@@ -221,3 +221,77 @@ Published Commentary v1.2 = UNCHANGED
 Commentary candidates = 12 (12 READY_FOR_HUMAN_REVIEW, 0 approved)
 C3 / promotion / publication = NOT STARTED
 ```
+
+## Transaction C3 — explicit approval and selective promotion
+
+### Approval boundary and manifest-count correction
+
+The human operator explicitly approved exactly the 12 active candidate artifacts listed below. Each approval binds the chapter reference, active source path, candidate SHA-256, evidence hash, synthesis hash, `READY_FOR_HUMAN_REVIEW` state, and successful `validated` state. The deterministic machine-readable approval record is `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json`; the C2 review package and its historical recommendation classifications remain preserved.
+
+| Chapter | Approved candidate SHA-256 |
+|---|---|
+| 1 Samuel 17 | `50070415702264ae95cbfdbf1a334322bebadd6798f1c6ef1610e8c1e9bafa2d` |
+| 2 Kings 5 | `480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6` |
+| Acts 27 | `ac625b17687b3c0158f04a5d7678394f07b2c3877ee243b6f0342a0e043ef8d8` |
+| Genesis 13 | `c389b19f4781f3000242d437c61c0d36ffefc48c596e20f00f7935bafe97c8d4` |
+| Genesis 34 | `811c11c0421822df129b5c693d8c54047dc2a0c510b818eb3731c50385c760cd` |
+| Isaiah 36 | `c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41` |
+| John 4 | `bac11949ded437702a0e19933a2cb692718c03cadd16b61b68c5ca8581fbed10` |
+| Joshua 6 | `89ada8ecbf6b942405d93d55cd460653cb1934ea972fb91fd9d67d9bf779b41f` |
+| Judges 20 | `e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129` |
+| Matthew 2 | `a4f3f0f115de23a5f94ce99e91a91e7941ff7ffcef588f80c37120d19d745ebf` |
+| Numbers 18 | `502c079673d07725a126502a869ccdf28a8fefd054110f5495deb2e29753206a` |
+| Ruth 1 | `8e3ceec1c3095b48b33fbb27f4948bf569d8e3dfc788423941e7638474114b47` |
+
+The manifest-level `validation_counts` had combined active candidates with a superseded diagnostic failure for Genesis 13. The `diagnostic_attempts` entry describes a failed renderer diagnostic; the invalid artifact was never an active candidate and remains preserved in its historical record. The aggregate is now defined and tested as a roll-up of the 12 active `candidates[]` records: `READY_FOR_HUMAN_REVIEW: 12`, with no active `INVALID_ARTIFACT`. All active rows retain `generation_status: validated` and empty `validation_errors`. C2S approval uses only the C2S artifacts for 1 Samuel 17, Joshua 6, Numbers 18, and Ruth 1; the superseded C2/C2R/C2S attempts remain in history.
+
+### Read-only scope and promotion
+
+The pre-promotion published Commentary v1.2 tree contained 974 files and had tree identity `9d92742f184a6707f46e597284b0167e4c7b974ea4eec957da1f10cb5efc98f4`. The snapshot is retained at `transaction-c-commentary-c2/published-tree-c3-before.json`.
+
+The existing `tools/commentary_v12_release.py` promotion command reconciles the full corpus and does not offer selective dry-run mode. A read-only calculation checked the current release manifest, checksum index, descriptor, all 12 active candidate hashes, and source identities before writing. Its expected changed release scope was exactly the 12 approved chapter files and the existing release manifest/checksum index, plus the existing `docs/commentary-v1.2-release.json` descriptor whose manifest and package identities must follow the update. The scope is recorded in `transaction-c-commentary-c2/promotion-dry-run.json`.
+
+The 12 approved candidate files were copied byte-for-byte into the existing published v1.2 paths. The release index rows now carry the promoted artifact hashes and current evidence/synthesis hashes. Their obsolete corpus-runner pointers were removed, and their source is identified as `transaction-c-selective-promotion`. The existing checksum index, corpus checksum root, release manifest identity, and release descriptor bindings were recomputed. Release version and schema remain Commentary v1.2 and `commentary-v1.2-corpus-reconciliation-v1`; published chapter count remains 972.
+
+Exact changed paths inside the published release tree:
+
+```text
+.bhf-data/bhf-commentary-v1.2/.bhf-commentary-release-checksums.json
+.bhf-data/bhf-commentary-v1.2/.bhf-commentary-release.json
+.bhf-data/bhf-commentary-v1.2/1_samuel_017.json
+.bhf-data/bhf-commentary-v1.2/2_kings_005.json
+.bhf-data/bhf-commentary-v1.2/acts_027.json
+.bhf-data/bhf-commentary-v1.2/genesis_013.json
+.bhf-data/bhf-commentary-v1.2/genesis_034.json
+.bhf-data/bhf-commentary-v1.2/isaiah_036.json
+.bhf-data/bhf-commentary-v1.2/john_004.json
+.bhf-data/bhf-commentary-v1.2/joshua_006.json
+.bhf-data/bhf-commentary-v1.2/judges_020.json
+.bhf-data/bhf-commentary-v1.2/matthew_002.json
+.bhf-data/bhf-commentary-v1.2/numbers_018.json
+.bhf-data/bhf-commentary-v1.2/ruth_001.json
+```
+
+The release descriptor `docs/commentary-v1.2-release.json` was also updated to bind the new release manifest and package root. No other published release path changed. The post-promotion tree contains 974 files and has tree identity `2aa8c39e26528136d7242e5fe96d99ac59328f21161907d00ad4fbe7e76bce57`. The release manifest identity is `e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f`; its chapter package checksum root is `762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414`; the descriptor identity is `8d04a592e74a25f0df8f20d28a4074d493bb93ea7b5039945d51427e67402872`.
+
+### Controls, production reader, and verification
+
+Psalms 76, Revelation 18, and Acts 16 received no candidates and remain byte-identical where a published artifact exists. Their release-index evidence and synthesis hashes are unchanged; Psalms 76 remains source-limited with no prose file. The production reader still resolves `.bhf-data/bhf-commentary-v1.2`, not the candidate workspace. All 12 production reads resolve the newly promoted artifacts. `promotion-verification.json` records the exact tree diff, candidate byte matches, controls, and reader path.
+
+All 12 published files passed `validate_chapter_commentary()` against freshly reconstructed current evidence bundles and synthesis objects. Their published bytes equal the approved candidate bytes. The C3 candidate and impact checks, including active manifest aggregation, C1 selective-impact identity, C2/C2S candidate lineage, approval binding, changed-path isolation, controls, and production-reader resolution, passed: 13 tests. Release promotion and frozen-release tests passed: 17 tests. Current-lineage and source/provenance tests passed: 30 tests. Production runtime and availability smoke tests passed: 18 tests. Selective-recompile tests passed: 13 tests (52 deselected). `python3 -m tools.commentary_v12_release inventory` reported `RECONCILIATION_PASS`; `python3 -m tools.commentary_v12_freeze verify` reported `COMMENTARY_V1_2_FROZEN_READY` with 1189 manifest entries and no checksum conflicts.
+
+The broader production/data-gap test invocation also exposed three pre-existing environment-sensitive failures outside this promotion: the production census fixture expects zero completed run records but the ignored local run state contains 16; two data-gap adjudication tests encounter an Exodus 14 input-identity mismatch and an immutable gate-artifact collision. No production code, CKL evidence, or those run artifacts were changed for C3. Commentary release-dependent smoke checks and all C3-specific checks passed.
+
+### Final C3 state
+
+```text
+Transaction C1 = SELECTIVE_INPUT_IMPACT_VERIFIED
+Transaction C2 = COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW
+Transaction C3 = COMMENTARY_SELECTIVE_PROMOTION_VERIFIED_READY_TO_MERGE
+Approved active artifacts = 12
+Promoted published artifacts = 12 (byte-identical to approved candidates)
+Unrelated published release paths changed = 0
+Controls changed = 0
+Production reader uses published Commentary v1.2 = verified
+Merge or deployment = not performed
+```

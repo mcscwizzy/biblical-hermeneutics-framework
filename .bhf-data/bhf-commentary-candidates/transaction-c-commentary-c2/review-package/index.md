@@ -1,12 +1,12 @@
 # Transaction C2 candidate review package
 
-**State:** `COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW`
+**Review state:** `COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW`
 **Candidates:** 12 exact C1 chapters
 **Validated for human review:** 12
 **Invalid artifacts:** 0
-**Approved:** 0
+**Explicitly approved for C3:** 12 (identity-bound; see `../approval-manifest.json`)
 
-All Commentary shown below is a candidate. Review states do not constitute approval or publication.
+The review-state labels and recommendation classifications below are preserved as historical review records. The separate Transaction C3 approval manifest records the exact active artifacts approved for promotion.
 
 | Chapter | Review state | Old evidence | New evidence | Old synthesis | New synthesis | Candidate SHA-256 | Review |
 |---|---|---|---|---|---|---|---|

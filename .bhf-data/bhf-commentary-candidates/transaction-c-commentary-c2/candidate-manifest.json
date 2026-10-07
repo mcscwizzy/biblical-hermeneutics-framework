@@ -1,5 +1,5 @@
 {
-  "approval_state": "NONE_APPROVED",
+  "approval_state": "ALL_12_EXPLICITLY_APPROVED",
   "artifact_version": "transaction-c2-candidate-manifest-v1",
   "candidate_chapter_count": 12,
   "candidate_chapter_set": [
@@ -24,7 +24,7 @@
         "source-lock-genesis-13-jordan-valley-well-watered-description",
         "source-lock-genesis-13-lot-eastward-separation"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Genesis",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-13c4d7e346924c69/chapters/genesis_013/commentary.json",
       "candidate_artifact_sha256": "c389b19f4781f3000242d437c61c0d36ffefc48c596e20f00f7935bafe97c8d4",
@@ -61,14 +61,15 @@
       "review_state": "READY_FOR_HUMAN_REVIEW",
       "synthesis_compiler_version": "1.1",
       "synthesis_schema_version": "1.1",
-      "validation_errors": []
+      "validation_errors": [],
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
         "source-lock-genesis-34-city-gate-negotiation-setting",
         "source-lock-genesis-34-local-population-description"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Genesis",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-b7edc665c15bdc06/chapters/genesis_034/commentary.json",
       "candidate_artifact_sha256": "811c11c0421822df129b5c693d8c54047dc2a0c510b818eb3731c50385c760cd",
@@ -105,14 +106,15 @@
       "review_state": "READY_FOR_HUMAN_REVIEW",
       "synthesis_compiler_version": "1.1",
       "synthesis_schema_version": "1.1",
-      "validation_errors": []
+      "validation_errors": [],
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
         "source-lock-numbers-18-levites-no-territorial-inheritance",
         "source-lock-numbers-18-levites-tithe-as-inheritance"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Numbers",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/numbers_18/commentary.json",
       "candidate_artifact_sha256": "502c079673d07725a126502a869ccdf28a8fefd054110f5495deb2e29753206a",
@@ -170,14 +172,15 @@
         "evidence_hash": "785aafb367ed47fa7eb77a2266b51348c31451de23d2cf455c6c77901dd9c6bc",
         "synthesis_hash": "462866b275503b11655d321f4286a59d16d5637e50b0ad572e61f46f921f0253",
         "validation_status": "passed"
-      }
+      },
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
         "source-lock-joshua-6-jericho-closed-city",
         "source-lock-joshua-6-jericho-encirclement"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Joshua",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/joshua_6/commentary.json",
       "candidate_artifact_sha256": "89ada8ecbf6b942405d93d55cd460653cb1934ea972fb91fd9d67d9bf779b41f",
@@ -235,13 +238,14 @@
         "evidence_hash": "3d8ee512e4ccd07b52a096ad3fde0995b43509fcf048b9a5cf6892c97289a789",
         "synthesis_hash": "25a695fb8911720b3894a8a3385696c18ef46d4a7bf6e64e2d3cefc63d2b9a7c",
         "validation_status": "passed"
-      }
+      },
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
         "source-lock-judges-20-mizpah-gibeah-campaign-locations"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Judges",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0595ebb1c627f433/chapters/judges_020/commentary.json",
       "candidate_artifact_sha256": "e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129",
@@ -278,7 +282,8 @@
       "review_state": "READY_FOR_HUMAN_REVIEW",
       "synthesis_compiler_version": "1.1",
       "synthesis_schema_version": "1.1",
-      "validation_errors": []
+      "validation_errors": [],
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
@@ -286,7 +291,7 @@
         "source-lock-ruth-1-bethlehem-judah-territory",
         "source-lock-ruth-1-bethlehem-moab-migration"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Ruth",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/ruth_001/commentary.json",
       "candidate_artifact_sha256": "8e3ceec1c3095b48b33fbb27f4948bf569d8e3dfc788423941e7638474114b47",
@@ -390,7 +395,8 @@
         "synthesis_hash": "315fb5e50f38e7f3720f3bbdd574360e7d02e6dc48964b1edd1deae1a9e29969",
         "validation_status": "passed",
         "artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/ruth_001/commentary.json"
-      }
+      },
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
@@ -399,7 +405,7 @@
         "source-lock-1samuel-17-elah-opposing-slopes",
         "source-lock-1samuel-17-socoh-azekah-encampment"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "1 Samuel",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/1_samuel_17/commentary.json",
       "candidate_artifact_sha256": "50070415702264ae95cbfdbf1a334322bebadd6798f1c6ef1610e8c1e9bafa2d",
@@ -460,7 +466,8 @@
         "evidence_hash": "5556dbf59881489d3f94e32f0f0e01879fcdfdfdb11ac1a7f579ac833a9f67cd",
         "synthesis_hash": "1105d490acf8e7254af3d2168e1b81606026ac684aa36ec89b07199bf86c5d4d",
         "validation_status": "passed"
-      }
+      },
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
@@ -470,7 +477,7 @@
         "source-lock-2kings-5-naaman-aram-israel-jordan-journey",
         "source-lock-2kings-5-naaman-jordan-immersion"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "2 Kings",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0e53eca15a36aa3a/chapters/2_kings_005/commentary.json",
       "candidate_artifact_sha256": "480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6",
@@ -507,7 +514,8 @@
       "review_state": "READY_FOR_HUMAN_REVIEW",
       "synthesis_compiler_version": "1.1",
       "synthesis_schema_version": "1.1",
-      "validation_errors": []
+      "validation_errors": [],
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
@@ -515,7 +523,7 @@
         "source-lock-isaiah-36-lachish-jerusalem-assyrian-deployment",
         "source-lock-isaiah-36-upper-pool-conduit-field-setting"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Isaiah",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9e3cec1b8c2f60be/chapters/isaiah_036/commentary.json",
       "candidate_artifact_sha256": "c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41",
@@ -552,7 +560,8 @@
       "review_state": "READY_FOR_HUMAN_REVIEW",
       "synthesis_compiler_version": "1.1",
       "synthesis_schema_version": "1.1",
-      "validation_errors": []
+      "validation_errors": [],
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
@@ -562,7 +571,7 @@
         "source-lock-matthew-2-egypt-return-itinerary",
         "source-lock-matthew-2-nazareth-galilee-region"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Matthew",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0c56c7d053fadbec/chapters/matthew_002/commentary.json",
       "candidate_artifact_sha256": "a4f3f0f115de23a5f94ce99e91a91e7941ff7ffcef588f80c37120d19d745ebf",
@@ -604,7 +613,8 @@
       "review_state": "READY_FOR_HUMAN_REVIEW",
       "synthesis_compiler_version": "1.1",
       "synthesis_schema_version": "1.1",
-      "validation_errors": []
+      "validation_errors": [],
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
@@ -612,7 +622,7 @@
         "source-lock-john-4-sychar-well-near-jacob-field",
         "sychar-john-4-sychar-well-near-jacob-field-identity"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "John",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-7c306bebfc473aa6/chapters/john_004/commentary.json",
       "candidate_artifact_sha256": "bac11949ded437702a0e19933a2cb692718c03cadd16b61b68c5ca8581fbed10",
@@ -649,7 +659,8 @@
       "review_state": "READY_FOR_HUMAN_REVIEW",
       "synthesis_compiler_version": "1.1",
       "synthesis_schema_version": "1.1",
-      "validation_errors": []
+      "validation_errors": [],
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     },
     {
       "added_evidence_ids": [
@@ -663,7 +674,7 @@
         "source-lock-acts-27-crete-wind-navigation-conditions",
         "source-lock-acts-27-sidon-crete-maritime-itinerary"
       ],
-      "approval_state": "NOT_APPROVED",
+      "approval_state": "APPROVED",
       "book": "Acts",
       "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9f02a6ae0a47569b/chapters/acts_027/commentary.json",
       "candidate_artifact_sha256": "ac625b17687b3c0158f04a5d7678394f07b2c3877ee243b6f0342a0e043ef8d8",
@@ -700,7 +711,8 @@
       "review_state": "READY_FOR_HUMAN_REVIEW",
       "synthesis_compiler_version": "1.1",
       "synthesis_schema_version": "1.1",
-      "validation_errors": []
+      "validation_errors": [],
+      "approval_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json"
     }
   ],
   "control_chapter_set": [
@@ -733,9 +745,8 @@
     "renderer_label": "commentary-v1.2-codex-cli",
     "synthesis_compiler_version": "1.1"
   },
-  "transaction_state": "COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW",
+  "transaction_state": "COMMENTARY_SELECTIVE_PROMOTION_VERIFIED_READY_TO_MERGE",
   "validation_counts": {
-    "INVALID_ARTIFACT": 1,
-    "READY_FOR_HUMAN_REVIEW": 11
+    "READY_FOR_HUMAN_REVIEW": 12
   }
 }

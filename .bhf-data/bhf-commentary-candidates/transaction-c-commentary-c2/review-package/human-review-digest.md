@@ -120,7 +120,26 @@ This digest covers the 12 active candidates in `candidate-manifest.json`. Candid
 
 ## Transaction boundary
 
-This is a deterministic review aid only. It does not regenerate Commentary, approve candidates, modify CKL evidence, change the published Commentary v1.2 release, advance pipeline state, or begin C3.
+At C2 review-package creation, this digest was a deterministic review aid and did not approve candidates, modify CKL evidence, or change the published Commentary v1.2 release. C3 approval is recorded separately below.
+
+## Transaction C3 explicit approval record
+
+The human operator explicitly approved the following active candidate artifacts for C3 promotion. Approval is bound to chapter reference, artifact SHA-256, evidence hash, synthesis hash, source candidate path, and successful validation state. The machine-readable record is `../approval-manifest.json`. Earlier recommendation classifications in this digest remain unchanged review history.
+
+| Chapter | Approved artifact SHA-256 |
+|---|---|
+| 1 Samuel 17 | `50070415702264ae95cbfdbf1a334322bebadd6798f1c6ef1610e8c1e9bafa2d` |
+| 2 Kings 5 | `480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6` |
+| Acts 27 | `ac625b17687b3c0158f04a5d7678394f07b2c3877ee243b6f0342a0e043ef8d8` |
+| Genesis 13 | `c389b19f4781f3000242d437c61c0d36ffefc48c596e20f00f7935bafe97c8d4` |
+| Genesis 34 | `811c11c0421822df129b5c693d8c54047dc2a0c510b818eb3731c50385c760cd` |
+| Isaiah 36 | `c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41` |
+| John 4 | `bac11949ded437702a0e19933a2cb692718c03cadd16b61b68c5ca8581fbed10` |
+| Joshua 6 | `89ada8ecbf6b942405d93d55cd460653cb1934ea972fb91fd9d67d9bf779b41f` |
+| Judges 20 | `e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129` |
+| Matthew 2 | `a4f3f0f115de23a5f94ce99e91a91e7941ff7ffcef588f80c37120d19d745ebf` |
+| Numbers 18 | `502c079673d07725a126502a869ccdf28a8fefd054110f5495deb2e29753206a` |
+| Ruth 1 | `8e3ceec1c3095b48b33fbb27f4948bf569d8e3dfc788423941e7638474114b47` |
 
 
 ## C2S status

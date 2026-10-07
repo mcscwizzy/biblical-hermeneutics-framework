@@ -39,9 +39,18 @@ def test_c2_candidate_artifacts_are_one_to_one_with_c1_and_match_locked_inputs()
     }
     assert commentary_files == {row["candidate_artifact_path"] for row in rows}
     assert not (set(impact["control_chapter_set"]) & {row["reference"] for row in rows})
-    assert manifest["approval_state"] == "NONE_APPROVED"
-    assert all(row["approval_state"] == "NOT_APPROVED" for row in rows)
+    assert manifest["approval_state"] == "ALL_12_EXPLICITLY_APPROVED"
+    assert all(row["approval_state"] == "APPROVED" for row in rows)
     assert all(row["review_state"] == "READY_FOR_HUMAN_REVIEW" for row in rows)
+    active_counts = {}
+    for row in rows:
+        active_counts[row["review_state"]] = active_counts.get(row["review_state"], 0) + 1
+    assert manifest["validation_counts"] == active_counts
+    assert active_counts == {"READY_FOR_HUMAN_REVIEW": 12}
+    assert any(
+        attempt.get("status") == "INVALID_ARTIFACT"
+        for attempt in manifest["diagnostic_attempts"]
+    )
 
     c1 = {row["reference"]: row for row in impact["chapters"]}
     for row in rows:
@@ -90,19 +99,12 @@ def test_c2_candidate_artifacts_are_one_to_one_with_c1_and_match_locked_inputs()
 
 
 def test_c2_published_v12_release_tree_matches_pre_render_snapshot():
-    snapshot = _json(C2_ROOT / "published-tree-before.json")
-    current = {
-        path.relative_to(RELEASE_ROOT).as_posix(): _sha256(path)
-        for path in sorted(RELEASE_ROOT.rglob("*"))
-        if path.is_file()
-    }
-
-    assert current == snapshot["files"]
-    assert len(current) == snapshot["file_count"]
-
+    before_c2 = _json(C2_ROOT / "published-tree-before.json")
+    before_c3 = _json(C2_ROOT / "published-tree-c3-before.json")
     repair_snapshot = _json(C2_ROOT / "ruth-repair-001/pre-repair-state.json")["published_release_tree"]
-    assert current == repair_snapshot["files"]
-    assert len(current) == repair_snapshot["file_count"]
+
+    assert before_c3["files"] == before_c2["files"] == repair_snapshot["files"]
+    assert before_c3["file_count"] == before_c2["file_count"] == repair_snapshot["file_count"]
 
 
 def test_c2s_stabilization_preserves_c1_inputs_and_eight_untouched_candidate_artifacts():

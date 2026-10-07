@@ -47,21 +47,23 @@ def test_rendered_c1_table_contains_only_complete_lowercase_sha256_identities():
     assert set(rows) == EXPECTED_CANDIDATES | EXPECTED_CONTROLS
 
 
-def test_isaiah_36_published_baseline_hash_agrees_across_authoritative_sources():
+def test_isaiah_36_c1_baseline_is_preserved_and_c3_release_uses_approved_identity():
     impact = _impact()
     impact_row = next(row for row in impact["chapters"] if row["reference"] == "Isaiah 36")
     release = json.loads((RELEASE_ROOT / ".bhf-commentary-release.json").read_text(encoding="utf-8"))
     release_row = next(row for row in release["chapter_publication_index"] if row["reference"] == "Isaiah 36")
     artifact = json.loads((RELEASE_ROOT / "isaiah_036.json").read_text(encoding="utf-8"))
+    snapshot_path = ROOT / ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/published-tree-c3-before.json"
+    snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+    old_row = snapshot["chapter_identities"]["Isaiah 36"]
+    approved = json.loads((ROOT / ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json").read_text(encoding="utf-8"))
+    approved_row = next(row for row in approved["approvals"] if row["reference"] == "Isaiah 36")
 
-    expected = "d0a416ef62843e2a5bfd6b7afbc00b28e47e21663011b89e638f79bfa31faedb"
-    sources = [
-        impact_row["old_identity"]["evidence_hash"],
-        release_row["source_lineage"]["evidence_hash"],
-        artifact["generated_metadata"]["evidence_hash"],
-    ]
-    assert all(SHA256_RE.fullmatch(value) for value in sources)
-    assert sources == [expected] * 3
+    old_expected = "d0a416ef62843e2a5bfd6b7afbc00b28e47e21663011b89e638f79bfa31faedb"
+    new_expected = "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f"
+    assert impact_row["old_identity"]["evidence_hash"] == old_row["source_lineage"]["evidence_hash"] == old_expected
+    assert release_row["source_lineage"]["evidence_hash"] == artifact["generated_metadata"]["evidence_hash"] == approved_row["evidence_hash"] == new_expected
+    assert release_row["artifact_sha256"] == approved_row["candidate_artifact_sha256"]
 
 
 def test_controls_have_no_input_drift_and_are_not_candidates():

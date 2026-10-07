@@ -1,0 +1,48 @@
+{
+  "approved_artifact_count": 12,
+  "artifact_version": "transaction-c3-promotion-verification-v1",
+  "byte_identical_promoted_artifacts": [
+    "1 Samuel 17",
+    "2 Kings 5",
+    "Acts 27",
+    "Genesis 13",
+    "Genesis 34",
+    "Isaiah 36",
+    "John 4",
+    "Joshua 6",
+    "Judges 20",
+    "Matthew 2",
+    "Numbers 18",
+    "Ruth 1"
+  ],
+  "changed_paths": [
+    ".bhf-data/bhf-commentary-v1.2/.bhf-commentary-release-checksums.json",
+    ".bhf-data/bhf-commentary-v1.2/.bhf-commentary-release.json",
+    ".bhf-data/bhf-commentary-v1.2/1_samuel_017.json",
+    ".bhf-data/bhf-commentary-v1.2/2_kings_005.json",
+    ".bhf-data/bhf-commentary-v1.2/acts_027.json",
+    ".bhf-data/bhf-commentary-v1.2/genesis_013.json",
+    ".bhf-data/bhf-commentary-v1.2/genesis_034.json",
+    ".bhf-data/bhf-commentary-v1.2/isaiah_036.json",
+    ".bhf-data/bhf-commentary-v1.2/john_004.json",
+    ".bhf-data/bhf-commentary-v1.2/joshua_006.json",
+    ".bhf-data/bhf-commentary-v1.2/judges_020.json",
+    ".bhf-data/bhf-commentary-v1.2/matthew_002.json",
+    ".bhf-data/bhf-commentary-v1.2/numbers_018.json",
+    ".bhf-data/bhf-commentary-v1.2/ruth_001.json"
+  ],
+  "controls_unchanged": [
+    "Acts 16",
+    "Psalms 76",
+    "Revelation 18"
+  ],
+  "post_promotion_file_count": 974,
+  "post_promotion_tree_identity": "2aa8c39e26528136d7242e5fe96d99ac59328f21161907d00ad4fbe7e76bce57",
+  "pre_promotion_file_count": 974,
+  "pre_promotion_tree_identity": "9d92742f184a6707f46e597284b0167e4c7b974ea4eec957da1f10cb5efc98f4",
+  "production_reader_storage_path": ".bhf-data/bhf-commentary-v1.2",
+  "release_descriptor_identity": "8d04a592e74a25f0df8f20d28a4074d493bb93ea7b5039945d51427e67402872",
+  "release_manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+  "release_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+  "status": "COMMENTARY_SELECTIVE_PROMOTION_VERIFIED_READY_TO_MERGE"
+}

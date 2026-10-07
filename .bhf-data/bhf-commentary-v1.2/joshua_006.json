@@ -1,1 +1,96 @@
-{"book":"Joshua","chapter":6,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"d10fd021c232ebdfedea2bcbf61b9a18e0aa1f5ec3d414e1b8258e7fef6e6895","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"23eb1892b86436e5d84228a379184ba253b6bbcdda3ff602c09cd731536edaec","synthesis_schema_version":"1.1"},"reference":"Joshua 6","sections":[{"blocks":[{"confidence":"high","evidence_ids":["joshua-literary-movement"],"id":"block_1","interpretation_level":"fact","synthesis_ids":["syn_surrounding_passages_9607d4397cdd"],"text":"This chapter belongs within Joshua's larger narrative movement, so its episode is read as part of the book's developing account.","verse_refs":[]}],"kind":"surrounding_passages","title":"Context"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "reference": "Joshua 6",
+  "book": "Joshua",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "why_it_matters",
+      "title": "A City Shut In",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Jericho is described as completely closed because of Israel: no one could leave or enter. That condition supplies the immediate setting for the repeated encircling of the city. The marches are therefore presented as action around a sealed city, rather than as an encounter with people moving freely in and out.",
+          "verse_refs": [
+            "Joshua 6:1",
+            "Joshua 6:15",
+            "Joshua 6:3-4"
+          ],
+          "evidence_ids": [
+            "source-lock-joshua-6-jericho-closed-city",
+            "source-lock-joshua-6-jericho-encirclement"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_48dfcb729f0c"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Rahab and Her Household",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter sets the destruction of Jericho beside the rescue of Rahab and her household. Their preservation is tied directly to her having protected the messengers sent by Joshua, and the account adds that she thereafter lived within Israel. The contrast makes her rescue a deliberate exception within the chapter's account of the city's judgment.",
+          "verse_refs": [
+            "Joshua 6:22-25"
+          ],
+          "evidence_ids": [
+            "joshua-rahab-rescue"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_2bdf4b692870"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Reading the Wider Conquest Account",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Questions about the conquest accounts cannot be settled by treating archaeological evidence as though it supplied one simple, uncontested reconstruction. Evidence from Jericho, Ai, Hazor, the highlands, and Mount Ebal varies by site and chronology. The cited interpretive note also cautions that Joshua’s warfare and devoted-destruction texts require historical, literary, ethical, and theological scrutiny and cannot authorize modern territorial or religious violence.",
+          "verse_refs": [
+            "Joshua 10:1-43",
+            "Joshua 11:1-23",
+            "Joshua 12:1-24",
+            "Joshua 7:1-26",
+            "Joshua 8:1-35",
+            "Joshua 9:1-27"
+          ],
+          "evidence_ids": [
+            "joshua:interpretive_note:2",
+            "joshua:interpretive_note:3"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_47fe9a7f08e5"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3d8ee512e4ccd07b52a096ad3fde0995b43509fcf048b9a5cf6892c97289a789",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "25a695fb8911720b3894a8a3385696c18ef46d4a7bf6e64e2d3cefc63d2b9a7c",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "commentary-v1.2-codex-cli"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

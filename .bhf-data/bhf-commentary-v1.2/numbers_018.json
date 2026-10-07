@@ -1,1 +1,80 @@
-{"book":"Numbers","chapter":18,"evidence_availability":"THIN","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"94b518a68787e9ca707665e95a262b0169bfb611f3cd51d8654e799ad99d204d","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"81a4afab49a895a9957932a35496b7c574dc951ca032285e16f08c58c5007674","synthesis_schema_version":"1.1"},"reference":"Numbers 18","sections":[{"blocks":[{"confidence":"low","evidence_ids":["numbers:interpretive_note:2"],"id":"block_1","interpretation_level":"inference","synthesis_ids":["syn_surrounding_passages_e8e44c6130d1"],"text":"The chapter sits within the book's larger movement; reading it alongside the surrounding account helps clarify its place in that development.","verse_refs":[]}],"kind":"surrounding_passages","title":"Context"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "reference": "Numbers 18",
+  "book": "Numbers",
+  "chapter": 18,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "cultural_context",
+      "title": "Inheritance and the Levites' support",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Verses 20–24 distinguish Aaron from the Levites while linking both to the chapter’s provisions. Aaron is told he will have no land inheritance among Israel, and the Levites receive Israel’s tithe as their inheritance in return for their service at the tent of meeting. In this passage, the tithe functions specifically as provision and inheritance for the Levites in connection with their service.",
+          "verse_refs": [
+            "Numbers 18:20",
+            "Numbers 18:21",
+            "Numbers 18:23-24"
+          ],
+          "evidence_ids": [
+            "source-lock-numbers-18-levites-no-territorial-inheritance",
+            "source-lock-numbers-18-levites-tithe-as-inheritance"
+          ],
+          "synthesis_ids": [
+            "syn_archaeology_geography_252d4fd96410",
+            "syn_cultural_context_6c9bc16a3638"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Wilderness-route maps",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Maps proposed for the wilderness journey described across Numbers 10–21 should mark uncertain site identifications as uncertain, rather than presenting one reconstructed itinerary as established.",
+          "verse_refs": [
+            "Numbers 10",
+            "Numbers 11:1-35",
+            "Numbers 12:1-16",
+            "Numbers 13:1-33",
+            "Numbers 14:1-45",
+            "Numbers 15:1-41",
+            "Numbers 16:1-50",
+            "Numbers 17:1-13",
+            "Numbers 19:1-22",
+            "Numbers 20:1-29",
+            "Numbers 21:1-35"
+          ],
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_e8e44c6130d1"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "785aafb367ed47fa7eb77a2266b51348c31451de23d2cf455c6c77901dd9c6bc",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "462866b275503b11655d321f4286a59d16d5637e50b0ad572e61f46f921f0253",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "commentary-v1.2-codex-cli"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

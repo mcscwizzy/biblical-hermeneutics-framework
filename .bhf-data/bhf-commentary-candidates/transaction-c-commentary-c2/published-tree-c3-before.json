@@ -1,7 +1,158 @@
 {
-  "artifact_version": "commentary-v1.2-runtime-release-checksums-v2",
+  "artifact_version": "transaction-c3-published-tree-snapshot-v1",
+  "chapter_identities": {
+    "1 Samuel 17": {
+      "artifact_sha256": "5767c8a07a8d448007e1cb879f279328ccac42d6861c7cae6dbe341090ba86b3",
+      "filename": "1_samuel_017.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "8c289caf94a73985981ef3dcc6406928169c3748f12780374fb0a92ad5655155",
+        "synthesis_hash": "664eaf4262927f411efd0d25886c72ab05e0299b0cc78ce930e577194afa5c65"
+      },
+      "validated": true
+    },
+    "2 Kings 5": {
+      "artifact_sha256": "8be6b1683cebae3b8ee4addd40ccc8d06a2e32faf85991900b4119491bd60040",
+      "filename": "2_kings_005.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "a92d1c9d4c6c771bc882fe0af2e8518526c88e484a141d6c595f762d4907a952",
+        "synthesis_hash": "13e54a21f10d4097fb1d360bb352e16f3725ca8e9afb10959b05d3a9811118de"
+      },
+      "validated": true
+    },
+    "Acts 16": {
+      "artifact_sha256": "c85df6706a3b60e7110836bd27989b53660cee68fb6d19d29b7f58a8148eb7b9",
+      "filename": "acts_016.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+        "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592"
+      },
+      "validated": true
+    },
+    "Acts 27": {
+      "artifact_sha256": "bd1eed0ccb869510625fbd1a260bd6874cd24efebc639bbd75d167ab8a52b75c",
+      "filename": "acts_027.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": null,
+      "validated": true
+    },
+    "Genesis 13": {
+      "artifact_sha256": "81a86bbb0d6687e98e0485d3e53b1cca2673eae50e6cc7a3e2fd7199cd0b64c8",
+      "filename": "genesis_013.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "4b16ee265db55e19aa832b598ce57e18fe3e847f3a2fd0c0955eba97084f12f6",
+        "synthesis_hash": "d22dadff9ff153050af30dbeeb1021b84248c1d310ef4830f6f73f709f0fe710"
+      },
+      "validated": true
+    },
+    "Genesis 34": {
+      "artifact_sha256": "727727086c031015c04383ec3f086403762bbf6fa61e4baa61789029b5eb2471",
+      "filename": "genesis_034.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "32aa624e5ce08506ccfa20866f8f73c6cb968fe230eb3df9465545c21102a994",
+        "synthesis_hash": "aa06e626eff7f4dfe1fe229af641f77da4625fe7f1e9a276de3b9cca6997db48"
+      },
+      "validated": true
+    },
+    "Isaiah 36": {
+      "artifact_sha256": "236f36c64949ffa86bfaf9521da2bb9335df5738f634940d7ce55096317bb4d7",
+      "filename": "isaiah_036.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "d0a416ef62843e2a5bfd6b7afbc00b28e47e21663011b89e638f79bfa31faedb",
+        "synthesis_hash": "13bfdd657d8894b1cffacbe5ced27c8d399b29266a306a31f1a8c28fdd4a3669"
+      },
+      "validated": true
+    },
+    "John 4": {
+      "artifact_sha256": "38c8b5a212e3d912d13ac44c64012b9d1ae64738bc107bce4141642225c2d80c",
+      "filename": "john_004.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "5754dce09b19398db16f631917a2604c5ce5596e6cde0fe1f3331e2baa7dba0f",
+        "synthesis_hash": "5f8626783e689b48318feb3f3e6d90ce0631c6096bc652c6f8d257db3197c182"
+      },
+      "validated": true
+    },
+    "Joshua 6": {
+      "artifact_sha256": "cf9e0da15be86e8ebcc2c3ffc0011005ac66445335e14de39bda1137f6237b06",
+      "filename": "joshua_006.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "d10fd021c232ebdfedea2bcbf61b9a18e0aa1f5ec3d414e1b8258e7fef6e6895",
+        "synthesis_hash": "23eb1892b86436e5d84228a379184ba253b6bbcdda3ff602c09cd731536edaec"
+      },
+      "validated": true
+    },
+    "Judges 20": {
+      "artifact_sha256": "60218f6413f5286ac8932c46d5cd31cc322a54c2bb1fe27517f23719355d960c",
+      "filename": "judges_020.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "96f737fed1db2e5347af242223ccb9f6c2c423bfda2fd67960067f44ac67afc8",
+        "synthesis_hash": "58284a66f1fc53aa3e59fe5bd5781da85390e693c5f3e962524d109bca86a392"
+      },
+      "validated": true
+    },
+    "Matthew 2": {
+      "artifact_sha256": "52747b3d4d2cb446cabb0e28136106dff423e9b8e6c57cf7d12f15a75c13186d",
+      "filename": "matthew_002.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "1aeee333a66ab737a49c10c24eb5d603ddc1e22f140d03c62886a4990bfe524f",
+        "synthesis_hash": "3247a06fc2b87d11623896db0367659f322b23492ef5a73e87075272930f4f5b"
+      },
+      "validated": true
+    },
+    "Numbers 18": {
+      "artifact_sha256": "84f4a96ef24e1d834a1dc4fae89925294f8451d512e614830065b42fc1f3a208",
+      "filename": "numbers_018.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "94b518a68787e9ca707665e95a262b0169bfb611f3cd51d8654e799ad99d204d",
+        "synthesis_hash": "81a4afab49a895a9957932a35496b7c574dc951ca032285e16f08c58c5007674"
+      },
+      "validated": true
+    },
+    "Psalms 76": {
+      "artifact_sha256": null,
+      "filename": null,
+      "release_state": "NOT_RENDERABLE_SOURCE_LIMITED",
+      "source_lineage": {
+        "evidence_hash": "a4b7138baefd5f742058b5334dab09befa853dc0702151bc57c6965282fa2e72",
+        "synthesis_hash": "ff565d20e5bac53a9991662ea3d49ff549898064ec5472a0c2d68be5cae133ba"
+      },
+      "validated": true
+    },
+    "Revelation 18": {
+      "artifact_sha256": "087335ec105d9f1a11b5f71ba6b6ad6d951bee61325a0c648e4bfd556e2a931d",
+      "filename": "revelation_018.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+        "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0"
+      },
+      "validated": true
+    },
+    "Ruth 1": {
+      "artifact_sha256": "aae40857cbef886856ed2aebe88f24fe4d66ecd7e9b4fc2f574e3be8d306c426",
+      "filename": "ruth_001.json",
+      "release_state": "PUBLISHED",
+      "source_lineage": {
+        "evidence_hash": "9b25f9ec169873ffbbcfe387f238bf2618195918a136c2c6eda37ca4c74c119c",
+        "synthesis_hash": "ba93ac0b616347616f3e7d8c000cd05a31836a96429c0cd1268a194e351e72a7"
+      },
+      "validated": true
+    }
+  },
+  "file_count": 974,
   "files": {
-    ".bhf-commentary-release.json": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+    ".bhf-commentary-release-checksums.json": "d43831af3ef3b12cf7c1e823006da44ebaf9b367ef8bec70096459aebbd1d44d",
+    ".bhf-commentary-release.json": "aad968530b371ac05de3529c3f0ac0a59afebc66bfaa21c2fcf4ca6306684c5b",
     "1_chronicles_001.json": "45cbb750f1c9518cccfeed955087ca6f97d447123ba15201f624823b56b9ea1e",
     "1_chronicles_002.json": "367140781df5e19119f918253e53efd959ac74b2b1371768214dbbdeb6d13574",
     "1_chronicles_003.json": "57a18a351aa16b4767278bc171ad5180f201590bc31c29d616c81552ed169d33",
@@ -81,7 +232,7 @@
     "1_samuel_014.json": "ae92c4f793e974e8153b6ec348fa5e50d297cae78c16e7df5e671ae35c9ef56d",
     "1_samuel_015.json": "c19cfd5e4eb9eef41cf30859b039d32c00bc9825af7c7e077598c41058b787c2",
     "1_samuel_016.json": "62eb9fd47d76b057eceeb5b00ef5b7f577548c989a9228542e4a1c3f35bd9882",
-    "1_samuel_017.json": "50070415702264ae95cbfdbf1a334322bebadd6798f1c6ef1610e8c1e9bafa2d",
+    "1_samuel_017.json": "5767c8a07a8d448007e1cb879f279328ccac42d6861c7cae6dbe341090ba86b3",
     "1_samuel_018.json": "338e6c82c5f73967d31952a6cc1f7990f2d29c017682655854a5b9932b3f4719",
     "1_samuel_019.json": "f7dac81ebeb8cbac993884a48e2332c908e2855fc0a775193e91818569d1045e",
     "1_samuel_020.json": "eef519683ca011397b575558c3ad02664554e26a4e3dc0e3ce6b12fc3694653d",
@@ -142,7 +293,7 @@
     "2_kings_002.json": "ba58f4898cf5d85833847f34c0f6447ce005852e5dfc98d838a3de3116067656",
     "2_kings_003.json": "a0616b923b90cd671fc933192bb2e4378abf5bc682c8fe7a43a58b6b9a9673fa",
     "2_kings_004.json": "780c5ecdc630a3de1454cc4977f994e6fb87603f043fe6d3f46296fb72b4fa2f",
-    "2_kings_005.json": "480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6",
+    "2_kings_005.json": "8be6b1683cebae3b8ee4addd40ccc8d06a2e32faf85991900b4119491bd60040",
     "2_kings_009.json": "78dfa2caaefa81ce469e121be1f66b2f39ac0331e5d2d206b82814ffbf889702",
     "2_kings_010.json": "aa6e6371bff1f91d3254157a03384ae1ea6f544d12f7b2c483235a2a79618323",
     "2_kings_014.json": "242cee9290575ef91bdd2f604d1a200fef68107746de3ffde0a8c53c383f164b",
@@ -212,7 +363,7 @@
     "acts_024.json": "3a1766f89d5f2b21aeba3cec8eb5d7deef8dc1a3ad367ba3c9118b67b3122557",
     "acts_025.json": "cd59f3e6dbc5de008ac40dc00de17d74d1b11f7a2f8b5e7a9a0125d3f1760886",
     "acts_026.json": "753fd7bb4b5f853cb4cbb1d8e0ccc776e2843760a810e1bbf722367f05b6aae8",
-    "acts_027.json": "ac625b17687b3c0158f04a5d7678394f07b2c3877ee243b6f0342a0e043ef8d8",
+    "acts_027.json": "bd1eed0ccb869510625fbd1a260bd6874cd24efebc639bbd75d167ab8a52b75c",
     "acts_028.json": "887c69c79b94f6fea9d1b0af6ec65318dd2527816a5eef35c0a69cdf60b5ad50",
     "amos_001.json": "4bb9887f263c9db7d2079bf2bd1ddef967c209e886e1756a7b405bff7ad97e8f",
     "amos_002.json": "8d5b291190fa3c85aa6c2c361e28464f7592bf808aceb0ab8169fa021875541d",
@@ -391,7 +542,7 @@
     "genesis_010.json": "987fd4dcce4b20ef21e4fb05b63f2e66a094746c2be7159592f09d95a7e20db4",
     "genesis_011.json": "35185da1447297c78263f53a41f7dc2694455633f15b8562c49ee2d44d553d1f",
     "genesis_012.json": "9b92f278f1aa46d6a2eed1a2381b8d037c381cdb710f529b2a6ecbf46cd2af0d",
-    "genesis_013.json": "c389b19f4781f3000242d437c61c0d36ffefc48c596e20f00f7935bafe97c8d4",
+    "genesis_013.json": "81a86bbb0d6687e98e0485d3e53b1cca2673eae50e6cc7a3e2fd7199cd0b64c8",
     "genesis_014.json": "1b711fba2de3a2827f82eddca7584faefdcedde8f28393d6dbc4bbd14b835a4f",
     "genesis_015.json": "cf5f73b202cab361d374da8d443042388a655f2497db05f859a16ce48ece355d",
     "genesis_016.json": "3a88a1174a267ddb6d89d77395ca87e0a1e4226ceae0c0c6a9eaf789a1492fd2",
@@ -412,7 +563,7 @@
     "genesis_031.json": "d70a69aa679c95d0a98b12a6971dfe03b11c5c650b101931a59999b1ee25c3c5",
     "genesis_032.json": "de74286093b0b29bb9a961b76d1c0b928598a36e3b351e98a6f32c7ddf001f6d",
     "genesis_033.json": "3b387cccb103010698edcb91abffd5a9b02f851e5108db1480d4f360a5c07d7c",
-    "genesis_034.json": "811c11c0421822df129b5c693d8c54047dc2a0c510b818eb3731c50385c760cd",
+    "genesis_034.json": "727727086c031015c04383ec3f086403762bbf6fa61e4baa61789029b5eb2471",
     "genesis_035.json": "3ecd483b1b5f0c32d7568fa163f5288da720fed3f8e0e8a947fb8e77253e7afd",
     "genesis_036.json": "d0bc451b61fc1486e2f3a51acaf4bac96c7ee1415b790c3fc659ea4393a529e2",
     "genesis_037.json": "e2103497bfb4ea81723bb4eeb4de4748ebf483c6c5dab8573b55c9e74a6b8190",
@@ -494,7 +645,7 @@
     "isaiah_033.json": "98b9222cd10ef9ab5b4732051277c7d056aa96207228ffff8fe5b2c2ae43d6c3",
     "isaiah_034.json": "e43aa91b2674d6010570af7688c56337ef4b1458c46d6556b244a2f1e87c96cd",
     "isaiah_035.json": "678493f5e75b8e5dfc472747096e9272e4ef13301aa4984fd7792c1f96e94d03",
-    "isaiah_036.json": "c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41",
+    "isaiah_036.json": "236f36c64949ffa86bfaf9521da2bb9335df5738f634940d7ce55096317bb4d7",
     "isaiah_037.json": "8662628545c5c9f631933268104b9aac15858fae93bf99301fbe8b0406a26adc",
     "isaiah_038.json": "83d4ce0e544447a907adb0b439598588c0b22bad9c56b6b80e098655273fe6e8",
     "isaiah_039.json": "d0b3ec9c83e11d19678e045dc47533ef31bcd467345927591f3ba97a37a7e9d8",
@@ -627,7 +778,7 @@
     "john_001.json": "58fd2b20924fe216fa988461362d9ddbde1e7428ded2d59d4b749d50d3b570b6",
     "john_002.json": "eed2943c95024dda541a84089220f511b6350fbb54c0a0f0920ef5f69c5e33ad",
     "john_003.json": "2d9e6ffe9fa33d4b4240a2a40082e666778247783806501a2b7f8336f06fea99",
-    "john_004.json": "bac11949ded437702a0e19933a2cb692718c03cadd16b61b68c5ca8581fbed10",
+    "john_004.json": "38c8b5a212e3d912d13ac44c64012b9d1ae64738bc107bce4141642225c2d80c",
     "john_005.json": "6e09d738f65e49b59e8ef979bee100721b8a9e516e513345723446fa59e40491",
     "john_006.json": "6e35ab28c50aab1fe744825230058f4151dd368cfa0b1e6368c4a22d5926b0b4",
     "john_007.json": "7b286c106223ee47f1018ca420afb324e3cbf55fc308bcb283c2766d39e54213",
@@ -653,7 +804,7 @@
     "joshua_003.json": "c795314d926d52e266b9d662b40ab4d618d83b93a11c3a5b662f2b7a8532145d",
     "joshua_004.json": "5aa27b8af1036b95c2cfc67e59d2d06ef8437d975c6f48b4f54350fde5b6ae09",
     "joshua_005.json": "dce28c5b5d4e013f0a62eebc53b117f1128d8632c3752ab7619680e208052261",
-    "joshua_006.json": "89ada8ecbf6b942405d93d55cd460653cb1934ea972fb91fd9d67d9bf779b41f",
+    "joshua_006.json": "cf9e0da15be86e8ebcc2c3ffc0011005ac66445335e14de39bda1137f6237b06",
     "joshua_007.json": "a069c7277bffcbf5003565dc40150b60a50bd8575f07932740415bf807425bd0",
     "joshua_008.json": "e74647a99ba33bb4ec32768a38d04568f84df36c2e62c8328f95c4c7214e4287",
     "joshua_009.json": "0998f8748c92f208a674a1e4318814a7460210d0ca777a2d33e70d139ab611f2",
@@ -687,7 +838,7 @@
     "judges_017.json": "b1e262eba7600b003e50ec31e24eb98245cc859dbbd0f0381d66ba7c57711efb",
     "judges_018.json": "8c00a2b7fee45e6729aadd277a3a3affc39c5428b02e952c72486096db51d42c",
     "judges_019.json": "7d0940246a23d789257c4d4a377ffe0e8a3f15ca74718e02a6e48c30265cdfb4",
-    "judges_020.json": "e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129",
+    "judges_020.json": "60218f6413f5286ac8932c46d5cd31cc322a54c2bb1fe27517f23719355d960c",
     "judges_021.json": "8da691c7984c2f5b7c6ef5cc3ed2e33177de0a433868b7c77e5e7f83096913a4",
     "lamentations_001.json": "2e34b68ba8673a8092ac700f368ec1ab0dabbbd3af82e967033cbaa19966edcb",
     "lamentations_002.json": "87a9339daa082893105c432289cda8752f278386c736cc30e54b9df8b53c7c53",
@@ -756,7 +907,7 @@
     "mark_014.json": "c39df5ad0da3626e082dd1a259ea52f540d0ce49580f994f1d32490f52000227",
     "mark_015.json": "0cb40b973df8015104ad24b30eb4ae3b16001d49ec1c9ec4e95b72555599f5e1",
     "mark_016.json": "f287a05d90b3bacababc6c9820ce4ee2a07b44dc6a9a747e922e2fd245a83e89",
-    "matthew_002.json": "a4f3f0f115de23a5f94ce99e91a91e7941ff7ffcef588f80c37120d19d745ebf",
+    "matthew_002.json": "52747b3d4d2cb446cabb0e28136106dff423e9b8e6c57cf7d12f15a75c13186d",
     "matthew_003.json": "9a4fc7b1dce55662271400f65b3d00326bd3ca312d19f0917a04c56ea0e55d5d",
     "matthew_004.json": "c0f187069516f7efb23833be213a978c4ea8a0787f3f6462739a135897d6563e",
     "matthew_005.json": "9e7c06fd9f8784e1789eeb07857071f571d1ee41114bb5a30517dac03dce69dc",
@@ -818,7 +969,7 @@
     "numbers_015.json": "1f3f457b7f5333390ac14df8cfe7515b030f7f9ca5bb5471ee639b60189bc50f",
     "numbers_016.json": "5f1fa15c6d628386c2bca835fab3a73290e08f42eedbfd4e5eb6dfc8852c2fb0",
     "numbers_017.json": "402018de5584a07598f7c9878d55e6866e2f4748cce22f646ce7e403d4ba4c59",
-    "numbers_018.json": "502c079673d07725a126502a869ccdf28a8fefd054110f5495deb2e29753206a",
+    "numbers_018.json": "84f4a96ef24e1d834a1dc4fae89925294f8451d512e614830065b42fc1f3a208",
     "numbers_019.json": "db98d56d3fc83a2dfed8b0dbb8cd299d63c3cf1c9661d63493469a4b79f6cafd",
     "numbers_020.json": "3a31e0853b93f21ae75f2520dceae0c0ef174e238219cbe9b462a5ffe2d833a1",
     "numbers_021.json": "10931a10756b5f94e2cd6d39f25a062740bc04b306ace343463d14ef956ac53c",
@@ -945,7 +1096,7 @@
     "romans_014.json": "47484a12d548875ce4ddb46cd6b1192cfa1882d67b03a41a5891fdd2757168b8",
     "romans_015.json": "3a3fdea92c6cc9b90b8fa1db8a3f06644e8282ebd8870eb32058476c574f365a",
     "romans_016.json": "0bdf6e171e43fe4df395349de70fe71b1a9d7c3bf6b469846a266afeac3632f5",
-    "ruth_001.json": "8e3ceec1c3095b48b33fbb27f4948bf569d8e3dfc788423941e7638474114b47",
+    "ruth_001.json": "aae40857cbef886856ed2aebe88f24fe4d66ecd7e9b4fc2f574e3be8d306c426",
     "ruth_003.json": "bb196f0aa1b6f88af440b0cfd4b9fca7281e07b3abf91ba698d666d37a06974f",
     "ruth_004.json": "98bc3c35498fc890566c5b2d6d8d1029014dde3d10dd776872029f1aadb7be9d",
     "song_of_songs_001.json": "d829d43257aa770509c8ddb14c7817136b72575a2dfc48c45aa2e6a28b74c0cc",
@@ -974,5 +1125,7 @@
     "zephaniah_001.json": "ba7eb750529b0429fe3f583521b4e891489a040aaad37a0b0a5a691174e08aa6",
     "zephaniah_002.json": "618d8fee7e18b45dac4058a360d759bf37aedbe250f82139e409d08575445744",
     "zephaniah_003.json": "60467dfcda2174f3cc256fd91aff6bbaf01438e2737e199ccbc32e9d5d98bd39"
-  }
+  },
+  "release": "commentary-v1.2",
+  "tree_identity": "9d92742f184a6707f46e597284b0167e4c7b974ea4eec957da1f10cb5efc98f4"
 }
