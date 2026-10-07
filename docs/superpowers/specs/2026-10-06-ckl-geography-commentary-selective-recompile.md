@@ -108,13 +108,67 @@ All 12 targets classify as `EVIDENCE_AND_SYNTHESIS_CHANGED`; each has a changed 
 
 The complete machine-readable impact data, including availability, IDs, versions, counts, old/new hashes, classifications, reasons, and candidate-required flags, is `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-impact/impact-manifest.json` (SHA-256 `3bf1cf7a71cdc6eb7cf584c13e96a7e58652ac588a286415c00dc2bee0ac9624`).
 
+## C2 preflight resolutions (before generation)
+
+### Isaiah 36 published evidence hash
+
+The malformed value shown in the C1 status display (`d0a416ef62843e2a5bfd6b7afbc00b28e47e21631f1a8c28fdd4a3669`) is not present in the repository. The authoritative old evidence hash is `d0a416ef62843e2a5bfd6b7afbc00b28e47e21663011b89e638f79bfa31faedb` (64 lowercase hexadecimal characters), and it agrees across the published release index's `source_lineage`, the published Isaiah 36 artifact's `generated_metadata`, the C1 impact manifest, and the C1 comparison table. The committed evidence is intact; the defect was a status-display transcription, not an impact-manifest serialization error or corrupted published metadata. Regression coverage checks the release/index/artifact/manifest agreement and validates all four hash cells in the rendered C1 table.
+
+### Current-lineage test after Transaction A
+
+The September 12 `commentary-v1.2-current-source-lineage-v2` manifest is a frozen pre-Transaction-A 96-chapter snapshot. Transaction A intentionally changed current CKL-derived packet identities. A fresh `build()` gives manifest identity `e3674534fb1acf0141a602cc602857f084cb2b5198f03967ea4e0e8b1bef8ea5`; exactly three scale-pilot rows differ from that preserved snapshot: John 2, Jeremiah 49, and Acts 27. Their old/new evidence and synthesis identities are pinned in `tests/test_commentary_v12_current_lineage.py`; Acts 27's new values match C1. The qualification population is unchanged. The frozen snapshot and historical/published lineage artifacts remain preserved. The test now expresses the distinction between that frozen baseline and deterministic current CKL output instead of treating the expected Transaction A changes as unexplained drift.
+
+Preflight tests run before C2 input preparation: `.venv/bin/pytest -q tests/test_transaction_c_commentary_impact.py` (4 passed), `.venv/bin/pytest -q tests/test_commentary_v12_current_lineage.py` (6 passed), `.venv/bin/pytest -q tests/canonical_library/test_expansion.py -k 'selective_recompile'`, and the frozen-lineage/published-release reconstruction tests recorded in the C2 results below. No prose/model rendering has occurred at this point.
+
 ## C2 entry requirements
 
-1. Human review the exact candidate chapter set, impact manifest, and evidence-ID deltas; C2 must not begin until that review is complete and explicitly authorizes rendering.
+1. The exact candidate chapter set, impact manifest, and evidence-ID deltas are explicitly authorized for C2 by the user request.
 2. Recheck the CKL inventory fingerprint and byte signature against the reviewed manifest before any C2 input lock.
-3. Render only the approved candidate set into a distinct non-production candidate namespace. Keep the published v1.2 release immutable through C2 validation and review.
+3. Render only the exact C1 candidate set authorized for C2 into a distinct non-production candidate namespace. Keep the published v1.2 release immutable through C2 validation and review.
 4. Require deterministic input identities and the current EvidenceBundle, synthesis schema/compiler, and Commentary v1.2 validation contracts. A control drift or any identity disagreement blocks C2.
 5. Promotion/deployment requires a separate explicit release action after human review; C1 authorizes neither.
+
+## C2 results
+
+### Rendering and provenance
+
+- The CKL inventory recheck matched C1 exactly: 679 objects, 90 places, 102 people, 14 warnings, zero errors, inventory fingerprint `78d983e0aed63f489e1126a054d087e86049b10915ffd3810ca0fd5eb617defd`, byte signature `0bd8259ce0af2a8cd748d1c82cda732010954ee98173e72238950f8de2661c40`.
+- C2 prepared exactly the 12 C1 references through `V12CorpusRunner.prepare()`. All 12 were renderable and their prepared evidence/synthesis hashes matched the C1 manifest before rendering. The three controls were excluded.
+- The initial sandboxed Codex CLI invocation failed before any model response because its local app-server could not write profile state. The same configured renderer was then run with the required local state access; there was no model/provider substitution. One isolated diagnostic Genesis 13 response was rejected; its raw-response hash and validation reason were recorded. The formal candidate render run then produced its separately validated Genesis 13 result.
+- The formal run rendered exactly 12 chapters from 2026-10-07 00:28:33Z to 00:34:38Z. Model: `gpt-5.6-terra`; effort: high; provider/renderer: host-local Codex CLI `codex-cli 0.160.1`, renderer label `commentary-v1.2-codex-cli`; Commentary prompt `1.8`; Commentary schema `1.2`; EvidenceBundle `1.1`; synthesis schema/compiler `1.1`.
+- The existing artifact format has `generated_metadata.generated_timestamp: null`; per-chapter generation start/end times are therefore recorded in the candidate manifest. Each candidate also records packet SHA-256, raw-response SHA-256, candidate artifact SHA-256, old/new evidence and synthesis hashes, Transaction A evidence ID additions/removals, renderer identity, compiler/prompt versions, and result/review status.
+
+### Candidate outcomes and artifact hashes
+
+The exact review set has 11 `READY_FOR_HUMAN_REVIEW` candidates and one `INVALID_ARTIFACT`. No candidate is approved. Ruth 1 retains its returned artifact and raw response, but the existing validator rejected missing confidence/interpretation fields and confidence exceeding cited evidence/synthesis; it is not marked ready for review.
+
+| Chapter | Review state | Candidate artifact | SHA-256 |
+|---|---|---|---|
+| 1 Samuel 17 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-48bc7a4b71863518/chapters/1_samuel_017/commentary.json` | `f3b5669a33d28923a72bf5c801b177e81131969ce0c7236791351a0e4417b67d` |
+| 2 Kings 5 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0e53eca15a36aa3a/chapters/2_kings_005/commentary.json` | `480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6` |
+| Acts 27 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9f02a6ae0a47569b/chapters/acts_027/commentary.json` | `ac625b17687b3c0158f04a5d7678394f07b2c3877ee243b6f0342a0e043ef8d8` |
+| Genesis 13 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-13c4d7e346924c69/chapters/genesis_013/commentary.json` | `c389b19f4781f3000242d437c61c0d36ffefc48c596e20f00f7935bafe97c8d4` |
+| Genesis 34 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-b7edc665c15bdc06/chapters/genesis_034/commentary.json` | `811c11c0421822df129b5c693d8c54047dc2a0c510b818eb3731c50385c760cd` |
+| Isaiah 36 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9e3cec1b8c2f60be/chapters/isaiah_036/commentary.json` | `c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41` |
+| John 4 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-7c306bebfc473aa6/chapters/john_004/commentary.json` | `bac11949ded437702a0e19933a2cb692718c03cadd16b61b68c5ca8581fbed10` |
+| Joshua 6 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-26540bca220b999c/chapters/joshua_006/commentary.json` | `74dbb0ee2be044b579af8ea8779d89beeb2d73dadf293decd9ad5ae24f3953a5` |
+| Judges 20 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0595ebb1c627f433/chapters/judges_020/commentary.json` | `e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129` |
+| Matthew 2 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0c56c7d053fadbec/chapters/matthew_002/commentary.json` | `a4f3f0f115de23a5f94ce99e91a91e7941ff7ffcef588f80c37120d19d745ebf` |
+| Numbers 18 | READY_FOR_HUMAN_REVIEW | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-dae7a68dd8db0c99/chapters/numbers_018/commentary.json` | `4a2629a3e8b65a5fb99c3bbc972572e4e45a0341dcd6df46e9fdf4d8333c58c6` |
+| Ruth 1 | INVALID_ARTIFACT | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9ae3229dd2fdd5bd/chapters/ruth_001/commentary.json` | `0529d5ddf77b5cfa5fbe1afa2513785cb1e02062384eb00af39c90bf2fae6e76` |
+
+The human-review package is `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/review-package/index.md`; it contains one chapter document per target with old published prose, new candidate prose, evidence deltas, identity hashes, validation errors, and a whitespace-normalized semantic/text diff. The complete provenance is `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/candidate-manifest.json` (SHA-256 `76805975d0490134b188fba3effecbf90cb25644695f21f597c0baff33534c5a`). Candidate-to-C1 evidence/synthesis identity matched 12/12. No control candidate artifact exists.
+
+### Isolation and verification
+
+- Before rendering, C2 recorded every file hash in the published v1.2 release tree: 974 files, tree SHA-256 `9d92742f184a6707f46e597284b0167e4c7b974ea4eec957da1f10cb5efc98f4`. The post-render file map and tree hash are identical.
+- `default_commentary_storage_path({"BHF_COMMENTARY_RELEASE": "commentary-v1.2"})` resolves to `.bhf-data/bhf-commentary-v1.2`; the active local runtime defaults to the published v1.1 root. Both paths are published release roots, and neither points to the candidate workspace. No files under the published v1.2 release root were written.
+- Controls Psalms 76, Revelation 18, and Acts 16 were reconstructed after rendering. Evidence and synthesis hashes matched C1 for all three; none has a candidate Commentary artifact.
+- Tests executed: `.venv/bin/pytest -q tests/canonical_library/test_expansion.py -k 'selective_recompile'` (13 passed, 52 deselected); `.venv/bin/pytest -q tests/test_commentary_v12_reader_provenance_binding.py::test_current_record_reconstructs_to_its_frozen_source_identity` (1 passed); `.venv/bin/pytest -q tests/test_commentary_v12_freeze.py` (11 passed); `.venv/bin/pytest -q tests/test_commentary_v12_current_lineage.py` (6 passed); `.venv/bin/pytest -q tests/test_transaction_c_commentary_impact.py tests/test_transaction_c2_commentary_candidates.py` (7 passed). The CKL identity comparison, all 12 candidate identity checks, control reconstructions, and published-tree equality check also passed. `git diff --check` is recorded after the final documentation/test edits.
+
+### Final C2 state
+
+`COMMENTARY_CANDIDATES_PARTIAL_AWAITING_REVIEW`. Eleven valid candidates are ready for human review; Ruth 1 requires attention because its rendered artifact failed existing validation. Nothing is approved. C3, promotion, release-manifest updates, and publication are not started.
 
 ## Transaction state
 
@@ -122,6 +176,8 @@ The complete machine-readable impact data, including availability, IDs, versions
 Transaction A = CKL_COMMITTED
 Transaction B = DERIVED_RUNTIME_NOT_SEPARATELY_REQUIRED
 Transaction C1 = SELECTIVE_INPUT_IMPACT_VERIFIED
+Transaction C2 = COMMENTARY_CANDIDATES_PARTIAL_AWAITING_REVIEW
 Published Commentary v1.2 = UNCHANGED
-Commentary candidate rendering = NOT STARTED
+Commentary candidates = 12 (11 READY_FOR_HUMAN_REVIEW, 1 INVALID_ARTIFACT)
+C3 / promotion / publication = NOT STARTED
 ```
