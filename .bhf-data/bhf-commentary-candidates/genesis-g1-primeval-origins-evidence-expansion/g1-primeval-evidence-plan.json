@@ -1,0 +1,116 @@
+{
+  "transaction": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_EXPANSION",
+  "status": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_READY_FOR_REVIEW",
+  "branch": "feat/genesis-ckl-expansion",
+  "base_master": "3cf8990a3e0384fddc11b273dde7f4c82645f893",
+  "g0_input_head": "0877ddde3b8177710617033c65e8c5ac89643662",
+  "g0_baseline_commit": "6f153db6dcae6a804eb4b2f168a2bcfd1c4c7dd6",
+  "scope": [
+    "Genesis 1",
+    "Genesis 2",
+    "Genesis 3",
+    "Genesis 4",
+    "Genesis 5"
+  ],
+  "controls": {
+    "preservation": [
+      "Genesis 1",
+      "Genesis 5"
+    ],
+    "external": [
+      "Isaiah 36",
+      "Acts 16",
+      "Revelation 18"
+    ]
+  },
+  "classification_before": {
+    "Genesis 1": "GOOD",
+    "Genesis 2": "GAP",
+    "Genesis 3": "GAP",
+    "Genesis 4": "GAP",
+    "Genesis 5": "GOOD"
+  },
+  "strategy": {
+    "new_objects": [],
+    "enriched_existing_objects": [
+      "genesis"
+    ],
+    "evidence_items_to_add": [
+      "g2-toledot-and-genesis1-relationship",
+      "g2-dust-adamah-breath",
+      "g2-garden-planting-presence",
+      "g2-rivers-and-eden-geographic-limits",
+      "g2-work-and-keep-vocation",
+      "g2-two-trees-and-knowing-good-evil",
+      "g2-ezer-kenegdo-counterpart",
+      "g2-bone-of-bones-and-one-flesh",
+      "g2-naked-and-unashamed",
+      "g3-serpent-genesis-characterization",
+      "g3-serpent-later-canonical-reception",
+      "g3-tree-knowing-and-desire",
+      "g3-deception-and-autonomy-sequence",
+      "g3-shame-sewing-and-clothing",
+      "g3-divine-interrogation-and-blame",
+      "g3-distinct-oracles-and-ground",
+      "g3-ground-adam-adamah-return",
+      "g3-seed-conflict-immediate-wording",
+      "g3-seed-later-jewish-christian-reception",
+      "g3-cherubim-biblical-sacred-space-context",
+      "g3-eastward-expulsion-and-flaming-weapon",
+      "g4-offerings-and-divine-regard",
+      "g4-sin-crouching-desire-mastery",
+      "g4-murder-blood-cries-from-ground",
+      "g4-ground-curse-wandering-fear",
+      "g4-mark-sign-unspecified-protection",
+      "g4-sevenfold-and-lamech-escalation",
+      "g4-cain-genealogy-and-city",
+      "g4-jabal-jubal-tubal-cain-traditions",
+      "g4-lamech-polygyny-and-violence-poem",
+      "g4-seth-and-calling-on-yhwh",
+      "g5-masoretic-septuagint-samaritan-chronology-variants"
+    ],
+    "reusable_objects_linked": [
+      "abel",
+      "adam",
+      "cain",
+      "creation",
+      "euphrates",
+      "eve",
+      "exile-theme",
+      "the-fall"
+    ],
+    "candidate_first": true,
+    "commentary_v1_2_write": false,
+    "chapters_6_plus": false
+  },
+  "control_review": {
+    "Genesis 1": "G0 GOOD; reviewed as preservation control. Existing creation evidence includes ordered speech/separation/naming/blessing/rest, human image/vocation, and bounded Enuma Elish comparison. No G1 item planned.",
+    "Genesis 5": "G0 GOOD; existing items cover toledot/genealogy, Adam/Seth likeness, death refrain, longevity formula, Enoch, Noah naming, and transition. Focused audit found no prepared note on MT/LXX/SP chronological variation, so one source-locked textual-variant item is planned. No chronological figures are changed and no tradition is selected as original; GOOD remains the preservation floor."
+  },
+  "g0_anomaly_review": {
+    "Genesis 2": {
+      "condition": "APPLICABILITY/RETRIEVAL_GAP",
+      "objects": [
+        "1-corinthians",
+        "ephesians",
+        "revelation",
+        "song-of-songs"
+      ],
+      "diagnosis": "Overlapping parent anchors lacked admitted child evidence in these external books. G1 adds direct Genesis 2 evidence to the Genesis book object; it does not edit those books."
+    },
+    "Genesis 4": {
+      "condition": "APPLICABILITY/RETRIEVAL_GAP",
+      "objects": [
+        "jude"
+      ],
+      "diagnosis": "Jude has an overlapping Genesis 4 parent anchor but no admitted child evidence. G1 adds direct Genesis 4 evidence to the Genesis book object; it does not edit Jude."
+    },
+    "Genesis 1": "No G0 no-prepared overlapping candidate object in the detailed retrieval audit.",
+    "Genesis 3": "No G0 no-prepared overlapping candidate object in the detailed retrieval audit.",
+    "Genesis 5": "No G0 no-prepared overlapping candidate object in the detailed retrieval audit."
+  },
+  "source_policy": "Scripture for direct observations; existing Sarna/Hamilton sources reused; new article/reference entries added only for specific disputed or comparative claims. No coordinates or unsupported historical identities. Genesis 5 receives one focused academic textual-variant note; it records differing witness figures without resolving their origin.",
+  "production_apply_manifest": "g1-production-apply-manifest.json",
+  "chapter_impact_report": "g1-chapter-impact.json",
+  "validation_report": "g1-validation-report.json"
+}

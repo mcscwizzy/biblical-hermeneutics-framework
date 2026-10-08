@@ -1,0 +1,366 @@
+{
+  "changed_production_objects": [
+    {
+      "after_sha256": "24c9bb0d087e832ab474feaaec94d03791aea3cc81d11bdf1b4473f55e58735a",
+      "before_sha256": "c2ea350923c1b21d0a51a95cce0d8a276edbf552ab765dfe62c5329088b5ca63",
+      "evidence_items_added": [
+        "g2-bone-of-bones-and-one-flesh",
+        "g2-dust-adamah-breath",
+        "g2-ezer-kenegdo-counterpart",
+        "g2-garden-planting-presence",
+        "g2-naked-and-unashamed",
+        "g2-rivers-and-eden-geographic-limits",
+        "g2-toledot-and-genesis1-relationship",
+        "g2-two-trees-and-knowing-good-evil",
+        "g2-work-and-keep-vocation",
+        "g3-cherubim-biblical-sacred-space-context",
+        "g3-deception-and-autonomy-sequence",
+        "g3-distinct-oracles-and-ground",
+        "g3-divine-interrogation-and-blame",
+        "g3-eastward-expulsion-and-flaming-weapon",
+        "g3-ground-adam-adamah-return",
+        "g3-seed-conflict-immediate-wording",
+        "g3-seed-later-jewish-christian-reception",
+        "g3-serpent-genesis-characterization",
+        "g3-serpent-later-canonical-reception",
+        "g3-shame-sewing-and-clothing",
+        "g3-tree-knowing-and-desire",
+        "g4-cain-genealogy-and-city",
+        "g4-ground-curse-wandering-fear",
+        "g4-jabal-jubal-tubal-cain-traditions",
+        "g4-lamech-polygyny-and-violence-poem",
+        "g4-mark-sign-unspecified-protection",
+        "g4-murder-blood-cries-from-ground",
+        "g4-offerings-and-divine-regard",
+        "g4-seth-and-calling-on-yhwh",
+        "g4-sevenfold-and-lamech-escalation",
+        "g4-sin-crouching-desire-mastery",
+        "g5-masoretic-septuagint-samaritan-chronology-variants"
+      ],
+      "id": "genesis",
+      "path": "framework/canonical_library/objects/books/genesis.json",
+      "sources_added": [
+        "g1-amit-eden-exposition",
+        "g1-carr-genesis-textual-traditions",
+        "g1-exodus-text",
+        "g1-junior-mark-cain",
+        "g1-kelly-eden-knowledge",
+        "g1-kings-text",
+        "g1-lexham-cherubim",
+        "g1-revelation-text",
+        "g1-schmid-two-creation-accounts",
+        "g1-zhakevich-genesis-315",
+        "g1-zucker-cain-offerings"
+      ]
+    }
+  ],
+  "enriched_ckl_object_ids": [
+    "genesis"
+  ],
+  "manifest_json_changed": false,
+  "new_ckl_object_ids": [],
+  "other_ckl_objects_changed": [],
+  "out_of_scope_preexisting_claims_unchanged": true,
+  "out_of_scope_preexisting_evidence_items_unchanged": true,
+  "related_object_relationship_count": 56,
+  "relationships_added": [
+    {
+      "evidence_id": "g2-bone-of-bones-and-one-flesh",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g2-bone-of-bones-and-one-flesh",
+      "relationship": "passage-person",
+      "target_object_id": "eve"
+    },
+    {
+      "evidence_id": "g2-dust-adamah-breath",
+      "relationship": "narrative-context",
+      "target_object_id": "creation"
+    },
+    {
+      "evidence_id": "g2-dust-adamah-breath",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g2-ezer-kenegdo-counterpart",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g2-ezer-kenegdo-counterpart",
+      "relationship": "passage-person",
+      "target_object_id": "eve"
+    },
+    {
+      "evidence_id": "g2-garden-planting-presence",
+      "relationship": "narrative-context",
+      "target_object_id": "creation"
+    },
+    {
+      "evidence_id": "g2-garden-planting-presence",
+      "relationship": "narrative-context",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g2-naked-and-unashamed",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g2-naked-and-unashamed",
+      "relationship": "passage-person",
+      "target_object_id": "eve"
+    },
+    {
+      "evidence_id": "g2-naked-and-unashamed",
+      "relationship": "narrative-transition",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g2-rivers-and-eden-geographic-limits",
+      "relationship": "named-river",
+      "target_object_id": "euphrates"
+    },
+    {
+      "evidence_id": "g2-toledot-and-genesis1-relationship",
+      "relationship": "narrative-context",
+      "target_object_id": "creation"
+    },
+    {
+      "evidence_id": "g2-two-trees-and-knowing-good-evil",
+      "relationship": "narrative-context",
+      "target_object_id": "creation"
+    },
+    {
+      "evidence_id": "g2-two-trees-and-knowing-good-evil",
+      "relationship": "narrative-context",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g2-work-and-keep-vocation",
+      "relationship": "narrative-context",
+      "target_object_id": "creation"
+    },
+    {
+      "evidence_id": "g2-work-and-keep-vocation",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g3-cherubim-biblical-sacred-space-context",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-deception-and-autonomy-sequence",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-deception-and-autonomy-sequence",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g3-deception-and-autonomy-sequence",
+      "relationship": "passage-person",
+      "target_object_id": "eve"
+    },
+    {
+      "evidence_id": "g3-distinct-oracles-and-ground",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-distinct-oracles-and-ground",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g3-distinct-oracles-and-ground",
+      "relationship": "passage-person",
+      "target_object_id": "eve"
+    },
+    {
+      "evidence_id": "g3-divine-interrogation-and-blame",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-divine-interrogation-and-blame",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g3-divine-interrogation-and-blame",
+      "relationship": "passage-person",
+      "target_object_id": "eve"
+    },
+    {
+      "evidence_id": "g3-eastward-expulsion-and-flaming-weapon",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-eastward-expulsion-and-flaming-weapon",
+      "relationship": "thematic-development",
+      "target_object_id": "exile-theme"
+    },
+    {
+      "evidence_id": "g3-ground-adam-adamah-return",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-ground-adam-adamah-return",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g3-seed-conflict-immediate-wording",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-seed-conflict-immediate-wording",
+      "relationship": "passage-person",
+      "target_object_id": "eve"
+    },
+    {
+      "evidence_id": "g3-seed-later-jewish-christian-reception",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-serpent-genesis-characterization",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-serpent-later-canonical-reception",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-shame-sewing-and-clothing",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g3-shame-sewing-and-clothing",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g3-shame-sewing-and-clothing",
+      "relationship": "passage-person",
+      "target_object_id": "eve"
+    },
+    {
+      "evidence_id": "g3-tree-knowing-and-desire",
+      "relationship": "narrative-event",
+      "target_object_id": "the-fall"
+    },
+    {
+      "evidence_id": "g4-cain-genealogy-and-city",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-ground-curse-wandering-fear",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-ground-curse-wandering-fear",
+      "relationship": "thematic-development",
+      "target_object_id": "exile-theme"
+    },
+    {
+      "evidence_id": "g4-jabal-jubal-tubal-cain-traditions",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-lamech-polygyny-and-violence-poem",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-mark-sign-unspecified-protection",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-murder-blood-cries-from-ground",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-murder-blood-cries-from-ground",
+      "relationship": "passage-person",
+      "target_object_id": "abel"
+    },
+    {
+      "evidence_id": "g4-offerings-and-divine-regard",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-offerings-and-divine-regard",
+      "relationship": "passage-person",
+      "target_object_id": "abel"
+    },
+    {
+      "evidence_id": "g4-seth-and-calling-on-yhwh",
+      "relationship": "passage-person",
+      "target_object_id": "adam"
+    },
+    {
+      "evidence_id": "g4-seth-and-calling-on-yhwh",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-sevenfold-and-lamech-escalation",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-sevenfold-and-lamech-escalation",
+      "relationship": "thematic-development",
+      "target_object_id": "exile-theme"
+    },
+    {
+      "evidence_id": "g4-sin-crouching-desire-mastery",
+      "relationship": "passage-person",
+      "target_object_id": "cain"
+    },
+    {
+      "evidence_id": "g4-sin-crouching-desire-mastery",
+      "relationship": "narrative-context",
+      "target_object_id": "the-fall"
+    }
+  ],
+  "runtime_inventory_rebuild": {
+    "inventory_fingerprint": "bfac3c5edd78f173ab09408360cb20b06d3bab7f10ac9ec4e53de80d273b7a71",
+    "object_count": 679,
+    "path": ".bhf/ckl.sqlite",
+    "verified": true
+  },
+  "scripture_chapters_impacted": [
+    "Genesis 2",
+    "Genesis 3",
+    "Genesis 4",
+    "Genesis 5",
+    "Exodus 25",
+    "1 Kings 6",
+    "Revelation 12"
+  ],
+  "status": "PRODUCTION_APPLY_COMPLETE",
+  "transaction": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_EXPANSION",
+  "write_method": "framework.canonical_library.expansion.apply_candidate_queue(write=True) after a passing dry run"
+}

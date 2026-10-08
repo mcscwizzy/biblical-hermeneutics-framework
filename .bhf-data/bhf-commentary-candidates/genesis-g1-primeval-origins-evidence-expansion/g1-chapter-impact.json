@@ -1,0 +1,407 @@
+{
+  "chapters": [
+    {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 58,
+        "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+        "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+        "synthesis_units": 12
+      },
+      "before": {
+        "classification": "GOOD",
+        "evidence_count": 58,
+        "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+        "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+        "synthesis_units": 12
+      },
+      "changed_hashes": {
+        "evidence": false,
+        "impact_status": "NEITHER",
+        "synthesis": false
+      },
+      "diagnoses": {
+        "APPLICABILITY/RETRIEVAL_GAP": {
+          "g1_candidates_prepared": 0,
+          "overlapping_unadmitted_objects": [],
+          "status": "REVIEWED"
+        },
+        "CKL_GAP": "PRESERVED_CONTROL_NO_G1_ADDITION",
+        "COMMENTARY_RENDERING_GAP": {
+          "g0_exact_lineage_unconsumed_unit_count": 10,
+          "impact": "UNCHANGED_RELEASE_INPUTS_CURRENT",
+          "published_lineage_matched_g0_input": true,
+          "published_lineage_matches_g1_input": true
+        },
+        "SYNTHESIS_GAP": {
+          "g1_items_missing": [],
+          "status": "NONE_FOR_G1_ITEMS"
+        }
+      },
+      "g1_evidence_ids_not_used_by_synthesis": [],
+      "g1_evidence_ids_prepared": [],
+      "g1_evidence_ids_used_by_synthesis": [],
+      "preparation": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 21,
+        "evidence_availability": "AVAILABLE",
+        "gap_taxonomy": [
+          "COMMENTARY_ONLY_ISSUE",
+          "EXISTING_OBJECT_ENRICHMENT_REQUIRED"
+        ],
+        "rejected_candidate_count": 0
+      },
+      "reference": "Genesis 1"
+    },
+    {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 61,
+        "evidence_hash": "ed5995b4d842682dc80149e73a94acb62d95f909a3450f6937da6b49fa60c9be",
+        "synthesis_hash": "9e7ccb10d8828f1bd717a1ca9535bd4892defb82351bdd4c98a0b6b56f792a80",
+        "synthesis_units": 22
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 41,
+        "evidence_hash": "170d026c7721c7fab2b3069177023f1b63002d448055e11aa1d09d0009c8a633",
+        "synthesis_hash": "8115f4c1a55566522280d154d2f55773c87d85045ce2b713906978f24f9d9d17",
+        "synthesis_units": 9
+      },
+      "changed_hashes": {
+        "evidence": true,
+        "impact_status": "BOTH",
+        "synthesis": true
+      },
+      "diagnoses": {
+        "APPLICABILITY/RETRIEVAL_GAP": {
+          "g1_candidates_prepared": 10,
+          "overlapping_unadmitted_objects": [
+            "1-corinthians",
+            "ephesians",
+            "revelation",
+            "song-of-songs"
+          ],
+          "status": "REVIEWED"
+        },
+        "CKL_GAP": "RESOLVED",
+        "COMMENTARY_RENDERING_GAP": {
+          "g0_exact_lineage_unconsumed_unit_count": 7,
+          "impact": "PUBLISHED_INPUTS_NOW_STALE_AFTER_G1; no rendering performed",
+          "published_lineage_matched_g0_input": true,
+          "published_lineage_matches_g1_input": false
+        },
+        "SYNTHESIS_GAP": {
+          "g1_items_missing": [],
+          "status": "NONE_FOR_G1_ITEMS"
+        }
+      },
+      "g1_evidence_ids_not_used_by_synthesis": [],
+      "g1_evidence_ids_prepared": [
+        "g2-bone-of-bones-and-one-flesh",
+        "g2-dust-adamah-breath",
+        "g2-ezer-kenegdo-counterpart",
+        "g2-garden-planting-presence",
+        "g2-naked-and-unashamed",
+        "g2-rivers-and-eden-geographic-limits",
+        "g2-toledot-and-genesis1-relationship",
+        "g2-two-trees-and-knowing-good-evil",
+        "g2-work-and-keep-vocation",
+        "g3-ground-adam-adamah-return"
+      ],
+      "g1_evidence_ids_used_by_synthesis": [
+        "g2-bone-of-bones-and-one-flesh",
+        "g2-dust-adamah-breath",
+        "g2-ezer-kenegdo-counterpart",
+        "g2-garden-planting-presence",
+        "g2-naked-and-unashamed",
+        "g2-rivers-and-eden-geographic-limits",
+        "g2-toledot-and-genesis1-relationship",
+        "g2-two-trees-and-knowing-good-evil",
+        "g2-work-and-keep-vocation",
+        "g3-ground-adam-adamah-return"
+      ],
+      "preparation": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 15,
+        "evidence_availability": "AVAILABLE",
+        "gap_taxonomy": [
+          "EXISTING_OBJECT_ENRICHMENT_REQUIRED",
+          "PASSAGE_APPLICABILITY_REQUIRED"
+        ],
+        "rejected_candidate_count": 0
+      },
+      "reference": "Genesis 2"
+    },
+    {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 39,
+        "evidence_hash": "870102c3c989fca11cdca2f909746de3e8ab0b3c7c690cd1408d1e44ac66c26b",
+        "synthesis_hash": "0132c6233503bb91e33efa3740c68a919931bc6a56e40a8b96a7452012e287ef",
+        "synthesis_units": 18
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 13,
+        "evidence_hash": "cadc40d9d39d07366c8f83768d836a59d21fa0c2bf240c160f440b0d3bc31496",
+        "synthesis_hash": "db38d68d50b9f5663b23a76747aa5c7d6ded4efebec1ea9cddbbb4710621d45e",
+        "synthesis_units": 5
+      },
+      "changed_hashes": {
+        "evidence": true,
+        "impact_status": "BOTH",
+        "synthesis": true
+      },
+      "diagnoses": {
+        "APPLICABILITY/RETRIEVAL_GAP": {
+          "g1_candidates_prepared": 13,
+          "overlapping_unadmitted_objects": [],
+          "status": "REVIEWED"
+        },
+        "CKL_GAP": "RESOLVED",
+        "COMMENTARY_RENDERING_GAP": {
+          "g0_exact_lineage_unconsumed_unit_count": 3,
+          "impact": "PUBLISHED_INPUTS_NOW_STALE_AFTER_G1; no rendering performed",
+          "published_lineage_matched_g0_input": true,
+          "published_lineage_matches_g1_input": false
+        },
+        "SYNTHESIS_GAP": {
+          "g1_items_missing": [],
+          "status": "NONE_FOR_G1_ITEMS"
+        }
+      },
+      "g1_evidence_ids_not_used_by_synthesis": [],
+      "g1_evidence_ids_prepared": [
+        "g2-garden-planting-presence",
+        "g3-cherubim-biblical-sacred-space-context",
+        "g3-deception-and-autonomy-sequence",
+        "g3-distinct-oracles-and-ground",
+        "g3-divine-interrogation-and-blame",
+        "g3-eastward-expulsion-and-flaming-weapon",
+        "g3-ground-adam-adamah-return",
+        "g3-seed-conflict-immediate-wording",
+        "g3-seed-later-jewish-christian-reception",
+        "g3-serpent-genesis-characterization",
+        "g3-serpent-later-canonical-reception",
+        "g3-shame-sewing-and-clothing",
+        "g3-tree-knowing-and-desire"
+      ],
+      "g1_evidence_ids_used_by_synthesis": [
+        "g2-garden-planting-presence",
+        "g3-cherubim-biblical-sacred-space-context",
+        "g3-deception-and-autonomy-sequence",
+        "g3-distinct-oracles-and-ground",
+        "g3-divine-interrogation-and-blame",
+        "g3-eastward-expulsion-and-flaming-weapon",
+        "g3-ground-adam-adamah-return",
+        "g3-seed-conflict-immediate-wording",
+        "g3-seed-later-jewish-christian-reception",
+        "g3-serpent-genesis-characterization",
+        "g3-serpent-later-canonical-reception",
+        "g3-shame-sewing-and-clothing",
+        "g3-tree-knowing-and-desire"
+      ],
+      "preparation": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 4,
+        "evidence_availability": "AVAILABLE",
+        "gap_taxonomy": [
+          "EXISTING_OBJECT_ENRICHMENT_REQUIRED"
+        ],
+        "rejected_candidate_count": 0
+      },
+      "reference": "Genesis 3"
+    },
+    {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 39,
+        "evidence_hash": "7e0d7e84879a6b149d05187211b9365b54a05e9e071078ea65b90695b1fd0c24",
+        "synthesis_hash": "417b91d1b4e09db99370e10164eddd2c9ad998b053bc0d6aeca03944488c6dc8",
+        "synthesis_units": 17
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 19,
+        "evidence_hash": "1cf828d1bb83b3545d547d771e458c0dbee30d5f2814ab5f00284f49938ee5d5",
+        "synthesis_hash": "8f599ef4bbf98aef9c992c6b216c4b95f284c4afaca93b4bdec5255104e8e765",
+        "synthesis_units": 5
+      },
+      "changed_hashes": {
+        "evidence": true,
+        "impact_status": "BOTH",
+        "synthesis": true
+      },
+      "diagnoses": {
+        "APPLICABILITY/RETRIEVAL_GAP": {
+          "g1_candidates_prepared": 10,
+          "overlapping_unadmitted_objects": [
+            "jude"
+          ],
+          "status": "REVIEWED"
+        },
+        "CKL_GAP": "RESOLVED",
+        "COMMENTARY_RENDERING_GAP": {
+          "g0_exact_lineage_unconsumed_unit_count": 3,
+          "impact": "PUBLISHED_INPUTS_NOW_STALE_AFTER_G1; no rendering performed",
+          "published_lineage_matched_g0_input": true,
+          "published_lineage_matches_g1_input": false
+        },
+        "SYNTHESIS_GAP": {
+          "g1_items_missing": [],
+          "status": "NONE_FOR_G1_ITEMS"
+        }
+      },
+      "g1_evidence_ids_not_used_by_synthesis": [],
+      "g1_evidence_ids_prepared": [
+        "g4-cain-genealogy-and-city",
+        "g4-ground-curse-wandering-fear",
+        "g4-jabal-jubal-tubal-cain-traditions",
+        "g4-lamech-polygyny-and-violence-poem",
+        "g4-mark-sign-unspecified-protection",
+        "g4-murder-blood-cries-from-ground",
+        "g4-offerings-and-divine-regard",
+        "g4-seth-and-calling-on-yhwh",
+        "g4-sevenfold-and-lamech-escalation",
+        "g4-sin-crouching-desire-mastery"
+      ],
+      "g1_evidence_ids_used_by_synthesis": [
+        "g4-cain-genealogy-and-city",
+        "g4-ground-curse-wandering-fear",
+        "g4-jabal-jubal-tubal-cain-traditions",
+        "g4-lamech-polygyny-and-violence-poem",
+        "g4-mark-sign-unspecified-protection",
+        "g4-murder-blood-cries-from-ground",
+        "g4-offerings-and-divine-regard",
+        "g4-seth-and-calling-on-yhwh",
+        "g4-sevenfold-and-lamech-escalation",
+        "g4-sin-crouching-desire-mastery"
+      ],
+      "preparation": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 9,
+        "evidence_availability": "AVAILABLE",
+        "gap_taxonomy": [
+          "EXISTING_OBJECT_ENRICHMENT_REQUIRED",
+          "PASSAGE_APPLICABILITY_REQUIRED"
+        ],
+        "rejected_candidate_count": 0
+      },
+      "reference": "Genesis 4"
+    },
+    {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 21,
+        "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+        "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+        "synthesis_units": 7
+      },
+      "before": {
+        "classification": "GOOD",
+        "evidence_count": 19,
+        "evidence_hash": "ff7e4fef33456a8e9a3058f0141aa2635d871de177ed96eca2918a2638e9805a",
+        "synthesis_hash": "114dc3c03197c198a3d255af75d80a71909a14a4ab268e4be151b5559097760e",
+        "synthesis_units": 9
+      },
+      "changed_hashes": {
+        "evidence": true,
+        "impact_status": "BOTH",
+        "synthesis": true
+      },
+      "diagnoses": {
+        "APPLICABILITY/RETRIEVAL_GAP": {
+          "g1_candidates_prepared": 1,
+          "overlapping_unadmitted_objects": [],
+          "status": "REVIEWED"
+        },
+        "CKL_GAP": "RESOLVED",
+        "COMMENTARY_RENDERING_GAP": {
+          "g0_exact_lineage_unconsumed_unit_count": 0,
+          "impact": "PUBLISHED_LINEAGE_MISSING_BEFORE_G1; G1 impact recorded; no rendering performed",
+          "published_lineage_matched_g0_input": false,
+          "published_lineage_matches_g1_input": false
+        },
+        "SYNTHESIS_GAP": {
+          "g1_items_missing": [],
+          "status": "NONE_FOR_G1_ITEMS"
+        }
+      },
+      "g1_evidence_ids_not_used_by_synthesis": [],
+      "g1_evidence_ids_prepared": [
+        "g5-masoretic-septuagint-samaritan-chronology-variants"
+      ],
+      "g1_evidence_ids_used_by_synthesis": [
+        "g5-masoretic-septuagint-samaritan-chronology-variants"
+      ],
+      "preparation": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 4,
+        "evidence_availability": "AVAILABLE",
+        "gap_taxonomy": [
+          "EXISTING_OBJECT_ENRICHMENT_REQUIRED"
+        ],
+        "rejected_candidate_count": 0
+      },
+      "reference": "Genesis 5"
+    }
+  ],
+  "commentary_rendered": false,
+  "external_controls": [
+    {
+      "byte_input_identical": true,
+      "evidence_count_after": 28,
+      "evidence_count_before": 28,
+      "evidence_hash_after": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+      "evidence_hash_before": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+      "reference": "Isaiah 36",
+      "synthesis_hash_after": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+      "synthesis_hash_before": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+      "synthesis_units_after": 12,
+      "synthesis_units_before": 12
+    },
+    {
+      "byte_input_identical": true,
+      "evidence_count_after": 89,
+      "evidence_count_before": 89,
+      "evidence_hash_after": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+      "evidence_hash_before": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+      "reference": "Acts 16",
+      "synthesis_hash_after": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+      "synthesis_hash_before": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+      "synthesis_units_after": 50,
+      "synthesis_units_before": 50
+    },
+    {
+      "byte_input_identical": true,
+      "evidence_count_after": 13,
+      "evidence_count_before": 13,
+      "evidence_hash_after": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+      "evidence_hash_before": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+      "reference": "Revelation 18",
+      "synthesis_hash_after": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+      "synthesis_hash_before": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+      "synthesis_units_after": 3,
+      "synthesis_units_before": 3
+    }
+  ],
+  "g0_anomalies_in_scope": {
+    "Genesis 2": [
+      "1-corinthians",
+      "ephesians",
+      "revelation",
+      "song-of-songs"
+    ],
+    "Genesis 4": [
+      "jude"
+    ]
+  },
+  "notes": [
+    "G1 candidates for Genesis 2–4 were present in prepared evidence and compiled; any remaining cross-book object with an overlapping parent anchor and no child evidence is diagnosed separately as an applicability/retrieval issue.",
+    "Genesis 5 receives one narrowly scoped textual-variant evidence item; no chronological figure was changed or selected as original."
+  ],
+  "pipeline": "commentary-v1.2 evidence-synthesis-only",
+  "status": "READ_ONLY_SELECTIVE_IMPACT_COMPLETE",
+  "transaction": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_EXPANSION"
+}
