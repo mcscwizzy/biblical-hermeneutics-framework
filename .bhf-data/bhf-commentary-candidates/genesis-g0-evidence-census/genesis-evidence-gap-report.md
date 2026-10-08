@@ -94,16 +94,16 @@ Relevant CKL object reuse classifications: `{"ENRICH": 1, "REUSE_AS_IS": 150}`.
 
 Top 10 chapter-level evidence gaps (ordered by current bundle count; dimensions need human review):
 
-- Genesis 14: 3 items; review ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts.
-- Genesis 23: 3 items; review ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context.
-- Genesis 24: 3 items; review ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts.
-- Genesis 26: 3 items; review ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context.
-- Genesis 27: 3 items; review ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts.
-- Genesis 28: 3 items; review ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, lexical_concepts.
-- Genesis 29: 3 items; review ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections.
-- Genesis 30: 3 items; review ancient_near_eastern_context, cultural_social_context, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts.
-- Genesis 31: 3 items; review ancient_near_eastern_context, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts.
-- Genesis 38: 3 items; review ancient_near_eastern_context, cultural_social_context, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts.
+- Genesis 14: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, geography, historical_context, hebrew_worldview_concepts, intertextual_canonical_connections, lexical_concepts, interpretive_disputes.
+- Genesis 23: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, geography, archaeology_material_culture, historical_context, hebrew_worldview_concepts.
+- Genesis 24: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, geography, archaeology_material_culture, historical_context, hebrew_worldview_concepts, intertextual_canonical_connections, lexical_concepts, interpretive_disputes.
+- Genesis 26: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, geography, archaeology_material_culture, historical_context, hebrew_worldview_concepts, covenant_context.
+- Genesis 27: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, geography, historical_context, hebrew_worldview_concepts, intertextual_canonical_connections, lexical_concepts, interpretive_disputes.
+- Genesis 28: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, geography, archaeology_material_culture, historical_context, hebrew_worldview_concepts, divine_council_spiritual_worldview, covenant_context, lexical_concepts, interpretive_disputes.
+- Genesis 29: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, geography, archaeology_material_culture, historical_context, hebrew_worldview_concepts, intertextual_canonical_connections.
+- Genesis 30: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, historical_context, hebrew_worldview_concepts, intertextual_canonical_connections, lexical_concepts, interpretive_disputes.
+- Genesis 31: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, geography, historical_context, hebrew_worldview_concepts, covenant_context, intertextual_canonical_connections, lexical_concepts, interpretive_disputes.
+- Genesis 38: 3 items; review immediate_literary_context, ancient_near_eastern_context, cultural_social_context, historical_context, hebrew_worldview_concepts, intertextual_canonical_connections, lexical_concepts, interpretive_disputes.
 
 ## Proposed expansion order
 

@@ -1723,7 +1723,7 @@
           "category": "geography",
           "claim": "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-ane-comparative-context",
           "object_exists": true,
           "object_type": "book",
@@ -1777,7 +1777,7 @@
           "category": "culture",
           "claim": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-literary-movement",
           "object_exists": true,
           "object_type": "book",
@@ -1950,7 +1950,7 @@
           "category": "culture",
           "claim": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
           "confidence": "low",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis:interpretive_note:0",
           "object_exists": true,
           "object_type": "book",
@@ -2004,7 +2004,7 @@
           "category": "culture",
           "claim": "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
           "confidence": "medium",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis:interpretive_note:1",
           "object_exists": true,
           "object_type": "book",
@@ -2060,7 +2060,7 @@
           "category": "geography",
           "claim": "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis:interpretive_note:2",
           "object_exists": true,
           "object_type": "book",
@@ -4407,7 +4407,13 @@
         }
       ],
       "reference": "Genesis 1",
-      "remediation_summary": "covenant_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, lexical_concepts, textual_manuscript_issues",
+      "remediation_summary": "covenant_context, divine_council_spiritual_worldview, lexical_concepts, textual_manuscript_issues",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 21,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 21
+      },
       "source_classes": {
         "PRIMARY": 42,
         "SECONDARY": 24
@@ -8080,6 +8086,12 @@
       ],
       "reference": "Genesis 2",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 15,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 15
+      },
       "source_classes": {
         "PRIMARY": 31,
         "SECONDARY": 14
@@ -9605,6 +9617,12 @@
       ],
       "reference": "Genesis 3",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 4,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 4
+      },
       "source_classes": {
         "PRIMARY": 11,
         "SECONDARY": 9
@@ -11460,6 +11478,12 @@
       ],
       "reference": "Genesis 4",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts, textual_manuscript_issues",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 9,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 9
+      },
       "source_classes": {
         "PRIMARY": 6,
         "SECONDARY": 12
@@ -11990,7 +12014,7 @@
           "category": "culture",
           "claim": "Genesis 5:1-3 introduces the written account of Adam's generations, recalls humanity made in God's likeness, and follows Adam's line through Seth, whom Adam fathers in his own likeness and image.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-5-adam-seth-image-lineage",
           "object_exists": true,
           "object_type": "book",
@@ -12046,7 +12070,7 @@
           "category": "culture",
           "claim": "The repeated words 'and he died' in Genesis 5:5, 8, 11, 14, 17, 20, 27, and 31 create a mortality refrain across the genealogy, while the exception of Enoch in verses 21-24 interrupts the pattern.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-5-and-he-died-mortality",
           "object_exists": true,
           "object_type": "book",
@@ -12102,7 +12126,7 @@
           "category": "history",
           "claim": "Genesis 5:21-24 gives Enoch a distinct notice: he fathers Methuselah, walks with God for 300 years, and is said to have been taken by God rather than receiving the ordinary death formula.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-5-enoch-walks-with-god",
           "object_exists": true,
           "object_type": "book",
@@ -12158,7 +12182,7 @@
           "category": "culture",
           "claim": "As a literary unit, Genesis 5 preserves a continuous Adam-to-Noah line while carrying forward both human mortality and the hope attached to Noah; the chapter's function is therefore narrative continuity and thematic development, not an explicit modern chronology table.",
           "confidence": "medium",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-5-genealogy-narrative-function",
           "object_exists": true,
           "object_type": "book",
@@ -12214,7 +12238,7 @@
           "category": "history",
           "claim": "Genesis 5:25-32 carries the line through Methuselah and Lamech to Noah and explains Noah's name through Lamech's hope for relief from the labor and pain associated with the ground that the LORD had cursed.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-5-methuselah-lamech-noah-naming",
           "object_exists": true,
           "object_type": "book",
@@ -12270,7 +12294,7 @@
           "category": "culture",
           "claim": "Genesis 5 repeatedly uses a genealogy formula—age at fathering, additional years, total lifespan, and a closing notice—so the chapter's regular pattern organizes the succession from Adam toward Noah.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-5-repeated-genealogy-formula",
           "object_exists": true,
           "object_type": "book",
@@ -13336,6 +13360,12 @@
       ],
       "reference": "Genesis 5",
       "remediation_summary": "ancient_near_eastern_context, intertextual_canonical_connections, textual_manuscript_issues",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 4,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 4
+      },
       "source_classes": {
         "PRIMARY": 26,
         "SECONDARY": 6
@@ -14963,6 +14993,12 @@
       ],
       "reference": "Genesis 6",
       "remediation_summary": "covenant_context, divine_council_spiritual_worldview, hebrew_worldview_concepts, lexical_concepts, textual_manuscript_issues",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 6,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 6
+      },
       "source_classes": {
         "PRIMARY": 9,
         "SECONDARY": 11
@@ -16268,6 +16304,12 @@
       ],
       "reference": "Genesis 7",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 4,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 4
+      },
       "source_classes": {
         "PRIMARY": 6,
         "SECONDARY": 7
@@ -17668,6 +17710,12 @@
       ],
       "reference": "Genesis 8",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 5,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 5
+      },
       "source_classes": {
         "PRIMARY": 13,
         "SECONDARY": 8
@@ -23073,6 +23121,12 @@
       ],
       "reference": "Genesis 9",
       "remediation_summary": "ancient_near_eastern_context, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 32,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 32
+      },
       "source_classes": {
         "PRIMARY": 37,
         "SECONDARY": 31
@@ -27659,6 +27713,12 @@
       ],
       "reference": "Genesis 10",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts, textual_manuscript_issues",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 25,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 25
+      },
       "source_classes": {
         "PRIMARY": 19,
         "SECONDARY": 28
@@ -28961,7 +29021,7 @@
           "category": "culture",
           "claim": "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions.",
           "confidence": "low",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis:interpretive_note:3",
           "object_exists": true,
           "object_type": "book",
@@ -29614,6 +29674,12 @@
       ],
       "reference": "Genesis 11",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts, textual_manuscript_issues",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 8,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 8
+      },
       "source_classes": {
         "PRIMARY": 18,
         "SECONDARY": 11
@@ -34713,7 +34779,7 @@
           "category": "history",
           "claim": "Genesis 12:1-3 links God's call of Abram with land, a great name and nation, blessing, and blessing for all the families of the earth.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-blessing-for-families",
           "object_exists": true,
           "object_type": "book",
@@ -40831,6 +40897,12 @@
       ],
       "reference": "Genesis 12",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, geography",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 60,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 60
+      },
       "source_classes": {
         "PRIMARY": 50,
         "SECONDARY": 66
@@ -41732,7 +41804,7 @@
           "category": "geography",
           "claim": "It locates Abram's return before the land-choice scene without adding route precision.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "source-lock-genesis-13-abram-negev-bethel-ai-movement",
           "object_exists": true,
           "object_type": "book",
@@ -41786,7 +41858,7 @@
           "category": "geography",
           "claim": "The physical description is the stated basis for Lot's choice and is therefore passage material.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "source-lock-genesis-13-jordan-valley-well-watered-description",
           "object_exists": true,
           "object_type": "book",
@@ -41839,7 +41911,7 @@
           "category": "geography",
           "claim": "It makes the separation and Lot's settlement choice geographically explicit.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "source-lock-genesis-13-lot-eastward-separation",
           "object_exists": true,
           "object_type": "book",
@@ -41954,6 +42026,12 @@
       ],
       "reference": "Genesis 13",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "PRIMARY": 1,
         "SECONDARY": 4
@@ -42629,6 +42707,12 @@
       ],
       "reference": "Genesis 14",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -47938,6 +48022,12 @@
       ],
       "reference": "Genesis 15",
       "remediation_summary": "ancient_near_eastern_context, geography, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 26,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 26
+      },
       "source_classes": {
         "PRIMARY": 30,
         "SECONDARY": 30
@@ -48914,6 +49004,12 @@
       ],
       "reference": "Genesis 16",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "PRIMARY": 1,
         "SECONDARY": 6
@@ -52833,6 +52929,12 @@
       ],
       "reference": "Genesis 17",
       "remediation_summary": "ancient_near_eastern_context, geography, hebrew_worldview_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 16,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 16
+      },
       "source_classes": {
         "PRIMARY": 24,
         "SECONDARY": 21
@@ -53939,6 +54041,12 @@
       ],
       "reference": "Genesis 18",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 5,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 5
+      },
       "source_classes": {
         "PRIMARY": 5,
         "SECONDARY": 9
@@ -54756,6 +54864,12 @@
       ],
       "reference": "Genesis 19",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 4,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 4
+      },
       "source_classes": {
         "PRIMARY": 2,
         "SECONDARY": 7
@@ -55472,6 +55586,12 @@
       ],
       "reference": "Genesis 20",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "PRIMARY": 1,
         "SECONDARY": 6
@@ -56392,6 +56512,12 @@
       ],
       "reference": "Genesis 21",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 4,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 4
+      },
       "source_classes": {
         "PRIMARY": 5,
         "SECONDARY": 8
@@ -59420,6 +59546,12 @@
       ],
       "reference": "Genesis 22",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 9,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 9
+      },
       "source_classes": {
         "PRIMARY": 20,
         "SECONDARY": 15
@@ -60061,6 +60193,12 @@
       ],
       "reference": "Genesis 23",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -60639,6 +60777,12 @@
       ],
       "reference": "Genesis 24",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -61332,6 +61476,12 @@
       ],
       "reference": "Genesis 25",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 3,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 3
+      },
       "source_classes": {
         "PRIMARY": 1,
         "SECONDARY": 5
@@ -61939,6 +62089,12 @@
       ],
       "reference": "Genesis 26",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -62516,6 +62672,12 @@
       ],
       "reference": "Genesis 27",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -63095,6 +63257,12 @@
       ],
       "reference": "Genesis 28",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -63671,6 +63839,12 @@
       ],
       "reference": "Genesis 29",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -64247,6 +64421,12 @@
       ],
       "reference": "Genesis 30",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -64825,6 +65005,12 @@
       ],
       "reference": "Genesis 31",
       "remediation_summary": "ancient_near_eastern_context, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -65548,6 +65734,12 @@
       ],
       "reference": "Genesis 32",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, divine_council_spiritual_worldview, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "PRIMARY": 3,
         "SECONDARY": 5
@@ -66725,6 +66917,12 @@
       ],
       "reference": "Genesis 33",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 3,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 3
+      },
       "source_classes": {
         "PRIMARY": 6,
         "SECONDARY": 6
@@ -67297,7 +67495,7 @@
           "category": "geography",
           "claim": "The negotiation is located at a city gate; it may clarify the public settlement setting without claiming a resolved site or a broader trade network.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "source-lock-genesis-34-city-gate-negotiation-setting",
           "object_exists": true,
           "object_type": "book",
@@ -67350,7 +67548,7 @@
           "category": "geography",
           "claim": "It supplies only the narrated local-population context that makes Jacob's fear intelligible.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "source-lock-genesis-34-local-population-description",
           "object_exists": true,
           "object_type": "book",
@@ -67450,6 +67648,12 @@
       ],
       "reference": "Genesis 34",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "PRIMARY": 1,
         "SECONDARY": 4
@@ -68553,6 +68757,12 @@
       ],
       "reference": "Genesis 35",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "PRIMARY": 3,
         "SECONDARY": 5
@@ -69244,6 +69454,12 @@
       ],
       "reference": "Genesis 36",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 3,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 3
+      },
       "source_classes": {
         "PRIMARY": 1,
         "SECONDARY": 6
@@ -70392,6 +70608,12 @@
       ],
       "reference": "Genesis 37",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "PRIMARY": 4,
         "SECONDARY": 5
@@ -70978,6 +71200,12 @@
       ],
       "reference": "Genesis 38",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -71553,6 +71781,12 @@
       ],
       "reference": "Genesis 39",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -72129,6 +72363,12 @@
       ],
       "reference": "Genesis 40",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -72854,6 +73094,12 @@
       ],
       "reference": "Genesis 41",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "PRIMARY": 4,
         "SECONDARY": 5
@@ -73434,6 +73680,12 @@
       ],
       "reference": "Genesis 42",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -74010,6 +74262,12 @@
       ],
       "reference": "Genesis 43",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -74585,6 +74843,12 @@
       ],
       "reference": "Genesis 44",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -75310,6 +75574,12 @@
       ],
       "reference": "Genesis 45",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, intertextual_canonical_connections",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "PRIMARY": 4,
         "SECONDARY": 5
@@ -75891,6 +76161,12 @@
       ],
       "reference": "Genesis 46",
       "remediation_summary": "ancient_near_eastern_context, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -76470,6 +76746,12 @@
       ],
       "reference": "Genesis 47",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -77047,6 +77329,12 @@
       ],
       "reference": "Genesis 48",
       "remediation_summary": "ancient_near_eastern_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -77625,6 +77913,12 @@
       ],
       "reference": "Genesis 49",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 1,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 1
+      },
       "source_classes": {
         "SECONDARY": 4
       },
@@ -78036,7 +78330,7 @@
           "category": "history",
           "claim": "Genesis ends with Joseph's death in Egypt while preserving an expectation that God will bring Abraham's family to the promised land.",
           "confidence": "high",
-          "generic_book_level_context": true,
+          "generic_book_level_context": false,
           "id": "genesis-ends-in-egypt",
           "object_exists": true,
           "object_type": "book",
@@ -78445,6 +78739,12 @@
       ],
       "reference": "Genesis 50",
       "remediation_summary": "ancient_near_eastern_context, archaeology_material_culture, covenant_context, cultural_social_context, geography, hebrew_worldview_concepts, historical_context, immediate_literary_context, interpretive_disputes, intertextual_canonical_connections, lexical_concepts",
+      "retrieval_diagnostic": {
+        "book_index_candidate_count": 150,
+        "chapter_overlapping_candidate_count": 2,
+        "rejected_candidate_count": 0,
+        "valid_scripture_anchored_result_count": 2
+      },
       "source_classes": {
         "PRIMARY": 5,
         "SECONDARY": 5
