@@ -1064,11 +1064,14 @@ function initializeWorkspaceBridge() {
     navigateToPassage,
     openPassageReference,
     getStudySelection: () => window.BHFStudySelection?.getState?.() || null,
+    loadChapterData: loadReaderChapterData,
   };
   window.BHFStudyActions = {
     perform: performCompanionStudyAction,
     openWorkspaceTab: activateWorkspaceTab,
     openCanonicalQuery,
+    loadReadableTranslations,
+    openTranslationManager: openTranslationSelector,
     savePassage: saveSelectedPassage,
     getSavedStudies: getSavedStudiesForSelection,
     syncAskSelection: syncAskFields,
@@ -2493,6 +2496,41 @@ function populateChapterOptions(bookSelect, chapterSelect) {
   }
 }
 
+async function loadReaderChapterData(book, chapter, translation, options = {}) {
+  const normalizedBook = String(book || "").trim();
+  const normalizedChapter = Number(chapter);
+  const translationId = String(translation || readerDefaultTranslationId()).toLowerCase();
+  const tab = options.tab || readerTabs.find((candidate) =>
+    String(candidate.book || "").toLowerCase() === normalizedBook.toLowerCase()
+      && Number(candidate.chapter) === normalizedChapter
+      && String(candidate.translation || "").toLowerCase() === translationId,
+  );
+  const matches = (data) => Boolean(data
+    && String(data.book || "").toLowerCase() === normalizedBook.toLowerCase()
+    && Number(data.chapter) === normalizedChapter
+    && String(data.translation?.id || translationId).toLowerCase() === translationId);
+  if (options.useCache !== false) {
+    if (!options.tab && matches(currentChapter)) return currentChapter;
+    if (matches(tab?.data)) return tab.data;
+  }
+  const params = new URLSearchParams({translation: translationId});
+  return requestJson(
+    `/api/bible/${encodeURIComponent(normalizedBook)}/${encodeURIComponent(normalizedChapter)}?${params.toString()}`,
+    options.signal ? {signal: options.signal} : {},
+    "Could not load chapter.",
+  );
+}
+
+async function loadReadableTranslations() {
+  translationCatalogState = await loadTranslationState("/api/translations/installed");
+  const installed = Array.isArray(translationCatalogState?.sections?.installed)
+    ? translationCatalogState.sections.installed
+    : Array.isArray(translationCatalogState?.translations)
+      ? translationCatalogState.translations
+      : [];
+  return installed.filter((entry) => entry?.installed === true);
+}
+
 async function loadReaderChapter(book, chapter, options = {}) {
   const continuationToken = options.readerSpeechContinuationToken;
   const shouldResumeReaderSpeech = Number.isInteger(continuationToken);
@@ -2518,23 +2556,10 @@ async function loadReaderChapter(book, chapter, options = {}) {
   reader.setAttribute("aria-busy", "true");
   renderChapter(null);
   try {
-    let data = null;
-    if (
-      options.useCache !== false &&
-      tab?.data &&
-      String(tab.data.book).toLowerCase() === String(book).toLowerCase() &&
-      Number(tab.data.chapter) === Number(chapter) &&
-      String(tab.data.translation?.id || translationId).toLowerCase() === translationId
-    ) {
-      data = tab.data;
-    } else {
-      const params = new URLSearchParams({translation: translationId});
-      data = await requestJson(
-        `/api/bible/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}?${params.toString()}`,
-        {},
-        "Could not load chapter.",
-      );
-    }
+    const data = await loadReaderChapterData(book, chapter, translationId, {
+      tab,
+      useCache: options.useCache !== false,
+    });
     if (requestToken !== readerLoadToken) {
       return;
     }
@@ -2634,12 +2659,7 @@ function loadReaderTabData(tab) {
     return tab.pendingLoad;
   }
   const translationId = String(tab.translation || readerDefaultTranslationId()).toLowerCase();
-  const params = new URLSearchParams({translation: translationId});
-  const request = requestJson(
-    `/api/bible/${encodeURIComponent(tab.book)}/${encodeURIComponent(tab.chapter)}?${params.toString()}`,
-    {},
-    "Could not load chapter.",
-  ).then((data) => {
+  const request = loadReaderChapterData(tab.book, tab.chapter, translationId, {tab, useCache: false}).then((data) => {
     tab.data = data;
     tab.book = data.book;
     tab.chapter = Number(data.chapter);
@@ -4186,6 +4206,18 @@ async function dispatchStudyAction(studyAction) {
   } else if (studyAction.type === "compare_archaeology") {
     applyStudyActionContext(studyAction);
     await requestDeterministicStudyAction({...studyAction, type: "archaeology"});
+  } else if (studyAction.type === "compare_translations") {
+    const trigger = document.activeElement;
+    if (typeof window.BHFStudyCompanion?.openResource === "function") {
+      await window.BHFStudyCompanion.openResource("translation_comparison", {
+        trigger,
+      });
+    } else {
+      const status = document.querySelector("[data-bhf-commentary-status]");
+      if (status) status.textContent = "Translation comparison is unavailable right now.";
+    }
+  } else if (window.BHFRuntimeConfig?.debug === true) {
+    console.warn(`Unsupported study action: ${String(studyAction.type || "")}`);
   }
 }
 

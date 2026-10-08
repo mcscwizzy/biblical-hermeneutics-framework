@@ -3,7 +3,8 @@
   "use strict";
 
   const NATIVE_RESOURCES = new Set([
-    "commentary", "canonical", "archaeology", "people", "places",
+    // `commentary` is the persisted Tyndale resource ID and remains compatible.
+    "commentary", "translation_comparison", "canonical", "archaeology", "people", "places",
     "themes", "timeline", "cross_references", "historical_context",
     "cultural_context", "original_audience", "literary_context", "covenant_context",
   ]);
@@ -91,6 +92,10 @@
         renderCommentary(data);
         return;
       }
+      if (resourceId === "translation_comparison") {
+        await renderTranslationComparison(selection, requestSequence, signal);
+        return;
+      }
       if (contextRecord.status === "error" && contextRecord.key === selectionKey) {
         renderError(host, contextRecord.error || "Passage resources could not be loaded.");
         return;
@@ -163,6 +168,129 @@
       );
       (data.sources || []).forEach((source) => body.append(summaryCard(source.name || source.id, source.attribution || source.copyright || "")));
       commit(body);
+    }
+
+    async function renderTranslationComparison(selection, requestSequence, signal) {
+      const entries = await options.getReadableTranslations?.();
+      if (requestSequence !== sequence) return;
+      const available = new Map();
+      (Array.isArray(entries) ? entries : []).forEach((entry) => {
+        const id = String(entry?.id || "").trim().toLowerCase();
+        if (id && entry.installed === true && !available.has(id)) {
+          available.set(id, entry);
+        }
+      });
+
+      const requestedSourceId = String(
+        selection?.translation || selection?.sourceTranslation || "",
+      ).trim().toLowerCase();
+      const sourceEntry = available.get(requestedSourceId)
+        || available.values().next().value;
+      const translations = sourceEntry
+        ? [sourceEntry, ...Array.from(available.entries())
+          .filter(([id]) => id !== String(sourceEntry.id).toLowerCase())
+          .map(([, entry]) => entry)]
+        : [];
+      const selectedVerses = Array.isArray(selection?.selectedVerses)
+        ? selection.selectedVerses.map(Number).filter((verse) => Number.isInteger(verse) && verse > 0)
+        : [];
+      const hasVerseSelection = selectedVerses.length > 0;
+      const reference = String(selection?.reference || "").trim()
+        || `${selection?.book || ""} ${Number(selection?.chapter || 0)}`.trim();
+      if (!selection?.book || !Number(selection.chapter)) {
+        renderError(host, "Choose a Scripture passage before comparing translations.");
+        return;
+      }
+
+      const body = resourceBody(
+        "Compare translations",
+        "Parallel Bible text from translations installed on this device.",
+      );
+      body.classList.add("translation-comparison");
+      const passageHeading = document.createElement("p");
+      passageHeading.className = "translation-comparison-reference";
+      passageHeading.dataset.comparisonReference = "true";
+      passageHeading.setAttribute("role", "heading");
+      passageHeading.setAttribute("aria-level", "4");
+      passageHeading.textContent = reference;
+      body.append(passageHeading);
+
+      if (translations.length === 1) {
+        const emptyState = document.createElement("p");
+        emptyState.className = "companion-availability-empty translation-comparison-empty";
+        emptyState.textContent = "Install or import another translation to compare this passage.";
+        const manage = document.createElement("button");
+        manage.type = "button";
+        manage.className = "secondary";
+        manage.dataset.openTranslationManagement = "true";
+        manage.textContent = "Manage translations";
+        body.append(emptyState, manage);
+      }
+
+      if (!translations.length) {
+        const emptyState = document.createElement("p");
+        emptyState.className = "companion-availability-empty";
+        emptyState.textContent = "No installed translations are available to compare.";
+        const manage = document.createElement("button");
+        manage.type = "button";
+        manage.className = "secondary";
+        manage.dataset.openTranslationManagement = "true";
+        manage.textContent = "Manage translations";
+        body.append(emptyState, manage);
+      }
+
+      for (const entry of translations) {
+        if (requestSequence !== sequence) return;
+        const id = String(entry.id || "").toLowerCase();
+        const section = document.createElement("section");
+        section.className = "translation-comparison-section";
+        section.dataset.comparisonTranslation = id;
+        section.dataset.comparisonTranslationContainer = "true";
+        const heading = document.createElement("h4");
+        heading.textContent = `${entry.abbreviation || id.toUpperCase()} · ${entry.name || id.toUpperCase()}`;
+        section.append(heading);
+        try {
+          const chapter = await options.loadChapterData?.(
+            selection.book,
+            Number(selection.chapter),
+            id,
+            {signal},
+          );
+          if (requestSequence !== sequence) return;
+          const verses = (Array.isArray(chapter?.verses) ? chapter.verses : [])
+            .filter((verse) => !hasVerseSelection || selectedVerses.includes(Number(verse.verse)));
+          if (!verses.length) {
+            const unavailable = document.createElement("p");
+            unavailable.className = "companion-detail-status";
+            unavailable.setAttribute("role", "status");
+            unavailable.textContent = "This passage is unavailable in this translation.";
+            section.append(unavailable);
+          }
+          verses.forEach((verse) => {
+            const line = document.createElement("p");
+            line.className = "translation-comparison-verse";
+            line.dataset.comparisonVerse = String(verse.verse);
+            const number = document.createElement("span");
+            number.className = "translation-comparison-verse-number";
+            number.setAttribute("aria-label", `Verse ${Number(verse.verse)}`);
+            number.textContent = String(verse.verse);
+            const text = document.createElement("span");
+            text.className = "translation-comparison-verse-text";
+            text.textContent = String(verse.text || "");
+            line.append(number, text);
+            section.append(line);
+          });
+        } catch (error) {
+          if (error?.name === "AbortError") throw error;
+          const unavailable = document.createElement("p");
+          unavailable.className = "companion-detail-status";
+          unavailable.setAttribute("role", "status");
+          unavailable.textContent = "This translation is unavailable offline or could not be loaded.";
+          section.append(unavailable);
+        }
+        body.append(section);
+      }
+      if (requestSequence === sequence) commit(body);
     }
 
     function renderArchaeology(items, contextual) {
@@ -420,6 +548,11 @@
     }
 
     function handleClick(event) {
+      const translationManagement = event.target.closest("[data-open-translation-management]");
+      if (translationManagement) {
+        void options.openTranslationManager?.(translationManagement);
+        return;
+      }
       const legacy = event.target.closest("[data-open-legacy-resource]");
       if (legacy) {
         showLegacy(legacy.dataset.openLegacyResource);

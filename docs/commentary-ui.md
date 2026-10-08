@@ -1,17 +1,20 @@
 # BHF Commentary UI
 
-The BHF Commentary UI presents the frozen `commentary-v1.0` corpus as an
-optional, read-only context layer inside the Bible reader's Study Companion.
-The reader and Scripture remain primary; commentary is a concise aid for
+**BHF Context** is the CKL-backed BHF Commentary, currently served from the
+immutable `commentary-v1.2` release as an optional, read-only context layer in
+the Study Companion. It can show contextual synthesis, cited evidence, verse
+references, maps, canonical objects, and personal actions. It is separate from
+Tyndale's published study notes and from Scripture translation comparison.
+The reader and Scripture remain primary; BHF Commentary is a concise aid for
 understanding the world behind the text, not a replacement for Scripture or a
 theological authority.
 
 ## Read-only release boundary
 
-The UI consumes immutable `commentary-v1.0` artifacts through a presentation
+The UI consumes immutable `commentary-v1.2` artifacts through a presentation
 projection. It does not write commentary files, regenerate chapters, or
 retrieve replacement evidence. A future corpus release must use a new release
-identifier so cached content cannot be confused with v1.0.
+identifier so cached content cannot be confused with v1.2.
 
 ## Availability states
 
@@ -66,12 +69,22 @@ older commentary releases are ignored rather than displayed as current.
 Uncached commentary or evidence fails with the normal offline state. No model
 call is required to read cached release content.
 
+## Separate reader features
+
+- **BHF Context** presents CKL-backed BHF Commentary from the current v1.2
+  release.
+- **Tyndale Companion** is the independent published Tyndale Open Study Notes
+  reader pane; it remains available through its own workspace tab and API.
+- **Compare translations** displays parallel Bible text from translations that
+  the existing reader reports as installed and readable. It uses the reader's
+  chapter data and offline cache, and never installs or imports a translation.
+
 ## Integration boundary
 
 Commentary links into existing BHF destinations such as Context, Maps,
 Timeline, History, Culture, Archaeology, Lexicon, Notes, Highlights, and
-translation comparison. Those tools remain authoritative destinations; the
-commentary card does not duplicate their data or create a separate commentary
+translation comparison. Those tools remain their own destinations; the BHF
+Commentary card does not duplicate their data or create a separate commentary
 application.
 
 Future UI work should happen on a UI branch and should preserve the frozen
