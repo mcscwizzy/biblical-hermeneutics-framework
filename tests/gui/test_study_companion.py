@@ -123,9 +123,12 @@ def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
-def test_explore_questions_use_general_scope_instead_of_reader_selection(driver, wait, base_url):
+def test_explore_opens_general_research_overview(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    HomePage(driver, wait, base_url).open()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return typeof window.BHFStudyCompanion?.getState === 'function';"
+    ))
 
     driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
     wait.until(lambda _driver: _driver.execute_script(
@@ -133,18 +136,14 @@ def test_explore_questions_use_general_scope_instead_of_reader_selection(driver,
     ))
 
     assert driver.find_element(By.CSS_SELECTOR, "#companion-ask-title").text == "Explore BHF"
-    quick_ask = driver.find_element(By.CSS_SELECTOR, "#companion-question")
-    assert quick_ask.get_attribute("placeholder") == "Search or ask about the Bible…"
-    quick_ask.send_keys("Who was Paul?")
-    driver.find_element(By.CSS_SELECTOR, "[data-companion-quick-ask] button[type='submit']").click()
-
-    wait.until(lambda _driver: _driver.execute_script(
-        "return document.querySelector('.ask-form [name=question_scope]').value === 'general_question';"
-    ))
+    assert "independently of a selected passage" in driver.find_element(
+        By.CSS_SELECTOR, "[data-companion-recommendation-reason]"
+    ).text
+    wait.until(lambda _driver: len(_driver.find_elements(
+        By.CSS_SELECTOR, "[data-companion-resource]"
+    )) > 0)
     assert driver.execute_script("return document.body.dataset.appSection;") == "explore"
-    assert driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="ask"]').get_attribute("aria-selected") == "true"
-    assert driver.find_element(By.CSS_SELECTOR, "[data-ask-heading]").text == "Explore BHF"
-    assert driver.find_element(By.CSS_SELECTOR, '[data-testid="ask-submit"]').text == "Search BHF"
+    assert not driver.find_elements(By.CSS_SELECTOR, "#companion-question, .ask-form")
 
 
 def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, base_url):
@@ -155,7 +154,7 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
     assert driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]").is_displayed()
     assert driver.find_element(By.CSS_SELECTOR, "#chapter-reader").is_displayed()
-    assert not driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-ask"]').is_displayed()
+    assert not driver.find_elements(By.CSS_SELECTOR, '[data-testid="app-dock-ask"]')
     assert not driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-archaeology"]').is_displayed()
 
     metrics = driver.execute_script(
@@ -265,7 +264,13 @@ def test_chapter_companion_uses_one_compact_context_request(driver, wait, base_u
         "return window.BHFStudyCompanion?.getContext?.()?.reference === 'John 1:2';"
     ))
     requests = driver.execute_script("return window.__companionRequests;")
-    assert requests == ["/api/study/companion-context?book=John&chapter=1&verse_start=2&verse_end=2&translation=asv"]
+    translation = str(driver.execute_script(
+        "return window.BHFStudySelection.getState().translation;"
+    )).lower()
+    assert requests == [
+        "/api/study/companion-context?book=John&chapter=1&verse_start=2&verse_end=2"
+        f"&translation={translation}"
+    ]
     assert "passage_text" not in requests[0]
 
 
@@ -758,41 +763,42 @@ def test_companion_context_cache_refreshes_after_explicit_invalidation(driver, w
     assert result == {"calls": 2, "first": 1, "cached": 1, "refreshed": 2}
 
 
-def test_mobile_companion_input_focus_uses_keyboard_safe_layout(driver, wait, base_url):
+def test_mobile_ask_handoff_focus_stays_within_viewport(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
-    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
-    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
-    quick_ask = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#companion-question")))
-    quick_ask.click()
+    HomePage(driver, wait, base_url).open()
     wait.until(lambda _driver: _driver.execute_script(
-        "return document.body.classList.contains('companion-input-focused');"
+        "return typeof window.BHFStudyCompanion?.getState === 'function';"
+    ))
+    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+    wait.until(lambda _driver: driver.find_element(By.CSS_SELECTOR, "#companion-ask-title").text == "Explore BHF")
+    companion = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+    companion_state = companion.get_attribute("data-companion-state")
+    trigger = driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf]")
+    trigger.click()
+    question = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-question]")))
+    wait.until(lambda _driver: _driver.execute_script(
+        "return document.activeElement === arguments[0];", question
     ))
     metrics = driver.execute_script(
         """
         const field = arguments[0].getBoundingClientRect();
-        const panel = document.querySelector('[data-study-companion]').getBoundingClientRect();
-        const dock = document.querySelector('[data-app-dock]');
+        const dialog = document.querySelector('[data-ask-bhf-dialog]').getBoundingClientRect();
         return {
-          fieldBottom: field.bottom, panelBottom: panel.bottom,
-          dockVisibility: getComputedStyle(dock).visibility,
+          fieldTop: field.top, fieldBottom: field.bottom, dialogTop: dialog.top, dialogBottom: dialog.bottom,
           scrollWidth: document.documentElement.scrollWidth,
           clientWidth: document.documentElement.clientWidth,
         };
         """,
-        quick_ask,
+        question,
     )
-    assert metrics["fieldBottom"] <= metrics["panelBottom"] + 1
-    assert metrics["dockVisibility"] == "hidden"
+    assert metrics["fieldTop"] >= metrics["dialogTop"]
+    assert metrics["fieldBottom"] <= metrics["dialogBottom"]
+    assert metrics["dialogTop"] >= 0
+    assert metrics["dialogBottom"] <= driver.execute_script("return window.innerHeight;")
     assert metrics["scrollWidth"] <= metrics["clientWidth"]
-
-    driver.find_element(By.CSS_SELECTOR, "[data-companion-quick-ask] button[type='submit']").click()
-    wait.until(lambda _driver: _driver.execute_script(
-        "return window.BHFStudyCompanion.getState().resource === 'ask';"
-    ))
-    textarea = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.ask-form [name="question"]')))
-    wait.until(lambda _driver: _driver.execute_script("return document.activeElement === arguments[0];", textarea))
-    assert driver.find_element(By.CSS_SELECTOR, ".reader-column").get_attribute("inert") is not None
+    assert companion.get_attribute("data-companion-state") == companion_state
+    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-close]").click()
+    wait.until(lambda _driver: driver.execute_script("return document.activeElement === arguments[0];", trigger))
 
 
 def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
@@ -845,9 +851,12 @@ def test_archaeology_record_opens_its_curated_evidence_detail(driver, wait, base
     assert host.find_element(By.CSS_SELECTOR, "[data-native-resource-back]").is_displayed()
 
 
-def test_ask_fields_follow_exact_shared_selection_and_clear_stale_word(driver, wait, base_url):
-    driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+def test_ask_handoff_tracks_exact_shared_selection_and_clears_stale_word(driver, wait, base_url):
+    driver.set_window_size(1440, 1000)
+    HomePage(driver, wait, base_url).open()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return typeof window.BHFStudySelection?.getState === 'function' && typeof window.BHFStudyCompanion?.getState === 'function';"
+    ))
 
     selected = driver.execute_script(
         """
@@ -859,47 +868,35 @@ def test_ask_fields_follow_exact_shared_selection_and_clear_stale_word(driver, w
           translation: 'kjv',
           selectedWord: {surfaceForm: 'Word', lemma: 'logos', strongsNumber: 'G3056', wordPosition: 4},
         }, 'ask-sync-test');
-        window.BHFStudyActions.syncAskSelection();
-        const form = document.querySelector('.ask-form');
-        return Object.fromEntries([
-          'reader_book', 'reader_chapter', 'reader_start_verse', 'reader_end_verse',
-          'reader_selected_verses', 'reader_selected_text', 'reader_selected_word', 'reader_translation'
-        ].map((name) => [name, form.elements[name].value]));
+        return window.BHFStudySelection.getState();
         """
     )
 
-    assert selected == {
-        "reader_book": "John",
-        "reader_chapter": "1",
-        "reader_start_verse": "1",
-        "reader_end_verse": "2",
-        "reader_selected_verses": "[1,2]",
-        "reader_selected_text": "Exact current selection",
-        "reader_selected_word": '{"surfaceForm":"Word","lemma":"logos","strongsNumber":"G3056","wordPosition":4}',
-        "reader_translation": "kjv",
-    }
+    assert selected["reference"] == "John 1:1-2"
+    assert selected["selectedVerses"] == [1, 2]
+    assert selected["selectedText"] == "Exact current selection"
+    assert selected["translation"].lower() == "kjv"
+    assert selected["selectedWord"]["lemma"] == "logos"
+    driver.execute_script(
+        "window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});"
+    )
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-ask-bhf]"))).click()
+    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog]")))
+    assert driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text == "John 1:1-2"
+    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-close]").click()
 
     cleared = driver.execute_script(
         """
         window.BHFStudySelection.setChapter({book: 'John', chapter: 2, translation: 'asv'}, 'ask-sync-test');
-        window.BHFStudyActions.syncAskSelection();
-        const form = document.querySelector('.ask-form');
-        return Object.fromEntries([
-          'reader_book', 'reader_chapter', 'reader_start_verse', 'reader_end_verse',
-          'reader_selected_verses', 'reader_selected_text', 'reader_selected_word', 'reader_translation'
-        ].map((name) => [name, form.elements[name].value]));
+        return window.BHFStudySelection.getState();
         """
     )
-    assert cleared == {
-        "reader_book": "John",
-        "reader_chapter": "2",
-        "reader_start_verse": "",
-        "reader_end_verse": "",
-        "reader_selected_verses": "",
-        "reader_selected_text": "",
-        "reader_selected_word": "",
-        "reader_translation": "asv",
-    }
+    assert cleared["reference"] == "John 2"
+    assert cleared["hasPassageSelection"] is False
+    assert cleared["selectedWord"] is None
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-ask-bhf]"))).click()
+    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog]")))
+    assert driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text == "John 2"
 
 
 def test_word_study_choice_updates_and_restores_shared_selection(driver, wait, base_url):
@@ -1185,7 +1182,29 @@ def test_translation_comparison_shows_chapter_and_single_translation_management_
 
 def test_translation_comparison_mobile_layout_back_navigation_and_focus(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {"source": """
+      const originalFetch = window.fetch.bind(window);
+      window.fetch = async (input, init) => {
+        const url = new URL(input instanceof Request ? input.url : String(input), location.origin);
+        const json = (payload) => new Response(JSON.stringify(payload), {
+          status: 200, headers: {'Content-Type': 'application/json'},
+        });
+        if (url.pathname === '/api/translations') {
+          const installed = [{id: 'kjv', abbreviation: 'KJV', name: 'King James Version', installed: true}];
+          return json({translations: installed, catalog: installed, sections: {installed}, default_translation: 'kjv'});
+        }
+        if (url.pathname === '/api/bible/John/1') {
+          return json({
+            book: 'John', chapter: 1, translation: {id: 'KJV', name: 'King James Version'},
+            verses: Array.from({length: 7}, (_value, index) => ({
+              book: 'John', chapter: 1, verse: index + 1, text: `Reader verse ${index + 1}`,
+            })),
+          });
+        }
+        return originalFetch(input, init);
+      };
+    """})
+    HomePage(driver, wait, base_url).open().wait_loaded()
     wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);"))
     selection = {
         "book": "John", "chapter": 4, "translation": "kjv", "selectedVerses": [4],

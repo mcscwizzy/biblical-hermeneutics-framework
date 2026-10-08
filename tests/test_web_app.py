@@ -2301,7 +2301,10 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(translations["default_translation"], "kjv")
         self.assertTrue(next(entry for entry in translations["translations"] if entry["id"] == "kjv")["default"])
         self.assertIn('data-default-translation="kjv"', index_response["body"])
-        self.assertIn('name="reader_translation" value="kjv"', index_response["body"])
+        self.assertIn(
+            'id="translation-select" data-reader-translation data-default-translation="kjv"',
+            index_response["body"],
+        )
 
     def test_fresh_vercel_reader_settings_returns_safe_default(self):
         with tempfile.TemporaryDirectory() as temporary:
