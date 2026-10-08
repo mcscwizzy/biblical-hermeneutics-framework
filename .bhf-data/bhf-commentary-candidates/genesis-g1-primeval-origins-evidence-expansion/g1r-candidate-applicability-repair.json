@@ -1,0 +1,339 @@
+{
+  "queue_id": "GENESIS_G1R_COMPARATIVE_REFERENCE_APPLICABILITY_REPAIR",
+  "target_object_id": "genesis",
+  "candidates": [
+    {
+      "dimension": "intertextual-canonical-connections",
+      "target_object_id": "genesis",
+      "passage_reference": "Genesis 3",
+      "evidence_item": {
+        "id": "g3-serpent-later-canonical-reception",
+        "title": "Later biblical identification of the ancient serpent",
+        "evidence_type": "primary-source",
+        "description": "Revelation 12:9 later identifies the “ancient serpent” with the devil and Satan. This is later canonical reception and does not make Genesis 3 itself use those names.",
+        "assertion_type": "secondary-evidence",
+        "confidence": "high",
+        "confidence_rationale": "The two texts state different things directly; their canonical relation is later reception.",
+        "passage_relevance": "Revelation 12:9 later identifies the “ancient serpent” with the devil and Satan. This is later canonical reception and does not make Genesis 3 itself use those names. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "primary_observation": "Genesis 3:1 describes the serpent without naming Satan; Revelation 12:9 explicitly uses the later identification.",
+        "scholarly_interpretation": "The later text can inform canonical readings while remaining distinct from the serpent’s characterization in the immediate Genesis narrative.",
+        "related_objects": [
+          {
+            "id": "the-fall",
+            "relationship": "narrative-event",
+            "weight": 8,
+            "notes": "The later reception refers to the serpent in Genesis 3."
+          }
+        ],
+        "geography_ids": [],
+        "scripture_references": [
+          {
+            "reference": "Genesis 3:1",
+            "relationship": "direct",
+            "temporal_relation": "contemporary",
+            "relevance_rationale": "The Genesis wording names the serpent but not Satan.",
+            "weight": 8
+          }
+        ],
+        "source_ids": [
+          "genesis-1-50",
+          "g1-revelation-text",
+          "g1-zhakevich-genesis-315"
+        ],
+        "notes": "Later canonical reception context (not a Genesis applicability anchor): Revelation 12:9 identifies the ancient serpent with the devil and Satan. This remains distinct from Genesis 3 wording. Comparative Scripture source retained: g1-revelation-text; scholarly reception source retained: g1-zhakevich-genesis-315."
+      },
+      "source_records": [
+        {
+          "id": "g1-zhakevich-genesis-315",
+          "title": "Genesis 3:15 in the New Testament and in the Pentateuchal Targums: Enmity as a Spiritual Conflict",
+          "author": "Iosif J. Zhakevich",
+          "publisher": "Journal of Biblical and Theological Studies 7, no. 1",
+          "year": 2022,
+          "locator": "Pages 119–134; discussion of Genesis 3:15, the Pentateuchal Targums, and Revelation 12",
+          "url": "https://jbtsonline.org/2022/06/genesis-315-in-the-new-testament-and-in-the-pentateuchal-targums-enmity-as-a-spiritual-conflict-by-iosif-j-zhakevich/",
+          "source_type": "journal-article",
+          "notes": "Comparative reception study; later Jewish and Christian readings remain distinct from the immediate wording of Genesis.",
+          "supports": [
+            "g3-seed-conflict-immediate-wording",
+            "g3-seed-later-jewish-christian-reception",
+            "g3-serpent-later-canonical-reception"
+          ]
+        },
+        {
+          "id": "g1-revelation-text",
+          "title": "Revelation 12:9, 17",
+          "author": "Canonical biblical text",
+          "publisher": "",
+          "year": null,
+          "locator": "Revelation 12:9, 17",
+          "url": "",
+          "source_type": "scripture",
+          "notes": "Primary text cited only for later canonical reception, not projected into Genesis wording.",
+          "supports": [
+            "g3-seed-later-jewish-christian-reception",
+            "g3-serpent-later-canonical-reception"
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "intertextual-canonical-connections",
+      "target_object_id": "genesis",
+      "passage_reference": "Genesis 3",
+      "evidence_item": {
+        "id": "g3-seed-later-jewish-christian-reception",
+        "title": "Later Jewish and Christian reception of Genesis 3:15",
+        "evidence_type": "primary-source",
+        "description": "Pentateuchal Targums and New Testament reception read Genesis 3:15’s enmity as a conflict between serpent and adversarial powers; Revelation 12 develops a later serpent-conflict image. These are later interpretations and do not replace the immediate offspring language.",
+        "assertion_type": "secondary-evidence",
+        "confidence": "medium",
+        "confidence_rationale": "The later reception is documented in a focused comparative study and is distinguished from Genesis wording.",
+        "passage_relevance": "Pentateuchal Targums and New Testament reception read Genesis 3:15’s enmity as a conflict between serpent and adversarial powers; Revelation 12 develops a later serpent-conflict image. These are later interpretations and do not replace the immediate offspring language. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "primary_observation": "Genesis 3:15 gives the immediate enmity wording; later Targumic and Christian texts interpret that conflict in expanded ways.",
+        "scholarly_interpretation": "Zhakevich’s comparative study documents these readings as reception history. Messianic interpretation is therefore recorded as a later Jewish/Christian reading, not the only original meaning supplied to synthesis.",
+        "related_objects": [
+          {
+            "id": "the-fall",
+            "relationship": "narrative-event",
+            "weight": 8,
+            "notes": "The reception interprets the serpent and enmity in Genesis 3."
+          }
+        ],
+        "geography_ids": [],
+        "scripture_references": [
+          {
+            "reference": "Genesis 3:15",
+            "relationship": "direct",
+            "temporal_relation": "contemporary",
+            "relevance_rationale": "The immediate wording remains the anchor.",
+            "weight": 8
+          }
+        ],
+        "source_ids": [
+          "genesis-1-50",
+          "g1-revelation-text",
+          "g1-zhakevich-genesis-315"
+        ],
+        "notes": "Later Jewish and Christian reception context (not Genesis applicability anchors): Revelation 12:9 and 12:17 develop later serpent-conflict imagery. These reception readings remain distinct from Genesis 3:15 immediate offspring-conflict wording. Comparative Scripture source retained: g1-revelation-text; scholarly reception source retained: g1-zhakevich-genesis-315."
+      },
+      "source_records": [
+        {
+          "id": "g1-zhakevich-genesis-315",
+          "title": "Genesis 3:15 in the New Testament and in the Pentateuchal Targums: Enmity as a Spiritual Conflict",
+          "author": "Iosif J. Zhakevich",
+          "publisher": "Journal of Biblical and Theological Studies 7, no. 1",
+          "year": 2022,
+          "locator": "Pages 119–134; discussion of Genesis 3:15, the Pentateuchal Targums, and Revelation 12",
+          "url": "https://jbtsonline.org/2022/06/genesis-315-in-the-new-testament-and-in-the-pentateuchal-targums-enmity-as-a-spiritual-conflict-by-iosif-j-zhakevich/",
+          "source_type": "journal-article",
+          "notes": "Comparative reception study; later Jewish and Christian readings remain distinct from the immediate wording of Genesis.",
+          "supports": [
+            "g3-seed-conflict-immediate-wording",
+            "g3-seed-later-jewish-christian-reception",
+            "g3-serpent-later-canonical-reception"
+          ]
+        },
+        {
+          "id": "g1-revelation-text",
+          "title": "Revelation 12:9, 17",
+          "author": "Canonical biblical text",
+          "publisher": "",
+          "year": null,
+          "locator": "Revelation 12:9, 17",
+          "url": "",
+          "source_type": "scripture",
+          "notes": "Primary text cited only for later canonical reception, not projected into Genesis wording.",
+          "supports": [
+            "g3-seed-later-jewish-christian-reception",
+            "g3-serpent-later-canonical-reception"
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "divine-council-spiritual-worldview",
+      "target_object_id": "genesis",
+      "passage_reference": "Genesis 3",
+      "evidence_item": {
+        "id": "g3-cherubim-biblical-sacred-space-context",
+        "title": "Cherubim as guardians and biblical sacred-space figures",
+        "evidence_type": "worldview-concept",
+        "description": "Genesis 3:24 stations cherubim east of the garden to guard the way to the tree of life. Later biblical sanctuary texts place cherubim over or within sacred settings; Genesis 3 does not describe their physical appearance.",
+        "assertion_type": "secondary-evidence",
+        "confidence": "medium",
+        "confidence_rationale": "Genesis’s guarding role is explicit; the wider biblical sacred-space pattern is comparative context.",
+        "passage_relevance": "Genesis 3:24 stations cherubim east of the garden to guard the way to the tree of life. Later biblical sanctuary texts place cherubim over or within sacred settings; Genesis 3 does not describe their physical appearance. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "primary_observation": "Genesis gives the cherubim a guarding function; Exodus 25:18–22 and 1 Kings 6:23–35 provide later sanctuary context.",
+        "scholarly_interpretation": "Lexham’s entry discusses guardian and sanctuary/throne associations. This context excludes later popular “baby angel” imagery but does not establish a single appearance for Genesis 3.",
+        "related_objects": [
+          {
+            "id": "the-fall",
+            "relationship": "narrative-event",
+            "weight": 8,
+            "notes": "The cherubim guard the route back into Eden."
+          }
+        ],
+        "geography_ids": [],
+        "scripture_references": [
+          {
+            "reference": "Genesis 3:24",
+            "relationship": "direct",
+            "temporal_relation": "contemporary",
+            "relevance_rationale": "The guarding role is explicit.",
+            "weight": 8
+          }
+        ],
+        "source_ids": [
+          "genesis-1-50",
+          "g1-exodus-text",
+          "g1-kings-text",
+          "g1-lexham-cherubim"
+        ],
+        "notes": "Comparative biblical sanctuary context (not Genesis applicability anchors): Exodus 25:18–22 places cherubim over the ark; 1 Kings 6:23–35 describes cherubim in the temple. These later texts contextualize Genesis 3:24 but do not establish a single physical appearance for Eden’s cherubim. Comparative Scripture sources retained: g1-exodus-text and g1-kings-text; scholarly context source retained: g1-lexham-cherubim."
+      },
+      "source_records": [
+        {
+          "id": "g1-lexham-cherubim",
+          "title": "Cherubim",
+          "author": "",
+          "publisher": "The Lexham Bible Dictionary; Lexham Press",
+          "year": 2016,
+          "locator": "Entry “Cherubim,” especially Genesis 3:24 and biblical sanctuary/throne references",
+          "url": "https://biblia.com/books/lbd/offset/4581289",
+          "source_type": "reference-work",
+          "notes": "Reference entry on cherubim as guardians of sacred space and their biblical sanctuary/throne associations; Genesis gives no visual description.",
+          "supports": [
+            "g3-cherubim-biblical-sacred-space-context",
+            "g3-eastward-expulsion-and-flaming-weapon"
+          ]
+        },
+        {
+          "id": "g1-exodus-text",
+          "title": "Exodus 25:18–22",
+          "author": "Canonical biblical text",
+          "publisher": "",
+          "year": null,
+          "locator": "Exodus 25:18–22",
+          "url": "",
+          "source_type": "scripture",
+          "notes": "Primary text cited only for later biblical sanctuary context.",
+          "supports": [
+            "g3-cherubim-biblical-sacred-space-context"
+          ]
+        },
+        {
+          "id": "g1-kings-text",
+          "title": "1 Kings 6:23–35",
+          "author": "Canonical biblical text",
+          "publisher": "",
+          "year": null,
+          "locator": "1 Kings 6:23–35",
+          "url": "",
+          "source_type": "scripture",
+          "notes": "Primary text cited only for later biblical sanctuary context.",
+          "supports": [
+            "g3-cherubim-biblical-sacred-space-context"
+          ]
+        }
+      ]
+    }
+  ],
+  "original_g1_references": {
+    "g3-serpent-later-canonical-reception": {
+      "passage_reference": "Genesis 3",
+      "scripture_references": [
+        {
+          "reference": "Genesis 3:1",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "The Genesis wording names the serpent but not Satan.",
+          "weight": 8
+        },
+        {
+          "reference": "Revelation 12:9",
+          "relationship": "comparative",
+          "temporal_relation": "later-comparative",
+          "relevance_rationale": "Revelation supplies the explicit later identification.",
+          "weight": 8
+        }
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "g1-revelation-text",
+        "g1-zhakevich-genesis-315"
+      ]
+    },
+    "g3-seed-later-jewish-christian-reception": {
+      "passage_reference": "Genesis 3",
+      "scripture_references": [
+        {
+          "reference": "Genesis 3:15",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "The immediate wording remains the anchor.",
+          "weight": 8
+        },
+        {
+          "reference": "Revelation 12:9",
+          "relationship": "comparative",
+          "temporal_relation": "later-comparative",
+          "relevance_rationale": "Revelation supplies a later canonical serpent-conflict text.",
+          "weight": 8
+        },
+        {
+          "reference": "Revelation 12:17",
+          "relationship": "comparative",
+          "temporal_relation": "later-comparative",
+          "relevance_rationale": "Revelation develops the later serpent-conflict image.",
+          "weight": 8
+        }
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "g1-revelation-text",
+        "g1-zhakevich-genesis-315"
+      ]
+    },
+    "g3-cherubim-biblical-sacred-space-context": {
+      "passage_reference": "Genesis 3",
+      "scripture_references": [
+        {
+          "reference": "Genesis 3:24",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "The guarding role is explicit.",
+          "weight": 8
+        },
+        {
+          "reference": "Exodus 25:18-22",
+          "relationship": "comparative",
+          "temporal_relation": "later-comparative",
+          "relevance_rationale": "Later sanctuary imagery places cherubim over the ark.",
+          "weight": 8
+        },
+        {
+          "reference": "1 Kings 6:23-35",
+          "relationship": "comparative",
+          "temporal_relation": "later-comparative",
+          "relevance_rationale": "Later temple imagery includes large cherubim.",
+          "weight": 8
+        }
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "g1-exodus-text",
+        "g1-kings-text",
+        "g1-lexham-cherubim"
+      ]
+    }
+  },
+  "write_scope": [
+    "framework/canonical_library/objects/books/genesis.json"
+  ]
+}

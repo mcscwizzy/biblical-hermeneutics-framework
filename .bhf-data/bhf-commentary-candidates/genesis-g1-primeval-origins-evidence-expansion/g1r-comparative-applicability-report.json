@@ -1,0 +1,1320 @@
+{
+  "artifact_version": "genesis-g1r-comparative-applicability-repair-v1",
+  "branch": "feat/genesis-ckl-expansion",
+  "broader_semantics_review": {
+    "classification": "SYSTEMIC_APPLICABILITY_SEMANTICS_ISSUE",
+    "maintenance_follow_up": "Review applicability field directionality and item-level representation in a separate maintenance transaction; do not reinterpret historical evidence links without review.",
+    "mixed_direct_and_non_direct_cross_book_evidence_item_count_after_g1r": 47,
+    "read_only_example_records": [
+      {
+        "direct_references": [
+          "2 Corinthians 2:5-11"
+        ],
+        "evidence_id": "second-corinthians-offender-identity-limit",
+        "non_direct_cross_book_references": [
+          {
+            "reference": "1 Corinthians 5:1-13",
+            "relationship": "disputed",
+            "temporal_relation": "diachronic"
+          }
+        ],
+        "object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+      },
+      {
+        "direct_references": [
+          "Acts 15:19-29"
+        ],
+        "evidence_id": "acts-decree-porneia-legal-dispute",
+        "non_direct_cross_book_references": [
+          {
+            "reference": "Leviticus 17:1-18:30",
+            "relationship": "comparative",
+            "temporal_relation": "earlier-comparative"
+          }
+        ],
+        "object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+      },
+      {
+        "direct_references": [
+          "Galatians 2:1-14",
+          "Romans 14:1-23"
+        ],
+        "evidence_id": "acts-paul-chronology-control",
+        "non_direct_cross_book_references": [
+          {
+            "reference": "Acts 15:1-35",
+            "relationship": "comparative",
+            "temporal_relation": "diachronic"
+          }
+        ],
+        "object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+      },
+      {
+        "direct_references": [
+          "Acts 17:5-9"
+        ],
+        "evidence_id": "household-venue-uncertainty",
+        "non_direct_cross_book_references": [
+          {
+            "reference": "1 Thessalonians 5:27",
+            "relationship": "contextual",
+            "temporal_relation": "contemporary"
+          }
+        ],
+        "object_id": "thessalonian-civic-and-funerary-context"
+      },
+      {
+        "direct_references": [
+          "1 Thessalonians 1:6",
+          "1 Thessalonians 3:1-5"
+        ],
+        "evidence_id": "thessalonian-affliction-opponents-uncertain",
+        "non_direct_cross_book_references": [
+          {
+            "reference": "2 Thessalonians 1:4-10",
+            "relationship": "disputed",
+            "temporal_relation": "diachronic"
+          }
+        ],
+        "object_id": "thessalonian-civic-and-funerary-context"
+      },
+      {
+        "direct_references": [
+          "1 Corinthians 12:27-31"
+        ],
+        "evidence_id": "corinthian-role-list-not-complete-hierarchy",
+        "non_direct_cross_book_references": [
+          {
+            "reference": "Romans 12:3-8",
+            "relationship": "comparative",
+            "temporal_relation": "near-contemporary"
+          }
+        ],
+        "object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+      },
+      {
+        "direct_references": [
+          "Acts 2:1-21"
+        ],
+        "evidence_id": "acts-pentecost-languages-joel",
+        "non_direct_cross_book_references": [
+          {
+            "reference": "1 Corinthians 14:1-25",
+            "relationship": "contrast",
+            "temporal_relation": "near-contemporary"
+          }
+        ],
+        "object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+      },
+      {
+        "direct_references": [
+          "1 Corinthians 12:1-31",
+          "Galatians 3:1-14"
+        ],
+        "evidence_id": "acts-letters-chronology-spirit",
+        "non_direct_cross_book_references": [
+          {
+            "reference": "Acts 2:1-21",
+            "relationship": "comparative",
+            "temporal_relation": "diachronic"
+          },
+          {
+            "reference": "Acts 19:1-7",
+            "relationship": "comparative",
+            "temporal_relation": "diachronic"
+          }
+        ],
+        "object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+      }
+    ],
+    "whole_library_cleanup_performed": false
+  },
+  "chapter_impacts": {
+    "commentary_regenerated": false,
+    "external_controls": [
+      {
+        "after_g1r": {
+          "evidence_count": 28,
+          "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+          "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+          "synthesis_units": 12
+        },
+        "after_g1r_matches_g0": true,
+        "after_original_g1": {
+          "evidence_count": 28,
+          "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+          "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+          "synthesis_units": 12
+        },
+        "before_g0": {
+          "evidence_count": 28,
+          "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+          "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+          "synthesis_units": 12
+        },
+        "commentary_impact_after_g1r": "NEITHER",
+        "input_identical_through_g1r": true,
+        "reference": "Isaiah 36"
+      },
+      {
+        "after_g1r": {
+          "evidence_count": 89,
+          "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+          "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+          "synthesis_units": 50
+        },
+        "after_g1r_matches_g0": true,
+        "after_original_g1": {
+          "evidence_count": 89,
+          "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+          "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+          "synthesis_units": 50
+        },
+        "before_g0": {
+          "evidence_count": 89,
+          "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+          "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+          "synthesis_units": 50
+        },
+        "commentary_impact_after_g1r": "NEITHER",
+        "input_identical_through_g1r": true,
+        "reference": "Acts 16"
+      },
+      {
+        "after_g1r": {
+          "evidence_count": 13,
+          "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+          "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+          "synthesis_units": 3
+        },
+        "after_g1r_matches_g0": true,
+        "after_original_g1": {
+          "evidence_count": 13,
+          "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+          "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+          "synthesis_units": 3
+        },
+        "before_g0": {
+          "evidence_count": 13,
+          "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+          "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+          "synthesis_units": 3
+        },
+        "commentary_impact_after_g1r": "NEITHER",
+        "input_identical_through_g1r": true,
+        "reference": "Revelation 18"
+      }
+    ],
+    "final_genesis_g1_inputs_preserved": true,
+    "genesis_1_to_5": [
+      {
+        "after_g1r": {
+          "classification": "GOOD",
+          "evidence_count": 58,
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+          "synthesis_units": 12
+        },
+        "after_original_g1": {
+          "classification": "GOOD",
+          "evidence_count": 58,
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+          "synthesis_units": 12
+        },
+        "before_g0": {
+          "classification": "GOOD",
+          "evidence_count": 58,
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+          "synthesis_units": 12
+        },
+        "commentary_impact_after_g1r": "NEITHER",
+        "g1_evidence_ids_prepared_and_preserved": [],
+        "reference": "Genesis 1"
+      },
+      {
+        "after_g1r": {
+          "classification": "GOOD",
+          "evidence_count": 61,
+          "evidence_hash": "ed5995b4d842682dc80149e73a94acb62d95f909a3450f6937da6b49fa60c9be",
+          "synthesis_hash": "9e7ccb10d8828f1bd717a1ca9535bd4892defb82351bdd4c98a0b6b56f792a80",
+          "synthesis_units": 22
+        },
+        "after_original_g1": {
+          "classification": "GOOD",
+          "evidence_count": 61,
+          "evidence_hash": "ed5995b4d842682dc80149e73a94acb62d95f909a3450f6937da6b49fa60c9be",
+          "synthesis_hash": "9e7ccb10d8828f1bd717a1ca9535bd4892defb82351bdd4c98a0b6b56f792a80",
+          "synthesis_units": 22
+        },
+        "before_g0": {
+          "classification": "GAP",
+          "evidence_count": 41,
+          "evidence_hash": "170d026c7721c7fab2b3069177023f1b63002d448055e11aa1d09d0009c8a633",
+          "synthesis_hash": "8115f4c1a55566522280d154d2f55773c87d85045ce2b713906978f24f9d9d17",
+          "synthesis_units": 9
+        },
+        "commentary_impact_after_g1r": "BOTH",
+        "g1_evidence_ids_prepared_and_preserved": [
+          "g2-bone-of-bones-and-one-flesh",
+          "g2-dust-adamah-breath",
+          "g2-ezer-kenegdo-counterpart",
+          "g2-garden-planting-presence",
+          "g2-naked-and-unashamed",
+          "g2-rivers-and-eden-geographic-limits",
+          "g2-toledot-and-genesis1-relationship",
+          "g2-two-trees-and-knowing-good-evil",
+          "g2-work-and-keep-vocation",
+          "g3-ground-adam-adamah-return"
+        ],
+        "reference": "Genesis 2"
+      },
+      {
+        "after_g1r": {
+          "classification": "GOOD",
+          "evidence_count": 39,
+          "evidence_hash": "870102c3c989fca11cdca2f909746de3e8ab0b3c7c690cd1408d1e44ac66c26b",
+          "synthesis_hash": "0132c6233503bb91e33efa3740c68a919931bc6a56e40a8b96a7452012e287ef",
+          "synthesis_units": 18
+        },
+        "after_original_g1": {
+          "classification": "GOOD",
+          "evidence_count": 39,
+          "evidence_hash": "870102c3c989fca11cdca2f909746de3e8ab0b3c7c690cd1408d1e44ac66c26b",
+          "synthesis_hash": "0132c6233503bb91e33efa3740c68a919931bc6a56e40a8b96a7452012e287ef",
+          "synthesis_units": 18
+        },
+        "before_g0": {
+          "classification": "GAP",
+          "evidence_count": 13,
+          "evidence_hash": "cadc40d9d39d07366c8f83768d836a59d21fa0c2bf240c160f440b0d3bc31496",
+          "synthesis_hash": "db38d68d50b9f5663b23a76747aa5c7d6ded4efebec1ea9cddbbb4710621d45e",
+          "synthesis_units": 5
+        },
+        "commentary_impact_after_g1r": "BOTH",
+        "g1_evidence_ids_prepared_and_preserved": [
+          "g2-garden-planting-presence",
+          "g3-cherubim-biblical-sacred-space-context",
+          "g3-deception-and-autonomy-sequence",
+          "g3-distinct-oracles-and-ground",
+          "g3-divine-interrogation-and-blame",
+          "g3-eastward-expulsion-and-flaming-weapon",
+          "g3-ground-adam-adamah-return",
+          "g3-seed-conflict-immediate-wording",
+          "g3-seed-later-jewish-christian-reception",
+          "g3-serpent-genesis-characterization",
+          "g3-serpent-later-canonical-reception",
+          "g3-shame-sewing-and-clothing",
+          "g3-tree-knowing-and-desire"
+        ],
+        "reference": "Genesis 3"
+      },
+      {
+        "after_g1r": {
+          "classification": "GOOD",
+          "evidence_count": 39,
+          "evidence_hash": "7e0d7e84879a6b149d05187211b9365b54a05e9e071078ea65b90695b1fd0c24",
+          "synthesis_hash": "417b91d1b4e09db99370e10164eddd2c9ad998b053bc0d6aeca03944488c6dc8",
+          "synthesis_units": 17
+        },
+        "after_original_g1": {
+          "classification": "GOOD",
+          "evidence_count": 39,
+          "evidence_hash": "7e0d7e84879a6b149d05187211b9365b54a05e9e071078ea65b90695b1fd0c24",
+          "synthesis_hash": "417b91d1b4e09db99370e10164eddd2c9ad998b053bc0d6aeca03944488c6dc8",
+          "synthesis_units": 17
+        },
+        "before_g0": {
+          "classification": "GAP",
+          "evidence_count": 19,
+          "evidence_hash": "1cf828d1bb83b3545d547d771e458c0dbee30d5f2814ab5f00284f49938ee5d5",
+          "synthesis_hash": "8f599ef4bbf98aef9c992c6b216c4b95f284c4afaca93b4bdec5255104e8e765",
+          "synthesis_units": 5
+        },
+        "commentary_impact_after_g1r": "BOTH",
+        "g1_evidence_ids_prepared_and_preserved": [
+          "g4-cain-genealogy-and-city",
+          "g4-ground-curse-wandering-fear",
+          "g4-jabal-jubal-tubal-cain-traditions",
+          "g4-lamech-polygyny-and-violence-poem",
+          "g4-mark-sign-unspecified-protection",
+          "g4-murder-blood-cries-from-ground",
+          "g4-offerings-and-divine-regard",
+          "g4-seth-and-calling-on-yhwh",
+          "g4-sevenfold-and-lamech-escalation",
+          "g4-sin-crouching-desire-mastery"
+        ],
+        "reference": "Genesis 4"
+      },
+      {
+        "after_g1r": {
+          "classification": "GOOD",
+          "evidence_count": 21,
+          "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+          "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+          "synthesis_units": 7
+        },
+        "after_original_g1": {
+          "classification": "GOOD",
+          "evidence_count": 21,
+          "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+          "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+          "synthesis_units": 7
+        },
+        "before_g0": {
+          "classification": "GOOD",
+          "evidence_count": 19,
+          "evidence_hash": "ff7e4fef33456a8e9a3058f0141aa2635d871de177ed96eca2918a2638e9805a",
+          "synthesis_hash": "114dc3c03197c198a3d255af75d80a71909a14a4ab268e4be151b5559097760e",
+          "synthesis_units": 9
+        },
+        "commentary_impact_after_g1r": "BOTH",
+        "g1_evidence_ids_prepared_and_preserved": [
+          "g5-masoretic-septuagint-samaritan-chronology-variants"
+        ],
+        "reference": "Genesis 5"
+      }
+    ],
+    "non_genesis_impacts": [
+      {
+        "after_g1r": {
+          "evidence_count": 41,
+          "evidence_hash": "16c5a6eea7c9e7859dd4734f53367a22eb26fdccf171d46951e2624ccd2d2da3",
+          "synthesis_hash": "bc5c446bcbdcb7188ff221d3895470825ddee6fd197c78f23b24646c5ec54f13",
+          "synthesis_units": 12
+        },
+        "after_g1r_matches_g0": true,
+        "after_original_g1": {
+          "evidence_count": 43,
+          "evidence_hash": "cec8c2f6c77af5f74fdee954152a116bfa73e1324f8a660a8485314d9c06d2d4",
+          "synthesis_hash": "c67512dad5f92d966d64643271fabd63d2bb17d4eaaf3aae5fd899b6c689154b",
+          "synthesis_units": 14
+        },
+        "before_g0": {
+          "evidence_count": 41,
+          "evidence_hash": "16c5a6eea7c9e7859dd4734f53367a22eb26fdccf171d46951e2624ccd2d2da3",
+          "synthesis_hash": "bc5c446bcbdcb7188ff221d3895470825ddee6fd197c78f23b24646c5ec54f13",
+          "synthesis_units": 12
+        },
+        "commentary_impact_after_g1r": "NEITHER",
+        "input_identical_through_g1r": null,
+        "reference": "Exodus 25"
+      },
+      {
+        "after_g1r": {
+          "evidence_count": 5,
+          "evidence_hash": "0a84785212b7dbcd93a75fb1dbea634d6f10daf7b8620379e5e231b248d8dc97",
+          "synthesis_hash": "110df207f5aff55061be107012da4981a95d5fb54f82fac2288a9d7e868eae3f",
+          "synthesis_units": 1
+        },
+        "after_g1r_matches_g0": true,
+        "after_original_g1": {
+          "evidence_count": 7,
+          "evidence_hash": "8d3584c296e8f1820ea350ae870e89e077a5793ee91c0d2b846810c49e16ff48",
+          "synthesis_hash": "990dacb348a1dee492a152203cc14f3f514b7757529331ce55c66cd96e83c3a9",
+          "synthesis_units": 3
+        },
+        "before_g0": {
+          "evidence_count": 5,
+          "evidence_hash": "0a84785212b7dbcd93a75fb1dbea634d6f10daf7b8620379e5e231b248d8dc97",
+          "synthesis_hash": "110df207f5aff55061be107012da4981a95d5fb54f82fac2288a9d7e868eae3f",
+          "synthesis_units": 1
+        },
+        "commentary_impact_after_g1r": "NEITHER",
+        "input_identical_through_g1r": null,
+        "reference": "1 Kings 6"
+      },
+      {
+        "after_g1r": {
+          "evidence_count": 5,
+          "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+          "synthesis_hash": "518f95978e206a7669187f9e96955c5191a4a9335d7ebe8889ef32b11ba00461",
+          "synthesis_units": 5
+        },
+        "after_g1r_matches_g0": true,
+        "after_original_g1": {
+          "evidence_count": 9,
+          "evidence_hash": "f5feb0b39713b389508566cda6fdd9a104c605fee840b3ef6fec5963912f892a",
+          "synthesis_hash": "c2e6cf4056e88614e4ef75cca2f8397a2ea2266df89dccc090305ffe86599fdc",
+          "synthesis_units": 7
+        },
+        "before_g0": {
+          "evidence_count": 5,
+          "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+          "synthesis_hash": "518f95978e206a7669187f9e96955c5191a4a9335d7ebe8889ef32b11ba00461",
+          "synthesis_units": 5
+        },
+        "commentary_impact_after_g1r": "NEITHER",
+        "input_identical_through_g1r": null,
+        "reference": "Revelation 12"
+      }
+    ]
+  },
+  "ckl_identity": {
+    "after_g1r": {
+      "byte_signature": "b2baa7289efa2909d4d7d75d2e73106faf45a5274e5b47a3bfba25106ab0e5e0",
+      "genesis_object_sha256": "21545afe0621738580a97b5ddd0bfa2d4ccbb594896473f484423f5d4fdf1e59",
+      "inventory_fingerprint": "10b7c993a511bb986f5d8e33ad9f23a3df6e093fe4f3dabee1837c7ccd11c668",
+      "manifest_sha256": "1a19faf619c610ff87647490dbb7b6853783611703241f2df450f9b9bc210f75",
+      "object_count": 679,
+      "object_file_sha256_root": "b4a1bae12ae938b8cad693d07fb893377bdb674101f3fb362a1599dd30dae672"
+    },
+    "before_g1r": {
+      "byte_signature": "52037ce74d9007393caf6c49256c782dc998fea9df81840c0b3ad69c70b3f8f7",
+      "genesis_object_sha256": "24c9bb0d087e832ab474feaaec94d03791aea3cc81d11bdf1b4473f55e58735a",
+      "inventory_fingerprint": "bfac3c5edd78f173ab09408360cb20b06d3bab7f10ac9ec4e53de80d273b7a71",
+      "manifest_sha256": "1a19faf619c610ff87647490dbb7b6853783611703241f2df450f9b9bc210f75",
+      "object_count": 679,
+      "object_file_sha256_root": "5e1900c861c458594471cd7eace8166cf2d5f3ef983a61abd9f52c13b148e91d"
+    },
+    "object_count_unchanged": true
+  },
+  "commentary_v1_2_frozen_identity": {
+    "after": {
+      "all_indexed_files_valid": true,
+      "chapter_tree_identity": "e76ece622e01538d2e15fe99eaf88019e858c6eb31a7027ed64f9e6d63a88f27",
+      "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+      "corpus_checksum_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+      "descriptor_identity": "e8af58131e066def98a2",
+      "indexed_file_count": 973,
+      "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+      "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+      "release": "commentary-v1.2"
+    },
+    "all_indexed_files_valid": true,
+    "before": {
+      "all_indexed_files_valid": true,
+      "chapter_tree_identity": "e76ece622e01538d2e15fe99eaf88019e858c6eb31a7027ed64f9e6d63a88f27",
+      "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+      "checksum_index_version": "commentary-v1.2-runtime-release-checksums-v2",
+      "corpus_checksum_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+      "descriptor_identity": "e8af58131e066def98a2",
+      "genesis_publication_rows": 50,
+      "indexed_file_count": 973,
+      "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+      "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+      "reconciliation_version": "commentary-v1.2-corpus-reconciliation-v1",
+      "release": "commentary-v1.2"
+    },
+    "unchanged": true
+  },
+  "deployment_performed": false,
+  "g0_baseline_commit": "6f153db6dcae6a804eb4b2f168a2bcfd1c4c7dd6",
+  "g1_before_g1r_head": "058277c3c3446d2f7588fe53c342186af60557d8",
+  "g1_evidence_reference_audit": {
+    "classification_counts": {
+      "COMPARATIVE_SUPPORT": 1,
+      "DIRECT_APPLICABILITY": 29,
+      "LATER_CANONICAL_RECEPTION": 2,
+      "SOURCE_ONLY": 0,
+      "UNRESOLVED": 0
+    },
+    "item_count": 32,
+    "items": [
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-toledot-and-genesis1-relationship",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:4",
+            "relationship": "direct",
+            "relevance_rationale": "The *toledot* formula and transition are stated at this verse.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 2:5-9",
+            "relationship": "direct",
+            "relevance_rationale": "The following narrative focuses on the ground, human, and garden.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-dust-adamah-breath",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:7",
+            "relationship": "direct",
+            "relevance_rationale": "The formation, dust/ground wording, and breath are the direct textual observation.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-garden-planting-presence",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:8-10",
+            "relationship": "direct",
+            "relevance_rationale": "Garden planting, placement, and trees are described here.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 3:8",
+            "relationship": "contextual",
+            "relevance_rationale": "The next chapter depicts YHWH God in the garden.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-rivers-and-eden-geographic-limits",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:10-14",
+            "relationship": "direct",
+            "relevance_rationale": "The rivers and regions are named in this passage.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-work-and-keep-vocation",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:15",
+            "relationship": "direct",
+            "relevance_rationale": "The work/serve and keep/guard wording is explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-two-trees-and-knowing-good-evil",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:9",
+            "relationship": "direct",
+            "relevance_rationale": "The two trees and their names are given.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 2:16-17",
+            "relationship": "direct",
+            "relevance_rationale": "The prohibition concerns eating from the tree of knowing good and evil.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-ezer-kenegdo-counterpart",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:18-20",
+            "relationship": "direct",
+            "relevance_rationale": "The phrase and its narrative setting are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 2:21-23",
+            "relationship": "direct",
+            "relevance_rationale": "The woman is recognized as corresponding kin.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-bone-of-bones-and-one-flesh",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:23-24",
+            "relationship": "direct",
+            "relevance_rationale": "The kinship expression and one-flesh statement appear here.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g2-naked-and-unashamed",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 2:25",
+            "relationship": "direct",
+            "relevance_rationale": "The closing nakedness/no-shame statement is explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 2",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-serpent-genesis-characterization",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:1-5",
+            "relationship": "direct",
+            "relevance_rationale": "The serpent’s characterization and speech are narrated.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 3:14-15",
+            "relationship": "direct",
+            "relevance_rationale": "The serpent receives a distinct judgment speech.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "LATER_CANONICAL_RECEPTION",
+        "evidence_id": "g3-serpent-later-canonical-reception",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:1",
+            "relationship": "direct",
+            "relevance_rationale": "The Genesis wording names the serpent but not Satan.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": [
+          {
+            "reference": "Revelation 12:9",
+            "relationship": "comparative",
+            "relevance_rationale": "Revelation supplies the explicit later identification.",
+            "temporal_relation": "later-comparative",
+            "weight": 8
+          }
+        ]
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-tree-knowing-and-desire",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:4-7",
+            "relationship": "direct",
+            "relevance_rationale": "The claim, assessment, and eating sequence are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 3:22",
+            "relationship": "direct",
+            "relevance_rationale": "The narrator later connects knowing good and evil with the possibility of living forever.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-deception-and-autonomy-sequence",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:1-6",
+            "relationship": "direct",
+            "relevance_rationale": "The dialogue and actions are narrated in order.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-shame-sewing-and-clothing",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:7-10",
+            "relationship": "direct",
+            "relevance_rationale": "Recognition, sewing coverings, and hiding are narrated.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 3:21",
+            "relationship": "direct",
+            "relevance_rationale": "YHWH God makes garments for the humans.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-divine-interrogation-and-blame",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:9-13",
+            "relationship": "direct",
+            "relevance_rationale": "The questions, answers, and sequence are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-distinct-oracles-and-ground",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:14-19",
+            "relationship": "direct",
+            "relevance_rationale": "The distinct addressees and curse wording occur here.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-ground-adam-adamah-return",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:17-19",
+            "relationship": "direct",
+            "relevance_rationale": "The ground and return wording are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 2:7",
+            "relationship": "contextual",
+            "relevance_rationale": "The formation-from-ground wording supplies the local narrative connection.",
+            "temporal_relation": "earlier-comparative",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-seed-conflict-immediate-wording",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:15",
+            "relationship": "direct",
+            "relevance_rationale": "The enmity, offspring, and head/heel language are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "LATER_CANONICAL_RECEPTION",
+        "evidence_id": "g3-seed-later-jewish-christian-reception",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:15",
+            "relationship": "direct",
+            "relevance_rationale": "The immediate wording remains the anchor.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": [
+          {
+            "reference": "Revelation 12:9",
+            "relationship": "comparative",
+            "relevance_rationale": "Revelation supplies a later canonical serpent-conflict text.",
+            "temporal_relation": "later-comparative",
+            "weight": 8
+          },
+          {
+            "reference": "Revelation 12:17",
+            "relationship": "comparative",
+            "relevance_rationale": "Revelation develops the later serpent-conflict image.",
+            "temporal_relation": "later-comparative",
+            "weight": 8
+          }
+        ]
+      },
+      {
+        "classification": "COMPARATIVE_SUPPORT",
+        "evidence_id": "g3-cherubim-biblical-sacred-space-context",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:24",
+            "relationship": "direct",
+            "relevance_rationale": "The guarding role is explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": [
+          {
+            "reference": "Exodus 25:18-22",
+            "relationship": "comparative",
+            "relevance_rationale": "Later sanctuary imagery places cherubim over the ark.",
+            "temporal_relation": "later-comparative",
+            "weight": 8
+          },
+          {
+            "reference": "1 Kings 6:23-35",
+            "relationship": "comparative",
+            "relevance_rationale": "Later temple imagery includes large cherubim.",
+            "temporal_relation": "later-comparative",
+            "weight": 8
+          }
+        ]
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g3-eastward-expulsion-and-flaming-weapon",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 3:23-24",
+            "relationship": "direct",
+            "relevance_rationale": "Expulsion and the guard at the garden’s east are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 3",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-offerings-and-divine-regard",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:2-5",
+            "relationship": "direct",
+            "relevance_rationale": "The occupations, offerings, and differing regard are narrated.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-sin-crouching-desire-mastery",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:6-7",
+            "relationship": "direct",
+            "relevance_rationale": "The warning follows Cain’s anger and precedes the murder.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-murder-blood-cries-from-ground",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:8-11",
+            "relationship": "direct",
+            "relevance_rationale": "The murder, blood, and ground language are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-ground-curse-wandering-fear",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:11-15",
+            "relationship": "direct",
+            "relevance_rationale": "The sentence and Cain’s stated fear are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-mark-sign-unspecified-protection",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:15",
+            "relationship": "direct",
+            "relevance_rationale": "The sign and its protective function are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-sevenfold-and-lamech-escalation",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:15",
+            "relationship": "direct",
+            "relevance_rationale": "Cain receives the sevenfold protection declaration.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 4:23-24",
+            "relationship": "direct",
+            "relevance_rationale": "Lamech recites the later vengeance boast.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-cain-genealogy-and-city",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:17-18",
+            "relationship": "direct",
+            "relevance_rationale": "The city and early genealogy are listed here.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-jabal-jubal-tubal-cain-traditions",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:19-22",
+            "relationship": "direct",
+            "relevance_rationale": "The family lines and craft descriptions are given here.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-lamech-polygyny-and-violence-poem",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:19",
+            "relationship": "direct",
+            "relevance_rationale": "The two wives are named.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          },
+          {
+            "reference": "Genesis 4:23-24",
+            "relationship": "direct",
+            "relevance_rationale": "The violence poem and vengeance figure are stated.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g4-seth-and-calling-on-yhwh",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 4:25-26",
+            "relationship": "direct",
+            "relevance_rationale": "Seth’s birth and the closing worship notice are explicit.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 4",
+        "non_genesis_references_before_g1r": []
+      },
+      {
+        "classification": "DIRECT_APPLICABILITY",
+        "evidence_id": "g5-masoretic-septuagint-samaritan-chronology-variants",
+        "final_applicability_references": [
+          {
+            "reference": "Genesis 5:3-31",
+            "relationship": "direct",
+            "relevance_rationale": "The genealogical ages and lifespan notices under comparison occur across this passage.",
+            "temporal_relation": "contemporary",
+            "weight": 8
+          }
+        ],
+        "intended_passage": "Genesis 5",
+        "non_genesis_references_before_g1r": []
+      }
+    ]
+  },
+  "merge_performed": false,
+  "offending_evidence_items": [
+    {
+      "comparative_references_removed_from_applicability": [
+        {
+          "reference": "Genesis 3:1",
+          "relationship": "direct",
+          "relevance_rationale": "The Genesis wording names the serpent but not Satan.",
+          "temporal_relation": "contemporary",
+          "weight": 8
+        },
+        {
+          "reference": "Revelation 12:9",
+          "relationship": "comparative",
+          "relevance_rationale": "Revelation supplies the explicit later identification.",
+          "temporal_relation": "later-comparative",
+          "weight": 8
+        }
+      ],
+      "evidence_id": "g3-serpent-later-canonical-reception",
+      "final_applicability_references": [
+        {
+          "reference": "Genesis 3:1",
+          "relationship": "direct",
+          "relevance_rationale": "The Genesis wording names the serpent but not Satan.",
+          "temporal_relation": "contemporary",
+          "weight": 8
+        }
+      ],
+      "final_notes_preserving_comparison": "Later canonical reception context (not a Genesis applicability anchor): Revelation 12:9 identifies the ancient serpent with the devil and Satan. This remains distinct from Genesis 3 wording. Comparative Scripture source retained: g1-revelation-text; scholarly reception source retained: g1-zhakevich-genesis-315.",
+      "intended_passage": "Genesis 3",
+      "source_ids_after": [
+        "genesis-1-50",
+        "g1-revelation-text",
+        "g1-zhakevich-genesis-315"
+      ],
+      "source_ids_before": [
+        "genesis-1-50",
+        "g1-revelation-text",
+        "g1-zhakevich-genesis-315"
+      ],
+      "source_ids_unchanged": true
+    },
+    {
+      "comparative_references_removed_from_applicability": [
+        {
+          "reference": "Genesis 3:15",
+          "relationship": "direct",
+          "relevance_rationale": "The immediate wording remains the anchor.",
+          "temporal_relation": "contemporary",
+          "weight": 8
+        },
+        {
+          "reference": "Revelation 12:9",
+          "relationship": "comparative",
+          "relevance_rationale": "Revelation supplies a later canonical serpent-conflict text.",
+          "temporal_relation": "later-comparative",
+          "weight": 8
+        },
+        {
+          "reference": "Revelation 12:17",
+          "relationship": "comparative",
+          "relevance_rationale": "Revelation develops the later serpent-conflict image.",
+          "temporal_relation": "later-comparative",
+          "weight": 8
+        }
+      ],
+      "evidence_id": "g3-seed-later-jewish-christian-reception",
+      "final_applicability_references": [
+        {
+          "reference": "Genesis 3:15",
+          "relationship": "direct",
+          "relevance_rationale": "The immediate wording remains the anchor.",
+          "temporal_relation": "contemporary",
+          "weight": 8
+        }
+      ],
+      "final_notes_preserving_comparison": "Later Jewish and Christian reception context (not Genesis applicability anchors): Revelation 12:9 and 12:17 develop later serpent-conflict imagery. These reception readings remain distinct from Genesis 3:15 immediate offspring-conflict wording. Comparative Scripture source retained: g1-revelation-text; scholarly reception source retained: g1-zhakevich-genesis-315.",
+      "intended_passage": "Genesis 3",
+      "source_ids_after": [
+        "genesis-1-50",
+        "g1-revelation-text",
+        "g1-zhakevich-genesis-315"
+      ],
+      "source_ids_before": [
+        "genesis-1-50",
+        "g1-revelation-text",
+        "g1-zhakevich-genesis-315"
+      ],
+      "source_ids_unchanged": true
+    },
+    {
+      "comparative_references_removed_from_applicability": [
+        {
+          "reference": "Genesis 3:24",
+          "relationship": "direct",
+          "relevance_rationale": "The guarding role is explicit.",
+          "temporal_relation": "contemporary",
+          "weight": 8
+        },
+        {
+          "reference": "Exodus 25:18-22",
+          "relationship": "comparative",
+          "relevance_rationale": "Later sanctuary imagery places cherubim over the ark.",
+          "temporal_relation": "later-comparative",
+          "weight": 8
+        },
+        {
+          "reference": "1 Kings 6:23-35",
+          "relationship": "comparative",
+          "relevance_rationale": "Later temple imagery includes large cherubim.",
+          "temporal_relation": "later-comparative",
+          "weight": 8
+        }
+      ],
+      "evidence_id": "g3-cherubim-biblical-sacred-space-context",
+      "final_applicability_references": [
+        {
+          "reference": "Genesis 3:24",
+          "relationship": "direct",
+          "relevance_rationale": "The guarding role is explicit.",
+          "temporal_relation": "contemporary",
+          "weight": 8
+        }
+      ],
+      "final_notes_preserving_comparison": "Comparative biblical sanctuary context (not Genesis applicability anchors): Exodus 25:18–22 places cherubim over the ark; 1 Kings 6:23–35 describes cherubim in the temple. These later texts contextualize Genesis 3:24 but do not establish a single physical appearance for Eden’s cherubim. Comparative Scripture sources retained: g1-exodus-text and g1-kings-text; scholarly context source retained: g1-lexham-cherubim.",
+      "intended_passage": "Genesis 3",
+      "source_ids_after": [
+        "genesis-1-50",
+        "g1-exodus-text",
+        "g1-kings-text",
+        "g1-lexham-cherubim"
+      ],
+      "source_ids_before": [
+        "genesis-1-50",
+        "g1-exodus-text",
+        "g1-kings-text",
+        "g1-lexham-cherubim"
+      ],
+      "source_ids_unchanged": true
+    }
+  ],
+  "production_apply": {
+    "accepted_repair_candidates": 3,
+    "exact_production_paths": [
+      "framework/canonical_library/objects/books/genesis.json"
+    ],
+    "existing_ckl_objects_enriched": [
+      "genesis"
+    ],
+    "new_ckl_objects": [],
+    "rejected_repair_candidates": 0,
+    "relationships_added": [],
+    "source_records_or_source_locks_changed": false
+  },
+  "root_cause": {
+    "classification": "SYSTEMIC_APPLICABILITY_SEMANTICS_ISSUE",
+    "code_path": [
+      {
+        "behavior": "indexes all evidence scripture_references",
+        "path": "framework/canonical_library/database_builder.py"
+      },
+      {
+        "behavior": "chapter lookup includes every evidence reference in its union",
+        "path": "framework/canonical_library/sqlite_repository.py"
+      },
+      {
+        "behavior": "scripture_anchors extracts reference text and ignores relationship metadata",
+        "path": "bhf_agent/presentation/eligibility.py"
+      },
+      {
+        "behavior": "evidence is admitted when any extracted anchor overlaps the requested chapter",
+        "path": "bhf_agent/presentation/evidence.py"
+      }
+    ],
+    "details": "Every evidence scripture_references entry is indexed and matched by reference text. relationship and temporal_relation are discarded by scripture_anchors, so comparative and later-comparative references became applicability anchors despite passage_relevance naming Genesis 3 as the target.",
+    "trigger": "G1_DATA_MODEL_ISSUE"
+  },
+  "safe_to_merge": true,
+  "scope": [
+    "Genesis 1-5 applicability repair",
+    "Exodus 25, 1 Kings 6, Revelation 12 regression reconciliation"
+  ],
+  "source_locks": {
+    "claim_count": 41,
+    "locked_source_record_count": 15,
+    "source_lock_artifact_sha256_before_and_after": "25c7c271f6a416285b3050aaac567386b431aa4f6e1b21114b12d95d2f2dbb4a",
+    "source_lock_artifact_unchanged": true,
+    "status_counts": {
+      "CONFLICTED": 0,
+      "LOCKED": 32,
+      "REJECTED": 6,
+      "UNRESOLVED": 3
+    }
+  },
+  "status": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_MERGE_GATE_VERIFIED",
+  "transaction": "GENESIS_G1R_COMPARATIVE_REFERENCE_APPLICABILITY_REPAIR",
+  "validation_summary": {
+    "candidate_dry_run": "PASS: 3 accepted, 0 rejected; no production write in dry run",
+    "chapter_preparation_and_synthesis": "PASS: Genesis 1-5 plus Exodus 25, 1 Kings 6, Revelation 12, Isaiah 36, Acts 16, Revelation 18; synthesis validated",
+    "exact_write_scope_review": "PASS: one existing object; only three items changed notes and scripture_references",
+    "frozen_commentary_v1_2": "PASS: all 973 indexed files valid; release identities unchanged",
+    "full_targeted_test_batch": "RUNNING",
+    "g1r_regression_test": "PASS: 2 tests in tests/test_genesis_g1r_comparative_applicability.py",
+    "git_diff_check": "PASS",
+    "runtime_database_rebuild": "PASS",
+    "runtime_database_rebuild_and_verification": "PASS: inventory fingerprint 10b7c993a511bb986f5d8e33ad9f23a3df6e093fe4f3dabee1837c7ccd11c668",
+    "runtime_database_verification": "PASS",
+    "scripture_references_and_index": "PASS: test_scripture_reference_integrity.py, test_loader.py, test_sqlite_storage.py",
+    "source_and_provenance": "PASS: LOCKED 32, UNRESOLVED 3, REJECTED 6, CONFLICTED 0; lock artifact unchanged",
+    "targeted_test_batch": "PASS: 213 passed, 35 subtests passed",
+    "test_environment_limitation": "tests/canonical_library/test_evidence_graph_expansion.py could not be collected because FastAPI is not installed; typed target tests and whole-library relationship validation passed",
+    "typed_targets_and_relationships": "PASS: whole CKL validation and test_typed_evidence_targets.py",
+    "whole_ckl_schema": "PASS: 679 objects, zero errors, 14 pre-existing warnings"
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "base_master": "3cf8990a3e0384fddc11b273dde7f4c82645f893",
+  "branch": "feat/genesis-ckl-expansion",
+  "candidate_validation": {
+    "accepted_count": 32,
+    "candidate_count": 32,
+    "candidate_ids": [
+      "g2-toledot-and-genesis1-relationship",
+      "g2-dust-adamah-breath",
+      "g2-garden-planting-presence",
+      "g2-rivers-and-eden-geographic-limits",
+      "g2-work-and-keep-vocation",
+      "g2-two-trees-and-knowing-good-evil",
+      "g2-ezer-kenegdo-counterpart",
+      "g2-bone-of-bones-and-one-flesh",
+      "g2-naked-and-unashamed",
+      "g3-serpent-genesis-characterization",
+      "g3-serpent-later-canonical-reception",
+      "g3-tree-knowing-and-desire",
+      "g3-deception-and-autonomy-sequence",
+      "g3-shame-sewing-and-clothing",
+      "g3-divine-interrogation-and-blame",
+      "g3-distinct-oracles-and-ground",
+      "g3-ground-adam-adamah-return",
+      "g3-seed-conflict-immediate-wording",
+      "g3-seed-later-jewish-christian-reception",
+      "g3-cherubim-biblical-sacred-space-context",
+      "g3-eastward-expulsion-and-flaming-weapon",
+      "g4-offerings-and-divine-regard",
+      "g4-sin-crouching-desire-mastery",
+      "g4-murder-blood-cries-from-ground",
+      "g4-ground-curse-wandering-fear",
+      "g4-mark-sign-unspecified-protection",
+      "g4-sevenfold-and-lamech-escalation",
+      "g4-cain-genealogy-and-city",
+      "g4-jabal-jubal-tubal-cain-traditions",
+      "g4-lamech-polygyny-and-violence-poem",
+      "g4-seth-and-calling-on-yhwh",
+      "g5-masoretic-septuagint-samaritan-chronology-variants"
+    ],
+    "rejected_count": 0,
+    "result": "PASS",
+    "validator": "framework.canonical_library.expansion.apply_candidate_queue(write=False)",
+    "whole_library_schema_typed_target_reference_and_relationship_validation": "PASS",
+    "wrote": false
+  },
+  "chapters_before": [
+    {
+      "classification": "GOOD",
+      "commentary_source_lineage": {
+        "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+        "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+      },
+      "evidence_count": 58,
+      "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+      "g0_gap_taxonomy": [
+        "COMMENTARY_ONLY_ISSUE",
+        "EXISTING_OBJECT_ENRICHMENT_REQUIRED"
+      ],
+      "reference": "Genesis 1",
+      "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+      "synthesis_unit_count": 12
+    },
+    {
+      "classification": "GAP",
+      "commentary_source_lineage": {
+        "evidence_hash": "170d026c7721c7fab2b3069177023f1b63002d448055e11aa1d09d0009c8a633",
+        "synthesis_hash": "8115f4c1a55566522280d154d2f55773c87d85045ce2b713906978f24f9d9d17"
+      },
+      "evidence_count": 41,
+      "evidence_hash": "170d026c7721c7fab2b3069177023f1b63002d448055e11aa1d09d0009c8a633",
+      "g0_gap_taxonomy": [
+        "COMMENTARY_ONLY_ISSUE",
+        "NEW_CKL_EVIDENCE_REQUIRED",
+        "PASSAGE_APPLICABILITY_REQUIRED"
+      ],
+      "reference": "Genesis 2",
+      "synthesis_hash": "8115f4c1a55566522280d154d2f55773c87d85045ce2b713906978f24f9d9d17",
+      "synthesis_unit_count": 9
+    },
+    {
+      "classification": "GAP",
+      "commentary_source_lineage": {
+        "evidence_hash": "cadc40d9d39d07366c8f83768d836a59d21fa0c2bf240c160f440b0d3bc31496",
+        "synthesis_hash": "db38d68d50b9f5663b23a76747aa5c7d6ded4efebec1ea9cddbbb4710621d45e"
+      },
+      "evidence_count": 13,
+      "evidence_hash": "cadc40d9d39d07366c8f83768d836a59d21fa0c2bf240c160f440b0d3bc31496",
+      "g0_gap_taxonomy": [
+        "COMMENTARY_ONLY_ISSUE",
+        "NEW_CKL_EVIDENCE_REQUIRED"
+      ],
+      "reference": "Genesis 3",
+      "synthesis_hash": "db38d68d50b9f5663b23a76747aa5c7d6ded4efebec1ea9cddbbb4710621d45e",
+      "synthesis_unit_count": 5
+    },
+    {
+      "classification": "GAP",
+      "commentary_source_lineage": {
+        "evidence_hash": "1cf828d1bb83b3545d547d771e458c0dbee30d5f2814ab5f00284f49938ee5d5",
+        "synthesis_hash": "8f599ef4bbf98aef9c992c6b216c4b95f284c4afaca93b4bdec5255104e8e765"
+      },
+      "evidence_count": 19,
+      "evidence_hash": "1cf828d1bb83b3545d547d771e458c0dbee30d5f2814ab5f00284f49938ee5d5",
+      "g0_gap_taxonomy": [
+        "COMMENTARY_ONLY_ISSUE",
+        "NEW_CKL_EVIDENCE_REQUIRED",
+        "PASSAGE_APPLICABILITY_REQUIRED"
+      ],
+      "reference": "Genesis 4",
+      "synthesis_hash": "8f599ef4bbf98aef9c992c6b216c4b95f284c4afaca93b4bdec5255104e8e765",
+      "synthesis_unit_count": 5
+    },
+    {
+      "classification": "GOOD",
+      "commentary_source_lineage": {},
+      "evidence_count": 19,
+      "evidence_hash": "ff7e4fef33456a8e9a3058f0141aa2635d871de177ed96eca2918a2638e9805a",
+      "g0_gap_taxonomy": [
+        "EXISTING_OBJECT_ENRICHMENT_REQUIRED"
+      ],
+      "reference": "Genesis 5",
+      "synthesis_hash": "114dc3c03197c198a3d255af75d80a71909a14a4ab268e4be151b5559097760e",
+      "synthesis_unit_count": 9
+    }
+  ],
+  "commentary_v1_2_frozen_guardrail": "release/checksum identities recorded above and will be compared after G1",
+  "commentary_v1_2_identity_comparison": {
+    "chapter_tree_after": "e76ece622e01538d2e15fe99eaf88019e858c6eb31a7027ed64f9e6d63a88f27",
+    "chapter_tree_before": "e76ece622e01538d2e15fe99eaf88019e858c6eb31a7027ed64f9e6d63a88f27",
+    "checksum_index_sha256_after": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+    "checksum_index_sha256_before": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+    "corpus_checksum_root_after": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+    "corpus_checksum_root_before": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+    "release_descriptor_after": "e8af58131e066def98a2",
+    "release_descriptor_before": "e8af58131e066def98a2",
+    "release_manifest_identity_after": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+    "release_manifest_identity_before": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+    "release_manifest_sha256_after": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+    "release_manifest_sha256_before": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+    "unchanged": true
+  },
+  "commentary_v1_2_regeneration": false,
+  "commentary_v1_2_write": false,
+  "exact_write_scope_review": {
+    "changed_chapter_references": [
+      "Genesis 2",
+      "Genesis 3",
+      "Genesis 4",
+      "Genesis 5",
+      "Exodus 25",
+      "1 Kings 6",
+      "Revelation 12"
+    ],
+    "changed_object_ids": [
+      "genesis"
+    ],
+    "new_objects": [],
+    "paths": [
+      "framework/canonical_library/objects/books/genesis.json"
+    ],
+    "production_apply_authorized_by_transaction": "candidate-first production CKL application explicitly requested for Genesis 1–5",
+    "review_result": "PASS"
+  },
+  "external_control_inputs_before": [
+    {
+      "evidence_count": 28,
+      "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+      "reference": "Isaiah 36",
+      "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+      "synthesis_unit_count": 12
+    },
+    {
+      "evidence_count": 89,
+      "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+      "reference": "Acts 16",
+      "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+      "synthesis_unit_count": 50
+    },
+    {
+      "evidence_count": 13,
+      "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+      "reference": "Revelation 18",
+      "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+      "synthesis_unit_count": 3
+    }
+  ],
+  "final_scope": {
+    "candidate_and_audit_paths": [
+      ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-primeval-evidence-plan.json",
+      ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json",
+      ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-source-lock.json",
+      ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-validation-report.json",
+      ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-production-apply-manifest.json",
+      ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-chapter-impact.json",
+      ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-review-digest.md"
+    ],
+    "ckl_manifest_json_changed": false,
+    "commentary_v1_2_paths_changed": [],
+    "production_ckl_paths": [
+      "framework/canonical_library/objects/books/genesis.json"
+    ],
+    "runtime_only_updated_path": ".bhf/ckl.sqlite"
+  },
+  "g0_baseline_commit": "6f153db6dcae6a804eb4b2f168a2bcfd1c4c7dd6",
+  "merge_condition_note": "Ready for review and merge as CKL evidence; Genesis 2–4 Commentary v1.2 inputs are stale for a future Commentary transaction. G1 did not regenerate or modify that release.",
+  "notes": [
+    "Genesis 5 has one focused textual-variant addition to cover materially relevant MT/LXX/SP numerical differences; figures are not changed and no chronology is selected.",
+    "Genesis 1 and Genesis 5 remain preservation controls; Genesis 1 has no planned evidence addition.",
+    "The local SQLite CKL database was stale before apply and follows configured fallback_to_json; it will be rebuilt after JSON CKL application."
+  ],
+  "post_apply_frozen_identities": {
+    "ckl": {
+      "byte_signature": "52037ce74d9007393caf6c49256c782dc998fea9df81840c0b3ad69c70b3f8f7",
+      "inventory_fingerprint": "bfac3c5edd78f173ab09408360cb20b06d3bab7f10ac9ec4e53de80d273b7a71",
+      "manifest_object_count": 679,
+      "manifest_sha256": "1a19faf619c610ff87647490dbb7b6853783611703241f2df450f9b9bc210f75",
+      "object_count": 679,
+      "object_file_sha256_root": "5e1900c861c458594471cd7eace8166cf2d5f3ef983a61abd9f52c13b148e91d",
+      "runtime_database": {
+        "build_timestamp": "2026-10-08T16:17:04.932595Z",
+        "claim_count": 2329,
+        "configured_stale_policy": "fallback_to_json",
+        "database_file_size": 108888064,
+        "database_path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+        "database_schema_version": "4",
+        "evidence_count": 847,
+        "file_sha256": "3bb7df5e7ee91fa5e6f996745691f9aa4aa79cc7208b79799f204429094ef6a0",
+        "framework_version": "1.0",
+        "inventory_fingerprint": "bfac3c5edd78f173ab09408360cb20b06d3bab7f10ac9ec4e53de80d273b7a71",
+        "matches_json_inventory": true,
+        "object_count": 679,
+        "retrieval_index_version": "3",
+        "schema_version": "1.0",
+        "source_count": 5092
+      },
+      "stat_signature": "657430f3e99b0c36a014f5c35477e9f3157e8fe67f138db116ff3be96614cacb"
+    },
+    "release": {
+      "all_indexed_files_valid": true,
+      "chapter_tree_identity": "e76ece622e01538d2e15fe99eaf88019e858c6eb31a7027ed64f9e6d63a88f27",
+      "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+      "checksum_index_version": "commentary-v1.2-runtime-release-checksums-v2",
+      "corpus_checksum_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+      "descriptor_identity": "e8af58131e066def98a2",
+      "genesis_publication_rows": 50,
+      "indexed_file_count": 973,
+      "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+      "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+      "reconciliation_version": "commentary-v1.2-corpus-reconciliation-v1",
+      "release": "commentary-v1.2"
+    }
+  },
+  "post_apply_scope_review": {
+    "finding": "The candidate applier normalized five pre-existing Genesis 13/34 evidence records with default metadata during serialization.",
+    "remediation": "Restored all pre-existing claims and evidence items from the G0 baseline values; all G1 candidate items and source records remain.",
+    "result": "PASS_AFTER_RESTORING_OUT_OF_SCOPE_NORMALIZATION",
+    "unrelated_existing_records_modified": 0
+  },
+  "post_apply_validations": {
+    "chapter_preparation_synthesis_and_selective_impact": "PASS; see g1-chapter-impact.json",
+    "ckl_schema": "PASS; 679/679 valid; 0 errors; 14 existing warnings",
+    "commentary_v1_2_frozen_validation": "PASS; immutable release identities unchanged",
+    "external_controls": "PASS; Isaiah 36, Acts 16, Revelation 18 input-identical",
+    "focused_tests": "PASS; 97 passed in 7.83s: tests/canonical_library/test_expansion.py, tests/canonical_library/test_source_locks.py, tests/test_genesis_g0_evidence_census.py",
+    "git_diff_check": "PASS",
+    "inventory_rebuild_and_verify": "PASS; SQLite fingerprint matches JSON inventory",
+    "source_and_provenance": "PASS; 32 LOCKED, 3 UNRESOLVED, 6 REJECTED",
+    "typed_targets_relationships_scripture_references": "PASS; whole-library validation and candidate queue validation"
+  },
+  "pre_apply_frozen_identities": {
+    "ckl": {
+      "byte_signature": "0bd8259ce0af2a8cd748d1c82cda732010954ee98173e72238950f8de2661c40",
+      "inventory_fingerprint": "78d983e0aed63f489e1126a054d087e86049b10915ffd3810ca0fd5eb617defd",
+      "manifest_object_count": 679,
+      "manifest_sha256": "1a19faf619c610ff87647490dbb7b6853783611703241f2df450f9b9bc210f75",
+      "object_count": 679,
+      "object_file_sha256_root": "1a38c9df6b9bb4ae6125d5767a5948c9f34c1325ef0e5c026412eb5092b10788",
+      "runtime_database": {
+        "build_timestamp": "2026-09-05T18:39:10.904497Z",
+        "claim_count": 2302,
+        "configured_stale_policy": "fallback_to_json",
+        "database_file_size": 107597824,
+        "database_path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+        "database_schema_version": "4",
+        "evidence_count": 773,
+        "file_sha256": "19c66f931b6afe907bbef85ac29f34a3aefd288886d516c318e7965474ca2322",
+        "framework_version": "1.0",
+        "inventory_fingerprint": "4110222ae77df2e35c91cdd59af4312ba4e3710accf349bf030aefe9d3b1e9bc",
+        "matches_json_inventory": false,
+        "object_count": 665,
+        "retrieval_index_version": "3",
+        "schema_version": "1.0",
+        "source_count": 5039
+      },
+      "stat_signature": "026affa3e3cdae8c044fe9ecba01f13ea11971dfe790c613f3e5ec5082a7864b"
+    },
+    "release": {
+      "all_indexed_files_valid": true,
+      "chapter_tree_identity": "e76ece622e01538d2e15fe99eaf88019e858c6eb31a7027ed64f9e6d63a88f27",
+      "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+      "checksum_index_version": "commentary-v1.2-runtime-release-checksums-v2",
+      "corpus_checksum_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+      "descriptor_identity": "e8af58131e066def98a2",
+      "genesis_publication_rows": 50,
+      "indexed_file_count": 973,
+      "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+      "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+      "reconciliation_version": "commentary-v1.2-corpus-reconciliation-v1",
+      "release": "commentary-v1.2"
+    }
+  },
+  "safe_to_merge_ckl_evidence": true,
+  "source_provenance_validation": {
+    "chapter_count": 5,
+    "claim_count": 41,
+    "relationship_counts": {
+      "describes": 39,
+      "identifies": 2
+    },
+    "result": "PASS",
+    "source_count": 15,
+    "status_counts": {
+      "CONFLICTED": 0,
+      "LOCKED": 32,
+      "REJECTED": 6,
+      "UNRESOLVED": 3
+    }
+  },
+  "status": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_READY_FOR_REVIEW",
+  "g1r_reconciliation": {
+    "report_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1r-comparative-applicability-report.json",
+    "historical_g1_chapter_impact_preserved": true,
+    "final_state": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_MERGE_GATE_VERIFIED"
+  },
+  "transaction": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_EXPANSION"
+}

@@ -1,0 +1,62 @@
+{
+  "artifact_version": "genesis-g1r-production-apply-manifest-v1",
+  "candidate_file": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1r-candidate-applicability-repair.json",
+  "dry_run": {
+    "accepted_candidates": 3,
+    "changed_object_ids": [
+      "genesis"
+    ],
+    "rejected_candidates": 0,
+    "write_occurred": false
+  },
+  "historical_g1_manifest_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-production-apply-manifest.json",
+  "preserved": {
+    "commentary_v1_2": true,
+    "confidence": true,
+    "dispute_status": true,
+    "relationships": true,
+    "source_ids": true,
+    "source_records": true
+  },
+  "production_apply": {
+    "changed_evidence_ids": [
+      "g3-cherubim-biblical-sacred-space-context",
+      "g3-seed-later-jewish-christian-reception",
+      "g3-serpent-later-canonical-reception"
+    ],
+    "changed_fields": {
+      "g3-cherubim-biblical-sacred-space-context": [
+        "scripture_references",
+        "notes"
+      ],
+      "g3-seed-later-jewish-christian-reception": [
+        "scripture_references",
+        "notes"
+      ],
+      "g3-serpent-later-canonical-reception": [
+        "scripture_references",
+        "notes"
+      ]
+    },
+    "changed_object_ids": [
+      "genesis"
+    ],
+    "enriched_object_ids": [
+      "genesis"
+    ],
+    "new_object_ids": [],
+    "object_count_after": 679,
+    "object_count_before": 679,
+    "paths": [
+      "framework/canonical_library/objects/books/genesis.json"
+    ]
+  },
+  "reconciled_chapter_inputs": {
+    "1 Kings 6": "G0 identity restored",
+    "Exodus 25": "G0 identity restored",
+    "Revelation 12": "G0 identity restored"
+  },
+  "reconciliation_report_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1r-comparative-applicability-report.json",
+  "status": "PRODUCTION_APPLY_COMPLETE",
+  "transaction": "GENESIS_G1R_COMPARATIVE_REFERENCE_APPLICABILITY_REPAIR"
+}

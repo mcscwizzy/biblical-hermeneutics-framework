@@ -1,0 +1,125 @@
+{
+  "applicability_and_preparation": {
+    "candidate_chapter_preparation": "PASS",
+    "chapter_preparation_and_synthesis": "PASS",
+    "chapters_checked": [
+      "Genesis 1",
+      "Genesis 2",
+      "Genesis 3",
+      "Genesis 4",
+      "Genesis 5",
+      "Exodus 25",
+      "1 Kings 6",
+      "Revelation 12",
+      "Isaiah 36",
+      "Acts 16",
+      "Revelation 18"
+    ],
+    "external_impacts_returned_to_g0": true,
+    "genesis_g1_inputs_preserved": true,
+    "synthesis_validation": "PASS"
+  },
+  "artifact_version": "genesis-g1r-validation-report-v1",
+  "candidate_and_scope": {
+    "accepted_count": 3,
+    "candidate_count": 3,
+    "changed_fields": [
+      "scripture_references",
+      "notes"
+    ],
+    "dry_run_write_occurred": false,
+    "exact_scope_review": "PASS",
+    "new_objects": [],
+    "production_objects_changed": [
+      "genesis"
+    ],
+    "rejected_count": 0
+  },
+  "ckl": {
+    "after_g1r": {
+      "byte_signature": "b2baa7289efa2909d4d7d75d2e73106faf45a5274e5b47a3bfba25106ab0e5e0",
+      "genesis_object_sha256": "21545afe0621738580a97b5ddd0bfa2d4ccbb594896473f484423f5d4fdf1e59",
+      "inventory_fingerprint": "10b7c993a511bb986f5d8e33ad9f23a3df6e093fe4f3dabee1837c7ccd11c668",
+      "manifest_sha256": "1a19faf619c610ff87647490dbb7b6853783611703241f2df450f9b9bc210f75",
+      "object_count": 679,
+      "object_file_sha256_root": "b4a1bae12ae938b8cad693d07fb893377bdb674101f3fb362a1599dd30dae672"
+    },
+    "before_g1r": {
+      "byte_signature": "52037ce74d9007393caf6c49256c782dc998fea9df81840c0b3ad69c70b3f8f7",
+      "genesis_object_sha256": "24c9bb0d087e832ab474feaaec94d03791aea3cc81d11bdf1b4473f55e58735a",
+      "inventory_fingerprint": "bfac3c5edd78f173ab09408360cb20b06d3bab7f10ac9ec4e53de80d273b7a71",
+      "manifest_sha256": "1a19faf619c610ff87647490dbb7b6853783611703241f2df450f9b9bc210f75",
+      "object_count": 679,
+      "object_file_sha256_root": "5e1900c861c458594471cd7eace8166cf2d5f3ef983a61abd9f52c13b148e91d"
+    },
+    "database_rebuild": "PASS",
+    "database_verification": "PASS",
+    "object_count": 679,
+    "pre_existing_warnings": 14,
+    "schema_errors": 0,
+    "whole_library_validation": "PASS"
+  },
+  "commentary_v1_2": {
+    "all_indexed_files_valid": true,
+    "identity": {
+      "all_indexed_files_valid": true,
+      "chapter_tree_identity": "e76ece622e01538d2e15fe99eaf88019e858c6eb31a7027ed64f9e6d63a88f27",
+      "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+      "corpus_checksum_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+      "descriptor_identity": "e8af58131e066def98a2",
+      "indexed_file_count": 973,
+      "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+      "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+      "release": "commentary-v1.2"
+    },
+    "identity_unchanged": true,
+    "indexed_file_count": 973,
+    "regeneration_performed": false,
+    "write_performed": false
+  },
+  "git_diff_check": "PASS",
+  "notes": [
+    "The original G1 impact artifact remains as historical evidence and points to the G1R reconciliation report.",
+    "No Commentary v1.2 content or identity was changed."
+  ],
+  "scripture_reference_index": {
+    "result": "PASS",
+    "tests": [
+      "tests/canonical_library/test_scripture_reference_integrity.py",
+      "tests/canonical_library/test_loader.py",
+      "tests/canonical_library/test_sqlite_storage.py"
+    ]
+  },
+  "source_provenance": {
+    "claim_count": 41,
+    "locked_source_record_count": 15,
+    "result": "PASS",
+    "source_lock_artifact_unchanged": true,
+    "status_counts": {
+      "CONFLICTED": 0,
+      "LOCKED": 32,
+      "REJECTED": 6,
+      "UNRESOLVED": 3
+    }
+  },
+  "status": "PASS",
+  "tests": {
+    "command": "pytest -q tests/test_genesis_g1r_comparative_applicability.py tests/canonical_library/test_expansion.py tests/canonical_library/test_source_locks.py tests/test_genesis_g0_evidence_census.py tests/canonical_library/test_scripture_reference_integrity.py tests/canonical_library/test_loader.py tests/canonical_library/test_sqlite_storage.py tests/canonical_library/test_typed_evidence_targets.py tests/canonical_library/test_genesis_exodus_records.py tests/test_commentary_v12_synthesis.py tests/test_commentary_v12_validation.py",
+    "environment_limitation": {
+      "equivalent_coverage": "test_typed_evidence_targets.py and whole CKL validation passed",
+      "module": "tests/canonical_library/test_evidence_graph_expansion.py",
+      "reason": "FastAPI is not installed in the execution environment",
+      "status": "NOT_COLLECTED"
+    },
+    "passed": 213,
+    "result": "PASS",
+    "subtests_passed": 35
+  },
+  "transaction": "GENESIS_G1R_COMPARATIVE_REFERENCE_APPLICABILITY_REPAIR",
+  "typed_relationships": {
+    "test": "tests/canonical_library/test_typed_evidence_targets.py",
+    "test_result": "PASS",
+    "whole_ckl_validation": "PASS"
+  },
+  "validation_summary_status": "PASS"
+}

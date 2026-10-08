@@ -1,0 +1,2077 @@
+{
+  "schema_version": "1.0",
+  "queue_id": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_EXPANSION-source-lock-v1",
+  "purpose": "Claim-level provenance ledger for Genesis 1–5. Only LOCKED claims represented in the candidate queue may be applied; unresolved/rejected interpretations are explicitly withheld.",
+  "approved_pilot_references": [
+    "Genesis 1",
+    "Genesis 2",
+    "Genesis 3",
+    "Genesis 4",
+    "Genesis 5"
+  ],
+  "source_policy": {
+    "model_is_not_a_source": true,
+    "copyright_boundary": "Paraphrased claims and exact locators only; no commentary prose copied.",
+    "production_mutation": false,
+    "source_records_add_to_ckl_only_through_validated_candidate_queue": true
+  },
+  "sources": [
+    {
+      "id": "g1-amit-eden-exposition",
+      "title": "The Exposition of the Garden of Eden Story",
+      "author": "Yairah Amit",
+      "publisher": "TheTorah.com",
+      "year": 2018,
+      "source_type": "reference-work",
+      "registry_status": "externally-reviewed-source",
+      "locator": "Sections on Genesis 2:4b–3:1a and footnote 2 on the river identifications",
+      "url": "https://thetorah.com/article/the-exposition-of-the-garden-of-eden-story",
+      "supports_evidence_ids": [
+        "g2-garden-planting-presence",
+        "g2-rivers-and-eden-geographic-limits"
+      ],
+      "provenance": {
+        "source_origin": "published scholarly source",
+        "stable_identifier": "https://thetorah.com/article/the-exposition-of-the-garden-of-eden-story",
+        "publication": "TheTorah.com",
+        "record_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json"
+      }
+    },
+    {
+      "id": "g1-exodus-text",
+      "title": "Exodus 25:18–22",
+      "author": "Canonical biblical text",
+      "publisher": "",
+      "year": null,
+      "source_type": "scripture",
+      "registry_status": "existing-ckl-object-source",
+      "locator": "Exodus 25:18–22",
+      "url": "",
+      "supports_evidence_ids": [
+        "g3-cherubim-biblical-sacred-space-context"
+      ],
+      "provenance": {
+        "record_path": "framework/canonical_library/objects/books/exodus.json",
+        "record_object_id": "exodus",
+        "record_source_id": "exodus-1-40",
+        "source_origin": "existing repository CKL source record"
+      }
+    },
+    {
+      "id": "g1-junior-mark-cain",
+      "title": "The Mark of Cain and White Violence",
+      "author": "Nyasha Junior",
+      "publisher": "Journal of Biblical Literature 139, no. 4",
+      "year": 2020,
+      "source_type": "journal-article",
+      "registry_status": "externally-reviewed-source",
+      "locator": "Pages 661–673; DOI 10.15699/jbl.1394.2020.2",
+      "url": "https://doi.org/10.15699/jbl.1394.2020.2",
+      "supports_evidence_ids": [
+        "g4-mark-sign-unspecified-protection"
+      ],
+      "provenance": {
+        "source_origin": "published scholarly source",
+        "stable_identifier": "https://doi.org/10.15699/jbl.1394.2020.2",
+        "publication": "Journal of Biblical Literature 139, no. 4",
+        "record_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json"
+      }
+    },
+    {
+      "id": "g1-kelly-eden-knowledge",
+      "title": "The Secret of the Garden of Eden: Knowledge or Immortality",
+      "author": "Joseph Ryan Kelly",
+      "publisher": "TheTorah.com",
+      "year": 2022,
+      "source_type": "reference-work",
+      "registry_status": "externally-reviewed-source",
+      "locator": "Article discussion of Genesis 2:8–17 and 3:22",
+      "url": "https://thetorah.com/article/the-secret-of-the-garden-of-eden-knowledge-or-immortality",
+      "supports_evidence_ids": [
+        "g2-two-trees-and-knowing-good-evil",
+        "g3-tree-knowing-and-desire"
+      ],
+      "provenance": {
+        "source_origin": "published scholarly source",
+        "stable_identifier": "https://thetorah.com/article/the-secret-of-the-garden-of-eden-knowledge-or-immortality",
+        "publication": "TheTorah.com",
+        "record_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json"
+      }
+    },
+    {
+      "id": "g1-kings-text",
+      "title": "1 Kings 6:23–35",
+      "author": "Canonical biblical text",
+      "publisher": "",
+      "year": null,
+      "source_type": "scripture",
+      "registry_status": "existing-ckl-object-source",
+      "locator": "1 Kings 6:23–35",
+      "url": "",
+      "supports_evidence_ids": [
+        "g3-cherubim-biblical-sacred-space-context"
+      ],
+      "provenance": {
+        "record_path": "framework/canonical_library/objects/books/1-kings.json",
+        "record_object_id": "1-kings",
+        "record_source_id": "1-kings-1-22",
+        "source_origin": "existing repository CKL source record"
+      }
+    },
+    {
+      "id": "g1-lexham-cherubim",
+      "title": "Cherubim",
+      "author": "",
+      "publisher": "The Lexham Bible Dictionary; Lexham Press",
+      "year": 2016,
+      "source_type": "reference-work",
+      "registry_status": "externally-reviewed-source",
+      "locator": "Entry “Cherubim,” especially Genesis 3:24 and biblical sanctuary/throne references",
+      "url": "https://biblia.com/books/lbd/offset/4581289",
+      "supports_evidence_ids": [
+        "g3-cherubim-biblical-sacred-space-context",
+        "g3-eastward-expulsion-and-flaming-weapon"
+      ],
+      "provenance": {
+        "source_origin": "published scholarly source",
+        "stable_identifier": "https://biblia.com/books/lbd/offset/4581289",
+        "publication": "The Lexham Bible Dictionary; Lexham Press",
+        "record_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json"
+      }
+    },
+    {
+      "id": "g1-revelation-text",
+      "title": "Revelation 12:9, 17",
+      "author": "Canonical biblical text",
+      "publisher": "",
+      "year": null,
+      "source_type": "scripture",
+      "registry_status": "existing-ckl-object-source",
+      "locator": "Revelation 12:9, 17",
+      "url": "",
+      "supports_evidence_ids": [
+        "g3-seed-later-jewish-christian-reception",
+        "g3-serpent-later-canonical-reception"
+      ],
+      "provenance": {
+        "record_path": "framework/canonical_library/objects/books/revelation.json",
+        "record_object_id": "revelation",
+        "record_source_id": "rev-greek",
+        "source_origin": "existing repository CKL source record"
+      }
+    },
+    {
+      "id": "g1-schmid-two-creation-accounts",
+      "title": "Genesis’ Two Creation Accounts Compiled and Interpreted as One",
+      "author": "Konrad Schmid",
+      "publisher": "TheTorah.com",
+      "year": 2023,
+      "source_type": "reference-work",
+      "registry_status": "externally-reviewed-source",
+      "locator": "Article discussion of Genesis 1:1–2:4a and 2:4b–3:24",
+      "url": "https://www.thetorah.com/article/genesis-two-creation-accounts-compiled-and-interpreted-as-one",
+      "supports_evidence_ids": [
+        "g2-toledot-and-genesis1-relationship"
+      ],
+      "provenance": {
+        "source_origin": "published scholarly source",
+        "stable_identifier": "https://www.thetorah.com/article/genesis-two-creation-accounts-compiled-and-interpreted-as-one",
+        "publication": "TheTorah.com",
+        "record_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json"
+      }
+    },
+    {
+      "id": "g1-zhakevich-genesis-315",
+      "title": "Genesis 3:15 in the New Testament and in the Pentateuchal Targums: Enmity as a Spiritual Conflict",
+      "author": "Iosif J. Zhakevich",
+      "publisher": "Journal of Biblical and Theological Studies 7, no. 1",
+      "year": 2022,
+      "source_type": "journal-article",
+      "registry_status": "externally-reviewed-source",
+      "locator": "Pages 119–134; discussion of Genesis 3:15, the Pentateuchal Targums, and Revelation 12",
+      "url": "https://jbtsonline.org/2022/06/genesis-315-in-the-new-testament-and-in-the-pentateuchal-targums-enmity-as-a-spiritual-conflict-by-iosif-j-zhakevich/",
+      "supports_evidence_ids": [
+        "g3-seed-conflict-immediate-wording",
+        "g3-seed-later-jewish-christian-reception",
+        "g3-serpent-later-canonical-reception"
+      ],
+      "provenance": {
+        "source_origin": "published scholarly source",
+        "stable_identifier": "https://jbtsonline.org/2022/06/genesis-315-in-the-new-testament-and-in-the-pentateuchal-targums-enmity-as-a-spiritual-conflict-by-iosif-j-zhakevich/",
+        "publication": "Journal of Biblical and Theological Studies 7, no. 1",
+        "record_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json"
+      }
+    },
+    {
+      "id": "g1-zucker-cain-offerings",
+      "title": "Why Did Cain Kill Abel?",
+      "author": "David J. Zucker",
+      "publisher": "TheTorah.com",
+      "year": 2020,
+      "source_type": "reference-work",
+      "registry_status": "externally-reviewed-source",
+      "locator": "Sections “The Background: The Rejected Offering” and “YHWH Speaks to Cain,” Genesis 4:3–7",
+      "url": "https://thetorah.com/article/why-did-cain-kill-abel",
+      "supports_evidence_ids": [
+        "g4-offerings-and-divine-regard",
+        "g4-sin-crouching-desire-mastery"
+      ],
+      "provenance": {
+        "source_origin": "published scholarly source",
+        "stable_identifier": "https://thetorah.com/article/why-did-cain-kill-abel",
+        "publication": "TheTorah.com",
+        "record_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json"
+      }
+    },
+    {
+      "id": "genesis-1-50",
+      "title": "Genesis 1-50",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "source_type": "scripture",
+      "registry_status": "existing-ckl-object-source",
+      "locator": "Genesis 1:1-50:26",
+      "url": "",
+      "supports_evidence_ids": [],
+      "provenance": {
+        "record_path": "framework/canonical_library/objects/books/genesis.json",
+        "record_object_id": "genesis",
+        "record_source_id": "genesis-1-50",
+        "source_origin": "existing repository CKL source record"
+      }
+    },
+    {
+      "id": "hamilton-genesis-1-17",
+      "title": "The Book of Genesis, Chapters 1-17",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "source_type": "reference-work",
+      "registry_status": "existing-ckl-object-source",
+      "locator": "Introduction and Genesis 1-17",
+      "url": "",
+      "supports_evidence_ids": [],
+      "provenance": {
+        "record_path": "framework/canonical_library/objects/books/genesis.json",
+        "record_object_id": "genesis",
+        "record_source_id": "hamilton-genesis-1-17",
+        "source_origin": "existing repository CKL source record"
+      }
+    },
+    {
+      "id": "sarna-genesis",
+      "title": "The JPS Torah Commentary: Genesis",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "source_type": "reference-work",
+      "registry_status": "existing-ckl-object-source",
+      "locator": "Introduction and commentary throughout",
+      "url": "",
+      "supports_evidence_ids": [],
+      "provenance": {
+        "record_path": "framework/canonical_library/objects/books/genesis.json",
+        "record_object_id": "genesis",
+        "record_source_id": "sarna-genesis",
+        "source_origin": "existing repository CKL source record"
+      }
+    },
+    {
+      "id": "zondervan-illustrated-pentateuch-backgrounds",
+      "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "source_type": "reference-work",
+      "registry_status": "existing-ckl-object-source",
+      "locator": "Genesis",
+      "url": "",
+      "supports_evidence_ids": [],
+      "provenance": {
+        "record_path": "framework/canonical_library/objects/books/genesis.json",
+        "record_object_id": "genesis",
+        "record_source_id": "zondervan-illustrated-pentateuch-backgrounds",
+        "source_origin": "existing repository CKL source record"
+      }
+    },
+    {
+      "id": "g1-carr-genesis-textual-traditions",
+      "title": "The Formation of Genesis 1–11: Biblical and Other Precursors",
+      "author": "David M. Carr",
+      "publisher": "Oxford University Press",
+      "year": 2020,
+      "source_type": "reference-work",
+      "registry_status": "externally-reviewed-source",
+      "locator": "Chapter 4, “The Book of the Toledot (Descendants) of Adam,” section on scribal adaptation in early textual traditions",
+      "url": "https://doi.org/10.1093/oso/9780190062545.001.0001",
+      "supports_evidence_ids": [
+        "g5-masoretic-septuagint-samaritan-chronology-variants"
+      ],
+      "provenance": {
+        "source_origin": "published academic monograph",
+        "stable_identifier": "https://doi.org/10.1093/oso/9780190062545.001.0001",
+        "publication": "Oxford University Press",
+        "record_path": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1-candidate-evidence.json"
+      }
+    }
+  ],
+  "chapters": [
+    {
+      "reference": "Genesis 1",
+      "candidate_generation": "no-write",
+      "classification_before": "GOOD",
+      "geography_gap": "No G1 geography expansion authorized; preservation control.",
+      "claims": [
+        {
+          "id": "g1-control-genesis1-no-expansion",
+          "status": "REJECTED",
+          "subject": {
+            "label": "Genesis 1 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Additional general creation evidence",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 1:1-31",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "Preservation control: G0 classified Genesis 1 GOOD; the existing source-backed coverage was retained and no meaningful source-supported hole requiring a G1 write was demonstrated."
+        }
+      ]
+    },
+    {
+      "reference": "Genesis 2",
+      "candidate_generation": "eligible",
+      "classification_before": "GAP",
+      "geography_gap": "Exact Eden location and Pishon/Gihon identity remain unresolved; no coordinates.",
+      "claims": [
+        {
+          "id": "g2-toledot-and-genesis1-relationship",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Genesis 2:4 as literary hinge",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:4, 5-9",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 2 commentary",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-schmid-two-creation-accounts",
+              "locator": "Article discussion of Genesis 1:1–2:4a and 2:4b–3:24",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:4",
+              "eligibility": "direct"
+            },
+            {
+              "reference": "Genesis 2:5-9",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The formula and shift of focus are explicit; the literary relationship is a disputed scholarly inference."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 2:4 uses the *toledot* formula at the transition from Genesis 1:1–2:3 into the garden narrative; the following scene narrows attention to land, the human, and the garden. The relationship between the units is interpreted in more than one way. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-dust-adamah-breath",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Human formation from ground and breath",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:7",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "textual-context"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 2 commentary",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:7",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The wording and anchor are explicit in the cited passage."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 2:7 describes YHWH God forming the human from dust of the ground and breathing the breath of life; the Hebrew wording links *ha-adam* (the human/man) and *ha-adamah* (the ground/soil) in the scene. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-garden-planting-presence",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Garden planting and divine presence",
+            "entity_type": "geography-environment",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:8-10",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-amit-eden-exposition",
+              "locator": "Sections on Genesis 2:4b–3:1a and footnote 2 on the river identifications",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:8-10",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The garden details are explicit; sacred-space interpretation is a scholarly reading."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "The narrative says YHWH God plants a garden in Eden in the east, places the formed human there, and causes trees to grow; Genesis 3:8 later depicts YHWH God in the garden. Eden-as-sacred-space or temple analogies are interpretations rather than an explicit identification in Genesis 2. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-rivers-and-eden-geographic-limits",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Four rivers and limits of Eden identification",
+            "entity_type": "geography-environment",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:10-14",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-amit-eden-exposition",
+              "locator": "Sections on Genesis 2:4b–3:1a and footnote 2 on the river identifications",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:10-14",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The river names are explicit; exact identifications and the narrative geography remain uncertain."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 2:10–14 names Pishon, Gihon, Tigris, and Euphrates as branches of a river associated with Eden. The passage gives no coordinates; Pishon and Gihon remain unidentified, and the named rivers do not establish a recoverable location for the garden. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-work-and-keep-vocation",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Human work and keeping in the garden",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:15",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 2 commentary",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:15",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The assigned tasks are explicit; priestly verbal parallels are inferential."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 2:15 assigns the human to work/serve the garden and keep/guard it. The verse directly gives a garden vocation; priestly-service parallels are a later literary interpretation and do not turn the wording into an explicit priestly office. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-two-trees-and-knowing-good-evil",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Tree of life and tree of knowing good and evil",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:9, 16-17",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 2 commentary",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-kelly-eden-knowledge",
+              "locator": "Article discussion of Genesis 2:8–17 and 3:22",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:9",
+              "eligibility": "direct"
+            },
+            {
+              "reference": "Genesis 2:16-17",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The named trees and prohibition are explicit; their interpretive significance is disputed."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 2:9 names the tree of life and the tree of knowing good and evil, while 2:16–17 gives a prohibition concerning the latter. The text does not reduce the tree to generic knowledge or identify it with a later theological system. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-ezer-kenegdo-counterpart",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "The phrase *ezer kenegdo*",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:18-20, 21-23",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 2 commentary",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:18-20",
+              "eligibility": "direct"
+            },
+            {
+              "reference": "Genesis 2:21-23",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The Hebrew phrase and narrative correspondence are explicit; wider social conclusions are disputed."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 2:18 and 2:20 describes the needed partner as *ezer kenegdo*, a helper corresponding to or facing the human. The phrase answers the “not good to be alone” problem and culminates in recognition of a matching human partner. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-bone-of-bones-and-one-flesh",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Kinship and one-flesh language",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:23-24",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 2 commentary",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:23-24",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The wording is explicit; its narrator-level social framing is an inference."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 2:23–24 moves from “bone of my bones, flesh of my flesh” to a narrator’s statement about leaving father and mother and becoming one flesh. The text joins kinship language and marital union; its later canonical use belongs to reception, not a substitute for the immediate narrative. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-naked-and-unashamed",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Nakedness without shame before the transgression",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 2:25",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 2:4-25",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:25",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The wording and anchor are explicit in the cited passage."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 2:25 closes with the man and woman naked and unashamed, immediately before Genesis 3 introduces the serpent and later shame and covering. This supports passage-specific synthesis of Genesis 2 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g2-pishon-gihon-identification",
+          "status": "UNRESOLVED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "identifies",
+          "target": {
+            "label": "Exact identities of Pishon and Gihon",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:10-14",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "Available source review does not resolve the identities; the candidate records the named rivers and explicitly withholds coordinates or a single Eden location."
+        },
+        {
+          "id": "g2-eden-coordinate-claim",
+          "status": "REJECTED",
+          "subject": {
+            "label": "Genesis 2 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "identifies",
+          "target": {
+            "label": "Precise modern coordinates for Eden",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 2:10-14",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "Genesis 2 does not supply coordinates, and the reviewed source does not establish a precise Eden location. No coordinates are promoted."
+        }
+      ]
+    },
+    {
+      "reference": "Genesis 3",
+      "candidate_generation": "eligible",
+      "classification_before": "GAP",
+      "geography_gap": "Eden is an eastward garden setting; the passage does not provide modern coordinates.",
+      "claims": [
+        {
+          "id": "g3-serpent-genesis-characterization",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Serpent characterization in Genesis 3",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:1-5, 14-15",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:1-5",
+              "eligibility": "direct"
+            },
+            {
+              "reference": "Genesis 3:14-15",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "Genesis 3’s description is direct; the later identification is addressed separately."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 3 calls the serpent more crafty than the other animals YHWH God made and narrates its speech to the woman; Genesis itself does not name the serpent Satan. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-serpent-later-canonical-reception",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Later biblical identification of the ancient serpent",
+            "entity_type": "primary-source",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:1",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "g1-zhakevich-genesis-315",
+              "locator": "Pages 119–134; discussion of Genesis 3:15, the Pentateuchal Targums, and Revelation 12",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:1",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The two texts state different things directly; their canonical relation is later reception."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Revelation 12:9 later identifies the “ancient serpent” with the devil and Satan. This is later canonical reception and does not make Genesis 3 itself use those names. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-tree-knowing-and-desire",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Tree, desire, and knowing good and evil",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:4-7, 22",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-kelly-eden-knowledge",
+              "locator": "Article discussion of Genesis 2:8–17 and 3:22",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:4-7",
+              "eligibility": "direct"
+            },
+            {
+              "reference": "Genesis 3:22",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The plot sequence is explicit; the symbolic/semantic interpretation is debated."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "The woman sees that the tree is good for food, pleasing to the eyes, and desirable for gaining wisdom; the narrative then describes eating and sharing the fruit. “Knowledge” here is not merely abstract information. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-deception-and-autonomy-sequence",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Serpent speech and human action sequence",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:1-6",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:1-6",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The wording and anchor are explicit in the cited passage."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "The serpent questions the prohibition, contradicts the announced death, and offers a claim about becoming like God; the woman assesses the tree, eats, and shares it, after which the man eats. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-shame-sewing-and-clothing",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Nakedness, shame, and clothing",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:7-10, 21",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:7-10",
+              "eligibility": "direct"
+            },
+            {
+              "reference": "Genesis 3:21",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The wording and anchor are explicit in the cited passage."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "After eating, the humans recognize their nakedness, sew fig leaves, and hide; later YHWH God makes garments of skin for them. This reverses Genesis 2:25’s nakedness without shame. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-divine-interrogation-and-blame",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Divine questions and movement of blame",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:9-13",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:9-13",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The sequence is explicit; identifying a formal legal genre would exceed the evidence."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "YHWH God questions the man, the man answers and refers to the woman, the woman answers and refers to the serpent, and the serpent is addressed. The narrative does not label the exchange a court proceeding. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-distinct-oracles-and-ground",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Distinct serpent, woman, man, and ground pronouncements",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:14-19",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:14-19",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The addressees and explicit curse language are stated in the passage."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 3:14–19 addresses the serpent, woman, man, and ground in distinct pronouncements. The text explicitly calls the serpent cursed and the ground cursed on the man’s account; it does not apply the same “cursed” formula to every statement. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-ground-adam-adamah-return",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Ground, human formation, and return",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:17-19",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:17-19",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "Both the ground and return language are explicit and connected within Genesis 2–3."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 3:17–19 links the ground’s curse and difficult cultivation with the human’s return to the ground, recalling the formation from dust/soil in Genesis 2:7. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-seed-conflict-immediate-wording",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Offspring conflict in Genesis 3:15",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:15",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-zhakevich-genesis-315",
+              "locator": "Pages 119–134; discussion of Genesis 3:15, the Pentateuchal Targums, and Revelation 12",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:15",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The wording is explicit; its scope and later theological identification are debated."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 3:15 announces enmity between the serpent and the woman and between their offspring, with striking of head and heel. The immediate wording presents offspring conflict; it does not name a specific messiah. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-seed-later-jewish-christian-reception",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Later Jewish and Christian reception of Genesis 3:15",
+            "entity_type": "primary-source",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:15",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "g1-zhakevich-genesis-315",
+              "locator": "Pages 119–134; discussion of Genesis 3:15, the Pentateuchal Targums, and Revelation 12",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:15",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The later reception is documented in a focused comparative study and is distinguished from Genesis wording."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Pentateuchal Targums and New Testament reception read Genesis 3:15’s enmity as a conflict between serpent and adversarial powers; Revelation 12 develops a later serpent-conflict image. These are later interpretations and do not replace the immediate offspring language. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-cherubim-biblical-sacred-space-context",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Cherubim as guardians and biblical sacred-space figures",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:24",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "g1-lexham-cherubim",
+              "locator": "Entry “Cherubim,” especially Genesis 3:24 and biblical sanctuary/throne references",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:24",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Genesis’s guarding role is explicit; the wider biblical sacred-space pattern is comparative context."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 3:24 stations cherubim east of the garden to guard the way to the tree of life. Later biblical sanctuary texts place cherubim over or within sacred settings; Genesis 3 does not describe their physical appearance. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-eastward-expulsion-and-flaming-weapon",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Eastward expulsion and barred return",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 3:23-24",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 3:1-26",
+              "support_type": "textual-context"
+            },
+            {
+              "source_id": "g1-lexham-cherubim",
+              "locator": "Entry “Cherubim,” especially Genesis 3:24 and biblical sanctuary/throne references",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:23-24",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The expulsion and guard are explicit; the weapon’s mechanics are not described."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 3:23–24 sends the humans out of the garden and places cherubim and a turning flaming sword east of Eden to guard the way to the tree of life. The text does not explain the weapon’s mechanics or identify its material form. This supports passage-specific synthesis of Genesis 3 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g3-serpent-explicitly-satan",
+          "status": "UNRESOLVED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Genesis 3 explicitly names the serpent as Satan",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:1",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "Genesis 3 calls the figure a serpent and does not name Satan; Revelation 12 is recorded separately as later reception."
+        },
+        {
+          "id": "g3-315-only-messianic-meaning",
+          "status": "REJECTED",
+          "subject": {
+            "label": "Genesis 3 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Genesis 3:15 has only one messianic meaning",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 3:15",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "The immediate wording, collective-offspring conflict, and documented later reception are kept distinct; exclusive messianic promotion is unsupported by this evidence set."
+        }
+      ]
+    },
+    {
+      "reference": "Genesis 4",
+      "candidate_generation": "eligible",
+      "classification_before": "GAP",
+      "geography_gap": "Ground, wandering, field, and city are textual settings; no archaeological route/site identity is asserted.",
+      "claims": [
+        {
+          "id": "g4-offerings-and-divine-regard",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Cain and Abel offerings and divine regard",
+            "entity_type": "primary-source",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:2-5",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 4 commentary",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-zucker-cain-offerings",
+              "locator": "Sections “The Background: The Rejected Offering” and “YHWH Speaks to Cain,” Genesis 4:3–7",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:2-5",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The offerings and narrator’s wording are explicit; the reason for the different regard is unstated."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Cain brings produce from the ground and Abel brings firstlings and fat portions from the flock; the narrative says YHWH regards Abel and his offering but not Cain and his offering, without stating why. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-sin-crouching-desire-mastery",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Sin crouching at the door",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:6-7",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 4 commentary",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-zucker-cain-offerings",
+              "locator": "Sections “The Background: The Rejected Offering” and “YHWH Speaks to Cain,” Genesis 4:3–7",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:6-7",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The wording is direct, while its syntax and image are disputed."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 4:7 personifies sin as crouching at the door, with desire directed toward Cain and a command that Cain rule over it. The wording is difficult and does not settle whether the image is animal-like, demonic, or metaphorical. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-murder-blood-cries-from-ground",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Abel’s blood and the ground",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:8-11",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "textual-context"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 4 commentary",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:8-11",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The wording and anchor are explicit in the cited passage."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "After Cain kills Abel in the field, YHWH says Abel’s blood cries from the ground; the ground that received it is central to the accusation and ensuing sentence. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-ground-curse-wandering-fear",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Ground loss, wandering, and fear of vengeance",
+            "entity_type": "geography-environment",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:11-15",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:11-15",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The ground and wandering language are explicit; no route or location is identified."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Cain is cursed away from the ground that received Abel’s blood, becomes a restless wanderer, and fears being killed; YHWH’s sign is given in response to that fear. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-mark-sign-unspecified-protection",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Sign of Cain and the limits of identification",
+            "entity_type": "worldview-concept",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:15",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "g1-junior-mark-cain",
+              "locator": "Pages 661–673; DOI 10.15699/jbl.1394.2020.2",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:15",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The sign’s function is explicit and its physical form unspecified; the racialized reception is documented historically."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 4:15 gives Cain a sign that protects him from being killed but does not describe its physical form. The text gives no racial identity to the sign; racialized readings of the mark are later harmful interpretation, not a claim supplied by Genesis. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-sevenfold-and-lamech-escalation",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Sevenfold protection and Lamech’s vengeance boast",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:15, 23-24",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:15",
+              "eligibility": "direct"
+            },
+            {
+              "reference": "Genesis 4:23-24",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "Both statements are explicit; their literary relation is a supported but interpretive reading."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "YHWH’s declaration of sevenfold vengeance protects Cain from retaliation; Lamech later boasts of seventy-sevenfold vengeance after violence. The paired statements permit a reading of escalating violence but do not identify the sign itself. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-cain-genealogy-and-city",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Cain’s genealogy and city-building",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:17-18",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "textual-context"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 4 commentary",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:17-18",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The names and city-building notice are explicit; identification beyond the text is unsupported."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Cain’s line proceeds through Enoch, Irad, Mehujael, Methushael, and Lamech; Cain builds a city and names it Enoch after his son. The passage identifies a narrative city but supplies no archaeological identity for it. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-jabal-jubal-tubal-cain-traditions",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Pastoral life, music, and metalworking in Cain’s line",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:19-22",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "textual-context"
+            },
+            {
+              "source_id": "zondervan-illustrated-pentateuch-backgrounds",
+              "locator": "Genesis background commentary on Genesis 4:19-22",
+              "support_type": "textual-context"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:19-22",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "high",
+            "rationale": "The named associations are explicit; archaeological identity claims are not."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Genesis 4:20–22 associates Jabal with tent-dwelling and livestock, Jubal with lyre and pipe, and Tubal-cain with bronze and iron work. The text presents ancestral cultural traditions; it does not establish archaeological identities for these individuals. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-lamech-polygyny-and-violence-poem",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Lamech’s two wives and violence poem",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:19, 23-24",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 4 commentary",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:19",
+              "eligibility": "direct"
+            },
+            {
+              "reference": "Genesis 4:23-24",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The family structure and poem are explicit; their narrative evaluation is not stated directly."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "Lamech takes two wives and recites a poem about killing a man who wounded him and claiming seventy-sevenfold vengeance. The narrative gives no explicit moral verdict in the poem itself. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-seth-and-calling-on-yhwh",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Seth and the closing notice about calling on YHWH",
+            "entity_type": "literary-convention",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "genesis-1-50",
+              "locator": "Genesis 4:25-26",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "sarna-genesis",
+              "locator": "The JPS Torah Commentary: Genesis, commentary on Genesis 4:1-26",
+              "support_type": "scholarly-interpretation"
+            },
+            {
+              "source_id": "hamilton-genesis-1-17",
+              "locator": "NICOT, Genesis 4 commentary",
+              "support_type": "scholarly-interpretation"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:25-26",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The transition is explicit; the social form of the worship notice is not specified."
+          },
+          "provenance": {
+            "source_origin": "Primary Scripture and cited scholarly records",
+            "review_method": "claim-specific source locators recorded in this ledger"
+          },
+          "material_relevance": "After Abel’s death, Eve names Seth as another offspring in Abel’s place; Genesis 4:26 then says people began to call on the name of YHWH. The closing notice shifts from Cain’s line to another family line. This supports passage-specific synthesis of Genesis 4 while preserving the stated limits.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        },
+        {
+          "id": "g4-cain-rejected-for-nonblood-offering",
+          "status": "REJECTED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Cain is rejected solely because his offering is non-blood",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:3-5",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "Genesis 4 does not state this reason; Zucker’s review records competing explanations and the passage’s silence."
+        },
+        {
+          "id": "g4-named-craft-ancestors-archaeological-identity",
+          "status": "UNRESOLVED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Archaeological identities for Jabal, Jubal, and Tubal-cain",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:20-22",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "The passage gives a narrative genealogy and craft associations but no archaeological identification; no named person is matched to an artifact or excavated individual."
+        },
+        {
+          "id": "g4-mark-racial-identification",
+          "status": "REJECTED",
+          "subject": {
+            "label": "Genesis 4 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Cain’s sign identifies a racial group",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 4:15",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "Genesis does not describe the sign or racialize Cain; racialized interpretations are later harmful reception documented as caution, not legitimate textual exegesis."
+        }
+      ]
+    },
+    {
+      "reference": "Genesis 5",
+      "candidate_generation": "eligible",
+      "classification_before": "GOOD",
+      "geography_gap": "No G1 geography expansion. One focused textual-chronology item records differing witness figures without resolving chronology.",
+      "claims": [
+        {
+          "id": "g1-control-genesis5-no-expansion",
+          "status": "REJECTED",
+          "subject": {
+            "label": "Genesis 5 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Additional general genealogy evidence",
+            "entity_type": "interpretive-claim",
+            "resolution": "withheld-from-production"
+          },
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 5:1-32",
+              "eligibility": "contextual"
+            }
+          ],
+          "disposition_reason": "Preservation control: G0 classified Genesis 5 GOOD; existing evidence covers the genealogy, mortality refrain, Enoch, Noah naming, and transition. Chronology is not rewritten or resolved."
+        },
+        {
+          "id": "g5-masoretic-septuagint-samaritan-chronology-variants",
+          "status": "LOCKED",
+          "subject": {
+            "label": "Genesis 5 passage",
+            "entity_type": "scripture-passage",
+            "resolution": "chapter-bounded-text"
+          },
+          "relationship_type": "describes",
+          "target": {
+            "label": "Chronological figures across textual traditions",
+            "entity_type": "manuscript-textual-variant",
+            "resolution": "source-backed-passage-claim"
+          },
+          "source_locks": [
+            {
+              "source_id": "g1-carr-genesis-textual-traditions",
+              "locator": "Chapter 4, “The Book of the Toledot (Descendants) of Adam,” section on scribal adaptation in early textual traditions",
+              "support_type": "comparative-textual-analysis"
+            }
+          ],
+          "scripture_anchors": [
+            {
+              "reference": "Genesis 5:3-31",
+              "eligibility": "direct"
+            }
+          ],
+          "confidence": {
+            "level": "moderate",
+            "rationale": "The textual variation is documented, while reconstruction of its origin remains disputed."
+          },
+          "provenance": {
+            "source_origin": "Published academic monograph",
+            "review_method": "claim-specific locator and source identity recorded in the source-lock ledger"
+          },
+          "material_relevance": "The begetting ages and lifespan figures in Genesis 5 differ among the Masoretic Text, Septuagint, and Samaritan Pentateuch. Comparative textual study treats these figures as a textual-critical question. This evidence records the variant traditions without selecting an original reading, recalculating dates, or altering the Scripture dataset.",
+          "candidate_readiness": "ready-for-book-evidence-item"
+        }
+      ]
+    }
+  ]
+}
