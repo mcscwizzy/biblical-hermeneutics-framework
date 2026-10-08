@@ -361,6 +361,9 @@
     "Revelation 12"
   ],
   "status": "PRODUCTION_APPLY_COMPLETE",
+  "impact_snapshot": "original G1 production apply; use the G1R reconciliation report for final current applicability scope",
+  "reconciled_by": ".bhf-data/bhf-commentary-candidates/genesis-g1-primeval-origins-evidence-expansion/g1r-comparative-applicability-report.json",
+  "g1r_reconciliation_status": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_MERGE_GATE_VERIFIED",
   "transaction": "GENESIS_G1_PRIMEVAL_ORIGINS_EVIDENCE_EXPANSION",
   "write_method": "framework.canonical_library.expansion.apply_candidate_queue(write=True) after a passing dry run"
 }
