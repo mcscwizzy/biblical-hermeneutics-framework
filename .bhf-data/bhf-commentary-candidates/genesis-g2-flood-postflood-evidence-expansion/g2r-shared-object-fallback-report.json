@@ -1,0 +1,115 @@
+{
+  "affected_controls": [
+    "Genesis 1",
+    "Genesis 5"
+  ],
+  "affected_object": "image-of-god-theme",
+  "artifact_version": "g2r-shared-object-fallback-report-v2",
+  "base_master": "5b84a76a37cb8460266de04fdbe1b24841a76dea",
+  "behavior_after_original_g2": "The Genesis 9 item became the first structured evidence item on image-of-god-theme. The object then had structured evidence, so the legacy fallback condition was false for Genesis 1 and 5 requests with no matching structured child.",
+  "classification": "SHARED_OBJECT_LEGACY_FALLBACK_TRANSITION",
+  "final_Genesis_1": {
+    "evidence_count": 58,
+    "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+    "identity_match": true,
+    "reference": "Genesis 1",
+    "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+    "synthesis_unit_count": 12
+  },
+  "final_Genesis_5": {
+    "evidence_count": 21,
+    "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+    "identity_match": true,
+    "reference": "Genesis 5",
+    "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+    "synthesis_unit_count": 7
+  },
+  "final_Genesis_9": {
+    "coverage_classification": "GOOD",
+    "evidence_count": 79,
+    "evidence_hash": "f675c064faaa00917456f23345f7cabee28d0a698a2e24e6472970d6b8e5bbb9",
+    "reference": "Genesis 9",
+    "synthesis_hash": "0364dc2f13694481d2c8007b184b29646103d58d5bfab3c40abba5d10ec86ba6",
+    "synthesis_unit_count": 12
+  },
+  "final_parent_object": "genesis-flood-postflood-context",
+  "g2r2_regression": {
+    "legacy_object_fallback_inputs_unchanged": true,
+    "result": "PASS",
+    "tests": [
+      "test_g2_isolated_container_preserves_legacy_fallback_for_existing_objects"
+    ]
+  },
+  "historical_aborted_g2r_relocation": {
+    "evidence_id_duplicated": false,
+    "from": "image-of-god-theme",
+    "global_fallback_engine_modified": false,
+    "moved_evidence_id": "g9-renewed-vocation-and-blood-life-accountability",
+    "object_local_sources_copied_to_genesis": 26,
+    "other_24_G2_items": "also consolidated onto genesis because all other original G2 target parents were legacy-fallback-only and whole-corpus audit found their fallback transitions changed external chapters",
+    "restored_original_legacy_parents": [
+      "the-flood",
+      "noah",
+      "covenant-theme",
+      "image-of-god-theme",
+      "what-is-a-covenant-sign",
+      "what-is-sacrifice-in-the-bible"
+    ],
+    "source_ids_preserved": true,
+    "to": "genesis"
+  },
+  "legacy_behavior_before_original_g2": "When no structured evidence item matched the requested chapter and the object had no structured evidence items, its anchored legacy context fields were emitted as fallback evidence.",
+  "merge_gate": "GENESIS_G2_FLOOD_POSTFLOOD_EVIDENCE_MERGE_GATE_VERIFIED; Safe to merge: YES.",
+  "similar_legacy_fallback_only_objects": {
+    "definition": "Objects have no structured evidence items, at least one scripture_references entry, and at least one recognized legacy fallback field.",
+    "examples": [
+      "chiasm",
+      "temple-symbol",
+      "what-is-the-temple",
+      "what-does-torah-mean",
+      "what-does-ruach-mean",
+      "what-does-shalom-mean",
+      "what-is-a-parable",
+      "what-is-the-tabernacle",
+      "what-is-the-second-temple",
+      "what-is-the-significance-of-jerusalem",
+      "what-is-the-ancient-near-east",
+      "what-is-the-roman-empire-in-the-bible"
+    ],
+    "exist": true,
+    "migrated": 0,
+    "raw_count": 608
+  },
+  "source_owner_provenance_changes": {
+    "existing_source_ids_reused_directly": 0,
+    "historical_source_rows_with_ownership_changes": 0,
+    "local_aliases_added_to_new_object": 13,
+    "new_g2_sources_added_to_new_object": 16,
+    "result": "PASS"
+  },
+  "systemic_maintenance_debt": {
+    "G2R2_migrated_objects": 0,
+    "retained": true,
+    "separate_tasks": true,
+    "tasks": [
+      "structured evidence migration and legacy fallback semantics",
+      "comparative scripture applicability semantics"
+    ]
+  },
+  "transaction": "GENESIS_G2R2_ISOLATED_EVIDENCE_CONTAINER",
+  "triggering_evidence_id": "g9-renewed-vocation-and-blood-life-accountability",
+  "whole_corpus_expected_set": [
+    "Genesis 6",
+    "Genesis 7",
+    "Genesis 8",
+    "Genesis 9"
+  ],
+  "whole_corpus_final_changed_chapter_set": [
+    "Genesis 6",
+    "Genesis 7",
+    "Genesis 8",
+    "Genesis 9"
+  ],
+  "whole_corpus_gate": "PASS",
+  "why_control_and_external_hashes_still_differ": "Not applicable after G2R2: all controls match base exactly; G2 source records are isolated under distinct local IDs."
+}

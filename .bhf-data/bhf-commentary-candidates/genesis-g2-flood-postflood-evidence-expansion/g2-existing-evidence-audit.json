@@ -1,0 +1,52 @@
+{
+  "all_25_claim_ids_preserved": true,
+  "artifact_version": "g2-existing-evidence-audit-v2",
+  "base_master": "5b84a76a37cb8460266de04fdbe1b24841a76dea",
+  "base_replay": {
+    "accepted_as_new": 25,
+    "candidate_count": 25,
+    "read_only": true,
+    "rejected_or_duplicate": 0
+  },
+  "disposition": "PASS: all 25 accepted G2 evidence items are stored once on the dedicated Genesis 6-9 context object; historical production objects are restored to base/master bytes.",
+  "final_candidate_parent_counts": {
+    "genesis-flood-postflood-context": 25
+  },
+  "final_g2r2_parent": "genesis-flood-postflood-context",
+  "final_production_copies_by_object": {
+    "genesis-flood-postflood-context": 1
+  },
+  "final_production_copy_count": 1,
+  "g9_evidence_id": "g9-renewed-vocation-and-blood-life-accountability",
+  "g9_in_base_master": false,
+  "g9_original_g2_newly_added": true,
+  "g9_original_g2_parent": "image-of-god-theme",
+  "historical_aborted_g2r_candidate_parent_counts": {
+    "genesis": 25
+  },
+  "historical_aborted_g2r_parent": "genesis",
+  "id_mapping": "Identity mapping; all 25 original G2 evidence IDs survive exactly once in the isolated object.",
+  "original_candidate_parent_counts": {
+    "covenant-theme": 1,
+    "genesis": 11,
+    "image-of-god-theme": 1,
+    "noah": 3,
+    "the-flood": 7,
+    "what-is-a-covenant-sign": 1,
+    "what-is-sacrifice-in-the-bible": 1
+  },
+  "original_g2_fallback_impact": "The item was the first structured evidence item on image-of-god-theme; no chapter-specific structured item matched Genesis 1 or 5, so the object-level legacy fallback was disabled for those requests.",
+  "preserved_fields": [
+    "evidence ID",
+    "claim wording",
+    "Genesis 9:1–7 direct applicability",
+    "source IDs",
+    "provenance",
+    "confidence",
+    "certainty",
+    "dispute metadata",
+    "relationships"
+  ],
+  "scope": "Genesis 6–9 candidate IDs and the shared fallback target identified during G2 control review.",
+  "transaction": "GENESIS_G2R2_ISOLATED_EVIDENCE_CONTAINER"
+}

@@ -1,0 +1,3007 @@
+{
+  "artifact_version": "g2-apply-report-g2r2-v1",
+  "final_g2r2_production_apply": {
+    "accepted_evidence_count": 25,
+    "existing_objects_modified": [],
+    "manifest_rebuilt": true,
+    "new_object_created": true,
+    "production_write_scope": [
+      "framework/canonical_library/objects/cultural_background/genesis-flood-postflood-context.json",
+      "framework/canonical_library/manifest.json"
+    ],
+    "rejected_evidence_count": 0,
+    "result": "PASS",
+    "runtime_db_rebuilt_and_verified": true,
+    "source_count": 29,
+    "target_object_id": "genesis-flood-postflood-context"
+  },
+  "historical_aborted_g2_and_g2r_apply": {
+    "accepted": [
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "interpretive-disputes",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "disputed",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 6:1–4 calls the male figures *bene ha'elohim* (“sons of God”), distinguishes them from the daughters of humanity, and reports that they take wives. The identity of the figures and the force of the episode remain disputed.",
+            "dispute_status": "major_scholarly_disagreement",
+            "evidence_type": "worldview-concept",
+            "geography_ids": [],
+            "id": "g6-sons-of-god-interpretive-positions",
+            "notes": "Only Genesis 6:1–4 is an applicability anchor. Job and other canonical comparisons are explanatory notes, not additional scripture_references.",
+            "passage_relevance": "Genesis 6:1–4 calls the male figures *bene ha'elohim* (“sons of God”), distinguishes them from the daughters of humanity, and reports that they take wives. The identity of the figures and the force of the episode remain disputed. This evidence supports passage-specific synthesis of Genesis 6:1-4 while preserving the stated interpretive limits.",
+            "primary_observation": "The Hebrew phrase is explicit, while Genesis 6:1–4 itself does not name the figures as Sethites, kings, angels, or demons.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "The episode occurs within the preflood account.",
+                "relationship": "narrative-context",
+                "weight": 8
+              }
+            ],
+            "scholarly_interpretation": "A divine/heavenly-being reading draws support from comparable biblical uses of “sons of God” for heavenly beings (for example, Job 1:6; 2:1; 38:7) and from ancient divine-council settings. Other historically documented readings identify the figures with Seth's line, royal or tyrannical rulers, or judges/mighty human beings; interpreters differ over how the phrase and the episode relate. These are recorded positions, not interchangeable textual facts. Later Second Temple angel traditions are treated in a separate item. The Job references are comparative context only and are intentionally absent from scripture_references.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:1-4",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17",
+              "g2-doedens-sons-god"
+            ],
+            "title": "Sons of God: documented interpretive positions"
+          },
+          "passage_reference": "Genesis 6:1-4",
+          "source_records": [
+            {
+              "author": "Jaap J. T. Doedens",
+              "id": "g2-doedens-sons-god",
+              "locator": "Interpretive history and analysis of Genesis 6:1–4",
+              "notes": "Monograph surveying the text, ancient context, and reception of the principal interpretive positions; used to preserve disagreement rather than select one view.",
+              "publisher": "Brill",
+              "source_type": "academic-book",
+              "supports": [
+                "g6-sons-of-god-interpretive-positions"
+              ],
+              "title": "The Sons of God in Genesis 6:1–4: Analysis and History of Exegesis",
+              "url": "https://books.google.com/books/about/The_Sons_of_God_in_Genesis_6_1_4.html?id=oPuiDwAAQBAJ",
+              "year": 2019
+            }
+          ],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 6:1-4"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17",
+          "g2-doedens-sons-god"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "disputed",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 6:1–4 calls the male figures *bene ha'elohim* (“sons of God”), distinguishes them from the daughters of humanity, and reports that they take wives. The identity of the figures and the force of the episode remain disputed.",
+          "dispute_status": "major_scholarly_disagreement",
+          "evidence_type": "worldview-concept",
+          "geography_ids": [],
+          "id": "g6-sons-of-god-interpretive-positions",
+          "notes": "Only Genesis 6:1–4 is an applicability anchor. Job and other canonical comparisons are explanatory notes, not additional scripture_references.",
+          "passage_relevance": "Genesis 6:1–4 calls the male figures *bene ha'elohim* (“sons of God”), distinguishes them from the daughters of humanity, and reports that they take wives. The identity of the figures and the force of the episode remain disputed. This evidence supports passage-specific synthesis of Genesis 6:1-4 while preserving the stated interpretive limits.",
+          "primary_observation": "The Hebrew phrase is explicit, while Genesis 6:1–4 itself does not name the figures as Sethites, kings, angels, or demons.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "The episode occurs within the preflood account.",
+              "relationship": "narrative-context",
+              "weight": 8
+            }
+          ],
+          "scholarly_interpretation": "A divine/heavenly-being reading draws support from comparable biblical uses of “sons of God” for heavenly beings (for example, Job 1:6; 2:1; 38:7) and from ancient divine-council settings. Other historically documented readings identify the figures with Seth's line, royal or tyrannical rulers, or judges/mighty human beings; interpreters differ over how the phrase and the episode relate. These are recorded positions, not interchangeable textual facts. Later Second Temple angel traditions are treated in a separate item. The Job references are comparative context only and are intentionally absent from scripture_references.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:1-4",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17",
+            "g2-doedens-sons-god"
+          ],
+          "title": "Sons of God: documented interpretive positions"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "second-temple-reception",
+          "evidence_item": {
+            "assertion_type": "primary-evidence",
+            "certainty": "strong_consensus",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Second Temple texts such as 1 Enoch 6–16 and Jubilees 5:1–11 develop an angelic/Watchers reading of the “sons of God” episode and its offspring. These texts attest later interpretation rather than adding details to Genesis 6:1–4.",
+            "dispute_status": "minor_scholarly_disagreement",
+            "evidence_type": "ancient-text",
+            "geography_ids": [],
+            "id": "g6-second-temple-watchers-reception",
+            "notes": "The 1 Enoch and Jubilees records are later reception sources, not scripture_references or co-temporal evidence for Genesis wording.",
+            "passage_relevance": "Second Temple texts such as 1 Enoch 6–16 and Jubilees 5:1–11 develop an angelic/Watchers reading of the “sons of God” episode and its offspring. These texts attest later interpretation rather than adding details to Genesis 6:1–4. This evidence supports passage-specific synthesis of Genesis 6:1-4 while preserving the stated interpretive limits.",
+            "primary_observation": "Genesis 6:1–4 does not mention Watchers, fallen angels, demonic spirits, or an angelic system; the later texts develop those motifs explicitly.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "Later reception interprets the episode within the flood story.",
+                "relationship": "narrative-context",
+                "weight": 7
+              }
+            ],
+            "scholarly_interpretation": "The reception history helps explain the long influence of a heavenly-being reading. It must remain diachronically distinct from the immediate wording of Genesis; claims about demons or a fixed angelic cosmology are not presented as facts stated in Genesis.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:1-4",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "g2-doedens-sons-god",
+              "g2-1-enoch-6",
+              "g2-jubilees-5"
+            ],
+            "title": "Second Temple Watchers reception of Genesis 6"
+          },
+          "passage_reference": "Genesis 6:1-4",
+          "source_records": [
+            {
+              "author": "Jaap J. T. Doedens",
+              "id": "g2-doedens-sons-god",
+              "locator": "Interpretive history and analysis of Genesis 6:1–4",
+              "notes": "Monograph surveying the text, ancient context, and reception of the principal interpretive positions; used to preserve disagreement rather than select one view.",
+              "publisher": "Brill",
+              "source_type": "academic-book",
+              "supports": [
+                "g6-sons-of-god-interpretive-positions"
+              ],
+              "title": "The Sons of God in Genesis 6:1–4: Analysis and History of Exegesis",
+              "url": "https://books.google.com/books/about/The_Sons_of_God_in_Genesis_6_1_4.html?id=oPuiDwAAQBAJ",
+              "year": 2019
+            },
+            {
+              "author": "Ancient Jewish text",
+              "id": "g2-1-enoch-6",
+              "locator": "1 Enoch 6–16, Watchers narrative",
+              "notes": "Second Temple reception witness. Its angelic interpretation is later reception of Genesis and is not evidence for Genesis 6's immediate wording.",
+              "publisher": "Sefaria",
+              "source_type": "ancient-primary-source",
+              "supports": [
+                "g6-second-temple-watchers-reception"
+              ],
+              "title": "1 Enoch 6–16",
+              "url": "https://www.sefaria.org/1_Enoch.6?lang=bi",
+              "year": -200
+            },
+            {
+              "author": "Ancient Jewish text",
+              "id": "g2-jubilees-5",
+              "locator": "Jubilees 5:1–11",
+              "notes": "Second Temple reception witness. Angelic descent and offspring traditions are recorded as reception, not imported into Genesis 6's own claims.",
+              "publisher": "Sefaria",
+              "source_type": "ancient-primary-source",
+              "supports": [
+                "g6-second-temple-watchers-reception"
+              ],
+              "title": "Book of Jubilees 5:1–11",
+              "url": "https://www.sefaria.org/Book_of_Jubilees.5?lang=bi",
+              "year": -150
+            }
+          ],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 6:1-4"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "g2-doedens-sons-god",
+          "g2-1-enoch-6",
+          "g2-jubilees-5"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "primary-evidence",
+          "certainty": "strong_consensus",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Second Temple texts such as 1 Enoch 6–16 and Jubilees 5:1–11 develop an angelic/Watchers reading of the “sons of God” episode and its offspring. These texts attest later interpretation rather than adding details to Genesis 6:1–4.",
+          "dispute_status": "minor_scholarly_disagreement",
+          "evidence_type": "ancient-text",
+          "geography_ids": [],
+          "id": "g6-second-temple-watchers-reception",
+          "notes": "The 1 Enoch and Jubilees records are later reception sources, not scripture_references or co-temporal evidence for Genesis wording.",
+          "passage_relevance": "Second Temple texts such as 1 Enoch 6–16 and Jubilees 5:1–11 develop an angelic/Watchers reading of the “sons of God” episode and its offspring. These texts attest later interpretation rather than adding details to Genesis 6:1–4. This evidence supports passage-specific synthesis of Genesis 6:1-4 while preserving the stated interpretive limits.",
+          "primary_observation": "Genesis 6:1–4 does not mention Watchers, fallen angels, demonic spirits, or an angelic system; the later texts develop those motifs explicitly.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "Later reception interprets the episode within the flood story.",
+              "relationship": "narrative-context",
+              "weight": 7
+            }
+          ],
+          "scholarly_interpretation": "The reception history helps explain the long influence of a heavenly-being reading. It must remain diachronically distinct from the immediate wording of Genesis; claims about demons or a fixed angelic cosmology are not presented as facts stated in Genesis.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:1-4",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "g2-doedens-sons-god",
+            "g2-1-enoch-6",
+            "g2-jubilees-5"
+          ],
+          "title": "Second Temple Watchers reception of Genesis 6"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "lexical-concepts",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "disputed",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 6:4 says the Nephilim were on the earth in those days and also afterward, then associates the period with mighty men of old, men of renown. The syntax does not unambiguously state that the Nephilim are identical with the offspring or with the mighty men.",
+            "dispute_status": "interpretive_uncertainty",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g6-nephilim-and-mighty-men",
+            "notes": "Numbers 13:33 and later giant traditions are contextual reception/comparison only; they are deliberately not scripture_references.",
+            "passage_relevance": "Genesis 6:4 says the Nephilim were on the earth in those days and also afterward, then associates the period with mighty men of old, men of renown. The syntax does not unambiguously state that the Nephilim are identical with the offspring or with the mighty men. This evidence supports passage-specific synthesis of Genesis 6:4 while preserving the stated interpretive limits.",
+            "primary_observation": "The verse names Nephilim and separately describes mighty men and men of renown; it supplies no height, anatomy, or physical dimensions.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "The notice sits within the preflood account.",
+                "relationship": "preflood-context",
+                "weight": 7
+              }
+            ],
+            "scholarly_interpretation": "Numbers 13:33 later uses “Nephilim” in the spies' report, and ancient giant traditions developed in reception. Those later comparisons do not supply a physical description for Genesis 6:4, and the spies' claim is itself a later narrative report. No demonic genealogy or measurements are inferred.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:4",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17",
+              "g2-doedens-sons-god"
+            ],
+            "title": "Nephilim and the mighty-men notice"
+          },
+          "passage_reference": "Genesis 6:4",
+          "source_records": [
+            {
+              "author": "Jaap J. T. Doedens",
+              "id": "g2-doedens-sons-god",
+              "locator": "Interpretive history and analysis of Genesis 6:1–4",
+              "notes": "Monograph surveying the text, ancient context, and reception of the principal interpretive positions; used to preserve disagreement rather than select one view.",
+              "publisher": "Brill",
+              "source_type": "academic-book",
+              "supports": [
+                "g6-sons-of-god-interpretive-positions"
+              ],
+              "title": "The Sons of God in Genesis 6:1–4: Analysis and History of Exegesis",
+              "url": "https://books.google.com/books/about/The_Sons_of_God_in_Genesis_6_1_4.html?id=oPuiDwAAQBAJ",
+              "year": 2019
+            }
+          ],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 6:4"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17",
+          "g2-doedens-sons-god"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "disputed",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 6:4 says the Nephilim were on the earth in those days and also afterward, then associates the period with mighty men of old, men of renown. The syntax does not unambiguously state that the Nephilim are identical with the offspring or with the mighty men.",
+          "dispute_status": "interpretive_uncertainty",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g6-nephilim-and-mighty-men",
+          "notes": "Numbers 13:33 and later giant traditions are contextual reception/comparison only; they are deliberately not scripture_references.",
+          "passage_relevance": "Genesis 6:4 says the Nephilim were on the earth in those days and also afterward, then associates the period with mighty men of old, men of renown. The syntax does not unambiguously state that the Nephilim are identical with the offspring or with the mighty men. This evidence supports passage-specific synthesis of Genesis 6:4 while preserving the stated interpretive limits.",
+          "primary_observation": "The verse names Nephilim and separately describes mighty men and men of renown; it supplies no height, anatomy, or physical dimensions.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "The notice sits within the preflood account.",
+              "relationship": "preflood-context",
+              "weight": 7
+            }
+          ],
+          "scholarly_interpretation": "Numbers 13:33 later uses “Nephilim” in the spies' report, and ancient giant traditions developed in reception. Those later comparisons do not supply a physical description for Genesis 6:4, and the spies' claim is itself a later narrative report. No demonic genealogy or measurements are inferred.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:4",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17",
+            "g2-doedens-sons-god"
+          ],
+          "title": "Nephilim and the mighty-men notice"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "chronology",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "disputed",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 6:3 gives a 120-year limit in the divine speech concerning the human condition before the flood. The verse does not explicitly identify whether the period describes future human lifespan or time remaining until the flood.",
+            "dispute_status": "major_scholarly_disagreement",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g6-one-hundred-twenty-years",
+            "notes": "Genesis 11 lifespan data is comparative context only and is not added to scripture_references.",
+            "passage_relevance": "Genesis 6:3 gives a 120-year limit in the divine speech concerning the human condition before the flood. The verse does not explicitly identify whether the period describes future human lifespan or time remaining until the flood. This evidence supports passage-specific synthesis of Genesis 6:3 while preserving the stated interpretive limits.",
+            "primary_observation": "The number 120 and the phrase about the human days are explicit; the temporal referent is not specified in the verse.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "The reading is shaped by the flood announcement in the immediate narrative.",
+                "relationship": "chronological-context",
+                "weight": 8
+              }
+            ],
+            "scholarly_interpretation": "Major readings take the statement as a limit on human lifespan or as a countdown/grace period before the flood. Other readings connect it to the narrative's description of creaturely limits. The disagreement should remain visible; Genesis 11's longer lifespans are a later-book comparison, not part of this item's applicability anchor.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:3",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17",
+              "g2-way-120-years"
+            ],
+            "title": "The disputed 120-year statement"
+          },
+          "passage_reference": "Genesis 6:3",
+          "source_records": [
+            {
+              "author": "Kenneth C. Way",
+              "id": "g2-way-120-years",
+              "locator": "Discussion of Genesis 6:3 and the 120-year lifespan/countdown readings",
+              "notes": "Recent scholarly discussion records both major readings; the item marks the verse as disputed.",
+              "publisher": "Sage Journals",
+              "source_type": "journal-article",
+              "supports": [
+                "g6-one-hundred-twenty-years"
+              ],
+              "title": "Goodness and Creaturely Finitude: Time and Limits in Genesis 1–11 and in Christian Practice",
+              "url": "https://journals.sagepub.com/doi/10.1177/19397909261422637",
+              "year": 2026
+            }
+          ],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 6:3"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17",
+          "g2-way-120-years"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "disputed",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 6:3 gives a 120-year limit in the divine speech concerning the human condition before the flood. The verse does not explicitly identify whether the period describes future human lifespan or time remaining until the flood.",
+          "dispute_status": "major_scholarly_disagreement",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g6-one-hundred-twenty-years",
+          "notes": "Genesis 11 lifespan data is comparative context only and is not added to scripture_references.",
+          "passage_relevance": "Genesis 6:3 gives a 120-year limit in the divine speech concerning the human condition before the flood. The verse does not explicitly identify whether the period describes future human lifespan or time remaining until the flood. This evidence supports passage-specific synthesis of Genesis 6:3 while preserving the stated interpretive limits.",
+          "primary_observation": "The number 120 and the phrase about the human days are explicit; the temporal referent is not specified in the verse.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "The reading is shaped by the flood announcement in the immediate narrative.",
+              "relationship": "chronological-context",
+              "weight": 8
+            }
+          ],
+          "scholarly_interpretation": "Major readings take the statement as a limit on human lifespan or as a countdown/grace period before the flood. Other readings connect it to the narrative's description of creaturely limits. The disagreement should remain visible; Genesis 11's longer lifespans are a later-book comparison, not part of this item's applicability anchor.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:3",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17",
+            "g2-way-120-years"
+          ],
+          "title": "The disputed 120-year statement"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "hebrew-worldview-concepts",
+          "evidence_item": {
+            "assertion_type": "primary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 6:5 describes the evil of human action and the continuing inclination of the heart's thoughts; 6:11–13 names corruption and violence filling the earth. The account links inward intention with public harm without reducing one to the other.",
+            "dispute_status": "minor_scholarly_disagreement",
+            "evidence_type": "worldview-concept",
+            "geography_ids": [],
+            "id": "g6-evil-intention-and-violence",
+            "notes": "Genesis 4 is cited as literary context in prose only; it is not an applicability anchor for this item.",
+            "passage_relevance": "Genesis 6:5 describes the evil of human action and the continuing inclination of the heart's thoughts; 6:11–13 names corruption and violence filling the earth. The account links inward intention with public harm without reducing one to the other. This evidence supports passage-specific synthesis of Genesis 6:5-13 while preserving the stated interpretive limits.",
+            "primary_observation": "The repeated language of evil, corruption, and violence culminates in the earth being filled with violence; Genesis 4's Cain and Lamech episodes provide an earlier narrative escalation.",
+            "related_objects": [
+              {
+                "id": "the-fall",
+                "notes": "The flood narrative continues Genesis's account of human rupture.",
+                "relationship": "primeval-human-condition",
+                "weight": 7
+              },
+              {
+                "id": "the-flood",
+                "notes": "Corruption and violence motivate the flood judgment in the narrative.",
+                "relationship": "judgment-context",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "The movement from interpersonal murder and escalating vengeance in Genesis 4 to earth-wide violence in Genesis 6 is a literary development in the received sequence. It does not make every person or every act identical, and the comparison with Genesis 4 is explanatory context only, not an additional applicability anchor.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:5-13",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17"
+            ],
+            "title": "Human intention, corruption, and violence"
+          },
+          "passage_reference": "Genesis 6:5-13",
+          "source_records": [],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 6:5-13"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "primary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 6:5 describes the evil of human action and the continuing inclination of the heart's thoughts; 6:11–13 names corruption and violence filling the earth. The account links inward intention with public harm without reducing one to the other.",
+          "dispute_status": "minor_scholarly_disagreement",
+          "evidence_type": "worldview-concept",
+          "geography_ids": [],
+          "id": "g6-evil-intention-and-violence",
+          "notes": "Genesis 4 is cited as literary context in prose only; it is not an applicability anchor for this item.",
+          "passage_relevance": "Genesis 6:5 describes the evil of human action and the continuing inclination of the heart's thoughts; 6:11–13 names corruption and violence filling the earth. The account links inward intention with public harm without reducing one to the other. This evidence supports passage-specific synthesis of Genesis 6:5-13 while preserving the stated interpretive limits.",
+          "primary_observation": "The repeated language of evil, corruption, and violence culminates in the earth being filled with violence; Genesis 4's Cain and Lamech episodes provide an earlier narrative escalation.",
+          "related_objects": [
+            {
+              "id": "the-fall",
+              "notes": "The flood narrative continues Genesis's account of human rupture.",
+              "relationship": "primeval-human-condition",
+              "weight": 7
+            },
+            {
+              "id": "the-flood",
+              "notes": "Corruption and violence motivate the flood judgment in the narrative.",
+              "relationship": "judgment-context",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "The movement from interpersonal murder and escalating vengeance in Genesis 4 to earth-wide violence in Genesis 6 is a literary development in the received sequence. It does not make every person or every act identical, and the comparison with Genesis 4 is explanatory context only, not an additional applicability anchor.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:5-13",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17"
+          ],
+          "title": "Human intention, corruption, and violence"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "lexical-concepts",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 6:6 uses the Hebrew verb *naḥam* for YHWH's regret/relenting and the verb *ʿatsav* for grief or pain of heart; the next verse frames the response to human evil. The wording is emotionally vivid anthropopathic narration.",
+            "dispute_status": "interpretive_uncertainty",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g6-divine-grief-and-regret",
+            "notes": "Anthropopathic description is an interpretive label; no systematic-theology conclusion is encoded as evidence.",
+            "passage_relevance": "Genesis 6:6 uses the Hebrew verb *naḥam* for YHWH's regret/relenting and the verb *ʿatsav* for grief or pain of heart; the next verse frames the response to human evil. The wording is emotionally vivid anthropopathic narration. This evidence supports passage-specific synthesis of Genesis 6:6-7 while preserving the stated interpretive limits.",
+            "primary_observation": "The text directly predicates regret and heart-grief of YHWH in response to human evil and announces judgment; it does not itself formulate a systematic account of divine change or immutability.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "The grief statement precedes the flood judgment.",
+                "relationship": "narrative-context",
+                "weight": 8
+              }
+            ],
+            "scholarly_interpretation": "Lexical and literary readings describe sorrow, regret, or relenting in the narrated relationship. The passage should be allowed to retain its affective force without turning one verse into a stand-alone metaphysical conclusion. Genesis 1–5 may provide literary context, but this evidence is anchored only to Genesis 6:6–7.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:6-7",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17"
+            ],
+            "title": "Divine regret and grief in Genesis 6"
+          },
+          "passage_reference": "Genesis 6:6-7",
+          "source_records": [],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 6:6-7"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 6:6 uses the Hebrew verb *naḥam* for YHWH's regret/relenting and the verb *ʿatsav* for grief or pain of heart; the next verse frames the response to human evil. The wording is emotionally vivid anthropopathic narration.",
+          "dispute_status": "interpretive_uncertainty",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g6-divine-grief-and-regret",
+          "notes": "Anthropopathic description is an interpretive label; no systematic-theology conclusion is encoded as evidence.",
+          "passage_relevance": "Genesis 6:6 uses the Hebrew verb *naḥam* for YHWH's regret/relenting and the verb *ʿatsav* for grief or pain of heart; the next verse frames the response to human evil. The wording is emotionally vivid anthropopathic narration. This evidence supports passage-specific synthesis of Genesis 6:6-7 while preserving the stated interpretive limits.",
+          "primary_observation": "The text directly predicates regret and heart-grief of YHWH in response to human evil and announces judgment; it does not itself formulate a systematic account of divine change or immutability.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "The grief statement precedes the flood judgment.",
+              "relationship": "narrative-context",
+              "weight": 8
+            }
+          ],
+          "scholarly_interpretation": "Lexical and literary readings describe sorrow, regret, or relenting in the narrated relationship. The passage should be allowed to retain its affective force without turning one verse into a stand-alone metaphysical conclusion. Genesis 1–5 may provide literary context, but this evidence is anchored only to Genesis 6:6–7.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:6-7",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17"
+          ],
+          "title": "Divine regret and grief in Genesis 6"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "literary-convention",
+          "evidence_item": {
+            "assertion_type": "primary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 6:8 says Noah found favor in YHWH's eyes; 6:9 introduces Noah's *toledot* and describes him as righteous, blameless in his generations, and walking with God. The genealogy heading introduces the narrative section centered on Noah and his family.",
+            "dispute_status": "minor_scholarly_disagreement",
+            "evidence_type": "person",
+            "geography_ids": [],
+            "id": "g6-noah-favor-righteousness-and-toledot",
+            "notes": "The source and descriptive terms are attached to Genesis 6:8–9 only.",
+            "passage_relevance": "Genesis 6:8 says Noah found favor in YHWH's eyes; 6:9 introduces Noah's *toledot* and describes him as righteous, blameless in his generations, and walking with God. The genealogy heading introduces the narrative section centered on Noah and his family. This evidence supports passage-specific synthesis of Genesis 6:8-9 while preserving the stated interpretive limits.",
+            "primary_observation": "Favor precedes the description of Noah's character; *toledot* at 6:9 is followed by a narrative about Noah, not only a list of descendants.",
+            "related_objects": [
+              {
+                "id": "genesis",
+                "notes": "The Noah toledot marks a major section in Genesis.",
+                "relationship": "book-context",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "The description distinguishes Noah from the corruption and violence around him while remaining part of the section's literary transition. “Blameless” is a character description in the narrative and need not be inflated into absolute sinlessness. Schwartz's study treats the Noah toledot as a narrative heading.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:8-9",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-11",
+              "noah-historical-orientation",
+              "g2-schwartz-toledot"
+            ],
+            "title": "Noah finds favor; the Noah toledot begins"
+          },
+          "passage_reference": "Genesis 6:8-9",
+          "source_records": [
+            {
+              "author": "Sarah Schwartz",
+              "id": "g2-schwartz-toledot",
+              "locator": "Article discussion of Genesis 6:9 and the Noah toledot section",
+              "notes": "Literary study of the toledot formula and the narrative function of Noah's genealogy heading.",
+              "publisher": "Journal of Hebrew Scriptures 16",
+              "source_type": "journal-article",
+              "supports": [
+                "g6-noah-favor-righteousness-and-toledot"
+              ],
+              "title": "Narrative Toledot Formulae in Genesis: The Case of Heaven and Earth, Noah, and Isaac",
+              "url": "https://doi.org/10.5508/jhs.2016.v16.a8",
+              "year": 2016
+            }
+          ],
+          "target_object_id": "noah"
+        },
+        "changed_references": [
+          "Genesis 6:8-9"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-11",
+          "noah-historical-orientation",
+          "g2-schwartz-toledot"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "primary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 6:8 says Noah found favor in YHWH's eyes; 6:9 introduces Noah's *toledot* and describes him as righteous, blameless in his generations, and walking with God. The genealogy heading introduces the narrative section centered on Noah and his family.",
+          "dispute_status": "minor_scholarly_disagreement",
+          "evidence_type": "person",
+          "geography_ids": [],
+          "id": "g6-noah-favor-righteousness-and-toledot",
+          "notes": "The source and descriptive terms are attached to Genesis 6:8–9 only.",
+          "passage_relevance": "Genesis 6:8 says Noah found favor in YHWH's eyes; 6:9 introduces Noah's *toledot* and describes him as righteous, blameless in his generations, and walking with God. The genealogy heading introduces the narrative section centered on Noah and his family. This evidence supports passage-specific synthesis of Genesis 6:8-9 while preserving the stated interpretive limits.",
+          "primary_observation": "Favor precedes the description of Noah's character; *toledot* at 6:9 is followed by a narrative about Noah, not only a list of descendants.",
+          "related_objects": [
+            {
+              "id": "genesis",
+              "notes": "The Noah toledot marks a major section in Genesis.",
+              "relationship": "book-context",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "The description distinguishes Noah from the corruption and violence around him while remaining part of the section's literary transition. “Blameless” is a character description in the narrative and need not be inflated into absolute sinlessness. Schwartz's study treats the Noah toledot as a narrative heading.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:8-9",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-11",
+            "noah-historical-orientation",
+            "g2-schwartz-toledot"
+          ],
+          "title": "Noah finds favor; the Noah toledot begins"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "archaeology-material-culture",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 6:14–16 specifies a vessel coated inside and outside with *kopher* (pitch), compartments, a window, a door, three levels, and dimensions of 300 by 50 by 30 cubits. The Hebrew *gopher* wood term is uncertain; “cypress” is a proposal rather than a secure identification.",
+            "dispute_status": "lexical_uncertainty",
+            "evidence_type": "material-culture",
+            "geography_ids": [],
+            "id": "g6-ark-instructions-and-material-terms",
+            "notes": "Comparative ancient vessel evidence is kept in source records and the existing comparison object; it is not placed in scripture_references.",
+            "passage_relevance": "Genesis 6:14–16 specifies a vessel coated inside and outside with *kopher* (pitch), compartments, a window, a door, three levels, and dimensions of 300 by 50 by 30 cubits. The Hebrew *gopher* wood term is uncertain; “cypress” is a proposal rather than a secure identification. This evidence supports passage-specific synthesis of Genesis 6:14-16 while preserving the stated interpretive limits.",
+            "primary_observation": "The construction description is detailed but gives no construction site, surviving object, or archaeological identification; “ark” describes a preservation vessel in this narrative, not a modernly measured shipwreck.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "The instructions concern the vessel at the center of the flood narrative.",
+                "relationship": "vessel-and-preservation",
+                "weight": 9
+              },
+              {
+                "id": "mesopotamian-creation-and-flood-comparisons",
+                "notes": "The existing comparison object already holds ancient flood-vessel comparanda.",
+                "relationship": "bounded-ancient-comparison",
+                "weight": 7
+              }
+            ],
+            "scholarly_interpretation": "Comparative large-vessel traditions can provide material background, but they cannot establish the exact wood species, a historical hull design, or the location of Noah's ark. No archaeological-discovery claim is supported.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:14-16",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17",
+              "g2-ark-flood-context"
+            ],
+            "title": "Ark dimensions, structure, and uncertain materials"
+          },
+          "passage_reference": "Genesis 6:14-16",
+          "source_records": [
+            {
+              "author": "Shalom E. Holtz",
+              "id": "g2-ark-flood-context",
+              "locator": "Discussion of the pitch term *kofer* in Genesis 6:14 and its Akkadian comparative context",
+              "notes": "Supports the pitch/Akkadian comparison only; the uncertain *gopher* wood term is not attributed to this article, and no archaeological ark identification is asserted.",
+              "publisher": "TheTorah.com",
+              "source_type": "reference-work",
+              "supports": [
+                "g6-ark-instructions-and-material-terms"
+              ],
+              "title": "The Flood Story in Its Ancient Near Eastern Context",
+              "url": "https://www.thetorah.com/article/the-flood-story-in-its-ancient-near-eastern-context",
+              "year": 2014
+            }
+          ],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 6:14-16"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17",
+          "g2-ark-flood-context"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 6:14–16 specifies a vessel coated inside and outside with *kopher* (pitch), compartments, a window, a door, three levels, and dimensions of 300 by 50 by 30 cubits. The Hebrew *gopher* wood term is uncertain; “cypress” is a proposal rather than a secure identification.",
+          "dispute_status": "lexical_uncertainty",
+          "evidence_type": "material-culture",
+          "geography_ids": [],
+          "id": "g6-ark-instructions-and-material-terms",
+          "notes": "Comparative ancient vessel evidence is kept in source records and the existing comparison object; it is not placed in scripture_references.",
+          "passage_relevance": "Genesis 6:14–16 specifies a vessel coated inside and outside with *kopher* (pitch), compartments, a window, a door, three levels, and dimensions of 300 by 50 by 30 cubits. The Hebrew *gopher* wood term is uncertain; “cypress” is a proposal rather than a secure identification. This evidence supports passage-specific synthesis of Genesis 6:14-16 while preserving the stated interpretive limits.",
+          "primary_observation": "The construction description is detailed but gives no construction site, surviving object, or archaeological identification; “ark” describes a preservation vessel in this narrative, not a modernly measured shipwreck.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "The instructions concern the vessel at the center of the flood narrative.",
+              "relationship": "vessel-and-preservation",
+              "weight": 9
+            },
+            {
+              "id": "mesopotamian-creation-and-flood-comparisons",
+              "notes": "The existing comparison object already holds ancient flood-vessel comparanda.",
+              "relationship": "bounded-ancient-comparison",
+              "weight": 7
+            }
+          ],
+          "scholarly_interpretation": "Comparative large-vessel traditions can provide material background, but they cannot establish the exact wood species, a historical hull design, or the location of Noah's ark. No archaeological-discovery claim is supported.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:14-16",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17",
+            "g2-ark-flood-context"
+          ],
+          "title": "Ark dimensions, structure, and uncertain materials"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "covenant-context",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 6:18 is the first occurrence of covenant language in Genesis: God says that he will establish a covenant with Noah, who enters the ark with his household. The narrative later specifies a covenant with Noah, descendants, and living creatures in Genesis 9.",
+            "dispute_status": "interpretive_uncertainty",
+            "evidence_type": "institution",
+            "geography_ids": [],
+            "id": "g6-covenant-announced-before-flood",
+            "notes": "Genesis 9 is mentioned as within-book context only; this item applies only to Genesis 6:18.",
+            "passage_relevance": "Genesis 6:18 is the first occurrence of covenant language in Genesis: God says that he will establish a covenant with Noah, who enters the ark with his household. The narrative later specifies a covenant with Noah, descendants, and living creatures in Genesis 9. This evidence supports passage-specific synthesis of Genesis 6:18 while preserving the stated interpretive limits.",
+            "primary_observation": "The covenant is announced before the flood and before Noah's entry; Genesis 6:18 does not yet give the full terms or sign.",
+            "related_objects": [
+              {
+                "id": "covenant-theme",
+                "notes": "The announcement belongs to Genesis's developing covenant theme.",
+                "relationship": "narrative-context",
+                "weight": 8
+              },
+              {
+                "id": "the-flood",
+                "notes": "The promise of covenant frames Noah's preservation.",
+                "relationship": "covenant-trajectory",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "The forward relation to Genesis 9 is a within-book literary connection, while the exact formal status of the earlier covenant announcement is debated. The later terms are not copied into this verse's anchor.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 6:18",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17"
+            ],
+            "title": "Covenant terminology anticipates Genesis 9"
+          },
+          "passage_reference": "Genesis 6:18",
+          "source_records": [],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 6:18"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 6:18 is the first occurrence of covenant language in Genesis: God says that he will establish a covenant with Noah, who enters the ark with his household. The narrative later specifies a covenant with Noah, descendants, and living creatures in Genesis 9.",
+          "dispute_status": "interpretive_uncertainty",
+          "evidence_type": "institution",
+          "geography_ids": [],
+          "id": "g6-covenant-announced-before-flood",
+          "notes": "Genesis 9 is mentioned as within-book context only; this item applies only to Genesis 6:18.",
+          "passage_relevance": "Genesis 6:18 is the first occurrence of covenant language in Genesis: God says that he will establish a covenant with Noah, who enters the ark with his household. The narrative later specifies a covenant with Noah, descendants, and living creatures in Genesis 9. This evidence supports passage-specific synthesis of Genesis 6:18 while preserving the stated interpretive limits.",
+          "primary_observation": "The covenant is announced before the flood and before Noah's entry; Genesis 6:18 does not yet give the full terms or sign.",
+          "related_objects": [
+            {
+              "id": "covenant-theme",
+              "notes": "The announcement belongs to Genesis's developing covenant theme.",
+              "relationship": "narrative-context",
+              "weight": 8
+            },
+            {
+              "id": "the-flood",
+              "notes": "The promise of covenant frames Noah's preservation.",
+              "relationship": "covenant-trajectory",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "The forward relation to Genesis 9 is a within-book literary connection, while the exact formal status of the earlier covenant announcement is debated. The later terms are not copied into this verse's anchor.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 6:18",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17"
+          ],
+          "title": "Covenant terminology anticipates Genesis 9"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "cultural-social-context",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "disputed",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 7 narrates Noah, his wife, his three sons and their wives entering the ark; it distinguishes clean from unclean animals and birds. The wording of 7:2–3 is commonly rendered as seven pairs or as seven of each, while 6:19–20 had described pairs of each kind.",
+            "dispute_status": "lexical_uncertainty",
+            "evidence_type": "cultural-practice",
+            "geography_ids": [],
+            "id": "g7-clean-animals-and-family-entry",
+            "notes": "No later Torah passage is an applicability anchor for this Genesis 7 item.",
+            "passage_relevance": "Genesis 7 narrates Noah, his wife, his three sons and their wives entering the ark; it distinguishes clean from unclean animals and birds. The wording of 7:2–3 is commonly rendered as seven pairs or as seven of each, while 6:19–20 had described pairs of each kind. This evidence supports passage-specific synthesis of Genesis 7:1-9 while preserving the stated interpretive limits.",
+            "primary_observation": "The received narrative preserves both the earlier pair instruction and the later expanded number for clean animals and birds; clean/unclean categories appear before the detailed legislation of Leviticus.",
+            "related_objects": [
+              {
+                "id": "noah",
+                "notes": "Noah and his household enter the ark.",
+                "relationship": "principal-person",
+                "weight": 8
+              },
+              {
+                "id": "the-flood",
+                "notes": "The animals and family enter in the flood narrative.",
+                "relationship": "ark-entry",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "One reading takes the seven/seven wording as extra clean animals and birds available for sacrifice after the flood; another attends to the wording and possible literary layering. The categories should not be described as simply identical to later Mosaic legislation or projected backward as its completed legal system.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 7:1-9",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17"
+            ],
+            "title": "Noah's household and clean-animal groups enter"
+          },
+          "passage_reference": "Genesis 7:1-9",
+          "source_records": [],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 7:1-9"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "disputed",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 7 narrates Noah, his wife, his three sons and their wives entering the ark; it distinguishes clean from unclean animals and birds. The wording of 7:2–3 is commonly rendered as seven pairs or as seven of each, while 6:19–20 had described pairs of each kind.",
+          "dispute_status": "lexical_uncertainty",
+          "evidence_type": "cultural-practice",
+          "geography_ids": [],
+          "id": "g7-clean-animals-and-family-entry",
+          "notes": "No later Torah passage is an applicability anchor for this Genesis 7 item.",
+          "passage_relevance": "Genesis 7 narrates Noah, his wife, his three sons and their wives entering the ark; it distinguishes clean from unclean animals and birds. The wording of 7:2–3 is commonly rendered as seven pairs or as seven of each, while 6:19–20 had described pairs of each kind. This evidence supports passage-specific synthesis of Genesis 7:1-9 while preserving the stated interpretive limits.",
+          "primary_observation": "The received narrative preserves both the earlier pair instruction and the later expanded number for clean animals and birds; clean/unclean categories appear before the detailed legislation of Leviticus.",
+          "related_objects": [
+            {
+              "id": "noah",
+              "notes": "Noah and his household enter the ark.",
+              "relationship": "principal-person",
+              "weight": 8
+            },
+            {
+              "id": "the-flood",
+              "notes": "The animals and family enter in the flood narrative.",
+              "relationship": "ark-entry",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "One reading takes the seven/seven wording as extra clean animals and birds available for sacrifice after the flood; another attends to the wording and possible literary layering. The categories should not be described as simply identical to later Mosaic legislation or projected backward as its completed legal system.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 7:1-9",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17"
+          ],
+          "title": "Noah's household and clean-animal groups enter"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "chronology",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 7 places Noah at age 600 at the flood's onset, gives a seven-day interval before the waters, records rain for forty days and nights, dates the onset to month two day seventeen, and says the waters prevailed for 150 days. These markers organize the narrative's chronology.",
+            "dispute_status": "chronological_uncertainty",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g7-flood-chronology-and-dated-sequence",
+            "notes": "Chronology observations are confined to the Genesis 7 notices; Genesis 8 dates are treated in a separate item.",
+            "passage_relevance": "Genesis 7 places Noah at age 600 at the flood's onset, gives a seven-day interval before the waters, records rain for forty days and nights, dates the onset to month two day seventeen, and says the waters prevailed for 150 days. These markers organize the narrative's chronology. This evidence supports passage-specific synthesis of Genesis 7:6-24 while preserving the stated interpretive limits.",
+            "primary_observation": "The chapter combines age, month/day, interval, duration, and total-period notices; the 150-day notice is not simply another name for the forty days of rain.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "The dates are the event's internal chronology.",
+                "relationship": "narrative-chronology",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "The final narrative has an ordered sequence, while interpreters debate how repeated notices relate to compositional layers and how the 150 days are counted against later dates in chapter 8. A reading should distinguish the stated intervals instead of collapsing them into one duration.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 7:6-24",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17"
+            ],
+            "title": "Genesis 7's dated flood sequence"
+          },
+          "passage_reference": "Genesis 7:6-24",
+          "source_records": [],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 7:6-24"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 7 places Noah at age 600 at the flood's onset, gives a seven-day interval before the waters, records rain for forty days and nights, dates the onset to month two day seventeen, and says the waters prevailed for 150 days. These markers organize the narrative's chronology.",
+          "dispute_status": "chronological_uncertainty",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g7-flood-chronology-and-dated-sequence",
+          "notes": "Chronology observations are confined to the Genesis 7 notices; Genesis 8 dates are treated in a separate item.",
+          "passage_relevance": "Genesis 7 places Noah at age 600 at the flood's onset, gives a seven-day interval before the waters, records rain for forty days and nights, dates the onset to month two day seventeen, and says the waters prevailed for 150 days. These markers organize the narrative's chronology. This evidence supports passage-specific synthesis of Genesis 7:6-24 while preserving the stated interpretive limits.",
+          "primary_observation": "The chapter combines age, month/day, interval, duration, and total-period notices; the 150-day notice is not simply another name for the forty days of rain.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "The dates are the event's internal chronology.",
+              "relationship": "narrative-chronology",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "The final narrative has an ordered sequence, while interpreters debate how repeated notices relate to compositional layers and how the 150 days are counted against later dates in chapter 8. A reading should distinguish the stated intervals instead of collapsing them into one duration.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 7:6-24",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17"
+          ],
+          "title": "Genesis 7's dated flood sequence"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "hebrew-worldview-concepts",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "plausible",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 7:11 describes the fountains of the great deep bursting open and the windows of heaven opening; rain and rising waters follow. The paired sources evoke the narrative's total reversal of ordered boundaries.",
+            "dispute_status": "interpretive_uncertainty",
+            "evidence_type": "worldview-concept",
+            "geography_ids": [],
+            "id": "g7-cosmic-waters-and-decreation",
+            "notes": "Genesis 1 is retained as a literary comparison in prose only; scripture_references contains Genesis 7 alone.",
+            "passage_relevance": "Genesis 7:11 describes the fountains of the great deep bursting open and the windows of heaven opening; rain and rising waters follow. The paired sources evoke the narrative's total reversal of ordered boundaries. This evidence supports passage-specific synthesis of Genesis 7:11-24 while preserving the stated interpretive limits.",
+            "primary_observation": "The language draws on the deep and heavenly waters and narrates water overcoming the ordered land; Genesis 1's separation of waters offers an immediate book-level literary comparison.",
+            "related_objects": [
+              {
+                "id": "creation",
+                "notes": "The imagery recalls the ordering of waters in Genesis 1.",
+                "relationship": "literary-comparison",
+                "weight": 8
+              },
+              {
+                "id": "the-flood",
+                "notes": "The waters drive the judgment sequence.",
+                "relationship": "waters-and-judgment",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "A decreation reading describes the flood as reversal of creation order and is a recognized literary-theological interpretation. The ancient cosmological idiom should not be converted into a modern scientific diagram or asserted mechanism. Genesis 1 is comparative context only and is not an applicability anchor.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 7:11-24",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-50",
+              "sarna-genesis",
+              "hamilton-genesis-1-17"
+            ],
+            "title": "The deep and heaven's windows"
+          },
+          "passage_reference": "Genesis 7:11-24",
+          "source_records": [],
+          "target_object_id": "genesis"
+        },
+        "changed_references": [
+          "Genesis 7:11-24"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-50",
+          "sarna-genesis",
+          "hamilton-genesis-1-17"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "plausible",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 7:11 describes the fountains of the great deep bursting open and the windows of heaven opening; rain and rising waters follow. The paired sources evoke the narrative's total reversal of ordered boundaries.",
+          "dispute_status": "interpretive_uncertainty",
+          "evidence_type": "worldview-concept",
+          "geography_ids": [],
+          "id": "g7-cosmic-waters-and-decreation",
+          "notes": "Genesis 1 is retained as a literary comparison in prose only; scripture_references contains Genesis 7 alone.",
+          "passage_relevance": "Genesis 7:11 describes the fountains of the great deep bursting open and the windows of heaven opening; rain and rising waters follow. The paired sources evoke the narrative's total reversal of ordered boundaries. This evidence supports passage-specific synthesis of Genesis 7:11-24 while preserving the stated interpretive limits.",
+          "primary_observation": "The language draws on the deep and heavenly waters and narrates water overcoming the ordered land; Genesis 1's separation of waters offers an immediate book-level literary comparison.",
+          "related_objects": [
+            {
+              "id": "creation",
+              "notes": "The imagery recalls the ordering of waters in Genesis 1.",
+              "relationship": "literary-comparison",
+              "weight": 8
+            },
+            {
+              "id": "the-flood",
+              "notes": "The waters drive the judgment sequence.",
+              "relationship": "waters-and-judgment",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "A decreation reading describes the flood as reversal of creation order and is a recognized literary-theological interpretation. The ancient cosmological idiom should not be converted into a modern scientific diagram or asserted mechanism. Genesis 1 is comparative context only and is not an applicability anchor.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 7:11-24",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-50",
+            "sarna-genesis",
+            "hamilton-genesis-1-17"
+          ],
+          "title": "The deep and heaven's windows"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "interpretive-disputes",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "disputed",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 7:19–24 uses comprehensive language for the waters, the earth, high mountains, and all flesh outside the ark. The narrative's rhetoric is expansive; the Hebrew *'erets* can refer to earth or land according to context.",
+            "dispute_status": "major_scholarly_disagreement",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g7-scope-of-flood-language",
+            "notes": "No geological data or non-Genesis passage is made an applicability anchor. Comparative source material is context only.",
+            "passage_relevance": "Genesis 7:19–24 uses comprehensive language for the waters, the earth, high mountains, and all flesh outside the ark. The narrative's rhetoric is expansive; the Hebrew *'erets* can refer to earth or land according to context. This evidence supports passage-specific synthesis of Genesis 7:19-24 while preserving the stated interpretive limits.",
+            "primary_observation": "The wording presents the flood as comprehensive within the narrated world, while the passage does not provide geological measurements or an explicit modern geographic boundary.",
+            "related_objects": [
+              {
+                "id": "mesopotamian-creation-and-flood-comparisons",
+                "notes": "Existing comparative flood evidence is preserved in its dedicated object.",
+                "relationship": "comparative-literary-context",
+                "weight": 7
+              }
+            ],
+            "scholarly_interpretation": "Readers defend a universal/global reading of the narrated event, a reading that treats universal language as ancient rhetorical totality for a devastating regional event, and other literary or theological accounts. Narrative rhetoric, lexical range, theological scope, and geological claims are distinct questions; this evidence records the debate without adjudicating geological evidence. Longman and Walton are a documented regional/hyperbolic proposal, not a consensus statement.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 7:19-24",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-flood-text",
+              "sarna-genesis-flood",
+              "g2-longman-walton-flood"
+            ],
+            "title": "Scope of the flood's universal language"
+          },
+          "passage_reference": "Genesis 7:19-24",
+          "source_records": [
+            {
+              "author": "Tremper Longman III and John H. Walton",
+              "id": "g2-longman-walton-flood",
+              "locator": "Their literary and theological argument concerning flood scope and ancient rhetorical conventions",
+              "notes": "A documented regional/hyperbolic reading of the narrative's universal language, included as one interpretation rather than a geological finding or consensus verdict.",
+              "publisher": "IVP Academic",
+              "source_type": "academic-book",
+              "supports": [
+                "g7-scope-of-flood-language"
+              ],
+              "title": "The Lost World of the Flood: Mythology, Theology, and the Deluge Debate",
+              "url": "https://ivpress.com/the-lost-world-of-the-flood",
+              "year": 2018
+            }
+          ],
+          "target_object_id": "the-flood"
+        },
+        "changed_references": [
+          "Genesis 7:19-24"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-flood-text",
+          "sarna-genesis-flood",
+          "g2-longman-walton-flood"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "disputed",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 7:19–24 uses comprehensive language for the waters, the earth, high mountains, and all flesh outside the ark. The narrative's rhetoric is expansive; the Hebrew *'erets* can refer to earth or land according to context.",
+          "dispute_status": "major_scholarly_disagreement",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g7-scope-of-flood-language",
+          "notes": "No geological data or non-Genesis passage is made an applicability anchor. Comparative source material is context only.",
+          "passage_relevance": "Genesis 7:19–24 uses comprehensive language for the waters, the earth, high mountains, and all flesh outside the ark. The narrative's rhetoric is expansive; the Hebrew *'erets* can refer to earth or land according to context. This evidence supports passage-specific synthesis of Genesis 7:19-24 while preserving the stated interpretive limits.",
+          "primary_observation": "The wording presents the flood as comprehensive within the narrated world, while the passage does not provide geological measurements or an explicit modern geographic boundary.",
+          "related_objects": [
+            {
+              "id": "mesopotamian-creation-and-flood-comparisons",
+              "notes": "Existing comparative flood evidence is preserved in its dedicated object.",
+              "relationship": "comparative-literary-context",
+              "weight": 7
+            }
+          ],
+          "scholarly_interpretation": "Readers defend a universal/global reading of the narrated event, a reading that treats universal language as ancient rhetorical totality for a devastating regional event, and other literary or theological accounts. Narrative rhetoric, lexical range, theological scope, and geological claims are distinct questions; this evidence records the debate without adjudicating geological evidence. Longman and Walton are a documented regional/hyperbolic proposal, not a consensus statement.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 7:19-24",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-flood-text",
+            "sarna-genesis-flood",
+            "g2-longman-walton-flood"
+          ],
+          "title": "Scope of the flood's universal language"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "narrative-function",
+          "evidence_item": {
+            "assertion_type": "primary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 7:21–23 states that land animals and humans outside the ark die as the waters cover the land; Noah and those with him remain alive. This is the narrative's grave judgment outcome.",
+            "dispute_status": "not_disputed",
+            "evidence_type": "historical-event",
+            "geography_ids": [],
+            "id": "g7-judgment-and-death-outside-ark",
+            "notes": "Applicable only to Genesis 7:21–23.",
+            "passage_relevance": "Genesis 7:21–23 states that land animals and humans outside the ark die as the waters cover the land; Noah and those with him remain alive. This is the narrative's grave judgment outcome. This evidence supports passage-specific synthesis of Genesis 7:21-23 while preserving the stated interpretive limits.",
+            "primary_observation": "The passage directly names the destruction of living creatures outside the ark and the preservation of those inside; it gives no graphic description beyond the judgment outcome.",
+            "related_objects": [
+              {
+                "id": "noah",
+                "notes": "Noah is among those preserved.",
+                "relationship": "preserved-person",
+                "weight": 8
+              },
+              {
+                "id": "the-flood",
+                "notes": "The event narrative reports judgment and preservation.",
+                "relationship": "judgment-and-preservation",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "The outcome functions within the account's movement from violence and corruption to judgment and preservation. The item records the narrative without sensationalizing death or using it to make unsupported claims about a modern disaster.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 7:21-23",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-flood-text",
+              "sarna-genesis-flood"
+            ],
+            "title": "The narrative's account of death and judgment"
+          },
+          "passage_reference": "Genesis 7:21-23",
+          "source_records": [],
+          "target_object_id": "the-flood"
+        },
+        "changed_references": [
+          "Genesis 7:21-23"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-flood-text",
+          "sarna-genesis-flood"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "primary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 7:21–23 states that land animals and humans outside the ark die as the waters cover the land; Noah and those with him remain alive. This is the narrative's grave judgment outcome.",
+          "dispute_status": "not_disputed",
+          "evidence_type": "historical-event",
+          "geography_ids": [],
+          "id": "g7-judgment-and-death-outside-ark",
+          "notes": "Applicable only to Genesis 7:21–23.",
+          "passage_relevance": "Genesis 7:21–23 states that land animals and humans outside the ark die as the waters cover the land; Noah and those with him remain alive. This is the narrative's grave judgment outcome. This evidence supports passage-specific synthesis of Genesis 7:21-23 while preserving the stated interpretive limits.",
+          "primary_observation": "The passage directly names the destruction of living creatures outside the ark and the preservation of those inside; it gives no graphic description beyond the judgment outcome.",
+          "related_objects": [
+            {
+              "id": "noah",
+              "notes": "Noah is among those preserved.",
+              "relationship": "preserved-person",
+              "weight": 8
+            },
+            {
+              "id": "the-flood",
+              "notes": "The event narrative reports judgment and preservation.",
+              "relationship": "judgment-and-preservation",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "The outcome functions within the account's movement from violence and corruption to judgment and preservation. The item records the narrative without sensationalizing death or using it to make unsupported claims about a modern disaster.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 7:21-23",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-flood-text",
+            "sarna-genesis-flood"
+          ],
+          "title": "The narrative's account of death and judgment"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "lexical-concepts",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 8:1 says God remembered Noah, every animal, and all the livestock with him, then caused a wind (*ruach*) to pass over the earth and the waters to subside. The remembering is expressed through a narrated action toward those in the ark.",
+            "dispute_status": "interpretive_uncertainty",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g8-god-remembered-and-wind",
+            "notes": "Genesis 1:2 is mentioned only as comparison and is not included in scripture_references.",
+            "passage_relevance": "Genesis 8:1 says God remembered Noah, every animal, and all the livestock with him, then caused a wind (*ruach*) to pass over the earth and the waters to subside. The remembering is expressed through a narrated action toward those in the ark. This evidence supports passage-specific synthesis of Genesis 8:1 while preserving the stated interpretive limits.",
+            "primary_observation": "The verse links divine remembering, wind, and the beginning of recession; it does not depict divine forgetfulness followed by recollection.",
+            "related_objects": [
+              {
+                "id": "noah",
+                "notes": "Noah is the named recipient of divine remembering.",
+                "relationship": "preserved-person",
+                "weight": 8
+              },
+              {
+                "id": "new-creation-theme",
+                "notes": "A possible creation/recreation resonance may inform the reading.",
+                "relationship": "literary-resonance",
+                "weight": 7
+              }
+            ],
+            "scholarly_interpretation": "Biblical remembering language commonly signals attention expressed in action, often with covenantal force. The Hebrew *ruach* here is directly rendered wind; a resonance with Genesis 1:2's wind/spirit wording and a recreation reading are possible literary observations, not a certain lexical identity or modern meteorological account. Genesis 1:2 is contextual comparison only.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 8:1",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-flood-text",
+              "sarna-genesis-flood",
+              "g2-van-dyk-ruach"
+            ],
+            "title": "God remembers Noah; a wind passes over the waters"
+          },
+          "passage_reference": "Genesis 8:1",
+          "source_records": [
+            {
+              "author": "Petrus J. van Dyk",
+              "id": "g2-van-dyk-ruach",
+              "locator": "Discussion of ruach in Genesis 1:2 and 8:1; DOI 10.4102/hts.v73i3.4670",
+              "notes": "Argues for connected wind/breath/spirit senses and a possible creation/re-creation resonance. The CKL item retains wind as the immediate sense and records resonance as a proposal, not a settled lexical result.",
+              "publisher": "HTS Teologiese Studies/Theological Studies 73, no. 3, article 4670",
+              "source_type": "journal-article",
+              "supports": [
+                "g8-god-remembered-and-wind"
+              ],
+              "title": "The Spirit of God, or is it?",
+              "url": "https://doi.org/10.4102/hts.v73i3.4670",
+              "year": 2017
+            }
+          ],
+          "target_object_id": "the-flood"
+        },
+        "changed_references": [
+          "Genesis 8:1"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-flood-text",
+          "sarna-genesis-flood",
+          "g2-van-dyk-ruach"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 8:1 says God remembered Noah, every animal, and all the livestock with him, then caused a wind (*ruach*) to pass over the earth and the waters to subside. The remembering is expressed through a narrated action toward those in the ark.",
+          "dispute_status": "interpretive_uncertainty",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g8-god-remembered-and-wind",
+          "notes": "Genesis 1:2 is mentioned only as comparison and is not included in scripture_references.",
+          "passage_relevance": "Genesis 8:1 says God remembered Noah, every animal, and all the livestock with him, then caused a wind (*ruach*) to pass over the earth and the waters to subside. The remembering is expressed through a narrated action toward those in the ark. This evidence supports passage-specific synthesis of Genesis 8:1 while preserving the stated interpretive limits.",
+          "primary_observation": "The verse links divine remembering, wind, and the beginning of recession; it does not depict divine forgetfulness followed by recollection.",
+          "related_objects": [
+            {
+              "id": "noah",
+              "notes": "Noah is the named recipient of divine remembering.",
+              "relationship": "preserved-person",
+              "weight": 8
+            },
+            {
+              "id": "new-creation-theme",
+              "notes": "A possible creation/recreation resonance may inform the reading.",
+              "relationship": "literary-resonance",
+              "weight": 7
+            }
+          ],
+          "scholarly_interpretation": "Biblical remembering language commonly signals attention expressed in action, often with covenantal force. The Hebrew *ruach* here is directly rendered wind; a resonance with Genesis 1:2's wind/spirit wording and a recreation reading are possible literary observations, not a certain lexical identity or modern meteorological account. Genesis 1:2 is contextual comparison only.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 8:1",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-flood-text",
+            "sarna-genesis-flood",
+            "g2-van-dyk-ruach"
+          ],
+          "title": "God remembers Noah; a wind passes over the waters"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "chronology",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 8 dates the ark's resting to month seven day seventeen; mountain tops appear in month ten day one; after forty days Noah sends birds; the 601st year begins with dry surface water on month one day one, and the ground is dry by month two day twenty-seven. The passage distinguishes resting, visibility, surface drying, and dry ground.",
+            "dispute_status": "chronological_uncertainty",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g8-receding-water-chronology",
+            "notes": "Exact applicability is Genesis 8:3–14.",
+            "passage_relevance": "Genesis 8 dates the ark's resting to month seven day seventeen; mountain tops appear in month ten day one; after forty days Noah sends birds; the 601st year begins with dry surface water on month one day one, and the ground is dry by month two day twenty-seven. The passage distinguishes resting, visibility, surface drying, and dry ground. This evidence supports passage-specific synthesis of Genesis 8:3-14 while preserving the stated interpretive limits.",
+            "primary_observation": "The sequence preserves dates and intervals rather than identifying every milestone as the same event; the 150 days of prevailing waters conclude before the later drying notices.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "The dates organize recession and drying.",
+                "relationship": "narrative-chronology",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "The chronology is a literary ordering of the final narrative and has been read in relation to source layering; apparent overlaps should be assessed against the stated milestones. This item does not compute an unstated calendar or add Genesis 7 references.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 8:3-14",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-flood-text",
+              "sarna-genesis-flood"
+            ],
+            "title": "The dated recession and drying sequence"
+          },
+          "passage_reference": "Genesis 8:3-14",
+          "source_records": [],
+          "target_object_id": "the-flood"
+        },
+        "changed_references": [
+          "Genesis 8:3-14"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-flood-text",
+          "sarna-genesis-flood"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 8 dates the ark's resting to month seven day seventeen; mountain tops appear in month ten day one; after forty days Noah sends birds; the 601st year begins with dry surface water on month one day one, and the ground is dry by month two day twenty-seven. The passage distinguishes resting, visibility, surface drying, and dry ground.",
+          "dispute_status": "chronological_uncertainty",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g8-receding-water-chronology",
+          "notes": "Exact applicability is Genesis 8:3–14.",
+          "passage_relevance": "Genesis 8 dates the ark's resting to month seven day seventeen; mountain tops appear in month ten day one; after forty days Noah sends birds; the 601st year begins with dry surface water on month one day one, and the ground is dry by month two day twenty-seven. The passage distinguishes resting, visibility, surface drying, and dry ground. This evidence supports passage-specific synthesis of Genesis 8:3-14 while preserving the stated interpretive limits.",
+          "primary_observation": "The sequence preserves dates and intervals rather than identifying every milestone as the same event; the 150 days of prevailing waters conclude before the later drying notices.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "The dates organize recession and drying.",
+              "relationship": "narrative-chronology",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "The chronology is a literary ordering of the final narrative and has been read in relation to source layering; apparent overlaps should be assessed against the stated milestones. This item does not compute an unstated calendar or add Genesis 7 references.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 8:3-14",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-flood-text",
+            "sarna-genesis-flood"
+          ],
+          "title": "The dated recession and drying sequence"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "geography",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "probable",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 8:4 says the ark rested on the mountains of Ararat. Biblical “Ararat” designates the Urartu region/kingdom in other usage and does not by itself identify the modern Mount Ararat peak as the resting place.",
+            "dispute_status": "identification_uncertainty",
+            "evidence_type": "geography-environment",
+            "geography_ids": [],
+            "id": "g8-ararat-as-region",
+            "notes": "The source and anchor do not locate the ark on the contemporary Mount Ararat.",
+            "passage_relevance": "Genesis 8:4 says the ark rested on the mountains of Ararat. Biblical “Ararat” designates the Urartu region/kingdom in other usage and does not by itself identify the modern Mount Ararat peak as the resting place. This evidence supports passage-specific synthesis of Genesis 8:4 while preserving the stated interpretive limits.",
+            "primary_observation": "The verse uses a plural mountain expression and supplies no coordinates or specific summit.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "Ararat is named in the flood account.",
+                "relationship": "narrative-geography",
+                "weight": 8
+              }
+            ],
+            "scholarly_interpretation": "Geographic identification should remain at the level the text supports: an Ararat/Urartu region, not a proven ark site. No location claim is made for a modern peak, and no archaeological discovery of Noah's ark is asserted.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 8:4",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-flood-text",
+              "sarna-genesis-flood",
+              "g2-net-ararat"
+            ],
+            "title": "Ararat as a regional designation"
+          },
+          "passage_reference": "Genesis 8:4",
+          "source_records": [
+            {
+              "author": "NET Bible Translators",
+              "id": "g2-net-ararat",
+              "locator": "Genesis 8:4, note 1: Ararat/Urartu region and the plural mountain phrase",
+              "notes": "Identifies Ararat with the mountainous Urartu region north of Mesopotamia; the note does not identify a particular modern peak or ark site.",
+              "publisher": "Bible.org",
+              "source_type": "reference-work",
+              "supports": [
+                "g8-ararat-as-region"
+              ],
+              "title": "NET Bible Notes on Genesis 8:4",
+              "url": "https://classic.net.bible.org/verse.php?book=Gen&chapter=8&tab=commentaries&verse=4",
+              "year": null
+            }
+          ],
+          "target_object_id": "the-flood"
+        },
+        "changed_references": [
+          "Genesis 8:4"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-flood-text",
+          "sarna-genesis-flood",
+          "g2-net-ararat"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "probable",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 8:4 says the ark rested on the mountains of Ararat. Biblical “Ararat” designates the Urartu region/kingdom in other usage and does not by itself identify the modern Mount Ararat peak as the resting place.",
+          "dispute_status": "identification_uncertainty",
+          "evidence_type": "geography-environment",
+          "geography_ids": [],
+          "id": "g8-ararat-as-region",
+          "notes": "The source and anchor do not locate the ark on the contemporary Mount Ararat.",
+          "passage_relevance": "Genesis 8:4 says the ark rested on the mountains of Ararat. Biblical “Ararat” designates the Urartu region/kingdom in other usage and does not by itself identify the modern Mount Ararat peak as the resting place. This evidence supports passage-specific synthesis of Genesis 8:4 while preserving the stated interpretive limits.",
+          "primary_observation": "The verse uses a plural mountain expression and supplies no coordinates or specific summit.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "Ararat is named in the flood account.",
+              "relationship": "narrative-geography",
+              "weight": 8
+            }
+          ],
+          "scholarly_interpretation": "Geographic identification should remain at the level the text supports: an Ararat/Urartu region, not a proven ark site. No location claim is made for a modern peak, and no archaeological discovery of Noah's ark is asserted.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 8:4",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-flood-text",
+            "sarna-genesis-flood",
+            "g2-net-ararat"
+          ],
+          "title": "Ararat as a regional designation"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "literary-convention",
+          "evidence_item": {
+            "assertion_type": "primary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "After waiting forty days, Noah sends a raven and then a dove to test whether the waters have receded. The dove is sent again after seven days, returns with a fresh olive leaf, and after another seven days does not return; these narrated signs mark changing conditions outside the ark.",
+            "dispute_status": "minor_scholarly_disagreement",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g8-raven-dove-and-habitability",
+            "notes": "Ancient flood comparanda are sources for comparison only and do not appear as scripture_references.",
+            "passage_relevance": "After waiting forty days, Noah sends a raven and then a dove to test whether the waters have receded. The dove is sent again after seven days, returns with a fresh olive leaf, and after another seven days does not return; these narrated signs mark changing conditions outside the ark. This evidence supports passage-specific synthesis of Genesis 8:6-12 while preserving the stated interpretive limits.",
+            "primary_observation": "The repeated sending, waiting, and return/no-return sequence supplies practical narrative information about whether land can sustain life and whether the family may leave.",
+            "related_objects": [
+              {
+                "id": "noah",
+                "notes": "Noah sends the birds from the ark.",
+                "relationship": "narrative-agent",
+                "weight": 8
+              },
+              {
+                "id": "mesopotamian-creation-and-flood-comparisons",
+                "notes": "Existing comparative material should be reused, not duplicated.",
+                "relationship": "bounded-bird-motif-comparison",
+                "weight": 7
+              }
+            ],
+            "scholarly_interpretation": "Comparative ancient bird-release episodes illuminate literary context, but the narrative's own sequence is sufficient to explain the test. The olive leaf indicates vegetation available to the bird; additional symbolism should not be asserted without evidence.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 8:6-12",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-flood-text",
+              "sarna-genesis-flood",
+              "g2-darshan-birds"
+            ],
+            "title": "Raven, dove, olive leaf, and habitable land"
+          },
+          "passage_reference": "Genesis 8:6-12",
+          "source_records": [
+            {
+              "author": "Guy Darshan",
+              "id": "g2-darshan-birds",
+              "locator": "Comparative analysis of raven and dove episodes in Genesis 8 and ancient flood narratives",
+              "notes": "Comparison supports literary context; ancient comparanda are kept out of Scripture applicability anchors.",
+              "publisher": "TheTorah.com",
+              "source_type": "reference-work",
+              "supports": [
+                "g8-raven-dove-and-habitability"
+              ],
+              "title": "The Motif of Releasing Birds in Ancient Near Eastern Flood Stories",
+              "url": "https://www.thetorah.com/article/the-motif-of-releasing-birds-in-ane-flood-stories",
+              "year": 2017
+            }
+          ],
+          "target_object_id": "the-flood"
+        },
+        "changed_references": [
+          "Genesis 8:6-12"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-flood-text",
+          "sarna-genesis-flood",
+          "g2-darshan-birds"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "primary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "After waiting forty days, Noah sends a raven and then a dove to test whether the waters have receded. The dove is sent again after seven days, returns with a fresh olive leaf, and after another seven days does not return; these narrated signs mark changing conditions outside the ark.",
+          "dispute_status": "minor_scholarly_disagreement",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g8-raven-dove-and-habitability",
+          "notes": "Ancient flood comparanda are sources for comparison only and do not appear as scripture_references.",
+          "passage_relevance": "After waiting forty days, Noah sends a raven and then a dove to test whether the waters have receded. The dove is sent again after seven days, returns with a fresh olive leaf, and after another seven days does not return; these narrated signs mark changing conditions outside the ark. This evidence supports passage-specific synthesis of Genesis 8:6-12 while preserving the stated interpretive limits.",
+          "primary_observation": "The repeated sending, waiting, and return/no-return sequence supplies practical narrative information about whether land can sustain life and whether the family may leave.",
+          "related_objects": [
+            {
+              "id": "noah",
+              "notes": "Noah sends the birds from the ark.",
+              "relationship": "narrative-agent",
+              "weight": 8
+            },
+            {
+              "id": "mesopotamian-creation-and-flood-comparisons",
+              "notes": "Existing comparative material should be reused, not duplicated.",
+              "relationship": "bounded-bird-motif-comparison",
+              "weight": 7
+            }
+          ],
+          "scholarly_interpretation": "Comparative ancient bird-release episodes illuminate literary context, but the narrative's own sequence is sufficient to explain the test. The olive leaf indicates vegetation available to the bird; additional symbolism should not be asserted without evidence.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 8:6-12",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-flood-text",
+            "sarna-genesis-flood",
+            "g2-darshan-birds"
+          ],
+          "title": "Raven, dove, olive leaf, and habitable land"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "immediate-literary-context",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "plausible",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 8:15–19 narrates God's command for Noah, his household, and the animals to leave the ark, with the creatures moving out by their kinds. The scene returns people and animals to the land after the waters recede.",
+            "dispute_status": "interpretive_uncertainty",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g8-departure-and-renewed-creaturely-movement",
+            "notes": "Genesis 1 and broader new-creation parallels are contextual; only Genesis 8:15–19 is an applicability anchor.",
+            "passage_relevance": "Genesis 8:15–19 narrates God's command for Noah, his household, and the animals to leave the ark, with the creatures moving out by their kinds. The scene returns people and animals to the land after the waters recede. This evidence supports passage-specific synthesis of Genesis 8:15-19 while preserving the stated interpretive limits.",
+            "primary_observation": "The text repeats the command to leave, then narrates the exit and the animals' movement; the sequence recalls creaturely fruitfulness and movement in Genesis 1.",
+            "related_objects": [
+              {
+                "id": "creation",
+                "notes": "The exit can be read against earlier creaturely blessing.",
+                "relationship": "literary-comparison",
+                "weight": 7
+              },
+              {
+                "id": "new-creation-theme",
+                "notes": "The narrative renews creaturely life after judgment.",
+                "relationship": "literary-resonance",
+                "weight": 8
+              }
+            ],
+            "scholarly_interpretation": "A recreation or new-creation structure is a supported literary reading of the larger movement from creation through flood to renewed life, but the passage's direct claim is departure and renewed habitation. Genesis 1 is comparison only, not an applicability anchor.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 8:15-19",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-flood-text",
+              "sarna-genesis-flood"
+            ],
+            "title": "Leaving the ark and renewed creaturely movement"
+          },
+          "passage_reference": "Genesis 8:15-19",
+          "source_records": [],
+          "target_object_id": "the-flood"
+        },
+        "changed_references": [
+          "Genesis 8:15-19"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-flood-text",
+          "sarna-genesis-flood"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "plausible",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 8:15–19 narrates God's command for Noah, his household, and the animals to leave the ark, with the creatures moving out by their kinds. The scene returns people and animals to the land after the waters recede.",
+          "dispute_status": "interpretive_uncertainty",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g8-departure-and-renewed-creaturely-movement",
+          "notes": "Genesis 1 and broader new-creation parallels are contextual; only Genesis 8:15–19 is an applicability anchor.",
+          "passage_relevance": "Genesis 8:15–19 narrates God's command for Noah, his household, and the animals to leave the ark, with the creatures moving out by their kinds. The scene returns people and animals to the land after the waters recede. This evidence supports passage-specific synthesis of Genesis 8:15-19 while preserving the stated interpretive limits.",
+          "primary_observation": "The text repeats the command to leave, then narrates the exit and the animals' movement; the sequence recalls creaturely fruitfulness and movement in Genesis 1.",
+          "related_objects": [
+            {
+              "id": "creation",
+              "notes": "The exit can be read against earlier creaturely blessing.",
+              "relationship": "literary-comparison",
+              "weight": 7
+            },
+            {
+              "id": "new-creation-theme",
+              "notes": "The narrative renews creaturely life after judgment.",
+              "relationship": "literary-resonance",
+              "weight": 8
+            }
+          ],
+          "scholarly_interpretation": "A recreation or new-creation structure is a supported literary reading of the larger movement from creation through flood to renewed life, but the passage's direct claim is departure and renewed habitation. Genesis 1 is comparison only, not an applicability anchor.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 8:15-19",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-flood-text",
+            "sarna-genesis-flood"
+          ],
+          "title": "Leaving the ark and renewed creaturely movement"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "cultural-social-context",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 8:20–22 presents Noah building an altar, taking from every clean animal and clean bird, and offering burnt offerings; YHWH receives a *reah nihoah*, a pleasing or soothing aroma, and speaks of the ground and human inclination.",
+            "dispute_status": "interpretive_uncertainty",
+            "evidence_type": "cultural-practice",
+            "geography_ids": [],
+            "id": "g8-noah-altar-and-pleasing-aroma",
+            "notes": "Comparative cultic language is discussed through scholarship, not added as another passage anchor.",
+            "passage_relevance": "Genesis 8:20–22 presents Noah building an altar, taking from every clean animal and clean bird, and offering burnt offerings; YHWH receives a *reah nihoah*, a pleasing or soothing aroma, and speaks of the ground and human inclination. This evidence supports passage-specific synthesis of Genesis 8:20-22 while preserving the stated interpretive limits.",
+            "primary_observation": "This is the first explicit altar in Genesis; clean animals and birds are used, and the narrative connects the offering with a divine response and the promise of seasonal stability.",
+            "related_objects": [
+              {
+                "id": "sacrifice-theme",
+                "notes": "The episode is an early narrative of altar and offering.",
+                "relationship": "narrative-context",
+                "weight": 8
+              },
+              {
+                "id": "the-flood",
+                "notes": "The sacrifice follows departure from the ark.",
+                "relationship": "post-flood-response",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "The aroma phrase has been read literally, idiomatically, and in relation to ancient sacrificial language. The text does not say that God needs food or that sacrifice mechanically compels the promise; it narrates a response while acknowledging continuing human evil.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 8:20-22",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-8",
+              "g2-zuckier-pleasing-aroma"
+            ],
+            "title": "Noah's altar and pleasing-aroma language"
+          },
+          "passage_reference": "Genesis 8:20-22",
+          "source_records": [
+            {
+              "author": "Shlomo Zuckier",
+              "id": "g2-zuckier-pleasing-aroma",
+              "locator": "Discussion of reah nihoah and Genesis 8:20–22",
+              "notes": "Surveys readings of pleasing aroma language and cautions against assuming that the text depicts divine need for food.",
+              "publisher": "Journal for the Study of the Old Testament",
+              "source_type": "journal-article",
+              "supports": [
+                "g8-noah-altar-and-pleasing-aroma"
+              ],
+              "title": "Nothing to Sniff At: Odorless Reah Nihoah in Early Biblical Interpretation",
+              "url": "https://journals.sagepub.com/doi/10.1177/09518207211032881",
+              "year": 2022
+            }
+          ],
+          "target_object_id": "what-is-sacrifice-in-the-bible"
+        },
+        "changed_references": [
+          "Genesis 8:20-22"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-8",
+          "g2-zuckier-pleasing-aroma"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 8:20–22 presents Noah building an altar, taking from every clean animal and clean bird, and offering burnt offerings; YHWH receives a *reah nihoah*, a pleasing or soothing aroma, and speaks of the ground and human inclination.",
+          "dispute_status": "interpretive_uncertainty",
+          "evidence_type": "cultural-practice",
+          "geography_ids": [],
+          "id": "g8-noah-altar-and-pleasing-aroma",
+          "notes": "Comparative cultic language is discussed through scholarship, not added as another passage anchor.",
+          "passage_relevance": "Genesis 8:20–22 presents Noah building an altar, taking from every clean animal and clean bird, and offering burnt offerings; YHWH receives a *reah nihoah*, a pleasing or soothing aroma, and speaks of the ground and human inclination. This evidence supports passage-specific synthesis of Genesis 8:20-22 while preserving the stated interpretive limits.",
+          "primary_observation": "This is the first explicit altar in Genesis; clean animals and birds are used, and the narrative connects the offering with a divine response and the promise of seasonal stability.",
+          "related_objects": [
+            {
+              "id": "sacrifice-theme",
+              "notes": "The episode is an early narrative of altar and offering.",
+              "relationship": "narrative-context",
+              "weight": 8
+            },
+            {
+              "id": "the-flood",
+              "notes": "The sacrifice follows departure from the ark.",
+              "relationship": "post-flood-response",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "The aroma phrase has been read literally, idiomatically, and in relation to ancient sacrificial language. The text does not say that God needs food or that sacrifice mechanically compels the promise; it narrates a response while acknowledging continuing human evil.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 8:20-22",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-8",
+            "g2-zuckier-pleasing-aroma"
+          ],
+          "title": "Noah's altar and pleasing-aroma language"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "hebrew-worldview-concepts",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 9:1–7 renews the charge to be fruitful and fill the earth, permits animal food, prohibits eating flesh with its blood, and requires an accounting for human bloodshed. Verse 6 grounds that accountability in humanity's creation in God's image.",
+            "dispute_status": "interpretive_uncertainty",
+            "evidence_type": "worldview-concept",
+            "geography_ids": [],
+            "id": "g9-renewed-vocation-and-blood-life-accountability",
+            "notes": "Genesis 4 and Leviticus 17 are explanatory comparisons only and intentionally are not scripture_references.",
+            "passage_relevance": "Genesis 9:1–7 renews the charge to be fruitful and fill the earth, permits animal food, prohibits eating flesh with its blood, and requires an accounting for human bloodshed. Verse 6 grounds that accountability in humanity's creation in God's image. This evidence supports passage-specific synthesis of Genesis 9:1-7 while preserving the stated interpretive limits.",
+            "primary_observation": "The text links creaturely life, blood, human accountability, and the image of God; the permission and blood restriction are stated within the post-flood narrative.",
+            "related_objects": [
+              {
+                "id": "nephesh",
+                "notes": "The passage's life/blood language relates to the nephesh concept.",
+                "relationship": "lexical-concept",
+                "weight": 8
+              },
+              {
+                "id": "imago-dei",
+                "notes": "Human accountability is grounded in the divine image.",
+                "relationship": "canonical-theme",
+                "weight": 8
+              },
+              {
+                "id": "the-flood",
+                "notes": "The instruction follows the flood.",
+                "relationship": "post-flood-vocation",
+                "weight": 7
+              }
+            ],
+            "scholarly_interpretation": "The Hebrew language associates blood with life (*nephesh*) in this passage, and homicide accountability is grounded in the divine image. Genesis 4's blood-and-ground language and later Levitical blood legislation provide canonical comparisons, not the direct scope of this item; later food law should not be projected backward as the stated basis here.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 9:1-7",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-9-1-7",
+              "image-of-god-theme-historical-orientation"
+            ],
+            "title": "Renewed vocation, blood as life, and image-based accountability"
+          },
+          "passage_reference": "Genesis 9:1-7",
+          "source_records": [],
+          "target_object_id": "image-of-god-theme"
+        },
+        "changed_references": [
+          "Genesis 9:1-7"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-9-1-7",
+          "image-of-god-theme-historical-orientation"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 9:1–7 renews the charge to be fruitful and fill the earth, permits animal food, prohibits eating flesh with its blood, and requires an accounting for human bloodshed. Verse 6 grounds that accountability in humanity's creation in God's image.",
+          "dispute_status": "interpretive_uncertainty",
+          "evidence_type": "worldview-concept",
+          "geography_ids": [],
+          "id": "g9-renewed-vocation-and-blood-life-accountability",
+          "notes": "Genesis 4 and Leviticus 17 are explanatory comparisons only and intentionally are not scripture_references.",
+          "passage_relevance": "Genesis 9:1–7 renews the charge to be fruitful and fill the earth, permits animal food, prohibits eating flesh with its blood, and requires an accounting for human bloodshed. Verse 6 grounds that accountability in humanity's creation in God's image. This evidence supports passage-specific synthesis of Genesis 9:1-7 while preserving the stated interpretive limits.",
+          "primary_observation": "The text links creaturely life, blood, human accountability, and the image of God; the permission and blood restriction are stated within the post-flood narrative.",
+          "related_objects": [
+            {
+              "id": "nephesh",
+              "notes": "The passage's life/blood language relates to the nephesh concept.",
+              "relationship": "lexical-concept",
+              "weight": 8
+            },
+            {
+              "id": "imago-dei",
+              "notes": "Human accountability is grounded in the divine image.",
+              "relationship": "canonical-theme",
+              "weight": 8
+            },
+            {
+              "id": "the-flood",
+              "notes": "The instruction follows the flood.",
+              "relationship": "post-flood-vocation",
+              "weight": 7
+            }
+          ],
+          "scholarly_interpretation": "The Hebrew language associates blood with life (*nephesh*) in this passage, and homicide accountability is grounded in the divine image. Genesis 4's blood-and-ground language and later Levitical blood legislation provide canonical comparisons, not the direct scope of this item; later food law should not be projected backward as the stated basis here.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 9:1-7",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-9-1-7",
+            "image-of-god-theme-historical-orientation"
+          ],
+          "title": "Renewed vocation, blood as life, and image-based accountability"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "covenant-context",
+          "evidence_item": {
+            "assertion_type": "primary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 9:8–17 names Noah, his descendants, every living creature, and the earth as parties/beneficiaries of God's covenant. God promises that floodwaters will not again destroy all flesh in this way and appoints the bow in the cloud as covenant sign.",
+            "dispute_status": "minor_scholarly_disagreement",
+            "evidence_type": "institution",
+            "geography_ids": [],
+            "id": "g9-covenant-with-noah-and-all-flesh",
+            "notes": "Only Genesis 9:8–17 is applicable; later covenants and treaty analogies are not scripture_references.",
+            "passage_relevance": "Genesis 9:8–17 names Noah, his descendants, every living creature, and the earth as parties/beneficiaries of God's covenant. God promises that floodwaters will not again destroy all flesh in this way and appoints the bow in the cloud as covenant sign. This evidence supports passage-specific synthesis of Genesis 9:8-17 while preserving the stated interpretive limits.",
+            "primary_observation": "The covenant scope is explicitly wider than Noah's household and includes living creatures; the promise concerns recurrence of the narrated catastrophic waters, and the sign is given for the covenant across generations.",
+            "related_objects": [
+              {
+                "id": "the-flood",
+                "notes": "The promise follows the flood and addresses its recurrence.",
+                "relationship": "covenant-culmination",
+                "weight": 9
+              },
+              {
+                "id": "noah",
+                "notes": "Noah is directly named as recipient.",
+                "relationship": "covenant-recipient",
+                "weight": 8
+              }
+            ],
+            "scholarly_interpretation": "The text presents a divine promise with universal creaturely scope. Broader treaty comparisons or later theological systems may be relevant elsewhere, but the item does not import their terms or claims into Genesis 9.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 9:8-17",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-9-12-15-17",
+              "covenant-theme-historical-orientation",
+              "g2-gnuse-noah-covenant"
+            ],
+            "title": "The covenant with Noah and all living flesh"
+          },
+          "passage_reference": "Genesis 9:8-17",
+          "source_records": [
+            {
+              "author": "Robert Gnuse",
+              "id": "g2-gnuse-noah-covenant",
+              "locator": "Discussion of Genesis 9:1–17, beneficiaries, food permission, and covenant scope",
+              "notes": "Supports a passage-bounded account of human and animal beneficiaries and the covenant's scope.",
+              "publisher": "Biblical Theology Bulletin",
+              "source_type": "journal-article",
+              "supports": [
+                "g9-covenant-with-noah-and-all-flesh"
+              ],
+              "title": "The Covenant with Noah in Genesis 9",
+              "url": "https://doi.org/10.1177/01461079211040147",
+              "year": 2022
+            }
+          ],
+          "target_object_id": "covenant-theme"
+        },
+        "changed_references": [
+          "Genesis 9:8-17"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-9-12-15-17",
+          "covenant-theme-historical-orientation",
+          "g2-gnuse-noah-covenant"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "primary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 9:8–17 names Noah, his descendants, every living creature, and the earth as parties/beneficiaries of God's covenant. God promises that floodwaters will not again destroy all flesh in this way and appoints the bow in the cloud as covenant sign.",
+          "dispute_status": "minor_scholarly_disagreement",
+          "evidence_type": "institution",
+          "geography_ids": [],
+          "id": "g9-covenant-with-noah-and-all-flesh",
+          "notes": "Only Genesis 9:8–17 is applicable; later covenants and treaty analogies are not scripture_references.",
+          "passage_relevance": "Genesis 9:8–17 names Noah, his descendants, every living creature, and the earth as parties/beneficiaries of God's covenant. God promises that floodwaters will not again destroy all flesh in this way and appoints the bow in the cloud as covenant sign. This evidence supports passage-specific synthesis of Genesis 9:8-17 while preserving the stated interpretive limits.",
+          "primary_observation": "The covenant scope is explicitly wider than Noah's household and includes living creatures; the promise concerns recurrence of the narrated catastrophic waters, and the sign is given for the covenant across generations.",
+          "related_objects": [
+            {
+              "id": "the-flood",
+              "notes": "The promise follows the flood and addresses its recurrence.",
+              "relationship": "covenant-culmination",
+              "weight": 9
+            },
+            {
+              "id": "noah",
+              "notes": "Noah is directly named as recipient.",
+              "relationship": "covenant-recipient",
+              "weight": 8
+            }
+          ],
+          "scholarly_interpretation": "The text presents a divine promise with universal creaturely scope. Broader treaty comparisons or later theological systems may be relevant elsewhere, but the item does not import their terms or claims into Genesis 9.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 9:8-17",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-9-12-15-17",
+            "covenant-theme-historical-orientation",
+            "g2-gnuse-noah-covenant"
+          ],
+          "title": "The covenant with Noah and all living flesh"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "lexical-concepts",
+          "evidence_item": {
+            "assertion_type": "primary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 9:12–17 identifies the bow set in the cloud as the sign of God's covenant with Noah, descendants, and every living creature. The Hebrew *qeshet* is the ordinary word for a bow and the narrative places it in the cloud.",
+            "dispute_status": "minor_scholarly_disagreement",
+            "evidence_type": "literary-convention",
+            "geography_ids": [],
+            "id": "g9-bow-sign-and-interpretive-proposals",
+            "notes": "Ancient weapon symbolism remains interpretive context and is not a scripture applicability anchor.",
+            "passage_relevance": "Genesis 9:12–17 identifies the bow set in the cloud as the sign of God's covenant with Noah, descendants, and every living creature. The Hebrew *qeshet* is the ordinary word for a bow and the narrative places it in the cloud. This evidence supports passage-specific synthesis of Genesis 9:12-17 while preserving the stated interpretive limits.",
+            "primary_observation": "The passage directly calls the bow a sign and repeats its covenantal relation to the earth and living creatures.",
+            "related_objects": [
+              {
+                "id": "covenant-theme",
+                "notes": "The bow is the covenant sign in this passage.",
+                "relationship": "sign-of-promise",
+                "weight": 9
+              },
+              {
+                "id": "the-flood",
+                "notes": "The sign concludes the flood narrative's covenant section.",
+                "relationship": "narrative-covenant-sign",
+                "weight": 8
+              }
+            ],
+            "scholarly_interpretation": "“Rainbow” is a standard rendering of the cloud phenomenon. A proposal reads the bow imagery against ancient weapon symbolism and imagines a weapon hung in the sky; this remains a comparative interpretive possibility, not an explicit explanation supplied by the text.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 9:12-17",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-9",
+              "g2-bonfil-bow"
+            ],
+            "title": "The bow as covenant sign"
+          },
+          "passage_reference": "Genesis 9:12-17",
+          "source_records": [
+            {
+              "author": "Ruhama Bonfil and Robert Bonfil",
+              "id": "g2-bonfil-bow",
+              "locator": "Chapter on Genesis 9:12–17 and ancient bow/rainbow symbolism",
+              "notes": "Presents a weapon-in-cloud proposal as a possible symbolic reading; the lexical observation and the proposal remain distinct.",
+              "publisher": "Archaeopress",
+              "source_type": "academic-book",
+              "supports": [
+                "g9-bow-sign-and-interpretive-proposals"
+              ],
+              "title": "I Have Set My Bow in the Cloud: Symbolism and Myth",
+              "url": "https://cris.huji.ac.il/en/publications/i-have-set-my-bow-in-the-cloud-symbolism-and-myth/",
+              "year": 2025
+            }
+          ],
+          "target_object_id": "what-is-a-covenant-sign"
+        },
+        "changed_references": [
+          "Genesis 9:12-17"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-9",
+          "g2-bonfil-bow"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "primary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 9:12–17 identifies the bow set in the cloud as the sign of God's covenant with Noah, descendants, and every living creature. The Hebrew *qeshet* is the ordinary word for a bow and the narrative places it in the cloud.",
+          "dispute_status": "minor_scholarly_disagreement",
+          "evidence_type": "literary-convention",
+          "geography_ids": [],
+          "id": "g9-bow-sign-and-interpretive-proposals",
+          "notes": "Ancient weapon symbolism remains interpretive context and is not a scripture applicability anchor.",
+          "passage_relevance": "Genesis 9:12–17 identifies the bow set in the cloud as the sign of God's covenant with Noah, descendants, and every living creature. The Hebrew *qeshet* is the ordinary word for a bow and the narrative places it in the cloud. This evidence supports passage-specific synthesis of Genesis 9:12-17 while preserving the stated interpretive limits.",
+          "primary_observation": "The passage directly calls the bow a sign and repeats its covenantal relation to the earth and living creatures.",
+          "related_objects": [
+            {
+              "id": "covenant-theme",
+              "notes": "The bow is the covenant sign in this passage.",
+              "relationship": "sign-of-promise",
+              "weight": 9
+            },
+            {
+              "id": "the-flood",
+              "notes": "The sign concludes the flood narrative's covenant section.",
+              "relationship": "narrative-covenant-sign",
+              "weight": 8
+            }
+          ],
+          "scholarly_interpretation": "“Rainbow” is a standard rendering of the cloud phenomenon. A proposal reads the bow imagery against ancient weapon symbolism and imagines a weapon hung in the sky; this remains a comparative interpretive possibility, not an explicit explanation supplied by the text.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 9:12-17",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-9",
+            "g2-bonfil-bow"
+          ],
+          "title": "The bow as covenant sign"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "interpretive-disputes",
+          "evidence_item": {
+            "assertion_type": "secondary-evidence",
+            "certainty": "disputed",
+            "confidence": "medium",
+            "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+            "description": "Genesis 9:20–27 narrates Noah planting a vineyard, becoming drunk, and lying uncovered; Ham sees and tells his brothers, while Shem and Japheth cover Noah. On waking, Noah speaks an oracle that curses Canaan and blesses YHWH and Shem while extending Japheth's dwelling.",
+            "dispute_status": "major_scholarly_disagreement",
+            "evidence_type": "person",
+            "geography_ids": [],
+            "id": "g9-noah-vineyard-and-canaan-oracle",
+            "notes": "The wording is anchored only to Genesis 9:20–27; the later racist misuse is reception history, not biblical content.",
+            "passage_relevance": "Genesis 9:20–27 narrates Noah planting a vineyard, becoming drunk, and lying uncovered; Ham sees and tells his brothers, while Shem and Japheth cover Noah. On waking, Noah speaks an oracle that curses Canaan and blesses YHWH and Shem while extending Japheth's dwelling. This evidence supports passage-specific synthesis of Genesis 9:20-27 while preserving the stated interpretive limits.",
+            "primary_observation": "The text says Ham saw Noah and tells the brothers, but it does not explicitly spell out a further act; the stated curse is directed at Canaan, not at all Hamites or a race.",
+            "related_objects": [
+              {
+                "id": "genesis",
+                "notes": "The episode belongs to the Genesis primeval narrative.",
+                "relationship": "book-context",
+                "weight": 8
+              },
+              {
+                "id": "the-flood",
+                "notes": "The episode follows Noah's deliverance and covenant.",
+                "relationship": "post-flood-aftermath",
+                "weight": 8
+              }
+            ],
+            "scholarly_interpretation": "Interpretations include social exposure/shaming, proposed sexual offense or other misconduct, and a minority proposal that Canaan may be the “youngest son” implicated in the account. The exact offense and relationship between Ham and Canaan remain debated. Later racialized “curse of Ham” readings are not the text's claim and cannot be used to justify slavery or anti-Black racism.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 9:20-27",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-11",
+              "noah-historical-orientation",
+              "g2-rainey-ham",
+              "g2-schlimm-ham",
+              "g2-alexander-ham"
+            ],
+            "title": "Noah's vineyard, exposure, and oracle concerning Canaan"
+          },
+          "passage_reference": "Genesis 9:20-27",
+          "source_records": [
+            {
+              "author": "Brian Rainey",
+              "id": "g2-rainey-ham",
+              "locator": "Pages 674–695; discussion of Genesis 9:20–27",
+              "notes": "Argues for social shame and exposure as a key interpretive frame; it is one proposal among debated readings.",
+              "publisher": "Vetus Testamentum 70",
+              "source_type": "journal-article",
+              "supports": [
+                "g9-noah-vineyard-and-canaan-oracle"
+              ],
+              "title": "Indecent Exposure: Social Shame, ʿerwâ and Interpretation of Genesis 9:20–27",
+              "url": "https://doi.org/10.1163/15685330-12341415",
+              "year": 2020
+            },
+            {
+              "author": "Matthew R. Schlimm",
+              "id": "g2-schlimm-ham",
+              "locator": "Article discussion of Noah's inebriation, speech, and interpretations of Genesis 9:20–27",
+              "notes": "Treats the narrative's moral and reception questions without making a later racialized reading part of the text.",
+              "publisher": "Harvard Theological Review",
+              "source_type": "journal-article",
+              "supports": [
+                "g9-noah-vineyard-and-canaan-oracle"
+              ],
+              "title": "Noah's Inebriated Curse (Genesis 9:20–27)",
+              "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/noahs-inebriated-curse-gen-92027/90F83CF0E1946E79C9D5E01F9F91D0AB",
+              "year": 2025
+            },
+            {
+              "author": "T. Desmond Alexander",
+              "id": "g2-alexander-ham",
+              "locator": "Pages 27–58; alternative reading of the identity of the youngest son in Genesis 9:24",
+              "notes": "A minority proposal that Canaan, rather than Ham, may be the son implicated by the narrative; recorded as a proposal, not a settled reading.",
+              "publisher": "Tyndale Bulletin 77",
+              "source_type": "journal-article",
+              "supports": [
+                "g9-noah-vineyard-and-canaan-oracle"
+              ],
+              "title": "Exonerating Ham: An Alternative Reading of Genesis 9:20–27",
+              "url": "https://doi.org/10.53751/001c.155114",
+              "year": 2026
+            }
+          ],
+          "target_object_id": "noah"
+        },
+        "changed_references": [
+          "Genesis 9:20-27"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-11",
+          "noah-historical-orientation",
+          "g2-rainey-ham",
+          "g2-schlimm-ham",
+          "g2-alexander-ham"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "secondary-evidence",
+          "certainty": "disputed",
+          "confidence": "medium",
+          "confidence_rationale": "The passage-level observation is identifiable, while the relevant lexical, historical, or interpretive question remains qualified.",
+          "description": "Genesis 9:20–27 narrates Noah planting a vineyard, becoming drunk, and lying uncovered; Ham sees and tells his brothers, while Shem and Japheth cover Noah. On waking, Noah speaks an oracle that curses Canaan and blesses YHWH and Shem while extending Japheth's dwelling.",
+          "dispute_status": "major_scholarly_disagreement",
+          "evidence_type": "person",
+          "geography_ids": [],
+          "id": "g9-noah-vineyard-and-canaan-oracle",
+          "notes": "The wording is anchored only to Genesis 9:20–27; the later racist misuse is reception history, not biblical content.",
+          "passage_relevance": "Genesis 9:20–27 narrates Noah planting a vineyard, becoming drunk, and lying uncovered; Ham sees and tells his brothers, while Shem and Japheth cover Noah. On waking, Noah speaks an oracle that curses Canaan and blesses YHWH and Shem while extending Japheth's dwelling. This evidence supports passage-specific synthesis of Genesis 9:20-27 while preserving the stated interpretive limits.",
+          "primary_observation": "The text says Ham saw Noah and tells the brothers, but it does not explicitly spell out a further act; the stated curse is directed at Canaan, not at all Hamites or a race.",
+          "related_objects": [
+            {
+              "id": "genesis",
+              "notes": "The episode belongs to the Genesis primeval narrative.",
+              "relationship": "book-context",
+              "weight": 8
+            },
+            {
+              "id": "the-flood",
+              "notes": "The episode follows Noah's deliverance and covenant.",
+              "relationship": "post-flood-aftermath",
+              "weight": 8
+            }
+          ],
+          "scholarly_interpretation": "Interpretations include social exposure/shaming, proposed sexual offense or other misconduct, and a minority proposal that Canaan may be the “youngest son” implicated in the account. The exact offense and relationship between Ham and Canaan remain debated. Later racialized “curse of Ham” readings are not the text's claim and cannot be used to justify slavery or anti-Black racism.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 9:20-27",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-11",
+            "noah-historical-orientation",
+            "g2-rainey-ham",
+            "g2-schlimm-ham",
+            "g2-alexander-ham"
+          ],
+          "title": "Noah's vineyard, exposure, and oracle concerning Canaan"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      },
+      {
+        "accepted": true,
+        "candidate": {
+          "dimension": "genealogy",
+          "evidence_item": {
+            "assertion_type": "primary-evidence",
+            "certainty": "textually_explicit",
+            "confidence": "high",
+            "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+            "description": "Genesis 9:18–19 names Shem, Ham, and Japheth as Noah's sons and says the people who spread over the earth descended from them. This brief notice closes the ark narrative and introduces the family line's post-flood role.",
+            "dispute_status": "not_disputed",
+            "evidence_type": "people-group",
+            "geography_ids": [],
+            "id": "g9-noah-sons-and-population-notice",
+            "notes": "No Genesis 10–11 content is added; the item's only applicability anchor is Genesis 9:18–19.",
+            "passage_relevance": "Genesis 9:18–19 names Shem, Ham, and Japheth as Noah's sons and says the people who spread over the earth descended from them. This brief notice closes the ark narrative and introduces the family line's post-flood role. This evidence supports passage-specific synthesis of Genesis 9:18-19 while preserving the stated interpretive limits.",
+            "primary_observation": "The text names three sons and describes population descent; it does not yet identify the nations or territories later listed in Genesis 10.",
+            "related_objects": [
+              {
+                "id": "genesis",
+                "notes": "The notice introduces the next Genesis section.",
+                "relationship": "genealogical-context",
+                "weight": 8
+              },
+              {
+                "id": "noah",
+                "notes": "The three sons are named as Noah's sons.",
+                "relationship": "family-context",
+                "weight": 9
+              }
+            ],
+            "scholarly_interpretation": "The notice is a transition to the following genealogy, but the genealogy of nations belongs to Genesis 10 and remains outside this transaction's evidence scope.",
+            "scripture_references": [
+              {
+                "reference": "Genesis 9:18-19",
+                "relationship": "direct",
+                "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+                "temporal_relation": "contemporary",
+                "weight": 9
+              }
+            ],
+            "source_ids": [
+              "genesis-1-11",
+              "noah-historical-orientation"
+            ],
+            "title": "Noah's sons and the post-flood population notice"
+          },
+          "passage_reference": "Genesis 9:18-19",
+          "source_records": [],
+          "target_object_id": "noah"
+        },
+        "changed_references": [
+          "Genesis 9:18-19"
+        ],
+        "classification": "new",
+        "contributing_source_ids": [
+          "genesis-1-11",
+          "noah-historical-orientation"
+        ],
+        "normalized_claim": null,
+        "normalized_evidence_item": {
+          "assertion_type": "primary-evidence",
+          "certainty": "textually_explicit",
+          "confidence": "high",
+          "confidence_rationale": "The passage observation is explicit; interpretation is qualified and its dispute status is recorded.",
+          "description": "Genesis 9:18–19 names Shem, Ham, and Japheth as Noah's sons and says the people who spread over the earth descended from them. This brief notice closes the ark narrative and introduces the family line's post-flood role.",
+          "dispute_status": "not_disputed",
+          "evidence_type": "people-group",
+          "geography_ids": [],
+          "id": "g9-noah-sons-and-population-notice",
+          "notes": "No Genesis 10–11 content is added; the item's only applicability anchor is Genesis 9:18–19.",
+          "passage_relevance": "Genesis 9:18–19 names Shem, Ham, and Japheth as Noah's sons and says the people who spread over the earth descended from them. This brief notice closes the ark narrative and introduces the family line's post-flood role. This evidence supports passage-specific synthesis of Genesis 9:18-19 while preserving the stated interpretive limits.",
+          "primary_observation": "The text names three sons and describes population descent; it does not yet identify the nations or territories later listed in Genesis 10.",
+          "related_objects": [
+            {
+              "id": "genesis",
+              "notes": "The notice introduces the next Genesis section.",
+              "relationship": "genealogical-context",
+              "weight": 8
+            },
+            {
+              "id": "noah",
+              "notes": "The three sons are named as Noah's sons.",
+              "relationship": "family-context",
+              "weight": 9
+            }
+          ],
+          "scholarly_interpretation": "The notice is a transition to the following genealogy, but the genealogy of nations belongs to Genesis 10 and remains outside this transaction's evidence scope.",
+          "scripture_references": [
+            {
+              "reference": "Genesis 9:18-19",
+              "relationship": "direct",
+              "relevance_rationale": "The cited Genesis passage directly contains the wording or event recorded in this item; no comparative or later passage is indexed.",
+              "temporal_relation": "contemporary",
+              "weight": 9
+            }
+          ],
+          "source_ids": [
+            "genesis-1-11",
+            "noah-historical-orientation"
+          ],
+          "title": "Noah's sons and the post-flood population notice"
+        },
+        "provenance_conflicts": [],
+        "reasons": [],
+        "survivor_evidence_id": ""
+      }
+    ],
+    "candidate_count": 25,
+    "changed_chapters": [
+      "Genesis 6",
+      "Genesis 7",
+      "Genesis 8",
+      "Genesis 9"
+    ],
+    "changed_object_ids": [
+      "covenant-theme",
+      "genesis",
+      "image-of-god-theme",
+      "noah",
+      "the-flood",
+      "what-is-a-covenant-sign",
+      "what-is-sacrifice-in-the-bible"
+    ],
+    "changed_references": [
+      "Genesis 6:1-4",
+      "Genesis 6:14-16",
+      "Genesis 6:18",
+      "Genesis 6:3",
+      "Genesis 6:4",
+      "Genesis 6:5-13",
+      "Genesis 6:6-7",
+      "Genesis 6:8-9",
+      "Genesis 7:1-9",
+      "Genesis 7:11-24",
+      "Genesis 7:19-24",
+      "Genesis 7:21-23",
+      "Genesis 7:6-24",
+      "Genesis 8:1",
+      "Genesis 8:15-19",
+      "Genesis 8:20-22",
+      "Genesis 8:3-14",
+      "Genesis 8:4",
+      "Genesis 8:6-12",
+      "Genesis 9:1-7",
+      "Genesis 9:12-17",
+      "Genesis 9:18-19",
+      "Genesis 9:20-27",
+      "Genesis 9:8-17"
+    ],
+    "final_locked_source_record_count": 16,
+    "final_queue_replay": {
+      "accepted": 25,
+      "rejected": 0,
+      "validated_against_commit": "5b84a76a37cb8460266de04fdbe1b24841a76dea",
+      "wrote": false
+    },
+    "initial_adapter_source_record_count": 14,
+    "post_apply_source_record_corrections": [
+      {
+        "candidate_evidence_unchanged": true,
+        "fields_corrected": [
+          "author",
+          "locator",
+          "notes"
+        ],
+        "reason": "Publisher metadata confirms Shalom E. Holtz as author; locator narrowed to the article's kofer/pitch discussion, and uncertain gopher wood is not attributed to this article.",
+        "source_id": "g2-ark-flood-context"
+      },
+      {
+        "evidence_item_id": "g8-ararat-as-region",
+        "reason": "Added the passage note supporting Ararat/Urartu as a region; no specific peak or ark site is claimed.",
+        "source_id": "g2-net-ararat",
+        "target_object_id": "the-flood"
+      },
+      {
+        "evidence_item_id": "g8-god-remembered-and-wind",
+        "reason": "Added a bounded scholarly source for ruach's wind/breath/spirit range and possible creation/re-creation resonance; the item retains the immediate wind sense and labels resonance as a proposal.",
+        "source_id": "g2-van-dyk-ruach",
+        "target_object_id": "the-flood"
+      }
+    ],
+    "rejected": [],
+    "wrote": true
+  },
+  "transaction": "GENESIS_G2R2_ISOLATED_EVIDENCE_CONTAINER"
+}

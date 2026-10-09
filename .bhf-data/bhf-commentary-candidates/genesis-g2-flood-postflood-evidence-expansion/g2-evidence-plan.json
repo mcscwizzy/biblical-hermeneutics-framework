@@ -1,0 +1,80 @@
+{
+  "transaction": "GENESIS_G2_FLOOD_POSTFLOOD_EVIDENCE_EXPANSION",
+  "branch": "feat/genesis-g2-flood-postflood",
+  "base_master": "5b84a76a37cb8460266de04fdbe1b24841a76dea",
+  "scope": {
+    "included": [
+      "Genesis 6",
+      "Genesis 7",
+      "Genesis 8",
+      "Genesis 9"
+    ],
+    "excluded": [
+      "Genesis 10",
+      "Genesis 11",
+      "Commentary regeneration",
+      "Commentary v1.2",
+      "deployment",
+      "merge"
+    ]
+  },
+  "g0_baseline": {
+    "Genesis 6": {
+      "classification": "THIN",
+      "evidence_count": 13,
+      "synthesis_units": 7
+    },
+    "Genesis 7": {
+      "classification": "GAP",
+      "evidence_count": 11,
+      "synthesis_units": 5
+    },
+    "Genesis 8": {
+      "classification": "GAP",
+      "evidence_count": 13,
+      "synthesis_units": 5
+    },
+    "Genesis 9": {
+      "classification": "GAP",
+      "evidence_count": 69,
+      "synthesis_units": 5
+    }
+  },
+  "quality_diagnosis": {
+    "Genesis 9": "The 69 raw records are not 69 focused, synthesis-useful items. The census shows much of the apparent volume comes from repeated generic globally scoped background across unrelated themes and the unused evidence is not tied to Genesis 9 synthesis. Retain focused existing anchors (image-of-God, covenant-sign, flood, and Mesopotamian comparison) and add passage-specific items; do not treat the raw total as adequacy.",
+    "deduplication": "Reuse the existing Mesopotamian creation/flood comparison object and existing creation, Noah, Flood, covenant, image-of-God, sacrifice, new-creation, and nephesh concepts rather than replicating generic content."
+  },
+  "placement": {
+    "genesis": [
+      "G6 interpretive positions, Nephilim, 120 years, corruption/violence, divine grief, ark terms, covenant announcement",
+      "G7 animal entry, chronology, waters/decreation",
+      "G8 chronology"
+    ],
+    "noah": [
+      "G6 favor/righteousness/blamelessness/walking/toledot",
+      "G9 sons and vineyard/curse aftermath"
+    ],
+    "the-flood": [
+      "G7 scope and narrative judgment",
+      "G8 remembering/wind, chronology, Ararat, birds, departure"
+    ],
+    "covenant-theme": [
+      "G9 covenant scope and promise"
+    ],
+    "image-of-god-theme": [
+      "G9 renewed vocation, blood/life, human accountability"
+    ],
+    "what-is-a-covenant-sign": [
+      "G9 bow sign"
+    ],
+    "what-is-sacrifice-in-the-bible": [
+      "G8 altar and pleasing aroma"
+    ]
+  },
+  "applicability_audit": {
+    "rule": "Each new evidence item's scripture_references contains only its direct Genesis 6–9 anchor range. Job, Genesis 1/4/10+, Numbers 13, Torah law, ancient texts, and later reception are retained only in source records, notes, or scholarly_interpretation.",
+    "schema_limitation": "The typed evidence schema has no general non_applicability metadata field. Explanatory notes/source records preserve contextual status; there is no machine-readable non-applicability relation available.",
+    "candidate_count": 25
+  },
+  "expected_result": "Expand the evidence base with focused and disputed-view-aware records. Chapter classifications should be assessed only after source and CKL validation; this transaction does not regenerate or certify Commentary."
+}
