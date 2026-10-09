@@ -1,0 +1,682 @@
+{
+  "artifact_version": "g2-production-apply-manifest-v3",
+  "base_master": "5b84a76a37cb8460266de04fdbe1b24841a76dea",
+  "branch": "feat/genesis-g2-flood-postflood",
+  "canonical_library_identity": {
+    "after": {
+      "canonical_byte_signature": "3dad7684efbf5156e84ece802085b8f2857ec0f2ce79b0eaec97193f9d298b27",
+      "inventory_fingerprint": "9cb577ba38a8ab463e78b74c95c053bccc92d4b933d3edc3454af5152d86a090",
+      "manifest_sha256": "fa04b63d88623034ca9130d509743f5fdcc93616a87d81060ac4cdb958ba20e3",
+      "object_count": 680,
+      "object_file_sha_root": "8cc8ed4d6f4be4645b7c56a3d1fa767274efd3e45be58a0d2d285babde706e02"
+    },
+    "before": {
+      "canonical_byte_signature": "5bcf506bf29430a3448f0e6d37581c0560caa234de6d010e2f4dcce93a5d6e96",
+      "inventory_fingerprint": "ddded3d3055de51fbb9944276ed26e3d47f9f64a61c8ba75607070a56b442de7",
+      "manifest_sha256": "1a19faf619c610ff87647490dbb7b6853783611703241f2df450f9b9bc210f75",
+      "object_count": 679,
+      "object_file_sha_root": "9ac5ada1bd0e13efb541fc073f4640a0ca2a46a27f2ddea461f05283a862628c"
+    },
+    "manifest_updated_for_new_object": true,
+    "new_object_id": "genesis-flood-postflood-context"
+  },
+  "final_g2r2_state": {
+    "candidate_replay": {
+      "accepted": 25,
+      "base_master": "5b84a76a37cb8460266de04fdbe1b24841a76dea",
+      "candidate_count": 25,
+      "changed_chapters": [
+        "Genesis 6",
+        "Genesis 7",
+        "Genesis 8",
+        "Genesis 9"
+      ],
+      "changed_object_ids": [
+        "genesis-flood-postflood-context"
+      ],
+      "rejected": 0,
+      "result": "PASS",
+      "wrote": false
+    },
+    "chapter_results": {
+      "Genesis 6": {
+        "classification": "GOOD",
+        "evidence_count": 31,
+        "evidence_hash": "f30b5cf8f944d843a3fab81ff5dbe4b130ad0b9d3f1fafecb74babeeeb3c4cb1",
+        "g0_dimension_status": {
+          "ancient_near_eastern_context": "COVERED",
+          "archaeology_material_culture": "NOT_APPLICABLE",
+          "covenant_context": "COVERED",
+          "cultural_social_context": "COVERED",
+          "divine_council_spiritual_worldview": "COVERED",
+          "geography": "NOT_APPLICABLE",
+          "hebrew_worldview_concepts": "COVERED",
+          "historical_context": "COVERED",
+          "immediate_literary_context": "COVERED",
+          "interpretive_disputes": "COVERED",
+          "intertextual_canonical_connections": "COVERED",
+          "lexical_concepts": "COVERED",
+          "textual_manuscript_issues": "GAP"
+        },
+        "synthesis_hash": "9730ac5f58de247bcbeaa0110c9958c0b37dd66cf086b794b993106ad8691f27",
+        "synthesis_unit_count": 16
+      },
+      "Genesis 7": {
+        "classification": "GOOD",
+        "evidence_count": 21,
+        "evidence_hash": "63fedc8a85e193b58a84e8f9260a7409d6ab459c382d499385d41dfa2760f476",
+        "g0_dimension_status": {
+          "ancient_near_eastern_context": "GAP",
+          "archaeology_material_culture": "NOT_APPLICABLE",
+          "covenant_context": "NOT_APPLICABLE",
+          "cultural_social_context": "COVERED",
+          "divine_council_spiritual_worldview": "NOT_APPLICABLE",
+          "geography": "COVERED",
+          "hebrew_worldview_concepts": "COVERED",
+          "historical_context": "COVERED",
+          "immediate_literary_context": "COVERED",
+          "interpretive_disputes": "NOT_APPLICABLE",
+          "intertextual_canonical_connections": "NOT_APPLICABLE",
+          "lexical_concepts": "NOT_APPLICABLE",
+          "textual_manuscript_issues": "NOT_APPLICABLE"
+        },
+        "synthesis_hash": "cc03646852ca3f360029eb5a4391a1109215f170b3e2283f9faba3ae8cacafc7",
+        "synthesis_unit_count": 12
+      },
+      "Genesis 8": {
+        "classification": "GOOD",
+        "evidence_count": 25,
+        "evidence_hash": "9691f48226ea4e85b39d1902c34eee347c2e2bb4579502a63ab20ead1697dd46",
+        "g0_dimension_status": {
+          "ancient_near_eastern_context": "GAP",
+          "archaeology_material_culture": "COVERED",
+          "covenant_context": "GAP",
+          "cultural_social_context": "COVERED",
+          "divine_council_spiritual_worldview": "NOT_APPLICABLE",
+          "geography": "COVERED",
+          "hebrew_worldview_concepts": "COVERED",
+          "historical_context": "COVERED",
+          "immediate_literary_context": "COVERED",
+          "interpretive_disputes": "NOT_APPLICABLE",
+          "intertextual_canonical_connections": "NOT_APPLICABLE",
+          "lexical_concepts": "NOT_APPLICABLE",
+          "textual_manuscript_issues": "NOT_APPLICABLE"
+        },
+        "synthesis_hash": "0137f810ecdacb15b52b08993e7e3de683a75bebfb4b54dc0f0d28b8bf61c440",
+        "synthesis_unit_count": 11
+      },
+      "Genesis 9": {
+        "classification": "GOOD",
+        "evidence_count": 79,
+        "evidence_hash": "f675c064faaa00917456f23345f7cabee28d0a698a2e24e6472970d6b8e5bbb9",
+        "g0_dimension_status": {
+          "ancient_near_eastern_context": "GAP",
+          "archaeology_material_culture": "NOT_APPLICABLE",
+          "covenant_context": "COVERED",
+          "cultural_social_context": "COVERED",
+          "divine_council_spiritual_worldview": "NOT_APPLICABLE",
+          "geography": "COVERED",
+          "hebrew_worldview_concepts": "COVERED",
+          "historical_context": "COVERED",
+          "immediate_literary_context": "COVERED",
+          "interpretive_disputes": "NOT_APPLICABLE",
+          "intertextual_canonical_connections": "NOT_APPLICABLE",
+          "lexical_concepts": "NOT_APPLICABLE",
+          "textual_manuscript_issues": "NOT_APPLICABLE"
+        },
+        "synthesis_hash": "0364dc2f13694481d2c8007b184b29646103d58d5bfab3c40abba5d10ec86ba6",
+        "synthesis_unit_count": 12
+      }
+    },
+    "exact_controls": {
+      "1 Kings 6": {
+        "evidence_count": 5,
+        "evidence_hash": "0a84785212b7dbcd93a75fb1dbea634d6f10daf7b8620379e5e231b248d8dc97",
+        "identity_matches_base": true,
+        "synthesis_hash": "110df207f5aff55061be107012da4981a95d5fb54f82fac2288a9d7e868eae3f",
+        "synthesis_unit_count": 1
+      },
+      "Acts 16": {
+        "evidence_count": 89,
+        "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+        "identity_matches_base": true,
+        "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+        "synthesis_unit_count": 50
+      },
+      "Exodus 25": {
+        "evidence_count": 41,
+        "evidence_hash": "16c5a6eea7c9e7859dd4734f53367a22eb26fdccf171d46951e2624ccd2d2da3",
+        "identity_matches_base": true,
+        "synthesis_hash": "bc5c446bcbdcb7188ff221d3895470825ddee6fd197c78f23b24646c5ec54f13",
+        "synthesis_unit_count": 12
+      },
+      "Genesis 1": {
+        "evidence_count": 58,
+        "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+        "identity_matches_base": true,
+        "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+        "synthesis_unit_count": 12
+      },
+      "Genesis 11": {
+        "evidence_count": 21,
+        "evidence_hash": "0ac359bb7d48c3c63927c7aa49461fc70bf034e0360864f80a6d62b8f4cb4d4c",
+        "identity_matches_base": true,
+        "synthesis_hash": "9530249112686c9cb712e46278a2f3e130c73ca7b3550e1ea0f562397a973227",
+        "synthesis_unit_count": 3
+      },
+      "Genesis 12": {
+        "evidence_count": 152,
+        "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+        "identity_matches_base": true,
+        "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613",
+        "synthesis_unit_count": 9
+      },
+      "Genesis 15": {
+        "evidence_count": 69,
+        "evidence_hash": "ea24c129ea6415412cac555aa745c8802a1a988b33c3a69e46238e92cf52221d",
+        "identity_matches_base": true,
+        "synthesis_hash": "fb9649bb6c8731a0ffd5cfb5998bf89cc2f78faa360e6b0ca602001c8952894e",
+        "synthesis_unit_count": 11
+      },
+      "Genesis 17": {
+        "evidence_count": 50,
+        "evidence_hash": "9ae11257cf20afc9fc0d11c2dcdc108e298f031c3a8f52f964d65c04979fd60d",
+        "identity_matches_base": true,
+        "synthesis_hash": "689b68a41cb68e7bb3990c7535e952554e276a6f125a62c9fec67ad031eba25c",
+        "synthesis_unit_count": 8
+      },
+      "Genesis 22": {
+        "evidence_count": 38,
+        "evidence_hash": "bed3f84ff2f57bf8bdd505ac873a08d6390af69d1238b899836d330962dd3916",
+        "identity_matches_base": true,
+        "synthesis_hash": "4fae8bfa05ac709b7a6a4a6131fb6c84fe8bbe47e90f0f03b230582281438f53",
+        "synthesis_unit_count": 4
+      },
+      "Genesis 5": {
+        "evidence_count": 21,
+        "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+        "identity_matches_base": true,
+        "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+        "synthesis_unit_count": 7
+      },
+      "Isaiah 36": {
+        "evidence_count": 28,
+        "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+        "identity_matches_base": true,
+        "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+        "synthesis_unit_count": 12
+      },
+      "Revelation 12": {
+        "evidence_count": 5,
+        "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+        "identity_matches_base": true,
+        "synthesis_hash": "518f95978e206a7669187f9e96955c5191a4a9335d7ebe8889ef32b11ba00461",
+        "synthesis_unit_count": 5
+      },
+      "Revelation 18": {
+        "evidence_count": 13,
+        "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+        "identity_matches_base": true,
+        "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+        "synthesis_unit_count": 3
+      }
+    },
+    "existing_ckl_objects_modified": [],
+    "final_changed_ckl_object_ids": [
+      "genesis-flood-postflood-context"
+    ],
+    "historical_source_rows_with_ownership_changes": 0,
+    "object_count_after": 680,
+    "object_count_before": 679,
+    "production_apply": {
+      "evidence_count": 25,
+      "new_object_id": "genesis-flood-postflood-context",
+      "result": "PASS",
+      "source_count": 29,
+      "wrote": true
+    },
+    "source_owner_preflight_result": "PASS",
+    "whole_corpus_changed_chapters": [
+      "Genesis 6",
+      "Genesis 7",
+      "Genesis 8",
+      "Genesis 9"
+    ],
+    "whole_corpus_gate": "PASS"
+  },
+  "historical_aborted_g2r_state": {
+    "blockers": [
+      "Genesis 1 exact evidence and synthesis identities do not match base/master.",
+      "Genesis 5 exact evidence and synthesis identities do not match base/master.",
+      "Whole-corpus changed chapter set includes Genesis 1, 5, 11, 12, 15, 17, and 22."
+    ],
+    "candidate_replay": {
+      "accepted": 25,
+      "candidate_count": 25,
+      "rejected": 0,
+      "result": "PASS",
+      "validated_against_commit": "5b84a76a37cb8460266de04fdbe1b24841a76dea",
+      "wrote": false
+    },
+    "commentary_regenerated": false,
+    "commentary_v1_2_modified": false,
+    "deployment_performed": false,
+    "evidence_items_preserved": 25,
+    "exact_controls": {
+      "1 Kings 6": {
+        "base": {
+          "classification": "THIN",
+          "evidence_count": 5,
+          "evidence_hash": "0a84785212b7dbcd93a75fb1dbea634d6f10daf7b8620379e5e231b248d8dc97",
+          "reference": "1 Kings 6",
+          "synthesis_hash": "110df207f5aff55061be107012da4981a95d5fb54f82fac2288a9d7e868eae3f",
+          "synthesis_unit_count": 1
+        },
+        "final": {
+          "classification": "THIN",
+          "evidence_count": 5,
+          "evidence_hash": "0a84785212b7dbcd93a75fb1dbea634d6f10daf7b8620379e5e231b248d8dc97",
+          "reference": "1 Kings 6",
+          "synthesis_hash": "110df207f5aff55061be107012da4981a95d5fb54f82fac2288a9d7e868eae3f",
+          "synthesis_unit_count": 1
+        },
+        "identity_match": true
+      },
+      "Acts 16": {
+        "base": {
+          "classification": "AVAILABLE",
+          "evidence_count": 89,
+          "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+          "reference": "Acts 16",
+          "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+          "synthesis_unit_count": 50
+        },
+        "final": {
+          "classification": "AVAILABLE",
+          "evidence_count": 89,
+          "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+          "reference": "Acts 16",
+          "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+          "synthesis_unit_count": 50
+        },
+        "identity_match": true
+      },
+      "Exodus 25": {
+        "base": {
+          "classification": "AVAILABLE",
+          "evidence_count": 41,
+          "evidence_hash": "16c5a6eea7c9e7859dd4734f53367a22eb26fdccf171d46951e2624ccd2d2da3",
+          "reference": "Exodus 25",
+          "synthesis_hash": "bc5c446bcbdcb7188ff221d3895470825ddee6fd197c78f23b24646c5ec54f13",
+          "synthesis_unit_count": 12
+        },
+        "final": {
+          "classification": "AVAILABLE",
+          "evidence_count": 41,
+          "evidence_hash": "16c5a6eea7c9e7859dd4734f53367a22eb26fdccf171d46951e2624ccd2d2da3",
+          "reference": "Exodus 25",
+          "synthesis_hash": "bc5c446bcbdcb7188ff221d3895470825ddee6fd197c78f23b24646c5ec54f13",
+          "synthesis_unit_count": 12
+        },
+        "identity_match": true
+      },
+      "Genesis 1": {
+        "base": {
+          "classification": "AVAILABLE",
+          "evidence_count": 58,
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "reference": "Genesis 1",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+          "synthesis_unit_count": 12
+        },
+        "final": {
+          "classification": "AVAILABLE",
+          "evidence_count": 58,
+          "evidence_hash": "6bada1ce22ade56f4538c38b2dcb12fdcb8d4405996c7988c89a768e356c9207",
+          "reference": "Genesis 1",
+          "synthesis_hash": "917cf62f1800d3dc4bdd1dbbcc7fe1e0c900561b9f46f1e172aec104b9d41807",
+          "synthesis_unit_count": 12
+        },
+        "identity_match": false
+      },
+      "Genesis 5": {
+        "base": {
+          "classification": "AVAILABLE",
+          "evidence_count": 21,
+          "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+          "reference": "Genesis 5",
+          "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+          "synthesis_unit_count": 7
+        },
+        "final": {
+          "classification": "AVAILABLE",
+          "evidence_count": 21,
+          "evidence_hash": "a932d4af8da3f1226a30b9d1352ae4e3d06b2be57c52e95da890604541e295f7",
+          "reference": "Genesis 5",
+          "synthesis_hash": "29296d2cb9911b24e712d06ff2e8cbdcc6b6292d135c8c40c489a993ded1b657",
+          "synthesis_unit_count": 7
+        },
+        "identity_match": false
+      },
+      "Isaiah 36": {
+        "base": {
+          "classification": "AVAILABLE",
+          "evidence_count": 28,
+          "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+          "reference": "Isaiah 36",
+          "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+          "synthesis_unit_count": 12
+        },
+        "final": {
+          "classification": "AVAILABLE",
+          "evidence_count": 28,
+          "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+          "reference": "Isaiah 36",
+          "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+          "synthesis_unit_count": 12
+        },
+        "identity_match": true
+      },
+      "Revelation 12": {
+        "base": {
+          "classification": "AVAILABLE",
+          "evidence_count": 5,
+          "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+          "reference": "Revelation 12",
+          "synthesis_hash": "518f95978e206a7669187f9e96955c5191a4a9335d7ebe8889ef32b11ba00461",
+          "synthesis_unit_count": 5
+        },
+        "final": {
+          "classification": "AVAILABLE",
+          "evidence_count": 5,
+          "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+          "reference": "Revelation 12",
+          "synthesis_hash": "518f95978e206a7669187f9e96955c5191a4a9335d7ebe8889ef32b11ba00461",
+          "synthesis_unit_count": 5
+        },
+        "identity_match": true
+      },
+      "Revelation 18": {
+        "base": {
+          "classification": "AVAILABLE",
+          "evidence_count": 13,
+          "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+          "reference": "Revelation 18",
+          "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+          "synthesis_unit_count": 3
+        },
+        "final": {
+          "classification": "AVAILABLE",
+          "evidence_count": 13,
+          "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+          "reference": "Revelation 18",
+          "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+          "synthesis_unit_count": 3
+        },
+        "identity_match": true
+      }
+    },
+    "existing_source_records_copied_for_object_local_references": 10,
+    "final_changed_ckl_object_ids": [
+      "genesis"
+    ],
+    "final_evidence_parent_object_id": "genesis",
+    "g9_evidence_id": "g9-renewed-vocation-and-blood-life-accountability",
+    "g9_final_copy_count": 1,
+    "genesis_6_9_final": {
+      "Genesis 6": {
+        "classification": "AVAILABLE",
+        "coverage_classification": "GOOD",
+        "evidence_count": 31,
+        "evidence_hash": "9eeda7bdaea9c8df9d6ea716d18c85beff8f97a1964cdfbbbc71eb2ed36bc0e9",
+        "reference": "Genesis 6",
+        "synthesis_hash": "4969c3701253ede8ac0d3e43ec2665dab85db0b399c354d6ad0516d17ef0da2f",
+        "synthesis_unit_count": 15
+      },
+      "Genesis 7": {
+        "classification": "AVAILABLE",
+        "coverage_classification": "GOOD",
+        "evidence_count": 21,
+        "evidence_hash": "996427960859f163c60290407fab8c94cb13ea88046b8aec2f1dc33c80ddb37b",
+        "reference": "Genesis 7",
+        "synthesis_hash": "4387fb5575cfe3911ab726c3c24002fbdf49364c661f2c1c396294470d5055d5",
+        "synthesis_unit_count": 11
+      },
+      "Genesis 8": {
+        "classification": "AVAILABLE",
+        "coverage_classification": "GOOD",
+        "evidence_count": 25,
+        "evidence_hash": "f579db0fd155920ddccafc421b2557cf0c6b28839bfb986c48a0fc5a4d7518a0",
+        "reference": "Genesis 8",
+        "synthesis_hash": "b1102ce40ce2c315fbc20ea2fe82e08b023a8fb8f5ba2ffb246be8206042a93d",
+        "synthesis_unit_count": 11
+      },
+      "Genesis 9": {
+        "classification": "AVAILABLE",
+        "coverage_classification": "GOOD",
+        "evidence_count": 79,
+        "evidence_hash": "78026bf6d8d6e28400a90f7398de98b22ba9b0fcd26c01d9580b5e333d6af3f0",
+        "reference": "Genesis 9",
+        "synthesis_hash": "3bf2a842e05580dd77eab4d6fffd45a2640ab170d221cc47c4f3695d497477b1",
+        "synthesis_unit_count": 11
+      }
+    },
+    "merge_performed": false,
+    "new_ckl_object_ids": [],
+    "new_source_records_locked": 16,
+    "preexisting_genesis_source_records_reused": 3,
+    "restored_original_legacy_parents": [
+      "the-flood",
+      "noah",
+      "covenant-theme",
+      "image-of-god-theme",
+      "what-is-a-covenant-sign",
+      "what-is-sacrifice-in-the-bible"
+    ],
+    "status": "BLOCKED",
+    "whole_corpus_impact": {
+      "changed_chapters": [
+        "Genesis 1",
+        "Genesis 5",
+        "Genesis 6",
+        "Genesis 7",
+        "Genesis 8",
+        "Genesis 9",
+        "Genesis 11",
+        "Genesis 12",
+        "Genesis 15",
+        "Genesis 17",
+        "Genesis 22"
+      ],
+      "chapter_count": 1189,
+      "expected_changed_chapters": [
+        "Genesis 6",
+        "Genesis 7",
+        "Genesis 8",
+        "Genesis 9"
+      ],
+      "result": "FAIL",
+      "unexpected_changed_chapters": [
+        "Genesis 1",
+        "Genesis 5",
+        "Genesis 11",
+        "Genesis 12",
+        "Genesis 15",
+        "Genesis 17",
+        "Genesis 22"
+      ]
+    }
+  },
+  "historical_original_g2_application": {
+    "candidate_validation": {
+      "accepted_count": 25,
+      "candidate_count": 25,
+      "rejected_count": 0,
+      "result": "PASS",
+      "validator": "apply_candidate_queue(write=False) on temporary pre-transaction CKL snapshot",
+      "wrote": false
+    },
+    "changed_top_level_fields_by_object": {
+      "covenant-theme": [
+        "evidence_items",
+        "sources"
+      ],
+      "genesis": [
+        "evidence_items",
+        "sources"
+      ],
+      "image-of-god-theme": [
+        "evidence_items"
+      ],
+      "noah": [
+        "evidence_items",
+        "sources"
+      ],
+      "the-flood": [
+        "evidence_items",
+        "sources"
+      ],
+      "what-is-a-covenant-sign": [
+        "evidence_items",
+        "sources"
+      ],
+      "what-is-sacrifice-in-the-bible": [
+        "evidence_items",
+        "sources"
+      ]
+    },
+    "enriched_ckl_objects": [
+      {
+        "evidence_items_added": [
+          "g9-covenant-with-noah-and-all-flesh"
+        ],
+        "id": "covenant-theme",
+        "sources_added": [
+          "g2-gnuse-noah-covenant"
+        ]
+      },
+      {
+        "evidence_items_added": [
+          "g6-sons-of-god-interpretive-positions",
+          "g6-second-temple-watchers-reception",
+          "g6-nephilim-and-mighty-men",
+          "g6-one-hundred-twenty-years",
+          "g6-evil-intention-and-violence",
+          "g6-divine-grief-and-regret",
+          "g6-ark-instructions-and-material-terms",
+          "g6-covenant-announced-before-flood",
+          "g7-clean-animals-and-family-entry",
+          "g7-flood-chronology-and-dated-sequence",
+          "g7-cosmic-waters-and-decreation"
+        ],
+        "id": "genesis",
+        "sources_added": [
+          "g2-1-enoch-6",
+          "g2-ark-flood-context",
+          "g2-doedens-sons-god",
+          "g2-jubilees-5",
+          "g2-way-120-years"
+        ]
+      },
+      {
+        "evidence_items_added": [
+          "g9-renewed-vocation-and-blood-life-accountability"
+        ],
+        "id": "image-of-god-theme",
+        "sources_added": []
+      },
+      {
+        "evidence_items_added": [
+          "g6-noah-favor-righteousness-and-toledot",
+          "g9-noah-vineyard-and-canaan-oracle",
+          "g9-noah-sons-and-population-notice"
+        ],
+        "id": "noah",
+        "sources_added": [
+          "g2-alexander-ham",
+          "g2-rainey-ham",
+          "g2-schlimm-ham",
+          "g2-schwartz-toledot"
+        ]
+      },
+      {
+        "evidence_items_added": [
+          "g7-scope-of-flood-language",
+          "g7-judgment-and-death-outside-ark",
+          "g8-god-remembered-and-wind",
+          "g8-receding-water-chronology",
+          "g8-ararat-as-region",
+          "g8-raven-dove-and-habitability",
+          "g8-departure-and-renewed-creaturely-movement"
+        ],
+        "id": "the-flood",
+        "sources_added": [
+          "g2-darshan-birds",
+          "g2-longman-walton-flood",
+          "g2-net-ararat",
+          "g2-van-dyk-ruach"
+        ]
+      },
+      {
+        "evidence_items_added": [
+          "g9-bow-sign-and-interpretive-proposals"
+        ],
+        "id": "what-is-a-covenant-sign",
+        "sources_added": [
+          "g2-bonfil-bow"
+        ]
+      },
+      {
+        "evidence_items_added": [
+          "g8-noah-altar-and-pleasing-aroma"
+        ],
+        "id": "what-is-sacrifice-in-the-bible",
+        "sources_added": [
+          "g2-zuckier-pleasing-aroma"
+        ]
+      }
+    ],
+    "historical_label": "These describe the original G2 placement before G2R relocation; they are not the final object placement.",
+    "new_ckl_object_ids": [],
+    "original_final_chapter_counts_from_recalculation": {
+      "Genesis 6": "28 / 17",
+      "Genesis 7": "18 / 11",
+      "Genesis 8": "20 / 11",
+      "Genesis 9": "66 / 12"
+    },
+    "production_apply": {
+      "accepted_count": 25,
+      "final_queue_replay": {
+        "accepted": 25,
+        "rejected": 0,
+        "wrote": false
+      },
+      "post_apply_source_record_adjustments": 3,
+      "post_apply_sources_added": 2,
+      "rejected_count": 0,
+      "result": "PASS",
+      "wrote": true
+    }
+  },
+  "merge_gate": "GENESIS_G2_FLOOD_POSTFLOOD_EVIDENCE_MERGE_GATE_VERIFIED; Safe to merge: YES; no merge or deploy performed.",
+  "original_transaction": "GENESIS_G2_FLOOD_POSTFLOOD_EVIDENCE_EXPANSION",
+  "production_write_scope": [
+    "framework/canonical_library/objects/cultural_background/genesis-flood-postflood-context.json",
+    "framework/canonical_library/manifest.json"
+  ],
+  "runtime_database": {
+    "build": "PASS",
+    "claim_count": 2329,
+    "database_sha256_after": "292f477f86b57923095291b508554634021d56d9a01cb0ffd38b91d579311624",
+    "database_sha256_before": "237480562db2e3db8082a1d23c6fc99e7cee8186b35082a05ebffc08f020d0cd",
+    "evidence_count": 872,
+    "matches_json_inventory": true,
+    "object_count_after": 680,
+    "object_count_before": 679,
+    "runtime_db_fingerprint_after": "9cb577ba38a8ab463e78b74c95c053bccc92d4b933d3edc3454af5152d86a090",
+    "runtime_db_fingerprint_before": "ddded3d3055de51fbb9944276ed26e3d47f9f64a61c8ba75607070a56b442de7",
+    "source_count": 5121,
+    "verify": "PASS"
+  },
+  "transaction": "GENESIS_G2R2_ISOLATED_EVIDENCE_CONTAINER"
+}
