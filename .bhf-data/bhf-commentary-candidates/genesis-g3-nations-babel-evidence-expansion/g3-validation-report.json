@@ -122,6 +122,15 @@
   "artifact_version": "g3-validation-report-v1",
   "base_master": "6bb6075d5b4142110b88a6636dcf04d27146b1ad",
   "blockers": [],
+  "branch_commit_push": {
+    "branch": "feat/genesis-g3-nations-babel",
+    "committed": true,
+    "deployment_performed": false,
+    "merge_performed": false,
+    "pushed_to_origin": true,
+    "result": "PASS",
+    "working_tree_clean_at_final_gate": true
+  },
   "candidate_replay": {
     "accepted_count": 29,
     "base_master": "6bb6075d5b4142110b88a6636dcf04d27146b1ad",
@@ -291,7 +300,7 @@
     "result": "PASS",
     "test": "test_g3_controls_and_legacy_fallback_inputs_match_base_exactly"
   },
-  "merge_gate": "CONTENT_AND_TEST_GATES_PASS; COMMIT_AND_PUSH_PENDING",
+  "merge_gate": "GENESIS_G3_NATIONS_BABEL_EVIDENCE_MERGE_GATE_VERIFIED",
   "new_object_schema": {
     "id": "genesis-nations-babel-context",
     "object_count_after": 681,

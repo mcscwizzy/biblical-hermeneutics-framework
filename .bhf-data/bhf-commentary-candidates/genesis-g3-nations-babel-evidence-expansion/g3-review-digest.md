@@ -39,7 +39,7 @@ Post-apply comparison covered all 1,189 canonical chapter inputs and found exact
 
 Commentary v1.2 was not regenerated or modified. Its packaged release diagnostics and checksum verification pass; manifest identity is `1c8972058420f00c2c9f05f52e7924566bf9fb3f56547d16c4c8b9f1f48b65d7` with 973 indexed files. Genesis 10 and 11 are marked as future stale Commentary inputs. The combined test run had 18 passes and 2 inherited failures in the historical 75-chapter promotion artifact: it pins CKL SHA `19c66f...`, already stale on the post-G2 base (G2 documented the same two failures). Exact mismatch is limited to the CKL database protected contract; packaged Commentary identity/checksum/state tests pass.
 
-Candidate replay, whole CKL schema, source/provenance, typed-target, relationship, applicability, G0 classification, legacy fallback, isolated source-owner, controls, and full-corpus gates pass. `git diff --check` passes; the requested commit and push are the remaining operational steps.
+Candidate replay, whole CKL schema, source/provenance, typed-target, relationship, applicability, G0 classification, legacy fallback, isolated source-owner, controls, and full-corpus gates pass. `git diff --check` passes. The transaction is committed and pushed on `feat/genesis-g3-nations-babel`; no merge or deployment was performed.
 
 Object SHA-256: `ee22202a8bfc1be62469d1e710ae2383149ecad445dc4d721008a18d42a22f23`
 
