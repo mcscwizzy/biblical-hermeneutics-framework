@@ -25,7 +25,7 @@ The legacy-fallback-only audit identified 608 objects under the broad definition
 
 Candidate replay accepted 25/25 items with no writes and predicted only the new object plus Genesis 6–9. Whole CKL validation reports zero errors; runtime DB rebuild and verification pass. Frozen Commentary v1.2 identities and checksums remain valid; no Commentary was regenerated. G1R and both G2 regressions pass.
 
-G2R2 content and impact gates pass. The only broader-suite failures are the two tests that pin the historical 75-chapter validation artifact to the pre-G2 CKL database SHA; the packaged Commentary v1.2 release checks pass. Safe to merge: YES after the requested branch commit/push. No merge or deployment was performed.
+G2R2 content and impact gates pass. The only broader-suite failures are the two tests that pin the historical 75-chapter validation artifact to the pre-G2 CKL database SHA; the packaged Commentary v1.2 release checks pass. Safe to merge: YES. The requested branch commit and push are complete. No merge or deployment was performed.
 
 
 ## Additional test result

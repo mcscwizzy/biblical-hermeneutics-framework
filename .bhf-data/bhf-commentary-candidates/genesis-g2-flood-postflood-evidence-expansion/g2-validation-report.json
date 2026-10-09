@@ -757,7 +757,13 @@
       "synthesis_unit_count": 12
     }
   },
-  "git_diff_check": "PENDING_FINAL_RUN",
+  "git_diff_check": {
+    "commands": [
+      "git diff --cached --check",
+      "git diff --check HEAD^ HEAD"
+    ],
+    "result": "PASS"
+  },
   "merge_gate": "GENESIS_G2_FLOOD_POSTFLOOD_EVIDENCE_MERGE_GATE_VERIFIED; all G2R2 content and impact gates pass; no merge or deploy performed.",
   "new_object_schema": {
     "id": "genesis-flood-postflood-context",

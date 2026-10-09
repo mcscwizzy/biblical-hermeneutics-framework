@@ -1330,7 +1330,13 @@
     "g2_legacy_fallback_regression": "PASS",
     "g2r2_source_owner_isolation_regression": "PASS",
     "genesis_6_9_preparation_synthesis": "PASS",
-    "git_diff_check": "PENDING_FINAL_RUN",
+    "git_diff_check": {
+      "commands": [
+        "git diff --cached --check",
+        "git diff --check HEAD^ HEAD"
+      ],
+      "result": "PASS"
+    },
     "new_object_schema_validation": "PASS",
     "relationship_validation": "PASS; no unresolved CKL relationships",
     "runtime_db_rebuild_verification": "PASS",
