@@ -1,0 +1,14 @@
+{
+  "artifact_version": "g3-regression-reconciliation-v1",
+  "transaction": "GENESIS_G3_NATIONS_BABEL_EVIDENCE_EXPANSION",
+  "change": "Removed Genesis 11 from the G2 shared-source-owner regression's unaffected chapter identity controls.",
+  "reason": "Genesis 11 is an explicit G3 evidence target. Its G2-era hash is expected to change under G3, so retaining it as an unchanged control made the historical G2 regression contradict the authorized G3 scope.",
+  "historical_g2_result_artifacts_modified": false,
+  "g2_behavior_still_checked": [
+    "G2 evidence remains isolated on genesis-flood-postflood-context.",
+    "G2 source aliases remain local and preserve publication identity.",
+    "Unaffected Genesis 12, 15, 17, and 22 identities remain exact."
+  ],
+  "genesis_11_g3_before_after_identity_authority": "g3-chapter-impact.json",
+  "genesis_11_g3_control_status": "TARGET; intentionally excluded from unaffected-control comparisons"
+}

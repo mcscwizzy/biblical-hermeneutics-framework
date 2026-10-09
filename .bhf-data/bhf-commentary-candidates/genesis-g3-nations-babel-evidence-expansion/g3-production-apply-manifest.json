@@ -1,0 +1,196 @@
+{
+  "apply_status": "APPLIED_AND_POST_APPLY_GATES_PASS",
+  "artifact_version": "g3-production-apply-manifest-v1",
+  "base_master": "6bb6075d5b4142110b88a6636dcf04d27146b1ad",
+  "branch": "feat/genesis-g3-nations-babel",
+  "candidate_dispositions": {
+    "accepted": 29,
+    "rejected": 5,
+    "unresolved": 5,
+    "withheld": 4
+  },
+  "candidate_replay": {
+    "accepted_count": 29,
+    "base_master": "6bb6075d5b4142110b88a6636dcf04d27146b1ad",
+    "candidate_count": 29,
+    "changed_chapters": [
+      "Genesis 10",
+      "Genesis 11"
+    ],
+    "changed_object_ids": [
+      "genesis-nations-babel-context"
+    ],
+    "rejected_count": 0,
+    "replayed_production_evidence_ids_match": true,
+    "replayed_production_source_count": 20,
+    "result": "PASS",
+    "scripture_reference_validation": "PASS",
+    "source_reference_validation": "PASS",
+    "staged_new_object_id": "genesis-nations-babel-context",
+    "staged_schema_validation": "PASS",
+    "typed_target_validation": "PASS",
+    "write_requested": false
+  },
+  "commentary_regenerated": false,
+  "commentary_v1_2_modified": false,
+  "commentary_v1_2_release_checks": "PASS; exact package identities unchanged; two inherited CKL database SHA promotion test failures are documented above",
+  "deployment_performed": false,
+  "exact_controls": {
+    "1 Kings 6": {
+      "evidence_count": 5,
+      "evidence_hash": "0a84785212b7dbcd93a75fb1dbea634d6f10daf7b8620379e5e231b248d8dc97",
+      "synthesis_hash": "110df207f5aff55061be107012da4981a95d5fb54f82fac2288a9d7e868eae3f",
+      "synthesis_unit_count": 1
+    },
+    "Acts 16": {
+      "evidence_count": 89,
+      "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+      "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+      "synthesis_unit_count": 50
+    },
+    "Exodus 25": {
+      "evidence_count": 41,
+      "evidence_hash": "16c5a6eea7c9e7859dd4734f53367a22eb26fdccf171d46951e2624ccd2d2da3",
+      "synthesis_hash": "bc5c446bcbdcb7188ff221d3895470825ddee6fd197c78f23b24646c5ec54f13",
+      "synthesis_unit_count": 12
+    },
+    "Genesis 1": {
+      "evidence_count": 58,
+      "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+      "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778",
+      "synthesis_unit_count": 12
+    },
+    "Genesis 12": {
+      "evidence_count": 152,
+      "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+      "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613",
+      "synthesis_unit_count": 9
+    },
+    "Genesis 15": {
+      "evidence_count": 69,
+      "evidence_hash": "ea24c129ea6415412cac555aa745c8802a1a988b33c3a69e46238e92cf52221d",
+      "synthesis_hash": "fb9649bb6c8731a0ffd5cfb5998bf89cc2f78faa360e6b0ca602001c8952894e",
+      "synthesis_unit_count": 11
+    },
+    "Genesis 17": {
+      "evidence_count": 50,
+      "evidence_hash": "9ae11257cf20afc9fc0d11c2dcdc108e298f031c3a8f52f964d65c04979fd60d",
+      "synthesis_hash": "689b68a41cb68e7bb3990c7535e952554e276a6f125a62c9fec67ad031eba25c",
+      "synthesis_unit_count": 8
+    },
+    "Genesis 22": {
+      "evidence_count": 38,
+      "evidence_hash": "bed3f84ff2f57bf8bdd505ac873a08d6390af69d1238b899836d330962dd3916",
+      "synthesis_hash": "4fae8bfa05ac709b7a6a4a6131fb6c84fe8bbe47e90f0f03b230582281438f53",
+      "synthesis_unit_count": 4
+    },
+    "Genesis 5": {
+      "evidence_count": 21,
+      "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+      "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+      "synthesis_unit_count": 7
+    },
+    "Genesis 6": {
+      "evidence_count": 31,
+      "evidence_hash": "f30b5cf8f944d843a3fab81ff5dbe4b130ad0b9d3f1fafecb74babeeeb3c4cb1",
+      "synthesis_hash": "9730ac5f58de247bcbeaa0110c9958c0b37dd66cf086b794b993106ad8691f27",
+      "synthesis_unit_count": 16
+    },
+    "Genesis 7": {
+      "evidence_count": 21,
+      "evidence_hash": "63fedc8a85e193b58a84e8f9260a7409d6ab459c382d499385d41dfa2760f476",
+      "synthesis_hash": "cc03646852ca3f360029eb5a4391a1109215f170b3e2283f9faba3ae8cacafc7",
+      "synthesis_unit_count": 12
+    },
+    "Genesis 8": {
+      "evidence_count": 25,
+      "evidence_hash": "9691f48226ea4e85b39d1902c34eee347c2e2bb4579502a63ab20ead1697dd46",
+      "synthesis_hash": "0137f810ecdacb15b52b08993e7e3de683a75bebfb4b54dc0f0d28b8bf61c440",
+      "synthesis_unit_count": 11
+    },
+    "Genesis 9": {
+      "evidence_count": 79,
+      "evidence_hash": "f675c064faaa00917456f23345f7cabee28d0a698a2e24e6472970d6b8e5bbb9",
+      "synthesis_hash": "0364dc2f13694481d2c8007b184b29646103d58d5bfab3c40abba5d10ec86ba6",
+      "synthesis_unit_count": 12
+    },
+    "Isaiah 36": {
+      "evidence_count": 28,
+      "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+      "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+      "synthesis_unit_count": 12
+    },
+    "Revelation 12": {
+      "evidence_count": 5,
+      "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+      "synthesis_hash": "518f95978e206a7669187f9e96955c5191a4a9335d7ebe8889ef32b11ba00461",
+      "synthesis_unit_count": 5
+    },
+    "Revelation 18": {
+      "evidence_count": 13,
+      "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+      "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+      "synthesis_unit_count": 3
+    }
+  },
+  "existing_ckl_objects_modified": [],
+  "expected_changed_chapters": [
+    "Genesis 10",
+    "Genesis 11"
+  ],
+  "final_chapter_identities": {
+    "Genesis 10": {
+      "evidence_count": 82,
+      "evidence_hash": "a1e373e87e93821e6f0aa3920a5afb050c7da30b4e019252afddb33cb4f5e58f",
+      "synthesis_hash": "fd851519230b1092100ae5db3e5945b1358c74ccb3ece3e093cda7d517efd06e",
+      "synthesis_unit_count": 17
+    },
+    "Genesis 11": {
+      "evidence_count": 53,
+      "evidence_hash": "514eb7573bee01c46b1fcfb03249c8f90182bfbc1c9504a47eab1e006b043361",
+      "synthesis_hash": "57baace0ce5e073c2716fe2da00421f4541bcc5607b281f9108d38f16d99b086",
+      "synthesis_unit_count": 17
+    }
+  },
+  "final_classifications": {
+    "Genesis 10": "GOOD",
+    "Genesis 11": "GOOD"
+  },
+  "g3_evidence_item_counts": {
+    "Genesis 10": 13,
+    "Genesis 11": 16
+  },
+  "historical_source_owner_rows_changed": 0,
+  "merge_performed": false,
+  "new_object_id": "genesis-nations-babel-context",
+  "object_count_after": 681,
+  "object_count_before": 680,
+  "post_apply_comparison_sha256": "b9310e0090ee661b7c7c39c066e9f8414548edac4acdf850927dd3b8867577f3",
+  "production_write_scope": [
+    "framework/canonical_library/objects/cultural_background/genesis-nations-babel-context.json",
+    "framework/canonical_library/manifest.json"
+  ],
+  "runtime_database": {
+    "build": "PASS",
+    "claim_count": 2329,
+    "database_path": ".bhf/ckl.sqlite",
+    "database_sha256": "923a74bb4395d1c2a83efd04c8dc1e3dcafbd417763c2f32c355796ff3dbbc9c",
+    "evidence_count": 901,
+    "inventory_fingerprint": "07ea043978df7cdb7678523e688f4beac4294aa42c6ca015685de87dbb357534",
+    "object_count": 681,
+    "result": "PASS",
+    "source_count": 5141,
+    "verify": "PASS"
+  },
+  "source_owner_audit": {
+    "existing_historical_source_owner_rows_changed": 0,
+    "result": "PASS"
+  },
+  "total_g3_evidence_items": 29,
+  "transaction": "GENESIS_G3_NATIONS_BABEL_EVIDENCE_EXPANSION",
+  "whole_corpus_changed_chapters": [
+    "Genesis 10",
+    "Genesis 11"
+  ],
+  "whole_corpus_gate": "PASS"
+}

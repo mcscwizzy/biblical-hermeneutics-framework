@@ -1,0 +1,48 @@
+{
+  "artifact_version": "g3-existing-evidence-audit-v1",
+  "base_master": "6bb6075d5b4142110b88a6636dcf04d27146b1ad",
+  "chapters": {
+    "Genesis 10": {
+      "detail": "44 place-object legacy snippets are geographically anchored but mostly generic location/history context rather than Table-specific claims. Four FAQ entries are generic background. Three Babel legacy fields touch the immediate adjacent narrative but are not a structured Table of Nations evidence set. Five Genesis book-level claims/notes supply broad movement or ANE context; no existing item is a focused, synthesis-usable passage-domain treatment of the Table, Japheth/Ham/Shem, Nimrod, boundaries, or Peleg.",
+      "existing_evidence_partition": {
+        "book_level_context": 5,
+        "generic_background": 7,
+        "geography_only": 44,
+        "later_reception": 0,
+        "passage_specific_structured_and_synthesis_usable": 0
+      },
+      "g0_chapter_overlapping_candidates": 25,
+      "g0_classification": "GAP",
+      "g0_evidence_count": 56,
+      "g0_synthesis_unit_count": 3,
+      "raw_count_caveat": "The 56 count includes 44 geography-only candidates and does not demonstrate Table coverage.",
+      "synthesis_evidence_before": [
+        "genesis-literary-movement"
+      ]
+    },
+    "Genesis 11": {
+      "detail": "Fifteen legacy fields are generic: eight from Abel, Adam, Eve, and Noah; four FAQ fields; and three Babel-object background fields. Six Genesis book-level items provide broad context. The initial three synthesis units draw on book-level context rather than those 15 generic legacy fields. There is no focused passage-domain object for Babel, its materials and literary movement, or the Shem-to-Abram genealogy.",
+      "existing_evidence_partition": {
+        "book_level_context": 6,
+        "generic_background": 15,
+        "geography_only": 0,
+        "later_reception": 0,
+        "passage_specific_structured_and_synthesis_usable": 0
+      },
+      "g0_chapter_overlapping_candidates": 8,
+      "g0_classification": "SPARSE",
+      "g0_evidence_count": 21,
+      "g0_synthesis_unit_count": 3,
+      "raw_count_caveat": "21 raw items generated only 3 synthesis units; 15 legacy field candidates were unused by synthesis.",
+      "synthesis_evidence_before": [
+        "genesis-ane-comparative-context",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:1",
+        "genesis:interpretive_note:2"
+      ]
+    }
+  },
+  "classification_caveat": "Later reception is reported as a separate lens and not double counted. The source-role partition is not additive with synthesis units. Evidence may touch the passage while still being generic or unused.",
+  "method": "Read the prepared chapter bundle at the G2-merged base; classify each item by strongest role in its source/object and evidence semantics. Categories are mutually exclusive, best-fit, and distinguish raw applicability from synthesis usability. Raw count is not coverage.",
+  "transaction": "GENESIS_G3_NATIONS_BABEL_EVIDENCE_EXPANSION"
+}
