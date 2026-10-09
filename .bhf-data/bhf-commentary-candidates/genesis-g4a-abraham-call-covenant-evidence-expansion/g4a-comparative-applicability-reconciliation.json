@@ -1,0 +1,94 @@
+{
+  "artifact_version": "g4a-comparative-applicability-reconciliation-v1",
+  "transaction": "GENESIS_G4A_ABRAHAM_CALL_COVENANT_EVIDENCE_EXPANSION",
+  "observed_base_behavior": "The base G0 evidence adapter labels inherited Pauline reception evidence DIRECT_CONTEXT when Genesis verses occur in comparative/background references. This is the base behavior as observed before apply and is retained here rather than rewriting the original audit.",
+  "base_artifact": "g4a-existing-evidence-audit.json",
+  "base_observations": [
+    {
+      "chapter": "Genesis 12",
+      "evidence_id": "abrahamic-seed-and-inheritance",
+      "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+      "g0_semantic_relationship": "DIRECT_CONTEXT",
+      "g0_passage_anchors": [
+        "Genesis 12:1-3"
+      ]
+    },
+    {
+      "chapter": "Genesis 12",
+      "evidence_id": "galatians-abraham-promise-seed",
+      "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+      "g0_semantic_relationship": "DIRECT_CONTEXT",
+      "g0_passage_anchors": [
+        "Genesis 12:3"
+      ]
+    },
+    {
+      "chapter": "Genesis 15",
+      "evidence_id": "abrahamic-seed-and-inheritance",
+      "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+      "g0_semantic_relationship": "DIRECT_CONTEXT",
+      "g0_passage_anchors": [
+        "Genesis 15:1-6"
+      ]
+    },
+    {
+      "chapter": "Genesis 15",
+      "evidence_id": "galatians-abraham-promise-seed",
+      "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+      "g0_semantic_relationship": "DIRECT_CONTEXT",
+      "g0_passage_anchors": [
+        "Genesis 15:6"
+      ]
+    },
+    {
+      "chapter": "Genesis 15",
+      "evidence_id": "romans-abraham-before-circumcision",
+      "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+      "g0_semantic_relationship": "DIRECT_CONTEXT",
+      "g0_passage_anchors": [
+        "Genesis 15:6"
+      ]
+    },
+    {
+      "chapter": "Genesis 17",
+      "evidence_id": "abrahamic-seed-and-inheritance",
+      "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+      "g0_semantic_relationship": "DIRECT_CONTEXT",
+      "g0_passage_anchors": [
+        "Genesis 17:1-8"
+      ]
+    },
+    {
+      "chapter": "Genesis 17",
+      "evidence_id": "romans-abraham-before-circumcision",
+      "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+      "g0_semantic_relationship": "DIRECT_CONTEXT",
+      "g0_passage_anchors": [
+        "Genesis 17:1-27"
+      ]
+    }
+  ],
+  "reference_relationships_in_historical_source_objects": {
+    "pauline-kinship-guardianship-slavery-and-inheritance": {
+      "object_level_genesis_refs": [
+        "Genesis 12:1-3",
+        "Genesis 15:1-6",
+        "Genesis 17:1-8"
+      ],
+      "relationship": "background",
+      "evidence_or_claim": "abrahamic-seed-and-inheritance",
+      "role": "Pauline rereading context; not direct Genesis evidence"
+    },
+    "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel": {
+      "claims": [
+        "romans-abraham-before-circumcision",
+        "galatians-abraham-promise-seed"
+      ],
+      "reference_relationship": "comparative",
+      "role": "Romans/Galatians reception context; not direct Genesis evidence"
+    }
+  },
+  "scope_disposition": "No inherited shared object or claim was modified in G4A. G4A evidence, sources, and applicability anchors are local to its isolated object; later reception remains descriptive context. Any broad repair to the inherited G0 adapter/reference behavior requires a distinct transaction.",
+  "g4a_regression_result": "PASS",
+  "historical_shared_object_edits": []
+}

@@ -1,0 +1,91 @@
+{
+  "artifact_version": "g4a-production-apply-manifest-v1",
+  "transaction": "GENESIS_G4A_ABRAHAM_CALL_COVENANT_EVIDENCE_EXPANSION",
+  "base_master": "f4b3d88a23b723eea8eced74c334df29def9fabf",
+  "branch": "feat/genesis-g4a-abraham-call-covenant",
+  "apply_status": "APPLIED_AND_ALL_EVIDENCE_AND_IMPACT_GATES_PASS",
+  "object_count_before": 681,
+  "object_count_after": 682,
+  "new_object_id": "genesis-abraham-call-covenant-context",
+  "new_object_type": "cultural_background",
+  "production_write_scope": [
+    "framework/canonical_library/objects/cultural_background/genesis-abraham-call-covenant-context.json",
+    "framework/canonical_library/manifest.json"
+  ],
+  "existing_ckl_objects_modified": [],
+  "new_g4a_evidence_items": 46,
+  "new_g4a_source_records": 17,
+  "historical_source_owner_rows_changed": 0,
+  "source_owner_result": "PASS",
+  "candidate_replay": {
+    "result": "PASS",
+    "base_master": "f4b3d88a23b723eea8eced74c334df29def9fabf",
+    "candidate_count": 46,
+    "accepted_count": 46,
+    "rejected_count": 0,
+    "changed_chapters": [
+      "Genesis 12",
+      "Genesis 13",
+      "Genesis 14",
+      "Genesis 15",
+      "Genesis 16",
+      "Genesis 17"
+    ],
+    "changed_object_ids": [
+      "genesis-abraham-call-covenant-context"
+    ],
+    "production_item_content_parity": "PASS",
+    "replayed_production_evidence_ids_match": true,
+    "replayed_production_source_count": 17,
+    "source_reference_validation": "PASS",
+    "scripture_reference_validation": "PASS",
+    "staged_schema_validation": "PASS",
+    "typed_target_validation": "PASS",
+    "write_requested": false,
+    "staged_new_object_id": "genesis-abraham-call-covenant-context",
+    "staged_and_applied_evidence_count": 46,
+    "replay_method": "Extracted framework/canonical_library from the exact clean G4A base commit using git archive; overlaid the staged object and incremented the manifest to 682; loaded/validated the full CKL; prepared and synthesized Genesis 12–17."
+  },
+  "candidate_dispositions": {
+    "accepted": 46,
+    "rejected": 0,
+    "unresolved": 0,
+    "withheld": 0
+  },
+  "claim_dispositions": {
+    "accepted": 6,
+    "unresolved": 3,
+    "rejected": 10,
+    "withheld": 3
+  },
+  "changed_chapters": [
+    "Genesis 12",
+    "Genesis 13",
+    "Genesis 14",
+    "Genesis 15",
+    "Genesis 16",
+    "Genesis 17"
+  ],
+  "whole_corpus_gate": "PASS",
+  "whole_corpus_chapters_compared": 1189,
+  "final_classifications": {
+    "Genesis 12": "GOOD",
+    "Genesis 13": "GOOD",
+    "Genesis 14": "GOOD",
+    "Genesis 15": "GOOD",
+    "Genesis 16": "GOOD",
+    "Genesis 17": "GOOD"
+  },
+  "frozen_commentary_v1_2_modified": false,
+  "commentary_regenerated": false,
+  "stale_future_commentary_inputs": [
+    "Genesis 12",
+    "Genesis 13",
+    "Genesis 14",
+    "Genesis 15",
+    "Genesis 16",
+    "Genesis 17"
+  ],
+  "merge_performed": false,
+  "deployment_performed": false
+}
