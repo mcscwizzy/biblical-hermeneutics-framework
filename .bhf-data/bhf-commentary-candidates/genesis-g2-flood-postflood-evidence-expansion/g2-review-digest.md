@@ -30,4 +30,4 @@ G2R2 content and impact gates pass. The only broader-suite failures are the two 
 
 ## Additional test result
 
-The combined G2/G1R/Commentary v1.2 promotion suite reported 8 passed and 2 failed. Both failures concern the separate historical 75-chapter validation artifact, which pins the pre-G2 CKL database SHA; the required rebuilt runtime DB now has the new CKL fingerprint. Packaged Commentary v1.2 identity/checksum checks pass, and no Commentary or source-validation artifact was rewritten.
+The combined G2/G1R/Commentary v1.2 promotion suite reported 8 passed and 2 failed. Both failures concern a separate historical 75-chapter validation artifact whose pinned CKL database SHA was already stale against the base runtime DB and remains stale against the required rebuilt 680-object DB. Packaged Commentary v1.2 identity/checksum checks pass, and no Commentary or source-validation artifact was rewritten.

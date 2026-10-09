@@ -121,7 +121,7 @@
     }
   },
   "commentary_v1_2": {
-    "additional_validation_context": "Two tests against the separate 75-chapter source-validation artifact fail because it pins the pre-G2 CKL database SHA; the packaged Commentary v1.2 release integrity and identity checks pass.",
+    "additional_validation_context": "Two tests against a separate historical 75-chapter source-validation artifact fail because its pinned CKL database SHA is stale relative to both the base runtime DB and the rebuilt 680-object DB. The packaged Commentary v1.2 release integrity and identity checks pass.",
     "all_indexed_files_valid": true,
     "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
     "corpus_checksum_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
@@ -1349,10 +1349,10 @@
         "test_validation_intersection_is_calculated_from_per_chapter_records",
         "test_full_corpus_reconciliation_inventory_is_complete_and_generation_free"
       ],
-      "failure_reason": "The separate historical 75-chapter validation artifact protects the pre-G2 CKL database SHA 19c66f931b6afe907bbef85ac29f34a3aefd288886d516c318e7965474ca2322; the required rebuilt CKL runtime database now has SHA 292f477f86b57923095291b508554634021d56d9a01cb0ffd38b91d579311624. No artifact or Commentary release files were changed.",
+      "failure_reason": "The separate historical 75-chapter validation artifact expects CKL database SHA 19c66f931b6afe907bbef85ac29f34a3aefd288886d516c318e7965474ca2322. The base runtime database already had SHA 237480562db2e3db8082a1d23c6fc99e7cee8186b35082a05ebffc08f020d0cd, and the required rebuilt 680-object runtime database has SHA 292f477f86b57923095291b508554634021d56d9a01cb0ffd38b91d579311624. This is a stale protected-contract mismatch in that historical validation artifact; no artifact or Commentary release files were changed.",
       "g2_and_g1r_regressions": "PASS; included in the 8 passed tests",
       "g2_g1r_and_commentary_v12_release_promotion_command": "pytest -q tests/test_genesis_g2_shared_object_fallback.py tests/test_genesis_g1r_comparative_applicability.py tests/test_commentary_v12_release_promotion.py",
-      "merge_gate_interpretation": "These failures are limited to the older scale-validation source artifact binding to the former CKL DB. Frozen packaged Commentary v1.2 identities and checksums remain valid; these failures do not indicate altered Commentary or a G2 chapter-impact expansion.",
+      "merge_gate_interpretation": "These two failures are in the separate historical scale-validation source artifact. Its protected CKL database SHA mismatched the base runtime database before G2R2 and remains stale after the required rebuild. The packaged Commentary v1.2 release identity/checksums and the G2-specific gates pass.",
       "packaged_v12_release_checks": "PASS; packaged manifest/checksum and chapter state tests passed",
       "passed": 8
     },
