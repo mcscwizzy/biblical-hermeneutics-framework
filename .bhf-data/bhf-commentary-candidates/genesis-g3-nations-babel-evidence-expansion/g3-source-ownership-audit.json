@@ -1,0 +1,171 @@
+{
+  "alias_bibliographic_identity_validation": {
+    "aliases_checked": 3,
+    "fields": [
+      "title",
+      "author",
+      "publisher",
+      "year",
+      "locator",
+      "url",
+      "source_type"
+    ],
+    "original_work_identity_checked": true,
+    "result": "PASS"
+  },
+  "artifact_version": "g3-source-ownership-audit-v1",
+  "existing_changed_rows": [],
+  "existing_historical_source_owner_rows_changed": 0,
+  "new_object_local_source_owner_rows": 20,
+  "new_source_owner_rows": [
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-carr-formation-genesis-1-11"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-connan-bitumen"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-george-babel"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-goldenberg-ham"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-gousmett-babel-language"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-grossman-babel-etymology"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-hendel-genesis-text"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-hieke-genealogical-space"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-hom-nimrod"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-klamm-language"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-levin-nimrod-proposal"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-local-genesis-1-50"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-local-hamilton-genesis-1-17"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-local-sarna-genesis"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-louvre-etemenanki-stele"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-oded-table-nations"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-saggs-ur"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-sargon-name-making"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-wilson-genealogy"
+    },
+    {
+      "owners": [
+        "genesis-nations-babel-context"
+      ],
+      "source_id": "g3-ziggurat-architecture"
+    }
+  ],
+  "post_apply_audit": {
+    "existing_historical_source_owner_rows_changed": 0,
+    "historical_source_records_modified": false,
+    "new_local_source_ids_owned_by_new_object": 20,
+    "result": "PASS"
+  },
+  "result": "PASS",
+  "source_aliases": [
+    {
+      "historical_source_id": "genesis-1-50",
+      "local_source_id": "g3-local-genesis-1-50",
+      "original_work_identity_preserved": true,
+      "same_bibliographic_identity": true
+    },
+    {
+      "historical_source_id": "sarna-genesis",
+      "local_source_id": "g3-local-sarna-genesis",
+      "original_work_identity_preserved": true,
+      "same_bibliographic_identity": true
+    },
+    {
+      "historical_source_id": "hamilton-genesis-1-17",
+      "local_source_id": "g3-local-hamilton-genesis-1-17",
+      "original_work_identity_preserved": true,
+      "same_bibliographic_identity": true
+    }
+  ],
+  "source_id_reuse": "No historical source ID is referenced directly by G3 evidence; existing works are referenced through local aliases.",
+  "transaction": "GENESIS_G3_NATIONS_BABEL_EVIDENCE_EXPANSION"
+}

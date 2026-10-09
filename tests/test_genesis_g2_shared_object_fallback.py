@@ -56,12 +56,8 @@ GENESIS_5_BASE = {
     "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
 }
 GENESIS_SOURCE_OWNER_CONTROLS = {
-    "Genesis 11": (
-        21,
-        "0ac359bb7d48c3c63927c7aa49461fc70bf034e0360864f80a6d62b8f4cb4d4c",
-        3,
-        "9530249112686c9cb712e46278a2f3e130c73ca7b3550e1ea0f562397a973227",
-    ),
+    # Genesis 11 is an intentional G3 target; its before/after identities are
+    # verified by the G3 chapter-impact artifact rather than this G2 control.
     "Genesis 12": (
         152,
         "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
