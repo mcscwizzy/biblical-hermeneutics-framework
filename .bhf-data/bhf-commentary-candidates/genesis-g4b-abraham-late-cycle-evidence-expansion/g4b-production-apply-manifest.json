@@ -1,0 +1,188 @@
+{
+  "apply_status": "APPLIED_ALL_CONTENT_AND_IMPACT_GATES_PASS",
+  "artifact_version": "g4b-production-apply-manifest-v1",
+  "base_master": "76dba476fc1b31902a206b68b1651de0373dcdc3",
+  "branch": "feat/genesis-g4b-abraham-late-cycle",
+  "candidate_dispositions": {
+    "accepted": 71,
+    "rejected": 0
+  },
+  "candidate_replay": {
+    "accepted_count": 71,
+    "candidate_count": 71,
+    "changed_chapters": [
+      "Genesis 18",
+      "Genesis 19",
+      "Genesis 20",
+      "Genesis 21",
+      "Genesis 22",
+      "Genesis 23",
+      "Genesis 24",
+      "Genesis 25"
+    ],
+    "production_item_content_parity": "PASS",
+    "rejected_count": 0,
+    "result": "PASS",
+    "staged_and_applied_evidence_count": 71
+  },
+  "changed_chapters": [
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25"
+  ],
+  "claim_dispositions": [
+    {
+      "claim": "Three Genesis 18 visitors explicitly mean the Trinity in immediate grammar.",
+      "disposition": "REJECTED_AS_IMMEDIATE_MEANING",
+      "reason": "The narrative shifts among men, YHWH, and visitors; Trinitarian readings are later Christian reception."
+    },
+    {
+      "claim": "Genesis 19 is exclusively one modern political or sexual slogan.",
+      "disposition": "REJECTED",
+      "reason": "Sexual assault, domination, hospitality violation, and wider injustice remain in the scene; exclusive reduction is unsupported."
+    },
+    {
+      "claim": "The demand to “know” the visitors has no sexual dimension.",
+      "disposition": "REJECTED",
+      "reason": "The narrative context describes attempted gang assault; a minority legal proposal is recorded as disputed without erasing the threat."
+    },
+    {
+      "claim": "Lot’s offer of his daughters is morally approved hospitality.",
+      "disposition": "REJECTED",
+      "reason": "The text reports the disturbing offer without morally approving it."
+    },
+    {
+      "claim": "A specific excavated site is definitely biblical Sodom or Gomorrah.",
+      "disposition": "REJECTED_UNRESOLVED",
+      "reason": "Site proposals remain disputed; no destruction layer proves the narrative identification."
+    },
+    {
+      "claim": "Sulfur balls or one destruction layer prove Genesis 19.",
+      "disposition": "REJECTED",
+      "reason": "Material claims do not establish the narrative identification; the Tall el-Hammam airburst paper was retracted in 2025."
+    },
+    {
+      "claim": "Lot’s wife became salt through a known geological mechanism.",
+      "disposition": "REJECTED",
+      "reason": "Genesis supplies no geological mechanism."
+    },
+    {
+      "claim": "Moabite and Ammonite ancestry permits ethnic contempt.",
+      "disposition": "REJECTED",
+      "reason": "Etiological narrative does not warrant ethnic stereotyping."
+    },
+    {
+      "claim": "Genesis 20 forces later prophetic office structures onto Abraham.",
+      "disposition": "REJECTED",
+      "reason": "Navi and intercession are explicit, but later institutions are not projected backward unchanged."
+    },
+    {
+      "claim": "Household infertility in Genesis 20 has a recoverable medical cause.",
+      "disposition": "WITHHELD",
+      "reason": "The narrative makes a theological claim without medical reconstruction."
+    },
+    {
+      "claim": "Ancient legal parallels fully explain or justify Hagar and Ishmael’s expulsion.",
+      "disposition": "REJECTED",
+      "reason": "Comparisons are bounded; distress and expulsion remain visible."
+    },
+    {
+      "claim": "Ishmael’s nation promise licenses ethnic stereotyping.",
+      "disposition": "REJECTED",
+      "reason": "The promise is affirmative and does not justify caricature."
+    },
+    {
+      "claim": "Genesis 22 endorses human sacrifice.",
+      "disposition": "REJECTED",
+      "reason": "The test is stopped and a ram is offered instead of Isaac."
+    },
+    {
+      "claim": "Genesis 22 is simply borrowed from one pagan ritual.",
+      "disposition": "REJECTED",
+      "reason": "No single origin theory is established by comparative evidence."
+    },
+    {
+      "claim": "Moriah is an exact modern Temple Mount coordinate in Genesis 22.",
+      "disposition": "UNRESOLVED_LATER_CANONICAL_ASSOCIATION",
+      "reason": "2 Chronicles 3:1 supplies a later Jerusalem association, not an applicability anchor or precise coordinate."
+    },
+    {
+      "claim": "Later Akedah or Christian typology is the sole immediate meaning of Genesis 22.",
+      "disposition": "REJECTED",
+      "reason": "Reception history is distinct from the immediate command, test, intervention, and ram."
+    },
+    {
+      "claim": "The Genesis 24 oath-under-thigh gesture certainly has a sexual ritual meaning.",
+      "disposition": "WITHHELD_UNSUPPORTED",
+      "reason": "The narrator does not explain the gesture; interpretations remain debated."
+    },
+    {
+      "claim": "The Hittite imperial code directly governs Genesis 23.",
+      "disposition": "REJECTED",
+      "reason": "The ethnonym does not establish imperial legal jurisdiction."
+    },
+    {
+      "claim": "Rebekah had no agency in Genesis 24.",
+      "disposition": "REJECTED",
+      "reason": "The text records her answer, “I will go.”"
+    },
+    {
+      "claim": "Every Genesis 25 descendant is securely identified with a later people.",
+      "disposition": "WITHHELD_UNRESOLVED",
+      "reason": "Genealogical and geographic identifications vary in confidence."
+    },
+    {
+      "claim": "Birthright means only a double inheritance portion.",
+      "disposition": "REJECTED_AS_INCOMPLETE",
+      "reason": "The narrative also concerns household status, kinship, inheritance, oath, and narrator evaluation."
+    }
+  ],
+  "commentary_regenerated": false,
+  "deployment_performed": false,
+  "existing_ckl_objects_modified": [],
+  "final_classifications": {
+    "Genesis 18": "GOOD",
+    "Genesis 19": "GOOD",
+    "Genesis 20": "GOOD",
+    "Genesis 21": "GOOD",
+    "Genesis 22": "GOOD",
+    "Genesis 23": "GOOD",
+    "Genesis 24": "GOOD",
+    "Genesis 25": "GOOD"
+  },
+  "frozen_commentary_v1_2_modified": false,
+  "historical_source_owner_rows_changed": 0,
+  "merge_performed": false,
+  "new_g4b_evidence_items": 71,
+  "new_g4b_source_records": 11,
+  "new_object_id": "genesis-abraham-late-cycle-context",
+  "new_object_type": "cultural_background",
+  "object_count_after": 683,
+  "object_count_before": 682,
+  "production_write_scope": [
+    "framework/canonical_library/objects/cultural_background/genesis-abraham-late-cycle-context.json",
+    "framework/canonical_library/manifest.json"
+  ],
+  "source_owner_result": "PASS",
+  "stale_future_commentary_inputs": [
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25"
+  ],
+  "transaction": "GENESIS_G4B_ABRAHAM_LATE_CYCLE_EVIDENCE_EXPANSION",
+  "whole_corpus_gate": {
+    "chapters_compared": 1189,
+    "result": "PASS",
+    "unexpected_changed_chapters": []
+  }
+}

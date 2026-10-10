@@ -1,0 +1,293 @@
+{
+  "artifact_version": "g4b-validation-report-v1",
+  "base_master": "76dba476fc1b31902a206b68b1651de0373dcdc3",
+  "branch": "feat/genesis-g4b-abraham-late-cycle",
+  "candidate_replay": {
+    "accepted_count": 71,
+    "all_direct_candidate_items_synthesized": true,
+    "candidate_count": 71,
+    "changed_chapters": [
+      "Genesis 18",
+      "Genesis 19",
+      "Genesis 20",
+      "Genesis 21",
+      "Genesis 22",
+      "Genesis 23",
+      "Genesis 24",
+      "Genesis 25"
+    ],
+    "result": "PASS",
+    "staged_production_item_parity": "PASS"
+  },
+  "ckl_identities": {
+    "base_inventory_fingerprint": "67269c80b7c4ca80846c96c77ced6bc407f0990716d67f03bd6783ed63774412",
+    "final_inventory_fingerprint": "8a2194175ea53ee23b0f71a8cf16bd7f8ff4f4934e4bac6b98d18513e5ef50f9",
+    "object_count_after": 683,
+    "object_count_before": 682
+  },
+  "comparative_applicability_regression": {
+    "result": "PASS",
+    "tests": "G1R tests passed in the targeted regression suite"
+  },
+  "deployment_performed": false,
+  "exact_changed_paths": [
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-abraham-late-cycle-evidence-plan.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-candidate-evidence.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-candidate-replay-final.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-chapter-impact.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-comparative-applicability-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-existing-evidence-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-final-ckl-identities.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-g0-target-results.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-post-apply-validation.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-production-apply-manifest.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-regression-reconciliation.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-review-digest.md",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-runtime-db-preparation-verification.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-source-lock.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-source-ownership-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-validation-report.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/staging/new-object.json",
+    "docs/superpowers/plans/2026-10-10-genesis-g4b-abraham-late-cycle.md",
+    "framework/canonical_library/manifest.json",
+    "framework/canonical_library/objects/cultural_background/genesis-abraham-late-cycle-context.json",
+    "tests/test_genesis_g4b_abraham_late_cycle_isolation.py"
+  ],
+  "frozen_commentary_v1_2": {
+    "commentary_regenerated": false,
+    "identities_exactly_preserved": true,
+    "result": "PASS",
+    "stale_future_inputs": [
+      "Genesis 18",
+      "Genesis 19",
+      "Genesis 20",
+      "Genesis 21",
+      "Genesis 22",
+      "Genesis 23",
+      "Genesis 24",
+      "Genesis 25"
+    ]
+  },
+  "g0_classification": {
+    "all_good": true,
+    "chapters": {
+      "Genesis 18": "GOOD",
+      "Genesis 19": "GOOD",
+      "Genesis 20": "GOOD",
+      "Genesis 21": "GOOD",
+      "Genesis 22": "GOOD",
+      "Genesis 23": "GOOD",
+      "Genesis 24": "GOOD",
+      "Genesis 25": "GOOD"
+    },
+    "method": "Established passage-specific, synthesis-usable, multi-dimension G0 classifier",
+    "result": "PASS"
+  },
+  "genesis_18_25_preparation_and_synthesis": {
+    "all_candidate_items_synthesized": true,
+    "chapters": {
+      "Genesis 18": {
+        "after": "GOOD",
+        "before": "GAP",
+        "evidence_count_after": 14,
+        "evidence_count_before": 7,
+        "synthesis_unit_count_after": 9,
+        "synthesis_unit_count_before": 5
+      },
+      "Genesis 19": {
+        "after": "GOOD",
+        "before": "GAP",
+        "evidence_count_after": 15,
+        "evidence_count_before": 5,
+        "synthesis_unit_count_after": 10,
+        "synthesis_unit_count_before": 5
+      },
+      "Genesis 20": {
+        "after": "GOOD",
+        "before": "GAP",
+        "evidence_count_after": 10,
+        "evidence_count_before": 4,
+        "synthesis_unit_count_after": 7,
+        "synthesis_unit_count_before": 4
+      },
+      "Genesis 21": {
+        "after": "GOOD",
+        "before": "GAP",
+        "evidence_count_after": 16,
+        "evidence_count_before": 7,
+        "synthesis_unit_count_after": 10,
+        "synthesis_unit_count_before": 5
+      },
+      "Genesis 22": {
+        "after": "GOOD",
+        "before": "GAP",
+        "evidence_count_after": 51,
+        "evidence_count_before": 38,
+        "synthesis_unit_count_after": 10,
+        "synthesis_unit_count_before": 4
+      },
+      "Genesis 23": {
+        "after": "GOOD",
+        "before": "GAP",
+        "evidence_count_after": 10,
+        "evidence_count_before": 3,
+        "synthesis_unit_count_after": 7,
+        "synthesis_unit_count_before": 3
+      },
+      "Genesis 24": {
+        "after": "GOOD",
+        "before": "GAP",
+        "evidence_count_after": 13,
+        "evidence_count_before": 3,
+        "synthesis_unit_count_after": 7,
+        "synthesis_unit_count_before": 3
+      },
+      "Genesis 25": {
+        "after": "GOOD",
+        "before": "SPARSE",
+        "evidence_count_after": 13,
+        "evidence_count_before": 4,
+        "synthesis_unit_count_after": 9,
+        "synthesis_unit_count_before": 4
+      }
+    },
+    "result": "PASS"
+  },
+  "git_diff_check": {
+    "command": "git diff --cached --check",
+    "result": "PASS"
+  },
+  "isolated_source_owner_regression": {
+    "g2_g3_genesis_12_frozen_expectations": "See separate reconciliation artifact.",
+    "g4a_isolation": "PASS",
+    "reconciliation_artifact": "g4b-regression-reconciliation.json",
+    "result": "PASS_WITH_HISTORICAL_EXPECTATION_RECONCILIATION"
+  },
+  "legacy_fallback_regression": {
+    "g2_fallback_test": "PASS",
+    "historical_genesis_12_expectation": "See separate reconciliation artifact.",
+    "result": "PASS_WITH_HISTORICAL_EXPECTATION_RECONCILIATION"
+  },
+  "merge_performed": false,
+  "new_object_schema": {
+    "evidence_items": 71,
+    "loaded_object_count": 683,
+    "object_id": "genesis-abraham-late-cycle-context",
+    "result": "PASS",
+    "source_records": 11,
+    "type": "cultural_background"
+  },
+  "previous_genesis_transaction_regressions": {
+    "historical_expectation_failures": 2,
+    "reconciliation_artifact": "g4b-regression-reconciliation.json",
+    "result": "PASS_WITH_HISTORICAL_EXPECTATION_RECONCILIATION",
+    "suite_passed": 15
+  },
+  "relationship_validation": {
+    "one_way_relationships_only": true,
+    "result": "PASS",
+    "reverse_relationships_added": false
+  },
+  "representative_controls": {
+    "controls": {
+      "1 Kings 6": true,
+      "Acts 16": true,
+      "Exodus 25": true,
+      "Genesis 1": true,
+      "Genesis 10": true,
+      "Genesis 11": true,
+      "Genesis 12": true,
+      "Genesis 15": true,
+      "Genesis 17": true,
+      "Genesis 26": true,
+      "Genesis 34": true,
+      "Genesis 5": true,
+      "Genesis 50": true,
+      "Genesis 6": true,
+      "Genesis 9": true,
+      "Isaiah 36": true,
+      "Revelation 12": true,
+      "Revelation 18": true
+    },
+    "result": "PASS"
+  },
+  "runtime_db_rebuild_verification": {
+    "backend": "SQLiteCanonicalLibrary",
+    "inventory_fingerprint": "8a2194175ea53ee23b0f71a8cf16bd7f8ff4f4934e4bac6b98d18513e5ef50f9",
+    "result": "PASS",
+    "target_preparations_match_full_corpus": true
+  },
+  "scripture_reference_validation": {
+    "all_direct_anchors_within_genesis_18_25": true,
+    "comparative_or_later_applicability_anchors": [],
+    "direct_evidence_anchors": 71,
+    "result": "PASS"
+  },
+  "source_disposition_counts": {
+    "REJECTED": 14,
+    "REJECTED_AS_IMMEDIATE_MEANING": 1,
+    "REJECTED_AS_INCOMPLETE": 1,
+    "REJECTED_UNRESOLVED": 1,
+    "UNRESOLVED_LATER_CANONICAL_ASSOCIATION": 1,
+    "WITHHELD": 1,
+    "WITHHELD_UNRESOLVED": 1,
+    "WITHHELD_UNSUPPORTED": 1
+  },
+  "source_owner_isolation": {
+    "base_historical_owner_rows": 5158,
+    "existing_historical_source_owner_rows_changed": 0,
+    "new_source_ids_owned_only_by_g4b": true,
+    "result": "PASS"
+  },
+  "source_provenance_validation": {
+    "aliases_bibliographically_identical": true,
+    "all_item_sources_object_local": true,
+    "all_source_records_have_supported_items": true,
+    "identity_preserving_alias_count": 5,
+    "result": "PASS"
+  },
+  "test_results": {
+    "g0_and_canonical_library": "51 passed",
+    "g4b_isolation_after_final_metadata": "4 passed",
+    "genesis_transaction_regression_suite": "15 passed; 2 G2/G3 Genesis 12 historical expectation failures reconciled separately"
+  },
+  "transaction": "GENESIS_G4B_ABRAHAM_LATE_CYCLE_EVIDENCE_EXPANSION",
+  "typed_target_validation": {
+    "all_targets_exist": true,
+    "relationship_targets": 14,
+    "result": "PASS"
+  },
+  "validation_gate_summary": "PASS_WITH_HISTORICAL_EXPECTATION_RECONCILIATION",
+  "whole_ckl_validation": {
+    "loaded_object_count": 683,
+    "manifest_object_count": 683,
+    "result": "PASS"
+  },
+  "whole_corpus_exact_changed_chapter_gate": {
+    "actual_changed_chapters": [
+      "Genesis 18",
+      "Genesis 19",
+      "Genesis 20",
+      "Genesis 21",
+      "Genesis 22",
+      "Genesis 23",
+      "Genesis 24",
+      "Genesis 25"
+    ],
+    "base_identity_sha256": "6ea2ff964909694dc20000ad2e253fdfba2aa63b36dad70cb2a91097c0aa3ae4",
+    "chapter_count_compared": 1189,
+    "expected_changed_chapters": [
+      "Genesis 18",
+      "Genesis 19",
+      "Genesis 20",
+      "Genesis 21",
+      "Genesis 22",
+      "Genesis 23",
+      "Genesis 24",
+      "Genesis 25"
+    ],
+    "post_identity_sha256": "d3f85bcd23c8d9b5035fb85c8a4193e1db090e2de1db0cc7aa9497b814cea554",
+    "result": "PASS",
+    "unexpected_changed_chapters": []
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "artifact_version": "g4b-runtime-db-preparation-verification-v1",
+  "database_backend": "SQLiteCanonicalLibrary",
+  "database_inventory_fingerprint": "8a2194175ea53ee23b0f71a8cf16bd7f8ff4f4934e4bac6b98d18513e5ef50f9",
+  "database_path": ".bhf/ckl.sqlite",
+  "legacy_fallback_regression": "PASS",
+  "representative_controls": {
+    "1 Kings 6": true,
+    "Acts 16": true,
+    "Exodus 25": true,
+    "Genesis 1": true,
+    "Genesis 10": true,
+    "Genesis 11": true,
+    "Genesis 12": true,
+    "Genesis 15": true,
+    "Genesis 17": true,
+    "Genesis 26": true,
+    "Genesis 34": true,
+    "Genesis 5": true,
+    "Genesis 50": true,
+    "Genesis 6": true,
+    "Genesis 9": true,
+    "Isaiah 36": true,
+    "Revelation 12": true,
+    "Revelation 18": true
+  },
+  "result": "PASS",
+  "runtime_matches_full_corpus_json_identity": true,
+  "targets": {
+    "Genesis 18": {
+      "identity": {
+        "evidence_count": 14,
+        "evidence_hash": "bc5a09c989706d9b078c765a47b6e3e88549135347c60b2dbec90d8ad5b0f3fe",
+        "synthesis_hash": "29f319ccb733508247d59a7a5318ea7000ebc1fb328537912dd542b364e9868a",
+        "synthesis_unit_count": 9
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 19": {
+      "identity": {
+        "evidence_count": 15,
+        "evidence_hash": "9af800225b6fe843a2b2119aa39c1fb58d39236488522484a99e3e54145b2236",
+        "synthesis_hash": "cc1b8af77194a94c7ad2a4c7ab3a2bd8328a163352b4ea5526bc65bce8ce17bc",
+        "synthesis_unit_count": 10
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 20": {
+      "identity": {
+        "evidence_count": 10,
+        "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+        "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab",
+        "synthesis_unit_count": 7
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 21": {
+      "identity": {
+        "evidence_count": 16,
+        "evidence_hash": "1de3689cd811fc2755ea2c2b1a3eb338c0fcdc9f0c3b4dba7bead68b8701c19d",
+        "synthesis_hash": "605c4399c81887479e6115786055d9a4be62e9bb91ae91d10f4031cdfa4ad389",
+        "synthesis_unit_count": 10
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 22": {
+      "identity": {
+        "evidence_count": 51,
+        "evidence_hash": "6f90988b7b7268fd4282c26967a513538df08ae0e093b1ea2927f6217c0f8e86",
+        "synthesis_hash": "47eca559a0f2e77b4939400bf2df9ed6d533eb113cb4b364314a352517ecf0ed",
+        "synthesis_unit_count": 10
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 23": {
+      "identity": {
+        "evidence_count": 10,
+        "evidence_hash": "882e8aeefbbd785ca19876bfd2e87b087cdd46cf69b91e7dd56078db1765f232",
+        "synthesis_hash": "509687fb79efde443487347658235beebcd8cb03de66269801b4161c8f13fc42",
+        "synthesis_unit_count": 7
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 24": {
+      "identity": {
+        "evidence_count": 13,
+        "evidence_hash": "6c356b86ba9c9c990acb17ba255d9efb9288f4d6d87d979fbd1368d8ee21eeb3",
+        "synthesis_hash": "dae6e55a764f6cff354223e5ac143a152b346a466014645a20f979f7da4ccee3",
+        "synthesis_unit_count": 7
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 25": {
+      "identity": {
+        "evidence_count": 13,
+        "evidence_hash": "0c8e02b0972ec3375db8cbd5d8ff91913f20d0c7124815bc27e6081ce12fa0ee",
+        "synthesis_hash": "eebbd7fab0060bf6d3329888abc4020268b846ec3f7431bb07c5f0b2e91770d1",
+        "synthesis_unit_count": 9
+      },
+      "matches_json_full_corpus_run": true
+    }
+  }
+}

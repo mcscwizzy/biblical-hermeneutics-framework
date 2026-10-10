@@ -1,0 +1,70 @@
+{
+  "artifact_version": "g4b-regression-reconciliation-v1",
+  "failures": [
+    {
+      "current_g4b_base_identity": {
+        "evidence_count": 160,
+        "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+        "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+        "synthesis_unit_count": 14
+      },
+      "disposition": "RECONCILED_PRE_G4A_EXPECTATION",
+      "historical_expected_identity": {
+        "evidence_count": 152,
+        "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+        "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613",
+        "synthesis_unit_count": 9
+      },
+      "reason": "Genesis 12 was an authorized G4A target, and G4A is merged into the G4B base master. The frozen G2 expectation predates that authorized change.",
+      "reference": "Genesis 12",
+      "test": "tests/test_genesis_g2_shared_object_fallback.py::test_g2_local_sources_do_not_change_historical_source_owners_or_genesis_hashes"
+    },
+    {
+      "current_g4b_base_identity": {
+        "evidence_count": 160,
+        "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+        "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+        "synthesis_unit_count": 14
+      },
+      "disposition": "RECONCILED_PRE_G4A_EXPECTATION",
+      "historical_expected_identity": {
+        "evidence_count": 152,
+        "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+        "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613",
+        "synthesis_unit_count": 9
+      },
+      "reason": "Genesis 12 was an authorized G4A target, and G4A is merged into the G4B base master. The frozen G3 expectation predates that authorized change.",
+      "reference": "Genesis 12",
+      "test": "tests/test_genesis_g3_nations_babel_isolation.py::test_g3_controls_and_legacy_fallback_inputs_match_base_exactly"
+    }
+  ],
+  "g4b_isolation_evidence": {
+    "g4b_base_master": "76dba476fc1b31902a206b68b1651de0373dcdc3",
+    "g4b_exact_changed_set": [
+      "Genesis 18",
+      "Genesis 19",
+      "Genesis 20",
+      "Genesis 21",
+      "Genesis 22",
+      "Genesis 23",
+      "Genesis 24",
+      "Genesis 25"
+    ],
+    "genesis_12_is_a_required_g4b_control": true,
+    "genesis_12_is_in_g4b_changed_set": false,
+    "genesis_12_matches_g4b_base": true
+  },
+  "preservation": {
+    "historical_artifacts_rewritten": false,
+    "historical_tests_modified": false,
+    "separate_reconciliation_artifact": true
+  },
+  "result": "PASS_WITH_HISTORICAL_EXPECTATION_RECONCILIATION",
+  "suite": "pytest -q tests/test_genesis_g1r_comparative_applicability.py tests/test_genesis_g2_shared_object_fallback.py tests/test_genesis_g3_nations_babel_isolation.py tests/test_genesis_g4a_abraham_call_covenant_isolation.py tests/test_genesis_g4b_abraham_late_cycle_isolation.py",
+  "summary": {
+    "duration_seconds": 209.02,
+    "failed": 2,
+    "passed": 15
+  },
+  "transaction": "GENESIS_G4B_ABRAHAM_LATE_CYCLE_EVIDENCE_EXPANSION"
+}

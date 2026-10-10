@@ -1,0 +1,209 @@
+{
+  "artifact_version": "g4b-abraham-late-cycle-evidence-plan-v1",
+  "transaction": "GENESIS_G4B_ABRAHAM_LATE_CYCLE_EVIDENCE_EXPANSION",
+  "base_master": "76dba476fc1b31902a206b68b1651de0373dcdc3",
+  "branch": "feat/genesis-g4b-abraham-late-cycle",
+  "scope": {
+    "book": "Genesis",
+    "chapters": [
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "direct_scripture_applicability": "Genesis 18–25 only",
+    "excluded": [
+      "Genesis 26–36",
+      "Commentary regeneration",
+      "Commentary v1.2 modification",
+      "deployment",
+      "merge"
+    ]
+  },
+  "architecture": {
+    "object_id": "genesis-abraham-late-cycle-context",
+    "type": "cultural_background",
+    "path": "framework/canonical_library/objects/cultural_background/genesis-abraham-late-cycle-context.json",
+    "source_ownership": "Object-local aliases; historical source-owner rows changed must equal zero.",
+    "relationships": "One-way links only to existing typed objects; no shared-object writes."
+  },
+  "methodology": {
+    "chapter_baseline": "g4b-existing-evidence-audit.json",
+    "coverage": "Established G0 passage-specific, synthesis-usable, multi-dimension methodology; raw counts are not quality.",
+    "gates": [
+      "staged candidate replay",
+      "schema/provenance/applicability/typed-target checks",
+      "exact 1189 chapter identity set",
+      "representative controls",
+      "runtime DB rebuild/verify",
+      "frozen Commentary v1.2 identity preservation"
+    ]
+  },
+  "chapter_coverage_plan": {
+    "Genesis 18": [
+      "Mamre hospitality",
+      "visitor identity",
+      "Sarah and appointed promise",
+      "deliberation/outcry/justice",
+      "intercession"
+    ],
+    "Genesis 19": [
+      "city hospitality",
+      "attempted sexual assault and disputed alternative",
+      "Lot’s offer",
+      "angelic rescue",
+      "destruction and archaeological restraint",
+      "wife/Zoar/cave/etiology"
+    ],
+    "Genesis 20": [
+      "Gerar repetition",
+      "dream and integrity",
+      "navi/intercession",
+      "gifts and household healing"
+    ],
+    "Genesis 21": [
+      "Isaac and eighth day",
+      "Hagar/Ishmael expulsion and inheritance",
+      "divine hearing and nation promise",
+      "Paran and Beersheba treaty"
+    ],
+    "Genesis 22": [
+      "test/command/Moriah",
+      "human-sacrifice comparison/outcome",
+      "journey/dialogue",
+      "wording/binding/messenger/ram",
+      "promise oath and reception boundary"
+    ],
+    "Genesis 23": [
+      "Sarah death/status",
+      "Hittite terminology",
+      "public property negotiation",
+      "Machpelah payment/witness/transfer"
+    ],
+    "Genesis 24": [
+      "oath gesture uncertainty",
+      "commission/kinship",
+      "route/well",
+      "hospitality/gifts/household negotiation",
+      "Rebekah consent/veil/Isaac"
+    ],
+    "Genesis 25": [
+      "Keturah/inheritance",
+      "Abraham death/burial",
+      "Ishmael line",
+      "twins/oracle/birthright"
+    ]
+  },
+  "claim_dispositions": [
+    {
+      "claim": "Three Genesis 18 visitors explicitly mean the Trinity in immediate grammar.",
+      "disposition": "REJECTED_AS_IMMEDIATE_MEANING",
+      "reason": "The narrative shifts among men, YHWH, and visitors; Trinitarian readings are later Christian reception."
+    },
+    {
+      "claim": "Genesis 19 is exclusively one modern political or sexual slogan.",
+      "disposition": "REJECTED",
+      "reason": "Sexual assault, domination, hospitality violation, and wider injustice remain in the scene; exclusive reduction is unsupported."
+    },
+    {
+      "claim": "The demand to “know” the visitors has no sexual dimension.",
+      "disposition": "REJECTED",
+      "reason": "The narrative context describes attempted gang assault; a minority legal proposal is recorded as disputed without erasing the threat."
+    },
+    {
+      "claim": "Lot’s offer of his daughters is morally approved hospitality.",
+      "disposition": "REJECTED",
+      "reason": "The text reports the disturbing offer without morally approving it."
+    },
+    {
+      "claim": "A specific excavated site is definitely biblical Sodom or Gomorrah.",
+      "disposition": "REJECTED_UNRESOLVED",
+      "reason": "Site proposals remain disputed; no destruction layer proves the narrative identification."
+    },
+    {
+      "claim": "Sulfur balls or one destruction layer prove Genesis 19.",
+      "disposition": "REJECTED",
+      "reason": "Material claims do not establish the narrative identification; the Tall el-Hammam airburst paper was retracted in 2025."
+    },
+    {
+      "claim": "Lot’s wife became salt through a known geological mechanism.",
+      "disposition": "REJECTED",
+      "reason": "Genesis supplies no geological mechanism."
+    },
+    {
+      "claim": "Moabite and Ammonite ancestry permits ethnic contempt.",
+      "disposition": "REJECTED",
+      "reason": "Etiological narrative does not warrant ethnic stereotyping."
+    },
+    {
+      "claim": "Genesis 20 forces later prophetic office structures onto Abraham.",
+      "disposition": "REJECTED",
+      "reason": "Navi and intercession are explicit, but later institutions are not projected backward unchanged."
+    },
+    {
+      "claim": "Household infertility in Genesis 20 has a recoverable medical cause.",
+      "disposition": "WITHHELD",
+      "reason": "The narrative makes a theological claim without medical reconstruction."
+    },
+    {
+      "claim": "Ancient legal parallels fully explain or justify Hagar and Ishmael’s expulsion.",
+      "disposition": "REJECTED",
+      "reason": "Comparisons are bounded; distress and expulsion remain visible."
+    },
+    {
+      "claim": "Ishmael’s nation promise licenses ethnic stereotyping.",
+      "disposition": "REJECTED",
+      "reason": "The promise is affirmative and does not justify caricature."
+    },
+    {
+      "claim": "Genesis 22 endorses human sacrifice.",
+      "disposition": "REJECTED",
+      "reason": "The test is stopped and a ram is offered instead of Isaac."
+    },
+    {
+      "claim": "Genesis 22 is simply borrowed from one pagan ritual.",
+      "disposition": "REJECTED",
+      "reason": "No single origin theory is established by comparative evidence."
+    },
+    {
+      "claim": "Moriah is an exact modern Temple Mount coordinate in Genesis 22.",
+      "disposition": "UNRESOLVED_LATER_CANONICAL_ASSOCIATION",
+      "reason": "2 Chronicles 3:1 supplies a later Jerusalem association, not an applicability anchor or precise coordinate."
+    },
+    {
+      "claim": "Later Akedah or Christian typology is the sole immediate meaning of Genesis 22.",
+      "disposition": "REJECTED",
+      "reason": "Reception history is distinct from the immediate command, test, intervention, and ram."
+    },
+    {
+      "claim": "The Genesis 24 oath-under-thigh gesture certainly has a sexual ritual meaning.",
+      "disposition": "WITHHELD_UNSUPPORTED",
+      "reason": "The narrator does not explain the gesture; interpretations remain debated."
+    },
+    {
+      "claim": "The Hittite imperial code directly governs Genesis 23.",
+      "disposition": "REJECTED",
+      "reason": "The ethnonym does not establish imperial legal jurisdiction."
+    },
+    {
+      "claim": "Rebekah had no agency in Genesis 24.",
+      "disposition": "REJECTED",
+      "reason": "The text records her answer, “I will go.”"
+    },
+    {
+      "claim": "Every Genesis 25 descendant is securely identified with a later people.",
+      "disposition": "WITHHELD_UNRESOLVED",
+      "reason": "Genealogical and geographic identifications vary in confidence."
+    },
+    {
+      "claim": "Birthright means only a double inheritance portion.",
+      "disposition": "REJECTED_AS_INCOMPLETE",
+      "reason": "The narrative also concerns household status, kinship, inheritance, oath, and narrator evaluation."
+    }
+  ],
+  "source_policy": "Bibliography is locked before production apply. Historical works are reused through identity-preserving object-local aliases; new publications use unique G4B IDs. No provenance is weakened to preserve hashes."
+}
