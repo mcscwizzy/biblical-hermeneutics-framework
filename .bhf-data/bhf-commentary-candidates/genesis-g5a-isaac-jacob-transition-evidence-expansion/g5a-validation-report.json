@@ -1,0 +1,158 @@
+{
+  "artifact_version": "g5a-validation-report-v1",
+  "transaction": "GENESIS_G5A_ISAAC_JACOB_TRANSITION_EVIDENCE_EXPANSION",
+  "base_master": "fb73ae60fd9c33e664a4d2446f2407e420f58f7f",
+  "branch": "feat/genesis-g5a-isaac-jacob-transition",
+  "result": "PASS_WITH_DOCUMENTED_HISTORICAL_SNAPSHOT_RECONCILIATION",
+  "safe_to_merge": true,
+  "gates": {
+    "candidate_replay": {
+      "result": "PASS",
+      "candidates": 51,
+      "accepted": 51,
+      "rejected": 0,
+      "all_direct_items_synthesized": true
+    },
+    "new_object_schema": {
+      "result": "PASS",
+      "object_id": "genesis-isaac-jacob-transition-context",
+      "type": "cultural_background"
+    },
+    "source_provenance": {
+      "result": "PASS",
+      "source_records": 12,
+      "local_aliases": 3,
+      "new_scholarly_records": 9
+    },
+    "source_owner_isolation": {
+      "result": "PASS",
+      "historical_source_owner_rows_changed": 0,
+      "new_owner_rows": 12
+    },
+    "typed_targets_and_relationships": {
+      "result": "PASS",
+      "one_way_targets": [
+        "isaac",
+        "jacob",
+        "rebekah",
+        "beersheba-1",
+        "bethel-1"
+      ],
+      "reciprocal_writes": []
+    },
+    "scripture_reference_scope": {
+      "result": "PASS",
+      "direct_scope": "Genesis 26–30",
+      "out_of_scope_anchors": []
+    },
+    "whole_ckl_validation": {
+      "result": "PASS",
+      "object_count": 684,
+      "inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23"
+    },
+    "genesis_26_30_preparation_synthesis": {
+      "result": "PASS",
+      "all_candidate_items_synthesized": true
+    },
+    "g0_dimensional_classification": {
+      "result": "PASS",
+      "classifications": {
+        "Genesis 26": "GOOD",
+        "Genesis 27": "GOOD",
+        "Genesis 28": "GOOD",
+        "Genesis 29": "GOOD",
+        "Genesis 30": "GOOD"
+      }
+    },
+    "comparative_applicability_regression": {
+      "result": "PASS",
+      "reverse_applicability": false,
+      "out_of_scope_anchors": []
+    },
+    "legacy_fallback_regression": {
+      "result": "PASS",
+      "detail": "G2 shared-object fallback and G4A exact Genesis 1 fallback tests passed."
+    },
+    "isolated_source_owner_regressions": {
+      "result": "PASS_WITH_RECONCILIATION",
+      "historical_owner_changes": 0
+    },
+    "prior_genesis_transaction_tests": {
+      "result": "PASS_WITH_RECONCILIATION",
+      "passed": 15,
+      "clean_base_reproduced_failures": 2,
+      "new_failures": 0
+    },
+    "representative_controls": {
+      "result": "PASS",
+      "controls_passed": 22,
+      "controls_total": 22
+    },
+    "all_1189_chapter_exact_impact": {
+      "result": "PASS",
+      "chapters_compared": 1189,
+      "changed_chapters": [
+        "Genesis 26",
+        "Genesis 27",
+        "Genesis 28",
+        "Genesis 29",
+        "Genesis 30"
+      ],
+      "unexpected_changed_chapters": []
+    },
+    "runtime_db_rebuild_verification_and_preparation": {
+      "result": "PASS",
+      "targets_and_controls_match_json": true,
+      "fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23"
+    },
+    "frozen_commentary_v1_2": {
+      "result": "PASS",
+      "identities_exactly_preserved": true,
+      "commentary_regenerated": false
+    },
+    "g5a_isolation_tests": {
+      "result": "PASS",
+      "passed": 4,
+      "failed": 0
+    },
+    "git_diff_check": {
+      "result": "PASS",
+      "commands": [
+        "git diff --check",
+        "git diff --cached --check"
+      ]
+    }
+  },
+  "historical_reconciliation_artifact": "g5a-regression-reconciliation.json",
+  "commentary_stale_future_inputs": [
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30"
+  ],
+  "merge_performed": false,
+  "deployment_performed": false,
+  "exact_changed_paths": [
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-candidate-evidence.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-candidate-replay-final.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-chapter-impact.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-comparative-applicability-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-existing-evidence-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-final-ckl-identities.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-g0-target-results.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-isaac-jacob-transition-evidence-plan.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-post-apply-validation.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-production-apply-manifest.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-regression-reconciliation.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-review-digest.md",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-runtime-db-preparation-verification.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-source-lock.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-source-ownership-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-validation-report.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/staging/new-object.json",
+    "framework/canonical_library/manifest.json",
+    "framework/canonical_library/objects/cultural_background/genesis-isaac-jacob-transition-context.json",
+    "tests/test_genesis_g5a_isaac_jacob_transition_isolation.py"
+  ]
+}

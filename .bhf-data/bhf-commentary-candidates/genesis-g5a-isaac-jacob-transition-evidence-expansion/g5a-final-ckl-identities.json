@@ -1,0 +1,96 @@
+{
+  "artifact_version": "g5a-final-ckl-identities-v1",
+  "transaction": "GENESIS_G5A_ISAAC_JACOB_TRANSITION_EVIDENCE_EXPANSION",
+  "base_master": "fb73ae60fd9c33e664a4d2446f2407e420f58f7f",
+  "base_ckl_identity_authority": "G4B final CKL identity embedded in the merged clean origin/master transaction; base manifest hash independently matches origin/master before G5A apply.",
+  "base_ckl_identity": {
+    "byte_signature": "02ab895b7a4cac33e5ed5f5e97cdeafdf47bab2a910049b992f456cb6047efac",
+    "inventory_fingerprint": "8a2194175ea53ee23b0f71a8cf16bd7f8ff4f4934e4bac6b98d18513e5ef50f9",
+    "manifest_object_count": 683,
+    "manifest_sha256": "322293962fd895388c6030133503a689cec79bd1d79cce1190eb7d9654abb173",
+    "object_count": 683,
+    "object_file_sha256_root": "ea845bc52f967d814654e0de428f5180cb38a987ac3677a6f758ba0f3ce97daa",
+    "runtime_database": {
+      "build_timestamp": "2026-10-10T19:22:00.758821Z",
+      "claim_count": 2329,
+      "configured_stale_policy": "fallback_to_json",
+      "database_file_size": 111792128,
+      "database_path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+      "database_schema_version": "4",
+      "evidence_count": 1018,
+      "file_sha256": "1b89beaf10b753964fffa5b45391f1350d42050af9c7e7b4bdf9363985bddf9d",
+      "framework_version": "1.0",
+      "inventory_fingerprint": "8a2194175ea53ee23b0f71a8cf16bd7f8ff4f4934e4bac6b98d18513e5ef50f9",
+      "matches_json_inventory": true,
+      "object_count": 683,
+      "retrieval_index_version": "3",
+      "schema_version": "1.0",
+      "source_count": 5169
+    },
+    "stat_signature": "3c4e25fb317a24efe36fc055e141353c4b29f5d68f4f97485d9dd42de37749da"
+  },
+  "final_ckl_identity": {
+    "manifest_sha256": "62a0c32c6c8c1b387a96c20a65948dbb324f18a1cefe934bd540e5c6a3bf296e",
+    "manifest_object_count": 684,
+    "object_count": 684,
+    "inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23",
+    "byte_signature": "a2b2a4f06e7830bf76b94bf8b807c255e6ccd32923010c6ef8bdc065aa032f28",
+    "stat_signature": "b5aaa0bb57cbec5db55bf745dd6de4376c334cd2912c50478e65b31b7fbcf034",
+    "object_file_sha256_root": "508ddb4287bee029d176541ffc350056e571fd588b93031696a9ed1b9e29ec6b",
+    "runtime_database": {
+      "database_path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+      "database_schema_version": "4",
+      "retrieval_index_version": "3",
+      "framework_version": "1.0",
+      "schema_version": "1.0",
+      "object_count": 684,
+      "claim_count": 2329,
+      "source_count": 5181,
+      "evidence_count": 1069,
+      "build_timestamp": "2026-10-10T22:51:09.628958Z",
+      "inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23",
+      "database_file_size": 112697344,
+      "file_sha256": "7eb6c441af95319035ba3fd5a76592de9fed18dc8a6a936c00942fd508f67f47",
+      "matches_json_inventory": true,
+      "configured_stale_policy": "fallback_to_json"
+    }
+  },
+  "object_count_before": 683,
+  "object_count_after": 684,
+  "source_count_before": 5169,
+  "source_count_after": 5181,
+  "evidence_count_before": 1018,
+  "evidence_count_after": 1069,
+  "new_object_id": "genesis-isaac-jacob-transition-context",
+  "new_object_sha256": "22f8d2d0b6c7625b1267193ab1fb4e500981ad95713f702b83466b031bcb28cb",
+  "commentary_v1_2": {
+    "base_identity": {
+      "release": "commentary-v1.2",
+      "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+      "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+      "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+      "chapter_publication_index_rows": 1189,
+      "indexed_file_count": 973,
+      "all_indexed_files_valid": true
+    },
+    "final_identity": {
+      "release": "commentary-v1.2",
+      "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+      "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+      "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+      "indexed_file_count": 973,
+      "chapter_publication_index_rows": 1189,
+      "all_indexed_files_valid": true
+    },
+    "identities_exactly_preserved": true,
+    "commentary_regenerated": false,
+    "stale_future_inputs": [
+      "Genesis 26",
+      "Genesis 27",
+      "Genesis 28",
+      "Genesis 29",
+      "Genesis 30"
+    ]
+  },
+  "result": "PASS"
+}

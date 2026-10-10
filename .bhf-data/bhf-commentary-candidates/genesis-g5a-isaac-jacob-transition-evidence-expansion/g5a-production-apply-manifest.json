@@ -1,0 +1,63 @@
+{
+  "artifact_version": "g5a-production-apply-manifest-v1",
+  "transaction": "GENESIS_G5A_ISAAC_JACOB_TRANSITION_EVIDENCE_EXPANSION",
+  "branch": "feat/genesis-g5a-isaac-jacob-transition",
+  "base_master": "fb73ae60fd9c33e664a4d2446f2407e420f58f7f",
+  "apply_status": "APPLIED_ALL_CONTENT_AND_IMPACT_GATES_PASS_WITH_HISTORICAL_TEST_RECONCILIATION",
+  "candidate_replay": {
+    "result": "PASS",
+    "candidate_count": 51,
+    "accepted_count": 51,
+    "rejected_count": 0,
+    "changed_chapters": [
+      "Genesis 26",
+      "Genesis 27",
+      "Genesis 28",
+      "Genesis 29",
+      "Genesis 30"
+    ]
+  },
+  "object_id": "genesis-isaac-jacob-transition-context",
+  "object_type": "cultural_background",
+  "new_evidence_items": 51,
+  "new_source_records": 12,
+  "object_count_before": 683,
+  "object_count_after": 684,
+  "cultural_background_count_before": 48,
+  "cultural_background_count_after": 49,
+  "base_manifest_sha256": "322293962fd895388c6030133503a689cec79bd1d79cce1190eb7d9654abb173",
+  "final_manifest_sha256": "62a0c32c6c8c1b387a96c20a65948dbb324f18a1cefe934bd540e5c6a3bf296e",
+  "historical_source_owner_rows_changed": 0,
+  "source_owner_result": "PASS",
+  "existing_ckl_objects_modified": [],
+  "production_write_scope": [
+    "framework/canonical_library/objects/cultural_background/genesis-isaac-jacob-transition-context.json",
+    "framework/canonical_library/manifest.json"
+  ],
+  "commentary_regenerated": false,
+  "frozen_commentary_v1_2_modified": false,
+  "merge_performed": false,
+  "deployment_performed": false,
+  "stale_future_commentary_inputs": [
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30"
+  ],
+  "final_classifications": {
+    "Genesis 26": "GOOD",
+    "Genesis 27": "GOOD",
+    "Genesis 28": "GOOD",
+    "Genesis 29": "GOOD",
+    "Genesis 30": "GOOD"
+  },
+  "whole_corpus_gate": {
+    "chapters_compared": 1189,
+    "result": "PASS",
+    "unexpected_changed_chapters": []
+  },
+  "runtime_database_inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23",
+  "prior_transaction_test_disposition": "DOCUMENTED_HISTORICAL_EXPECTATION_DRIFT; no old artifacts or tests were rewritten.",
+  "git_diff_check": "PASS"
+}

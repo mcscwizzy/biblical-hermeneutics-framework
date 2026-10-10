@@ -1,0 +1,1043 @@
+{
+  "artifact_version": "g5a-g0-target-results-v1",
+  "transaction": "GENESIS_G5A_ISAAC_JACOB_TRANSITION_EVIDENCE_EXPANSION",
+  "classifier": "tools.genesis_g0_evidence_census._classify after evidence application; dimensional coverage, not evidence count alone",
+  "targets": {
+    "Genesis 26": {
+      "before": {
+        "evidence_count": 3,
+        "synthesis_unit_count": 3,
+        "classification": "GAP",
+        "covered_dimensions": []
+      },
+      "after": {
+        "evidence_count": 13,
+        "synthesis_unit_count": 8,
+        "classification": "GOOD",
+        "covered_dimensions": [
+          "ancient_near_eastern_context",
+          "archaeology_material_culture",
+          "covenant_context",
+          "cultural_social_context",
+          "geography",
+          "hebrew_worldview_concepts",
+          "historical_context",
+          "immediate_literary_context"
+        ],
+        "thin_dimensions": [],
+        "gap_dimensions": [],
+        "dimension_assessment": {
+          "immediate_literary_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g26-abimelech-ahuzzath-phicol-oath",
+              "g26-abraham-wells-reopened-and-renamed",
+              "g26-beersheba-altar-and-promise",
+              "g26-esek-sitnah-rehoboth-water-dispute",
+              "g26-famine-and-gerar-instruction",
+              "g26-promise-reaffirmed-to-isaac",
+              "g26-rebekah-wife-sister-and-protection",
+              "g26-sowing-hundredfold-prosperity"
+            ],
+            "synthesis_evidence_ids": [
+              "g26-abimelech-ahuzzath-phicol-oath",
+              "g26-abraham-wells-reopened-and-renamed",
+              "g26-beersheba-altar-and-promise",
+              "g26-esek-sitnah-rehoboth-water-dispute",
+              "g26-famine-and-gerar-instruction",
+              "g26-promise-reaffirmed-to-isaac",
+              "g26-rebekah-wife-sister-and-protection",
+              "g26-sowing-hundredfold-prosperity"
+            ]
+          },
+          "ancient_near_eastern_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g26-abimelech-ahuzzath-phicol-oath",
+              "g26-esau-hittite-wives-family-grief"
+            ],
+            "synthesis_evidence_ids": [
+              "g26-abimelech-ahuzzath-phicol-oath",
+              "g26-esau-hittite-wives-family-grief"
+            ]
+          },
+          "cultural_social_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g26-abraham-wells-reopened-and-renamed",
+              "g26-beersheba-altar-and-promise",
+              "g26-discovered-water-and-beersheba-name",
+              "g26-esau-hittite-wives-family-grief",
+              "g26-esek-sitnah-rehoboth-water-dispute",
+              "g26-famine-and-gerar-instruction",
+              "g26-promise-reaffirmed-to-isaac",
+              "g26-rebekah-wife-sister-and-protection",
+              "g26-sowing-hundredfold-prosperity"
+            ],
+            "synthesis_evidence_ids": [
+              "g26-abraham-wells-reopened-and-renamed",
+              "g26-beersheba-altar-and-promise",
+              "g26-discovered-water-and-beersheba-name",
+              "g26-esau-hittite-wives-family-grief",
+              "g26-esek-sitnah-rehoboth-water-dispute",
+              "g26-famine-and-gerar-instruction",
+              "g26-promise-reaffirmed-to-isaac",
+              "g26-rebekah-wife-sister-and-protection",
+              "g26-sowing-hundredfold-prosperity"
+            ]
+          },
+          "geography": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g26-beersheba-altar-and-promise",
+              "g26-discovered-water-and-beersheba-name",
+              "g26-esek-sitnah-rehoboth-water-dispute",
+              "g26-famine-and-gerar-instruction",
+              "g26-promise-reaffirmed-to-isaac",
+              "g26-sowing-hundredfold-prosperity"
+            ],
+            "synthesis_evidence_ids": [
+              "g26-beersheba-altar-and-promise",
+              "g26-discovered-water-and-beersheba-name",
+              "g26-esek-sitnah-rehoboth-water-dispute",
+              "g26-famine-and-gerar-instruction",
+              "g26-promise-reaffirmed-to-isaac",
+              "g26-sowing-hundredfold-prosperity"
+            ]
+          },
+          "archaeology_material_culture": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g26-abraham-wells-reopened-and-renamed",
+              "g26-beersheba-altar-and-promise",
+              "g26-discovered-water-and-beersheba-name",
+              "g26-esek-sitnah-rehoboth-water-dispute"
+            ],
+            "synthesis_evidence_ids": [
+              "g26-abraham-wells-reopened-and-renamed",
+              "g26-beersheba-altar-and-promise",
+              "g26-discovered-water-and-beersheba-name",
+              "g26-esek-sitnah-rehoboth-water-dispute"
+            ]
+          },
+          "historical_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g26-abimelech-ahuzzath-phicol-oath",
+              "g26-esau-hittite-wives-family-grief",
+              "g26-famine-and-gerar-instruction",
+              "g26-promise-reaffirmed-to-isaac"
+            ],
+            "synthesis_evidence_ids": [
+              "g26-abimelech-ahuzzath-phicol-oath",
+              "g26-esau-hittite-wives-family-grief",
+              "g26-famine-and-gerar-instruction",
+              "g26-promise-reaffirmed-to-isaac"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g26-abraham-wells-reopened-and-renamed",
+              "g26-beersheba-altar-and-promise",
+              "g26-discovered-water-and-beersheba-name",
+              "g26-esek-sitnah-rehoboth-water-dispute",
+              "g26-promise-reaffirmed-to-isaac",
+              "g26-rebekah-wife-sister-and-protection",
+              "g26-sowing-hundredfold-prosperity"
+            ],
+            "synthesis_evidence_ids": [
+              "g26-abraham-wells-reopened-and-renamed",
+              "g26-beersheba-altar-and-promise",
+              "g26-discovered-water-and-beersheba-name",
+              "g26-esek-sitnah-rehoboth-water-dispute",
+              "g26-promise-reaffirmed-to-isaac",
+              "g26-rebekah-wife-sister-and-protection",
+              "g26-sowing-hundredfold-prosperity"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "covenant_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g26-abimelech-ahuzzath-phicol-oath",
+              "g26-beersheba-altar-and-promise",
+              "g26-promise-reaffirmed-to-isaac"
+            ],
+            "synthesis_evidence_ids": [
+              "g26-abimelech-ahuzzath-phicol-oath",
+              "g26-beersheba-altar-and-promise",
+              "g26-promise-reaffirmed-to-isaac"
+            ]
+          },
+          "intertextual_canonical_connections": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "lexical_concepts": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          }
+        },
+        "evidence_hash": "865125e5486e7e5d73c0e7f1710eebbd2cc19b43d0386c14c6b2775b96002da5",
+        "synthesis_hash": "adab8fce7f558449ffe28f98b254742ccd2275ab8ccdaab96da85c830d205291",
+        "candidate_evidence_ids": [
+          "g26-abimelech-ahuzzath-phicol-oath",
+          "g26-abraham-wells-reopened-and-renamed",
+          "g26-beersheba-altar-and-promise",
+          "g26-discovered-water-and-beersheba-name",
+          "g26-esau-hittite-wives-family-grief",
+          "g26-esek-sitnah-rehoboth-water-dispute",
+          "g26-famine-and-gerar-instruction",
+          "g26-promise-reaffirmed-to-isaac",
+          "g26-rebekah-wife-sister-and-protection",
+          "g26-sowing-hundredfold-prosperity"
+        ],
+        "candidate_evidence_ids_synthesized": [
+          "g26-abimelech-ahuzzath-phicol-oath",
+          "g26-abraham-wells-reopened-and-renamed",
+          "g26-beersheba-altar-and-promise",
+          "g26-discovered-water-and-beersheba-name",
+          "g26-esau-hittite-wives-family-grief",
+          "g26-esek-sitnah-rehoboth-water-dispute",
+          "g26-famine-and-gerar-instruction",
+          "g26-promise-reaffirmed-to-isaac",
+          "g26-rebekah-wife-sister-and-protection",
+          "g26-sowing-hundredfold-prosperity"
+        ]
+      }
+    },
+    "Genesis 27": {
+      "before": {
+        "evidence_count": 3,
+        "synthesis_unit_count": 3,
+        "classification": "GAP",
+        "covered_dimensions": []
+      },
+      "after": {
+        "evidence_count": 13,
+        "synthesis_unit_count": 7,
+        "classification": "GOOD",
+        "covered_dimensions": [
+          "cultural_social_context",
+          "geography",
+          "hebrew_worldview_concepts",
+          "immediate_literary_context",
+          "interpretive_disputes"
+        ],
+        "thin_dimensions": [
+          "historical_context"
+        ],
+        "gap_dimensions": [
+          "ancient_near_eastern_context",
+          "intertextual_canonical_connections",
+          "lexical_concepts"
+        ],
+        "dimension_assessment": {
+          "immediate_literary_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g27-age-sight-and-game-request",
+              "g27-blessing-birthright-inheritance-distinction",
+              "g27-blessing-dew-earth-grain-nations",
+              "g27-discovery-trembling-and-esau-cry",
+              "g27-meal-before-blessing",
+              "g27-murder-threat-and-paddan-aram-flight",
+              "g27-name-pun-and-grievance",
+              "g27-rebekah-overhears-and-prepares",
+              "g27-secondary-words-concerning-esau",
+              "g27-voice-touch-and-false-identity"
+            ],
+            "synthesis_evidence_ids": [
+              "g27-age-sight-and-game-request",
+              "g27-blessing-birthright-inheritance-distinction",
+              "g27-blessing-dew-earth-grain-nations",
+              "g27-discovery-trembling-and-esau-cry",
+              "g27-meal-before-blessing",
+              "g27-murder-threat-and-paddan-aram-flight",
+              "g27-name-pun-and-grievance",
+              "g27-rebekah-overhears-and-prepares",
+              "g27-secondary-words-concerning-esau",
+              "g27-voice-touch-and-false-identity"
+            ]
+          },
+          "ancient_near_eastern_context": {
+            "status": "GAP",
+            "evidence_ids": [],
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g27-age-sight-and-game-request",
+              "g27-blessing-birthright-inheritance-distinction",
+              "g27-blessing-dew-earth-grain-nations",
+              "g27-discovery-trembling-and-esau-cry",
+              "g27-meal-before-blessing",
+              "g27-murder-threat-and-paddan-aram-flight",
+              "g27-name-pun-and-grievance",
+              "g27-rebekah-overhears-and-prepares",
+              "g27-secondary-words-concerning-esau",
+              "g27-voice-touch-and-false-identity"
+            ],
+            "synthesis_evidence_ids": [
+              "g27-age-sight-and-game-request",
+              "g27-blessing-birthright-inheritance-distinction",
+              "g27-blessing-dew-earth-grain-nations",
+              "g27-discovery-trembling-and-esau-cry",
+              "g27-meal-before-blessing",
+              "g27-murder-threat-and-paddan-aram-flight",
+              "g27-name-pun-and-grievance",
+              "g27-rebekah-overhears-and-prepares",
+              "g27-secondary-words-concerning-esau",
+              "g27-voice-touch-and-false-identity"
+            ]
+          },
+          "geography": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g27-murder-threat-and-paddan-aram-flight",
+              "g27-secondary-words-concerning-esau"
+            ],
+            "synthesis_evidence_ids": [
+              "g27-murder-threat-and-paddan-aram-flight",
+              "g27-secondary-words-concerning-esau"
+            ]
+          },
+          "archaeology_material_culture": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "historical_context": {
+            "status": "THIN",
+            "evidence_ids": [
+              "g27-name-pun-and-grievance"
+            ],
+            "synthesis_evidence_ids": [
+              "g27-name-pun-and-grievance"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g27-age-sight-and-game-request",
+              "g27-blessing-birthright-inheritance-distinction",
+              "g27-blessing-dew-earth-grain-nations",
+              "g27-discovery-trembling-and-esau-cry",
+              "g27-meal-before-blessing",
+              "g27-name-pun-and-grievance",
+              "g27-secondary-words-concerning-esau"
+            ],
+            "synthesis_evidence_ids": [
+              "g27-age-sight-and-game-request",
+              "g27-blessing-birthright-inheritance-distinction",
+              "g27-blessing-dew-earth-grain-nations",
+              "g27-discovery-trembling-and-esau-cry",
+              "g27-meal-before-blessing",
+              "g27-name-pun-and-grievance",
+              "g27-secondary-words-concerning-esau"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "covenant_context": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "status": "GAP",
+            "evidence_ids": [],
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "lexical_concepts": {
+            "status": "GAP",
+            "evidence_ids": [],
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g27-age-sight-and-game-request",
+              "g27-blessing-birthright-inheritance-distinction",
+              "g27-blessing-dew-earth-grain-nations",
+              "g27-discovery-trembling-and-esau-cry",
+              "g27-meal-before-blessing",
+              "g27-murder-threat-and-paddan-aram-flight",
+              "g27-name-pun-and-grievance",
+              "g27-rebekah-overhears-and-prepares",
+              "g27-secondary-words-concerning-esau",
+              "g27-voice-touch-and-false-identity"
+            ],
+            "synthesis_evidence_ids": [
+              "g27-age-sight-and-game-request",
+              "g27-blessing-birthright-inheritance-distinction",
+              "g27-blessing-dew-earth-grain-nations",
+              "g27-discovery-trembling-and-esau-cry",
+              "g27-meal-before-blessing",
+              "g27-murder-threat-and-paddan-aram-flight",
+              "g27-name-pun-and-grievance",
+              "g27-rebekah-overhears-and-prepares",
+              "g27-secondary-words-concerning-esau",
+              "g27-voice-touch-and-false-identity"
+            ]
+          }
+        },
+        "evidence_hash": "972cbb00d8e96921bbfe2d22e1a88884a778b3745de1d474a6ad9d050855b974",
+        "synthesis_hash": "93622fb51c0adb44808a6df3a818ce72459166d193bfb7ae218e1d846ef32658",
+        "candidate_evidence_ids": [
+          "g27-age-sight-and-game-request",
+          "g27-blessing-birthright-inheritance-distinction",
+          "g27-blessing-dew-earth-grain-nations",
+          "g27-discovery-trembling-and-esau-cry",
+          "g27-meal-before-blessing",
+          "g27-murder-threat-and-paddan-aram-flight",
+          "g27-name-pun-and-grievance",
+          "g27-rebekah-overhears-and-prepares",
+          "g27-secondary-words-concerning-esau",
+          "g27-voice-touch-and-false-identity"
+        ],
+        "candidate_evidence_ids_synthesized": [
+          "g27-age-sight-and-game-request",
+          "g27-blessing-birthright-inheritance-distinction",
+          "g27-blessing-dew-earth-grain-nations",
+          "g27-discovery-trembling-and-esau-cry",
+          "g27-meal-before-blessing",
+          "g27-murder-threat-and-paddan-aram-flight",
+          "g27-name-pun-and-grievance",
+          "g27-rebekah-overhears-and-prepares",
+          "g27-secondary-words-concerning-esau",
+          "g27-voice-touch-and-false-identity"
+        ]
+      }
+    },
+    "Genesis 28": {
+      "before": {
+        "evidence_count": 3,
+        "synthesis_unit_count": 3,
+        "classification": "GAP",
+        "covered_dimensions": []
+      },
+      "after": {
+        "evidence_count": 13,
+        "synthesis_unit_count": 7,
+        "classification": "GOOD",
+        "covered_dimensions": [
+          "archaeology_material_culture",
+          "covenant_context",
+          "cultural_social_context",
+          "geography",
+          "hebrew_worldview_concepts",
+          "immediate_literary_context",
+          "interpretive_disputes"
+        ],
+        "thin_dimensions": [
+          "ancient_near_eastern_context",
+          "lexical_concepts"
+        ],
+        "gap_dimensions": [
+          "divine_council_spiritual_worldview",
+          "historical_context"
+        ],
+        "dimension_assessment": {
+          "immediate_literary_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g28-beersheba-journey-and-stone",
+              "g28-esau-additional-marriage",
+              "g28-house-of-god-gate-of-heaven",
+              "g28-isaac-commissions-jacob",
+              "g28-yhwh-promise-land-offspring"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-beersheba-journey-and-stone",
+              "g28-esau-additional-marriage",
+              "g28-house-of-god-gate-of-heaven",
+              "g28-isaac-commissions-jacob",
+              "g28-yhwh-promise-land-offspring"
+            ]
+          },
+          "ancient_near_eastern_context": {
+            "status": "THIN",
+            "evidence_ids": [
+              "g28-sullam-lexical-range"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-sullam-lexical-range"
+            ]
+          },
+          "cultural_social_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g28-esau-additional-marriage",
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-messengers-ascending-descending",
+              "g28-presence-protection-and-return",
+              "g28-sullam-lexical-range",
+              "g28-yhwh-promise-land-offspring"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-esau-additional-marriage",
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-messengers-ascending-descending",
+              "g28-presence-protection-and-return",
+              "g28-sullam-lexical-range",
+              "g28-yhwh-promise-land-offspring"
+            ]
+          },
+          "geography": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g28-beersheba-journey-and-stone",
+              "g28-esau-additional-marriage",
+              "g28-house-of-god-gate-of-heaven",
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-pillar-oil-bethel-luz",
+              "g28-presence-protection-and-return",
+              "g28-yhwh-promise-land-offspring"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-beersheba-journey-and-stone",
+              "g28-esau-additional-marriage",
+              "g28-house-of-god-gate-of-heaven",
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-pillar-oil-bethel-luz",
+              "g28-presence-protection-and-return",
+              "g28-yhwh-promise-land-offspring"
+            ]
+          },
+          "archaeology_material_culture": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g28-beersheba-journey-and-stone",
+              "g28-pillar-oil-bethel-luz"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-beersheba-journey-and-stone",
+              "g28-pillar-oil-bethel-luz"
+            ]
+          },
+          "historical_context": {
+            "status": "GAP",
+            "evidence_ids": [],
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-messengers-ascending-descending",
+              "g28-pillar-oil-bethel-luz",
+              "g28-presence-protection-and-return",
+              "g28-yhwh-promise-land-offspring"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-messengers-ascending-descending",
+              "g28-pillar-oil-bethel-luz",
+              "g28-presence-protection-and-return",
+              "g28-yhwh-promise-land-offspring"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "status": "GAP",
+            "evidence_ids": [],
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-presence-protection-and-return",
+              "g28-yhwh-promise-land-offspring"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-presence-protection-and-return",
+              "g28-yhwh-promise-land-offspring"
+            ]
+          },
+          "intertextual_canonical_connections": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "lexical_concepts": {
+            "status": "THIN",
+            "evidence_ids": [
+              "g28-sullam-lexical-range"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-sullam-lexical-range"
+            ]
+          },
+          "interpretive_disputes": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g28-beersheba-journey-and-stone",
+              "g28-esau-additional-marriage",
+              "g28-house-of-god-gate-of-heaven",
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-messengers-ascending-descending",
+              "g28-pillar-oil-bethel-luz",
+              "g28-presence-protection-and-return",
+              "g28-sullam-lexical-range",
+              "g28-yhwh-promise-land-offspring"
+            ],
+            "synthesis_evidence_ids": [
+              "g28-beersheba-journey-and-stone",
+              "g28-esau-additional-marriage",
+              "g28-house-of-god-gate-of-heaven",
+              "g28-isaac-commissions-jacob",
+              "g28-jacob-vow-conditions-and-tithe",
+              "g28-messengers-ascending-descending",
+              "g28-pillar-oil-bethel-luz",
+              "g28-presence-protection-and-return",
+              "g28-sullam-lexical-range",
+              "g28-yhwh-promise-land-offspring"
+            ]
+          }
+        },
+        "evidence_hash": "af0a5cbac9eed71d805ff5fcd8f50a57c5ddf32394e8c403796f31248ea85151",
+        "synthesis_hash": "eb97171b17e4bb0f2dbebcc9fa5be56580f2ec005a7640ea8abf3c6ff17f08bc",
+        "candidate_evidence_ids": [
+          "g28-beersheba-journey-and-stone",
+          "g28-esau-additional-marriage",
+          "g28-house-of-god-gate-of-heaven",
+          "g28-isaac-commissions-jacob",
+          "g28-jacob-vow-conditions-and-tithe",
+          "g28-messengers-ascending-descending",
+          "g28-pillar-oil-bethel-luz",
+          "g28-presence-protection-and-return",
+          "g28-sullam-lexical-range",
+          "g28-yhwh-promise-land-offspring"
+        ],
+        "candidate_evidence_ids_synthesized": [
+          "g28-beersheba-journey-and-stone",
+          "g28-esau-additional-marriage",
+          "g28-house-of-god-gate-of-heaven",
+          "g28-isaac-commissions-jacob",
+          "g28-jacob-vow-conditions-and-tithe",
+          "g28-messengers-ascending-descending",
+          "g28-pillar-oil-bethel-luz",
+          "g28-presence-protection-and-return",
+          "g28-sullam-lexical-range",
+          "g28-yhwh-promise-land-offspring"
+        ]
+      }
+    },
+    "Genesis 29": {
+      "before": {
+        "evidence_count": 3,
+        "synthesis_unit_count": 3,
+        "classification": "GAP",
+        "covered_dimensions": []
+      },
+      "after": {
+        "evidence_count": 12,
+        "synthesis_unit_count": 7,
+        "classification": "GOOD",
+        "covered_dimensions": [
+          "ancient_near_eastern_context",
+          "cultural_social_context",
+          "hebrew_worldview_concepts",
+          "historical_context",
+          "immediate_literary_context"
+        ],
+        "thin_dimensions": [
+          "archaeology_material_culture",
+          "intertextual_canonical_connections"
+        ],
+        "gap_dimensions": [
+          "geography"
+        ],
+        "dimension_assessment": {
+          "immediate_literary_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g29-bilhah-and-zilpah-household-status",
+              "g29-feast-night-handover-and-discovery",
+              "g29-leah-children-and-name-wordplay",
+              "g29-loved-and-unloved-relational-language",
+              "g29-well-stone-and-rachel-shepherd"
+            ],
+            "synthesis_evidence_ids": [
+              "g29-bilhah-and-zilpah-household-status",
+              "g29-feast-night-handover-and-discovery",
+              "g29-leah-children-and-name-wordplay",
+              "g29-loved-and-unloved-relational-language",
+              "g29-well-stone-and-rachel-shepherd"
+            ]
+          },
+          "ancient_near_eastern_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g29-laban-older-before-younger-explanation",
+              "g29-seven-years-service-for-rachel"
+            ],
+            "synthesis_evidence_ids": [
+              "g29-laban-older-before-younger-explanation",
+              "g29-seven-years-service-for-rachel"
+            ]
+          },
+          "cultural_social_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g29-bilhah-and-zilpah-household-status",
+              "g29-feast-night-handover-and-discovery",
+              "g29-kinship-recognition-and-hospitality",
+              "g29-laban-older-before-younger-explanation",
+              "g29-leah-children-and-name-wordplay",
+              "g29-loved-and-unloved-relational-language",
+              "g29-marriage-to-sisters-canonical-context",
+              "g29-seven-years-service-for-rachel",
+              "g29-well-stone-and-rachel-shepherd"
+            ],
+            "synthesis_evidence_ids": [
+              "g29-bilhah-and-zilpah-household-status",
+              "g29-feast-night-handover-and-discovery",
+              "g29-kinship-recognition-and-hospitality",
+              "g29-laban-older-before-younger-explanation",
+              "g29-leah-children-and-name-wordplay",
+              "g29-loved-and-unloved-relational-language",
+              "g29-marriage-to-sisters-canonical-context",
+              "g29-seven-years-service-for-rachel",
+              "g29-well-stone-and-rachel-shepherd"
+            ]
+          },
+          "geography": {
+            "status": "GAP",
+            "evidence_ids": [],
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "status": "THIN",
+            "evidence_ids": [
+              "g29-well-stone-and-rachel-shepherd"
+            ],
+            "synthesis_evidence_ids": [
+              "g29-well-stone-and-rachel-shepherd"
+            ]
+          },
+          "historical_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g29-feast-night-handover-and-discovery",
+              "g29-leah-children-and-name-wordplay",
+              "g29-well-stone-and-rachel-shepherd"
+            ],
+            "synthesis_evidence_ids": [
+              "g29-feast-night-handover-and-discovery",
+              "g29-leah-children-and-name-wordplay",
+              "g29-well-stone-and-rachel-shepherd"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g29-laban-older-before-younger-explanation",
+              "g29-leah-children-and-name-wordplay"
+            ],
+            "synthesis_evidence_ids": [
+              "g29-laban-older-before-younger-explanation",
+              "g29-leah-children-and-name-wordplay"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "covenant_context": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "status": "THIN",
+            "evidence_ids": [
+              "g29-marriage-to-sisters-canonical-context"
+            ],
+            "synthesis_evidence_ids": [
+              "g29-marriage-to-sisters-canonical-context"
+            ]
+          },
+          "textual_manuscript_issues": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "lexical_concepts": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          }
+        },
+        "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+        "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8",
+        "candidate_evidence_ids": [
+          "g29-bilhah-and-zilpah-household-status",
+          "g29-feast-night-handover-and-discovery",
+          "g29-kinship-recognition-and-hospitality",
+          "g29-laban-older-before-younger-explanation",
+          "g29-leah-children-and-name-wordplay",
+          "g29-loved-and-unloved-relational-language",
+          "g29-marriage-to-sisters-canonical-context",
+          "g29-seven-years-service-for-rachel",
+          "g29-well-stone-and-rachel-shepherd"
+        ],
+        "candidate_evidence_ids_synthesized": [
+          "g29-bilhah-and-zilpah-household-status",
+          "g29-feast-night-handover-and-discovery",
+          "g29-kinship-recognition-and-hospitality",
+          "g29-laban-older-before-younger-explanation",
+          "g29-leah-children-and-name-wordplay",
+          "g29-loved-and-unloved-relational-language",
+          "g29-marriage-to-sisters-canonical-context",
+          "g29-seven-years-service-for-rachel",
+          "g29-well-stone-and-rachel-shepherd"
+        ]
+      }
+    },
+    "Genesis 30": {
+      "before": {
+        "evidence_count": 3,
+        "synthesis_unit_count": 3,
+        "classification": "GAP",
+        "covered_dimensions": []
+      },
+      "after": {
+        "evidence_count": 15,
+        "synthesis_unit_count": 9,
+        "classification": "GOOD",
+        "covered_dimensions": [
+          "ancient_near_eastern_context",
+          "cultural_social_context",
+          "hebrew_worldview_concepts",
+          "immediate_literary_context",
+          "interpretive_disputes"
+        ],
+        "thin_dimensions": [
+          "historical_context"
+        ],
+        "gap_dimensions": [
+          "intertextual_canonical_connections",
+          "lexical_concepts"
+        ],
+        "dimension_assessment": {
+          "immediate_literary_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g30-bilhah-childbearing-arrangement",
+              "g30-dan-and-naphtali-naming",
+              "g30-issachar-zebulun-dinah",
+              "g30-joseph-birth-and-return-transition",
+              "g30-mandrake-fertility-belief-not-efficacy",
+              "g30-selective-breeding-and-flock-wealth",
+              "g30-spotted-flock-wage-separation",
+              "g30-zilpah-gad-and-asher"
+            ],
+            "synthesis_evidence_ids": [
+              "g30-bilhah-childbearing-arrangement",
+              "g30-dan-and-naphtali-naming",
+              "g30-issachar-zebulun-dinah",
+              "g30-joseph-birth-and-return-transition",
+              "g30-mandrake-fertility-belief-not-efficacy",
+              "g30-selective-breeding-and-flock-wealth",
+              "g30-spotted-flock-wage-separation",
+              "g30-zilpah-gad-and-asher"
+            ]
+          },
+          "ancient_near_eastern_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g30-bilhah-childbearing-arrangement",
+              "g30-zilpah-gad-and-asher"
+            ],
+            "synthesis_evidence_ids": [
+              "g30-bilhah-childbearing-arrangement",
+              "g30-zilpah-gad-and-asher"
+            ]
+          },
+          "cultural_social_context": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g30-bilhah-childbearing-arrangement",
+              "g30-dan-and-naphtali-naming",
+              "g30-issachar-zebulun-dinah",
+              "g30-joseph-birth-and-return-transition",
+              "g30-laban-acknowledges-blessing-and-wages",
+              "g30-mandrake-fertility-belief-not-efficacy",
+              "g30-mandrakes-identification-and-exchange",
+              "g30-peeled-rods-not-genetics",
+              "g30-rachel-distress-and-jacob-response",
+              "g30-selective-breeding-and-flock-wealth",
+              "g30-zilpah-gad-and-asher"
+            ],
+            "synthesis_evidence_ids": [
+              "g30-bilhah-childbearing-arrangement",
+              "g30-dan-and-naphtali-naming",
+              "g30-issachar-zebulun-dinah",
+              "g30-joseph-birth-and-return-transition",
+              "g30-laban-acknowledges-blessing-and-wages",
+              "g30-mandrake-fertility-belief-not-efficacy",
+              "g30-mandrakes-identification-and-exchange",
+              "g30-peeled-rods-not-genetics",
+              "g30-rachel-distress-and-jacob-response",
+              "g30-selective-breeding-and-flock-wealth",
+              "g30-zilpah-gad-and-asher"
+            ]
+          },
+          "geography": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "historical_context": {
+            "status": "THIN",
+            "evidence_ids": [
+              "g30-issachar-zebulun-dinah"
+            ],
+            "synthesis_evidence_ids": [
+              "g30-issachar-zebulun-dinah"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g30-dan-and-naphtali-naming",
+              "g30-issachar-zebulun-dinah",
+              "g30-laban-acknowledges-blessing-and-wages",
+              "g30-rachel-distress-and-jacob-response",
+              "g30-selective-breeding-and-flock-wealth",
+              "g30-zilpah-gad-and-asher"
+            ],
+            "synthesis_evidence_ids": [
+              "g30-dan-and-naphtali-naming",
+              "g30-issachar-zebulun-dinah",
+              "g30-laban-acknowledges-blessing-and-wages",
+              "g30-rachel-distress-and-jacob-response",
+              "g30-selective-breeding-and-flock-wealth",
+              "g30-zilpah-gad-and-asher"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "covenant_context": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "status": "GAP",
+            "evidence_ids": [],
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "status": "NOT_APPLICABLE",
+            "evidence_ids": []
+          },
+          "lexical_concepts": {
+            "status": "GAP",
+            "evidence_ids": [],
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "status": "COVERED",
+            "evidence_ids": [
+              "g30-bilhah-childbearing-arrangement",
+              "g30-dan-and-naphtali-naming",
+              "g30-issachar-zebulun-dinah",
+              "g30-joseph-birth-and-return-transition",
+              "g30-laban-acknowledges-blessing-and-wages",
+              "g30-mandrake-fertility-belief-not-efficacy",
+              "g30-mandrakes-identification-and-exchange",
+              "g30-peeled-rods-not-genetics",
+              "g30-rachel-distress-and-jacob-response",
+              "g30-selective-breeding-and-flock-wealth",
+              "g30-spotted-flock-wage-separation",
+              "g30-zilpah-gad-and-asher"
+            ],
+            "synthesis_evidence_ids": [
+              "g30-bilhah-childbearing-arrangement",
+              "g30-dan-and-naphtali-naming",
+              "g30-issachar-zebulun-dinah",
+              "g30-joseph-birth-and-return-transition",
+              "g30-laban-acknowledges-blessing-and-wages",
+              "g30-mandrake-fertility-belief-not-efficacy",
+              "g30-mandrakes-identification-and-exchange",
+              "g30-peeled-rods-not-genetics",
+              "g30-rachel-distress-and-jacob-response",
+              "g30-selective-breeding-and-flock-wealth",
+              "g30-spotted-flock-wage-separation",
+              "g30-zilpah-gad-and-asher"
+            ]
+          }
+        },
+        "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+        "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479",
+        "candidate_evidence_ids": [
+          "g30-bilhah-childbearing-arrangement",
+          "g30-dan-and-naphtali-naming",
+          "g30-issachar-zebulun-dinah",
+          "g30-joseph-birth-and-return-transition",
+          "g30-laban-acknowledges-blessing-and-wages",
+          "g30-mandrake-fertility-belief-not-efficacy",
+          "g30-mandrakes-identification-and-exchange",
+          "g30-peeled-rods-not-genetics",
+          "g30-rachel-distress-and-jacob-response",
+          "g30-selective-breeding-and-flock-wealth",
+          "g30-spotted-flock-wage-separation",
+          "g30-zilpah-gad-and-asher"
+        ],
+        "candidate_evidence_ids_synthesized": [
+          "g30-bilhah-childbearing-arrangement",
+          "g30-dan-and-naphtali-naming",
+          "g30-issachar-zebulun-dinah",
+          "g30-joseph-birth-and-return-transition",
+          "g30-laban-acknowledges-blessing-and-wages",
+          "g30-mandrake-fertility-belief-not-efficacy",
+          "g30-mandrakes-identification-and-exchange",
+          "g30-peeled-rods-not-genetics",
+          "g30-rachel-distress-and-jacob-response",
+          "g30-selective-breeding-and-flock-wealth",
+          "g30-spotted-flock-wage-separation",
+          "g30-zilpah-gad-and-asher"
+        ]
+      }
+    }
+  },
+  "all_targets_good": true
+}
