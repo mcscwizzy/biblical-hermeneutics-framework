@@ -1,0 +1,133 @@
+{
+  "result": "PASS",
+  "base_master": "76dba476fc1b31902a206b68b1651de0373dcdc3",
+  "method": "Exact G4B base CKL plus staged object and manifest; full CKL load followed by target chapter preparation and synthesis.",
+  "staged_schema_validation": "PASS",
+  "source_reference_validation": "PASS",
+  "scripture_reference_validation": "PASS",
+  "typed_target_validation": "PASS",
+  "production_item_content_parity": "PASS",
+  "changed_chapters": [
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25"
+  ],
+  "expected_changed_chapters": [
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25"
+  ],
+  "base_target_identities": {
+    "Genesis 18": {
+      "evidence_count": 7,
+      "evidence_hash": "33193cc7d10dc199f267bdaf06c2d4ebecd15062a70ed288f5e53fa21d19753e",
+      "synthesis_unit_count": 5,
+      "synthesis_hash": "13737b0bba5a783f80bb973fdbdc74e3a03b236583828f7724472374a8727f81"
+    },
+    "Genesis 19": {
+      "evidence_count": 5,
+      "evidence_hash": "114156990326a8586b47f8a55515701e96147a6ef522606bc27885fc8178cbb1",
+      "synthesis_unit_count": 5,
+      "synthesis_hash": "8c7e3242215bd2606852829806538bc2097f7f0aaf71e2e3a410ea90eb18dbf3"
+    },
+    "Genesis 20": {
+      "evidence_count": 4,
+      "evidence_hash": "68f77e4c6221882137675a19e336bab9ec3f61f21b22f02de6f3cd91ec97a728",
+      "synthesis_unit_count": 4,
+      "synthesis_hash": "1a2c546e55130a04b6987b2346225f43ca2e101d69843b3a7e3e971ca8231b30"
+    },
+    "Genesis 21": {
+      "evidence_count": 7,
+      "evidence_hash": "57584a4ec5531c2a5d5613b400f725546e64af0d6a27853986441ab86cdb578a",
+      "synthesis_unit_count": 5,
+      "synthesis_hash": "b0b8e67b8ddae575dcd085a7e719bdd1fb03aa849a10ef4ca07fb8fbcfba16cc"
+    },
+    "Genesis 22": {
+      "evidence_count": 38,
+      "evidence_hash": "bed3f84ff2f57bf8bdd505ac873a08d6390af69d1238b899836d330962dd3916",
+      "synthesis_unit_count": 4,
+      "synthesis_hash": "4fae8bfa05ac709b7a6a4a6131fb6c84fe8bbe47e90f0f03b230582281438f53"
+    },
+    "Genesis 23": {
+      "evidence_count": 3,
+      "evidence_hash": "a79065fa6ec7b470889c5d40f96c303bb9aa76b4fbf94cf46657c2f722500a5a",
+      "synthesis_unit_count": 3,
+      "synthesis_hash": "1d92407c4baac5443a0da6f221d146d60cf254bea2f05da8f7779c0b4c10efff"
+    },
+    "Genesis 24": {
+      "evidence_count": 3,
+      "evidence_hash": "c19a649074540fd52e09f48ae6fe99eab51dda140c5715cf31a361f8aa7b9898",
+      "synthesis_unit_count": 3,
+      "synthesis_hash": "28f349e1ae47ed8fd1e6b697ad0bbc7bbefcf8dee32b4659c38b6a108f24e9d3"
+    },
+    "Genesis 25": {
+      "evidence_count": 4,
+      "evidence_hash": "7bc23fa79587783a1aea43ec0c6f599ceb562ddd49a7b76024a0d34d1ea74d61",
+      "synthesis_unit_count": 4,
+      "synthesis_hash": "45f293501002468b9de824653d8192bf3c08e850c43219d6e2646042d6fdf035"
+    }
+  },
+  "staged_target_identities": {
+    "Genesis 18": {
+      "evidence_count": 14,
+      "evidence_hash": "bc5a09c989706d9b078c765a47b6e3e88549135347c60b2dbec90d8ad5b0f3fe",
+      "synthesis_unit_count": 9,
+      "synthesis_hash": "29f319ccb733508247d59a7a5318ea7000ebc1fb328537912dd542b364e9868a"
+    },
+    "Genesis 19": {
+      "evidence_count": 15,
+      "evidence_hash": "9af800225b6fe843a2b2119aa39c1fb58d39236488522484a99e3e54145b2236",
+      "synthesis_unit_count": 10,
+      "synthesis_hash": "cc1b8af77194a94c7ad2a4c7ab3a2bd8328a163352b4ea5526bc65bce8ce17bc"
+    },
+    "Genesis 20": {
+      "evidence_count": 10,
+      "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+      "synthesis_unit_count": 7,
+      "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab"
+    },
+    "Genesis 21": {
+      "evidence_count": 16,
+      "evidence_hash": "1de3689cd811fc2755ea2c2b1a3eb338c0fcdc9f0c3b4dba7bead68b8701c19d",
+      "synthesis_unit_count": 10,
+      "synthesis_hash": "605c4399c81887479e6115786055d9a4be62e9bb91ae91d10f4031cdfa4ad389"
+    },
+    "Genesis 22": {
+      "evidence_count": 51,
+      "evidence_hash": "6f90988b7b7268fd4282c26967a513538df08ae0e093b1ea2927f6217c0f8e86",
+      "synthesis_unit_count": 10,
+      "synthesis_hash": "47eca559a0f2e77b4939400bf2df9ed6d533eb113cb4b364314a352517ecf0ed"
+    },
+    "Genesis 23": {
+      "evidence_count": 10,
+      "evidence_hash": "882e8aeefbbd785ca19876bfd2e87b087cdd46cf69b91e7dd56078db1765f232",
+      "synthesis_unit_count": 7,
+      "synthesis_hash": "509687fb79efde443487347658235beebcd8cb03de66269801b4161c8f13fc42"
+    },
+    "Genesis 24": {
+      "evidence_count": 13,
+      "evidence_hash": "6c356b86ba9c9c990acb17ba255d9efb9288f4d6d87d979fbd1368d8ee21eeb3",
+      "synthesis_unit_count": 7,
+      "synthesis_hash": "dae6e55a764f6cff354223e5ac143a152b346a466014645a20f979f7da4ccee3"
+    },
+    "Genesis 25": {
+      "evidence_count": 13,
+      "evidence_hash": "0c8e02b0972ec3375db8cbd5d8ff91913f20d0c7124815bc27e6081ce12fa0ee",
+      "synthesis_unit_count": 9,
+      "synthesis_hash": "eebbd7fab0060bf6d3329888abc4020268b846ec3f7431bb07c5f0b2e91770d1"
+    }
+  },
+  "candidate_item_count": 71,
+  "source_count": 11,
+  "write_requested": false
+}
