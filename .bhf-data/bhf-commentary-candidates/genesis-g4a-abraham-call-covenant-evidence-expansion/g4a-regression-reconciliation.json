@@ -1,0 +1,45 @@
+{
+  "artifact_version": "g4a-regression-reconciliation-v1",
+  "transaction": "GENESIS_G4A_ABRAHAM_CALL_COVENANT_EVIDENCE_EXPANSION",
+  "regression_command": "PYTHONPATH=. pytest -q tests/test_genesis_g3_nations_babel_isolation.py tests/test_genesis_g2_shared_object_fallback.py tests/test_genesis_g1r_comparative_applicability.py tests/test_genesis_g0_evidence_census.py",
+  "result": "11 passed, 2 failed; both failures are historical Genesis 12 identity assertions superseded by authorized G4A scope.",
+  "failed_assertions": [
+    {
+      "test": "tests/test_genesis_g3_nations_babel_isolation.py::test_g3_controls_and_legacy_fallback_inputs_match_base_exactly",
+      "asserted_control": "Genesis 12 exact G3-era evidence and synthesis identity",
+      "expected_identity": {
+        "evidence_count": 152,
+        "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+        "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613",
+        "synthesis_unit_count": 9
+      },
+      "actual_g4a_identity": {
+        "evidence_count": 160,
+        "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+        "synthesis_unit_count": 14,
+        "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c"
+      },
+      "disposition": "EXPECTED_SCOPE_CHANGE"
+    },
+    {
+      "test": "tests/test_genesis_g2_shared_object_fallback.py::test_g2_local_sources_do_not_change_historical_source_owners_or_genesis_hashes",
+      "asserted_control": "Genesis 12 exact G2-era evidence and synthesis identity",
+      "expected_identity": {
+        "evidence_count": 152,
+        "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+        "synthesis_unit_count": 9,
+        "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613"
+      },
+      "actual_g4a_identity": {
+        "evidence_count": 160,
+        "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+        "synthesis_unit_count": 14,
+        "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c"
+      },
+      "disposition": "EXPECTED_SCOPE_CHANGE"
+    }
+  ],
+  "why_not_rewritten": "Genesis 12 is an explicit G4A target. The G4A live preparation changes its identity, and the same actual identity is captured in the clean G4A baseline audit and the full 1,189-chapter impact report. Prior transaction tests remain unchanged; their cross-transaction Genesis 12 control is no longer applicable after G4A.",
+  "other_regressions": "All other assertions in those suites passed, including Genesis G1R comparative applicability, G2/G3 isolation and owner checks, and G0 census checks.",
+  "whole_corpus_gate": "PASS; exactly Genesis 12–17 changed."
+}

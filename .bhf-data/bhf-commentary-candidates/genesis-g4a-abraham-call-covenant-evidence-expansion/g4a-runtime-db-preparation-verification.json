@@ -1,0 +1,183 @@
+{
+  "artifact_version": "g4a-runtime-db-preparation-verification-v1",
+  "database_backend": "SQLite canonical repository after successful rebuild and verify-db",
+  "result": "PASS",
+  "targets": {
+    "Genesis 12": {
+      "identity": {
+        "evidence_count": 160,
+        "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+        "synthesis_unit_count": 14,
+        "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 13": {
+      "identity": {
+        "evidence_count": 12,
+        "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+        "synthesis_unit_count": 8,
+        "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 14": {
+      "identity": {
+        "evidence_count": 13,
+        "evidence_hash": "2f29c8568a5f787ec94eba0eab9f6dc0d229c19cd88a0ab6352ea99ad615accf",
+        "synthesis_unit_count": 8,
+        "synthesis_hash": "9eaf85311285244171ac967339ebcdebe35fa283d73785d5631c43f1a6796899"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 15": {
+      "identity": {
+        "evidence_count": 77,
+        "evidence_hash": "6871bb5ca9c1b2414b9cf7b6c920c966e74086f258881bb16e2bc4d1445320bf",
+        "synthesis_unit_count": 16,
+        "synthesis_hash": "3768a7f09a788550a9380f09d2fa74064933fa0de74e74023807affdbf57c12b"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 16": {
+      "identity": {
+        "evidence_count": 11,
+        "evidence_hash": "adfaf7ee6624dab7554a13b25de3009e03ba4513ffa80a1b97e68d6fb8e5cf93",
+        "synthesis_unit_count": 8,
+        "synthesis_hash": "dd20a8f6b98e1fdd0748ac2958a4c22e53cf0280682929388ab7a98c2a3bcf9c"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 17": {
+      "identity": {
+        "evidence_count": 57,
+        "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+        "synthesis_unit_count": 12,
+        "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7"
+      },
+      "matches_json_full_corpus_run": true
+    }
+  },
+  "representative_controls": {
+    "result": "PASS",
+    "backend": "SQLite canonical repository",
+    "identity_matches": {
+      "Genesis 1": true,
+      "Genesis 5": true,
+      "Genesis 6": true,
+      "Genesis 9": true,
+      "Genesis 10": true,
+      "Genesis 11": true,
+      "Genesis 18": true,
+      "Genesis 22": true,
+      "Isaiah 36": true,
+      "Acts 16": true,
+      "Revelation 18": true,
+      "Exodus 25": true,
+      "1 Kings 6": true,
+      "Revelation 12": true
+    },
+    "identities": {
+      "Genesis 1": {
+        "evidence_count": 58,
+        "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+        "synthesis_unit_count": 12,
+        "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+      },
+      "Genesis 5": {
+        "evidence_count": 21,
+        "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+        "synthesis_unit_count": 7,
+        "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8"
+      },
+      "Genesis 6": {
+        "evidence_count": 31,
+        "evidence_hash": "f30b5cf8f944d843a3fab81ff5dbe4b130ad0b9d3f1fafecb74babeeeb3c4cb1",
+        "synthesis_unit_count": 16,
+        "synthesis_hash": "9730ac5f58de247bcbeaa0110c9958c0b37dd66cf086b794b993106ad8691f27"
+      },
+      "Genesis 9": {
+        "evidence_count": 79,
+        "evidence_hash": "f675c064faaa00917456f23345f7cabee28d0a698a2e24e6472970d6b8e5bbb9",
+        "synthesis_unit_count": 12,
+        "synthesis_hash": "0364dc2f13694481d2c8007b184b29646103d58d5bfab3c40abba5d10ec86ba6"
+      },
+      "Genesis 10": {
+        "evidence_count": 82,
+        "evidence_hash": "a1e373e87e93821e6f0aa3920a5afb050c7da30b4e019252afddb33cb4f5e58f",
+        "synthesis_unit_count": 17,
+        "synthesis_hash": "fd851519230b1092100ae5db3e5945b1358c74ccb3ece3e093cda7d517efd06e"
+      },
+      "Genesis 11": {
+        "evidence_count": 53,
+        "evidence_hash": "514eb7573bee01c46b1fcfb03249c8f90182bfbc1c9504a47eab1e006b043361",
+        "synthesis_unit_count": 17,
+        "synthesis_hash": "57baace0ce5e073c2716fe2da00421f4541bcc5607b281f9108d38f16d99b086"
+      },
+      "Genesis 18": {
+        "evidence_count": 7,
+        "evidence_hash": "33193cc7d10dc199f267bdaf06c2d4ebecd15062a70ed288f5e53fa21d19753e",
+        "synthesis_unit_count": 5,
+        "synthesis_hash": "13737b0bba5a783f80bb973fdbdc74e3a03b236583828f7724472374a8727f81"
+      },
+      "Genesis 22": {
+        "evidence_count": 38,
+        "evidence_hash": "bed3f84ff2f57bf8bdd505ac873a08d6390af69d1238b899836d330962dd3916",
+        "synthesis_unit_count": 4,
+        "synthesis_hash": "4fae8bfa05ac709b7a6a4a6131fb6c84fe8bbe47e90f0f03b230582281438f53"
+      },
+      "Isaiah 36": {
+        "evidence_count": 28,
+        "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+        "synthesis_unit_count": 12,
+        "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c"
+      },
+      "Acts 16": {
+        "evidence_count": 89,
+        "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+        "synthesis_unit_count": 50,
+        "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592"
+      },
+      "Revelation 18": {
+        "evidence_count": 13,
+        "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+        "synthesis_unit_count": 3,
+        "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0"
+      },
+      "Exodus 25": {
+        "evidence_count": 41,
+        "evidence_hash": "16c5a6eea7c9e7859dd4734f53367a22eb26fdccf171d46951e2624ccd2d2da3",
+        "synthesis_unit_count": 12,
+        "synthesis_hash": "bc5c446bcbdcb7188ff221d3895470825ddee6fd197c78f23b24646c5ec54f13"
+      },
+      "1 Kings 6": {
+        "evidence_count": 5,
+        "evidence_hash": "0a84785212b7dbcd93a75fb1dbea634d6f10daf7b8620379e5e231b248d8dc97",
+        "synthesis_unit_count": 1,
+        "synthesis_hash": "110df207f5aff55061be107012da4981a95d5fb54f82fac2288a9d7e868eae3f"
+      },
+      "Revelation 12": {
+        "evidence_count": 5,
+        "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+        "synthesis_unit_count": 5,
+        "synthesis_hash": "518f95978e206a7669187f9e96955c5191a4a9335d7ebe8889ef32b11ba00461"
+      }
+    }
+  },
+  "legacy_fallback_regression": {
+    "result": "PASS",
+    "reference": "Genesis 1",
+    "expected_ids": [
+      "image-of-god-theme:ancient_near_east_context:0",
+      "image-of-god-theme:hebraic_worldview:0",
+      "image-of-god-theme:historical_context:0",
+      "image-of-god-theme:second_temple_context:0"
+    ],
+    "actual_ids": [
+      "image-of-god-theme:ancient_near_east_context:0",
+      "image-of-god-theme:hebraic_worldview:0",
+      "image-of-god-theme:historical_context:0",
+      "image-of-god-theme:second_temple_context:0"
+    ]
+  }
+}

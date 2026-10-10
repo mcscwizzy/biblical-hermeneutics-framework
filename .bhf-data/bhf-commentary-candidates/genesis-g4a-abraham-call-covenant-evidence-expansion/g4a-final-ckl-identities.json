@@ -1,0 +1,77 @@
+{
+  "artifact_version": "g4a-final-ckl-identities-v1",
+  "transaction": "GENESIS_G4A_ABRAHAM_CALL_COVENANT_EVIDENCE_EXPANSION",
+  "base_master": "f4b3d88a23b723eea8eced74c334df29def9fabf",
+  "object_count_before": 681,
+  "object_count_after": 682,
+  "base_ckl_identity": {
+    "canonical_byte_signature": "5a55bc45afad9b94a7162cfb99255acb012a6dd7eff90fdc7739e28cee2ceaf9",
+    "inventory_fingerprint": "07ea043978df7cdb7678523e688f4beac4294aa42c6ca015685de87dbb357534",
+    "manifest_object_count": 681,
+    "manifest_sha256": "8aa18590b0667c332ef86984f2c3cae9f71a8b937e21cd3cbcc45c53a187de94",
+    "object_count": 681,
+    "object_file_sha_root": "5d1f7ab4a3790427043c18dfbd2865a6389bd6f90e01a75fe7892e941c712924",
+    "runtime_database": {
+      "build": "PASS",
+      "claim_count": 2329,
+      "database_path": ".bhf/ckl.sqlite",
+      "database_sha256": "923a74bb4395d1c2a83efd04c8dc1e3dcafbd417763c2f32c355796ff3dbbc9c",
+      "evidence_count": 901,
+      "inventory_fingerprint": "07ea043978df7cdb7678523e688f4beac4294aa42c6ca015685de87dbb357534",
+      "object_count": 681,
+      "result": "PASS",
+      "source_count": 5141,
+      "verify": "PASS"
+    }
+  },
+  "final_ckl_identity": {
+    "manifest_sha256": "9808f4addaa57aa0f3b4793f482427411ace565b5c551f4c74fa6d99796f7b9c",
+    "manifest_object_count": 682,
+    "object_count": 682,
+    "inventory_fingerprint": "67269c80b7c4ca80846c96c77ced6bc407f0990716d67f03bd6783ed63774412",
+    "byte_signature": "7a323bcb4690f5d959f4ec7393e6527b7f1b836a87a255f6c9bdb9aa29acc50a",
+    "stat_signature": "a1475e70775448ea0784d4f809ea14ffb93a27a5e4ed696607cd392a2d1eca7b",
+    "object_file_sha256_root": "b1e0a8914300e75149f5bb8b78f1ec2535c4752d48f93c4391f76bae35d23562",
+    "runtime_database": {
+      "database_path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+      "database_schema_version": "4",
+      "retrieval_index_version": "3",
+      "framework_version": "1.0",
+      "schema_version": "1.0",
+      "object_count": 682,
+      "claim_count": 2329,
+      "source_count": 5158,
+      "evidence_count": 947,
+      "build_timestamp": "2026-10-09T17:57:02.996718Z",
+      "inventory_fingerprint": "67269c80b7c4ca80846c96c77ced6bc407f0990716d67f03bd6783ed63774412",
+      "database_file_size": 110911488,
+      "file_sha256": "09b183b40672c84339f26b11bc45f1e7b3fdb25841ad46fb031008c288d9d452",
+      "matches_json_inventory": true,
+      "configured_stale_policy": "fallback_to_json"
+    }
+  },
+  "base_commentary_v1_2_identity": {
+    "all_indexed_files_valid": true,
+    "chapter_publication_index_rows": 1189,
+    "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+    "corpus_checksum_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+    "indexed_file_count": 973,
+    "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+    "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46"
+  },
+  "final_commentary_v1_2_identity": {
+    "release": "commentary-v1.2",
+    "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+    "descriptor_identity": "e8af58131e066def98a2",
+    "corpus_checksum_root_identity": "762a0590a50ad2708b773c66458a6c6f68e5c96b07c0b99005712ae5724c5414",
+    "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+    "reconciliation_version": "commentary-v1.2-corpus-reconciliation-v1",
+    "checksum_index_version": "commentary-v1.2-runtime-release-checksums-v2",
+    "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+    "indexed_file_count": 973,
+    "all_indexed_files_valid": true,
+    "chapter_tree_identity": "e76ece622e01538d2e15fe99eaf88019e858c6eb31a7027ed64f9e6d63a88f27",
+    "genesis_publication_rows": 50
+  },
+  "commentary_release_exactly_preserved": true
+}
