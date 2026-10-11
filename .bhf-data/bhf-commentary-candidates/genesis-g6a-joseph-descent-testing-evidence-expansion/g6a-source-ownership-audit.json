@@ -1,0 +1,69 @@
+{
+  "artifact_version": "g6a-source-ownership-audit-v1",
+  "audit_timing": "pre-apply baseline and post-apply verification",
+  "baseline_historical_owner_rows": {
+    "count": 5195,
+    "row_identity": "sorted compact UTF-8 JSON array of {owner,source_id} rows from every G6A-base CKL object",
+    "sha256": "8e6d410001d5d987b7971728e6ca98688117a8d9b77c28ae5886e20257db225f"
+  },
+  "existing_historical_source_owner_rows_changed": 0,
+  "new_object_source_rows": 16,
+  "post_apply_audit": {
+    "baseline_historical_rows": 5195,
+    "baseline_sha256": "8e6d410001d5d987b7971728e6ca98688117a8d9b77c28ae5886e20257db225f",
+    "historical_owner_identity_matches": true,
+    "historical_rows_changed": 0,
+    "local_source_count": 16,
+    "post_apply_historical_rows": 5195,
+    "post_apply_sha256": "8e6d410001d5d987b7971728e6ca98688117a8d9b77c28ae5886e20257db225f",
+    "result": "PASS"
+  },
+  "pre_apply_historical_owner_rows": {
+    "count": 5195,
+    "sha256": "8e6d410001d5d987b7971728e6ca98688117a8d9b77c28ae5886e20257db225f"
+  },
+  "source_aliases": [
+    {
+      "bibliographic_identity_preserved": true,
+      "historical_owner_rows_mutated": 0,
+      "historical_source_id": "genesis-1-50",
+      "identity_preservation_note": "G6A local alias of CKL source 'genesis-1-50'; same publication/work and stable bibliographic identity; historical source and owner row unchanged. Bibliographic identity preserved from historical source 'genesis-1-50'.",
+      "local_source_id": "g6a-local-genesis-1-50",
+      "matched_historical_source_owner_count": 1
+    },
+    {
+      "bibliographic_identity_preserved": true,
+      "historical_owner_rows_mutated": 0,
+      "historical_source_id": "sarna-genesis",
+      "identity_preservation_note": "G6A local alias of CKL source 'sarna-genesis'; same publication/work and stable bibliographic identity; historical source and owner row unchanged. Bibliographic identity preserved from historical source 'sarna-genesis'.",
+      "local_source_id": "g6a-local-sarna-genesis",
+      "matched_historical_source_owner_count": 1
+    },
+    {
+      "bibliographic_identity_preserved": true,
+      "historical_owner_rows_mutated": 0,
+      "historical_source_id": "hamilton-genesis-18-50",
+      "identity_preservation_note": "G6A local alias of CKL source 'hamilton-genesis-18-50'; same publication/work and stable bibliographic identity; historical source and owner row unchanged. Bibliographic identity preserved from historical source 'hamilton-genesis-18-50'.",
+      "local_source_id": "g6a-local-hamilton-genesis-18-50",
+      "matched_historical_source_owner_count": 1
+    },
+    {
+      "bibliographic_identity_preserved": true,
+      "historical_owner_rows_mutated": 0,
+      "historical_source_id": "zondervan-illustrated-pentateuch-backgrounds",
+      "identity_preservation_note": "G6A local alias of CKL source 'zondervan-illustrated-pentateuch-backgrounds'; same publication/work and stable bibliographic identity; historical source and owner row unchanged. Bibliographic identity preserved from historical source 'zondervan-illustrated-pentateuch-backgrounds'.",
+      "local_source_id": "g6a-local-zondervan-backgrounds",
+      "matched_historical_source_owner_count": 1
+    },
+    {
+      "bibliographic_identity_preserved": true,
+      "historical_owner_rows_mutated": 0,
+      "historical_source_id": "halot",
+      "identity_preservation_note": "G6A local alias of CKL source 'halot'; same publication/work and stable bibliographic identity; historical source and owner row unchanged. Bibliographic identity preserved from historical source 'halot'.",
+      "local_source_id": "g6a-local-halot",
+      "matched_historical_source_owner_count": 1
+    }
+  ],
+  "target_object_id": "genesis-joseph-descent-testing-context",
+  "transaction": "GENESIS_G6A_JOSEPH_DESCENT_TESTING_EVIDENCE_EXPANSION"
+}

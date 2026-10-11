@@ -1,0 +1,115 @@
+{
+  "artifact_version": "g6a-historical-test-reconciliation-v1",
+  "base_master": "f6bb0744fdbc5ff796bf61adef616b93b9f7fe66",
+  "clean_base_reproduction": "Tests were reproduced from a git archive of origin/master at the exact G6A base; no historical transaction artifact or test was edited.",
+  "clean_base_suite_results": {
+    "g2_and_g3_combined": "2 failed, 4 passed; the same Genesis 12 stale-snapshot failures occurred on clean origin/master.",
+    "g5b": "4 passed on clean origin/master."
+  },
+  "g6a_reconciliation_status": "RECORDED; G6A-specific gates and exact-impact controls are independently validated.",
+  "historical_failures_rewritten": false,
+  "prior_transaction_artifacts_modified": false,
+  "reconciled_historical_tests": [
+    {
+      "cause": "The G2 test snapshot predates the current origin/master Genesis 12 input identity. G6A leaves Genesis 12 exact to the transaction base; the failure is inherited.",
+      "clean_base_observed_identity": {
+        "evidence_count": 160,
+        "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+        "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+        "synthesis_unit_count": 14
+      },
+      "clean_base_result": "FAILS_IDENTICALLY_ON_CLEAN_ORIGIN_MASTER",
+      "current_branch_result": "FAILS_ON_STALE_GENESIS_12_SNAPSHOT",
+      "embedded_expected_identity": {
+        "evidence_count": 152,
+        "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+        "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613",
+        "synthesis_unit_count": 9
+      },
+      "failing_reference": "Genesis 12",
+      "g6a_before_after_identity": {
+        "after": {
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 160,
+          "input_identity": {
+            "commentary_schema_version": "1.2",
+            "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+            "gate_version": "commentary-richness-gate-v2.1",
+            "packet_hash": "35b45c9fd75fdf16a4c7150ab5c1df466a3a82aa4375c24f7cfb9c398e58a017",
+            "packet_id": "commentary-production-v1-packet:35b45c9fd75fdf16a4c7150ab5c1df466a3a82aa4375c24f7cfb9c398e58a017",
+            "prompt_version": "1.5",
+            "synthesis_compiler_version": "1.1",
+            "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+            "synthesis_schema_version": "1.1",
+            "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+          },
+          "synthesis_unit_count": 14
+        },
+        "before": {
+          "evidence_count": 160,
+          "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+          "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+          "synthesis_unit_count": 14
+        }
+      },
+      "test": "tests/test_genesis_g2_shared_object_fallback.py::test_g2_local_sources_do_not_change_historical_source_owners_or_genesis_hashes"
+    },
+    {
+      "cause": "The G3 control snapshot predates the current origin/master Genesis 12 input identity. G6A leaves Genesis 12 exact to the transaction base; the failure is inherited.",
+      "clean_base_observed_identity": {
+        "evidence_count": 160,
+        "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+        "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+        "synthesis_unit_count": 14
+      },
+      "clean_base_result": "FAILS_IDENTICALLY_ON_CLEAN_ORIGIN_MASTER",
+      "current_branch_result": "FAILS_ON_STALE_GENESIS_12_SNAPSHOT",
+      "embedded_expected_identity": {
+        "evidence_count": 152,
+        "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+        "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613",
+        "synthesis_unit_count": 9
+      },
+      "failing_reference": "Genesis 12",
+      "g6a_before_after_identity": {
+        "after": {
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 160,
+          "input_identity": {
+            "commentary_schema_version": "1.2",
+            "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+            "gate_version": "commentary-richness-gate-v2.1",
+            "packet_hash": "35b45c9fd75fdf16a4c7150ab5c1df466a3a82aa4375c24f7cfb9c398e58a017",
+            "packet_id": "commentary-production-v1-packet:35b45c9fd75fdf16a4c7150ab5c1df466a3a82aa4375c24f7cfb9c398e58a017",
+            "prompt_version": "1.5",
+            "synthesis_compiler_version": "1.1",
+            "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+            "synthesis_schema_version": "1.1",
+            "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+          },
+          "synthesis_unit_count": 14
+        },
+        "before": {
+          "evidence_count": 160,
+          "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+          "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+          "synthesis_unit_count": 14
+        }
+      },
+      "test": "tests/test_genesis_g3_nations_babel_isolation.py::test_g3_controls_and_legacy_fallback_inputs_match_base_exactly"
+    },
+    {
+      "cause": "The G5B assertion excludes the G5B object but counts later G6A object-local source rows as though they were historical rows. Clean-base G5B passes; the G6A raw historical-owner comparison matches all 5,195 base rows exactly.",
+      "clean_base_result": "PASS",
+      "current_branch_result": "FAILS_ON_HISTORICAL_OWNER_COUNT_SNAPSHOT_AFTER_LATER_TRANSACTION",
+      "current_count_when_g5b_object_is_excluded": 5197,
+      "expected_old_count_excluding_g5b_object": 5181,
+      "g6a_base_historical_owner_sha256": "8e6d410001d5d987b7971728e6ca98688117a8d9b77c28ae5886e20257db225f",
+      "g6a_base_historical_row_count_excluding_g6a_object": 5195,
+      "g6a_historical_owner_rows_changed": 0,
+      "g6a_local_source_rows_counted_by_old_assertion": 16,
+      "test": "tests/test_genesis_g5b_jacob_esau_return_isolation.py::test_g5b_sources_are_local_and_historical_owner_rows_are_unchanged"
+    }
+  ],
+  "transaction": "GENESIS_G6A_JOSEPH_DESCENT_TESTING_EVIDENCE_EXPANSION"
+}
