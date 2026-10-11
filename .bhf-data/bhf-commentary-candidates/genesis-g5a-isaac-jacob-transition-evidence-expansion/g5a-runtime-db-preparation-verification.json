@@ -1,0 +1,125 @@
+{
+  "artifact_version": "g5a-runtime-db-preparation-verification-v1",
+  "database_backend": "SQLiteCanonicalLibrary",
+  "database_path": ".bhf/ckl.sqlite",
+  "pre_rebuild_database": {
+    "build_timestamp": "2026-10-10T19:22:00.758821Z",
+    "claim_count": 2329,
+    "database_file_size": 111792128,
+    "database_path": ".bhf/ckl.sqlite",
+    "database_schema_version": "4",
+    "evidence_count": 1018,
+    "file_sha256": "1b89beaf10b753964fffa5b45391f1350d42050af9c7e7b4bdf9363985bddf9d",
+    "framework_version": "1.0",
+    "inventory_fingerprint": "8a2194175ea53ee23b0f71a8cf16bd7f8ff4f4934e4bac6b98d18513e5ef50f9",
+    "matches_current_json_inventory": false,
+    "object_count": 683,
+    "retrieval_index_version": "3",
+    "schema_version": "1.0",
+    "source_count": 5169
+  },
+  "database_info": {
+    "database_path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+    "database_schema_version": "4",
+    "retrieval_index_version": "3",
+    "framework_version": "1.0",
+    "schema_version": "1.0",
+    "object_count": 684,
+    "claim_count": 2329,
+    "source_count": 5181,
+    "evidence_count": 1069,
+    "build_timestamp": "2026-10-10T22:51:09.628958Z",
+    "inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23",
+    "database_file_size": 112697344,
+    "file_sha256": "7eb6c441af95319035ba3fd5a76592de9fed18dc8a6a936c00942fd508f67f47"
+  },
+  "verification_report": {
+    "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+    "database_schema_version": "4",
+    "retrieval_index_version": "3",
+    "framework_version": "1.0",
+    "schema_version": "1.0",
+    "object_count": 684,
+    "claim_count": 2329,
+    "source_count": 5181,
+    "evidence_count": 1069,
+    "build_timestamp": "2026-10-10T22:51:09.628958Z",
+    "inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23",
+    "file_size": 112697344
+  },
+  "database_inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23",
+  "runtime_matches_full_corpus_json_identity": true,
+  "targets": {
+    "Genesis 26": {
+      "identity": {
+        "evidence_count": 13,
+        "evidence_hash": "865125e5486e7e5d73c0e7f1710eebbd2cc19b43d0386c14c6b2775b96002da5",
+        "synthesis_unit_count": 8,
+        "synthesis_hash": "adab8fce7f558449ffe28f98b254742ccd2275ab8ccdaab96da85c830d205291"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 27": {
+      "identity": {
+        "evidence_count": 13,
+        "evidence_hash": "972cbb00d8e96921bbfe2d22e1a88884a778b3745de1d474a6ad9d050855b974",
+        "synthesis_unit_count": 7,
+        "synthesis_hash": "93622fb51c0adb44808a6df3a818ce72459166d193bfb7ae218e1d846ef32658"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 28": {
+      "identity": {
+        "evidence_count": 13,
+        "evidence_hash": "af0a5cbac9eed71d805ff5fcd8f50a57c5ddf32394e8c403796f31248ea85151",
+        "synthesis_unit_count": 7,
+        "synthesis_hash": "eb97171b17e4bb0f2dbebcc9fa5be56580f2ec005a7640ea8abf3c6ff17f08bc"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 29": {
+      "identity": {
+        "evidence_count": 12,
+        "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+        "synthesis_unit_count": 7,
+        "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8"
+      },
+      "matches_json_full_corpus_run": true
+    },
+    "Genesis 30": {
+      "identity": {
+        "evidence_count": 15,
+        "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+        "synthesis_unit_count": 9,
+        "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479"
+      },
+      "matches_json_full_corpus_run": true
+    }
+  },
+  "representative_controls": {
+    "Genesis 1": true,
+    "Genesis 5": true,
+    "Genesis 6": true,
+    "Genesis 9": true,
+    "Genesis 10": true,
+    "Genesis 11": true,
+    "Genesis 12": true,
+    "Genesis 15": true,
+    "Genesis 17": true,
+    "Genesis 18": true,
+    "Genesis 22": true,
+    "Genesis 25": true,
+    "Genesis 31": true,
+    "Genesis 34": true,
+    "Genesis 36": true,
+    "Genesis 50": true,
+    "Isaiah 36": true,
+    "Acts 16": true,
+    "Revelation 18": true,
+    "Exodus 25": true,
+    "1 Kings 6": true,
+    "Revelation 12": true
+  },
+  "all_target_and_control_preparations_match_json": true,
+  "result": "PASS"
+}

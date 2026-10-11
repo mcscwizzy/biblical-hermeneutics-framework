@@ -1,0 +1,145 @@
+{
+  "artifact_version": "g5a-isaac-jacob-transition-evidence-plan-v1",
+  "transaction": "GENESIS_G5A_ISAAC_JACOB_TRANSITION_EVIDENCE_EXPANSION",
+  "scope": {
+    "book": "Genesis",
+    "chapters": [
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "scripture_reference_policy": "Every direct evidence anchor is restricted to Genesis 26–30. Adjacent, later, and comparative biblical texts remain interpretation context only."
+  },
+  "architecture": {
+    "object_id": "genesis-isaac-jacob-transition-context",
+    "type": "cultural_background",
+    "path": "framework/canonical_library/objects/cultural_background/genesis-isaac-jacob-transition-context.json",
+    "isolated_passage_domain": true,
+    "existing_shared_objects_modified": [],
+    "one_way_related_objects": [
+      {
+        "id": "isaac",
+        "relationship": "person-context"
+      },
+      {
+        "id": "jacob",
+        "relationship": "person-context"
+      },
+      {
+        "id": "rebekah",
+        "relationship": "person-context"
+      },
+      {
+        "id": "beersheba-1",
+        "relationship": "geographic-context"
+      },
+      {
+        "id": "bethel-1",
+        "relationship": "geographic-context"
+      }
+    ]
+  },
+  "baseline_g0": {
+    "Genesis 26": {
+      "evidence_count": 3,
+      "synthesis_unit_count": 3,
+      "classification": "GAP"
+    },
+    "Genesis 27": {
+      "evidence_count": 3,
+      "synthesis_unit_count": 3,
+      "classification": "GAP"
+    },
+    "Genesis 28": {
+      "evidence_count": 3,
+      "synthesis_unit_count": 3,
+      "classification": "GAP"
+    },
+    "Genesis 29": {
+      "evidence_count": 3,
+      "synthesis_unit_count": 3,
+      "classification": "GAP"
+    },
+    "Genesis 30": {
+      "evidence_count": 3,
+      "synthesis_unit_count": 3,
+      "classification": "GAP"
+    }
+  },
+  "candidate_counts_by_chapter": {
+    "Genesis 26": 10,
+    "Genesis 27": 10,
+    "Genesis 28": 10,
+    "Genesis 29": 9,
+    "Genesis 30": 12
+  },
+  "candidate_evidence_count": 51,
+  "source_record_count": 12,
+  "design_principles": [
+    "Source-owner isolation through local aliases",
+    "One-way typed relationships only",
+    "No reverse applicability",
+    "No direct Scripture anchors outside Genesis 26–30",
+    "No Commentary generation or mutation",
+    "No evidence padding; each item addresses a distinct passage-specific issue"
+  ],
+  "required_claim_dispositions": [
+    {
+      "claim": "Isaac episodes are mere duplicates of Abraham narratives",
+      "disposition": "REJECTED_AS_AUTOMATIC_COLLAPSE"
+    },
+    {
+      "claim": "Ancient well disputes establish modern title rules",
+      "disposition": "REJECTED"
+    },
+    {
+      "claim": "Blessing is literal magic",
+      "disposition": "REJECTED"
+    },
+    {
+      "claim": "Jacob and Rebekah receive explicit narrative moral approval",
+      "disposition": "REJECTED"
+    },
+    {
+      "claim": "sullam certainly means ziggurat",
+      "disposition": "REJECTED_AS_CERTAIN; COMPARATIVE_PROPOSAL_ONLY"
+    },
+    {
+      "claim": "Genesis 28 explicitly teaches later Trinitarian theology",
+      "disposition": "REJECTED_AS_IMMEDIATE_MEANING"
+    },
+    {
+      "claim": "Jacob’s pillar is a known archaeological cult installation",
+      "disposition": "WITHHELD_UNSUPPORTED"
+    },
+    {
+      "claim": "Laban’s older-daughter custom is universal ANE law",
+      "disposition": "REJECTED_AS_UNIVERSAL"
+    },
+    {
+      "claim": "Nuzi proves a precise Rachel/Leah contract",
+      "disposition": "REJECTED"
+    },
+    {
+      "claim": "Mandrakes scientifically cause conception",
+      "disposition": "REJECTED"
+    },
+    {
+      "claim": "Peeled rods cause genetic changes",
+      "disposition": "REJECTED"
+    },
+    {
+      "claim": "Esau’s marriages support ethnic stereotypes",
+      "disposition": "REJECTED"
+    }
+  ],
+  "stale_future_commentary_inputs": [
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "artifact_version": "g5a-regression-reconciliation-v1",
+  "transaction": "GENESIS_G5A_ISAAC_JACOB_TRANSITION_EVIDENCE_EXPANSION",
+  "clean_base_reproduction": {
+    "base_master": "fb73ae60fd9c33e664a4d2446f2407e420f58f7f",
+    "command": "pytest -q tests/test_genesis_g1r_comparative_applicability.py tests/test_genesis_g2_shared_object_fallback.py tests/test_genesis_g3_nations_babel_isolation.py tests/test_genesis_g4a_abraham_call_covenant_isolation.py tests/test_genesis_g4b_abraham_late_cycle_isolation.py",
+    "result": "15 passed, 2 failed on clean G5A base before production apply",
+    "failing_tests": [
+      "tests/test_genesis_g2_shared_object_fallback.py::test_g2_local_sources_do_not_change_historical_source_owners_or_genesis_hashes",
+      "tests/test_genesis_g3_nations_babel_isolation.py::test_g3_controls_and_legacy_fallback_inputs_match_base_exactly"
+    ],
+    "failing_reference": "Genesis 12",
+    "expected_snapshot": {
+      "evidence_count": 152,
+      "evidence_hash": "ea5aed62ac331507ab8d72d6adab0cfe6f08e6f8b9a719215aa87e823d0c7bcf",
+      "synthesis_unit_count": 9,
+      "synthesis_hash": "b5d99419269801a970028a345c350e9620f78a949773538d6134e29ca4d62613"
+    },
+    "actual_clean_base": {
+      "evidence_count": 160,
+      "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+      "synthesis_unit_count": 14,
+      "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c"
+    },
+    "historical_cause": "Genesis 12 is an authorized G4A expansion target; G2/G3 tests retain pre-G4A control identities. The same two failures reproduced after G5A, with no new failures."
+  },
+  "post_g5a_reproduction": {
+    "result": "15 passed, 2 failed",
+    "same_failures_as_clean_base": true,
+    "additional_failures": [],
+    "g5a_isolation_suite": "4 passed"
+  },
+  "former_g4b_control_now_authorized_target": {
+    "reference": "Genesis 26",
+    "g4b_historical_control_identity": {
+      "evidence_count": 3,
+      "evidence_hash": "b335a918f163bde1aab6aca197615c38879b54bbdad52b43b12b861cef904ec9",
+      "synthesis_unit_count": 3,
+      "synthesis_hash": "aedce10b36e95c23f09aebd3eca689480fcbd7957939944de21bbd180496a09d"
+    },
+    "g5a_base_identity": {
+      "evidence_count": 3,
+      "evidence_hash": "b335a918f163bde1aab6aca197615c38879b54bbdad52b43b12b861cef904ec9",
+      "synthesis_unit_count": 3,
+      "synthesis_hash": "aedce10b36e95c23f09aebd3eca689480fcbd7957939944de21bbd180496a09d"
+    },
+    "g5a_post_identity": {
+      "evidence_count": 13,
+      "evidence_hash": "865125e5486e7e5d73c0e7f1710eebbd2cc19b43d0386c14c6b2775b96002da5",
+      "synthesis_unit_count": 8,
+      "synthesis_hash": "adab8fce7f558449ffe28f98b254742ccd2275ab8ccdaab96da85c830d205291"
+    },
+    "authorized_by_g5a": true,
+    "historical_g4b_artifacts_rewritten": false,
+    "g4b_test_suite_failed_on_this_control": false,
+    "note": "Genesis 26 is a G5A target and is intentionally excluded from G5A controls; the G4B archived control row remains historical."
+  },
+  "historical_g4b_identity_digest_reconciliation": {
+    "row_content_matches_fresh_base": true,
+    "recorded_g4b_digest": "d3f85bcd23c8d9b5035fb85c8a4193e1db090e2de1db0cc7aa9497b814cea554",
+    "fresh_recomputed_digest": "c20f7922b6fc7989d5e355b8f340ea2d0bac880f730efc6ff4a133f22bacd4b9",
+    "digest_field_matches": false,
+    "note": "G5A uses the freshly captured identity map and digest; this historical G4B digest field is not treated as authoritative."
+  },
+  "old_transaction_history_modified": false,
+  "disposition": "DOCUMENTED_HISTORICAL_EXPECTATION_DRIFT; no old artifacts or tests were rewritten."
+}

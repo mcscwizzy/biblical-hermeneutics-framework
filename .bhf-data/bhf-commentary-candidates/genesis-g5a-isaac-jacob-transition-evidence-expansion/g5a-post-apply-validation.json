@@ -1,0 +1,201 @@
+{
+  "artifact_version": "g5a-post-apply-validation-v1",
+  "transaction": "GENESIS_G5A_ISAAC_JACOB_TRANSITION_EVIDENCE_EXPANSION",
+  "base_master": "fb73ae60fd9c33e664a4d2446f2407e420f58f7f",
+  "candidate_replay": {
+    "result": "PASS",
+    "candidate_count": 51,
+    "accepted_count": 51,
+    "rejected_count": 0,
+    "all_direct_candidate_items_synthesized": true,
+    "changed_chapters": [
+      "Genesis 26",
+      "Genesis 27",
+      "Genesis 28",
+      "Genesis 29",
+      "Genesis 30"
+    ]
+  },
+  "new_object_schema": "PASS",
+  "source_provenance": "PASS",
+  "source_owner_isolation": {
+    "result": "PASS",
+    "historical_source_owner_rows_changed": 0,
+    "new_source_records": 12
+  },
+  "typed_target_validation": "PASS",
+  "relationship_validation": "PASS",
+  "scripture_reference_validation": {
+    "result": "PASS",
+    "direct_scope": "Genesis 26–30",
+    "out_of_scope_direct_references": []
+  },
+  "whole_ckl_validation": {
+    "result": "PASS",
+    "object_count": 684,
+    "inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23"
+  },
+  "genesis_26_30_preparation_and_synthesis": {
+    "result": "PASS",
+    "all_candidate_items_synthesized": true,
+    "chapters": {
+      "Genesis 26": {
+        "before": "GAP",
+        "after": "GOOD",
+        "evidence_count_before": 3,
+        "evidence_count_after": 13,
+        "synthesis_unit_count_before": 3,
+        "synthesis_unit_count_after": 8
+      },
+      "Genesis 27": {
+        "before": "GAP",
+        "after": "GOOD",
+        "evidence_count_before": 3,
+        "evidence_count_after": 13,
+        "synthesis_unit_count_before": 3,
+        "synthesis_unit_count_after": 7
+      },
+      "Genesis 28": {
+        "before": "GAP",
+        "after": "GOOD",
+        "evidence_count_before": 3,
+        "evidence_count_after": 13,
+        "synthesis_unit_count_before": 3,
+        "synthesis_unit_count_after": 7
+      },
+      "Genesis 29": {
+        "before": "GAP",
+        "after": "GOOD",
+        "evidence_count_before": 3,
+        "evidence_count_after": 12,
+        "synthesis_unit_count_before": 3,
+        "synthesis_unit_count_after": 7
+      },
+      "Genesis 30": {
+        "before": "GAP",
+        "after": "GOOD",
+        "evidence_count_before": 3,
+        "evidence_count_after": 15,
+        "synthesis_unit_count_before": 3,
+        "synthesis_unit_count_after": 9
+      }
+    }
+  },
+  "g0_classification": {
+    "result": "PASS",
+    "method": "Established G0 dimensional classifier after application; not based on evidence count alone",
+    "all_good": true,
+    "chapters": {
+      "Genesis 26": "GOOD",
+      "Genesis 27": "GOOD",
+      "Genesis 28": "GOOD",
+      "Genesis 29": "GOOD",
+      "Genesis 30": "GOOD"
+    }
+  },
+  "comparative_applicability_regression": {
+    "result": "PASS",
+    "reverse_applicability_created": false,
+    "out_of_scope_anchors": []
+  },
+  "legacy_fallback_regression": {
+    "result": "PASS",
+    "evidence": "G2 shared theme legacy fallback and G4A Genesis 1 legacy fallback regression tests passed in prior transaction suite."
+  },
+  "isolated_source_owner_regressions": {
+    "result": "PASS_WITH_HISTORICAL_EXPECTATION_RECONCILIATION",
+    "historical_source_owner_rows_changed": 0,
+    "G2_source_owner_checks": "PASS; subsequent Genesis 12 identity snapshot is stale on clean base.",
+    "G3_source_alias_identity": "PASS"
+  },
+  "prior_genesis_transaction_tests": {
+    "result": "15 passed, 2 historical stale snapshot failures",
+    "clean_base_reproduced": true,
+    "same_failures_after_G5A": true,
+    "new_failures": 0,
+    "reconciliation_artifact": "g5a-regression-reconciliation.json"
+  },
+  "representative_controls": {
+    "Genesis 1": true,
+    "Genesis 5": true,
+    "Genesis 6": true,
+    "Genesis 9": true,
+    "Genesis 10": true,
+    "Genesis 11": true,
+    "Genesis 12": true,
+    "Genesis 15": true,
+    "Genesis 17": true,
+    "Genesis 18": true,
+    "Genesis 22": true,
+    "Genesis 25": true,
+    "Genesis 31": true,
+    "Genesis 34": true,
+    "Genesis 36": true,
+    "Genesis 50": true,
+    "Isaiah 36": true,
+    "Acts 16": true,
+    "Revelation 18": true,
+    "Exodus 25": true,
+    "1 Kings 6": true,
+    "Revelation 12": true
+  },
+  "changed_chapters": [
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30"
+  ],
+  "unexpected_changed_chapters": [],
+  "whole_corpus_exact_set_pass": true,
+  "controls": {
+    "Genesis 1": true,
+    "Genesis 5": true,
+    "Genesis 6": true,
+    "Genesis 9": true,
+    "Genesis 10": true,
+    "Genesis 11": true,
+    "Genesis 12": true,
+    "Genesis 15": true,
+    "Genesis 17": true,
+    "Genesis 18": true,
+    "Genesis 22": true,
+    "Genesis 25": true,
+    "Genesis 31": true,
+    "Genesis 34": true,
+    "Genesis 36": true,
+    "Genesis 50": true,
+    "Isaiah 36": true,
+    "Acts 16": true,
+    "Revelation 18": true,
+    "Exodus 25": true,
+    "1 Kings 6": true,
+    "Revelation 12": true
+  },
+  "frozen_commentary_v1_2": {
+    "result": "PASS",
+    "identities_exactly_preserved": true,
+    "commentary_regenerated": false,
+    "stale_future_inputs": [
+      "Genesis 26",
+      "Genesis 27",
+      "Genesis 28",
+      "Genesis 29",
+      "Genesis 30"
+    ]
+  },
+  "runtime_db_rebuild_and_verification": {
+    "result": "PASS",
+    "database_backend": "SQLiteCanonicalLibrary",
+    "inventory_fingerprint": "a711adaa075b2bca9ec0e3fd1988c2597400fe42c8263db46cf0acb208772b23",
+    "targets_and_controls_match_json": true
+  },
+  "git_diff_check": "PASS",
+  "tests": {
+    "g5a_isolation": "4 passed",
+    "prior_genesis_transactions": "15 passed, 2 clean-base-reproduced Genesis 12 snapshot failures"
+  },
+  "deployment_performed": false,
+  "merge_performed": false,
+  "source_owner_rows_changed": 0
+}
