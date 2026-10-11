@@ -1,0 +1,37 @@
+{
+  "applied_object_sha256": "b958f9bae081423b7e201c3b50dfd7c860754268300e6b72dc653d27e8b51e8b",
+  "apply_status": "APPLIED",
+  "artifact_version": "g5b-production-apply-manifest-v1",
+  "base_master": "f752f9841a0ffc32e167afe7b79a4ecd62e475e4",
+  "branch": "feat/genesis-g5b-jacob-esau-return",
+  "commentary_paths_modified": [],
+  "commentary_regeneration_authorized": false,
+  "direct_applicability_chapters": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "expected_post_apply_object_count": 685,
+  "historical_source_owner_rows_changed": 0,
+  "post_apply_cultural_background_count": 50,
+  "post_apply_object_count": 685,
+  "pre_apply_object_count": 684,
+  "production_additions": [
+    {
+      "object_id": "genesis-jacob-esau-return-context",
+      "production_path": "framework/canonical_library/objects/cultural_background/genesis-jacob-esau-return-context.json",
+      "sha256": "b958f9bae081423b7e201c3b50dfd7c860754268300e6b72dc653d27e8b51e8b",
+      "staged_path": ".bhf-data/bhf-commentary-candidates/genesis-g5b-jacob-esau-return-evidence-expansion/staging/new-object.json"
+    },
+    {
+      "manifest_entry": "one object count/category inventory update only",
+      "manifest_file": "framework/canonical_library/manifest.json",
+      "object_id": "genesis-jacob-esau-return-context"
+    }
+  ],
+  "shared_existing_objects_modified": [],
+  "transaction": "GENESIS_G5B_JACOB_ESAU_RETURN_EVIDENCE_EXPANSION"
+}

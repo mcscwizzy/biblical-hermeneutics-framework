@@ -1,0 +1,210 @@
+{
+  "artifact_version": "g5b-source-ownership-audit-v1",
+  "existing_historical_source_owner_rows_changed": 0,
+  "post_apply_audit": {
+    "existing_historical_source_owner_rows_changed": 0,
+    "historical_source_owner_row_count": 5181,
+    "historical_source_owner_row_sha256": "8ea3fd540553686f658680f55b6e2d94fa43f408c3d4471eecc4f587aaea0d6e",
+    "new_object_source_count": 14,
+    "new_object_source_ids": [
+      "g5b-local-anderson-human-divine",
+      "g5b-local-bartlett-edom-kings",
+      "g5b-local-blyth-dinah",
+      "g5b-local-genesis-1-50",
+      "g5b-local-greenberg-teraphim",
+      "g5b-local-halot",
+      "g5b-local-hamilton-genesis-18-50",
+      "g5b-local-hamori-divination",
+      "g5b-local-hundley-messengers",
+      "g5b-local-naaman-edom",
+      "g5b-local-sarna-genesis",
+      "g5b-local-sasson-circumcision",
+      "g5b-local-tebes-edom",
+      "g5b-local-yadan-ritual-spaces"
+    ],
+    "new_source_owner_rows": 14,
+    "result": "PASS",
+    "source_aliases_preserve_bibliographic_identity": true,
+    "source_ids_disjoint_from_historical_ids": true
+  },
+  "pre_apply_audit": {
+    "candidate_local_source_ids_disjoint_from_historical_source_ids": true,
+    "candidate_new_owner_rows": [
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-anderson-human-divine"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-bartlett-edom-kings"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-blyth-dinah"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-genesis-1-50"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-greenberg-teraphim"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-halot"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-hamilton-genesis-18-50"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-hamori-divination"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-hundley-messengers"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-naaman-edom"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-sarna-genesis"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-sasson-circumcision"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-tebes-edom"
+      },
+      {
+        "owner": "genesis-jacob-esau-return-context",
+        "source_id": "g5b-local-yadan-ritual-spaces"
+      }
+    ],
+    "expected_historical_source_owner_rows_changed": 0,
+    "historical_source_owner_row_count": 5181,
+    "historical_source_owner_row_sha256": "8ea3fd540553686f658680f55b6e2d94fa43f408c3d4471eecc4f587aaea0d6e",
+    "result": "PASS"
+  },
+  "source_aliases": [
+    {
+      "all_fields_equal": true,
+      "historical_owner_rows_changed": 0,
+      "historical_source_id": "genesis-1-50",
+      "local_source_id": "g5b-local-genesis-1-50",
+      "preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ],
+      "stable_identifier_preserved": ""
+    },
+    {
+      "all_fields_equal": true,
+      "historical_owner_rows_changed": 0,
+      "historical_source_id": "sarna-genesis",
+      "local_source_id": "g5b-local-sarna-genesis",
+      "preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ],
+      "stable_identifier_preserved": "https://jps.org/books/jps-torah-commentary-genesis/"
+    },
+    {
+      "all_fields_equal": true,
+      "historical_owner_rows_changed": 0,
+      "historical_source_id": "hamilton-genesis-18-50",
+      "local_source_id": "g5b-local-hamilton-genesis-18-50",
+      "preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ],
+      "stable_identifier_preserved": "https://www.eerdmans.com/9780802823090/the-book-of-genesis-chapters-18-50/"
+    },
+    {
+      "all_fields_equal": true,
+      "historical_owner_rows_changed": 0,
+      "historical_source_id": "halot",
+      "local_source_id": "g5b-local-halot",
+      "preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ],
+      "stable_identifier_preserved": "https://brill.com/display/title/812"
+    },
+    {
+      "all_fields_equal": true,
+      "historical_owner_rows_changed": 0,
+      "historical_source_id": "g4a-hundley-divine-messengers",
+      "local_source_id": "g5b-local-hundley-messengers",
+      "preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ],
+      "stable_identifier_preserved": "https://doi.org/10.1093/jts/flw066"
+    },
+    {
+      "all_fields_equal": true,
+      "historical_owner_rows_changed": 0,
+      "historical_source_id": "g4a-sasson-circumcision-ane",
+      "local_source_id": "g5b-local-sasson-circumcision",
+      "preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ],
+      "stable_identifier_preserved": "https://ir.vanderbilt.edu/items/dad70d17-0a6e-4142-a27f-9a8cf3fe64fe"
+    },
+    {
+      "all_fields_equal": true,
+      "historical_owner_rows_changed": 0,
+      "historical_source_id": "tebes-edom-southern-jordan",
+      "local_source_id": "g5b-local-tebes-edom",
+      "preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ],
+      "stable_identifier_preserved": "https://www.taylorfrancis.com/chapters/edit/10.4324/9780367815691-46/edom-southern-jordan-iron-age-juan-manuel-tebes"
+    }
+  ],
+  "transaction": "GENESIS_G5B_JACOB_ESAU_RETURN_EVIDENCE_EXPANSION"
+}
