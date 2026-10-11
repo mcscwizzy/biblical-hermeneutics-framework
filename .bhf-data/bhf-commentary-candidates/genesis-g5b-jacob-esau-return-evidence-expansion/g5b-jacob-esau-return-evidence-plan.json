@@ -1,0 +1,247 @@
+{
+  "applicability": {
+    "out_of_scope_scripture_examples_as_context_only": [
+      "Genesis 28",
+      "Genesis 37",
+      "Genesis 49",
+      "Hosea 12"
+    ],
+    "reverse_applicability": false
+  },
+  "artifact_version": "g5b-jacob-esau-return-evidence-plan-v1",
+  "artifacts": [
+    "g5b-existing-evidence-audit.json",
+    "g5b-jacob-esau-return-evidence-plan.json",
+    "g5b-candidate-evidence.json",
+    "g5b-candidate-replay-final.json",
+    "g5b-source-lock.json",
+    "g5b-source-ownership-audit.json",
+    "g5b-comparative-applicability-audit.json",
+    "g5b-production-apply-manifest.json",
+    "g5b-post-apply-validation.json",
+    "g5b-g0-target-results.json",
+    "g5b-chapter-impact.json",
+    "g5b-final-ckl-identities.json",
+    "g5b-runtime-db-preparation-verification.json",
+    "g5b-validation-report.json",
+    "g5b-review-digest.md"
+  ],
+  "base_master": "f752f9841a0ffc32e167afe7b79a4ecd62e475e4",
+  "baseline_g0": {
+    "Genesis 31": {
+      "classification": "GAP",
+      "evidence_count": 3,
+      "synthesis_unit_count": 3
+    },
+    "Genesis 32": {
+      "classification": "GAP",
+      "evidence_count": 5,
+      "synthesis_unit_count": 3
+    },
+    "Genesis 33": {
+      "classification": "GAP",
+      "evidence_count": 12,
+      "synthesis_unit_count": 3
+    },
+    "Genesis 34": {
+      "classification": "SPARSE",
+      "evidence_count": 5,
+      "synthesis_unit_count": 5
+    },
+    "Genesis 35": {
+      "classification": "GAP",
+      "evidence_count": 10,
+      "synthesis_unit_count": 3
+    },
+    "Genesis 36": {
+      "classification": "SPARSE",
+      "evidence_count": 4,
+      "synthesis_unit_count": 4
+    }
+  },
+  "branch": "feat/genesis-g5b-jacob-esau-return",
+  "chapter_focus": {
+    "Genesis 31": [
+      "Laban household conflict; wages/retrospective history; Bethel dream; Rachel/Leah inheritance and household statements; flight and pursuit; teraphim; search and menstrual claim; twenty-year complaint; covenant heap, names, oath, meal"
+    ],
+    "Genesis 32": [
+      "Mahanaim and divine messengers; Esau and 400 men; prayer; gift strategy; Jabbok; wrestling opponent interpretations; Israel wordplay; blessing/name refusal; Peniel/Penuel; injury; thigh sinew etiological note"
+    ],
+    "Genesis 33": [
+      "household arrangement and seven bows; Esau embrace and marked-kiss textual note if relevant; family presentation; gift/blessing and face language; Seir/Succoth/Shechem travel; land purchase and altar; El-Elohe-Israel"
+    ],
+    "Genesis 34": [
+      "Dinah and lexical account of the assault; Shechem attachment after the act; Hamor negotiation; Jacob silence; sons’ response; circumcision deception; third-day massacre, rescue, plunder; ethical and ethnicity safeguards"
+    ],
+    "Genesis 35": [
+      "Bethel command; household gods, earrings, purification and burial; terror of God; Bethel altar/name/promise/pillar/oil; Deborah; Rachel labor, naming, burial and location; Reuben/Bilhah; sons and tribal transition; Isaac death and burial"
+    ],
+    "Genesis 36": [
+      "Esau/Edom and Seir move; wives/children and land capacity; genealogy as family/clan/territorial record; alluf chiefs; Horites; Anah/yemim lexical uncertainty; Edomite kings and city associations; 36:31 composition/chronology debate; Edom geography confidence"
+    ]
+  },
+  "claim_dispositions": [
+    "Rachel stole teraphim solely to inherit Laban estate: REJECTED_AS_PROVEN; represent multiple responsible interpretations.",
+    "Mizpah as originally a sentimental friendship blessing: REJECTED; explain boundary/witness context.",
+    "Jacob explicitly wrestled Jesus in Genesis: REJECTED_AS_IMMEDIATE_TEXT.",
+    "Hosea 12 angel language projected into Genesis as its own wording: REJECTED_AS_APPLICABILITY; later reception context only.",
+    "Jacob injury assigned a modern medical diagnosis: WITHHELD_UNSUPPORTED.",
+    "Esau’s seven bows as worship: REJECTED_AS_AUTOMATIC; diplomacy/kinship prostration context cautiously described.",
+    "Masoretic dots over kissed prove Esau intended murder: REJECTED_AS_PROOF; document textual tradition cautiously if sources justify.",
+    "Dinah’s assault sanitized as consensual romance: REJECTED; lexical and narrative agency carefully distinguished.",
+    "Simeon and Levi massacre divinely commanded: REJECTED; no command appears in Genesis 34.",
+    "Circumcision deception as legitimate covenant conversion: REJECTED.",
+    "Genesis 34 authorizes hostility toward later ethnic groups: REJECTED.",
+    "Earrings inherently idolatrous: REJECTED_AS_UNSUPPORTED; assess household context.",
+    "A modern Rachel’s Tomb site is certainly the Genesis burial place: REJECTED_AS_CERTAIN.",
+    "Genesis 36:31 alone proves a late Pentateuchal date: REJECTED_AS_AUTOMATIC; preserve composition debate.",
+    "Genesis 36:24 yemim has one certain lexical meaning: REJECTED; retain textual/lexical alternatives.",
+    "Specific patriarchal events are archaeologically proven: WITHHELD_UNSUPPORTED.",
+    "Every divine/messenger scene encodes a divine-council system: REJECTED_AS_FORCED."
+  ],
+  "commentary": {
+    "frozen_identity_source": "G5B base master",
+    "modify_v1_2": false,
+    "regenerate": false,
+    "stale_future_inputs": [
+      "Genesis 31",
+      "Genesis 32",
+      "Genesis 33",
+      "Genesis 34",
+      "Genesis 35",
+      "Genesis 36"
+    ]
+  },
+  "coverage_goal": {
+    "below_good_policy": "Report remaining missing dimensions rather than pad evidence.",
+    "desired": "GOOD for all six chapters, not forced"
+  },
+  "evidence_curation": {
+    "by_chapter": {
+      "31": 12,
+      "32": 12,
+      "33": 8,
+      "34": 12,
+      "35": 13,
+      "36": 11
+    },
+    "candidate_count": 68,
+    "candidate_stage_path": ".bhf-data/bhf-commentary-candidates/genesis-g5b-jacob-esau-return-evidence-expansion/staging/new-object.json",
+    "source_alias_count": 7,
+    "source_count": 14,
+    "source_owner_mutation_expected": 0
+  },
+  "evidence_target_ranges": {
+    "Genesis 31": "9–13; fewer only if sufficient",
+    "Genesis 32": "9–13; fewer only if sufficient",
+    "Genesis 33": "6–10; fewer only if sufficient",
+    "Genesis 34": "9–13; fewer only if sufficient",
+    "Genesis 35": "9–13; fewer only if sufficient",
+    "Genesis 36": "9–13; fewer only if sufficient"
+  },
+  "git_policy": {
+    "commit_only_after_all_gates_pass": true,
+    "deploy": false,
+    "merge": false,
+    "push_only_after_all_gates_pass": true
+  },
+  "required_controls": [
+    "Genesis 1",
+    "Genesis 5",
+    "Genesis 6",
+    "Genesis 9",
+    "Genesis 10",
+    "Genesis 11",
+    "Genesis 12",
+    "Genesis 15",
+    "Genesis 17",
+    "Genesis 18",
+    "Genesis 22",
+    "Genesis 25",
+    "Genesis 26",
+    "Genesis 28",
+    "Genesis 30",
+    "Genesis 37",
+    "Genesis 38",
+    "Genesis 50",
+    "Isaiah 36",
+    "Acts 16",
+    "Revelation 18",
+    "Exodus 25",
+    "1 Kings 6",
+    "Revelation 12"
+  ],
+  "scope": {
+    "book": "Genesis",
+    "chapters": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "direct_scripture_reference_policy": "Every new evidence_item.scripture_references entry is direct and inside Genesis 31–36. Later Scripture, comparative ANE evidence, reception, and later history are contextual fields/source records only.",
+    "object_id": "genesis-jacob-esau-return-context",
+    "object_path": "framework/canonical_library/objects/cultural_background/genesis-jacob-esau-return-context.json",
+    "object_type": "cultural_background",
+    "relationship_policy": "One-way typed relationships only; no reverse applicability; no shared-object source ownership.",
+    "shared_objects_modified": []
+  },
+  "source_isolation": {
+    "broad_genesis_object_modified": false,
+    "existing_shared_objects_modified": [],
+    "legacy_fallback_only_shared_objects_modified": false
+  },
+  "source_policy": {
+    "aliases_preserve": [
+      "bibliographic work identity",
+      "author/editor",
+      "title",
+      "publisher",
+      "year",
+      "locator",
+      "stable identifier"
+    ],
+    "archaeological_proof_of_patriarchal_events": "not claimed",
+    "historical_source_owner_rows_changed": 0,
+    "object_local_source_records": true,
+    "pre_apply_source_ownership_audit_required": true,
+    "provenance_weakening_allowed": false
+  },
+  "transaction": "GENESIS_G5B_JACOB_ESAU_RETURN_EVIDENCE_EXPANSION",
+  "validation_gates": [
+    "candidate replay",
+    "new-object schema",
+    "source/provenance",
+    "source-owner isolation",
+    "typed-target",
+    "relationship",
+    "Scripture-reference",
+    "whole-CKL",
+    "Genesis 31–36 preparation",
+    "synthesis",
+    "G0 dimensional classification",
+    "comparative-applicability regression",
+    "legacy fallback regression",
+    "isolated-source-owner regressions",
+    "previous Genesis transaction isolation suites",
+    "representative controls",
+    "all-1,189 exact impact",
+    "runtime DB rebuild/verification",
+    "frozen Commentary validation",
+    "git diff --check"
+  ],
+  "whole_corpus_gate": {
+    "base_chapter_count": 1189,
+    "expected_changed_chapters": [
+      "Genesis 31",
+      "Genesis 32",
+      "Genesis 33",
+      "Genesis 34",
+      "Genesis 35",
+      "Genesis 36"
+    ],
+    "unexpected_chapters_allowed": false
+  }
+}

@@ -1,0 +1,2128 @@
+{
+  "artifact_version": "g5b-post-apply-validation-v1",
+  "base_master": "f752f9841a0ffc32e167afe7b79a4ecd62e475e4",
+  "candidate_replay": {
+    "accepted_count": 68,
+    "all_direct_candidate_items_synthesized": true,
+    "candidate_count": 68,
+    "changed_chapters": [
+      "Genesis 31",
+      "Genesis 32",
+      "Genesis 33",
+      "Genesis 34",
+      "Genesis 35",
+      "Genesis 36"
+    ],
+    "rejected_count": 0,
+    "result": "PASS"
+  },
+  "changed_chapters": [
+    "Genesis 31",
+    "Genesis 32",
+    "Genesis 33",
+    "Genesis 34",
+    "Genesis 35",
+    "Genesis 36"
+  ],
+  "comparative_applicability_regression": {
+    "out_of_scope_anchors": [],
+    "result": "PASS",
+    "reverse_applicability_created": false
+  },
+  "controls": {
+    "1 Kings 6": true,
+    "Acts 16": true,
+    "Exodus 25": true,
+    "Genesis 1": true,
+    "Genesis 10": true,
+    "Genesis 11": true,
+    "Genesis 12": true,
+    "Genesis 15": true,
+    "Genesis 17": true,
+    "Genesis 18": true,
+    "Genesis 22": true,
+    "Genesis 25": true,
+    "Genesis 26": true,
+    "Genesis 28": true,
+    "Genesis 30": true,
+    "Genesis 37": true,
+    "Genesis 38": true,
+    "Genesis 5": true,
+    "Genesis 50": true,
+    "Genesis 6": true,
+    "Genesis 9": true,
+    "Isaiah 36": true,
+    "Revelation 12": true,
+    "Revelation 18": true
+  },
+  "deployment_performed": false,
+  "frozen_commentary_v1_2": {
+    "commentary_regenerated": false,
+    "identities_exactly_preserved": true,
+    "result": "PASS",
+    "stale_future_inputs": [
+      "Genesis 31",
+      "Genesis 32",
+      "Genesis 33",
+      "Genesis 34",
+      "Genesis 35",
+      "Genesis 36"
+    ]
+  },
+  "g0_classification": {
+    "all_good": true,
+    "chapters": {
+      "Genesis 31": {
+        "classification": "GOOD",
+        "dimension_assessment": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [
+              "g31-boundary-oath-pillar-heap-meal"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g31-boundary-oath-pillar-heap-meal"
+            ]
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "covenant_context": {
+            "evidence_ids": [
+              "g31-boundary-oath-pillar-heap-meal",
+              "g31-galeed-jegar-sahadutha-mizpah-names"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g31-boundary-oath-pillar-heap-meal",
+              "g31-galeed-jegar-sahadutha-mizpah-names"
+            ]
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g31-boundary-oath-pillar-heap-meal",
+              "g31-galeed-jegar-sahadutha-mizpah-names",
+              "g31-rachel-leah-property-and-estrangement",
+              "g31-return-command-and-wives-consulted",
+              "g31-search-saddle-menstrual-claim",
+              "g31-teraphim-household-cult-objects",
+              "g31-teraphim-inheritance-and-divination-theories"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g31-boundary-oath-pillar-heap-meal",
+              "g31-galeed-jegar-sahadutha-mizpah-names",
+              "g31-rachel-leah-property-and-estrangement",
+              "g31-return-command-and-wives-consulted",
+              "g31-search-saddle-menstrual-claim",
+              "g31-teraphim-household-cult-objects",
+              "g31-teraphim-inheritance-and-divination-theories"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [
+              "g31-flock-dream-god-of-bethel",
+              "g31-galeed-jegar-sahadutha-mizpah-names",
+              "g31-return-command-and-wives-consulted",
+              "g31-secret-flight-euphrates-gilead"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g31-flock-dream-god-of-bethel",
+              "g31-galeed-jegar-sahadutha-mizpah-names",
+              "g31-return-command-and-wives-consulted",
+              "g31-secret-flight-euphrates-gilead"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g31-galeed-jegar-sahadutha-mizpah-names",
+              "g31-return-command-and-wives-consulted",
+              "g31-teraphim-household-cult-objects",
+              "g31-teraphim-inheritance-and-divination-theories"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g31-galeed-jegar-sahadutha-mizpah-names",
+              "g31-return-command-and-wives-consulted",
+              "g31-teraphim-household-cult-objects",
+              "g31-teraphim-inheritance-and-divination-theories"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g31-search-saddle-menstrual-claim"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g31-search-saddle-menstrual-claim"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g31-boundary-oath-pillar-heap-meal",
+              "g31-flock-dream-god-of-bethel",
+              "g31-galeed-jegar-sahadutha-mizpah-names",
+              "g31-jacob-twenty-years-labor-complaint",
+              "g31-search-saddle-menstrual-claim",
+              "g31-teraphim-household-cult-objects",
+              "g31-wages-retrospective-and-contract-uncertainty"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g31-boundary-oath-pillar-heap-meal",
+              "g31-flock-dream-god-of-bethel",
+              "g31-galeed-jegar-sahadutha-mizpah-names",
+              "g31-jacob-twenty-years-labor-complaint",
+              "g31-search-saddle-menstrual-claim",
+              "g31-teraphim-household-cult-objects",
+              "g31-wages-retrospective-and-contract-uncertainty"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [
+              "g31-rachel-leah-property-and-estrangement",
+              "g31-return-command-and-wives-consulted",
+              "g31-search-saddle-menstrual-claim",
+              "g31-teraphim-household-cult-objects",
+              "g31-teraphim-inheritance-and-divination-theories",
+              "g31-wages-retrospective-and-contract-uncertainty"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g31-rachel-leah-property-and-estrangement",
+              "g31-return-command-and-wives-consulted",
+              "g31-search-saddle-menstrual-claim",
+              "g31-teraphim-household-cult-objects",
+              "g31-teraphim-inheritance-and-divination-theories",
+              "g31-wages-retrospective-and-contract-uncertainty"
+            ]
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "Genesis 32": {
+        "classification": "GOOD",
+        "dimension_assessment": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-blessing-request-and-withheld-name",
+              "g32-gid-hannasheh-dietary-etiology",
+              "g32-israel-name-striving-wordplay",
+              "g32-man-wrestles-narrative-wording",
+              "g32-minhah-livestock-gift-sequence",
+              "g32-opponent-identity-interpretive-range",
+              "g32-peniel-face-of-god-explanation",
+              "g32-prayer-unworthiness-command-promise"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-blessing-request-and-withheld-name",
+              "g32-gid-hannasheh-dietary-etiology",
+              "g32-israel-name-striving-wordplay",
+              "g32-man-wrestles-narrative-wording",
+              "g32-minhah-livestock-gift-sequence",
+              "g32-opponent-identity-interpretive-range",
+              "g32-peniel-face-of-god-explanation",
+              "g32-prayer-unworthiness-command-promise"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [
+              "g32-man-wrestles-narrative-wording",
+              "g32-opponent-identity-interpretive-range"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g32-man-wrestles-narrative-wording",
+              "g32-opponent-identity-interpretive-range"
+            ]
+          },
+          "geography": {
+            "evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-jabbok-crossing-geography",
+              "g32-peniel-face-of-god-explanation"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-jabbok-crossing-geography",
+              "g32-peniel-face-of-god-explanation"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-blessing-request-and-withheld-name",
+              "g32-israel-name-striving-wordplay",
+              "g32-peniel-face-of-god-explanation",
+              "g32-prayer-unworthiness-command-promise"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-blessing-request-and-withheld-name",
+              "g32-israel-name-striving-wordplay",
+              "g32-peniel-face-of-god-explanation",
+              "g32-prayer-unworthiness-command-promise"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g32-esau-four-hundred-and-divided-camp",
+              "g32-hip-touch-limp-injury",
+              "g32-israel-name-striving-wordplay",
+              "g32-opponent-identity-interpretive-range"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g32-esau-four-hundred-and-divided-camp",
+              "g32-hip-touch-limp-injury",
+              "g32-israel-name-striving-wordplay",
+              "g32-opponent-identity-interpretive-range"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-blessing-request-and-withheld-name",
+              "g32-esau-four-hundred-and-divided-camp",
+              "g32-hip-touch-limp-injury",
+              "g32-israel-name-striving-wordplay",
+              "g32-jabbok-crossing-geography",
+              "g32-man-wrestles-narrative-wording",
+              "g32-minhah-livestock-gift-sequence"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-blessing-request-and-withheld-name",
+              "g32-esau-four-hundred-and-divided-camp",
+              "g32-hip-touch-limp-injury",
+              "g32-israel-name-striving-wordplay",
+              "g32-jabbok-crossing-geography",
+              "g32-man-wrestles-narrative-wording",
+              "g32-minhah-livestock-gift-sequence"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-gid-hannasheh-dietary-etiology",
+              "g32-israel-name-striving-wordplay",
+              "g32-jabbok-crossing-geography",
+              "g32-man-wrestles-narrative-wording",
+              "g32-minhah-livestock-gift-sequence",
+              "g32-opponent-identity-interpretive-range",
+              "g32-peniel-face-of-god-explanation"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g32-angels-mahanaim-gods-camp",
+              "g32-gid-hannasheh-dietary-etiology",
+              "g32-israel-name-striving-wordplay",
+              "g32-jabbok-crossing-geography",
+              "g32-man-wrestles-narrative-wording",
+              "g32-minhah-livestock-gift-sequence",
+              "g32-opponent-identity-interpretive-range",
+              "g32-peniel-face-of-god-explanation"
+            ]
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [
+              "g32-opponent-identity-interpretive-range"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g32-opponent-identity-interpretive-range"
+            ]
+          },
+          "lexical_concepts": {
+            "evidence_ids": [
+              "g32-minhah-livestock-gift-sequence"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g32-minhah-livestock-gift-sequence"
+            ]
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "Genesis 33": {
+        "classification": "GOOD",
+        "dimension_assessment": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g33-el-elohe-israel-altar-name"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g33-el-elohe-israel-altar-name"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g33-el-elohe-israel-altar-name",
+              "g33-esau-embrace-kiss-weeping",
+              "g33-gift-blessing-face-of-god",
+              "g33-household-approach-and-seven-bows",
+              "g33-kiss-dotted-word-textual-traditions",
+              "g33-women-children-presentation"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g33-el-elohe-israel-altar-name",
+              "g33-esau-embrace-kiss-weeping",
+              "g33-gift-blessing-face-of-god",
+              "g33-household-approach-and-seven-bows",
+              "g33-kiss-dotted-word-textual-traditions",
+              "g33-women-children-presentation"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [
+              "g33-esau-seir-jacob-succoth-shechem-travel",
+              "g33-gift-blessing-face-of-god",
+              "g33-purchased-parcel-near-shechem"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g33-esau-seir-jacob-succoth-shechem-travel",
+              "g33-gift-blessing-face-of-god",
+              "g33-purchased-parcel-near-shechem"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g33-el-elohe-israel-altar-name",
+              "g33-esau-seir-jacob-succoth-shechem-travel",
+              "g33-gift-blessing-face-of-god",
+              "g33-purchased-parcel-near-shechem"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g33-el-elohe-israel-altar-name",
+              "g33-esau-seir-jacob-succoth-shechem-travel",
+              "g33-gift-blessing-face-of-god",
+              "g33-purchased-parcel-near-shechem"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g33-esau-embrace-kiss-weeping",
+              "g33-kiss-dotted-word-textual-traditions",
+              "g33-purchased-parcel-near-shechem"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g33-esau-embrace-kiss-weeping",
+              "g33-kiss-dotted-word-textual-traditions",
+              "g33-purchased-parcel-near-shechem"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g33-esau-embrace-kiss-weeping",
+              "g33-gift-blessing-face-of-god",
+              "g33-household-approach-and-seven-bows",
+              "g33-purchased-parcel-near-shechem",
+              "g33-women-children-presentation"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g33-esau-embrace-kiss-weeping",
+              "g33-gift-blessing-face-of-god",
+              "g33-household-approach-and-seven-bows",
+              "g33-purchased-parcel-near-shechem",
+              "g33-women-children-presentation"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "Genesis 34": {
+        "classification": "GOOD",
+        "dimension_assessment": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "source-lock-genesis-34-city-gate-negotiation-setting"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "source-lock-genesis-34-city-gate-negotiation-setting"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g34-circumcision-condition-deception",
+              "g34-genesis49-later-ethical-reception-not-anchor",
+              "g34-hamor-intermarriage-land-trade-property",
+              "g34-jacob-condemnation-and-sons-honor-response",
+              "g34-jacob-silence-and-sons-anger",
+              "g34-no-divine-command-or-ethnic-warrant",
+              "g34-shechem-attachment-and-marriage-request"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g34-circumcision-condition-deception",
+              "g34-genesis49-later-ethical-reception-not-anchor",
+              "g34-hamor-intermarriage-land-trade-property",
+              "g34-jacob-condemnation-and-sons-honor-response",
+              "g34-jacob-silence-and-sons-anger",
+              "g34-no-divine-command-or-ethnic-warrant",
+              "g34-shechem-attachment-and-marriage-request"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [
+              "g34-dinah-sees-women-shechem-takes-and-violates",
+              "g34-disgrace-folly-in-israel-language",
+              "g34-hamor-intermarriage-land-trade-property",
+              "g34-no-divine-command-or-ethnic-warrant",
+              "g34-shechem-attachment-and-marriage-request",
+              "g34-third-day-attack-and-dinah-rescue",
+              "source-lock-genesis-34-city-gate-negotiation-setting",
+              "source-lock-genesis-34-local-population-description"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g34-dinah-sees-women-shechem-takes-and-violates",
+              "g34-disgrace-folly-in-israel-language",
+              "g34-hamor-intermarriage-land-trade-property",
+              "g34-no-divine-command-or-ethnic-warrant",
+              "g34-shechem-attachment-and-marriage-request",
+              "g34-third-day-attack-and-dinah-rescue",
+              "source-lock-genesis-34-city-gate-negotiation-setting",
+              "source-lock-genesis-34-local-population-description"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g34-circumcision-condition-deception",
+              "g34-dinah-sees-women-shechem-takes-and-violates"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g34-circumcision-condition-deception",
+              "g34-dinah-sees-women-shechem-takes-and-violates"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g34-brothers-plunder-city-people-and-property",
+              "g34-dinah-sees-women-shechem-takes-and-violates",
+              "g34-disgrace-folly-in-israel-language",
+              "g34-genesis49-later-ethical-reception-not-anchor",
+              "g34-innah-lexical-debate-and-translation",
+              "g34-jacob-condemnation-and-sons-honor-response",
+              "g34-shechem-attachment-and-marriage-request",
+              "g34-third-day-attack-and-dinah-rescue"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g34-brothers-plunder-city-people-and-property",
+              "g34-dinah-sees-women-shechem-takes-and-violates",
+              "g34-disgrace-folly-in-israel-language",
+              "g34-genesis49-later-ethical-reception-not-anchor",
+              "g34-innah-lexical-debate-and-translation",
+              "g34-jacob-condemnation-and-sons-honor-response",
+              "g34-shechem-attachment-and-marriage-request",
+              "g34-third-day-attack-and-dinah-rescue"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g34-dinah-sees-women-shechem-takes-and-violates",
+              "g34-disgrace-folly-in-israel-language",
+              "g34-genesis49-later-ethical-reception-not-anchor",
+              "g34-hamor-intermarriage-land-trade-property",
+              "g34-innah-lexical-debate-and-translation",
+              "g34-jacob-silence-and-sons-anger",
+              "g34-third-day-attack-and-dinah-rescue"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g34-dinah-sees-women-shechem-takes-and-violates",
+              "g34-disgrace-folly-in-israel-language",
+              "g34-genesis49-later-ethical-reception-not-anchor",
+              "g34-hamor-intermarriage-land-trade-property",
+              "g34-innah-lexical-debate-and-translation",
+              "g34-jacob-silence-and-sons-anger",
+              "g34-third-day-attack-and-dinah-rescue"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [
+              "g34-dinah-sees-women-shechem-takes-and-violates",
+              "g34-disgrace-folly-in-israel-language",
+              "g34-innah-lexical-debate-and-translation",
+              "g34-shechem-attachment-and-marriage-request"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g34-dinah-sees-women-shechem-takes-and-violates",
+              "g34-disgrace-folly-in-israel-language",
+              "g34-innah-lexical-debate-and-translation",
+              "g34-shechem-attachment-and-marriage-request"
+            ]
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [
+              "g34-disgrace-folly-in-israel-language",
+              "g34-genesis49-later-ethical-reception-not-anchor",
+              "g34-no-divine-command-or-ethnic-warrant"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g34-disgrace-folly-in-israel-language",
+              "g34-genesis49-later-ethical-reception-not-anchor",
+              "g34-no-divine-command-or-ethnic-warrant"
+            ]
+          },
+          "lexical_concepts": {
+            "evidence_ids": [
+              "g34-innah-lexical-debate-and-translation"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g34-innah-lexical-debate-and-translation"
+            ]
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "Genesis 35": {
+        "classification": "GOOD",
+        "dimension_assessment": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-command-to-bethel-live-build-altar",
+              "g35-household-foreign-gods-earrings-burial",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-pillar-libation-oil-bethel",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-burial-location-traditions"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-command-to-bethel-live-build-altar",
+              "g35-household-foreign-gods-earrings-burial",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-pillar-libation-oil-bethel",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-burial-location-traditions"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [
+              "g35-israel-name-fruitfulness-kings-land"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g35-israel-name-fruitfulness-kings-land"
+            ]
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-command-to-bethel-live-build-altar",
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-household-foreign-gods-earrings-burial",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-burial-location-traditions",
+              "g35-reuben-bilhah-household-power",
+              "g35-terror-of-god-neighboring-cities",
+              "g35-twelve-sons-tribal-transition"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-command-to-bethel-live-build-altar",
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-household-foreign-gods-earrings-burial",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-burial-location-traditions",
+              "g35-reuben-bilhah-household-power",
+              "g35-terror-of-god-neighboring-cities",
+              "g35-twelve-sons-tribal-transition"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-command-to-bethel-live-build-altar",
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-household-foreign-gods-earrings-burial",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-pillar-libation-oil-bethel",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-burial-location-traditions",
+              "g35-terror-of-god-neighboring-cities",
+              "g35-twelve-sons-tribal-transition"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-command-to-bethel-live-build-altar",
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-household-foreign-gods-earrings-burial",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-pillar-libation-oil-bethel",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-burial-location-traditions",
+              "g35-terror-of-god-neighboring-cities",
+              "g35-twelve-sons-tribal-transition"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-labor-ben-oni-benjamin-death",
+              "g35-twelve-sons-tribal-transition"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-labor-ben-oni-benjamin-death",
+              "g35-twelve-sons-tribal-transition"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-rachel-burial-location-traditions",
+              "g35-rachel-labor-ben-oni-benjamin-death",
+              "g35-reuben-bilhah-household-power"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-rachel-burial-location-traditions",
+              "g35-rachel-labor-ben-oni-benjamin-death",
+              "g35-reuben-bilhah-household-power"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-command-to-bethel-live-build-altar",
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-household-foreign-gods-earrings-burial",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-pillar-libation-oil-bethel",
+              "g35-rachel-burial-location-traditions",
+              "g35-rachel-labor-ben-oni-benjamin-death",
+              "g35-reuben-bilhah-household-power",
+              "g35-twelve-sons-tribal-transition"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g35-bethel-altar-el-bethel-name-and-appearance",
+              "g35-command-to-bethel-live-build-altar",
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-household-foreign-gods-earrings-burial",
+              "g35-isaac-death-hebron-mamre-burial",
+              "g35-israel-name-fruitfulness-kings-land",
+              "g35-pillar-libation-oil-bethel",
+              "g35-rachel-burial-location-traditions",
+              "g35-rachel-labor-ben-oni-benjamin-death",
+              "g35-reuben-bilhah-household-power",
+              "g35-twelve-sons-tribal-transition"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-burial-location-traditions",
+              "g35-rachel-labor-ben-oni-benjamin-death",
+              "g35-reuben-bilhah-household-power"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g35-deborah-nurse-allon-bacuth",
+              "g35-purification-and-garment-change-context",
+              "g35-rachel-burial-location-traditions",
+              "g35-rachel-labor-ben-oni-benjamin-death",
+              "g35-reuben-bilhah-household-power"
+            ]
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [
+              "g35-rachel-burial-location-traditions"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g35-rachel-burial-location-traditions"
+            ]
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "Genesis 36": {
+        "classification": "GOOD",
+        "dimension_assessment": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g36-edoms-polity-archaeological-context-limits"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g36-edoms-polity-archaeological-context-limits"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g36-alluf-chief-clan-social-term",
+              "g36-edomite-kings-sequence-and-city-associations",
+              "g36-edoms-polity-archaeological-context-limits",
+              "g36-esau-identified-as-edom-family-record",
+              "g36-genealogy-clan-territorial-ethnography",
+              "g36-migration-to-seir-land-capacity",
+              "g36-neighbor-ethnicity-and-family-relationship",
+              "g36-seir-horites-territorial-integration",
+              "job:interpretive_note:1"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g36-alluf-chief-clan-social-term",
+              "g36-edomite-kings-sequence-and-city-associations",
+              "g36-edoms-polity-archaeological-context-limits",
+              "g36-esau-identified-as-edom-family-record",
+              "g36-genealogy-clan-territorial-ethnography",
+              "g36-migration-to-seir-land-capacity",
+              "g36-neighbor-ethnicity-and-family-relationship",
+              "g36-seir-horites-territorial-integration",
+              "job:interpretive_note:1"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [
+              "g36-edom-geography-place-identifications",
+              "g36-genealogy-clan-territorial-ethnography",
+              "g36-migration-to-seir-land-capacity",
+              "job:interpretive_note:1"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g36-edom-geography-place-identifications",
+              "g36-genealogy-clan-territorial-ethnography",
+              "g36-migration-to-seir-land-capacity",
+              "job:interpretive_note:1"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g36-edom-geography-place-identifications",
+              "g36-edomite-kings-sequence-and-city-associations",
+              "g36-esau-identified-as-edom-family-record",
+              "g36-genealogy-clan-territorial-ethnography",
+              "g36-migration-to-seir-land-capacity",
+              "g36-neighbor-ethnicity-and-family-relationship",
+              "g36-seir-horites-territorial-integration"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g36-edom-geography-place-identifications",
+              "g36-edomite-kings-sequence-and-city-associations",
+              "g36-esau-identified-as-edom-family-record",
+              "g36-genealogy-clan-territorial-ethnography",
+              "g36-migration-to-seir-land-capacity",
+              "g36-neighbor-ethnicity-and-family-relationship",
+              "g36-seir-horites-territorial-integration"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g36-31-israelite-kingship-composition-debate",
+              "g36-alluf-chief-clan-social-term",
+              "g36-anah-yemim-difficult-lexeme",
+              "g36-edomite-kings-sequence-and-city-associations",
+              "g36-edoms-polity-archaeological-context-limits",
+              "job:interpretive_note:1"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g36-31-israelite-kingship-composition-debate",
+              "g36-alluf-chief-clan-social-term",
+              "g36-anah-yemim-difficult-lexeme",
+              "g36-edomite-kings-sequence-and-city-associations",
+              "g36-edoms-polity-archaeological-context-limits",
+              "job:interpretive_note:1"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g36-31-israelite-kingship-composition-debate",
+              "g36-anah-yemim-difficult-lexeme",
+              "g36-edoms-polity-archaeological-context-limits",
+              "g36-esau-identified-as-edom-family-record",
+              "g36-genealogy-clan-territorial-ethnography",
+              "g36-neighbor-ethnicity-and-family-relationship",
+              "g36-seir-horites-territorial-integration"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g36-31-israelite-kingship-composition-debate",
+              "g36-anah-yemim-difficult-lexeme",
+              "g36-edoms-polity-archaeological-context-limits",
+              "g36-esau-identified-as-edom-family-record",
+              "g36-genealogy-clan-territorial-ethnography",
+              "g36-neighbor-ethnicity-and-family-relationship",
+              "g36-seir-horites-territorial-integration"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      }
+    },
+    "method": "Established tools.genesis_g0_evidence_census dimensional classifier",
+    "result": "PASS"
+  },
+  "genesis_31_36_preparation_and_synthesis": {
+    "all_candidate_items_synthesized": true,
+    "chapters": {
+      "Genesis 31": {
+        "after": {
+          "classification": "GOOD",
+          "dimension_assessment": {
+            "ancient_near_eastern_context": {
+              "evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal"
+              ]
+            },
+            "archaeology_material_culture": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "covenant_context": {
+              "evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal",
+                "g31-galeed-jegar-sahadutha-mizpah-names"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal",
+                "g31-galeed-jegar-sahadutha-mizpah-names"
+              ]
+            },
+            "cultural_social_context": {
+              "evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal",
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-rachel-leah-property-and-estrangement",
+                "g31-return-command-and-wives-consulted",
+                "g31-search-saddle-menstrual-claim",
+                "g31-teraphim-household-cult-objects",
+                "g31-teraphim-inheritance-and-divination-theories"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal",
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-rachel-leah-property-and-estrangement",
+                "g31-return-command-and-wives-consulted",
+                "g31-search-saddle-menstrual-claim",
+                "g31-teraphim-household-cult-objects",
+                "g31-teraphim-inheritance-and-divination-theories"
+              ]
+            },
+            "divine_council_spiritual_worldview": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "geography": {
+              "evidence_ids": [
+                "g31-flock-dream-god-of-bethel",
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-return-command-and-wives-consulted",
+                "g31-secret-flight-euphrates-gilead"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g31-flock-dream-god-of-bethel",
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-return-command-and-wives-consulted",
+                "g31-secret-flight-euphrates-gilead"
+              ]
+            },
+            "hebrew_worldview_concepts": {
+              "evidence_ids": [
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-return-command-and-wives-consulted",
+                "g31-teraphim-household-cult-objects",
+                "g31-teraphim-inheritance-and-divination-theories"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-return-command-and-wives-consulted",
+                "g31-teraphim-household-cult-objects",
+                "g31-teraphim-inheritance-and-divination-theories"
+              ]
+            },
+            "historical_context": {
+              "evidence_ids": [
+                "g31-search-saddle-menstrual-claim"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g31-search-saddle-menstrual-claim"
+              ]
+            },
+            "immediate_literary_context": {
+              "evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal",
+                "g31-flock-dream-god-of-bethel",
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-jacob-twenty-years-labor-complaint",
+                "g31-search-saddle-menstrual-claim",
+                "g31-teraphim-household-cult-objects",
+                "g31-wages-retrospective-and-contract-uncertainty"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal",
+                "g31-flock-dream-god-of-bethel",
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-jacob-twenty-years-labor-complaint",
+                "g31-search-saddle-menstrual-claim",
+                "g31-teraphim-household-cult-objects",
+                "g31-wages-retrospective-and-contract-uncertainty"
+              ]
+            },
+            "interpretive_disputes": {
+              "evidence_ids": [
+                "g31-rachel-leah-property-and-estrangement",
+                "g31-return-command-and-wives-consulted",
+                "g31-search-saddle-menstrual-claim",
+                "g31-teraphim-household-cult-objects",
+                "g31-teraphim-inheritance-and-divination-theories",
+                "g31-wages-retrospective-and-contract-uncertainty"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g31-rachel-leah-property-and-estrangement",
+                "g31-return-command-and-wives-consulted",
+                "g31-search-saddle-menstrual-claim",
+                "g31-teraphim-household-cult-objects",
+                "g31-teraphim-inheritance-and-divination-theories",
+                "g31-wages-retrospective-and-contract-uncertainty"
+              ]
+            },
+            "intertextual_canonical_connections": {
+              "evidence_ids": [],
+              "status": "GAP",
+              "synthesis_evidence_ids": []
+            },
+            "lexical_concepts": {
+              "evidence_ids": [],
+              "status": "GAP",
+              "synthesis_evidence_ids": []
+            },
+            "textual_manuscript_issues": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "evidence_count": 15,
+          "synthesis_unit_count": 9
+        },
+        "before": {
+          "classification": "GAP",
+          "evidence_count": 3,
+          "synthesis_unit_count": 3
+        }
+      },
+      "Genesis 32": {
+        "after": {
+          "classification": "GOOD",
+          "dimension_assessment": {
+            "ancient_near_eastern_context": {
+              "evidence_ids": [],
+              "status": "GAP",
+              "synthesis_evidence_ids": []
+            },
+            "archaeology_material_culture": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "covenant_context": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "cultural_social_context": {
+              "evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-blessing-request-and-withheld-name",
+                "g32-gid-hannasheh-dietary-etiology",
+                "g32-israel-name-striving-wordplay",
+                "g32-man-wrestles-narrative-wording",
+                "g32-minhah-livestock-gift-sequence",
+                "g32-opponent-identity-interpretive-range",
+                "g32-peniel-face-of-god-explanation",
+                "g32-prayer-unworthiness-command-promise"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-blessing-request-and-withheld-name",
+                "g32-gid-hannasheh-dietary-etiology",
+                "g32-israel-name-striving-wordplay",
+                "g32-man-wrestles-narrative-wording",
+                "g32-minhah-livestock-gift-sequence",
+                "g32-opponent-identity-interpretive-range",
+                "g32-peniel-face-of-god-explanation",
+                "g32-prayer-unworthiness-command-promise"
+              ]
+            },
+            "divine_council_spiritual_worldview": {
+              "evidence_ids": [
+                "g32-man-wrestles-narrative-wording",
+                "g32-opponent-identity-interpretive-range"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g32-man-wrestles-narrative-wording",
+                "g32-opponent-identity-interpretive-range"
+              ]
+            },
+            "geography": {
+              "evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-jabbok-crossing-geography",
+                "g32-peniel-face-of-god-explanation"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-jabbok-crossing-geography",
+                "g32-peniel-face-of-god-explanation"
+              ]
+            },
+            "hebrew_worldview_concepts": {
+              "evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-blessing-request-and-withheld-name",
+                "g32-israel-name-striving-wordplay",
+                "g32-peniel-face-of-god-explanation",
+                "g32-prayer-unworthiness-command-promise"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-blessing-request-and-withheld-name",
+                "g32-israel-name-striving-wordplay",
+                "g32-peniel-face-of-god-explanation",
+                "g32-prayer-unworthiness-command-promise"
+              ]
+            },
+            "historical_context": {
+              "evidence_ids": [
+                "g32-esau-four-hundred-and-divided-camp",
+                "g32-hip-touch-limp-injury",
+                "g32-israel-name-striving-wordplay",
+                "g32-opponent-identity-interpretive-range"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g32-esau-four-hundred-and-divided-camp",
+                "g32-hip-touch-limp-injury",
+                "g32-israel-name-striving-wordplay",
+                "g32-opponent-identity-interpretive-range"
+              ]
+            },
+            "immediate_literary_context": {
+              "evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-blessing-request-and-withheld-name",
+                "g32-esau-four-hundred-and-divided-camp",
+                "g32-hip-touch-limp-injury",
+                "g32-israel-name-striving-wordplay",
+                "g32-jabbok-crossing-geography",
+                "g32-man-wrestles-narrative-wording",
+                "g32-minhah-livestock-gift-sequence"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-blessing-request-and-withheld-name",
+                "g32-esau-four-hundred-and-divided-camp",
+                "g32-hip-touch-limp-injury",
+                "g32-israel-name-striving-wordplay",
+                "g32-jabbok-crossing-geography",
+                "g32-man-wrestles-narrative-wording",
+                "g32-minhah-livestock-gift-sequence"
+              ]
+            },
+            "interpretive_disputes": {
+              "evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-gid-hannasheh-dietary-etiology",
+                "g32-israel-name-striving-wordplay",
+                "g32-jabbok-crossing-geography",
+                "g32-man-wrestles-narrative-wording",
+                "g32-minhah-livestock-gift-sequence",
+                "g32-opponent-identity-interpretive-range",
+                "g32-peniel-face-of-god-explanation"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-gid-hannasheh-dietary-etiology",
+                "g32-israel-name-striving-wordplay",
+                "g32-jabbok-crossing-geography",
+                "g32-man-wrestles-narrative-wording",
+                "g32-minhah-livestock-gift-sequence",
+                "g32-opponent-identity-interpretive-range",
+                "g32-peniel-face-of-god-explanation"
+              ]
+            },
+            "intertextual_canonical_connections": {
+              "evidence_ids": [
+                "g32-opponent-identity-interpretive-range"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g32-opponent-identity-interpretive-range"
+              ]
+            },
+            "lexical_concepts": {
+              "evidence_ids": [
+                "g32-minhah-livestock-gift-sequence"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g32-minhah-livestock-gift-sequence"
+              ]
+            },
+            "textual_manuscript_issues": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "evidence_count": 17,
+          "synthesis_unit_count": 11
+        },
+        "before": {
+          "classification": "GAP",
+          "evidence_count": 5,
+          "synthesis_unit_count": 3
+        }
+      },
+      "Genesis 33": {
+        "after": {
+          "classification": "GOOD",
+          "dimension_assessment": {
+            "ancient_near_eastern_context": {
+              "evidence_ids": [],
+              "status": "GAP",
+              "synthesis_evidence_ids": []
+            },
+            "archaeology_material_culture": {
+              "evidence_ids": [
+                "g33-el-elohe-israel-altar-name"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g33-el-elohe-israel-altar-name"
+              ]
+            },
+            "covenant_context": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "cultural_social_context": {
+              "evidence_ids": [
+                "g33-el-elohe-israel-altar-name",
+                "g33-esau-embrace-kiss-weeping",
+                "g33-gift-blessing-face-of-god",
+                "g33-household-approach-and-seven-bows",
+                "g33-kiss-dotted-word-textual-traditions",
+                "g33-women-children-presentation"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g33-el-elohe-israel-altar-name",
+                "g33-esau-embrace-kiss-weeping",
+                "g33-gift-blessing-face-of-god",
+                "g33-household-approach-and-seven-bows",
+                "g33-kiss-dotted-word-textual-traditions",
+                "g33-women-children-presentation"
+              ]
+            },
+            "divine_council_spiritual_worldview": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "geography": {
+              "evidence_ids": [
+                "g33-esau-seir-jacob-succoth-shechem-travel",
+                "g33-gift-blessing-face-of-god",
+                "g33-purchased-parcel-near-shechem"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g33-esau-seir-jacob-succoth-shechem-travel",
+                "g33-gift-blessing-face-of-god",
+                "g33-purchased-parcel-near-shechem"
+              ]
+            },
+            "hebrew_worldview_concepts": {
+              "evidence_ids": [
+                "g33-el-elohe-israel-altar-name",
+                "g33-esau-seir-jacob-succoth-shechem-travel",
+                "g33-gift-blessing-face-of-god",
+                "g33-purchased-parcel-near-shechem"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g33-el-elohe-israel-altar-name",
+                "g33-esau-seir-jacob-succoth-shechem-travel",
+                "g33-gift-blessing-face-of-god",
+                "g33-purchased-parcel-near-shechem"
+              ]
+            },
+            "historical_context": {
+              "evidence_ids": [
+                "g33-esau-embrace-kiss-weeping",
+                "g33-kiss-dotted-word-textual-traditions",
+                "g33-purchased-parcel-near-shechem"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g33-esau-embrace-kiss-weeping",
+                "g33-kiss-dotted-word-textual-traditions",
+                "g33-purchased-parcel-near-shechem"
+              ]
+            },
+            "immediate_literary_context": {
+              "evidence_ids": [
+                "g33-esau-embrace-kiss-weeping",
+                "g33-gift-blessing-face-of-god",
+                "g33-household-approach-and-seven-bows",
+                "g33-purchased-parcel-near-shechem",
+                "g33-women-children-presentation"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g33-esau-embrace-kiss-weeping",
+                "g33-gift-blessing-face-of-god",
+                "g33-household-approach-and-seven-bows",
+                "g33-purchased-parcel-near-shechem",
+                "g33-women-children-presentation"
+              ]
+            },
+            "interpretive_disputes": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "intertextual_canonical_connections": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "lexical_concepts": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "textual_manuscript_issues": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "evidence_count": 20,
+          "synthesis_unit_count": 8
+        },
+        "before": {
+          "classification": "GAP",
+          "evidence_count": 12,
+          "synthesis_unit_count": 3
+        }
+      },
+      "Genesis 34": {
+        "after": {
+          "classification": "GOOD",
+          "dimension_assessment": {
+            "ancient_near_eastern_context": {
+              "evidence_ids": [],
+              "status": "GAP",
+              "synthesis_evidence_ids": []
+            },
+            "archaeology_material_culture": {
+              "evidence_ids": [
+                "source-lock-genesis-34-city-gate-negotiation-setting"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "source-lock-genesis-34-city-gate-negotiation-setting"
+              ]
+            },
+            "covenant_context": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "cultural_social_context": {
+              "evidence_ids": [
+                "g34-circumcision-condition-deception",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-hamor-intermarriage-land-trade-property",
+                "g34-jacob-condemnation-and-sons-honor-response",
+                "g34-jacob-silence-and-sons-anger",
+                "g34-no-divine-command-or-ethnic-warrant",
+                "g34-shechem-attachment-and-marriage-request"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g34-circumcision-condition-deception",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-hamor-intermarriage-land-trade-property",
+                "g34-jacob-condemnation-and-sons-honor-response",
+                "g34-jacob-silence-and-sons-anger",
+                "g34-no-divine-command-or-ethnic-warrant",
+                "g34-shechem-attachment-and-marriage-request"
+              ]
+            },
+            "divine_council_spiritual_worldview": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "geography": {
+              "evidence_ids": [
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-hamor-intermarriage-land-trade-property",
+                "g34-no-divine-command-or-ethnic-warrant",
+                "g34-shechem-attachment-and-marriage-request",
+                "g34-third-day-attack-and-dinah-rescue",
+                "source-lock-genesis-34-city-gate-negotiation-setting",
+                "source-lock-genesis-34-local-population-description"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-hamor-intermarriage-land-trade-property",
+                "g34-no-divine-command-or-ethnic-warrant",
+                "g34-shechem-attachment-and-marriage-request",
+                "g34-third-day-attack-and-dinah-rescue",
+                "source-lock-genesis-34-city-gate-negotiation-setting",
+                "source-lock-genesis-34-local-population-description"
+              ]
+            },
+            "hebrew_worldview_concepts": {
+              "evidence_ids": [
+                "g34-circumcision-condition-deception",
+                "g34-dinah-sees-women-shechem-takes-and-violates"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g34-circumcision-condition-deception",
+                "g34-dinah-sees-women-shechem-takes-and-violates"
+              ]
+            },
+            "historical_context": {
+              "evidence_ids": [
+                "g34-brothers-plunder-city-people-and-property",
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-innah-lexical-debate-and-translation",
+                "g34-jacob-condemnation-and-sons-honor-response",
+                "g34-shechem-attachment-and-marriage-request",
+                "g34-third-day-attack-and-dinah-rescue"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g34-brothers-plunder-city-people-and-property",
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-innah-lexical-debate-and-translation",
+                "g34-jacob-condemnation-and-sons-honor-response",
+                "g34-shechem-attachment-and-marriage-request",
+                "g34-third-day-attack-and-dinah-rescue"
+              ]
+            },
+            "immediate_literary_context": {
+              "evidence_ids": [
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-hamor-intermarriage-land-trade-property",
+                "g34-innah-lexical-debate-and-translation",
+                "g34-jacob-silence-and-sons-anger",
+                "g34-third-day-attack-and-dinah-rescue"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-hamor-intermarriage-land-trade-property",
+                "g34-innah-lexical-debate-and-translation",
+                "g34-jacob-silence-and-sons-anger",
+                "g34-third-day-attack-and-dinah-rescue"
+              ]
+            },
+            "interpretive_disputes": {
+              "evidence_ids": [
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-innah-lexical-debate-and-translation",
+                "g34-shechem-attachment-and-marriage-request"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-innah-lexical-debate-and-translation",
+                "g34-shechem-attachment-and-marriage-request"
+              ]
+            },
+            "intertextual_canonical_connections": {
+              "evidence_ids": [
+                "g34-disgrace-folly-in-israel-language",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-no-divine-command-or-ethnic-warrant"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g34-disgrace-folly-in-israel-language",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-no-divine-command-or-ethnic-warrant"
+              ]
+            },
+            "lexical_concepts": {
+              "evidence_ids": [
+                "g34-innah-lexical-debate-and-translation"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g34-innah-lexical-debate-and-translation"
+              ]
+            },
+            "textual_manuscript_issues": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "evidence_count": 17,
+          "synthesis_unit_count": 12
+        },
+        "before": {
+          "classification": "SPARSE",
+          "evidence_count": 5,
+          "synthesis_unit_count": 5
+        }
+      },
+      "Genesis 35": {
+        "after": {
+          "classification": "GOOD",
+          "dimension_assessment": {
+            "ancient_near_eastern_context": {
+              "evidence_ids": [],
+              "status": "GAP",
+              "synthesis_evidence_ids": []
+            },
+            "archaeology_material_culture": {
+              "evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-pillar-libation-oil-bethel",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-pillar-libation-oil-bethel",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions"
+              ]
+            },
+            "covenant_context": {
+              "evidence_ids": [
+                "g35-israel-name-fruitfulness-kings-land"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g35-israel-name-fruitfulness-kings-land"
+              ]
+            },
+            "cultural_social_context": {
+              "evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions",
+                "g35-reuben-bilhah-household-power",
+                "g35-terror-of-god-neighboring-cities",
+                "g35-twelve-sons-tribal-transition"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions",
+                "g35-reuben-bilhah-household-power",
+                "g35-terror-of-god-neighboring-cities",
+                "g35-twelve-sons-tribal-transition"
+              ]
+            },
+            "divine_council_spiritual_worldview": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "geography": {
+              "evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-pillar-libation-oil-bethel",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions",
+                "g35-terror-of-god-neighboring-cities",
+                "g35-twelve-sons-tribal-transition"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-pillar-libation-oil-bethel",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions",
+                "g35-terror-of-god-neighboring-cities",
+                "g35-twelve-sons-tribal-transition"
+              ]
+            },
+            "hebrew_worldview_concepts": {
+              "evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-twelve-sons-tribal-transition"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-twelve-sons-tribal-transition"
+              ]
+            },
+            "historical_context": {
+              "evidence_ids": [
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-rachel-burial-location-traditions",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-reuben-bilhah-household-power"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-rachel-burial-location-traditions",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-reuben-bilhah-household-power"
+              ]
+            },
+            "immediate_literary_context": {
+              "evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-pillar-libation-oil-bethel",
+                "g35-rachel-burial-location-traditions",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-reuben-bilhah-household-power",
+                "g35-twelve-sons-tribal-transition"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land",
+                "g35-pillar-libation-oil-bethel",
+                "g35-rachel-burial-location-traditions",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-reuben-bilhah-household-power",
+                "g35-twelve-sons-tribal-transition"
+              ]
+            },
+            "interpretive_disputes": {
+              "evidence_ids": [
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-reuben-bilhah-household-power"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-reuben-bilhah-household-power"
+              ]
+            },
+            "intertextual_canonical_connections": {
+              "evidence_ids": [
+                "g35-rachel-burial-location-traditions"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g35-rachel-burial-location-traditions"
+              ]
+            },
+            "lexical_concepts": {
+              "evidence_ids": [],
+              "status": "GAP",
+              "synthesis_evidence_ids": []
+            },
+            "textual_manuscript_issues": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "evidence_count": 23,
+          "synthesis_unit_count": 11
+        },
+        "before": {
+          "classification": "GAP",
+          "evidence_count": 10,
+          "synthesis_unit_count": 3
+        }
+      },
+      "Genesis 36": {
+        "after": {
+          "classification": "GOOD",
+          "dimension_assessment": {
+            "ancient_near_eastern_context": {
+              "evidence_ids": [],
+              "status": "GAP",
+              "synthesis_evidence_ids": []
+            },
+            "archaeology_material_culture": {
+              "evidence_ids": [
+                "g36-edoms-polity-archaeological-context-limits"
+              ],
+              "status": "THIN",
+              "synthesis_evidence_ids": [
+                "g36-edoms-polity-archaeological-context-limits"
+              ]
+            },
+            "covenant_context": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "cultural_social_context": {
+              "evidence_ids": [
+                "g36-alluf-chief-clan-social-term",
+                "g36-edomite-kings-sequence-and-city-associations",
+                "g36-edoms-polity-archaeological-context-limits",
+                "g36-esau-identified-as-edom-family-record",
+                "g36-genealogy-clan-territorial-ethnography",
+                "g36-migration-to-seir-land-capacity",
+                "g36-neighbor-ethnicity-and-family-relationship",
+                "g36-seir-horites-territorial-integration",
+                "job:interpretive_note:1"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g36-alluf-chief-clan-social-term",
+                "g36-edomite-kings-sequence-and-city-associations",
+                "g36-edoms-polity-archaeological-context-limits",
+                "g36-esau-identified-as-edom-family-record",
+                "g36-genealogy-clan-territorial-ethnography",
+                "g36-migration-to-seir-land-capacity",
+                "g36-neighbor-ethnicity-and-family-relationship",
+                "g36-seir-horites-territorial-integration",
+                "job:interpretive_note:1"
+              ]
+            },
+            "divine_council_spiritual_worldview": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "geography": {
+              "evidence_ids": [
+                "g36-edom-geography-place-identifications",
+                "g36-genealogy-clan-territorial-ethnography",
+                "g36-migration-to-seir-land-capacity",
+                "job:interpretive_note:1"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g36-edom-geography-place-identifications",
+                "g36-genealogy-clan-territorial-ethnography",
+                "g36-migration-to-seir-land-capacity",
+                "job:interpretive_note:1"
+              ]
+            },
+            "hebrew_worldview_concepts": {
+              "evidence_ids": [
+                "g36-edom-geography-place-identifications",
+                "g36-edomite-kings-sequence-and-city-associations",
+                "g36-esau-identified-as-edom-family-record",
+                "g36-genealogy-clan-territorial-ethnography",
+                "g36-migration-to-seir-land-capacity",
+                "g36-neighbor-ethnicity-and-family-relationship",
+                "g36-seir-horites-territorial-integration"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g36-edom-geography-place-identifications",
+                "g36-edomite-kings-sequence-and-city-associations",
+                "g36-esau-identified-as-edom-family-record",
+                "g36-genealogy-clan-territorial-ethnography",
+                "g36-migration-to-seir-land-capacity",
+                "g36-neighbor-ethnicity-and-family-relationship",
+                "g36-seir-horites-territorial-integration"
+              ]
+            },
+            "historical_context": {
+              "evidence_ids": [
+                "g36-31-israelite-kingship-composition-debate",
+                "g36-alluf-chief-clan-social-term",
+                "g36-anah-yemim-difficult-lexeme",
+                "g36-edomite-kings-sequence-and-city-associations",
+                "g36-edoms-polity-archaeological-context-limits",
+                "job:interpretive_note:1"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g36-31-israelite-kingship-composition-debate",
+                "g36-alluf-chief-clan-social-term",
+                "g36-anah-yemim-difficult-lexeme",
+                "g36-edomite-kings-sequence-and-city-associations",
+                "g36-edoms-polity-archaeological-context-limits",
+                "job:interpretive_note:1"
+              ]
+            },
+            "immediate_literary_context": {
+              "evidence_ids": [
+                "g36-31-israelite-kingship-composition-debate",
+                "g36-anah-yemim-difficult-lexeme",
+                "g36-edoms-polity-archaeological-context-limits",
+                "g36-esau-identified-as-edom-family-record",
+                "g36-genealogy-clan-territorial-ethnography",
+                "g36-neighbor-ethnicity-and-family-relationship",
+                "g36-seir-horites-territorial-integration"
+              ],
+              "status": "COVERED",
+              "synthesis_evidence_ids": [
+                "g36-31-israelite-kingship-composition-debate",
+                "g36-anah-yemim-difficult-lexeme",
+                "g36-edoms-polity-archaeological-context-limits",
+                "g36-esau-identified-as-edom-family-record",
+                "g36-genealogy-clan-territorial-ethnography",
+                "g36-neighbor-ethnicity-and-family-relationship",
+                "g36-seir-horites-territorial-integration"
+              ]
+            },
+            "interpretive_disputes": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "intertextual_canonical_connections": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "lexical_concepts": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            },
+            "textual_manuscript_issues": {
+              "evidence_ids": [],
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "evidence_count": 15,
+          "synthesis_unit_count": 11
+        },
+        "before": {
+          "classification": "SPARSE",
+          "evidence_count": 4,
+          "synthesis_unit_count": 4
+        }
+      }
+    },
+    "result": "PASS"
+  },
+  "git_diff_check": "PASS",
+  "isolated_source_owner_regressions": {
+    "G2_source_owner_identity_checks": "passed before inherited Genesis 12 stale snapshot assertion",
+    "G3_source_alias_identity": "passed",
+    "G4A_source_owner": "passed",
+    "G4B_source_owner": "passed",
+    "G5A_source_owner": "passed",
+    "historical_source_owner_rows_changed": 0,
+    "result": "PASS"
+  },
+  "legacy_fallback_regression": {
+    "details": "Dedicated G2/G4A legacy fallback regression tests passed on clean base and current branch",
+    "result": "PASS"
+  },
+  "merge_performed": false,
+  "new_object_schema": "PASS",
+  "prior_genesis_transaction_tests": {
+    "clean_base_failed": 2,
+    "clean_base_passed": 17,
+    "clean_base_reproduced": true,
+    "new_failures": 0,
+    "reconciliation_artifact": "g5b-regression-reconciliation.json",
+    "result": "PASS_WITH_RECONCILED_BASELINE_FAILURES",
+    "same_failures_after_G5B": true
+  },
+  "relationship_validation": {
+    "one_way_typed_links_only": true,
+    "result": "PASS",
+    "reverse_links_created": false
+  },
+  "representative_controls": {
+    "1 Kings 6": true,
+    "Acts 16": true,
+    "Exodus 25": true,
+    "Genesis 1": true,
+    "Genesis 10": true,
+    "Genesis 11": true,
+    "Genesis 12": true,
+    "Genesis 15": true,
+    "Genesis 17": true,
+    "Genesis 18": true,
+    "Genesis 22": true,
+    "Genesis 25": true,
+    "Genesis 26": true,
+    "Genesis 28": true,
+    "Genesis 30": true,
+    "Genesis 37": true,
+    "Genesis 38": true,
+    "Genesis 5": true,
+    "Genesis 50": true,
+    "Genesis 6": true,
+    "Genesis 9": true,
+    "Isaiah 36": true,
+    "Revelation 12": true,
+    "Revelation 18": true
+  },
+  "runtime_db_rebuild_and_verification": {
+    "database_backend": "SQLiteCanonicalLibrary",
+    "inventory_fingerprint": "8c8c466956f2dfccda979ae307618598018f135aff65842540845d010c2ce5e6",
+    "result": "PASS",
+    "targets_and_controls_match_json": true
+  },
+  "scripture_reference_validation": {
+    "direct_scope": "Genesis 31–36 only",
+    "out_of_scope_direct_references": [],
+    "result": "PASS"
+  },
+  "source_owner_isolation": {
+    "historical_source_owner_row_count": 5181,
+    "historical_source_owner_rows_changed": 0,
+    "new_object_local_source_count": 14,
+    "result": "PASS"
+  },
+  "source_owner_rows_changed": 0,
+  "source_provenance": "PASS",
+  "tests": {
+    "candidate_replay": "PASS (68 accepted; 0 rejected; all synthesized)",
+    "g5b_isolation": "PASS (6 passed across G5B and dedicated fallback regression selections)",
+    "scripture_reference_integrity": "PASS (15 passed)",
+    "prior_genesis_transactions": "PASS_WITH_RECONCILED_BASELINE_FAILURES (17 passed, 2 inherited failures reproduced on clean base; no new failures)"
+  },
+  "transaction": "GENESIS_G5B_JACOB_ESAU_RETURN_EVIDENCE_EXPANSION",
+  "typed_target_validation": "PASS",
+  "unexpected_changed_chapters": [],
+  "whole_ckl_validation": {
+    "inventory_fingerprint": "8c8c466956f2dfccda979ae307618598018f135aff65842540845d010c2ce5e6",
+    "object_count": 685,
+    "result": "PASS"
+  },
+  "whole_corpus_exact_set_pass": true,
+  "final_review": "PASS: independent review found no remaining Critical, Important, or Minor issues after apply-manifest object-count correction."
+}
