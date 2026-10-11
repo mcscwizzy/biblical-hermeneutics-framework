@@ -1,0 +1,1765 @@
+{
+  "artifact_version": "g6a-g0-target-results-v1",
+  "method": "tools/genesis_g0_evidence_census.py _dimension_applicability/_dim_matches/_meaningful_passage_evidence/_classify on freshly prepared chapter evidence and synthesis",
+  "targets": {
+    "Genesis 37": {
+      "after": {
+        "classification": "GOOD",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g6a-37-special-garment"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g6a-37-special-garment"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g6a-37-deception-potiphar",
+              "g6a-37-favoritism",
+              "g6a-37-price",
+              "g6a-37-sheaves-dream",
+              "g6a-37-stars-dream",
+              "g6a-37-toledot-transition"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-37-deception-potiphar",
+              "g6a-37-favoritism",
+              "g6a-37-price",
+              "g6a-37-sheaves-dream",
+              "g6a-37-stars-dream",
+              "g6a-37-toledot-transition"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "geography": {
+            "evidence_ids": [
+              "g6a-37-deception-potiphar",
+              "g6a-37-geography",
+              "g6a-37-pit-reuben",
+              "g6a-37-trade-goods"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-37-deception-potiphar",
+              "g6a-37-geography",
+              "g6a-37-pit-reuben",
+              "g6a-37-trade-goods"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g6a-37-caravan-ethnonyms",
+              "g6a-37-seventeen-report",
+              "g6a-37-special-garment"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-37-caravan-ethnonyms",
+              "g6a-37-seventeen-report",
+              "g6a-37-special-garment"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g6a-37-caravan-ethnonyms",
+              "g6a-37-pit-reuben",
+              "g6a-37-price",
+              "g6a-37-seventeen-report"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-37-caravan-ethnonyms",
+              "g6a-37-pit-reuben",
+              "g6a-37-price",
+              "g6a-37-seventeen-report"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g6a-37-caravan-ethnonyms",
+              "g6a-37-favoritism",
+              "g6a-37-geography",
+              "g6a-37-pit-reuben",
+              "g6a-37-seventeen-report",
+              "g6a-37-sheaves-dream",
+              "g6a-37-toledot-transition"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-37-caravan-ethnonyms",
+              "g6a-37-favoritism",
+              "g6a-37-geography",
+              "g6a-37-pit-reuben",
+              "g6a-37-seventeen-report",
+              "g6a-37-sheaves-dream",
+              "g6a-37-toledot-transition"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          }
+        },
+        "evidence_count": 23,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "2930c13fcaa0b6055d1e50b7fc95de2f327f0c2004ae460c890fd6d615ba4e37",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "8937b3faac4eee91d781a2505685bad8e0e430206576457da02fa216246eeec0",
+          "packet_id": "commentary-production-v1-packet:8937b3faac4eee91d781a2505685bad8e0e430206576457da02fa216246eeec0",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "9922c75f9cdf9a3680246bf0a714565837895997a2191dda5270f19ed9fc5a61",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 9,
+        "synthesis_unused_evidence_ids": [
+          "egypt:ancient_near_east_context:0",
+          "egypt:hebraic_worldview:0",
+          "egypt:historical_context:0",
+          "egypt:key_places:0",
+          "egypt:key_places:1",
+          "egypt:key_places:2",
+          "egypt:key_places:3",
+          "egypt:second_temple_context:0"
+        ]
+      },
+      "before": {
+        "classification": "GAP",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "evidence_count": 11,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 38": {
+      "after": {
+        "classification": "GOOD",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g6a-38-household-judgment",
+              "g6a-38-integral-chapter",
+              "g6a-38-judah-joseph-comparison",
+              "g6a-38-lineage-obligation",
+              "g6a-38-tamar-status",
+              "g6a-38-twins-wordplay",
+              "g6a-38-widow-garments",
+              "g6a-38-zonah-qedeshah"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-38-household-judgment",
+              "g6a-38-integral-chapter",
+              "g6a-38-judah-joseph-comparison",
+              "g6a-38-lineage-obligation",
+              "g6a-38-tamar-status",
+              "g6a-38-twins-wordplay",
+              "g6a-38-widow-garments",
+              "g6a-38-zonah-qedeshah"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g6a-38-adullam-family",
+              "g6a-38-household-judgment",
+              "g6a-38-lineage-obligation",
+              "g6a-38-twins-wordplay"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-38-adullam-family",
+              "g6a-38-household-judgment",
+              "g6a-38-lineage-obligation",
+              "g6a-38-twins-wordplay"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g6a-38-recognition-tsadaq",
+              "g6a-38-twins-wordplay",
+              "g6a-38-zonah-qedeshah"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-38-recognition-tsadaq",
+              "g6a-38-twins-wordplay",
+              "g6a-38-zonah-qedeshah"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g6a-38-adullam-family",
+              "g6a-38-household-judgment",
+              "g6a-38-integral-chapter",
+              "g6a-38-judah-joseph-comparison",
+              "g6a-38-recognition-tsadaq",
+              "g6a-38-twins-wordplay",
+              "g6a-38-widow-garments"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-38-adullam-family",
+              "g6a-38-household-judgment",
+              "g6a-38-integral-chapter",
+              "g6a-38-judah-joseph-comparison",
+              "g6a-38-recognition-tsadaq",
+              "g6a-38-twins-wordplay",
+              "g6a-38-widow-garments"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [
+              "g6a-38-household-judgment",
+              "g6a-38-integral-chapter",
+              "g6a-38-judah-joseph-comparison",
+              "g6a-38-lineage-obligation",
+              "g6a-38-pledge-objects",
+              "g6a-38-recognition-tsadaq",
+              "g6a-38-tamar-status",
+              "g6a-38-widow-garments",
+              "g6a-38-zonah-qedeshah"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-38-household-judgment",
+              "g6a-38-integral-chapter",
+              "g6a-38-judah-joseph-comparison",
+              "g6a-38-lineage-obligation",
+              "g6a-38-pledge-objects",
+              "g6a-38-recognition-tsadaq",
+              "g6a-38-tamar-status",
+              "g6a-38-widow-garments",
+              "g6a-38-zonah-qedeshah"
+            ]
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          }
+        },
+        "evidence_count": 14,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "cf15ac7f7027facfedd786420a2772f4a5da2fc9a2656a57c4eb3e987bd30b81",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "03796eba83107017918c25c003420d10a9950a14590271ccae1597b9615a41e0",
+          "packet_id": "commentary-production-v1-packet:03796eba83107017918c25c003420d10a9950a14590271ccae1597b9615a41e0",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "0aa6c656359afdd556a78b224da34ca86063e116bb6805b8b24b85f4a4069362",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 9,
+        "synthesis_unused_evidence_ids": []
+      },
+      "before": {
+        "classification": "GAP",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 39": {
+      "after": {
+        "classification": "GOOD",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [
+              "g6a-39-enslaved-foreigner",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal",
+              "g6a-39-potiphar-title"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-39-enslaved-foreigner",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal",
+              "g6a-39-potiphar-title"
+            ]
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g6a-39-garment-accusation",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-39-garment-accusation",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g6a-39-custody-terms",
+              "g6a-39-enslaved-foreigner",
+              "g6a-39-garment-accusation",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal",
+              "g6a-39-moral-refusal",
+              "g6a-39-potiphar-title",
+              "g6a-39-repeated-proposition",
+              "g6a-39-yhwh-presence"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-39-custody-terms",
+              "g6a-39-enslaved-foreigner",
+              "g6a-39-garment-accusation",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal",
+              "g6a-39-moral-refusal",
+              "g6a-39-potiphar-title",
+              "g6a-39-repeated-proposition",
+              "g6a-39-yhwh-presence"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "geography": {
+            "evidence_ids": [
+              "g6a-39-enslaved-foreigner",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal",
+              "g6a-39-potiphar-title"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-39-enslaved-foreigner",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal",
+              "g6a-39-potiphar-title"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g6a-39-literary-reversal",
+              "g6a-39-moral-refusal"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-39-literary-reversal",
+              "g6a-39-moral-refusal"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g6a-39-custody-terms",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal",
+              "g6a-39-moral-refusal",
+              "g6a-39-potiphar-title"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-39-custody-terms",
+              "g6a-39-household-steward",
+              "g6a-39-literary-reversal",
+              "g6a-39-moral-refusal",
+              "g6a-39-potiphar-title"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g6a-39-custody-terms",
+              "g6a-39-garment-accusation",
+              "g6a-39-literary-reversal",
+              "g6a-39-moral-refusal",
+              "g6a-39-yhwh-presence"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-39-custody-terms",
+              "g6a-39-garment-accusation",
+              "g6a-39-literary-reversal",
+              "g6a-39-moral-refusal",
+              "g6a-39-yhwh-presence"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          }
+        },
+        "evidence_count": 12,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "199e5813aa8693b767c4c5b7e571da67ff7d8bb999a02113849698ba437d9dc2",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "f6d7edf6ccdb7040c97006689055718f7469f8b24dc9c328b8f69f0b1a3179c4",
+          "packet_id": "commentary-production-v1-packet:f6d7edf6ccdb7040c97006689055718f7469f8b24dc9c328b8f69f0b1a3179c4",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "2a59937e3c213e9a75b8b0ce67a8de0542bc6418e34be59935c91572f6e7f533",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 8,
+        "synthesis_unused_evidence_ids": []
+      },
+      "before": {
+        "classification": "GAP",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 40": {
+      "after": {
+        "classification": "GOOD",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [
+              "g6a-40-birthday-execution",
+              "g6a-40-court-offices"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-40-birthday-execution",
+              "g6a-40-court-offices"
+            ]
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g6a-40-custody-attendance"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g6a-40-custody-attendance"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g6a-40-baker-dream",
+              "g6a-40-court-offices",
+              "g6a-40-cupbearer-dream",
+              "g6a-40-forgotten",
+              "g6a-40-interpretation-god"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-40-baker-dream",
+              "g6a-40-court-offices",
+              "g6a-40-cupbearer-dream",
+              "g6a-40-forgotten",
+              "g6a-40-interpretation-god"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "geography": {
+            "evidence_ids": [
+              "g6a-40-birthday-execution",
+              "g6a-40-court-offices"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-40-birthday-execution",
+              "g6a-40-court-offices"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g6a-40-birthday-execution",
+              "g6a-40-court-offices",
+              "g6a-40-cupbearer-dream",
+              "g6a-40-custody-attendance"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-40-birthday-execution",
+              "g6a-40-court-offices",
+              "g6a-40-cupbearer-dream",
+              "g6a-40-custody-attendance"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g6a-40-baker-dream",
+              "g6a-40-birthday-execution",
+              "g6a-40-custody-attendance",
+              "g6a-40-forgotten",
+              "g6a-40-interpretation-god"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-40-baker-dream",
+              "g6a-40-birthday-execution",
+              "g6a-40-custody-attendance",
+              "g6a-40-forgotten",
+              "g6a-40-interpretation-god"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          }
+        },
+        "evidence_count": 10,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "720d1cf04fe1e073db26217ab0a70047f9cc113bf4716f06c172241e842dddc4",
+          "packet_id": "commentary-production-v1-packet:720d1cf04fe1e073db26217ab0a70047f9cc113bf4716f06c172241e842dddc4",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 7,
+        "synthesis_unused_evidence_ids": []
+      },
+      "before": {
+        "classification": "GAP",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 41": {
+      "after": {
+        "classification": "GOOD",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [
+              "g6a-41-administrative-fifth",
+              "g6a-41-asenath-on",
+              "g6a-41-court-specialists",
+              "g6a-41-egyptian-name",
+              "g6a-41-investiture",
+              "g6a-41-shaving-clothes"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-41-administrative-fifth",
+              "g6a-41-asenath-on",
+              "g6a-41-court-specialists",
+              "g6a-41-egyptian-name",
+              "g6a-41-investiture",
+              "g6a-41-shaving-clothes"
+            ]
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g6a-41-investiture",
+              "g6a-41-seven-years-restraint",
+              "g6a-41-shaving-clothes"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-41-investiture",
+              "g6a-41-seven-years-restraint",
+              "g6a-41-shaving-clothes"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g6a-41-administrative-fifth",
+              "g6a-41-court-specialists",
+              "g6a-41-egyptian-name",
+              "g6a-41-grain-east-wind",
+              "g6a-41-interpretation-god",
+              "g6a-41-manasseh-ephraim",
+              "g6a-41-regional-famine",
+              "g6a-41-seven-years-restraint"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-41-administrative-fifth",
+              "g6a-41-court-specialists",
+              "g6a-41-egyptian-name",
+              "g6a-41-grain-east-wind",
+              "g6a-41-interpretation-god",
+              "g6a-41-manasseh-ephraim",
+              "g6a-41-regional-famine",
+              "g6a-41-seven-years-restraint"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "geography": {
+            "evidence_ids": [
+              "g6a-41-administrative-fifth",
+              "g6a-41-asenath-on",
+              "g6a-41-court-specialists",
+              "g6a-41-egyptian-name",
+              "g6a-41-grain-east-wind",
+              "g6a-41-investiture",
+              "g6a-41-nile-cows",
+              "g6a-41-regional-famine",
+              "g6a-41-shaving-clothes"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-41-administrative-fifth",
+              "g6a-41-asenath-on",
+              "g6a-41-court-specialists",
+              "g6a-41-egyptian-name",
+              "g6a-41-grain-east-wind",
+              "g6a-41-investiture",
+              "g6a-41-nile-cows",
+              "g6a-41-regional-famine",
+              "g6a-41-shaving-clothes"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [
+              "g6a-41-asenath-on",
+              "g6a-41-egyptian-name",
+              "g6a-41-investiture",
+              "g6a-41-manasseh-ephraim",
+              "g6a-41-regional-famine"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-41-asenath-on",
+              "g6a-41-egyptian-name",
+              "g6a-41-investiture",
+              "g6a-41-manasseh-ephraim",
+              "g6a-41-regional-famine"
+            ]
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g6a-41-age-thirty",
+              "g6a-41-asenath-on",
+              "g6a-41-court-specialists",
+              "g6a-41-interpretation-god",
+              "g6a-41-manasseh-ephraim",
+              "g6a-41-seven-years-restraint",
+              "g6a-41-shaving-clothes"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-41-age-thirty",
+              "g6a-41-asenath-on",
+              "g6a-41-court-specialists",
+              "g6a-41-interpretation-god",
+              "g6a-41-manasseh-ephraim",
+              "g6a-41-seven-years-restraint",
+              "g6a-41-shaving-clothes"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g6a-41-administrative-fifth",
+              "g6a-41-age-thirty",
+              "g6a-41-asenath-on",
+              "g6a-41-interpretation-god",
+              "g6a-41-manasseh-ephraim",
+              "g6a-41-regional-famine",
+              "g6a-41-seven-years-restraint"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-41-administrative-fifth",
+              "g6a-41-age-thirty",
+              "g6a-41-asenath-on",
+              "g6a-41-interpretation-god",
+              "g6a-41-manasseh-ephraim",
+              "g6a-41-regional-famine",
+              "g6a-41-seven-years-restraint"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          }
+        },
+        "evidence_count": 18,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "00f603a4ced20aa2c7fac342c0ac3520d224ff032d31809c5a131c95aba43056",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "1547aeec03acbc0da692cb34aaebdccce7bc66428e69723044ccf61e059b5e31",
+          "packet_id": "commentary-production-v1-packet:1547aeec03acbc0da692cb34aaebdccce7bc66428e69723044ccf61e059b5e31",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "ab1e09eaf6ca681e944a8b58f35152e42be90a0d8490a26f0deaade26224193c",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 10,
+        "synthesis_unused_evidence_ids": [
+          "joseph-interprets-pharaohs-dreams:ancient_near_east_context:0",
+          "joseph-interprets-pharaohs-dreams:historical_context:0"
+        ]
+      },
+      "before": {
+        "classification": "GAP",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "evidence_count": 5,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 42": {
+      "after": {
+        "classification": "GOOD",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [
+              "g6a-42-famine-grain-journey",
+              "g6a-42-spy-test"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-42-famine-grain-journey",
+              "g6a-42-spy-test"
+            ]
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g6a-42-interpreter-silver"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g6a-42-interpreter-silver"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g6a-42-benjamin-stays",
+              "g6a-42-bowing-dreams",
+              "g6a-42-famine-grain-journey",
+              "g6a-42-guilt-reuben",
+              "g6a-42-recognition-asymmetry"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-42-benjamin-stays",
+              "g6a-42-bowing-dreams",
+              "g6a-42-famine-grain-journey",
+              "g6a-42-guilt-reuben",
+              "g6a-42-recognition-asymmetry"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "geography": {
+            "evidence_ids": [
+              "g6a-42-famine-grain-journey",
+              "g6a-42-spy-test"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-42-famine-grain-journey",
+              "g6a-42-spy-test"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g6a-42-recognition-asymmetry",
+              "g6a-42-spy-test",
+              "g6a-42-three-day-simeon"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-42-recognition-asymmetry",
+              "g6a-42-spy-test",
+              "g6a-42-three-day-simeon"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g6a-42-bowing-dreams",
+              "g6a-42-spy-test",
+              "g6a-42-three-day-simeon"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-42-bowing-dreams",
+              "g6a-42-spy-test",
+              "g6a-42-three-day-simeon"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          }
+        },
+        "evidence_count": 11,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "d32de42b000f3951da92f5331db5a3e8c954f5b27a3e930735db40a3b5921612",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "28d26b3e9ed2ea0eefcf424d69a7ffc70019f7974ca7d70d2bbbf39f344fa3a4",
+          "packet_id": "commentary-production-v1-packet:28d26b3e9ed2ea0eefcf424d69a7ffc70019f7974ca7d70d2bbbf39f344fa3a4",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "275ff6918e90dd388eda6a4d96043dd014965ae0e1659a5dd1be3ad037b9b2c5",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 7,
+        "synthesis_unused_evidence_ids": []
+      },
+      "before": {
+        "classification": "GAP",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 43": {
+      "after": {
+        "classification": "GOOD",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [
+              "g6a-43-dining-boundary",
+              "g6a-43-double-money"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-43-dining-boundary",
+              "g6a-43-double-money"
+            ]
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g6a-43-double-money"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g6a-43-double-money"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g6a-43-birth-order-seating",
+              "g6a-43-dining-boundary",
+              "g6a-43-fivefold-portion",
+              "g6a-43-gifts",
+              "g6a-43-judah-guarantee",
+              "g6a-43-steward-hospitality"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-43-birth-order-seating",
+              "g6a-43-dining-boundary",
+              "g6a-43-fivefold-portion",
+              "g6a-43-gifts",
+              "g6a-43-judah-guarantee",
+              "g6a-43-steward-hospitality"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "geography": {
+            "evidence_ids": [
+              "g6a-43-dining-boundary",
+              "g6a-43-double-money",
+              "g6a-43-judah-guarantee"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-43-dining-boundary",
+              "g6a-43-double-money",
+              "g6a-43-judah-guarantee"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g6a-43-joseph-benjamin",
+              "g6a-43-simeon-release"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-43-joseph-benjamin",
+              "g6a-43-simeon-release"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g6a-43-birth-order-seating",
+              "g6a-43-joseph-benjamin",
+              "g6a-43-judah-guarantee",
+              "g6a-43-simeon-release"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-43-birth-order-seating",
+              "g6a-43-joseph-benjamin",
+              "g6a-43-judah-guarantee",
+              "g6a-43-simeon-release"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [
+              "g6a-43-dining-boundary"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g6a-43-dining-boundary"
+            ]
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          }
+        },
+        "evidence_count": 12,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "1c5f23d0416c1e08b05ab404841b586bfc2a97d442803e3cb822e1a86058371b",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "f06c0918de362fa43373c9f024e790a70f39fe80be4ba763c8787b8c04eb9962",
+          "packet_id": "commentary-production-v1-packet:f06c0918de362fa43373c9f024e790a70f39fe80be4ba763c8787b8c04eb9962",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "eb51ce2df2160e125b818b4d21f7c6e1ed25173b779186e1628586a20415e89f",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 10,
+        "synthesis_unused_evidence_ids": []
+      },
+      "before": {
+        "classification": "GAP",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 44": {
+      "after": {
+        "classification": "GOOD",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [
+              "g6a-44-court-address-retelling",
+              "g6a-44-pursuit-search"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-44-court-address-retelling",
+              "g6a-44-pursuit-search"
+            ]
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [
+              "g6a-44-silver-cup-divination"
+            ],
+            "status": "THIN",
+            "synthesis_evidence_ids": [
+              "g6a-44-silver-cup-divination"
+            ]
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "cultural_social_context": {
+            "evidence_ids": [
+              "g6a-44-collective-return",
+              "g6a-44-court-address-retelling",
+              "g6a-44-jacob-joseph-presumed-dead",
+              "g6a-44-judah-arc",
+              "g6a-44-judah-substitution",
+              "g6a-44-pledge-father-impact",
+              "g6a-44-speech-kinship"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-44-collective-return",
+              "g6a-44-court-address-retelling",
+              "g6a-44-jacob-joseph-presumed-dead",
+              "g6a-44-judah-arc",
+              "g6a-44-judah-substitution",
+              "g6a-44-pledge-father-impact",
+              "g6a-44-speech-kinship"
+            ]
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "geography": {
+            "evidence_ids": [
+              "g6a-44-court-address-retelling",
+              "g6a-44-judah-arc",
+              "g6a-44-pursuit-search",
+              "g6a-44-silver-cup-divination"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-44-court-address-retelling",
+              "g6a-44-judah-arc",
+              "g6a-44-pursuit-search",
+              "g6a-44-silver-cup-divination"
+            ]
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [
+              "g6a-44-pursuit-search",
+              "g6a-44-silver-cup-divination",
+              "g6a-44-speech-kinship"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-44-pursuit-search",
+              "g6a-44-silver-cup-divination",
+              "g6a-44-speech-kinship"
+            ]
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [
+              "g6a-44-judah-arc",
+              "g6a-44-judah-substitution",
+              "g6a-44-pursuit-search",
+              "g6a-44-speech-kinship"
+            ],
+            "status": "COVERED",
+            "synthesis_evidence_ids": [
+              "g6a-44-judah-arc",
+              "g6a-44-judah-substitution",
+              "g6a-44-pursuit-search",
+              "g6a-44-speech-kinship"
+            ]
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE",
+            "synthesis_evidence_ids": []
+          }
+        },
+        "evidence_count": 12,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "556da119db1edf77a7aa0af82eaa9b11a5144357f4e8fa67310e815211c5fceb",
+          "packet_id": "commentary-production-v1-packet:556da119db1edf77a7aa0af82eaa9b11a5144357f4e8fa67310e815211c5fceb",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 7,
+        "synthesis_unused_evidence_ids": []
+      },
+      "before": {
+        "classification": "GAP",
+        "dimensions": {
+          "ancient_near_eastern_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "archaeology_material_culture": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "covenant_context": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "cultural_social_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "divine_council_spiritual_worldview": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "geography": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "hebrew_worldview_concepts": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "historical_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "immediate_literary_context": {
+            "evidence_ids": [],
+            "status": "GAP",
+            "synthesis_evidence_ids": []
+          },
+          "interpretive_disputes": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "intertextual_canonical_connections": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "lexical_concepts": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          },
+          "textual_manuscript_issues": {
+            "evidence_ids": [],
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    }
+  },
+  "transaction": "GENESIS_G6A_JOSEPH_DESCENT_TESTING_EVIDENCE_EXPANSION"
+}

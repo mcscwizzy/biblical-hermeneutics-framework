@@ -1,0 +1,375 @@
+{
+  "artifact_version": "g6a-validation-report-v1",
+  "base_master": "f6bb0744fdbc5ff796bf61adef616b93b9f7fe66",
+  "branch": "feat/genesis-g6a-joseph-descent-testing",
+  "chapter_results": {
+    "Genesis 37": {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 23,
+        "synthesis_unit_count": 9
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 11,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 38": {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 14,
+        "synthesis_unit_count": 9
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 39": {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 12,
+        "synthesis_unit_count": 8
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 40": {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 10,
+        "synthesis_unit_count": 7
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 41": {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 18,
+        "synthesis_unit_count": 10
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 5,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 42": {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 11,
+        "synthesis_unit_count": 7
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 43": {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 12,
+        "synthesis_unit_count": 10
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    },
+    "Genesis 44": {
+      "after": {
+        "classification": "GOOD",
+        "evidence_count": 12,
+        "synthesis_unit_count": 7
+      },
+      "before": {
+        "classification": "GAP",
+        "evidence_count": 3,
+        "synthesis_unit_count": 3
+      }
+    }
+  },
+  "ckl_identities": {
+    "base": {
+      "byte_signature": "9cc85b2f2e5e2b089adcca6140547a1607986ff59f983e36f904623448c6329f",
+      "inventory_fingerprint": "8c8c466956f2dfccda979ae307618598018f135aff65842540845d010c2ce5e6",
+      "manifest_object_count": 685,
+      "manifest_sha256": "c3f51d65430b63dc5deadffef549e612fe535d0b859ba8eacf6a0612d123c54d",
+      "object_count": 685,
+      "object_file_sha256_root": "8df5c1a19163a641538609781f6a7e7d63a870e2e4ca804a1f4c6712945a35ca",
+      "runtime_database": {
+        "build_timestamp": "2026-10-11T08:50:53.704273Z",
+        "claim_count": 2329,
+        "configured_stale_policy": "fallback_to_json",
+        "database_file_size": 113803264,
+        "database_path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+        "database_schema_version": "4",
+        "evidence_count": 1137,
+        "file_sha256": "1c504f68eb4de5ae6e454ab800edc3226b377a5f530c33c59d9f79927bad6c46",
+        "framework_version": "1.0",
+        "inventory_fingerprint": "8c8c466956f2dfccda979ae307618598018f135aff65842540845d010c2ce5e6",
+        "matches_json_inventory": true,
+        "object_count": 685,
+        "retrieval_index_version": "3",
+        "schema_version": "1.0",
+        "source_count": 5195
+      },
+      "stat_signature": "025b02128970efa42d04176d8dcf985d0845a201434cb3c2f6390e110425148c"
+    },
+    "post": {
+      "evidence_count": 1215,
+      "inventory_fingerprint": "8b3f5e48d2665ed94ec35e559e689d67170a471f3450afb495edd5d55f192b07",
+      "manifest_sha256": "e6fb7592576487ef92d3d12e09b113f748ff5db53d89e794cea9e4c779ce877b",
+      "new_object_sha256": "e1d15d8560907934fecc2f5ed8c0a878ec3ec13628bbe93214099d4216331da9",
+      "object_count": 686,
+      "runtime_database_sha256": "ebb3c238e352018f617ce709ac79b87c4192e96e788b5ca7900424d6b4c6890f",
+      "source_count": 5211
+    }
+  },
+  "claim_dispositions": [
+    "Certain multicolored garment translation: REJECTED_AS_CERTAIN; preserve lexical alternatives.",
+    "Twenty shekels proves an exact date: REJECTED.",
+    "Ishmaelite/Midianite issue solved by invented caravan structure: REJECTED; literary/textual alternatives remain.",
+    "Genesis 38 simply applies Deuteronomy 25: REJECTED; later comparison only.",
+    "Onan reduced to masturbation: REJECTED.",
+    "Institutional sacred prostitution asserted as established: WITHHELD; distinguish zonah, qedeshah, and debate.",
+    "Potiphar or Joseph identified with a named Egyptian: WITHHELD_UNSUPPORTED.",
+    "A Pharaoh identified as certain: REJECTED_AS_UNSUPPORTED.",
+    "Seven-year archaeological famine proves Genesis 41: REJECTED.",
+    "Zaphenath-paneah one certain etymology: REJECTED.",
+    "Genesis 43 dining separation made modern racial ideology: REJECTED.",
+    "Joseph certainly practiced pagan cup divination: WITHHELD.",
+    "Judah substitution treated as original explicit Christian atonement: REJECTED_AS_IMMEDIATE_MEANING."
+  ],
+  "commentary_status": {
+    "commentary_pipeline_state": "CORPUS_COMPLETE",
+    "commentary_v1_1_touched": false,
+    "commentary_v1_2_touched": false,
+    "genesis_37_44_recorded_as_stale_future_inputs": true
+  },
+  "commentary_v1_2": {
+    "all_checksummed_files_match": true,
+    "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+    "checksummed_files_verified": 973,
+    "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+    "mutated": false,
+    "regenerated": false,
+    "stale_future_inputs": [
+      "Genesis 37",
+      "Genesis 38",
+      "Genesis 39",
+      "Genesis 40",
+      "Genesis 41",
+      "Genesis 42",
+      "Genesis 43",
+      "Genesis 44"
+    ]
+  },
+  "commit_push_status": {
+    "commit_authorized_after_final_gates": true,
+    "deploy": false,
+    "final_head": "Recorded in completion report after commit/push.",
+    "merge": false,
+    "push_to_origin_authorized": true
+  },
+  "controls": {
+    "all_exact_to_g6a_base": true,
+    "count": 24,
+    "identities": {
+      "1 Kings 6": true,
+      "Acts 16": true,
+      "Exodus 25": true,
+      "Genesis 1": true,
+      "Genesis 10": true,
+      "Genesis 11": true,
+      "Genesis 12": true,
+      "Genesis 15": true,
+      "Genesis 18": true,
+      "Genesis 22": true,
+      "Genesis 26": true,
+      "Genesis 31": true,
+      "Genesis 34": true,
+      "Genesis 36": true,
+      "Genesis 45": true,
+      "Genesis 46": true,
+      "Genesis 49": true,
+      "Genesis 5": true,
+      "Genesis 50": true,
+      "Genesis 6": true,
+      "Genesis 9": true,
+      "Isaiah 36": true,
+      "Revelation 12": true,
+      "Revelation 18": true
+    }
+  },
+  "evidence_and_source_counts": {
+    "candidate_evidence": 78,
+    "object_evidence_after": 1215,
+    "object_evidence_before": 1137,
+    "object_local_sources": 16,
+    "object_sources_after": 5211,
+    "object_sources_before": 5195
+  },
+  "exact_changed_paths": [
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-existing-evidence-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-joseph-descent-testing-evidence-plan.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-candidate-evidence.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-candidate-replay-final.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-source-lock.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-source-ownership-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-comparative-applicability-audit.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-production-apply-manifest.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-post-apply-validation.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-g0-target-results.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-chapter-impact.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-final-ckl-identities.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-runtime-db-preparation-verification.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-validation-report.json",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-review-digest.md",
+    ".bhf-data/bhf-commentary-candidates/genesis-g6a-joseph-descent-testing-evidence-expansion/g6a-historical-test-reconciliation.json",
+    "docs/superpowers/plans/2026-10-11-genesis-g6a-joseph-descent-testing.md",
+    "framework/canonical_library/manifest.json",
+    "framework/canonical_library/objects/cultural_background/genesis-joseph-descent-testing-context.json",
+    "tests/test_genesis_g6a_joseph_descent_testing_isolation.py"
+  ],
+  "final_head": "Recorded in the completion report after commit; this artifact ships in the verified transaction commit.",
+  "independent_review": "The staged replay, source ownership comparison, exact chapter impact, and post-apply audits were independently recomputed from the frozen base and final CKL inputs.",
+  "interpretive_safeguards": {
+    "dining_separation": "Genesis 43:32 is treated as debated social-boundary language; historical corroboration is limited and it is not mapped to modern racial categories.",
+    "divination_cup": "Genesis 44’s steward allegation and Egyptian divination comparison do not prove Joseph personally practiced pagan divination; court persona/ruse/actual context remain open readings.",
+    "egyptian_court_and_dreams": "Court offices are translated cautiously; dream practices are comparative context while Joseph attributes interpretation to God in the narrative.",
+    "egyptian_names_on": "Zaphenath-paneah’s Egyptian etymology remains uncertain; On is conventionally identified with Heliopolis, without identifying Asenath or Potiphera historically.",
+    "garment": "Genesis 37:3’s garment may be ornamented, long-sleeved, multicolored, or a special tunic/status garment; no single rendering is certain.",
+    "ishmaelite_midianite": "Recognizes a real literary/textual complexity, presents debated serious explanations, rejects invented nested-caravan harmonization, and does not call the text necessarily contradictory.",
+    "joseph_potiphar": "Joseph is an enslaved foreigner under household power; refusal, trust, accusation, and custody are treated without romanticizing. Potiphar is not historically identified.",
+    "judah_arc_and_substitution": "Judah’s Genesis 37, 38, 43, and 44 acts form a developing narrative arc. Offering himself for Benjamin is immediate narrative action; later Christian typology is reception context.",
+    "judah_tamar_levirate": "Genesis 38 is integral; the kinship duty predates Deuteronomy 25 and is not simply an application of that later law. Onan’s refusal is not reduced to masturbation.",
+    "pharaoh_administration_chronology": "No certain Pharaoh, named Joseph identification, specific dynasty, or archaeological proof of the seven-year famine is claimed. The one-fifth and storage plan is not treated as a complete Egyptian tax record.",
+    "slave_price": "Twenty shekels is narrated; it does not prove an exact patriarchal date.",
+    "testing_recognition": "The spy accusation is a narrative test, not assumed standard Egyptian law; the recognition asymmetry is not given one certain cause; the interpreter and returned silver remain in view.",
+    "zonah_qedeshah": "Distinguishes prostitution-related zonah/qedeshah usage from later institutional sacred-prostitution claims, whose historiography is disputed."
+  },
+  "merge_assessment": {
+    "basis": "All G6A gates pass; exact 1,189 chapter impact, source isolation, controls, frozen Commentary, runtime database, and reconciled inherited historical snapshots are recorded.",
+    "status": "Safe to merge: YES"
+  },
+  "new_ckl_object": {
+    "id": "genesis-joseph-descent-testing-context",
+    "path": "framework/canonical_library/objects/cultural_background/genesis-joseph-descent-testing-context.json",
+    "sha256": "e1d15d8560907934fecc2f5ed8c0a878ec3ec13628bbe93214099d4216331da9",
+    "type": "cultural_background"
+  },
+  "object_count": {
+    "after": 686,
+    "before": 685
+  },
+  "prior_test_reconciliation": {
+    "artifact": "g6a-historical-test-reconciliation.json",
+    "prior_transaction_artifacts_modified": false,
+    "reproduced_against_clean_base": true
+  },
+  "source_owner_result": {
+    "baseline_historical_rows": 5195,
+    "historical_owner_sha256": "8e6d410001d5d987b7971728e6ca98688117a8d9b77c28ae5886e20257db225f",
+    "historical_rows_changed": 0,
+    "object_local_alias_count": 5,
+    "post_apply_historical_rows": 5195,
+    "result": "PASS"
+  },
+  "status": "GENESIS_G6A_JOSEPH_DESCENT_TESTING_MERGE_GATE_VERIFIED",
+  "tests_and_gates": [
+    {
+      "detail": "78/78 direct candidates were bundled and synthesized across Genesis 37–44.",
+      "gate": "Candidate replay",
+      "result": "PASS"
+    },
+    {
+      "detail": "Whole CKL JSON load validated; 16 locked object-local sources support 78 items; all direct references stay inside Genesis 37–44.",
+      "gate": "New-object schema, source/provenance, source lock, typed targets, relationships, and Scripture scope",
+      "result": "PASS"
+    },
+    {
+      "detail": "0 of 5,195 historical owner rows changed; five aliases preserve source bibliographic identity and locator.",
+      "gate": "Historical source-owner isolation",
+      "result": "PASS"
+    },
+    {
+      "detail": "686 objects, 1,215 evidence records, 5,211 source records; rebuilt and verified SQLite; 32 target/control preparations match JSON identities.",
+      "gate": "Whole CKL validation and runtime DB",
+      "result": "PASS"
+    },
+    {
+      "detail": "All candidates synthesized; all eight targets classify GOOD.",
+      "gate": "Genesis 37–44 preparation, synthesis, and G0",
+      "result": "PASS"
+    },
+    {
+      "detail": "Changed chapter set exactly Genesis 37–44; all 24 controls exact.",
+      "gate": "All 1,189 chapter identities and controls",
+      "result": "PASS"
+    },
+    {
+      "detail": "No out-of-scope Scripture applicability anchors, no reverse links, and exact whole-corpus gate passed.",
+      "gate": "Comparative applicability, reverse links, and legacy-fallback isolation",
+      "result": "PASS"
+    },
+    {
+      "detail": "Manifest identity and checksum index match base; all 973 indexed files match; no Commentary regenerated.",
+      "gate": "Commentary v1.2 frozen validation",
+      "result": "PASS"
+    },
+    {
+      "detail": "67 passed.",
+      "gate": "Focused G6A, legacy fallback, source-lock, typed-target tests",
+      "result": "PASS"
+    },
+    {
+      "detail": "The combined run had 90 passed and two stale Genesis 12 snapshot failures (G2/G3), reproduced identically on clean origin/master. The current G5B suite had 3 passed and one later-owner-count snapshot failure; clean-base G5B had 4 passed. See g6a-historical-test-reconciliation.json.",
+      "gate": "Previous Genesis transaction suites",
+      "result": "PASS_WITH_RECONCILIATION"
+    },
+    {
+      "detail": "git diff --cached --check reported no whitespace errors for the complete staged transaction.",
+      "gate": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "transaction": "GENESIS_G6A_JOSEPH_DESCENT_TESTING_EVIDENCE_EXPANSION",
+  "whole_corpus_impact": {
+    "base_chapter_count": 1189,
+    "changed_chapters": [
+      "Genesis 37",
+      "Genesis 38",
+      "Genesis 39",
+      "Genesis 40",
+      "Genesis 41",
+      "Genesis 42",
+      "Genesis 43",
+      "Genesis 44"
+    ],
+    "expected_changed_chapters": [
+      "Genesis 37",
+      "Genesis 38",
+      "Genesis 39",
+      "Genesis 40",
+      "Genesis 41",
+      "Genesis 42",
+      "Genesis 43",
+      "Genesis 44"
+    ],
+    "identity_sha256_after": "29597ae9393cf68d39ce09760ea356d07c96ee573f4f7f9f43d2188ae6f6ebc8",
+    "identity_sha256_before": "92d7f79a2ffed6453be2288fc3c4ffb1c901b827750b63cc8bdcc361ff5432d0",
+    "whole_corpus_exact_set_pass": true
+  }
+}

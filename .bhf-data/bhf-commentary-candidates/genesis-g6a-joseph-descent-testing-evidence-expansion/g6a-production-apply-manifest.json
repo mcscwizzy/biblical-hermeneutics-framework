@@ -1,0 +1,31 @@
+{
+  "after": {
+    "cultural_background_count": 51,
+    "manifest_sha256": "e6fb7592576487ef92d3d12e09b113f748ff5db53d89e794cea9e4c779ce877b",
+    "object_count": 686,
+    "object_sha256": "e1d15d8560907934fecc2f5ed8c0a878ec3ec13628bbe93214099d4216331da9"
+  },
+  "applied": true,
+  "apply_scope": "One isolated cultural_background object and CKL aggregate manifest counts only.",
+  "artifact_version": "g6a-production-apply-manifest-v1",
+  "base_master": "f6bb0744fdbc5ff796bf61adef616b93b9f7fe66",
+  "before": {
+    "cultural_background_count": 50,
+    "object_count": 685,
+    "sha256": "c3f51d65430b63dc5deadffef549e612fe535d0b859ba8eacf6a0612d123c54d"
+  },
+  "branch": "feat/genesis-g6a-joseph-descent-testing",
+  "candidate_replay_passed_before_apply": true,
+  "historical_source_owner_rows_changed": 0,
+  "manifest_path": "framework/canonical_library/manifest.json",
+  "new_object": {
+    "evidence_count": 78,
+    "id": "genesis-joseph-descent-testing-context",
+    "path": "framework/canonical_library/objects/cultural_background/genesis-joseph-descent-testing-context.json",
+    "source_count": 16,
+    "type": "cultural_background"
+  },
+  "source_owner_isolation_passed_before_apply": true,
+  "transaction": "GENESIS_G6A_JOSEPH_DESCENT_TESTING_EVIDENCE_EXPANSION",
+  "typed_relationship_and_applicability_audit_passed_before_apply": true
+}
