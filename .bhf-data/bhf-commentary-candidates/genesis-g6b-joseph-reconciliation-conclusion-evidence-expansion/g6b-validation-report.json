@@ -1,0 +1,210 @@
+{
+  "artifact_version": "g6b-validation-report-v1",
+  "transaction": "GENESIS_G6B_JOSEPH_RECONCILIATION_CONCLUSION_EVIDENCE_EXPANSION",
+  "base_master": "dde95a3fa41ea47f716f3b22de7b8f1e7c59a43e",
+  "branch": "feat/genesis-g6b-joseph-reconciliation-conclusion",
+  "gate_status": "GENESIS_G6B_JOSEPH_RECONCILIATION_CONCLUSION_EVIDENCE_MERGE_GATE_VERIFIED",
+  "gates": {
+    "candidate_replay": {
+      "result": "PASS",
+      "candidates": 77,
+      "all_bundled_and_synthesized": true
+    },
+    "new_object_schema": {
+      "result": "PASS",
+      "validator": "validate_base_object and full CKL loader"
+    },
+    "source_provenance": {
+      "result": "PASS",
+      "source_count": 15,
+      "object_local_source_ids": true,
+      "source_lock_matches": true
+    },
+    "historical_source_owner_isolation": {
+      "result": "PASS",
+      "changed_rows": 0,
+      "base_count": 5211,
+      "post_count_excluding_g6b": 5211,
+      "base_sha256": "799257a6e32f155b75239dacc90ca4aff64b535c47bcf183175f73a9e6a26f36",
+      "post_sha256": "799257a6e32f155b75239dacc90ca4aff64b535c47bcf183175f73a9e6a26f36"
+    },
+    "typed_targets_and_relationships": {
+      "result": "PASS",
+      "top_level_typed_targets": 7,
+      "reverse_relationships": 0
+    },
+    "scripture_reference_scope": {
+      "result": "PASS",
+      "new_evidence_items": 77,
+      "direct_evidence_anchors_outside_genesis_45_50": 0,
+      "chapters": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    "whole_ckl_validation": {
+      "result": "PASS",
+      "raw_objects": 687,
+      "valid_objects": 687,
+      "errors": 0,
+      "warnings": 14,
+      "g6b_object_issues": 0,
+      "warnings_note": "Fourteen aggregate completeness warnings concern existing legacy objects; none identifies the G6B object."
+    },
+    "g0_target_classification": {
+      "Genesis 45": "THIN",
+      "Genesis 46": "GOOD",
+      "Genesis 47": "GOOD",
+      "Genesis 48": "GOOD",
+      "Genesis 49": "GOOD",
+      "Genesis 50": "GOOD"
+    },
+    "genesis_1_50_census": {
+      "result": "PASS",
+      "totals": {
+        "GOOD": 49,
+        "THIN": 1,
+        "SPARSE": 0,
+        "GAP": 0
+      },
+      "below_good": [
+        "Genesis 45"
+      ]
+    },
+    "comparative_applicability_regression": {
+      "result": "PASS",
+      "out_of_scope_anchors": 0,
+      "reverse_applicability_created": false
+    },
+    "legacy_fallback_regression": "PASS_WITH_RECONCILED_PRE_G4A_GENESIS_12_SNAPSHOT",
+    "prior_genesis_isolation_suites": {
+      "result": "RECONCILED",
+      "passed": 33,
+      "stale_expectation_failures": 5,
+      "clean_base_preexisting_failures": 3,
+      "see": "g6b-historical-test-reconciliation.json"
+    },
+    "g6b_isolation_suite": {
+      "result": "PASS",
+      "passed": 4
+    },
+    "exact_1189_chapter_impact": {
+      "result": "PASS",
+      "changed_chapters": [
+        "Genesis 45",
+        "Genesis 46",
+        "Genesis 47",
+        "Genesis 48",
+        "Genesis 49",
+        "Genesis 50"
+      ],
+      "expected_changed_chapters": [
+        "Genesis 45",
+        "Genesis 46",
+        "Genesis 47",
+        "Genesis 48",
+        "Genesis 49",
+        "Genesis 50"
+      ],
+      "controls": 26,
+      "all_controls_match": true
+    },
+    "runtime_database": {
+      "result": "PASS",
+      "sqlite_vs_json_preparation_cases": 32,
+      "all_cases_match": true,
+      "inventory_fingerprint": "76f18d200194e8f3b0b5bdfb3cca698bb72b6ec19991007a197f75ac74fc15f1"
+    },
+    "commentary_v1_2_frozen": {
+      "result": "PASS",
+      "mutation_authorized": false,
+      "stale_genesis_chapters": 49
+    },
+    "deterministic_stale_commentary_set": {
+      "result": "PASS",
+      "count": 49,
+      "references": [
+        "Genesis 2",
+        "Genesis 3",
+        "Genesis 4",
+        "Genesis 5",
+        "Genesis 6",
+        "Genesis 7",
+        "Genesis 8",
+        "Genesis 9",
+        "Genesis 10",
+        "Genesis 11",
+        "Genesis 12",
+        "Genesis 13",
+        "Genesis 14",
+        "Genesis 15",
+        "Genesis 16",
+        "Genesis 17",
+        "Genesis 18",
+        "Genesis 19",
+        "Genesis 20",
+        "Genesis 21",
+        "Genesis 22",
+        "Genesis 23",
+        "Genesis 24",
+        "Genesis 25",
+        "Genesis 26",
+        "Genesis 27",
+        "Genesis 28",
+        "Genesis 29",
+        "Genesis 30",
+        "Genesis 31",
+        "Genesis 32",
+        "Genesis 33",
+        "Genesis 34",
+        "Genesis 35",
+        "Genesis 36",
+        "Genesis 37",
+        "Genesis 38",
+        "Genesis 39",
+        "Genesis 40",
+        "Genesis 41",
+        "Genesis 42",
+        "Genesis 43",
+        "Genesis 44",
+        "Genesis 45",
+        "Genesis 46",
+        "Genesis 47",
+        "Genesis 48",
+        "Genesis 49",
+        "Genesis 50"
+      ]
+    },
+    "git_diff_check": {
+      "result": "PASS",
+      "commands": [
+        "git diff --check",
+        "git diff --cached --check"
+      ],
+      "exit_codes": [
+        0,
+        0
+      ]
+    }
+  },
+  "production_scope": {
+    "new_ckl_object": "genesis-joseph-reconciliation-conclusion-context",
+    "changed_chapters": [
+      "Genesis 45",
+      "Genesis 46",
+      "Genesis 47",
+      "Genesis 48",
+      "Genesis 49",
+      "Genesis 50"
+    ],
+    "commentary_regenerated": false,
+    "commentary_v1_2_modified": false,
+    "other_books_expanded": false,
+    "merge_performed": false,
+    "deployment_performed": false
+  }
+}

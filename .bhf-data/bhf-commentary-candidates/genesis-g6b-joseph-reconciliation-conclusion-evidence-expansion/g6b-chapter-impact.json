@@ -1,0 +1,276 @@
+{
+  "artifact_version": "g6b-chapter-impact-v1",
+  "transaction": "GENESIS_G6B_JOSEPH_RECONCILIATION_CONCLUSION_EVIDENCE_EXPANSION",
+  "base_chapter_count": 1189,
+  "changed_chapters": [
+    "Genesis 45",
+    "Genesis 46",
+    "Genesis 47",
+    "Genesis 48",
+    "Genesis 49",
+    "Genesis 50"
+  ],
+  "expected_changed_chapters": [
+    "Genesis 45",
+    "Genesis 46",
+    "Genesis 47",
+    "Genesis 48",
+    "Genesis 49",
+    "Genesis 50"
+  ],
+  "whole_corpus_exact_set_pass": true,
+  "controls": {
+    "Genesis 1": true,
+    "Genesis 2": true,
+    "Genesis 5": true,
+    "Genesis 6": true,
+    "Genesis 9": true,
+    "Genesis 10": true,
+    "Genesis 11": true,
+    "Genesis 12": true,
+    "Genesis 15": true,
+    "Genesis 18": true,
+    "Genesis 22": true,
+    "Genesis 26": true,
+    "Genesis 31": true,
+    "Genesis 34": true,
+    "Genesis 36": true,
+    "Genesis 37": true,
+    "Genesis 38": true,
+    "Genesis 41": true,
+    "Genesis 44": true,
+    "Exodus 1": true,
+    "Exodus 25": true,
+    "Isaiah 36": true,
+    "Acts 7": true,
+    "Acts 16": true,
+    "Revelation 12": true,
+    "Revelation 18": true
+  },
+  "control_count": 26,
+  "all_controls_match_base": true,
+  "changed_identities": {
+    "Genesis 45": {
+      "before": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 5,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "1b2b4b0cf4fff9fbcdcb21794f16faa65a2b6d6958e7d96ffa1f150cc8aee573",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "7c1a01f4ac7025c013fc3a331bf4d1a8336ff9ca3ad27c38548d0d4ef3c83a3f",
+          "packet_id": "commentary-production-v1-packet:7c1a01f4ac7025c013fc3a331bf4d1a8336ff9ca3ad27c38548d0d4ef3c83a3f",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "3c0809361b670eb781e79e86ff7a5cfdd5fcca2fdb66de297586d3196db60f07",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 3
+      },
+      "after": {
+        "evidence_count": 16,
+        "evidence_hash": "6a1265a55a08d7700f628a165bc11ca8849a93f31f6b9864452aabd5b878ab5d",
+        "synthesis_unit_count": 10,
+        "synthesis_hash": "43e2cee7a5a75adf741b021fb55d9ff9b84f6788d5672f64756903bcebc63a4b",
+        "input_identity": {
+          "evidence_hash": "6a1265a55a08d7700f628a165bc11ca8849a93f31f6b9864452aabd5b878ab5d",
+          "synthesis_hash": "43e2cee7a5a75adf741b021fb55d9ff9b84f6788d5672f64756903bcebc63a4b",
+          "prompt_version": "1.5",
+          "commentary_schema_version": "1.2",
+          "synthesis_schema_version": "1.1",
+          "synthesis_compiler_version": "1.1",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2",
+          "packet_hash": "7a9787f1b23c46b1c3752cdedb77afca2f20767640f816ab950fb5042484a210",
+          "packet_id": "commentary-production-v1-packet:7a9787f1b23c46b1c3752cdedb77afca2f20767640f816ab950fb5042484a210"
+        }
+      }
+    },
+    "Genesis 46": {
+      "before": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 3,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "bcbd66c54f7bc0d1e1d91492c30bb3423b29ffd3e603a6e9909a57f638ad49cf",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "b4d206b3bef32930fe0853e2aa662952bb7118ef05dfbecc370fa063c91bb08c",
+          "packet_id": "commentary-production-v1-packet:b4d206b3bef32930fe0853e2aa662952bb7118ef05dfbecc370fa063c91bb08c",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "05411901c61105729c82c1f67831a6693099b1d7bfc40153b261f2ae3cf1ad57",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 3
+      },
+      "after": {
+        "evidence_count": 16,
+        "evidence_hash": "976d3b6b3ed738d1a7592b95d05c4342723cab40e4d7dca22615dc4571bff138",
+        "synthesis_unit_count": 11,
+        "synthesis_hash": "2a9f0c2851f4a89a94be5647869ab1ced285ec3cc248d59ca71e8ef9da1a186b",
+        "input_identity": {
+          "evidence_hash": "976d3b6b3ed738d1a7592b95d05c4342723cab40e4d7dca22615dc4571bff138",
+          "synthesis_hash": "2a9f0c2851f4a89a94be5647869ab1ced285ec3cc248d59ca71e8ef9da1a186b",
+          "prompt_version": "1.5",
+          "commentary_schema_version": "1.2",
+          "synthesis_schema_version": "1.1",
+          "synthesis_compiler_version": "1.1",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2",
+          "packet_hash": "fe5526c5b1f141e91f7601dc03bf01abd9f9c3d76449635807bdb735730bc04b",
+          "packet_id": "commentary-production-v1-packet:fe5526c5b1f141e91f7601dc03bf01abd9f9c3d76449635807bdb735730bc04b"
+        }
+      }
+    },
+    "Genesis 47": {
+      "before": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 3,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "e7eb23500c451037fa678881594bc46034d14e54bd81a71a8cdaefa9761485dc",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "6de7aace7bd88514f0aaba84039f492a659c4f5ca8c65ef7964a4525c949ca9d",
+          "packet_id": "commentary-production-v1-packet:6de7aace7bd88514f0aaba84039f492a659c4f5ca8c65ef7964a4525c949ca9d",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "9003994526e9771c2789aa71cca7b5fd81190b3a2960447a18ef11cd008aa441",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 3
+      },
+      "after": {
+        "evidence_count": 16,
+        "evidence_hash": "615198fe4c96d9aa86cf0f0764f628bb07e792663fd051fb6b0bd95cbb0deae3",
+        "synthesis_unit_count": 10,
+        "synthesis_hash": "7910ce70ffd5bfb3e8836b49061b3db6e071ad87e22ba8a68a1f530b5869fa79",
+        "input_identity": {
+          "evidence_hash": "615198fe4c96d9aa86cf0f0764f628bb07e792663fd051fb6b0bd95cbb0deae3",
+          "synthesis_hash": "7910ce70ffd5bfb3e8836b49061b3db6e071ad87e22ba8a68a1f530b5869fa79",
+          "prompt_version": "1.5",
+          "commentary_schema_version": "1.2",
+          "synthesis_schema_version": "1.1",
+          "synthesis_compiler_version": "1.1",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2",
+          "packet_hash": "a9322bb06bf56a03220d5d537858afc03fec06a82a653773d6b5461305cd9b1c",
+          "packet_id": "commentary-production-v1-packet:a9322bb06bf56a03220d5d537858afc03fec06a82a653773d6b5461305cd9b1c"
+        }
+      }
+    },
+    "Genesis 48": {
+      "before": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 3,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "f551d5549c38140691f9a6b0cec49b23e024186a73b5e6b9c2f22a94eb22018d",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "ca03bb0a4f9476a2baa70c31fc709e1a967beb9afb1358713f71f38d205e4d25",
+          "packet_id": "commentary-production-v1-packet:ca03bb0a4f9476a2baa70c31fc709e1a967beb9afb1358713f71f38d205e4d25",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "027d715b286a1bbfc2be5906578a2578ca4568eb8d359aaad0f0831425149dd8",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 3
+      },
+      "after": {
+        "evidence_count": 13,
+        "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+        "synthesis_unit_count": 8,
+        "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f",
+        "input_identity": {
+          "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+          "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f",
+          "prompt_version": "1.5",
+          "commentary_schema_version": "1.2",
+          "synthesis_schema_version": "1.1",
+          "synthesis_compiler_version": "1.1",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2",
+          "packet_hash": "7ff4ea18cf3fabd82c67e5a519fef5c0296c25025ee228e18e2e591679d9ddec",
+          "packet_id": "commentary-production-v1-packet:7ff4ea18cf3fabd82c67e5a519fef5c0296c25025ee228e18e2e591679d9ddec"
+        }
+      }
+    },
+    "Genesis 49": {
+      "before": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 3,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "11d9664b6f67f2f0889d6d411c6626ed36f578af7a2e99c853806581e149dec2",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "a45a3a3be9c9b4e4d5fc4a707f63794ac82f93c0c3d90fe76dd388228101697d",
+          "packet_id": "commentary-production-v1-packet:a45a3a3be9c9b4e4d5fc4a707f63794ac82f93c0c3d90fe76dd388228101697d",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "774cb8aeaff16afb8539589363f27a33bff268174f7ca6a708577810f2f42c70",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 3
+      },
+      "after": {
+        "evidence_count": 21,
+        "evidence_hash": "a871339f28cdc5ef910c708d9a2c3a11e41c4ec34d4ccb2629dd62cb3cd56627",
+        "synthesis_unit_count": 11,
+        "synthesis_hash": "d37dbb22e5f9dfa297fef293d7ce0e3129b18c342cd34360ac1c2cce749acd5c",
+        "input_identity": {
+          "evidence_hash": "a871339f28cdc5ef910c708d9a2c3a11e41c4ec34d4ccb2629dd62cb3cd56627",
+          "synthesis_hash": "d37dbb22e5f9dfa297fef293d7ce0e3129b18c342cd34360ac1c2cce749acd5c",
+          "prompt_version": "1.5",
+          "commentary_schema_version": "1.2",
+          "synthesis_schema_version": "1.1",
+          "synthesis_compiler_version": "1.1",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2",
+          "packet_hash": "65f4431468091440fe490b2e278211436c6990d2f212dc93ddaddc98223d9884",
+          "packet_id": "commentary-production-v1-packet:65f4431468091440fe490b2e278211436c6990d2f212dc93ddaddc98223d9884"
+        }
+      }
+    },
+    "Genesis 50": {
+      "before": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 6,
+        "input_identity": {
+          "commentary_schema_version": "1.2",
+          "evidence_hash": "a4b38721bd873cb6b8bf8b5abab02c1779f3ee95b339ce56145084677223d805",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "packet_hash": "be7a17ff614cb652321969b3d66e3110d0ad122af4696c328b500cd91a92e3f2",
+          "packet_id": "commentary-production-v1-packet:be7a17ff614cb652321969b3d66e3110d0ad122af4696c328b500cd91a92e3f2",
+          "prompt_version": "1.5",
+          "synthesis_compiler_version": "1.1",
+          "synthesis_hash": "c084df2b9fecf6994ffc144c4df6e8aa04b8dcda00d5700874129afed073f99c",
+          "synthesis_schema_version": "1.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2"
+        },
+        "synthesis_unit_count": 4
+      },
+      "after": {
+        "evidence_count": 18,
+        "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+        "synthesis_unit_count": 10,
+        "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841",
+        "input_identity": {
+          "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+          "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841",
+          "prompt_version": "1.5",
+          "commentary_schema_version": "1.2",
+          "synthesis_schema_version": "1.1",
+          "synthesis_compiler_version": "1.1",
+          "gate_version": "commentary-richness-gate-v2.1",
+          "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2",
+          "packet_hash": "03ccaf4ae176c87ca3997cc80849c0d8a75dfa647cd253d22c36aebc7e11c062",
+          "packet_id": "commentary-production-v1-packet:03ccaf4ae176c87ca3997cc80849c0d8a75dfa647cd253d22c36aebc7e11c062"
+        }
+      }
+    }
+  }
+}

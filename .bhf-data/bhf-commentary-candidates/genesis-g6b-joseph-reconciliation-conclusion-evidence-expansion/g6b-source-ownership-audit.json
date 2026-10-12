@@ -1,0 +1,109 @@
+{
+  "artifact_version": "g6b-source-ownership-audit-v1",
+  "phase": "pre-production-apply",
+  "result": "PASS",
+  "existing_historical_source_owner_rows_changed": 0,
+  "base_historical_owner_rows": {
+    "count": 5211,
+    "identity": "sorted (owner_id, source_id) pairs for all pre-G6B CKL objects",
+    "sha256": "799257a6e32f155b75239dacc90ca4aff64b535c47bcf183175f73a9e6a26f36"
+  },
+  "pre_apply_owner_count": 5211,
+  "pre_apply_owner_sha256": "799257a6e32f155b75239dacc90ca4aff64b535c47bcf183175f73a9e6a26f36",
+  "new_source_ids_are_object_local": true,
+  "new_source_ids_colliding_with_historical_ids": [],
+  "source_aliases": [
+    {
+      "historical_source_id": "genesis-1-50",
+      "local_source_id": "g6b-local-genesis",
+      "identity_preserved_fields": [
+        "author",
+        "title",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ]
+    },
+    {
+      "historical_source_id": "sarna-genesis",
+      "local_source_id": "g6b-local-sarna",
+      "identity_preserved_fields": [
+        "author",
+        "title",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ]
+    },
+    {
+      "historical_source_id": "hamilton-genesis-18-50",
+      "local_source_id": "g6b-local-hamilton",
+      "identity_preserved_fields": [
+        "author",
+        "title",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ]
+    },
+    {
+      "historical_source_id": "halot",
+      "local_source_id": "g6b-local-halot",
+      "identity_preserved_fields": [
+        "author",
+        "title",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ]
+    },
+    {
+      "historical_source_id": "zondervan-illustrated-pentateuch-backgrounds",
+      "local_source_id": "g6b-local-zondervan",
+      "identity_preserved_fields": [
+        "author",
+        "title",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ]
+    }
+  ],
+  "candidate_source_ids": [
+    "g6b-local-brettler-70-75",
+    "g6b-local-brettler-genesis-list",
+    "g6b-local-de-hoop-gen49",
+    "g6b-local-eyre-land-tenure",
+    "g6b-local-frolov-gen49-shiloh",
+    "g6b-local-galpaz-feller-embalming",
+    "g6b-local-genesis",
+    "g6b-local-halot",
+    "g6b-local-hamilton",
+    "g6b-local-lefebvre-110-years",
+    "g6b-local-rageot-embalming",
+    "g6b-local-sarna",
+    "g6b-local-steiner-gen49-10",
+    "g6b-local-tov-textual-criticism",
+    "g6b-local-zondervan"
+  ],
+  "method": "Compared all owner/source rows from the clean base CKL to all proposed G6B source IDs before writing the production CKL object; historical source IDs are not attached to the new object.",
+  "post_apply_audit": {
+    "result": "PASS",
+    "existing_historical_source_owner_rows_after_excluding_g6b_object": 5211,
+    "sha256": "799257a6e32f155b75239dacc90ca4aff64b535c47bcf183175f73a9e6a26f36",
+    "equals_base": true
+  },
+  "new_object_source_record_count": 15,
+  "total_source_record_count_after_apply": 5226,
+  "historical_source_owner_rows_changed": 0
+}

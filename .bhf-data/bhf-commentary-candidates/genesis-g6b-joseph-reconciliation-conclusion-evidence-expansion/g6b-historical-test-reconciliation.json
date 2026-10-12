@@ -1,0 +1,57 @@
+{
+  "artifact_version": "g6b-historical-test-reconciliation-v1",
+  "transaction": "GENESIS_G6B_JOSEPH_RECONCILIATION_CONCLUSION_EVIDENCE_EXPANSION",
+  "prior_tests_or_artifacts_rewritten": false,
+  "clean_g6b_base_reproduction": {
+    "base_master": "dde95a3fa41ea47f716f3b22de7b8f1e7c59a43e",
+    "command": ".venv/bin/pytest -q tests/test_genesis_g0_evidence_census.py tests/test_genesis_g1r_comparative_applicability.py tests/test_genesis_g2_shared_object_fallback.py tests/test_genesis_g3_nations_babel_isolation.py tests/test_genesis_g4a_abraham_call_covenant_isolation.py tests/test_genesis_g4b_abraham_late_cycle_isolation.py tests/test_genesis_g5a_isaac_jacob_transition_isolation.py tests/test_genesis_g5b_jacob_esau_return_isolation.py tests/test_genesis_g6a_joseph_descent_testing_isolation.py",
+    "result": "31 passed, 3 failed",
+    "classification": "The three failures below were reproduced before G6B production apply on the clean G6B base and are stale historical snapshots."
+  },
+  "post_apply_full_suite": {
+    "command": ".venv/bin/pytest -q tests/test_genesis_g0_evidence_census.py tests/test_genesis_g1r_comparative_applicability.py tests/test_genesis_g2_shared_object_fallback.py tests/test_genesis_g3_nations_babel_isolation.py tests/test_genesis_g4a_abraham_call_covenant_isolation.py tests/test_genesis_g4b_abraham_late_cycle_isolation.py tests/test_genesis_g5a_isaac_jacob_transition_isolation.py tests/test_genesis_g5b_jacob_esau_return_isolation.py tests/test_genesis_g6a_joseph_descent_testing_isolation.py tests/test_genesis_g6b_joseph_reconciliation_conclusion_isolation.py",
+    "result": "33 passed, 5 failed in 342.18s",
+    "g6b_isolated_suite": "4 passed in 31.49s"
+  },
+  "failures": [
+    {
+      "test": "tests/test_genesis_g2_shared_object_fallback.py::test_g2_local_sources_do_not_change_historical_source_owners_or_genesis_hashes",
+      "clean_base_reproduced": true,
+      "stale_expectation": "Genesis 12 pre-G4A identity: 152 evidence / 9 synthesis units; hashes ea5aed62… and b5d99419….",
+      "current_valid_identity": "Genesis 12 after G4A: 160 evidence / 14 synthesis units; hashes a2c0b096… and 9ab29889….",
+      "cause": "The old Genesis 12 snapshot predates merged G4A; G6B does not change Genesis 12."
+    },
+    {
+      "test": "tests/test_genesis_g3_nations_babel_isolation.py::test_g3_controls_and_legacy_fallback_inputs_match_base_exactly",
+      "clean_base_reproduced": true,
+      "stale_expectation": "The same pre-G4A Genesis 12 snapshot used by the G2 control.",
+      "current_valid_identity": "Genesis 12 after G4A: 160 evidence / 14 synthesis units; hashes a2c0b096… and 9ab29889….",
+      "cause": "Historical test snapshot predates merged G4A; G6B leaves Genesis 12 unchanged."
+    },
+    {
+      "test": "tests/test_genesis_g5b_jacob_esau_return_isolation.py::test_g5b_sources_are_local_and_historical_owner_rows_are_unchanged",
+      "clean_base_reproduced": true,
+      "stale_expectation": "5,181 source-owner rows from the pre-G6A state.",
+      "clean_base_observation": "5,197 rows after G6A added 16 object-local sources.",
+      "post_apply_observation": "5,212 rows in the older test view because it includes G6A and G6B source records but excludes G5B’s own object.",
+      "cause": "The prior test snapshot predates G6A and G6B; the G6B ownership audit excluding the G6B object still matches its 5,211-row base hash exactly."
+    },
+    {
+      "test": "tests/test_genesis_g6a_joseph_descent_testing_isolation.py::test_g6a_object_candidates_sources_and_direct_anchors_are_isolated",
+      "clean_base_reproduced": false,
+      "stale_expectation": "686 total CKL objects and 1,215 total evidence items.",
+      "post_apply_observation": "687 CKL objects and 1,292 evidence items after G6B adds the authorized object and 77 evidence items.",
+      "cause": "The G6A test hard-codes the pre-G6B global inventory. The G6A object itself and its 78 candidates remain unchanged."
+    },
+    {
+      "test": "tests/test_genesis_g6a_joseph_descent_testing_isolation.py::test_g6a_source_aliases_and_historical_owner_rows_are_unchanged",
+      "clean_base_reproduced": false,
+      "stale_expectation": "5,195 owner rows when excluding the G6A object.",
+      "post_apply_observation": "5,210 rows when excluding G6A but including the 15 new G6B source records.",
+      "cause": "The old test’s owner-count snapshot predates G6B. Excluding the G6B object as well yields the exact 5,211-row G6B base count/hash; no historical owner row changed."
+    }
+  ],
+  "no_g6b_test_failures": true,
+  "g6b_source_owner_gate": "PASS",
+  "interpretation": "The five suite failures are stale historical expectations, not unexplained G6B isolation failures. The three inherited failures were reproduced on the clean G6B base. The two new G6A failures are the direct consequence of G6B’s expected global object/evidence/source count increase. Prior tests and reports remain unchanged."
+}
