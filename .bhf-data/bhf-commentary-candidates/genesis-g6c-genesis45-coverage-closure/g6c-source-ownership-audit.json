@@ -1,0 +1,108 @@
+{
+  "all_existing_target_object_source_records_unchanged": true,
+  "artifact_version": "g6c-source-ownership-audit-v1",
+  "base_owner_row_count": 5226,
+  "base_owner_row_sha256": "cf30e0efbef43fa03b34a15643f49802bac00fac9b39059283ed7d6c589b5841",
+  "existing_historical_source_owner_rows_changed": 0,
+  "historical_owner_rows_removed_or_reassigned": [],
+  "method": "Compared all (owner_id, source_id) pairs on clean G6B base and proposed object; every prior row and source record remains unchanged. Six new local IDs are owned by the existing isolated G6B object.",
+  "new_object_local_owner_rows": [
+    {
+      "owner": "genesis-joseph-reconciliation-conclusion-context",
+      "source_id": "g6c-local-bader-tell-el-daba"
+    },
+    {
+      "owner": "genesis-joseph-reconciliation-conclusion-context",
+      "source_id": "g6c-local-bietak-egypt-canaan"
+    },
+    {
+      "owner": "genesis-joseph-reconciliation-conclusion-context",
+      "source_id": "g6c-local-goldingay-psalms"
+    },
+    {
+      "owner": "genesis-joseph-reconciliation-conclusion-context",
+      "source_id": "g6c-local-matthews-clothing"
+    },
+    {
+      "owner": "genesis-joseph-reconciliation-conclusion-context",
+      "source_id": "g6c-local-psalms-text"
+    },
+    {
+      "owner": "genesis-joseph-reconciliation-conclusion-context",
+      "source_id": "g6c-local-twiss-judah-speech"
+    }
+  ],
+  "new_source_record_count": 6,
+  "phase": "post-production-apply",
+  "post_apply_expected_owner_row_count": 5232,
+  "post_apply_expected_owner_row_sha256": "a4f98b730eed941f5962a43b89d4a23955bbef5df0806196742933bd9542e9fa",
+  "result": "PASS",
+  "source_aliases": [
+    {
+      "alias_kind": "new-object-local-scholarly-source",
+      "historical_source_id": null,
+      "identity_preserved_fields": [],
+      "local_source_id": "g6c-local-bader-tell-el-daba"
+    },
+    {
+      "alias_kind": "new-object-local-scholarly-source",
+      "historical_source_id": null,
+      "identity_preserved_fields": [],
+      "local_source_id": "g6c-local-bietak-egypt-canaan"
+    },
+    {
+      "alias_kind": "same-publication-work",
+      "historical_source_id": "goldingay-psalms",
+      "identity_preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type"
+      ],
+      "local_source_id": "g6c-local-goldingay-psalms"
+    },
+    {
+      "alias_kind": "new-object-local-scholarly-source",
+      "historical_source_id": null,
+      "identity_preserved_fields": [],
+      "local_source_id": "g6c-local-matthews-clothing"
+    },
+    {
+      "alias_kind": "canonical-scripture-source-with-narrower-locator",
+      "historical_source_id": "psalms",
+      "identity_preserved_fields": [
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "url",
+        "source_type"
+      ],
+      "local_source_id": "g6c-local-psalms-text",
+      "locator": "Psalm 105:16–22"
+    },
+    {
+      "alias_kind": "new-object-local-scholarly-source",
+      "historical_source_id": null,
+      "identity_preserved_fields": [],
+      "local_source_id": "g6c-local-twiss-judah-speech"
+    }
+  ],
+  "transaction": "GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE",
+  "post_apply_audit": {
+    "base_historical_owner_row_count": 5226,
+    "base_historical_owner_row_sha256": "cf30e0efbef43fa03b34a15643f49802bac00fac9b39059283ed7d6c589b5841",
+    "historical_owner_rows_after_excluding_six_new_local_rows": 5226,
+    "historical_owner_row_sha256_after_excluding_new_local_rows": "cf30e0efbef43fa03b34a15643f49802bac00fac9b39059283ed7d6c589b5841",
+    "current_total_owner_row_count": 5232,
+    "current_total_owner_row_sha256": "a4f98b730eed941f5962a43b89d4a23955bbef5df0806196742933bd9542e9fa",
+    "new_local_owner_row_count": 6,
+    "new_local_owner_rows_exact": true,
+    "all_previous_source_records_preserved": true,
+    "all_previous_owner_rows_preserved": true,
+    "result": "PASS"
+  }
+}

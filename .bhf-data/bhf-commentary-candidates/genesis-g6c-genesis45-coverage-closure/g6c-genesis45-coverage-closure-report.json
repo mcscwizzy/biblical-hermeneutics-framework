@@ -1,0 +1,327 @@
+{
+  "artifact_version": "g6c-genesis45-coverage-closure-report-v1",
+  "transaction": "GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE",
+  "status": "GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE_VERIFIED",
+  "base_master": "547128c267d0d07783a6efc4e70c39e35653dad0",
+  "branch": "feat/genesis-g6c-genesis45-coverage-closure",
+  "selected_architecture": "ENRICH_EXISTING_G6B_ISOLATED_OBJECT",
+  "architecture_rationale": "Candidate/preparation dry-run changed exactly Genesis 45 across all 1,189 chapters; Genesis 46–50 and all other controls remained exact. The existing object’s outer Genesis 45–50 applicability span is unchanged.",
+  "target_object": {
+    "id": "genesis-joseph-reconciliation-conclusion-context",
+    "type": "cultural_background",
+    "path": "framework/canonical_library/objects/cultural_background/genesis-joseph-reconciliation-conclusion-context.json",
+    "object_sha256": "746d4dd85b9ad5b9e419c15c5dc523be02c3dbe6cf897617410604d806a048d7",
+    "objects_before_after": [
+      687,
+      687
+    ]
+  },
+  "scope": "Genesis 45 only",
+  "historical_source_owner_rows_changed": 0,
+  "source_owner_audit": {
+    "base_historical_owner_row_count": 5226,
+    "base_historical_owner_row_sha256": "cf30e0efbef43fa03b34a15643f49802bac00fac9b39059283ed7d6c589b5841",
+    "historical_owner_rows_after_excluding_six_new_local_rows": 5226,
+    "historical_owner_row_sha256_after_excluding_new_local_rows": "cf30e0efbef43fa03b34a15643f49802bac00fac9b39059283ed7d6c589b5841",
+    "current_total_owner_row_count": 5232,
+    "current_total_owner_row_sha256": "a4f98b730eed941f5962a43b89d4a23955bbef5df0806196742933bd9542e9fa",
+    "new_local_owner_row_count": 6,
+    "new_local_owner_rows_exact": true,
+    "all_previous_source_records_preserved": true,
+    "all_previous_owner_rows_preserved": true,
+    "result": "PASS"
+  },
+  "evidence_counts": {
+    "before": 16,
+    "after": 21
+  },
+  "synthesis_unit_counts": {
+    "before": 10,
+    "after": 11
+  },
+  "hashes": {
+    "evidence_before": "6a1265a55a08d7700f628a165bc11ca8849a93f31f6b9864452aabd5b878ab5d",
+    "evidence_after": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+    "synthesis_before": "43e2cee7a5a75adf741b021fb55d9ff9b84f6788d5672f64756903bcebc63a4b",
+    "synthesis_after": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8"
+  },
+  "final_classification": "GOOD",
+  "final_dimensional_coverage": {
+    "immediate_literary_context": "COVERED",
+    "ancient_near_eastern_context": "COVERED",
+    "cultural_social_context": "COVERED",
+    "geography": "COVERED",
+    "archaeology_material_culture": "COVERED",
+    "historical_context": "COVERED",
+    "hebrew_worldview_concepts": "COVERED",
+    "divine_council_spiritual_worldview": "NOT_APPLICABLE",
+    "covenant_context": "NOT_APPLICABLE",
+    "intertextual_canonical_connections": "COVERED",
+    "textual_manuscript_issues": "NOT_APPLICABLE",
+    "lexical_concepts": "NOT_APPLICABLE",
+    "interpretive_disputes": "NOT_APPLICABLE"
+  },
+  "evidence_items_added": [
+    {
+      "id": "g6c-45-judah-speech-to-joseph-revelation",
+      "title": "Judah’s offer and Joseph’s self-disclosure",
+      "direct_anchor_references": [
+        "Genesis 45:1-3"
+      ],
+      "source_ids": [
+        "g6b-local-genesis",
+        "g6b-local-sarna",
+        "g6b-local-hamilton",
+        "g6c-local-twiss-judah-speech"
+      ],
+      "candidate_dimension": "literary-convention"
+    },
+    {
+      "id": "g6c-45-gifts-garments-silver-material-culture",
+      "title": "Clothing and provisions in Joseph’s reconciliation gifts",
+      "direct_anchor_references": [
+        "Genesis 45:21-23"
+      ],
+      "source_ids": [
+        "g6b-local-genesis",
+        "g6b-local-sarna",
+        "g6b-local-hamilton",
+        "g6c-local-matthews-clothing"
+      ],
+      "candidate_dimension": "material-culture"
+    },
+    {
+      "id": "g6c-45-levant-egypt-mobility-context",
+      "title": "Levantine mobility and Egypt–Levant contact in the eastern Delta",
+      "direct_anchor_references": [
+        "Genesis 45:9-11"
+      ],
+      "source_ids": [
+        "g6b-local-genesis",
+        "g6b-local-sarna",
+        "g6c-local-bietak-egypt-canaan",
+        "g6c-local-bader-tell-el-daba"
+      ],
+      "candidate_dimension": "historical-context"
+    },
+    {
+      "id": "g6c-45-genesis50-providence-reprise",
+      "title": "Genesis 50:20 reprises providence and human responsibility",
+      "direct_anchor_references": [
+        "Genesis 45:4-8"
+      ],
+      "source_ids": [
+        "g6b-local-genesis",
+        "g6b-local-hamilton"
+      ],
+      "candidate_dimension": "intertextual-canonical-connection"
+    },
+    {
+      "id": "g6c-45-psalm105-joseph-sent-ahead-reception",
+      "title": "Psalm 105 retells Joseph as sent ahead",
+      "direct_anchor_references": [
+        "Genesis 45:5-8"
+      ],
+      "source_ids": [
+        "g6b-local-genesis",
+        "g6b-local-hamilton",
+        "g6c-local-goldingay-psalms",
+        "g6c-local-psalms-text"
+      ],
+      "candidate_dimension": "intertextual-canonical-connection"
+    }
+  ],
+  "sources_added_or_aliased": [
+    {
+      "id": "g6c-local-bader-tell-el-daba",
+      "title": "Contacts between Egypt and Syria-Palestine as seen in a Grown Settlement of the late Middle Kingdom at Tell el-Dabʿa/Egypt",
+      "author": "Bettina Bader",
+      "year": 2011,
+      "url": "https://ucrisportal.univie.ac.at/en/publications/contacts-between-egypt-and-syria-palestine-as-seen-in-a-grown-set/",
+      "kind": "new-object-local-scholarly-source",
+      "supported_evidence_ids": [
+        "g6c-45-levant-egypt-mobility-context"
+      ]
+    },
+    {
+      "id": "g6c-local-bietak-egypt-canaan",
+      "title": "Egypt and Canaan during the Middle Bronze Age",
+      "author": "Manfred Bietak",
+      "year": 1991,
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.2307/1357163",
+      "kind": "new-object-local-scholarly-source",
+      "supported_evidence_ids": [
+        "g6c-45-levant-egypt-mobility-context"
+      ]
+    },
+    {
+      "id": "g6c-local-goldingay-psalms",
+      "title": "Psalms",
+      "author": "John Goldingay",
+      "year": 2008,
+      "url": "https://tst.bakeracademic.com/p/Psalms-John-Goldingay/40486",
+      "kind": "same-publication-work",
+      "supported_evidence_ids": [
+        "g6c-45-psalm105-joseph-sent-ahead-reception"
+      ]
+    },
+    {
+      "id": "g6c-local-matthews-clothing",
+      "title": "The Anthropology of Clothing in the Joseph Narrative",
+      "author": "Victor H. Matthews",
+      "year": 1995,
+      "url": "https://journals.sagepub.com/doi/10.1177/030908929502006503",
+      "kind": "new-object-local-scholarly-source",
+      "supported_evidence_ids": [
+        "g6c-45-gifts-garments-silver-material-culture"
+      ]
+    },
+    {
+      "id": "g6c-local-psalms-text",
+      "title": "Psalms",
+      "author": "",
+      "year": null,
+      "url": "",
+      "kind": "canonical-scripture-source-with-narrower-locator",
+      "supported_evidence_ids": [
+        "g6c-45-psalm105-joseph-sent-ahead-reception"
+      ]
+    },
+    {
+      "id": "g6c-local-twiss-judah-speech",
+      "title": "An Overlooked Aspect of Judah’s Speech in Genesis 44:18–34",
+      "author": "Paul Twiss",
+      "year": 2022,
+      "url": "https://etsjets.org/wp-content/uploads/JETS_65.3_457-71_Twiss.pdf",
+      "kind": "new-object-local-scholarly-source",
+      "supported_evidence_ids": [
+        "g6c-45-judah-speech-to-joseph-revelation"
+      ]
+    }
+  ],
+  "dimensional_findings": {
+    "immediate_literary_context": "Judah’s transformed offer in Genesis 44 precedes Joseph’s loss of composure, dismissal of attendants, self-disclosure and the brothers’ inability to answer; Genesis 44 remains contextual only.",
+    "archaeology_material_culture": "The clothing, silver and provisions evidence is distinct from the wagon item; it makes no exact garment/value claim and cites no archaeological assemblage as direct explanation.",
+    "historical_context": "Tell el-Dabʿa/Egypt–Levant scholarship contextualizes mobility and population presence in its own periods only; no identification of Jacob’s household, Joseph, dynasty or Hyksos shortcut.",
+    "intertextual_canonical_connections": "Genesis 50:20 is an intra-Genesis reprise; Psalm 105:16–22 is later canonical reception/context only. Neither is an applicability anchor."
+  },
+  "providence_safeguard": "The brothers’ sale of Joseph remains culpable wrongdoing. Genesis 45’s divine preservation interpretation and Genesis 50:20’s later reprise hold human evil intent and divine good purpose together, without moral neutrality, fatalism or a complete philosophical system.",
+  "whole_corpus_impact": {
+    "chapter_count": 1189,
+    "changed_chapters": [
+      "Genesis 45"
+    ],
+    "collateral_chapter_changes": [],
+    "controls": {
+      "Genesis 1": true,
+      "Genesis 2": true,
+      "Genesis 12": true,
+      "Genesis 22": true,
+      "Genesis 31": true,
+      "Genesis 36": true,
+      "Genesis 37": true,
+      "Genesis 41": true,
+      "Genesis 44": true,
+      "Genesis 46": true,
+      "Genesis 47": true,
+      "Genesis 48": true,
+      "Genesis 49": true,
+      "Genesis 50": true,
+      "Exodus 1": true,
+      "Exodus 25": true,
+      "Psalms 105": true,
+      "Isaiah 36": true,
+      "Acts 7": true,
+      "Acts 16": true,
+      "Revelation 12": true,
+      "Revelation 18": true
+    },
+    "genesis_37_44_exact": true,
+    "genesis_46_50_exact": true,
+    "psalm_105_exact": true
+  },
+  "runtime_db": {
+    "status": "PASS",
+    "fingerprint": "90fa7547ea4146328ab1fc4f9e4ca1b262f810e0e503c589b64a5f9b8c4a08c6",
+    "objects": 687,
+    "sources": 5232,
+    "evidence": 1297
+  },
+  "commentary_v1_2": {
+    "status": "FROZEN_EXACT",
+    "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+    "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+    "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+    "indexed_files": 973,
+    "all_valid": true,
+    "output_rewritten": false
+  },
+  "commentary_stale_set": [
+    "Genesis 2",
+    "Genesis 3",
+    "Genesis 4",
+    "Genesis 5",
+    "Genesis 6",
+    "Genesis 7",
+    "Genesis 8",
+    "Genesis 9",
+    "Genesis 10",
+    "Genesis 11",
+    "Genesis 12",
+    "Genesis 13",
+    "Genesis 14",
+    "Genesis 15",
+    "Genesis 16",
+    "Genesis 17",
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25",
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30",
+    "Genesis 31",
+    "Genesis 32",
+    "Genesis 33",
+    "Genesis 34",
+    "Genesis 35",
+    "Genesis 36",
+    "Genesis 37",
+    "Genesis 38",
+    "Genesis 39",
+    "Genesis 40",
+    "Genesis 41",
+    "Genesis 42",
+    "Genesis 43",
+    "Genesis 44",
+    "Genesis 45",
+    "Genesis 46",
+    "Genesis 47",
+    "Genesis 48",
+    "Genesis 49",
+    "Genesis 50"
+  ],
+  "genesis_census": {
+    "GOOD": 50,
+    "THIN": 0,
+    "SPARSE": 0,
+    "GAP": 0
+  },
+  "remaining_below_good": [],
+  "historical_test_reconciliation": "PASS_WITH_DOCUMENTED_HISTORICAL_SNAPSHOT_DRIFT",
+  "test_summary": {
+    "passed": 43,
+    "documented_failures": 6
+  },
+  "completion_tokens": [
+    "GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE_VERIFIED",
+    "GENESIS_CKL_EVIDENCE_EXPANSION_COMPLETE"
+  ],
+  "safe_to_merge": "YES"
+}

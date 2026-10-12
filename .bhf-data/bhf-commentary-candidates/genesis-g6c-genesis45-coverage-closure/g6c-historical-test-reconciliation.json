@@ -1,0 +1,59 @@
+{
+  "artifact_version": "g6c-historical-test-reconciliation-v1",
+  "transaction": "GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE",
+  "final_regression_command": "python3 -m pytest -q tests/test_genesis_g0_evidence_census.py tests/test_genesis_g1r_comparative_applicability.py tests/test_genesis_g2_shared_object_fallback.py tests/test_genesis_g3_nations_babel_isolation.py tests/test_genesis_g4a_abraham_call_covenant_isolation.py tests/test_genesis_g4b_abraham_late_cycle_isolation.py tests/test_genesis_g5a_isaac_jacob_transition_isolation.py tests/test_genesis_g5b_jacob_esau_return_isolation.py tests/test_genesis_g6a_joseph_descent_testing_isolation.py tests/test_genesis_g6b_joseph_reconciliation_conclusion_isolation.py tests/test_commentary_v12_freeze.py",
+  "final_regression_result": {
+    "passed": 43,
+    "failed": 6,
+    "exit_code": 1,
+    "failures": [
+      {
+        "test": "tests/test_genesis_g2_shared_object_fallback.py::test_g2_local_sources_do_not_change_historical_source_owners_or_genesis_hashes",
+        "classification": "inherited_snapshot_drift",
+        "reason": "The test expects the pre-G4A Genesis 12 identity; clean G6B base reproduces the same identity mismatch (actual 160 evidence / 14 synthesis units vs expected 152 / 9)."
+      },
+      {
+        "test": "tests/test_genesis_g3_nations_babel_isolation.py::test_g3_controls_and_legacy_fallback_inputs_match_base_exactly",
+        "classification": "inherited_snapshot_drift",
+        "reason": "The test’s Genesis 12 control predates the G4A Genesis 12 expansion; clean G6B base reproduces the same mismatch."
+      },
+      {
+        "test": "tests/test_genesis_g5b_jacob_esau_return_isolation.py::test_g5b_sources_are_local_and_historical_owner_rows_are_unchanged",
+        "classification": "inherited_snapshot_drift",
+        "reason": "The test hard-codes 5,181 source-owner rows; clean G6B base has 5,212 rows after later G6A/G6B transactions."
+      },
+      {
+        "test": "tests/test_genesis_g6a_joseph_descent_testing_isolation.py::test_g6a_object_candidates_sources_and_direct_anchors_are_isolated",
+        "classification": "inherited_snapshot_drift",
+        "reason": "The test hard-codes 686 CKL objects; clean G6B base contains 687 after G6B added its isolated object."
+      },
+      {
+        "test": "tests/test_genesis_g6a_joseph_descent_testing_isolation.py::test_g6a_source_aliases_and_historical_owner_rows_are_unchanged",
+        "classification": "inherited_snapshot_drift",
+        "reason": "The test hard-codes 5,195 owner rows; clean G6B base has 5,210 after G6B added its 15 object-local sources."
+      },
+      {
+        "test": "tests/test_genesis_g6b_joseph_reconciliation_conclusion_isolation.py::test_g6b_object_candidates_sources_and_direct_anchors_are_isolated",
+        "classification": "expected_g6c_snapshot_delta",
+        "reason": "G6B asserts its 77-item candidate packet equals the full production object. G6C adds five separately identified items to that same object; this assertion passes on clean G6B base and fails on G6C by design."
+      }
+    ]
+  },
+  "clean_g6b_base_reproduction": {
+    "base_commit": "547128c267d0d07783a6efc4e70c39e35653dad0",
+    "method": "Temporarily restored the target object bytes from git show HEAD:<path>, ran the six failing selectors, and restored the G6C object in a finally block; restoration hash matched the applied G6C object.",
+    "selected_test_count": 6,
+    "passed": 1,
+    "failed": 5,
+    "failure_names": [
+      "tests/test_genesis_g2_shared_object_fallback.py::test_g2_local_sources_do_not_change_historical_source_owners_or_genesis_hashes",
+      "tests/test_genesis_g3_nations_babel_isolation.py::test_g3_controls_and_legacy_fallback_inputs_match_base_exactly",
+      "tests/test_genesis_g5b_jacob_esau_return_isolation.py::test_g5b_sources_are_local_and_historical_owner_rows_are_unchanged",
+      "tests/test_genesis_g6a_joseph_descent_testing_isolation.py::test_g6a_object_candidates_sources_and_direct_anchors_are_isolated",
+      "tests/test_genesis_g6a_joseph_descent_testing_isolation.py::test_g6a_source_aliases_and_historical_owner_rows_are_unchanged"
+    ],
+    "g6b_object_candidate_test": "PASS on clean G6B base"
+  },
+  "interpretation": "Five failures are inherited snapshot/count assumptions and reproduce on the clean G6B base. The sixth is an expected G6C additive-data mismatch in a G6B equality assertion; the G6B transaction test passes on its clean base. Historical test files were not modified. G6C-specific candidate, source-owner, preparation, coverage and whole-corpus exact-impact gates pass.",
+  "result": "PASS_WITH_DOCUMENTED_HISTORICAL_SNAPSHOT_DRIFT"
+}
