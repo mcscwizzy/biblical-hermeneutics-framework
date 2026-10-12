@@ -1,0 +1,44 @@
+{
+  "artifact_version": "g6b-production-apply-manifest-v1",
+  "transaction": "GENESIS_G6B_JOSEPH_RECONCILIATION_CONCLUSION_EVIDENCE_EXPANSION",
+  "branch": "feat/genesis-g6b-joseph-reconciliation-conclusion",
+  "base_master": "dde95a3fa41ea47f716f3b22de7b8f1e7c59a43e",
+  "scope": "Genesis 45–50 only",
+  "apply_status": "APPLIED_AFTER_PREAPPLY_SOURCE_OWNERSHIP_AND_SCHEMA_GATES",
+  "new_object": {
+    "id": "genesis-joseph-reconciliation-conclusion-context",
+    "type": "cultural_background",
+    "path": "framework/canonical_library/objects/cultural_background/genesis-joseph-reconciliation-conclusion-context.json",
+    "sha256": "c771211b66a04daf22ac67ec8ef5a787b1d81cdb65aaefe72ab06ca8e69f2909"
+  },
+  "ckl_manifest": {
+    "path": "framework/canonical_library/manifest.json",
+    "sha256": "334c42fc5245779f22c7e68143a09e3ee8a1c724f74faacd833d088ba7cfc0a4",
+    "object_count_before": 686,
+    "object_count_after": 687,
+    "cultural_background_count_after": 52
+  },
+  "object_count_before": 686,
+  "object_count_after": 687,
+  "evidence_item_count_before": 1215,
+  "evidence_item_count_after": 1292,
+  "source_record_count_before": 5211,
+  "source_record_count_after": 5226,
+  "new_object_evidence_item_count": 77,
+  "new_object_source_record_count": 15,
+  "historical_source_owner_rows_changed": 0,
+  "preapply_source_ownership_audit": "PASS",
+  "preapply_object_schema_validation": "PASS",
+  "expected_changed_chapters": [
+    "Genesis 45",
+    "Genesis 46",
+    "Genesis 47",
+    "Genesis 48",
+    "Genesis 49",
+    "Genesis 50"
+  ],
+  "production_writes": [
+    "framework/canonical_library/manifest.json",
+    "framework/canonical_library/objects/cultural_background/genesis-joseph-reconciliation-conclusion-context.json"
+  ]
+}

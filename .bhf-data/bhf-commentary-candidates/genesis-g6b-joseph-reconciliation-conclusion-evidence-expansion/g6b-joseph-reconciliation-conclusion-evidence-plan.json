@@ -1,0 +1,186 @@
+{
+  "artifact_version": "g6b-evidence-plan-v1",
+  "transaction": "GENESIS_G6B_JOSEPH_RECONCILIATION_CONCLUSION_EVIDENCE_EXPANSION",
+  "scope": "Genesis 45–50 only",
+  "target_object_id": "genesis-joseph-reconciliation-conclusion-context",
+  "target_type": "cultural_background",
+  "target_path": "framework/canonical_library/objects/cultural_background/genesis-joseph-reconciliation-conclusion-context.json",
+  "candidate_count": 77,
+  "candidates_per_chapter": {
+    "45": 11,
+    "46": 13,
+    "47": 13,
+    "48": 10,
+    "49": 18,
+    "50": 12
+  },
+  "coverage_topics": {
+    "Genesis 45": [
+      "revelation scene and stated dismay",
+      "human wrongdoing with providence",
+      "famine chronology and remnant",
+      "father to Pharaoh court rhetoric",
+      "Goshen invitation",
+      "Benjamin reconciliation and gifts",
+      "Pharaoh wagons and provision",
+      "Jacob belief and revived spirit"
+    ],
+    "Genesis 46": [
+      "Beersheba sacrifice",
+      "night vision and covenant migration",
+      "divine presence and bring-up promise",
+      "household movement",
+      "genealogical function and named women",
+      "MT 66/70 and LXX 75",
+      "Qumran Exodus witnesses and Acts reception as context",
+      "Judah sent ahead",
+      "reunion",
+      "shepherd occupation boundary and Goshen"
+    ],
+    "Genesis 47": [
+      "brothers before Pharaoh",
+      "Jacob blessing and age",
+      "Goshen/Rameses cautious geography",
+      "money, livestock, land and people, seed and one-fifth",
+      "priestly exception",
+      "land and labor terminology",
+      "Egypt/Israel narrative contrast",
+      "burial oath gesture"
+    ],
+    "Genesis 48": [
+      "Ephraim/Manasseh elevation and tribal inheritance",
+      "Rachel memory",
+      "sight and literary echo",
+      "crossed hands and younger-over-older motif",
+      "God shepherd/messenger redemption language",
+      "name and multiplication",
+      "Shechem portion difficulty"
+    ],
+    "Genesis 49": [
+      "poetic tribal-saying genre",
+      "tribal characterization and historical referents",
+      "Reuben and Genesis 35 context",
+      "Simeon/Levi and Genesis 34 context",
+      "Judah prominence, lion, scepter and multiple readings of 49:10",
+      "wine/vine imagery",
+      "Zebulun geography and Issachar labor imagery",
+      "Dan/Gad/Asher/Naphtali poetic wordplay",
+      "Joseph titles and fertility/attacks",
+      "Benjamin wolf",
+      "composition/date complexity"
+    ],
+    "Genesis 50": [
+      "physicians, embalming and mourning periods",
+      "Pharaoh permission and procession",
+      "Atad/Abel-mizraim caution",
+      "Machpelah property thread",
+      "brothers fear and reported Jacob message distinction",
+      "Joseph’s weeping and reassurance",
+      "50:20 evil intent and good purpose",
+      "110 years as comparative motif only",
+      "oath, bones, coffin, and Exodus bridge"
+    ]
+  },
+  "architecture": [
+    "one isolated cultural_background object",
+    "new object-local source aliases where historical works are reused",
+    "no new source ownership on broad Genesis or shared subjects",
+    "one-way typed relationships only",
+    "all direct applicability anchors within Genesis 45–50",
+    "comparative, later reception, and Exodus/Acts data remain context only"
+  ],
+  "claim_dispositions": [
+    {
+      "claim": "God’s providence makes the brothers morally blameless",
+      "disposition": "reject",
+      "reason": "Genesis 45 and 50 preserve their harmful intention while also attributing preservation to God."
+    },
+    {
+      "claim": "“Father to Pharaoh” certainly names a specific Egyptian office",
+      "disposition": "withhold",
+      "reason": "Courtly counsel/honorific rhetoric is possible; no exact title identification is secure."
+    },
+    {
+      "claim": "Goshen has one certain archaeological identification",
+      "disposition": "withhold",
+      "reason": "Broad eastern Delta context only; exact location is debated."
+    },
+    {
+      "claim": "Genesis 46 totals are solved by adding unnamed travelers",
+      "disposition": "reject",
+      "reason": "Represent MT, LXX, Qumran Exodus evidence, and Acts 7 without invented people."
+    },
+    {
+      "claim": "Egyptian shepherd aversion equals modern racial segregation",
+      "disposition": "reject",
+      "reason": "Narrative social-boundary wording does not establish that modern category or a certain historical cause."
+    },
+    {
+      "claim": "Rameses terminology by itself dates the whole narrative",
+      "disposition": "reject",
+      "reason": "Later familiar nomenclature and other geographic/compositional possibilities remain."
+    },
+    {
+      "claim": "Egyptian records independently verify Joseph’s famine policy",
+      "disposition": "reject",
+      "reason": "Comparative land-tenure evidence is limited and does not attest the story’s exact policy."
+    },
+    {
+      "claim": "Genesis 47 straightforwardly describes modern chattel slavery",
+      "disposition": "reject",
+      "reason": "Land tenure, service, dependency, labor, and later chattel categories must be distinguished."
+    },
+    {
+      "claim": "Ephraim and Manasseh’s status is identical to a known legal adoption contract",
+      "disposition": "withhold",
+      "reason": "The narrative elevates them in tribal inheritance without specifying that modern or exact institutional equivalence."
+    },
+    {
+      "claim": "The angel/messenger in Genesis 48 is explicitly Jesus in the immediate text",
+      "disposition": "reject",
+      "reason": "The Hebrew divine-agency language does not require an explicit Trinitarian identification."
+    },
+    {
+      "claim": "Genesis 49:10 has one undisputed Hebrew reading",
+      "disposition": "reject",
+      "reason": "Several philological and translation options remain live."
+    },
+    {
+      "claim": "Genesis 49 is exclusively predictive prophecy without tribal/historical dimension",
+      "disposition": "reject",
+      "reason": "Genre includes poetic blessing, tribal characterization, history, and future-oriented speech."
+    },
+    {
+      "claim": "Judah’s saying has only later Christian messianic meaning",
+      "disposition": "reject",
+      "reason": "Immediate tribal and royal language and later Jewish/Christian reception are distinct."
+    },
+    {
+      "claim": "Genesis 49 proves one exact Pentateuchal composition date",
+      "disposition": "reject",
+      "reason": "Composition and dating approaches are diverse; no one verse settles the whole Pentateuch."
+    },
+    {
+      "claim": "Jacob certainly received full royal embalming",
+      "disposition": "withhold",
+      "reason": "The text says physicians embalmed him but does not describe full royal protocol."
+    },
+    {
+      "claim": "The brothers’ report of Jacob’s forgiveness command is certainly fabricated",
+      "disposition": "withhold",
+      "reason": "The text reports their message but does not independently verify it or call it false."
+    },
+    {
+      "claim": "Genesis 50:20 makes all evil morally neutral",
+      "disposition": "reject",
+      "reason": "The verse preserves human evil intention and divine good purpose; it does not neutralize wrongdoing."
+    },
+    {
+      "claim": "Joseph’s tomb or coffin has been archaeologically identified",
+      "disposition": "reject",
+      "reason": "Genesis ends with his coffin in Egypt; no archaeological identification is established."
+    }
+  ],
+  "pre_apply_source_ownership_audit": "g6b-source-ownership-audit.json",
+  "candidate_review_status": "ready for deterministic replay and schema validation before production apply"
+}

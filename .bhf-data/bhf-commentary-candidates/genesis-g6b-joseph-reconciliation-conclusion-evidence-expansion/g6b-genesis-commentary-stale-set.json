@@ -1,0 +1,511 @@
+{
+  "artifact_version": "g6b-genesis-commentary-stale-set-v1",
+  "transaction": "GENESIS_G6B_JOSEPH_RECONCILIATION_CONCLUSION_EVIDENCE_EXPANSION",
+  "commentary_release": "Commentary v1.2",
+  "commentary_frozen": true,
+  "commentary_freeze_identity": {
+    "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+    "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+    "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+    "indexed_file_count": 973,
+    "all_indexed_files_valid": true,
+    "matches_base_manifest_identity": true,
+    "matches_base_checksum_index_sha256": true,
+    "mutation_authorized": false,
+    "result": "PASS"
+  },
+  "comparison": "Each chapter’s current prepare_chapter evidence_hash and synthesis_hash versus the published Commentary v1.2 chapter_publication_index source_lineage.",
+  "chapter_count": 49,
+  "chapters": [
+    {
+      "reference": "Genesis 2",
+      "current_evidence_hash": "ed5995b4d842682dc80149e73a94acb62d95f909a3450f6937da6b49fa60c9be",
+      "current_synthesis_hash": "9e7ccb10d8828f1bd717a1ca9535bd4892defb82351bdd4c98a0b6b56f792a80",
+      "published_commentary_evidence_hash": "170d026c7721c7fab2b3069177023f1b63002d448055e11aa1d09d0009c8a633",
+      "published_commentary_synthesis_hash": "8115f4c1a55566522280d154d2f55773c87d85045ce2b713906978f24f9d9d17",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 3",
+      "current_evidence_hash": "870102c3c989fca11cdca2f909746de3e8ab0b3c7c690cd1408d1e44ac66c26b",
+      "current_synthesis_hash": "0132c6233503bb91e33efa3740c68a919931bc6a56e40a8b96a7452012e287ef",
+      "published_commentary_evidence_hash": "cadc40d9d39d07366c8f83768d836a59d21fa0c2bf240c160f440b0d3bc31496",
+      "published_commentary_synthesis_hash": "db38d68d50b9f5663b23a76747aa5c7d6ded4efebec1ea9cddbbb4710621d45e",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 4",
+      "current_evidence_hash": "7e0d7e84879a6b149d05187211b9365b54a05e9e071078ea65b90695b1fd0c24",
+      "current_synthesis_hash": "417b91d1b4e09db99370e10164eddd2c9ad998b053bc0d6aeca03944488c6dc8",
+      "published_commentary_evidence_hash": "1cf828d1bb83b3545d547d771e458c0dbee30d5f2814ab5f00284f49938ee5d5",
+      "published_commentary_synthesis_hash": "8f599ef4bbf98aef9c992c6b216c4b95f284c4afaca93b4bdec5255104e8e765",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 5",
+      "current_evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+      "current_synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+      "published_commentary_evidence_hash": null,
+      "published_commentary_synthesis_hash": null,
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 6",
+      "current_evidence_hash": "f30b5cf8f944d843a3fab81ff5dbe4b130ad0b9d3f1fafecb74babeeeb3c4cb1",
+      "current_synthesis_hash": "9730ac5f58de247bcbeaa0110c9958c0b37dd66cf086b794b993106ad8691f27",
+      "published_commentary_evidence_hash": "9e2879195d1e3bca408d1789ac7ba8f155d65b4c8c0e6ddba94f6a0c95b48530",
+      "published_commentary_synthesis_hash": "e3875acb6227e0e4e677a839f084016b9c46fbe3b1e5b7e2c9a6d5147056a042",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 7",
+      "current_evidence_hash": "63fedc8a85e193b58a84e8f9260a7409d6ab459c382d499385d41dfa2760f476",
+      "current_synthesis_hash": "cc03646852ca3f360029eb5a4391a1109215f170b3e2283f9faba3ae8cacafc7",
+      "published_commentary_evidence_hash": "20a3c4fccf2fa9592c4068ab756d915953c9bef2663d2118353adc6151f0659b",
+      "published_commentary_synthesis_hash": "b4c8295c9df5c35657836d94bc9b12488d1e55237bb9f28dd5cf06102452a831",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 8",
+      "current_evidence_hash": "9691f48226ea4e85b39d1902c34eee347c2e2bb4579502a63ab20ead1697dd46",
+      "current_synthesis_hash": "0137f810ecdacb15b52b08993e7e3de683a75bebfb4b54dc0f0d28b8bf61c440",
+      "published_commentary_evidence_hash": "6a96743cf5fd0c6f84437ab5ba9c21763f8d34c1780e533ce934d4db848edc92",
+      "published_commentary_synthesis_hash": "af111750f6d3514d0b1c442740da23fe0ad00bf2c31bd35a75f03fcacfedb378",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 9",
+      "current_evidence_hash": "f675c064faaa00917456f23345f7cabee28d0a698a2e24e6472970d6b8e5bbb9",
+      "current_synthesis_hash": "0364dc2f13694481d2c8007b184b29646103d58d5bfab3c40abba5d10ec86ba6",
+      "published_commentary_evidence_hash": "207b72fe9c15e9691d5d2c9799de9309057261a84150e27066d2cc52d763f949",
+      "published_commentary_synthesis_hash": "b6e8b07731b2e1e965dc2353a5d9e39432dc755a18ce3d9ab5bc5397ff296913",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 10",
+      "current_evidence_hash": "a1e373e87e93821e6f0aa3920a5afb050c7da30b4e019252afddb33cb4f5e58f",
+      "current_synthesis_hash": "fd851519230b1092100ae5db3e5945b1358c74ccb3ece3e093cda7d517efd06e",
+      "published_commentary_evidence_hash": "cd39d91b1382508081c1d935fb3a38465c81d4ba3f343aa06ad45d5dd2c5fdd9",
+      "published_commentary_synthesis_hash": "f14777a0cc61ab2123cbd2da3537cfc68880cca5593c48b0466a6deca731d9d9",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 11",
+      "current_evidence_hash": "514eb7573bee01c46b1fcfb03249c8f90182bfbc1c9504a47eab1e006b043361",
+      "current_synthesis_hash": "57baace0ce5e073c2716fe2da00421f4541bcc5607b281f9108d38f16d99b086",
+      "published_commentary_evidence_hash": "0ac359bb7d48c3c63927c7aa49461fc70bf034e0360864f80a6d62b8f4cb4d4c",
+      "published_commentary_synthesis_hash": "9530249112686c9cb712e46278a2f3e130c73ca7b3550e1ea0f562397a973227",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 12",
+      "current_evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+      "current_synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+      "published_commentary_evidence_hash": "b1f3b2377f7daf3a8df95f1744059061fbaf0c835414768ce2eb4f7ff9f23871",
+      "published_commentary_synthesis_hash": "c9e9cb36b4b89caa3f4d81de391d8c09f0a932debbe651d3cc87dfe7a74214f8",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 13",
+      "current_evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+      "current_synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6",
+      "published_commentary_evidence_hash": "513efc8ac13f279874b658ffb3529b1fb78e0a5102c7f1bb650e38f93be21fc2",
+      "published_commentary_synthesis_hash": "c83250bfd35e5cfca438a18d707bfb57a1145e626fac61a4d8c998a9b1330c95",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 14",
+      "current_evidence_hash": "2f29c8568a5f787ec94eba0eab9f6dc0d229c19cd88a0ab6352ea99ad615accf",
+      "current_synthesis_hash": "9eaf85311285244171ac967339ebcdebe35fa283d73785d5631c43f1a6796899",
+      "published_commentary_evidence_hash": "231c2ee48ddf4e31af593db5439189d1d6c9cdf29c94b577dd6a7c304e1b9b9c",
+      "published_commentary_synthesis_hash": "5392ce740c814a660d07abfd132c7332fa6773fe2047dbb27d86c775c9248546",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 15",
+      "current_evidence_hash": "6871bb5ca9c1b2414b9cf7b6c920c966e74086f258881bb16e2bc4d1445320bf",
+      "current_synthesis_hash": "3768a7f09a788550a9380f09d2fa74064933fa0de74e74023807affdbf57c12b",
+      "published_commentary_evidence_hash": "ea24c129ea6415412cac555aa745c8802a1a988b33c3a69e46238e92cf52221d",
+      "published_commentary_synthesis_hash": "fb9649bb6c8731a0ffd5cfb5998bf89cc2f78faa360e6b0ca602001c8952894e",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 16",
+      "current_evidence_hash": "adfaf7ee6624dab7554a13b25de3009e03ba4513ffa80a1b97e68d6fb8e5cf93",
+      "current_synthesis_hash": "dd20a8f6b98e1fdd0748ac2958a4c22e53cf0280682929388ab7a98c2a3bcf9c",
+      "published_commentary_evidence_hash": "bd53414ce4f2dbc4602177332f26e874d1210576411958791eb3da2c0749cf6b",
+      "published_commentary_synthesis_hash": "cf049b80afa06fbe625008cb7bfd6127dd1fe1054d0accf1767ab3c0c79318fa",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 17",
+      "current_evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+      "current_synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7",
+      "published_commentary_evidence_hash": "9ae11257cf20afc9fc0d11c2dcdc108e298f031c3a8f52f964d65c04979fd60d",
+      "published_commentary_synthesis_hash": "689b68a41cb68e7bb3990c7535e952554e276a6f125a62c9fec67ad031eba25c",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 18",
+      "current_evidence_hash": "bc5a09c989706d9b078c765a47b6e3e88549135347c60b2dbec90d8ad5b0f3fe",
+      "current_synthesis_hash": "29f319ccb733508247d59a7a5318ea7000ebc1fb328537912dd542b364e9868a",
+      "published_commentary_evidence_hash": "33193cc7d10dc199f267bdaf06c2d4ebecd15062a70ed288f5e53fa21d19753e",
+      "published_commentary_synthesis_hash": "13737b0bba5a783f80bb973fdbdc74e3a03b236583828f7724472374a8727f81",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 19",
+      "current_evidence_hash": "9af800225b6fe843a2b2119aa39c1fb58d39236488522484a99e3e54145b2236",
+      "current_synthesis_hash": "cc1b8af77194a94c7ad2a4c7ab3a2bd8328a163352b4ea5526bc65bce8ce17bc",
+      "published_commentary_evidence_hash": "114156990326a8586b47f8a55515701e96147a6ef522606bc27885fc8178cbb1",
+      "published_commentary_synthesis_hash": "8c7e3242215bd2606852829806538bc2097f7f0aaf71e2e3a410ea90eb18dbf3",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 20",
+      "current_evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+      "current_synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab",
+      "published_commentary_evidence_hash": "68f77e4c6221882137675a19e336bab9ec3f61f21b22f02de6f3cd91ec97a728",
+      "published_commentary_synthesis_hash": "1a2c546e55130a04b6987b2346225f43ca2e101d69843b3a7e3e971ca8231b30",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 21",
+      "current_evidence_hash": "1de3689cd811fc2755ea2c2b1a3eb338c0fcdc9f0c3b4dba7bead68b8701c19d",
+      "current_synthesis_hash": "605c4399c81887479e6115786055d9a4be62e9bb91ae91d10f4031cdfa4ad389",
+      "published_commentary_evidence_hash": "57584a4ec5531c2a5d5613b400f725546e64af0d6a27853986441ab86cdb578a",
+      "published_commentary_synthesis_hash": "b0b8e67b8ddae575dcd085a7e719bdd1fb03aa849a10ef4ca07fb8fbcfba16cc",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 22",
+      "current_evidence_hash": "6f90988b7b7268fd4282c26967a513538df08ae0e093b1ea2927f6217c0f8e86",
+      "current_synthesis_hash": "47eca559a0f2e77b4939400bf2df9ed6d533eb113cb4b364314a352517ecf0ed",
+      "published_commentary_evidence_hash": "bed3f84ff2f57bf8bdd505ac873a08d6390af69d1238b899836d330962dd3916",
+      "published_commentary_synthesis_hash": "4fae8bfa05ac709b7a6a4a6131fb6c84fe8bbe47e90f0f03b230582281438f53",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 23",
+      "current_evidence_hash": "882e8aeefbbd785ca19876bfd2e87b087cdd46cf69b91e7dd56078db1765f232",
+      "current_synthesis_hash": "509687fb79efde443487347658235beebcd8cb03de66269801b4161c8f13fc42",
+      "published_commentary_evidence_hash": "a79065fa6ec7b470889c5d40f96c303bb9aa76b4fbf94cf46657c2f722500a5a",
+      "published_commentary_synthesis_hash": "1d92407c4baac5443a0da6f221d146d60cf254bea2f05da8f7779c0b4c10efff",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 24",
+      "current_evidence_hash": "6c356b86ba9c9c990acb17ba255d9efb9288f4d6d87d979fbd1368d8ee21eeb3",
+      "current_synthesis_hash": "dae6e55a764f6cff354223e5ac143a152b346a466014645a20f979f7da4ccee3",
+      "published_commentary_evidence_hash": "c19a649074540fd52e09f48ae6fe99eab51dda140c5715cf31a361f8aa7b9898",
+      "published_commentary_synthesis_hash": "28f349e1ae47ed8fd1e6b697ad0bbc7bbefcf8dee32b4659c38b6a108f24e9d3",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 25",
+      "current_evidence_hash": "0c8e02b0972ec3375db8cbd5d8ff91913f20d0c7124815bc27e6081ce12fa0ee",
+      "current_synthesis_hash": "eebbd7fab0060bf6d3329888abc4020268b846ec3f7431bb07c5f0b2e91770d1",
+      "published_commentary_evidence_hash": "7bc23fa79587783a1aea43ec0c6f599ceb562ddd49a7b76024a0d34d1ea74d61",
+      "published_commentary_synthesis_hash": "45f293501002468b9de824653d8192bf3c08e850c43219d6e2646042d6fdf035",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 26",
+      "current_evidence_hash": "865125e5486e7e5d73c0e7f1710eebbd2cc19b43d0386c14c6b2775b96002da5",
+      "current_synthesis_hash": "adab8fce7f558449ffe28f98b254742ccd2275ab8ccdaab96da85c830d205291",
+      "published_commentary_evidence_hash": "b335a918f163bde1aab6aca197615c38879b54bbdad52b43b12b861cef904ec9",
+      "published_commentary_synthesis_hash": "aedce10b36e95c23f09aebd3eca689480fcbd7957939944de21bbd180496a09d",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 27",
+      "current_evidence_hash": "972cbb00d8e96921bbfe2d22e1a88884a778b3745de1d474a6ad9d050855b974",
+      "current_synthesis_hash": "93622fb51c0adb44808a6df3a818ce72459166d193bfb7ae218e1d846ef32658",
+      "published_commentary_evidence_hash": "316bb78df734618cacf0e0823bb8e1ec139d0c0093a4827ddbcc49adb54c853d",
+      "published_commentary_synthesis_hash": "09a072e00eb45d202371b357a7c7203e3cb00a9d7d9566c1d9f116e148bb7c16",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 28",
+      "current_evidence_hash": "af0a5cbac9eed71d805ff5fcd8f50a57c5ddf32394e8c403796f31248ea85151",
+      "current_synthesis_hash": "eb97171b17e4bb0f2dbebcc9fa5be56580f2ec005a7640ea8abf3c6ff17f08bc",
+      "published_commentary_evidence_hash": "c411cd26215969e4fcd0321ca3bd30223bfd01e42c2c45ed82af69be7e792d14",
+      "published_commentary_synthesis_hash": "28ba714d231215068e1acc58dfcec1ead8e7dc174f4aaffac59be5790fd0d596",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 29",
+      "current_evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+      "current_synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8",
+      "published_commentary_evidence_hash": "70d1afd01f97c3a4041cab005fdbf61e0db1e99ad62a4dc9b8b52e55ea76c3a9",
+      "published_commentary_synthesis_hash": "5807d1365bed21d6ef0632eb5e4b1fe1b852f8f8814eae7040f05f98b868bf17",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 30",
+      "current_evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+      "current_synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479",
+      "published_commentary_evidence_hash": "e904619b962ac6844c211d7d78dfa1bb5b21e5b25270fd5775cee2889e6558b9",
+      "published_commentary_synthesis_hash": "67a70177bac6b5164a448bf785f4306135a9a348b5d92fc07127f1af970e0d56",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 31",
+      "current_evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+      "current_synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2",
+      "published_commentary_evidence_hash": "c84229a06a949fd7cdca5441729ef0515d15794872efe01c29de2323a05eafab",
+      "published_commentary_synthesis_hash": "2f8228484636a73e6fab15888adbc465d2cee8da2d596c21a90531088199fd74",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 32",
+      "current_evidence_hash": "1fdcac9241524047665fc3f7c60ec96ec1a5651d53d7eb356cf48895923920fc",
+      "current_synthesis_hash": "f5539d87b0cc016b6a30c51a66a90a4b7d0d2b9393939e20bf7d952d4aca4ce9",
+      "published_commentary_evidence_hash": "543436423fd2816562ba38b2b39ea9dff587cd5088f15ba2e6c6eb26ca7755ce",
+      "published_commentary_synthesis_hash": "aa14d3de488329b7635c68724e10db33b0178880b426cd9094bfcc79be76ab47",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 33",
+      "current_evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+      "current_synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756",
+      "published_commentary_evidence_hash": "4294805a799e4621f42e729a7d19068de01dbd797fb4866f14709e4325a7c6ac",
+      "published_commentary_synthesis_hash": "e8886ef347fbb1f58c666af657e6b34055d7383f08b31f60865e54aa42064e7d",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 34",
+      "current_evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+      "current_synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5",
+      "published_commentary_evidence_hash": "dd3fac5f67d75d70c3c4038fcc24d3470776e1692e9fe363e7db31441ddb1426",
+      "published_commentary_synthesis_hash": "dc91ea7b624f4c709028d8231c904ee1c9edffd2f21140d885dddb9e1b23ec0b",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 35",
+      "current_evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+      "current_synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64",
+      "published_commentary_evidence_hash": "745037d3bda18da326117939fa34d5c1c3c7ee57b3826173fef2a1a70878088a",
+      "published_commentary_synthesis_hash": "c14fe927130e9201cd2529bafffcce8b3fb22fc8842b067aa12f4c7d31d5a123",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 36",
+      "current_evidence_hash": "25a97a65f365c20ca78d9e8178c3428626418b613c2833f4fffe2bb0c8902e99",
+      "current_synthesis_hash": "dc44d8d39bcbe043d68407fb5def6d29ac24d1b60e9d4abc1619a67fa168d521",
+      "published_commentary_evidence_hash": "5821e7fb44152be0eb3018a8e67885c0ec85d1f4ddca364fe24124a87becdd93",
+      "published_commentary_synthesis_hash": "6c1ef1bf247fcbef805ec4e567b684ba0869a3f9ae4dbd5b7176ed0bed7f9ce9",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 37",
+      "current_evidence_hash": "2930c13fcaa0b6055d1e50b7fc95de2f327f0c2004ae460c890fd6d615ba4e37",
+      "current_synthesis_hash": "9922c75f9cdf9a3680246bf0a714565837895997a2191dda5270f19ed9fc5a61",
+      "published_commentary_evidence_hash": "bd9b7d18e0b8deb0094dd0e1c5d73cc56ce5da4308d90852edb12ff7dd0f0bb6",
+      "published_commentary_synthesis_hash": "ab13ee77f448f666acfd9a841e0a1259131ef9a9e4ac66dec17ed8088424347f",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 38",
+      "current_evidence_hash": "cf15ac7f7027facfedd786420a2772f4a5da2fc9a2656a57c4eb3e987bd30b81",
+      "current_synthesis_hash": "0aa6c656359afdd556a78b224da34ca86063e116bb6805b8b24b85f4a4069362",
+      "published_commentary_evidence_hash": "92ca6b02d34e0ad3de2733f80e2a8435352e359b609570b4f7120855ed6fb1f4",
+      "published_commentary_synthesis_hash": "6ec34907299ded5277df90cb8f81e617f4fac509ce9fd0f8c266e0acc27c70f2",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 39",
+      "current_evidence_hash": "199e5813aa8693b767c4c5b7e571da67ff7d8bb999a02113849698ba437d9dc2",
+      "current_synthesis_hash": "2a59937e3c213e9a75b8b0ce67a8de0542bc6418e34be59935c91572f6e7f533",
+      "published_commentary_evidence_hash": "0969e27ebdde155e9797775037e83b1cbf2ca4a9559b5b0dec6f6bfb7c11e13c",
+      "published_commentary_synthesis_hash": "294030051adbe88a30b47cc440ef630f94a8f7cc23af5f3b10d4c8844afc36a0",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 40",
+      "current_evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+      "current_synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2",
+      "published_commentary_evidence_hash": "cda4da8b75b9003d7655f4775d97a01dbb9c4a3d2cb5facbad817c9d023c352b",
+      "published_commentary_synthesis_hash": "824bb762b7f154c51a93fadbda19e56507774bbdefb9d4bf685472a14ab3c9f0",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 41",
+      "current_evidence_hash": "00f603a4ced20aa2c7fac342c0ac3520d224ff032d31809c5a131c95aba43056",
+      "current_synthesis_hash": "ab1e09eaf6ca681e944a8b58f35152e42be90a0d8490a26f0deaade26224193c",
+      "published_commentary_evidence_hash": "1d8af7bf69b734bd4c4e73f7f22e9a55b4f3d288b6d9d2d6c0c85377d3af427f",
+      "published_commentary_synthesis_hash": "5369d2ef7fa657c8bebecb3e2d3f386880af72deb6673605c857850d68c0048a",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 42",
+      "current_evidence_hash": "d32de42b000f3951da92f5331db5a3e8c954f5b27a3e930735db40a3b5921612",
+      "current_synthesis_hash": "275ff6918e90dd388eda6a4d96043dd014965ae0e1659a5dd1be3ad037b9b2c5",
+      "published_commentary_evidence_hash": "f93d5839089001a4b588558ae0d0713c6261cdd8ffcaa6725b1f3ecd4d88ec06",
+      "published_commentary_synthesis_hash": "8dd99d63118f1d39b9b80432b1d2008f3520a27d51cd32cb8e90a2ed0505198f",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 43",
+      "current_evidence_hash": "1c5f23d0416c1e08b05ab404841b586bfc2a97d442803e3cb822e1a86058371b",
+      "current_synthesis_hash": "eb51ce2df2160e125b818b4d21f7c6e1ed25173b779186e1628586a20415e89f",
+      "published_commentary_evidence_hash": "b49d59baa6c01ec4418f6064d050a4a1da602b00f2b93f010ac6dedaa3838372",
+      "published_commentary_synthesis_hash": "1517f43110bb81d4b48820316f75266858aea219f7a018073b031c28799eec8e",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 44",
+      "current_evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+      "current_synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef",
+      "published_commentary_evidence_hash": "394fe9deebc89a154320ae133c05b3a0d320e79e1d0a2288bdc2bcc87e5d461f",
+      "published_commentary_synthesis_hash": "5d7f344b42b585bdf65a0d4702b7d58bdf0541ce466ffed70621c794604c4c1a",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 45",
+      "current_evidence_hash": "6a1265a55a08d7700f628a165bc11ca8849a93f31f6b9864452aabd5b878ab5d",
+      "current_synthesis_hash": "43e2cee7a5a75adf741b021fb55d9ff9b84f6788d5672f64756903bcebc63a4b",
+      "published_commentary_evidence_hash": "1b2b4b0cf4fff9fbcdcb21794f16faa65a2b6d6958e7d96ffa1f150cc8aee573",
+      "published_commentary_synthesis_hash": "3c0809361b670eb781e79e86ff7a5cfdd5fcca2fdb66de297586d3196db60f07",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 46",
+      "current_evidence_hash": "976d3b6b3ed738d1a7592b95d05c4342723cab40e4d7dca22615dc4571bff138",
+      "current_synthesis_hash": "2a9f0c2851f4a89a94be5647869ab1ced285ec3cc248d59ca71e8ef9da1a186b",
+      "published_commentary_evidence_hash": "bcbd66c54f7bc0d1e1d91492c30bb3423b29ffd3e603a6e9909a57f638ad49cf",
+      "published_commentary_synthesis_hash": "05411901c61105729c82c1f67831a6693099b1d7bfc40153b261f2ae3cf1ad57",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 47",
+      "current_evidence_hash": "615198fe4c96d9aa86cf0f0764f628bb07e792663fd051fb6b0bd95cbb0deae3",
+      "current_synthesis_hash": "7910ce70ffd5bfb3e8836b49061b3db6e071ad87e22ba8a68a1f530b5869fa79",
+      "published_commentary_evidence_hash": "e7eb23500c451037fa678881594bc46034d14e54bd81a71a8cdaefa9761485dc",
+      "published_commentary_synthesis_hash": "9003994526e9771c2789aa71cca7b5fd81190b3a2960447a18ef11cd008aa441",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 48",
+      "current_evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+      "current_synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f",
+      "published_commentary_evidence_hash": "f551d5549c38140691f9a6b0cec49b23e024186a73b5e6b9c2f22a94eb22018d",
+      "published_commentary_synthesis_hash": "027d715b286a1bbfc2be5906578a2578ca4568eb8d359aaad0f0831425149dd8",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 49",
+      "current_evidence_hash": "a871339f28cdc5ef910c708d9a2c3a11e41c4ec34d4ccb2629dd62cb3cd56627",
+      "current_synthesis_hash": "d37dbb22e5f9dfa297fef293d7ce0e3129b18c342cd34360ac1c2cce749acd5c",
+      "published_commentary_evidence_hash": "11d9664b6f67f2f0889d6d411c6626ed36f578af7a2e99c853806581e149dec2",
+      "published_commentary_synthesis_hash": "774cb8aeaff16afb8539589363f27a33bff268174f7ca6a708577810f2f42c70",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    },
+    {
+      "reference": "Genesis 50",
+      "current_evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+      "current_synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841",
+      "published_commentary_evidence_hash": "a4b38721bd873cb6b8bf8b5abab02c1779f3ee95b339ce56145084677223d805",
+      "published_commentary_synthesis_hash": "c084df2b9fecf6994ffc144c4df6e8aa04b8dcda00d5700874129afed073f99c",
+      "evidence_identity_differs": true,
+      "synthesis_identity_differs": true,
+      "commentary_v1_2_frozen": true
+    }
+  ]
+}
