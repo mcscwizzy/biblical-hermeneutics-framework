@@ -40,3 +40,17 @@ Added `genesis-joseph-reconciliation-conclusion-context` (`cultural_background`)
 Commentary v1.2 stayed frozen. The deterministic stale-input set is Genesis 2–50 (49 chapters); Genesis 45–50 are included for the later refresh transaction.
 
 Current merge-gate state: `GENESIS_G6B_JOSEPH_RECONCILIATION_CONCLUSION_EVIDENCE_MERGE_GATE_VERIFIED`. No merge, deploy, or Commentary regeneration occurred.
+
+## Final G6C Genesis 45 coverage closure
+
+G6C began from clean `origin/master` `547128c267d0d07783a6efc4e70c39e35653dad0` and enriched the existing isolated G6B object `genesis-joseph-reconciliation-conclusion-context`. Candidate and post-apply scans across 1,189 chapters changed exactly Genesis 45; Genesis 37–44, Genesis 46–50, Psalm 105, and all 22 representative controls remained exact. Historical source-owner rows changed: 0.
+
+Added five Genesis 45 items: `g6c-45-judah-speech-to-joseph-revelation`, `g6c-45-gifts-garments-silver-material-culture`, `g6c-45-levant-egypt-mobility-context`, `g6c-45-genesis50-providence-reprise`, and `g6c-45-psalm105-joseph-sent-ahead-reception`. Six object-local source records/aliases were locked. The Twiss article supports only the Judah-to-disclosure item; Genesis 50:20 uses the Genesis text and Hamilton source.
+
+Genesis 45 moved from 16 evidence items / 10 synthesis units (THIN; evidence `6a1265a55a08d7700f628a165bc11ca8849a93f31f6b9864452aabd5b878ab5d`, synthesis `43e2cee7a5a75adf741b021fb55d9ff9b84f6788d5672f64756903bcebc63a4b`) to 21 / 11 (GOOD; evidence `d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90`, synthesis `fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8`). Immediate literary context, archaeology/material culture, historical context, and intertextual/canonical connections are COVERED. Providence preserves both the brothers’ culpability and the text’s divine preservation theme.
+
+Final Genesis 1–50 census: GOOD 50, THIN 0, SPARSE 0, GAP 0. Commentary v1.2 remains frozen and exact; deterministic stale set is Genesis 2–50, with Genesis 1 excluded by exact lineage match. No Commentary output was rewritten. Runtime CKL DB verified.
+
+Regression reconciliation: 43 passed; six historical snapshot tests fail. Five failures reproduce on the clean G6B base. The sixth is the G6B test’s historical assertion that its 77-item packet equals the full object after G6C adds five items; that test passes on clean G6B base. Historical tests and G1–G6B transaction artifacts were not rewritten.
+
+G6C result: `GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE_VERIFIED`. Safe to merge: YES. Genesis expansion result: `GENESIS_CKL_EVIDENCE_EXPANSION_COMPLETE`.

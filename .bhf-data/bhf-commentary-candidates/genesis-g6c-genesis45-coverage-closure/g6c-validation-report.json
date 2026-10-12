@@ -1,0 +1,149 @@
+{
+  "artifact_version": "g6c-validation-report-v1",
+  "transaction": "GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE",
+  "base_master": "547128c267d0d07783a6efc4e70c39e35653dad0",
+  "validation_status": "GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE_VERIFIED",
+  "gates": {
+    "candidate_replay": {
+      "status": "PASS",
+      "candidate_count": 5,
+      "all_candidates_bundled_and_synthesized": true,
+      "genesis45_classification": "GOOD"
+    },
+    "source_lock_and_provenance": {
+      "status": "PASS",
+      "locked_new_source_count": 6,
+      "all_source_hashes_and_support_lists_match": true
+    },
+    "schema_and_whole_ckl": {
+      "status": "PASS_WITH_PREEXISTING_WARNINGS",
+      "objects_valid": 687,
+      "errors": 0,
+      "preexisting_warnings": 14,
+      "target_object_schema": "PASS"
+    },
+    "historical_source_owner_isolation": {
+      "status": "PASS",
+      "historical_source_owner_rows_changed": 0,
+      "new_object_local_owner_rows": 6
+    },
+    "scripture_applicability_and_relationships": {
+      "status": "PASS",
+      "new_direct_anchor_scope": [
+        "Genesis 45"
+      ],
+      "G6B_outer_scope_preserved": true,
+      "reverse_applicability_created": false
+    },
+    "genesis45_preparation_synthesis_g0": {
+      "status": "PASS",
+      "evidence_count": 21,
+      "synthesis_unit_count": 11,
+      "classification": "GOOD",
+      "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+      "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8"
+    },
+    "full_1189_chapter_impact": {
+      "status": "PASS",
+      "changed_chapters": [
+        "Genesis 45"
+      ],
+      "all_22_controls_exact": true,
+      "candidate_preflight_identity_exact": true
+    },
+    "genesis1_50_coverage_census": {
+      "status": "PASS",
+      "totals": {
+        "GOOD": 50,
+        "THIN": 0,
+        "SPARSE": 0,
+        "GAP": 0
+      },
+      "remaining_below_good": []
+    },
+    "commentary_v12_frozen": {
+      "status": "PASS",
+      "manifest_identity": "e1b9d945109e5da167348d93adbf7cbc6508d5d7ee3374684d2f9ad6d5fc9b3f",
+      "manifest_sha256": "e76a982e4c45a53542bdb1e45bcfd69d3c606eb874662fb509f718fc0822dc46",
+      "checksum_index_sha256": "4f279d53478025af84380d573dace71c4ca261d8d0d3abac8bef8a61e760e85c",
+      "indexed_files": 973,
+      "all_indexed_files_valid": true,
+      "commentary_output_mutated": false
+    },
+    "commentary_stale_set": {
+      "status": "PASS",
+      "references": [
+        "Genesis 2",
+        "Genesis 3",
+        "Genesis 4",
+        "Genesis 5",
+        "Genesis 6",
+        "Genesis 7",
+        "Genesis 8",
+        "Genesis 9",
+        "Genesis 10",
+        "Genesis 11",
+        "Genesis 12",
+        "Genesis 13",
+        "Genesis 14",
+        "Genesis 15",
+        "Genesis 16",
+        "Genesis 17",
+        "Genesis 18",
+        "Genesis 19",
+        "Genesis 20",
+        "Genesis 21",
+        "Genesis 22",
+        "Genesis 23",
+        "Genesis 24",
+        "Genesis 25",
+        "Genesis 26",
+        "Genesis 27",
+        "Genesis 28",
+        "Genesis 29",
+        "Genesis 30",
+        "Genesis 31",
+        "Genesis 32",
+        "Genesis 33",
+        "Genesis 34",
+        "Genesis 35",
+        "Genesis 36",
+        "Genesis 37",
+        "Genesis 38",
+        "Genesis 39",
+        "Genesis 40",
+        "Genesis 41",
+        "Genesis 42",
+        "Genesis 43",
+        "Genesis 44",
+        "Genesis 45",
+        "Genesis 46",
+        "Genesis 47",
+        "Genesis 48",
+        "Genesis 49",
+        "Genesis 50"
+      ],
+      "genesis1_exact_lineage_match": true
+    },
+    "runtime_db": {
+      "status": "PASS",
+      "inventory_fingerprint": "90fa7547ea4146328ab1fc4f9e4ca1b262f810e0e503c589b64a5f9b8c4a08c6",
+      "object_count": 687,
+      "source_count": 5232,
+      "evidence_count": 1297,
+      "database_schema_version": "4"
+    },
+    "historical_regression_suite": {
+      "status": "PASS_WITH_DOCUMENTED_HISTORICAL_SNAPSHOT_DRIFT",
+      "passed": 43,
+      "documented_failures": 6,
+      "clean_base_reproduction": "5 inherited failures reproduced; G6B packet equality passes on base"
+    },
+    "git_diff_check": {
+      "status": "PASS"
+    }
+  },
+  "final_state": "GENESIS_G6C_GENESIS45_COVERAGE_CLOSURE_VERIFIED",
+  "safe_to_merge": "YES",
+  "genesis_ckl_evidence_expansion_complete": "GENESIS_CKL_EVIDENCE_EXPANSION_COMPLETE"
+}
