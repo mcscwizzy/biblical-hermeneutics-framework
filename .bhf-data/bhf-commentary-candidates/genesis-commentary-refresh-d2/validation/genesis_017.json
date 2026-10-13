@@ -1,0 +1,1174 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 7,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g17-circumcision-covenant-sign",
+            "g17-covenant-land-seed-nations-kings",
+            "g17-eight-day-household-inclusion",
+            "g17-el-shaddai-title",
+            "g17-isaac-promise-ishmael-blessing"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_f67992c5350f"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g17-circumcision-covenant-sign": [
+              "syn_interpretive_questions_f67992c5350f"
+            ],
+            "g17-covenant-land-seed-nations-kings": [
+              "syn_interpretive_questions_f67992c5350f"
+            ],
+            "g17-eight-day-household-inclusion": [
+              "syn_interpretive_questions_f67992c5350f"
+            ],
+            "g17-el-shaddai-title": [
+              "syn_interpretive_questions_f67992c5350f"
+            ],
+            "g17-isaac-promise-ishmael-blessing": [
+              "syn_interpretive_questions_f67992c5350f"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g17-circumcision-covenant-sign",
+            "g17-covenant-land-seed-nations-kings",
+            "g17-eight-day-household-inclusion",
+            "g17-el-shaddai-title",
+            "g17-isaac-promise-ishmael-blessing"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_f67992c5350f"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g17-circumcision-covenant-sign": [
+              "syn_interpretive_questions_f67992c5350f"
+            ],
+            "g17-covenant-land-seed-nations-kings": [
+              "syn_interpretive_questions_f67992c5350f"
+            ],
+            "g17-eight-day-household-inclusion": [
+              "syn_interpretive_questions_f67992c5350f"
+            ],
+            "g17-el-shaddai-title": [
+              "syn_interpretive_questions_f67992c5350f"
+            ],
+            "g17-isaac-promise-ishmael-blessing": [
+              "syn_interpretive_questions_f67992c5350f"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g17-laughter-obedience",
+            "g17-name-changes-identity"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_bb0ba932ef35"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g17-laughter-obedience": [
+              "syn_interpretive_questions_bb0ba932ef35"
+            ],
+            "g17-name-changes-identity": [
+              "syn_interpretive_questions_bb0ba932ef35"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "romans-abraham-before-circumcision",
+            "romans-abraham-before-circumcision:passage-relevance"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_bc7d3197bc30"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "romans-abraham-before-circumcision": [
+              "syn_interpretive_questions_bc7d3197bc30"
+            ],
+            "romans-abraham-before-circumcision:passage-relevance": [
+              "syn_interpretive_questions_bc7d3197bc30"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "abrahamic-seed-and-inheritance",
+            "abrahamic-seed-and-inheritance:passage-relevance"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_710aefbce3c0"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "abrahamic-seed-and-inheritance": [
+              "syn_interpretive_questions_710aefbce3c0"
+            ],
+            "abrahamic-seed-and-inheritance:passage-relevance": [
+              "syn_interpretive_questions_710aefbce3c0"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_6",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_702707db4e7e"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_702707db4e7e"
+            ]
+          },
+          "section_index": 4
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_7",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "gal-allegory"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_5dd75b0a0bc2"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "gal-allegory": [
+              "syn_surrounding_passages_5dd75b0a0bc2"
+            ]
+          },
+          "section_index": 4
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 5,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "abrahamic-seed-and-inheritance",
+          "abrahamic-seed-and-inheritance:passage-relevance",
+          "g17-circumcision-covenant-sign",
+          "g17-covenant-land-seed-nations-kings",
+          "g17-eight-day-household-inclusion",
+          "g17-el-shaddai-title",
+          "g17-isaac-promise-ishmael-blessing",
+          "g17-laughter-obedience",
+          "g17-name-changes-identity",
+          "gal-allegory",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3",
+          "romans-abraham-before-circumcision",
+          "romans-abraham-before-circumcision:passage-relevance"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_interpretive_questions_710aefbce3c0",
+          "syn_interpretive_questions_bb0ba932ef35",
+          "syn_interpretive_questions_bc7d3197bc30",
+          "syn_interpretive_questions_f67992c5350f",
+          "syn_surrounding_passages_5dd75b0a0bc2",
+          "syn_surrounding_passages_702707db4e7e",
+          "syn_surrounding_passages_a79d3e4a045a",
+          "syn_surrounding_passages_fefe60250e6e",
+          "syn_why_it_matters_22ddeba5d190",
+          "syn_why_it_matters_608249341131",
+          "syn_why_it_matters_744518c11cf6",
+          "syn_why_it_matters_f904d301c258"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "abrahamic-seed-and-inheritance",
+          "abrahamic-seed-and-inheritance:passage-relevance",
+          "g17-circumcision-covenant-sign",
+          "g17-covenant-land-seed-nations-kings",
+          "g17-eight-day-household-inclusion",
+          "g17-el-shaddai-title",
+          "g17-isaac-promise-ishmael-blessing",
+          "g17-laughter-obedience",
+          "g17-name-changes-identity",
+          "gal-allegory",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3",
+          "romans-abraham-before-circumcision",
+          "romans-abraham-before-circumcision:passage-relevance"
+        ],
+        "source_idea_count": 5,
+        "source_synthesis_unit_ids": [
+          "syn_interpretive_questions_710aefbce3c0",
+          "syn_interpretive_questions_bb0ba932ef35",
+          "syn_interpretive_questions_bc7d3197bc30",
+          "syn_interpretive_questions_f67992c5350f",
+          "syn_surrounding_passages_5dd75b0a0bc2",
+          "syn_surrounding_passages_702707db4e7e",
+          "syn_surrounding_passages_a79d3e4a045a",
+          "syn_surrounding_passages_fefe60250e6e",
+          "syn_why_it_matters_22ddeba5d190",
+          "syn_why_it_matters_608249341131",
+          "syn_why_it_matters_744518c11cf6",
+          "syn_why_it_matters_f904d301c258"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "366c153c186408411b48cab4008f98575bcd267ec8c01826ebffc7b8863a65b4",
+      "expected_envelope_hash": "366c153c186408411b48cab4008f98575bcd267ec8c01826ebffc7b8863a65b4",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "4b7277ed81a4d12f5714f6f7bf7ff251bdd64b1acf3156de4a523d86d5e365f1",
+      "expected_binding_hash": "4b7277ed81a4d12f5714f6f7bf7ff251bdd64b1acf3156de4a523d86d5e365f1",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 7,
+      "commentary_prose_char_count": 2236,
+      "commentary_prose_word_count": 343,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 2,
+        "groups": 0,
+        "people": 7,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 2,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "chronology": 5,
+        "culture": 28,
+        "geography": 8,
+        "history": 15,
+        "social": 1
+      },
+      "evidence_category_diversity": 5,
+      "evidence_consumption_ratio": 0.2281,
+      "evidence_ids_referenced": [
+        "abrahamic-seed-and-inheritance",
+        "abrahamic-seed-and-inheritance:passage-relevance",
+        "g17-circumcision-covenant-sign",
+        "g17-covenant-land-seed-nations-kings",
+        "g17-eight-day-household-inclusion",
+        "g17-el-shaddai-title",
+        "g17-isaac-promise-ishmael-blessing",
+        "g17-laughter-obedience",
+        "g17-name-changes-identity",
+        "gal-allegory",
+        "genesis-literary-movement",
+        "romans-abraham-before-circumcision",
+        "romans-abraham-before-circumcision:passage-relevance"
+      ],
+      "evidence_item_count": 57,
+      "evidence_score": 46.15,
+      "geography_evidence_count": 8,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0349,
+      "people_count": 7,
+      "places_count": 0,
+      "reference": "Genesis 17",
+      "richness_reasons": [
+        "meaningful evidence exists but reader commentary underuses or weakly explains it"
+      ],
+      "richness_status": "SYNTHESIS_GAP",
+      "section_count": 5,
+      "specific_evidence_count": 15,
+      "unique_evidence_ids_consumed": 13,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 44,
+      "unused_evidence_ids": [
+        "abraham:ancient_near_east_context:0",
+        "abraham:hebraic_worldview:0",
+        "abraham:historical_context:0",
+        "abraham:key_places:0",
+        "abraham:key_places:1",
+        "abraham:key_places:2",
+        "abraham:key_places:3",
+        "abraham:second_temple_context:0",
+        "abrahamic-covenant-framework:ancient_near_east_context:0",
+        "abrahamic-covenant-framework:hebraic_worldview:0",
+        "abrahamic-covenant-framework:historical_context:0",
+        "abrahamic-covenant-framework:historical_setting:0",
+        "abrahamic-covenant-framework:key_places:0",
+        "abrahamic-covenant-framework:key_places:1",
+        "abrahamic-covenant-framework:key_places:2",
+        "abrahamic-covenant-framework:original_audience:0",
+        "abrahamic-covenant-framework:second_temple_context:0",
+        "abrahamic-covenant-framework:timeline:0",
+        "abrahamic-covenant-framework:timeline:1",
+        "abrahamic-covenant-framework:timeline:2",
+        "abrahamic-covenant-framework:timeline:3",
+        "abrahamic-covenant-framework:timeline:4",
+        "abrahamic-covenant:ancient_near_east_context:0",
+        "abrahamic-covenant:historical_context:0",
+        "bathsheba:ancient_near_east_context:0",
+        "bathsheba:historical_context:0",
+        "call-of-abraham:ancient_near_east_context:0",
+        "call-of-abraham:historical_context:0",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3",
+        "isaac:ancient_near_east_context:0",
+        "isaac:historical_context:0",
+        "jacob:ancient_near_east_context:0",
+        "jacob:historical_context:0",
+        "joseph:ancient_near_east_context:0",
+        "joseph:historical_context:0",
+        "rebekah:ancient_near_east_context:0",
+        "rebekah:historical_context:0",
+        "sarah:ancient_near_east_context:0",
+        "sarah:historical_context:0",
+        "what-is-a-covenant-sign:ancient_near_east_context:0",
+        "what-is-a-covenant-sign:historical_context:0",
+        "who-was-abraham:ancient_near_east_context:0",
+        "who-was-abraham:historical_context:0"
+      ],
+      "validated_but_contextually_thin": true,
+      "validation_status": "validated",
+      "verse_anchor_count": 27,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 5,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_32912e1cbbc5",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_702707db4e7e",
+            "syn_surrounding_passages_a79d3e4a045a",
+            "syn_surrounding_passages_fefe60250e6e"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "geography",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-abraham-call-covenant-context|facts=abraham falls face laughs promised son voices concern ishmael hears distinct isaac promise ishmael blessing then circumcises household day;chapter gives abram sarai new names within covenant speech ancient naming can mark identity vocation immediate text itself supplies meanings promise functions;abraham laughs asks ishmael might live before god yhwh promises sarah’s son isaac also promises bless make fruitful multiply ishmael;command applies eighth day males born abraham’s household those purchased including household outsiders genesis 17 therefore sets covenant boundary encompasses whole household;genesis 17 explicitly calls circumcision sign covenant marks bodily sign within abrahamic household covenant not modern medical argument;genesis 17 reaffirms covenant relationship develops promise through numerous offspring nations kings land canaan enduring possession;yhwh appears abram el shaddai proposed derivations include relation mountain language other proposals title’s etymology remains uncertain",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g17-circumcision-covenant-sign",
+            "g17-covenant-land-seed-nations-kings",
+            "g17-eight-day-household-inclusion",
+            "g17-el-shaddai-title",
+            "g17-isaac-promise-ishmael-blessing",
+            "g17-laughter-obedience",
+            "g17-name-changes-identity"
+          ],
+          "id": "idea_cluster_7ccc8e2b10e8",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_bb0ba932ef35",
+            "syn_interpretive_questions_f67992c5350f",
+            "syn_why_it_matters_608249341131",
+            "syn_why_it_matters_f904d301c258"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "history",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=pauline-kinship-guardianship-slavery-and-inheritance|facts=galatians concludes those belonging messiah abraham's seed heirs according promise drawing inheritance into sustained rereading genesis;scriptural evidence prevents roman household law becoming sole source heir kinship language",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "abrahamic-seed-and-inheritance",
+            "abrahamic-seed-and-inheritance:passage-relevance"
+          ],
+          "id": "idea_cluster_9f6a231c2631",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_710aefbce3c0",
+            "syn_why_it_matters_744518c11cf6"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=galatians|facts=paul explicitly calls hagar sarah construction allegory mapping women sons mountains covenants jerusalems within polemical argument whose details remain contested",
+          "confidence": "low",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "gal-allegory"
+          ],
+          "id": "idea_cluster_b425dc9a6190",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_surrounding_passages_5dd75b0a0bc2"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel|facts=grounds gentile inclusion without recasting jewish circumcision worthless shameful;romans coordinates genesis 15 17 so abraham's trust reckoned before later circumcision sign",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "romans-abraham-before-circumcision",
+            "romans-abraham-before-circumcision:passage-relevance"
+          ],
+          "id": "idea_cluster_d5c652113042",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_bc7d3197bc30",
+            "syn_why_it_matters_22ddeba5d190"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6111,
+      "consumed_category_count": 5,
+      "consumed_category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 5,
+      "consumed_core_cluster_count": 1,
+      "consumed_eligible_synthesis_count": 6,
+      "consumed_eligible_weight": 3.0,
+      "consumed_synthesis_count": 6,
+      "core_cluster_count": 1,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 7,
+        "block_to_cluster_ratio": 1.4,
+        "block_to_synthesis_ratio": 1.1667,
+        "consolidation_ratio": 0.6111,
+        "consumed_cluster_count": 5,
+        "consumed_synthesis_count": 6,
+        "consumed_unit_ratio": 0.5,
+        "mean_evidence_ids_per_block": 2.5714,
+        "meaningful_cluster_count": 5,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 68.4
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 4,
+        "REQUIRED": 1
+      },
+      "eligible_synthesis_count": 12,
+      "eligible_synthesis_coverage": 0.5,
+      "eligible_weighted_denominator": 3.0,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 5,
+      "raw_synthesis_coverage": 0.5,
+      "synthesis_unit_count": 12,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "8f3dc9e891e6698440403bd4857b7d08ba811bdf50fab0734feda899e97638ca",
+  "d1_packet_identity": {
+    "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:42c04670aa1ba1d711f2c0e6f48d8c3635ff82b29778f8b41ac3098e3a1e5ba5",
+    "packet_sha256": "42c04670aa1ba1d711f2c0e6f48d8c3635ff82b29778f8b41ac3098e3a1e5ba5",
+    "path": "renderer-input/chapters/genesis_017",
+    "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "a4bb3c18a18077a86095d4c1b1cff84808d747de143950c7aad9f181fd62af20"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "4b7277ed81a4d12f5714f6f7bf7ff251bdd64b1acf3156de4a523d86d5e365f1",
+      "block_count": 7,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g17-circumcision-covenant-sign",
+            "g17-covenant-land-seed-nations-kings",
+            "g17-eight-day-household-inclusion",
+            "g17-el-shaddai-title",
+            "g17-isaac-promise-ishmael-blessing"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g17-circumcision-covenant-sign",
+                "g17-covenant-land-seed-nations-kings",
+                "g17-eight-day-household-inclusion",
+                "g17-el-shaddai-title",
+                "g17-isaac-promise-ishmael-blessing"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+                  "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g17-circumcision-covenant-sign",
+                  "g17-covenant-land-seed-nations-kings",
+                  "g17-eight-day-household-inclusion",
+                  "g17-el-shaddai-title",
+                  "g17-isaac-promise-ishmael-blessing"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 17:1",
+                  "Genesis 17:1-8",
+                  "Genesis 17:12-14",
+                  "Genesis 17:15-21",
+                  "Genesis 17:23-27",
+                  "Genesis 17:9-14"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_f67992c5350f",
+                "verse_refs": [
+                  "Genesis 17:1",
+                  "Genesis 17:1-8",
+                  "Genesis 17:12-14",
+                  "Genesis 17:15-21",
+                  "Genesis 17:23-27",
+                  "Genesis 17:9-14"
+                ]
+              },
+              "path_hash": "f21b15446d6ba722a5905a922e90f8e5088bf08087830aadccbc60e79567d015",
+              "path_id": "reader_path_genesis_017_f21b15446d6ba722a5905a92",
+              "reader_idea_id": "reader_idea_6169b3641094cfc2",
+              "reader_idea_label": "Abraham falls on his face and laughs at the promised son, voices concern for Ishmael, hears the distinct Isaac promise and Ishmael…",
+              "synthesis_id": "syn_interpretive_questions_f67992c5350f"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_017_f21b15446d6ba722a5905a92"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_6169b3641094cfc2"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_f67992c5350f"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g17-circumcision-covenant-sign",
+            "g17-covenant-land-seed-nations-kings",
+            "g17-eight-day-household-inclusion",
+            "g17-el-shaddai-title",
+            "g17-isaac-promise-ishmael-blessing"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g17-circumcision-covenant-sign",
+                "g17-covenant-land-seed-nations-kings",
+                "g17-eight-day-household-inclusion",
+                "g17-el-shaddai-title",
+                "g17-isaac-promise-ishmael-blessing"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+                  "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g17-circumcision-covenant-sign",
+                  "g17-covenant-land-seed-nations-kings",
+                  "g17-eight-day-household-inclusion",
+                  "g17-el-shaddai-title",
+                  "g17-isaac-promise-ishmael-blessing"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 17:1",
+                  "Genesis 17:1-8",
+                  "Genesis 17:12-14",
+                  "Genesis 17:15-21",
+                  "Genesis 17:23-27",
+                  "Genesis 17:9-14"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_f67992c5350f",
+                "verse_refs": [
+                  "Genesis 17:1",
+                  "Genesis 17:1-8",
+                  "Genesis 17:12-14",
+                  "Genesis 17:15-21",
+                  "Genesis 17:23-27",
+                  "Genesis 17:9-14"
+                ]
+              },
+              "path_hash": "f21b15446d6ba722a5905a922e90f8e5088bf08087830aadccbc60e79567d015",
+              "path_id": "reader_path_genesis_017_f21b15446d6ba722a5905a92",
+              "reader_idea_id": "reader_idea_6169b3641094cfc2",
+              "reader_idea_label": "Abraham falls on his face and laughs at the promised son, voices concern for Ishmael, hears the distinct Isaac promise and Ishmael…",
+              "synthesis_id": "syn_interpretive_questions_f67992c5350f"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_017_f21b15446d6ba722a5905a92"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_6169b3641094cfc2"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_interpretive_questions_f67992c5350f"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g17-laughter-obedience",
+            "g17-name-changes-identity"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g17-laughter-obedience",
+                "g17-name-changes-identity"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+                  "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g17-laughter-obedience",
+                  "g17-name-changes-identity"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 17:15",
+                  "Genesis 17:17-27",
+                  "Genesis 17:5"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_bb0ba932ef35",
+                "verse_refs": [
+                  "Genesis 17:15",
+                  "Genesis 17:17-27",
+                  "Genesis 17:5"
+                ]
+              },
+              "path_hash": "884a623e9db8f71094845a83b15e6ac0105bdac1662918b58ea8b5e2816b54e8",
+              "path_id": "reader_path_genesis_017_884a623e9db8f71094845a83",
+              "reader_idea_id": "reader_idea_6169b3641094cfc2",
+              "reader_idea_label": "Abraham falls on his face and laughs at the promised son, voices concern for Ishmael, hears the distinct Isaac promise and Ishmael…",
+              "synthesis_id": "syn_interpretive_questions_bb0ba932ef35"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_017_884a623e9db8f71094845a83"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_6169b3641094cfc2"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_interpretive_questions_bb0ba932ef35"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "romans-abraham-before-circumcision",
+            "romans-abraham-before-circumcision:passage-relevance"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "romans-abraham-before-circumcision",
+                "romans-abraham-before-circumcision:passage-relevance"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+                  "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "romans-abraham-before-circumcision",
+                  "romans-abraham-before-circumcision:passage-relevance"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 17:1-27"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_bc7d3197bc30",
+                "verse_refs": [
+                  "Genesis 17:1-27"
+                ]
+              },
+              "path_hash": "ceae9c9b9cbb3eb0b5d7861f5603d9361f849c9d1ece1360197a4ea311c4a086",
+              "path_id": "reader_path_genesis_017_ceae9c9b9cbb3eb0b5d7861f",
+              "reader_idea_id": "reader_idea_ea0706c8bc5c3ce7",
+              "reader_idea_label": "Romans coordinates Genesis 15 and 17 so Abraham's trust is reckoned before the later circumcision sign.",
+              "synthesis_id": "syn_interpretive_questions_bc7d3197bc30"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_017_ceae9c9b9cbb3eb0b5d7861f"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_ea0706c8bc5c3ce7"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_interpretive_questions_bc7d3197bc30"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 1,
+          "evidence_ids": [
+            "abrahamic-seed-and-inheritance",
+            "abrahamic-seed-and-inheritance:passage-relevance"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "abrahamic-seed-and-inheritance",
+                "abrahamic-seed-and-inheritance:passage-relevance"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+                  "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "abrahamic-seed-and-inheritance",
+                  "abrahamic-seed-and-inheritance:passage-relevance"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 17:1-8"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_710aefbce3c0",
+                "verse_refs": [
+                  "Genesis 17:1-8"
+                ]
+              },
+              "path_hash": "306641d850bba6a8e5132078bd4ec6957f056c2230d8c63f43feecd8e523ecca",
+              "path_id": "reader_path_genesis_017_306641d850bba6a8e5132078",
+              "reader_idea_id": "reader_idea_a7f823587a03a8f2",
+              "reader_idea_label": "Galatians concludes that those belonging to Messiah are Abraham's seed and heirs according to promise, drawing inheritance into its…",
+              "synthesis_id": "syn_interpretive_questions_710aefbce3c0"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_017_306641d850bba6a8e5132078"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_a7f823587a03a8f2"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_interpretive_questions_710aefbce3c0"
+          ]
+        },
+        {
+          "block_id": "block_6",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+                  "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_702707db4e7e",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "1b4cd64c6898350f2e4ccef5eb08f1fd1cdd34c1bc0e1eb42e336f23e5e27efe",
+              "path_id": "reader_path_genesis_017_1b4cd64c6898350f2e4ccef5",
+              "reader_idea_id": "reader_idea_651a33925e8d35e3",
+              "reader_idea_label": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's…",
+              "synthesis_id": "syn_surrounding_passages_702707db4e7e"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_017_1b4cd64c6898350f2e4ccef5"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_651a33925e8d35e3"
+          ],
+          "section_index": 4,
+          "synthesis_ids": [
+            "syn_surrounding_passages_702707db4e7e"
+          ]
+        },
+        {
+          "block_id": "block_7",
+          "block_index": 1,
+          "evidence_ids": [
+            "gal-allegory"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "gal-allegory"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+                  "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "gal-allegory"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 16:1-21:21"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_5dd75b0a0bc2",
+                "verse_refs": [
+                  "Genesis 16:1-16",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-21"
+                ]
+              },
+              "path_hash": "8266de8bd1c176f131a433e1a2d3ae67e235579938ca3655d2714d48e93095c8",
+              "path_id": "reader_path_genesis_017_8266de8bd1c176f131a433e1",
+              "reader_idea_id": "reader_idea_685121dd96a21ae9",
+              "reader_idea_label": "Paul explicitly calls his Hagar-Sarah construction an allegory, mapping women, sons, mountains, covenants, and Jerusalems within a…",
+              "synthesis_id": "syn_surrounding_passages_5dd75b0a0bc2"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_017_8266de8bd1c176f131a433e1"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_685121dd96a21ae9"
+          ],
+          "section_index": 4,
+          "synthesis_ids": [
+            "syn_surrounding_passages_5dd75b0a0bc2"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "36079c584b1de21fe50523d05f7f59f4bb1b89cd3f986517869801c1e75b20df",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

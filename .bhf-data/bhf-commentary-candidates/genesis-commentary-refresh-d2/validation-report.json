@@ -1,0 +1,410 @@
+{
+  "all_49_ready_for_human_review": true,
+  "artifact_version": "genesis-commentary-refresh-d2-validation-report-v1",
+  "attempts_with_raw_response": 51,
+  "blocked_or_invalid_chapters": [],
+  "candidate_count": 49,
+  "candidate_set_exact": true,
+  "chapters_valid_after_retry": [
+    "Genesis 2",
+    "Genesis 37",
+    "Genesis 44"
+  ],
+  "chapters_valid_first_attempt": [
+    "Genesis 3",
+    "Genesis 4",
+    "Genesis 5",
+    "Genesis 6",
+    "Genesis 7",
+    "Genesis 8",
+    "Genesis 9",
+    "Genesis 10",
+    "Genesis 11",
+    "Genesis 12",
+    "Genesis 13",
+    "Genesis 14",
+    "Genesis 15",
+    "Genesis 16",
+    "Genesis 17",
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25",
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30",
+    "Genesis 31",
+    "Genesis 32",
+    "Genesis 33",
+    "Genesis 34",
+    "Genesis 35",
+    "Genesis 36",
+    "Genesis 38",
+    "Genesis 39",
+    "Genesis 40",
+    "Genesis 41",
+    "Genesis 42",
+    "Genesis 43",
+    "Genesis 45",
+    "Genesis 46",
+    "Genesis 47",
+    "Genesis 48",
+    "Genesis 49",
+    "Genesis 50"
+  ],
+  "chapters_with_retries": [
+    "Genesis 2",
+    "Genesis 37",
+    "Genesis 44"
+  ],
+  "d1_root_immutable": true,
+  "genesis_1_control": {
+    "artifact_version": "genesis-commentary-refresh-d2-genesis-1-control-v1",
+    "d2_candidate_files": [],
+    "expected_artifact_sha256": "8090b554273c56561c0fbe3a3c7b96a67fb79901475ff1e39081b22f3c40134e",
+    "expected_source_lineage": {
+      "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+      "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+    },
+    "no_genesis_1_candidate": true,
+    "published_artifact_sha256": "8090b554273c56561c0fbe3a3c7b96a67fb79901475ff1e39081b22f3c40134e",
+    "published_artifact_unchanged": true,
+    "reference": "Genesis 1",
+    "source_lineage": {
+      "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+      "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+    },
+    "source_lineage_unchanged": true
+  },
+  "genesis_5_lineage": {
+    "candidate_metadata": {
+      "commentary_prompt_version": "1.8",
+      "commentary_schema_version": "1.2",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+      "generated_timestamp": null,
+      "model": "gpt-5.6-terra",
+      "renderer_label": "commentary-v1.2-codex-session",
+      "synthesis_compiler_version": "1.1",
+      "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+      "synthesis_schema_version": "1.1"
+    },
+    "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+    "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8"
+  },
+  "non_genesis_controls": {
+    "artifact_version": "genesis-commentary-refresh-d2-non-genesis-controls-v1",
+    "controls": {
+      "Acts 16": {
+        "actual_index_identity": {
+          "artifact_sha256": "c85df6706a3b60e7110836bd27989b53660cee68fb6d19d29b7f58a8148eb7b9",
+          "book": "Acts",
+          "canonical_ordinal": 1034,
+          "chapter": 16,
+          "corpus_runner_result": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/corpus-runner/runs/session-batch-8762724ee1e0b261/chapters/acts_016/result.json",
+          "filename": "acts_016.json",
+          "raw_response_sha256": "c055208ecd80170abbe520a6d60ce743421b724d22b4ccedb411d4d75d8fe168",
+          "reason": "published",
+          "reference": "Acts 16",
+          "release_state": "PUBLISHED",
+          "result_sha256": "db5d14c9ce5ab4a00c0eae5dc4be97918e8dda75887527f19387e064cdbb5ab5",
+          "source": "corpus-runner",
+          "source_lineage": {
+            "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+            "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592"
+          },
+          "validated": true
+        },
+        "artifact_file": {
+          "exists": true,
+          "expected_sha256": "c85df6706a3b60e7110836bd27989b53660cee68fb6d19d29b7f58a8148eb7b9",
+          "path": ".bhf-data/bhf-commentary-v1.2/acts_016.json",
+          "sha256": "c85df6706a3b60e7110836bd27989b53660cee68fb6d19d29b7f58a8148eb7b9"
+        },
+        "expected_index_identity": {
+          "artifact_sha256": "c85df6706a3b60e7110836bd27989b53660cee68fb6d19d29b7f58a8148eb7b9",
+          "book": "Acts",
+          "canonical_ordinal": 1034,
+          "chapter": 16,
+          "corpus_runner_result": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/corpus-runner/runs/session-batch-8762724ee1e0b261/chapters/acts_016/result.json",
+          "filename": "acts_016.json",
+          "raw_response_sha256": "c055208ecd80170abbe520a6d60ce743421b724d22b4ccedb411d4d75d8fe168",
+          "reason": "published",
+          "reference": "Acts 16",
+          "release_state": "PUBLISHED",
+          "result_sha256": "db5d14c9ce5ab4a00c0eae5dc4be97918e8dda75887527f19387e064cdbb5ab5",
+          "source": "corpus-runner",
+          "source_lineage": {
+            "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+            "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592"
+          },
+          "validated": true
+        },
+        "index_identity_matches": true
+      },
+      "Exodus 14": {
+        "actual_index_identity": {
+          "artifact_sha256": "fc4fbb1a05be73aff0c8a691ad199be0b5b82874b15dce5df5029c5bc69b4e75",
+          "book": "Exodus",
+          "canonical_ordinal": 64,
+          "chapter": 14,
+          "evidence_availability": "AVAILABLE",
+          "failure_classification": null,
+          "filename": "exodus_014.json",
+          "reason": "published",
+          "reference": "Exodus 14",
+          "release_state": "PUBLISHED",
+          "source": "historical-75-release",
+          "source_normalized_sha256": "01b95ab3a506c70ebf351b8e28fa3f56eb4a870299efaa898545dc7b95230a1c",
+          "validated": true
+        },
+        "artifact_file": {
+          "exists": true,
+          "expected_sha256": "fc4fbb1a05be73aff0c8a691ad199be0b5b82874b15dce5df5029c5bc69b4e75",
+          "path": ".bhf-data/bhf-commentary-v1.2/exodus_014.json",
+          "sha256": "fc4fbb1a05be73aff0c8a691ad199be0b5b82874b15dce5df5029c5bc69b4e75"
+        },
+        "expected_index_identity": {
+          "artifact_sha256": "fc4fbb1a05be73aff0c8a691ad199be0b5b82874b15dce5df5029c5bc69b4e75",
+          "book": "Exodus",
+          "canonical_ordinal": 64,
+          "chapter": 14,
+          "evidence_availability": "AVAILABLE",
+          "failure_classification": null,
+          "filename": "exodus_014.json",
+          "reason": "published",
+          "reference": "Exodus 14",
+          "release_state": "PUBLISHED",
+          "source": "historical-75-release",
+          "source_normalized_sha256": "01b95ab3a506c70ebf351b8e28fa3f56eb4a870299efaa898545dc7b95230a1c",
+          "validated": true
+        },
+        "index_identity_matches": true
+      },
+      "Isaiah 36": {
+        "actual_index_identity": {
+          "artifact_sha256": "c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41",
+          "book": "Isaiah",
+          "canonical_ordinal": 715,
+          "chapter": 36,
+          "filename": "isaiah_036.json",
+          "raw_response_sha256": "b63ebfa59c67a88f706ff43dec29f1540829064ed168d0a7ff4738351134e2ba",
+          "reason": "published",
+          "reference": "Isaiah 36",
+          "release_state": "PUBLISHED",
+          "source": "transaction-c-selective-promotion",
+          "source_lineage": {
+            "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+            "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c"
+          },
+          "validated": true
+        },
+        "artifact_file": {
+          "exists": true,
+          "expected_sha256": "c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41",
+          "path": ".bhf-data/bhf-commentary-v1.2/isaiah_036.json",
+          "sha256": "c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41"
+        },
+        "expected_index_identity": {
+          "artifact_sha256": "c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41",
+          "book": "Isaiah",
+          "canonical_ordinal": 715,
+          "chapter": 36,
+          "filename": "isaiah_036.json",
+          "raw_response_sha256": "b63ebfa59c67a88f706ff43dec29f1540829064ed168d0a7ff4738351134e2ba",
+          "reason": "published",
+          "reference": "Isaiah 36",
+          "release_state": "PUBLISHED",
+          "source": "transaction-c-selective-promotion",
+          "source_lineage": {
+            "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+            "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c"
+          },
+          "validated": true
+        },
+        "index_identity_matches": true
+      },
+      "Psalms 76": {
+        "actual_index_identity": {
+          "book": "Psalms",
+          "canonical_ordinal": 554,
+          "chapter": 76,
+          "corpus_runner_result": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/corpus-runner/runs/session-batch-d86ed172cff8baff/chapters/psalms_076/result.json",
+          "reason": "commentary_source_limited",
+          "reference": "Psalms 76",
+          "release_state": "NOT_RENDERABLE_SOURCE_LIMITED",
+          "result_sha256": "3f7449dd29d763e85f0a0f8a842355ec384e8e267f4965a558d0ae6f815568ca",
+          "source": "corpus-runner",
+          "source_lineage": {
+            "evidence_hash": "a4b7138baefd5f742058b5334dab09befa853dc0702151bc57c6965282fa2e72",
+            "synthesis_hash": "ff565d20e5bac53a9991662ea3d49ff549898064ec5472a0c2d68be5cae133ba"
+          },
+          "validated": true
+        },
+        "artifact_file": null,
+        "expected_index_identity": {
+          "book": "Psalms",
+          "canonical_ordinal": 554,
+          "chapter": 76,
+          "corpus_runner_result": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/corpus-runner/runs/session-batch-d86ed172cff8baff/chapters/psalms_076/result.json",
+          "reason": "commentary_source_limited",
+          "reference": "Psalms 76",
+          "release_state": "NOT_RENDERABLE_SOURCE_LIMITED",
+          "result_sha256": "3f7449dd29d763e85f0a0f8a842355ec384e8e267f4965a558d0ae6f815568ca",
+          "source": "corpus-runner",
+          "source_lineage": {
+            "evidence_hash": "a4b7138baefd5f742058b5334dab09befa853dc0702151bc57c6965282fa2e72",
+            "synthesis_hash": "ff565d20e5bac53a9991662ea3d49ff549898064ec5472a0c2d68be5cae133ba"
+          },
+          "validated": true
+        },
+        "index_identity_matches": true
+      },
+      "Revelation 18": {
+        "actual_index_identity": {
+          "artifact_sha256": "087335ec105d9f1a11b5f71ba6b6ad6d951bee61325a0c648e4bfd556e2a931d",
+          "book": "Revelation",
+          "canonical_ordinal": 1185,
+          "chapter": 18,
+          "corpus_runner_result": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/corpus-runner/runs/session-batch-ae1f88331de62da8/chapters/revelation_018/result.json",
+          "filename": "revelation_018.json",
+          "raw_response_sha256": "112277759edfb861db1fc8b03997e81a4249344022e1ab939a067ba626b167da",
+          "reason": "published",
+          "reference": "Revelation 18",
+          "release_state": "PUBLISHED",
+          "result_sha256": "2cd2edec4959dba6e5f188321f092f926672f88ed20d5a4b0a0040cb24a4516c",
+          "source": "corpus-runner",
+          "source_lineage": {
+            "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+            "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0"
+          },
+          "validated": true
+        },
+        "artifact_file": {
+          "exists": true,
+          "expected_sha256": "087335ec105d9f1a11b5f71ba6b6ad6d951bee61325a0c648e4bfd556e2a931d",
+          "path": ".bhf-data/bhf-commentary-v1.2/revelation_018.json",
+          "sha256": "087335ec105d9f1a11b5f71ba6b6ad6d951bee61325a0c648e4bfd556e2a931d"
+        },
+        "expected_index_identity": {
+          "artifact_sha256": "087335ec105d9f1a11b5f71ba6b6ad6d951bee61325a0c648e4bfd556e2a931d",
+          "book": "Revelation",
+          "canonical_ordinal": 1185,
+          "chapter": 18,
+          "corpus_runner_result": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/corpus-runner/runs/session-batch-ae1f88331de62da8/chapters/revelation_018/result.json",
+          "filename": "revelation_018.json",
+          "raw_response_sha256": "112277759edfb861db1fc8b03997e81a4249344022e1ab939a067ba626b167da",
+          "reason": "published",
+          "reference": "Revelation 18",
+          "release_state": "PUBLISHED",
+          "result_sha256": "2cd2edec4959dba6e5f188321f092f926672f88ed20d5a4b0a0040cb24a4516c",
+          "source": "corpus-runner",
+          "source_lineage": {
+            "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+            "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0"
+          },
+          "validated": true
+        },
+        "index_identity_matches": true
+      }
+    },
+    "no_non_genesis_candidates": true,
+    "non_genesis_candidate_files": [],
+    "release_tree_unchanged": true
+  },
+  "published_release_tree_unchanged": true,
+  "references": [
+    "Genesis 2",
+    "Genesis 3",
+    "Genesis 4",
+    "Genesis 5",
+    "Genesis 6",
+    "Genesis 7",
+    "Genesis 8",
+    "Genesis 9",
+    "Genesis 10",
+    "Genesis 11",
+    "Genesis 12",
+    "Genesis 13",
+    "Genesis 14",
+    "Genesis 15",
+    "Genesis 16",
+    "Genesis 17",
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25",
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30",
+    "Genesis 31",
+    "Genesis 32",
+    "Genesis 33",
+    "Genesis 34",
+    "Genesis 35",
+    "Genesis 36",
+    "Genesis 37",
+    "Genesis 38",
+    "Genesis 39",
+    "Genesis 40",
+    "Genesis 41",
+    "Genesis 42",
+    "Genesis 43",
+    "Genesis 44",
+    "Genesis 45",
+    "Genesis 46",
+    "Genesis 47",
+    "Genesis 48",
+    "Genesis 49",
+    "Genesis 50"
+  ],
+  "renderer_contract": {
+    "effort": "high",
+    "mode": "codex_session",
+    "model": "gpt-5.6-terra",
+    "prompt_version": "1.8",
+    "schema_version": "1.2",
+    "transport": "local_codex_cli"
+  },
+  "safe_to_begin_d3_approval": true,
+  "status": "GENESIS_COMMENTARY_REFRESH_D2_CANDIDATES_VERIFIED",
+  "technical_review_is_not_human_approval": true,
+  "test_reconciliation_path": "historical-test-reconciliation.json",
+  "total_cli_attempts": 53,
+  "transaction": "GENESIS_COMMENTARY_REFRESH_D2_CANDIDATE_RENDERING",
+  "transport_failures": [
+    {
+      "attempt": 1,
+      "error": "WARNING: proceeding, even though we could not create PATH aliases: Read-only file system (os error 30)\nError: failed to initialize in-process app-server client: Read-only file system (os error 30)\n",
+      "reference": "Genesis 2",
+      "returncode": 1,
+      "timed_out": false
+    },
+    {
+      "attempt": 1,
+      "error": "plied renderer_verse_refs for ordinary block verse_refs. The source scope remains\nthe source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value\nwhen a renderer_verse_refs value is supplied.\n\nIn every block, use exactly this field: \"provenance_refs\": [\"<listed path ID>\"]\nDo not emit any path ID from another chapter or invent one.\n\nERROR: Selected model is at capacity. Please try a different model.\nERROR: Selected model is at capacity. Please try a different model.\n",
+      "reference": "Genesis 44",
+      "returncode": 1,
+      "timed_out": false
+    }
+  ],
+  "test_reconciliation": {
+    "path": "historical-test-reconciliation.json",
+    "compatibility_suite_passed": 387,
+    "compatibility_suite_inherited_failures": 45,
+    "clean_origin_master_reproduction": "PASS (45/45 identical failure IDs)",
+    "d2_specific_tests": "4 passed"
+  }
+}

@@ -1,0 +1,938 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 5,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-50-fear-after-jacob",
+            "g6b-50-hashav-evil-good",
+            "g6b-50-joseph-weeps-and-comforts",
+            "g6b-50-machpelah-burial",
+            "g6b-50-pharaoh-permission"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_a3a85a1a34f9"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-50-fear-after-jacob": [
+              "syn_cultural_context_a3a85a1a34f9"
+            ],
+            "g6b-50-hashav-evil-good": [
+              "syn_cultural_context_a3a85a1a34f9"
+            ],
+            "g6b-50-joseph-weeps-and-comforts": [
+              "syn_cultural_context_a3a85a1a34f9"
+            ],
+            "g6b-50-machpelah-burial": [
+              "syn_cultural_context_a3a85a1a34f9"
+            ],
+            "g6b-50-pharaoh-permission": [
+              "syn_cultural_context_a3a85a1a34f9"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-50-atad-abel-mizraim",
+            "g6b-50-embalming-and-mourning",
+            "g6b-50-funeral-procession",
+            "g6b-50-joseph-age-descendants",
+            "g6b-50-not-royal-mummification"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_93093f09c340"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-50-atad-abel-mizraim": [
+              "syn_interpretive_questions_93093f09c340"
+            ],
+            "g6b-50-embalming-and-mourning": [
+              "syn_interpretive_questions_93093f09c340"
+            ],
+            "g6b-50-funeral-procession": [
+              "syn_interpretive_questions_93093f09c340"
+            ],
+            "g6b-50-joseph-age-descendants": [
+              "syn_interpretive_questions_93093f09c340"
+            ],
+            "g6b-50-not-royal-mummification": [
+              "syn_interpretive_questions_93093f09c340"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-50-oath-bones-coffin",
+            "g6b-50-reported-message"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_8dc0e16d394a"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-50-oath-bones-coffin": [
+              "syn_interpretive_questions_8dc0e16d394a"
+            ],
+            "g6b-50-reported-message": [
+              "syn_interpretive_questions_8dc0e16d394a"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-ends-in-egypt"
+          ],
+          "cited_synthesis_ids": [
+            "syn_historical_context_643c8c2f0f5c"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-ends-in-egypt": [
+              "syn_historical_context_643c8c2f0f5c"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_0902bb81760d"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_0902bb81760d"
+            ]
+          },
+          "section_index": 4
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 3,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g6b-50-atad-abel-mizraim",
+          "g6b-50-embalming-and-mourning",
+          "g6b-50-fear-after-jacob",
+          "g6b-50-funeral-procession",
+          "g6b-50-hashav-evil-good",
+          "g6b-50-joseph-age-descendants",
+          "g6b-50-joseph-weeps-and-comforts",
+          "g6b-50-machpelah-burial",
+          "g6b-50-not-royal-mummification",
+          "g6b-50-oath-bones-coffin",
+          "g6b-50-pharaoh-permission",
+          "g6b-50-reported-message",
+          "genesis-ends-in-egypt",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_cultural_context_a3a85a1a34f9",
+          "syn_historical_context_643c8c2f0f5c",
+          "syn_interpretive_questions_8dc0e16d394a",
+          "syn_interpretive_questions_93093f09c340",
+          "syn_surrounding_passages_0902bb81760d",
+          "syn_surrounding_passages_9e8d6f4848eb",
+          "syn_surrounding_passages_bf148428a174",
+          "syn_why_it_matters_0135abde1950",
+          "syn_why_it_matters_708d172de6ef",
+          "syn_why_it_matters_9f760fce7650"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g6b-50-atad-abel-mizraim",
+          "g6b-50-embalming-and-mourning",
+          "g6b-50-fear-after-jacob",
+          "g6b-50-funeral-procession",
+          "g6b-50-hashav-evil-good",
+          "g6b-50-joseph-age-descendants",
+          "g6b-50-joseph-weeps-and-comforts",
+          "g6b-50-machpelah-burial",
+          "g6b-50-not-royal-mummification",
+          "g6b-50-oath-bones-coffin",
+          "g6b-50-pharaoh-permission",
+          "g6b-50-reported-message",
+          "genesis-ends-in-egypt",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 3,
+        "source_synthesis_unit_ids": [
+          "syn_cultural_context_a3a85a1a34f9",
+          "syn_historical_context_643c8c2f0f5c",
+          "syn_interpretive_questions_8dc0e16d394a",
+          "syn_interpretive_questions_93093f09c340",
+          "syn_surrounding_passages_0902bb81760d",
+          "syn_surrounding_passages_9e8d6f4848eb",
+          "syn_surrounding_passages_bf148428a174",
+          "syn_why_it_matters_0135abde1950",
+          "syn_why_it_matters_708d172de6ef",
+          "syn_why_it_matters_9f760fce7650"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "0e6e550a32470e3578e2a5c44ad87b07372c5d88aa0546eaf3d2d85af20357f3",
+      "expected_envelope_hash": "0e6e550a32470e3578e2a5c44ad87b07372c5d88aa0546eaf3d2d85af20357f3",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "cb4ff85fca3521fa3b52bce27772a80a802ad9eca1389e4aedd40b4e9b73a691",
+      "expected_binding_hash": "cb4ff85fca3521fa3b52bce27772a80a802ad9eca1389e4aedd40b4e9b73a691",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 1,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 5,
+      "commentary_prose_char_count": 1892,
+      "commentary_prose_word_count": 307,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 1,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 1,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "archaeology": 1,
+        "culture": 12,
+        "geography": 1,
+        "history": 3,
+        "social": 1
+      },
+      "evidence_category_diversity": 5,
+      "evidence_consumption_ratio": 0.7778,
+      "evidence_ids_referenced": [
+        "g6b-50-atad-abel-mizraim",
+        "g6b-50-embalming-and-mourning",
+        "g6b-50-fear-after-jacob",
+        "g6b-50-funeral-procession",
+        "g6b-50-hashav-evil-good",
+        "g6b-50-joseph-age-descendants",
+        "g6b-50-joseph-weeps-and-comforts",
+        "g6b-50-machpelah-burial",
+        "g6b-50-not-royal-mummification",
+        "g6b-50-oath-bones-coffin",
+        "g6b-50-pharaoh-permission",
+        "g6b-50-reported-message",
+        "genesis-ends-in-egypt",
+        "genesis-literary-movement"
+      ],
+      "evidence_item_count": 18,
+      "evidence_score": 14.0625,
+      "geography_evidence_count": 1,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0274,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 50",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 5,
+      "specific_evidence_count": 16,
+      "unique_evidence_ids_consumed": 14,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 4,
+      "unused_evidence_ids": [
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3",
+        "joseph-interprets-pharaohs-dreams:ancient_near_east_context:0",
+        "joseph-interprets-pharaohs-dreams:historical_context:0"
+      ],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 26,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 6,
+      "category_coverage": 1.0,
+      "category_families": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_408f2484cafb",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_0902bb81760d",
+            "syn_surrounding_passages_9e8d6f4848eb",
+            "syn_surrounding_passages_bf148428a174"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-joseph-reconciliation-conclusion-context|facts=after mourning period joseph asks pharaoh’s household convey oath bound request bury jacob canaan pharaoh grants permission;brothers say joseph may hate repay wrong did him after father’s death;jacob’s sons carry him canaan bury him cave machpelah field abraham acquired burial holding leah also named among those buried there;joseph says brothers intended evil against him while god intended good preserve many people alive;joseph weeps when brothers speak rejects fear says will provide children comforts",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6b-50-fear-after-jacob",
+            "g6b-50-hashav-evil-good",
+            "g6b-50-joseph-weeps-and-comforts",
+            "g6b-50-machpelah-burial",
+            "g6b-50-pharaoh-permission"
+          ],
+          "id": "idea_cluster_54cb4725b6bb",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_a3a85a1a34f9",
+            "syn_why_it_matters_9f760fce7650"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "archaeology",
+            "culture",
+            "geography",
+            "history",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-joseph-reconciliation-conclusion-context|facts=brothers send joseph message jacob had commanded him forgive transgression sin genesis not independently narrated jacob giving instruction;joseph says god will visit israel bring up promised land makes family swear carry up bones dies 110 embalmed placed coffin egypt;joseph lives 110 sees ephraim’s children third generation sees children machir son manasseh;joseph weeps over jacob physicians embalm him forty days egypt mourns him seventy days;narrative says physicians embalmed jacob joseph’s direction without calling him king describing complete royal funerary protocol;pharaoh’s officials elders household members chariots horsemen family accompany joseph toward canaan;procession mourns threshing floor atad beyond jordan location receives name abel mizraim narrative explanation",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6b-50-atad-abel-mizraim",
+            "g6b-50-embalming-and-mourning",
+            "g6b-50-funeral-procession",
+            "g6b-50-joseph-age-descendants",
+            "g6b-50-not-royal-mummification",
+            "g6b-50-oath-bones-coffin",
+            "g6b-50-reported-message"
+          ],
+          "id": "idea_cluster_61d8e56b9054",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_8dc0e16d394a",
+            "syn_interpretive_questions_93093f09c340",
+            "syn_why_it_matters_0135abde1950",
+            "syn_why_it_matters_708d172de6ef"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "history"
+          ],
+          "concept_signature": "kind=historical_context|parents=genesis|facts=genesis ends joseph's death egypt while preserving expectation god will bring abraham's family promised land",
+          "confidence": "low",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "genesis-ends-in-egypt"
+          ],
+          "id": "idea_cluster_c73fcfd6bed5",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "historical_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_historical_context_643c8c2f0f5c"
+          ],
+          "unit_kinds": [
+            "historical_context"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6429,
+      "consumed_category_count": 6,
+      "consumed_category_families": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 4,
+      "consumed_core_cluster_count": 3,
+      "consumed_eligible_synthesis_count": 5,
+      "consumed_eligible_weight": 3.5,
+      "consumed_synthesis_count": 5,
+      "core_cluster_count": 3,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 5,
+        "block_to_cluster_ratio": 1.25,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.6429,
+        "consumed_cluster_count": 4,
+        "consumed_synthesis_count": 5,
+        "consumed_unit_ratio": 0.5,
+        "mean_evidence_ids_per_block": 2.8,
+        "meaningful_cluster_count": 4,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 76.75
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 3
+      },
+      "eligible_synthesis_count": 10,
+      "eligible_synthesis_coverage": 0.5,
+      "eligible_weighted_denominator": 3.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 4,
+      "raw_synthesis_coverage": 0.5,
+      "synthesis_unit_count": 10,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "41c732264c55e4e6d7bd30424f827cc069b29995b3334b302de9efadb110e67e",
+  "d1_packet_identity": {
+    "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:3a7e243631b0834d1e14883ff679a7015434e702f3999e55fa4b713451a397bf",
+    "packet_sha256": "3a7e243631b0834d1e14883ff679a7015434e702f3999e55fa4b713451a397bf",
+    "path": "renderer-input/chapters/genesis_050",
+    "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "f1f9c6de0839a05feb82351ac3ca32448bed68f527e53fc4f33d64e223060657"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "cb4ff85fca3521fa3b52bce27772a80a802ad9eca1389e4aedd40b4e9b73a691",
+      "block_count": 5,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-50-fear-after-jacob",
+            "g6b-50-hashav-evil-good",
+            "g6b-50-joseph-weeps-and-comforts",
+            "g6b-50-machpelah-burial",
+            "g6b-50-pharaoh-permission"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-50-fear-after-jacob",
+                "g6b-50-hashav-evil-good",
+                "g6b-50-joseph-weeps-and-comforts",
+                "g6b-50-machpelah-burial",
+                "g6b-50-pharaoh-permission"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+                  "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6b-50-fear-after-jacob",
+                  "g6b-50-hashav-evil-good",
+                  "g6b-50-joseph-weeps-and-comforts",
+                  "g6b-50-machpelah-burial",
+                  "g6b-50-pharaoh-permission"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 50:12-14",
+                  "Genesis 50:15",
+                  "Genesis 50:17-21",
+                  "Genesis 50:20",
+                  "Genesis 50:4-6"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_a3a85a1a34f9",
+                "verse_refs": [
+                  "Genesis 50:12-14",
+                  "Genesis 50:15",
+                  "Genesis 50:17-21",
+                  "Genesis 50:20",
+                  "Genesis 50:4-6"
+                ]
+              },
+              "path_hash": "2fb6f05f6122c1c5c01867a81e4bb806997c88e9e907de9c7cdde72c7913c752",
+              "path_id": "reader_path_genesis_050_2fb6f05f6122c1c5c01867a8",
+              "reader_idea_id": "reader_idea_7dadb193587a60c5",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_cultural_context_a3a85a1a34f9"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_050_2fb6f05f6122c1c5c01867a8"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_7dadb193587a60c5"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_cultural_context_a3a85a1a34f9"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-50-atad-abel-mizraim",
+            "g6b-50-embalming-and-mourning",
+            "g6b-50-funeral-procession",
+            "g6b-50-joseph-age-descendants",
+            "g6b-50-not-royal-mummification"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-50-atad-abel-mizraim",
+                "g6b-50-embalming-and-mourning",
+                "g6b-50-funeral-procession",
+                "g6b-50-joseph-age-descendants",
+                "g6b-50-not-royal-mummification"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+                  "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g6b-50-atad-abel-mizraim",
+                  "g6b-50-embalming-and-mourning",
+                  "g6b-50-funeral-procession",
+                  "g6b-50-joseph-age-descendants",
+                  "g6b-50-not-royal-mummification"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 50:1-3",
+                  "Genesis 50:10-11",
+                  "Genesis 50:2",
+                  "Genesis 50:22-23",
+                  "Genesis 50:7-9"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_93093f09c340",
+                "verse_refs": [
+                  "Genesis 50:1-3",
+                  "Genesis 50:10-11",
+                  "Genesis 50:2",
+                  "Genesis 50:22-23",
+                  "Genesis 50:7-9"
+                ]
+              },
+              "path_hash": "c9bfd671bb0f2eda2a9f899b2a2e894184481ffe1a4f08f8650e084c797f387e",
+              "path_id": "reader_path_genesis_050_c9bfd671bb0f2eda2a9f899b",
+              "reader_idea_id": "reader_idea_7dadb193587a60c5",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_interpretive_questions_93093f09c340"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_050_c9bfd671bb0f2eda2a9f899b"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_7dadb193587a60c5"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_interpretive_questions_93093f09c340"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-50-oath-bones-coffin",
+            "g6b-50-reported-message"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-50-oath-bones-coffin",
+                "g6b-50-reported-message"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+                  "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g6b-50-oath-bones-coffin",
+                  "g6b-50-reported-message"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 50:16-17",
+                  "Genesis 50:24-26"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_8dc0e16d394a",
+                "verse_refs": [
+                  "Genesis 50:16-17",
+                  "Genesis 50:24-26"
+                ]
+              },
+              "path_hash": "3181d25d176a315447d4c9ab44edc371cdb721e9055284a1a96f0a5a44f4658e",
+              "path_id": "reader_path_genesis_050_3181d25d176a315447d4c9ab",
+              "reader_idea_id": "reader_idea_7dadb193587a60c5",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_interpretive_questions_8dc0e16d394a"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_050_3181d25d176a315447d4c9ab"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_7dadb193587a60c5"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_interpretive_questions_8dc0e16d394a"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-ends-in-egypt"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-ends-in-egypt"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+                  "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-ends-in-egypt"
+                ],
+                "interpretation_level": "fact",
+                "kind": "historical_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 50:24-26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_historical_context_643c8c2f0f5c",
+                "verse_refs": [
+                  "Genesis 50:24-26"
+                ]
+              },
+              "path_hash": "e7738265f6497915386c822609936d9aae030f9ca9096f2234dea8b661d5d296",
+              "path_id": "reader_path_genesis_050_e7738265f6497915386c8226",
+              "reader_idea_id": "reader_idea_f6193f3a4bfd8395",
+              "reader_idea_label": "Genesis ends with Joseph's death in Egypt while preserving an expectation that God will bring Abraham's family to the promised land.",
+              "synthesis_id": "syn_historical_context_643c8c2f0f5c"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_050_e7738265f6497915386c8226"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_f6193f3a4bfd8395"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_historical_context_643c8c2f0f5c"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+                  "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_0902bb81760d",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "76b6406aee56fa753ffc049c2c0a694874df6f88fa6bf0c73ecfbaeea8b0e21a",
+              "path_id": "reader_path_genesis_050_76b6406aee56fa753ffc049c",
+              "reader_idea_id": "reader_idea_78a66a5d184acde7",
+              "reader_idea_label": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's…",
+              "synthesis_id": "syn_surrounding_passages_0902bb81760d"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_050_76b6406aee56fa753ffc049c"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_78a66a5d184acde7"
+          ],
+          "section_index": 4,
+          "synthesis_ids": [
+            "syn_surrounding_passages_0902bb81760d"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "149449014fbf63f0f3433378d15c9564c399f775913ee70d3fc4223abff8f3d3",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

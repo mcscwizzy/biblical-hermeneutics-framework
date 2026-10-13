@@ -1,0 +1,100 @@
+{
+  "book": "Genesis",
+  "chapter": 27,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "972cbb00d8e96921bbfe2d22e1a88884a778b3745de1d474a6ad9d050855b974",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "93622fb51c0adb44808a6df3a818ce72459166d193bfb7ae218e1d846ef32658",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 27",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g27-age-sight-and-game-request",
+            "g27-blessing-birthright-inheritance-distinction",
+            "g27-blessing-dew-earth-grain-nations",
+            "g27-discovery-trembling-and-esau-cry",
+            "g27-meal-before-blessing"
+          ],
+          "id": "block_1",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_276b64b61a6c"
+          ],
+          "text": "Isaac’s intended blessing is framed by a meal and by his sense that death may be near. The blessing is not simply the earlier birthright dispute repeated: blessing, birthright, household inheritance, and covenant promise overlap in family importance without being the same concept. Its words combine agricultural plenty—dew, fertile land, grain, and wine—with authority over peoples and kin. The swift reversal when Esau returns, Isaac trembles, and Esau pleads for a blessing brings the family’s grief and conflict into full view.",
+          "verse_refs": [
+            "Genesis 27:1-4",
+            "Genesis 27:25-29",
+            "Genesis 27:27-29",
+            "Genesis 27:30-38"
+          ]
+        }
+      ],
+      "kind": "chapter_overview",
+      "title": "Overview"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g27-murder-threat-and-paddan-aram-flight",
+            "g27-name-pun-and-grievance",
+            "g27-rebekah-overhears-and-prepares",
+            "g27-secondary-words-concerning-esau",
+            "g27-voice-touch-and-false-identity"
+          ],
+          "id": "block_2",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_64ec717ecdbb"
+          ],
+          "text": "The narrative carefully shows how the deception works: Rebekah overhears Isaac, prepares the food, dresses Jacob in Esau’s clothing, and covers his smooth skin with goatskins. Isaac hears Jacob’s voice but relies on touch, clothing, and smell; the account preserves his uncertainty without naming a medical explanation. Esau later treats Jacob’s name as a wordplay and connects this loss to the earlier birthright conflict, though that wordplay is part of Esau’s accusation rather than a final definition of Jacob’s name. Isaac’s later words give Esau a distinct future, variously understood as a secondary blessing or an oracle, before Esau’s threat sends Jacob toward Paddan-aram.",
+          "verse_refs": [
+            "Genesis 27:18-24",
+            "Genesis 27:35-36",
+            "Genesis 27:39-40",
+            "Genesis 27:41-46",
+            "Genesis 27:5-17"
+          ]
+        }
+      ],
+      "kind": "interpretive_questions",
+      "title": "Questions Raised by the Deception"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "id": "block_3",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_surrounding_passages_2b269998d896"
+          ],
+          "text": "Genesis 27 belongs to the ancestral-family narratives that fill chapters 12–50. These narratives follow Genesis’s opening movement from universal origins in chapters 1–11 and ultimately conclude with Jacob’s household in Egypt.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis in Context"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

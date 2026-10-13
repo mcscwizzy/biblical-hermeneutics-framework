@@ -1,0 +1,1037 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 6,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g33-gift-blessing-face-of-god",
+            "g33-women-children-presentation"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_d59ea209855f"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g33-gift-blessing-face-of-god": [
+              "syn_cultural_context_d59ea209855f"
+            ],
+            "g33-women-children-presentation": [
+              "syn_cultural_context_d59ea209855f"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g33-el-elohe-israel-altar-name",
+            "g33-esau-embrace-kiss-weeping",
+            "g33-household-approach-and-seven-bows",
+            "g33-kiss-dotted-word-textual-traditions",
+            "g33-purchased-parcel-near-shechem"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_37966dc5e0fc"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g33-el-elohe-israel-altar-name": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ],
+            "g33-esau-embrace-kiss-weeping": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ],
+            "g33-household-approach-and-seven-bows": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ],
+            "g33-kiss-dotted-word-textual-traditions": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ],
+            "g33-purchased-parcel-near-shechem": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "g33-el-elohe-israel-altar-name",
+            "g33-esau-embrace-kiss-weeping",
+            "g33-household-approach-and-seven-bows",
+            "g33-kiss-dotted-word-textual-traditions",
+            "g33-purchased-parcel-near-shechem"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_37966dc5e0fc"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g33-el-elohe-israel-altar-name": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ],
+            "g33-esau-embrace-kiss-weeping": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ],
+            "g33-household-approach-and-seven-bows": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ],
+            "g33-kiss-dotted-word-textual-traditions": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ],
+            "g33-purchased-parcel-near-shechem": [
+              "syn_interpretive_questions_37966dc5e0fc"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g33-esau-seir-jacob-succoth-shechem-travel"
+          ],
+          "cited_synthesis_ids": [
+            "syn_archaeology_geography_b195a876431f"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g33-esau-seir-jacob-succoth-shechem-travel": [
+              "syn_archaeology_geography_b195a876431f"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_84e308be81bd"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_84e308be81bd"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_6",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_257a5c5fb5c7"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_257a5c5fb5c7"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_257a5c5fb5c7"
+            ]
+          },
+          "section_index": 3
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g33-el-elohe-israel-altar-name",
+          "g33-esau-embrace-kiss-weeping",
+          "g33-esau-seir-jacob-succoth-shechem-travel",
+          "g33-gift-blessing-face-of-god",
+          "g33-household-approach-and-seven-bows",
+          "g33-kiss-dotted-word-textual-traditions",
+          "g33-purchased-parcel-near-shechem",
+          "g33-women-children-presentation",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_archaeology_geography_b195a876431f",
+          "syn_cultural_context_d59ea209855f",
+          "syn_interpretive_questions_37966dc5e0fc",
+          "syn_surrounding_passages_257a5c5fb5c7",
+          "syn_surrounding_passages_84e308be81bd",
+          "syn_surrounding_passages_bd8dc3fff7c2",
+          "syn_why_it_matters_8cca79af1ea0",
+          "syn_why_it_matters_96918ecfa53f"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g33-el-elohe-israel-altar-name",
+          "g33-esau-embrace-kiss-weeping",
+          "g33-esau-seir-jacob-succoth-shechem-travel",
+          "g33-gift-blessing-face-of-god",
+          "g33-household-approach-and-seven-bows",
+          "g33-kiss-dotted-word-textual-traditions",
+          "g33-purchased-parcel-near-shechem",
+          "g33-women-children-presentation",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_archaeology_geography_b195a876431f",
+          "syn_cultural_context_d59ea209855f",
+          "syn_interpretive_questions_37966dc5e0fc",
+          "syn_surrounding_passages_257a5c5fb5c7",
+          "syn_surrounding_passages_84e308be81bd",
+          "syn_surrounding_passages_bd8dc3fff7c2",
+          "syn_why_it_matters_8cca79af1ea0",
+          "syn_why_it_matters_96918ecfa53f"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "ae9d602e754550183f89af24feca73fc2de371a38ade41f2ce82832ede8360d1",
+      "expected_envelope_hash": "ae9d602e754550183f89af24feca73fc2de371a38ade41f2ce82832ede8360d1",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "cfbc774a279b3c4490deb5b07fb499f65e8b7fc9da3ff1685a89af18b4f71590",
+      "expected_binding_hash": "cfbc774a279b3c4490deb5b07fb499f65e8b7fc9da3ff1685a89af18b4f71590",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 6,
+      "commentary_prose_char_count": 2304,
+      "commentary_prose_word_count": 372,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 1,
+        "groups": 0,
+        "people": 0,
+        "places": 1
+      },
+      "events_groups_artifacts_count": 1,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "culture": 13,
+        "geography": 4,
+        "history": 3
+      },
+      "evidence_category_diversity": 3,
+      "evidence_consumption_ratio": 0.55,
+      "evidence_ids_referenced": [
+        "g33-el-elohe-israel-altar-name",
+        "g33-esau-embrace-kiss-weeping",
+        "g33-esau-seir-jacob-succoth-shechem-travel",
+        "g33-gift-blessing-face-of-god",
+        "g33-household-approach-and-seven-bows",
+        "g33-kiss-dotted-word-textual-traditions",
+        "g33-purchased-parcel-near-shechem",
+        "g33-women-children-presentation",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 20,
+      "evidence_score": 16.075,
+      "geography_evidence_count": 4,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0287,
+      "people_count": 0,
+      "places_count": 1,
+      "reference": "Genesis 33",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 4,
+      "specific_evidence_count": 11,
+      "unique_evidence_ids_consumed": 11,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 9,
+      "unused_evidence_ids": [
+        "jacob-wrestles-at-peniel:ancient_near_east_context:0",
+        "jacob-wrestles-at-peniel:historical_context:0",
+        "shechem:ancient_near_east_context:0",
+        "shechem:hebraic_worldview:0",
+        "shechem:historical_context:0",
+        "shechem:key_places:0",
+        "shechem:key_places:1",
+        "shechem:key_places:2",
+        "shechem:second_temple_context:0"
+      ],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 20,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 5,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_297127d83638",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_257a5c5fb5c7",
+            "syn_surrounding_passages_84e308be81bd",
+            "syn_surrounding_passages_bd8dc3fff7c2"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-jacob-esau-return-context|facts=jacob asks esau accept min ah then calls blessing says seeing esau’s face like seeing face god because esau received him favorably language echoes peniel prior fear meeting esau expresses reconciliation favor not esau’s divinization;jacob presents women children approach each group bows narrative makes household’s social ordering visible does not state motive order claims about strategic protection rank must remain qualified",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g33-gift-blessing-face-of-god",
+            "g33-women-children-presentation"
+          ],
+          "id": "idea_cluster_38106e642bc1",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_d59ea209855f",
+            "syn_why_it_matters_96918ecfa53f"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "geography"
+          ],
+          "concept_signature": "kind=archaeology_geography|parents=genesis-jacob-esau-return-context|facts=esau returns toward seir while jacob travels succoth builds house makes booths livestock before later arriving shechem sequence records divergent routes named stop neither booth construction nor itinerary yields exact modern coordinates",
+          "confidence": "low",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "g33-esau-seir-jacob-succoth-shechem-travel"
+          ],
+          "id": "idea_cluster_5755cf94d7f1",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "archaeology_geography",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_archaeology_geography_b195a876431f"
+          ],
+          "unit_kinds": [
+            "archaeology_geography"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-jacob-esau-return-context|facts=esau runs meet jacob embraces him falls neck kisses him brothers weep immediate narrative portrays emotional reunion later suspicion about marked dotted hebrew word kissed textual reception issue cannot itself prove esau intended murder;jacob arranges household groups moves ahead bows seven times approaches esau ancient prostration could signal deference diplomatic kinship encounters scene does not automatically describe worship text does not disclose single motive household order;jacob buys parcel where pitches tent sons hamor one hundred qesitah purchase narrated land transaction settlement claim unit’s value parcel’s precise boundaries not independently established;jacob erects altar names el elohe israel wording can construed along lines such el god israel god god israel altar name relates jacob’s new name worship grammatical interpretive nuance remains;masoretic text marks word kissed him dots prompting interpretive traditions about sincerity esau’s kiss textual explanations marks dots do not establish hidden murder plot manuscript reception claims should tied textual evidence rather than used overturn narrated embrace",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g33-el-elohe-israel-altar-name",
+            "g33-esau-embrace-kiss-weeping",
+            "g33-household-approach-and-seven-bows",
+            "g33-kiss-dotted-word-textual-traditions",
+            "g33-purchased-parcel-near-shechem"
+          ],
+          "id": "idea_cluster_96376c8e649d",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_37966dc5e0fc",
+            "syn_why_it_matters_8cca79af1ea0"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.625,
+      "consumed_category_count": 5,
+      "consumed_category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 4,
+      "consumed_core_cluster_count": 3,
+      "consumed_eligible_synthesis_count": 5,
+      "consumed_eligible_weight": 3.5,
+      "consumed_synthesis_count": 5,
+      "core_cluster_count": 3,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 6,
+        "block_to_cluster_ratio": 1.5,
+        "block_to_synthesis_ratio": 1.2,
+        "consolidation_ratio": 0.625,
+        "consumed_cluster_count": 4,
+        "consumed_synthesis_count": 5,
+        "consumed_unit_ratio": 0.625,
+        "mean_evidence_ids_per_block": 2.6667,
+        "meaningful_cluster_count": 4,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 93.0
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 3
+      },
+      "eligible_synthesis_count": 8,
+      "eligible_synthesis_coverage": 0.625,
+      "eligible_weighted_denominator": 3.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 4,
+      "raw_synthesis_coverage": 0.625,
+      "synthesis_unit_count": 8,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "3f3660fe24a4b391e2ca8c55d9f5495ba0584202c3ae83fe8800f4b413106520",
+  "d1_packet_identity": {
+    "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:9383d8cedb7d44a4532d4060ff0fcd96c06508d64a75a4ab3049a0b876ac0c84",
+    "packet_sha256": "9383d8cedb7d44a4532d4060ff0fcd96c06508d64a75a4ab3049a0b876ac0c84",
+    "path": "renderer-input/chapters/genesis_033",
+    "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "305543966a7d1131089ea8233b63af0bddb294472f0bb4a23ed0e8bd787f4ff0"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "cfbc774a279b3c4490deb5b07fb499f65e8b7fc9da3ff1685a89af18b4f71590",
+      "block_count": 6,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g33-gift-blessing-face-of-god",
+            "g33-women-children-presentation"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g33-gift-blessing-face-of-god",
+                "g33-women-children-presentation"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+                  "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g33-gift-blessing-face-of-god",
+                  "g33-women-children-presentation"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 33:5-7",
+                  "Genesis 33:8-11"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_d59ea209855f",
+                "verse_refs": [
+                  "Genesis 33:5-7",
+                  "Genesis 33:8-11"
+                ]
+              },
+              "path_hash": "bbcb036f1544ca6a0c38480b365b85650f526d3df3088d1fadb71559e0effe5e",
+              "path_id": "reader_path_genesis_033_bbcb036f1544ca6a0c38480b",
+              "reader_idea_id": "reader_idea_cac067fe9faeb455",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_cultural_context_d59ea209855f"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_033_bbcb036f1544ca6a0c38480b"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_cac067fe9faeb455"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_cultural_context_d59ea209855f"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g33-el-elohe-israel-altar-name",
+            "g33-esau-embrace-kiss-weeping",
+            "g33-household-approach-and-seven-bows",
+            "g33-kiss-dotted-word-textual-traditions",
+            "g33-purchased-parcel-near-shechem"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g33-el-elohe-israel-altar-name",
+                "g33-esau-embrace-kiss-weeping",
+                "g33-household-approach-and-seven-bows",
+                "g33-kiss-dotted-word-textual-traditions",
+                "g33-purchased-parcel-near-shechem"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+                  "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g33-el-elohe-israel-altar-name",
+                  "g33-esau-embrace-kiss-weeping",
+                  "g33-household-approach-and-seven-bows",
+                  "g33-kiss-dotted-word-textual-traditions",
+                  "g33-purchased-parcel-near-shechem"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 33:1-3",
+                  "Genesis 33:18-19",
+                  "Genesis 33:20",
+                  "Genesis 33:4"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_37966dc5e0fc",
+                "verse_refs": [
+                  "Genesis 33:1-3",
+                  "Genesis 33:18-19",
+                  "Genesis 33:20",
+                  "Genesis 33:4"
+                ]
+              },
+              "path_hash": "566883389b0eb51de392345886a22a9fa99d0223a7828336dd33fb5c26eea7c9",
+              "path_id": "reader_path_genesis_033_566883389b0eb51de3923458",
+              "reader_idea_id": "reader_idea_cac067fe9faeb455",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_interpretive_questions_37966dc5e0fc"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_033_566883389b0eb51de3923458"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_cac067fe9faeb455"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_interpretive_questions_37966dc5e0fc"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 1,
+          "evidence_ids": [
+            "g33-el-elohe-israel-altar-name",
+            "g33-esau-embrace-kiss-weeping",
+            "g33-household-approach-and-seven-bows",
+            "g33-kiss-dotted-word-textual-traditions",
+            "g33-purchased-parcel-near-shechem"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g33-el-elohe-israel-altar-name",
+                "g33-esau-embrace-kiss-weeping",
+                "g33-household-approach-and-seven-bows",
+                "g33-kiss-dotted-word-textual-traditions",
+                "g33-purchased-parcel-near-shechem"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+                  "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g33-el-elohe-israel-altar-name",
+                  "g33-esau-embrace-kiss-weeping",
+                  "g33-household-approach-and-seven-bows",
+                  "g33-kiss-dotted-word-textual-traditions",
+                  "g33-purchased-parcel-near-shechem"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 33:1-3",
+                  "Genesis 33:18-19",
+                  "Genesis 33:20",
+                  "Genesis 33:4"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_37966dc5e0fc",
+                "verse_refs": [
+                  "Genesis 33:1-3",
+                  "Genesis 33:18-19",
+                  "Genesis 33:20",
+                  "Genesis 33:4"
+                ]
+              },
+              "path_hash": "566883389b0eb51de392345886a22a9fa99d0223a7828336dd33fb5c26eea7c9",
+              "path_id": "reader_path_genesis_033_566883389b0eb51de3923458",
+              "reader_idea_id": "reader_idea_cac067fe9faeb455",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_interpretive_questions_37966dc5e0fc"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_033_566883389b0eb51de3923458"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_cac067fe9faeb455"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_interpretive_questions_37966dc5e0fc"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "g33-esau-seir-jacob-succoth-shechem-travel"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g33-esau-seir-jacob-succoth-shechem-travel"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+                  "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g33-esau-seir-jacob-succoth-shechem-travel"
+                ],
+                "interpretation_level": "fact",
+                "kind": "archaeology_geography",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 33:12-18"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_archaeology_geography_b195a876431f",
+                "verse_refs": [
+                  "Genesis 33:12-18"
+                ]
+              },
+              "path_hash": "c1decf35fe9941b5c03410ed353b54d18ebc6a7c0175787726665c132599f3d1",
+              "path_id": "reader_path_genesis_033_c1decf35fe9941b5c03410ed",
+              "reader_idea_id": "reader_idea_cac067fe9faeb455",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_archaeology_geography_b195a876431f"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_033_c1decf35fe9941b5c03410ed"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_cac067fe9faeb455"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_archaeology_geography_b195a876431f"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+                  "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_84e308be81bd",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "f42e39dcc3513649a839405c3d1ff66fad228b2e1d1fac79e06a9cc823f3fc11",
+              "path_id": "reader_path_genesis_033_f42e39dcc3513649a839405c",
+              "reader_idea_id": "reader_idea_dfe00ea6bb399847",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_84e308be81bd"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_033_f42e39dcc3513649a839405c"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_dfe00ea6bb399847"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_surrounding_passages_84e308be81bd"
+          ]
+        },
+        {
+          "block_id": "block_6",
+          "block_index": 1,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+                  "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_257a5c5fb5c7",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "3fc3d726e5944eb883bcb770bec4d20d03703ddc9aa441baad8bd6ae37f472ca",
+              "path_id": "reader_path_genesis_033_3fc3d726e5944eb883bcb770",
+              "reader_idea_id": "reader_idea_dfe00ea6bb399847",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_257a5c5fb5c7"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_033_3fc3d726e5944eb883bcb770"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_dfe00ea6bb399847"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_surrounding_passages_257a5c5fb5c7"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "1d38c468cbd389c7e99709584b27998c9efb402ac8964bf23e0e6f6b8c8ecc64",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

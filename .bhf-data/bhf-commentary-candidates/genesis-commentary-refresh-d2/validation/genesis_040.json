@@ -1,0 +1,883 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 4,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6a-40-baker-dream",
+            "g6a-40-cupbearer-dream",
+            "g6a-40-forgotten",
+            "g6a-40-interpretation-god"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_b5e1f2a5ca11"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6a-40-baker-dream": [
+              "syn_cultural_context_b5e1f2a5ca11"
+            ],
+            "g6a-40-cupbearer-dream": [
+              "syn_cultural_context_b5e1f2a5ca11"
+            ],
+            "g6a-40-forgotten": [
+              "syn_cultural_context_b5e1f2a5ca11"
+            ],
+            "g6a-40-interpretation-god": [
+              "syn_cultural_context_b5e1f2a5ca11"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6a-40-birthday-execution",
+            "g6a-40-court-offices",
+            "g6a-40-custody-attendance"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_58da22bb4b5a"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6a-40-birthday-execution": [
+              "syn_interpretive_questions_58da22bb4b5a"
+            ],
+            "g6a-40-court-offices": [
+              "syn_interpretive_questions_58da22bb4b5a"
+            ],
+            "g6a-40-custody-attendance": [
+              "syn_interpretive_questions_58da22bb4b5a"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6a-40-baker-dream",
+            "g6a-40-cupbearer-dream",
+            "g6a-40-forgotten",
+            "g6a-40-interpretation-god"
+          ],
+          "cited_synthesis_ids": [
+            "syn_why_it_matters_14162208d995"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6a-40-baker-dream": [
+              "syn_why_it_matters_14162208d995"
+            ],
+            "g6a-40-cupbearer-dream": [
+              "syn_why_it_matters_14162208d995"
+            ],
+            "g6a-40-forgotten": [
+              "syn_why_it_matters_14162208d995"
+            ],
+            "g6a-40-interpretation-god": [
+              "syn_why_it_matters_14162208d995"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3",
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_999f864f75fc",
+            "syn_surrounding_passages_bf38f037feb1"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_bf38f037feb1"
+            ],
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_999f864f75fc"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_999f864f75fc"
+            ]
+          },
+          "section_index": 3
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g6a-40-baker-dream",
+          "g6a-40-birthday-execution",
+          "g6a-40-court-offices",
+          "g6a-40-cupbearer-dream",
+          "g6a-40-custody-attendance",
+          "g6a-40-forgotten",
+          "g6a-40-interpretation-god",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_cultural_context_b5e1f2a5ca11",
+          "syn_interpretive_questions_58da22bb4b5a",
+          "syn_surrounding_passages_999f864f75fc",
+          "syn_surrounding_passages_bf38f037feb1",
+          "syn_surrounding_passages_cb5c07591c39",
+          "syn_why_it_matters_14162208d995",
+          "syn_why_it_matters_94c03c2eb675"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g6a-40-baker-dream",
+          "g6a-40-birthday-execution",
+          "g6a-40-court-offices",
+          "g6a-40-cupbearer-dream",
+          "g6a-40-custody-attendance",
+          "g6a-40-forgotten",
+          "g6a-40-interpretation-god",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_cultural_context_b5e1f2a5ca11",
+          "syn_interpretive_questions_58da22bb4b5a",
+          "syn_surrounding_passages_999f864f75fc",
+          "syn_surrounding_passages_bf38f037feb1",
+          "syn_surrounding_passages_cb5c07591c39",
+          "syn_why_it_matters_14162208d995",
+          "syn_why_it_matters_94c03c2eb675"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "73ae2537892d82a9de656672ca424b9671ab2d7766062fe64ee60e4ebf55e0ad",
+      "expected_envelope_hash": "73ae2537892d82a9de656672ca424b9671ab2d7766062fe64ee60e4ebf55e0ad",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "b4138eebeae4736d6947d721826df58e371d6209a45b9b7920a137ff978ec7e7",
+      "expected_binding_hash": "b4138eebeae4736d6947d721826df58e371d6209a45b9b7920a137ff978ec7e7",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 4,
+      "commentary_prose_char_count": 1862,
+      "commentary_prose_word_count": 278,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "culture": 7,
+        "history": 2,
+        "social": 1
+      },
+      "evidence_category_diversity": 3,
+      "evidence_consumption_ratio": 1.0,
+      "evidence_ids_referenced": [
+        "g6a-40-baker-dream",
+        "g6a-40-birthday-execution",
+        "g6a-40-court-offices",
+        "g6a-40-cupbearer-dream",
+        "g6a-40-custody-attendance",
+        "g6a-40-forgotten",
+        "g6a-40-interpretation-god",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 10,
+      "evidence_score": 7.8125,
+      "geography_evidence_count": 0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0443,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 40",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 4,
+      "specific_evidence_count": 10,
+      "unique_evidence_ids_consumed": 10,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unused_evidence_ids": [],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 23,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 4,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-joseph-descent-testing-context|facts=pharaoh’s cupbearer baker offend lord confined under captain guard comparable courts used food drink service offices hebrew titles do not map certainty one egyptian position identify men historically;third day pharaoh holds birthday feast restores cupbearer executes baker hebrew death verb rendered hanging impalement comparative egyptian royal birthday evidence identifies no pharaoh date;two officials share joseph’s custody setting where attends prison describes detention under royal authority not necessarily modern penal institution identified archaeological site",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6a-40-birthday-execution",
+            "g6a-40-court-offices",
+            "g6a-40-custody-attendance"
+          ],
+          "id": "idea_cluster_12f0ceccb39e",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_58da22bb4b5a",
+            "syn_why_it_matters_94c03c2eb675"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-joseph-descent-testing-context|facts=baker sees three baskets head birds eating upper basket joseph interprets three days before pharaoh executes him story narrates outcome;cupbearer dreams vine three branches presses grapes into pharaoh’s cup serves pharaoh cup pressing action material culture details within dream image joseph interprets branches three days restoration asking remembered;restored cupbearer does not remember joseph forgets him closing narrative beat delays release moves story toward pharaoh’s dreams;when officials lack interpreter joseph says interpretations belong god asks tell dreams story’s explicit theological framing",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6a-40-baker-dream",
+            "g6a-40-cupbearer-dream",
+            "g6a-40-forgotten",
+            "g6a-40-interpretation-god"
+          ],
+          "id": "idea_cluster_987403fc90cb",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_b5e1f2a5ca11",
+            "syn_why_it_matters_14162208d995"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_a6846c3b6da2",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_999f864f75fc",
+            "syn_surrounding_passages_bf38f037feb1",
+            "syn_surrounding_passages_cb5c07591c39"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.7143,
+      "consumed_category_count": 4,
+      "consumed_category_families": [
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 3,
+      "consumed_core_cluster_count": 2,
+      "consumed_eligible_synthesis_count": 5,
+      "consumed_eligible_weight": 2.5,
+      "consumed_synthesis_count": 5,
+      "core_cluster_count": 2,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 4,
+        "block_to_cluster_ratio": 1.3333,
+        "block_to_synthesis_ratio": 0.8,
+        "consolidation_ratio": 0.7143,
+        "consumed_cluster_count": 3,
+        "consumed_synthesis_count": 5,
+        "consumed_unit_ratio": 0.7143,
+        "mean_evidence_ids_per_block": 3.5,
+        "meaningful_cluster_count": 3,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 92.6667
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 2
+      },
+      "eligible_synthesis_count": 7,
+      "eligible_synthesis_coverage": 0.7143,
+      "eligible_weighted_denominator": 2.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 3,
+      "raw_synthesis_coverage": 0.7143,
+      "synthesis_unit_count": 7,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "a22c62d73b683e7b13ab92c747b76b0fa64ab22a3ff6ee90375d2b5e7237924e",
+  "d1_packet_identity": {
+    "evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:d1691925248fb0354f5d7bd365c1992843af1d413b7881620d817430516c6339",
+    "packet_sha256": "d1691925248fb0354f5d7bd365c1992843af1d413b7881620d817430516c6339",
+    "path": "renderer-input/chapters/genesis_040",
+    "synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "05ddc57074d0c90feb9153d1140e8eb8c3c15984ed21f68a3029a4c3f3b6653c"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "b4138eebeae4736d6947d721826df58e371d6209a45b9b7920a137ff978ec7e7",
+      "block_count": 4,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6a-40-baker-dream",
+            "g6a-40-cupbearer-dream",
+            "g6a-40-forgotten",
+            "g6a-40-interpretation-god"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6a-40-baker-dream",
+                "g6a-40-cupbearer-dream",
+                "g6a-40-forgotten",
+                "g6a-40-interpretation-god"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+                  "synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6a-40-baker-dream",
+                  "g6a-40-cupbearer-dream",
+                  "g6a-40-forgotten",
+                  "g6a-40-interpretation-god"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 40:16-19",
+                  "Genesis 40:23",
+                  "Genesis 40:8",
+                  "Genesis 40:9-15"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_b5e1f2a5ca11",
+                "verse_refs": [
+                  "Genesis 40:16-19",
+                  "Genesis 40:23",
+                  "Genesis 40:8",
+                  "Genesis 40:9-15"
+                ]
+              },
+              "path_hash": "01a5962c767d89be8eb781ada05c753753df9e25f92be15a78024be47a2fcb12",
+              "path_id": "reader_path_genesis_040_01a5962c767d89be8eb781ad",
+              "reader_idea_id": "reader_idea_35e434202b4c081e",
+              "reader_idea_label": "Genesis Joseph Descent Testing Context",
+              "synthesis_id": "syn_cultural_context_b5e1f2a5ca11"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_040_01a5962c767d89be8eb781ad"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_35e434202b4c081e"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_cultural_context_b5e1f2a5ca11"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6a-40-birthday-execution",
+            "g6a-40-court-offices",
+            "g6a-40-custody-attendance"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6a-40-birthday-execution",
+                "g6a-40-court-offices",
+                "g6a-40-custody-attendance"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+                  "synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g6a-40-birthday-execution",
+                  "g6a-40-court-offices",
+                  "g6a-40-custody-attendance"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 40:1-4",
+                  "Genesis 40:20-22",
+                  "Genesis 40:3-8"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_58da22bb4b5a",
+                "verse_refs": [
+                  "Genesis 40:1-4",
+                  "Genesis 40:20-22",
+                  "Genesis 40:3-8"
+                ]
+              },
+              "path_hash": "1a4ec21753c90189f5ac2271e67f07f34a979185c4c40501e1aefe2b14e737d4",
+              "path_id": "reader_path_genesis_040_1a4ec21753c90189f5ac2271",
+              "reader_idea_id": "reader_idea_35e434202b4c081e",
+              "reader_idea_label": "Genesis Joseph Descent Testing Context",
+              "synthesis_id": "syn_interpretive_questions_58da22bb4b5a"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_040_1a4ec21753c90189f5ac2271"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_35e434202b4c081e"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_interpretive_questions_58da22bb4b5a"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6a-40-baker-dream",
+            "g6a-40-cupbearer-dream",
+            "g6a-40-forgotten",
+            "g6a-40-interpretation-god"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6a-40-baker-dream",
+                "g6a-40-cupbearer-dream",
+                "g6a-40-forgotten",
+                "g6a-40-interpretation-god"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+                  "synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6a-40-baker-dream",
+                  "g6a-40-cupbearer-dream",
+                  "g6a-40-forgotten",
+                  "g6a-40-interpretation-god"
+                ],
+                "interpretation_level": "inference",
+                "kind": "why_it_matters",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 40:16-19",
+                  "Genesis 40:23",
+                  "Genesis 40:8",
+                  "Genesis 40:9-15"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_why_it_matters_14162208d995",
+                "verse_refs": [
+                  "Genesis 40:16-19",
+                  "Genesis 40:23",
+                  "Genesis 40:8",
+                  "Genesis 40:9-15"
+                ]
+              },
+              "path_hash": "308ca93c2f3445e0da201020987352107df6db2d3ece970d618fd418e5cbdc95",
+              "path_id": "reader_path_genesis_040_308ca93c2f3445e0da201020",
+              "reader_idea_id": "reader_idea_35e434202b4c081e",
+              "reader_idea_label": "Genesis Joseph Descent Testing Context",
+              "synthesis_id": "syn_why_it_matters_14162208d995"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_040_308ca93c2f3445e0da201020"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_35e434202b4c081e"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_why_it_matters_14162208d995"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3",
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+                  "synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_999f864f75fc",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "87e172d370c4383a8224796ec7749551b29c2c7bb7b80a5078e2ab393171dd26",
+              "path_id": "reader_path_genesis_040_87e172d370c4383a8224796e",
+              "reader_idea_id": "reader_idea_4158502b9df7d444",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_999f864f75fc"
+            },
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+                  "synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_bf38f037feb1",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "fb3ec72e7751fc8210674c6d39cdeeecc8bbdbdade8de87a217487e87f54f669",
+              "path_id": "reader_path_genesis_040_fb3ec72e7751fc8210674c6d",
+              "reader_idea_id": "reader_idea_4158502b9df7d444",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_bf38f037feb1"
+            }
+          ],
+          "path_classes": [
+            "priority",
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_040_87e172d370c4383a8224796e",
+            "reader_path_genesis_040_fb3ec72e7751fc8210674c6d"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_4158502b9df7d444"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_surrounding_passages_999f864f75fc",
+            "syn_surrounding_passages_bf38f037feb1"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "ce39d15c4f3e6bc944e62050c33c96178f2a3dc957dca5fc2660fd2610a880e9",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

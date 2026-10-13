@@ -1,0 +1,390 @@
+{
+  "candidate_status": "VALIDATION_FAILED",
+  "d1_packet_identity": {
+    "evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:8fdfebc0a2317e2fe14ae2565fca618ad2f4d2a9323b6ab543c46b27348e6a91",
+    "packet_sha256": "8fdfebc0a2317e2fe14ae2565fca618ad2f4d2a9323b6ab543c46b27348e6a91",
+    "path": "renderer-input/chapters/genesis_044",
+    "synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "3545a18209b1bd8838a01d03e4a0f5f123bfb5176a392c6a0fc16bf4083f5b8c"
+  },
+  "d3_eligibility": false,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "32195f6b97671ac0cc17f032c2412a01196e8f68b883b2b74f6f96fc32147349",
+      "block_count": 3,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6a-44-collective-return",
+            "g6a-44-court-address-retelling",
+            "g6a-44-jacob-joseph-presumed-dead",
+            "g6a-44-pledge-father-impact"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6a-44-collective-return",
+                "g6a-44-court-address-retelling",
+                "g6a-44-jacob-joseph-presumed-dead",
+                "g6a-44-pledge-father-impact"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+                  "synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6a-44-collective-return",
+                  "g6a-44-court-address-retelling",
+                  "g6a-44-jacob-joseph-presumed-dead",
+                  "g6a-44-pledge-father-impact"
+                ],
+                "interpretation_level": "inference",
+                "kind": "why_it_matters",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 44:13-18",
+                  "Genesis 44:18-23",
+                  "Genesis 44:24-29",
+                  "Genesis 44:30-32"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_why_it_matters_e7367bbde1dd",
+                "verse_refs": [
+                  "Genesis 44:13-18",
+                  "Genesis 44:18-23",
+                  "Genesis 44:24-29",
+                  "Genesis 44:30-32"
+                ]
+              },
+              "path_hash": "2f6758da5a5ed25eae22bccf3a9976a8cdc12d3bb460af27a14fb31558f81659",
+              "path_id": "reader_path_genesis_044_2f6758da5a5ed25eae22bccf",
+              "reader_idea_id": "reader_idea_eb7cf126015059a7",
+              "reader_idea_label": "Genesis Joseph Descent Testing Context",
+              "synthesis_id": "syn_why_it_matters_e7367bbde1dd"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_044_2f6758da5a5ed25eae22bccf"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_eb7cf126015059a7"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_why_it_matters_e7367bbde1dd"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6a-44-judah-arc",
+            "g6a-44-judah-substitution",
+            "g6a-44-pursuit-search",
+            "g6a-44-silver-cup-divination",
+            "g6a-44-speech-kinship"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6a-44-judah-arc",
+                "g6a-44-judah-substitution",
+                "g6a-44-pursuit-search",
+                "g6a-44-silver-cup-divination",
+                "g6a-44-speech-kinship"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+                  "synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g6a-44-judah-arc",
+                  "g6a-44-judah-substitution",
+                  "g6a-44-pursuit-search",
+                  "g6a-44-silver-cup-divination",
+                  "g6a-44-speech-kinship"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 44:1-5",
+                  "Genesis 44:18-34",
+                  "Genesis 44:33",
+                  "Genesis 44:4-13"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_7b348d7f464d",
+                "verse_refs": [
+                  "Genesis 44:1-5",
+                  "Genesis 44:18-34",
+                  "Genesis 44:33",
+                  "Genesis 44:4-13"
+                ]
+              },
+              "path_hash": "9f5d3be836de34439e82efb0e1770a3443c5f95cac884b2ae38f585673f8eae1",
+              "path_id": "reader_path_genesis_044_9f5d3be836de34439e82efb0",
+              "reader_idea_id": "reader_idea_eb7cf126015059a7",
+              "reader_idea_label": "Genesis Joseph Descent Testing Context",
+              "synthesis_id": "syn_interpretive_questions_7b348d7f464d"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_044_9f5d3be836de34439e82efb0"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_eb7cf126015059a7"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_interpretive_questions_7b348d7f464d"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3",
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+                  "synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_5d2240df2929",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "53576474c142cbc706bb8529dc72f20ddd4621e721fad16fc38d15914061ecdf",
+              "path_id": "reader_path_genesis_044_53576474c142cbc706bb8529",
+              "reader_idea_id": "reader_idea_688ba838ec75c9a6",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_5d2240df2929"
+            },
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+                  "synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_85adb5bfaaf1",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "361187f470fe216292b9295bc7df2162a7f3a85d43135e9cc9a9c755bc477a2d",
+              "path_id": "reader_path_genesis_044_361187f470fe216292b9295b",
+              "reader_idea_id": "reader_idea_688ba838ec75c9a6",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_85adb5bfaaf1"
+            }
+          ],
+          "path_classes": [
+            "priority",
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_044_53576474c142cbc706bb8529",
+            "reader_path_genesis_044_361187f470fe216292b9295b"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_688ba838ec75c9a6"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_surrounding_passages_5d2240df2929",
+            "syn_surrounding_passages_85adb5bfaaf1"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "34e79a687df68620393273f31429857f999915ac46f99d378845a91da3638663",
+  "validation_errors": [
+    "section[0].block[0].confidence is required",
+    "section[0].block[0].interpretation_level is required",
+    "section[1].block[0].confidence is required",
+    "section[1].block[0].interpretation_level is required",
+    "section[2].block[0].confidence is required",
+    "section[2].block[0].interpretation_level is required",
+    "CONFIDENCE_EXCEEDS_EVIDENCE: section[2].block[0].confidence exceeds its cited evidence",
+    "CONFIDENCE_EXCEEDS_EVIDENCE: section[2].block[0].confidence exceeds its cited synthesis"
+  ],
+  "validation_warnings": [],
+  "validator_errors": [
+    "section[0].block[0].confidence is required",
+    "section[0].block[0].interpretation_level is required",
+    "section[1].block[0].confidence is required",
+    "section[1].block[0].interpretation_level is required",
+    "section[2].block[0].confidence is required",
+    "section[2].block[0].interpretation_level is required",
+    "CONFIDENCE_EXCEEDS_EVIDENCE: section[2].block[0].confidence exceeds its cited evidence",
+    "CONFIDENCE_EXCEEDS_EVIDENCE: section[2].block[0].confidence exceeds its cited synthesis"
+  ],
+  "validator_partial": false,
+  "validator_valid": false
+}

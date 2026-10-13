@@ -1,0 +1,1013 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 5,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g31-return-command-and-wives-consulted"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_c113af8e960a"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g31-return-command-and-wives-consulted": [
+              "syn_cultural_context_c113af8e960a"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g31-secret-flight-euphrates-gilead"
+          ],
+          "cited_synthesis_ids": [
+            "syn_archaeology_geography_a435910db7a8"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g31-secret-flight-euphrates-gilead": [
+              "syn_archaeology_geography_a435910db7a8"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g31-rachel-leah-property-and-estrangement",
+            "g31-search-saddle-menstrual-claim",
+            "g31-teraphim-household-cult-objects",
+            "g31-teraphim-inheritance-and-divination-theories",
+            "g31-wages-retrospective-and-contract-uncertainty"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_3e7413502842"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g31-rachel-leah-property-and-estrangement": [
+              "syn_interpretive_questions_3e7413502842"
+            ],
+            "g31-search-saddle-menstrual-claim": [
+              "syn_interpretive_questions_3e7413502842"
+            ],
+            "g31-teraphim-household-cult-objects": [
+              "syn_interpretive_questions_3e7413502842"
+            ],
+            "g31-teraphim-inheritance-and-divination-theories": [
+              "syn_interpretive_questions_3e7413502842"
+            ],
+            "g31-wages-retrospective-and-contract-uncertainty": [
+              "syn_interpretive_questions_3e7413502842"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g31-boundary-oath-pillar-heap-meal",
+            "g31-flock-dream-god-of-bethel",
+            "g31-galeed-jegar-sahadutha-mizpah-names",
+            "g31-household-complaints-and-laban-attitude",
+            "g31-jacob-twenty-years-labor-complaint"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_75ac1a797cb0"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g31-boundary-oath-pillar-heap-meal": [
+              "syn_cultural_context_75ac1a797cb0"
+            ],
+            "g31-flock-dream-god-of-bethel": [
+              "syn_cultural_context_75ac1a797cb0"
+            ],
+            "g31-galeed-jegar-sahadutha-mizpah-names": [
+              "syn_cultural_context_75ac1a797cb0"
+            ],
+            "g31-household-complaints-and-laban-attitude": [
+              "syn_cultural_context_75ac1a797cb0"
+            ],
+            "g31-jacob-twenty-years-labor-complaint": [
+              "syn_cultural_context_75ac1a797cb0"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_3cf57504c04a",
+            "syn_surrounding_passages_21b7d10e9137"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_3cf57504c04a"
+            ],
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_21b7d10e9137"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_21b7d10e9137"
+            ]
+          },
+          "section_index": 4
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g31-boundary-oath-pillar-heap-meal",
+          "g31-flock-dream-god-of-bethel",
+          "g31-galeed-jegar-sahadutha-mizpah-names",
+          "g31-household-complaints-and-laban-attitude",
+          "g31-jacob-twenty-years-labor-complaint",
+          "g31-rachel-leah-property-and-estrangement",
+          "g31-return-command-and-wives-consulted",
+          "g31-search-saddle-menstrual-claim",
+          "g31-secret-flight-euphrates-gilead",
+          "g31-teraphim-household-cult-objects",
+          "g31-teraphim-inheritance-and-divination-theories",
+          "g31-wages-retrospective-and-contract-uncertainty",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_archaeology_geography_a435910db7a8",
+          "syn_cultural_context_75ac1a797cb0",
+          "syn_cultural_context_c113af8e960a",
+          "syn_interpretive_questions_3e7413502842",
+          "syn_surrounding_passages_21b7d10e9137",
+          "syn_surrounding_passages_3cf57504c04a",
+          "syn_surrounding_passages_4be2f0c86212",
+          "syn_why_it_matters_4a507f6bfb36",
+          "syn_why_it_matters_abb91f935619"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g31-boundary-oath-pillar-heap-meal",
+          "g31-flock-dream-god-of-bethel",
+          "g31-galeed-jegar-sahadutha-mizpah-names",
+          "g31-household-complaints-and-laban-attitude",
+          "g31-jacob-twenty-years-labor-complaint",
+          "g31-rachel-leah-property-and-estrangement",
+          "g31-return-command-and-wives-consulted",
+          "g31-search-saddle-menstrual-claim",
+          "g31-secret-flight-euphrates-gilead",
+          "g31-teraphim-household-cult-objects",
+          "g31-teraphim-inheritance-and-divination-theories",
+          "g31-wages-retrospective-and-contract-uncertainty",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_archaeology_geography_a435910db7a8",
+          "syn_cultural_context_75ac1a797cb0",
+          "syn_cultural_context_c113af8e960a",
+          "syn_interpretive_questions_3e7413502842",
+          "syn_surrounding_passages_21b7d10e9137",
+          "syn_surrounding_passages_3cf57504c04a",
+          "syn_surrounding_passages_4be2f0c86212",
+          "syn_why_it_matters_4a507f6bfb36",
+          "syn_why_it_matters_abb91f935619"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "a16e1ec2c80f3d81323b934e0395efce4419411bbf38a81ea22653728086d46c",
+      "expected_envelope_hash": "a16e1ec2c80f3d81323b934e0395efce4419411bbf38a81ea22653728086d46c",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "3eecfd97d369c5cb30cd751a598b1314173d80dd5dba8048d3276fdb3dd74dc3",
+      "expected_binding_hash": "3eecfd97d369c5cb30cd751a598b1314173d80dd5dba8048d3276fdb3dd74dc3",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 1,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 5,
+      "commentary_prose_char_count": 2404,
+      "commentary_prose_word_count": 373,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "archaeology": 1,
+        "culture": 8,
+        "economics": 5,
+        "geography": 1
+      },
+      "evidence_category_diversity": 4,
+      "evidence_consumption_ratio": 1.0,
+      "evidence_ids_referenced": [
+        "g31-boundary-oath-pillar-heap-meal",
+        "g31-flock-dream-god-of-bethel",
+        "g31-galeed-jegar-sahadutha-mizpah-names",
+        "g31-household-complaints-and-laban-attitude",
+        "g31-jacob-twenty-years-labor-complaint",
+        "g31-rachel-leah-property-and-estrangement",
+        "g31-return-command-and-wives-consulted",
+        "g31-search-saddle-menstrual-claim",
+        "g31-secret-flight-euphrates-gilead",
+        "g31-teraphim-household-cult-objects",
+        "g31-teraphim-inheritance-and-divination-theories",
+        "g31-wages-retrospective-and-contract-uncertainty",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 15,
+      "evidence_score": 12.2,
+      "geography_evidence_count": 1,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0195,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 31",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 5,
+      "specific_evidence_count": 15,
+      "unique_evidence_ids_consumed": 15,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unused_evidence_ids": [],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 54,
+      "verse_anchor_coverage": 0.9818
+    },
+    "richness": {
+      "available_category_count": 5,
+      "category_coverage": 1.0,
+      "category_families": [
+        "archaeology",
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "archaeology",
+            "culture",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-jacob-esau-return-context|facts=jacob says laban changed wages ten times credits god preventing laban’s intended harm jacob’s speech within dispute not surviving contract basis reconstructing every wage term exact flock transfer;laban accuses jacob taking gods searches tents rachel hides teraphim under camel saddle says she cannot rise because monthly period text gives claim part scene comparative purity menstruation contexts do not warrant inventing universal taboo rule narrative does not endorse deception;narrator does not state why rachel took teraphim one proposal links household gods some nuzi inheritance settings family headship property claims biblical passages elsewhere associate teraphim divination scholarship also considers domestic ancestral cult functions these comparative later biblical data contextualize question cannot establish rachel’s sole motive exact function laban’s objects;rachel leah say no remaining share inheritance father’s household describe themselves treated like outsiders connect father’s use bride price wealth family’s present assets comparative marriage property evidence can illuminate terms no single ane law code proves sisters legal status one uniform custom;rachel takes teraphim laban calls gods she hides beneath camel’s saddle sits scene supports portable household religious objects narrative does not determine exact form cultic role rachel’s motive biblical comparative discussions include household cult divination ancestral domestic functions no single proposal established",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g31-rachel-leah-property-and-estrangement",
+            "g31-search-saddle-menstrual-claim",
+            "g31-teraphim-household-cult-objects",
+            "g31-teraphim-inheritance-and-divination-theories",
+            "g31-wages-retrospective-and-contract-uncertainty"
+          ],
+          "id": "idea_cluster_097ea904db29",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_3e7413502842",
+            "syn_why_it_matters_4a507f6bfb36"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-jacob-esau-return-context|facts=heap pillar mark separation parties swear not cross boundary harm invoke god witness share meal after sacrifice treaty like scene joins material marker oath witness table fellowship no archaeological claim specific extant monument been identified;jacob laban raise stone pillar heap boundary witness account gives aramaic jegar sahadutha hebrew galeed corresponding names heap then calls place mizpah naming tied boundary mutual watch oath not detached sentimental friendship blessing;jacob summarizes twenty years service describing day night exposure heat frost sleeplessness animal losses charged him repeated wage changes these jacob’s words confrontation narrative contrasts laban’s claim property jacob’s account labor divine protection;jacob’s dream flock’s breeding described through animal imagery wage agreement speaker identifies himself god bethel where jacob set up pillar made vow wording recalls genesis 28 remains literary context rather than direct applicability anchor here;sons laban complain jacob taken father’s wealth while jacob observes laban’s attitude toward him changed narrated shift frames departure text does not independently establish brothers accounting flock;yhwh tells jacob return kindred ancestral land jacob summons rachel leah field recounts dispute laban both women answer terms father’s treatment own household position family decision narrated both divine direction consultation among spouses",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g31-boundary-oath-pillar-heap-meal",
+            "g31-flock-dream-god-of-bethel",
+            "g31-galeed-jegar-sahadutha-mizpah-names",
+            "g31-household-complaints-and-laban-attitude",
+            "g31-jacob-twenty-years-labor-complaint",
+            "g31-return-command-and-wives-consulted"
+          ],
+          "id": "idea_cluster_129803d2fab2",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_75ac1a797cb0",
+            "syn_cultural_context_c113af8e960a",
+            "syn_why_it_matters_abb91f935619"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_135d6f1fcec0",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_21b7d10e9137",
+            "syn_surrounding_passages_3cf57504c04a",
+            "syn_surrounding_passages_4be2f0c86212"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "geography"
+          ],
+          "concept_signature": "kind=archaeology_geography|parents=genesis-jacob-esau-return-context|facts=jacob departs while laban away crosses river euphrates heads toward hill country gilead laban pursues after three days geographical sequence explicit broad scale does not fix modern route precise crossing point",
+          "confidence": "low",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "g31-secret-flight-euphrates-gilead"
+          ],
+          "id": "idea_cluster_1c16084a3f6c",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "archaeology_geography",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_archaeology_geography_a435910db7a8"
+          ],
+          "unit_kinds": [
+            "archaeology_geography"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6667,
+      "consumed_category_count": 5,
+      "consumed_category_families": [
+        "archaeology",
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 4,
+      "consumed_core_cluster_count": 3,
+      "consumed_eligible_synthesis_count": 6,
+      "consumed_eligible_weight": 3.5,
+      "consumed_synthesis_count": 6,
+      "core_cluster_count": 3,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 5,
+        "block_to_cluster_ratio": 1.25,
+        "block_to_synthesis_ratio": 0.8333,
+        "consolidation_ratio": 0.6667,
+        "consumed_cluster_count": 4,
+        "consumed_synthesis_count": 6,
+        "consumed_unit_ratio": 0.6667,
+        "mean_evidence_ids_per_block": 3.0,
+        "meaningful_cluster_count": 4,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 93.25
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 3
+      },
+      "eligible_synthesis_count": 9,
+      "eligible_synthesis_coverage": 0.6667,
+      "eligible_weighted_denominator": 3.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 4,
+      "raw_synthesis_coverage": 0.6667,
+      "synthesis_unit_count": 9,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "5a18729958fd8511eb5ffab49e867c9c6b831e020112f54affe4a057bb929cfb",
+  "d1_packet_identity": {
+    "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:33562406040cc0b42cf8a1f8b139c0fa6cc4228bc8272dd8f1f65de378a083f7",
+    "packet_sha256": "33562406040cc0b42cf8a1f8b139c0fa6cc4228bc8272dd8f1f65de378a083f7",
+    "path": "renderer-input/chapters/genesis_031",
+    "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "b29a6ee12b09d49cef5d464699228ae46cec4a5adfc80c43b6dd98bd52862ca2"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "3eecfd97d369c5cb30cd751a598b1314173d80dd5dba8048d3276fdb3dd74dc3",
+      "block_count": 5,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g31-return-command-and-wives-consulted"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g31-return-command-and-wives-consulted"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+                  "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g31-return-command-and-wives-consulted"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 31:3-16"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_c113af8e960a",
+                "verse_refs": [
+                  "Genesis 31:3-16"
+                ]
+              },
+              "path_hash": "c686b7aa68e45b5a7d8297d3335bfe709ce1f7bc8a4a72602c242d981079b1c2",
+              "path_id": "reader_path_genesis_031_c686b7aa68e45b5a7d8297d3",
+              "reader_idea_id": "reader_idea_c4e60bb05a633854",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_cultural_context_c113af8e960a"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_031_c686b7aa68e45b5a7d8297d3"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c4e60bb05a633854"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_cultural_context_c113af8e960a"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g31-secret-flight-euphrates-gilead"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g31-secret-flight-euphrates-gilead"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+                  "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g31-secret-flight-euphrates-gilead"
+                ],
+                "interpretation_level": "fact",
+                "kind": "archaeology_geography",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 31:17-23"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_archaeology_geography_a435910db7a8",
+                "verse_refs": [
+                  "Genesis 31:17-23"
+                ]
+              },
+              "path_hash": "b03ded310926af690ab79c907884372b819bb5b67779a3a5b831677e52284be3",
+              "path_id": "reader_path_genesis_031_b03ded310926af690ab79c90",
+              "reader_idea_id": "reader_idea_c4e60bb05a633854",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_archaeology_geography_a435910db7a8"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_031_b03ded310926af690ab79c90"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c4e60bb05a633854"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_archaeology_geography_a435910db7a8"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g31-rachel-leah-property-and-estrangement",
+            "g31-search-saddle-menstrual-claim",
+            "g31-teraphim-household-cult-objects",
+            "g31-teraphim-inheritance-and-divination-theories",
+            "g31-wages-retrospective-and-contract-uncertainty"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g31-rachel-leah-property-and-estrangement",
+                "g31-search-saddle-menstrual-claim",
+                "g31-teraphim-household-cult-objects",
+                "g31-teraphim-inheritance-and-divination-theories",
+                "g31-wages-retrospective-and-contract-uncertainty"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+                  "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g31-rachel-leah-property-and-estrangement",
+                  "g31-search-saddle-menstrual-claim",
+                  "g31-teraphim-household-cult-objects",
+                  "g31-teraphim-inheritance-and-divination-theories",
+                  "g31-wages-retrospective-and-contract-uncertainty"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 31:14-16",
+                  "Genesis 31:19",
+                  "Genesis 31:22-35",
+                  "Genesis 31:30",
+                  "Genesis 31:34-35",
+                  "Genesis 31:7-9"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_3e7413502842",
+                "verse_refs": [
+                  "Genesis 31:14-16",
+                  "Genesis 31:19",
+                  "Genesis 31:22-35",
+                  "Genesis 31:30",
+                  "Genesis 31:34-35",
+                  "Genesis 31:7-9"
+                ]
+              },
+              "path_hash": "ead75797fb7ce6c85172d15cef09a6ab64b7320b1eb5c47ac38b39ffc31141d6",
+              "path_id": "reader_path_genesis_031_ead75797fb7ce6c85172d15c",
+              "reader_idea_id": "reader_idea_c4e60bb05a633854",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_interpretive_questions_3e7413502842"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_031_ead75797fb7ce6c85172d15c"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c4e60bb05a633854"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_interpretive_questions_3e7413502842"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "g31-boundary-oath-pillar-heap-meal",
+            "g31-flock-dream-god-of-bethel",
+            "g31-galeed-jegar-sahadutha-mizpah-names",
+            "g31-household-complaints-and-laban-attitude",
+            "g31-jacob-twenty-years-labor-complaint"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g31-boundary-oath-pillar-heap-meal",
+                "g31-flock-dream-god-of-bethel",
+                "g31-galeed-jegar-sahadutha-mizpah-names",
+                "g31-household-complaints-and-laban-attitude",
+                "g31-jacob-twenty-years-labor-complaint"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+                  "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g31-boundary-oath-pillar-heap-meal",
+                  "g31-flock-dream-god-of-bethel",
+                  "g31-galeed-jegar-sahadutha-mizpah-names",
+                  "g31-household-complaints-and-laban-attitude",
+                  "g31-jacob-twenty-years-labor-complaint"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 31:1-2",
+                  "Genesis 31:10-13",
+                  "Genesis 31:36-42",
+                  "Genesis 31:43-49",
+                  "Genesis 31:44-54"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_75ac1a797cb0",
+                "verse_refs": [
+                  "Genesis 31:1-2",
+                  "Genesis 31:10-13",
+                  "Genesis 31:36-42",
+                  "Genesis 31:43-49",
+                  "Genesis 31:44-54"
+                ]
+              },
+              "path_hash": "77ce363330b7d972c64961e863516ca9311a2ea8a7775d88180b1ed6ac3b6525",
+              "path_id": "reader_path_genesis_031_77ce363330b7d972c64961e8",
+              "reader_idea_id": "reader_idea_c4e60bb05a633854",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_cultural_context_75ac1a797cb0"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_031_77ce363330b7d972c64961e8"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c4e60bb05a633854"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_cultural_context_75ac1a797cb0"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+                  "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_3cf57504c04a",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "83730451fa8efecbba8c56183b6f06499daa5155c0aadc552e787afdaa4356e2",
+              "path_id": "reader_path_genesis_031_83730451fa8efecbba8c5618",
+              "reader_idea_id": "reader_idea_d8fef64adb25c6a2",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_3cf57504c04a"
+            },
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+                  "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_21b7d10e9137",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "a9d0c111c62a111e3de486cc7efecc1cc5b0b3afd2cec7d71abaf23485289bb3",
+              "path_id": "reader_path_genesis_031_a9d0c111c62a111e3de486cc",
+              "reader_idea_id": "reader_idea_d8fef64adb25c6a2",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_21b7d10e9137"
+            }
+          ],
+          "path_classes": [
+            "priority",
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_031_83730451fa8efecbba8c5618",
+            "reader_path_genesis_031_a9d0c111c62a111e3de486cc"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_d8fef64adb25c6a2"
+          ],
+          "section_index": 4,
+          "synthesis_ids": [
+            "syn_surrounding_passages_3cf57504c04a",
+            "syn_surrounding_passages_21b7d10e9137"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "1aa9c714908d1d1b7f3a82afcd28f3e3e76167248fa31b41c335d4c95125bf6b",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

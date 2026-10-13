@@ -1,0 +1,705 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 3,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6a-42-famine-grain-journey",
+            "g6a-42-interpreter-silver",
+            "g6a-42-recognition-asymmetry",
+            "g6a-42-spy-test",
+            "g6a-42-three-day-simeon"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_fcec29875d8f"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6a-42-famine-grain-journey": [
+              "syn_interpretive_questions_fcec29875d8f"
+            ],
+            "g6a-42-interpreter-silver": [
+              "syn_interpretive_questions_fcec29875d8f"
+            ],
+            "g6a-42-recognition-asymmetry": [
+              "syn_interpretive_questions_fcec29875d8f"
+            ],
+            "g6a-42-spy-test": [
+              "syn_interpretive_questions_fcec29875d8f"
+            ],
+            "g6a-42-three-day-simeon": [
+              "syn_interpretive_questions_fcec29875d8f"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6a-42-benjamin-stays",
+            "g6a-42-bowing-dreams",
+            "g6a-42-guilt-reuben"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_3f0840d85803"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6a-42-benjamin-stays": [
+              "syn_cultural_context_3f0840d85803"
+            ],
+            "g6a-42-bowing-dreams": [
+              "syn_cultural_context_3f0840d85803"
+            ],
+            "g6a-42-guilt-reuben": [
+              "syn_cultural_context_3f0840d85803"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_371079176ae1"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_371079176ae1"
+            ]
+          },
+          "section_index": 2
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g6a-42-benjamin-stays",
+          "g6a-42-bowing-dreams",
+          "g6a-42-famine-grain-journey",
+          "g6a-42-guilt-reuben",
+          "g6a-42-interpreter-silver",
+          "g6a-42-recognition-asymmetry",
+          "g6a-42-spy-test",
+          "g6a-42-three-day-simeon",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_cultural_context_3f0840d85803",
+          "syn_interpretive_questions_fcec29875d8f",
+          "syn_surrounding_passages_371079176ae1",
+          "syn_surrounding_passages_a43e6d993925",
+          "syn_surrounding_passages_d89358a243df",
+          "syn_why_it_matters_9b109c9a89d5",
+          "syn_why_it_matters_b9e3662aaba4"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g6a-42-benjamin-stays",
+          "g6a-42-bowing-dreams",
+          "g6a-42-famine-grain-journey",
+          "g6a-42-guilt-reuben",
+          "g6a-42-interpreter-silver",
+          "g6a-42-recognition-asymmetry",
+          "g6a-42-spy-test",
+          "g6a-42-three-day-simeon",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_cultural_context_3f0840d85803",
+          "syn_interpretive_questions_fcec29875d8f",
+          "syn_surrounding_passages_371079176ae1",
+          "syn_surrounding_passages_a43e6d993925",
+          "syn_surrounding_passages_d89358a243df",
+          "syn_why_it_matters_9b109c9a89d5",
+          "syn_why_it_matters_b9e3662aaba4"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "2f8ddc65a381b68467a18923ef2a5b13109bcd218d900669d874a181841d59d2",
+      "expected_envelope_hash": "2f8ddc65a381b68467a18923ef2a5b13109bcd218d900669d874a181841d59d2",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "9e1536071519ecff8395e368d017d6fdbddd1d22875fe94fa498ba4b88e898ad",
+      "expected_binding_hash": "9e1536071519ecff8395e368d017d6fdbddd1d22875fe94fa498ba4b88e898ad",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 1,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 3,
+      "commentary_prose_char_count": 1011,
+      "commentary_prose_word_count": 161,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "archaeology": 1,
+        "culture": 8,
+        "history": 2
+      },
+      "evidence_category_diversity": 3,
+      "evidence_consumption_ratio": 0.8182,
+      "evidence_ids_referenced": [
+        "g6a-42-benjamin-stays",
+        "g6a-42-bowing-dreams",
+        "g6a-42-famine-grain-journey",
+        "g6a-42-guilt-reuben",
+        "g6a-42-interpreter-silver",
+        "g6a-42-recognition-asymmetry",
+        "g6a-42-spy-test",
+        "g6a-42-three-day-simeon",
+        "genesis-literary-movement"
+      ],
+      "evidence_item_count": 11,
+      "evidence_score": 8.0875,
+      "geography_evidence_count": 0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.101,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 42",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 3,
+      "specific_evidence_count": 11,
+      "unique_evidence_ids_consumed": 9,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 2,
+      "unused_evidence_ids": [
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 38,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 5,
+      "category_coverage": 1.0,
+      "category_families": [
+        "archaeology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_16b3eda8ca5d",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_371079176ae1",
+            "syn_surrounding_passages_a43e6d993925",
+            "syn_surrounding_passages_d89358a243df"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-joseph-descent-testing-context|facts=brothers bow before joseph remembers dreams about genesis itself supplies literary connection no external astral symbolism duplicate evidence needed;brothers connect distress joseph’s anguish recall pleaded reuben says objected joseph hears through interpreter turns away weep;jacob does not send benjamin because fears harm may befall him account connects choice joseph’s earlier loss states no additional motive",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6a-42-benjamin-stays",
+            "g6a-42-bowing-dreams",
+            "g6a-42-guilt-reuben"
+          ],
+          "id": "idea_cluster_87ee773d46d7",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_3f0840d85803",
+            "syn_why_it_matters_b9e3662aaba4"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "archaeology",
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-joseph-descent-testing-context|facts=jacob sends sons egypt buy grain famine reaches canaan regional grain movement egyptian agricultural capacity give context no contemporaneous famine record established;joseph accuses brothers spying demands proof account narrative testing strategy not evidence standard egyptian legal procedure;joseph confines brothers three days then sends most home grain while holding simeon until return benjamin account does not identify building legal institution;joseph recognizes brothers remembers dreams while fail recognize him time court dress status language changed setting possible context narrator does not explain failure;joseph spoken through interpreter silver returned brothers sacks fear jacob’s reaction these material details container types normal accounting practices not specified",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6a-42-famine-grain-journey",
+            "g6a-42-interpreter-silver",
+            "g6a-42-recognition-asymmetry",
+            "g6a-42-spy-test",
+            "g6a-42-three-day-simeon"
+          ],
+          "id": "idea_cluster_a88d50e57e87",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_fcec29875d8f",
+            "syn_why_it_matters_9b109c9a89d5"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6667,
+      "consumed_category_count": 5,
+      "consumed_category_families": [
+        "archaeology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 3,
+      "consumed_core_cluster_count": 2,
+      "consumed_eligible_synthesis_count": 3,
+      "consumed_eligible_weight": 2.5,
+      "consumed_synthesis_count": 3,
+      "core_cluster_count": 2,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 3,
+        "block_to_cluster_ratio": 1.0,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.6667,
+        "consumed_cluster_count": 3,
+        "consumed_synthesis_count": 3,
+        "consumed_unit_ratio": 0.4286,
+        "mean_evidence_ids_per_block": 3.0,
+        "meaningful_cluster_count": 3,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 53.6667
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 2
+      },
+      "eligible_synthesis_count": 7,
+      "eligible_synthesis_coverage": 0.4286,
+      "eligible_weighted_denominator": 2.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 3,
+      "raw_synthesis_coverage": 0.4286,
+      "synthesis_unit_count": 7,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "92c3f5cce9c6c5fc8491bef57dbd6ca0d997d3a9071a798d84a0f7ebc3945d37",
+  "d1_packet_identity": {
+    "evidence_hash": "d32de42b000f3951da92f5331db5a3e8c954f5b27a3e930735db40a3b5921612",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:fff589cd32b6fcec732bbfab3ed7de9d6b77c158704ae077c65d6b19a851b374",
+    "packet_sha256": "fff589cd32b6fcec732bbfab3ed7de9d6b77c158704ae077c65d6b19a851b374",
+    "path": "renderer-input/chapters/genesis_042",
+    "synthesis_hash": "275ff6918e90dd388eda6a4d96043dd014965ae0e1659a5dd1be3ad037b9b2c5",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "edd86200d1dc368f7a1ff7c17bc7e9a705e40e85be9dfea98f1c8f8d583dc72c"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "9e1536071519ecff8395e368d017d6fdbddd1d22875fe94fa498ba4b88e898ad",
+      "block_count": 3,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6a-42-famine-grain-journey",
+            "g6a-42-interpreter-silver",
+            "g6a-42-recognition-asymmetry",
+            "g6a-42-spy-test",
+            "g6a-42-three-day-simeon"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6a-42-famine-grain-journey",
+                "g6a-42-interpreter-silver",
+                "g6a-42-recognition-asymmetry",
+                "g6a-42-spy-test",
+                "g6a-42-three-day-simeon"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d32de42b000f3951da92f5331db5a3e8c954f5b27a3e930735db40a3b5921612",
+                  "synthesis_hash": "275ff6918e90dd388eda6a4d96043dd014965ae0e1659a5dd1be3ad037b9b2c5"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g6a-42-famine-grain-journey",
+                  "g6a-42-interpreter-silver",
+                  "g6a-42-recognition-asymmetry",
+                  "g6a-42-spy-test",
+                  "g6a-42-three-day-simeon"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 42:1-5",
+                  "Genesis 42:17-24",
+                  "Genesis 42:23-38",
+                  "Genesis 42:6-8",
+                  "Genesis 42:9-17"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_fcec29875d8f",
+                "verse_refs": [
+                  "Genesis 42:1-5",
+                  "Genesis 42:17-24",
+                  "Genesis 42:23-38",
+                  "Genesis 42:6-8",
+                  "Genesis 42:9-17"
+                ]
+              },
+              "path_hash": "295353294fe92adc522a2d026ea7f6be46aa290c269d9d948c5efaeab08dd3fd",
+              "path_id": "reader_path_genesis_042_295353294fe92adc522a2d02",
+              "reader_idea_id": "reader_idea_4ada1e6c81489eb0",
+              "reader_idea_label": "Genesis Joseph Descent Testing Context",
+              "synthesis_id": "syn_interpretive_questions_fcec29875d8f"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_042_295353294fe92adc522a2d02"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_4ada1e6c81489eb0"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_fcec29875d8f"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6a-42-benjamin-stays",
+            "g6a-42-bowing-dreams",
+            "g6a-42-guilt-reuben"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6a-42-benjamin-stays",
+                "g6a-42-bowing-dreams",
+                "g6a-42-guilt-reuben"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d32de42b000f3951da92f5331db5a3e8c954f5b27a3e930735db40a3b5921612",
+                  "synthesis_hash": "275ff6918e90dd388eda6a4d96043dd014965ae0e1659a5dd1be3ad037b9b2c5"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6a-42-benjamin-stays",
+                  "g6a-42-bowing-dreams",
+                  "g6a-42-guilt-reuben"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 42:21-24",
+                  "Genesis 42:4",
+                  "Genesis 42:6-9"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_3f0840d85803",
+                "verse_refs": [
+                  "Genesis 42:21-24",
+                  "Genesis 42:4",
+                  "Genesis 42:6-9"
+                ]
+              },
+              "path_hash": "027551285c4c2260c323bf73d994aa45e6dcf84122832f45fed4da3f8cb110a8",
+              "path_id": "reader_path_genesis_042_027551285c4c2260c323bf73",
+              "reader_idea_id": "reader_idea_4ada1e6c81489eb0",
+              "reader_idea_label": "Genesis Joseph Descent Testing Context",
+              "synthesis_id": "syn_cultural_context_3f0840d85803"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_042_027551285c4c2260c323bf73"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_4ada1e6c81489eb0"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_cultural_context_3f0840d85803"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d32de42b000f3951da92f5331db5a3e8c954f5b27a3e930735db40a3b5921612",
+                  "synthesis_hash": "275ff6918e90dd388eda6a4d96043dd014965ae0e1659a5dd1be3ad037b9b2c5"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_371079176ae1",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "9914c9e330c8b19cccb4c1cad591ef9e6ed3aed958175d0cd236188d28740673",
+              "path_id": "reader_path_genesis_042_9914c9e330c8b19cccb4c1ca",
+              "reader_idea_id": "reader_idea_2290dbfc959370b0",
+              "reader_idea_label": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's…",
+              "synthesis_id": "syn_surrounding_passages_371079176ae1"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_042_9914c9e330c8b19cccb4c1ca"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_2290dbfc959370b0"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_surrounding_passages_371079176ae1"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "30533bba634564015e81c78c19633363f6da3dee80bbb55d5e010076f14f6b1e",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

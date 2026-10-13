@@ -1,0 +1,889 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 4,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g30-bilhah-childbearing-arrangement",
+            "g30-dan-and-naphtali-naming",
+            "g30-issachar-zebulun-dinah",
+            "g30-joseph-birth-and-return-transition",
+            "g30-laban-acknowledges-blessing-and-wages"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_7a402a22fac6"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g30-bilhah-childbearing-arrangement": [
+              "syn_interpretive_questions_7a402a22fac6"
+            ],
+            "g30-dan-and-naphtali-naming": [
+              "syn_interpretive_questions_7a402a22fac6"
+            ],
+            "g30-issachar-zebulun-dinah": [
+              "syn_interpretive_questions_7a402a22fac6"
+            ],
+            "g30-joseph-birth-and-return-transition": [
+              "syn_interpretive_questions_7a402a22fac6"
+            ],
+            "g30-laban-acknowledges-blessing-and-wages": [
+              "syn_interpretive_questions_7a402a22fac6"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "g30-mandrake-fertility-belief-not-efficacy",
+            "g30-mandrakes-identification-and-exchange",
+            "g30-peeled-rods-not-genetics",
+            "g30-rachel-distress-and-jacob-response",
+            "g30-selective-breeding-and-flock-wealth"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_7f8a2ec8235a"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g30-mandrake-fertility-belief-not-efficacy": [
+              "syn_interpretive_questions_7f8a2ec8235a"
+            ],
+            "g30-mandrakes-identification-and-exchange": [
+              "syn_interpretive_questions_7f8a2ec8235a"
+            ],
+            "g30-peeled-rods-not-genetics": [
+              "syn_interpretive_questions_7f8a2ec8235a"
+            ],
+            "g30-rachel-distress-and-jacob-response": [
+              "syn_interpretive_questions_7f8a2ec8235a"
+            ],
+            "g30-selective-breeding-and-flock-wealth": [
+              "syn_interpretive_questions_7f8a2ec8235a"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 2,
+          "cited_evidence_ids": [
+            "g30-spotted-flock-wage-separation",
+            "g30-zilpah-gad-and-asher"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_0e5e9da805f3"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g30-spotted-flock-wage-separation": [
+              "syn_interpretive_questions_0e5e9da805f3"
+            ],
+            "g30-zilpah-gad-and-asher": [
+              "syn_interpretive_questions_0e5e9da805f3"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_bec5df88b054",
+            "syn_surrounding_passages_6be45cba1178"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_bec5df88b054"
+            ],
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_6be45cba1178"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_6be45cba1178"
+            ]
+          },
+          "section_index": 1
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g30-bilhah-childbearing-arrangement",
+          "g30-dan-and-naphtali-naming",
+          "g30-issachar-zebulun-dinah",
+          "g30-joseph-birth-and-return-transition",
+          "g30-laban-acknowledges-blessing-and-wages",
+          "g30-mandrake-fertility-belief-not-efficacy",
+          "g30-mandrakes-identification-and-exchange",
+          "g30-peeled-rods-not-genetics",
+          "g30-rachel-distress-and-jacob-response",
+          "g30-selective-breeding-and-flock-wealth",
+          "g30-spotted-flock-wage-separation",
+          "g30-zilpah-gad-and-asher",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_interpretive_questions_0e5e9da805f3",
+          "syn_interpretive_questions_7a402a22fac6",
+          "syn_interpretive_questions_7f8a2ec8235a",
+          "syn_surrounding_passages_6be45cba1178",
+          "syn_surrounding_passages_bec5df88b054",
+          "syn_surrounding_passages_f1e9a08a963d",
+          "syn_why_it_matters_78d796969d11",
+          "syn_why_it_matters_7f8e662be620",
+          "syn_why_it_matters_e42bdb4eda1a"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g30-bilhah-childbearing-arrangement",
+          "g30-dan-and-naphtali-naming",
+          "g30-issachar-zebulun-dinah",
+          "g30-joseph-birth-and-return-transition",
+          "g30-laban-acknowledges-blessing-and-wages",
+          "g30-mandrake-fertility-belief-not-efficacy",
+          "g30-mandrakes-identification-and-exchange",
+          "g30-peeled-rods-not-genetics",
+          "g30-rachel-distress-and-jacob-response",
+          "g30-selective-breeding-and-flock-wealth",
+          "g30-spotted-flock-wage-separation",
+          "g30-zilpah-gad-and-asher",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_interpretive_questions_0e5e9da805f3",
+          "syn_interpretive_questions_7a402a22fac6",
+          "syn_interpretive_questions_7f8a2ec8235a",
+          "syn_surrounding_passages_6be45cba1178",
+          "syn_surrounding_passages_bec5df88b054",
+          "syn_surrounding_passages_f1e9a08a963d",
+          "syn_why_it_matters_78d796969d11",
+          "syn_why_it_matters_7f8e662be620",
+          "syn_why_it_matters_e42bdb4eda1a"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "68f4861dc037051d1e801f2ab61921da5933fb3b349391cfe1ebc6ca1768d783",
+      "expected_envelope_hash": "68f4861dc037051d1e801f2ab61921da5933fb3b349391cfe1ebc6ca1768d783",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "fa0ba3cdda4b2861af806b238f34779d3612faa075fe367f6aa4a9c8d00b5ac2",
+      "expected_binding_hash": "fa0ba3cdda4b2861af806b238f34779d3612faa075fe367f6aa4a9c8d00b5ac2",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 1,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 4,
+      "commentary_prose_char_count": 2367,
+      "commentary_prose_word_count": 345,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "archaeology": 1,
+        "culture": 11,
+        "economics": 3
+      },
+      "evidence_category_diversity": 3,
+      "evidence_consumption_ratio": 1.0,
+      "evidence_ids_referenced": [
+        "g30-bilhah-childbearing-arrangement",
+        "g30-dan-and-naphtali-naming",
+        "g30-issachar-zebulun-dinah",
+        "g30-joseph-birth-and-return-transition",
+        "g30-laban-acknowledges-blessing-and-wages",
+        "g30-mandrake-fertility-belief-not-efficacy",
+        "g30-mandrakes-identification-and-exchange",
+        "g30-peeled-rods-not-genetics",
+        "g30-rachel-distress-and-jacob-response",
+        "g30-selective-breeding-and-flock-wealth",
+        "g30-spotted-flock-wage-separation",
+        "g30-zilpah-gad-and-asher",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 15,
+      "evidence_score": 10.7875,
+      "geography_evidence_count": 0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0202,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 30",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 2,
+      "specific_evidence_count": 15,
+      "unique_evidence_ids_consumed": 15,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unused_evidence_ids": [],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 43,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 4,
+      "category_coverage": 1.0,
+      "category_families": [
+        "archaeology",
+        "culture",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_60f99a3b54ae",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_6be45cba1178",
+            "syn_surrounding_passages_bec5df88b054",
+            "syn_surrounding_passages_f1e9a08a963d"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "archaeology",
+            "culture",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-isaac-jacob-transition-context|facts=jacob peels branches places before animals watering so mate view rods text describes what jacob does does not establish rods alter inherited coat color function through modern genetics;jacob separates animals narrative distinguishes stronger weaker offspring before reporting growing flocks servants camels donkeys any plausible selective husbandry strategy distinct peeled rod imagery prosperity attribution;mandrake exchange reflects ancient fertility association often discussed later lore narrative does not say mandrakes caused pregnancy explicitly says god listened leah before issachar’s conception;rachel distressed childlessness asks jacob children jacob responds sharply locates life giving power god household fertility conflict narrated without recoverable medical diagnosis;reuben finds dudaim commonly identified mandrakes though plant identification discussed rachel asks leah leah negotiates night jacob exchange shows household competition fertility association not proven botanical efficacy;jacob proposes spotted speckled dark animals wage laban removes marked animals places distance between flocks narrative records negotiated livestock arrangement separation strategy;leah gives zilpah jacob names gad asher after births continuing household competition narrative presents these arrangements family kinship setting ancient near east comparisons do not establish one precise legal model;laban acknowledges yhwh blessed him because jacob invites jacob name wages jacob negotiates compensation tied flock household labor negotiated wages frame next arrangement;leah bears issachar zebulun then dinah speeches use wordplay about wages honor household status names carry narrative interpretation without requiring single certain historical etymology;narrative says god remembers rachel she bears joseph jacob then asks laban let him return own place country joseph’s birth marks transition household formation toward departure;rachel gives bilhah jacob wife household partner so she may bear children through narrative marks competition household status through births dan naphtali comparative ancient near east household practices illuminate possibilities do not prove one one nuzi contract;rachel names dan naphtali language judgment struggle prevailing competition leah hebrew name explanations narrative wordplay theology rather than guaranteed full etymologies",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g30-bilhah-childbearing-arrangement",
+            "g30-dan-and-naphtali-naming",
+            "g30-issachar-zebulun-dinah",
+            "g30-joseph-birth-and-return-transition",
+            "g30-laban-acknowledges-blessing-and-wages",
+            "g30-mandrake-fertility-belief-not-efficacy",
+            "g30-mandrakes-identification-and-exchange",
+            "g30-peeled-rods-not-genetics",
+            "g30-rachel-distress-and-jacob-response",
+            "g30-selective-breeding-and-flock-wealth",
+            "g30-spotted-flock-wage-separation",
+            "g30-zilpah-gad-and-asher"
+          ],
+          "id": "idea_cluster_df5db2524eca",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_0e5e9da805f3",
+            "syn_interpretive_questions_7a402a22fac6",
+            "syn_interpretive_questions_7f8a2ec8235a",
+            "syn_why_it_matters_78d796969d11",
+            "syn_why_it_matters_7f8e662be620",
+            "syn_why_it_matters_e42bdb4eda1a"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.7333,
+      "consumed_category_count": 4,
+      "consumed_category_families": [
+        "archaeology",
+        "culture",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 2,
+      "consumed_core_cluster_count": 1,
+      "consumed_eligible_synthesis_count": 5,
+      "consumed_eligible_weight": 1.5,
+      "consumed_synthesis_count": 5,
+      "core_cluster_count": 1,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 4,
+        "block_to_cluster_ratio": 2.0,
+        "block_to_synthesis_ratio": 0.8,
+        "consolidation_ratio": 0.7333,
+        "consumed_cluster_count": 2,
+        "consumed_synthesis_count": 5,
+        "consumed_unit_ratio": 0.5556,
+        "mean_evidence_ids_per_block": 3.75,
+        "meaningful_cluster_count": 2,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 172.5
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 1
+      },
+      "eligible_synthesis_count": 9,
+      "eligible_synthesis_coverage": 0.5556,
+      "eligible_weighted_denominator": 1.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 2,
+      "raw_synthesis_coverage": 0.5556,
+      "synthesis_unit_count": 9,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "4c45f8d79046984a995c4febc2b2bf0206e8a7557cb0a6fb19f13f9213f40547",
+  "d1_packet_identity": {
+    "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:03fec390958d46fbe14d5e4f695b3c7959f03c63eb37136bca3d0b1eead3f9a6",
+    "packet_sha256": "03fec390958d46fbe14d5e4f695b3c7959f03c63eb37136bca3d0b1eead3f9a6",
+    "path": "renderer-input/chapters/genesis_030",
+    "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "d14d40ed2fed2c5d6618a41b18e1d067cf76fc6641df14cb59873ad96fd3b884"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "fa0ba3cdda4b2861af806b238f34779d3612faa075fe367f6aa4a9c8d00b5ac2",
+      "block_count": 4,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g30-bilhah-childbearing-arrangement",
+            "g30-dan-and-naphtali-naming",
+            "g30-issachar-zebulun-dinah",
+            "g30-joseph-birth-and-return-transition",
+            "g30-laban-acknowledges-blessing-and-wages"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g30-bilhah-childbearing-arrangement",
+                "g30-dan-and-naphtali-naming",
+                "g30-issachar-zebulun-dinah",
+                "g30-joseph-birth-and-return-transition",
+                "g30-laban-acknowledges-blessing-and-wages"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+                  "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g30-bilhah-childbearing-arrangement",
+                  "g30-dan-and-naphtali-naming",
+                  "g30-issachar-zebulun-dinah",
+                  "g30-joseph-birth-and-return-transition",
+                  "g30-laban-acknowledges-blessing-and-wages"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 30:17-21",
+                  "Genesis 30:22-26",
+                  "Genesis 30:27-34",
+                  "Genesis 30:3-8",
+                  "Genesis 30:5-8"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_7a402a22fac6",
+                "verse_refs": [
+                  "Genesis 30:17-21",
+                  "Genesis 30:22-26",
+                  "Genesis 30:27-34",
+                  "Genesis 30:3-8",
+                  "Genesis 30:5-8"
+                ]
+              },
+              "path_hash": "e4cfafd86674240dab3be672e85e1db88368798557670633b65f52f68e6c5cff",
+              "path_id": "reader_path_genesis_030_e4cfafd86674240dab3be672",
+              "reader_idea_id": "reader_idea_288c503d8a27299b",
+              "reader_idea_label": "Jacob proposes spotted, speckled, and dark animals as his wage; Laban removes marked animals and places distance between the flocks.…",
+              "synthesis_id": "syn_interpretive_questions_7a402a22fac6"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_030_e4cfafd86674240dab3be672"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_288c503d8a27299b"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_7a402a22fac6"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 1,
+          "evidence_ids": [
+            "g30-mandrake-fertility-belief-not-efficacy",
+            "g30-mandrakes-identification-and-exchange",
+            "g30-peeled-rods-not-genetics",
+            "g30-rachel-distress-and-jacob-response",
+            "g30-selective-breeding-and-flock-wealth"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g30-mandrake-fertility-belief-not-efficacy",
+                "g30-mandrakes-identification-and-exchange",
+                "g30-peeled-rods-not-genetics",
+                "g30-rachel-distress-and-jacob-response",
+                "g30-selective-breeding-and-flock-wealth"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+                  "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g30-mandrake-fertility-belief-not-efficacy",
+                  "g30-mandrakes-identification-and-exchange",
+                  "g30-peeled-rods-not-genetics",
+                  "g30-rachel-distress-and-jacob-response",
+                  "g30-selective-breeding-and-flock-wealth"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 30:1-2",
+                  "Genesis 30:14-16",
+                  "Genesis 30:14-17",
+                  "Genesis 30:37-39",
+                  "Genesis 30:40-43"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_7f8a2ec8235a",
+                "verse_refs": [
+                  "Genesis 30:1-2",
+                  "Genesis 30:14-16",
+                  "Genesis 30:14-17",
+                  "Genesis 30:37-39",
+                  "Genesis 30:40-43"
+                ]
+              },
+              "path_hash": "5a49ea67adf9c55930c0f56c1dbfe9f425130eeadca8678bf9b6130cdc53f089",
+              "path_id": "reader_path_genesis_030_5a49ea67adf9c55930c0f56c",
+              "reader_idea_id": "reader_idea_288c503d8a27299b",
+              "reader_idea_label": "Jacob proposes spotted, speckled, and dark animals as his wage; Laban removes marked animals and places distance between the flocks.…",
+              "synthesis_id": "syn_interpretive_questions_7f8a2ec8235a"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_030_5a49ea67adf9c55930c0f56c"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_288c503d8a27299b"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_7f8a2ec8235a"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 2,
+          "evidence_ids": [
+            "g30-spotted-flock-wage-separation",
+            "g30-zilpah-gad-and-asher"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g30-spotted-flock-wage-separation",
+                "g30-zilpah-gad-and-asher"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+                  "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g30-spotted-flock-wage-separation",
+                  "g30-zilpah-gad-and-asher"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 30:32-36",
+                  "Genesis 30:9-13"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_0e5e9da805f3",
+                "verse_refs": [
+                  "Genesis 30:32-36",
+                  "Genesis 30:9-13"
+                ]
+              },
+              "path_hash": "944c62c51293fe70a7a31baed4815aec1c5802adbe77f20ca577c7bfd4071bb8",
+              "path_id": "reader_path_genesis_030_944c62c51293fe70a7a31bae",
+              "reader_idea_id": "reader_idea_288c503d8a27299b",
+              "reader_idea_label": "Jacob proposes spotted, speckled, and dark animals as his wage; Laban removes marked animals and places distance between the flocks.…",
+              "synthesis_id": "syn_interpretive_questions_0e5e9da805f3"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_030_944c62c51293fe70a7a31bae"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_288c503d8a27299b"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_0e5e9da805f3"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+                  "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_bec5df88b054",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "4a9cf1e3efc3797736de8e7561c1f07822895a81e2ec450583a38f3fb3ddfda4",
+              "path_id": "reader_path_genesis_030_4a9cf1e3efc3797736de8e75",
+              "reader_idea_id": "reader_idea_5c93036f110c1e36",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_bec5df88b054"
+            },
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+                  "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_6be45cba1178",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "b60a54e86da44dc59a707b6b5e57c5260ca649a8a23e2e2c884bcef722dac1cd",
+              "path_id": "reader_path_genesis_030_b60a54e86da44dc59a707b6b",
+              "reader_idea_id": "reader_idea_5c93036f110c1e36",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_6be45cba1178"
+            }
+          ],
+          "path_classes": [
+            "priority",
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_030_4a9cf1e3efc3797736de8e75",
+            "reader_path_genesis_030_b60a54e86da44dc59a707b6b"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_5c93036f110c1e36"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_surrounding_passages_bec5df88b054",
+            "syn_surrounding_passages_6be45cba1178"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "da679fadb82ddb524de6c00c95ed001e10ad0718a4ee915aee13f938adb8db29",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

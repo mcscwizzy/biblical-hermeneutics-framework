@@ -1,0 +1,1054 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 6,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g34-dinah-sees-women-shechem-takes-and-violates",
+            "g34-disgrace-folly-in-israel-language",
+            "g34-innah-lexical-debate-and-translation",
+            "g34-shechem-attachment-and-marriage-request"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_78b2282c3ce3"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g34-dinah-sees-women-shechem-takes-and-violates": [
+              "syn_interpretive_questions_78b2282c3ce3"
+            ],
+            "g34-disgrace-folly-in-israel-language": [
+              "syn_interpretive_questions_78b2282c3ce3"
+            ],
+            "g34-innah-lexical-debate-and-translation": [
+              "syn_interpretive_questions_78b2282c3ce3"
+            ],
+            "g34-shechem-attachment-and-marriage-request": [
+              "syn_interpretive_questions_78b2282c3ce3"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g34-brothers-plunder-city-people-and-property",
+            "g34-circumcision-condition-deception",
+            "g34-genesis49-later-ethical-reception-not-anchor",
+            "g34-hamor-intermarriage-land-trade-property",
+            "g34-jacob-condemnation-and-sons-honor-response"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_903679bcc977"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g34-brothers-plunder-city-people-and-property": [
+              "syn_cultural_context_903679bcc977"
+            ],
+            "g34-circumcision-condition-deception": [
+              "syn_cultural_context_903679bcc977"
+            ],
+            "g34-genesis49-later-ethical-reception-not-anchor": [
+              "syn_cultural_context_903679bcc977"
+            ],
+            "g34-hamor-intermarriage-land-trade-property": [
+              "syn_cultural_context_903679bcc977"
+            ],
+            "g34-jacob-condemnation-and-sons-honor-response": [
+              "syn_cultural_context_903679bcc977"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "g34-third-day-attack-and-dinah-rescue"
+          ],
+          "cited_synthesis_ids": [
+            "syn_historical_context_888bec359040"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g34-third-day-attack-and-dinah-rescue": [
+              "syn_historical_context_888bec359040"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "source-lock-genesis-34-city-gate-negotiation-setting",
+            "source-lock-genesis-34-local-population-description"
+          ],
+          "cited_synthesis_ids": [
+            "syn_archaeology_geography_63055eeb9f21"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "source-lock-genesis-34-city-gate-negotiation-setting": [
+              "syn_archaeology_geography_63055eeb9f21"
+            ],
+            "source-lock-genesis-34-local-population-description": [
+              "syn_archaeology_geography_63055eeb9f21"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g34-jacob-silence-and-sons-anger",
+            "g34-no-divine-command-or-ethnic-warrant"
+          ],
+          "cited_synthesis_ids": [
+            "syn_why_it_matters_215e65fee816"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g34-jacob-silence-and-sons-anger": [
+              "syn_why_it_matters_215e65fee816"
+            ],
+            "g34-no-divine-command-or-ethnic-warrant": [
+              "syn_why_it_matters_215e65fee816"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_6",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_7ad49f02bd7d"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_7ad49f02bd7d"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_7ad49f02bd7d"
+            ]
+          },
+          "section_index": 4
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 3,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g34-brothers-plunder-city-people-and-property",
+          "g34-circumcision-condition-deception",
+          "g34-dinah-sees-women-shechem-takes-and-violates",
+          "g34-disgrace-folly-in-israel-language",
+          "g34-genesis49-later-ethical-reception-not-anchor",
+          "g34-hamor-intermarriage-land-trade-property",
+          "g34-innah-lexical-debate-and-translation",
+          "g34-jacob-condemnation-and-sons-honor-response",
+          "g34-jacob-silence-and-sons-anger",
+          "g34-no-divine-command-or-ethnic-warrant",
+          "g34-shechem-attachment-and-marriage-request",
+          "g34-third-day-attack-and-dinah-rescue",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3",
+          "source-lock-genesis-34-city-gate-negotiation-setting",
+          "source-lock-genesis-34-local-population-description"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_archaeology_geography_63055eeb9f21",
+          "syn_cultural_context_903679bcc977",
+          "syn_cultural_context_d5f07c33fb1c",
+          "syn_historical_context_888bec359040",
+          "syn_interpretive_questions_78b2282c3ce3",
+          "syn_surrounding_passages_7ad49f02bd7d",
+          "syn_surrounding_passages_bea9eb6fee0a",
+          "syn_surrounding_passages_ecaba249edfd",
+          "syn_why_it_matters_215e65fee816",
+          "syn_why_it_matters_2fe36febdafd",
+          "syn_why_it_matters_ec8ec8cbf674",
+          "syn_why_it_matters_f3e192afe0d4"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g34-brothers-plunder-city-people-and-property",
+          "g34-circumcision-condition-deception",
+          "g34-dinah-sees-women-shechem-takes-and-violates",
+          "g34-disgrace-folly-in-israel-language",
+          "g34-genesis49-later-ethical-reception-not-anchor",
+          "g34-hamor-intermarriage-land-trade-property",
+          "g34-innah-lexical-debate-and-translation",
+          "g34-jacob-condemnation-and-sons-honor-response",
+          "g34-jacob-silence-and-sons-anger",
+          "g34-no-divine-command-or-ethnic-warrant",
+          "g34-shechem-attachment-and-marriage-request",
+          "g34-third-day-attack-and-dinah-rescue",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3",
+          "source-lock-genesis-34-city-gate-negotiation-setting",
+          "source-lock-genesis-34-local-population-description"
+        ],
+        "source_idea_count": 3,
+        "source_synthesis_unit_ids": [
+          "syn_archaeology_geography_63055eeb9f21",
+          "syn_cultural_context_903679bcc977",
+          "syn_cultural_context_d5f07c33fb1c",
+          "syn_historical_context_888bec359040",
+          "syn_interpretive_questions_78b2282c3ce3",
+          "syn_surrounding_passages_7ad49f02bd7d",
+          "syn_surrounding_passages_bea9eb6fee0a",
+          "syn_surrounding_passages_ecaba249edfd",
+          "syn_why_it_matters_215e65fee816",
+          "syn_why_it_matters_2fe36febdafd",
+          "syn_why_it_matters_ec8ec8cbf674",
+          "syn_why_it_matters_f3e192afe0d4"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "0f874a101c602a4d3c400ff8af8719bc4bc4fd9a8972286efa01f877243a3260",
+      "expected_envelope_hash": "0f874a101c602a4d3c400ff8af8719bc4bc4fd9a8972286efa01f877243a3260",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "b6e239e53be3d52a130bbec15c858c7b250cd698385c9f67163ec2c0ce8210fc",
+      "expected_binding_hash": "b6e239e53be3d52a130bbec15c858c7b250cd698385c9f67163ec2c0ce8210fc",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 6,
+      "commentary_prose_char_count": 2664,
+      "commentary_prose_word_count": 409,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "culture": 10,
+        "economics": 1,
+        "geography": 2,
+        "history": 4
+      },
+      "evidence_category_diversity": 4,
+      "evidence_consumption_ratio": 0.9412,
+      "evidence_ids_referenced": [
+        "g34-brothers-plunder-city-people-and-property",
+        "g34-circumcision-condition-deception",
+        "g34-dinah-sees-women-shechem-takes-and-violates",
+        "g34-disgrace-folly-in-israel-language",
+        "g34-genesis49-later-ethical-reception-not-anchor",
+        "g34-hamor-intermarriage-land-trade-property",
+        "g34-innah-lexical-debate-and-translation",
+        "g34-jacob-condemnation-and-sons-honor-response",
+        "g34-jacob-silence-and-sons-anger",
+        "g34-no-divine-command-or-ethnic-warrant",
+        "g34-shechem-attachment-and-marriage-request",
+        "g34-third-day-attack-and-dinah-rescue",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3",
+        "source-lock-genesis-34-city-gate-negotiation-setting",
+        "source-lock-genesis-34-local-population-description"
+      ],
+      "evidence_item_count": 17,
+      "evidence_score": 14.675,
+      "geography_evidence_count": 2,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.014,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 34",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 5,
+      "specific_evidence_count": 17,
+      "unique_evidence_ids_consumed": 16,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 1,
+      "unused_evidence_ids": [
+        "genesis-literary-movement"
+      ],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 31,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 5,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "history"
+          ],
+          "concept_signature": "kind=historical_context|parents=genesis-jacob-esau-return-context|facts=third day while men pain simeon levi enter city kill males including hamor shechem then take dinah shechem’s house chapter narrates lethal violence rescue without saying god commanded attack",
+          "confidence": "low",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "g34-third-day-attack-and-dinah-rescue"
+          ],
+          "id": "idea_cluster_2b0535bba8d6",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "historical_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_historical_context_888bec359040"
+          ],
+          "unit_kinds": [
+            "historical_context"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_2e9b780a85a6",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_7ad49f02bd7d",
+            "syn_surrounding_passages_bea9eb6fee0a",
+            "syn_surrounding_passages_ecaba249edfd"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-jacob-esau-return-context|facts=after narrated violation shechem becomes attached dinah speaks tenderly requests marriage those subsequent actions part text’s complexity do not undo preceding taking humiliation convert opening into consensual romance;dinah goes out see women daughters land shechem sees takes lies narrator describes him humbling violating sequence supports treating episode sexual violence rather than softening into romance while not inventing details text does not state;hebrew verb inn sexual context commonly rendered humiliation violation language central debate over rape coercive violation illicit sexual relation lexical analysis must consider narrative actions subsequent description whole no simplistic dictionary gloss supplies details absent text;sons describe act disgrace folly should not done israel wording provides internal moral evaluation shechem’s action later canonical resonance does not settle every disputed legal category",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g34-dinah-sees-women-shechem-takes-and-violates",
+            "g34-disgrace-folly-in-israel-language",
+            "g34-innah-lexical-debate-and-translation",
+            "g34-shechem-attachment-and-marriage-request"
+          ],
+          "id": "idea_cluster_96facb36614b",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_78b2282c3ce3",
+            "syn_why_it_matters_f3e192afe0d4"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-jacob-esau-return-context|facts=genesis 34 does not say god commanded simeon levi’s massacre nor does authorize hostility toward later peoples identified shechem canaan bounded canonical ethical conclusion follows text’s narrated agency silence about divine commission;jacob hears dinah been defiled remains silent until sons return sons hear report become angry furious these narrative facts psychological explanations jacob’s silence not supplied should not presented certain;hamor proposes intermarriage shared settlement trade property access shechem offers bridewealth gifts negotiations city household bargaining narrative not evidence one universal ancient marriage code governed parties;jacob condemns consequences making him vulnerable surrounding peoples sons answer asking whether sister should treated like prostitute exchange preserves conflict between danger family honor violence already committed rather than resolving into simple moral endorsement;jacob’s sons plunder city because dinah had been defiled taking livestock wealth women children text records extensive collective violence appropriation does not present divinely commanded campaign authorize generalization against later ethnic groups;later genesis 49 condemns simeon levi’s violence own literary setting may noted canonical reception episode not direct g5b applicability anchor does not justify apologetic harmonization genesis 34’s ending;simeon levi condition agreement all males city being circumcised while intending violence circumcision ancient covenantal contexts proposal deception cannot presented legitimate covenant conversion merely because sign used",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g34-brothers-plunder-city-people-and-property",
+            "g34-circumcision-condition-deception",
+            "g34-genesis49-later-ethical-reception-not-anchor",
+            "g34-hamor-intermarriage-land-trade-property",
+            "g34-jacob-condemnation-and-sons-honor-response",
+            "g34-jacob-silence-and-sons-anger",
+            "g34-no-divine-command-or-ethnic-warrant"
+          ],
+          "id": "idea_cluster_a14fd8d6054c",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_903679bcc977",
+            "syn_cultural_context_d5f07c33fb1c",
+            "syn_why_it_matters_215e65fee816",
+            "syn_why_it_matters_2fe36febdafd"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "geography"
+          ],
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=genesis|facts=negotiation located city gate may clarify public settlement setting without claiming resolved site broader trade network;supplies only narrated local population context makes jacob's fear intelligible",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "source-lock-genesis-34-city-gate-negotiation-setting",
+            "source-lock-genesis-34-local-population-description"
+          ],
+          "id": "idea_cluster_f34784f9e162",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "archaeology_geography",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_archaeology_geography_63055eeb9f21",
+            "syn_why_it_matters_ec8ec8cbf674"
+          ],
+          "unit_kinds": [
+            "archaeology_geography",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.625,
+      "consumed_category_count": 5,
+      "consumed_category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 5,
+      "consumed_core_cluster_count": 4,
+      "consumed_eligible_synthesis_count": 6,
+      "consumed_eligible_weight": 4.5,
+      "consumed_synthesis_count": 6,
+      "core_cluster_count": 4,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 6,
+        "block_to_cluster_ratio": 1.2,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.625,
+        "consumed_cluster_count": 5,
+        "consumed_synthesis_count": 6,
+        "consumed_unit_ratio": 0.5,
+        "mean_evidence_ids_per_block": 2.6667,
+        "meaningful_cluster_count": 5,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 81.8
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 4
+      },
+      "eligible_synthesis_count": 12,
+      "eligible_synthesis_coverage": 0.5,
+      "eligible_weighted_denominator": 4.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 5,
+      "raw_synthesis_coverage": 0.5,
+      "synthesis_unit_count": 12,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "245dccfd7b7b5e6755edb044a3a9b1d7456a9b1645897b9dacd74c4a0d75e9fd",
+  "d1_packet_identity": {
+    "evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:a2072a5e435f074a8867428126654c83334f48efd57e654703b5d57794352758",
+    "packet_sha256": "a2072a5e435f074a8867428126654c83334f48efd57e654703b5d57794352758",
+    "path": "renderer-input/chapters/genesis_034",
+    "synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "ff54eb981398777e8b615731f39ba8f6c1ac14148975ae0aabf9f7c843f28412"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "b6e239e53be3d52a130bbec15c858c7b250cd698385c9f67163ec2c0ce8210fc",
+      "block_count": 6,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g34-dinah-sees-women-shechem-takes-and-violates",
+            "g34-disgrace-folly-in-israel-language",
+            "g34-innah-lexical-debate-and-translation",
+            "g34-shechem-attachment-and-marriage-request"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g34-dinah-sees-women-shechem-takes-and-violates",
+                "g34-disgrace-folly-in-israel-language",
+                "g34-innah-lexical-debate-and-translation",
+                "g34-shechem-attachment-and-marriage-request"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+                  "synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g34-dinah-sees-women-shechem-takes-and-violates",
+                  "g34-disgrace-folly-in-israel-language",
+                  "g34-innah-lexical-debate-and-translation",
+                  "g34-shechem-attachment-and-marriage-request"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 34:1-2",
+                  "Genesis 34:2",
+                  "Genesis 34:3-4",
+                  "Genesis 34:5",
+                  "Genesis 34:7",
+                  "Genesis 34:8-12"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_78b2282c3ce3",
+                "verse_refs": [
+                  "Genesis 34:1-2",
+                  "Genesis 34:2",
+                  "Genesis 34:3-4",
+                  "Genesis 34:5",
+                  "Genesis 34:7",
+                  "Genesis 34:8-12"
+                ]
+              },
+              "path_hash": "155d503478353f875c3d914b5cf499291a11fa9c35cd87989c4d3043990a8086",
+              "path_id": "reader_path_genesis_034_155d503478353f875c3d914b",
+              "reader_idea_id": "reader_idea_b55dda875a77ddcc",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_interpretive_questions_78b2282c3ce3"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_034_155d503478353f875c3d914b"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_b55dda875a77ddcc"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_78b2282c3ce3"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g34-brothers-plunder-city-people-and-property",
+            "g34-circumcision-condition-deception",
+            "g34-genesis49-later-ethical-reception-not-anchor",
+            "g34-hamor-intermarriage-land-trade-property",
+            "g34-jacob-condemnation-and-sons-honor-response"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g34-brothers-plunder-city-people-and-property",
+                "g34-circumcision-condition-deception",
+                "g34-genesis49-later-ethical-reception-not-anchor",
+                "g34-hamor-intermarriage-land-trade-property",
+                "g34-jacob-condemnation-and-sons-honor-response"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+                  "synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g34-brothers-plunder-city-people-and-property",
+                  "g34-circumcision-condition-deception",
+                  "g34-genesis49-later-ethical-reception-not-anchor",
+                  "g34-hamor-intermarriage-land-trade-property",
+                  "g34-jacob-condemnation-and-sons-honor-response"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 34:13-24",
+                  "Genesis 34:20-23",
+                  "Genesis 34:27-29",
+                  "Genesis 34:30-31",
+                  "Genesis 34:8-12"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_903679bcc977",
+                "verse_refs": [
+                  "Genesis 34:13-24",
+                  "Genesis 34:20-23",
+                  "Genesis 34:27-29",
+                  "Genesis 34:30-31",
+                  "Genesis 34:8-12"
+                ]
+              },
+              "path_hash": "7449590e9b3e1230e97977614dcc07480bd995d31c600a673fc13df6688cf8a0",
+              "path_id": "reader_path_genesis_034_7449590e9b3e1230e9797761",
+              "reader_idea_id": "reader_idea_b55dda875a77ddcc",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_cultural_context_903679bcc977"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_034_7449590e9b3e1230e9797761"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_b55dda875a77ddcc"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_cultural_context_903679bcc977"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 1,
+          "evidence_ids": [
+            "g34-third-day-attack-and-dinah-rescue"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g34-third-day-attack-and-dinah-rescue"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+                  "synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g34-third-day-attack-and-dinah-rescue"
+                ],
+                "interpretation_level": "fact",
+                "kind": "historical_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 34:25-26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_historical_context_888bec359040",
+                "verse_refs": [
+                  "Genesis 34:25-26"
+                ]
+              },
+              "path_hash": "6a2542a264670115aacd0598d1634e54a470c6d223df2fcd719981bc5e7c359f",
+              "path_id": "reader_path_genesis_034_6a2542a264670115aacd0598",
+              "reader_idea_id": "reader_idea_b55dda875a77ddcc",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_historical_context_888bec359040"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_034_6a2542a264670115aacd0598"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_b55dda875a77ddcc"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_historical_context_888bec359040"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "source-lock-genesis-34-city-gate-negotiation-setting",
+            "source-lock-genesis-34-local-population-description"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "source-lock-genesis-34-city-gate-negotiation-setting",
+                "source-lock-genesis-34-local-population-description"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+                  "synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "source-lock-genesis-34-city-gate-negotiation-setting",
+                  "source-lock-genesis-34-local-population-description"
+                ],
+                "interpretation_level": "fact",
+                "kind": "archaeology_geography",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 34:20-21",
+                  "Genesis 34:30"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_archaeology_geography_63055eeb9f21",
+                "verse_refs": [
+                  "Genesis 34:20-21",
+                  "Genesis 34:30"
+                ]
+              },
+              "path_hash": "3740e254bd8d7a82e67e0e06f4d22ff07991d55b94d37f16410f6dc04a552c57",
+              "path_id": "reader_path_genesis_034_3740e254bd8d7a82e67e0e06",
+              "reader_idea_id": "reader_idea_6ac53188298265f3",
+              "reader_idea_label": "The negotiation is located at a city gate; it may clarify the public settlement setting without claiming a resolved site or a…",
+              "synthesis_id": "syn_archaeology_geography_63055eeb9f21"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_034_3740e254bd8d7a82e67e0e06"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_6ac53188298265f3"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_archaeology_geography_63055eeb9f21"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 0,
+          "evidence_ids": [
+            "g34-jacob-silence-and-sons-anger",
+            "g34-no-divine-command-or-ethnic-warrant"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g34-jacob-silence-and-sons-anger",
+                "g34-no-divine-command-or-ethnic-warrant"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+                  "synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g34-jacob-silence-and-sons-anger",
+                  "g34-no-divine-command-or-ethnic-warrant"
+                ],
+                "interpretation_level": "inference",
+                "kind": "why_it_matters",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 34:25-31",
+                  "Genesis 34:5-7"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_why_it_matters_215e65fee816",
+                "verse_refs": [
+                  "Genesis 34:25-31",
+                  "Genesis 34:5-7"
+                ]
+              },
+              "path_hash": "b16a35027882cfd6458742c1dc26b945bcc7a984aee1edb3f0c7b59dfc3678d8",
+              "path_id": "reader_path_genesis_034_b16a35027882cfd6458742c1",
+              "reader_idea_id": "reader_idea_b55dda875a77ddcc",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_why_it_matters_215e65fee816"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_034_b16a35027882cfd6458742c1"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_b55dda875a77ddcc"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_why_it_matters_215e65fee816"
+          ]
+        },
+        {
+          "block_id": "block_6",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+                  "synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_7ad49f02bd7d",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "309b84764fda2e16321a6b4cfde033ae4291f3dfc0a0addaf30ea14713147b8f",
+              "path_id": "reader_path_genesis_034_309b84764fda2e16321a6b4c",
+              "reader_idea_id": "reader_idea_a87b7eccefeb95ed",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_7ad49f02bd7d"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_034_309b84764fda2e16321a6b4c"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_a87b7eccefeb95ed"
+          ],
+          "section_index": 4,
+          "synthesis_ids": [
+            "syn_surrounding_passages_7ad49f02bd7d"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "fdad52d2355b371e045d1c9a272511d9ac02865b3fb6b2608a0ebb4b9b84d074",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}
