@@ -1,0 +1,938 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 5,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g13-bethel-mamre-movement",
+            "g13-jordan-plain-lot-choice",
+            "g13-pastoral-resources-wealth",
+            "g13-renewed-land-offspring-promise",
+            "g13-separation-and-kinship"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_394e69cfcee0"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g13-bethel-mamre-movement": [
+              "syn_interpretive_questions_394e69cfcee0"
+            ],
+            "g13-jordan-plain-lot-choice": [
+              "syn_interpretive_questions_394e69cfcee0"
+            ],
+            "g13-pastoral-resources-wealth": [
+              "syn_interpretive_questions_394e69cfcee0"
+            ],
+            "g13-renewed-land-offspring-promise": [
+              "syn_interpretive_questions_394e69cfcee0"
+            ],
+            "g13-separation-and-kinship": [
+              "syn_interpretive_questions_394e69cfcee0"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+            "source-lock-genesis-13-jordan-valley-well-watered-description",
+            "source-lock-genesis-13-lot-eastward-separation"
+          ],
+          "cited_synthesis_ids": [
+            "syn_archaeology_geography_fc17ce969410"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "source-lock-genesis-13-abram-negev-bethel-ai-movement": [
+              "syn_archaeology_geography_fc17ce969410"
+            ],
+            "source-lock-genesis-13-jordan-valley-well-watered-description": [
+              "syn_archaeology_geography_fc17ce969410"
+            ],
+            "source-lock-genesis-13-lot-eastward-separation": [
+              "syn_archaeology_geography_fc17ce969410"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g13-sodom-moral-notice"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_69fcbc2e921c"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g13-sodom-moral-notice": [
+              "syn_cultural_context_69fcbc2e921c"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_b2149024fab5"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_b2149024fab5"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_2cb2a9d8f645"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_2cb2a9d8f645"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_2cb2a9d8f645"
+            ]
+          },
+          "section_index": 3
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 3,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g13-bethel-mamre-movement",
+          "g13-jordan-plain-lot-choice",
+          "g13-pastoral-resources-wealth",
+          "g13-renewed-land-offspring-promise",
+          "g13-separation-and-kinship",
+          "g13-sodom-moral-notice",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3",
+          "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+          "source-lock-genesis-13-jordan-valley-well-watered-description",
+          "source-lock-genesis-13-lot-eastward-separation"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_archaeology_geography_fc17ce969410",
+          "syn_cultural_context_69fcbc2e921c",
+          "syn_interpretive_questions_394e69cfcee0",
+          "syn_surrounding_passages_2cb2a9d8f645",
+          "syn_surrounding_passages_b2149024fab5",
+          "syn_surrounding_passages_f20fc5bdafad",
+          "syn_why_it_matters_7ad1d46f84ec",
+          "syn_why_it_matters_8c61747c501f"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g13-bethel-mamre-movement",
+          "g13-jordan-plain-lot-choice",
+          "g13-pastoral-resources-wealth",
+          "g13-renewed-land-offspring-promise",
+          "g13-separation-and-kinship",
+          "g13-sodom-moral-notice",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3",
+          "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+          "source-lock-genesis-13-jordan-valley-well-watered-description",
+          "source-lock-genesis-13-lot-eastward-separation"
+        ],
+        "source_idea_count": 3,
+        "source_synthesis_unit_ids": [
+          "syn_archaeology_geography_fc17ce969410",
+          "syn_cultural_context_69fcbc2e921c",
+          "syn_interpretive_questions_394e69cfcee0",
+          "syn_surrounding_passages_2cb2a9d8f645",
+          "syn_surrounding_passages_b2149024fab5",
+          "syn_surrounding_passages_f20fc5bdafad",
+          "syn_why_it_matters_7ad1d46f84ec",
+          "syn_why_it_matters_8c61747c501f"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "7bcf477c1f87b27671d53d4aeb8a1c06f68d1f13ba3b39e73baabddcf5da6927",
+      "expected_envelope_hash": "7bcf477c1f87b27671d53d4aeb8a1c06f68d1f13ba3b39e73baabddcf5da6927",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "3549facf6ad3ebd1d3d3ff54d8b733591f2d99191d6bd2de1876a73f2743dc88",
+      "expected_binding_hash": "3549facf6ad3ebd1d3d3ff54d8b733591f2d99191d6bd2de1876a73f2743dc88",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 5,
+      "commentary_prose_char_count": 1791,
+      "commentary_prose_word_count": 269,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "culture": 7,
+        "geography": 5
+      },
+      "evidence_category_diversity": 2,
+      "evidence_consumption_ratio": 1.0,
+      "evidence_ids_referenced": [
+        "g13-bethel-mamre-movement",
+        "g13-jordan-plain-lot-choice",
+        "g13-pastoral-resources-wealth",
+        "g13-renewed-land-offspring-promise",
+        "g13-separation-and-kinship",
+        "g13-sodom-moral-notice",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3",
+        "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+        "source-lock-genesis-13-jordan-valley-well-watered-description",
+        "source-lock-genesis-13-lot-eastward-separation"
+      ],
+      "evidence_item_count": 12,
+      "evidence_score": 9.65,
+      "geography_evidence_count": 5,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0267,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 13",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 4,
+      "specific_evidence_count": 12,
+      "unique_evidence_ids_consumed": 12,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unused_evidence_ids": [],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 18,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 4,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "geography"
+          ],
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=genesis|facts=locates abram's return before land choice scene without adding route precision;makes separation lot's settlement choice geographically explicit;physical description stated basis lot's choice therefore passage material",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+            "source-lock-genesis-13-jordan-valley-well-watered-description",
+            "source-lock-genesis-13-lot-eastward-separation"
+          ],
+          "id": "idea_cluster_118c9ed7d5dd",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "archaeology_geography",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_archaeology_geography_fc17ce969410",
+            "syn_why_it_matters_7ad1d46f84ec"
+          ],
+          "unit_kinds": [
+            "archaeology_geography",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_18fd0b3d19da",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_2cb2a9d8f645",
+            "syn_surrounding_passages_b2149024fab5",
+            "syn_surrounding_passages_f20fc5bdafad"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context|parents=genesis-abraham-call-covenant-context|facts=narrator interrupts lot’s landscape choice characterize sodom’s inhabitants wicked sinful against yhwh later sodom episodes not applicability anchors genesis 13",
+          "confidence": "low",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "g13-sodom-moral-notice"
+          ],
+          "id": "idea_cluster_50c95b8b378f",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_69fcbc2e921c"
+          ],
+          "unit_kinds": [
+            "cultural_context"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "geography",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-abraham-call-covenant-context|facts=abram lot possess substantial livestock dependents land cannot support both camps together conflict arises between herdsmen social pastoral resource problem narrative;abram proposes separation end conflict appeals kinship lot chooses first while abram yields choice remains canaan;abram’s route returns negev bethel ai region then south hebron where settles oaks mamre builds altar;after lot separates yhwh renews land promise abram compares promised offspring dust earth command walk through land frames promise spatially;lot sees jordan plain well watered chooses pitching tents near sodom visual land choice followed narrator’s notice sodom’s people wicked",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g13-bethel-mamre-movement",
+            "g13-jordan-plain-lot-choice",
+            "g13-pastoral-resources-wealth",
+            "g13-renewed-land-offspring-promise",
+            "g13-separation-and-kinship"
+          ],
+          "id": "idea_cluster_bbe1824757e7",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_394e69cfcee0",
+            "syn_why_it_matters_8c61747c501f"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.5833,
+      "consumed_category_count": 4,
+      "consumed_category_families": [
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 4,
+      "consumed_core_cluster_count": 3,
+      "consumed_eligible_synthesis_count": 5,
+      "consumed_eligible_weight": 3.5,
+      "consumed_synthesis_count": 5,
+      "core_cluster_count": 3,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 5,
+        "block_to_cluster_ratio": 1.25,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.5833,
+        "consumed_cluster_count": 4,
+        "consumed_synthesis_count": 5,
+        "consumed_unit_ratio": 0.625,
+        "mean_evidence_ids_per_block": 2.4,
+        "meaningful_cluster_count": 4,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 67.0
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 3
+      },
+      "eligible_synthesis_count": 8,
+      "eligible_synthesis_coverage": 0.625,
+      "eligible_weighted_denominator": 3.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 4,
+      "raw_synthesis_coverage": 0.625,
+      "synthesis_unit_count": 8,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "f1da3e4c28baef02d92c40057c168223eba64e6f76e72ffe6e6be0c5e948f617",
+  "d1_packet_identity": {
+    "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:cefd956c9e16b0189f6fc2301717f73369f3ecb0531aadcdc3a90d209b639039",
+    "packet_sha256": "cefd956c9e16b0189f6fc2301717f73369f3ecb0531aadcdc3a90d209b639039",
+    "path": "renderer-input/chapters/genesis_013",
+    "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "f7ca83738f25eba5ed8cfb191f897854a13ec3801624110f7781e8049fba66c3"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "3549facf6ad3ebd1d3d3ff54d8b733591f2d99191d6bd2de1876a73f2743dc88",
+      "block_count": 5,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g13-bethel-mamre-movement",
+            "g13-jordan-plain-lot-choice",
+            "g13-pastoral-resources-wealth",
+            "g13-renewed-land-offspring-promise",
+            "g13-separation-and-kinship"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g13-bethel-mamre-movement",
+                "g13-jordan-plain-lot-choice",
+                "g13-pastoral-resources-wealth",
+                "g13-renewed-land-offspring-promise",
+                "g13-separation-and-kinship"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+                  "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g13-bethel-mamre-movement",
+                  "g13-jordan-plain-lot-choice",
+                  "g13-pastoral-resources-wealth",
+                  "g13-renewed-land-offspring-promise",
+                  "g13-separation-and-kinship"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 13:1-7",
+                  "Genesis 13:10-13",
+                  "Genesis 13:14-17",
+                  "Genesis 13:18",
+                  "Genesis 13:3-4",
+                  "Genesis 13:8-13"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_394e69cfcee0",
+                "verse_refs": [
+                  "Genesis 13:1-7",
+                  "Genesis 13:10-13",
+                  "Genesis 13:14-17",
+                  "Genesis 13:18",
+                  "Genesis 13:3-4",
+                  "Genesis 13:8-13"
+                ]
+              },
+              "path_hash": "2e6bcdad7ec1d2cd6652cd88497d68101ed999388bc3ef0e2b1f3ff284362973",
+              "path_id": "reader_path_genesis_013_2e6bcdad7ec1d2cd6652cd88",
+              "reader_idea_id": "reader_idea_a8fd0286ce82f8ea",
+              "reader_idea_label": "Genesis Abraham Call Covenant Context",
+              "synthesis_id": "syn_interpretive_questions_394e69cfcee0"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_013_2e6bcdad7ec1d2cd6652cd88"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_a8fd0286ce82f8ea"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_394e69cfcee0"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+            "source-lock-genesis-13-jordan-valley-well-watered-description",
+            "source-lock-genesis-13-lot-eastward-separation"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+                "source-lock-genesis-13-jordan-valley-well-watered-description",
+                "source-lock-genesis-13-lot-eastward-separation"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+                  "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+                  "source-lock-genesis-13-jordan-valley-well-watered-description",
+                  "source-lock-genesis-13-lot-eastward-separation"
+                ],
+                "interpretation_level": "fact",
+                "kind": "archaeology_geography",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 13:1",
+                  "Genesis 13:10",
+                  "Genesis 13:11-12",
+                  "Genesis 13:3"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_archaeology_geography_fc17ce969410",
+                "verse_refs": [
+                  "Genesis 13:1",
+                  "Genesis 13:10",
+                  "Genesis 13:11-12",
+                  "Genesis 13:3"
+                ]
+              },
+              "path_hash": "b5e282e16e57604f3c81c3ed0518d7d6074238d732902f70dfbc008b77828d0a",
+              "path_id": "reader_path_genesis_013_b5e282e16e57604f3c81c3ed",
+              "reader_idea_id": "reader_idea_c508db9ffee551ed",
+              "reader_idea_label": "It locates Abram's return before the land-choice scene without adding route precision.",
+              "synthesis_id": "syn_archaeology_geography_fc17ce969410"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_013_b5e282e16e57604f3c81c3ed"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c508db9ffee551ed"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_archaeology_geography_fc17ce969410"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g13-sodom-moral-notice"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g13-sodom-moral-notice"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+                  "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g13-sodom-moral-notice"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 13:12-13"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_69fcbc2e921c",
+                "verse_refs": [
+                  "Genesis 13:12-13"
+                ]
+              },
+              "path_hash": "4f472bc631d64aca437655a3cc924ab0b069614e3cabf0abc53650be6ef1dda4",
+              "path_id": "reader_path_genesis_013_4f472bc631d64aca437655a3",
+              "reader_idea_id": "reader_idea_a8fd0286ce82f8ea",
+              "reader_idea_label": "Genesis Abraham Call Covenant Context",
+              "synthesis_id": "syn_cultural_context_69fcbc2e921c"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_013_4f472bc631d64aca437655a3"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_a8fd0286ce82f8ea"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_cultural_context_69fcbc2e921c"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+                  "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_b2149024fab5",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "cf36085719d2965f02efaeb763152f8570b3ed89d0e1336b6ecec38135c9d969",
+              "path_id": "reader_path_genesis_013_cf36085719d2965f02efaeb7",
+              "reader_idea_id": "reader_idea_f0092e02715fe422",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_b2149024fab5"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_013_cf36085719d2965f02efaeb7"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_f0092e02715fe422"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_surrounding_passages_b2149024fab5"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 1,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+                  "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_2cb2a9d8f645",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "50786548ea8d5558fc7e8fcf2d8ac65c9a81ed207239c8604172cb7768e89496",
+              "path_id": "reader_path_genesis_013_50786548ea8d5558fc7e8fcf",
+              "reader_idea_id": "reader_idea_f0092e02715fe422",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_2cb2a9d8f645"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_013_50786548ea8d5558fc7e8fcf"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_f0092e02715fe422"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_surrounding_passages_2cb2a9d8f645"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "93170eafee462d1418a1a59203ffa3aa587dc8ba2d9d97fc372889e5224eecc4",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

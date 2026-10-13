@@ -1,0 +1,55 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "cli_command": [
+        "/home/johnwalker/.local/bin/codex",
+        "exec",
+        "--ephemeral",
+        "--ignore-user-config",
+        "-m",
+        "gpt-5.6-terra",
+        "-c",
+        "model_reasoning_effort=\"high\"",
+        "-s",
+        "read-only",
+        "-C",
+        "/tmp/bhf-genesis-d2-render-9qsixrqi",
+        "--skip-git-repo-check",
+        "--output-last-message",
+        "/tmp/bhf-genesis-d2-render-9qsixrqi/response.bin",
+        "-"
+      ],
+      "d1_packet_path": "renderer-input/chapters/genesis_046",
+      "d1_packet_sha256": "fcb05b8e42c5636f7e7d7d47b476dc83e4614e7fb1f1c7f2c93ba0e988650974",
+      "evidence_hash": "976d3b6b3ed738d1a7592b95d05c4342723cab40e4d7dca22615dc4571bff138",
+      "exchange_sha256": "ac12f6be6d9b2d961f71003191dfec04c267cddc014486f087032e14b91de048",
+      "raw_response_path": "attempts/genesis_046/attempt-001/raw-response.bin",
+      "raw_response_sha256": "a2f0362549d8a315c9edb9cfc2c67b620168a160d5960876a0af989050d39755",
+      "reference": "Genesis 46",
+      "renderer_contract": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2",
+        "transport": "local_codex_cli"
+      },
+      "retry_reason": null,
+      "retry_reason_for_next_attempt": null,
+      "started": true,
+      "status": "READY_FOR_HUMAN_REVIEW",
+      "stderr_path": "attempts/genesis_046/attempt-001/stderr.txt",
+      "stdout_path": "attempts/genesis_046/attempt-001/stdout.txt",
+      "subprocess_returncode": 0,
+      "synthesis_hash": "2a9f0c2851f4a89a94be5647869ab1ced285ec3cc248d59ca71e8ef9da1a186b",
+      "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+      "timed_out": false,
+      "user_prompt_sha256": "3726df42e9d87d9f6e36447f5176a16ed818d4859a2ee9a12e06767473ec8c86",
+      "validation_errors": [],
+      "validation_path": "attempts/genesis_046/attempt-001/validation.json",
+      "validation_warnings": []
+    }
+  ],
+  "reference": "Genesis 46"
+}

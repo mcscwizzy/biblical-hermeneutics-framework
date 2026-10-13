@@ -1,0 +1,925 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 5,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g32-esau-four-hundred-and-divided-camp",
+            "g32-hip-touch-limp-injury"
+          ],
+          "cited_synthesis_ids": [
+            "syn_historical_context_690e73f55096"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g32-esau-four-hundred-and-divided-camp": [
+              "syn_historical_context_690e73f55096"
+            ],
+            "g32-hip-touch-limp-injury": [
+              "syn_historical_context_690e73f55096"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g32-blessing-request-and-withheld-name",
+            "g32-prayer-unworthiness-command-promise"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_09f8f8cf405b"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g32-blessing-request-and-withheld-name": [
+              "syn_cultural_context_09f8f8cf405b"
+            ],
+            "g32-prayer-unworthiness-command-promise": [
+              "syn_cultural_context_09f8f8cf405b"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g32-minhah-livestock-gift-sequence",
+            "g32-opponent-identity-interpretive-range",
+            "g32-peniel-face-of-god-explanation"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_9efa2a350b74"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g32-minhah-livestock-gift-sequence": [
+              "syn_interpretive_questions_9efa2a350b74"
+            ],
+            "g32-opponent-identity-interpretive-range": [
+              "syn_interpretive_questions_9efa2a350b74"
+            ],
+            "g32-peniel-face-of-god-explanation": [
+              "syn_interpretive_questions_9efa2a350b74"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g32-angels-mahanaim-gods-camp",
+            "g32-gid-hannasheh-dietary-etiology",
+            "g32-israel-name-striving-wordplay",
+            "g32-jabbok-crossing-geography",
+            "g32-man-wrestles-narrative-wording"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_ef6440539e7f"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g32-angels-mahanaim-gods-camp": [
+              "syn_interpretive_questions_ef6440539e7f"
+            ],
+            "g32-gid-hannasheh-dietary-etiology": [
+              "syn_interpretive_questions_ef6440539e7f"
+            ],
+            "g32-israel-name-striving-wordplay": [
+              "syn_interpretive_questions_ef6440539e7f"
+            ],
+            "g32-jabbok-crossing-geography": [
+              "syn_interpretive_questions_ef6440539e7f"
+            ],
+            "g32-man-wrestles-narrative-wording": [
+              "syn_interpretive_questions_ef6440539e7f"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_529c3b96a46b"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_529c3b96a46b"
+            ]
+          },
+          "section_index": 4
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g32-angels-mahanaim-gods-camp",
+          "g32-blessing-request-and-withheld-name",
+          "g32-esau-four-hundred-and-divided-camp",
+          "g32-gid-hannasheh-dietary-etiology",
+          "g32-hip-touch-limp-injury",
+          "g32-israel-name-striving-wordplay",
+          "g32-jabbok-crossing-geography",
+          "g32-man-wrestles-narrative-wording",
+          "g32-minhah-livestock-gift-sequence",
+          "g32-opponent-identity-interpretive-range",
+          "g32-peniel-face-of-god-explanation",
+          "g32-prayer-unworthiness-command-promise",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_cultural_context_09f8f8cf405b",
+          "syn_historical_context_690e73f55096",
+          "syn_interpretive_questions_9efa2a350b74",
+          "syn_interpretive_questions_ef6440539e7f",
+          "syn_surrounding_passages_529c3b96a46b",
+          "syn_surrounding_passages_6abfcec52690",
+          "syn_surrounding_passages_d1d3b8f3b298",
+          "syn_why_it_matters_0a3e9fd4a0c6",
+          "syn_why_it_matters_29ac50de239f",
+          "syn_why_it_matters_cafdcf708a74",
+          "syn_why_it_matters_e2e0f91598fa"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g32-angels-mahanaim-gods-camp",
+          "g32-blessing-request-and-withheld-name",
+          "g32-esau-four-hundred-and-divided-camp",
+          "g32-gid-hannasheh-dietary-etiology",
+          "g32-hip-touch-limp-injury",
+          "g32-israel-name-striving-wordplay",
+          "g32-jabbok-crossing-geography",
+          "g32-man-wrestles-narrative-wording",
+          "g32-minhah-livestock-gift-sequence",
+          "g32-opponent-identity-interpretive-range",
+          "g32-peniel-face-of-god-explanation",
+          "g32-prayer-unworthiness-command-promise",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_cultural_context_09f8f8cf405b",
+          "syn_historical_context_690e73f55096",
+          "syn_interpretive_questions_9efa2a350b74",
+          "syn_interpretive_questions_ef6440539e7f",
+          "syn_surrounding_passages_529c3b96a46b",
+          "syn_surrounding_passages_6abfcec52690",
+          "syn_surrounding_passages_d1d3b8f3b298",
+          "syn_why_it_matters_0a3e9fd4a0c6",
+          "syn_why_it_matters_29ac50de239f",
+          "syn_why_it_matters_cafdcf708a74",
+          "syn_why_it_matters_e2e0f91598fa"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "6819272f851aff0976bef754cde0cdb1115712e198f12634f74f2b27118dca56",
+      "expected_envelope_hash": "6819272f851aff0976bef754cde0cdb1115712e198f12634f74f2b27118dca56",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "54d98132ff25f0729089d249261bcb1ea0c7894a16df5e2f269fbffe8466b504",
+      "expected_binding_hash": "54d98132ff25f0729089d249261bcb1ea0c7894a16df5e2f269fbffe8466b504",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 5,
+      "commentary_prose_char_count": 2500,
+      "commentary_prose_word_count": 407,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 1,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 1,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "culture": 13,
+        "geography": 1,
+        "history": 3
+      },
+      "evidence_category_diversity": 3,
+      "evidence_consumption_ratio": 0.7647,
+      "evidence_ids_referenced": [
+        "g32-angels-mahanaim-gods-camp",
+        "g32-blessing-request-and-withheld-name",
+        "g32-esau-four-hundred-and-divided-camp",
+        "g32-gid-hannasheh-dietary-etiology",
+        "g32-hip-touch-limp-injury",
+        "g32-israel-name-striving-wordplay",
+        "g32-jabbok-crossing-geography",
+        "g32-man-wrestles-narrative-wording",
+        "g32-minhah-livestock-gift-sequence",
+        "g32-opponent-identity-interpretive-range",
+        "g32-peniel-face-of-god-explanation",
+        "g32-prayer-unworthiness-command-promise",
+        "genesis-literary-movement"
+      ],
+      "evidence_item_count": 17,
+      "evidence_score": 13.15,
+      "geography_evidence_count": 1,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0379,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 32",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 5,
+      "specific_evidence_count": 15,
+      "unique_evidence_ids_consumed": 13,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 4,
+      "unused_evidence_ids": [
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3",
+        "jacob-wrestles-at-peniel:ancient_near_east_context:0",
+        "jacob-wrestles-at-peniel:historical_context:0"
+      ],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 32,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 5,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "history"
+          ],
+          "concept_signature": "kind=historical_context,why_it_matters|parents=genesis-jacob-esau-return-context|facts=jacob sends messengers toward esau seir edom hears esau coming four hundred men becomes greatly afraid distressed divides people flocks into two camps narrative states jacob’s strategy fear without independently identifying esau’s military purpose;opponent touches jacob’s hip socket jacob limps after encounter text supplies no modern medical diagnosis precise injury mechanism evidence beyond narrated impairment",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g32-esau-four-hundred-and-divided-camp",
+            "g32-hip-touch-limp-injury"
+          ],
+          "id": "idea_cluster_1c0d49622e1b",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "historical_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_historical_context_690e73f55096",
+            "syn_why_it_matters_0a3e9fd4a0c6"
+          ],
+          "unit_kinds": [
+            "historical_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_4f7c05bc2f4c",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_529c3b96a46b",
+            "syn_surrounding_passages_6abfcec52690",
+            "syn_surrounding_passages_d1d3b8f3b298"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-jacob-esau-return-context|facts=jacob addresses god abraham isaac recalls command return promise do him good confesses unworthy steadfast love asks deliverance esau repeats promise offspring like sand sea prayer joins ancestral promise immediate fear;jacob refuses release opponent without blessing receives name change blessing asks opponent’s name not given exchange preserves asymmetry jacob receives blessing not full control disclosure",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g32-blessing-request-and-withheld-name",
+            "g32-prayer-unworthiness-command-promise"
+          ],
+          "id": "idea_cluster_b1864a20fffb",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_09f8f8cf405b",
+            "syn_why_it_matters_29ac50de239f"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "geography",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-jacob-esau-return-context|facts=family possessions cross ford jabbok during night sequence jacob remains alone other side narrative’s river ford geographically significant while scholarly route reconstructions proposed identifications nearby sites remain debated;immediate narrative says man wrestled jacob until daybreak wording starting point interpretation scene later uses divine language jacob’s explanation genesis does not introduce opponent jesus initially call him angel;messengers god meet jacob journeys jacob calls place mahanaim explains god’s camp name’s relation two camps scene’s sacred geographic setting been discussed text does not specify developed divine council structure secure modern site;narrator explains israelites do not eat gid hannasheh hip socket because jacob struck there hebrew anatomical term difficult map exactly modern tendon sinew nerve genesis gives etiology rather than full later halakhic definition prohibited tissue;opponent renames jacob israel explains name wordplay about striving god humans prevailing narrative explanation name’s etymology related not identical questions no single english gloss exhausts hebrew name resolves historical formation;interpretations include divine manifestation angelic messenger figure mysterious humanlike opponent later jewish christian reception readings genesis itself moves man language god naming explanation hosea 12’s angel messenger language later prophetic reception not applicability anchor wording project backward;jacob names place peniel penuel because words seen god face face life preserved place name jacob’s interpretation explicit statement should not flattened into unmediated narrator identification every detail opponent;jacob selects livestock holdings sends successive droves ahead min ah instructing servants create space between identify jacob sender calculated gift appeasement strategy narrative bribery overstates lexical evidence unless used carefully qualified interpretation",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g32-angels-mahanaim-gods-camp",
+            "g32-gid-hannasheh-dietary-etiology",
+            "g32-israel-name-striving-wordplay",
+            "g32-jabbok-crossing-geography",
+            "g32-man-wrestles-narrative-wording",
+            "g32-minhah-livestock-gift-sequence",
+            "g32-opponent-identity-interpretive-range",
+            "g32-peniel-face-of-god-explanation"
+          ],
+          "id": "idea_cluster_dbe52b6320bd",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_9efa2a350b74",
+            "syn_interpretive_questions_ef6440539e7f",
+            "syn_why_it_matters_cafdcf708a74",
+            "syn_why_it_matters_e2e0f91598fa"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6154,
+      "consumed_category_count": 5,
+      "consumed_category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 4,
+      "consumed_core_cluster_count": 3,
+      "consumed_eligible_synthesis_count": 5,
+      "consumed_eligible_weight": 3.5,
+      "consumed_synthesis_count": 5,
+      "core_cluster_count": 3,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 5,
+        "block_to_cluster_ratio": 1.25,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.6154,
+        "consumed_cluster_count": 4,
+        "consumed_synthesis_count": 5,
+        "consumed_unit_ratio": 0.4545,
+        "mean_evidence_ids_per_block": 2.6,
+        "meaningful_cluster_count": 4,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 101.75
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 3
+      },
+      "eligible_synthesis_count": 11,
+      "eligible_synthesis_coverage": 0.4545,
+      "eligible_weighted_denominator": 3.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 4,
+      "raw_synthesis_coverage": 0.4545,
+      "synthesis_unit_count": 11,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "f6b79e26ca2b64e0a7e22d96f61cb6c20712d0d277df27acac5005bb2ab6a0e0",
+  "d1_packet_identity": {
+    "evidence_hash": "1fdcac9241524047665fc3f7c60ec96ec1a5651d53d7eb356cf48895923920fc",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:6bccfd785634f5bbbc190ccfb17868106c9827aecaa27658f9565223d8f3f3f7",
+    "packet_sha256": "6bccfd785634f5bbbc190ccfb17868106c9827aecaa27658f9565223d8f3f3f7",
+    "path": "renderer-input/chapters/genesis_032",
+    "synthesis_hash": "f5539d87b0cc016b6a30c51a66a90a4b7d0d2b9393939e20bf7d952d4aca4ce9",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "e05b784a23a078c6081a4ca433fe4834d9a9105a5ffcae56a4b95b8fbf1c92e7"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "54d98132ff25f0729089d249261bcb1ea0c7894a16df5e2f269fbffe8466b504",
+      "block_count": 5,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g32-esau-four-hundred-and-divided-camp",
+            "g32-hip-touch-limp-injury"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g32-esau-four-hundred-and-divided-camp",
+                "g32-hip-touch-limp-injury"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1fdcac9241524047665fc3f7c60ec96ec1a5651d53d7eb356cf48895923920fc",
+                  "synthesis_hash": "f5539d87b0cc016b6a30c51a66a90a4b7d0d2b9393939e20bf7d952d4aca4ce9"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g32-esau-four-hundred-and-divided-camp",
+                  "g32-hip-touch-limp-injury"
+                ],
+                "interpretation_level": "fact",
+                "kind": "historical_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 32:25",
+                  "Genesis 32:31-32",
+                  "Genesis 32:4-8"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_historical_context_690e73f55096",
+                "verse_refs": [
+                  "Genesis 32:25",
+                  "Genesis 32:31-32",
+                  "Genesis 32:4-8"
+                ]
+              },
+              "path_hash": "f1bf984212f8a76cd8328dc5735e696d171d1c461276e18e26a78136e1b1f3bb",
+              "path_id": "reader_path_genesis_032_f1bf984212f8a76cd8328dc5",
+              "reader_idea_id": "reader_idea_e74419429a6a9ee0",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_historical_context_690e73f55096"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_032_f1bf984212f8a76cd8328dc5"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_e74419429a6a9ee0"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_historical_context_690e73f55096"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g32-blessing-request-and-withheld-name",
+            "g32-prayer-unworthiness-command-promise"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g32-blessing-request-and-withheld-name",
+                "g32-prayer-unworthiness-command-promise"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1fdcac9241524047665fc3f7c60ec96ec1a5651d53d7eb356cf48895923920fc",
+                  "synthesis_hash": "f5539d87b0cc016b6a30c51a66a90a4b7d0d2b9393939e20bf7d952d4aca4ce9"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g32-blessing-request-and-withheld-name",
+                  "g32-prayer-unworthiness-command-promise"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 32:26-29",
+                  "Genesis 32:9-12"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_09f8f8cf405b",
+                "verse_refs": [
+                  "Genesis 32:26-29",
+                  "Genesis 32:9-12"
+                ]
+              },
+              "path_hash": "e4cd0fcb32e5542a5380be0ef57dc4801fecd7c103681d2bc96260b363445f5e",
+              "path_id": "reader_path_genesis_032_e4cd0fcb32e5542a5380be0e",
+              "reader_idea_id": "reader_idea_e74419429a6a9ee0",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_cultural_context_09f8f8cf405b"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_032_e4cd0fcb32e5542a5380be0e"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_e74419429a6a9ee0"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_cultural_context_09f8f8cf405b"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g32-minhah-livestock-gift-sequence",
+            "g32-opponent-identity-interpretive-range",
+            "g32-peniel-face-of-god-explanation"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g32-minhah-livestock-gift-sequence",
+                "g32-opponent-identity-interpretive-range",
+                "g32-peniel-face-of-god-explanation"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1fdcac9241524047665fc3f7c60ec96ec1a5651d53d7eb356cf48895923920fc",
+                  "synthesis_hash": "f5539d87b0cc016b6a30c51a66a90a4b7d0d2b9393939e20bf7d952d4aca4ce9"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g32-minhah-livestock-gift-sequence",
+                  "g32-opponent-identity-interpretive-range",
+                  "g32-peniel-face-of-god-explanation"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 32:13-21",
+                  "Genesis 32:24-30",
+                  "Genesis 32:30-31"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_9efa2a350b74",
+                "verse_refs": [
+                  "Genesis 32:13-21",
+                  "Genesis 32:24-30",
+                  "Genesis 32:30-31"
+                ]
+              },
+              "path_hash": "ad1deaaf33595c51d833a03e15be8d62b803e3f132c17750c54ab0887cf0ad52",
+              "path_id": "reader_path_genesis_032_ad1deaaf33595c51d833a03e",
+              "reader_idea_id": "reader_idea_e74419429a6a9ee0",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_interpretive_questions_9efa2a350b74"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_032_ad1deaaf33595c51d833a03e"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_e74419429a6a9ee0"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_interpretive_questions_9efa2a350b74"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "g32-angels-mahanaim-gods-camp",
+            "g32-gid-hannasheh-dietary-etiology",
+            "g32-israel-name-striving-wordplay",
+            "g32-jabbok-crossing-geography",
+            "g32-man-wrestles-narrative-wording"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g32-angels-mahanaim-gods-camp",
+                "g32-gid-hannasheh-dietary-etiology",
+                "g32-israel-name-striving-wordplay",
+                "g32-jabbok-crossing-geography",
+                "g32-man-wrestles-narrative-wording"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1fdcac9241524047665fc3f7c60ec96ec1a5651d53d7eb356cf48895923920fc",
+                  "synthesis_hash": "f5539d87b0cc016b6a30c51a66a90a4b7d0d2b9393939e20bf7d952d4aca4ce9"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g32-angels-mahanaim-gods-camp",
+                  "g32-gid-hannasheh-dietary-etiology",
+                  "g32-israel-name-striving-wordplay",
+                  "g32-jabbok-crossing-geography",
+                  "g32-man-wrestles-narrative-wording"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 32:1-3",
+                  "Genesis 32:22-24",
+                  "Genesis 32:24-25",
+                  "Genesis 32:27-29",
+                  "Genesis 32:32"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_ef6440539e7f",
+                "verse_refs": [
+                  "Genesis 32:1-3",
+                  "Genesis 32:22-24",
+                  "Genesis 32:24-25",
+                  "Genesis 32:27-29",
+                  "Genesis 32:32"
+                ]
+              },
+              "path_hash": "bef93fad81ace0f82df1c4b560c424a8405eb220eef3a370e5cfc8e1ccb1985d",
+              "path_id": "reader_path_genesis_032_bef93fad81ace0f82df1c4b5",
+              "reader_idea_id": "reader_idea_e74419429a6a9ee0",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_interpretive_questions_ef6440539e7f"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_032_bef93fad81ace0f82df1c4b5"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_e74419429a6a9ee0"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_interpretive_questions_ef6440539e7f"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "1fdcac9241524047665fc3f7c60ec96ec1a5651d53d7eb356cf48895923920fc",
+                  "synthesis_hash": "f5539d87b0cc016b6a30c51a66a90a4b7d0d2b9393939e20bf7d952d4aca4ce9"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_529c3b96a46b",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "61062c816b17985967265f6100396048fcf3537a1bf9f15bbf06cf2c4aaee53e",
+              "path_id": "reader_path_genesis_032_61062c816b17985967265f61",
+              "reader_idea_id": "reader_idea_0008d9ca1c7c992b",
+              "reader_idea_label": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's…",
+              "synthesis_id": "syn_surrounding_passages_529c3b96a46b"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_032_61062c816b17985967265f61"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_0008d9ca1c7c992b"
+          ],
+          "section_index": 4,
+          "synthesis_ids": [
+            "syn_surrounding_passages_529c3b96a46b"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "9a5cd72b588f6f24ad0f694533a277fe8186d8f9fec5197f025098eb7cffde65",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

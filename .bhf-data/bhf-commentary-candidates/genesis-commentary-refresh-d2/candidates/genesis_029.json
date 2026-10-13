@@ -1,0 +1,102 @@
+{
+  "book": "Genesis",
+  "chapter": 29,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 29",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g29-loved-and-unloved-relational-language",
+            "g29-marriage-to-sisters-canonical-context",
+            "g29-seven-years-service-for-rachel",
+            "g29-well-stone-and-rachel-shepherd"
+          ],
+          "id": "block_1",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_91d62d78d26e"
+          ],
+          "text": "The well scene portrays a working pastoral setting: flocks gather before the heavy stone is moved, and Rachel arrives while caring for her father’s sheep. It describes this particular watering practice rather than establishing a universal custom. Jacob’s seven years of labor function as the negotiated marriage payment in Laban’s household; Rachel is not portrayed as purchased property. The chapter also narrates Jacob’s marriages to Leah and Rachel as part of this household arrangement, without presenting a charge under later Sinai law. Its contrast between Jacob’s love for Rachel and Leah’s “unloved” position can express preference or standing and should not be turned into an unqualified modern emotional diagnosis.",
+          "verse_refs": [
+            "Genesis 29:1-10",
+            "Genesis 29:15-20",
+            "Genesis 29:21-30",
+            "Genesis 29:30-31"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "Household Arrangements"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g29-bilhah-and-zilpah-household-status",
+            "g29-feast-night-handover-and-discovery",
+            "g29-kinship-recognition-and-hospitality",
+            "g29-laban-older-before-younger-explanation",
+            "g29-leah-children-and-name-wordplay"
+          ],
+          "id": "block_2",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_4433ac725ad0"
+          ],
+          "text": "Jacob’s identification as Rebekah’s son establishes kinship before Laban welcomes him and marriage labor is negotiated. After the wedding feast, Laban brings Leah to Jacob at night, and Jacob discovers the substitution in the morning. The episode echoes Jacob’s earlier deception, without making either deception acceptable. Laban appeals to a local practice of marrying the older daughter before the younger, then secures further service before giving Rachel as well; the account does not make that practice a universal rule. Zilpah and Bilhah are given to Leah and Rachel as household women, and their later childbearing roles are developed in Genesis 30. Leah’s speeches about her sons connect their names with seeing, hearing, attachment, and praise; these are narrative wordplays, not necessarily complete historical explanations of the names.",
+          "verse_refs": [
+            "Genesis 29:11-14",
+            "Genesis 29:21-25",
+            "Genesis 29:24-29",
+            "Genesis 29:26-30",
+            "Genesis 29:31-35"
+          ]
+        }
+      ],
+      "kind": "things_easy_to_miss",
+      "title": "Kinship, Deception, and Naming"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_3",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_849018526777",
+            "syn_surrounding_passages_8278a1ae2c02"
+          ],
+          "text": "Genesis moves from the universal origins narrated in chapters 1–11 into the ancestral family narratives of chapters 12–50, concluding with Jacob’s household in Egypt. Views that attribute Genesis to Moses and views that explain it through compositional models are distinct positions; Genesis itself does not narrate the history of its own literary formation. Likewise, the absence of direct archaeological identification cannot by itself prove or disprove every ancestral narrative, because archaeology and literary interpretation address different questions.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Reading Genesis as a Book"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,1071 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 5,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g35-bethel-altar-el-bethel-name-and-appearance",
+            "g35-command-to-bethel-live-build-altar",
+            "g35-terror-of-god-neighboring-cities",
+            "g35-twelve-sons-tribal-transition"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_6db1022d1810"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g35-bethel-altar-el-bethel-name-and-appearance": [
+              "syn_cultural_context_6db1022d1810"
+            ],
+            "g35-command-to-bethel-live-build-altar": [
+              "syn_cultural_context_6db1022d1810"
+            ],
+            "g35-terror-of-god-neighboring-cities": [
+              "syn_cultural_context_6db1022d1810"
+            ],
+            "g35-twelve-sons-tribal-transition": [
+              "syn_cultural_context_6db1022d1810"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g35-household-foreign-gods-earrings-burial",
+            "g35-pillar-libation-oil-bethel"
+          ],
+          "cited_synthesis_ids": [
+            "syn_archaeology_geography_a5cde110dcb2"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g35-household-foreign-gods-earrings-burial": [
+              "syn_archaeology_geography_a5cde110dcb2"
+            ],
+            "g35-pillar-libation-oil-bethel": [
+              "syn_archaeology_geography_a5cde110dcb2"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g35-isaac-death-hebron-mamre-burial",
+            "g35-israel-name-fruitfulness-kings-land"
+          ],
+          "cited_synthesis_ids": [
+            "syn_historical_context_04a5dce7477c"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g35-isaac-death-hebron-mamre-burial": [
+              "syn_historical_context_04a5dce7477c"
+            ],
+            "g35-israel-name-fruitfulness-kings-land": [
+              "syn_historical_context_04a5dce7477c"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g35-deborah-nurse-allon-bacuth",
+            "g35-purification-and-garment-change-context",
+            "g35-rachel-burial-location-traditions",
+            "g35-rachel-labor-ben-oni-benjamin-death",
+            "g35-reuben-bilhah-household-power"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_76ba93558d58"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g35-deborah-nurse-allon-bacuth": [
+              "syn_interpretive_questions_76ba93558d58"
+            ],
+            "g35-purification-and-garment-change-context": [
+              "syn_interpretive_questions_76ba93558d58"
+            ],
+            "g35-rachel-burial-location-traditions": [
+              "syn_interpretive_questions_76ba93558d58"
+            ],
+            "g35-rachel-labor-ben-oni-benjamin-death": [
+              "syn_interpretive_questions_76ba93558d58"
+            ],
+            "g35-reuben-bilhah-household-power": [
+              "syn_interpretive_questions_76ba93558d58"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3",
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_3eb42e35bd7e",
+            "syn_surrounding_passages_8f1ce118488a"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_8f1ce118488a"
+            ],
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_3eb42e35bd7e"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_3eb42e35bd7e"
+            ]
+          },
+          "section_index": 4
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g35-bethel-altar-el-bethel-name-and-appearance",
+          "g35-command-to-bethel-live-build-altar",
+          "g35-deborah-nurse-allon-bacuth",
+          "g35-household-foreign-gods-earrings-burial",
+          "g35-isaac-death-hebron-mamre-burial",
+          "g35-israel-name-fruitfulness-kings-land",
+          "g35-pillar-libation-oil-bethel",
+          "g35-purification-and-garment-change-context",
+          "g35-rachel-burial-location-traditions",
+          "g35-rachel-labor-ben-oni-benjamin-death",
+          "g35-reuben-bilhah-household-power",
+          "g35-terror-of-god-neighboring-cities",
+          "g35-twelve-sons-tribal-transition",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_archaeology_geography_a5cde110dcb2",
+          "syn_cultural_context_6db1022d1810",
+          "syn_historical_context_04a5dce7477c",
+          "syn_interpretive_questions_76ba93558d58",
+          "syn_surrounding_passages_3eb42e35bd7e",
+          "syn_surrounding_passages_5d2e481deae1",
+          "syn_surrounding_passages_8f1ce118488a",
+          "syn_why_it_matters_37cb3adb2b80",
+          "syn_why_it_matters_493acdb9ad90",
+          "syn_why_it_matters_9d1b038d639d",
+          "syn_why_it_matters_db2976c187dd"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g35-bethel-altar-el-bethel-name-and-appearance",
+          "g35-command-to-bethel-live-build-altar",
+          "g35-deborah-nurse-allon-bacuth",
+          "g35-household-foreign-gods-earrings-burial",
+          "g35-isaac-death-hebron-mamre-burial",
+          "g35-israel-name-fruitfulness-kings-land",
+          "g35-pillar-libation-oil-bethel",
+          "g35-purification-and-garment-change-context",
+          "g35-rachel-burial-location-traditions",
+          "g35-rachel-labor-ben-oni-benjamin-death",
+          "g35-reuben-bilhah-household-power",
+          "g35-terror-of-god-neighboring-cities",
+          "g35-twelve-sons-tribal-transition",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_archaeology_geography_a5cde110dcb2",
+          "syn_cultural_context_6db1022d1810",
+          "syn_historical_context_04a5dce7477c",
+          "syn_interpretive_questions_76ba93558d58",
+          "syn_surrounding_passages_3eb42e35bd7e",
+          "syn_surrounding_passages_5d2e481deae1",
+          "syn_surrounding_passages_8f1ce118488a",
+          "syn_why_it_matters_37cb3adb2b80",
+          "syn_why_it_matters_493acdb9ad90",
+          "syn_why_it_matters_9d1b038d639d",
+          "syn_why_it_matters_db2976c187dd"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "12a39c6151fccaa7436b54005048543e2f7a639c2a340fd283afdebf58d24cd2",
+      "expected_envelope_hash": "12a39c6151fccaa7436b54005048543e2f7a639c2a340fd283afdebf58d24cd2",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "b0d0982ea329f9085f1d325c760c1be5dc23572cb8203a547b77cca70eadbb9d",
+      "expected_binding_hash": "b0d0982ea329f9085f1d325c760c1be5dc23572cb8203a547b77cca70eadbb9d",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 2,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 5,
+      "commentary_prose_char_count": 2730,
+      "commentary_prose_word_count": 428,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 1
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "archaeology": 2,
+        "culture": 11,
+        "geography": 4,
+        "history": 6
+      },
+      "evidence_category_diversity": 4,
+      "evidence_consumption_ratio": 0.6957,
+      "evidence_ids_referenced": [
+        "g35-bethel-altar-el-bethel-name-and-appearance",
+        "g35-command-to-bethel-live-build-altar",
+        "g35-deborah-nurse-allon-bacuth",
+        "g35-household-foreign-gods-earrings-burial",
+        "g35-isaac-death-hebron-mamre-burial",
+        "g35-israel-name-fruitfulness-kings-land",
+        "g35-pillar-libation-oil-bethel",
+        "g35-purification-and-garment-change-context",
+        "g35-rachel-burial-location-traditions",
+        "g35-rachel-labor-ben-oni-benjamin-death",
+        "g35-reuben-bilhah-household-power",
+        "g35-terror-of-god-neighboring-cities",
+        "g35-twelve-sons-tribal-transition",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 23,
+      "evidence_score": 19.375,
+      "geography_evidence_count": 4,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0508,
+      "people_count": 0,
+      "places_count": 1,
+      "reference": "Genesis 35",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 5,
+      "specific_evidence_count": 16,
+      "unique_evidence_ids_consumed": 16,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 7,
+      "unused_evidence_ids": [
+        "shechem:ancient_near_east_context:0",
+        "shechem:hebraic_worldview:0",
+        "shechem:historical_context:0",
+        "shechem:key_places:0",
+        "shechem:key_places:1",
+        "shechem:key_places:2",
+        "shechem:second_temple_context:0"
+      ],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 28,
+      "verse_anchor_coverage": 0.9655
+    },
+    "richness": {
+      "available_category_count": 6,
+      "category_coverage": 1.0,
+      "category_families": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "archaeology"
+          ],
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=genesis-jacob-esau-return-context|facts=jacob sets up stone pillar site divine speech pours drink offering pours oil over material acts mark place narrative do not identify specific archaeological installation make every standing stone equivalent;jacob tells household remove foreign gods purify themselves change garments give him foreign gods earrings buries beneath tree near shechem narrative associates items household purification earrings not inherently idolatrous apart context",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g35-household-foreign-gods-earrings-burial",
+            "g35-pillar-libation-oil-bethel"
+          ],
+          "id": "idea_cluster_284b466765aa",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "archaeology_geography",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_archaeology_geography_a5cde110dcb2",
+            "syn_why_it_matters_db2976c187dd"
+          ],
+          "unit_kinds": [
+            "archaeology_geography",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-jacob-esau-return-context|facts=chapter names jacob’s twelve sons organized mothers household servants places births paddan aram benjamin born later narrative list provides literary bridge family history israel’s tribal structure should not forced into modern biological census model;god commands jacob go bethel dwell there build altar god appeared him while fleeing esau jacob’s household prepares go scene joins return divine appearance renewed act worship;jacob arrives bethel luz builds altar names place el bethel because god had revealed himself there while jacob fled naming recalls earlier bethel encounter without conflating two narrative moments;jacob’s household travels terror god falls surrounding cities do not pursue jacob’s sons narrator attributes non pursuit divine terror passage does not describe battle casualties military event",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g35-bethel-altar-el-bethel-name-and-appearance",
+            "g35-command-to-bethel-live-build-altar",
+            "g35-terror-of-god-neighboring-cities",
+            "g35-twelve-sons-tribal-transition"
+          ],
+          "id": "idea_cluster_6671d28c0a4e",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_6db1022d1810",
+            "syn_why_it_matters_493acdb9ad90"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_a10dc3d97711",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_3eb42e35bd7e",
+            "syn_surrounding_passages_5d2e481deae1",
+            "syn_surrounding_passages_8f1ce118488a"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "history"
+          ],
+          "concept_signature": "kind=historical_context,why_it_matters|parents=genesis-jacob-esau-return-context|facts=god again calls jacob israel promises fruitfulness nation assembly nations kings land given abraham isaac passage explicitly carries ancestral promise through jacob’s named household;jacob comes isaac mamre kiriath arba identified hebron isaac dies 180 gathered people buried esau jacob joint burial closes family transition narratively brings brothers together again",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g35-isaac-death-hebron-mamre-burial",
+            "g35-israel-name-fruitfulness-kings-land"
+          ],
+          "id": "idea_cluster_aab7b77709a2",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "historical_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_historical_context_04a5dce7477c",
+            "syn_why_it_matters_9d1b038d639d"
+          ],
+          "unit_kinds": [
+            "historical_context",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "geography",
+            "history",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-jacob-esau-return-context|facts=deborah rebekah’s nurse dies buried below bethel under oak named allon bacuth oak weeping terse notice suggests place mourning household role nurse does not supply further biography explain how deborah joined jacob’s household;genesis reports reuben slept bilhah father’s concubine israel heard narrative act carries household succession implications while text does not state reuben’s motive genesis 49 later context not applicability anchor here;purification changed garments precede household’s movement bethel altar building comparative purification practices can illuminate ritual preparation chapter does not specify every procedure declare every ornament impure;rachel difficult labor midwife announces son rachel names him ben oni before jacob calls him benjamin rachel dies buried way ephrath chapter records pillar grave narrative preserves both birth mother’s death without modern medical diagnosis;text places rachel’s burial way ephrath identified bethlehem notice while other biblical notices later traditions place grave differently geography reception history must distinguished no modern tomb identification certain genesis 35 alone",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g35-deborah-nurse-allon-bacuth",
+            "g35-purification-and-garment-change-context",
+            "g35-rachel-burial-location-traditions",
+            "g35-rachel-labor-ben-oni-benjamin-death",
+            "g35-reuben-bilhah-household-power"
+          ],
+          "id": "idea_cluster_f75681d50237",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_76ba93558d58",
+            "syn_why_it_matters_37cb3adb2b80"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6875,
+      "consumed_category_count": 6,
+      "consumed_category_families": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 5,
+      "consumed_core_cluster_count": 4,
+      "consumed_eligible_synthesis_count": 6,
+      "consumed_eligible_weight": 4.5,
+      "consumed_synthesis_count": 6,
+      "core_cluster_count": 4,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 5,
+        "block_to_cluster_ratio": 1.0,
+        "block_to_synthesis_ratio": 0.8333,
+        "consolidation_ratio": 0.6875,
+        "consumed_cluster_count": 5,
+        "consumed_synthesis_count": 6,
+        "consumed_unit_ratio": 0.5455,
+        "mean_evidence_ids_per_block": 3.2,
+        "meaningful_cluster_count": 5,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 85.6
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 4
+      },
+      "eligible_synthesis_count": 11,
+      "eligible_synthesis_coverage": 0.5455,
+      "eligible_weighted_denominator": 4.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 5,
+      "raw_synthesis_coverage": 0.5455,
+      "synthesis_unit_count": 11,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "66897d37b4d57c256d96ee755b7e03ff97fbd90fe48d12789213139ed2065e36",
+  "d1_packet_identity": {
+    "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:79a309fcf3e4bc4bc60b511ab8a657e99031c725eb7d9e7f6ffd6b2aa3bcf955",
+    "packet_sha256": "79a309fcf3e4bc4bc60b511ab8a657e99031c725eb7d9e7f6ffd6b2aa3bcf955",
+    "path": "renderer-input/chapters/genesis_035",
+    "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "18d04b3f1be4c763bc2f970c6363f4aa670f393cbb26a2289b46cfb68592a280"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "b0d0982ea329f9085f1d325c760c1be5dc23572cb8203a547b77cca70eadbb9d",
+      "block_count": 5,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g35-bethel-altar-el-bethel-name-and-appearance",
+            "g35-command-to-bethel-live-build-altar",
+            "g35-terror-of-god-neighboring-cities",
+            "g35-twelve-sons-tribal-transition"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g35-bethel-altar-el-bethel-name-and-appearance",
+                "g35-command-to-bethel-live-build-altar",
+                "g35-terror-of-god-neighboring-cities",
+                "g35-twelve-sons-tribal-transition"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+                  "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g35-bethel-altar-el-bethel-name-and-appearance",
+                  "g35-command-to-bethel-live-build-altar",
+                  "g35-terror-of-god-neighboring-cities",
+                  "g35-twelve-sons-tribal-transition"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 35:1-3",
+                  "Genesis 35:22-26",
+                  "Genesis 35:5",
+                  "Genesis 35:6-7"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_6db1022d1810",
+                "verse_refs": [
+                  "Genesis 35:1-3",
+                  "Genesis 35:22-26",
+                  "Genesis 35:5",
+                  "Genesis 35:6-7"
+                ]
+              },
+              "path_hash": "f3b3a6f85349793e83f99bfd49712d25f59a74f59cf0c8f6b4baa2e2593cd816",
+              "path_id": "reader_path_genesis_035_f3b3a6f85349793e83f99bfd",
+              "reader_idea_id": "reader_idea_5f7ded53dc940273",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_cultural_context_6db1022d1810"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_035_f3b3a6f85349793e83f99bfd"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_5f7ded53dc940273"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_cultural_context_6db1022d1810"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g35-household-foreign-gods-earrings-burial",
+            "g35-pillar-libation-oil-bethel"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g35-household-foreign-gods-earrings-burial",
+                "g35-pillar-libation-oil-bethel"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+                  "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g35-household-foreign-gods-earrings-burial",
+                  "g35-pillar-libation-oil-bethel"
+                ],
+                "interpretation_level": "fact",
+                "kind": "archaeology_geography",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 35:13-15",
+                  "Genesis 35:2-4"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_archaeology_geography_a5cde110dcb2",
+                "verse_refs": [
+                  "Genesis 35:13-15",
+                  "Genesis 35:2-4"
+                ]
+              },
+              "path_hash": "e6cfff81b44513e07d0d6f14b0c6e2e496fc8318363312ee124ebe40ab91d1db",
+              "path_id": "reader_path_genesis_035_e6cfff81b44513e07d0d6f14",
+              "reader_idea_id": "reader_idea_5f7ded53dc940273",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_archaeology_geography_a5cde110dcb2"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_035_e6cfff81b44513e07d0d6f14"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_5f7ded53dc940273"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_archaeology_geography_a5cde110dcb2"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g35-isaac-death-hebron-mamre-burial",
+            "g35-israel-name-fruitfulness-kings-land"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g35-isaac-death-hebron-mamre-burial",
+                "g35-israel-name-fruitfulness-kings-land"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+                  "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g35-isaac-death-hebron-mamre-burial",
+                  "g35-israel-name-fruitfulness-kings-land"
+                ],
+                "interpretation_level": "fact",
+                "kind": "historical_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 35:27-29",
+                  "Genesis 35:9-12"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_historical_context_04a5dce7477c",
+                "verse_refs": [
+                  "Genesis 35:27-29",
+                  "Genesis 35:9-12"
+                ]
+              },
+              "path_hash": "de45da76e825515a7c7acdd6bdf209d0d6565f182e28263da15564cab3a87bd6",
+              "path_id": "reader_path_genesis_035_de45da76e825515a7c7acdd6",
+              "reader_idea_id": "reader_idea_5f7ded53dc940273",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_historical_context_04a5dce7477c"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_035_de45da76e825515a7c7acdd6"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_5f7ded53dc940273"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_historical_context_04a5dce7477c"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "g35-deborah-nurse-allon-bacuth",
+            "g35-purification-and-garment-change-context",
+            "g35-rachel-burial-location-traditions",
+            "g35-rachel-labor-ben-oni-benjamin-death",
+            "g35-reuben-bilhah-household-power"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g35-deborah-nurse-allon-bacuth",
+                "g35-purification-and-garment-change-context",
+                "g35-rachel-burial-location-traditions",
+                "g35-rachel-labor-ben-oni-benjamin-death",
+                "g35-reuben-bilhah-household-power"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+                  "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g35-deborah-nurse-allon-bacuth",
+                  "g35-purification-and-garment-change-context",
+                  "g35-rachel-burial-location-traditions",
+                  "g35-rachel-labor-ben-oni-benjamin-death",
+                  "g35-reuben-bilhah-household-power"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 35:16-20",
+                  "Genesis 35:19-20",
+                  "Genesis 35:2-4",
+                  "Genesis 35:22",
+                  "Genesis 35:8"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_76ba93558d58",
+                "verse_refs": [
+                  "Genesis 35:16-20",
+                  "Genesis 35:19-20",
+                  "Genesis 35:2-4",
+                  "Genesis 35:22",
+                  "Genesis 35:8"
+                ]
+              },
+              "path_hash": "1eeb15b5304ecd030a0990b77fe6935af74f0dd97a2386927ecd42894f4a778f",
+              "path_id": "reader_path_genesis_035_1eeb15b5304ecd030a0990b7",
+              "reader_idea_id": "reader_idea_5f7ded53dc940273",
+              "reader_idea_label": "Genesis Jacob Esau Return Context",
+              "synthesis_id": "syn_interpretive_questions_76ba93558d58"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_035_1eeb15b5304ecd030a0990b7"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_5f7ded53dc940273"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_interpretive_questions_76ba93558d58"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3",
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+                  "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_3eb42e35bd7e",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "eb8581b0597148efc567aedc2e85d2e7d9b16b0b155ed06ec4f7fafdbcfcec65",
+              "path_id": "reader_path_genesis_035_eb8581b0597148efc567aedc",
+              "reader_idea_id": "reader_idea_0304a31c12ab936a",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_3eb42e35bd7e"
+            },
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+                  "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_8f1ce118488a",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "9acab3383c3d4c2b7430efd28c1dc66a47cd74e2965d160860944bc3ab6484e5",
+              "path_id": "reader_path_genesis_035_9acab3383c3d4c2b7430efd2",
+              "reader_idea_id": "reader_idea_0304a31c12ab936a",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_8f1ce118488a"
+            }
+          ],
+          "path_classes": [
+            "priority",
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_035_eb8581b0597148efc567aedc",
+            "reader_path_genesis_035_9acab3383c3d4c2b7430efd2"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_0304a31c12ab936a"
+          ],
+          "section_index": 4,
+          "synthesis_ids": [
+            "syn_surrounding_passages_3eb42e35bd7e",
+            "syn_surrounding_passages_8f1ce118488a"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "03fc677c996f2bf3229f6a24789a9bebb0a69efc6570e76ae1dab5220cd20ecc",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

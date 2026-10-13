@@ -1,0 +1,297 @@
+OpenAI Codex v0.162.1
+--------
+workdir: /tmp/bhf-genesis-d2-render-nzhemzcs
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 01a135aa-7094-7351-bd6c-a58ff4161fdb
+--------
+user
+You are the selected GPT-5.6 Terra prose renderer at high reasoning effort. Treat the supplied BHF SYSTEM PROMPT and USER PROMPT as the complete and authoritative generation contract. Do not call tools, inspect files, browse, use web research, outside commentary, unsupported facts, or additional theology. Return only the requested raw JSON object, with no Markdown fence or preamble.
+
+SYSTEM PROMPT
+You write BHF reader commentary for an intelligent reader with no formal theological education.
+
+Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
+
+Explain rather than merely list or restate facts. You may and should combine multiple compatible synthesis units into one coherent explanatory block when they address the same passage detail, contextual topic, entity, custom, location, literary feature, or closely related reader question. Cite every synthesis ID and evidence ID actually used. Combining units does not authorize a new causal, theological, historical, or significance relationship between them. State such relationships only when the supplied synthesis explicitly supports them, including through `why_it_matters` or another authored relationship. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+
+Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
+
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Contextual breadth also applies within a family: if one family contains several materially different current-chapter ideas that each help explain the passage, mentioning one does not cover the others. Consolidate duplicate or parallel representations of the same idea, but preserve distinct reader-relevant ideas even when they share a family. When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, prioritize it over secondary or surrounding material. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+
+
+Before returning JSON, silently perform two final checks:
+- Representative breadth: for an AVAILABLE chapter, the draft is incomplete if it explains only the dominant central idea while another materially distinct, synthesis-supported idea would change or deepen a reader's understanding of the chapter. Prefer direct passage-specific context and explicitly supported significance. Add such an idea by naturally extending or consolidating a block when possible. Stop when the remaining units are redundant, generic, weakly related, or would only add bulk. Never mention a claim or attach an ID merely to improve coverage.
+- Per-block ancestry: for every block, every `evidence_id` must occur in the union of the evidence ancestry of that block's cited `synthesis_ids`. If a claim uses evidence from another synthesis unit, cite that actual synthesis unit or remove the unsupported claim and evidence ID. Being from the same chapter does not establish ancestry compatibility.
+
+Before returning JSON, silently perform a distinct-idea coverage pass:
+- First identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally survive in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+- Distinguish records from ideas. Synthesize multiple records that support one concept, but continue looking when another distinct, useful concept would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve a metric.
+- Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must still be relevant, supported, non-repetitive prose.
+- Preserve all v1.6 ancestry, provenance, dispute, and no-dump checks.
+
+Before returning JSON, determine renderability separately from reader-level prioritization:
+- `CORE: None` and `RELEVANT: None` mean only that the deterministic reader-level projection found no priority ideas. They do not mean that the authoritative compiled chapter synthesis is empty or unusable. Inspect that synthesis and the canonical text under the existing grounding rules.
+- For THIN or AVAILABLE chapters, an empty reader-level projection must not suppress a legally renderable synthesis-backed explanation. THIN means concise, not empty.
+- `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If at least one usable synthesis unit can support a valid block, render the smallest useful supported commentary. This is a renderability condition, not a minimum number of sections, blocks, words, or synthesis units.
+- Keep disputed material disputed and preserve confidence, evidence ancestry, provenance, and no-dump rules. Do not manufacture prose or promote material to CORE or RELEVANT.
+
+Presentation rules:
+- Do not create one block for every synthesis unit.
+- Do not attempt to mention every available synthesis unit.
+- The renderer need not consume all available synthesis units.
+- The synthesis packet is a set of permitted contextual material, not a checklist.
+- For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- For AVAILABLE chapters, contextual breadth applies to distinct ideas within a family as well as across families. If one family contains several materially different current-chapter ideas that each help explain the passage, do not treat mentioning one as sufficient coverage of the family.
+- Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Combine compatible observations where possible, but preserve each materially different reader-relevant idea that changes or deepens how the chapter is understood.
+- Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
+- Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
+- Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
+- When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, give it priority over secondary or surrounding material.
+
+Grounding rules:
+- Use only the available chapter context and the canonical text.
+- Do not use outside model knowledge.
+- Do not invent history, culture, geography, archaeology, entities, motives, emotions, dates, political meaning, theological conclusions, or narrative significance.
+- Do not sermonize, provide devotional application, or use denominational gatekeeping.
+- Preserve uncertainty and dispute status. Confidence cannot exceed the cited synthesis units or evidence.
+- Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
+- A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
+- Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be cited only inside a section whose kind is exactly `surrounding_passages`. Never cite it in `chapter_overview`, `historical_context`, `cultural_context`, `why_it_matters`, or any other current-chapter section. Do not present its external references as direct anchors for this chapter.
+- If a block would use both `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` synthesis units, do not combine them. Put the current-chapter material in its appropriate current-chapter section and keep the surrounding material in its own `surrounding_passages` block.
+- The only permitted section kinds are: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+- Include only useful supported sections. Do not force every kind to appear.
+- Return JSON only.
+
+USER PROMPT
+TASK: Generate BHF Commentary v1.8 for Genesis 13.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_c508db9ffee551ed: It locates Abram's return before the land-choice scene without adding route precision. (categories: geography)
+- reader_idea_a8fd0286ce82f8ea: Genesis Abraham Call Covenant Context (categories: culture, geography, interpretive_questions)
+- reader_idea_f0092e02715fe422: Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary… (categories: culture, surrounding_passages)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_c508db9ffee551ed: It locates Abram's return before the land-choice scene without adding route precision. (importance: CORE; categories: geography)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["source-lock-genesis-13-abram-negev-bethel-ai-movement", "source-lock-genesis-13-jordan-valley-well-watered-description", "source-lock-genesis-13-lot-eastward-separation"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_archaeology_geography_fc17ce969410"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["source-lock-genesis-13-abram-negev-bethel-ai-movement", "source-lock-genesis-13-jordan-valley-well-watered-description", "source-lock-genesis-13-lot-eastward-separation"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_7ad1d46f84ec"}
+
+IDEA reader_idea_a8fd0286ce82f8ea: Genesis Abraham Call Covenant Context (importance: CORE; categories: culture, geography, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["g13-sodom-moral-notice"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_69fcbc2e921c"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["g13-bethel-mamre-movement", "g13-jordan-plain-lot-choice", "g13-pastoral-resources-wealth", "g13-renewed-land-offspring-promise", "g13-separation-and-kinship"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_394e69cfcee0"}
+- path_3: {"confidence": "high", "disputed": true, "evidence_ids": ["g13-bethel-mamre-movement", "g13-jordan-plain-lot-choice", "g13-pastoral-resources-wealth", "g13-renewed-land-offspring-promise", "g13-separation-and-kinship"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_8c61747c501f"}
+
+IDEA reader_idea_f0092e02715fe422: Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary… (importance: CORE; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "low", "disputed": true, "evidence_ids": ["genesis:interpretive_note:0", "genesis:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_2cb2a9d8f645"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["genesis-literary-movement"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_b2149024fab5"}
+- path_3: {"confidence": "low", "disputed": true, "evidence_ids": ["genesis:interpretive_note:0", "genesis:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_f20fc5bdafad"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And Abram went up out of Egypt, he, and his wife, and all that he had, and Lot with him, into the South. 2. And Abram was very rich in cattle, in silver, and in gold. 3. And he went on his journeys from the South even to Beth-el, unto the place where his tent had been at the beginning, between Beth-el and Ai, 4. unto the place of the altar, which he had made there at the first: and there Abram called on the name of Jehovah. 5. And Lot also, who went with Abram, had flocks, and herds, and tents. 6. And the land was not able to bear them, that they might dwell together: for their substance was great, so that they could not dwell together. 7. And there was a strife between the herdsmen of Abram's cattle and the herdsmen of Lot's cattle: and the Canaanite and the Perizzite dwelt then in the land. 8. And Abram said unto Lot, Let there be no strife, I pray thee, between me and thee, and between my herdsmen and thy herdsmen; for we are brethren. 9. Is not the whole land before thee? separate thyself, I pray thee, from me. If `thou wilt take' the left hand, then I will go to the right. Or if `thou take' the right hand, then I will go to the left. 10. And Lot lifted up his eyes, and beheld all the Plain of the Jordan, that it was well watered every where, before Jehovah destroyed Sodom and Gomorrah, like the garden of Jehovah, like the land of Egypt, as thou goest unto Zoar. 11. So Lot chose him all the Plain of the Jordan; and Lot journeyed east: and they separated themselves the one from the other. 12. Abram dwelt in the land of Canaan, and Lot dwelt in the cities of the Plain, and moved his tent as far as Sodom. 13. Now the men of Sodom were wicked and sinners against Jehovah exceedingly. 14. And Jehovah said unto Abram, after that Lot was separated from him, Lift up now thine eyes, and look from the place where thou art, northward and southward and eastward and westward: 15. for all the land which thou seest, to thee will I give it, and to thy seed for ever. 16. And I will make thy seed as the dust of the earth: So that if a man can number the dust of the earth, then may thy seed also be numbered. 17. Arise, walk through the land in the length of it and in the breadth of it; for unto thee will I give it. 18. And Abram moved his tent, and came and dwelt by the oaks of Mamre, which are in Hebron, and built there an altar unto Jehovah.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 7, "geography": 5}, "evidence_item_count": 12, "relationship_unit_count": 3, "specific_evidence_count": 12, "unit_kind_counts": {"archaeology_geography": 1, "cultural_context": 1, "interpretive_questions": 1, "surrounding_passages": 3, "why_it_matters": 2}, "unused_evidence_ids": [], "used_evidence_ids": ["g13-bethel-mamre-movement", "g13-jordan-plain-lot-choice", "g13-pastoral-resources-wealth", "g13-renewed-land-offspring-promise", "g13-separation-and-kinship", "g13-sodom-moral-notice", "genesis-literary-movement", "genesis:interpretive_note:0", "genesis:interpretive_note:3", "source-lock-genesis-13-abram-negev-bethel-ai-movement", "source-lock-genesis-13-jordan-valley-well-watered-description", "source-lock-genesis-13-lot-eastward-separation"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["source-lock-genesis-13-abram-negev-bethel-ai-movement", "source-lock-genesis-13-jordan-valley-well-watered-description", "source-lock-genesis-13-lot-eastward-separation"], "facts": ["It locates Abram's return before the land-choice scene without adding route precision.", "The physical description is the stated basis for Lot's choice and is therefore passage material.", "It makes the separation and Lot's settlement choice geographically explicit."], "id": "syn_archaeology_geography_fc17ce969410", "interpretation_level": "fact", "kind": "archaeology_geography", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["geography"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 13:1", "Genesis 13:10", "Genesis 13:11-12", "Genesis 13:3"], "verse_refs": ["Genesis 13:1", "Genesis 13:10", "Genesis 13:11-12", "Genesis 13:3"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["g13-sodom-moral-notice"], "facts": ["The narrator interrupts Lot’s landscape choice to characterize Sodom’s inhabitants as wicked and sinful against YHWH; later Sodom episodes are not applicability anchors for Genesis 13."], "id": "syn_cultural_context_69fcbc2e921c", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 13:12-13"], "verse_refs": ["Genesis 13:12-13"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["g13-bethel-mamre-movement", "g13-jordan-plain-lot-choice", "g13-pastoral-resources-wealth", "g13-renewed-land-offspring-promise", "g13-separation-and-kinship"], "facts": ["Abram’s route returns from the Negev to the Bethel–Ai region and then south to Hebron, where he settles by the oaks of Mamre and builds an altar.", "Lot sees the Jordan plain as well-watered and chooses it, pitching his tents near Sodom; the visual land choice is followed by the narrator’s notice that Sodom’s people were wicked.", "Abram and Lot possess substantial livestock and dependents; the land cannot support both camps together, and conflict arises between their herdsmen, a social and pastoral resource problem in the narrative.", "After Lot separates, YHWH renews the land promise to Abram and compares the promised offspring with the dust of the earth; the command to walk through the land frames the promise spatially.", "Abram proposes separation to end conflict and appeals to their kinship; Lot chooses first, while Abram yields choice and remains in Canaan."], "id": "syn_interpretive_questions_394e69cfcee0", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 13:1-7", "Genesis 13:10-13", "Genesis 13:14-17", "Genesis 13:18", "Genesis 13:3-4", "Genesis 13:8-13"], "verse_refs": ["Genesis 13:1-7", "Genesis 13:10-13", "Genesis 13:14-17", "Genesis 13:18", "Genesis 13:3-4", "Genesis 13:8-13"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["genesis:interpretive_note:0", "genesis:interpretive_note:3"], "facts": ["Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.", "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions."], "id": "syn_surrounding_passages_2cb2a9d8f645", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Genesis 11:27-50:26", "Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["genesis-literary-movement"], "facts": ["Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."], "id": "syn_surrounding_passages_b2149024fab5", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["genesis:interpretive_note:0", "genesis:interpretive_note:3"], "facts": ["Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.", "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions."], "id": "syn_surrounding_passages_f20fc5bdafad", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_2cb2a9d8f645"], "source_anchors": ["Genesis 11:27-50:26", "Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["source-lock-genesis-13-abram-negev-bethel-ai-movement", "source-lock-genesis-13-jordan-valley-well-watered-description", "source-lock-genesis-13-lot-eastward-separation"], "facts": ["It locates Abram's return before the land-choice scene without adding route precision.", "The physical description is the stated basis for Lot's choice and is therefore passage material.", "It makes the separation and Lot's settlement choice geographically explicit."], "id": "syn_why_it_matters_7ad1d46f84ec", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_archaeology_geography_fc17ce969410"], "source_anchors": ["Genesis 13:1", "Genesis 13:10", "Genesis 13:11-12", "Genesis 13:3"], "verse_refs": ["Genesis 13:1", "Genesis 13:10", "Genesis 13:11-12", "Genesis 13:3"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["g13-bethel-mamre-movement", "g13-jordan-plain-lot-choice", "g13-pastoral-resources-wealth", "g13-renewed-land-offspring-promise", "g13-separation-and-kinship"], "facts": ["Abram’s route returns from the Negev to the Bethel–Ai region and then south to Hebron, where he settles by the oaks of Mamre and builds an altar.", "Lot sees the Jordan plain as well-watered and chooses it, pitching his tents near Sodom; the visual land choice is followed by the narrator’s notice that Sodom’s people were wicked.", "Abram and Lot possess substantial livestock and dependents; the land cannot support both camps together, and conflict arises between their herdsmen, a social and pastoral resource problem in the narrative.", "After Lot separates, YHWH renews the land promise to Abram and compares the promised offspring with the dust of the earth; the command to walk through the land frames the promise spatially.", "Abram proposes separation to end conflict and appeals to their kinship; Lot chooses first, while Abram yields choice and remains in Canaan."], "id": "syn_why_it_matters_8c61747c501f", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_394e69cfcee0"], "source_anchors": ["Genesis 13:1-7", "Genesis 13:10-13", "Genesis 13:14-17", "Genesis 13:18", "Genesis 13:3-4", "Genesis 13:8-13"], "verse_refs": ["Genesis 13:1-7", "Genesis 13:10-13", "Genesis 13:14-17", "Genesis 13:18", "Genesis 13:3-4", "Genesis 13:8-13"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "g13-bethel-mamre-movement", "passage_anchors": ["Genesis 13:18", "Genesis 13:3-4"], "source_ids": ["g4a-local-genesis-1-50", "g4a-local-hamilton-genesis-1-17", "g4a-local-sarna-genesis"]}, {"confidence": "high", "id": "g13-jordan-plain-lot-choice", "passage_anchors": ["Genesis 13:10-13"], "source_ids": ["g4a-local-genesis-1-50", "g4a-local-hamilton-genesis-1-17", "g4a-local-sarna-genesis"]}, {"confidence": "high", "id": "g13-pastoral-resources-wealth", "passage_anchors": ["Genesis 13:1-7"], "source_ids": ["g4a-local-genesis-1-50", "g4a-local-hamilton-genesis-1-17", "g4a-local-sarna-genesis", "g4a-selman-social-environment"]}, {"confidence": "high", "id": "g13-renewed-land-offspring-promise", "passage_anchors": ["Genesis 13:14-17"], "source_ids": ["g4a-local-genesis-1-50", "g4a-local-hamilton-genesis-1-17", "g4a-local-sarna-genesis"]}, {"confidence": "high", "id": "g13-separation-and-kinship", "passage_anchors": ["Genesis 13:8-13"], "source_ids": ["g4a-local-genesis-1-50", "g4a-local-hamilton-genesis-1-17", "g4a-local-sarna-genesis", "g4a-wenham-genesis-1-15"]}, {"confidence": "high", "id": "g13-sodom-moral-notice", "passage_anchors": ["Genesis 13:12-13"], "source_ids": ["g4a-local-genesis-1-50", "g4a-local-sarna-genesis", "g4a-wenham-genesis-1-15"]}, {"confidence": "high", "id": "genesis-literary-movement", "passage_anchors": ["Genesis 1:1-50:26"], "source_ids": ["hamilton-genesis-1-17", "hamilton-genesis-18-50", "sarna-genesis"]}, {"confidence": "low", "id": "genesis:interpretive_note:0", "passage_anchors": ["Genesis 1:1-50:26"], "source_ids": ["hamilton-genesis-1-17", "sarna-genesis"]}, {"confidence": "low", "id": "genesis:interpretive_note:3", "passage_anchors": ["Genesis 11:27-50:26"], "source_ids": ["zondervan-illustrated-pentateuch-backgrounds"]}, {"confidence": "high", "id": "source-lock-genesis-13-abram-negev-bethel-ai-movement", "passage_anchors": ["Genesis 13:1", "Genesis 13:3"], "source_ids": ["genesis-1-50"]}, {"confidence": "high", "id": "source-lock-genesis-13-jordan-valley-well-watered-description", "passage_anchors": ["Genesis 13:10"], "source_ids": ["genesis-1-50"]}, {"confidence": "high", "id": "source-lock-genesis-13-lot-eastward-separation", "passage_anchors": ["Genesis 13:11-12"], "source_ids": ["genesis-1-50"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Genesis 13",
+  "book": "Genesis",
+  "chapter": 13,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Genesis 13:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Genesis 13:
+   for example `Genesis 13:1` or `Genesis 13:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Genesis 13:1", "Genesis 13:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_genesis_013_b5e282e16e57604f3c81c3ed", "renderer_verse_refs": ["Genesis 13:1", "Genesis 13:10", "Genesis 13:11-12", "Genesis 13:3"], "source_verse_refs": ["Genesis 13:1", "Genesis 13:10", "Genesis 13:11-12", "Genesis 13:3"], "synthesis_unit": "syn_archaeology_geography_fc17ce969410"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_genesis_013_6731a1595c07352caa14825d", "renderer_verse_refs": ["Genesis 13:1", "Genesis 13:10", "Genesis 13:11-12", "Genesis 13:3"], "source_verse_refs": ["Genesis 13:1", "Genesis 13:10", "Genesis 13:11-12", "Genesis 13:3"], "synthesis_unit": "syn_why_it_matters_7ad1d46f84ec"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_genesis_013_4f472bc631d64aca437655a3", "renderer_verse_refs": ["Genesis 13:12-13"], "source_verse_refs": ["Genesis 13:12-13"], "synthesis_unit": "syn_cultural_context_69fcbc2e921c"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_genesis_013_2e6bcdad7ec1d2cd6652cd88", "renderer_verse_refs": ["Genesis 13:1-7", "Genesis 13:10-13", "Genesis 13:14-17", "Genesis 13:18", "Genesis 13:3-4", "Genesis 13:8-13"], "source_verse_refs": ["Genesis 13:1-7", "Genesis 13:10-13", "Genesis 13:14-17", "Genesis 13:18", "Genesis 13:3-4", "Genesis 13:8-13"], "synthesis_unit": "syn_interpretive_questions_394e69cfcee0"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_genesis_013_eba3cc3857ebdf891f39ebdf", "renderer_verse_refs": ["Genesis 13:1-7", "Genesis 13:10-13", "Genesis 13:14-17", "Genesis 13:18", "Genesis 13:3-4", "Genesis 13:8-13"], "source_verse_refs": ["Genesis 13:1-7", "Genesis 13:10-13", "Genesis 13:14-17", "Genesis 13:18", "Genesis 13:3-4", "Genesis 13:8-13"], "synthesis_unit": "syn_why_it_matters_8c61747c501f"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_genesis_013_50786548ea8d5558fc7e8fcf", "renderer_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "source_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "synthesis_unit": "syn_surrounding_passages_2cb2a9d8f645"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_genesis_013_cf36085719d2965f02efaeb7", "renderer_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "source_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "synthesis_unit": "syn_surrounding_passages_b2149024fab5"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_genesis_013_27e5272e3c6b86d08518998a", "renderer_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "source_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "synthesis_unit": "syn_surrounding_passages_f20fc5bdafad"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.
+
+codex
+{"reference":"Genesis 13","book":"Genesis","chapter":13,"status":"pending","sections":[{"kind":"chapter_overview","title":"Overview","blocks":[{"id":"block_1","text":"One interpretive reading highlights the chapter’s movement from a practical pastoral conflict to renewed promise. Abram and Lot have enough livestock and dependents that their camps cannot remain together without strain; Abram proposes a peaceful separation, appealing to their kinship, and lets Lot choose first. Lot chooses the well-watered plain, while Abram remains in Canaan. Afterward, the promise of land and innumerable offspring is renewed to Abram, and he is told to walk through the land.","verse_refs":["Genesis 13:1-7","Genesis 13:10-13","Genesis 13:14-17","Genesis 13:18","Genesis 13:3-4","Genesis 13:8-13"],"provenance_refs":["reader_path_genesis_013_2e6bcdad7ec1d2cd6652cd88"],"confidence":"high","interpretation_level":"disputed"}]},{"kind":"archaeology_geography","title":"Places and Movement","blocks":[{"id":"block_2","text":"The chapter first locates Abram’s return in the Negev and the Bethel–Ai area before the dispute over land. Lot’s choice is explicitly based on what he sees: the Jordan plain appears well watered. He travels eastward and settles among the cities of the plain, moving his tents toward Sodom, while Abram remains in Canaan.","verse_refs":["Genesis 13:1","Genesis 13:10","Genesis 13:11-12","Genesis 13:3"],"provenance_refs":["reader_path_genesis_013_b5e282e16e57604f3c81c3ed"],"confidence":"high","interpretation_level":"fact"}]},{"kind":"cultural_context","title":"A Narrator’s Notice","blocks":[{"id":"block_3","text":"The description of Lot’s attractive destination is immediately qualified by the narrator: Sodom’s inhabitants are called exceedingly wicked and sinful against the LORD. This notice shapes how the reader understands Lot’s settlement near Sodom without needing to draw on later episodes.","verse_refs":["Genesis 13:12-13"],"provenance_refs":["reader_path_genesis_013_4f472bc631d64aca437655a3"],"confidence":"high","interpretation_level":"fact"}]},{"kind":"surrounding_passages","title":"Genesis in Context","blocks":[{"id":"block_4","text":"Genesis moves from the universal origins narratives of chapters 1–11 into the ancestral family narratives of chapters 12–50. Genesis 13 belongs to that latter movement, which follows Abram’s household and eventually ends with Jacob’s household in Egypt.","provenance_refs":["reader_path_genesis_013_cf36085719d2965f02efaeb7"],"confidence":"high","interpretation_level":"fact"},{"id":"block_5","text":"Questions about how Genesis was formed should be kept distinct from what Genesis itself narrates. Mosaic attribution and compositional models are different interpretive positions, while Genesis does not describe its own literary formation. Likewise, the absence of direct archaeological identification does not by itself prove or disprove every ancestral narrative; archaeological and literary questions address different matters.","provenance_refs":["reader_path_genesis_013_50786548ea8d5558fc7e8fcf"],"confidence":"low","interpretation_level":"disputed"}]}],"generated_metadata":null}
+tokens used
+19,530

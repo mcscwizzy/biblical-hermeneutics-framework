@@ -1,0 +1,1099 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 6,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-45-revelation-scene",
+            "g6b-45-weeping-and-gifts",
+            "g6c-45-genesis50-providence-reprise",
+            "g6c-45-gifts-garments-silver-material-culture",
+            "g6c-45-judah-speech-to-joseph-revelation"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_3c3a2af58a6d"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-45-revelation-scene": [
+              "syn_cultural_context_3c3a2af58a6d"
+            ],
+            "g6b-45-weeping-and-gifts": [
+              "syn_cultural_context_3c3a2af58a6d"
+            ],
+            "g6c-45-genesis50-providence-reprise": [
+              "syn_cultural_context_3c3a2af58a6d"
+            ],
+            "g6c-45-gifts-garments-silver-material-culture": [
+              "syn_cultural_context_3c3a2af58a6d"
+            ],
+            "g6c-45-judah-speech-to-joseph-revelation": [
+              "syn_cultural_context_3c3a2af58a6d"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "g6b-45-benjamin-and-brothers",
+            "g6b-45-food-provision",
+            "g6b-45-jacob-believes",
+            "g6b-45-not-you-but-god",
+            "g6b-45-reassurance-and-sale"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_72e99f242462"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-45-benjamin-and-brothers": [
+              "syn_cultural_context_72e99f242462"
+            ],
+            "g6b-45-food-provision": [
+              "syn_cultural_context_72e99f242462"
+            ],
+            "g6b-45-jacob-believes": [
+              "syn_cultural_context_72e99f242462"
+            ],
+            "g6b-45-not-you-but-god": [
+              "syn_cultural_context_72e99f242462"
+            ],
+            "g6b-45-reassurance-and-sale": [
+              "syn_cultural_context_72e99f242462"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-45-famine-chronology-remnant"
+          ],
+          "cited_synthesis_ids": [
+            "syn_historical_context_3c8acbd63333"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-45-famine-chronology-remnant": [
+              "syn_historical_context_3c8acbd63333"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-45-father-to-pharaoh",
+            "g6b-45-goshen-invitation",
+            "g6b-45-pharaoh-wagons",
+            "g6c-45-levant-egypt-mobility-context"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_f11e2807d72b"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-45-father-to-pharaoh": [
+              "syn_interpretive_questions_f11e2807d72b"
+            ],
+            "g6b-45-goshen-invitation": [
+              "syn_interpretive_questions_f11e2807d72b"
+            ],
+            "g6b-45-pharaoh-wagons": [
+              "syn_interpretive_questions_f11e2807d72b"
+            ],
+            "g6c-45-levant-egypt-mobility-context": [
+              "syn_interpretive_questions_f11e2807d72b"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_e0450ae38a05"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_e0450ae38a05"
+            ]
+          },
+          "section_index": 3
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_6",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_9f6cc9254b7c"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_9f6cc9254b7c"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_9f6cc9254b7c"
+            ]
+          },
+          "section_index": 3
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g6b-45-benjamin-and-brothers",
+          "g6b-45-famine-chronology-remnant",
+          "g6b-45-father-to-pharaoh",
+          "g6b-45-food-provision",
+          "g6b-45-goshen-invitation",
+          "g6b-45-jacob-believes",
+          "g6b-45-not-you-but-god",
+          "g6b-45-pharaoh-wagons",
+          "g6b-45-reassurance-and-sale",
+          "g6b-45-revelation-scene",
+          "g6b-45-weeping-and-gifts",
+          "g6c-45-genesis50-providence-reprise",
+          "g6c-45-gifts-garments-silver-material-culture",
+          "g6c-45-judah-speech-to-joseph-revelation",
+          "g6c-45-levant-egypt-mobility-context",
+          "g6c-45-psalm105-joseph-sent-ahead-reception",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_cultural_context_3c3a2af58a6d",
+          "syn_cultural_context_72e99f242462",
+          "syn_cultural_context_c00313b29b20",
+          "syn_historical_context_3c8acbd63333",
+          "syn_interpretive_questions_f11e2807d72b",
+          "syn_surrounding_passages_9f6cc9254b7c",
+          "syn_surrounding_passages_d60f9a49e1df",
+          "syn_surrounding_passages_e0450ae38a05",
+          "syn_why_it_matters_211e7e8bfd80",
+          "syn_why_it_matters_836340e715a0",
+          "syn_why_it_matters_db0e9d0d0104"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g6b-45-benjamin-and-brothers",
+          "g6b-45-famine-chronology-remnant",
+          "g6b-45-father-to-pharaoh",
+          "g6b-45-food-provision",
+          "g6b-45-goshen-invitation",
+          "g6b-45-jacob-believes",
+          "g6b-45-not-you-but-god",
+          "g6b-45-pharaoh-wagons",
+          "g6b-45-reassurance-and-sale",
+          "g6b-45-revelation-scene",
+          "g6b-45-weeping-and-gifts",
+          "g6c-45-genesis50-providence-reprise",
+          "g6c-45-gifts-garments-silver-material-culture",
+          "g6c-45-judah-speech-to-joseph-revelation",
+          "g6c-45-levant-egypt-mobility-context",
+          "g6c-45-psalm105-joseph-sent-ahead-reception",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_cultural_context_3c3a2af58a6d",
+          "syn_cultural_context_72e99f242462",
+          "syn_cultural_context_c00313b29b20",
+          "syn_historical_context_3c8acbd63333",
+          "syn_interpretive_questions_f11e2807d72b",
+          "syn_surrounding_passages_9f6cc9254b7c",
+          "syn_surrounding_passages_d60f9a49e1df",
+          "syn_surrounding_passages_e0450ae38a05",
+          "syn_why_it_matters_211e7e8bfd80",
+          "syn_why_it_matters_836340e715a0",
+          "syn_why_it_matters_db0e9d0d0104"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "c59e29f8481915fc1c8818dbb61765fb2a900692388e40a08ceafce61a07b808",
+      "expected_envelope_hash": "c59e29f8481915fc1c8818dbb61765fb2a900692388e40a08ceafce61a07b808",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "1fef526669ccf1a5e2c3afaf337204b8a3f1cafc78026e0d3cff3132afc2c253",
+      "expected_binding_hash": "1fef526669ccf1a5e2c3afaf337204b8a3f1cafc78026e0d3cff3132afc2c253",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 1,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 6,
+      "commentary_prose_char_count": 2499,
+      "commentary_prose_word_count": 380,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 1,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 1,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "archaeology": 1,
+        "culture": 13,
+        "economics": 2,
+        "geography": 2,
+        "history": 2,
+        "social": 1
+      },
+      "evidence_category_diversity": 6,
+      "evidence_consumption_ratio": 0.8571,
+      "evidence_ids_referenced": [
+        "g6b-45-benjamin-and-brothers",
+        "g6b-45-famine-chronology-remnant",
+        "g6b-45-father-to-pharaoh",
+        "g6b-45-food-provision",
+        "g6b-45-goshen-invitation",
+        "g6b-45-jacob-believes",
+        "g6b-45-not-you-but-god",
+        "g6b-45-pharaoh-wagons",
+        "g6b-45-reassurance-and-sale",
+        "g6b-45-revelation-scene",
+        "g6b-45-weeping-and-gifts",
+        "g6c-45-genesis50-providence-reprise",
+        "g6c-45-gifts-garments-silver-material-culture",
+        "g6c-45-judah-speech-to-joseph-revelation",
+        "g6c-45-levant-egypt-mobility-context",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 21,
+      "evidence_score": 17.7,
+      "geography_evidence_count": 2,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0348,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 45",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 4,
+      "specific_evidence_count": 19,
+      "unique_evidence_ids_consumed": 18,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 3,
+      "unused_evidence_ids": [
+        "g6c-45-psalm105-joseph-sent-ahead-reception",
+        "joseph-interprets-pharaohs-dreams:ancient_near_east_context:0",
+        "joseph-interprets-pharaohs-dreams:historical_context:0"
+      ],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 24,
+      "verse_anchor_coverage": 0.8571
+    },
+    "richness": {
+      "available_category_count": 6,
+      "category_coverage": 1.0,
+      "category_families": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_127ab3ace7f9",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_9f6cc9254b7c",
+            "syn_surrounding_passages_d60f9a49e1df",
+            "syn_surrounding_passages_e0450ae38a05"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "archaeology",
+            "culture",
+            "geography",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-joseph-reconciliation-conclusion-context|facts=family’s narrated move canaan egypt can placed beside archaeological evidence egypt levant contact settlement eastern nile delta research tell el dab documents such contact specified middle kingdom middle bronze age contexts discusses late middle kingdom settlement some non egyptian syria palestine cultural connections these data attest regional interaction presence own periods do not identify jacob’s household joseph dynasty;joseph calls himself father pharaoh lord pharaoh’s house ruler over egypt;joseph sends word jacob family come quickly promising settlement goshen proximity remaining famine years;pharaoh hears joseph’s brothers arrived welcomes household orders wagons dependents promises best egypt tells not troubled about possessions",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6b-45-father-to-pharaoh",
+            "g6b-45-goshen-invitation",
+            "g6b-45-pharaoh-wagons",
+            "g6c-45-levant-egypt-mobility-context"
+          ],
+          "id": "idea_cluster_1e1e426727fe",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_f11e2807d72b",
+            "syn_why_it_matters_db0e9d0d0104"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "history"
+          ],
+          "concept_signature": "kind=historical_context|parents=genesis-joseph-reconciliation-conclusion-context|facts=joseph states two years famine passed five remain neither plowing nor harvest god sent him ahead preserve remnant keep survivors alive",
+          "confidence": "low",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "g6b-45-famine-chronology-remnant"
+          ],
+          "id": "idea_cluster_b94cdf4a0277",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "historical_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_historical_context_3c8acbd63333"
+          ],
+          "unit_kinds": [
+            "historical_context"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-joseph-reconciliation-conclusion-context|facts=brothers carry wagons provisions canaan jacob first disbelieves report then sees wagons spirit revives resolves see joseph;joseph names pharaoh’s father like relation household lordship rule over egypt then says god not brothers sent him egypt;joseph points brothers benjamin witnesses asks report egyptian rank everything saw jacob;joseph promises sustain household because five famine years remain warns otherwise family dependents could become impoverished;joseph recalls brothers sold him into egypt tells not distressed angry themselves because god sent him ahead preserve life;genesis 45 1 3 narrates joseph’s disclosure immediately after judah offers remain benjamin’s place joseph cannot restrain himself sends egyptian attendants out identifies himself brothers too dismayed answer narrative moves final test toward disclosure reconciliation;genesis 45 4 8 recalls brothers sold joseph interprets arrival egypt god’s action preserve life genesis 50 20 later returns theme intra genesis canonical reprise naming brothers harmful intention god’s good purpose preserve many lives intra genesis reprise holds both claims together rather than making wrongdoing morally neutral;joseph can no longer restrain himself orders every egyptian attendant out weeps loudly enough pharaoh’s household hear identifies himself joseph asks whether father alive;joseph embraces benjamin weeps kisses weeps over brothers after speak him gives clothing benjamin extra silver garments;textual observation material culture genesis 45 22 23 lists garments given brothers additional garments silver benjamin donkeys carrying egyptian goods grain bread provisions jacob these material gifts accompany household’s proposed journey passage does not specify garment forms convert silver into modern value;psalm 105 16 22 later retells joseph’s story famine sequence god sends joseph ahead confined king releases him receives authority royal household psalm later canonical reception joseph narrative providence theme not treated immediate source genesis 45’s meaning",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6b-45-benjamin-and-brothers",
+            "g6b-45-food-provision",
+            "g6b-45-jacob-believes",
+            "g6b-45-not-you-but-god",
+            "g6b-45-reassurance-and-sale",
+            "g6b-45-revelation-scene",
+            "g6b-45-weeping-and-gifts",
+            "g6c-45-genesis50-providence-reprise",
+            "g6c-45-gifts-garments-silver-material-culture",
+            "g6c-45-judah-speech-to-joseph-revelation",
+            "g6c-45-psalm105-joseph-sent-ahead-reception"
+          ],
+          "id": "idea_cluster_eeb4af0116c6",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_3c3a2af58a6d",
+            "syn_cultural_context_72e99f242462",
+            "syn_cultural_context_c00313b29b20",
+            "syn_why_it_matters_211e7e8bfd80",
+            "syn_why_it_matters_836340e715a0"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6667,
+      "consumed_category_count": 6,
+      "consumed_category_families": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 4,
+      "consumed_core_cluster_count": 3,
+      "consumed_eligible_synthesis_count": 6,
+      "consumed_eligible_weight": 3.5,
+      "consumed_synthesis_count": 6,
+      "core_cluster_count": 3,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 6,
+        "block_to_cluster_ratio": 1.5,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.6667,
+        "consumed_cluster_count": 4,
+        "consumed_synthesis_count": 6,
+        "consumed_unit_ratio": 0.5455,
+        "mean_evidence_ids_per_block": 3.0,
+        "meaningful_cluster_count": 4,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 95.0
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 3
+      },
+      "eligible_synthesis_count": 11,
+      "eligible_synthesis_coverage": 0.5455,
+      "eligible_weighted_denominator": 3.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 4,
+      "raw_synthesis_coverage": 0.5455,
+      "synthesis_unit_count": 11,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "eea3ae516784eca618ec07602065171f01902605f2c5201eef802ec8bf19a800",
+  "d1_packet_identity": {
+    "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:0835e182e9fb45680755ef8479a16a1d7ac3a156f2f11b11b5085474d313e674",
+    "packet_sha256": "0835e182e9fb45680755ef8479a16a1d7ac3a156f2f11b11b5085474d313e674",
+    "path": "renderer-input/chapters/genesis_045",
+    "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "464797b59b20286f198ca0cb41ae6c96b289038c57dd2512c3616cc71812e476"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "1fef526669ccf1a5e2c3afaf337204b8a3f1cafc78026e0d3cff3132afc2c253",
+      "block_count": 6,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-45-revelation-scene",
+            "g6b-45-weeping-and-gifts",
+            "g6c-45-genesis50-providence-reprise",
+            "g6c-45-gifts-garments-silver-material-culture",
+            "g6c-45-judah-speech-to-joseph-revelation"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-45-revelation-scene",
+                "g6b-45-weeping-and-gifts",
+                "g6c-45-genesis50-providence-reprise",
+                "g6c-45-gifts-garments-silver-material-culture",
+                "g6c-45-judah-speech-to-joseph-revelation"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+                  "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6b-45-revelation-scene",
+                  "g6b-45-weeping-and-gifts",
+                  "g6c-45-genesis50-providence-reprise",
+                  "g6c-45-gifts-garments-silver-material-culture",
+                  "g6c-45-judah-speech-to-joseph-revelation"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 45:1-2",
+                  "Genesis 45:1-3",
+                  "Genesis 45:14-15",
+                  "Genesis 45:21-23",
+                  "Genesis 45:4-8"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_cultural_context_3c3a2af58a6d",
+                "verse_refs": [
+                  "Genesis 45:1-2",
+                  "Genesis 45:1-3",
+                  "Genesis 45:14-15",
+                  "Genesis 45:21-23",
+                  "Genesis 45:4-8"
+                ]
+              },
+              "path_hash": "e2367c8cc9baabe495750ea56f5f1cedb44df0308725dab54d920021f2f19ff9",
+              "path_id": "reader_path_genesis_045_e2367c8cc9baabe495750ea5",
+              "reader_idea_id": "reader_idea_c241b4d4491ee5d9",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_cultural_context_3c3a2af58a6d"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_045_e2367c8cc9baabe495750ea5"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c241b4d4491ee5d9"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_cultural_context_3c3a2af58a6d"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 1,
+          "evidence_ids": [
+            "g6b-45-benjamin-and-brothers",
+            "g6b-45-food-provision",
+            "g6b-45-jacob-believes",
+            "g6b-45-not-you-but-god",
+            "g6b-45-reassurance-and-sale"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-45-benjamin-and-brothers",
+                "g6b-45-food-provision",
+                "g6b-45-jacob-believes",
+                "g6b-45-not-you-but-god",
+                "g6b-45-reassurance-and-sale"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+                  "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6b-45-benjamin-and-brothers",
+                  "g6b-45-food-provision",
+                  "g6b-45-jacob-believes",
+                  "g6b-45-not-you-but-god",
+                  "g6b-45-reassurance-and-sale"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 45:11",
+                  "Genesis 45:12-13",
+                  "Genesis 45:21-24",
+                  "Genesis 45:4-5",
+                  "Genesis 45:8"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_72e99f242462",
+                "verse_refs": [
+                  "Genesis 45:11",
+                  "Genesis 45:12-13",
+                  "Genesis 45:21-24",
+                  "Genesis 45:4-5",
+                  "Genesis 45:8"
+                ]
+              },
+              "path_hash": "156ab3328f7b54a18051f116941487fc4787de2d85c94ca2fdc5bdb0c78befdd",
+              "path_id": "reader_path_genesis_045_156ab3328f7b54a18051f116",
+              "reader_idea_id": "reader_idea_c241b4d4491ee5d9",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_cultural_context_72e99f242462"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_045_156ab3328f7b54a18051f116"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c241b4d4491ee5d9"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_cultural_context_72e99f242462"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-45-famine-chronology-remnant"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-45-famine-chronology-remnant"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+                  "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6b-45-famine-chronology-remnant"
+                ],
+                "interpretation_level": "fact",
+                "kind": "historical_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 45:6-7"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_historical_context_3c8acbd63333",
+                "verse_refs": [
+                  "Genesis 45:6-7"
+                ]
+              },
+              "path_hash": "f73a30e47a2fdab5da18172357393ba4d16b29d17ac2e87db5c5dc4f167933de",
+              "path_id": "reader_path_genesis_045_f73a30e47a2fdab5da181723",
+              "reader_idea_id": "reader_idea_c241b4d4491ee5d9",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_historical_context_3c8acbd63333"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_045_f73a30e47a2fdab5da181723"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c241b4d4491ee5d9"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_historical_context_3c8acbd63333"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-45-father-to-pharaoh",
+            "g6b-45-goshen-invitation",
+            "g6b-45-pharaoh-wagons",
+            "g6c-45-levant-egypt-mobility-context"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-45-father-to-pharaoh",
+                "g6b-45-goshen-invitation",
+                "g6b-45-pharaoh-wagons",
+                "g6c-45-levant-egypt-mobility-context"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+                  "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g6b-45-father-to-pharaoh",
+                  "g6b-45-goshen-invitation",
+                  "g6b-45-pharaoh-wagons",
+                  "g6c-45-levant-egypt-mobility-context"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 45:16-20",
+                  "Genesis 45:8",
+                  "Genesis 45:9-10",
+                  "Genesis 45:9-11"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_f11e2807d72b",
+                "verse_refs": [
+                  "Genesis 45:16-20",
+                  "Genesis 45:8",
+                  "Genesis 45:9-10",
+                  "Genesis 45:9-11"
+                ]
+              },
+              "path_hash": "c4aff7cc6b5e899d529235f929eca75c27ac0a3d55493a9812a5e07f491b12ef",
+              "path_id": "reader_path_genesis_045_c4aff7cc6b5e899d529235f9",
+              "reader_idea_id": "reader_idea_c241b4d4491ee5d9",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_interpretive_questions_f11e2807d72b"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_045_c4aff7cc6b5e899d529235f9"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_c241b4d4491ee5d9"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_interpretive_questions_f11e2807d72b"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+                  "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_e0450ae38a05",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "6f9ec2bc8f448c86e4f5bf5f043432e995a7a4d816e25714631748ebb42b5cef",
+              "path_id": "reader_path_genesis_045_6f9ec2bc8f448c86e4f5bf5f",
+              "reader_idea_id": "reader_idea_2e266951b46e8ef3",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_e0450ae38a05"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_045_6f9ec2bc8f448c86e4f5bf5f"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_2e266951b46e8ef3"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_surrounding_passages_e0450ae38a05"
+          ]
+        },
+        {
+          "block_id": "block_6",
+          "block_index": 1,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+                  "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_9f6cc9254b7c",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "b89fe241de0f012eb62a7360f3dc0786e8943f6a96978c149ee820c573c2ee25",
+              "path_id": "reader_path_genesis_045_b89fe241de0f012eb62a7360",
+              "reader_idea_id": "reader_idea_2e266951b46e8ef3",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_9f6cc9254b7c"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_045_b89fe241de0f012eb62a7360"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_2e266951b46e8ef3"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_surrounding_passages_9f6cc9254b7c"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "f4b09420e52ef9d17fb2ccd20ae969d11394674b9bbb96e4d4fe0fbdc640ab19",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

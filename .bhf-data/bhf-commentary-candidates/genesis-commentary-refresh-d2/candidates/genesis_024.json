@@ -1,0 +1,115 @@
+{
+  "book": "Genesis",
+  "chapter": 24,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "6c356b86ba9c9c990acb17ba255d9efb9288f4d6d87d979fbd1368d8ee21eeb3",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "dae6e55a764f6cff354223e5ac143a152b346a466014645a20f979f7da4ccee3",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 24",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g24-aram-naharaim-nahor-route",
+            "g24-household-laban-bethuel-and-gifts",
+            "g24-isaac-beer-lahai-roi-and-comfort",
+            "g24-no-canaanite-wife-and-no-return",
+            "g24-rebekah-consents-to-go"
+          ],
+          "id": "block_1",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_dffa83e0a1c9"
+          ],
+          "text": "The chapter follows Abraham’s servant as he seeks a wife for Isaac among Abraham’s relatives, while Abraham insists that Isaac must neither marry a Canaanite woman nor be taken back to Abraham’s former homeland. The journey reaches Nahor’s city and a household negotiation involving Laban, Bethuel, gifts, and Rebekah’s departure. Rebekah is asked directly whether she will go, and her answer, “I will go,” records her agency within that negotiation. The account ends with Isaac meeting her near Beer-lahai-roi, taking her as his wife, and finding comfort after Sarah’s death.",
+          "verse_refs": [
+            "Genesis 24:10-11",
+            "Genesis 24:22-60",
+            "Genesis 24:3-8",
+            "Genesis 24:57-61",
+            "Genesis 24:62-67"
+          ]
+        }
+      ],
+      "kind": "chapter_overview",
+      "title": "Overview"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "g24-rebekah-water-labor-and-hospitality",
+            "g24-servant-oath-under-thigh",
+            "g24-servant-prayer-and-sign",
+            "g24-veil-scene",
+            "g24-well-social-setting"
+          ],
+          "id": "block_2",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_57e3c99e9a7e"
+          ],
+          "text": "Several striking details should be read as features of this particular narrative, not as universal rules. The servant’s oath gesture—placing a hand under Abraham’s thigh—is unexplained in the text; proposed connections with kinship or reproduction remain uncertain, and the scene does not establish a sexual ritual. At the well, the servant asks for a sign tied to hospitality. Rebekah not only gives him water but repeatedly draws for his camels until they finish drinking, substantial work within the story. His request is a prayer for this journey, not a general method for choosing a spouse. Likewise, Rebekah’s veil when she sees Isaac describes this encounter rather than establishing a universal veiling rule.",
+          "verse_refs": [
+            "Genesis 24:1-9",
+            "Genesis 24:11-14",
+            "Genesis 24:12-14",
+            "Genesis 24:15-21",
+            "Genesis 24:64-65"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "Customs and cautions"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "id": "block_3",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_surrounding_passages_8d0547bc70cb"
+          ],
+          "text": "Genesis moves from its account of universal origins in chapters 1–11 to the narratives of the ancestral family in chapters 12–50, ending with Jacob’s household in Egypt. Genesis 24 belongs within that extended family narrative.",
+          "verse_refs": []
+        },
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_4",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_00a4ee8b4ca5"
+          ],
+          "text": "Genesis does not narrate the history of its own literary formation. Mosaic attribution and compositional models are distinct ways readers account for the book’s formation, but this chapter does not decide between them. Similarly, the lack of a direct archaeological identification should not by itself be used either to prove or to disprove every ancestral narrative; archaeological and literary questions address different matters.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis in view"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

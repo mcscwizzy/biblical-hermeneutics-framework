@@ -1,0 +1,805 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 4,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-48-crossed-hands",
+            "g6b-48-ephraim-manasseh-elevated",
+            "g6b-48-ephraim-over-manasseh",
+            "g6b-48-joseph-double-portion",
+            "g6b-48-name-and-multiplication"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_6852192f5fc2"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-48-crossed-hands": [
+              "syn_cultural_context_6852192f5fc2"
+            ],
+            "g6b-48-ephraim-manasseh-elevated": [
+              "syn_cultural_context_6852192f5fc2"
+            ],
+            "g6b-48-ephraim-over-manasseh": [
+              "syn_cultural_context_6852192f5fc2"
+            ],
+            "g6b-48-joseph-double-portion": [
+              "syn_cultural_context_6852192f5fc2"
+            ],
+            "g6b-48-name-and-multiplication": [
+              "syn_cultural_context_6852192f5fc2"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-48-sight-and-recognition"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_8b165b00ba84"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-48-sight-and-recognition": [
+              "syn_cultural_context_8b165b00ba84"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g6b-48-god-shepherd-messenger",
+            "g6b-48-later-ephraim-prominence",
+            "g6b-48-rachel-ephrath",
+            "g6b-48-shechem-portion"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_cf1185e248a0"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g6b-48-god-shepherd-messenger": [
+              "syn_interpretive_questions_cf1185e248a0"
+            ],
+            "g6b-48-later-ephraim-prominence": [
+              "syn_interpretive_questions_cf1185e248a0"
+            ],
+            "g6b-48-rachel-ephrath": [
+              "syn_interpretive_questions_cf1185e248a0"
+            ],
+            "g6b-48-shechem-portion": [
+              "syn_interpretive_questions_cf1185e248a0"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_0efd434ac2ef"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_0efd434ac2ef"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_0efd434ac2ef"
+            ]
+          },
+          "section_index": 3
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g6b-48-crossed-hands",
+          "g6b-48-ephraim-manasseh-elevated",
+          "g6b-48-ephraim-over-manasseh",
+          "g6b-48-god-shepherd-messenger",
+          "g6b-48-joseph-double-portion",
+          "g6b-48-later-ephraim-prominence",
+          "g6b-48-name-and-multiplication",
+          "g6b-48-rachel-ephrath",
+          "g6b-48-shechem-portion",
+          "g6b-48-sight-and-recognition",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_cultural_context_6852192f5fc2",
+          "syn_cultural_context_8b165b00ba84",
+          "syn_interpretive_questions_cf1185e248a0",
+          "syn_surrounding_passages_0efd434ac2ef",
+          "syn_surrounding_passages_28f61a16abdb",
+          "syn_surrounding_passages_af5f0c2fd064",
+          "syn_why_it_matters_cf6278c26937",
+          "syn_why_it_matters_e1f8210dcc81"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g6b-48-crossed-hands",
+          "g6b-48-ephraim-manasseh-elevated",
+          "g6b-48-ephraim-over-manasseh",
+          "g6b-48-god-shepherd-messenger",
+          "g6b-48-joseph-double-portion",
+          "g6b-48-later-ephraim-prominence",
+          "g6b-48-name-and-multiplication",
+          "g6b-48-rachel-ephrath",
+          "g6b-48-shechem-portion",
+          "g6b-48-sight-and-recognition",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_cultural_context_6852192f5fc2",
+          "syn_cultural_context_8b165b00ba84",
+          "syn_interpretive_questions_cf1185e248a0",
+          "syn_surrounding_passages_0efd434ac2ef",
+          "syn_surrounding_passages_28f61a16abdb",
+          "syn_surrounding_passages_af5f0c2fd064",
+          "syn_why_it_matters_cf6278c26937",
+          "syn_why_it_matters_e1f8210dcc81"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "6a02df7727fe1e8ed253a633b1eb6fe6b68baf407284176740a60ccda5568dc6",
+      "expected_envelope_hash": "6a02df7727fe1e8ed253a633b1eb6fe6b68baf407284176740a60ccda5568dc6",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "b235e3ded5ac2942f45862f47b9cf60757a2f830108f333bfa0c6161bd5b61b5",
+      "expected_binding_hash": "b235e3ded5ac2942f45862f47b9cf60757a2f830108f333bfa0c6161bd5b61b5",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 4,
+      "commentary_prose_char_count": 1548,
+      "commentary_prose_word_count": 246,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "chronology": 1,
+        "culture": 10,
+        "geography": 2
+      },
+      "evidence_category_diversity": 3,
+      "evidence_consumption_ratio": 0.9231,
+      "evidence_ids_referenced": [
+        "g6b-48-crossed-hands",
+        "g6b-48-ephraim-manasseh-elevated",
+        "g6b-48-ephraim-over-manasseh",
+        "g6b-48-god-shepherd-messenger",
+        "g6b-48-joseph-double-portion",
+        "g6b-48-later-ephraim-prominence",
+        "g6b-48-name-and-multiplication",
+        "g6b-48-rachel-ephrath",
+        "g6b-48-shechem-portion",
+        "g6b-48-sight-and-recognition",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 13,
+      "evidence_score": 10.45,
+      "geography_evidence_count": 2,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.084,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 48",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 4,
+      "specific_evidence_count": 13,
+      "unique_evidence_ids_consumed": 12,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 1,
+      "unused_evidence_ids": [
+        "genesis-literary-movement"
+      ],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 22,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 5,
+      "category_coverage": 1.0,
+      "category_families": [
+        "chronology",
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "chronology",
+            "culture",
+            "geography",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-joseph-reconciliation-conclusion-context|facts=blessing gives ephraim precedence named future two sons;jacob invokes god before whom abraham isaac walked god shepherded him messenger angel redeemed him evil;jacob promises god’s presence return land then speaks giving joseph one portion above brothers taken amorites sword bow;jacob remembers rachel’s death burial way ephrath identified verse bethlehem",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6b-48-god-shepherd-messenger",
+            "g6b-48-later-ephraim-prominence",
+            "g6b-48-rachel-ephrath",
+            "g6b-48-shechem-portion"
+          ],
+          "id": "idea_cluster_a4939e210e6b",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_cf1185e248a0",
+            "syn_why_it_matters_e1f8210dcc81"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_de2574e3dee0",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_0efd434ac2ef",
+            "syn_surrounding_passages_28f61a16abdb",
+            "syn_surrounding_passages_af5f0c2fd064"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=genesis-joseph-reconciliation-conclusion-context|facts=counting ephraim manasseh jacob’s sons narrative gives joseph two named tribal lines family structure;jacob asks name names abraham isaac carried through boys multiply land;jacob says ephraim manasseh will like reuben simeon treats later children joseph’s naming two sons within israel’s family inheritance;joseph positions manasseh jacob’s right hand ephraim left jacob deliberately crosses hands so younger receives right hand blessing;joseph protests right hand ephraim jacob says manasseh will become people ephraim will greater places ephraim before manasseh blessing;jacob’s eyes dim age asks boys receives joseph’s answer then embraces kisses",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g6b-48-crossed-hands",
+            "g6b-48-ephraim-manasseh-elevated",
+            "g6b-48-ephraim-over-manasseh",
+            "g6b-48-joseph-double-portion",
+            "g6b-48-name-and-multiplication",
+            "g6b-48-sight-and-recognition"
+          ],
+          "id": "idea_cluster_f19599dfd117",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_6852192f5fc2",
+            "syn_cultural_context_8b165b00ba84",
+            "syn_why_it_matters_cf6278c26937"
+          ],
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6667,
+      "consumed_category_count": 5,
+      "consumed_category_families": [
+        "chronology",
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 3,
+      "consumed_core_cluster_count": 2,
+      "consumed_eligible_synthesis_count": 4,
+      "consumed_eligible_weight": 2.5,
+      "consumed_synthesis_count": 4,
+      "core_cluster_count": 2,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 4,
+        "block_to_cluster_ratio": 1.3333,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.6667,
+        "consumed_cluster_count": 3,
+        "consumed_synthesis_count": 4,
+        "consumed_unit_ratio": 0.5,
+        "mean_evidence_ids_per_block": 3.0,
+        "meaningful_cluster_count": 3,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 82.0
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 2
+      },
+      "eligible_synthesis_count": 8,
+      "eligible_synthesis_coverage": 0.5,
+      "eligible_weighted_denominator": 2.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 3,
+      "raw_synthesis_coverage": 0.5,
+      "synthesis_unit_count": 8,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "4a68de56eb2b211e50ae3ee7262e036886bc8359aa1371d9bcec5151fd9089fb",
+  "d1_packet_identity": {
+    "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:ab1f854411b0e660563c5a43e9daa5e5ca92f479be2982f7cfa8def939df5023",
+    "packet_sha256": "ab1f854411b0e660563c5a43e9daa5e5ca92f479be2982f7cfa8def939df5023",
+    "path": "renderer-input/chapters/genesis_048",
+    "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "30a02e23251513cbb4a78261b619d3c359b75338129333d3c401bd002b08116c"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "b235e3ded5ac2942f45862f47b9cf60757a2f830108f333bfa0c6161bd5b61b5",
+      "block_count": 4,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-48-crossed-hands",
+            "g6b-48-ephraim-manasseh-elevated",
+            "g6b-48-ephraim-over-manasseh",
+            "g6b-48-joseph-double-portion",
+            "g6b-48-name-and-multiplication"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-48-crossed-hands",
+                "g6b-48-ephraim-manasseh-elevated",
+                "g6b-48-ephraim-over-manasseh",
+                "g6b-48-joseph-double-portion",
+                "g6b-48-name-and-multiplication"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+                  "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6b-48-crossed-hands",
+                  "g6b-48-ephraim-manasseh-elevated",
+                  "g6b-48-ephraim-over-manasseh",
+                  "g6b-48-joseph-double-portion",
+                  "g6b-48-name-and-multiplication"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 48:1-6",
+                  "Genesis 48:12-14",
+                  "Genesis 48:16",
+                  "Genesis 48:17-20",
+                  "Genesis 48:5-6"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_6852192f5fc2",
+                "verse_refs": [
+                  "Genesis 48:1-6",
+                  "Genesis 48:12-14",
+                  "Genesis 48:16",
+                  "Genesis 48:17-20",
+                  "Genesis 48:5-6"
+                ]
+              },
+              "path_hash": "66c62d5dd2a3e6b2082742386fb0e216549586cc8a80efb25dd544bc8f003bd9",
+              "path_id": "reader_path_genesis_048_66c62d5dd2a3e6b208274238",
+              "reader_idea_id": "reader_idea_2f59f2c5fc35bf88",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_cultural_context_6852192f5fc2"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_048_66c62d5dd2a3e6b208274238"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_2f59f2c5fc35bf88"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_cultural_context_6852192f5fc2"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-48-sight-and-recognition"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-48-sight-and-recognition"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+                  "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g6b-48-sight-and-recognition"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 48:8-11"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_8b165b00ba84",
+                "verse_refs": [
+                  "Genesis 48:8-11"
+                ]
+              },
+              "path_hash": "b758887656a6e19d22eb7243635e1b46d3efbad119670ab6690c9d3935ad7804",
+              "path_id": "reader_path_genesis_048_b758887656a6e19d22eb7243",
+              "reader_idea_id": "reader_idea_2f59f2c5fc35bf88",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_cultural_context_8b165b00ba84"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_048_b758887656a6e19d22eb7243"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_2f59f2c5fc35bf88"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_cultural_context_8b165b00ba84"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g6b-48-god-shepherd-messenger",
+            "g6b-48-later-ephraim-prominence",
+            "g6b-48-rachel-ephrath",
+            "g6b-48-shechem-portion"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g6b-48-god-shepherd-messenger",
+                "g6b-48-later-ephraim-prominence",
+                "g6b-48-rachel-ephrath",
+                "g6b-48-shechem-portion"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+                  "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g6b-48-god-shepherd-messenger",
+                  "g6b-48-later-ephraim-prominence",
+                  "g6b-48-rachel-ephrath",
+                  "g6b-48-shechem-portion"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 48:15-16",
+                  "Genesis 48:20",
+                  "Genesis 48:21-22",
+                  "Genesis 48:7"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_cf1185e248a0",
+                "verse_refs": [
+                  "Genesis 48:15-16",
+                  "Genesis 48:20",
+                  "Genesis 48:21-22",
+                  "Genesis 48:7"
+                ]
+              },
+              "path_hash": "b014f6a6558bddc1f694a2ab0597b433564c0c35bf7c008085824642de9dcd9c",
+              "path_id": "reader_path_genesis_048_b014f6a6558bddc1f694a2ab",
+              "reader_idea_id": "reader_idea_2f59f2c5fc35bf88",
+              "reader_idea_label": "Genesis Joseph Reconciliation Conclusion Context",
+              "synthesis_id": "syn_interpretive_questions_cf1185e248a0"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_048_b014f6a6558bddc1f694a2ab"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_2f59f2c5fc35bf88"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_interpretive_questions_cf1185e248a0"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+                  "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_0efd434ac2ef",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "6abddad1f71ebfe7799e639b64dad83af11ed6b2dedb4d92400784915ca0c45e",
+              "path_id": "reader_path_genesis_048_6abddad1f71ebfe7799e639b",
+              "reader_idea_id": "reader_idea_f49ee60a90534209",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_0efd434ac2ef"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_048_6abddad1f71ebfe7799e639b"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_f49ee60a90534209"
+          ],
+          "section_index": 3,
+          "synthesis_ids": [
+            "syn_surrounding_passages_0efd434ac2ef"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "6dfabbef0b257cba5663ea59c90e39d405637c932c14ca98bea38194578f0421",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

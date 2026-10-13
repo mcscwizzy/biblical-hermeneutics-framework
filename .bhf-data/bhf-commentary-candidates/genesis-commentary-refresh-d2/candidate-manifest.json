@@ -1,0 +1,1292 @@
+{
+  "artifact_version": "genesis-commentary-refresh-d2-candidate-manifest-v1",
+  "candidates": {
+    "Genesis 10": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "ba9cf6ecc2e21e06d31f77de7fa93d08d2af172a8ecbb0951b1eb0fa15b4a91e",
+      "canonical_candidate_path": "candidates/genesis_010.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_010",
+      "d1_renderer_packet_sha256": "66455251cf07b3d8df2c7b6fb7266e23d024010639dc56dee061a019e68cfb06",
+      "d3_eligibility": true,
+      "evidence_hash": "a1e373e87e93821e6f0aa3920a5afb050c7da30b4e019252afddb33cb4f5e58f",
+      "raw_response_paths": [
+        "attempts/genesis_010/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 10",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "fd851519230b1092100ae5db3e5945b1358c74ccb3ece3e093cda7d517efd06e",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_010.json",
+      "validation_warnings": []
+    },
+    "Genesis 11": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "a3d50b7e24daa21aa040e43cbae1b0b45dd43cea5c6939044fbd29ef70fbe343",
+      "canonical_candidate_path": "candidates/genesis_011.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_011",
+      "d1_renderer_packet_sha256": "5f2c031f7dfbee96f62b3eed78045f0c92d934736aa5e23d09d062ccd9a973b9",
+      "d3_eligibility": true,
+      "evidence_hash": "514eb7573bee01c46b1fcfb03249c8f90182bfbc1c9504a47eab1e006b043361",
+      "raw_response_paths": [
+        "attempts/genesis_011/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 11",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "57baace0ce5e073c2716fe2da00421f4541bcc5607b281f9108d38f16d99b086",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_011.json",
+      "validation_warnings": []
+    },
+    "Genesis 12": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "7850077218bb43d3bde9c8c47d99940423e87bab3ce7245da00c05825ac21ba0",
+      "canonical_candidate_path": "candidates/genesis_012.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_012",
+      "d1_renderer_packet_sha256": "ef1ee8d385433ba1f3bb4783129e17a725a875bcb4d56a1d436ac1c9350887dc",
+      "d3_eligibility": true,
+      "evidence_hash": "a2c0b096f7bd0b31702c59a1be58fdf2bd1dc500af53b4ca9473aa4263aad04f",
+      "raw_response_paths": [
+        "attempts/genesis_012/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 12",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "9ab2988961d679bec4d618f43b9f1eb046339f6ef01c2544e077f4a37d361d1c",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_012.json",
+      "validation_warnings": []
+    },
+    "Genesis 13": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "f1da3e4c28baef02d92c40057c168223eba64e6f76e72ffe6e6be0c5e948f617",
+      "canonical_candidate_path": "candidates/genesis_013.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_013",
+      "d1_renderer_packet_sha256": "cefd956c9e16b0189f6fc2301717f73369f3ecb0531aadcdc3a90d209b639039",
+      "d3_eligibility": true,
+      "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+      "raw_response_paths": [
+        "attempts/genesis_013/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 13",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_013.json",
+      "validation_warnings": []
+    },
+    "Genesis 14": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "089c3736e14b96146014bde1e317b64c460e746397b2587d019b00ac8b986ccb",
+      "canonical_candidate_path": "candidates/genesis_014.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_014",
+      "d1_renderer_packet_sha256": "3b03cc196d0baf6bb9ee425e4cffb91ea3c594ee95eb3b9fcbf668b9a21a1a4c",
+      "d3_eligibility": true,
+      "evidence_hash": "2f29c8568a5f787ec94eba0eab9f6dc0d229c19cd88a0ab6352ea99ad615accf",
+      "raw_response_paths": [
+        "attempts/genesis_014/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 14",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "9eaf85311285244171ac967339ebcdebe35fa283d73785d5631c43f1a6796899",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_014.json",
+      "validation_warnings": []
+    },
+    "Genesis 15": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "5605f5ff49bbb89fdd05a95da8442ab94935825d29ba868ffa98c3b0ad5b2b3e",
+      "canonical_candidate_path": "candidates/genesis_015.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_015",
+      "d1_renderer_packet_sha256": "84379aab97b0f02728d07f762b9cac1baf01664cf870840b4e2d2ec49fbfdaf3",
+      "d3_eligibility": true,
+      "evidence_hash": "6871bb5ca9c1b2414b9cf7b6c920c966e74086f258881bb16e2bc4d1445320bf",
+      "raw_response_paths": [
+        "attempts/genesis_015/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 15",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "3768a7f09a788550a9380f09d2fa74064933fa0de74e74023807affdbf57c12b",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_015.json",
+      "validation_warnings": []
+    },
+    "Genesis 16": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "6cf9c83cbddab31d81acb89f5d8e148452f9e8629dde9b82322f4893fe744620",
+      "canonical_candidate_path": "candidates/genesis_016.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_016",
+      "d1_renderer_packet_sha256": "6858c9775cddf3a48330d6d1866d9987a5e3c23464d20c75df3e171bb7e05805",
+      "d3_eligibility": true,
+      "evidence_hash": "adfaf7ee6624dab7554a13b25de3009e03ba4513ffa80a1b97e68d6fb8e5cf93",
+      "raw_response_paths": [
+        "attempts/genesis_016/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 16",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "dd20a8f6b98e1fdd0748ac2958a4c22e53cf0280682929388ab7a98c2a3bcf9c",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_016.json",
+      "validation_warnings": []
+    },
+    "Genesis 17": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "8f3dc9e891e6698440403bd4857b7d08ba811bdf50fab0734feda899e97638ca",
+      "canonical_candidate_path": "candidates/genesis_017.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_017",
+      "d1_renderer_packet_sha256": "42c04670aa1ba1d711f2c0e6f48d8c3635ff82b29778f8b41ac3098e3a1e5ba5",
+      "d3_eligibility": true,
+      "evidence_hash": "835966711cdd55c9bd19c32c9db0ac4c3e914c1a1aeede175fe581b32f230d6b",
+      "raw_response_paths": [
+        "attempts/genesis_017/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 17",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "c6c01407d9e36d3b45be7a79939461d7d351b2b27685eeeb7a36a41999af3ef7",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_017.json",
+      "validation_warnings": []
+    },
+    "Genesis 18": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "b3525d0e00828973547935168ec5f926150b9127086473137397ab0347cb1199",
+      "canonical_candidate_path": "candidates/genesis_018.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_018",
+      "d1_renderer_packet_sha256": "646d8e42fb072e31efdb17f419a7f47917f17181a06fc889130746e48579c8a5",
+      "d3_eligibility": true,
+      "evidence_hash": "bc5a09c989706d9b078c765a47b6e3e88549135347c60b2dbec90d8ad5b0f3fe",
+      "raw_response_paths": [
+        "attempts/genesis_018/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 18",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "29f319ccb733508247d59a7a5318ea7000ebc1fb328537912dd542b364e9868a",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_018.json",
+      "validation_warnings": []
+    },
+    "Genesis 19": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "9a5900d1a582731243b196fa4b4f1eefcb7e96f83312e51e97abab71a41112e1",
+      "canonical_candidate_path": "candidates/genesis_019.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_019",
+      "d1_renderer_packet_sha256": "0785a0047cc6c1449b4176eb97d7319d61a81c0a75306cdb66cae1dfed2f512c",
+      "d3_eligibility": true,
+      "evidence_hash": "9af800225b6fe843a2b2119aa39c1fb58d39236488522484a99e3e54145b2236",
+      "raw_response_paths": [
+        "attempts/genesis_019/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 19",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "cc1b8af77194a94c7ad2a4c7ab3a2bd8328a163352b4ea5526bc65bce8ce17bc",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_019.json",
+      "validation_warnings": []
+    },
+    "Genesis 2": {
+      "attempt_count": 2,
+      "candidate_artifact_sha256": "b67d6542a6f6cb1b60afeb75df7334b02db1e31122993a8573dd01d7eb418bb0",
+      "canonical_candidate_path": "candidates/genesis_002.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_002",
+      "d1_renderer_packet_sha256": "3fa654bb05ae9dc091a655999c21d1279cd715fc21924b7ce45fb0b1a603e10d",
+      "d3_eligibility": true,
+      "evidence_hash": "ed5995b4d842682dc80149e73a94acb62d95f909a3450f6937da6b49fa60c9be",
+      "raw_response_paths": [
+        "attempts/genesis_002/attempt-002/raw-response.bin"
+      ],
+      "reference": "Genesis 2",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "9e7ccb10d8828f1bd717a1ca9535bd4892defb82351bdd4c98a0b6b56f792a80",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_002.json",
+      "validation_warnings": []
+    },
+    "Genesis 20": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "b2184f7ffb51312e927289d00e87fe41919aea8ec9432e4be073bf1cc4821934",
+      "canonical_candidate_path": "candidates/genesis_020.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_020",
+      "d1_renderer_packet_sha256": "f6fd89a1822586e08cfc365798850aa0bb6efd1ebcdde506df188d0911555ea2",
+      "d3_eligibility": true,
+      "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+      "raw_response_paths": [
+        "attempts/genesis_020/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 20",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_020.json",
+      "validation_warnings": []
+    },
+    "Genesis 21": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "88ed814e5733162f8dc84079efcdd7c09898eb9512802c67b9216cc70a18eda0",
+      "canonical_candidate_path": "candidates/genesis_021.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_021",
+      "d1_renderer_packet_sha256": "a9c7348763a27e2194ab118f4b2b29914bb0af06993adf27f9761dbe3c984d7e",
+      "d3_eligibility": true,
+      "evidence_hash": "1de3689cd811fc2755ea2c2b1a3eb338c0fcdc9f0c3b4dba7bead68b8701c19d",
+      "raw_response_paths": [
+        "attempts/genesis_021/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 21",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "605c4399c81887479e6115786055d9a4be62e9bb91ae91d10f4031cdfa4ad389",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_021.json",
+      "validation_warnings": []
+    },
+    "Genesis 22": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "cd5f4c98832ded3d999c6d37a5c48b2bd4fad1a062849d341362483deff38cab",
+      "canonical_candidate_path": "candidates/genesis_022.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_022",
+      "d1_renderer_packet_sha256": "24ad6badc97b058f7b8c5b01418a80f4d8e6c588b025d3d959c340c9a7df0a16",
+      "d3_eligibility": true,
+      "evidence_hash": "6f90988b7b7268fd4282c26967a513538df08ae0e093b1ea2927f6217c0f8e86",
+      "raw_response_paths": [
+        "attempts/genesis_022/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 22",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "47eca559a0f2e77b4939400bf2df9ed6d533eb113cb4b364314a352517ecf0ed",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_022.json",
+      "validation_warnings": []
+    },
+    "Genesis 23": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "2644009ce689a688c82831401b52d2d37449d68f902c57f3bda469495ba918d2",
+      "canonical_candidate_path": "candidates/genesis_023.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_023",
+      "d1_renderer_packet_sha256": "000996cd1fb57e08618db1f133d655f68b108e8efe482d16e0ae9cadbb8b5daf",
+      "d3_eligibility": true,
+      "evidence_hash": "882e8aeefbbd785ca19876bfd2e87b087cdd46cf69b91e7dd56078db1765f232",
+      "raw_response_paths": [
+        "attempts/genesis_023/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 23",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "509687fb79efde443487347658235beebcd8cb03de66269801b4161c8f13fc42",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_023.json",
+      "validation_warnings": []
+    },
+    "Genesis 24": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "22887ccbc7bb274cce55f7fb9d31be3594dce981a2b3911c8b8dab630d0be8af",
+      "canonical_candidate_path": "candidates/genesis_024.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_024",
+      "d1_renderer_packet_sha256": "9e3e53cddc2cc330347ac98f848ccf8f19c3ea8e249ff063db1f107722f31592",
+      "d3_eligibility": true,
+      "evidence_hash": "6c356b86ba9c9c990acb17ba255d9efb9288f4d6d87d979fbd1368d8ee21eeb3",
+      "raw_response_paths": [
+        "attempts/genesis_024/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 24",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "dae6e55a764f6cff354223e5ac143a152b346a466014645a20f979f7da4ccee3",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_024.json",
+      "validation_warnings": []
+    },
+    "Genesis 25": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "3c46782d82dcaff74f76f4ce33f7fa89f44b3eaeb28a0ce9391381521ec2913b",
+      "canonical_candidate_path": "candidates/genesis_025.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_025",
+      "d1_renderer_packet_sha256": "167c3c2fa5e94bdf62595be58b90a01a79dd19230346e9f370134c932e7c48e5",
+      "d3_eligibility": true,
+      "evidence_hash": "0c8e02b0972ec3375db8cbd5d8ff91913f20d0c7124815bc27e6081ce12fa0ee",
+      "raw_response_paths": [
+        "attempts/genesis_025/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 25",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "eebbd7fab0060bf6d3329888abc4020268b846ec3f7431bb07c5f0b2e91770d1",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_025.json",
+      "validation_warnings": []
+    },
+    "Genesis 26": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "4f599df2778c0a3757f2508846c1880a759969e592daa76fc690e5affff734a0",
+      "canonical_candidate_path": "candidates/genesis_026.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_026",
+      "d1_renderer_packet_sha256": "910e89f7591d3e964246880e62932e0d4c4988a7ae9c5aaccb01891ba4f82279",
+      "d3_eligibility": true,
+      "evidence_hash": "865125e5486e7e5d73c0e7f1710eebbd2cc19b43d0386c14c6b2775b96002da5",
+      "raw_response_paths": [
+        "attempts/genesis_026/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 26",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "adab8fce7f558449ffe28f98b254742ccd2275ab8ccdaab96da85c830d205291",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_026.json",
+      "validation_warnings": []
+    },
+    "Genesis 27": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "b89bcd7acd9752403fca2d69061ff45f1c6a3899fd8aba0118d5e8df1b3f37b0",
+      "canonical_candidate_path": "candidates/genesis_027.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_027",
+      "d1_renderer_packet_sha256": "304a50f11e51178263ab43e7b856e8a0841c053ffd29393f167d17c5b1a13692",
+      "d3_eligibility": true,
+      "evidence_hash": "972cbb00d8e96921bbfe2d22e1a88884a778b3745de1d474a6ad9d050855b974",
+      "raw_response_paths": [
+        "attempts/genesis_027/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 27",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "93622fb51c0adb44808a6df3a818ce72459166d193bfb7ae218e1d846ef32658",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_027.json",
+      "validation_warnings": []
+    },
+    "Genesis 28": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "28f101aecc6361302463f40f63e411276c2b2392e1e7e1f8b9ab21e92eae62b1",
+      "canonical_candidate_path": "candidates/genesis_028.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_028",
+      "d1_renderer_packet_sha256": "60be5fadfa3ff5a94b036403b310ec4e0364b0fe0b80f29ba839a8a0f0e5186e",
+      "d3_eligibility": true,
+      "evidence_hash": "af0a5cbac9eed71d805ff5fcd8f50a57c5ddf32394e8c403796f31248ea85151",
+      "raw_response_paths": [
+        "attempts/genesis_028/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 28",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "eb97171b17e4bb0f2dbebcc9fa5be56580f2ec005a7640ea8abf3c6ff17f08bc",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_028.json",
+      "validation_warnings": []
+    },
+    "Genesis 29": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "a02ec8cd75700933bbbb3da2accc10324087e384d7e81e736ccbcd20453c6420",
+      "canonical_candidate_path": "candidates/genesis_029.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_029",
+      "d1_renderer_packet_sha256": "96c41bf1b20c0e8e3f1cdd675b5fa439a6dbd295f5a6b10a919da1bee93731f8",
+      "d3_eligibility": true,
+      "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+      "raw_response_paths": [
+        "attempts/genesis_029/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 29",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_029.json",
+      "validation_warnings": []
+    },
+    "Genesis 3": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "6d13fec054b47acab82070d79af8206a790dfce15aa9dbda0f56e7c0867eda45",
+      "canonical_candidate_path": "candidates/genesis_003.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_003",
+      "d1_renderer_packet_sha256": "04fa7fbe0b1e696fde273ca7705bd1260c41ca0079dea926f341e8251aa9406e",
+      "d3_eligibility": true,
+      "evidence_hash": "870102c3c989fca11cdca2f909746de3e8ab0b3c7c690cd1408d1e44ac66c26b",
+      "raw_response_paths": [
+        "attempts/genesis_003/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 3",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "0132c6233503bb91e33efa3740c68a919931bc6a56e40a8b96a7452012e287ef",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_003.json",
+      "validation_warnings": []
+    },
+    "Genesis 30": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "4c45f8d79046984a995c4febc2b2bf0206e8a7557cb0a6fb19f13f9213f40547",
+      "canonical_candidate_path": "candidates/genesis_030.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_030",
+      "d1_renderer_packet_sha256": "03fec390958d46fbe14d5e4f695b3c7959f03c63eb37136bca3d0b1eead3f9a6",
+      "d3_eligibility": true,
+      "evidence_hash": "ac8b3877165eb150c627bcd50207417e40b698d84df3854249214dd10c114e28",
+      "raw_response_paths": [
+        "attempts/genesis_030/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 30",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "2bb1d97af2d241bad0722a83a21bf193f15fcfe4f7e18f2b5fea4fe9a9662479",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_030.json",
+      "validation_warnings": []
+    },
+    "Genesis 31": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "5a18729958fd8511eb5ffab49e867c9c6b831e020112f54affe4a057bb929cfb",
+      "canonical_candidate_path": "candidates/genesis_031.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_031",
+      "d1_renderer_packet_sha256": "33562406040cc0b42cf8a1f8b139c0fa6cc4228bc8272dd8f1f65de378a083f7",
+      "d3_eligibility": true,
+      "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+      "raw_response_paths": [
+        "attempts/genesis_031/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 31",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_031.json",
+      "validation_warnings": []
+    },
+    "Genesis 32": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "f6b79e26ca2b64e0a7e22d96f61cb6c20712d0d277df27acac5005bb2ab6a0e0",
+      "canonical_candidate_path": "candidates/genesis_032.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_032",
+      "d1_renderer_packet_sha256": "6bccfd785634f5bbbc190ccfb17868106c9827aecaa27658f9565223d8f3f3f7",
+      "d3_eligibility": true,
+      "evidence_hash": "1fdcac9241524047665fc3f7c60ec96ec1a5651d53d7eb356cf48895923920fc",
+      "raw_response_paths": [
+        "attempts/genesis_032/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 32",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "f5539d87b0cc016b6a30c51a66a90a4b7d0d2b9393939e20bf7d952d4aca4ce9",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_032.json",
+      "validation_warnings": []
+    },
+    "Genesis 33": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "3f3660fe24a4b391e2ca8c55d9f5495ba0584202c3ae83fe8800f4b413106520",
+      "canonical_candidate_path": "candidates/genesis_033.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_033",
+      "d1_renderer_packet_sha256": "9383d8cedb7d44a4532d4060ff0fcd96c06508d64a75a4ab3049a0b876ac0c84",
+      "d3_eligibility": true,
+      "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+      "raw_response_paths": [
+        "attempts/genesis_033/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 33",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_033.json",
+      "validation_warnings": []
+    },
+    "Genesis 34": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "245dccfd7b7b5e6755edb044a3a9b1d7456a9b1645897b9dacd74c4a0d75e9fd",
+      "canonical_candidate_path": "candidates/genesis_034.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_034",
+      "d1_renderer_packet_sha256": "a2072a5e435f074a8867428126654c83334f48efd57e654703b5d57794352758",
+      "d3_eligibility": true,
+      "evidence_hash": "fbe33e27ab643a7bb4d3279428a9fd59bb1991f238c36a746b3e4617900c0cbf",
+      "raw_response_paths": [
+        "attempts/genesis_034/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 34",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "f5ddeed2738f6c9e44d2016529cf8b565cf9c97e0b70a96f54d9f20ae1f41fc5",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_034.json",
+      "validation_warnings": []
+    },
+    "Genesis 35": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "66897d37b4d57c256d96ee755b7e03ff97fbd90fe48d12789213139ed2065e36",
+      "canonical_candidate_path": "candidates/genesis_035.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_035",
+      "d1_renderer_packet_sha256": "79a309fcf3e4bc4bc60b511ab8a657e99031c725eb7d9e7f6ffd6b2aa3bcf955",
+      "d3_eligibility": true,
+      "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+      "raw_response_paths": [
+        "attempts/genesis_035/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 35",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_035.json",
+      "validation_warnings": []
+    },
+    "Genesis 36": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "57bd7d9f831e6a092ce0531aed8a4b592691bb95610843f60cc211b0b42d51bf",
+      "canonical_candidate_path": "candidates/genesis_036.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_036",
+      "d1_renderer_packet_sha256": "d419b80efa24b165ab4e0f936e4bbad77d48f9d129cd01d1fe2100513e863b0e",
+      "d3_eligibility": true,
+      "evidence_hash": "25a97a65f365c20ca78d9e8178c3428626418b613c2833f4fffe2bb0c8902e99",
+      "raw_response_paths": [
+        "attempts/genesis_036/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 36",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "dc44d8d39bcbe043d68407fb5def6d29ac24d1b60e9d4abc1619a67fa168d521",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_036.json",
+      "validation_warnings": []
+    },
+    "Genesis 37": {
+      "attempt_count": 2,
+      "candidate_artifact_sha256": "cf2d43f7e86a1e966151ead8c744033bec8d5bf83d1499c13af6d3e3654a2db4",
+      "canonical_candidate_path": "candidates/genesis_037.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_037",
+      "d1_renderer_packet_sha256": "cdc3b289933177bf3c84675f64e0f0900d6e1ad944a89c2ffb9708ca5f2b9cee",
+      "d3_eligibility": true,
+      "evidence_hash": "2930c13fcaa0b6055d1e50b7fc95de2f327f0c2004ae460c890fd6d615ba4e37",
+      "raw_response_paths": [
+        "attempts/genesis_037/attempt-001/raw-response.bin",
+        "attempts/genesis_037/attempt-002/raw-response.bin"
+      ],
+      "reference": "Genesis 37",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "9922c75f9cdf9a3680246bf0a714565837895997a2191dda5270f19ed9fc5a61",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_037.json",
+      "validation_warnings": []
+    },
+    "Genesis 38": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "a0ea8aafac7a79fc025df2ce33d30d89987af8c98072a37d5697cde6d9058a51",
+      "canonical_candidate_path": "candidates/genesis_038.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_038",
+      "d1_renderer_packet_sha256": "b2e529a9253ffa1c4152549133ac3dab6b429508eb1277a4fe2b1bd5d5042231",
+      "d3_eligibility": true,
+      "evidence_hash": "cf15ac7f7027facfedd786420a2772f4a5da2fc9a2656a57c4eb3e987bd30b81",
+      "raw_response_paths": [
+        "attempts/genesis_038/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 38",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "0aa6c656359afdd556a78b224da34ca86063e116bb6805b8b24b85f4a4069362",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_038.json",
+      "validation_warnings": []
+    },
+    "Genesis 39": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "03b69c24dd4bf559c80702c1ad3c576869253944e21e05fbdabf7f2be08ac4e7",
+      "canonical_candidate_path": "candidates/genesis_039.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_039",
+      "d1_renderer_packet_sha256": "aeb0f18af2c7213a2e20d0568024e71a6cd03a246beeb8cdd0ebb5996f3ec007",
+      "d3_eligibility": true,
+      "evidence_hash": "199e5813aa8693b767c4c5b7e571da67ff7d8bb999a02113849698ba437d9dc2",
+      "raw_response_paths": [
+        "attempts/genesis_039/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 39",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "2a59937e3c213e9a75b8b0ce67a8de0542bc6418e34be59935c91572f6e7f533",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_039.json",
+      "validation_warnings": []
+    },
+    "Genesis 4": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "0cd483a9c7de15abbbef937dd4b6a4ef69d388d313d3d449bb2e16dd5b0cd291",
+      "canonical_candidate_path": "candidates/genesis_004.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_004",
+      "d1_renderer_packet_sha256": "6e1319ae1bdea4c5a57d6bd3854ac4597fb9ff70695c14fbc1e3e782a4e16b3d",
+      "d3_eligibility": true,
+      "evidence_hash": "7e0d7e84879a6b149d05187211b9365b54a05e9e071078ea65b90695b1fd0c24",
+      "raw_response_paths": [
+        "attempts/genesis_004/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 4",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "417b91d1b4e09db99370e10164eddd2c9ad998b053bc0d6aeca03944488c6dc8",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_004.json",
+      "validation_warnings": []
+    },
+    "Genesis 40": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "a22c62d73b683e7b13ab92c747b76b0fa64ab22a3ff6ee90375d2b5e7237924e",
+      "canonical_candidate_path": "candidates/genesis_040.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_040",
+      "d1_renderer_packet_sha256": "d1691925248fb0354f5d7bd365c1992843af1d413b7881620d817430516c6339",
+      "d3_eligibility": true,
+      "evidence_hash": "b43961aeceabcc3781f655a80f56dbeb8bfb077cbcefd2a3cd02cfef4acf501a",
+      "raw_response_paths": [
+        "attempts/genesis_040/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 40",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "e63b35e6a4870f2cb498900bae0ecb619f9a0615f37aec5e44a5bc569c3353c2",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_040.json",
+      "validation_warnings": []
+    },
+    "Genesis 41": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "110f7c97806cd731d5231e4c033911a803982a4638f6bb0f170f0d9eab1e7947",
+      "canonical_candidate_path": "candidates/genesis_041.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_041",
+      "d1_renderer_packet_sha256": "e4fb4eb0721db86abac5dd693a9d895ae9057fa11187920aae456790db6e7932",
+      "d3_eligibility": true,
+      "evidence_hash": "00f603a4ced20aa2c7fac342c0ac3520d224ff032d31809c5a131c95aba43056",
+      "raw_response_paths": [
+        "attempts/genesis_041/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 41",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "ab1e09eaf6ca681e944a8b58f35152e42be90a0d8490a26f0deaade26224193c",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_041.json",
+      "validation_warnings": []
+    },
+    "Genesis 42": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "92c3f5cce9c6c5fc8491bef57dbd6ca0d997d3a9071a798d84a0f7ebc3945d37",
+      "canonical_candidate_path": "candidates/genesis_042.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_042",
+      "d1_renderer_packet_sha256": "fff589cd32b6fcec732bbfab3ed7de9d6b77c158704ae077c65d6b19a851b374",
+      "d3_eligibility": true,
+      "evidence_hash": "d32de42b000f3951da92f5331db5a3e8c954f5b27a3e930735db40a3b5921612",
+      "raw_response_paths": [
+        "attempts/genesis_042/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 42",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "275ff6918e90dd388eda6a4d96043dd014965ae0e1659a5dd1be3ad037b9b2c5",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_042.json",
+      "validation_warnings": []
+    },
+    "Genesis 43": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "ec7f0200702be004c405d350dfdf90d3a2598951890c58056348197df4c20d0d",
+      "canonical_candidate_path": "candidates/genesis_043.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_043",
+      "d1_renderer_packet_sha256": "89849a04a96b2492aaefa3d88d5eb46f2be8f9b0b7413cf6032ef9b515d09008",
+      "d3_eligibility": true,
+      "evidence_hash": "1c5f23d0416c1e08b05ab404841b586bfc2a97d442803e3cb822e1a86058371b",
+      "raw_response_paths": [
+        "attempts/genesis_043/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 43",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "eb51ce2df2160e125b818b4d21f7c6e1ed25173b779186e1628586a20415e89f",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_043.json",
+      "validation_warnings": []
+    },
+    "Genesis 44": {
+      "attempt_count": 3,
+      "candidate_artifact_sha256": "189abf305215a9d674a6c20ea77a61f273fef2e5d2fc572c39bbcf71ff4e9f58",
+      "canonical_candidate_path": "candidates/genesis_044.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_044",
+      "d1_renderer_packet_sha256": "8fdfebc0a2317e2fe14ae2565fca618ad2f4d2a9323b6ab543c46b27348e6a91",
+      "d3_eligibility": true,
+      "evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+      "raw_response_paths": [
+        "attempts/genesis_044/attempt-002/raw-response.bin",
+        "attempts/genesis_044/attempt-003/raw-response.bin"
+      ],
+      "reference": "Genesis 44",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_044.json",
+      "validation_warnings": []
+    },
+    "Genesis 45": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "eea3ae516784eca618ec07602065171f01902605f2c5201eef802ec8bf19a800",
+      "canonical_candidate_path": "candidates/genesis_045.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_045",
+      "d1_renderer_packet_sha256": "0835e182e9fb45680755ef8479a16a1d7ac3a156f2f11b11b5085474d313e674",
+      "d3_eligibility": true,
+      "evidence_hash": "d92d82f2fec68e2a1e0f50cc2e8a26286be6cbc773b2681ae3080cfc94b7cb90",
+      "raw_response_paths": [
+        "attempts/genesis_045/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 45",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "fd242c73c34a7bf25e16ec2969e376726ed51382d535ac33c43fd41e86c148c8",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_045.json",
+      "validation_warnings": []
+    },
+    "Genesis 46": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "b3b4a5c00f4b1367af79a03b90e91c6c9ae85bce20f5d828c80b6d1902c9cf88",
+      "canonical_candidate_path": "candidates/genesis_046.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_046",
+      "d1_renderer_packet_sha256": "fcb05b8e42c5636f7e7d7d47b476dc83e4614e7fb1f1c7f2c93ba0e988650974",
+      "d3_eligibility": true,
+      "evidence_hash": "976d3b6b3ed738d1a7592b95d05c4342723cab40e4d7dca22615dc4571bff138",
+      "raw_response_paths": [
+        "attempts/genesis_046/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 46",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "2a9f0c2851f4a89a94be5647869ab1ced285ec3cc248d59ca71e8ef9da1a186b",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_046.json",
+      "validation_warnings": []
+    },
+    "Genesis 47": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "a6e2b0ba996309256dfddb3e6480b600523dbc5994f48a653271eab4cfb6878e",
+      "canonical_candidate_path": "candidates/genesis_047.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_047",
+      "d1_renderer_packet_sha256": "5abf4cee3a6ee049b10faf433501f1370568f53bfbcd9f1b18723331117b776a",
+      "d3_eligibility": true,
+      "evidence_hash": "615198fe4c96d9aa86cf0f0764f628bb07e792663fd051fb6b0bd95cbb0deae3",
+      "raw_response_paths": [
+        "attempts/genesis_047/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 47",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "7910ce70ffd5bfb3e8836b49061b3db6e071ad87e22ba8a68a1f530b5869fa79",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_047.json",
+      "validation_warnings": []
+    },
+    "Genesis 48": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "4a68de56eb2b211e50ae3ee7262e036886bc8359aa1371d9bcec5151fd9089fb",
+      "canonical_candidate_path": "candidates/genesis_048.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_048",
+      "d1_renderer_packet_sha256": "ab1f854411b0e660563c5a43e9daa5e5ca92f479be2982f7cfa8def939df5023",
+      "d3_eligibility": true,
+      "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+      "raw_response_paths": [
+        "attempts/genesis_048/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 48",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_048.json",
+      "validation_warnings": []
+    },
+    "Genesis 49": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "87aeac18360bbd83c7fa8e94f59b30bc48a1e73a90e0de0a1fbccad553e7c7ca",
+      "canonical_candidate_path": "candidates/genesis_049.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_049",
+      "d1_renderer_packet_sha256": "b809dcdfcb00a7e77c2b4fade3aaea5b9ff249684f0008429a7ac2fd1d3895c0",
+      "d3_eligibility": true,
+      "evidence_hash": "a871339f28cdc5ef910c708d9a2c3a11e41c4ec34d4ccb2629dd62cb3cd56627",
+      "raw_response_paths": [
+        "attempts/genesis_049/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 49",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "d37dbb22e5f9dfa297fef293d7ce0e3129b18c342cd34360ac1c2cce749acd5c",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_049.json",
+      "validation_warnings": []
+    },
+    "Genesis 5": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "4df3fcef161334f7a3b89e1200e188348a3dc8cbd01ecee6b0696c6b44794a3d",
+      "canonical_candidate_path": "candidates/genesis_005.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_005",
+      "d1_renderer_packet_sha256": "6e50bb738ea0a0b734431ef7c60d7609e58cd6bbbdf8bb96bc7ff15718490e12",
+      "d3_eligibility": true,
+      "evidence_hash": "a08db21d7c8c71db65662dbe74d988fc20976289b04a856b8b948784fe840ef2",
+      "raw_response_paths": [
+        "attempts/genesis_005/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 5",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "4463d42e98b89c31ca184636b6cd9f4414548d072d9354a650fbf11369f448e8",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_005.json",
+      "validation_warnings": []
+    },
+    "Genesis 50": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "41c732264c55e4e6d7bd30424f827cc069b29995b3334b302de9efadb110e67e",
+      "canonical_candidate_path": "candidates/genesis_050.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_050",
+      "d1_renderer_packet_sha256": "3a7e243631b0834d1e14883ff679a7015434e702f3999e55fa4b713451a397bf",
+      "d3_eligibility": true,
+      "evidence_hash": "b870c2357f61d6a5505ddeaef3184149d9a5362957186bf3b492f0ed2f70c669",
+      "raw_response_paths": [
+        "attempts/genesis_050/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 50",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "99ef89e5d16f6acd4892937554102f4bd5eaec6f4ca91f957a7637bdfa020841",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_050.json",
+      "validation_warnings": []
+    },
+    "Genesis 6": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "72a0fa73827c8242bc8911680d0f51e76f5584dbc53dd236f49787ebb88db289",
+      "canonical_candidate_path": "candidates/genesis_006.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_006",
+      "d1_renderer_packet_sha256": "71bd04787a225c6146a6b8f8fc41c3b2f401f1271ed9ff7b7069e8f36452f7e4",
+      "d3_eligibility": true,
+      "evidence_hash": "f30b5cf8f944d843a3fab81ff5dbe4b130ad0b9d3f1fafecb74babeeeb3c4cb1",
+      "raw_response_paths": [
+        "attempts/genesis_006/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 6",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "9730ac5f58de247bcbeaa0110c9958c0b37dd66cf086b794b993106ad8691f27",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_006.json",
+      "validation_warnings": []
+    },
+    "Genesis 7": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "fddf04fed2aab3b0ae5686d2849bb4016e8fec6d3c61cbde9a0e6d236a9370ca",
+      "canonical_candidate_path": "candidates/genesis_007.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_007",
+      "d1_renderer_packet_sha256": "9617ca4406bca49c7f1ba60f57e7f12aec9e75e4e0fce8dc6f39a3b61c0769ac",
+      "d3_eligibility": true,
+      "evidence_hash": "63fedc8a85e193b58a84e8f9260a7409d6ab459c382d499385d41dfa2760f476",
+      "raw_response_paths": [
+        "attempts/genesis_007/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 7",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "cc03646852ca3f360029eb5a4391a1109215f170b3e2283f9faba3ae8cacafc7",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_007.json",
+      "validation_warnings": []
+    },
+    "Genesis 8": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "62b013269d8d9c37d55ff1e71d7341a892e90f62d0983fc885bf797f4b079cf0",
+      "canonical_candidate_path": "candidates/genesis_008.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_008",
+      "d1_renderer_packet_sha256": "c00bb1bf667963d9fb3211a3f0ac3efba626fea86aacbb53eab067eceb4489b0",
+      "d3_eligibility": true,
+      "evidence_hash": "9691f48226ea4e85b39d1902c34eee347c2e2bb4579502a63ab20ead1697dd46",
+      "raw_response_paths": [
+        "attempts/genesis_008/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 8",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "0137f810ecdacb15b52b08993e7e3de683a75bebfb4b54dc0f0d28b8bf61c440",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_008.json",
+      "validation_warnings": []
+    },
+    "Genesis 9": {
+      "attempt_count": 1,
+      "candidate_artifact_sha256": "431102f98c1d08ff0f1156b03d389c6ebc2c0f008b95b961ea8bac284ad84948",
+      "canonical_candidate_path": "candidates/genesis_009.json",
+      "d1_renderer_packet_path": "renderer-input/chapters/genesis_009",
+      "d1_renderer_packet_sha256": "f7837195bae2a6f703f96c69af53b549d222f18edc706e126d8bbedc168d93f1",
+      "d3_eligibility": true,
+      "evidence_hash": "f675c064faaa00917456f23345f7cabee28d0a698a2e24e6472970d6b8e5bbb9",
+      "raw_response_paths": [
+        "attempts/genesis_009/attempt-001/raw-response.bin"
+      ],
+      "reference": "Genesis 9",
+      "renderer": {
+        "effort": "high",
+        "mode": "codex_session",
+        "model": "gpt-5.6-terra",
+        "prompt_version": "1.8",
+        "schema_version": "1.2"
+      },
+      "synthesis_hash": "0364dc2f13694481d2c8007b184b29646103d58d5bfab3c40abba5d10ec86ba6",
+      "technical_review_state": "READY_FOR_HUMAN_REVIEW",
+      "validation_errors": [],
+      "validation_path": "validation/genesis_009.json",
+      "validation_warnings": []
+    }
+  },
+  "expected_candidate_count": 49,
+  "expected_references": [
+    "Genesis 2",
+    "Genesis 3",
+    "Genesis 4",
+    "Genesis 5",
+    "Genesis 6",
+    "Genesis 7",
+    "Genesis 8",
+    "Genesis 9",
+    "Genesis 10",
+    "Genesis 11",
+    "Genesis 12",
+    "Genesis 13",
+    "Genesis 14",
+    "Genesis 15",
+    "Genesis 16",
+    "Genesis 17",
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25",
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30",
+    "Genesis 31",
+    "Genesis 32",
+    "Genesis 33",
+    "Genesis 34",
+    "Genesis 35",
+    "Genesis 36",
+    "Genesis 37",
+    "Genesis 38",
+    "Genesis 39",
+    "Genesis 40",
+    "Genesis 41",
+    "Genesis 42",
+    "Genesis 43",
+    "Genesis 44",
+    "Genesis 45",
+    "Genesis 46",
+    "Genesis 47",
+    "Genesis 48",
+    "Genesis 49",
+    "Genesis 50"
+  ],
+  "renderer_contract": {
+    "effort": "high",
+    "mode": "codex_session",
+    "model": "gpt-5.6-terra",
+    "prompt_version": "1.8",
+    "schema_version": "1.2"
+  },
+  "transaction": "GENESIS_COMMENTARY_REFRESH_D2_CANDIDATE_RENDERING"
+}

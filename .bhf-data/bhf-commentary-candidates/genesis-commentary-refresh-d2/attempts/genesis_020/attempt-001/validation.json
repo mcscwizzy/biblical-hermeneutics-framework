@@ -1,0 +1,1016 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 6,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g20-abraham-called-prophet",
+            "g20-abraham-explanation-restoration",
+            "g20-dream-warning-and-integrity",
+            "g20-gerar-wife-sister-repetition",
+            "g20-gifts-vindication-and-settlement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_00aa894d87e2"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g20-abraham-called-prophet": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ],
+            "g20-abraham-explanation-restoration": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ],
+            "g20-dream-warning-and-integrity": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ],
+            "g20-gerar-wife-sister-repetition": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ],
+            "g20-gifts-vindication-and-settlement": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "g20-abraham-called-prophet",
+            "g20-abraham-explanation-restoration",
+            "g20-dream-warning-and-integrity",
+            "g20-gerar-wife-sister-repetition",
+            "g20-gifts-vindication-and-settlement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_00aa894d87e2"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g20-abraham-called-prophet": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ],
+            "g20-abraham-explanation-restoration": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ],
+            "g20-dream-warning-and-integrity": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ],
+            "g20-gerar-wife-sister-repetition": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ],
+            "g20-gifts-vindication-and-settlement": [
+              "syn_interpretive_questions_00aa894d87e2"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g20-household-wombs-healed"
+          ],
+          "cited_synthesis_ids": [
+            "syn_cultural_context_be3988141a83"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g20-household-wombs-healed": [
+              "syn_cultural_context_be3988141a83"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_4",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_8bf09b72f305"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_8bf09b72f305"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_5",
+          "block_index": 1,
+          "cited_evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_50e07f316719"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_50e07f316719"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_50e07f316719"
+            ]
+          },
+          "section_index": 2
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_6",
+          "block_index": 2,
+          "cited_evidence_ids": [
+            "gal-allegory"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_c266b5b99890"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "gal-allegory": [
+              "syn_surrounding_passages_c266b5b99890"
+            ]
+          },
+          "section_index": 2
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 3,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g20-abraham-called-prophet",
+          "g20-abraham-explanation-restoration",
+          "g20-dream-warning-and-integrity",
+          "g20-gerar-wife-sister-repetition",
+          "g20-gifts-vindication-and-settlement",
+          "g20-household-wombs-healed",
+          "gal-allegory",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_cultural_context_be3988141a83",
+          "syn_interpretive_questions_00aa894d87e2",
+          "syn_surrounding_passages_50e07f316719",
+          "syn_surrounding_passages_8bf09b72f305",
+          "syn_surrounding_passages_aab2885a8134",
+          "syn_surrounding_passages_c266b5b99890",
+          "syn_why_it_matters_94ca13c27b8b"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g20-abraham-called-prophet",
+          "g20-abraham-explanation-restoration",
+          "g20-dream-warning-and-integrity",
+          "g20-gerar-wife-sister-repetition",
+          "g20-gifts-vindication-and-settlement",
+          "g20-household-wombs-healed",
+          "gal-allegory",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 3,
+        "source_synthesis_unit_ids": [
+          "syn_cultural_context_be3988141a83",
+          "syn_interpretive_questions_00aa894d87e2",
+          "syn_surrounding_passages_50e07f316719",
+          "syn_surrounding_passages_8bf09b72f305",
+          "syn_surrounding_passages_aab2885a8134",
+          "syn_surrounding_passages_c266b5b99890",
+          "syn_why_it_matters_94ca13c27b8b"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "95f3bcf72d2aa2644b58e1ad9c7d92483d26de1cd082423c01e5f752fe291746",
+      "expected_envelope_hash": "95f3bcf72d2aa2644b58e1ad9c7d92483d26de1cd082423c01e5f752fe291746",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "265e8e45b207d3d212c8d407f50ae77bcad9c1ea189959755cf3f4a34b30d94e",
+      "expected_binding_hash": "265e8e45b207d3d212c8d407f50ae77bcad9c1ea189959755cf3f4a34b30d94e",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 6,
+      "commentary_prose_char_count": 2044,
+      "commentary_prose_word_count": 311,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "culture": 6,
+        "geography": 4
+      },
+      "evidence_category_diversity": 2,
+      "evidence_consumption_ratio": 1.0,
+      "evidence_ids_referenced": [
+        "g20-abraham-called-prophet",
+        "g20-abraham-explanation-restoration",
+        "g20-dream-warning-and-integrity",
+        "g20-gerar-wife-sister-repetition",
+        "g20-gifts-vindication-and-settlement",
+        "g20-household-wombs-healed",
+        "gal-allegory",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 10,
+      "evidence_score": 7.4,
+      "geography_evidence_count": 4,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0349,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 20",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 3,
+      "specific_evidence_count": 10,
+      "unique_evidence_ids_consumed": 10,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unused_evidence_ids": [],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 18,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 4,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_277d1ace0500",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_50e07f316719",
+            "syn_surrounding_passages_8bf09b72f305",
+            "syn_surrounding_passages_aab2885a8134"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=galatians|facts=paul explicitly calls hagar sarah construction allegory mapping women sons mountains covenants jerusalems within polemical argument whose details remain contested",
+          "confidence": "low",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "gal-allegory"
+          ],
+          "id": "idea_cluster_a2b88d8ea4f2",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_surrounding_passages_c266b5b99890"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "geography",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-abraham-late-cycle-context|facts=abimelech gives abraham livestock servants silver says sarah vindicated before all ancient near eastern social context functions material settlement public resolution historical setting without exact legal damages schedule;genesis 20 7 calls abraham prophet navi says will pray abimelech so may live hebrew worldview context emphasizes intercession without importing later institutional structures prophecy;gerar abraham again presents sarah sister abimelech takes literary narrative intertextual comparison genesis 12 own geography royal interlocutor divine warning restoration;god comes abimelech dream warns him sarah married hears claim acted integrity misled literary narrative uses dream form known ancient near eastern settings within historical context without universal dream code;literary narrative intertextual comparison genesis 12 abraham explains thought there no fear god says sarah half sister abimelech returns sarah gerar restores household situation preserving episode’s distinct geography",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g20-abraham-called-prophet",
+            "g20-abraham-explanation-restoration",
+            "g20-dream-warning-and-integrity",
+            "g20-gerar-wife-sister-repetition",
+            "g20-gifts-vindication-and-settlement"
+          ],
+          "id": "idea_cluster_a865b212a08f",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_00aa894d87e2",
+            "syn_why_it_matters_94ca13c27b8b"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        },
+        {
+          "categories": [
+            "culture"
+          ],
+          "concept_signature": "kind=cultural_context|parents=genesis-abraham-late-cycle-context|facts=chapter says yhwh closed wombs abimelech’s household because sarah god healed household after abraham prayed hebrew worldview context gives no medical mechanism",
+          "confidence": "low",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": false,
+          "duplicate_reason": "DISTINCT",
+          "evidence_ids": [
+            "g20-household-wombs-healed"
+          ],
+          "id": "idea_cluster_fda4cad3d302",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "cultural_context",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_cultural_context_be3988141a83"
+          ],
+          "unit_kinds": [
+            "cultural_context"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.6,
+      "consumed_category_count": 4,
+      "consumed_category_families": [
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 4,
+      "consumed_core_cluster_count": 2,
+      "consumed_eligible_synthesis_count": 5,
+      "consumed_eligible_weight": 3.0,
+      "consumed_synthesis_count": 5,
+      "core_cluster_count": 2,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 6,
+        "block_to_cluster_ratio": 1.5,
+        "block_to_synthesis_ratio": 1.2,
+        "consolidation_ratio": 0.6,
+        "consumed_cluster_count": 4,
+        "consumed_synthesis_count": 5,
+        "consumed_unit_ratio": 0.7143,
+        "mean_evidence_ids_per_block": 2.5,
+        "meaningful_cluster_count": 4,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 77.5
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 2,
+        "REQUIRED": 2
+      },
+      "eligible_synthesis_count": 7,
+      "eligible_synthesis_coverage": 0.7143,
+      "eligible_weighted_denominator": 3.0,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 4,
+      "raw_synthesis_coverage": 0.7143,
+      "synthesis_unit_count": 7,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "b2184f7ffb51312e927289d00e87fe41919aea8ec9432e4be073bf1cc4821934",
+  "d1_packet_identity": {
+    "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:f6fd89a1822586e08cfc365798850aa0bb6efd1ebcdde506df188d0911555ea2",
+    "packet_sha256": "f6fd89a1822586e08cfc365798850aa0bb6efd1ebcdde506df188d0911555ea2",
+    "path": "renderer-input/chapters/genesis_020",
+    "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "aa6f1ff566119b7562c1028317c0cda83e6d011fe68c4465b733abaadcc08e0e"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "265e8e45b207d3d212c8d407f50ae77bcad9c1ea189959755cf3f4a34b30d94e",
+      "block_count": 6,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g20-abraham-called-prophet",
+            "g20-abraham-explanation-restoration",
+            "g20-dream-warning-and-integrity",
+            "g20-gerar-wife-sister-repetition",
+            "g20-gifts-vindication-and-settlement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g20-abraham-called-prophet",
+                "g20-abraham-explanation-restoration",
+                "g20-dream-warning-and-integrity",
+                "g20-gerar-wife-sister-repetition",
+                "g20-gifts-vindication-and-settlement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+                  "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g20-abraham-called-prophet",
+                  "g20-abraham-explanation-restoration",
+                  "g20-dream-warning-and-integrity",
+                  "g20-gerar-wife-sister-repetition",
+                  "g20-gifts-vindication-and-settlement"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 20:1-3",
+                  "Genesis 20:14-16",
+                  "Genesis 20:3-7",
+                  "Genesis 20:7-17",
+                  "Genesis 20:8-18"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_00aa894d87e2",
+                "verse_refs": [
+                  "Genesis 20:1-3",
+                  "Genesis 20:14-16",
+                  "Genesis 20:3-7",
+                  "Genesis 20:7-17",
+                  "Genesis 20:8-18"
+                ]
+              },
+              "path_hash": "6bda02e71243f31e620d326aefe6551829e2137ee21722b2fc2ef402b7d85e1b",
+              "path_id": "reader_path_genesis_020_6bda02e71243f31e620d326a",
+              "reader_idea_id": "reader_idea_210877e14e85a56d",
+              "reader_idea_label": "Genesis Abraham Late Cycle Context",
+              "synthesis_id": "syn_interpretive_questions_00aa894d87e2"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_020_6bda02e71243f31e620d326a"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_210877e14e85a56d"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_00aa894d87e2"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 1,
+          "evidence_ids": [
+            "g20-abraham-called-prophet",
+            "g20-abraham-explanation-restoration",
+            "g20-dream-warning-and-integrity",
+            "g20-gerar-wife-sister-repetition",
+            "g20-gifts-vindication-and-settlement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g20-abraham-called-prophet",
+                "g20-abraham-explanation-restoration",
+                "g20-dream-warning-and-integrity",
+                "g20-gerar-wife-sister-repetition",
+                "g20-gifts-vindication-and-settlement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+                  "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g20-abraham-called-prophet",
+                  "g20-abraham-explanation-restoration",
+                  "g20-dream-warning-and-integrity",
+                  "g20-gerar-wife-sister-repetition",
+                  "g20-gifts-vindication-and-settlement"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 20:1-3",
+                  "Genesis 20:14-16",
+                  "Genesis 20:3-7",
+                  "Genesis 20:7-17",
+                  "Genesis 20:8-18"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_00aa894d87e2",
+                "verse_refs": [
+                  "Genesis 20:1-3",
+                  "Genesis 20:14-16",
+                  "Genesis 20:3-7",
+                  "Genesis 20:7-17",
+                  "Genesis 20:8-18"
+                ]
+              },
+              "path_hash": "6bda02e71243f31e620d326aefe6551829e2137ee21722b2fc2ef402b7d85e1b",
+              "path_id": "reader_path_genesis_020_6bda02e71243f31e620d326a",
+              "reader_idea_id": "reader_idea_210877e14e85a56d",
+              "reader_idea_label": "Genesis Abraham Late Cycle Context",
+              "synthesis_id": "syn_interpretive_questions_00aa894d87e2"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_020_6bda02e71243f31e620d326a"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_210877e14e85a56d"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_00aa894d87e2"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "g20-household-wombs-healed"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g20-household-wombs-healed"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+                  "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "g20-household-wombs-healed"
+                ],
+                "interpretation_level": "fact",
+                "kind": "cultural_context",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 20:17-18"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_cultural_context_be3988141a83",
+                "verse_refs": [
+                  "Genesis 20:17-18"
+                ]
+              },
+              "path_hash": "9308ec73cece28ea70c039d29c29a789d3107cec0e846ac3bc6b6ceef12658e7",
+              "path_id": "reader_path_genesis_020_9308ec73cece28ea70c039d2",
+              "reader_idea_id": "reader_idea_210877e14e85a56d",
+              "reader_idea_label": "Genesis Abraham Late Cycle Context",
+              "synthesis_id": "syn_cultural_context_be3988141a83"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_020_9308ec73cece28ea70c039d2"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_210877e14e85a56d"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_cultural_context_be3988141a83"
+          ]
+        },
+        {
+          "block_id": "block_4",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+                  "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_8bf09b72f305",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "5211ade5c9c8af05bed6476f6477ed5a2078280535dbf24c8367e5bb36800b30",
+              "path_id": "reader_path_genesis_020_5211ade5c9c8af05bed6476f",
+              "reader_idea_id": "reader_idea_33fe3f0c848600f4",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_8bf09b72f305"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_020_5211ade5c9c8af05bed6476f"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_33fe3f0c848600f4"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_surrounding_passages_8bf09b72f305"
+          ]
+        },
+        {
+          "block_id": "block_5",
+          "block_index": 1,
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+                  "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_50e07f316719",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 29:1-35",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "bedfb87bbd12407296d293ef97a4e9154f20cedccd09a114a508540854c8fcf0",
+              "path_id": "reader_path_genesis_020_bedfb87bbd12407296d293ef",
+              "reader_idea_id": "reader_idea_33fe3f0c848600f4",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_50e07f316719"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_020_bedfb87bbd12407296d293ef"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_33fe3f0c848600f4"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_surrounding_passages_50e07f316719"
+          ]
+        },
+        {
+          "block_id": "block_6",
+          "block_index": 2,
+          "evidence_ids": [
+            "gal-allegory"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "gal-allegory"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "53de00dba8ef29886ede9bb193ca2d1d38a97934497ce85e0960cb172d9a824a",
+                  "synthesis_hash": "052f3d191fe8373e09d3d8301296ebc2f8c69d4f568491a6840bc315d74694ab"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "gal-allegory"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 16:1-21:21"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_c266b5b99890",
+                "verse_refs": [
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 21:1-21"
+                ]
+              },
+              "path_hash": "c77c866ccb925be9f545f51079311e004c6dae93b1ac7114bbac4915cc7a6490",
+              "path_id": "reader_path_genesis_020_c77c866ccb925be9f545f510",
+              "reader_idea_id": "reader_idea_4a1e6b310f2823b2",
+              "reader_idea_label": "Paul explicitly calls his Hagar-Sarah construction an allegory, mapping women, sons, mountains, covenants, and Jerusalems within a…",
+              "synthesis_id": "syn_surrounding_passages_c266b5b99890"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_020_c77c866ccb925be9f545f510"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_4a1e6b310f2823b2"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_surrounding_passages_c266b5b99890"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "963487674c28cc2d6206c7ca025f3b0537bdd539b3ba183eec09e226c15a6ef8",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}

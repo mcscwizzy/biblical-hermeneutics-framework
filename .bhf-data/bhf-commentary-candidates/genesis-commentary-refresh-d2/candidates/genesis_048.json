@@ -1,0 +1,121 @@
+{
+  "book": "Genesis",
+  "chapter": 48,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "0d70fb92917d74ee556e2697d47d591940db99ffe4b1f49d5de8dd44ac97a6fe",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "742da63965b4dbca7b58b5dbe8d647e69fe7c2df091a2c6c5441f3fedc968f5f",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 48",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g6b-48-crossed-hands",
+            "g6b-48-ephraim-manasseh-elevated",
+            "g6b-48-ephraim-over-manasseh",
+            "g6b-48-joseph-double-portion",
+            "g6b-48-name-and-multiplication"
+          ],
+          "id": "block_1",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_6852192f5fc2"
+          ],
+          "text": "Jacob formally receives Ephraim and Manasseh as his own sons, placing them alongside Reuben and Simeon in the family’s inheritance. The blessing is deliberately staged: Joseph positions the firstborn, Manasseh, for Jacob’s right hand, but Jacob knowingly crosses his hands and gives Ephraim precedence. Thus Joseph’s line is represented through two named family lines, while both boys are included in the continuing name of Abraham, Isaac, and Jacob.",
+          "verse_refs": [
+            "Genesis 48:1-6",
+            "Genesis 48:12-14",
+            "Genesis 48:16",
+            "Genesis 48:17-20",
+            "Genesis 48:5-6"
+          ]
+        }
+      ],
+      "kind": "chapter_overview",
+      "title": "Overview"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g6b-48-sight-and-recognition"
+          ],
+          "id": "block_2",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_8b165b00ba84"
+          ],
+          "text": "Jacob’s dim sight explains why he first asks who the boys are. Once Joseph identifies them, Jacob draws them near, embraces and kisses them before the blessing. The scene presents the blessing as a personal family act carried out in the presence of Joseph and his sons.",
+          "verse_refs": [
+            "Genesis 48:8-11"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "Recognition and blessing"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g6b-48-god-shepherd-messenger",
+            "g6b-48-later-ephraim-prominence",
+            "g6b-48-rachel-ephrath",
+            "g6b-48-shechem-portion"
+          ],
+          "id": "block_3",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_cf1185e248a0"
+          ],
+          "text": "Jacob’s blessing speaks of the God associated with Abraham and Isaac, of God’s care for him throughout his life, and of a messenger or angel who rescued him from evil. The chapter also recalls Rachel’s burial on the way to Ephrath, identifies Ephraim as the one given precedence, and ends with Jacob’s expectation that God will bring the family back to the land of their fathers. The exact implications readers draw from these linked memories and images remain disputed.",
+          "verse_refs": [
+            "Genesis 48:15-16",
+            "Genesis 48:20",
+            "Genesis 48:21-22",
+            "Genesis 48:7"
+          ]
+        }
+      ],
+      "kind": "interpretive_questions",
+      "title": "Images and memories in Jacob’s final words"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_4",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_0efd434ac2ef"
+          ],
+          "text": "Genesis moves from its opening account of universal origins to the stories of the ancestral family, ending with Jacob’s household in Egypt. Questions about whether Genesis should be attributed to Moses or understood through compositional models are distinct interpretive positions; Genesis itself does not narrate the history of its own literary formation.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis as a whole"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,777 @@
+{
+  "audits": {
+    "ancestry": {
+      "ancestry_mismatch_count": 0,
+      "block_count": 3,
+      "blocks": [
+        {
+          "ancestry_valid": true,
+          "block_id": "block_1",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g29-loved-and-unloved-relational-language",
+            "g29-marriage-to-sisters-canonical-context",
+            "g29-seven-years-service-for-rachel",
+            "g29-well-stone-and-rachel-shepherd"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_91d62d78d26e"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g29-loved-and-unloved-relational-language": [
+              "syn_interpretive_questions_91d62d78d26e"
+            ],
+            "g29-marriage-to-sisters-canonical-context": [
+              "syn_interpretive_questions_91d62d78d26e"
+            ],
+            "g29-seven-years-service-for-rachel": [
+              "syn_interpretive_questions_91d62d78d26e"
+            ],
+            "g29-well-stone-and-rachel-shepherd": [
+              "syn_interpretive_questions_91d62d78d26e"
+            ]
+          },
+          "section_index": 0
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_2",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "g29-bilhah-and-zilpah-household-status",
+            "g29-feast-night-handover-and-discovery",
+            "g29-kinship-recognition-and-hospitality",
+            "g29-laban-older-before-younger-explanation",
+            "g29-leah-children-and-name-wordplay"
+          ],
+          "cited_synthesis_ids": [
+            "syn_interpretive_questions_4433ac725ad0"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "g29-bilhah-and-zilpah-household-status": [
+              "syn_interpretive_questions_4433ac725ad0"
+            ],
+            "g29-feast-night-handover-and-discovery": [
+              "syn_interpretive_questions_4433ac725ad0"
+            ],
+            "g29-kinship-recognition-and-hospitality": [
+              "syn_interpretive_questions_4433ac725ad0"
+            ],
+            "g29-laban-older-before-younger-explanation": [
+              "syn_interpretive_questions_4433ac725ad0"
+            ],
+            "g29-leah-children-and-name-wordplay": [
+              "syn_interpretive_questions_4433ac725ad0"
+            ]
+          },
+          "section_index": 1
+        },
+        {
+          "ancestry_valid": true,
+          "block_id": "block_3",
+          "block_index": 0,
+          "cited_evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "cited_synthesis_ids": [
+            "syn_surrounding_passages_849018526777",
+            "syn_surrounding_passages_8278a1ae2c02"
+          ],
+          "evidence_outside_cited_paths": [],
+          "evidence_path_owners": {
+            "genesis-literary-movement": [
+              "syn_surrounding_passages_849018526777"
+            ],
+            "genesis:interpretive_note:0": [
+              "syn_surrounding_passages_8278a1ae2c02"
+            ],
+            "genesis:interpretive_note:3": [
+              "syn_surrounding_passages_8278a1ae2c02"
+            ]
+          },
+          "section_index": 2
+        }
+      ],
+      "valid": true
+    },
+    "envelope": {
+      "ancestry_audit": {
+        "cross_synthesis_evidence_leakage": [],
+        "envelope_idea_count": 2,
+        "evidence_ids_preserved": true,
+        "flat_idea_evidence_lists_rendered": false,
+        "idea_ids_preserved": true,
+        "invented_evidence_ids": [],
+        "invented_synthesis_ids": [],
+        "path_evidence_ids": [
+          "g29-bilhah-and-zilpah-household-status",
+          "g29-feast-night-handover-and-discovery",
+          "g29-kinship-recognition-and-hospitality",
+          "g29-laban-older-before-younger-explanation",
+          "g29-leah-children-and-name-wordplay",
+          "g29-loved-and-unloved-relational-language",
+          "g29-marriage-to-sisters-canonical-context",
+          "g29-seven-years-service-for-rachel",
+          "g29-well-stone-and-rachel-shepherd",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "path_synthesis_unit_ids": [
+          "syn_interpretive_questions_4433ac725ad0",
+          "syn_interpretive_questions_91d62d78d26e",
+          "syn_surrounding_passages_8278a1ae2c02",
+          "syn_surrounding_passages_849018526777",
+          "syn_surrounding_passages_d23ae9036036",
+          "syn_why_it_matters_8201ae8f560b",
+          "syn_why_it_matters_fdd48b3aeb08"
+        ],
+        "paths_have_exact_unit_ancestry": true,
+        "source_evidence_ids": [
+          "g29-bilhah-and-zilpah-household-status",
+          "g29-feast-night-handover-and-discovery",
+          "g29-kinship-recognition-and-hospitality",
+          "g29-laban-older-before-younger-explanation",
+          "g29-leah-children-and-name-wordplay",
+          "g29-loved-and-unloved-relational-language",
+          "g29-marriage-to-sisters-canonical-context",
+          "g29-seven-years-service-for-rachel",
+          "g29-well-stone-and-rachel-shepherd",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3"
+        ],
+        "source_idea_count": 2,
+        "source_synthesis_unit_ids": [
+          "syn_interpretive_questions_4433ac725ad0",
+          "syn_interpretive_questions_91d62d78d26e",
+          "syn_surrounding_passages_8278a1ae2c02",
+          "syn_surrounding_passages_849018526777",
+          "syn_surrounding_passages_d23ae9036036",
+          "syn_why_it_matters_8201ae8f560b",
+          "syn_why_it_matters_fdd48b3aeb08"
+        ],
+        "synthesis_unit_ids_preserved": true,
+        "synthetic_parentage_created": false
+      },
+      "envelope_hash": "72192f834e3ab40cfdb71f3f71e38d43b0113b9a2a0140e55b81087db5b05319",
+      "expected_envelope_hash": "72192f834e3ab40cfdb71f3f71e38d43b0113b9a2a0140e55b81087db5b05319",
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "gate": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "provenance_binding": {
+      "binding_hash": "837db874c58d392df053de33011717a4483dcec6a76700107c78f047ae1d5575",
+      "expected_binding_hash": "837db874c58d392df053de33011717a4483dcec6a76700107c78f047ae1d5575",
+      "failure_code": null,
+      "hash_valid": true,
+      "shape_matches_deterministic_rebuild": true,
+      "valid": true
+    },
+    "quality": {
+      "archaeology_evidence_count": 0,
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "commentary_block_count": 3,
+      "commentary_prose_char_count": 2133,
+      "commentary_prose_word_count": 315,
+      "commentary_status": "validated",
+      "entity_counts": {
+        "artifacts": 0,
+        "events": 0,
+        "groups": 0,
+        "people": 0,
+        "places": 0
+      },
+      "events_groups_artifacts_count": 0,
+      "evidence_availability": "AVAILABLE",
+      "evidence_categories": {
+        "culture": 12
+      },
+      "evidence_category_diversity": 1,
+      "evidence_consumption_ratio": 1.0,
+      "evidence_ids_referenced": [
+        "g29-bilhah-and-zilpah-household-status",
+        "g29-feast-night-handover-and-discovery",
+        "g29-kinship-recognition-and-hospitality",
+        "g29-laban-older-before-younger-explanation",
+        "g29-leah-children-and-name-wordplay",
+        "g29-loved-and-unloved-relational-language",
+        "g29-marriage-to-sisters-canonical-context",
+        "g29-seven-years-service-for-rachel",
+        "g29-well-stone-and-rachel-shepherd",
+        "genesis-literary-movement",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "evidence_item_count": 12,
+      "evidence_score": 8.425,
+      "geography_evidence_count": 0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0225,
+      "people_count": 0,
+      "places_count": 0,
+      "reference": "Genesis 29",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "richness_status": "RICH_ENOUGH",
+      "section_count": 3,
+      "specific_evidence_count": 12,
+      "unique_evidence_ids_consumed": 12,
+      "unknown_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unused_evidence_ids": [],
+      "validated_but_contextually_thin": false,
+      "validation_status": "validated",
+      "verse_anchor_count": 35,
+      "verse_anchor_coverage": 1.0
+    },
+    "richness": {
+      "available_category_count": 3,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "clusters": [
+        {
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "concept_signature": "kind=surrounding_passages|parents=genesis|facts=do not use absence direct archaeological identification either prove disprove every ancestral narrative archaeology literary interpretation answer different questions;present mosaic attribution compositional models distinct positions genesis does not narrate history own literary formation;genesis moves universal origins chapters 1 11 ancestral family narratives chapters 12 50 ends jacob's household egypt",
+          "confidence": "high",
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "idea_cluster_556b7502165d",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "importance_weight": 1.0,
+          "kind": "surrounding_passages",
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "quality_class": "CORE",
+          "synthesis_ids": [
+            "syn_surrounding_passages_8278a1ae2c02",
+            "syn_surrounding_passages_849018526777",
+            "syn_surrounding_passages_d23ae9036036"
+          ],
+          "unit_kinds": [
+            "surrounding_passages"
+          ]
+        },
+        {
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=genesis-isaac-jacob-transition-context|facts=after wedding feast laban brings leah jacob night jacob discovers identity morning confronts laban literary reversal echoes jacob’s earlier deception without making either deception morally acceptable;jacob identifies himself rebekah’s son laban’s relative laban welcomes him jacob remains month episode situates hospitality kinship before marriage labor negotiated;laban explains local practice does not give younger daughter marriage before firstborn then negotiates rachel’s marriage after leah’s bridal week exchange more service comparative ancient near east customs may illuminate local explanation not proof universal law;laban gives zilpah leah bilhah rachel household women later childbearing roles developed genesis 30 status should described narrative rather than mapped one exact nuzi contract;leah bears reuben simeon levi judah narrator pairs names speeches about seeing hearing attachment praise these hebrew explanations carry narrative theology wordplay not necessarily exhaustive historical etymologies;jacob agrees serve laban seven years rachel text calls years few love labor serves negotiated marriage payment household arrangement comparative ancient near east evidence informs service context rachel not described purchased property;jacob marries leah rachel within narrated household arrangement later levitical prohibitions belong later canonical law context only genesis does not narrate sinai law charge here;jacob meets shepherds well where large stone covers opening flocks gather before watering rachel arrives laban’s flock jacob moves stone scene presents pastoral work well practice without making one action universal custom;narrative contrasts jacob’s love rachel leah’s unloved status then says yhwh sees leah’s situation hebrew relational language can mark preference status should not expanded into unqualified modern emotional diagnosis",
+          "confidence": "high",
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ],
+          "dispute_present": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "evidence_ids": [
+            "g29-bilhah-and-zilpah-household-status",
+            "g29-feast-night-handover-and-discovery",
+            "g29-kinship-recognition-and-hospitality",
+            "g29-laban-older-before-younger-explanation",
+            "g29-leah-children-and-name-wordplay",
+            "g29-loved-and-unloved-relational-language",
+            "g29-marriage-to-sisters-canonical-context",
+            "g29-seven-years-service-for-rachel",
+            "g29-well-stone-and-rachel-shepherd"
+          ],
+          "id": "idea_cluster_9040c6db2766",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "importance_weight": 0.5,
+          "kind": "interpretive_questions",
+          "passage_scope": "CURRENT_CHAPTER",
+          "quality_class": "DISPUTED",
+          "synthesis_ids": [
+            "syn_interpretive_questions_4433ac725ad0",
+            "syn_interpretive_questions_91d62d78d26e",
+            "syn_why_it_matters_8201ae8f560b",
+            "syn_why_it_matters_fdd48b3aeb08"
+          ],
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ]
+        }
+      ],
+      "consolidation_ratio": 0.75,
+      "consumed_category_count": 3,
+      "consumed_category_families": [
+        "culture",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_cluster_count": 2,
+      "consumed_core_cluster_count": 1,
+      "consumed_eligible_synthesis_count": 4,
+      "consumed_eligible_weight": 1.5,
+      "consumed_synthesis_count": 4,
+      "core_cluster_count": 1,
+      "core_cluster_coverage": 1.0,
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "dump_diagnostics": {
+        "block_count": 3,
+        "block_to_cluster_ratio": 1.5,
+        "block_to_synthesis_ratio": 0.75,
+        "consolidation_ratio": 0.75,
+        "consumed_cluster_count": 2,
+        "consumed_synthesis_count": 4,
+        "consumed_unit_ratio": 0.5714,
+        "mean_evidence_ids_per_block": 4.0,
+        "meaningful_cluster_count": 2,
+        "normalized_signals": [],
+        "repeated_block_count": 0,
+        "repeated_block_ratio": 0.0,
+        "severity": "NONE",
+        "signal_count": 0,
+        "signals": [],
+        "words_per_meaningful_cluster": 157.5
+      },
+      "eligibility_distribution": {
+        "RELEVANT": 1,
+        "REQUIRED": 1
+      },
+      "eligible_synthesis_count": 7,
+      "eligible_synthesis_coverage": 0.5714,
+      "eligible_weighted_denominator": 1.5,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 2,
+      "raw_synthesis_coverage": 0.5714,
+      "synthesis_unit_count": 7,
+      "weighted_idea_coverage": 1.0
+    }
+  },
+  "candidate_status": "READY_FOR_HUMAN_REVIEW",
+  "canonical_candidate_sha256": "a02ec8cd75700933bbbb3da2accc10324087e384d7e81e736ccbcd20453c6420",
+  "d1_packet_identity": {
+    "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+    "packet_id": "genesis-commentary-refresh-d1-renderer-input:96c41bf1b20c0e8e3f1cdd675b5fa439a6dbd295f5a6b10a919da1bee93731f8",
+    "packet_sha256": "96c41bf1b20c0e8e3f1cdd675b5fa439a6dbd295f5a6b10a919da1bee93731f8",
+    "path": "renderer-input/chapters/genesis_029",
+    "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "6e19459baf432e1263caabf7c82e53c23046da89d6777a493b34ff8e902d57c7"
+  },
+  "d3_eligibility": true,
+  "identity_checks": {
+    "ancestry_envelope_hash": true,
+    "binding_hash": true,
+    "canonical_chapter_sha": true,
+    "evidence_hash": true,
+    "production_source_packet": true,
+    "projection_hash": true,
+    "renderer_packet_sha": true,
+    "synthesis_hash": true,
+    "synthesis_unit_count": true,
+    "system_prompt_sha": true,
+    "user_prompt_sha": true
+  },
+  "normalization": {
+    "provenance": {
+      "artifact_version": "reader-provenance-binding-v2",
+      "binding_hash": "837db874c58d392df053de33011717a4483dcec6a76700107c78f047ae1d5575",
+      "block_count": 3,
+      "blocks": [
+        {
+          "block_id": "block_1",
+          "block_index": 0,
+          "evidence_ids": [
+            "g29-loved-and-unloved-relational-language",
+            "g29-marriage-to-sisters-canonical-context",
+            "g29-seven-years-service-for-rachel",
+            "g29-well-stone-and-rachel-shepherd"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g29-loved-and-unloved-relational-language",
+                "g29-marriage-to-sisters-canonical-context",
+                "g29-seven-years-service-for-rachel",
+                "g29-well-stone-and-rachel-shepherd"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+                  "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g29-loved-and-unloved-relational-language",
+                  "g29-marriage-to-sisters-canonical-context",
+                  "g29-seven-years-service-for-rachel",
+                  "g29-well-stone-and-rachel-shepherd"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 29:1-10",
+                  "Genesis 29:15-20",
+                  "Genesis 29:21-30",
+                  "Genesis 29:30-31"
+                ],
+                "synthesis_confidence": "medium",
+                "synthesis_id": "syn_interpretive_questions_91d62d78d26e",
+                "verse_refs": [
+                  "Genesis 29:1-10",
+                  "Genesis 29:15-20",
+                  "Genesis 29:21-30",
+                  "Genesis 29:30-31"
+                ]
+              },
+              "path_hash": "3030d9968e0047ea68a0a5fe1c4a6abad2d85d03ade67b598dc4d066dd009bac",
+              "path_id": "reader_path_genesis_029_3030d9968e0047ea68a0a5fe",
+              "reader_idea_id": "reader_idea_ba9f3d2deac148fa",
+              "reader_idea_label": "Laban gives Zilpah to Leah and Bilhah to Rachel as household women; their later childbearing roles are developed in Genesis 30.…",
+              "synthesis_id": "syn_interpretive_questions_91d62d78d26e"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_029_3030d9968e0047ea68a0a5fe"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_ba9f3d2deac148fa"
+          ],
+          "section_index": 0,
+          "synthesis_ids": [
+            "syn_interpretive_questions_91d62d78d26e"
+          ]
+        },
+        {
+          "block_id": "block_2",
+          "block_index": 0,
+          "evidence_ids": [
+            "g29-bilhah-and-zilpah-household-status",
+            "g29-feast-night-handover-and-discovery",
+            "g29-kinship-recognition-and-hospitality",
+            "g29-laban-older-before-younger-explanation",
+            "g29-leah-children-and-name-wordplay"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "g29-bilhah-and-zilpah-household-status",
+                "g29-feast-night-handover-and-discovery",
+                "g29-kinship-recognition-and-hospitality",
+                "g29-laban-older-before-younger-explanation",
+                "g29-leah-children-and-name-wordplay"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+                  "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "g29-bilhah-and-zilpah-household-status",
+                  "g29-feast-night-handover-and-discovery",
+                  "g29-kinship-recognition-and-hospitality",
+                  "g29-laban-older-before-younger-explanation",
+                  "g29-leah-children-and-name-wordplay"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "interpretive_questions",
+                "passage_scope": "CURRENT_CHAPTER",
+                "source_anchors": [
+                  "Genesis 29:11-14",
+                  "Genesis 29:21-25",
+                  "Genesis 29:24-29",
+                  "Genesis 29:26-30",
+                  "Genesis 29:31-35"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_interpretive_questions_4433ac725ad0",
+                "verse_refs": [
+                  "Genesis 29:11-14",
+                  "Genesis 29:21-25",
+                  "Genesis 29:24-29",
+                  "Genesis 29:26-30",
+                  "Genesis 29:31-35"
+                ]
+              },
+              "path_hash": "2cb50eb39e3db6f70f19da49b6d6655b66665c3b79bf2969b88456b2e339f6a3",
+              "path_id": "reader_path_genesis_029_2cb50eb39e3db6f70f19da49",
+              "reader_idea_id": "reader_idea_ba9f3d2deac148fa",
+              "reader_idea_label": "Laban gives Zilpah to Leah and Bilhah to Rachel as household women; their later childbearing roles are developed in Genesis 30.…",
+              "synthesis_id": "syn_interpretive_questions_4433ac725ad0"
+            }
+          ],
+          "path_classes": [
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_029_2cb50eb39e3db6f70f19da49"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_ba9f3d2deac148fa"
+          ],
+          "section_index": 1,
+          "synthesis_ids": [
+            "syn_interpretive_questions_4433ac725ad0"
+          ]
+        },
+        {
+          "block_id": "block_3",
+          "block_index": 0,
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "exact_paths": [
+            {
+              "evidence_ids": [
+                "genesis-literary-movement"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+                  "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8"
+                },
+                "disputed": false,
+                "evidence_ids": [
+                  "genesis-literary-movement"
+                ],
+                "interpretation_level": "fact",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "high",
+                "synthesis_id": "syn_surrounding_passages_849018526777",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "71f02eda35fad8a71dd6331157b2ae75b564eb961f7035df7e7c02c03aec1f6c",
+              "path_id": "reader_path_genesis_029_71f02eda35fad8a71dd63311",
+              "reader_idea_id": "reader_idea_10c64274a71d6133",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_849018526777"
+            },
+            {
+              "evidence_ids": [
+                "genesis:interpretive_note:0",
+                "genesis:interpretive_note:3"
+              ],
+              "path": {
+                "ancestry_hashes": {
+                  "evidence_hash": "2e28c26ee0bf57e987af15dd3585c465bca94e13432dd98f2f6cf887bba49648",
+                  "synthesis_hash": "226b01ff5c0320c16c87b46bb72465c1e6e9dc8133cdc36dd0790fd5a565cee8"
+                },
+                "disputed": true,
+                "evidence_ids": [
+                  "genesis:interpretive_note:0",
+                  "genesis:interpretive_note:3"
+                ],
+                "interpretation_level": "disputed",
+                "kind": "surrounding_passages",
+                "passage_scope": "SURROUNDING_PASSAGE",
+                "source_anchors": [
+                  "Genesis 11:27-50:26",
+                  "Genesis 1:1-50:26"
+                ],
+                "synthesis_confidence": "low",
+                "synthesis_id": "syn_surrounding_passages_8278a1ae2c02",
+                "verse_refs": [
+                  "Genesis 10:1-32",
+                  "Genesis 11:1-32",
+                  "Genesis 11:27-32",
+                  "Genesis 12:1-20",
+                  "Genesis 13:1-18",
+                  "Genesis 14:1-24",
+                  "Genesis 15:1-21",
+                  "Genesis 16:1-16",
+                  "Genesis 17:1-27",
+                  "Genesis 18:1-33",
+                  "Genesis 19:1-38",
+                  "Genesis 1:1-31",
+                  "Genesis 20:1-18",
+                  "Genesis 21:1-34",
+                  "Genesis 22:1-24",
+                  "Genesis 23:1-20",
+                  "Genesis 24:1-67",
+                  "Genesis 25:1-34",
+                  "Genesis 26:1-35",
+                  "Genesis 27:1-46",
+                  "Genesis 28:1-22",
+                  "Genesis 2:1-25",
+                  "Genesis 30:1-43",
+                  "Genesis 31:1-55",
+                  "Genesis 32:1-32",
+                  "Genesis 33:1-20",
+                  "Genesis 34:1-31",
+                  "Genesis 35:1-29",
+                  "Genesis 36:1-43",
+                  "Genesis 37:1-36",
+                  "Genesis 38:1-30",
+                  "Genesis 39:1-23",
+                  "Genesis 3:1-24",
+                  "Genesis 40:1-23",
+                  "Genesis 41:1-57",
+                  "Genesis 42:1-38",
+                  "Genesis 43:1-34",
+                  "Genesis 44:1-34",
+                  "Genesis 45:1-28",
+                  "Genesis 46:1-34",
+                  "Genesis 47:1-31",
+                  "Genesis 48:1-22",
+                  "Genesis 49:1-33",
+                  "Genesis 4:1-26",
+                  "Genesis 50:1-26",
+                  "Genesis 5:1-32",
+                  "Genesis 6:1-22",
+                  "Genesis 7:1-24",
+                  "Genesis 8:1-22",
+                  "Genesis 9:1-29"
+                ]
+              },
+              "path_hash": "723424c6f955eb98b66165f66d4e1035ebdf8cd6abcc3b24e48f4face09ee5a2",
+              "path_id": "reader_path_genesis_029_723424c6f955eb98b66165f6",
+              "reader_idea_id": "reader_idea_10c64274a71d6133",
+              "reader_idea_label": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary…",
+              "synthesis_id": "syn_surrounding_passages_8278a1ae2c02"
+            }
+          ],
+          "path_classes": [
+            "priority",
+            "priority"
+          ],
+          "provenance_refs": [
+            "reader_path_genesis_029_71f02eda35fad8a71dd63311",
+            "reader_path_genesis_029_723424c6f955eb98b66165f6"
+          ],
+          "reader_idea_ids": [
+            "reader_idea_10c64274a71d6133"
+          ],
+          "section_index": 2,
+          "synthesis_ids": [
+            "syn_surrounding_passages_849018526777",
+            "syn_surrounding_passages_8278a1ae2c02"
+          ]
+        }
+      ]
+    },
+    "reference_presentation": []
+  },
+  "parse_errors": [],
+  "parse_status": "JSON_OBJECT",
+  "raw_response_sha256": "694445f55329416b5250b0572cceaa63a8705f8c641685b9139a7f17d1dd47c4",
+  "validation_errors": [],
+  "validation_warnings": [],
+  "validator_errors": [],
+  "validator_partial": false,
+  "validator_valid": true
+}
