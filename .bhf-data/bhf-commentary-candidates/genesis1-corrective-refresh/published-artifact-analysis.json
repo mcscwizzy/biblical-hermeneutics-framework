@@ -1,0 +1,164 @@
+{
+  "artifact_version": "genesis1-corrective-refresh-published-analysis-v1",
+  "contract": {
+    "model": "gpt-5.6-terra",
+    "prompt_version": "1.8",
+    "schema_version": "1.2",
+    "status": "validated"
+  },
+  "diagnosis": {
+    "direct_cause": "The published renderer output selected one of twelve currently legal synthesis paths and two of fifteen citable evidence IDs; current binding exposes twelve active paths and six projected ideas.",
+    "quality_signal": "The current audit's richness_status and validated_but_contextually_thin fields identify whether the published artifact clears the v1.2 contextual-richness diagnostic."
+  },
+  "expected_sha256": "8090b554273c56561c0fbe3a3c7b96a67fb79901475ff1e39081b22f3c40134e",
+  "hash_matches_expected": true,
+  "path": ".bhf-data/bhf-commentary-v1.2/genesis_001.json",
+  "richness_audit": {
+    "archaeology_evidence_count": 0,
+    "boilerplate_detected": false,
+    "boilerplate_phrases": [],
+    "boilerplate_ratio": 0.0,
+    "commentary_block_count": 1,
+    "commentary_prose_char_count": 340,
+    "commentary_prose_word_count": 55,
+    "commentary_status": "validated",
+    "entity_counts": {
+      "artifacts": 0,
+      "events": 1,
+      "groups": 0,
+      "people": 0,
+      "places": 0
+    },
+    "events_groups_artifacts_count": 1,
+    "evidence_availability": "AVAILABLE",
+    "evidence_categories": {
+      "chronology": 6,
+      "culture": 31,
+      "geography": 2,
+      "history": 18,
+      "social": 1
+    },
+    "evidence_category_diversity": 5,
+    "evidence_consumption_ratio": 0.0345,
+    "evidence_ids_referenced": [
+      "col-image",
+      "col-new-humanity"
+    ],
+    "evidence_item_count": 58,
+    "evidence_score": 47.7213,
+    "geography_evidence_count": 2,
+    "mostly_repeats_opening_or_closing_verses": false,
+    "opening_closing_lexical_overlap": 0.0333,
+    "people_count": 0,
+    "places_count": 0,
+    "reference": "Genesis 1",
+    "richness_reasons": [
+      "meaningful evidence exists but reader commentary underuses or weakly explains it"
+    ],
+    "richness_status": "SYNTHESIS_GAP",
+    "section_count": 1,
+    "specific_evidence_count": 15,
+    "unique_evidence_ids_consumed": 2,
+    "unknown_evidence_ids": [],
+    "unused_evidence_count": 56,
+    "unused_evidence_ids": [
+      "2-corinthians:interpretive_note:21",
+      "creation-doctrine-framework:ancient_near_east_context:0",
+      "creation-doctrine-framework:hebraic_worldview:0",
+      "creation-doctrine-framework:historical_context:0",
+      "creation-doctrine-framework:historical_setting:0",
+      "creation-doctrine-framework:original_audience:0",
+      "creation-doctrine-framework:second_temple_context:0",
+      "creation-doctrine-framework:timeline:0",
+      "creation-doctrine-framework:timeline:1",
+      "creation-doctrine-framework:timeline:2",
+      "creation-doctrine-framework:timeline:3",
+      "creation-doctrine-framework:timeline:4",
+      "creation-doctrine-framework:timeline:5",
+      "creation-doctrine:ancient_near_east_context:0",
+      "creation-doctrine:historical_context:0",
+      "creation-theme:ancient_near_east_context:0",
+      "creation-theme:historical_context:0",
+      "creation:ancient_near_east_context:0",
+      "creation:hebraic_worldview:0",
+      "creation:historical_context:0",
+      "enuma-elish-cosmic-ordering-comparison",
+      "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+      "genesis-ane-comparative-context",
+      "genesis-literary-movement",
+      "genesis-ordered-worldview-observation",
+      "genesis-ordered-worldview-observation:passage-relevance",
+      "genesis:interpretive_note:0",
+      "genesis:interpretive_note:1",
+      "genesis:interpretive_note:2",
+      "image-of-god-theme:ancient_near_east_context:0",
+      "image-of-god-theme:hebraic_worldview:0",
+      "image-of-god-theme:historical_context:0",
+      "image-of-god-theme:second_temple_context:0",
+      "john-logos",
+      "light-and-darkness-theme:ancient_near_east_context:0",
+      "light-and-darkness-theme:historical_context:0",
+      "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+      "new-creation-theme:ancient_near_east_context:0",
+      "new-creation-theme:historical_context:0",
+      "pneumatology:ancient_near_east_context:0",
+      "pneumatology:historical_context:0",
+      "spirit-theme:ancient_near_east_context:0",
+      "spirit-theme:historical_context:0",
+      "spiritual-gifts:ancient_near_east_context:0",
+      "spiritual-gifts:historical_context:0",
+      "water-and-spirit-theme:ancient_near_east_context:0",
+      "water-and-spirit-theme:historical_context:0",
+      "what-does-ruach-mean:ancient_near_east_context:0",
+      "what-does-ruach-mean:historical_context:0",
+      "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-holy-spirit:historical_context:0",
+      "what-is-the-image-of-god:ancient_near_east_context:0",
+      "what-is-the-image-of-god:historical_context:0",
+      "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+      "zephaniah-creation-reversal"
+    ],
+    "validated_but_contextually_thin": true,
+    "validation_status": "validated",
+    "verse_anchor_count": 2,
+    "verse_anchor_coverage": 0.0645
+  },
+  "sha256": "8090b554273c56561c0fbe3a3c7b96a67fb79901475ff1e39081b22f3c40134e",
+  "shape": {
+    "active_path_count": 12,
+    "active_reader_idea_count": 6,
+    "available_unselected_evidence_id_count": 13,
+    "available_unselected_synthesis_unit_count": 11,
+    "block_count": 1,
+    "evidence_ids": [
+      "col-image",
+      "col-new-humanity"
+    ],
+    "section_count": 1,
+    "section_kinds": [
+      "chapter_overview"
+    ],
+    "synthesis_ids": [
+      "syn_interpretive_questions_104b452d03db"
+    ],
+    "unique_evidence_id_count": 2,
+    "unique_synthesis_unit_count": 1
+  },
+  "source_lineage": {
+    "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+    "matches_current_input": true,
+    "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+  },
+  "technical_validation": {
+    "valid": true,
+    "partial": false,
+    "errors": [],
+    "section_result_count": 1,
+    "validation_envelope_fields_stripped": [
+      "failure_reason",
+      "validation_errors",
+      "validation_warnings"
+    ]
+  }
+}

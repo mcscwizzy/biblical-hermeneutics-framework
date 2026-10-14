@@ -1,0 +1,2457 @@
+{
+  "answer": "YES. The current packet supports a concise, materially varied Genesis 1 Commentary: it includes an ordered-creation observation, an ANE comparison with an explicit no-direct-borrowing limit, Genesis literary movement, image-of-God discussion, and distinct later canonical reception. Seven surrounding units contain duplicate or parallel representations, but the packet is not limited to the published image-of-God discussion.",
+  "artifact_version": "genesis1-corrective-refresh-current-input-diagnosis-v1",
+  "base_sha": "b45147cf1ab9a19f4232f133419643cd8489d4bb",
+  "evidence": {
+    "applicability_status_counts": {
+      "background": 43,
+      "eligible": 15
+    },
+    "availability": "AVAILABLE",
+    "category_counts": {
+      "chronology": 6,
+      "culture": 31,
+      "geography": 2,
+      "history": 18,
+      "social": 1
+    },
+    "excluded_before_synthesis": [
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "creation-doctrine-framework:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "creation-doctrine-framework:hebraic_worldview:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "creation-doctrine-framework:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "creation-doctrine-framework:historical_setting:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "social",
+        "id": "creation-doctrine-framework:original_audience:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "creation-doctrine-framework:second_temple_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "chronology",
+        "id": "creation-doctrine-framework:timeline:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "chronology",
+        "id": "creation-doctrine-framework:timeline:1"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "chronology",
+        "id": "creation-doctrine-framework:timeline:2"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "chronology",
+        "id": "creation-doctrine-framework:timeline:3"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "chronology",
+        "id": "creation-doctrine-framework:timeline:4"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "chronology",
+        "id": "creation-doctrine-framework:timeline:5"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "creation-doctrine:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "creation-doctrine:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "creation-theme:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "creation-theme:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "entity",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "creation:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "entity",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "creation:hebraic_worldview:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "entity",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "creation:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "image-of-god-theme:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "image-of-god-theme:hebraic_worldview:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "image-of-god-theme:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "image-of-god-theme:second_temple_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "light-and-darkness-theme:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "light-and-darkness-theme:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "new-creation-theme:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "new-creation-theme:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "pneumatology:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "pneumatology:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "spirit-theme:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "spirit-theme:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "spiritual-gifts:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "spiritual-gifts:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "water-and-spirit-theme:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "water-and-spirit-theme:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "what-does-ruach-mean:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "what-does-ruach-mean:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "what-is-the-holy-spirit:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "what-is-the-holy-spirit:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "what-is-the-image-of-god:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "what-is-the-image-of-god:historical_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "culture",
+        "id": "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0"
+      },
+      {
+        "applicability": {
+          "anchor_source": "parent",
+          "applicability_scope": "global",
+          "availability_specific": false,
+          "current_chapter_eligible": false,
+          "inherited_from_parent": true,
+          "policy_version": "commentary-evidence-applicability-v1",
+          "raw_anchor_specificity": "verse",
+          "reason": "legacy_parent_inheritance_is_background_only",
+          "status": "background"
+        },
+        "category": "history",
+        "id": "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+      }
+    ],
+    "excluded_reason_counts": {
+      "legacy_parent_inheritance_is_background_only": 43
+    },
+    "item_count": 58,
+    "unused_evidence_count": 43,
+    "used_evidence_ids": [
+      "2-corinthians:interpretive_note:21",
+      "col-image",
+      "col-new-humanity",
+      "enuma-elish-cosmic-ordering-comparison",
+      "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+      "genesis-ane-comparative-context",
+      "genesis-literary-movement",
+      "genesis-ordered-worldview-observation",
+      "genesis-ordered-worldview-observation:passage-relevance",
+      "genesis:interpretive_note:0",
+      "genesis:interpretive_note:1",
+      "genesis:interpretive_note:2",
+      "john-logos",
+      "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+      "zephaniah-creation-reversal"
+    ]
+  },
+  "lineage": {
+    "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+    "source_packet_artifact": "source/source-packet.json",
+    "source_packet_hash": "e6928eef4b211b2617f9b10b96f64316fed9f7ffc12174eefcbdd3f4f4f462fa",
+    "source_packet_id": "commentary-production-v1-packet:e6928eef4b211b2617f9b10b96f64316fed9f7ffc12174eefcbdd3f4f4f462fa",
+    "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+  },
+  "preparation_path": {
+    "function": "framework.commentary.production.inputs.prepare_chapter",
+    "model_calls_during_preparation": 0,
+    "renderer_context": "framework.commentary.v12_corpus.V12CorpusRunner._renderer_context",
+    "renderer_input_writer": "framework.commentary.v12_corpus.V12CorpusRunner._write_renderer_input"
+  },
+  "reference": "Genesis 1",
+  "renderability": {
+    "comparison_decision": "SUFFICIENT_CONTEXT_FOR_ONE_CANDIDATE",
+    "reason": "12 synthesis units with eligible ancestry, six projected reader ideas, and twelve active provenance paths are present.",
+    "renderable": true
+  },
+  "renderer": {
+    "active_provenance_path_count": 12,
+    "active_provenance_paths": [
+      {
+        "confidence": "high",
+        "evidence_ids": [
+          "col-image",
+          "col-new-humanity"
+        ],
+        "facts": [
+          "Messiah is called the image of the invisible God.",
+          "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "CURRENT_CHAPTER",
+        "path_id": "reader_path_genesis_001_976a8f95234b3b8868dc9e55",
+        "reader_idea_id": "reader_idea_09b240b7af4088e4",
+        "source_anchors": [
+          "Genesis 1:26-27"
+        ],
+        "synthesis_id": "syn_interpretive_questions_104b452d03db",
+        "synthesis_kind": "interpretive_questions"
+      },
+      {
+        "confidence": "high",
+        "evidence_ids": [
+          "col-image",
+          "col-new-humanity"
+        ],
+        "facts": [
+          "Messiah is called the image of the invisible God.",
+          "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "CURRENT_CHAPTER",
+        "path_id": "reader_path_genesis_001_5fe76ae1e7bc750e9060f1d8",
+        "reader_idea_id": "reader_idea_09b240b7af4088e4",
+        "source_anchors": [
+          "Genesis 1:26-27"
+        ],
+        "synthesis_id": "syn_why_it_matters_8c410550b6f6",
+        "synthesis_kind": "why_it_matters"
+      },
+      {
+        "confidence": "high",
+        "evidence_ids": [
+          "zephaniah-creation-reversal"
+        ],
+        "facts": [
+          "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "CURRENT_CHAPTER",
+        "path_id": "reader_path_genesis_001_711db22424abeced6f163792",
+        "reader_idea_id": "reader_idea_27970fe326c44cd2",
+        "source_anchors": [
+          "Genesis 1:20-28"
+        ],
+        "synthesis_id": "syn_interpretive_questions_4abfca502108",
+        "synthesis_kind": "interpretive_questions"
+      },
+      {
+        "confidence": "high",
+        "evidence_ids": [
+          "john-logos"
+        ],
+        "facts": [
+          "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "CURRENT_CHAPTER",
+        "path_id": "reader_path_genesis_001_556d55bb113175b0b497ad68",
+        "reader_idea_id": "reader_idea_95728e344472a934",
+        "source_anchors": [
+          "Genesis 1:1-5"
+        ],
+        "synthesis_id": "syn_interpretive_questions_4b06eb55d452",
+        "synthesis_kind": "interpretive_questions"
+      },
+      {
+        "confidence": "high",
+        "evidence_ids": [
+          "2-corinthians:interpretive_note:21"
+        ],
+        "facts": [
+          "God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "CURRENT_CHAPTER",
+        "path_id": "reader_path_genesis_001_d63f957c4b938559c37a2058",
+        "reader_idea_id": "reader_idea_5ac937d5f38f78ea",
+        "source_anchors": [
+          "Genesis 1:3"
+        ],
+        "synthesis_id": "syn_interpretive_questions_ed658ab06804",
+        "synthesis_kind": "interpretive_questions"
+      },
+      {
+        "confidence": "medium",
+        "evidence_ids": [
+          "enuma-elish-cosmic-ordering-comparison",
+          "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+          "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+        ],
+        "facts": [
+          "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+          "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+          "Shared motifs support comparison but do not establish a single line of direct borrowing."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "path_id": "reader_path_genesis_001_8f39cf4ea4d8d816ccf7f47b",
+        "reader_idea_id": "reader_idea_07e866c2370e51b2",
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "synthesis_id": "syn_surrounding_passages_02324dc7bcd9",
+        "synthesis_kind": "surrounding_passages"
+      },
+      {
+        "confidence": "medium",
+        "evidence_ids": [
+          "enuma-elish-cosmic-ordering-comparison",
+          "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+          "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+        ],
+        "facts": [
+          "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+          "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+          "Shared motifs support comparison but do not establish a single line of direct borrowing."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "path_id": "reader_path_genesis_001_ee40c700b3f14b8b62e4ad52",
+        "reader_idea_id": "reader_idea_07e866c2370e51b2",
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "synthesis_id": "syn_surrounding_passages_68d0c434dd51",
+        "synthesis_kind": "surrounding_passages"
+      },
+      {
+        "confidence": "high",
+        "evidence_ids": [
+          "genesis-ordered-worldview-observation",
+          "genesis-ordered-worldview-observation:passage-relevance"
+        ],
+        "facts": [
+          "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+          "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+        ],
+        "interpretation_level": "fact",
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "path_id": "reader_path_genesis_001_764d2550b868e13636d922ad",
+        "reader_idea_id": "reader_idea_07e866c2370e51b2",
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "synthesis_id": "syn_surrounding_passages_89e2fa039257",
+        "synthesis_kind": "surrounding_passages"
+      },
+      {
+        "confidence": "high",
+        "evidence_ids": [
+          "genesis-ordered-worldview-observation",
+          "genesis-ordered-worldview-observation:passage-relevance"
+        ],
+        "facts": [
+          "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+          "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+        ],
+        "interpretation_level": "inference",
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "path_id": "reader_path_genesis_001_f42cd1037605ea4ed9c2d019",
+        "reader_idea_id": "reader_idea_07e866c2370e51b2",
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "synthesis_id": "syn_surrounding_passages_9a6be1bbec10",
+        "synthesis_kind": "surrounding_passages"
+      },
+      {
+        "confidence": "high",
+        "evidence_ids": [
+          "genesis-literary-movement"
+        ],
+        "facts": [
+          "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."
+        ],
+        "interpretation_level": "fact",
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "path_id": "reader_path_genesis_001_74b65dbe88a34bdafddf4b36",
+        "reader_idea_id": "reader_idea_5c6624c0f5d19e6c",
+        "source_anchors": [
+          "Genesis 1:1-50:26"
+        ],
+        "synthesis_id": "syn_surrounding_passages_311399d9709e",
+        "synthesis_kind": "surrounding_passages"
+      },
+      {
+        "confidence": "low",
+        "evidence_ids": [
+          "genesis-ane-comparative-context",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:1",
+          "genesis:interpretive_note:2"
+        ],
+        "facts": [
+          "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+          "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+          "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+          "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "path_id": "reader_path_genesis_001_1c5599bb4fbed3361552cb90",
+        "reader_idea_id": "reader_idea_5c6624c0f5d19e6c",
+        "source_anchors": [
+          "Genesis 1:1-11:26",
+          "Genesis 1:1-50:26"
+        ],
+        "synthesis_id": "syn_surrounding_passages_3c5ff4c1ad4a",
+        "synthesis_kind": "surrounding_passages"
+      },
+      {
+        "confidence": "low",
+        "evidence_ids": [
+          "genesis-ane-comparative-context",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:1",
+          "genesis:interpretive_note:2"
+        ],
+        "facts": [
+          "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+          "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+          "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+          "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
+        ],
+        "interpretation_level": "disputed",
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "path_id": "reader_path_genesis_001_72331ab7389ad078a0312a35",
+        "reader_idea_id": "reader_idea_5c6624c0f5d19e6c",
+        "source_anchors": [
+          "Genesis 1:1-11:26",
+          "Genesis 1:1-50:26"
+        ],
+        "synthesis_id": "syn_surrounding_passages_89969fb357a1",
+        "synthesis_kind": "surrounding_passages"
+      }
+    ],
+    "bundle_evidence_ids_visible_in_coverage_inventory": [
+      "2-corinthians:interpretive_note:21",
+      "col-image",
+      "col-new-humanity",
+      "creation-doctrine-framework:ancient_near_east_context:0",
+      "creation-doctrine-framework:hebraic_worldview:0",
+      "creation-doctrine-framework:historical_context:0",
+      "creation-doctrine-framework:historical_setting:0",
+      "creation-doctrine-framework:original_audience:0",
+      "creation-doctrine-framework:second_temple_context:0",
+      "creation-doctrine-framework:timeline:0",
+      "creation-doctrine-framework:timeline:1",
+      "creation-doctrine-framework:timeline:2",
+      "creation-doctrine-framework:timeline:3",
+      "creation-doctrine-framework:timeline:4",
+      "creation-doctrine-framework:timeline:5",
+      "creation-doctrine:ancient_near_east_context:0",
+      "creation-doctrine:historical_context:0",
+      "creation-theme:ancient_near_east_context:0",
+      "creation-theme:historical_context:0",
+      "creation:ancient_near_east_context:0",
+      "creation:hebraic_worldview:0",
+      "creation:historical_context:0",
+      "enuma-elish-cosmic-ordering-comparison",
+      "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+      "genesis-ane-comparative-context",
+      "genesis-literary-movement",
+      "genesis-ordered-worldview-observation",
+      "genesis-ordered-worldview-observation:passage-relevance",
+      "genesis:interpretive_note:0",
+      "genesis:interpretive_note:1",
+      "genesis:interpretive_note:2",
+      "image-of-god-theme:ancient_near_east_context:0",
+      "image-of-god-theme:hebraic_worldview:0",
+      "image-of-god-theme:historical_context:0",
+      "image-of-god-theme:second_temple_context:0",
+      "john-logos",
+      "light-and-darkness-theme:ancient_near_east_context:0",
+      "light-and-darkness-theme:historical_context:0",
+      "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+      "new-creation-theme:ancient_near_east_context:0",
+      "new-creation-theme:historical_context:0",
+      "pneumatology:ancient_near_east_context:0",
+      "pneumatology:historical_context:0",
+      "spirit-theme:ancient_near_east_context:0",
+      "spirit-theme:historical_context:0",
+      "spiritual-gifts:ancient_near_east_context:0",
+      "spiritual-gifts:historical_context:0",
+      "water-and-spirit-theme:ancient_near_east_context:0",
+      "water-and-spirit-theme:historical_context:0",
+      "what-does-ruach-mean:ancient_near_east_context:0",
+      "what-does-ruach-mean:historical_context:0",
+      "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-holy-spirit:historical_context:0",
+      "what-is-the-image-of-god:ancient_near_east_context:0",
+      "what-is-the-image-of-god:historical_context:0",
+      "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+      "zephaniah-creation-reversal"
+    ],
+    "canonical_text_present": true,
+    "citable_evidence_ids": [
+      "2-corinthians:interpretive_note:21",
+      "col-image",
+      "col-new-humanity",
+      "enuma-elish-cosmic-ordering-comparison",
+      "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+      "genesis-ane-comparative-context",
+      "genesis-literary-movement",
+      "genesis-ordered-worldview-observation",
+      "genesis-ordered-worldview-observation:passage-relevance",
+      "genesis:interpretive_note:0",
+      "genesis:interpretive_note:1",
+      "genesis:interpretive_note:2",
+      "john-logos",
+      "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+      "zephaniah-creation-reversal"
+    ],
+    "compiled_synthesis_present": true,
+    "contract_files": [
+      "renderer-input/system_prompt.txt",
+      "renderer-input/user_prompt.txt",
+      "renderer-input/metadata.json"
+    ],
+    "effort": "high",
+    "ids_visible_as_inventory_but_excluded_from_synthesis_or_citable_paths": [
+      "creation-doctrine-framework:ancient_near_east_context:0",
+      "creation-doctrine-framework:hebraic_worldview:0",
+      "creation-doctrine-framework:historical_context:0",
+      "creation-doctrine-framework:historical_setting:0",
+      "creation-doctrine-framework:original_audience:0",
+      "creation-doctrine-framework:second_temple_context:0",
+      "creation-doctrine-framework:timeline:0",
+      "creation-doctrine-framework:timeline:1",
+      "creation-doctrine-framework:timeline:2",
+      "creation-doctrine-framework:timeline:3",
+      "creation-doctrine-framework:timeline:4",
+      "creation-doctrine-framework:timeline:5",
+      "creation-doctrine:ancient_near_east_context:0",
+      "creation-doctrine:historical_context:0",
+      "creation-theme:ancient_near_east_context:0",
+      "creation-theme:historical_context:0",
+      "creation:ancient_near_east_context:0",
+      "creation:hebraic_worldview:0",
+      "creation:historical_context:0",
+      "image-of-god-theme:ancient_near_east_context:0",
+      "image-of-god-theme:hebraic_worldview:0",
+      "image-of-god-theme:historical_context:0",
+      "image-of-god-theme:second_temple_context:0",
+      "light-and-darkness-theme:ancient_near_east_context:0",
+      "light-and-darkness-theme:historical_context:0",
+      "new-creation-theme:ancient_near_east_context:0",
+      "new-creation-theme:historical_context:0",
+      "pneumatology:ancient_near_east_context:0",
+      "pneumatology:historical_context:0",
+      "spirit-theme:ancient_near_east_context:0",
+      "spirit-theme:historical_context:0",
+      "spiritual-gifts:ancient_near_east_context:0",
+      "spiritual-gifts:historical_context:0",
+      "water-and-spirit-theme:ancient_near_east_context:0",
+      "water-and-spirit-theme:historical_context:0",
+      "what-does-ruach-mean:ancient_near_east_context:0",
+      "what-does-ruach-mean:historical_context:0",
+      "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-holy-spirit:historical_context:0",
+      "what-is-the-image-of-god:ancient_near_east_context:0",
+      "what-is-the-image-of-god:historical_context:0",
+      "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+    ],
+    "mode": "codex_session",
+    "model": "gpt-5.6-terra",
+    "prompt_chars": 62373,
+    "prompt_version": "1.8",
+    "reader_idea_count": 6,
+    "reader_ideas": [
+      {
+        "ancestry_hashes": {
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+        },
+        "categories": [
+          "culture",
+          "interpretive_questions"
+        ],
+        "cluster_ids": [
+          "idea_cluster_a508d699bcd8"
+        ],
+        "confidence": "high",
+        "disputed": true,
+        "evidence_ids": [
+          "col-image",
+          "col-new-humanity"
+        ],
+        "grouping_reason": "UNGROUPED_DISTINCT_CLUSTER",
+        "grouping_reasons": [],
+        "idea_id": "reader_idea_09b240b7af4088e4",
+        "importance": "RELEVANT",
+        "label": "Messiah is called the image of the invisible God.",
+        "label_source": "first_synthesis_fact",
+        "source_order": {
+          "cluster_ids_in_source_order": [
+            "idea_cluster_a508d699bcd8"
+          ],
+          "first_unit_ordinal": 1,
+          "last_unit_ordinal": 12,
+          "unit_ordinals": [
+            1,
+            12
+          ]
+        },
+        "status": "DISPUTED",
+        "synthesis_unit_ids": [
+          "syn_interpretive_questions_104b452d03db",
+          "syn_why_it_matters_8c410550b6f6"
+        ]
+      },
+      {
+        "ancestry_hashes": {
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+        },
+        "categories": [
+          "culture",
+          "interpretive_questions"
+        ],
+        "cluster_ids": [
+          "idea_cluster_e0a8e6eb0419"
+        ],
+        "confidence": "low",
+        "disputed": true,
+        "evidence_ids": [
+          "zephaniah-creation-reversal"
+        ],
+        "grouping_reason": "UNGROUPED_DISTINCT_CLUSTER",
+        "grouping_reasons": [],
+        "idea_id": "reader_idea_27970fe326c44cd2",
+        "importance": "RELEVANT",
+        "label": "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with…",
+        "label_source": "first_synthesis_fact",
+        "source_order": {
+          "cluster_ids_in_source_order": [
+            "idea_cluster_e0a8e6eb0419"
+          ],
+          "first_unit_ordinal": 2,
+          "last_unit_ordinal": 2,
+          "unit_ordinals": [
+            2
+          ]
+        },
+        "status": "DISPUTED",
+        "synthesis_unit_ids": [
+          "syn_interpretive_questions_4abfca502108"
+        ]
+      },
+      {
+        "ancestry_hashes": {
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+        },
+        "categories": [
+          "culture",
+          "interpretive_questions"
+        ],
+        "cluster_ids": [
+          "idea_cluster_b9f4988183ec"
+        ],
+        "confidence": "low",
+        "disputed": true,
+        "evidence_ids": [
+          "john-logos"
+        ],
+        "grouping_reason": "UNGROUPED_DISTINCT_CLUSTER",
+        "grouping_reasons": [],
+        "idea_id": "reader_idea_95728e344472a934",
+        "importance": "RELEVANT",
+        "label": "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish…",
+        "label_source": "first_synthesis_fact",
+        "source_order": {
+          "cluster_ids_in_source_order": [
+            "idea_cluster_b9f4988183ec"
+          ],
+          "first_unit_ordinal": 3,
+          "last_unit_ordinal": 3,
+          "unit_ordinals": [
+            3
+          ]
+        },
+        "status": "DISPUTED",
+        "synthesis_unit_ids": [
+          "syn_interpretive_questions_4b06eb55d452"
+        ]
+      },
+      {
+        "ancestry_hashes": {
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+        },
+        "categories": [
+          "culture",
+          "interpretive_questions"
+        ],
+        "cluster_ids": [
+          "idea_cluster_8f57468944f2"
+        ],
+        "confidence": "low",
+        "disputed": true,
+        "evidence_ids": [
+          "2-corinthians:interpretive_note:21"
+        ],
+        "grouping_reason": "UNGROUPED_DISTINCT_CLUSTER",
+        "grouping_reasons": [],
+        "idea_id": "reader_idea_5ac937d5f38f78ea",
+        "importance": "RELEVANT",
+        "label": "God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of…",
+        "label_source": "first_synthesis_fact",
+        "source_order": {
+          "cluster_ids_in_source_order": [
+            "idea_cluster_8f57468944f2"
+          ],
+          "first_unit_ordinal": 4,
+          "last_unit_ordinal": 4,
+          "unit_ordinals": [
+            4
+          ]
+        },
+        "status": "DISPUTED",
+        "synthesis_unit_ids": [
+          "syn_interpretive_questions_ed658ab06804"
+        ]
+      },
+      {
+        "ancestry_hashes": {
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+        },
+        "categories": [
+          "culture",
+          "history",
+          "surrounding_passages"
+        ],
+        "cluster_ids": [
+          "idea_cluster_dc19b676e546"
+        ],
+        "confidence": "medium",
+        "disputed": true,
+        "evidence_ids": [
+          "enuma-elish-cosmic-ordering-comparison",
+          "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+          "genesis-ordered-worldview-observation",
+          "genesis-ordered-worldview-observation:passage-relevance",
+          "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+        ],
+        "grouping_reason": "UNGROUPED_DISTINCT_CLUSTER",
+        "grouping_reasons": [],
+        "idea_id": "reader_idea_07e866c2370e51b2",
+        "importance": "CORE",
+        "label": "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+        "label_source": "first_synthesis_fact",
+        "source_order": {
+          "cluster_ids_in_source_order": [
+            "idea_cluster_dc19b676e546"
+          ],
+          "first_unit_ordinal": 5,
+          "last_unit_ordinal": 11,
+          "unit_ordinals": [
+            5,
+            8,
+            10,
+            11
+          ]
+        },
+        "status": "DISPUTED",
+        "synthesis_unit_ids": [
+          "syn_surrounding_passages_02324dc7bcd9",
+          "syn_surrounding_passages_68d0c434dd51",
+          "syn_surrounding_passages_89e2fa039257",
+          "syn_surrounding_passages_9a6be1bbec10"
+        ]
+      },
+      {
+        "ancestry_hashes": {
+          "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+          "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+        },
+        "categories": [
+          "culture",
+          "geography",
+          "surrounding_passages"
+        ],
+        "cluster_ids": [
+          "idea_cluster_987a03cd3a49"
+        ],
+        "confidence": "low",
+        "disputed": true,
+        "evidence_ids": [
+          "genesis-ane-comparative-context",
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:1",
+          "genesis:interpretive_note:2"
+        ],
+        "grouping_reason": "UNGROUPED_DISTINCT_CLUSTER",
+        "grouping_reasons": [],
+        "idea_id": "reader_idea_5c6624c0f5d19e6c",
+        "importance": "CORE",
+        "label": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's…",
+        "label_source": "first_synthesis_fact",
+        "source_order": {
+          "cluster_ids_in_source_order": [
+            "idea_cluster_987a03cd3a49"
+          ],
+          "first_unit_ordinal": 6,
+          "last_unit_ordinal": 9,
+          "unit_ordinals": [
+            6,
+            7,
+            9
+          ]
+        },
+        "status": "DISPUTED",
+        "synthesis_unit_ids": [
+          "syn_surrounding_passages_311399d9709e",
+          "syn_surrounding_passages_3c5ff4c1ad4a",
+          "syn_surrounding_passages_89969fb357a1"
+        ]
+      }
+    ],
+    "renderer_input_sha256": "82c082dd7710364ad5128aba5f963544490018b42c2b8a14e8fe7bba4644a593",
+    "schema_version": "1.2",
+    "source_packet_hash": "e6928eef4b211b2617f9b10b96f64316fed9f7ffc12174eefcbdd3f4f4f462fa",
+    "source_packet_id": "commentary-production-v1-packet:e6928eef4b211b2617f9b10b96f64316fed9f7ffc12174eefcbdd3f4f4f462fa",
+    "source_packet_prompt_version": "1.5",
+    "source_packet_schema_version": "1.2",
+    "system_prompt_sha256": "1a263b613067895b37592994f490a2d422fdda65d42aaa2e0dafe3a4eda783ff",
+    "user_prompt_sha256": "65081f61e508fe0233197288776b113e686d746789a20644aee7398f87544317"
+  },
+  "synthesis": {
+    "all_units": [
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "col-image",
+          "col-new-humanity"
+        ],
+        "facts": [
+          "Messiah is called the image of the invisible God.",
+          "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions."
+        ],
+        "id": "syn_interpretive_questions_104b452d03db",
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "CURRENT_CHAPTER",
+          "relationship_basis": "shared_parent_object",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 2
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:26-27"
+        ],
+        "verse_refs": [
+          "Genesis 1:26-27"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "zephaniah-creation-reversal"
+        ],
+        "facts": [
+          "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances."
+        ],
+        "id": "syn_interpretive_questions_4abfca502108",
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "CURRENT_CHAPTER",
+          "relationship_basis": "single_evidence_item",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 1
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:20-28"
+        ],
+        "verse_refs": [
+          "Genesis 1:20-28"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "john-logos"
+        ],
+        "facts": [
+          "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation."
+        ],
+        "id": "syn_interpretive_questions_4b06eb55d452",
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "CURRENT_CHAPTER",
+          "relationship_basis": "single_evidence_item",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 1
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-5"
+        ],
+        "verse_refs": [
+          "Genesis 1:1-5"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "2-corinthians:interpretive_note:21"
+        ],
+        "facts": [
+          "God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision."
+        ],
+        "id": "syn_interpretive_questions_ed658ab06804",
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "CURRENT_CHAPTER",
+          "relationship_basis": "single_evidence_item",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 1
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:3"
+        ],
+        "verse_refs": [
+          "Genesis 1:3"
+        ]
+      },
+      {
+        "confidence": "medium",
+        "entity_ids": [
+          "creation"
+        ],
+        "evidence_ids": [
+          "enuma-elish-cosmic-ordering-comparison",
+          "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+          "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+        ],
+        "facts": [
+          "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+          "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+          "Shared motifs support comparison but do not establish a single line of direct borrowing."
+        ],
+        "id": "syn_surrounding_passages_02324dc7bcd9",
+        "interpretation_level": "disputed",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": true,
+          "relationship_basis": "shared_parent_object",
+          "safe_for_significance": true,
+          "support_count": 3
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [
+          "syn_surrounding_passages_68d0c434dd51"
+        ],
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "verse_refs": [
+          "Genesis 2:1-3"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "genesis-literary-movement"
+        ],
+        "facts": [
+          "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."
+        ],
+        "id": "syn_surrounding_passages_311399d9709e",
+        "interpretation_level": "fact",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "relationship_basis": "single_evidence_item",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 1
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-50:26"
+        ],
+        "verse_refs": [
+          "Genesis 10:1-32",
+          "Genesis 11:1-32",
+          "Genesis 12:1-20",
+          "Genesis 13:1-18",
+          "Genesis 14:1-24",
+          "Genesis 15:1-21",
+          "Genesis 16:1-16",
+          "Genesis 17:1-27",
+          "Genesis 18:1-33",
+          "Genesis 19:1-38",
+          "Genesis 20:1-18",
+          "Genesis 21:1-34",
+          "Genesis 22:1-24",
+          "Genesis 23:1-20",
+          "Genesis 24:1-67",
+          "Genesis 25:1-34",
+          "Genesis 26:1-35",
+          "Genesis 27:1-46",
+          "Genesis 28:1-22",
+          "Genesis 29:1-35",
+          "Genesis 2:1-25",
+          "Genesis 30:1-43",
+          "Genesis 31:1-55",
+          "Genesis 32:1-32",
+          "Genesis 33:1-20",
+          "Genesis 34:1-31",
+          "Genesis 35:1-29",
+          "Genesis 36:1-43",
+          "Genesis 37:1-36",
+          "Genesis 38:1-30",
+          "Genesis 39:1-23",
+          "Genesis 3:1-24",
+          "Genesis 40:1-23",
+          "Genesis 41:1-57",
+          "Genesis 42:1-38",
+          "Genesis 43:1-34",
+          "Genesis 44:1-34",
+          "Genesis 45:1-28",
+          "Genesis 46:1-34",
+          "Genesis 47:1-31",
+          "Genesis 48:1-22",
+          "Genesis 49:1-33",
+          "Genesis 4:1-26",
+          "Genesis 50:1-26",
+          "Genesis 5:1-32",
+          "Genesis 6:1-22",
+          "Genesis 7:1-24",
+          "Genesis 8:1-22",
+          "Genesis 9:1-29"
+        ]
+      },
+      {
+        "confidence": "low",
+        "entity_ids": [],
+        "evidence_ids": [
+          "genesis-ane-comparative-context",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:1",
+          "genesis:interpretive_note:2"
+        ],
+        "facts": [
+          "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+          "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+          "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+          "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
+        ],
+        "id": "syn_surrounding_passages_3c5ff4c1ad4a",
+        "interpretation_level": "disputed",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "relationship_basis": "shared_parent_object",
+          "source_categories": [
+            "culture",
+            "geography"
+          ],
+          "support_count": 4
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-11:26",
+          "Genesis 1:1-50:26"
+        ],
+        "verse_refs": [
+          "Genesis 10:1-32",
+          "Genesis 11:1-26",
+          "Genesis 11:1-32",
+          "Genesis 12:1-20",
+          "Genesis 13:1-18",
+          "Genesis 14:1-24",
+          "Genesis 15:1-21",
+          "Genesis 16:1-16",
+          "Genesis 17:1-27",
+          "Genesis 18:1-33",
+          "Genesis 19:1-38",
+          "Genesis 20:1-18",
+          "Genesis 21:1-34",
+          "Genesis 22:1-24",
+          "Genesis 23:1-20",
+          "Genesis 24:1-67",
+          "Genesis 25:1-34",
+          "Genesis 26:1-35",
+          "Genesis 27:1-46",
+          "Genesis 28:1-22",
+          "Genesis 29:1-35",
+          "Genesis 2:1-25",
+          "Genesis 30:1-43",
+          "Genesis 31:1-55",
+          "Genesis 32:1-32",
+          "Genesis 33:1-20",
+          "Genesis 34:1-31",
+          "Genesis 35:1-29",
+          "Genesis 36:1-43",
+          "Genesis 37:1-36",
+          "Genesis 38:1-30",
+          "Genesis 39:1-23",
+          "Genesis 3:1-24",
+          "Genesis 40:1-23",
+          "Genesis 41:1-57",
+          "Genesis 42:1-38",
+          "Genesis 43:1-34",
+          "Genesis 44:1-34",
+          "Genesis 45:1-28",
+          "Genesis 46:1-34",
+          "Genesis 47:1-31",
+          "Genesis 48:1-22",
+          "Genesis 49:1-33",
+          "Genesis 4:1-26",
+          "Genesis 50:1-26",
+          "Genesis 5:1-32",
+          "Genesis 6:1-22",
+          "Genesis 7:1-24",
+          "Genesis 8:1-22",
+          "Genesis 9:1-29"
+        ]
+      },
+      {
+        "confidence": "medium",
+        "entity_ids": [
+          "creation"
+        ],
+        "evidence_ids": [
+          "enuma-elish-cosmic-ordering-comparison",
+          "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+          "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+        ],
+        "facts": [
+          "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+          "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+          "Shared motifs support comparison but do not establish a single line of direct borrowing."
+        ],
+        "id": "syn_surrounding_passages_68d0c434dd51",
+        "interpretation_level": "disputed",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": true,
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "relationship_basis": "shared_parent_object",
+          "source_categories": [
+            "culture",
+            "history"
+          ],
+          "support_count": 3
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "verse_refs": [
+          "Genesis 2:1-3"
+        ]
+      },
+      {
+        "confidence": "low",
+        "entity_ids": [],
+        "evidence_ids": [
+          "genesis-ane-comparative-context",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:1",
+          "genesis:interpretive_note:2"
+        ],
+        "facts": [
+          "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+          "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+          "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+          "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
+        ],
+        "id": "syn_surrounding_passages_89969fb357a1",
+        "interpretation_level": "disputed",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": false,
+          "relationship_basis": "shared_parent_object",
+          "safe_for_significance": true,
+          "support_count": 4
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [
+          "syn_surrounding_passages_3c5ff4c1ad4a"
+        ],
+        "source_anchors": [
+          "Genesis 1:1-11:26",
+          "Genesis 1:1-50:26"
+        ],
+        "verse_refs": [
+          "Genesis 10:1-32",
+          "Genesis 11:1-26",
+          "Genesis 11:1-32",
+          "Genesis 12:1-20",
+          "Genesis 13:1-18",
+          "Genesis 14:1-24",
+          "Genesis 15:1-21",
+          "Genesis 16:1-16",
+          "Genesis 17:1-27",
+          "Genesis 18:1-33",
+          "Genesis 19:1-38",
+          "Genesis 20:1-18",
+          "Genesis 21:1-34",
+          "Genesis 22:1-24",
+          "Genesis 23:1-20",
+          "Genesis 24:1-67",
+          "Genesis 25:1-34",
+          "Genesis 26:1-35",
+          "Genesis 27:1-46",
+          "Genesis 28:1-22",
+          "Genesis 29:1-35",
+          "Genesis 2:1-25",
+          "Genesis 30:1-43",
+          "Genesis 31:1-55",
+          "Genesis 32:1-32",
+          "Genesis 33:1-20",
+          "Genesis 34:1-31",
+          "Genesis 35:1-29",
+          "Genesis 36:1-43",
+          "Genesis 37:1-36",
+          "Genesis 38:1-30",
+          "Genesis 39:1-23",
+          "Genesis 3:1-24",
+          "Genesis 40:1-23",
+          "Genesis 41:1-57",
+          "Genesis 42:1-38",
+          "Genesis 43:1-34",
+          "Genesis 44:1-34",
+          "Genesis 45:1-28",
+          "Genesis 46:1-34",
+          "Genesis 47:1-31",
+          "Genesis 48:1-22",
+          "Genesis 49:1-33",
+          "Genesis 4:1-26",
+          "Genesis 50:1-26",
+          "Genesis 5:1-32",
+          "Genesis 6:1-22",
+          "Genesis 7:1-24",
+          "Genesis 8:1-22",
+          "Genesis 9:1-29"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [
+          "creation"
+        ],
+        "evidence_ids": [
+          "genesis-ordered-worldview-observation",
+          "genesis-ordered-worldview-observation:passage-relevance"
+        ],
+        "facts": [
+          "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+          "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+        ],
+        "id": "syn_surrounding_passages_89e2fa039257",
+        "interpretation_level": "fact",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": true,
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "relationship_basis": "shared_entities",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 2
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "verse_refs": [
+          "Genesis 2:1-3"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [
+          "creation"
+        ],
+        "evidence_ids": [
+          "genesis-ordered-worldview-observation",
+          "genesis-ordered-worldview-observation:passage-relevance"
+        ],
+        "facts": [
+          "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+          "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+        ],
+        "id": "syn_surrounding_passages_9a6be1bbec10",
+        "interpretation_level": "inference",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": true,
+          "relationship_basis": "shared_entities",
+          "safe_for_significance": true,
+          "support_count": 2
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [
+          "syn_surrounding_passages_89e2fa039257"
+        ],
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "verse_refs": [
+          "Genesis 2:1-3"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "col-image",
+          "col-new-humanity"
+        ],
+        "facts": [
+          "Messiah is called the image of the invisible God.",
+          "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions."
+        ],
+        "id": "syn_why_it_matters_8c410550b6f6",
+        "interpretation_level": "disputed",
+        "kind": "why_it_matters",
+        "metadata": {
+          "explicit_significance": false,
+          "relationship_basis": "shared_parent_object",
+          "safe_for_significance": true,
+          "support_count": 2
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [
+          "syn_interpretive_questions_104b452d03db"
+        ],
+        "source_anchors": [
+          "Genesis 1:26-27"
+        ],
+        "verse_refs": [
+          "Genesis 1:26-27"
+        ]
+      }
+    ],
+    "compiler_version": "1.1",
+    "current_chapter_unit_count": 5,
+    "current_chapter_units": [
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "col-image",
+          "col-new-humanity"
+        ],
+        "facts": [
+          "Messiah is called the image of the invisible God.",
+          "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions."
+        ],
+        "id": "syn_interpretive_questions_104b452d03db",
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "CURRENT_CHAPTER",
+          "relationship_basis": "shared_parent_object",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 2
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:26-27"
+        ],
+        "verse_refs": [
+          "Genesis 1:26-27"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "zephaniah-creation-reversal"
+        ],
+        "facts": [
+          "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances."
+        ],
+        "id": "syn_interpretive_questions_4abfca502108",
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "CURRENT_CHAPTER",
+          "relationship_basis": "single_evidence_item",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 1
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:20-28"
+        ],
+        "verse_refs": [
+          "Genesis 1:20-28"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "john-logos"
+        ],
+        "facts": [
+          "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation."
+        ],
+        "id": "syn_interpretive_questions_4b06eb55d452",
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "CURRENT_CHAPTER",
+          "relationship_basis": "single_evidence_item",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 1
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-5"
+        ],
+        "verse_refs": [
+          "Genesis 1:1-5"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "2-corinthians:interpretive_note:21"
+        ],
+        "facts": [
+          "God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision."
+        ],
+        "id": "syn_interpretive_questions_ed658ab06804",
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "CURRENT_CHAPTER",
+          "relationship_basis": "single_evidence_item",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 1
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:3"
+        ],
+        "verse_refs": [
+          "Genesis 1:3"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "col-image",
+          "col-new-humanity"
+        ],
+        "facts": [
+          "Messiah is called the image of the invisible God.",
+          "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions."
+        ],
+        "id": "syn_why_it_matters_8c410550b6f6",
+        "interpretation_level": "disputed",
+        "kind": "why_it_matters",
+        "metadata": {
+          "explicit_significance": false,
+          "relationship_basis": "shared_parent_object",
+          "safe_for_significance": true,
+          "support_count": 2
+        },
+        "passage_scope": "CURRENT_CHAPTER",
+        "related_unit_ids": [
+          "syn_interpretive_questions_104b452d03db"
+        ],
+        "source_anchors": [
+          "Genesis 1:26-27"
+        ],
+        "verse_refs": [
+          "Genesis 1:26-27"
+        ]
+      }
+    ],
+    "kind_counts": {
+      "interpretive_questions": 4,
+      "surrounding_passages": 7,
+      "why_it_matters": 1
+    },
+    "schema_version": "1.1",
+    "surrounding_passage_unit_count": 7,
+    "surrounding_passage_units": [
+      {
+        "confidence": "medium",
+        "entity_ids": [
+          "creation"
+        ],
+        "evidence_ids": [
+          "enuma-elish-cosmic-ordering-comparison",
+          "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+          "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+        ],
+        "facts": [
+          "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+          "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+          "Shared motifs support comparison but do not establish a single line of direct borrowing."
+        ],
+        "id": "syn_surrounding_passages_02324dc7bcd9",
+        "interpretation_level": "disputed",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": true,
+          "relationship_basis": "shared_parent_object",
+          "safe_for_significance": true,
+          "support_count": 3
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [
+          "syn_surrounding_passages_68d0c434dd51"
+        ],
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "verse_refs": [
+          "Genesis 2:1-3"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [],
+        "evidence_ids": [
+          "genesis-literary-movement"
+        ],
+        "facts": [
+          "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."
+        ],
+        "id": "syn_surrounding_passages_311399d9709e",
+        "interpretation_level": "fact",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "relationship_basis": "single_evidence_item",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 1
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-50:26"
+        ],
+        "verse_refs": [
+          "Genesis 10:1-32",
+          "Genesis 11:1-32",
+          "Genesis 12:1-20",
+          "Genesis 13:1-18",
+          "Genesis 14:1-24",
+          "Genesis 15:1-21",
+          "Genesis 16:1-16",
+          "Genesis 17:1-27",
+          "Genesis 18:1-33",
+          "Genesis 19:1-38",
+          "Genesis 20:1-18",
+          "Genesis 21:1-34",
+          "Genesis 22:1-24",
+          "Genesis 23:1-20",
+          "Genesis 24:1-67",
+          "Genesis 25:1-34",
+          "Genesis 26:1-35",
+          "Genesis 27:1-46",
+          "Genesis 28:1-22",
+          "Genesis 29:1-35",
+          "Genesis 2:1-25",
+          "Genesis 30:1-43",
+          "Genesis 31:1-55",
+          "Genesis 32:1-32",
+          "Genesis 33:1-20",
+          "Genesis 34:1-31",
+          "Genesis 35:1-29",
+          "Genesis 36:1-43",
+          "Genesis 37:1-36",
+          "Genesis 38:1-30",
+          "Genesis 39:1-23",
+          "Genesis 3:1-24",
+          "Genesis 40:1-23",
+          "Genesis 41:1-57",
+          "Genesis 42:1-38",
+          "Genesis 43:1-34",
+          "Genesis 44:1-34",
+          "Genesis 45:1-28",
+          "Genesis 46:1-34",
+          "Genesis 47:1-31",
+          "Genesis 48:1-22",
+          "Genesis 49:1-33",
+          "Genesis 4:1-26",
+          "Genesis 50:1-26",
+          "Genesis 5:1-32",
+          "Genesis 6:1-22",
+          "Genesis 7:1-24",
+          "Genesis 8:1-22",
+          "Genesis 9:1-29"
+        ]
+      },
+      {
+        "confidence": "low",
+        "entity_ids": [],
+        "evidence_ids": [
+          "genesis-ane-comparative-context",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:1",
+          "genesis:interpretive_note:2"
+        ],
+        "facts": [
+          "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+          "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+          "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+          "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
+        ],
+        "id": "syn_surrounding_passages_3c5ff4c1ad4a",
+        "interpretation_level": "disputed",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": false,
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "relationship_basis": "shared_parent_object",
+          "source_categories": [
+            "culture",
+            "geography"
+          ],
+          "support_count": 4
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-11:26",
+          "Genesis 1:1-50:26"
+        ],
+        "verse_refs": [
+          "Genesis 10:1-32",
+          "Genesis 11:1-26",
+          "Genesis 11:1-32",
+          "Genesis 12:1-20",
+          "Genesis 13:1-18",
+          "Genesis 14:1-24",
+          "Genesis 15:1-21",
+          "Genesis 16:1-16",
+          "Genesis 17:1-27",
+          "Genesis 18:1-33",
+          "Genesis 19:1-38",
+          "Genesis 20:1-18",
+          "Genesis 21:1-34",
+          "Genesis 22:1-24",
+          "Genesis 23:1-20",
+          "Genesis 24:1-67",
+          "Genesis 25:1-34",
+          "Genesis 26:1-35",
+          "Genesis 27:1-46",
+          "Genesis 28:1-22",
+          "Genesis 29:1-35",
+          "Genesis 2:1-25",
+          "Genesis 30:1-43",
+          "Genesis 31:1-55",
+          "Genesis 32:1-32",
+          "Genesis 33:1-20",
+          "Genesis 34:1-31",
+          "Genesis 35:1-29",
+          "Genesis 36:1-43",
+          "Genesis 37:1-36",
+          "Genesis 38:1-30",
+          "Genesis 39:1-23",
+          "Genesis 3:1-24",
+          "Genesis 40:1-23",
+          "Genesis 41:1-57",
+          "Genesis 42:1-38",
+          "Genesis 43:1-34",
+          "Genesis 44:1-34",
+          "Genesis 45:1-28",
+          "Genesis 46:1-34",
+          "Genesis 47:1-31",
+          "Genesis 48:1-22",
+          "Genesis 49:1-33",
+          "Genesis 4:1-26",
+          "Genesis 50:1-26",
+          "Genesis 5:1-32",
+          "Genesis 6:1-22",
+          "Genesis 7:1-24",
+          "Genesis 8:1-22",
+          "Genesis 9:1-29"
+        ]
+      },
+      {
+        "confidence": "medium",
+        "entity_ids": [
+          "creation"
+        ],
+        "evidence_ids": [
+          "enuma-elish-cosmic-ordering-comparison",
+          "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+          "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+        ],
+        "facts": [
+          "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+          "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+          "Shared motifs support comparison but do not establish a single line of direct borrowing."
+        ],
+        "id": "syn_surrounding_passages_68d0c434dd51",
+        "interpretation_level": "disputed",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": true,
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "relationship_basis": "shared_parent_object",
+          "source_categories": [
+            "culture",
+            "history"
+          ],
+          "support_count": 3
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "verse_refs": [
+          "Genesis 2:1-3"
+        ]
+      },
+      {
+        "confidence": "low",
+        "entity_ids": [],
+        "evidence_ids": [
+          "genesis-ane-comparative-context",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:1",
+          "genesis:interpretive_note:2"
+        ],
+        "facts": [
+          "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+          "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+          "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+          "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
+        ],
+        "id": "syn_surrounding_passages_89969fb357a1",
+        "interpretation_level": "disputed",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": false,
+          "relationship_basis": "shared_parent_object",
+          "safe_for_significance": true,
+          "support_count": 4
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [
+          "syn_surrounding_passages_3c5ff4c1ad4a"
+        ],
+        "source_anchors": [
+          "Genesis 1:1-11:26",
+          "Genesis 1:1-50:26"
+        ],
+        "verse_refs": [
+          "Genesis 10:1-32",
+          "Genesis 11:1-26",
+          "Genesis 11:1-32",
+          "Genesis 12:1-20",
+          "Genesis 13:1-18",
+          "Genesis 14:1-24",
+          "Genesis 15:1-21",
+          "Genesis 16:1-16",
+          "Genesis 17:1-27",
+          "Genesis 18:1-33",
+          "Genesis 19:1-38",
+          "Genesis 20:1-18",
+          "Genesis 21:1-34",
+          "Genesis 22:1-24",
+          "Genesis 23:1-20",
+          "Genesis 24:1-67",
+          "Genesis 25:1-34",
+          "Genesis 26:1-35",
+          "Genesis 27:1-46",
+          "Genesis 28:1-22",
+          "Genesis 29:1-35",
+          "Genesis 2:1-25",
+          "Genesis 30:1-43",
+          "Genesis 31:1-55",
+          "Genesis 32:1-32",
+          "Genesis 33:1-20",
+          "Genesis 34:1-31",
+          "Genesis 35:1-29",
+          "Genesis 36:1-43",
+          "Genesis 37:1-36",
+          "Genesis 38:1-30",
+          "Genesis 39:1-23",
+          "Genesis 3:1-24",
+          "Genesis 40:1-23",
+          "Genesis 41:1-57",
+          "Genesis 42:1-38",
+          "Genesis 43:1-34",
+          "Genesis 44:1-34",
+          "Genesis 45:1-28",
+          "Genesis 46:1-34",
+          "Genesis 47:1-31",
+          "Genesis 48:1-22",
+          "Genesis 49:1-33",
+          "Genesis 4:1-26",
+          "Genesis 50:1-26",
+          "Genesis 5:1-32",
+          "Genesis 6:1-22",
+          "Genesis 7:1-24",
+          "Genesis 8:1-22",
+          "Genesis 9:1-29"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [
+          "creation"
+        ],
+        "evidence_ids": [
+          "genesis-ordered-worldview-observation",
+          "genesis-ordered-worldview-observation:passage-relevance"
+        ],
+        "facts": [
+          "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+          "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+        ],
+        "id": "syn_surrounding_passages_89e2fa039257",
+        "interpretation_level": "fact",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": true,
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "relationship_basis": "shared_entities",
+          "source_categories": [
+            "culture"
+          ],
+          "support_count": 2
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [],
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "verse_refs": [
+          "Genesis 2:1-3"
+        ]
+      },
+      {
+        "confidence": "high",
+        "entity_ids": [
+          "creation"
+        ],
+        "evidence_ids": [
+          "genesis-ordered-worldview-observation",
+          "genesis-ordered-worldview-observation:passage-relevance"
+        ],
+        "facts": [
+          "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+          "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+        ],
+        "id": "syn_surrounding_passages_9a6be1bbec10",
+        "interpretation_level": "inference",
+        "kind": "surrounding_passages",
+        "metadata": {
+          "explicit_significance": true,
+          "relationship_basis": "shared_entities",
+          "safe_for_significance": true,
+          "support_count": 2
+        },
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "related_unit_ids": [
+          "syn_surrounding_passages_89e2fa039257"
+        ],
+        "source_anchors": [
+          "Genesis 1:1-2:3"
+        ],
+        "verse_refs": [
+          "Genesis 2:1-3"
+        ]
+      }
+    ],
+    "unit_count": 12
+  },
+  "transaction": "GENESIS_1_COMMENTARY_CORRECTIVE_REFRESH_CANDIDATE"
+}

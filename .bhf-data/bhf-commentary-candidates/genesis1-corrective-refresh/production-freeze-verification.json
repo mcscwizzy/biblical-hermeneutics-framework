@@ -1,0 +1,65 @@
+{
+  "artifact_version": "genesis1-corrective-refresh-production-freeze-verification-v1",
+  "base_sha": "b45147cf1ab9a19f4232f133419643cd8489d4bb",
+  "published_genesis1_sha256": "8090b554273c56561c0fbe3a3c7b96a67fb79901475ff1e39081b22f3c40134e",
+  "published_genesis1_sha256_matches_expected": true,
+  "v12_package_file_count": 974,
+  "v12_package_byte_identity_matches_origin_master": true,
+  "changed_v12_package_files": [],
+  "genesis_2_50_byte_identical": true,
+  "genesis_2_50_missing": [],
+  "genesis_2_50_changed": [],
+  "all_non_genesis_v12_package_files_byte_identical": true,
+  "changed_non_genesis_v12_files": [],
+  "release_indexes_and_descriptor_unchanged": true,
+  "release_index_hashes": {
+    ".bhf-data/bhf-commentary-v1.2/.bhf-commentary-release.json": {
+      "sha256": "3d18a3c113cc0b0a1c8c279bec3b02f284f6b81fd80e05c7a600b722d0118ce3",
+      "matches_origin_master": true
+    },
+    ".bhf-data/bhf-commentary-v1.2/.bhf-commentary-release-checksums.json": {
+      "sha256": "1827f7674571a351b7392f9194bc549fb288fe1b898f75f5745666bd5dbf0610",
+      "matches_origin_master": true
+    },
+    "bhf_agent/data/commentary-v1.2/.bhf-commentary-release.json": {
+      "sha256": "aad968530b371ac05de3529c3f0ac0a59afebc66bfaa21c2fcf4ca6306684c5b",
+      "matches_origin_master": true
+    },
+    "bhf_agent/data/commentary-v1.2/.bhf-commentary-release-checksums.json": {
+      "sha256": "d43831af3ef3b12cf7c1e823006da44ebaf9b367ef8bec70096459aebbd1d44d",
+      "matches_origin_master": true
+    },
+    "docs/commentary-v1.2-release.json": {
+      "sha256": "a57152f2d6418dc6ff8a9bcc20681f262aa64755e636a5fcf0fd7e6575369e2d",
+      "matches_origin_master": true
+    }
+  },
+  "production_reader": {
+    "release": "commentary-v1.2",
+    "storage_path": ".bhf-data/bhf-commentary-v1.2",
+    "candidate_path_not_used": true,
+    "serves_existing_genesis1": true,
+    "serving_artifact_sha256": "8090b554273c56561c0fbe3a3c7b96a67fb79901475ff1e39081b22f3c40134e",
+    "served_evidence_count": 2
+  },
+  "candidate_only": {
+    "candidate_json_files": [
+      "genesis_001.json"
+    ],
+    "exactly_one_genesis1_candidate": true,
+    "candidate_sha256": "02bede74dce10a2b9e88a9cc6871325c2eac91aa861a76b301e05352524c8710",
+    "lineage_matches_current_production_input": true
+  },
+  "all_tracked_files_match_origin_master": true,
+  "deployment_performed": false,
+  "promotion_performed": false,
+  "merge_performed": false,
+  "transaction_change_scope": {
+    "staged_paths_before_commit": 30,
+    "all_staged_paths_under_candidate_root": true,
+    "published_package_files_staged": false,
+    "release_indexes_or_descriptor_staged": false
+  },
+  "origin_master_tracked_files_unchanged_before_commit": true,
+  "git_diff_check": "PASS"
+}

@@ -1,0 +1,102 @@
+{
+  "artifact_version": "genesis1-corrective-refresh-substantive-review-v1",
+  "reference": "Genesis 1",
+  "candidate_path": ".bhf-data/bhf-commentary-candidates/genesis1-corrective-refresh/candidate/genesis_001.json",
+  "candidate_sha256": "02bede74dce10a2b9e88a9cc6871325c2eac91aa861a76b301e05352524c8710",
+  "recommendation": "RECOMMEND_APPROVE",
+  "basis": {
+    "substantive_quality": "The candidate moves beyond image-of-God reception: it synthesizes the supplied ordered-creation actions, the Genesis-wide literary movement, a bounded Mesopotamian comparison, and later canonical reception as distinct from Genesis wording.",
+    "technical_validation": "Schema, reference, model/prompt/schema metadata, evidence/synthesis hashes, provenance binding, ancestry, and chapter-scope checks pass.",
+    "calibrated_richness_gate": "PASS",
+    "enrichment_coverage": {
+      "meaningful_clusters": 6,
+      "consumed_clusters": 6,
+      "core_clusters": 2,
+      "consumed_core_clusters": 2,
+      "weighted_idea_coverage": 1.0,
+      "category_coverage": 1.0,
+      "unique_evidence_ids": 11,
+      "renderer_eligible_evidence_ids": 15,
+      "synthesis_units": 7,
+      "compiled_synthesis_units": 12,
+      "candidate_sections": 2,
+      "candidate_blocks": 5
+    },
+    "legacy_richness_diagnostic": {
+      "status": "SYNTHESIS_GAP",
+      "validated_but_contextually_thin": true,
+      "evidence_items_denominator": 58,
+      "candidate_unique_evidence_ids": 11,
+      "eligible_citable_ids_maximum": 15,
+      "coverage_threshold": 0.35,
+      "maximum_possible_eligible_id_coverage": 0.2586,
+      "assessment": "The broad audit counts 43 background-only inherited records that the active applicability policy excludes. The warning is preserved; no background records were cited to satisfy it."
+    }
+  },
+  "content_review": [
+    {
+      "block_id": "block_1",
+      "finding": "Accurately summarizes the supplied Genesis 1–11 to Genesis 12–50 movement; significance remains bounded to book structure."
+    },
+    {
+      "block_id": "block_2",
+      "finding": "Clearly separates Genesis 1's ordered actions from the Enuma Elish comparison and explicitly rejects direct-borrowing inference from shared motifs."
+    },
+    {
+      "block_id": "block_3",
+      "finding": "Labels John and 2 Corinthians as later Christian readings; does not present those claims as immediate Genesis wording."
+    },
+    {
+      "block_id": "block_4",
+      "finding": "Reports image/new-humanity language as later reception and does not force a single definition of image or vocation onto the Genesis text."
+    },
+    {
+      "block_id": "block_5",
+      "finding": "Keeps Zephaniah's creation-reversal reading attached to the later prophetic passage and marks the interpretation as common rather than certain."
+    }
+  ],
+  "interpretive_safeguards": {
+    "ane_similarity_does_not_prove_direct_borrowing": {
+      "status": "PASS",
+      "note": "The candidate explicitly says shared motifs do not demonstrate direct borrowing."
+    },
+    "ruach_or_spirit_not_over_specified": {
+      "status": "PASS",
+      "note": "No ruach or Spirit claim is made."
+    },
+    "let_us_make_not_forced_into_trinity_proof": {
+      "status": "PASS",
+      "note": "The phrase is not discussed."
+    },
+    "image_of_god_interpretations_bounded": {
+      "status": "PASS",
+      "note": "The candidate describes later Christian reception and does not assert an exclusive immediate meaning."
+    },
+    "later_christological_or_new_creation_reception_separated": {
+      "status": "PASS",
+      "note": "Later readings have their own section and are labeled as later Christian writings."
+    },
+    "creation_chronology_or_science_not_falsely_settled": {
+      "status": "PASS",
+      "note": "No chronology or origins-science debate is adjudicated."
+    },
+    "ancient_cosmological_context_supported": {
+      "status": "PASS",
+      "note": "Only the supplied Enuma Elish comparison is described; no unsupported cosmological reconstruction is added."
+    },
+    "hebrew_ane_history_claims_supported": {
+      "status": "PASS",
+      "note": "No Hebrew lexical claim is made; ANE and historical references remain within supplied synthesis facts."
+    },
+    "unsupported_assertions_or_source_scope_violations": {
+      "status": "NONE",
+      "note": "No issue found in substantive review; all five blocks retain validated source ancestry."
+    }
+  },
+  "review_limitations": [
+    "The locked production synthesis does not supply language evidence, so the candidate makes no ruach, Hebrew, or lexical claim.",
+    "The broad legacy richness audit remains a warning because its all-bundle denominator includes ineligible background records; see validation.json and root-cause-analysis.md."
+  ],
+  "promotion_status": "NOT_PROMOTED",
+  "approval_request_safe": "YES"
+}
