@@ -1,0 +1,52 @@
+{
+  "artifact_version": "genesis1-corrective-refresh-operator-promotion-authorization-attestation-v1",
+  "attestation_identity": "15e88a5af44d4754f993c05707bf8bffca079c7c690a0cace54c63b0866a2991",
+  "authorization": {
+    "conveyed_outside_repository": true,
+    "decision": "APPROVE_FOR_PROMOTION",
+    "operator_reported_review_result": "GENESIS_1_COMMENTARY_PROMOTION_APPROVED",
+    "record_created_during_current_transaction": true,
+    "source_description": "Operator authorization supplied in the current promotion transaction; no preexisting committed final approval artifact is asserted."
+  },
+  "candidate": {
+    "branch": "feat/genesis-commentary-genesis1-corrective-refresh",
+    "head": "e0b760abd3bee2519fdad88a242d0a9c62d976ac",
+    "path": ".bhf-data/bhf-commentary-candidates/genesis1-corrective-refresh/candidate/genesis_001.json",
+    "sha256": "02bede74dce10a2b9e88a9cc6871325c2eac91aa861a76b301e05352524c8710"
+  },
+  "production_base": "b45147cf1ab9a19f4232f133419643cd8489d4bb",
+  "record_created_at_utc": "2026-10-14T21:21:49Z",
+  "review_findings_as_reported_by_operator": {
+    "applicability_boundary": "PASS",
+    "coverage_enrichment": "PASS",
+    "interpretive_safety": "PASS",
+    "legacy_warning": "NON_BLOCKING_LEGACY_METRIC_MISMATCH",
+    "production_freeze": "PASS",
+    "provenance_validation": "PASS",
+    "technical_validation": "PASS"
+  },
+  "source_identities": {
+    "ancestry_envelope_hash": "0bd481d8b8dacc0040370f219d2ac042373afb5666157f43888ffe44e8c3420d",
+    "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+    "provenance_binding_hash": "cc857f988fd75b08f68f0b8b6a27cf0dcdd7cc753aeb6e8931fa7d41f79be86f",
+    "source_packet_hash": "e6928eef4b211b2617f9b10b96f64316fed9f7ffc12174eefcbdd3f4f4f462fa",
+    "source_packet_id": "commentary-production-v1-packet:e6928eef4b211b2617f9b10b96f64316fed9f7ffc12174eefcbdd3f4f4f462fa",
+    "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
+  },
+  "supporting_source_records": {
+    "candidate_validation": {
+      "path": ".bhf-data/bhf-commentary-candidates/genesis1-corrective-refresh/validation.json",
+      "sha256": "9492754845128e80b819e306ae387e230f40ff671d3d765afb720d86ed974290"
+    },
+    "production_freeze_verification": {
+      "path": ".bhf-data/bhf-commentary-candidates/genesis1-corrective-refresh/production-freeze-verification.json",
+      "sha256": "bbf6ed6d4fe41cb4e4a57a541a0980bde97c5375240a6f497bf4666cec1fd4b5"
+    },
+    "source_branch": "feat/genesis-commentary-genesis1-corrective-refresh",
+    "source_commit": "e0b760abd3bee2519fdad88a242d0a9c62d976ac",
+    "substantive_review": {
+      "path": ".bhf-data/bhf-commentary-candidates/genesis1-corrective-refresh/substantive-review.json",
+      "sha256": "660544436dd6a3b1510bc66bb84c4fec1c9047217e0e89ea0ec1390483c0af2e"
+    }
+  }
+}
