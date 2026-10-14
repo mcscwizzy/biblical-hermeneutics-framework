@@ -1,0 +1,23 @@
+{
+  "artifact_version": "genesis-commentary-refresh-d3b-production-promotion-gates-v1",
+  "candidate_count": 49,
+  "candidate_manifest_sha256": "3e86cb71395d7add6374a61d28082882265dcc23b6e0774a38d4673a2d4a0a36",
+  "deployment_occurred": false,
+  "gates": {
+    "D2_manifest_hash_and_exact_Genesis_2_to_50_set": "PASS",
+    "D3A_substantive_audit_and_candidate_integrity": "PASS",
+    "Genesis_1_control_unchanged": "PASS",
+    "all_non_Genesis_commentary_unchanged": "PASS",
+    "candidate_bytes_match_approved_identities": "PASS",
+    "canonical_retry_attempts_bound": "PASS",
+    "current_production_freeze_and_checksum_verification": "PASS",
+    "explicit_human_approval_bound_to_exact_49_candidate_hashes": "PASS",
+    "live_evidence_synthesis_validation": "PASS (49/49)",
+    "release_delta_limited_to_Genesis_2_to_50_and_release_indexes": "PASS",
+    "staged_production_package_freeze_verification": "PASS",
+    "staged_runtime_reader_loads_all_49_candidates": "PASS"
+  },
+  "pre_promotion_status": "PASS",
+  "promotion_occurred": false,
+  "transaction": "GENESIS_COMMENTARY_REFRESH_D3B_SELECTIVE_PRODUCTION_PROMOTION"
+}

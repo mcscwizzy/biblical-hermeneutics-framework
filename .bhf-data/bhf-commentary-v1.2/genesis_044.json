@@ -1,1 +1,101 @@
-{"book":"Genesis","chapter":44,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"394fe9deebc89a154320ae133c05b3a0d320e79e1d0a2288bdc2bcc87e5d461f","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"5d7f344b42b585bdf65a0d4702b7d58bdf0541ce466ffed70621c794604c4c1a","synthesis_schema_version":"1.1"},"reference":"Genesis 44","sections":[{"blocks":[{"confidence":"high","evidence_ids":["genesis-literary-movement"],"id":"block_1","interpretation_level":"fact","synthesis_ids":["syn_surrounding_passages_85adb5bfaaf1"],"text":"The larger literary movement of Genesis shifts from universal beginnings in chapters 1–11 to the ancestral family narratives in chapters 12–50, ending with Jacob's household in Egypt. This places Genesis 44 within that ancestral narrative rather than the book's opening universal section.","verse_refs":[]}],"kind":"surrounding_passages","title":"The larger movement of Genesis"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "book": "Genesis",
+  "chapter": 44,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "8f8cecbe5cf47f9b105e96f4e2eda0e458e3c7c5d5940917c6df05723b1d12fa",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "1550bb63068411e12bda5c9f23f281a16341b24bd3cf0c9a621f12067be3d1ef",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 44",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g6a-44-judah-arc",
+            "g6a-44-judah-substitution",
+            "g6a-44-pursuit-search",
+            "g6a-44-silver-cup-divination",
+            "g6a-44-speech-kinship"
+          ],
+          "id": "block_1",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_7b348d7f464d"
+          ],
+          "text": "The pursuit and sack search are part of a staged test within the story, not a model of a routine Egyptian search. The steward’s claim that Joseph divines with the silver cup may reflect a court persona, a staged accusation, or an actual divinatory setting; the chapter does not settle which. The crisis places Benjamin under the threatened slavery, and Judah offers to take Benjamin’s place. This reverses his earlier proposal to sell Joseph, while the narrative itself does not require readers to treat Judah’s offer as a later theological symbol.",
+          "verse_refs": [
+            "Genesis 44:1-5",
+            "Genesis 44:4-13",
+            "Genesis 44:18-34",
+            "Genesis 44:33"
+          ]
+        }
+      ],
+      "kind": "interpretive_questions",
+      "title": "The Cup and Judah’s Offer"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g6a-44-collective-return",
+            "g6a-44-court-address-retelling",
+            "g6a-44-jacob-joseph-presumed-dead",
+            "g6a-44-pledge-father-impact"
+          ],
+          "id": "block_2",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_db01f0272678"
+          ],
+          "text": "When the cup is found, all the brothers return rather than leaving Benjamin behind, and Judah speaks for them before Joseph. His appeal retells the family’s earlier conversations and makes Jacob’s vulnerability central: Jacob believes Joseph is dead, fears losing Benjamin as well, and is deeply bound to him. Judah also explains that he became surety for Benjamin—that is, he personally guaranteed the boy’s safe return—and therefore asks to remain as Joseph’s slave in Benjamin’s place.",
+          "verse_refs": [
+            "Genesis 44:13-18",
+            "Genesis 44:18-23",
+            "Genesis 44:24-29",
+            "Genesis 44:30-32"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "Judah Speaks for the Family"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_3",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_85adb5bfaaf1",
+            "syn_surrounding_passages_5d2240df2929"
+          ],
+          "text": "Genesis moves from the universal beginnings of chapters 1–11 to the ancestral family narratives of chapters 12–50, ending with Jacob’s household in Egypt. Genesis 44 belongs to that family narrative. Questions about how Genesis was composed should be kept distinct from what the book itself narrates: Mosaic attribution and compositional models are different positions, and Genesis does not describe its own literary formation. Likewise, the lack of a direct archaeological identification cannot by itself prove or disprove every ancestral narrative, because archaeology and literary interpretation address different questions.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Reading Genesis as a Whole"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

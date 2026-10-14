@@ -1,1 +1,148 @@
-{"book":"Genesis","chapter":35,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"745037d3bda18da326117939fa34d5c1c3c7ee57b3826173fef2a1a70878088a","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"c14fe927130e9201cd2529bafffcce8b3fb22fc8842b067aa12f4c7d31d5a123","synthesis_schema_version":"1.1"},"reference":"Genesis 35","sections":[{"blocks":[{"confidence":"high","evidence_ids":["genesis-literary-movement"],"id":"block_1","interpretation_level":"fact","synthesis_ids":["syn_surrounding_passages_8f1ce118488a"],"text":"The larger literary movement of Genesis shifts from universal beginnings in chapters 1–11 to the ancestral family narratives in chapters 12–50, ending with Jacob's household in Egypt. This places Genesis 35 within that ancestral narrative rather than the book's opening universal section.","verse_refs":[]}],"kind":"surrounding_passages","title":"The larger movement of Genesis"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "book": "Genesis",
+  "chapter": 35,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "94f40366d9a8de407897d3d459be3211664a2bc5b14a6787a6349c1fb0306359",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "66544e0629f76c4f0b78c17ad537ab53fb122ef75a9b47f2836381739bb5ce64",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 35",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g35-bethel-altar-el-bethel-name-and-appearance",
+            "g35-command-to-bethel-live-build-altar",
+            "g35-terror-of-god-neighboring-cities",
+            "g35-twelve-sons-tribal-transition"
+          ],
+          "id": "block_1",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_6db1022d1810"
+          ],
+          "text": "Jacob’s return to Bethel is presented as a return to the God who appeared to him when he fled from Esau. The household’s removal of foreign gods, purification, and change of garments prepare for the journey and altar; the chapter associates the earrings with this particular act of preparation, without saying that earrings are inherently idolatrous. At Bethel, Jacob builds an altar and calls the place El-bethel, recalling the earlier appearance there while distinguishing this new encounter from it. The account also says that surrounding cities did not pursue the family because a terror from God came upon them; it does not describe a battle or military campaign. The list of twelve sons then shifts the focus from one household’s story toward the family that will be identified as Israel’s tribes.",
+          "verse_refs": [
+            "Genesis 35:1-3",
+            "Genesis 35:22-26",
+            "Genesis 35:5",
+            "Genesis 35:6-7"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "Return to Bethel"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g35-household-foreign-gods-earrings-burial",
+            "g35-pillar-libation-oil-bethel"
+          ],
+          "id": "block_2",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_archaeology_geography_a5cde110dcb2"
+          ],
+          "text": "The narrative marks significant places through physical acts. Jacob buries the household’s foreign gods and earrings beneath a tree near Shechem, and later erects a stone pillar at Bethel, pouring a drink offering and oil upon it. Within the story, these actions set apart and remember particular places and events; they do not identify a surviving archaeological feature or mean that every standing stone had the same purpose.",
+          "verse_refs": [
+            "Genesis 35:13-15",
+            "Genesis 35:2-4"
+          ]
+        }
+      ],
+      "kind": "archaeology_geography",
+      "title": "Markers of Memory"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g35-isaac-death-hebron-mamre-burial",
+            "g35-israel-name-fruitfulness-kings-land"
+          ],
+          "id": "block_3",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_historical_context_04a5dce7477c"
+          ],
+          "text": "God again names Jacob “Israel” and repeats promises of fruitfulness, many descendants, kings, and the land previously given to Abraham and Isaac. The chapter therefore carries the ancestral promise forward through Jacob and his household. Its ending also closes a family transition: Jacob reaches Isaac at Mamre, also called Kiriath-arba or Hebron, and Esau and Jacob bury their father together.",
+          "verse_refs": [
+            "Genesis 35:27-29",
+            "Genesis 35:9-12"
+          ]
+        }
+      ],
+      "kind": "historical_context",
+      "title": "Israel, Promise, and Family Transition"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g35-deborah-nurse-allon-bacuth",
+            "g35-purification-and-garment-change-context",
+            "g35-rachel-burial-location-traditions",
+            "g35-rachel-labor-ben-oni-benjamin-death",
+            "g35-reuben-bilhah-household-power"
+          ],
+          "id": "block_4",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_76ba93558d58"
+          ],
+          "text": "Several brief notices invite careful reading without supplying all the answers readers may want. Deborah’s burial beneath the “oak of weeping” records mourning but does not explain how Rebekah’s nurse came to be with Jacob’s household. Rachel dies after Benjamin’s birth and is buried on the way to Ephrath, identified here as Bethlehem; other biblical notices and later traditions locate her grave differently, so Genesis 35 alone cannot establish a modern tomb identification. Likewise, Reuben’s act with Bilhah has household and succession implications, but the chapter does not state his motive. The purification before Bethel should not be expanded into a detailed ritual procedure beyond what the text says.",
+          "verse_refs": [
+            "Genesis 35:16-20",
+            "Genesis 35:19-20",
+            "Genesis 35:2-4",
+            "Genesis 35:22",
+            "Genesis 35:8"
+          ]
+        }
+      ],
+      "kind": "interpretive_questions",
+      "title": "Details the Chapter Leaves Open"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3",
+            "genesis-literary-movement"
+          ],
+          "id": "block_5",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_3eb42e35bd7e",
+            "syn_surrounding_passages_8f1ce118488a"
+          ],
+          "text": "Genesis 35 belongs to the ancestral family narratives that run from Genesis 12 through 50, following the book’s opening account of universal origins. Questions about how Genesis was formed should be kept distinct from the chapter’s story: Mosaic attribution and compositional models are different proposals, while Genesis itself does not narrate the history of its own literary formation.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis in Its Larger Setting"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,1 +1,217 @@
-{"book":"Genesis","chapter":11,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"0ac359bb7d48c3c63927c7aa49461fc70bf034e0360864f80a6d62b8f4cb4d4c","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"9530249112686c9cb712e46278a2f3e130c73ca7b3550e1ea0f562397a973227","synthesis_schema_version":"1.1"},"reference":"Genesis 11","sections":[{"blocks":[{"confidence":"low","evidence_ids":["genesis-ane-comparative-context","genesis:interpretive_note:0","genesis:interpretive_note:1","genesis:interpretive_note:2","genesis:interpretive_note:3"],"id":"block_1","interpretation_level":"disputed","synthesis_ids":["syn_surrounding_passages_98c18e43db4d"],"text":"Genesis 1–11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were discussed. The chapter should be read as ancient theological and literary discourse; compositional models and Mosaic-attribution questions remain distinct positions because Genesis does not narrate its own literary formation.","verse_refs":[]}],"kind":"surrounding_passages","title":"Reading Genesis 1–11"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "book": "Genesis",
+  "chapter": 11,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "514eb7573bee01c46b1fcfb03249c8f90182bfbc1c9504a47eab1e006b043361",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "57baace0ce5e073c2716fe2da00421f4541bcc5607b281f9108d38f16d99b086",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 11",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis-ane-comparative-context",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:1",
+            "genesis:interpretive_note:2",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_1",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_98c18e43db4d"
+          ],
+          "text": "Genesis 1–11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building were also discussed. Such comparisons can clarify shared motifs and cultural questions, but they do not by themselves prove direct copying or settle how Genesis should be interpreted.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis in Its Larger Setting"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g11-babel-balal-wordplay",
+            "g11-babel-balal-wordplay:passage-relevance",
+            "g11-brick-bitumen",
+            "g11-brick-bitumen:passage-relevance",
+            "g11-city-tower-ziggurat-context"
+          ],
+          "id": "block_2",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_9c87336fab07"
+          ],
+          "text": "Shinar is associated with Babylonia or southern Mesopotamia, an appropriate setting for the builders’ use of brick and bitumen rather than quarried stone. Brick and bitumen were familiar materials for substantial construction in that setting. The city-and-tower project can be compared with Mesopotamian monumental architecture, including raised temple platforms called ziggurats, though Genesis does not identify the tower with a particular excavated structure. The explanation of Babel’s name also uses a Hebrew wordplay: it links Babel with balal, “confuse” or “mix,” rather than giving Babylon’s historical Akkadian etymology.",
+          "verse_refs": [
+            "Genesis 11:3",
+            "Genesis 11:4",
+            "Genesis 11:9"
+          ]
+        }
+      ],
+      "kind": "archaeology_geography",
+      "title": "The City and Its Setting"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g11-let-us-go-down",
+            "g11-let-us-go-down:passage-relevance",
+            "g11-make-a-name-and-abram",
+            "g11-make-a-name-and-abram:passage-relevance",
+            "g11-prevent-dispersion"
+          ],
+          "id": "block_3",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_1539946b33a2"
+          ],
+          "text": "The builders explicitly seek to make a name for themselves and to avoid being scattered, so their project aims at concentrated security or solidarity. The scattering that follows reverses that stated aim. The plural words, “Come, let us go down,” have been read in several ways: as divine-council deliberation, plural self-address, or continuity with the plural speech in Genesis 1:26. The phrase itself does not grammatically state the later Christian doctrine of the Trinity.",
+          "verse_refs": [
+            "Genesis 11:4",
+            "Genesis 11:7"
+          ]
+        },
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g11-yhwh-came-down-irony",
+            "g11-yhwh-came-down-irony:passage-relevance"
+          ],
+          "id": "block_4",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_54bd96b879dd"
+          ],
+          "text": "The phrase “its top in the heavens” can be conventional language for impressive height or monumental ambition; it need not mean that the builders intended literally to climb into God’s dwelling. The following line, in which YHWH “came down” to inspect the project, may function as irony: the monument described as reaching heaven still requires divine descent to be seen.",
+          "verse_refs": [
+            "Genesis 11:5"
+          ]
+        }
+      ],
+      "kind": "interpretive_questions",
+      "title": "The Tower and the Divine Speech"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g11-city-tower-ziggurat-context:passage-relevance",
+            "g11-genealogy-textual-chronology",
+            "g11-genealogy-textual-chronology:passage-relevance",
+            "g11-language-confusion-etiology",
+            "g11-language-confusion-etiology:passage-relevance"
+          ],
+          "id": "block_5",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_77f942c81310"
+          ],
+          "text": "The Babel story moves from one shared speech to mutual incomprehension and dispersion, explaining the place-name and the scattering within the narrative world. It is not presented as a technical scientific account of the origin of every human language. The genealogy that follows shifts attention through named generations from Shem to Terah and Abram. Its repeated age and lifespan formulas provide a generational frame, but exact calculations depend on textual tradition: the Masoretic Text, Septuagint, and Samaritan Pentateuch differ in some of these figures.",
+          "verse_refs": [
+            "Genesis 11:1-9",
+            "Genesis 11:10-26",
+            "Genesis 11:4"
+          ]
+        }
+      ],
+      "kind": "language_literary",
+      "title": "Language, Dispersion, and Genealogy"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g11-terah-route-to-haran:passage-relevance",
+            "g11-top-in-heavens",
+            "g11-top-in-heavens:passage-relevance",
+            "g11-ur-of-chaldeans-identification",
+            "g11-ur-of-chaldeans-identification:passage-relevance"
+          ],
+          "id": "block_6",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_9928f88f75d2"
+          ],
+          "text": "The genealogy culminates in Terah’s household: Abram, Nahor, Haran, Lot, Sarai, and Milcah. Terah sets out from Ur of the Chaldeans toward Canaan with Abram, Sarai, and Lot, but the household settles at Haran instead. The traditional identification of Ur with southern Mesopotamian Ur is debated, and archaeology has neither identified Abraham’s house nor independently established the itinerary. The account therefore supplies a family and travel transition without explaining every location or motive.",
+          "verse_refs": [
+            "Genesis 11:27-32",
+            "Genesis 11:28-31",
+            "Genesis 11:4"
+          ]
+        },
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g11-prevent-dispersion:passage-relevance",
+            "g11-sarai-barrenness-setup",
+            "g11-sarai-barrenness-setup:passage-relevance",
+            "g11-scattering-narrative-movement",
+            "g11-scattering-narrative-movement:passage-relevance"
+          ],
+          "id": "block_7",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_154032df331d"
+          ],
+          "text": "The final family notice pauses to state that Sarai is barren and has no child. This creates a narrative problem at the point where the account turns toward Abram and descendants, without resolving that problem within this chapter.",
+          "verse_refs": [
+            "Genesis 11:30",
+            "Genesis 11:4",
+            "Genesis 11:8-9"
+          ]
+        }
+      ],
+      "kind": "people_places",
+      "title": "From Terah to Abram"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g11-let-us-go-down",
+            "g11-let-us-go-down:passage-relevance",
+            "g11-make-a-name-and-abram",
+            "g11-make-a-name-and-abram:passage-relevance",
+            "g11-prevent-dispersion"
+          ],
+          "id": "block_8",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_why_it_matters_d4e8ddb148b1"
+          ],
+          "text": "The chapter’s placement heightens a contrast: Babel’s builders seek to make their own name through a centralized project, while the next chapter says that God will make Abram’s name great. This literary sequence redirects name-making from a human project toward a promise received by Abram.",
+          "verse_refs": [
+            "Genesis 11:4",
+            "Genesis 11:7"
+          ]
+        }
+      ],
+      "kind": "why_it_matters",
+      "title": "A Deliberate Transition"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

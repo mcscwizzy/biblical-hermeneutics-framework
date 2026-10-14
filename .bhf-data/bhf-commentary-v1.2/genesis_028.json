@@ -1,1 +1,100 @@
-{"book":"Genesis","chapter":28,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"c411cd26215969e4fcd0321ca3bd30223bfd01e42c2c45ed82af69be7e792d14","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"28ba714d231215068e1acc58dfcec1ead8e7dc174f4aaffac59be5790fd0d596","synthesis_schema_version":"1.1"},"reference":"Genesis 28","sections":[{"blocks":[{"confidence":"high","evidence_ids":["genesis-literary-movement"],"id":"block_1","interpretation_level":"fact","synthesis_ids":["syn_surrounding_passages_6391d840e795"],"text":"The larger literary movement of Genesis shifts from universal beginnings in chapters 1–11 to the ancestral family narratives in chapters 12–50, ending with Jacob's household in Egypt. This places Genesis 28 within that ancestral narrative rather than the book's opening universal section.","verse_refs":[]}],"kind":"surrounding_passages","title":"The larger movement of Genesis"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "book": "Genesis",
+  "chapter": 28,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "af0a5cbac9eed71d805ff5fcd8f50a57c5ddf32394e8c403796f31248ea85151",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "eb97171b17e4bb0f2dbebcc9fa5be56580f2ec005a7640ea8abf3c6ff17f08bc",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 28",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g28-beersheba-journey-and-stone",
+            "g28-esau-additional-marriage",
+            "g28-house-of-god-gate-of-heaven",
+            "g28-isaac-commissions-jacob",
+            "g28-jacob-vow-conditions-and-tithe"
+          ],
+          "id": "block_1",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_8c2103bd3983"
+          ],
+          "text": "The chapter begins by sending Jacob away with both a marriage instruction and the blessing associated with Abraham: offspring, a community of peoples, and the land of his family's sojournings. Esau notices his father's disapproval of Canaanite marriages and adds Mahalath from Ishmael's family to his existing wives. Jacob's departure from Beersheba toward Haran then becomes the setting for the night encounter at an otherwise unidentified stopping place. Afterward, Jacob describes it as the house of God and the gate of heaven; the language marks the place as sacred within the narrative without requiring a fully developed temple or map of heaven. His conditional-sounding vow, including a promise of a tenth, is read in differing ways—as bargaining, commitment, or a response shaped like covenant language.",
+          "verse_refs": [
+            "Genesis 28:1-5",
+            "Genesis 28:6-9",
+            "Genesis 28:10-11",
+            "Genesis 28:16-17",
+            "Genesis 28:20-22"
+          ]
+        }
+      ],
+      "kind": "chapter_overview",
+      "title": "Overview"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g28-messengers-ascending-descending",
+            "g28-pillar-oil-bethel-luz",
+            "g28-presence-protection-and-return",
+            "g28-sullam-lexical-range",
+            "g28-yhwh-promise-land-offspring"
+          ],
+          "id": "block_2",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_ea9b7c802c4b"
+          ],
+          "text": "Jacob's dream depicts God's messengers moving between earth and heaven on the sullam. It is commonly translated “ladder” or “stairway,” though “ramp” or another stepped structure has also been proposed; the word's precise image remains uncertain. The central point of the scene is clear: the dream joins Jacob's vulnerable journey to God's speech, which identifies the speaker with the God of Abraham and Isaac and repeats promises of land, offspring, blessing, presence, protection, and return. The exact wording of God's position in the dream is rendered differently in translations. Jacob responds by setting up the stone as a pillar, pouring oil on it, and naming the place Bethel, while the narrator notes its earlier name, Luz. This is a narrated standing-stone practice, not proof of a particular excavated installation.",
+          "verse_refs": [
+            "Genesis 28:12",
+            "Genesis 28:13-14",
+            "Genesis 28:15",
+            "Genesis 28:18-19"
+          ]
+        }
+      ],
+      "kind": "language_literary",
+      "title": "The Dream at Bethel"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "id": "block_3",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_surrounding_passages_6391d840e795"
+          ],
+          "text": "Genesis moves from its accounts of universal origins in chapters 1–11 to the ancestral family narratives in chapters 12–50, ending with Jacob's household in Egypt. Genesis 28 belongs to that family-centered movement: its attention to Jacob's journey, marriage, descendants, land, and return fits the larger narrative's focus on the ancestral household.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Place in Genesis"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

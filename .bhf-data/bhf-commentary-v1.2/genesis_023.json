@@ -1,1 +1,128 @@
-{"book":"Genesis","chapter":23,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"a79065fa6ec7b470889c5d40f96c303bb9aa76b4fbf94cf46657c2f722500a5a","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"1d92407c4baac5443a0da6f221d146d60cf254bea2f05da8f7779c0b4c10efff","synthesis_schema_version":"1.1"},"reference":"Genesis 23","sections":[{"blocks":[{"confidence":"low","evidence_ids":["genesis:interpretive_note:0","genesis:interpretive_note:3"],"id":"block_1","interpretation_level":"disputed","synthesis_ids":["syn_surrounding_passages_80bc59ff6b8a"],"text":"The supplied context keeps Mosaic-attribution and compositional models distinct positions because Genesis does not narrate its own literary formation. It also cautions that the absence of direct archaeological identification cannot by itself prove or disprove every ancestral narrative; archaeology and literary interpretation answer different questions.","verse_refs":[]}],"kind":"surrounding_passages","title":"History and archaeology"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "book": "Genesis",
+  "chapter": 23,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "882e8aeefbbd785ca19876bfd2e87b087cdd46cf69b91e7dd56078db1765f232",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "509687fb79efde443487347658235beebcd8cb03de66269801b4161c8f13fc42",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 23",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g23-sarah-age-death-mourning"
+          ],
+          "id": "block_1",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_2f0dbc9dd4bb"
+          ],
+          "text": "Sarah dies at 127 in Kiriath-arba, identified here as Hebron. Abraham’s mourning is followed immediately by the practical need to secure a burial place, so the chapter moves from grief into a public property negotiation.",
+          "verse_refs": [
+            "Genesis 23:1-2"
+          ]
+        }
+      ],
+      "kind": "chapter_overview",
+      "title": "Overview"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "g23-field-cave-machpelah",
+            "g23-hittites-sons-of-heth-terminology",
+            "g23-public-gate-negotiation",
+            "g23-silver-price-and-legal-comparison",
+            "g23-sojourner-status"
+          ],
+          "id": "block_2",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_db9e2ef5f758"
+          ],
+          "text": "Abraham calls himself a resident alien and sojourner while asking for a permanent burial holding. The negotiations take place publicly at the city gate, before local people, and conclude with silver weighed out for the field, its cave, and its trees. This public setting helps explain the repeated attention to witnesses and to the exact property being transferred. The narrative calls the local group Hittites, or sons of Heth; that label by itself does not establish that an Anatolian Hittite imperial state governed this transaction. Nor does the stated price of four hundred shekels establish a standard land price or identify the legal system controlling the sale.",
+          "verse_refs": [
+            "Genesis 23:15-16",
+            "Genesis 23:17-20",
+            "Genesis 23:3-20",
+            "Genesis 23:3-6",
+            "Genesis 23:7-18"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "A Public Purchase"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g23-witnessed-transfer-and-burial-property"
+          ],
+          "id": "block_3",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_26a0a0c2e57b"
+          ],
+          "text": "The final verses stress that the field and cave were formally made over to Abraham before the Hittites. Some readers see a pointed literary irony in this: Abraham’s first narrated legally held property in the promised land is a burial place.",
+          "verse_refs": [
+            "Genesis 23:17-20"
+          ]
+        }
+      ],
+      "kind": "interpretive_questions",
+      "title": "The Burial Holding"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "id": "block_4",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_surrounding_passages_d6fc6aee47ce"
+          ],
+          "text": "Genesis moves from accounts of universal origins in chapters 1–11 into the ancestral family narratives of chapters 12–50. Genesis 23 belongs to this latter movement, centered on Abraham’s family, before the book eventually ends with Jacob’s household in Egypt.",
+          "verse_refs": []
+        },
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_5",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_80bc59ff6b8a"
+          ],
+          "text": "Views that attribute Genesis to Moses and compositional models are distinct ways of accounting for the book’s formation; Genesis itself does not narrate its own literary formation. Likewise, the absence of a direct archaeological identification does not by itself prove or disprove every ancestral narrative, since archaeology and literary interpretation address different questions.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis in Context"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}
