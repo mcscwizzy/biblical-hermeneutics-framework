@@ -1,1 +1,147 @@
-{"book":"Genesis","chapter":31,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"c84229a06a949fd7cdca5441729ef0515d15794872efe01c29de2323a05eafab","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"2f8228484636a73e6fab15888adbc465d2cee8da2d596c21a90531088199fd74","synthesis_schema_version":"1.1"},"reference":"Genesis 31","sections":[{"blocks":[{"confidence":"high","evidence_ids":["genesis-literary-movement"],"id":"block_1","interpretation_level":"fact","synthesis_ids":["syn_surrounding_passages_3cf57504c04a"],"text":"The larger literary movement of Genesis shifts from universal beginnings in chapters 1–11 to the ancestral family narratives in chapters 12–50, ending with Jacob's household in Egypt. This places Genesis 31 within that ancestral narrative rather than the book's opening universal section.","verse_refs":[]}],"kind":"surrounding_passages","title":"The larger movement of Genesis"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "book": "Genesis",
+  "chapter": 31,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "929aab2b1ab7c95a9fa3d3f2c92e09a257fadb0b90620047c369fad9a260e8ff",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "cae83bd62816e4b1cf440b02b70b37fe0e015db0a5b4b0db0fef21a003e653d2",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 31",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g31-return-command-and-wives-consulted"
+          ],
+          "id": "block_1",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_c113af8e960a"
+          ],
+          "text": "Jacob’s departure is presented as both a response to worsening relations in Laban’s household and obedience to God’s command to return. He does not act alone: he brings Rachel and Leah into the decision, and their response describes their father’s treatment of them and supports the family’s departure.",
+          "verse_refs": [
+            "Genesis 31:3-16"
+          ]
+        }
+      ],
+      "kind": "chapter_overview",
+      "title": "Overview"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g31-secret-flight-euphrates-gilead"
+          ],
+          "id": "block_2",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_archaeology_geography_a435910db7a8"
+          ],
+          "text": "The journey moves from Laban’s territory across the River, identified broadly as the Euphrates, toward the hill country of Gilead. This gives the pursuit scene a clear large-scale movement: Jacob flees with his household and possessions, and Laban sets out after learning of it three days later. The account does not specify a modern route or exact crossing place.",
+          "verse_refs": [
+            "Genesis 31:17-23"
+          ]
+        }
+      ],
+      "kind": "archaeology_geography",
+      "title": "Flight toward Gilead"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g31-rachel-leah-property-and-estrangement",
+            "g31-search-saddle-menstrual-claim",
+            "g31-teraphim-household-cult-objects",
+            "g31-teraphim-inheritance-and-divination-theories",
+            "g31-wages-retrospective-and-contract-uncertainty"
+          ],
+          "id": "block_3",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_3e7413502842"
+          ],
+          "text": "Rachel’s theft of Laban’s teraphim—portable household religious objects in this story—creates a second conflict within Jacob’s flight. The narrative does not explain why she takes them or establish their precise function. Suggestions about inheritance claims, divination, or domestic and ancestral religious practice remain possibilities rather than conclusions. Likewise, Jacob’s account of repeatedly changed wages is his testimony in a hostile confrontation, not a surviving record from which every term of the arrangement can be reconstructed.",
+          "verse_refs": [
+            "Genesis 31:14-16",
+            "Genesis 31:19",
+            "Genesis 31:22-35",
+            "Genesis 31:30",
+            "Genesis 31:34-35",
+            "Genesis 31:7-9"
+          ]
+        }
+      ],
+      "kind": "interpretive_questions",
+      "title": "The teraphim and the dispute"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g31-boundary-oath-pillar-heap-meal",
+            "g31-flock-dream-god-of-bethel",
+            "g31-galeed-jegar-sahadutha-mizpah-names",
+            "g31-household-complaints-and-laban-attitude",
+            "g31-jacob-twenty-years-labor-complaint"
+          ],
+          "id": "block_4",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_75ac1a797cb0"
+          ],
+          "text": "The final agreement is not simply a reconciliation. The heap and pillar serve as visible witnesses to a boundary: Jacob and Laban swear not to cross it to harm one another, invoke God as witness, and share a meal after sacrifice. The paired names Jegar-sahadutha and Galeed are both names for the heap, while Mizpah is tied to the mutual watch and oath. In this setting, the words about God watching between them mark guarded separation, not a detached blessing of friendship. Jacob’s long complaint about labor, losses, and changed wages helps explain why this formal separation becomes necessary.",
+          "verse_refs": [
+            "Genesis 31:1-2",
+            "Genesis 31:10-13",
+            "Genesis 31:36-42",
+            "Genesis 31:43-49",
+            "Genesis 31:44-54"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "A boundary made visible"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_5",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_3cf57504c04a",
+            "syn_surrounding_passages_21b7d10e9137"
+          ],
+          "text": "Genesis as a whole moves from accounts of universal origins in chapters 1–11 into the ancestral family narratives of chapters 12–50, ending with Jacob’s household in Egypt. Questions about how Genesis came to be written should be kept distinct from what this chapter narrates: Mosaic attribution and compositional models are different interpretive positions, and Genesis itself does not recount its own literary formation. Similarly, the absence of a directly identified archaeological monument does not by itself settle the historical or literary interpretation of an ancestral narrative.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis in view"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

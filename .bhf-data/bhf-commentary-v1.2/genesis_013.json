@@ -1,1 +1,134 @@
-{"book":"Genesis","chapter":13,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"513efc8ac13f279874b658ffb3529b1fb78e0a5102c7f1bb650e38f93be21fc2","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-cli","synthesis_compiler_version":"1.1","synthesis_hash":"c83250bfd35e5cfca438a18d707bfb57a1145e626fac61a4d8c998a9b1330c95","synthesis_schema_version":"1.1"},"reference":"Genesis 13","sections":[{"blocks":[{"confidence":"high","evidence_ids":["source-lock-genesis-13-abram-negev-bethel-ai-movement","source-lock-genesis-13-jordan-valley-well-watered-description","source-lock-genesis-13-lot-eastward-separation"],"id":"block_1","interpretation_level":"fact","synthesis_ids":["syn_archaeology_geography_fc17ce969410"],"text":"Abram returns from the South to the earlier campsite between Bethel and Ai before the dispute over land is described. The chapter then makes geography central to the separation: Lot sees the Jordan Plain as well watered and chooses it, traveling east and settling among its cities as far as Sodom, while Abram remains in Canaan. The description of the plain is the stated basis for Lot’s choice.","verse_refs":["Genesis 13:1","Genesis 13:3","Genesis 13:10","Genesis 13:11-12"]}],"kind":"archaeology_geography","title":"Places and Movement"},{"blocks":[{"confidence":"low","evidence_ids":["genesis-literary-movement","genesis:interpretive_note:0","genesis:interpretive_note:3"],"id":"block_2","interpretation_level":"disputed","synthesis_ids":["syn_surrounding_passages_b2149024fab5","syn_surrounding_passages_2cb2a9d8f645"],"text":"Genesis 13 belongs to the ancestral family narratives that occupy Genesis 12–50, following the book’s opening movement from universal origins in chapters 1–11. Questions about how Genesis came to be written remain disputed: Mosaic attribution and compositional models are distinct positions, and Genesis itself does not narrate its own literary formation.","verse_refs":[]}],"kind":"surrounding_passages","title":"Genesis in Context"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "book": "Genesis",
+  "chapter": 13,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "1b4c083cf81f63aa03dd48ced51b565bdadc698a0ac91077b9b5972c03f8b804",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "36b8680098c159071fa66ff87c50a2a2f99232649556e96076dfb87bde7e8cd6",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 13",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g13-bethel-mamre-movement",
+            "g13-jordan-plain-lot-choice",
+            "g13-pastoral-resources-wealth",
+            "g13-renewed-land-offspring-promise",
+            "g13-separation-and-kinship"
+          ],
+          "id": "block_1",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_394e69cfcee0"
+          ],
+          "text": "One interpretive reading highlights the chapter’s movement from a practical pastoral conflict to renewed promise. Abram and Lot have enough livestock and dependents that their camps cannot remain together without strain; Abram proposes a peaceful separation, appealing to their kinship, and lets Lot choose first. Lot chooses the well-watered plain, while Abram remains in Canaan. Afterward, the promise of land and innumerable offspring is renewed to Abram, and he is told to walk through the land.",
+          "verse_refs": [
+            "Genesis 13:1-7",
+            "Genesis 13:10-13",
+            "Genesis 13:14-17",
+            "Genesis 13:18",
+            "Genesis 13:3-4",
+            "Genesis 13:8-13"
+          ]
+        }
+      ],
+      "kind": "chapter_overview",
+      "title": "Overview"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+            "source-lock-genesis-13-jordan-valley-well-watered-description",
+            "source-lock-genesis-13-lot-eastward-separation"
+          ],
+          "id": "block_2",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_archaeology_geography_fc17ce969410"
+          ],
+          "text": "The chapter first locates Abram’s return in the Negev and the Bethel–Ai area before the dispute over land. Lot’s choice is explicitly based on what he sees: the Jordan plain appears well watered. He travels eastward and settles among the cities of the plain, moving his tents toward Sodom, while Abram remains in Canaan.",
+          "verse_refs": [
+            "Genesis 13:1",
+            "Genesis 13:10",
+            "Genesis 13:11-12",
+            "Genesis 13:3"
+          ]
+        }
+      ],
+      "kind": "archaeology_geography",
+      "title": "Places and Movement"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g13-sodom-moral-notice"
+          ],
+          "id": "block_3",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_69fcbc2e921c"
+          ],
+          "text": "The description of Lot’s attractive destination is immediately qualified by the narrator: Sodom’s inhabitants are called exceedingly wicked and sinful against the LORD. This notice shapes how the reader understands Lot’s settlement near Sodom without needing to draw on later episodes.",
+          "verse_refs": [
+            "Genesis 13:12-13"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "A Narrator’s Notice"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "id": "block_4",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_surrounding_passages_b2149024fab5"
+          ],
+          "text": "Genesis moves from the universal origins narratives of chapters 1–11 into the ancestral family narratives of chapters 12–50. Genesis 13 belongs to that latter movement, which follows Abram’s household and eventually ends with Jacob’s household in Egypt.",
+          "verse_refs": []
+        },
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_5",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_2cb2a9d8f645"
+          ],
+          "text": "Questions about how Genesis was formed should be kept distinct from what Genesis itself narrates. Mosaic attribution and compositional models are different interpretive positions, while Genesis does not describe its own literary formation. Likewise, the absence of direct archaeological identification does not by itself prove or disprove every ancestral narrative; archaeological and literary questions address different matters.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis in Context"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}

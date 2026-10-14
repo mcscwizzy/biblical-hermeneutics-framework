@@ -1,1 +1,151 @@
-{"book":"Genesis","chapter":33,"evidence_availability":"AVAILABLE","failure_reason":null,"generated_metadata":{"commentary_prompt_version":"1.8","commentary_schema_version":"1.2","evidence_bundle_version":"1.1","evidence_hash":"4294805a799e4621f42e729a7d19068de01dbd797fb4866f14709e4325a7c6ac","generated_timestamp":null,"model":"gpt-5.6-terra","renderer_label":"commentary-v1.2-codex-session","synthesis_compiler_version":"1.1","synthesis_hash":"e8886ef347fbb1f58c666af657e6b34055d7383f08b31f60865e54aa42064e7d","synthesis_schema_version":"1.1"},"reference":"Genesis 33","sections":[{"blocks":[{"confidence":"high","evidence_ids":["genesis-literary-movement"],"id":"block_1","interpretation_level":"fact","synthesis_ids":["syn_surrounding_passages_84e308be81bd"],"text":"The larger literary movement of Genesis shifts from universal beginnings in chapters 1–11 to the ancestral family narratives in chapters 12–50, ending with Jacob's household in Egypt. This places Genesis 33 within that ancestral narrative rather than the book's opening universal section.","verse_refs":[]}],"kind":"surrounding_passages","title":"The larger movement of Genesis"}],"status":"validated","validation_errors":[],"validation_warnings":[]}
+{
+  "book": "Genesis",
+  "chapter": 33,
+  "evidence_availability": "AVAILABLE",
+  "failure_reason": null,
+  "generated_metadata": {
+    "commentary_prompt_version": "1.8",
+    "commentary_schema_version": "1.2",
+    "evidence_bundle_version": "1.1",
+    "evidence_hash": "a1bb5d94a84958adb8bfd8b8c2fb20240182660cf64ca56764d28b29ddcd6b89",
+    "generated_timestamp": null,
+    "model": "gpt-5.6-terra",
+    "renderer_label": "commentary-v1.2-codex-session",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_hash": "4ac5cb43821752eee723247eceaf59ff634df884cdd460cdecd7a4b292f64756",
+    "synthesis_schema_version": "1.1"
+  },
+  "reference": "Genesis 33",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g33-gift-blessing-face-of-god",
+            "g33-women-children-presentation"
+          ],
+          "id": "block_1",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_cultural_context_d59ea209855f"
+          ],
+          "text": "The household approaches Esau in visible groups, and each group bows. Jacob’s order makes the family’s social arrangement visible, but the passage does not explain why the groups are arranged as they are, so claims about protection or rank remain uncertain. Jacob calls his present a minḥah, a gift, and then asks Esau to accept it as his “blessing.” His comparison of Esau’s welcoming face to seeing the face of God expresses the favor and reconciliation he experiences; it does not identify Esau as divine.",
+          "verse_refs": [
+            "Genesis 33:5-7",
+            "Genesis 33:8-11"
+          ]
+        }
+      ],
+      "kind": "cultural_context",
+      "title": "Approach, Gift, and Favor"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g33-el-elohe-israel-altar-name",
+            "g33-esau-embrace-kiss-weeping",
+            "g33-household-approach-and-seven-bows",
+            "g33-kiss-dotted-word-textual-traditions",
+            "g33-purchased-parcel-near-shechem"
+          ],
+          "id": "block_2",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_37966dc5e0fc"
+          ],
+          "text": "Jacob goes ahead of his household and bows to the ground seven times. Such prostration could express deference in a kinship or diplomatic encounter; it should not automatically be read as worship. Esau’s run, embrace, kiss, and shared tears are the chapter’s immediate portrayal of their reunion. Later textual traditions notice dots over the Hebrew word translated “kissed” and raise questions about its sincerity, but those marks do not by themselves establish a hidden attempt on Jacob’s life.",
+          "verse_refs": [
+            "Genesis 33:1-3",
+            "Genesis 33:18-19",
+            "Genesis 33:20",
+            "Genesis 33:4"
+          ]
+        },
+        {
+          "confidence": "medium",
+          "evidence_ids": [
+            "g33-el-elohe-israel-altar-name",
+            "g33-esau-embrace-kiss-weeping",
+            "g33-household-approach-and-seven-bows",
+            "g33-kiss-dotted-word-textual-traditions",
+            "g33-purchased-parcel-near-shechem"
+          ],
+          "id": "block_3",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_interpretive_questions_37966dc5e0fc"
+          ],
+          "text": "At Shechem, Jacob purchases the parcel where he pitches his tent and erects an altar named El-Elohe-Israel. The purchase is presented as a land transaction, though the value of the qesitah and the parcel’s precise boundaries are not established here. The altar name can be understood in more than one grammatical way, including “El, the God of Israel”; in either case, it connects Jacob’s new name, Israel, with worship.",
+          "verse_refs": [
+            "Genesis 33:1-3",
+            "Genesis 33:18-19",
+            "Genesis 33:20",
+            "Genesis 33:4"
+          ]
+        }
+      ],
+      "kind": "interpretive_questions",
+      "title": "Bows, Reunion, and Settlement"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "g33-esau-seir-jacob-succoth-shechem-travel"
+          ],
+          "id": "block_4",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_archaeology_geography_b195a876431f"
+          ],
+          "text": "After their meeting, Esau returns toward Seir, while Jacob travels to Succoth, where he builds a house and shelters for his livestock, before arriving at Shechem. The chapter thus closes the reunion without depicting the brothers traveling on together. The itinerary names real stages in the narrative, but it does not supply exact modern coordinates for Succoth or the route.",
+          "verse_refs": [
+            "Genesis 33:12-18"
+          ]
+        }
+      ],
+      "kind": "archaeology_geography",
+      "title": "Diverging Routes"
+    },
+    {
+      "blocks": [
+        {
+          "confidence": "high",
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "id": "block_5",
+          "interpretation_level": "fact",
+          "synthesis_ids": [
+            "syn_surrounding_passages_84e308be81bd"
+          ],
+          "text": "Genesis moves from the accounts of universal beginnings in chapters 1–11 into the ancestral family narratives in chapters 12–50, ending with Jacob’s household in Egypt. Genesis 33 belongs within that extended family story rather than functioning as an isolated episode.",
+          "verse_refs": []
+        },
+        {
+          "confidence": "low",
+          "evidence_ids": [
+            "genesis:interpretive_note:0",
+            "genesis:interpretive_note:3"
+          ],
+          "id": "block_6",
+          "interpretation_level": "disputed",
+          "synthesis_ids": [
+            "syn_surrounding_passages_257a5c5fb5c7"
+          ],
+          "text": "Mosaic attribution and compositional models are distinct views about Genesis’s literary formation. Genesis itself does not narrate how it came to be written, so that question should be kept separate from the chapter’s own account.",
+          "verse_refs": []
+        }
+      ],
+      "kind": "surrounding_passages",
+      "title": "Genesis as a Larger Narrative"
+    }
+  ],
+  "status": "validated",
+  "validation_errors": [],
+  "validation_warnings": []
+}
