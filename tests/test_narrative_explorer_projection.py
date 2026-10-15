@@ -3,6 +3,8 @@
 from copy import deepcopy
 from importlib import import_module
 from importlib.util import find_spec
+import json
+from pathlib import Path
 
 import pytest
 
@@ -18,13 +20,21 @@ def _public(name):
     return value
 
 
-def _lookup(domain, *, records=(), query_status="complete", reason_code=None):
+def _lookup(
+    domain,
+    *,
+    records=(),
+    query_status="complete",
+    reason_code=None,
+    missing_subdomains=(),
+):
     domain_lookup = _public("DomainLookup")
     return domain_lookup(
         domain=domain,
         records=records,
         query_status=query_status,
         reason_code=reason_code,
+        missing_subdomains=missing_subdomains,
     )
 
 
@@ -36,6 +46,54 @@ def _project(reference, *, canonical=None, maps=None, archaeology=None):
         map_lookup=maps,
         archaeology_lookup=archaeology,
     ).to_dict()
+
+
+_OBJECT_ROOT = Path(__file__).resolve().parents[1] / "framework" / "canonical_library" / "objects"
+
+
+def _load_ckl(*object_paths):
+    return [
+        json.loads((_OBJECT_ROOT / object_path).read_text(encoding="utf-8"))
+        for object_path in object_paths
+    ]
+
+
+def _item(result, stable_id):
+    return next(item for item in result["items"] if item["id"] == stable_id)
+
+
+def _map_place(
+    item_id,
+    name,
+    reference,
+    *,
+    latitude=31.0,
+    longitude=35.0,
+    **overrides,
+):
+    record = {
+        "id": item_id,
+        "name": name,
+        "marker_kind": "place",
+        "description": f"Map evidence for {name}.",
+        "latitude": latitude,
+        "longitude": longitude,
+        "confidence": "high",
+        "source_id": "map-source",
+        "source": {"id": "map-source", "label": "Curated map source", "url": "https://example.test/map"},
+        "related_references": [
+            {
+                "book": reference.split()[0],
+                "chapter": int(reference.split()[1].split(":")[0]),
+                "verse_start": int(reference.split(":")[1].split("-")[0]),
+                "verse_end": int(reference.split(":")[1].split("-")[-1]),
+                "relationship_type": "direct",
+                "notes": "Authored map passage link.",
+            }
+        ],
+    }
+    record.update(overrides)
+    return record
 
 
 def test_projection_normalizes_chapter_and_verse_range_and_exposes_v1_envelope():
@@ -69,6 +127,12 @@ def test_projection_normalizes_chapter_and_verse_range_and_exposes_v1_envelope()
     assert coverage["maps"]["state"] == "unknown"
     assert coverage["maps"]["reason_code"] == "resolver_unavailable"
     assert coverage["archaeology"]["state"] == "not_represented"
+    assert {
+        "id": "navigation:passage:Genesis 6",
+        "kind": "passage",
+        "target_id": "Genesis 6",
+        "href": "/api/study/companion-context?book=Genesis&chapter=6",
+    } in result["navigation"]
 
     verse_result = _project("Genesis 6:1-4")
     assert verse_result["passage"] == {
@@ -79,6 +143,10 @@ def test_projection_normalizes_chapter_and_verse_range_and_exposes_v1_envelope()
         "verse_end": 4,
         "scope": "verse_range",
     }
+    passage_navigation = next(item for item in verse_result["navigation"] if item["kind"] == "passage")
+    assert passage_navigation["href"] == (
+        "/api/study/companion-context?book=Genesis&chapter=6&verse_start=1&verse_end=4"
+    )
 
 
 @pytest.mark.parametrize("reference", ["", "Genesis", "Genesis 6:0", "Genesis 1-2"])
@@ -106,3 +174,610 @@ def test_projection_is_stable_and_does_not_mutate_supplied_records():
 
     assert first == second
     assert records == before
+
+
+def test_unsupplied_lookup_is_unknown_not_a_completed_empty_query():
+    result = _project("Genesis 6")
+    maps = next(entry for entry in result["coverage"] if entry["domain"] == "maps")
+    archaeology = next(entry for entry in result["coverage"] if entry["domain"] == "archaeology")
+
+    assert maps["query_status"] == archaeology["query_status"] == "not_run"
+    assert maps["state"] == archaeology["state"] == "unknown"
+    assert maps["query_returned_count"] is None
+    assert maps["reason_code"] == "lookup_not_supplied"
+    assert "passage_maps" in maps["description"]
+
+
+def test_partial_lookup_and_empty_partial_lookup_keep_distinct_coverage_states():
+    partial_item = _map_place("midian", "Midian", "Exodus 3:1-2")
+    with_records = _project(
+        "Exodus 3",
+        maps=_lookup(
+            "maps",
+            records=[partial_item],
+            query_status="partial",
+            reason_code="routes_unavailable",
+            missing_subdomains=["routes"],
+        ),
+    )
+    maps_with_records = next(entry for entry in with_records["coverage"] if entry["domain"] == "maps")
+    geography_section = next(section for section in with_records["sections"] if section["id"] == "biblical_geography")
+    assert maps_with_records["state"] == "partial"
+    assert maps_with_records["missing_subdomains"] == ["routes"]
+    assert maps_with_records["reason_code"] == "routes_unavailable"
+    assert "passage_maps" in maps_with_records["description"]
+    assert geography_section["state"] == "partial"
+
+    empty_partial = _project(
+        "Exodus 3",
+        maps=_lookup("maps", query_status="partial", missing_subdomains=["places"]),
+    )
+    maps_without_records = next(entry for entry in empty_partial["coverage"] if entry["domain"] == "maps")
+    assert maps_without_records["state"] == "unknown"
+    assert maps_without_records["query_returned_count"] == 0
+
+
+def test_genesis_2_eden_coordinates_are_preserved_as_unverified_not_displayable():
+    eden = _map_place("eden", "Garden of Eden", "Genesis 2:10-14")
+    eden.pop("source")
+    eden["source_name"] = "Existing BHF map catalog"
+    eden["source_url"] = "https://example.test/map-catalog"
+    eden["related_references"].append(
+        {
+            "book": "Genesis",
+            "chapter": 3,
+            "verse_start": 8,
+            "verse_end": 8,
+            "relationship_type": "contextual",
+        }
+    )
+    original = deepcopy(eden)
+    result = _project("Genesis 2", maps=_lookup("maps", records=[eden]))
+
+    item = _item(result, "maps:eden")
+    assert item["geography_kind"] == "physical_place"
+    assert item["place_identification_confidence"] == "unknown"
+    assert item["stored_coordinates"] == {"latitude": 31.0, "longitude": 35.0}
+    assert item["coordinates_displayable"] is False
+    assert item["coordinate_display_reason"] == "physical_identification_not_established"
+    assert item["source_ids"] == ["map-source"]
+    assert item["sources"][0]["id"] == "map-source"
+    assert item["sources"][0]["details_available"] is True
+    assert item["sources"][0]["bibliographic_details"]["source_name"] == "Existing BHF map catalog"
+    assert item["parent_object_id"] is None
+    assert item["applicable_passage_anchors"][0]["reference"] == "Genesis 2:10-14"
+    assert eden == original
+
+    genesis_three = _project("Genesis 3", maps=_lookup("maps", records=[eden]))
+    garden_scene = _item(genesis_three, "maps:eden")
+    assert garden_scene["applicable_passage_anchors"][0]["reference"] == "Genesis 3:8"
+    assert garden_scene["coordinates_displayable"] is False
+
+
+def test_external_items_require_their_own_overlapping_verse_anchor():
+    eden = _map_place("eden", "Garden of Eden", "Genesis 2:10-14")
+    result = _project(
+        "Genesis 2:8-9",
+        maps=_lookup("maps", records=[eden]),
+    )
+    assert not any(item["id"] == "maps:eden" for item in result["items"])
+    assert next(entry for entry in result["coverage"] if entry["domain"] == "maps")["state"] == "not_represented"
+
+
+def test_exodus_3_physical_map_items_retain_uncertain_horeb_identification():
+    midian = _map_place(
+        "midian",
+        "Midian",
+        "Exodus 3:1-2",
+        physical_identification_status="established",
+        place_identification_confidence="high",
+    )
+    horeb = _map_place(
+        "horeb-sinai",
+        "Horeb / Sinai identification",
+        "Exodus 3:1-6",
+        place_identification_status="disputed",
+        place_identification_confidence="disputed",
+        dispute_status="identification_uncertainty",
+    )
+    canonical_records = _load_ckl(
+        "places/midian.json",
+        "places/mount-sinai.json",
+        "theology/divine-presence.json",
+    )
+    result = _project(
+        "Exodus 3",
+        canonical=_lookup("ckl", records=canonical_records),
+        maps=_lookup("maps", records=[midian, horeb]),
+    )
+
+    physical = _item(result, "maps:midian")
+    uncertain = _item(result, "maps:horeb-sinai")
+    textual_place = _item(result, "ckl:midian")
+    presence = _item(result, "ckl:divine-presence")
+    assert physical["geography_kind"] == "physical_place"
+    assert physical["place_identification_confidence"] == "high"
+    assert physical["coordinates_displayable"] is True
+    assert uncertain["geography_kind"] == "physical_place"
+    assert uncertain["place_identification_confidence"] == "disputed"
+    assert uncertain["dispute_status"] == "identification_uncertainty"
+    assert uncertain["coordinates_displayable"] is False
+    assert textual_place["object_type"] == "place"
+    assert textual_place["applicable_passage_anchors"][0]["reference"] == "Exodus 3:1-15"
+    assert presence["object_type"] == "theology"
+    assert presence["geography_kind"] == "unknown"
+    assert presence["stored_coordinates"] is None
+    assert "themes_biblical_connections" in presence["section_ids"]
+
+
+def test_sacred_space_never_projects_coordinates_as_physical_geometry():
+    sacred_space = _map_place(
+        "eden-sacred-space",
+        "Eden sacred-space concept",
+        "Genesis 2:8-10",
+        geography_kind="sacred_space",
+    )
+    result = _project("Genesis 2", maps=_lookup("maps", records=[sacred_space]))
+    item = _item(result, "maps:eden-sacred-space")
+
+    assert item["geography_kind"] == "sacred_space"
+    assert item["coordinates_displayable"] is False
+    assert item["coordinate_display_reason"] == "conceptual_geography_has_no_physical_marker"
+    assert item["stored_coordinates"] == {"latitude": 31.0, "longitude": 35.0}
+
+
+def test_route_geometry_requires_an_established_physical_identification():
+    route = {
+        "id": "wilderness-route",
+        "name": "Wilderness route concept",
+        "marker_kind": "route",
+        "route_type": "narrative route",
+        "geojson": {
+            "type": "Feature",
+            "geometry": {"type": "LineString", "coordinates": [[35.0, 31.0], [36.0, 32.0]]},
+        },
+        "scripture_links": [
+            {
+                "book": "Exodus",
+                "chapter": 3,
+                "verse_start": 1,
+                "verse_end": 4,
+                "relationship_type": "contextual",
+            }
+        ],
+    }
+    result = _project("Exodus 3", maps=_lookup("maps", records=[route]))
+    item = _item(result, "maps:wilderness-route")
+
+    assert item["geography_kind"] == "route"
+    assert item["stored_geometry"]["coordinates"] == [[35.0, 31.0], [36.0, 32.0]]
+    assert item["geometry_displayable"] is False
+    assert item["geometry_display_reason"] == "geographic_identification_not_established"
+
+
+def test_archaeology_projection_preserves_explicit_source_and_uncertainty():
+    record = {
+        "id": "exodus-inscription",
+        "title": "Inscription with a stated historical connection",
+        "item_type": "inscription",
+        "site_id": "tell-example",
+        "site_name": "Tell Example",
+        "summary": "An authored archaeological summary.",
+        "confidence": "low",
+        "dispute_status": "disputed_identification",
+        "source_id": "archaeology-source",
+        "source": {"id": "archaeology-source", "title": "Catalog entry", "year": None},
+        "scripture_links": [
+            {
+                "book": "Exodus",
+                "chapter": 3,
+                "verse_start": 1,
+                "verse_end": 5,
+                "relationship_type": "historical_context",
+                "notes": "Catalogued as historical context.",
+            }
+        ],
+    }
+    result = _project("Exodus 3:1-3", archaeology=_lookup("archaeology", records=[record]))
+
+    item = _item(result, "archaeology:exodus-inscription")
+    assert item["record_kind"] == "archaeology_item"
+    assert item["evidence_category"] == "inscription"
+    assert item["parent_object_id"] == "tell-example"
+    assert item["claim_text"] == "An authored archaeological summary."
+    assert item["confidence"] == "low"
+    assert item["dispute_status"] == "disputed_identification"
+    assert item["sources"][0]["id"] == "archaeology-source"
+    assert item["sources"][0]["details_available"] is True
+    assert item["applicable_passage_anchors"][0]["reference"] == "Exodus 3:1-5"
+    archaeology_edge = next(
+        edge for edge in result["connections"] if edge["source_id"] == "archaeology:exodus-inscription"
+    )
+    assert archaeology_edge["original_relationship_type"] == "historical_context"
+    assert archaeology_edge["relationship_mode"] == "direct"
+    assert archaeology_edge["connection_type"] == "uncategorized"
+    assert all(edge["connection_type"] != "direct_quotation" for edge in result["connections"])
+
+
+def test_genesis_6_projects_cultural_background_and_comparison_as_distinct_evidence():
+    records = _load_ckl(
+        "cultural_background/genesis-flood-postflood-context.json",
+        "cultural_background/mesopotamian-creation-and-flood-comparisons.json",
+    )
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=records))
+
+    sons = _item(
+        result,
+        "ckl:genesis-flood-postflood-context#evidence:g6-sons-of-god-interpretive-positions",
+    )
+    assert sons["object_type"] == "cultural_background"
+    assert sons["evidence_category"] == "worldview-concept"
+    assert sons["certainty"] == "disputed"
+    assert sons["dispute_status"] == "major_scholarly_disagreement"
+    assert sons["interpretation_state"] == "disputed"
+    assert sons["claim_text"]
+    assert sons["parent_object_id"] == "genesis-flood-postflood-context"
+    assert "g2-doedens-sons-god" in sons["source_ids"]
+    assert any(
+        source["id"] == "g2-doedens-sons-god"
+        and source["details_available"]
+        and source["bibliographic_details"]["year"] == 2019
+        for source in sons["sources"]
+    )
+
+    comparative = _item(
+        result,
+        "ckl:mesopotamian-creation-and-flood-comparisons#evidence:gilgamesh-tablet-xi-flood-comparison",
+    )
+    assert comparative["evidence_category"] == "ancient-text"
+    assert comparative["object_type"] == "cultural_background"
+    assert comparative["passage_anchors"][0]["relationship"] == "comparative"
+    assert comparative["temporal_relation"] == "diachronic"
+    assert comparative["certainty"] == "probable"
+    assert comparative["id"] != sons["id"]
+
+
+def test_psalm_82_cultural_context_is_discoverable_without_a_theme_object():
+    record = _load_ckl("cultural_background/ancient-divine-assembly-imagery.json")
+    result = _project("Psalm 82", canonical=_lookup("ckl", records=record))
+
+    claim = _item(result, "ckl:ancient-divine-assembly-imagery#claim:psalm-82-assembly-text")
+    evidence = _item(result, "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language")
+    assert claim["object_type"] == evidence["object_type"] == "cultural_background"
+    assert claim["claim_type"] == "biblical_text"
+    assert claim["certainty"] == "textually_explicit"
+    assert claim["dispute_status"] == "major_scholarly_disagreement"
+    assert claim["interpretation_state"] == "disputed"
+    cosmic = next(section for section in result["sections"] if section["id"] == "divine_council_cosmic_geography")
+    assert claim["id"] in cosmic["item_ids"]
+    assert evidence["id"] in cosmic["item_ids"]
+    assert not any(item["object_type"] == "theme" for item in result["items"])
+
+
+def test_deuteronomy_32_manuscript_evidence_survives_empty_archaeology_lookup():
+    record = _load_ckl("cultural_background/ancient-divine-assembly-imagery.json")
+    result = _project(
+        "Deuteronomy 32",
+        canonical=_lookup("ckl", records=record),
+        archaeology=_lookup("archaeology"),
+    )
+
+    variant = _item(
+        result,
+        "ckl:ancient-divine-assembly-imagery#evidence:deuteronomy-32-8-manuscript-variant",
+    )
+    assert variant["evidence_category"] == "manuscript"
+    assert variant["assertion_type"] == "primary-evidence"
+    assert variant["certainty"] == "disputed"
+    assert variant["dispute_status"] == "textual_variant"
+    assert "ulrich-biblical-qumran-scrolls-2010" in variant["source_ids"]
+    coverage = {entry["domain"]: entry for entry in result["coverage"]}
+    assert coverage["archaeology"]["state"] == "not_represented"
+    assert coverage["ckl"]["state"] == "available"
+    assert all(edge["connection_type"] != "direct_quotation" for edge in result["connections"])
+
+
+def test_genesis_6_does_not_inherit_genesis_book_cross_references():
+    records = _load_ckl(
+        "books/genesis.json",
+        "cultural_background/genesis-flood-postflood-context.json",
+    )
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=records))
+
+    assert any(item["id"].startswith("ckl:genesis#claim:") for item in result["items"])
+    assert not any(
+        "Exodus 1" in str(connection)
+        or "Psalm 105" in str(connection)
+        or "Matthew 1" in str(connection)
+        for connection in result["connections"]
+    )
+    assert not any(
+        reference.startswith(("Exodus 1", "Psalm 105", "Matthew 1"))
+        for item in result["items"]
+        for reference in item["related_passages"]
+    )
+    assert not any(
+        key in item for item in result["items"] for key in ("cross_references", "intertextuality")
+    )
+    assert not any(
+        "genesis-ends-in-egypt" in item["id"]
+        for item in result["items"]
+    )
+
+
+def test_genesis_6_verse_range_excludes_evidence_anchored_elsewhere_in_chapter():
+    record = _load_ckl("cultural_background/genesis-flood-postflood-context.json")
+    result = _project("Genesis 6:1-2", canonical=_lookup("ckl", records=record))
+
+    included_ids = {item["evidence_id"] for item in result["items"] if item["evidence_id"]}
+    assert "g6-sons-of-god-interpretive-positions" in included_ids
+    assert "g6-nephilim-and-mighty-men" not in included_ids
+    assert "g6-evil-intention-and-violence" not in included_ids
+    assert "g6-one-hundred-twenty-years" not in included_ids
+    assert all(
+        "Genesis 6:1-4" in item["related_passages"]
+        for item in result["items"]
+        if item["record_kind"] == "evidence"
+    )
+
+
+def test_genesis_1_keeps_passage_anchored_themes_and_comparative_sources():
+    records = _load_ckl(
+        "books/genesis.json",
+        "events/creation.json",
+        "themes/creation-theme.json",
+        "cultural_background/mesopotamian-creation-and-flood-comparisons.json",
+    )
+    result = _project("Genesis 1", canonical=_lookup("ckl", records=records))
+
+    assert any(item["object_id"] == "creation-theme" for item in result["items"])
+    assert any(item["evidence_category"] == "ancient-text" for item in result["items"])
+    assert not any(
+        item["claim_id"] == "genesis-blessing-for-families"
+        or item["claim_id"] == "genesis-ends-in-egypt"
+        for item in result["items"]
+    )
+
+
+def test_authoritative_semantic_misanchor_guard_still_excludes_bad_genesis_evidence():
+    misanchored = {
+        "id": "kurkh-monolith",
+        "type": "archaeology",
+        "title": "Assyrian royal inscription",
+        "scripture_references": [
+            {"reference": "Genesis 1:1-5", "relationship": "primary"}
+        ],
+        "evidence_items": [
+            {
+                "id": "unrelated-witness",
+                "description": "An unrelated item with the same bad anchor.",
+                "evidence_type": "inscription",
+                "scripture_references": ["Genesis 1:1-5"],
+            }
+        ],
+    }
+    result = _project("Genesis 1", canonical=_lookup("ckl", records=[misanchored]))
+
+    assert not any(item["object_id"] == "kurkh-monolith" for item in result["items"])
+
+
+def test_read_only_genesis_fixtures_are_not_mutated():
+    records = _load_ckl(
+        "books/genesis.json",
+        "cultural_background/genesis-flood-postflood-context.json",
+    )
+    before = deepcopy(records)
+
+    _project("Genesis 6", canonical=_lookup("ckl", records=records))
+
+    assert records == before
+
+
+def test_parent_qualified_ids_and_unavailable_source_details_are_preserved():
+    records = [
+        {
+            "id": "parent-one",
+            "type": "cultural_background",
+            "title": "One",
+            "scripture_references": [],
+            "sources": [],
+            "claims": [],
+            "evidence_items": [
+                {
+                    "id": "shared-local-id",
+                    "title": "First witness",
+                    "description": "One recorded claim.",
+                    "evidence_type": "manuscript",
+                    "assertion_type": "primary-evidence",
+                    "scripture_references": [{"reference": "Genesis 6:1-4", "relationship": "direct"}],
+                    "source_ids": ["missing-source"],
+                }
+            ],
+        },
+        {
+            "id": "parent-two",
+            "type": "cultural_background",
+            "title": "Two",
+            "sources": [],
+            "evidence_items": [
+                {
+                    "id": "shared-local-id",
+                    "title": "Second witness",
+                    "description": "A distinct recorded claim.",
+                    "evidence_type": "ancient-text",
+                    "assertion_type": "secondary-evidence",
+                    "scripture_references": [{"reference": "Genesis 6:1-4", "relationship": "comparative"}],
+                }
+            ],
+        },
+    ]
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=records))
+
+    first_id = "ckl:parent-one#evidence:shared-local-id"
+    second_id = "ckl:parent-two#evidence:shared-local-id"
+    first = _item(result, first_id)
+    second = _item(result, second_id)
+    assert first_id != second_id
+    assert first["parent_object_id"] == "parent-one"
+    assert second["parent_object_id"] == "parent-two"
+    assert first["sources"] == [
+        {
+            "id": "missing-source",
+            "details_available": False,
+            "unavailable_reason": "source_not_found_in_ckl",
+        }
+    ]
+
+
+def test_ambiguous_relationships_stay_uncategorized_and_do_not_gain_reverse_edges():
+    record = {
+        "id": "relation-parent",
+        "type": "cultural_background",
+        "title": "Relation fixture",
+        "scripture_references": [],
+        "claims": [],
+        "evidence_items": [
+            {
+                "id": "relation-evidence",
+                "title": "Recorded edge",
+                "description": "A claim with an authored but ambiguous edge.",
+                "evidence_type": "worldview-concept",
+                "assertion_type": "inference",
+                "scripture_references": [{"reference": "Genesis 6:1-4", "relationship": "direct"}],
+                "related_objects": [
+                    {"id": "other-parent", "relationship": "associated-with", "notes": "Authored note."}
+                ],
+            }
+        ],
+    }
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=[record]))
+
+    edge = next(edge for edge in result["connections"] if edge["target_id"] == "ckl:other-parent")
+    assert edge["connection_type"] == "uncategorized"
+    assert edge["original_relationship_type"] == "associated-with"
+    assert edge["relationship_mode"] == "inferred"
+    assert edge["direction"] == "one_way"
+    assert edge["reverse_edge_id"] is None
+    assert edge["basis"]["notes"] == "Authored note."
+    assert all(
+        connection["connection_type"] != "direct_quotation"
+        for connection in result["connections"]
+        if connection["original_relationship_type"] == "direct"
+    )
+
+
+def test_related_evidence_cannot_pull_an_unanchored_sibling_into_scope():
+    record = {
+        "id": "siblings",
+        "type": "cultural_background",
+        "title": "Sibling evidence fixture",
+        "evidence_items": [
+            {
+                "id": "in-scope",
+                "description": "Evidence linked to the selected passage.",
+                "evidence_type": "ancient-text",
+                "scripture_references": ["Genesis 6:1-2"],
+                "related_evidence": [
+                    {"id": "out-of-scope", "relationship": "supports", "notes": "Sibling relation."}
+                ],
+            },
+            {
+                "id": "out-of-scope",
+                "description": "Evidence linked elsewhere in the chapter.",
+                "evidence_type": "ancient-text",
+                "scripture_references": ["Genesis 6:10-12"],
+            },
+        ],
+        "claims": [],
+    }
+    result = _project("Genesis 6:1-2", canonical=_lookup("ckl", records=[record]))
+
+    assert "ckl:siblings#evidence:in-scope" in {item["id"] for item in result["items"]}
+    assert "ckl:siblings#evidence:out-of-scope" not in {item["id"] for item in result["items"]}
+    assert not any(
+        edge["target_id"] == "ckl:siblings#evidence:out-of-scope"
+        for edge in result["connections"]
+    )
+
+
+def test_only_explicit_relationship_labels_receive_specific_connection_types():
+    record = {
+        "id": "explicit-relations",
+        "type": "event",
+        "title": "A literary motif title does not determine the edge",
+        "scripture_references": [{"reference": "Genesis 6:1-4", "relationship": "primary"}],
+        "related_objects": [
+            {"id": "quoted-source", "relationship": "direct-quotation", "notes": "Authored quotation relation."},
+            {"id": "word-match", "relationship": "associated-with", "notes": "Same vocabulary is not a typed relation."},
+        ],
+        "claims": [],
+        "evidence_items": [],
+    }
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=[record]))
+
+    edges = {edge["target_id"]: edge for edge in result["connections"]}
+    assert edges["ckl:quoted-source"]["connection_type"] == "direct_quotation"
+    assert edges["ckl:quoted-source"]["relationship_mode"] == "direct"
+    assert edges["ckl:word-match"]["connection_type"] == "uncategorized"
+    assert edges["ckl:word-match"]["original_relationship_type"] == "associated-with"
+
+
+def test_not_established_is_distinct_from_unknown_and_recorded_certainty():
+    record = {
+        "id": "epistemic-state",
+        "type": "cultural_background",
+        "title": "Epistemic state fixture",
+        "claims": [
+            {
+                "id": "not-established",
+                "claim": "The evidence does not establish the proposed identification.",
+                "claim_type": "historical_cultural",
+                "certainty": "insufficient_evidence",
+                "dispute_status": "identification_uncertainty",
+                "interpretation_status": "not_established",
+                "scripture_references": ["Genesis 6:1-4"],
+            }
+        ],
+        "evidence_items": [],
+    }
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=[record]))
+
+    claim = _item(result, "ckl:epistemic-state#claim:not-established")
+    assert claim["interpretation_state"] == "not_established"
+    assert claim["certainty"] == "insufficient_evidence"
+    assert claim["dispute_status"] == "identification_uncertainty"
+    assert result["coverage"][0]["state"] == "available"
+
+
+def test_missing_interpretation_values_remain_unknown_and_private_fields_are_excluded():
+    record = {
+        "id": "unknown-parent",
+        "type": "cultural_background",
+        "title": "Unknown fixture",
+        "review_status": "approved",
+        "content_status": "active",
+        "human_review_required": False,
+        "sources": [],
+        "claims": [
+            {
+                "id": "unknown-claim",
+                "claim": "A source claim with no certainty metadata.",
+                "claim_type": "historical_cultural",
+                "scripture_references": ["Genesis 6:1-4"],
+                "private_notes": "not reader evidence",
+            }
+        ],
+        "evidence_items": [],
+        "private_highlights": ["never project"],
+    }
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=[record]))
+
+    claim = _item(result, "ckl:unknown-parent#claim:unknown-claim")
+    assert claim["certainty"] is None
+    assert claim["dispute_status"] is None
+    assert claim["interpretation_state"] == "unknown"
+    assert claim["review_status"] == "approved"
+    assert claim["content_status"] == "active"
+    assert claim["human_review_required"] is False
+    assert "private_notes" not in claim
+    assert "private_highlights" not in str(result)
