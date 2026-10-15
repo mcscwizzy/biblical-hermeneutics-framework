@@ -30,6 +30,7 @@ from .relevance import SEMANTICALLY_MISANCHORED, classify_semantic_relationship
 
 
 SCHEMA_VERSION = "1.0"
+SECTION_ASSIGNMENT_POLICY_VERSION = "ne5a-1"
 
 Domain = Literal["ckl", "maps", "archaeology"]
 QueryStatus = Literal["complete", "partial", "failed", "not_run"]
@@ -45,10 +46,74 @@ _SECTION_DOMAINS: tuple[tuple[str, tuple[Domain, ...]], ...] = (
     ("biblical_narrative", ("ckl",)),
     ("archaeology_ancient_history", ("ckl", "archaeology")),
     ("biblical_geography", ("ckl", "maps")),
-    ("divine_council_cosmic_geography", ("ckl",)),
+    ("divine_council_cosmic_geography", ("ckl", "maps")),
     ("themes_biblical_connections", ("ckl",)),
     ("people_events_relationships", ("ckl",)),
 )
+
+
+@dataclass(frozen=True)
+class _SpecializedEvidenceRule:
+    evidence_type: str
+    anchor_relationships: tuple[str, ...]
+    section_ids: tuple[str, ...]
+    semantic_role: Literal[
+        "sacred_space_interpretation",
+        "sacred_space_guarding_context",
+        "ancient_cosmology_comparison",
+        "divine_assembly_text",
+        "divine_assembly_comparison",
+        "disputed_divine_beings_interpretation",
+    ]
+
+
+# Broad evidence types such as worldview-concept do not establish a specialized
+# cosmic role. These source-identity rules add that lens only for audited CKL
+# records whose own passage links and relationship labels support it.
+_SPECIALIZED_EVIDENCE_RULES: Mapping[tuple[str, str], _SpecializedEvidenceRule] = {
+    ("genesis", "g2-garden-planting-presence"): _SpecializedEvidenceRule(
+        evidence_type="geography-environment",
+        anchor_relationships=("direct",),
+        section_ids=("divine_council_cosmic_geography",),
+        semantic_role="sacred_space_interpretation",
+    ),
+    ("genesis", "g3-cherubim-biblical-sacred-space-context"): _SpecializedEvidenceRule(
+        evidence_type="worldview-concept",
+        anchor_relationships=("direct",),
+        section_ids=("divine_council_cosmic_geography",),
+        semantic_role="sacred_space_guarding_context",
+    ),
+    (
+        "mesopotamian-creation-and-flood-comparisons",
+        "enuma-elish-cosmic-ordering-comparison",
+    ): _SpecializedEvidenceRule(
+        evidence_type="ancient-text",
+        anchor_relationships=("comparative",),
+        section_ids=("divine_council_cosmic_geography",),
+        semantic_role="ancient_cosmology_comparison",
+    ),
+    ("ancient-divine-assembly-imagery", "psalm-82-assembly-language"): _SpecializedEvidenceRule(
+        evidence_type="worldview-concept",
+        anchor_relationships=("direct",),
+        section_ids=("divine_council_cosmic_geography",),
+        semantic_role="divine_assembly_text",
+    ),
+    ("ancient-divine-assembly-imagery", "ugaritic-council-comparison"): _SpecializedEvidenceRule(
+        evidence_type="ancient-text",
+        anchor_relationships=("comparative",),
+        section_ids=("divine_council_cosmic_geography",),
+        semantic_role="divine_assembly_comparison",
+    ),
+    (
+        "genesis-flood-postflood-context",
+        "g6-sons-of-god-interpretive-positions",
+    ): _SpecializedEvidenceRule(
+        evidence_type="worldview-concept",
+        anchor_relationships=("direct",),
+        section_ids=("divine_council_cosmic_geography",),
+        semantic_role="disputed_divine_beings_interpretation",
+    ),
+}
 
 
 @dataclass(frozen=True)
@@ -625,7 +690,14 @@ def _project_ckl_lookup(
                     continue
                 local_id = _child_local_id(record_kind, child)
                 stable_id = _ckl_stable_id(parent_id, record_kind, local_id)
-                sections = _child_sections(record_kind, parent_type, child)
+                sections = _child_sections(
+                    record_kind,
+                    parent_type,
+                    child,
+                    parent_id=parent_id,
+                    local_id=local_id,
+                    applicable_anchors=applicable_anchors,
+                )
                 item = _make_ckl_item(
                     parent_id=parent_id,
                     parent=parent,
@@ -1322,6 +1394,8 @@ def _external_rationale(record: Mapping[str, Any]) -> dict[str, Any]:
 def _external_sections(domain: Domain, record: Mapping[str, Any], geography_kind: str) -> tuple[str, ...]:
     if domain == "archaeology":
         return ("archaeology_ancient_history",)
+    if geography_kind == "sacred_space":
+        return ("biblical_geography", "divine_council_cosmic_geography")
     if geography_kind != "unknown":
         return ("biblical_geography",)
     marker_kind = _text(record.get("marker_kind") or record.get("type")).casefold().replace("-", "_")
@@ -1734,13 +1808,17 @@ def _child_sections(
     record_kind: str,
     parent_type: str,
     record: Mapping[str, Any],
+    *,
+    parent_id: str | None = None,
+    local_id: str | None = None,
+    applicable_anchors: Sequence[Mapping[str, Any]] = (),
 ) -> tuple[str, ...]:
     normalized_parent = parent_type.casefold().replace("-", "_")
+    sections: set[str] = set()
     if normalized_parent == "theme":
-        return ("themes_biblical_connections",)
+        sections.add("themes_biblical_connections")
     if record_kind == "claim":
         claim_type = _text(record.get("claim_type")).casefold().replace("-", "_")
-        sections: set[str] = set()
         if claim_type in {"biblical_text", "textual", "textual_observation"}:
             sections.add("biblical_narrative")
         elif claim_type in {"historical_cultural", "historical", "social", "political"}:
@@ -1753,8 +1831,8 @@ def _child_sections(
     if record_kind == "evidence":
         evidence_type = _text(record.get("evidence_type")).casefold().replace("_", "-")
         if evidence_type == "worldview-concept":
-            return ("divine_council_cosmic_geography",)
-        if evidence_type in {
+            sections.add("themes_biblical_connections")
+        elif evidence_type in {
             "ancient-text",
             "manuscript",
             "artifact",
@@ -1765,27 +1843,58 @@ def _child_sections(
             "secondary-source",
             "historical-period",
         }:
-            return ("archaeology_ancient_history",)
-        if evidence_type == "geography-environment":
-            return ("biblical_geography",)
-        if evidence_type in {"historical-event", "person", "people-group", "institution"}:
-            return ("people_events_relationships",)
-        if evidence_type == "literary-convention":
-            return ("biblical_narrative", "themes_biblical_connections")
-        return ()
+            sections.add("archaeology_ancient_history")
+        elif evidence_type == "geography-environment":
+            sections.add("biblical_geography")
+        elif evidence_type in {"historical-event", "person", "people-group", "institution"}:
+            sections.add("people_events_relationships")
+        elif evidence_type == "literary-convention":
+            sections.update(("biblical_narrative", "themes_biblical_connections"))
+        sections.update(
+            _specialized_evidence_sections(
+                parent_id=parent_id,
+                local_id=local_id,
+                evidence_type=evidence_type,
+                applicable_anchors=applicable_anchors,
+            )
+        )
+        return tuple(sorted(sections))
     if record_kind == "interpretive_note":
         note_type = _text(record.get("note_type")).casefold().replace("-", "_")
         if note_type in {"ancient_near_east_context", "second_temple_context", "historical_context"}:
-            return ("archaeology_ancient_history",)
-        if note_type in {"canonical_connection", "later_reception"}:
-            return ("biblical_narrative", "themes_biblical_connections")
-        if note_type == "literary_observation":
-            return ("biblical_narrative", "themes_biblical_connections")
-        if note_type == "textual_observation":
-            return ("biblical_narrative",)
-        if note_type in {"theological_interpretation", "interpretive_caution"}:
-            return ("themes_biblical_connections",)
-    return ()
+            sections.add("archaeology_ancient_history")
+        elif note_type in {"canonical_connection", "later_reception"}:
+            sections.update(("biblical_narrative", "themes_biblical_connections"))
+        elif note_type == "literary_observation":
+            sections.update(("biblical_narrative", "themes_biblical_connections"))
+        elif note_type == "textual_observation":
+            sections.add("biblical_narrative")
+        elif note_type in {"theological_interpretation", "interpretive_caution"}:
+            sections.add("themes_biblical_connections")
+        return tuple(sorted(sections))
+    return tuple(sorted(sections))
+
+
+def _specialized_evidence_sections(
+    *,
+    parent_id: str | None,
+    local_id: str | None,
+    evidence_type: str,
+    applicable_anchors: Sequence[Mapping[str, Any]],
+) -> tuple[str, ...]:
+    if not parent_id or not local_id:
+        return ()
+    rule = _SPECIALIZED_EVIDENCE_RULES.get((parent_id, local_id))
+    if rule is None or evidence_type != rule.evidence_type:
+        return ()
+    relationships = {
+        _text(anchor.get("relationship")).casefold().replace("_", "-")
+        for anchor in applicable_anchors
+        if _text(anchor.get("relationship"))
+    }
+    if not relationships.intersection(rule.anchor_relationships):
+        return ()
+    return rule.section_ids
 
 
 def _passage_connection(
@@ -2170,11 +2279,17 @@ def _section_state(
     item_ids: Sequence[str], coverage: Sequence[DomainCoverage] | Any
 ) -> CoverageState:
     entries = tuple(coverage)
+    incomplete = any(
+        entry.query_status != "complete" or bool(entry.missing_subdomains)
+        for entry in entries
+    )
     if item_ids:
-        if all(entry.state == "available" for entry in entries):
-            return "available"
-        return "partial"
-    if entries and all(entry.state == "not_represented" for entry in entries):
+        return "partial" if incomplete else "available"
+    if (
+        entries
+        and not incomplete
+        and all(entry.state == "not_represented" for entry in entries)
+    ):
         return "not_represented"
     return "unknown"
 

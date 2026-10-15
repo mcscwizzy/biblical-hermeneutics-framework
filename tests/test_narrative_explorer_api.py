@@ -280,6 +280,18 @@ def test_exodus_3_keeps_physical_places_uncertainty_and_conceptual_language_sepa
     assert horeb["dispute_status"] == "identification_uncertainty"
     assert horeb["coordinates_displayable"] is False
     assert any(item["object_type"] == "theology" and item["geography_kind"] != "physical_place" for item in payload["items"])
+    presence_theme = _item(payload, "ckl:presence-theme")
+    divine_presence = _item(payload, "ckl:divine-presence")
+    cosmic = next(
+        section
+        for section in payload["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    assert presence_theme["id"] not in cosmic["item_ids"]
+    assert divine_presence["id"] not in cosmic["item_ids"]
+    assert cosmic["item_ids"] == []
+    assert cosmic["state"] == "unknown"
+    assert "Passage-specific availability could not be established" in cosmic["description"]
     for navigation in payload["navigation"]:
         if navigation["kind"] in {"map_place", "map_route"}:
             assert navigation["selection_required"] is True
@@ -315,8 +327,8 @@ def test_invalid_passages_return_safe_errors_and_ckl_failure_is_unavailable():
     assert unavailable.json() == {"error": "canonical_lookup_unavailable"}
 
 
-def test_independent_domain_failures_and_partial_results_keep_accurate_coverage():
-    library = _CanonicalLibrary()
+def test_independent_domain_failures_and_partial_results_keep_accurate_coverage(ckl_library):
+    library = ckl_library
 
     def failed_maps(**_request: Any) -> DomainLookup:
         raise OSError("do not disclose paths or configuration")
@@ -331,6 +343,19 @@ def test_independent_domain_failures_and_partial_results_keep_accurate_coverage(
     assert coverage["maps"]["state"] == "unknown"
     assert coverage["archaeology"]["query_status"] == "failed"
     assert coverage["archaeology"]["state"] == "unknown"
+    assert coverage["ckl"]["state"] == "available"
+    assert _item(payload, "ckl:genesis")
+    cosmic = next(
+        section
+        for section in payload["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    ancient_cosmology_id = (
+        "ckl:mesopotamian-creation-and-flood-comparisons"
+        "#evidence:enuma-elish-cosmic-ordering-comparison"
+    )
+    assert ancient_cosmology_id in cosmic["item_ids"]
+    assert cosmic["state"] == "partial"
     assert "private" not in str(payload)
     assert "/home/" not in str(payload)
 

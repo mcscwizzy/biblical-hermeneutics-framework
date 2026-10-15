@@ -351,6 +351,21 @@ def test_sacred_space_never_projects_coordinates_as_physical_geometry():
     assert item["coordinates_displayable"] is False
     assert item["coordinate_display_reason"] == "conceptual_geography_has_no_physical_marker"
     assert item["stored_coordinates"] == {"latitude": 31.0, "longitude": 35.0}
+    assert item["section_ids"] == [
+        "biblical_geography",
+        "divine_council_cosmic_geography",
+    ]
+    cosmic = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    assert cosmic["source_domains"] == [
+        "canonical_knowledge_library",
+        "passage_maps",
+    ]
+    assert cosmic["item_ids"].count(item["id"]) == 1
+    assert sum(candidate["id"] == item["id"] for candidate in result["items"]) == 1
 
 
 def test_route_geometry_requires_an_established_physical_identification():
@@ -444,7 +459,17 @@ def test_genesis_6_projects_cultural_background_and_comparison_as_distinct_evide
     assert sons["interpretation_state"] == "disputed"
     assert sons["claim_text"]
     assert sons["parent_object_id"] == "genesis-flood-postflood-context"
-    assert "g2-doedens-sons-god" in sons["source_ids"]
+    assert sons["object_id"] == "genesis-flood-postflood-context"
+    assert sons["record_kind"] == "evidence"
+    assert sons["source_ids"] == [
+        "g2r2-local-genesis-1-50",
+        "g2r2-local-sarna-genesis",
+        "g2r2-local-hamilton-genesis-1-17",
+        "g2-doedens-sons-god",
+    ]
+    assert [anchor["reference"] for anchor in sons["applicable_passage_anchors"]] == [
+        "Genesis 6:1-4"
+    ]
     assert any(
         source["id"] == "g2-doedens-sons-god"
         and source["details_available"]
@@ -463,6 +488,28 @@ def test_genesis_6_projects_cultural_background_and_comparison_as_distinct_evide
     assert comparative["certainty"] == "probable"
     assert comparative["id"] != sons["id"]
 
+    violence = _item(
+        result,
+        "ckl:genesis-flood-postflood-context#evidence:g6-evil-intention-and-violence",
+    )
+    cosmic = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    themes = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "themes_biblical_connections"
+    )
+    assert sons["id"] in cosmic["item_ids"]
+    assert sons["section_ids"] == [
+        "divine_council_cosmic_geography",
+        "themes_biblical_connections",
+    ]
+    assert violence["id"] not in cosmic["item_ids"]
+    assert violence["id"] in themes["item_ids"]
+
 
 def test_psalm_82_cultural_context_is_discoverable_without_a_theme_object():
     record = _load_ckl("cultural_background/ancient-divine-assembly-imagery.json")
@@ -470,6 +517,10 @@ def test_psalm_82_cultural_context_is_discoverable_without_a_theme_object():
 
     claim = _item(result, "ckl:ancient-divine-assembly-imagery#claim:psalm-82-assembly-text")
     evidence = _item(result, "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language")
+    comparison = _item(
+        result,
+        "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+    )
     assert claim["object_type"] == evidence["object_type"] == "cultural_background"
     assert claim["claim_type"] == "biblical_text"
     assert claim["certainty"] == "textually_explicit"
@@ -478,6 +529,33 @@ def test_psalm_82_cultural_context_is_discoverable_without_a_theme_object():
     cosmic = next(section for section in result["sections"] if section["id"] == "divine_council_cosmic_geography")
     assert claim["id"] in cosmic["item_ids"]
     assert evidence["id"] in cosmic["item_ids"]
+    assert evidence["object_id"] == "ancient-divine-assembly-imagery"
+    assert evidence["record_kind"] == "evidence"
+    assert evidence["evidence_category"] == "worldview-concept"
+    assert evidence["certainty"] == "textually_explicit"
+    assert evidence["dispute_status"] == "interpretive_uncertainty"
+    assert evidence["source_ids"] == [
+        "psalm-82-hebrew-text",
+        "smith-origins-biblical-monotheism-2001",
+        "lewis-origin-character-god-2020",
+    ]
+    assert [anchor["reference"] for anchor in evidence["applicable_passage_anchors"]] == [
+        "Psalm 82:1-8"
+    ]
+    assert comparison["id"] in cosmic["item_ids"]
+    assert comparison["object_id"] == "ancient-divine-assembly-imagery"
+    assert comparison["record_kind"] == "evidence"
+    assert comparison["evidence_category"] == "ancient-text"
+    assert comparison["certainty"] == "probable"
+    assert comparison["dispute_status"] == "major_scholarly_disagreement"
+    assert comparison["source_ids"] == [
+        "smith-ugaritic-baal-cycle-1994",
+        "smith-origins-biblical-monotheism-2001",
+        "lewis-origin-character-god-2020",
+    ]
+    assert comparison["applicable_passage_anchors"][0]["reference"] == "Psalm 82:1-8"
+    assert comparison["applicable_passage_anchors"][0]["relationship"] == "comparative"
+    assert "archaeology_ancient_history" in comparison["section_ids"]
     assert not any(item["object_type"] == "theme" for item in result["items"])
 
 
@@ -502,6 +580,18 @@ def test_deuteronomy_32_manuscript_evidence_survives_empty_archaeology_lookup():
     assert coverage["archaeology"]["state"] == "not_represented"
     assert coverage["ckl"]["state"] == "available"
     assert all(edge["connection_type"] != "direct_quotation" for edge in result["connections"])
+    cosmic = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    history = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "archaeology_ancient_history"
+    )
+    assert variant["id"] in history["item_ids"]
+    assert variant["id"] not in cosmic["item_ids"]
 
 
 def test_genesis_6_does_not_inherit_genesis_book_cross_references():
@@ -559,11 +649,276 @@ def test_genesis_1_keeps_passage_anchored_themes_and_comparative_sources():
 
     assert any(item["object_id"] == "creation-theme" for item in result["items"])
     assert any(item["evidence_category"] == "ancient-text" for item in result["items"])
+    ordered_worldview = _item(
+        result,
+        "ckl:mesopotamian-creation-and-flood-comparisons#evidence:genesis-ordered-worldview-observation",
+    )
+    ancient_cosmology = _item(
+        result,
+        "ckl:mesopotamian-creation-and-flood-comparisons#evidence:enuma-elish-cosmic-ordering-comparison",
+    )
+    cosmic = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    themes = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "themes_biblical_connections"
+    )
+    history = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "archaeology_ancient_history"
+    )
+    assert ordered_worldview["id"] in themes["item_ids"]
+    assert ordered_worldview["id"] not in cosmic["item_ids"]
+    assert ancient_cosmology["id"] in cosmic["item_ids"]
+    assert ancient_cosmology["id"] in history["item_ids"]
+    assert ancient_cosmology["certainty"] == "probable"
+    assert ancient_cosmology["dispute_status"] == "major_scholarly_disagreement"
+    assert ancient_cosmology["applicable_passage_anchors"][0]["relationship"] == "comparative"
+    assert ancient_cosmology["object_id"] == "mesopotamian-creation-and-flood-comparisons"
+    assert ancient_cosmology["record_kind"] == "evidence"
+    assert ancient_cosmology["source_ids"] == [
+        "lambert-babylonian-creation-2013",
+        "sarna-genesis-comparison",
+    ]
+    assert ancient_cosmology["section_ids"] == [
+        "archaeology_ancient_history",
+        "divine_council_cosmic_geography",
+    ]
     assert not any(
         item["claim_id"] == "genesis-blessing-for-families"
         or item["claim_id"] == "genesis-ends-in-egypt"
         for item in result["items"]
     )
+
+
+def test_genesis_2_and_3_keep_qualified_sacred_space_evidence_scoped_and_distinct():
+    genesis = _load_ckl("books/genesis.json")
+
+    genesis_two = _project("Genesis 2", canonical=_lookup("ckl", records=genesis))
+    garden = _item(genesis_two, "ckl:genesis#evidence:g2-garden-planting-presence")
+    cosmic_two = next(
+        section
+        for section in genesis_two["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    geography_two = next(
+        section
+        for section in genesis_two["sections"]
+        if section["id"] == "biblical_geography"
+    )
+    assert garden["evidence_category"] == "geography-environment"
+    assert garden["certainty"] == "plausible"
+    assert garden["dispute_status"] == "interpretive_uncertainty"
+    assert garden["source_ids"] == ["genesis-1-50", "sarna-genesis", "g1-amit-eden-exposition"]
+    assert [anchor["reference"] for anchor in garden["applicable_passage_anchors"]] == [
+        "Genesis 2:8-10"
+    ]
+    assert garden["id"] in cosmic_two["item_ids"]
+    assert garden["id"] in geography_two["item_ids"]
+    assert garden["id"] in {item["id"] for item in genesis_two["items"]}
+    assert len({item["id"] for item in genesis_two["items"]}) == len(genesis_two["items"])
+
+    genesis_three = _project("Genesis 3", canonical=_lookup("ckl", records=genesis))
+    cherubim = _item(
+        genesis_three,
+        "ckl:genesis#evidence:g3-cherubim-biblical-sacred-space-context",
+    )
+    serpent = _item(genesis_three, "ckl:genesis#evidence:g3-serpent-genesis-characterization")
+    cosmic_three = next(
+        section
+        for section in genesis_three["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    assert cherubim["certainty"] == "strong_consensus"
+    assert cherubim["dispute_status"] == "minor_scholarly_disagreement"
+    assert cherubim["object_id"] == "genesis"
+    assert cherubim["record_kind"] == "evidence"
+    assert cherubim["evidence_category"] == "worldview-concept"
+    assert cherubim["source_ids"] == [
+        "genesis-1-50",
+        "g1-exodus-text",
+        "g1-kings-text",
+        "g1-lexham-cherubim",
+    ]
+    assert [anchor["reference"] for anchor in cherubim["applicable_passage_anchors"]] == [
+        "Genesis 3:24"
+    ]
+    assert cherubim["id"] in cosmic_three["item_ids"]
+    assert serpent["id"] not in cosmic_three["item_ids"]
+
+
+def test_exodus_3_does_not_promote_presence_or_physical_places_to_sacred_space():
+    records = _load_ckl(
+        "books/exodus.json",
+        "events/burning-bush.json",
+        "places/mount-sinai.json",
+        "themes/presence-theme.json",
+        "themes/glory-theme.json",
+        "theology/divine-presence.json",
+        "themes/water-theme.json",
+    )
+    result = _project(
+        "Exodus 3",
+        canonical=_lookup("ckl", records=records),
+        maps=_lookup("maps"),
+        archaeology=_lookup("archaeology"),
+    )
+
+    presence_theme = _item(result, "ckl:presence-theme")
+    divine_presence = _item(result, "ckl:divine-presence")
+    burning_bush = _item(result, "ckl:burning-bush")
+    mount_sinai = _item(result, "ckl:mount-sinai")
+    cosmic = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    themes = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "themes_biblical_connections"
+    )
+    coverage = {entry["domain"]: entry for entry in result["coverage"]}
+
+    assert presence_theme["id"] in themes["item_ids"]
+    assert divine_presence["id"] in themes["item_ids"]
+    assert presence_theme["id"] not in cosmic["item_ids"]
+    assert divine_presence["id"] not in cosmic["item_ids"]
+    assert burning_bush["id"] not in cosmic["item_ids"]
+    assert mount_sinai["id"] not in cosmic["item_ids"]
+    assert cosmic["item_ids"] == []
+    assert cosmic["state"] == "unknown"
+    assert "Passage-specific availability could not be established" in cosmic["description"]
+    assert coverage["ckl"]["state"] == "available"
+
+
+@pytest.mark.parametrize(
+    ("reference", "object_path", "object_id", "expected_section"),
+    [
+        ("Exodus 3", "themes/presence-theme.json", "presence-theme", "themes_biblical_connections"),
+        ("Exodus 3", "theology/divine-presence.json", "divine-presence", "themes_biblical_connections"),
+        ("Exodus 3", "themes/glory-theme.json", "glory-theme", "themes_biblical_connections"),
+        ("Exodus 15", "themes/worship-theme.json", "worship-theme", "themes_biblical_connections"),
+        ("Psalm 2", "themes/kingdom-theme.json", "kingdom-theme", "themes_biblical_connections"),
+        ("Exodus 25", "themes/temple-theme.json", "temple-theme", "themes_biblical_connections"),
+        ("Exodus 19", "themes/mountain-theme.json", "mountain-theme", "themes_biblical_connections"),
+        ("Exodus 3", "places/mount-sinai.json", "mount-sinai", "biblical_geography"),
+    ],
+)
+def test_general_presence_worship_kingship_temple_glory_and_mountain_are_not_cosmic_by_title(
+    reference, object_path, object_id, expected_section
+):
+    result = _project(reference, canonical=_lookup("ckl", records=_load_ckl(object_path)))
+    item = _item(result, f"ckl:{object_id}")
+    cosmic = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+
+    assert expected_section in item["section_ids"]
+    assert item["id"] not in cosmic["item_ids"]
+
+
+def test_cosmic_section_coverage_uses_map_status_without_hiding_ckl_evidence():
+    record = _load_ckl("cultural_background/ancient-divine-assembly-imagery.json")
+    failed_maps = _project(
+        "Psalm 82",
+        canonical=_lookup("ckl", records=record),
+        maps=_lookup("maps", query_status="failed", reason_code="maps_unavailable"),
+        archaeology=_lookup("archaeology"),
+    )
+    failed_cosmic = next(
+        section
+        for section in failed_maps["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    evidence_id = "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language"
+    assert failed_cosmic["state"] == "partial"
+    assert evidence_id in failed_cosmic["item_ids"]
+    assert failed_cosmic["source_domains"] == [
+        "canonical_knowledge_library",
+        "passage_maps",
+    ]
+
+    complete_empty_maps = _project(
+        "Psalm 82",
+        canonical=_lookup("ckl", records=record),
+        maps=_lookup("maps"),
+        archaeology=_lookup("archaeology"),
+    )
+    complete_cosmic = next(
+        section
+        for section in complete_empty_maps["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    assert complete_cosmic["state"] == "available"
+    assert evidence_id in complete_cosmic["item_ids"]
+
+    all_complete_empty = _project(
+        "Psalm 82",
+        canonical=_lookup("ckl"),
+        maps=_lookup("maps"),
+        archaeology=_lookup("archaeology"),
+    )
+    empty_cosmic = next(
+        section
+        for section in all_complete_empty["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+    assert empty_cosmic["item_ids"] == []
+    assert empty_cosmic["state"] == "not_represented"
+
+
+def test_unclassified_passage_eligible_ckl_item_keeps_cosmic_coverage_unknown():
+    record = {
+        "id": "unclassified-genesis-evidence",
+        "type": "cultural_background",
+        "title": "Unclassified passage evidence",
+        "evidence_items": [
+            {
+                "id": "unmapped-evidence-kind",
+                "description": "Passage-linked source record with an unmapped evidence type.",
+                "evidence_type": "unmapped-evidence-kind",
+                "scripture_references": [
+                    {
+                        "reference": "Genesis 1:1-3",
+                        "relationship": "direct",
+                        "relevance_rationale": "The source explicitly applies to this passage.",
+                    }
+                ],
+                "source_ids": ["unclassified-source-record"],
+                "certainty": "plausible",
+                "dispute_status": "interpretive_uncertainty",
+            }
+        ],
+    }
+    result = _project(
+        "Genesis 1",
+        canonical=_lookup("ckl", records=[record]),
+        maps=_lookup("maps"),
+        archaeology=_lookup("archaeology"),
+    )
+    item = _item(
+        result,
+        "ckl:unclassified-genesis-evidence#evidence:unmapped-evidence-kind",
+    )
+    cosmic = next(
+        section
+        for section in result["sections"]
+        if section["id"] == "divine_council_cosmic_geography"
+    )
+
+    assert item["section_ids"] == []
+    assert item["applicable_passage_anchors"][0]["reference"] == "Genesis 1:1-3"
+    assert next(entry for entry in result["coverage"] if entry["domain"] == "ckl")["state"] == "available"
+    assert cosmic["item_ids"] == []
+    assert cosmic["state"] == "unknown"
 
 
 def test_authoritative_semantic_misanchor_guard_still_excludes_bad_genesis_evidence():
