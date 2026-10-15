@@ -25,6 +25,7 @@ from framework.canonical_library.sqlite_repository import (
 )
 
 from ..map_service import get_map_routes_for_passage, resolve_places_for_passage
+from .map_matching import PassageTextMatcher
 
 
 LOGGER = logging.getLogger(__name__)
@@ -259,6 +260,7 @@ class NarrativeExplorerService:
         records: list[Any] = []
         missing: list[str] = []
         text_first = False
+        passage_matcher = PassageTextMatcher(passage_text)
         try:
             places = resolve_places_for_passage(
                 book=book,
@@ -268,6 +270,7 @@ class NarrativeExplorerService:
                 passage_text=passage_text,
                 path=self.study_db_path,
                 include_related_passages=False,
+                passage_matcher=passage_matcher,
             )
             records.extend(places.get("markers") or [])
             text_first = text_first or _has_text_match(places.get("matched_terms"), passage_text)
@@ -282,6 +285,7 @@ class NarrativeExplorerService:
                 verse_end=reference_end,
                 passage_text=passage_text,
                 path=self.study_db_path,
+                passage_matcher=passage_matcher,
             )
             records.extend(routes.get("routes") or [])
             text_first = text_first or _has_text_match(routes.get("matched_terms"), passage_text)

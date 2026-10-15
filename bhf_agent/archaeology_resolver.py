@@ -64,7 +64,10 @@ def resolve_archaeology_evidence(
             text = ""
     normalized_text = _normalize(text)
 
-    sites = list_archaeology_sites(path=path)
+    # Passage resolution uses only site identity, location, and source fields.
+    # Avoid loading every site's nested items and media before loading the
+    # authoritative item list below.
+    sites = list_archaeology_sites(path=path, include_details=False)
     sites_by_id = {site["id"]: site for site in sites}
     items = list_archaeology_items(path=path)
     ranked: dict[str, tuple[int, str]] = {}

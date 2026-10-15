@@ -25,6 +25,36 @@ _STOPWORD_TERMS = {
 }
 
 
+class PassageTextMatcher:
+    """Reuse normalized passage text and repeated term results for one request."""
+
+    MAX_CACHED_TERMS = 8192
+
+    def __init__(self, passage_text: str) -> None:
+        self.source_text = passage_text
+        self.normalized_text = normalize_for_match(passage_text)
+        self._padded_text = f" {self.normalized_text} "
+        self._term_cache: dict[str, bool] = {}
+
+    def matches_source(self, passage_text: str) -> bool:
+        return self.source_text == passage_text
+
+    def contains(self, term: str) -> bool:
+        cached = self._term_cache.get(term)
+        if cached is not None:
+            return cached
+
+        normalized_term = normalize_for_match(term)
+        matched = bool(
+            normalized_term
+            and normalized_term not in _STOPWORD_TERMS
+            and f" {normalized_term} " in self._padded_text
+        )
+        if len(self._term_cache) < self.MAX_CACHED_TERMS:
+            self._term_cache[term] = matched
+        return matched
+
+
 def format_reference(
     book: str | None,
     chapter: int | str | None,

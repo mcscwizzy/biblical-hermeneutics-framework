@@ -4,6 +4,7 @@ import sqlite3
 
 import pytest
 
+import bhf_agent.archaeology_resolver as archaeology_resolver
 from bhf_agent.archaeology_resolver import resolve_archaeology_evidence
 from bhf_agent.study_db import initialize_database, list_archaeology_items
 
@@ -26,6 +27,32 @@ def test_exact_scripture_links_are_ranked_and_bounded(tmp_path) -> None:
     assert result["archaeological_items"][0]["biblical_relationship"] == "direct_context"
     assert result["archaeological_items"][0]["coordinates"]["latitude"] is not None
     assert len(result["archaeological_items"]) <= 8
+
+
+def test_passage_resolution_does_not_expand_unused_site_details(tmp_path, monkeypatch) -> None:
+    path = tmp_path / "study.sqlite"
+    initialize_database(path)
+    original_list_sites = archaeology_resolver.list_archaeology_sites
+    site_query_options: list[dict[str, object]] = []
+
+    def observe_site_query(*, path, **options):
+        site_query_options.append(dict(options))
+        return original_list_sites(path=path, **options)
+
+    monkeypatch.setattr(archaeology_resolver, "list_archaeology_sites", observe_site_query)
+    result = resolve_archaeology_evidence(
+        book="John",
+        chapter=9,
+        verse_start=7,
+        verse_end=11,
+        path=path,
+    )
+
+    assert site_query_options == [{"include_details": False}]
+    card = next(item for item in result["archaeological_items"] if item["id"] == "pool-of-siloam")
+    assert card["scripture_references"] == ["John 9:7-11"]
+    assert card["source"]["id"]
+    assert card["media"]
 
 
 def test_chapter_and_verse_range_resolution_use_link_overlap(tmp_path) -> None:

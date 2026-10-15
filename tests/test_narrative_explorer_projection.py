@@ -264,6 +264,18 @@ def test_external_items_require_their_own_overlapping_verse_anchor():
     assert next(entry for entry in result["coverage"] if entry["domain"] == "maps")["state"] == "not_represented"
 
 
+def test_malformed_external_scripture_references_do_not_create_passage_anchors():
+    from bhf_agent.presentation.narrative_explorer import _external_anchor_entries
+
+    record = {
+        "id": "malformed-map-reference",
+        "scripture_references": ["Genesis chapter one"],
+        "related_references": [{"book": "Genesis", "chapter": "one", "verse_start": 1}],
+    }
+
+    assert _external_anchor_entries(record, "maps") == []
+
+
 def test_map_navigation_marks_collection_or_kml_destinations_for_client_side_selection():
     route = {
         "id": "wilderness-route",

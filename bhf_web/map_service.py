@@ -25,6 +25,7 @@ from bhf_agent.study_db import (
     list_saved_map_studies,
 )
 from .services.map_matching import (
+    PassageTextMatcher,
     format_reference as _format_reference,
     normalize_for_match as _normalize_for_match,
     resolve_archaeology_from_reference as _resolve_archaeology_from_reference,
@@ -464,6 +465,7 @@ def resolve_places_for_passage(
     period: str | None = None,
     path: str | Path | None = None,
     include_related_passages: bool = True,
+    passage_matcher: PassageTextMatcher | None = None,
 ) -> dict[str, Any]:
     """Resolve curated places from a passage using deterministic matching only."""
 
@@ -476,13 +478,17 @@ def resolve_places_for_passage(
     else:
         text_source = ""
 
-    normalized_text = _normalize_for_match(text_source)
+    matcher = (
+        passage_matcher
+        if passage_matcher is not None and passage_matcher.matches_source(text_source)
+        else PassageTextMatcher(text_source)
+    )
     matched_places: list[dict[str, Any]] = []
     matched_terms: dict[str, list[str]] = {}
 
     for place in places:
         candidate_terms = [place["name"], *place.get("aliases", [])]
-        matches = [term for term in candidate_terms if _term_in_text(term, normalized_text)]
+        matches = [term for term in candidate_terms if matcher.contains(term)]
         if matches:
             matched_places.append(place)
             matched_terms[place["id"]] = _unique_terms(matches)
@@ -528,6 +534,7 @@ def get_map_routes_for_passage(
     passage_text: str | None = None,
     period: str | None = None,
     path: str | Path | None = None,
+    passage_matcher: PassageTextMatcher | None = None,
 ) -> dict[str, Any]:
     """Resolve curated routes from a passage using deterministic matching only."""
 
@@ -540,13 +547,17 @@ def get_map_routes_for_passage(
     else:
         text_source = ""
 
-    normalized_text = _normalize_for_match(text_source)
+    matcher = (
+        passage_matcher
+        if passage_matcher is not None and passage_matcher.matches_source(text_source)
+        else PassageTextMatcher(text_source)
+    )
     matched_routes: list[dict[str, Any]] = []
     matched_terms: dict[str, list[str]] = {}
 
     for route in routes:
         candidate_terms = [route["name"], route.get("description", ""), route.get("period", "")]
-        matches = [term for term in candidate_terms if _term_in_text(term, normalized_text)]
+        matches = [term for term in candidate_terms if matcher.contains(term)]
         if matches:
             matched_routes.append(route)
             matched_terms[route["id"]] = _unique_terms(matches)
