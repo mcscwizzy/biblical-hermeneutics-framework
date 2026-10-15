@@ -1,0 +1,4013 @@
+{
+  "entities": {
+    "artifacts": [],
+    "events": [
+      {
+        "aliases": [
+          "what happened in creation",
+          "tell me about creation",
+          "why is creation important"
+        ],
+        "id": "creation",
+        "metadata": {
+          "ancient_names": [],
+          "archaeology": [],
+          "elevation": null,
+          "importance": 100,
+          "modern_identification": "",
+          "region": "",
+          "related_passages": [
+            "Genesis 1:1-31",
+            "Genesis 2:1-25",
+            "Psalms 8:1-9",
+            "Psalms 104:1-35",
+            "John 1:1-5",
+            "Colossians 1:15-17",
+            "Hebrews 11:3",
+            "Revelation 21:1-5"
+          ],
+          "retrieval_score": 0.92,
+          "summary": "The divine ordering of the heavens and the earth and the blessing of life in the seven-day pattern of Genesis 1.",
+          "terrain": ""
+        },
+        "title": "Creation",
+        "type": "event"
+      }
+    ],
+    "groups": [],
+    "people": [],
+    "places": []
+  },
+  "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+  "evidence_items": [
+    {
+      "category": "culture",
+      "claim": "God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision.",
+      "confidence": "high",
+      "id": "2-corinthians:interpretive_note:21",
+      "passage_anchors": [
+        "Genesis 1:3"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "inference",
+        "broad_tag_only": false,
+        "certainty": "strong_consensus",
+        "claim_type": "",
+        "dispute_status": "minor_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "canonical-connection",
+        "object_importance": 91,
+        "overview_priority": 0,
+        "parent_object_id": "2-corinthians",
+        "parent_title": "2 Corinthians",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.911,
+        "semantic_relationship": "LATER_RECEPTION",
+        "source_kind": "ckl_interpretive_note",
+        "verse_distance": 2
+      },
+      "source_ids": [
+        "2cor-greek",
+        "nets-lxx"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Messiah is called the image of the invisible God.",
+      "confidence": "high",
+      "id": "col-image",
+      "passage_anchors": [
+        "Genesis 1:26-27"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "textually_explicit",
+        "claim_type": "biblical_theology",
+        "dispute_status": "denominational_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "",
+        "object_importance": 79,
+        "overview_priority": 0,
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.899,
+        "semantic_relationship": "LATER_RECEPTION",
+        "source_kind": "ckl_claim",
+        "verse_distance": 25
+      },
+      "source_ids": [
+        "col-greek",
+        "nets-lxx",
+        "moo-colossians"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions.",
+      "confidence": "high",
+      "id": "col-new-humanity",
+      "passage_anchors": [
+        "Genesis 1:26-27"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "textually_explicit",
+        "claim_type": "biblical_theology",
+        "dispute_status": "denominational_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "",
+        "object_importance": 79,
+        "overview_priority": 0,
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.899,
+        "semantic_relationship": "LATER_RECEPTION",
+        "source_kind": "ckl_claim",
+        "verse_distance": 25
+      },
+      "source_ids": [
+        "col-greek",
+        "nets-lxx",
+        "sumney-colossians"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 40,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:hebraic_worldview:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "hebraic_worldview",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 40,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 40,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Canonical teaching from Genesis through Revelation",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:historical_setting:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_setting",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 40,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "social",
+      "claim": "Readers learning Scripture's account of God, world, and human vocation",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:original_audience:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "original_audience",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 40,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:second_temple_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "second_temple_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 55,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "chronology",
+      "claim": "Creation declared good",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:timeline:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "timeline",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 25,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "chronology",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "chronology",
+      "claim": "Human vocation given",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:timeline:1",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "timeline",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 25,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "chronology",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "chronology",
+      "claim": "Fall disorders creation",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:timeline:2",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "timeline",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 25,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "chronology",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "chronology",
+      "claim": "Wisdom and worship confess the Creator",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:timeline:3",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "timeline",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 25,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "chronology",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "chronology",
+      "claim": "Christ revealed as agent and heir of creation",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:timeline:4",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "timeline",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 25,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "chronology",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "chronology",
+      "claim": "New creation promised",
+      "confidence": "medium",
+      "id": "creation-doctrine-framework:timeline:5",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "timeline",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 92,
+        "overview_priority": 25,
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "passage_relationship": "contextual",
+        "presentation_role": "chronology",
+        "retrieval_score": 0.912,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness.",
+      "confidence": "medium",
+      "id": "creation-doctrine:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 55,
+        "parent_object_id": "creation-doctrine",
+        "parent_title": "Creation Doctrine",
+        "parent_type": "theology",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "confidence": "medium",
+      "id": "creation-doctrine:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 40,
+        "parent_object_id": "creation-doctrine",
+        "parent_title": "Creation Doctrine",
+        "parent_type": "theology",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign.",
+      "confidence": "medium",
+      "id": "creation-theme:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 40,
+        "parent_object_id": "creation-theme",
+        "parent_title": "Creation Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope.",
+      "confidence": "medium",
+      "id": "creation-theme:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 40,
+        "parent_object_id": "creation-theme",
+        "parent_title": "Creation Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+      "confidence": "medium",
+      "id": "creation:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "entity",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 100,
+        "overview_priority": 40,
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.92,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
+      "confidence": "medium",
+      "id": "creation:hebraic_worldview:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "entity",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "hebraic_worldview",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 100,
+        "overview_priority": 40,
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.92,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Genesis presents creation as the foundational act that begins biblical history and establishes God’s sovereignty over all things.",
+      "confidence": "medium",
+      "id": "creation:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "entity",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 100,
+        "overview_priority": 40,
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.92,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+      "confidence": "medium",
+      "id": "enuma-elish-cosmic-ordering-comparison",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "primary-evidence",
+        "broad_tag_only": false,
+        "certainty": "probable",
+        "claim_type": "",
+        "dispute_status": "major_scholarly_disagreement",
+        "evidence_type": "ancient-text",
+        "exploration_potential": 0.75,
+        "field": "",
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 0,
+        "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+        "parent_title": "Mesopotamian Creation and Flood Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "comparative",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.936,
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "source_kind": "ckl_evidence_item",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "lambert-babylonian-creation-2013",
+        "sarna-genesis-comparison"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+      "confidence": "medium",
+      "id": "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "primary-evidence",
+        "broad_tag_only": false,
+        "certainty": "probable",
+        "claim_type": "",
+        "dispute_status": "major_scholarly_disagreement",
+        "evidence_type": "ancient-text",
+        "exploration_potential": 0.75,
+        "field": "",
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 0,
+        "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+        "parent_title": "Mesopotamian Creation and Flood Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "comparative",
+        "presentation_role": "significance",
+        "retrieval_score": 0.936,
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "source_kind": "ckl_evidence_item",
+        "supports_evidence_ids": [
+          "enuma-elish-cosmic-ordering-comparison"
+        ],
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "lambert-babylonian-creation-2013",
+        "sarna-genesis-comparison"
+      ]
+    },
+    {
+      "category": "geography",
+      "claim": "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+      "confidence": "high",
+      "id": "genesis-ane-comparative-context",
+      "passage_anchors": [
+        "Genesis 1:1-11:26"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "strong_consensus",
+        "claim_type": "historical_cultural",
+        "dispute_status": "minor_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "",
+        "object_importance": 99,
+        "overview_priority": 63,
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.919,
+        "semantic_relationship": "BOOK_CONTEXT",
+        "source_kind": "ckl_claim",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "sarna-genesis",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt.",
+      "confidence": "high",
+      "id": "genesis-literary-movement",
+      "passage_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "strong_consensus",
+        "claim_type": "literary",
+        "dispute_status": "not_disputed",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "",
+        "object_importance": 99,
+        "overview_priority": 88,
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "language_literary",
+        "retrieval_score": 0.919,
+        "semantic_relationship": "BOOK_CONTEXT",
+        "source_kind": "ckl_claim",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17",
+        "hamilton-genesis-18-50"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+      "confidence": "high",
+      "id": "genesis-ordered-worldview-observation",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "primary-evidence",
+        "broad_tag_only": false,
+        "certainty": "textually_explicit",
+        "claim_type": "",
+        "dispute_status": "not_disputed",
+        "evidence_type": "worldview-concept",
+        "exploration_potential": 0.5,
+        "field": "",
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 95,
+        "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+        "parent_title": "Mesopotamian Creation and Flood Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "direct",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.936,
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "source_kind": "ckl_evidence_item",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-11-text",
+        "sarna-genesis-comparison"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced.",
+      "confidence": "high",
+      "id": "genesis-ordered-worldview-observation:passage-relevance",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "primary-evidence",
+        "broad_tag_only": false,
+        "certainty": "textually_explicit",
+        "claim_type": "",
+        "dispute_status": "not_disputed",
+        "evidence_type": "worldview-concept",
+        "exploration_potential": 0.5,
+        "field": "",
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 95,
+        "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+        "parent_title": "Mesopotamian Creation and Flood Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "direct",
+        "presentation_role": "significance",
+        "retrieval_score": 0.936,
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "source_kind": "ckl_evidence_item",
+        "supports_evidence_ids": [
+          "genesis-ordered-worldview-observation"
+        ],
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-11-text",
+        "sarna-genesis-comparison"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+      "confidence": "low",
+      "id": "genesis:interpretive_note:0",
+      "passage_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "inference",
+        "broad_tag_only": false,
+        "certainty": "disputed",
+        "claim_type": "",
+        "dispute_status": "major_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "interpretive-caution",
+        "object_importance": 99,
+        "overview_priority": 27,
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.919,
+        "semantic_relationship": "BOOK_CONTEXT",
+        "source_kind": "ckl_interpretive_note",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+      "confidence": "medium",
+      "id": "genesis:interpretive_note:1",
+      "passage_anchors": [
+        "Genesis 1:1-11:26"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "inference",
+        "broad_tag_only": false,
+        "certainty": "probable",
+        "claim_type": "",
+        "dispute_status": "major_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "literary-observation",
+        "object_importance": 99,
+        "overview_priority": 62,
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.919,
+        "semantic_relationship": "BOOK_CONTEXT",
+        "source_kind": "ckl_interpretive_note",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ]
+    },
+    {
+      "category": "geography",
+      "claim": "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis.",
+      "confidence": "high",
+      "id": "genesis:interpretive_note:2",
+      "passage_anchors": [
+        "Genesis 1:1-11:26"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "inference",
+        "broad_tag_only": false,
+        "certainty": "strong_consensus",
+        "claim_type": "",
+        "dispute_status": "minor_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "ancient-near-east-context",
+        "object_importance": 99,
+        "overview_priority": 70,
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.919,
+        "semantic_relationship": "BOOK_CONTEXT",
+        "source_kind": "ckl_interpretive_note",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "sarna-genesis",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+      "confidence": "medium",
+      "id": "image-of-god-theme:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 55,
+        "parent_object_id": "image-of-god-theme",
+        "parent_title": "Image of God Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 25
+      },
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+      "confidence": "medium",
+      "id": "image-of-god-theme:hebraic_worldview:0",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "hebraic_worldview",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 40,
+        "parent_object_id": "image-of-god-theme",
+        "parent_title": "Image of God Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 25
+      },
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred.",
+      "confidence": "medium",
+      "id": "image-of-god-theme:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 40,
+        "parent_object_id": "image-of-god-theme",
+        "parent_title": "Image of God Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 25
+      },
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity.",
+      "confidence": "medium",
+      "id": "image-of-god-theme:second_temple_context:0",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "second_temple_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 55,
+        "parent_object_id": "image-of-god-theme",
+        "parent_title": "Image of God Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 25
+      },
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation.",
+      "confidence": "high",
+      "id": "john-logos",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "textually_explicit",
+        "claim_type": "biblical_theology",
+        "dispute_status": "major_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "",
+        "object_importance": 97,
+        "overview_priority": 0,
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.917,
+        "semantic_relationship": "LATER_RECEPTION",
+        "source_kind": "ckl_claim",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "john-greek",
+        "boyarin-logos",
+        "oxford-johannine"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Ancient background for Light and Darkness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and skotia without letting comparison replace the biblical witness.",
+      "confidence": "medium",
+      "id": "light-and-darkness-theme:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 88,
+        "overview_priority": 55,
+        "parent_object_id": "light-and-darkness-theme",
+        "parent_title": "Light and Darkness Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.908,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Light and Darkness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "confidence": "medium",
+      "id": "light-and-darkness-theme:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 88,
+        "overview_priority": 40,
+        "parent_object_id": "light-and-darkness-theme",
+        "parent_title": "Light and Darkness Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.908,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Shared motifs support comparison but do not establish a single line of direct borrowing.",
+      "confidence": "high",
+      "id": "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "inference",
+        "broad_tag_only": false,
+        "certainty": "strong_consensus",
+        "claim_type": "",
+        "dispute_status": "major_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "interpretive-caution",
+        "object_importance": 96,
+        "overview_priority": 0,
+        "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+        "parent_title": "Mesopotamian Creation and Flood Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "direct",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.936,
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "source_kind": "ckl_interpretive_note",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "sarna-genesis-comparison",
+        "lambert-babylonian-creation-2013",
+        "george-gilgamesh-2003"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness.",
+      "confidence": "medium",
+      "id": "new-creation-theme:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 55,
+        "parent_object_id": "new-creation-theme",
+        "parent_title": "New Creation Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "confidence": "medium",
+      "id": "new-creation-theme:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 40,
+        "parent_object_id": "new-creation-theme",
+        "parent_title": "New Creation Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Ancient background for Pneumatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and acts without letting comparison replace the biblical witness.",
+      "confidence": "medium",
+      "id": "pneumatology:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 55,
+        "parent_object_id": "pneumatology",
+        "parent_title": "Pneumatology",
+        "parent_type": "theology",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "pneumatology-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Pneumatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "confidence": "medium",
+      "id": "pneumatology:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 40,
+        "parent_object_id": "pneumatology",
+        "parent_title": "Pneumatology",
+        "parent_type": "theology",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "pneumatology-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "The Bible’s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force.",
+      "confidence": "medium",
+      "id": "spirit-theme:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 40,
+        "parent_object_id": "spirit-theme",
+        "parent_title": "Spirit Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 1
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Spirit language appears from creation through prophecy, Jesus’ ministry, Pentecost, and the life of the church.",
+      "confidence": "medium",
+      "id": "spirit-theme:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 96,
+        "overview_priority": 40,
+        "parent_object_id": "spirit-theme",
+        "parent_title": "Spirit Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 1
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Ancient background for Spiritual Gifts includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness.",
+      "confidence": "medium",
+      "id": "spiritual-gifts:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 55,
+        "parent_object_id": "spiritual-gifts",
+        "parent_title": "Spiritual Gifts",
+        "parent_type": "theology",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "spiritual-gifts-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Spiritual Gifts is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "confidence": "medium",
+      "id": "spiritual-gifts:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 40,
+        "parent_object_id": "spiritual-gifts",
+        "parent_title": "Spiritual Gifts",
+        "parent_type": "theology",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "spiritual-gifts-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Ancient background for Water and Spirit Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness.",
+      "confidence": "medium",
+      "id": "water-and-spirit-theme:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 55,
+        "parent_object_id": "water-and-spirit-theme",
+        "parent_title": "Water and Spirit Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "water-and-spirit-theme-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Water and Spirit Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "confidence": "medium",
+      "id": "water-and-spirit-theme:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 40,
+        "parent_object_id": "water-and-spirit-theme",
+        "parent_title": "Water and Spirit Theme",
+        "parent_type": "theme",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "water-and-spirit-theme-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Wind and breath were familiar life-images in the ancient world, and Scripture uses them to speak of God's invisible action.",
+      "confidence": "medium",
+      "id": "what-does-ruach-mean:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 89,
+        "overview_priority": 40,
+        "parent_object_id": "what-does-ruach-mean",
+        "parent_title": "What does ruach mean?",
+        "parent_type": "faq",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.909,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "genesis-2",
+        "ezekiel-37",
+        "joel-2",
+        "john-3",
+        "john-20",
+        "acts-2",
+        "what-does-ruach-mean-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "The word is used for physical wind and breath before it is used for divine and human life.",
+      "confidence": "medium",
+      "id": "what-does-ruach-mean:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 89,
+        "overview_priority": 40,
+        "parent_object_id": "what-does-ruach-mean",
+        "parent_title": "What does ruach mean?",
+        "parent_type": "faq",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.909,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "genesis-1",
+        "genesis-2",
+        "ezekiel-37",
+        "joel-2",
+        "john-3",
+        "john-20",
+        "acts-2",
+        "what-does-ruach-mean-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Biblical Spirit language is not impersonal force language; it expresses God’s living presence among his people.",
+      "confidence": "medium",
+      "id": "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 91,
+        "overview_priority": 40,
+        "parent_object_id": "what-is-the-holy-spirit",
+        "parent_title": "What is the Holy Spirit?",
+        "parent_type": "faq",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.911,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 1
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "what-is-the-holy-spirit-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church.",
+      "confidence": "medium",
+      "id": "what-is-the-holy-spirit:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 91,
+        "overview_priority": 40,
+        "parent_object_id": "what-is-the-holy-spirit",
+        "parent_title": "What is the Holy Spirit?",
+        "parent_type": "faq",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.911,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 1
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "what-is-the-holy-spirit-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people.",
+      "confidence": "medium",
+      "id": "what-is-the-image-of-god:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 55,
+        "parent_object_id": "what-is-the-image-of-god",
+        "parent_title": "What is the Image of God?",
+        "parent_type": "faq",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 25
+      },
+      "source_ids": [
+        "genesis-1",
+        "genesis-5",
+        "genesis-9",
+        "psalm-8",
+        "james-3",
+        "1-corinthians-11",
+        "colossians-3",
+        "romans-8"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ.",
+      "confidence": "medium",
+      "id": "what-is-the-image-of-god:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 55,
+        "parent_object_id": "what-is-the-image-of-god",
+        "parent_title": "What is the Image of God?",
+        "parent_type": "faq",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.915,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 25
+      },
+      "source_ids": [
+        "genesis-1",
+        "genesis-5",
+        "genesis-9",
+        "psalm-8",
+        "james-3",
+        "1-corinthians-11",
+        "colossians-3",
+        "romans-8"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Biblical Spirit language is not impersonal force language; it expresses God's living presence among his people.",
+      "confidence": "medium",
+      "id": "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "ancient_near_east_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 94,
+        "overview_priority": 40,
+        "parent_object_id": "what-is-the-significance-of-the-holy-spirit",
+        "parent_title": "What is the significance of the Holy Spirit?",
+        "parent_type": "faq",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.914,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 1
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "1-corinthians-12-14",
+        "what-is-the-significance-of-the-holy-spirit-historical-orientation"
+      ]
+    },
+    {
+      "category": "history",
+      "claim": "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church.",
+      "confidence": "medium",
+      "id": "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "parent",
+        "anchor_specificity": "verse",
+        "applicability_scope": "global",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "",
+        "claim_type": "",
+        "dispute_status": "",
+        "exploration_potential": 0.25,
+        "field": "historical_context",
+        "inherited_from_parent": true,
+        "note_type": "",
+        "object_importance": 94,
+        "overview_priority": 40,
+        "parent_object_id": "what-is-the-significance-of-the-holy-spirit",
+        "parent_title": "What is the significance of the Holy Spirit?",
+        "parent_type": "faq",
+        "passage_relationship": "contextual",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.914,
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "source_kind": "ckl_legacy_field",
+        "verse_distance": 1
+      },
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "1-corinthians-12-14",
+        "what-is-the-significance-of-the-holy-spirit-historical-orientation"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances.",
+      "confidence": "high",
+      "id": "zephaniah-creation-reversal",
+      "passage_anchors": [
+        "Genesis 1:20-28"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "strong_consensus",
+        "claim_type": "literary",
+        "dispute_status": "minor_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "",
+        "object_importance": 87,
+        "overview_priority": 0,
+        "parent_object_id": "zephaniah",
+        "parent_title": "Zephaniah",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.907,
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "source_kind": "ckl_claim",
+        "verse_distance": 19
+      },
+      "source_ids": [
+        "zephaniah-masoretic",
+        "zephaniah-canonical-comparanda",
+        "quine-zephaniah",
+        "oxford-metaphor"
+      ]
+    }
+  ],
+  "geography": {
+    "map_location_refs": [],
+    "map_route_refs": [],
+    "places": [],
+    "political_territories": [],
+    "regions": [],
+    "routes": []
+  },
+  "passage_ref": "Genesis 1",
+  "provenance": {
+    "canonical_objects": [
+      {
+        "id": "2-corinthians",
+        "object_version": "1",
+        "retrieval_score": 0.911,
+        "review_status": "in_review",
+        "title": "2 Corinthians",
+        "type": "book"
+      },
+      {
+        "id": "colossians",
+        "object_version": "1",
+        "retrieval_score": 0.899,
+        "review_status": "in_review",
+        "title": "Colossians",
+        "type": "book"
+      },
+      {
+        "id": "creation",
+        "object_version": "1",
+        "retrieval_score": 0.92,
+        "review_status": "in_review",
+        "title": "Creation",
+        "type": "event"
+      },
+      {
+        "id": "creation-doctrine",
+        "object_version": "1",
+        "retrieval_score": 0.915,
+        "review_status": "in_review",
+        "title": "Creation Doctrine",
+        "type": "theology"
+      },
+      {
+        "id": "creation-doctrine-framework",
+        "object_version": "1",
+        "retrieval_score": 0.912,
+        "review_status": "in_review",
+        "title": "Creation Doctrine Framework",
+        "type": "doctrine"
+      },
+      {
+        "id": "creation-theme",
+        "object_version": "1",
+        "retrieval_score": 0.916,
+        "review_status": "in_review",
+        "title": "Creation Theme",
+        "type": "theme"
+      },
+      {
+        "id": "genesis",
+        "object_version": "1",
+        "retrieval_score": 0.919,
+        "review_status": "in_review",
+        "title": "Genesis",
+        "type": "book"
+      },
+      {
+        "id": "image-of-god-theme",
+        "object_version": "1",
+        "retrieval_score": 0.916,
+        "review_status": "in_review",
+        "title": "Image of God Theme",
+        "type": "theme"
+      },
+      {
+        "id": "john",
+        "object_version": "1",
+        "retrieval_score": 0.917,
+        "review_status": "in_review",
+        "title": "John",
+        "type": "book"
+      },
+      {
+        "id": "light-and-darkness-theme",
+        "object_version": "1",
+        "retrieval_score": 0.908,
+        "review_status": "in_review",
+        "title": "Light and Darkness Theme",
+        "type": "theme"
+      },
+      {
+        "id": "mesopotamian-creation-and-flood-comparisons",
+        "object_version": "1",
+        "retrieval_score": 0.936,
+        "review_status": "in_review",
+        "title": "Mesopotamian Creation and Flood Comparisons",
+        "type": "cultural_background"
+      },
+      {
+        "id": "new-creation-theme",
+        "object_version": "1",
+        "retrieval_score": 0.915,
+        "review_status": "in_review",
+        "title": "New Creation Theme",
+        "type": "theme"
+      },
+      {
+        "id": "pneumatology",
+        "object_version": "1",
+        "retrieval_score": 0.915,
+        "review_status": "in_review",
+        "title": "Pneumatology",
+        "type": "theology"
+      },
+      {
+        "id": "spirit-theme",
+        "object_version": "1",
+        "retrieval_score": 0.916,
+        "review_status": "in_review",
+        "title": "Spirit Theme",
+        "type": "theme"
+      },
+      {
+        "id": "spiritual-gifts",
+        "object_version": "1",
+        "retrieval_score": 0.915,
+        "review_status": "in_review",
+        "title": "Spiritual Gifts",
+        "type": "theology"
+      },
+      {
+        "id": "water-and-spirit-theme",
+        "object_version": "1",
+        "retrieval_score": 0.915,
+        "review_status": "in_review",
+        "title": "Water and Spirit Theme",
+        "type": "theme"
+      },
+      {
+        "id": "what-does-ruach-mean",
+        "object_version": "1",
+        "retrieval_score": 0.909,
+        "review_status": "in_review",
+        "title": "What does ruach mean?",
+        "type": "faq"
+      },
+      {
+        "id": "what-is-the-holy-spirit",
+        "object_version": "1",
+        "retrieval_score": 0.911,
+        "review_status": "in_review",
+        "title": "What is the Holy Spirit?",
+        "type": "faq"
+      },
+      {
+        "id": "what-is-the-image-of-god",
+        "object_version": "1",
+        "retrieval_score": 0.915,
+        "review_status": "in_review",
+        "title": "What is the Image of God?",
+        "type": "faq"
+      },
+      {
+        "id": "what-is-the-significance-of-the-holy-spirit",
+        "object_version": "1",
+        "retrieval_score": 0.914,
+        "review_status": "in_review",
+        "title": "What is the significance of the Holy Spirit?",
+        "type": "faq"
+      },
+      {
+        "id": "zephaniah",
+        "object_version": "1",
+        "retrieval_score": 0.907,
+        "review_status": "in_review",
+        "title": "Zephaniah",
+        "type": "book"
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ],
+    "sources": [
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-is-the-image-of-god"
+        ],
+        "id": "1-corinthians-11",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "1 Corinthians 11",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "1-corinthians-11-7",
+        "locator": "",
+        "notes": "image and worship order",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "1 Corinthians 11:7",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "1-corinthians-12-14",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "1 Corinthians 12-14",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ],
+        "id": "1-john-1",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "1 John 1",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "Michael W. Holmes, ed.",
+        "canonical_object_ids": [
+          "2-corinthians"
+        ],
+        "id": "2cor-greek",
+        "locator": "2 Corinthians 1-13",
+        "notes": "Critical Greek base text used with textual apparatus resources.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "title": "The Greek New Testament: SBL Edition",
+        "url": "https://www.sblgnt.com/download/",
+        "year": 2010
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-does-ruach-mean",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "acts-2",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Acts 2",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "Daniel Boyarin",
+        "canonical_object_ids": [
+          "john"
+        ],
+        "id": "boyarin-logos",
+        "locator": "Harvard Theological Review 94",
+        "notes": "Jewish-contextual proposal for the Logos prologue.",
+        "publisher": "Harvard Theological Review / Cambridge University Press",
+        "source_type": "journal-article",
+        "supports": [
+          "hebraic-worldview",
+          "claims",
+          "interpretive-notes"
+        ],
+        "title": "The Gospel of the Memra: Jewish Binitarianism and the Prologue to John",
+        "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/gospel-of-the-memra-jewish-binitarianism-and-the-prologue-to-john/A97052954F201A3B1B79FD50EB9E3EFA",
+        "year": 2001
+      },
+      {
+        "author": "Michael W. Holmes, ed.",
+        "canonical_object_ids": [
+          "colossians"
+        ],
+        "id": "col-greek",
+        "locator": "Colossians",
+        "notes": "Primary Greek textual control.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "title": "SBL Greek New Testament: Colossians",
+        "url": "https://www.sblgnt.com/",
+        "year": 2010
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework"
+        ],
+        "id": "colossians-1",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Colossians 1",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "colossians-1-15-20",
+        "locator": "",
+        "notes": "Christ as the image",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Colossians 1:15-20",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-is-the-image-of-god"
+        ],
+        "id": "colossians-3",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Colossians 3",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "colossians-3-9-10",
+        "locator": "",
+        "notes": "renewed humanity",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Colossians 3:9-10",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "creation-doctrine-framework"
+        ],
+        "id": "creation-doctrine-framework-historical-orientation",
+        "locator": "Foundational doctrine introduced in Genesis and developed across the canon",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for Creation Doctrine Framework",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "ephesians-4-22-24",
+        "locator": "",
+        "notes": "new self and true righteousness",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Ephesians 4:22-24",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ],
+        "id": "ephesians-5",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Ephesians 5",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "ezekiel-36-37",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Ezekiel 36-37",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ],
+        "id": "ezekiel-37",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Ezekiel 37",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "galatians-5",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Galatians 5",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "light-and-darkness-theme",
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-does-ruach-mean",
+          "what-is-the-holy-spirit",
+          "what-is-the-image-of-god",
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "genesis-1",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Genesis 1",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "mesopotamian-creation-and-flood-comparisons"
+        ],
+        "id": "genesis-1-11-text",
+        "locator": "Genesis 1:1-11:26",
+        "notes": "Primary biblical text; no modern translation is reproduced.",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [
+          "genesis-ordered-cosmos",
+          "genesis-gilgamesh-flood-comparison"
+        ],
+        "title": "Genesis 1-11",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine",
+          "creation-doctrine-framework",
+          "creation-theme",
+          "new-creation-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "author": "",
+            "id": "genesis-1-2",
+            "locator": "",
+            "notes": "",
+            "publisher": "",
+            "source_type": "scripture",
+            "supports": [],
+            "title": "Genesis 1-2",
+            "url": "",
+            "year": null
+          },
+          {
+            "author": "",
+            "id": "genesis-1-2",
+            "locator": "Genesis 1:1-2:25",
+            "notes": "Primary biblical creation texts; no modern translation is reproduced.",
+            "publisher": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "literary-context",
+              "hebraic-worldview"
+            ],
+            "title": "Genesis 1-2",
+            "url": "",
+            "year": null
+          }
+        ],
+        "id": "genesis-1-2",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Genesis 1-2",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "genesis-1-26-28",
+        "locator": "",
+        "notes": "creation and vocation",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Genesis 1:26-28",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ],
+        "id": "genesis-2",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Genesis 2",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-is-the-image-of-god"
+        ],
+        "id": "genesis-5",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Genesis 5",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "genesis-5-1-3",
+        "locator": "",
+        "notes": "the image after the fall",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Genesis 5:1-3",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-is-the-image-of-god"
+        ],
+        "id": "genesis-9",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Genesis 9",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "genesis-9-1-7",
+        "locator": "",
+        "notes": "image and human life",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Genesis 9:1-7",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "Andrew R. George",
+        "canonical_object_ids": [
+          "mesopotamian-creation-and-flood-comparisons"
+        ],
+        "id": "george-gilgamesh-2003",
+        "locator": "Volume 1, Tablet XI; volume 2, plates 124-127",
+        "notes": "Critical edition and historical study; no copyrighted translation is reproduced.",
+        "publisher": "Oxford University Press",
+        "source_type": "academic-book",
+        "supports": [
+          "genesis-gilgamesh-flood-comparison"
+        ],
+        "title": "The Babylonian Gilgamesh Epic: Introduction, Critical Edition and Cuneiform Texts",
+        "url": "https://global.oup.com/academic/product/the-babylonian-gilgamesh-epic-9780199278428",
+        "year": 2003
+      },
+      {
+        "author": "Victor P. Hamilton",
+        "canonical_object_ids": [
+          "genesis"
+        ],
+        "id": "hamilton-genesis-1-17",
+        "locator": "Introduction and Genesis 1-17",
+        "notes": "NICOT commentary representing a conservative evangelical scholarly perspective.",
+        "publisher": "Eerdmans",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "literary-context",
+          "canonical-context",
+          "genesis-literary-movement",
+          "genesis-blessing-for-families"
+        ],
+        "title": "The Book of Genesis, Chapters 1-17",
+        "url": "https://www.eerdmans.com/9780802825216/the-book-of-genesis-chapters-1-17/",
+        "year": 1990
+      },
+      {
+        "author": "Victor P. Hamilton",
+        "canonical_object_ids": [
+          "genesis"
+        ],
+        "id": "hamilton-genesis-18-50",
+        "locator": "Genesis 18-50",
+        "notes": "NICOT commentary with literary, linguistic, theological, and reception-focused discussion.",
+        "publisher": "Eerdmans",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "genesis-literary-movement",
+          "genesis-ends-in-egypt"
+        ],
+        "title": "The Book of Genesis, Chapters 18-50",
+        "url": "https://www.eerdmans.com/9780802823090/the-book-of-genesis-chapters-18-50/",
+        "year": 1995
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "image-of-god-theme-historical-orientation",
+        "locator": "",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for Image of God Theme",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-is-the-image-of-god"
+        ],
+        "id": "james-3",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "James 3",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "james-3-9",
+        "locator": "",
+        "notes": "image and speech ethics",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "James 3:9",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-does-ruach-mean",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "joel-2",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Joel 2",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine",
+          "creation-doctrine-framework",
+          "creation-theme",
+          "light-and-darkness-theme",
+          "new-creation-theme"
+        ],
+        "id": "john-1",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "John 1",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "john-14-16",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "John 14-16",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ],
+        "id": "john-20",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "John 20",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ],
+        "id": "john-3",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "John 3",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "john"
+        ],
+        "id": "john-greek",
+        "locator": "John 1-21 in SBLGNT",
+        "notes": "Open critical Greek text.",
+        "publisher": "Society of Biblical Literature",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "title": "The Gospel according to John, Greek text",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "year": 2010
+      },
+      {
+        "author": "Wilfred G. Lambert",
+        "canonical_object_ids": [
+          "mesopotamian-creation-and-flood-comparisons"
+        ],
+        "id": "lambert-babylonian-creation-2013",
+        "locator": "Enuma Elish, Tablets I-VII; ISBN 978-1-57506-247-1; doi:10.5325/j.ctv18r6rfr",
+        "notes": "Critical edition, transliteration, and translation of the ancient witnesses; no translation is copied into CKL.",
+        "publisher": "Eisenbrauns",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "enuma-elish-cosmic-ordering"
+        ],
+        "title": "Babylonian Creation Myths",
+        "url": "https://www.eisenbrauns.org/books/titles/978-1-57506-247-1.html",
+        "year": 2013
+      },
+      {
+        "author": "Douglas J. Moo",
+        "canonical_object_ids": [
+          "colossians"
+        ],
+        "id": "moo-colossians",
+        "locator": "Introduction and commentary",
+        "notes": "Exegetical commentary defending Pauline authorship.",
+        "publisher": "Eerdmans",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "title": "The Letters to the Colossians and to Philemon",
+        "url": "https://www.eerdmans.com/9780802837271/the-letters-to-the-colossians-and-to-philemon/",
+        "year": 2008
+      },
+      {
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "canonical_object_ids": [
+          "2-corinthians",
+          "colossians"
+        ],
+        "canonical_source_variants": [
+          {
+            "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+            "id": "nets-lxx",
+            "locator": "Exodus, Psalms, Isaiah, Jeremiah",
+            "notes": "Greek scriptural comparanda.",
+            "publisher": "Oxford University Press",
+            "source_type": "ancient-primary-source",
+            "supports": [
+              "intertextuality",
+              "claims",
+              "interpretive-notes"
+            ],
+            "title": "A New English Translation of the Septuagint",
+            "url": "https://ccat.sas.upenn.edu/nets/edition/",
+            "year": 2007
+          },
+          {
+            "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+            "id": "nets-lxx",
+            "locator": "Genesis, Psalms, Proverbs, Hosea, Chronicles, Ezekiel",
+            "notes": "Septuagint comparison control.",
+            "publisher": "Oxford University Press",
+            "source_type": "ancient-primary-source",
+            "supports": [
+              "intertextuality",
+              "hebrew-words"
+            ],
+            "title": "A New English Translation of the Septuagint",
+            "url": "https://ccat.sas.upenn.edu/nets/edition/",
+            "year": 2007
+          }
+        ],
+        "id": "nets-lxx",
+        "locator": "Exodus, Psalms, Isaiah, Jeremiah",
+        "notes": "Greek scriptural comparanda.",
+        "publisher": "Oxford University Press",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "title": "A New English Translation of the Septuagint",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "year": 2007
+      },
+      {
+        "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+        "canonical_object_ids": [
+          "john"
+        ],
+        "id": "oxford-johannine",
+        "locator": "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon",
+        "notes": "Multi-author survey of Johannine scholarship.",
+        "publisher": "Oxford University Press",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "title": "The Oxford Handbook of Johannine Studies",
+        "url": "https://academic.oup.com/edited-volume/38583",
+        "year": 2018
+      },
+      {
+        "author": "Carol J. Dempsey",
+        "canonical_object_ids": [
+          "zephaniah"
+        ],
+        "id": "oxford-metaphor",
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 7, pages 85-100",
+        "notes": "Methodological resource for reading prophetic metaphor and its embodied effects.",
+        "publisher": "Oxford University Press",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "interpretive-disputes",
+          "zephaniah-creation-reversal",
+          "zephaniah-leaders"
+        ],
+        "title": "Metaphor in the Minor Prophets",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334371542",
+        "year": 2021
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "pneumatology"
+        ],
+        "id": "pneumatology-historical-orientation",
+        "locator": "",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for Pneumatology",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "author": "",
+            "id": "psalm-104",
+            "locator": "",
+            "notes": "",
+            "publisher": "",
+            "source_type": "reference-work",
+            "supports": [],
+            "title": "Psalm 104",
+            "url": "",
+            "year": null
+          },
+          {
+            "author": "",
+            "id": "psalm-104",
+            "locator": "",
+            "notes": "",
+            "publisher": "",
+            "source_type": "scripture",
+            "supports": [],
+            "title": "Psalm 104",
+            "url": "",
+            "year": null
+          }
+        ],
+        "id": "psalm-104",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "title": "Psalm 104",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ],
+        "id": "psalm-27",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "title": "Psalm 27",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine",
+          "creation-theme",
+          "new-creation-theme",
+          "what-is-the-image-of-god"
+        ],
+        "canonical_source_variants": [
+          {
+            "author": "",
+            "id": "psalm-8",
+            "locator": "",
+            "notes": "",
+            "publisher": "",
+            "source_type": "reference-work",
+            "supports": [],
+            "title": "Psalm 8",
+            "url": "",
+            "year": null
+          },
+          {
+            "author": "",
+            "id": "psalm-8",
+            "locator": "",
+            "notes": "",
+            "publisher": "",
+            "source_type": "scripture",
+            "supports": [],
+            "title": "Psalm 8",
+            "url": "",
+            "year": null
+          }
+        ],
+        "id": "psalm-8",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "title": "Psalm 8",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "psalm-8-1-9",
+        "locator": "",
+        "notes": "human dignity and rule",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Psalm 8:1-9",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "Cat Quine",
+        "canonical_object_ids": [
+          "zephaniah"
+        ],
+        "id": "quine-zephaniah",
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 37, pages 499-510",
+        "notes": "Recent overview of structure, authorship, date, Day of YHWH, cult, elites, remnant, intertextuality, and the Twelve.",
+        "publisher": "Oxford University Press",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "zephaniah-date",
+          "zephaniah-composition"
+        ],
+        "title": "Zephaniah",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373664",
+        "year": 2021
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine",
+          "creation-doctrine-framework",
+          "creation-theme",
+          "new-creation-theme"
+        ],
+        "id": "revelation-21",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Revelation 21",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "creation-doctrine",
+          "creation-theme",
+          "new-creation-theme",
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-image-of-god",
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "romans-8",
+        "locator": "",
+        "notes": "",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Romans 8",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ],
+        "id": "romans-8-28-30",
+        "locator": "",
+        "notes": "conformed to the Son",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [],
+        "title": "Romans 8:28-30",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "Nahum M. Sarna",
+        "canonical_object_ids": [
+          "genesis"
+        ],
+        "id": "sarna-genesis",
+        "locator": "Introduction and commentary throughout",
+        "notes": "Jewish scholarly commentary integrating the Hebrew text, classical interpretation, and modern scholarship.",
+        "publisher": "Jewish Publication Society",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "ancient-near-east-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "genesis-literary-movement",
+          "genesis-ane-comparative-context"
+        ],
+        "title": "The JPS Torah Commentary: Genesis",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "year": 1989
+      },
+      {
+        "author": "Nahum M. Sarna",
+        "canonical_object_ids": [
+          "mesopotamian-creation-and-flood-comparisons"
+        ],
+        "id": "sarna-genesis-comparison",
+        "locator": "Introduction; commentary on Genesis 1 and 6-9",
+        "notes": "Jewish academic commentary used to control comparison and literary claims.",
+        "publisher": "Jewish Publication Society",
+        "source_type": "reference-work",
+        "supports": [
+          "genesis-ordered-cosmos",
+          "enuma-elish-cosmic-ordering",
+          "genesis-gilgamesh-flood-comparison"
+        ],
+        "title": "The JPS Torah Commentary: Genesis",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "year": 1989
+      },
+      {
+        "author": "Nahum M. Sarna",
+        "canonical_object_ids": [
+          "creation"
+        ],
+        "id": "sarna-genesis-creation",
+        "locator": "Introduction and commentary on Genesis 1-2",
+        "notes": "Academic Jewish commentary used for literary and ancient comparative context.",
+        "publisher": "Jewish Publication Society",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context"
+        ],
+        "title": "The JPS Torah Commentary: Genesis",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "year": 1989
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ],
+        "id": "spirit-theme-historical-orientation",
+        "locator": "",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for Spirit Theme",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "spiritual-gifts"
+        ],
+        "id": "spiritual-gifts-historical-orientation",
+        "locator": "",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for Spiritual Gifts",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "Jerry L. Sumney",
+        "canonical_object_ids": [
+          "colossians"
+        ],
+        "id": "sumney-colossians",
+        "locator": "Introduction and commentary",
+        "notes": "Commentary emphasizing rhetoric, opponents, empire, and ethics.",
+        "publisher": "Westminster John Knox Press",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "title": "Colossians: A Commentary",
+        "url": "https://www.wjkbooks.com/Products/0664221421/colossians.aspx",
+        "year": 2008
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "water-and-spirit-theme"
+        ],
+        "id": "water-and-spirit-theme-historical-orientation",
+        "locator": "",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for Water and Spirit Theme",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ],
+        "id": "what-does-ruach-mean-historical-orientation",
+        "locator": "",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for What does ruach mean?",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-is-the-holy-spirit"
+        ],
+        "id": "what-is-the-holy-spirit-historical-orientation",
+        "locator": "",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for What is the Holy Spirit?",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-holy-spirit"
+        ],
+        "id": "what-is-the-significance-of-the-holy-spirit-historical-orientation",
+        "locator": "",
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "publisher": "Canonical Knowledge Library",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "title": "Canonical historical orientation for What is the significance of the Holy Spirit?",
+        "url": "",
+        "year": 2026
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "zephaniah"
+        ],
+        "id": "zephaniah-canonical-comparanda",
+        "locator": "Genesis; Deuteronomy; Isaiah; Jeremiah; Amos; Micah; Nahum; Habakkuk; Joel; Zechariah",
+        "notes": "Primary comparanda; quotation, parallel, shared tradition, reuse, contrast, and canonical trajectory remain distinct.",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "intertextuality",
+          "zephaniah-creation-reversal",
+          "zephaniah-day",
+          "zephaniah-daughter-zion"
+        ],
+        "title": "Canonical Hebrew Bible comparanda for Zephaniah",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "zephaniah"
+        ],
+        "id": "zephaniah-masoretic",
+        "locator": "Zephaniah 1:1-3:20",
+        "notes": "Primary Hebrew witness; difficult readings require review against a critical edition.",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "zephaniah-superscription",
+          "zephaniah-day",
+          "zephaniah-gathering"
+        ],
+        "title": "Masoretic Text of Zephaniah",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "John H. Walton, general editor; Bruce Wells and other contributors",
+        "canonical_object_ids": [
+          "genesis"
+        ],
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "locator": "Genesis",
+        "notes": "Comparative ancient Near Eastern textual, cultural, geographic, and artifactual background.",
+        "publisher": "Zondervan",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "genesis-ane-comparative-context"
+        ],
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "year": 2009
+      }
+    ]
+  },
+  "version": "1.1"
+}

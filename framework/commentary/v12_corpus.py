@@ -51,7 +51,20 @@ from bhf_agent.chapter_commentary.reader_provenance_binding_v2 import (
     response_ancestry_audit_v2,
 )
 from bhf_agent.chapter_commentary.renderer_reference_presentation_v1 import present_binding, add_presentation_to_prompt, normalize_selected_chapter_scope_refs
-from bhf_agent.chapter_commentary.richness_clusters import CORE_CLASSIFIER_V2, RICHNESS_POLICY_VERSION_V3, cluster_synthesis_units, score_synthesis_richness
+from bhf_agent.chapter_commentary.richness_clusters import (
+    CORE_CLASSIFIER_V2,
+    RICHNESS_GATE_V2_VERSION,
+    RICHNESS_POLICY_VERSION_V3,
+    assess_gate_v2,
+    cluster_synthesis_units,
+    score_synthesis_richness,
+)
+from bhf_agent.chapter_commentary.selection_sufficiency import (
+    RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE,
+    RENDERER_SELECTION_COLLAPSE,
+    SELECTION_SUFFICIENCY_VERSION,
+    assess_selection_sufficiency,
+)
 from bhf_agent.chapter_commentary.richness import audit_chapter
 from framework.commentary.production.inputs import prepare_chapter
 from bhf_agent.config import AgentConfig
@@ -1348,6 +1361,19 @@ class V12CorpusRunner:
             "envelope": envelope_audit,
             "quality": quality_audit,
             "richness": richness_score.to_dict(),
+            "technical_validity": {
+                "status": "PASS" if validation.valid else "FAIL",
+                "contract": "commentary-schema-1.2",
+                "errors": list(validation.errors),
+            },
+            "provenance_validity": {
+                "status": "PASS"
+                if all(
+                    item.get("valid") is True
+                    for item in (ancestry_audit, binding_audit, envelope_audit)
+                )
+                else "FAIL",
+            },
         }
         if validation.valid and not (ancestry_audit.get("valid") and binding_audit.get("valid") and envelope_audit.get("valid")):
             status = "needs_review"
@@ -1359,9 +1385,120 @@ class V12CorpusRunner:
                 failure_reason=None if validation.valid else "Some generated material was rejected",
                 validation_errors=list(validation.errors),
             )
+        selection_assessment = None
+        if status == "validated" and commentary is not None:
+            passage = bible.resolve_chapter(entry["book"], int(entry["chapter"]))
+            selection_assessment = assess_selection_sufficiency(
+                prepared.synthesis,
+                prepared.bundle,
+                commentary,
+                passage_text=bible.passage_text(passage.get("verses", [])),
+                source_identity={
+                    **(prepared.row.get("input_identity") or {}),
+                    "commentary_sha256": sha256_bytes(
+                        canonical_json(commentary.to_dict()).encode("utf-8")
+                    ),
+                    "raw_response_sha256": sha256_bytes(raw),
+                },
+                renderer_prompt_version=CODEX_PROMPT_VERSION,
+                renderer_schema_version=COMMENTARY_SCHEMA_VERSION,
+            )
+            audits["selection_sufficiency"] = selection_assessment.to_dict()
+            presentation_assessment = assess_gate_v2(
+                score=richness_score,
+                evidence_availability=prepared.synthesis.evidence_availability,
+                baseline_richness=(
+                    "SYNTHESIS_GAP"
+                    if prepared.synthesis.evidence_availability == "AVAILABLE"
+                    else "EVIDENCE_GAP"
+                ),
+                after_richness=quality_audit.get("richness_status", "missing"),
+                safety_checks={
+                    name: True
+                    for name in (
+                        "validation_clean",
+                        "provenance_complete",
+                        "hashes_valid",
+                        "chapter_boundaries_valid",
+                        "confidence_valid",
+                        "dispute_state_preserved",
+                        "unsupported_significance_absent",
+                    )
+                },
+                evidence_use_delta=quality_audit.get("unique_evidence_ids_consumed", 0),
+                section_delta=quality_audit.get("section_count", 0),
+                commentary_word_count=quality_audit.get("commentary_prose_word_count", 0),
+                unique_evidence_ids_consumed=quality_audit.get(
+                    "unique_evidence_ids_consumed", 0
+                ),
+            )
+            audits["presentation_quality"] = {
+                "contract_version": RICHNESS_GATE_V2_VERSION,
+                "status": presentation_assessment.outcome,
+                "assessment": presentation_assessment.to_dict(),
+                "quality_audit": quality_audit,
+                "evidence_dump_diagnostics": (
+                    richness_score.dump_diagnostics.to_dict()
+                    if hasattr(richness_score, "dump_diagnostics")
+                    else None
+                ),
+            }
+        else:
+            audits["selection_sufficiency"] = {
+                "assessment_version": SELECTION_SUFFICIENCY_VERSION,
+                "status": "NOT_RUN_TECHNICAL_OR_PROVENANCE_FAILURE",
+                "diagnostic_code": None,
+            }
+            audits["presentation_quality"] = {
+                "contract_version": RICHNESS_GATE_V2_VERSION,
+                "status": "NOT_RUN_TECHNICAL_OR_PROVENANCE_FAILURE",
+                "quality_audit": quality_audit,
+            }
+        if commentary is not None:
             write_json(chapter_dir / "commentary.json", commentary.to_dict(), immutable=True)
-        classification = "published" if status == "validated" else "quality-review" if status == "partial" else "model-rejected"
+        selection_status = (
+            selection_assessment.status if selection_assessment is not None else None
+        )
+        selection_pass = selection_status == "PASS"
+        presentation_status = audits["presentation_quality"].get("status")
+        presentation_pass = presentation_status in {"PASS", "PASS_WITH_WARNING"}
+        classification = (
+            "published"
+            if status == "validated" and selection_pass and presentation_pass
+            else "quality-review"
+            if status == "validated" or status == "partial"
+            else "model-rejected"
+        )
         receipt = {"artifact_version": "commentary-v1.2-corpus-result-v1", "reference": entry["reference"], "book": entry["book"], "chapter": int(entry["chapter"]), "status": status, "classification": classification, "error": None if validation.valid else "; ".join(validation.errors), "commentary_path": f"chapters/{_slug(entry['book'], int(entry['chapter']))}/commentary.json" if commentary is not None else None, "raw_response_sha256": sha256_bytes(raw), "raw_response_path": raw_path.relative_to(self.repo_root).as_posix(), "binding_metadata": binding_metadata, "normalization_metadata": conformance_metadata, "audits": audits}
+        if classification == "quality-review" and status == "validated":
+            failure_code = None
+            if not selection_pass:
+                failure_code = (
+                    selection_assessment.diagnostic_code
+                    if selection_assessment is not None
+                    else RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE
+                )
+            elif not presentation_pass:
+                failure_code = (
+                    "PRESENTATION_QUALITY_FAIL"
+                    if presentation_status == "QUALITY_FAIL"
+                    else "PRESENTATION_SAFETY_FAIL"
+                    if presentation_status == "SAFETY_FAIL"
+                    else "PRESENTATION_QUALITY_ASSESSMENT_UNAVAILABLE"
+                )
+            receipt["release_state"] = failure_code or RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE
+            if not selection_pass:
+                receipt["reason"] = (
+                    "; ".join(selection_assessment.reasons)
+                    if selection_assessment is not None and selection_assessment.reasons
+                    else "selection sufficiency assessment is unavailable or did not pass"
+                )
+            elif presentation_status in {"QUALITY_FAIL", "SAFETY_FAIL"}:
+                receipt["reason"] = "; ".join(
+                    audits["presentation_quality"]["assessment"].get("reasons", [])
+                ) or "presentation quality gate did not pass"
+            else:
+                receipt["reason"] = "presentation quality assessment is unavailable"
         if classification == "model-rejected":
             receipt["release_state"] = "MODEL_OUTPUT_REJECTED"
             receipt["reason"] = "renderer output failed validation"
@@ -1406,6 +1543,23 @@ class V12CorpusRunner:
             item.get("audits", {}).get("quality", {}).get("richness_status") != "RICH_ENOUGH"
             for item in renderable_outcomes
         )
+        has_selection_failures = any(
+            item.get("audits", {}).get("selection_sufficiency", {}).get("status")
+            != "PASS"
+            for item in renderable_outcomes
+        )
+        has_presentation_failures = any(
+            item.get("audits", {}).get("presentation_quality", {}).get("status")
+            in {
+                "QUALITY_FAIL",
+                "SAFETY_FAIL",
+                "PRESENTATION_QUALITY_ASSESSMENT_UNAVAILABLE",
+                "NOT_RUN_TECHNICAL_OR_PROVENANCE_FAILURE",
+            }
+            for item in renderable_outcomes
+        )
+        if has_selection_failures or has_presentation_failures:
+            return f"{prefix}_REVIEW_REQUIRED"
         return f"{prefix}_VALIDATED_WITH_WARNINGS" if has_quality_warnings else f"{prefix}_VALIDATED"
 
     def finalize(self, *, run_id: str | None = None) -> dict[str, Any]:

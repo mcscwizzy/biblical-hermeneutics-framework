@@ -19,6 +19,12 @@ from bhf_agent.chapter_commentary.generator import CommentaryGenerator
 from bhf_agent.chapter_commentary.models import GeneratedMetadata, data_gap_fallback_payload
 from bhf_agent.chapter_commentary.richness import audit_chapter
 from bhf_agent.chapter_commentary.richness_clusters import assess_gate_v2, score_synthesis_richness
+from bhf_agent.chapter_commentary.selection_sufficiency import (
+    RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE,
+    RENDERER_SELECTION_COLLAPSE,
+    SELECTION_SUFFICIENCY_VERSION,
+    assess_selection_sufficiency,
+)
 from bhf_agent.config import AgentConfig
 
 from .inputs import prepare_chapter
@@ -53,6 +59,7 @@ from .models import (
     read_json,
     production_root,
     sha256_bytes,
+    sha256_json,
     transition,
     write_json,
     write_immutable,
@@ -478,11 +485,6 @@ class ProductionRunner:
             return {"reference": reference, "state": QUARANTINED, "failure_kind": "CONTENT_FAILURE", "rejection_codes": _codes(messages)}
         accepted_payload = validation.commentary.to_dict() if validation.commentary else payload
         accepted_payload["status"] = "validated"
-        accepted_path = self.repo_root / ".bhf-data" / "bhf-commentary-production" / "v1" / chapter["expected_artifacts"]["accepted"]
-        record["accepted_path"] = _relative(self.repo_root, accepted_path)
-        write_json(accepted_path, accepted_payload, immutable=True)
-        self._set_record(state, reference, ACCEPTED)
-        self._save_state(state)
         blocks = [block for section in validation.commentary.sections for block in section.blocks] if validation.commentary else []
         audit = audit_chapter(chapter["book"], int(chapter["chapter"]), validation.commentary, prepared.bundle)
         score = score_synthesis_richness(prepared.synthesis.synthesis_units, evidence_items=prepared.bundle.evidence_items, consumed_synthesis_ids=[sid for block in blocks for sid in block.synthesis_ids], blocks=blocks, passage_ref=reference)
@@ -512,6 +514,93 @@ class ProductionRunner:
             write_json(gate_path, gate_value, immutable=True)
         record["gate_path"] = _relative(self.repo_root, gate_path)
         record["gate_status"] = assessment.outcome
+
+        chapter_data = bible.resolve_chapter(chapter["book"], int(chapter["chapter"]))
+        passage_text = bible.passage_text(chapter_data.get("verses", []))
+        selection_assessment = assess_selection_sufficiency(
+            prepared.synthesis,
+            prepared.bundle,
+            validation.commentary,
+            passage_text=passage_text,
+            source_identity={
+                **chapter["input_identity"],
+                "commentary_sha256": sha256_json(accepted_payload),
+                "raw_response_sha256": record.get("raw_sha256"),
+            },
+            renderer_prompt_version=chapter["input_identity"]["prompt_version"],
+            renderer_schema_version=chapter["input_identity"]["commentary_schema_version"],
+        )
+        selection_path = (
+            production_root(self.repo_root)
+            / chapter["expected_artifacts"].get(
+                "selection_assessment",
+                f"runs/{manifest['run_id']}/batches/{batch['batch_id']}/selection-assessments/attempt-001/{slug(chapter['book'], int(chapter['chapter']))}.json",
+            )
+        )
+        selection_receipt = {
+            "artifact_version": f"{SELECTION_SUFFICIENCY_VERSION}-receipt-v1",
+            "reference": reference,
+            "input_identity": chapter["input_identity"],
+            "technical_validity": "PASS",
+            "provenance_validity": "PASS",
+            "selection_sufficiency": selection_assessment.to_dict(),
+            "presentation_quality": {
+                "contract_version": "commentary-richness-gate-v2.1",
+                "status": assessment.outcome,
+                "assessment": assessment.to_dict(),
+            },
+        }
+        write_json(selection_path, selection_receipt, immutable=True)
+        record["selection_assessment_path"] = _relative(self.repo_root, selection_path)
+        record["selection_sufficiency_status"] = selection_assessment.status
+
+        if selection_assessment.status != "PASS":
+            failure_code = (
+                selection_assessment.diagnostic_code
+                or RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE
+            )
+            messages = selection_assessment.reasons or [
+                "selection sufficiency assessment did not pass"
+            ]
+            if selection_assessment.status == "FAIL":
+                self._set_record(state, reference, GATE_QUALITY_FAIL)
+                self._quarantine(
+                    manifest,
+                    batch,
+                    chapter,
+                    record,
+                    [failure_code],
+                    messages,
+                    generation_failure=False,
+                    gate_failure=True,
+                )
+                self._save_state(state)
+                return {
+                    "reference": reference,
+                    "state": GATE_QUALITY_FAIL,
+                    "gate_status": assessment.outcome,
+                    "selection_status": selection_assessment.status,
+                    "rejection_codes": [failure_code],
+                }
+            self._quarantine(
+                manifest,
+                batch,
+                chapter,
+                record,
+                [failure_code],
+                messages,
+                generation_failure=False,
+                gate_failure=True,
+            )
+            self._set_record(state, reference, QUARANTINED)
+            self._save_state(state)
+            return {
+                "reference": reference,
+                "state": QUARANTINED,
+                "gate_status": assessment.outcome,
+                "selection_status": selection_assessment.status,
+                "rejection_codes": [failure_code],
+            }
         if assessment.outcome == "QUALITY_FAIL":
             self._set_record(state, reference, GATE_QUALITY_FAIL)
             self._quarantine(manifest, batch, chapter, record, ["GATE_QUALITY_FAIL"], ["Gate v2.1 quality failure"], generation_failure=False, gate_failure=True)
@@ -522,6 +611,10 @@ class ProductionRunner:
             self._set_record(state, reference, QUARANTINED)
             self._save_state(state)
             return {"reference": reference, "state": QUARANTINED, "gate_status": assessment.outcome}
+        accepted_path = self.repo_root / ".bhf-data" / "bhf-commentary-production" / "v1" / chapter["expected_artifacts"]["accepted"]
+        record["accepted_path"] = _relative(self.repo_root, accepted_path)
+        write_json(accepted_path, accepted_payload, immutable=True)
+        self._set_record(state, reference, ACCEPTED)
         gate_state = GATE_WARNING if assessment.outcome == "PASS_WITH_WARNING" else GATE_PASS
         self._set_record(state, reference, gate_state)
         if (

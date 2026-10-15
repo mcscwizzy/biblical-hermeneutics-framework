@@ -37,6 +37,13 @@ from bhf_agent.chapter_commentary.release import (
     RELEASE_MANIFEST_FILENAME,
 )
 from bhf_agent.chapter_commentary.storage import load_commentary, save_commentary
+from bhf_agent.chapter_commentary.selection_sufficiency import (
+    LEGACY_SELECTION_EXCEPTION_VERSION,
+    RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE,
+    SELECTION_SUFFICIENCY_VERSION,
+    validate_legacy_selection_exception,
+    validate_selection_assessment,
+)
 from framework.commentary.production.models import canonical_json, sha256_json
 
 
@@ -178,7 +185,7 @@ def _prior_namespace(artifact: Path, manifest: dict[str, Any]) -> Path:
     return path
 
 
-def _row_is_publishable(row: dict[str, Any]) -> bool:
+def _row_is_technically_publishable(row: dict[str, Any]) -> bool:
     return all(
         (
             row.get("generated") is True,
@@ -194,6 +201,36 @@ def _row_is_publishable(row: dict[str, Any]) -> bool:
             row.get("parse_status") == "JSON_OBJECT",
         )
     )
+
+
+def _row_is_publishable(
+    row: dict[str, Any],
+    *,
+    selection_assessment: dict[str, Any] | None = None,
+    selection_source_identity: dict[str, Any] | None = None,
+    legacy_selection_exception: dict[str, Any] | None = None,
+) -> bool:
+    if not _row_is_technically_publishable(row):
+        return False
+    assessment = (
+        selection_assessment
+        if selection_assessment is not None
+        else row.get("selection_sufficiency")
+    )
+    if isinstance(assessment, dict) and assessment.get("status") == "PASS":
+        return validate_selection_assessment(
+            assessment, selection_source_identity
+        )["valid"]
+    if isinstance(assessment, dict) and assessment.get("status") == "FAIL":
+        return False
+    if isinstance(assessment, dict) and assessment.get("status") != "ASSESSMENT_UNAVAILABLE":
+        return False
+    if not selection_source_identity:
+        return False
+    exception = validate_legacy_selection_exception(
+        legacy_selection_exception, selection_source_identity
+    )
+    return exception["valid"]
 
 
 def _public_state(row: dict[str, Any], publishable: bool) -> tuple[str, str]:
@@ -353,6 +390,7 @@ def _manifest(
     artifact: Path,
     artifact_info: dict[str, Any],
     corpus_files: dict[str, str],
+    selection_results: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
     states = []
     for row in rows:
@@ -376,6 +414,29 @@ def _manifest(
             item["source_normalized_sha256"] = published[ref][1]
             if row.get("failure_classification") == "UNDER_EXPLANATION":
                 item["content_gap"] = "UNDER_EXPLANATION"
+        selection_result = selection_results.get(ref)
+        if selection_result is not None:
+            item["selection_sufficiency"] = {
+                "assessment_version": SELECTION_SUFFICIENCY_VERSION,
+                "status": selection_result["status"],
+            }
+            if selection_result["status"] in {
+                "ASSESSMENT_UNAVAILABLE",
+                "FAIL",
+            }:
+                item["selection_sufficiency"]["diagnostic_code"] = (
+                    RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE
+                    if selection_result["status"] == "ASSESSMENT_UNAVAILABLE"
+                    else "RENDERER_SELECTION_COLLAPSE"
+                )
+            item["presentation_quality"] = selection_result.get(
+                "presentation_quality",
+                {"status": "NOT_ASSESSED"},
+            )
+            if selection_result.get("legacy_selection_exception"):
+                item["legacy_selection_exception"] = selection_result[
+                    "legacy_selection_exception"
+                ]
         states.append(item)
     counts = Counter(item["release_state"] for item in states)
     gaps = Counter(
@@ -399,6 +460,16 @@ def _manifest(
         "published_chapter_count": len(published),
         "unavailable_not_published_count": len(rows) - len(published),
         "publication_eligibility_policy_version": POLICY_VERSION,
+        "selection_sufficiency_gate_version": SELECTION_SUFFICIENCY_VERSION,
+        "legacy_selection_exception_count": sum(
+            bool(value.get("legacy_selection_exception"))
+            for value in selection_results.values()
+        ),
+        "legacy_selection_exception_contract": (
+            LEGACY_SELECTION_EXCEPTION_VERSION
+            if any(value.get("legacy_selection_exception") for value in selection_results.values())
+            else None
+        ),
         "corpus_checksum_root_identity": sha256_json(corpus_files),
         "chapter_publication_index": states,
         "content_gap_summary": {
@@ -420,6 +491,7 @@ def promote_release(
     output: Path = DEFAULT_OUTPUT,
     *,
     current_evidence_loader: Callable[[str, int], Any] | None = None,
+    legacy_selection_exceptions: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Promote exactly the proven publication intersection into ``output``."""
 
@@ -447,11 +519,89 @@ def promote_release(
 
     staged_commentaries: dict[str, Any] = {}
     published: dict[str, tuple[str, str]] = {}
+    selection_results: dict[str, dict[str, Any]] = {}
     for row in rows:
-        if not _row_is_publishable(row):
+        technical_status = _row_is_technically_publishable(row)
+        legacy_presentation_status = (
+            "PASS"
+            if row.get("readability_result") == "PASS"
+            and row.get("normal_reader_usefulness") == "PASS"
+            and row.get("high_dump") in (False, None)
+            else "FAIL"
+        )
+        if not technical_status:
+            selection_results[str(row["reference"])] = {
+                "status": "NOT_RUN_TECHNICAL_OR_PROVENANCE_FAILURE",
+                "presentation_quality": {
+                    "contract_version": POLICY_VERSION,
+                    "status": legacy_presentation_status,
+                },
+            }
             continue
         source_dir = _source_dir_for(row, artifact, prior)
         commentary = _validate_source(row, source_dir, str(row.get("source") or ""), current_evidence_loader)
+        validation = _read(source_dir / "validation.json")
+        assessment = row.get("selection_sufficiency") or validation.get(
+            "selection_sufficiency"
+        )
+        normalized_path = source_dir / "normalized.json"
+        normalized = _read(normalized_path)
+        selection_source_identity = {
+            "reference": row["reference"],
+            "evidence_hash": row.get("evidence_hash"),
+            "synthesis_hash": row.get("synthesis_hash"),
+            "raw_response_sha256": row.get("raw_response_sha256"),
+            "commentary_sha256": _sha256_json(normalized),
+        }
+        legacy_exception = (legacy_selection_exceptions or {}).get(
+            str(row["reference"])
+        )
+        if not _row_is_publishable(
+            row,
+            selection_assessment=assessment,
+            selection_source_identity=selection_source_identity,
+            legacy_selection_exception=legacy_exception,
+        ):
+            selection_results[str(row["reference"])] = {
+                "status": (
+                    assessment.get("status")
+                    if isinstance(assessment, dict)
+                    else "ASSESSMENT_UNAVAILABLE"
+                ),
+                "diagnostic_code": (
+                    assessment.get("diagnostic_code")
+                    if isinstance(assessment, dict)
+                    else RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE
+                ),
+                "presentation_quality": {
+                    "contract_version": POLICY_VERSION,
+                    "status": legacy_presentation_status,
+                },
+            }
+            continue
+        accepted_exception = None
+        if not isinstance(assessment, dict) or assessment.get("status") != "PASS":
+            accepted_exception = validate_legacy_selection_exception(
+                legacy_exception, selection_source_identity
+            )["exception"]
+            selection_status = "ASSESSMENT_UNAVAILABLE"
+        else:
+            selection_status = "PASS"
+        selection_results[str(row["reference"])] = {
+            "status": selection_status,
+            "diagnostic_code": (
+                assessment.get("diagnostic_code")
+                if selection_status == "FAIL" and isinstance(assessment, dict)
+                else RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE
+                if selection_status == "ASSESSMENT_UNAVAILABLE"
+                else None
+            ),
+            "presentation_quality": {
+                "contract_version": POLICY_VERSION,
+                "status": legacy_presentation_status,
+            },
+            "legacy_selection_exception": accepted_exception,
+        }
         filename = f"{str(row['book']).lower().replace(' ', '_')}_{int(row['chapter']):03d}.json"
         staged_commentaries[str(row["reference"])] = commentary
         published[str(row["reference"])] = (filename, _sha256(source_dir / "normalized.json"))
@@ -467,7 +617,9 @@ def promote_release(
             path.name: _sha256(path)
             for path in sorted(stage.glob("*.json"))
         }
-        release_manifest = _manifest(rows, published, {}, artifact, info, corpus_files)
+        release_manifest = _manifest(
+            rows, published, {}, artifact, info, corpus_files, selection_results
+        )
         _write_json(stage / RELEASE_MANIFEST_FILENAME, release_manifest)
         checksum_files = {
             path.name: _sha256(path)
@@ -496,8 +648,25 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--artifact", type=Path, default=DEFAULT_ARTIFACT)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument(
+        "--legacy-selection-exceptions",
+        type=Path,
+        help="versioned, source-bound human review records for legacy artifacts without locked selection context",
+    )
     args = parser.parse_args()
-    result = promote_release(args.artifact, args.output)
+    exceptions = None
+    if args.legacy_selection_exceptions:
+        document = _read(args.legacy_selection_exceptions)
+        exceptions = document.get("exceptions") if isinstance(document, dict) else None
+        if not isinstance(exceptions, dict):
+            raise PromotionError(
+                "legacy selection exception file must contain an exceptions object"
+            )
+    result = promote_release(
+        args.artifact,
+        args.output,
+        legacy_selection_exceptions=exceptions,
+    )
     print(json.dumps({"status": result["status"], "release": RELEASE, "output": result["output"], "published": result["manifest"].get("published_chapter_count")}, sort_keys=True))
 
 

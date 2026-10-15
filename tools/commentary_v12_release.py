@@ -23,6 +23,14 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from bhf_agent.chapter_commentary.selection_sufficiency import (
+    LEGACY_SELECTION_EXCEPTION_VERSION,
+    RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE,
+    SELECTION_SUFFICIENCY_VERSION,
+    validate_legacy_selection_exception,
+    validate_selection_assessment,
+)
+
 RELEASE = "commentary-v1.2"
 RELEASE_ROOT = ROOT / ".bhf-data/bhf-commentary-v1.2"
 RUNNER_ROOT = ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/corpus-runner"
@@ -128,14 +136,28 @@ def _validate_existing_release(canonical: dict[str, dict[str, Any]]) -> tuple[di
 
 
 def _effective_audits(result_path: Path, result: dict[str, Any]) -> dict[str, Any]:
-    audits = result.get("audits")
-    if not isinstance(audits, dict):
-        sidecar = result_path.parent / "finalize-audit.json"
-        audits = _read(sidecar) if sidecar.is_file() else {}
-    return audits if isinstance(audits, dict) else {}
+    embedded = result.get("audits")
+    audits = dict(embedded) if isinstance(embedded, dict) else {}
+    sidecar = result_path.parent / "finalize-audit.json"
+    if sidecar.is_file():
+        sidecar_audits = _read(sidecar)
+        if isinstance(sidecar_audits, dict):
+            # A later deterministic finalize audit may add the selection gate
+            # to an immutable older receipt. Its fields supersede embedded
+            # fields of the same name, while preserving the receipt's other
+            # original technical/provenance audits.
+            audits.update(sidecar_audits)
+    return audits
 
 
-def _validate_audits(reference: str, audits: dict[str, Any]) -> None:
+def _validate_audits(
+    reference: str,
+    audits: dict[str, Any],
+    *,
+    require_selection: bool = False,
+    legacy_exception: dict[str, Any] | None = None,
+    selection_source_identity: dict[str, Any] | None = None,
+) -> dict[str, Any] | None:
     for key in ("ancestry", "provenance_binding", "envelope"):
         item = audits.get(key)
         if not isinstance(item, dict) or item.get("valid") is not True:
@@ -143,12 +165,81 @@ def _validate_audits(reference: str, audits: dict[str, Any]) -> None:
     envelope = audits["envelope"].get("ancestry_audit", {})
     if envelope.get("invented_evidence_ids") or envelope.get("invented_synthesis_ids"):
         raise ReconciliationError(f"{reference}: provenance envelope invented an identity")
+    if not require_selection:
+        return None
+    selection = audits.get("selection_sufficiency")
+    if isinstance(selection, dict) and selection.get("status") == "PASS":
+        verified = validate_selection_assessment(
+            selection, selection_source_identity
+        )
+        if not verified["valid"]:
+            raise ReconciliationError(
+                f"{reference}: recorded selection PASS is invalid or belongs to another artifact: "
+                + ", ".join(verified["reasons"])
+            )
+        return None
+    if isinstance(selection, dict) and selection.get("status") == "FAIL":
+        code = selection.get("diagnostic_code") or "RENDERER_SELECTION_COLLAPSE"
+        raise ReconciliationError(f"{reference}: {code}; selection gate did not pass")
+    if isinstance(selection, dict) and selection.get("status") != "ASSESSMENT_UNAVAILABLE":
+        raise ReconciliationError(
+            f"{reference}: recorded selection assessment has an invalid status"
+        )
+    if not selection_source_identity or any(
+        not value for value in selection_source_identity.values()
+    ):
+        raise ReconciliationError(
+            f"{reference}: {RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE}; "
+            "locked output identity is incomplete for legacy review"
+        )
+    exception_result = validate_legacy_selection_exception(
+        legacy_exception,
+        selection_source_identity or {},
+    )
+    if exception_result["valid"]:
+        return exception_result["exception"]
+    details = ", ".join(exception_result["reasons"])
+    raise ReconciliationError(
+        f"{reference}: {RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE}; "
+        "human-reviewed legacy selection exception required "
+        f"({details}); expected {LEGACY_SELECTION_EXCEPTION_VERSION}"
+    )
+
+
+def _validate_presentation_audit(
+    reference: str, audits: dict[str, Any]
+) -> tuple[bool, str | None]:
+    """Require an independent recorded Gate v2.1 pass for new publication."""
+
+    presentation = audits.get("presentation_quality")
+    status = presentation.get("status") if isinstance(presentation, dict) else None
+    assessment = presentation.get("assessment") if isinstance(presentation, dict) else None
+    if status in {"QUALITY_FAIL", "SAFETY_FAIL"}:
+        raise ReconciliationError(
+            f"{reference}: {status}; presentation quality gate did not pass"
+        )
+    valid = (
+        isinstance(presentation, dict)
+        and presentation.get("contract_version") == "commentary-richness-gate-v2.1"
+        and status in {"PASS", "PASS_WITH_WARNING"}
+        and isinstance(assessment, dict)
+        and assessment.get("outcome") == status
+        and assessment.get("safety_pass") is True
+    )
+    if valid:
+        return True, None
+    return (
+        False,
+        f"{reference}: PRESENTATION_QUALITY_ASSESSMENT_UNAVAILABLE; "
+        "a recorded Gate v2.1 PASS or PASS_WITH_WARNING is required",
+    )
 
 
 def _validate_runner_result(
     result_path: Path,
     canonical: dict[str, dict[str, Any]],
     records: dict[str, dict[str, Any]],
+    legacy_selection_exceptions: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     result = _read(result_path)
     if not isinstance(result, dict) or result.get("artifact_version") != "commentary-v1.2-corpus-result-v1":
@@ -206,6 +297,9 @@ def _validate_runner_result(
                     raise ReconciliationError(f"renderer receipt mismatch: {ref}")
 
     artifact_hash = None
+    selection_exception = None
+    selection_unavailable_reason = None
+    presentation_unavailable_reason = None
     commentary_path_value = result.get("commentary_path")
     if classification in {"published", "quality-review"}:
         if not isinstance(commentary_path_value, str) or Path(commentary_path_value).parts[:1] != ("chapters",):
@@ -222,7 +316,34 @@ def _validate_runner_result(
         if metadata.get("commentary_schema_version") != "1.2" or metadata.get("commentary_prompt_version") != "1.8" or metadata.get("model") != "gpt-5.6-terra":
             raise ReconciliationError(f"commentary source contract mismatch: {ref}")
         audits = _effective_audits(result_path, result)
-        _validate_audits(ref, audits)
+        artifact_hash = _sha256(commentary_path)
+        selection_source_identity = {
+            "reference": ref,
+            "evidence_hash": metadata.get("evidence_hash"),
+            "synthesis_hash": metadata.get("synthesis_hash"),
+            "prompt_version": metadata.get("commentary_prompt_version"),
+            "commentary_schema_version": metadata.get("commentary_schema_version"),
+            "raw_response_sha256": result.get("raw_response_sha256"),
+            "commentary_sha256": _sha256_json(_read(commentary_path)),
+        }
+        try:
+            selection_exception = _validate_audits(
+                ref,
+                audits,
+                require_selection=classification == "published",
+                legacy_exception=(legacy_selection_exceptions or {}).get(ref),
+                selection_source_identity=selection_source_identity,
+            )
+        except ReconciliationError as exc:
+            if RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE not in str(exc):
+                raise
+            selection_unavailable_reason = str(exc)
+        if classification == "published":
+            presentation_pass, presentation_unavailable_reason = (
+                _validate_presentation_audit(ref, audits)
+            )
+            if presentation_pass:
+                presentation_unavailable_reason = None
         binding = result.get("binding_metadata", {})
         input_metadata_path = chapter_root / "renderer-input/metadata.json"
         input_metadata = _read(input_metadata_path) if input_metadata_path.is_file() else {}
@@ -231,7 +352,6 @@ def _validate_runner_result(
                 raise ReconciliationError(f"source lineage mismatch: {ref} {key}")
         if binding.get("binding_hash") != input_metadata.get("binding_hash"):
             raise ReconciliationError(f"provenance binding mismatch: {ref}")
-        artifact_hash = _sha256(commentary_path)
     elif classification == "model-rejected":
         if result.get("release_state") not in (None, "MODEL_OUTPUT_REJECTED") or result.get("commentary_path") is not None:
             raise ReconciliationError(f"invalid model-rejected receipt: {ref}")
@@ -242,6 +362,10 @@ def _validate_runner_result(
         "model-rejected": "MODEL_OUTPUT_REJECTED",
         "quality-review": "QUALITY_REVIEW_REQUIRED",
     }[classification]
+    if classification == "published" and (
+        selection_unavailable_reason or presentation_unavailable_reason
+    ):
+        public_state = "QUALITY_REVIEW_REQUIRED"
     row = {
         "reference": ref,
         "book": expected["book"],
@@ -262,17 +386,56 @@ def _validate_runner_result(
             "synthesis_hash": result.get("synthesis_hash") or (_read(chapter_root / "commentary.json").get("generated_metadata", {}).get("synthesis_hash") if (chapter_root / "commentary.json").is_file() else None),
         },
     }
+    if selection_unavailable_reason or presentation_unavailable_reason:
+        row["reason"] = (
+            RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE
+            if selection_unavailable_reason
+            else "PRESENTATION_QUALITY_ASSESSMENT_UNAVAILABLE"
+        )
+        if selection_unavailable_reason:
+            row["selection_assessment_unavailable_reason"] = selection_unavailable_reason
+        if presentation_unavailable_reason:
+            row["presentation_assessment_unavailable_reason"] = presentation_unavailable_reason
     if artifact_hash:
         row["artifact_sha256"] = artifact_hash
-        if classification == "published":
+        if classification == "published" and public_state == "PUBLISHED":
             row["filename"] = _slug(expected) + ".json"
+    if classification in {"published", "quality-review"}:
+        effective_audits = _effective_audits(result_path, result)
+        row["selection_sufficiency"] = effective_audits.get(
+            "selection_sufficiency",
+            {
+                "status": "ASSESSMENT_UNAVAILABLE",
+                "diagnostic_code": RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE,
+            },
+        )
+        if selection_unavailable_reason:
+            row["selection_sufficiency"] = {
+                **row["selection_sufficiency"],
+                "status": "ASSESSMENT_UNAVAILABLE",
+                "diagnostic_code": RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE,
+            }
+        row["presentation_quality"] = effective_audits.get(
+            "presentation_quality",
+            {"status": "PRESENTATION_QUALITY_ASSESSMENT_UNAVAILABLE"},
+        )
+        if presentation_unavailable_reason:
+            row["presentation_quality"] = {
+                **row["presentation_quality"],
+                "status": "PRESENTATION_QUALITY_ASSESSMENT_UNAVAILABLE",
+            }
+    if selection_exception is not None:
+        row["legacy_selection_exception"] = selection_exception
     if raw_path.is_file():
         row["raw_response_sha256"] = _sha256(raw_path)
     records[ref] = row
     return row
 
 
-def build_reconciliation_inventory() -> dict[str, Any]:
+def build_reconciliation_inventory(
+    *,
+    legacy_selection_exceptions: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     """Perform the complete read-only scan used by promotion."""
     from framework.commentary.production.census import canonical_chapters
     from tools.commentary_v12_release_promotion import verify_validation_artifact, _row_is_publishable
@@ -287,7 +450,9 @@ def build_reconciliation_inventory() -> dict[str, Any]:
         runner: dict[str, dict[str, Any]] = {}
         result_paths = sorted(RUNNER_ROOT.glob("runs/*/chapters/*/result.json"))
         for result_path in result_paths:
-            _validate_runner_result(result_path, canonical, runner)
+            _validate_runner_result(
+                result_path, canonical, runner, legacy_selection_exceptions
+            )
         for ref, runner_row in runner.items():
             if historical.get(ref, {}).get("release_state") != runner_row.get("release_state"):
                 raise ReconciliationError(f"promoted package disagrees with corpus-runner state: {ref}")
@@ -311,13 +476,73 @@ def build_reconciliation_inventory() -> dict[str, Any]:
     by_historical = {row["reference"]: row for row in historical_info["population"]}
     for ref, row in historical.items():
         source_row = by_historical.get(ref)
-        expected_state = "PUBLISHED" if source_row and _row_is_publishable(source_row) else source_row and ("NOT_RENDERABLE_SOURCE_LIMITED" if source_row.get("failure_classification") == "NOT_RENDERABLE_SOURCE_LIMITED" or not source_row.get("generated") else "MODEL_OUTPUT_REJECTED" if source_row.get("structural_result") != "ACCEPTED" else "QUALITY_REVIEW_REQUIRED")
+        selection_identity = None
+        selection_exception = None
+        selection_assessment = source_row.get("selection_sufficiency") if source_row else None
+        if source_row and row.get("release_state") == "PUBLISHED":
+            commentary_path = RELEASE_ROOT / str(row.get("filename") or "")
+            if not commentary_path.is_file():
+                raise ReconciliationError(
+                    f"{ref}: published legacy artifact is missing for selection review"
+                )
+            selection_identity = {
+                "reference": ref,
+                "evidence_hash": source_row.get("evidence_hash"),
+                "synthesis_hash": source_row.get("synthesis_hash"),
+                "raw_response_sha256": source_row.get("raw_response_sha256"),
+                "commentary_sha256": _sha256_json(_read(commentary_path)),
+            }
+            exception_result = validate_legacy_selection_exception(
+                (legacy_selection_exceptions or {}).get(ref), selection_identity
+            )
+            if exception_result["valid"]:
+                selection_exception = exception_result["exception"]
+            publishable = _row_is_publishable(
+                source_row,
+                selection_assessment=selection_assessment,
+                selection_source_identity=selection_identity,
+                legacy_selection_exception=(legacy_selection_exceptions or {}).get(ref),
+            )
+            if (
+                isinstance(selection_assessment, dict)
+                and selection_assessment.get("status") == "FAIL"
+            ):
+                code = selection_assessment.get("diagnostic_code") or "RENDERER_SELECTION_COLLAPSE"
+                raise ReconciliationError(
+                    f"{ref}: {code}; selection gate did not pass"
+                )
+            if not publishable and (
+                not isinstance(selection_assessment, dict)
+                or selection_assessment.get("status") == "ASSESSMENT_UNAVAILABLE"
+            ):
+                raise ReconciliationError(
+                    f"{ref}: {RENDERER_SELECTION_ASSESSMENT_UNAVAILABLE}; "
+                    "human-reviewed, source-bound legacy exception required"
+                )
+        else:
+            publishable = bool(
+                source_row and _row_is_publishable(source_row)
+            )
+        expected_state = "PUBLISHED" if source_row and publishable else source_row and ("NOT_RENDERABLE_SOURCE_LIMITED" if source_row.get("failure_classification") == "NOT_RENDERABLE_SOURCE_LIMITED" or not source_row.get("generated") else "MODEL_OUTPUT_REJECTED" if source_row.get("structural_result") != "ACCEPTED" else "QUALITY_REVIEW_REQUIRED")
         if row.get("release_state") != expected_state:
             raise ReconciliationError(f"historical package mismatch: {ref}")
+        if selection_identity is not None:
+            row["selection_sufficiency"] = {
+                "assessment_version": SELECTION_SUFFICIENCY_VERSION,
+                "status": (
+                    selection_assessment.get("status")
+                    if isinstance(selection_assessment, dict)
+                    else "ASSESSMENT_UNAVAILABLE"
+                ),
+            }
+        if selection_exception is not None:
+            row["legacy_selection_exception"] = selection_exception
     runner: dict[str, dict[str, Any]] = {}
     result_paths = sorted(RUNNER_ROOT.glob("runs/*/chapters/*/result.json"))
     for result_path in result_paths:
-        _validate_runner_result(result_path, canonical, runner)
+        _validate_runner_result(
+            result_path, canonical, runner, legacy_selection_exceptions
+        )
     if set(historical) & set(runner):
         raise ReconciliationError("historical package and corpus-runner results overlap")
     if set(historical) | set(runner) != set(canonical):
@@ -358,6 +583,15 @@ def _release_manifest(inventory: dict[str, Any], corpus_files: dict[str, str]) -
         "unavailable_not_published_count": len(rows) - counts.get("PUBLISHED", 0),
         "terminal_state_counts": counts,
         "chapter_publication_index": rows,
+        "selection_sufficiency_gate_version": SELECTION_SUFFICIENCY_VERSION,
+        "legacy_selection_exception_count": sum(
+            "legacy_selection_exception" in row for row in rows
+        ),
+        "legacy_selection_exceptions": [
+            {"reference": row["reference"], **row["legacy_selection_exception"]}
+            for row in rows
+            if "legacy_selection_exception" in row
+        ],
         "historical_release_manifest_identity": historical_manifest.get("manifest_identity"),
         "source_validation_artifact": historical_manifest.get("source_validation_artifact"),
         "source_validation_artifact_identity": historical_manifest.get("source_validation_artifact_identity"),
@@ -377,8 +611,27 @@ def _release_manifest(inventory: dict[str, Any], corpus_files: dict[str, str]) -
     return manifest
 
 
-def promote_full_corpus(output: Path = RELEASE_ROOT) -> dict[str, Any]:
-    inventory = build_reconciliation_inventory()
+def promote_full_corpus(
+    output: Path = RELEASE_ROOT,
+    *,
+    legacy_selection_exceptions: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    output = Path(output)
+    existing_manifest_path = output / MANIFEST_NAME
+    if output.exists() and existing_manifest_path.is_file():
+        existing_manifest = _read(existing_manifest_path)
+        if existing_manifest.get("release") != RELEASE:
+            raise ReconciliationError("existing runtime package has a different release identity")
+        _check_index(output)
+        return {
+            "status": "ALREADY_PROMOTED",
+            "manifest": existing_manifest,
+            "output": str(output),
+            "inventory": None,
+        }
+    inventory = build_reconciliation_inventory(
+        legacy_selection_exceptions=legacy_selection_exceptions
+    )
     stage = Path(tempfile.mkdtemp(prefix=".commentary-v1.2-reconcile-", dir=output.parent))
     try:
         for row in inventory["rows"]:
@@ -424,12 +677,29 @@ def promote_full_corpus(output: Path = RELEASE_ROOT) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("inventory", "promote"))
+    parser.add_argument(
+        "--legacy-selection-exceptions",
+        type=Path,
+        help="versioned, source-bound human review records for legacy artifacts without locked selection context",
+    )
     args = parser.parse_args()
+    exceptions = None
+    if args.legacy_selection_exceptions:
+        document = _read(args.legacy_selection_exceptions)
+        exceptions = document.get("exceptions") if isinstance(document, dict) else None
+        if not isinstance(exceptions, dict):
+            raise ReconciliationError(
+                "legacy selection exception file must contain an exceptions object"
+            )
     if args.command == "inventory":
-        inventory = build_reconciliation_inventory()
+        inventory = build_reconciliation_inventory(
+            legacy_selection_exceptions=exceptions
+        )
         print(json.dumps({"status": "RECONCILIATION_PASS", "canonical_chapters": len(inventory["canonical"]), "runner_terminal_results": inventory["runner_result_count"], "state_counts": inventory["counts"]}, sort_keys=True))
     else:
-        result = promote_full_corpus()
+        result = promote_full_corpus(
+            legacy_selection_exceptions=exceptions
+        )
         print(json.dumps({"status": result["status"], "release": RELEASE, "published": result["manifest"]["published_chapter_count"], "manifest_entries": len(result["manifest"]["chapter_publication_index"])}, sort_keys=True))
 
 

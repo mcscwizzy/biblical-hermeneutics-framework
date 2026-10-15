@@ -38,6 +38,7 @@ def _row_for_manifest(prepared: PreparedChapter, *, run_id: str, batch_id: str) 
         "accepted": f"runs/{run_id}/batches/{batch_id}/accepted/attempt-001/{slug(row['book'], row['chapter'])}.json",
         "rejected": f"runs/{run_id}/batches/{batch_id}/rejected/attempt-001/{slug(row['book'], row['chapter'])}.json",
         "gate": f"runs/{run_id}/batches/{batch_id}/gate/attempt-001/{slug(row['book'], row['chapter'])}.json",
+        "selection_assessment": f"runs/{run_id}/batches/{batch_id}/selection-assessments/attempt-001/{slug(row['book'], row['chapter'])}.json",
         "reader": f"runs/{run_id}/batches/{batch_id}/reader/attempt-001/{slug(row['book'], row['chapter'])}.json",
         "quarantine": f"runs/{run_id}/batches/{batch_id}/quarantine/attempt-001/{slug(row['book'], row['chapter'])}.json",
     }

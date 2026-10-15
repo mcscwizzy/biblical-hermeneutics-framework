@@ -22,7 +22,11 @@ from framework.commentary.v12_config import (
     ensure_v12_prose_renderer_available,
     load_v12_prose_configuration,
 )
-from bhf_agent.chapter_commentary.models import CommentaryGenerationResult
+from bhf_agent.chapter_commentary.models import (
+    ChapterCommentary,
+    CommentaryGenerationResult,
+    GeneratedMetadata,
+)
 
 
 def _canonical():
@@ -509,7 +513,11 @@ def _frozen_finalize_session(runner, references, raw_by_reference=None):
 
 
 def _patch_finalize_dependencies(
-    monkeypatch, invalid_references=(), failure_code="MALFORMED_PROVENANCE_REFERENCE"
+    monkeypatch,
+    invalid_references=(),
+    failure_code="MALFORMED_PROVENANCE_REFERENCE",
+    selection_status="PASS",
+    presentation_status="PASS",
 ):
     def prepared(self, entry, run_root):
         value = _prepared(entry["reference"], unit_count=1)
@@ -531,14 +539,96 @@ def _patch_finalize_dependencies(
     monkeypatch.setattr(V12CorpusRunner, "_prepared_for_finalize", prepared)
     monkeypatch.setattr(corpus_module, "normalize_renderer_payload_v2", normalize)
     monkeypatch.setattr(corpus_module, "normalize_selected_chapter_scope_refs", lambda payload, binding, presentation: (dict(payload), []))
-    monkeypatch.setattr(corpus_module, "validate_chapter_commentary", lambda *args, **kwargs: type("Validation", (), {
-        "valid": True, "partial": False, "commentary": None, "accepted_sections": (), "errors": (),
-    })())
+    def validate(payload, *args, **kwargs):
+        reference = payload["reference"]
+        book, chapter = reference.rsplit(" ", 1)
+        metadata = GeneratedMetadata(
+            evidence_hash=f"evidence-{reference}",
+            evidence_bundle_version="1.1",
+            commentary_schema_version="1.2",
+            commentary_prompt_version="1.8",
+            model="fixture-model",
+            synthesis_hash=f"synthesis-{reference}",
+            synthesis_schema_version="synthesis-v1",
+            synthesis_compiler_version="compiler-v1",
+        )
+        commentary = ChapterCommentary(
+            reference=reference,
+            book=book,
+            chapter=int(chapter),
+            status="validated",
+            evidence_availability="AVAILABLE",
+            generated_metadata=metadata,
+        )
+        return type("Validation", (), {
+            "valid": True,
+            "partial": False,
+            "commentary": commentary,
+            "accepted_sections": (),
+            "errors": (),
+        })()
+
+    monkeypatch.setattr(corpus_module, "validate_chapter_commentary", validate)
     monkeypatch.setattr(corpus_module, "response_ancestry_audit_v2", lambda *args: {"valid": True})
     monkeypatch.setattr(corpus_module, "audit_provenance_binding_v2", lambda *args: {"valid": True})
     monkeypatch.setattr(corpus_module, "audit_ancestry_envelope", lambda *args: {"valid": True})
     monkeypatch.setattr(corpus_module, "audit_chapter", lambda *args: {"richness_status": "RICH_ENOUGH"})
     monkeypatch.setattr(corpus_module, "score_synthesis_richness", lambda *args, **kwargs: type("Score", (), {"to_dict": lambda self: {"richness_status": "RICH_ENOUGH"}})())
+    monkeypatch.setattr(
+        corpus_module,
+        "assess_gate_v2",
+        lambda **kwargs: type(
+            "PresentationAssessment",
+            (),
+            {
+                "outcome": presentation_status,
+                "to_dict": lambda self: {
+                    "outcome": presentation_status,
+                    "safety_pass": presentation_status != "SAFETY_FAIL",
+                    "reasons": (
+                        ["EVIDENCE_DUMP_HIGH"]
+                        if presentation_status == "QUALITY_FAIL"
+                        else []
+                    ),
+                },
+            },
+        )(),
+    )
+    monkeypatch.setattr(
+        corpus_module,
+        "assess_selection_sufficiency",
+        lambda *args, **kwargs: type(
+            "SelectionAssessment",
+            (),
+            {
+                "status": selection_status,
+                "diagnostic_code": (
+                    "RENDERER_SELECTION_COLLAPSE"
+                    if selection_status == "FAIL"
+                    else None
+                ),
+                "reasons": (
+                    ["OMITTED_CORE_IDEA_CLUSTERS: fixture-core"]
+                    if selection_status == "FAIL"
+                    else []
+                ),
+                "to_dict": lambda self: {
+                    "assessment_version": "commentary-renderer-selection-sufficiency-v1",
+                    "status": selection_status,
+                    "diagnostic_code": (
+                        "RENDERER_SELECTION_COLLAPSE"
+                        if selection_status == "FAIL"
+                        else None
+                    ),
+                    "reasons": (
+                        ["OMITTED_CORE_IDEA_CLUSTERS: fixture-core"]
+                        if selection_status == "FAIL"
+                        else []
+                    ),
+                },
+            },
+        )(),
+    )
 
 
 def test_finalize_quarantines_one_invalid_model_output_and_continues(tmp_path, monkeypatch):
@@ -575,6 +665,45 @@ def test_finalize_quarantines_malformed_json_and_continues(tmp_path, monkeypatch
     assert rejected["release_state"] == "MODEL_OUTPUT_REJECTED"
     assert "MALFORMED_RESPONSE_JSON" in rejected["error"]
     assert json.loads((run_root / "chapters/genesis_003/result.json").read_text())["classification"] == "published"
+
+
+def test_finalize_keeps_selection_failure_in_candidate_review_state(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    run_id, run_root, _ = _frozen_finalize_session(runner, ("Genesis 1",))
+    _patch_finalize_dependencies(monkeypatch, selection_status="FAIL")
+
+    report = runner.finalize(run_id=run_id)
+    result = report["chapters"][0]
+    assert result["status"] == "validated"
+    assert result["classification"] == "quality-review"
+    assert result["release_state"] == "RENDERER_SELECTION_COLLAPSE"
+    assert result["audits"]["technical_validity"]["status"] == "PASS"
+    assert result["audits"]["provenance_validity"]["status"] == "PASS"
+    assert result["audits"]["selection_sufficiency"]["status"] == "FAIL"
+    assert result["audits"]["presentation_quality"]["status"] == "PASS"
+    assert "commentary.json" in result["commentary_path"]
+    assert V12CorpusRunner._batch_classification(
+        {"batch_number": 6}, [result]
+    ) == "V1_2_CORPUS_BATCH_06_REVIEW_REQUIRED"
+
+
+def test_finalize_keeps_presentation_failure_separate_from_selection_pass(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    run_id, _, _ = _frozen_finalize_session(runner, ("Genesis 1",))
+    _patch_finalize_dependencies(
+        monkeypatch,
+        selection_status="PASS",
+        presentation_status="QUALITY_FAIL",
+    )
+
+    result = runner.finalize(run_id=run_id)["chapters"][0]
+    assert result["status"] == "validated"
+    assert result["classification"] == "quality-review"
+    assert result["release_state"] == "PRESENTATION_QUALITY_FAIL"
+    assert result["audits"]["technical_validity"]["status"] == "PASS"
+    assert result["audits"]["provenance_validity"]["status"] == "PASS"
+    assert result["audits"]["selection_sufficiency"]["status"] == "PASS"
+    assert result["audits"]["presentation_quality"]["status"] == "QUALITY_FAIL"
 
 
 def test_finalize_ancestry_model_failure_uses_model_rejection_taxonomy(tmp_path, monkeypatch):
