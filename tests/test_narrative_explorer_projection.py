@@ -264,6 +264,33 @@ def test_external_items_require_their_own_overlapping_verse_anchor():
     assert next(entry for entry in result["coverage"] if entry["domain"] == "maps")["state"] == "not_represented"
 
 
+def test_map_navigation_marks_collection_or_kml_destinations_for_client_side_selection():
+    route = {
+        "id": "wilderness-route",
+        "name": "Wilderness route",
+        "marker_kind": "route",
+        "scripture_links": [
+            {
+                "book": "Exodus",
+                "chapter": 3,
+                "verse_start": 1,
+                "verse_end": 4,
+                "relationship_type": "contextual",
+            }
+        ],
+    }
+    result = _project(
+        "Exodus 3",
+        maps=_lookup("maps", records=[_map_place("midian", "Midian", "Exodus 3:1-2"), route]),
+    )
+
+    destinations = {entry["target_id"]: entry for entry in result["navigation"]}
+    assert destinations["midian"]["href"] == "/api/maps/biblical-places"
+    assert destinations["midian"]["selection_required"] is True
+    assert destinations["wilderness-route"]["href"] == "/api/maps/routes/wilderness-route.kml"
+    assert destinations["wilderness-route"]["selection_required"] is True
+
+
 def test_exodus_3_physical_map_items_retain_uncertain_horeb_identification():
     midian = _map_place(
         "midian",

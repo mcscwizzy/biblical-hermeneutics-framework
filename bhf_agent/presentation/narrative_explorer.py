@@ -126,9 +126,13 @@ class NavigationDestination:
     kind: str
     target_id: str
     href: str
+    selection_required: bool = False
 
     def to_dict(self) -> dict[str, Any]:
-        return _jsonable(asdict(self))
+        result = asdict(self)
+        if not self.selection_required:
+            result.pop("selection_required", None)
+        return _jsonable(result)
 
 
 @dataclass(frozen=True)
@@ -435,6 +439,8 @@ def validate_projection(value: Mapping[str, Any]) -> None:
                 for key in ("id", "kind", "target_id", "href")
             ):
                 raise ValueError("projection item navigation has an invalid shape")
+            if "selection_required" in item_navigation and type(item_navigation["selection_required"]) is not bool:
+                raise ValueError("projection item navigation selection state has an invalid shape")
         if item.get("coordinates_displayable") is True:
             coordinates = item.get("stored_coordinates")
             if (
@@ -496,6 +502,8 @@ def validate_projection(value: Mapping[str, Any]) -> None:
             for key in ("id", "kind", "target_id", "href")
         ):
             raise ValueError("projection navigation has an invalid shape")
+        if "selection_required" in destination and type(destination["selection_required"]) is not bool:
+            raise ValueError("projection navigation selection state has an invalid shape")
         if destination["id"] in navigation_ids:
             raise ValueError("projection navigation IDs must be unique")
         navigation_ids.add(destination["id"])
@@ -1324,23 +1332,29 @@ def _external_sections(domain: Domain, record: Mapping[str, Any], geography_kind
 
 def _external_navigation(domain: Domain, record: Mapping[str, Any], item_id: str) -> NavigationDestination:
     quoted_id = quote(item_id, safe="-._~")
+    selection_required = False
     if domain == "archaeology":
         kind, href = "archaeology_item", f"/api/archaeology/items/{quoted_id}"
     else:
         record_kind = _external_record_kind(record, domain)
         if record_kind == "map_route":
             kind, href = "map_route", f"/api/maps/routes/{quoted_id}.kml"
+            selection_required = True
         elif record_kind == "map_place":
             kind, href = "map_place", "/api/maps/biblical-places"
+            selection_required = True
         elif record_kind == "map_manuscript":
             kind, href = "map_manuscript", "/api/maps/manuscripts"
+            selection_required = True
         else:
             kind, href = "map_record", "/api/maps/catalog"
+            selection_required = True
     return NavigationDestination(
         id=f"navigation:{domain}:{item_id}",
         kind=kind,
         target_id=item_id,
         href=href,
+        selection_required=selection_required,
     )
 
 

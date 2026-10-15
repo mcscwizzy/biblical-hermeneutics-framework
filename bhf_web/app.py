@@ -53,6 +53,7 @@ from .routes.maps import register_map_routes
 from .routes.archaeology import register_archaeology_routes
 from .routes.commentary import register_commentary_routes
 from .routes.commentary_coverage import register_commentary_coverage_routes
+from .routes.narrative_explorer import register_narrative_explorer_routes
 from .routes.study import register_study_routes
 from .offline import build_offline_manifest, build_offline_pack
 from .runtime import load_cors_origins, load_runtime_config
@@ -506,6 +507,7 @@ def create_app() -> FastAPI:
     register_canonical_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_canonical_editor_routes(web_app, templates=templates)
     register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
+    register_narrative_explorer_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_archaeology_routes(web_app, templates=templates)
     register_commentary_routes(web_app, database_path=str(COMMENTARY_DB_PATH))
     register_commentary_coverage_routes(
