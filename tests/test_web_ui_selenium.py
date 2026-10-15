@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import asyncio
+import os
 import shutil
 import socket
 import tempfile
@@ -197,6 +199,155 @@ class WebUiSeleniumTests(unittest.TestCase):
             lambda driver: "John 2" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
         )
         self.assertFalse(self.driver.find_element(By.ID, "reader-search-results").is_displayed())
+
+
+@unittest.skipUnless(
+    HAS_SELENIUM and HAS_WEB_DEPS and HAS_UVICORN and shutil.which("firefox"),
+    "Firefox, selenium, uvicorn, and the web app dependencies are required for browser smoke tests.",
+)
+class NarrativeExplorerWebUiTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls._tmpdir = tempfile.TemporaryDirectory()
+        cls._db_path = Path(cls._tmpdir.name) / "study.sqlite"
+        initialize_database(cls._db_path)
+        cls._db_patch = patch.object(web_app_module, "STUDY_DB_PATH", cls._db_path)
+        cls._db_patch.start()
+        cls._environment_patch = patch.dict(os.environ, {
+            "BHF_NARRATIVE_EXPLORER_ENABLED": "1",
+            "BHF_CKL_ROOT": str(Path(__file__).resolve().parents[1] / "framework" / "canonical_library"),
+        })
+        cls._environment_patch.start()
+        cls._app = web_app_module.create_app()
+        import httpx
+
+        async def warm_narrative_explorer():
+            async with httpx.AsyncClient(
+                transport=httpx.ASGITransport(app=cls._app),
+                base_url="http://testserver",
+            ) as client:
+                response = await client.get("/api/narrative-explorer/v1/passages/John/1")
+                if response.status_code != 200:
+                    raise AssertionError(f"NE-3 John 1 prewarm returned HTTP {response.status_code}")
+
+        asyncio.run(warm_narrative_explorer())
+        cls._port = _free_port()
+        cls._base_url = f"http://127.0.0.1:{cls._port}"
+        cls._server_runner = Server(Config(
+            cls._app,
+            host="127.0.0.1",
+            port=cls._port,
+            log_level="warning",
+            access_log=False,
+        ))
+        cls._thread = threading.Thread(target=cls._server_runner.run, daemon=True)
+        cls._thread.start()
+        _wait_for_url(f"{cls._base_url}/api/health")
+
+    @classmethod
+    def tearDownClass(cls):
+        if getattr(cls, "_server_runner", None) is not None:
+            cls._server_runner.should_exit = True
+        if getattr(cls, "_thread", None) is not None:
+            cls._thread.join(timeout=10)
+        if getattr(cls, "_environment_patch", None) is not None:
+            cls._environment_patch.stop()
+        if getattr(cls, "_db_patch", None) is not None:
+            cls._db_patch.stop()
+        if getattr(cls, "_tmpdir", None) is not None:
+            cls._tmpdir.cleanup()
+
+    def setUp(self):
+        options = FirefoxOptions()
+        options.add_argument("-headless")
+        try:
+            self.driver = webdriver.Firefox(options=options)
+        except Exception as exc:  # pragma: no cover - depends on local browser setup
+            raise unittest.SkipTest(f"Firefox WebDriver could not start: {exc}") from exc
+        self.driver.set_page_load_timeout(90)
+        self.driver.set_script_timeout(90)
+
+    def tearDown(self):
+        self.driver.quit()
+
+    def test_feature_flagged_explorer_uses_desktop_dock_and_mobile_sheet(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        wait = WebDriverWait(self.driver, 90)
+        self.driver.set_window_size(1440, 1200)
+        self.driver.get(self._base_url + "/")
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
+        entry = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
+        self.assertEqual(entry.text, "Explore the Narrative")
+        self.driver.execute_script(
+            """
+            window.__ne4ExplorerMetrics = [];
+            document.addEventListener('bhf:narrative-explorer-metrics', event => window.__ne4ExplorerMetrics.push(event.detail));
+            """,
+        )
+        self.driver.save_screenshot("/tmp/ne4-narrative-explorer-desktop.png")
+        entry.send_keys(Keys.ENTER)
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        cards = self.driver.find_elements(By.CSS_SELECTOR, ".narrative-explorer-section")
+        self.assertEqual(len(cards), 6)
+        self.assertIn("John 1", self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
+        self.assertGreater(len(self.driver.find_elements(By.CSS_SELECTOR, ".narrative-explorer-item")), 0)
+        self.assertLessEqual(
+            self.driver.execute_script("return document.documentElement.scrollWidth"),
+            self.driver.execute_script("return window.innerWidth"),
+        )
+        requests = self.driver.execute_script("return performance.getEntriesByType('resource').filter(e => e.name.includes('/api/narrative-explorer/v1/passages/')).length")
+        self.assertEqual(requests, 1)
+        response_metric = self.driver.execute_script("return window.__ne4ExplorerMetrics.find(item => item.phase === 'response')")
+        render_metric = self.driver.execute_script("return window.__ne4ExplorerMetrics.find(item => item.phase === 'render')")
+        self.assertGreater(response_metric["payload_bytes"], 0)
+        self.assertEqual(response_metric["network_requests"], 1)
+        self.assertGreaterEqual(render_metric["dom_node_growth"], 50)
+
+        self.driver.back()
+        wait.until(lambda driver: driver.switch_to.active_element.get_attribute("data-testid") == "companion-narrative-explorer")
+        self.driver.forward()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        self.assertEqual(
+            self.driver.execute_script("return performance.getEntriesByType('resource').filter(e => e.name.includes('/api/narrative-explorer/v1/passages/')).length"),
+            2,
+        )
+        self.driver.back()
+        wait.until(lambda driver: driver.switch_to.active_element.get_attribute("data-testid") == "companion-narrative-explorer")
+
+        self.driver.set_window_size(390, 844)
+        wait.until(lambda driver: driver.execute_script("return window.matchMedia('(max-width: 760px)').matches"))
+        self.driver.find_element(By.CSS_SELECTOR, "#chapter-reader [data-verse-select]").click()
+        wait.until(lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "peek")
+        peek = self.driver.find_element(By.CSS_SELECTOR, "[data-companion-state-control='study'].companion-peek")
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-companion-state-control='study'].companion-peek")))
+        wait.until(lambda driver: driver.execute_script(
+            "const p=document.querySelector('.companion-peek').getBoundingClientRect(); const d=document.querySelector('.app-dock').getBoundingClientRect(); return p.bottom <= d.top + 1;"
+        ))
+        peek.click()
+        mobile_entry = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
+        size = self.driver.execute_script(
+            "const r=arguments[0].getBoundingClientRect(); return {width:r.width,height:r.height};",
+            mobile_entry,
+        )
+        self.assertGreaterEqual(size["height"], 44)
+        mobile_entry.click()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        panel = self.driver.find_element(By.ID, "study-panel")
+        self.assertEqual(panel.get_attribute("data-companion-state"), "full")
+        self.assertIn("John 1:1", self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
+        self.assertLessEqual(
+            self.driver.execute_script("return document.documentElement.scrollWidth"),
+            self.driver.execute_script("return window.innerWidth"),
+        )
+        self.driver.save_screenshot("/tmp/ne4-narrative-explorer-mobile.png")
+        self.driver.find_element(By.CSS_SELECTOR, "[data-companion-back]").click()
+        wait.until(lambda driver: driver.switch_to.active_element.get_attribute("data-testid") == "companion-narrative-explorer")
+        self.driver.find_element(By.CSS_SELECTOR, "[data-companion-state-control='closed']").click()
+        wait.until(lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "closed")
 
 
 if __name__ == "__main__":

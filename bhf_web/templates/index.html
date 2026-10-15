@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20261007a">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20261015a">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260906a" src="/static/htmx-lite.js?v=20260906a" -->
   {# static_asset('/style.css') }}?v=20260906a #}
@@ -51,6 +51,9 @@
   <script src="{{ static_asset('/companion-history.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-viewport.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
+  {% if runtime_config.narrativeExplorerEnabled %}
+    <script src="{{ static_asset('/narrative-explorer.js') }}?v=20261015a" defer></script>
+  {% endif %}
   <script src="{{ static_asset('/resource-router.js') }}?v=20261007a" defer></script>
   <script src="{{ static_asset('/companion-discoveries.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/bhf-commentary-card.js') }}?v=20260912a" defer></script>
@@ -230,6 +233,9 @@
             <div class="companion-overview-actions">
               <button type="button" class="secondary" data-companion-action="note">＋ Add Note</button>
               <button type="button" class="secondary" data-companion-action="save" data-save-state="not-saved" disabled aria-disabled="true" aria-busy="false" aria-label="Save Passage unavailable; select a verse or passage">☆ Save Passage</button>
+              {% if runtime_config.narrativeExplorerEnabled %}
+                <button type="button" class="secondary narrative-explorer-entry" data-testid="companion-narrative-explorer" data-companion-resource="narrative_explorer" data-companion-resource-label="Explore the Narrative" aria-label="Explore the narrative for the selected passage">Explore the Narrative</button>
+              {% endif %}
             </div>
 
             <section class="companion-section bhf-commentary-card" data-bhf-commentary-card aria-labelledby="bhf-commentary-title" hidden>

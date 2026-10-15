@@ -5,6 +5,7 @@
   const NATIVE_RESOURCES = new Set([
     // `commentary` is the persisted Tyndale resource ID and remains compatible.
     "commentary", "translation_comparison", "canonical", "archaeology", "people", "places",
+    "narrative_explorer",
     "themes", "timeline", "cross_references", "historical_context",
     "cultural_context", "original_audience", "literary_context", "covenant_context",
   ]);
@@ -24,23 +25,62 @@
     let controller = null;
     let nativeBackView = null;
     let nativeBackFocusSelector = "";
+    let activeResourceId = "";
+    let activePassageKey = "";
+    const explorer = window.BHFNarrativeExplorer;
+    const narrativeSession = explorer?.createSession?.({
+      enabled: window.BHFRuntimeConfig?.narrativeExplorerEnabled === true,
+      onLoading(selection) {
+        if (activeResourceId === "narrative_explorer") {
+          renderLoading(host, `Loading narrative evidence for ${selection.reference || "this passage"}…`);
+        }
+      },
+      onReady: renderNarrativeProjection,
+      onError(state, _error, selection) {
+        if (activeResourceId !== "narrative_explorer") return;
+        const failure = explorer.renderFailure(state, selection, {
+          onRetry: () => void narrativeSession?.retry?.(),
+        });
+        host.replaceChildren(failure);
+        host.setAttribute("aria-busy", "false");
+      },
+    });
 
     host.addEventListener("click", handleClick);
     host.addEventListener("keydown", handleKeydown);
 
     async function open(resourceId, routeOptions = {}) {
       if (!NATIVE_RESOURCES.has(resourceId)) return false;
+      const isNarrativeExplorer = resourceId === "narrative_explorer";
+      const selection = options.getSelection?.() || {};
+      if (isNarrativeExplorer && window.BHFRuntimeConfig?.narrativeExplorerEnabled !== true) return false;
+      let passageKey = "";
+      if (isNarrativeExplorer) {
+        if (!explorer || !narrativeSession) return false;
+        try {
+          passageKey = explorer.urlFor(selection);
+        } catch (error) {
+          renderError(host, error?.message || "Select a passage before opening Narrative Explorer.");
+          return true;
+        }
+        if (activeResourceId === resourceId && activePassageKey === passageKey && !routeOptions.force) return true;
+      }
       sequence += 1;
       const requestSequence = sequence;
       controller?.abort();
       controller = new AbortController();
+      narrativeSession?.close?.();
+      activeResourceId = resourceId;
+      activePassageKey = isNarrativeExplorer ? passageKey : "";
       nativeBackView = null;
       nativeBackFocusSelector = "";
       shell.classList.add("is-native-resource");
       host.hidden = false;
-      renderLoading(host);
+      if (!isNarrativeExplorer) renderLoading(host);
       try {
-        if (routeOptions.mode === "explore") {
+        if (isNarrativeExplorer) {
+          await narrativeSession.open(selection, {force: routeOptions.force === true});
+        } else if (routeOptions.mode === "explore") {
           await renderExplore(resourceId, requestSequence, controller.signal);
         } else {
           await renderPassage(resourceId, requestSequence, controller.signal);
@@ -57,6 +97,9 @@
       sequence += 1;
       controller?.abort();
       controller = null;
+      narrativeSession?.close?.();
+      activeResourceId = "";
+      activePassageKey = "";
       host.hidden = true;
       host.replaceChildren();
       host.removeAttribute("aria-busy");
@@ -66,9 +109,59 @@
     }
 
     function showLegacy(resourceId) {
+      if (activeResourceId === "narrative_explorer") close();
       host.hidden = true;
       shell.classList.remove("is-native-resource");
       options.openLegacy?.(resourceId);
+    }
+
+    function renderNarrativeProjection(projection) {
+      if (activeResourceId !== "narrative_explorer") return;
+      const startedAt = performanceNow();
+      const view = explorer.renderOverview(projection, {onNavigate: navigateNarrativeItem});
+      host.replaceChildren(view);
+      host.setAttribute("aria-busy", "false");
+      dispatchNarrativeMetric({
+        phase: "render",
+        passage: projection?.passage?.reference || "",
+        initial_overview_render_ms: Math.max(0, performanceNow() - startedAt),
+        dom_node_growth: countNodes(view),
+        network_requests: 0,
+      });
+    }
+
+    async function navigateNarrativeItem(item, action, trigger) {
+      const destination = item?.navigation;
+      const targetId = String(destination?.target_id || "").trim();
+      if (!destination || !targetId) return false;
+      if (destination.kind === "canonical_object") {
+        await openCanonicalDetail(targetId);
+        return true;
+      }
+      if (destination.kind === "archaeology_item") {
+        await openArchaeologyDetail(targetId);
+        return true;
+      }
+      const physicalKinds = new Set([
+        "physical_place", "physical_region", "political_territory", "route", "archaeological_site",
+      ]);
+      if (
+        destination.selection_required === true
+        && ["map_place", "map_route", "map_record", "map_manuscript"].includes(destination.kind)
+        && physicalKinds.has(item.geography_kind)
+      ) {
+        await options.openResource?.("maps", {
+          trigger,
+          mapFocus: action?.mapFocusAllowed === true
+            ? {
+              kind: destination.kind === "map_route" ? "route" : "place",
+              targetId,
+            }
+            : undefined,
+        });
+        return true;
+      }
+      return false;
     }
 
     async function renderPassage(resourceId, requestSequence, signal) {
@@ -792,6 +885,20 @@
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
     return data;
+  }
+
+  function performanceNow() {
+    return window.performance?.now?.() ?? Date.now();
+  }
+
+  function countNodes(element) {
+    if (typeof element?.querySelectorAll === "function") return element.querySelectorAll("*").length + 1;
+    return 1 + Array.from(element?.children || []).reduce((total, child) => total + countNodes(child), 0);
+  }
+
+  function dispatchNarrativeMetric(detail) {
+    if (typeof document?.dispatchEvent !== "function" || typeof CustomEvent !== "function") return;
+    document.dispatchEvent(new CustomEvent("bhf:narrative-explorer-metrics", {detail}));
   }
 
   function renderLoading(host, message = "Loading resource…") {

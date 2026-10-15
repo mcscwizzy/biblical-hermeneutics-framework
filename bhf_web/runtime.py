@@ -8,6 +8,8 @@ from urllib.parse import urlsplit
 
 from bhf_agent.runtime_paths import configured_commentary_release
 
+from .settings import _env_bool
+
 DEFAULT_ASSISTANT_URL = (
     "https://chatgpt.com/g/g-6a36d3641a1c8191afa101ed50a927e9-"
     "biblical-hermeneutics-framework-bhf"
@@ -50,6 +52,7 @@ def load_runtime_config() -> dict[str, Any]:
         "enableServiceWorker": mode != "capacitor",
         "offlinePath": "/offline",
         "commentaryRelease": configured_commentary_release(),
+        "narrativeExplorerEnabled": _env_bool("BHF_NARRATIVE_EXPLORER_ENABLED", False),
         # OAuth client IDs and redirect URLs are public configuration. Secrets
         # are never injected into the browser; OneDrive uses PKCE.
         "studyVault": {

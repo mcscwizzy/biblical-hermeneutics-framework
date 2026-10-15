@@ -82,6 +82,7 @@
         window.BHFReader?.loadChapterData?.(book, chapter, translation, requestOptions),
       openTranslationManager: (trigger) =>
         window.BHFStudyActions?.openTranslationManager?.(trigger),
+      openResource: (resourceId, options) => openResource(resourceId, options),
       openLegacy: openLegacyResource,
     });
 
@@ -175,6 +176,17 @@
     const previousState = currentState;
     let normalized = STATES.has(nextState) ? nextState : "study";
     if (!compactViewport() && normalized === "closed") normalized = "study";
+    if (normalized === "closed" && currentResource === "narrative_explorer") {
+      resourceRouter?.close?.();
+      currentResource = null;
+      currentMode = "passage";
+      delete shell.dataset.companionResource;
+      shell.classList.remove("is-resource-detail");
+      overview.hidden = false;
+      const back = panel.querySelector("[data-companion-back]");
+      if (back) back.hidden = true;
+      renderSelectionContext();
+    }
     currentState = normalized;
     panel.dataset.companionState = normalized;
     panel.setAttribute("aria-expanded", String(normalized !== "closed"));
@@ -495,7 +507,9 @@
       return;
     }
     const engine = window.BHFStudyRecommendations;
-    const resource = engine?.resources?.[requestedResourceId]
+    const resource = requestedResourceId === "narrative_explorer"
+      ? {label: options.label || "Explore the Narrative"}
+      : engine?.resources?.[requestedResourceId]
       || engine?.resources?.[resourceId]
       || {label: options.label || "Study Resource"};
     ensureResourceVisible(resourceId, resource, {state: options.state});
@@ -587,7 +601,10 @@
     }
     const resource = event.target.closest("[data-companion-resource]");
     if (resource && resource !== shell) {
-      openResource(resource.dataset.companionResource, {trigger: resource});
+      openResource(resource.dataset.companionResource, {
+        trigger: resource,
+        label: resource.dataset.companionResourceLabel,
+      });
       return;
     }
     const route = event.target.closest("[data-companion-route]");
