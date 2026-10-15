@@ -2,18 +2,15 @@
   "canonical_chapter_count": 1189,
   "chapter_publication_index": [
     {
-      "artifact_sha256": "8090b554273c56561c0fbe3a3c7b96a67fb79901475ff1e39081b22f3c40134e",
+      "artifact_sha256": "02bede74dce10a2b9e88a9cc6871325c2eac91aa861a76b301e05352524c8710",
       "book": "Genesis",
       "canonical_ordinal": 1,
       "chapter": 1,
-      "corpus_runner_result": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/corpus-runner/runs/session-batch-eff892f5ceb94cfe/chapters/genesis_001/result.json",
       "filename": "genesis_001.json",
-      "raw_response_sha256": "521979132f26c08c4ef77f85b947e6209df5cd19959d2d825cb308644b1fdac4",
       "reason": "published",
       "reference": "Genesis 1",
       "release_state": "PUBLISHED",
-      "result_sha256": "98aed9b6b8a4356576a96944a5264f1ba0b578665e3b73aac3fa5b334c482465",
-      "source": "corpus-runner",
+      "source": "genesis1-corrective-refresh-selective-promotion",
       "source_lineage": {
         "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
         "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
@@ -21696,11 +21693,11 @@
     }
   ],
   "checksums": ".bhf-commentary-release-checksums.json",
-  "corpus_checksum_root_identity": "ae31de2fe50c0435387995dd4110579ff2b68ae9f59f9dd1b9f5afc55cb785eb",
+  "corpus_checksum_root_identity": "87f9c976a3c29720dcb477c4a2cc5b445b566a17ca5786a7c196b0c52d9df83a",
   "effort": "high",
   "generation_performed": false,
   "historical_release_manifest_identity": "4aa4d52cdcd5be8993362e3b0b0541ae52c8b52419c519de6ce13f605488ee1b",
-  "manifest_identity": "1c8972058420f00c2c9f05f52e7924566bf9fb3f56547d16c4c8b9f1f48b65d7",
+  "manifest_identity": "5e5971f35360a76b40d9a45db55be1bda0c877378b3f8c50cb99e9abe12aae07",
   "model": "gpt-5.6-terra",
   "promotion_mode": "deterministic_finalized_artifact_reconciliation",
   "protected_contract_hashes": {
