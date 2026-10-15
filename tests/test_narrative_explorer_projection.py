@@ -1116,6 +1116,153 @@ def test_only_explicit_relationship_labels_receive_specific_connection_types():
     assert edges["ckl:word-match"]["original_relationship_type"] == "associated-with"
 
 
+def test_ne_a2_classifies_only_explicit_ckl_types_and_labels():
+    records = [
+        {
+            "id": "cultural-record",
+            "type": "cultural_background",
+            "title": "Cultural record",
+            "scripture_references": [{"reference": "Genesis 1:1", "relationship": "primary"}],
+            "related_objects": [
+                {"id": "themed", "relationship": "thematic-anchor", "notes": "Authored theme edge.", "weight": 0.7},
+                {"id": "unsafe", "relationship": "canonical-fulfillment", "notes": "Authored proposal."},
+            ],
+            "claims": [
+                {
+                    "id": "archaeology-claim",
+                    "claim": "An archaeological claim.",
+                    "claim_type": "archaeology",
+                    "certainty": "likely",
+                    "dispute_status": "none",
+                    "scripture_references": ["Genesis 1:1"],
+                }
+            ],
+            "evidence_items": [
+                {
+                    "id": "practice-evidence",
+                    "description": "A cultural practice record.",
+                    "evidence_type": "cultural-practice",
+                    "certainty": "possible",
+                    "dispute_status": "contested",
+                    "scripture_references": ["Genesis 1:1"],
+                    "sources": [{"id": "source-1"}],
+                }
+            ],
+        },
+        {
+            "id": "theology-record",
+            "type": "biblical_theology",
+            "title": "Theology record",
+            "scripture_references": [{"reference": "Genesis 1:1", "relationship": "primary"}],
+            "claims": [
+                {
+                    "id": "biblical-theology-claim",
+                    "claim": "A biblical-theology claim.",
+                    "claim_type": "biblical_theology",
+                    "certainty": "likely",
+                    "dispute_status": "none",
+                    "scripture_references": ["Genesis 1:1"],
+                }
+            ],
+            "evidence_items": [],
+        },
+    ]
+    result = _project("Genesis 1", canonical=_lookup("ckl", records=records))
+    items = {item["id"]: item for item in result["items"]}
+
+    assert "archaeology_ancient_history" in items["ckl:cultural-record"]["section_ids"]
+    assert "archaeology_ancient_history" in items["ckl:cultural-record#claim:archaeology-claim"]["section_ids"]
+    evidence = items["ckl:cultural-record#evidence:practice-evidence"]
+    assert evidence["section_ids"] == ["archaeology_ancient_history"]
+    assert evidence["certainty"] == "possible"
+    assert evidence["dispute_status"] == "contested"
+    assert evidence["sources"] == [{"id": "source-1", "details_available": False, "unavailable_reason": "source_not_found_in_ckl"}]
+    theology_claim = items["ckl:theology-record#claim:biblical-theology-claim"]
+    assert theology_claim["section_ids"] == ["themes_biblical_connections"]
+    assert "divine_council_cosmic_geography" not in evidence["section_ids"]
+
+    edges = {edge["target_id"]: edge for edge in result["connections"] if edge["target_id"].startswith("ckl:")}
+    thematic = edges["ckl:themed"]
+    assert thematic["connection_type"] == "thematic_relationship"
+    assert thematic["original_relationship_type"] == "thematic-anchor"
+    assert thematic["basis"]["notes"] == "Authored theme edge."
+    assert thematic["basis"]["weight"] == 0.7
+    fulfillment = edges["ckl:unsafe"]
+    assert fulfillment["connection_type"] == "uncategorized"
+    assert fulfillment["original_relationship_type"] == "canonical-fulfillment"
+
+
+def test_ne_a2_relationship_policy_preserves_direction_mode_and_temporal_status():
+    record = {
+        "id": "typed-edges",
+        "type": "event",
+        "title": "Typed authored edges",
+        "scripture_references": [{"reference": "Jeremiah 31:31-34", "relationship": "primary"}],
+        "related_objects": [
+            {"id": "hebrews", "relationship": "new-covenant-quotation", "notes": "Hebrews quotes Jeremiah.", "weight": 0.9},
+            {"id": "reception", "relationship": "later-reception", "notes": "Later receiving text.", "weight": 0.8},
+            {"id": "typology", "relationship": "typological-connection", "notes": "Authored typological reading."},
+            {"id": "fulfillment", "relationship": "canonical-fulfillment", "notes": "Proposal retained as authored."},
+        ],
+        "claims": [],
+        "evidence_items": [],
+    }
+    result = _project("Jeremiah 31", canonical=_lookup("ckl", records=[record]))
+    edges = {edge["target_id"]: edge for edge in result["connections"] if edge["target_id"].startswith("ckl:")}
+
+    quotation = edges["ckl:hebrews"]
+    assert quotation["connection_type"] == "direct_quotation"
+    assert quotation["relationship_mode"] == "not_recorded"
+    assert quotation["direction"] == "one_way"
+    assert quotation["temporal_layer"] == "unknown"
+    assert quotation["original_relationship_type"] == "new-covenant-quotation"
+    assert quotation["basis"]["notes"] == "Hebrews quotes Jeremiah."
+    assert quotation["basis"]["weight"] == 0.9
+
+    reception = edges["ckl:reception"]
+    assert reception["connection_type"] == "later_canonical_reception"
+    assert reception["relationship_mode"] == "not_recorded"
+    assert reception["temporal_layer"] == "later_reception"
+    assert reception["direction"] == "one_way"
+    assert edges["ckl:typology"]["connection_type"] == "interpretive_association"
+    assert edges["ckl:typology"]["relationship_mode"] == "not_recorded"
+    assert edges["ckl:fulfillment"]["connection_type"] == "uncategorized"
+
+
+def test_ne_a2_thematic_reciprocity_requires_the_authored_reverse_edge():
+    records = [
+        {
+            "id": "source-event",
+            "type": "event",
+            "title": "Source",
+            "scripture_references": [{"reference": "Genesis 1:1", "relationship": "primary"}],
+            "related_objects": [{"id": "target-theme", "relationship": "thematic-anchor"}],
+            "claims": [],
+            "evidence_items": [],
+        },
+        {
+            "id": "target-theme",
+            "type": "theme",
+            "title": "Target",
+            "scripture_references": [{"reference": "Genesis 1:1", "relationship": "primary"}],
+            "related_objects": [{"id": "source-event", "relationship": "thematic-anchor"}],
+            "claims": [],
+            "evidence_items": [],
+        },
+    ]
+    reciprocal = _project("Genesis 1", canonical=_lookup("ckl", records=records))
+    reciprocal_edges = [edge for edge in reciprocal["connections"] if edge["target_id"].startswith("ckl:")]
+    assert len(reciprocal_edges) == 2
+    assert {edge["direction"] for edge in reciprocal_edges} == {"reciprocal"}
+
+    records[1]["related_objects"] = []
+    one_way = _project("Genesis 1", canonical=_lookup("ckl", records=records))
+    one_way_edges = [edge for edge in one_way["connections"] if edge["target_id"].startswith("ckl:")]
+    assert len(one_way_edges) == 1
+    assert one_way_edges[0]["direction"] == "one_way"
+    assert one_way_edges[0]["reverse_edge_id"] is None
+
+
 def test_not_established_is_distinct_from_unknown_and_recorded_certainty():
     record = {
         "id": "epistemic-state",

@@ -30,7 +30,8 @@ from .relevance import SEMANTICALLY_MISANCHORED, classify_semantic_relationship
 
 
 SCHEMA_VERSION = "1.0"
-SECTION_ASSIGNMENT_POLICY_VERSION = "ne5a-1"
+SECTION_ASSIGNMENT_POLICY_VERSION = "nea2-1"
+CONNECTION_MAPPING_POLICY_VERSION = "nea2-1"
 
 Domain = Literal["ckl", "maps", "archaeology"]
 QueryStatus = Literal["complete", "partial", "failed", "not_run"]
@@ -595,7 +596,31 @@ _CONNECTION_TYPE_BY_LABEL = {
     "allusion": "proposed_intertextual_echo",
     "interpretive-association": "interpretive_association",
     "interpretive_association": "interpretive_association",
+    "thematic-anchor": "thematic_relationship",
+    "canonical-theme": "thematic_relationship",
+    "develops-theme": "thematic_relationship",
+    "major-theme": "thematic_relationship",
+    "primary-theme": "thematic_relationship",
+    "theological-theme": "thematic_relationship",
+    "historical-narrative-parallel": "narrative_parallel",
+    "new-covenant-quotation": "direct_quotation",
+    "later-reception": "later_canonical_reception",
+    "later-canonical-reuse": "later_canonical_reception",
+    "explicit-new-testament-reception": "later_canonical_reception",
+    "explicit-prophetic-reception": "later_canonical_reception",
+    "seventy-years-reception": "later_canonical_reception",
+    "typological-connection": "interpretive_association",
 }
+
+_LATER_RECEPTION_LABELS = frozenset(
+    {
+        "later-reception",
+        "later-canonical-reuse",
+        "explicit-new-testament-reception",
+        "explicit-prophetic-reception",
+        "seventy-years-reception",
+    }
+)
 
 
 def _project_ckl_lookup(
@@ -1791,6 +1816,10 @@ def _object_sections(object_type: str) -> tuple[str, ...]:
     normalized = object_type.casefold().replace("-", "_")
     if normalized in {"theme", "theology", "doctrine"}:
         return ("themes_biblical_connections",)
+    if normalized == "biblical_theology":
+        return ("themes_biblical_connections",)
+    if normalized == "cultural_background":
+        return ("archaeology_ancient_history",)
     if normalized in {"person", "people_group", "group", "institution"}:
         return ("people_events_relationships",)
     if normalized == "place":
@@ -1823,6 +1852,10 @@ def _child_sections(
             sections.add("biblical_narrative")
         elif claim_type in {"historical_cultural", "historical", "social", "political"}:
             sections.add("archaeology_ancient_history")
+        elif claim_type == "archaeology":
+            sections.add("archaeology_ancient_history")
+        elif claim_type in {"biblical_theology", "systematic_theology"}:
+            sections.add("themes_biblical_connections")
         elif claim_type in {"literary", "composition", "rhetorical"}:
             sections.update(("biblical_narrative", "themes_biblical_connections"))
         elif normalized_parent in {"theme", "theology", "doctrine"}:
@@ -1833,6 +1866,7 @@ def _child_sections(
         if evidence_type == "worldview-concept":
             sections.add("themes_biblical_connections")
         elif evidence_type in {
+            "cultural-practice",
             "ancient-text",
             "manuscript",
             "artifact",
@@ -1948,12 +1982,17 @@ def _related_object_connection(
         "weight": deepcopy(data.get("weight")) if data.get("weight") is not None else None,
     }
     mode = _relationship_mode(relationship, assertion_type)
+    temporal_layer = (
+        "later_reception"
+        if _normalized_label(relationship) in _LATER_RECEPTION_LABELS
+        else "unknown"
+    )
     return _new_connection(
         source_id=source_id,
         target_id=f"ckl:{target_id}",
         relationship=relationship,
         relationship_mode=mode,
-        temporal_layer="unknown",
+        temporal_layer=temporal_layer,
         basis=basis,
     )
 
