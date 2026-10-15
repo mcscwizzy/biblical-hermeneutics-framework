@@ -251,15 +251,13 @@ class NarrativeExplorerService:
                 missing_subdomains=("places", "routes"),
             )
 
-        # The existing passage resolvers prefer text matches and only consult
-        # stored reference links when no name matches. Use a full chapter
-        # window for chapter requests, retain the resolver's anchors, and mark
-        # a text-first result partial because anchor-only records may be absent.
+        # Keep legacy Maps Explorer behavior unchanged, while Narrative
+        # Explorer requests both text matches and explicit stored links. Its
+        # projection later requires each map record's own overlapping anchor.
         reference_start = verse_start or 1
         reference_end = verse_end if verse_end is not None else (verse_start or 9999)
         records: list[Any] = []
         missing: list[str] = []
-        text_first = False
         passage_matcher = PassageTextMatcher(passage_text)
         try:
             places = resolve_places_for_passage(
@@ -271,9 +269,9 @@ class NarrativeExplorerService:
                 path=self.study_db_path,
                 include_related_passages=False,
                 passage_matcher=passage_matcher,
+                include_reference_matches=True,
             )
             records.extend(places.get("markers") or [])
-            text_first = text_first or _has_text_match(places.get("matched_terms"), passage_text)
         except Exception as exc:  # noqa: BLE001 - route and place lookup are independent
             LOGGER.error("Narrative Explorer map place lookup failed (%s)", type(exc).__name__)
             missing.append("places")
@@ -286,9 +284,9 @@ class NarrativeExplorerService:
                 passage_text=passage_text,
                 path=self.study_db_path,
                 passage_matcher=passage_matcher,
+                include_reference_matches=True,
             )
             records.extend(routes.get("routes") or [])
-            text_first = text_first or _has_text_match(routes.get("matched_terms"), passage_text)
         except Exception as exc:  # noqa: BLE001 - route and place lookup are independent
             LOGGER.error("Narrative Explorer map route lookup failed (%s)", type(exc).__name__)
             missing.append("routes")
@@ -307,14 +305,6 @@ class NarrativeExplorerService:
                 query_status="partial",
                 reason_code="map_subdomain_unavailable",
                 missing_subdomains=tuple(missing),
-            )
-        if text_first:
-            return DomainLookup(
-                domain="maps",
-                records=records,
-                query_status="partial",
-                reason_code="text_match_precedes_reference_lookup",
-                missing_subdomains=("anchor_only_map_records",),
             )
         return DomainLookup(domain="maps", records=records, query_status="complete")
 
@@ -372,15 +362,3 @@ def _full_inventory_limit(library: Any) -> int:
     # The retrieval APIs require a limit argument. No finite corpus can reach
     # this value; providers with their own cap must return DomainLookup(partial).
     return sys.maxsize
-
-
-def _has_text_match(matched_terms: Any, passage_text: str) -> bool:
-    normalized_text = " ".join(str(passage_text or "").casefold().split())
-    if not isinstance(matched_terms, Mapping):
-        return False
-    return any(
-        " ".join(str(term or "").casefold().split()) in normalized_text
-        for terms in matched_terms.values()
-        for term in (terms if isinstance(terms, (list, tuple)) else [terms])
-        if str(term or "").strip()
-    )

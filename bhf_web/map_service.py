@@ -87,6 +87,28 @@ def _search_text(value: Any) -> str:
     return str(value)
 
 
+def _merge_reference_matches(
+    text_records: list[dict[str, Any]],
+    text_terms: dict[str, list[str]],
+    reference_records: list[dict[str, Any]],
+    reference_terms: dict[str, list[str]],
+) -> tuple[list[dict[str, Any]], dict[str, list[str]]]:
+    """Append explicitly passage-linked records once, retaining text order."""
+
+    merged = list(text_records)
+    terms = dict(text_terms)
+    seen_ids = {record.get("id") for record in merged if record.get("id")}
+    for record in reference_records:
+        record_id = record.get("id")
+        if not record_id or record_id in seen_ids:
+            continue
+        merged.append(record)
+        seen_ids.add(record_id)
+        if record_id in reference_terms:
+            terms[record_id] = reference_terms[record_id]
+    return merged, terms
+
+
 def _first_text(item: dict[str, Any], fields: list[str]) -> str:
     for field in fields:
         value = _search_text(item.get(field, "")).strip()
@@ -466,6 +488,7 @@ def resolve_places_for_passage(
     path: str | Path | None = None,
     include_related_passages: bool = True,
     passage_matcher: PassageTextMatcher | None = None,
+    include_reference_matches: bool = False,
 ) -> dict[str, Any]:
     """Resolve curated places from a passage using deterministic matching only."""
 
@@ -493,7 +516,23 @@ def resolve_places_for_passage(
             matched_places.append(place)
             matched_terms[place["id"]] = _unique_terms(matches)
 
-    if not matched_places and book is not None and chapter is not None:
+    if include_reference_matches and book is not None and chapter is not None:
+        reference_places, reference_terms = _resolve_from_reference(
+            places=places,
+            book=book,
+            chapter=chapter,
+            verse_start=verse_start,
+            verse_end=verse_end,
+            list_place_references=list_place_references,
+            path=path,
+        )
+        matched_places, matched_terms = _merge_reference_matches(
+            matched_places,
+            matched_terms,
+            reference_places,
+            reference_terms,
+        )
+    elif not matched_places and book is not None and chapter is not None:
         matched_places, matched_terms = _resolve_from_reference(
             places=places,
             book=book,
@@ -535,6 +574,7 @@ def get_map_routes_for_passage(
     period: str | None = None,
     path: str | Path | None = None,
     passage_matcher: PassageTextMatcher | None = None,
+    include_reference_matches: bool = False,
 ) -> dict[str, Any]:
     """Resolve curated routes from a passage using deterministic matching only."""
 
@@ -562,7 +602,23 @@ def get_map_routes_for_passage(
             matched_routes.append(route)
             matched_terms[route["id"]] = _unique_terms(matches)
 
-    if not matched_routes and book is not None and chapter is not None:
+    if include_reference_matches and book is not None and chapter is not None:
+        reference_routes, reference_terms = _resolve_routes_from_reference(
+            routes=routes,
+            book=book,
+            chapter=chapter,
+            verse_start=verse_start,
+            verse_end=verse_end,
+            list_route_references=list_route_references,
+            path=path,
+        )
+        matched_routes, matched_terms = _merge_reference_matches(
+            matched_routes,
+            matched_terms,
+            reference_routes,
+            reference_terms,
+        )
+    elif not matched_routes and book is not None and chapter is not None:
         matched_routes, matched_terms = _resolve_routes_from_reference(
             routes=routes,
             book=book,

@@ -375,6 +375,37 @@ def test_independent_domain_failures_and_partial_results_keep_accurate_coverage(
     assert _coverage(partial)["maps"]["reason_code"] == "map_result_limit_reached"
 
 
+def test_narrative_map_lookup_adds_explicit_links_alongside_text_matches(monkeypatch):
+    import bhf_web.services.narrative_explorer as service_module
+
+    calls: list[tuple[str, bool]] = []
+    monkeypatch.setattr(service_module, "require_current_study_database", lambda _path: None)
+
+    def places(**arguments: Any) -> dict[str, Any]:
+        calls.append(("places", arguments.get("include_reference_matches", False)))
+        return {"markers": [{"id": "text-jericho"}, {"id": "anchor-nile"}], "matched_terms": {"text-jericho": ["Jericho"]}}
+
+    def routes(**arguments: Any) -> dict[str, Any]:
+        calls.append(("routes", arguments.get("include_reference_matches", False)))
+        return {"routes": [], "matched_terms": {}}
+
+    monkeypatch.setattr(service_module, "resolve_places_for_passage", places)
+    monkeypatch.setattr(service_module, "get_map_routes_for_passage", routes)
+    lookup = NarrativeExplorerService(
+        study_db_path=PROJECT_ROOT / ".bhf-data" / "study.sqlite",
+    )._lookup_maps(
+        book="Acts",
+        chapter=7,
+        verse_start=None,
+        verse_end=None,
+        passage_text="They came to Jericho.",
+    )
+
+    assert calls == [("places", True), ("routes", True)]
+    assert lookup.query_status == "complete"
+    assert [record["id"] for record in lookup.records] == ["text-jericho", "anchor-nile"]
+
+
 def test_archaeology_resolver_limit_is_reported_as_partial(monkeypatch):
     import bhf_web.services.narrative_explorer as service_module
 

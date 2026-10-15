@@ -85,3 +85,122 @@ def test_map_resolver_preserves_duplicate_unanchored_names_and_aliases(monkeypat
         "zion-a": ["Zion", "Holy City"],
         "zion-b": ["Zion"],
     }
+
+
+def test_narrative_opt_in_place_resolution_adds_explicit_links_to_text_matches(monkeypatch) -> None:
+    places = [
+        {"id": "text-jericho", "name": "Jericho", "aliases": []},
+        {"id": "anchor-nile", "name": "Nile", "aliases": []},
+    ]
+    monkeypatch.setattr(map_service, "list_biblical_places", lambda **_kwargs: places)
+    monkeypatch.setattr(
+        map_service,
+        "_place_to_marker",
+        lambda place, *_args, **_kwargs: {"id": place["id"], "name": place["name"]},
+    )
+    monkeypatch.setattr(
+        map_service,
+        "_resolve_from_reference",
+        lambda **_kwargs: (
+            [places[0], places[1], places[1]],
+            {"text-jericho": ["Jericho"], "anchor-nile": ["Nile"]},
+        ),
+    )
+
+    legacy_result = map_service.resolve_places_for_passage(
+        book="Acts", chapter=7, verse_start=18, verse_end=20, passage_text="They came to Jericho."
+    )
+    explorer_result = map_service.resolve_places_for_passage(
+        book="Acts",
+        chapter=7,
+        verse_start=18,
+        verse_end=20,
+        passage_text="They came to Jericho.",
+        include_reference_matches=True,
+    )
+
+    assert legacy_result["matched_place_ids"] == ["text-jericho"]
+    assert explorer_result["matched_place_ids"] == ["text-jericho", "anchor-nile"]
+    assert explorer_result["matched_terms"] == {"text-jericho": ["Jericho"], "anchor-nile": ["Nile"]}
+    assert [marker["id"] for marker in explorer_result["markers"]] == ["text-jericho", "anchor-nile"]
+
+
+def test_acts7_nile_reference_survives_text_first_match_suppression(monkeypatch) -> None:
+    jericho = {"id": "text-jericho", "name": "Jericho", "aliases": []}
+    nile = {
+        "id": "openbible-a012705",
+        "name": "Nile",
+        "aliases": [],
+        "related_references": [
+            {
+                "id": "openbible-ref-openbible-a012705-45",
+                "book": "Acts",
+                "chapter": 7,
+                "verse_start": 19,
+                "verse_end": 19,
+                "relationship_type": "directly_named",
+                "notes": "Imported from OpenBible.info Bible Geocoding Data.",
+            }
+        ],
+    }
+    monkeypatch.setattr(map_service, "list_biblical_places", lambda **_kwargs: [jericho, nile])
+    monkeypatch.setattr(
+        map_service,
+        "_place_to_marker",
+        lambda place, *_args, **_kwargs: place,
+    )
+    monkeypatch.setattr(
+        map_service,
+        "_resolve_from_reference",
+        lambda **_kwargs: ([nile], {"openbible-a012705": ["Nile"]}),
+    )
+    arguments = {
+        "book": "Acts",
+        "chapter": 7,
+        "verse_start": None,
+        "verse_end": None,
+        "passage_text": "Jericho appears in this passage, but the river name does not.",
+    }
+
+    legacy_result = map_service.resolve_places_for_passage(**arguments)
+    explorer_result = map_service.resolve_places_for_passage(
+        **arguments,
+        include_reference_matches=True,
+    )
+
+    assert legacy_result["matched_place_ids"] == ["text-jericho"]
+    assert "openbible-a012705" not in legacy_result["matched_place_ids"]
+    assert explorer_result["matched_place_ids"] == ["text-jericho", "openbible-a012705"]
+    retrieved_nile = explorer_result["markers"][1]
+    assert retrieved_nile["related_references"][0]["id"] == "openbible-ref-openbible-a012705-45"
+    assert retrieved_nile["related_references"][0]["relationship_type"] == "directly_named"
+
+
+def test_narrative_opt_in_route_resolution_adds_explicit_links_to_text_matches(monkeypatch) -> None:
+    routes = [
+        {"id": "text-route", "name": "Jericho route", "description": "", "period": ""},
+        {"id": "anchor-route", "name": "Nile route", "description": "", "period": ""},
+    ]
+    monkeypatch.setattr(map_service, "list_map_routes", lambda **_kwargs: routes)
+    monkeypatch.setattr(
+        map_service,
+        "_route_to_item",
+        lambda route, *_args, **_kwargs: {"id": route["id"], "name": route["name"]},
+    )
+    monkeypatch.setattr(
+        map_service,
+        "_resolve_routes_from_reference",
+        lambda **_kwargs: ([routes[1]], {"anchor-route": ["Nile route"]}),
+    )
+
+    explorer_result = map_service.get_map_routes_for_passage(
+        book="Acts",
+        chapter=7,
+        verse_start=18,
+        verse_end=20,
+        passage_text="They came to the Jericho route.",
+        include_reference_matches=True,
+    )
+
+    assert explorer_result["matched_route_ids"] == ["text-route", "anchor-route"]
+    assert [route["id"] for route in explorer_result["routes"]] == ["text-route", "anchor-route"]
