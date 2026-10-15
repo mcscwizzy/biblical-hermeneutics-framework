@@ -5,6 +5,17 @@ The caller supplies completed CKL, map, and archaeology lookups. The adapter
 does not retrieve records, persist a projection, register a route, or modify any
 source object. Its output follows schema version `1.0`.
 
+## Branch baseline
+
+At fetch time, `origin/master` was `b9812fd0236cc2341fd4b777fe92b009dfb05c8b`.
+The verified NE-1 design commit `a924d9ee68bf20d1076d3113ee86f90524d31562`
+was not an ancestor of master, so this implementation branch was created from
+that exact design commit and depends on the unmerged NE-1 design branch.
+
+The regression suite reads committed CKL JSON records as immutable fixtures and
+uses in-memory map and archaeology lookups. It does not write to CKL, map, or
+archaeology storage.
+
 ## Existing contract differences found during implementation
 
 - The map passage resolvers can return records matched from passage wording as

@@ -341,31 +341,106 @@ def validate_projection(value: Mapping[str, Any]) -> None:
         raise ValueError("Narrative Explorer projection has an invalid envelope")
     if value.get("schema_version") != SCHEMA_VERSION:
         raise ValueError("unsupported Narrative Explorer schema version")
+    passage = value.get("passage")
+    if not isinstance(passage, Mapping):
+        raise ValueError("projection passage has an invalid shape")
+    if any(
+        not isinstance(passage.get(key), str) or not passage[key]
+        for key in ("reference", "book")
+    ):
+        raise ValueError("projection passage has an invalid shape")
+    if not isinstance(passage.get("scope"), str) or passage["scope"] not in {
+        "chapter", "verse", "verse_range"
+    }:
+        raise ValueError("projection passage has an invalid scope")
+    if type(passage.get("chapter")) is not int or passage["chapter"] < 1:
+        raise ValueError("projection passage has an invalid chapter")
+    for key in ("coverage", "sections", "items", "connections", "navigation"):
+        if not isinstance(value.get(key), list):
+            raise ValueError(f"projection {key} must be a list")
+
     items = value.get("items")
-    if not isinstance(items, list):
-        raise ValueError("projection items must be a list")
     item_ids = [item.get("id") for item in items if isinstance(item, Mapping)]
-    if len(item_ids) != len(items) or len(item_ids) != len(set(item_ids)):
+    if (
+        len(item_ids) != len(items)
+        or any(not isinstance(item_id, str) or not item_id for item_id in item_ids)
+        or len(item_ids) != len(set(item_ids))
+    ):
         raise ValueError("projection item IDs must be present and unique")
     item_id_set = set(item_ids)
+    section_ids: set[str] = set()
     for section in value.get("sections", []):
-        if section.get("state") not in {"available", "partial", "not_represented", "unknown"}:
+        if not isinstance(section, Mapping) or not isinstance(section.get("item_ids"), list):
+            raise ValueError("projection section has an invalid shape")
+        section_id = section.get("id")
+        if not isinstance(section_id, str) or not section_id or section_id in section_ids:
+            raise ValueError("projection section IDs must be present and unique")
+        section_ids.add(section_id)
+        if not isinstance(section.get("state"), str) or section["state"] not in {
+            "available", "partial", "not_represented", "unknown"
+        }:
             raise ValueError("projection section has an invalid coverage state")
+        if any(not isinstance(item_id, str) for item_id in section["item_ids"]):
+            raise ValueError("projection section item IDs must be strings")
         if any(item_id not in item_id_set for item_id in section.get("item_ids", [])):
             raise ValueError("projection section references an unknown item")
+        if not isinstance(section.get("source_domains"), list) or any(
+            not isinstance(source_domain, str) or not source_domain
+            for source_domain in section["source_domains"]
+        ):
+            raise ValueError("projection section source domains have an invalid shape")
+    coverage_domains: set[str] = set()
     for entry in value.get("coverage", []):
-        if entry.get("state") not in {"available", "partial", "not_represented", "unknown"}:
+        if not isinstance(entry, Mapping):
+            raise ValueError("projection coverage has an invalid shape")
+        domain = entry.get("domain")
+        if not isinstance(domain, str) or domain not in _SOURCE_DOMAIN or domain in coverage_domains:
+            raise ValueError("projection coverage domains must be supported and unique")
+        coverage_domains.add(domain)
+        if not isinstance(entry.get("state"), str) or entry["state"] not in {
+            "available", "partial", "not_represented", "unknown"
+        }:
             raise ValueError("projection coverage has an invalid state")
-        if entry.get("query_status") not in {"complete", "partial", "failed", "not_run"}:
+        if not isinstance(entry.get("query_status"), str) or entry["query_status"] not in {
+            "complete", "partial", "failed", "not_run"
+        }:
             raise ValueError("projection coverage has an invalid query status")
+        if not isinstance(entry.get("source_domain"), str) or not isinstance(
+            entry.get("description"), str
+        ):
+            raise ValueError("projection coverage source description has an invalid shape")
+    if coverage_domains != set(_DOMAIN_ORDER):
+        raise ValueError("projection coverage must represent each queried source domain")
     for item in items:
-        if item.get("domain") not in _SOURCE_DOMAIN:
+        if not isinstance(item, Mapping):
+            raise ValueError("projection item has an invalid shape")
+        if not isinstance(item.get("domain"), str) or item["domain"] not in _SOURCE_DOMAIN:
             raise ValueError("projection item has an invalid source domain")
-        if item.get("geography_kind") not in _GEOGRAPHY_KINDS:
+        if (
+            not isinstance(item.get("geography_kind"), str)
+            or item["geography_kind"] not in _GEOGRAPHY_KINDS
+        ):
             raise ValueError("projection item has an invalid geography kind")
+        if (
+            not isinstance(item.get("source_ids"), list)
+            or any(not isinstance(source_id, str) or not source_id for source_id in item["source_ids"])
+            or not isinstance(item.get("sources"), list)
+            or any(not isinstance(source, Mapping) for source in item["sources"])
+        ):
+            raise ValueError("projection item source provenance has an invalid shape")
+        item_navigation = item.get("navigation")
+        if item_navigation is not None:
+            if not isinstance(item_navigation, Mapping) or not all(
+                isinstance(item_navigation.get(key), str) and item_navigation[key]
+                for key in ("id", "kind", "target_id", "href")
+            ):
+                raise ValueError("projection item navigation has an invalid shape")
         if item.get("coordinates_displayable") is True:
             coordinates = item.get("stored_coordinates")
-            if item.get("geography_kind") not in _PHYSICAL_GEOGRAPHY_KINDS or not _coordinates_are_valid(coordinates):
+            if (
+                item.get("geography_kind") not in _PHYSICAL_GEOGRAPHY_KINDS
+                or not _coordinates_are_valid(coordinates)
+            ):
                 raise ValueError("projection exposes unsupported physical coordinates")
         if item.get("geometry_displayable") is True:
             geometry = item.get("stored_geometry")
@@ -384,15 +459,46 @@ def validate_projection(value: Mapping[str, Any]) -> None:
     }
     connection_ids: set[str] = set()
     for connection in value.get("connections", []):
-        if connection.get("connection_type") not in connection_types:
+        if not isinstance(connection, Mapping):
+            raise ValueError("projection connection has an invalid shape")
+        if (
+            not isinstance(connection.get("connection_type"), str)
+            or connection["connection_type"] not in connection_types
+        ):
             raise ValueError("projection connection has an invalid type")
-        if connection.get("direction") not in {"one_way", "reciprocal"}:
+        if not isinstance(connection.get("direction"), str) or connection["direction"] not in {
+            "one_way", "reciprocal"
+        }:
             raise ValueError("projection connection has an invalid direction")
         if connection.get("direction") == "one_way" and connection.get("reverse_edge_id") is not None:
             raise ValueError("one-way connection cannot reference a reverse edge")
-        if not connection.get("id") or connection["id"] in connection_ids:
+        if not all(
+            isinstance(connection.get(key), str) and connection[key]
+            for key in ("id", "source_id", "target_id", "relationship_mode", "temporal_layer")
+        ):
+            raise ValueError("projection connection endpoints and identity must be present")
+        if not isinstance(connection.get("basis"), Mapping) or not connection["basis"]:
+            raise ValueError("projection connection must preserve its relationship basis")
+        if connection["id"] in connection_ids:
             raise ValueError("projection connection IDs must be present and unique")
         connection_ids.add(connection["id"])
+    for connection in value.get("connections", []):
+        if connection["direction"] == "reciprocal":
+            reverse_edge_id = connection.get("reverse_edge_id")
+            if not isinstance(reverse_edge_id, str) or reverse_edge_id not in connection_ids:
+                raise ValueError("reciprocal connection must reference a projected reverse edge")
+        elif connection.get("reverse_edge_id") is not None:
+            raise ValueError("one-way connection cannot reference a reverse edge")
+    navigation_ids: set[str] = set()
+    for destination in value.get("navigation", []):
+        if not isinstance(destination, Mapping) or not all(
+            isinstance(destination.get(key), str) and destination[key]
+            for key in ("id", "kind", "target_id", "href")
+        ):
+            raise ValueError("projection navigation has an invalid shape")
+        if destination["id"] in navigation_ids:
+            raise ValueError("projection navigation IDs must be unique")
+        navigation_ids.add(destination["id"])
 
 
 _CONNECTION_TYPE_BY_LABEL = {
@@ -1421,10 +1527,16 @@ def _project_source(
         for key in bibliographic_fields
         if key in source and source[key] not in (None, "", [])
     }
+    if not details:
+        return ProjectedSource(
+            id=source_id,
+            details_available=False,
+            unavailable_reason="source_record_has_no_bibliographic_details",
+        )
     return ProjectedSource(
         id=source_id,
         details_available=True,
-        bibliographic_details=details or None,
+        bibliographic_details=details,
     )
 
 
@@ -1474,7 +1586,7 @@ def _source_metadata(
         "traditions",
     ):
         if key in record and record[key] not in (None, "", []):
-            result[key] = deepcopy(record[key])
+            result[key] = _safe_projection_value(record[key])
     return result
 
 
@@ -1896,12 +2008,42 @@ def _string_values(value: Any) -> tuple[str, ...]:
 
 def _jsonable(value: Any) -> Any:
     if isinstance(value, Mapping):
-        return {str(key): _jsonable(item) for key, item in value.items()}
+        return {
+            str(key): _jsonable(item)
+            for key, item in value.items()
+            if not _is_personal_data_key(key)
+        }
     if isinstance(value, (list, tuple)):
         return [_jsonable(item) for item in value]
     if isinstance(value, set):
         return [_jsonable(item) for item in sorted(value, key=lambda item: str(item))]
     return deepcopy(value)
+
+
+def _safe_projection_value(value: Any) -> Any:
+    """Copy authored metadata while excluding personal-study-only fields."""
+
+    if isinstance(value, Mapping):
+        return {
+            key: _safe_projection_value(item)
+            for key, item in value.items()
+            if not _is_personal_data_key(key)
+        }
+    if isinstance(value, (list, tuple)):
+        return [_safe_projection_value(item) for item in value]
+    if isinstance(value, set):
+        return [_safe_projection_value(item) for item in sorted(value, key=lambda item: str(item))]
+    return deepcopy(value)
+
+
+def _is_personal_data_key(key: Any) -> bool:
+    normalized = "".join(character for character in str(key).casefold() if character.isalnum())
+    if "private" in normalized or "highlight" in normalized:
+        return True
+    if normalized in {"studyhistory", "studyhistories", "readinghistory", "readinghistories"}:
+        return True
+    personal_or_user = "personal" in normalized or normalized.startswith("user")
+    return personal_or_user and any(marker in normalized for marker in ("note", "study", "history"))
 
 
 def _normalize_passage(reference: str) -> PassageProjection:

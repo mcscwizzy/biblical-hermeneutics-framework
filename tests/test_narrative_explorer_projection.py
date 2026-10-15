@@ -781,3 +781,78 @@ def test_missing_interpretation_values_remain_unknown_and_private_fields_are_exc
     assert claim["human_review_required"] is False
     assert "private_notes" not in claim
     assert "private_highlights" not in str(result)
+
+
+def test_nested_personal_metadata_is_removed_without_dropping_authored_metadata():
+    record = {
+        "id": "nested-metadata",
+        "type": "cultural_background",
+        "title": "Nested metadata fixture",
+        "claims": [
+            {
+                "id": "claim",
+                "claim": "An authored claim with a passage anchor.",
+                "scripture_references": ["Genesis 6:1-4"],
+                "metadata": {
+                    "display_label": "Ancient context",
+                    "citation_context": {"edition": "Critical edition"},
+                    "private_notes": ["personal note"],
+                    "highlights": ["personal highlight"],
+                    "study_history": [{"date": "private"}],
+                    "nested": {"personal_study_notes": "private"},
+                },
+            }
+        ],
+    }
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=[record]))
+    item = _item(result, "ckl:nested-metadata#claim:claim")
+
+    metadata = item["source_metadata"]["metadata"]
+    assert metadata["display_label"] == "Ancient context"
+    assert metadata["citation_context"] == {"edition": "Critical edition"}
+    assert "private_notes" not in str(result)
+    assert "highlights" not in str(result)
+    assert "study_history" not in str(result)
+    assert "personal_study_notes" not in str(result)
+
+
+def test_source_id_without_bibliographic_details_is_retained_as_unresolved():
+    record = {
+        "id": "source-details",
+        "type": "cultural_background",
+        "title": "Source details fixture",
+        "sources": [{"id": "empty-source"}],
+        "claims": [
+            {
+                "id": "claim",
+                "claim": "An authored claim with a passage anchor.",
+                "scripture_references": ["Genesis 6:1-4"],
+                "source_ids": ["empty-source", "missing-source"],
+            }
+        ],
+    }
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=[record]))
+    item = _item(result, "ckl:source-details#claim:claim")
+    sources = {source["id"]: source for source in item["sources"]}
+
+    assert item["source_ids"] == ["empty-source", "missing-source"]
+    assert sources["empty-source"]["details_available"] is False
+    assert sources["empty-source"]["unavailable_reason"] == "source_record_has_no_bibliographic_details"
+    assert sources["missing-source"]["details_available"] is False
+    assert sources["missing-source"]["unavailable_reason"] == "source_not_found_in_ckl"
+
+
+def test_projection_validator_rejects_malformed_navigation_and_connection_shapes():
+    project = _public("project_narrative_explorer")
+    validate = _public("validate_projection")
+    projection = project("Genesis 6", canonical_lookup=_lookup("ckl")).to_dict()
+
+    malformed_navigation = deepcopy(projection)
+    malformed_navigation["navigation"] = {"id": "not-a-list"}
+    with pytest.raises(ValueError, match="navigation"):
+        validate(malformed_navigation)
+
+    malformed_connection = deepcopy(projection)
+    malformed_connection["connections"] = [{"id": "bad", "connection_type": "uncategorized"}]
+    with pytest.raises(ValueError, match="connection"):
+        validate(malformed_connection)
