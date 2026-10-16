@@ -24,6 +24,7 @@ from bhf_agent.study_db import (
     list_route_references,
     list_saved_map_studies,
 )
+from .cold_start_diagnostics import diagnostic_stage
 from .services.map_matching import (
     PassageTextMatcher,
     format_reference as _format_reference,
@@ -498,40 +499,43 @@ def resolve_places_for_passage(
 ) -> dict[str, Any]:
     """Resolve curated places from a passage using deterministic matching only."""
 
-    places = list_biblical_places(path=path) if path else list_biblical_places()
+    with diagnostic_stage("map_place_loading"):
+        places = list_biblical_places(path=path) if path else list_biblical_places()
     if passage_text and passage_text.strip():
         text_source = passage_text
     elif book is not None and chapter is not None:
-        passage = resolve_passage(book, chapter, verse_start, verse_end)
+        with diagnostic_stage("passage_text_resolution"):
+            passage = resolve_passage(book, chapter, verse_start, verse_end)
         text_source = passage["selected_text"]
     else:
         text_source = ""
 
-    matcher = (
-        passage_matcher
-        if passage_matcher is not None and passage_matcher.matches_source(text_source)
-        else PassageTextMatcher(text_source)
-    )
     matched_places: list[dict[str, Any]] = []
     matched_terms: dict[str, list[str]] = {}
-
-    for place in places:
-        candidate_terms = [place["name"], *place.get("aliases", [])]
-        matches = [term for term in candidate_terms if matcher.contains(term)]
-        if matches:
-            matched_places.append(place)
-            matched_terms[place["id"]] = _unique_terms(matches)
+    with diagnostic_stage("map_text_matching"):
+        matcher = (
+            passage_matcher
+            if passage_matcher is not None and passage_matcher.matches_source(text_source)
+            else PassageTextMatcher(text_source)
+        )
+        for place in places:
+            candidate_terms = [place["name"], *place.get("aliases", [])]
+            matches = [term for term in candidate_terms if matcher.contains(term)]
+            if matches:
+                matched_places.append(place)
+                matched_terms[place["id"]] = _unique_terms(matches)
 
     if include_reference_matches and book is not None and chapter is not None:
-        reference_places, reference_terms = _resolve_from_reference(
-            places=places,
-            book=book,
-            chapter=chapter,
-            verse_start=verse_start,
-            verse_end=verse_end,
-            list_place_references=list_place_references,
-            path=path,
-        )
+        with diagnostic_stage("scripture_reference_lookup"):
+            reference_places, reference_terms = _resolve_from_reference(
+                places=places,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                list_place_references=list_place_references,
+                path=path,
+            )
         matched_places, matched_terms = _merge_reference_matches(
             matched_places,
             matched_terms,
@@ -539,26 +543,28 @@ def resolve_places_for_passage(
             reference_terms,
         )
     elif not matched_places and book is not None and chapter is not None:
-        matched_places, matched_terms = _resolve_from_reference(
-            places=places,
-            book=book,
-            chapter=chapter,
-            verse_start=verse_start,
-            verse_end=verse_end,
-            list_place_references=list_place_references,
-            path=path,
-        )
+        with diagnostic_stage("scripture_reference_lookup"):
+            matched_places, matched_terms = _resolve_from_reference(
+                places=places,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                list_place_references=list_place_references,
+                path=path,
+            )
 
-    markers = [
-        _place_to_marker(
-            place,
-            list_place_references,
-            _related_passages_for_place,
-            path=path,
-            include_related_passages=include_related_passages,
-        )
-        for place in matched_places
-    ]
+    with diagnostic_stage("map_marker_serialization"):
+        markers = [
+            _place_to_marker(
+                place,
+                list_place_references,
+                _related_passages_for_place,
+                path=path,
+                include_related_passages=include_related_passages,
+            )
+            for place in matched_places
+        ]
     return {
         "reference": _format_reference(book, chapter, verse_start, verse_end),
         "passage_text": text_source,
@@ -584,40 +590,43 @@ def get_map_routes_for_passage(
 ) -> dict[str, Any]:
     """Resolve curated routes from a passage using deterministic matching only."""
 
-    routes = list_map_routes(period=period, path=path) if path else list_map_routes(period=period)
+    with diagnostic_stage("map_route_loading"):
+        routes = list_map_routes(period=period, path=path) if path else list_map_routes(period=period)
     if passage_text and passage_text.strip():
         text_source = passage_text
     elif book is not None and chapter is not None:
-        passage = resolve_passage(book, chapter, verse_start, verse_end)
+        with diagnostic_stage("passage_text_resolution"):
+            passage = resolve_passage(book, chapter, verse_start, verse_end)
         text_source = passage["selected_text"]
     else:
         text_source = ""
 
-    matcher = (
-        passage_matcher
-        if passage_matcher is not None and passage_matcher.matches_source(text_source)
-        else PassageTextMatcher(text_source)
-    )
     matched_routes: list[dict[str, Any]] = []
     matched_terms: dict[str, list[str]] = {}
-
-    for route in routes:
-        candidate_terms = [route["name"], route.get("description", ""), route.get("period", "")]
-        matches = [term for term in candidate_terms if matcher.contains(term)]
-        if matches:
-            matched_routes.append(route)
-            matched_terms[route["id"]] = _unique_terms(matches)
+    with diagnostic_stage("map_text_matching"):
+        matcher = (
+            passage_matcher
+            if passage_matcher is not None and passage_matcher.matches_source(text_source)
+            else PassageTextMatcher(text_source)
+        )
+        for route in routes:
+            candidate_terms = [route["name"], route.get("description", ""), route.get("period", "")]
+            matches = [term for term in candidate_terms if matcher.contains(term)]
+            if matches:
+                matched_routes.append(route)
+                matched_terms[route["id"]] = _unique_terms(matches)
 
     if include_reference_matches and book is not None and chapter is not None:
-        reference_routes, reference_terms = _resolve_routes_from_reference(
-            routes=routes,
-            book=book,
-            chapter=chapter,
-            verse_start=verse_start,
-            verse_end=verse_end,
-            list_route_references=list_route_references,
-            path=path,
-        )
+        with diagnostic_stage("scripture_reference_lookup"):
+            reference_routes, reference_terms = _resolve_routes_from_reference(
+                routes=routes,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                list_route_references=list_route_references,
+                path=path,
+            )
         matched_routes, matched_terms = _merge_reference_matches(
             matched_routes,
             matched_terms,
@@ -625,17 +634,19 @@ def get_map_routes_for_passage(
             reference_terms,
         )
     elif not matched_routes and book is not None and chapter is not None:
-        matched_routes, matched_terms = _resolve_routes_from_reference(
-            routes=routes,
-            book=book,
-            chapter=chapter,
-            verse_start=verse_start,
-            verse_end=verse_end,
-            list_route_references=list_route_references,
-            path=path,
-        )
+        with diagnostic_stage("scripture_reference_lookup"):
+            matched_routes, matched_terms = _resolve_routes_from_reference(
+                routes=routes,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                list_route_references=list_route_references,
+                path=path,
+            )
 
-    route_items = [_route_to_item(route, list_route_references, path=path) for route in matched_routes]
+    with diagnostic_stage("map_marker_serialization"):
+        route_items = [_route_to_item(route, list_route_references, path=path) for route in matched_routes]
     return {
         "reference": _format_reference(book, chapter, verse_start, verse_end),
         "passage_text": text_source,

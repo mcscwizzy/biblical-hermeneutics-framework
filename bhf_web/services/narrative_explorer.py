@@ -28,6 +28,7 @@ from framework.canonical_library.sqlite_repository import (
     SQLiteCanonicalRepository,
 )
 
+from ..cold_start_diagnostics import diagnostic_stage
 from ..map_service import get_map_routes_for_passage, resolve_places_for_passage
 from .map_matching import PassageTextMatcher
 
@@ -74,7 +75,8 @@ class NarrativeExplorerService:
     def _default_canonical_library() -> Any:
         # Honor the local repository configuration while forcing Vercel to use
         # its packaged, verified, read-only index without request-time fallback.
-        config = repository_config_from_env(CKLRepositoryConfig(read_only=True))
+        with diagnostic_stage("ckl_repository_initialization"):
+            config = repository_config_from_env(CKLRepositoryConfig(read_only=True))
         json_root = (
             Path(config.json_root).expanduser()
             if config.json_root
@@ -97,17 +99,19 @@ class NarrativeExplorerService:
                 raise FileNotFoundError("canonical repository is unavailable")
             return JsonCanonicalRepository(root=json_root).library
 
-        repository = SQLiteCanonicalRepository(
-            database_path,
-            read_only=True,
-            cache_size=config.cache_size,
-        )
+        with diagnostic_stage("ckl_repository_open"):
+            repository = SQLiteCanonicalRepository(
+                database_path,
+                read_only=True,
+                cache_size=config.cache_size,
+            )
         try:
-            if is_vercel_runtime():
-                validate_vercel_runtime_repository(repository, json_root)
-                stale = False
-            else:
-                stale = stale_policy != "ignore" and repository.is_stale(json_root)
+            with diagnostic_stage("ckl_freshness_fingerprint_verification"):
+                if is_vercel_runtime():
+                    validate_vercel_runtime_repository(repository, json_root)
+                    stale = False
+                else:
+                    stale = stale_policy != "ignore" and repository.is_stale(json_root)
         except Exception:
             repository.close()
             raise
@@ -127,7 +131,8 @@ class NarrativeExplorerService:
         verse_start: int | None = None,
         verse_end: int | None = None,
     ) -> dict[str, Any]:
-        passage = self._resolve_passage(book, chapter, verse_start, verse_end)
+        with diagnostic_stage("passage_text_resolution"):
+            passage = self._resolve_passage(book, chapter, verse_start, verse_end)
         reference = (
             f"{passage['book']} {int(passage['chapter'])}"
             if verse_start is None
@@ -144,24 +149,28 @@ class NarrativeExplorerService:
             "verse_end": verse_end if verse_end is not None else verse_start,
             "passage_text": str(passage.get("selected_text") or ""),
         }
-        map_lookup = self._lookup_domain(
-            domain="maps",
-            provider=self.maps_lookup_provider or self._lookup_maps,
-            arguments=lookup_arguments,
-        )
-        archaeology_lookup = self._lookup_domain(
-            domain="archaeology",
-            provider=self.archaeology_lookup_provider or self._lookup_archaeology,
-            arguments=lookup_arguments,
-        )
+        with diagnostic_stage("narrative_map_lookup"):
+            map_lookup = self._lookup_domain(
+                domain="maps",
+                provider=self.maps_lookup_provider or self._lookup_maps,
+                arguments=lookup_arguments,
+            )
+        with diagnostic_stage("narrative_archaeology_lookup"):
+            archaeology_lookup = self._lookup_domain(
+                domain="archaeology",
+                provider=self.archaeology_lookup_provider or self._lookup_archaeology,
+                arguments=lookup_arguments,
+            )
 
-        result = project_narrative_explorer(
-            reference,
-            canonical_lookup=canonical_lookup,
-            map_lookup=map_lookup,
-            archaeology_lookup=archaeology_lookup,
-        ).to_dict()
-        validate_projection(result)
+        with diagnostic_stage("narrative_projection_building"):
+            result = project_narrative_explorer(
+                reference,
+                canonical_lookup=canonical_lookup,
+                map_lookup=map_lookup,
+                archaeology_lookup=archaeology_lookup,
+            ).to_dict()
+        with diagnostic_stage("narrative_projection_validation"):
+            validate_projection(result)
         return result
 
     @staticmethod
@@ -200,17 +209,19 @@ class NarrativeExplorerService:
             raise CanonicalLookupUnavailable("canonical lookup provider is unavailable")
         try:
             if self._canonical_library is None:
-                self._canonical_library = provider()
+                with diagnostic_stage("ckl_repository_initialization"):
+                    self._canonical_library = provider()
             library = self._canonical_library
             lookup = getattr(library, "retrieve_by_scripture_reference", None)
             if not callable(lookup):
                 raise TypeError("canonical Scripture retrieval is unavailable")
             limit = _full_inventory_limit(library)
-            records = lookup(
-                reference,
-                limit=limit,
-                include_placeholders=True,
-            )
+            with diagnostic_stage("ckl_passage_retrieval"):
+                records = lookup(
+                    reference,
+                    limit=limit,
+                    include_placeholders=True,
+                )
             if records is None:
                 raise TypeError("canonical Scripture retrieval returned no result")
             return DomainLookup(domain="ckl", records=tuple(records), query_status="complete")
@@ -330,14 +341,17 @@ class NarrativeExplorerService:
     ) -> DomainLookup:
         try:
             require_current_study_database(self.study_db_path)
-            result = ArchaeologyService(self.study_db_path).for_passage(
-                book=book,
-                chapter=chapter,
-                verse_start=verse_start,
-                verse_end=verse_end,
-                passage_text=passage_text,
-                limit=ARCHAEOLOGY_RESULT_LIMIT,
-            )
+            with diagnostic_stage("archaeology_service_initialization"):
+                archaeology_service = ArchaeologyService(self.study_db_path)
+            with diagnostic_stage("archaeology_lookup"):
+                result = archaeology_service.for_passage(
+                    book=book,
+                    chapter=chapter,
+                    verse_start=verse_start,
+                    verse_end=verse_end,
+                    passage_text=passage_text,
+                    limit=ARCHAEOLOGY_RESULT_LIMIT,
+                )
             records = list(result.get("archaeological_items") or [])
         except Exception as exc:  # noqa: BLE001 - archaeology is independent of CKL/maps
             LOGGER.error("Narrative Explorer archaeology lookup failed (%s)", type(exc).__name__)

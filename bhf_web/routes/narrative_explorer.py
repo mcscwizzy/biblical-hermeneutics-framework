@@ -9,6 +9,7 @@ from typing import Any
 from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
 
+from ..cold_start_diagnostics import diagnostic_stage
 from ..services.narrative_explorer import (
     CanonicalLookupUnavailable,
     InvalidNarrativePassage,
@@ -62,4 +63,5 @@ def register_narrative_explorer_routes(
                 {"error": "narrative_explorer_unavailable"},
                 status_code=500,
             )
-        return JSONResponse(projection)
+        with diagnostic_stage("response_construction"):
+            return JSONResponse(projection)

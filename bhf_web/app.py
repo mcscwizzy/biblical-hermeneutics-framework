@@ -4,9 +4,19 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 from pathlib import Path
 
+from .cold_start_diagnostics import (
+    ColdStartDiagnosticsMiddleware,
+    diagnostic_stage,
+    diagnostics_enabled,
+    record_import_completion,
+    record_startup_stage,
+)
+
 from fastapi import FastAPI, Request
+from fastapi.routing import APIRoute
 from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -60,12 +70,43 @@ from .runtime import load_cors_origins, load_runtime_config
 from .services.companion_context import CompanionContextService
 
 
+record_import_completion("fastapi_module_import")
 PACKAGE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 STUDY_DB_PATH = settings.STUDY_DB_PATH
 COMMENTARY_DB_PATH = settings.COMMENTARY_DB_PATH
 BHF_COMMENTARY_STORAGE_PATH = settings.BHF_COMMENTARY_STORAGE_PATH
 LOGGER = logging.getLogger(__name__)
+
+
+class DiagnosticFastAPI(FastAPI):
+    """FastAPI app that times lazy middleware-stack construction when enabled."""
+
+    async def __call__(self, scope, receive, send):
+        app_call = super().__call__
+        if diagnostics_enabled():
+            await ColdStartDiagnosticsMiddleware(app_call)(scope, receive, send)
+        else:
+            await app_call(scope, receive, send)
+
+    def build_middleware_stack(self):
+        started_at = time.perf_counter()
+        stack = super().build_middleware_stack()
+        record_startup_stage("middleware_stack_initialization", started_at)
+        return stack
+
+
+class DiagnosticAPIRoute(APIRoute):
+    """Measure FastAPI dependency resolution and route dispatch as one span."""
+
+    def get_route_handler(self):
+        route_handler = super().get_route_handler()
+
+        async def timed_route_handler(request: Request):
+            with diagnostic_stage("fastapi_dependency_and_route_handler"):
+                return await route_handler(request)
+
+        return timed_route_handler
 
 
 def static_asset(path: str) -> str:
@@ -105,13 +146,19 @@ def _first_forwarded_header_value(headers, name: bytes) -> str:
 
 
 def create_app() -> FastAPI:
+    construction_started = time.perf_counter()
     runtime_config = load_runtime_config()
     if runtime_config["backendConfigError"]:
         LOGGER.error(
             "BHF backend routing configuration error: %s",
             runtime_config["backendConfigError"],
         )
-    web_app = FastAPI(title="BHF Bible Reader")
+    diagnostics_on = diagnostics_enabled()
+    app_class = DiagnosticFastAPI if diagnostics_on else FastAPI
+    web_app = app_class(title="BHF Bible Reader")
+    if diagnostics_on:
+        web_app.router.route_class = DiagnosticAPIRoute
+    registration_started = time.perf_counter()
     web_app.state.runtime_config = runtime_config
     cors_origins = load_cors_origins()
     if cors_origins:
@@ -506,8 +553,10 @@ def create_app() -> FastAPI:
     register_curation_routes(web_app, study_db_path=str(STUDY_DB_PATH), templates=templates)
     register_canonical_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_canonical_editor_routes(web_app, templates=templates)
-    register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
-    register_narrative_explorer_routes(web_app, study_db_path=str(STUDY_DB_PATH))
+    with diagnostic_stage("route_registration_maps"):
+        register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
+    with diagnostic_stage("route_registration_narrative_explorer"):
+        register_narrative_explorer_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_archaeology_routes(web_app, templates=templates)
     register_commentary_routes(web_app, database_path=str(COMMENTARY_DB_PATH))
     register_commentary_coverage_routes(
@@ -533,6 +582,8 @@ def create_app() -> FastAPI:
     )
     register_debug_routes(web_app)
 
+    record_startup_stage("route_registration", registration_started)
+    record_startup_stage("application_construction", construction_started)
     return web_app
 
 

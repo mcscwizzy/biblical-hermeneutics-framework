@@ -18,6 +18,7 @@ from bhf_agent.study_db import (
 )
 from bhf_agent.archaeology_service import ArchaeologyService
 
+from ..cold_start_diagnostics import diagnostic_stage
 from ..map_service import (
     get_map_catalog,
     get_archaeology_markers,
@@ -45,7 +46,8 @@ from ..services.web_helpers import (
 
 def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object | None = None) -> None:
     journey_data_path = Path(__file__).resolve().parents[1] / "static" / "data" / "journeys"
-    archaeology = ArchaeologyService(study_db_path)
+    with diagnostic_stage("archaeology_service_initialization"):
+        archaeology = ArchaeologyService(study_db_path)
 
     def kml_response(content: str, filename: str) -> Response:
         return Response(
@@ -59,13 +61,13 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         period: str | None = None,
         include_records: bool = True,
     ) -> JSONResponse:
-        return JSONResponse(
-            get_map_catalog(
-                period=period,
-                path=study_db_path,
-                include_records=include_records,
-            )
+        payload = get_map_catalog(
+            period=period,
+            path=study_db_path,
+            include_records=include_records,
         )
+        with diagnostic_stage("response_construction"):
+            return JSONResponse(payload)
 
     @app.get("/api/maps/biblical-places", response_class=JSONResponse)
     async def maps_biblical_places(period: str | None = None) -> JSONResponse:
@@ -131,7 +133,8 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
             )
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
-        return JSONResponse(result)
+        with diagnostic_stage("response_construction"):
+            return JSONResponse(result)
 
     @app.get("/api/maps/places-for-passage", response_class=JSONResponse)
     async def maps_places_for_passage(
@@ -156,7 +159,8 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
             )
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
-        return JSONResponse(result)
+        with diagnostic_stage("response_construction"):
+            return JSONResponse(result)
 
     @app.get("/api/maps/places/{place_id}.kml")
     async def maps_place_kml(place_id: str) -> Response:

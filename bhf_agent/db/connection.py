@@ -28,6 +28,15 @@ def connect(path: str | Path | None = None, *, read_only: bool | None = None) ->
     the existing writable runtime behavior.
     """
 
+    if os.environ.get("BHF_COLD_START_DIAGNOSTICS") != "1":
+        return _connect(path, read_only=read_only)
+    from bhf_web.cold_start_diagnostics import diagnostic_stage
+
+    with diagnostic_stage("study_database_acquisition"):
+        return _connect(path, read_only=read_only)
+
+
+def _connect(path: str | Path | None, *, read_only: bool | None) -> sqlite3.Connection:
     db_path = Path(path) if path is not None else RUNTIME_DATA_PATHS.study_db_path
     configured_read_only = (
         os.environ.get("BHF_STUDY_DB_READ_ONLY", "").strip().lower() in {"1", "true", "yes", "on"}
