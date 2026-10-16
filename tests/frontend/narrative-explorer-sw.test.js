@@ -9,18 +9,21 @@ const workerSource = fs.readFileSync(
   "utf8",
 );
 
-function createWorker() {
+function createWorker({fetchResponse, cachePut} = {}) {
   const listeners = new Map();
   const cacheAssets = new Map();
   const deletedCaches = [];
   const networkRequests = [];
+  const cachePutCalls = [];
   const makeCache = (name) => ({
     add: async (asset) => {
       const entries = cacheAssets.get(name) || new Set();
       entries.add(asset);
       cacheAssets.set(name, entries);
     },
-    put: async (request) => {
+    put: async (request, response) => {
+      cachePutCalls.push(request.url);
+      if (cachePut) await cachePut(request, response);
       const entries = cacheAssets.get(name) || new Set();
       entries.add(request.url);
       cacheAssets.set(name, entries);
@@ -29,7 +32,7 @@ function createWorker() {
   const caches = {
     open: async (name) => makeCache(name),
     match: async () => undefined,
-    keys: async () => ["bhf-shell-v46", "bhf-static-v46", "bhf-api-v46"],
+    keys: async () => ["bhf-shell-v47", "bhf-static-v47", "bhf-api-v47"],
     delete: async (name) => {
       deletedCaches.push(name);
       return true;
@@ -51,11 +54,11 @@ function createWorker() {
     Promise,
     fetch: async (request) => {
       networkRequests.push(request.url || String(request));
-      return new Response("network asset", {status: 200});
+      return fetchResponse ? fetchResponse(request) : new Response("network asset", {status: 200});
     },
   };
   vm.runInNewContext(workerSource, sandbox, {filename: "sw.js"});
-  return {listeners, cacheAssets, deletedCaches, networkRequests};
+  return {listeners, cacheAssets, deletedCaches, networkRequests, cachePutCalls};
 }
 
 test("service worker precaches the explorer module and retires the previous cache version", async () => {
@@ -66,15 +69,15 @@ test("service worker precaches the explorer module and retires the previous cach
   });
   await installPromise;
 
-  assert.equal(worker.cacheAssets.get("bhf-static-v47")?.has("/static/narrative-explorer.js"), true);
-  assert.equal(worker.cacheAssets.get("bhf-static-v47")?.has("/static/maps/MapFocusAcknowledgment.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v48")?.has("/static/narrative-explorer.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v48")?.has("/static/maps/MapFocusAcknowledgment.js"), true);
 
   let activatePromise;
   worker.listeners.get("activate")({
     waitUntil: (promise) => { activatePromise = promise; },
   });
   await activatePromise;
-  assert.deepEqual(worker.deletedCaches.sort(), ["bhf-api-v46", "bhf-shell-v46", "bhf-static-v46"]);
+  assert.deepEqual(worker.deletedCaches.sort(), ["bhf-api-v47", "bhf-shell-v47", "bhf-static-v47"]);
 });
 
 test("Narrative Explorer API requests bypass service-worker caching", async () => {
@@ -92,4 +95,52 @@ test("Narrative Explorer API requests bypass service-worker caching", async () =
   assert.equal(responsePromise, null);
   assert.deepEqual(worker.networkRequests, []);
   assert.equal(worker.cacheAssets.size, 0);
+});
+
+test("service worker lifetime includes successful map response cache writes", async () => {
+  let finishCacheWrite;
+  const pendingCacheWrite = new Promise((resolve) => { finishCacheWrite = resolve; });
+  const worker = createWorker({
+    fetchResponse: async () => new Response("complete map response", {status: 200}),
+    cachePut: async () => pendingCacheWrite,
+  });
+  let responsePromise = null;
+  let lifetimePromise = null;
+  worker.listeners.get("fetch")({
+    request: new Request("https://reader.example/api/maps/catalog"),
+    respondWith: (promise) => { responsePromise = promise; },
+    waitUntil: (promise) => { lifetimePromise = promise; },
+  });
+
+  const response = await responsePromise;
+  assert.equal(await response.text(), "complete map response");
+  assert.deepEqual(worker.cachePutCalls, ["https://reader.example/api/maps/catalog"]);
+  let lifetimeFinished = false;
+  lifetimePromise.then(() => { lifetimeFinished = true; });
+  await Promise.resolve();
+  assert.equal(lifetimeFinished, false);
+  finishCacheWrite();
+  await lifetimePromise;
+  assert.equal(lifetimeFinished, true);
+});
+
+test("small map responses remain cached", async () => {
+  const worker = createWorker({
+    fetchResponse: async () => new Response("small map response", {
+      status: 200,
+      headers: {"Content-Length": "18"},
+    }),
+  });
+  let responsePromise = null;
+  let lifetimePromise = null;
+  worker.listeners.get("fetch")({
+    request: new Request("https://reader.example/api/maps/catalog"),
+    respondWith: (promise) => { responsePromise = promise; },
+    waitUntil: (promise) => { lifetimePromise = promise; },
+  });
+
+  const response = await responsePromise;
+  assert.equal(await response.text(), "small map response");
+  await lifetimePromise;
+  assert.deepEqual(worker.cachePutCalls, ["https://reader.example/api/maps/catalog"]);
 });

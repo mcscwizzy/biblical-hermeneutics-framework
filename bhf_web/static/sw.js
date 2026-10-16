@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v47";
+const CACHE_VERSION = "v48";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -149,7 +149,18 @@ self.addEventListener("fetch", (event) => {
     if (isCacheableApiRequest(requestUrl)) {
       const preferNetwork = isRefreshRequest(event.request)
         || requestUrl.pathname === "/api/study/companion-context";
-      event.respondWith(preferNetwork ? networkFirstApi(event.request) : cacheFirstApi(event.request));
+      let cacheWritePromise = Promise.resolve();
+      const trackCacheWrite = (promise) => {
+        cacheWritePromise = Promise.resolve(promise).catch(() => undefined);
+      };
+      const responsePromise = preferNetwork
+        ? networkFirstApi(event.request, trackCacheWrite)
+        : cacheFirstApi(event.request, trackCacheWrite);
+      // Keep the worker alive until a successful network response has been
+      // copied into Cache Storage. Returning the response alone can let Firefox
+      // terminate the worker while the cloned body is still being consumed.
+      event.waitUntil(responsePromise.then(() => cacheWritePromise, () => cacheWritePromise));
+      event.respondWith(responsePromise);
     }
     return;
   }
@@ -200,12 +211,12 @@ async function networkFirstAsset(request) {
   }
 }
 
-async function networkFirstApi(request) {
+async function networkFirstApi(request, trackCacheWrite = () => {}) {
   try {
     const response = await fetch(request);
     if (response.ok) {
       const cache = await caches.open(API_CACHE);
-      cache.put(request, response.clone());
+      trackCacheWrite(cache.put(request, response.clone()));
     }
     return response;
   } catch (_error) {
@@ -224,12 +235,12 @@ async function networkFirstApi(request) {
   }
 }
 
-async function cacheFirstApi(request) {
+async function cacheFirstApi(request, trackCacheWrite = () => {}) {
   const cached = await caches.match(request);
   if (cached) {
     return cached;
   }
-  return networkFirstApi(request);
+  return networkFirstApi(request, trackCacheWrite);
 }
 
 function isRefreshRequest(request) {

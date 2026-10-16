@@ -1168,3 +1168,12 @@ html[data-theme="dark"] .map-stage {
     margin-top: 10px;
   }
 }
+
+@media (max-width: 680px) {
+  .map-browser-actions button,
+  .map-mobile-trigger,
+  .map-search-result-button,
+  .map-study-header .map-panel-close {
+    min-height: 44px;
+  }
+}

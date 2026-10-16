@@ -54,12 +54,25 @@ test("selected status requires exact loaded and selected kind and ID", async () 
     }).status,
     "failed",
   );
+  assert.equal(
+    acknowledgeMapFocus({
+      request,
+      markers: [{id: "eden"}],
+      selected: {kind: "route", id: "eden"},
+    }).status,
+    "failed",
+  );
 });
 
 test("a completed online lookup distinguishes missing, unsupported, and offline targets", async () => {
   const {acknowledgeMapFocus} = await helpers();
 
   assert.equal(acknowledgeMapFocus({request: {kind: "place", id: "absent"}, markers: []}).status, "not_found");
+  assert.equal(
+    acknowledgeMapFocus({request: {kind: "route", id: "eden"}, markers: [{id: "eden"}], routes: []}).status,
+    "not_found",
+    "a matching place ID cannot satisfy a route-kind request",
+  );
   assert.equal(acknowledgeMapFocus({request: {kind: "historical_layer", id: "period"}}).status, "unsupported");
   assert.equal(acknowledgeMapFocus({request: {kind: "place", id: "absent"}, offline: true}).status, "unavailable");
   assert.equal(acknowledgeMapFocus({request: {kind: "place", id: "eden"}, failureReason: "lookup_failed"}).status, "failed");
