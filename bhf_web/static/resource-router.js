@@ -444,6 +444,7 @@
             ? {
               kind: destination.kind === "map_route" ? "route" : "place",
               targetId,
+              acknowledgeFocus: true,
             }
             : undefined,
         });

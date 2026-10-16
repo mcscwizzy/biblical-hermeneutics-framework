@@ -19,7 +19,7 @@ function node() {
 }
 
 
-function loadCompanion() {
+function loadCompanion(options = {}) {
   const listeners = new Map();
   const panel = node();
   const shell = node();
@@ -43,7 +43,11 @@ function loadCompanion() {
     requestAnimationFrame(callback) { callback(); },
     BHFStudySelection: {
       subscribe(callback) { selectionListener = callback; },
+      getState() { return options.selection || null; },
     },
+    BHFMaps: options.openMapPanel
+      ? {openMapPanel: options.openMapPanel}
+      : undefined,
     BHFStudyRecommendations: {
       rank() { return {reason: "", recommended: [], deeper: [], all: []}; },
     },
@@ -112,4 +116,55 @@ test("other passage-bound resources still refresh when the reader selection chan
   fixture.select({book: "Acts", chapter: 7, reference: "Acts 7:19", hasPassageSelection: true});
   assert.equal(fixture.routerCalls.length, 2);
   assert.equal(fixture.routerCalls[1][0], "archaeology");
+});
+
+
+test("Companion returns requested Maps focus acknowledgment without changing legacy opens", async () => {
+  const calls = [];
+  const acknowledgment = {
+    status: "not_found",
+    requestedKind: "place",
+    requestedId: "openbible-a012705",
+    selectedKind: null,
+    selectedId: null,
+    reason: "requested_item_not_found",
+  };
+  const fixture = loadCompanion({
+    selection: {book: "Acts", chapter: 7, startVerse: 19, endVerse: 19},
+    openMapPanel: async (context) => {
+      calls.push(context);
+      return acknowledgment;
+    },
+  });
+
+  const result = await fixture.companion.openResource("maps", {
+    mapFocus: {kind: "place", targetId: "openbible-a012705", acknowledgeFocus: true},
+  });
+  const legacy = await fixture.companion.openResource("maps", {
+    mapFocus: {kind: "place", targetId: "openbible-a012705"},
+  });
+
+  assert.deepEqual(result, acknowledgment);
+  assert.equal(calls[0].focusPlaceId, "openbible-a012705");
+  assert.equal(calls[0].focusKind, "place");
+  assert.equal(calls[0].focusTargetId, "openbible-a012705");
+  assert.equal(calls[0].acknowledgeFocus, true);
+  assert.equal(legacy, undefined);
+  assert.equal(calls[1].acknowledgeFocus, undefined);
+});
+
+
+test("a requested map focus reports unavailable while the MapPanel module is loading", async () => {
+  const fixture = loadCompanion({
+    selection: {book: "Joshua", chapter: 1, startVerse: 4, endVerse: 4},
+  });
+
+  const result = await fixture.companion.openResource("maps", {
+    mapFocus: {kind: "place", targetId: "negeb", acknowledgeFocus: true},
+  });
+
+  assert.equal(result.status, "unavailable");
+  assert.equal(result.requestedKind, "place");
+  assert.equal(result.requestedId, "negeb");
+  assert.equal(result.reason, "map_panel_not_ready");
 });

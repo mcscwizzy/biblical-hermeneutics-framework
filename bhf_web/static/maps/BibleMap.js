@@ -325,37 +325,35 @@ export function createBibleMap(container, markers, options = {}) {
 
 function focusSelection(kind, item) {
     if (!item) {
-      return;
+      return false;
     }
     if (kind === "place" && Number.isFinite(item.latitude) && Number.isFinite(item.longitude)) {
       const placeLayer = placeLayers.get(item.id);
-      if (placeLayer) {
-        map.setView([item.latitude, item.longitude], 10);
-        placeLayer.openPopup();
-        return;
-      }
       map.setView([item.latitude, item.longitude], 10);
-      return;
+      if (placeLayer) {
+        placeLayer.openPopup();
+      }
+      return true;
     }
     if (kind === "archaeology") {
       const archaeology = archaeologyLayers.get(item.id);
       if (focusLayerBounds(archaeology?.layer, 10)) {
         archaeology?.layer?.openPopup?.();
-        return;
+        return true;
       }
     }
     if (kind === "manuscript") {
       const manuscript = manuscriptLayers.get(item.id);
       if (focusLayerBounds(manuscript?.layer, 10)) {
         manuscript?.layer?.openPopup?.();
-        return;
+        return true;
       }
     }
     if (kind === "route") {
       const route = routeLayers.get(item.id);
       if (focusLayerBounds(route, 9)) {
         route?.openPopup?.();
-        return;
+        return true;
       }
     }
     if (kind === "reference_feature") {
@@ -370,7 +368,9 @@ function focusSelection(kind, item) {
     }
     if (Number.isFinite(item.latitude) && Number.isFinite(item.longitude)) {
       map.setView([item.latitude, item.longitude], 9);
+      return true;
     }
+    return false;
   }
 
   function getReferenceFeatureKey(layerId, featureId) {

@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v46";
+const CACHE_VERSION = "v47";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -53,6 +53,7 @@ const STATIC_ASSETS = [
   "/static/maps/JourneyMapData.js",
   "/static/maps/MapMarkerPopup.js",
   "/static/maps/MapPanel.js",
+  "/static/maps/MapFocusAcknowledgment.js",
   "/static/maps/MapPanelContent.js",
   "/static/maps/MapPanelSearch.js",
   "/static/maps/MapPanelStateHelpers.js",

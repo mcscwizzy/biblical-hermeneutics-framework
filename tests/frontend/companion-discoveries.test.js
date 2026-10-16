@@ -182,7 +182,7 @@ test("grounded map and entity actions dispatch to existing BHF resources", async
   assert.deepEqual(calls, [
     ["resource", "maps", {
       trigger: mapButton,
-      mapFocus: {kind: "place", targetId: "corinth"},
+      mapFocus: {kind: "place", targetId: "corinth", acknowledgeFocus: true},
     }],
     ["resource", "canonical", {trigger: personButton}],
     ["canonical", "abigail"],

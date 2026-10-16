@@ -148,12 +148,12 @@
     if (action === "open_map" && target) {
       await openResource("maps", {
         trigger: button,
-        mapFocus: {kind: "place", targetId: target},
+        mapFocus: {kind: "place", targetId: target, acknowledgeFocus: true},
       });
     } else if (action === "show_route" && target) {
       await openResource("maps", {
         trigger: button,
-        mapFocus: {kind: "route", targetId: target},
+        mapFocus: {kind: "route", targetId: target, acknowledgeFocus: true},
       });
     } else if (action === "archaeology") {
       await openResource("archaeology", {trigger: button});
@@ -171,7 +171,7 @@
     ) {
       await openResource("maps", {
         trigger: button,
-        mapFocus: {kind: "place", targetId: target},
+        mapFocus: {kind: "place", targetId: target, acknowledgeFocus: true},
       });
     } else if (
       ["explore_person", "explore_place", "explore_event", "explore_custom"].includes(action)

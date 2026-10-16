@@ -20,6 +20,7 @@ import {
 } from "./MapPanelText.js";
 import { normalizeHistoricalPeriod } from "./MapPanelStateHelpers.js";
 import { buildGoogleEarthUrl } from "./MapExternalLinks.js";
+import { acknowledgeMapFocus, requestedMapFocus } from "./MapFocusAcknowledgment.js";
 
 // Source links still point to `/sources/` in the rendered map panel markup.
 const BHF_HTTP = window.BHFApi || {};
@@ -597,6 +598,7 @@ function ensureMapController(markers, routes, routeVisibility) {
 }
 
 async function openMapPanel(context = {}) {
+  const focusRequest = requestedMapFocus(context);
   const browseMode = context.mode === "browse" || (!context.book && !context.chapter);
   setMapMode(browseMode ? "browse" : "passage");
   if (browseMode) {
@@ -657,9 +659,17 @@ async function openMapPanel(context = {}) {
     );
     syncHistoricalPeriod();
 
-    if (!browseMode) {
-      applyRequestedMapFocus(context);
-    }
+    const selectedFocus = !browseMode ? applyRequestedMapFocus(context) : null;
+    const focusAcknowledgment = acknowledgeMapFocus({
+      request: focusRequest,
+      markers: loadedMarkers,
+      routes: loadedRoutes,
+      selected: selectedFocus,
+      offline: Boolean(catalog?.offline || offline || window.navigator?.onLine === false),
+      unsupportedReason: browseMode && focusRequest
+        ? "general_map_browser_does_not_resolve_passage_targets"
+        : null,
+    });
 
     if (browseMode) {
       clearStatus();
@@ -670,7 +680,7 @@ async function openMapPanel(context = {}) {
         renderBrowseInstructions("Browse the catalog, or search by topic, location, or route.");
         refreshBrowseMapResults([]);
       }
-      return;
+      return focusAcknowledgment || undefined;
     }
 
     if (selectedMarker && (placeResult.markers || []).some((marker) => marker.id === selectedMarker.id)) {
@@ -714,16 +724,22 @@ async function openMapPanel(context = {}) {
     if (routeVisibility && loadedRoutes.length === 0) {
       setStatus("Route view is on, but no curated routes are stored for this passage.", "empty");
     }
-    if (offline) {
+    if (offline || catalog?.offline) {
       setStatus(
         "Loaded cached local map data. The structured map responses will refresh automatically when the API is available.",
         "warning"
       );
     }
+    return focusAcknowledgment || undefined;
   } catch (error) {
     setPinHint("");
     setStatus(error.message || "Could not load the map.", "error");
     renderEmptyDetails("Could not load place and route details.");
+    return acknowledgeMapFocus({
+      request: focusRequest,
+      offline: window.navigator?.onLine === false,
+      failureReason: window.navigator?.onLine === false ? null : "map_lookup_or_controller_failed",
+    }) || undefined;
   }
 }
 
@@ -872,16 +888,17 @@ function loadSupplementalMapData() { return Promise.resolve({ journeys: [], mapL
 // setPoliticalContextLayerVisibility(result.item.id, true)
 
 function focusMapSelection(result) {
-  if (!mapController || !result) {
-    return;
+  if (!mapController || !result?.item) {
+    return false;
   }
   if (typeof mapController.focusSelection === "function") {
-    mapController.focusSelection(result.kind, result.item);
-    return;
+    return mapController.focusSelection(result.kind, result.item) === true;
   }
   if (mapController.map && Number.isFinite(result.item?.latitude) && Number.isFinite(result.item?.longitude)) {
     mapController.map.setView([result.item.latitude, result.item.longitude], 9);
+    return true;
   }
+  return false;
 }
 
 function applyRequestedMapFocus(context = {}) {
@@ -894,20 +911,22 @@ function applyRequestedMapFocus(context = {}) {
     ? loadedRoutes.find((item) => String(item?.id || "") === routeId)
     : null;
   if (marker) {
+    const focused = focusMapSelection({kind: "place", item: marker});
+    if (!focused && context.acknowledgeFocus === true) return null;
     selectedMarker = marker;
     selectedRoute = null;
     renderSelectedMarker(marker, context);
-    focusMapSelection({kind: "place", item: marker});
-    return true;
+    return focused ? {kind: "place", id: String(marker.id)} : null;
   }
   if (route) {
+    const focused = focusMapSelection({kind: "route", item: route});
+    if (!focused && context.acknowledgeFocus === true) return null;
     selectedRoute = route;
     selectedMarker = null;
     renderSelectedRoute(route, context);
-    focusMapSelection({kind: "route", item: route});
-    return true;
+    return focused ? {kind: "route", id: String(route.id)} : null;
   }
-  return false;
+  return null;
 }
 
 function renderEmptyDetails(message) {

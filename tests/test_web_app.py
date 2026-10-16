@@ -636,6 +636,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn('const askForm = document.querySelector(".ask-form")', script)
         self.assertIn("if (!bookSelect || !chapterSelect || !reader) {", script)
 
+    def test_map_focus_acknowledgment_module_is_in_the_offline_static_shell(self):
+        service_worker = Path("bhf_web/static/sw.js").read_text(encoding="utf-8")
+        self.assertIn('"/static/maps/MapFocusAcknowledgment.js"', service_worker)
+
     def test_map_workspace_opens_from_map_panel_events(self):
         reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
         companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
@@ -649,7 +653,11 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("{focus: false}", companion_script)
         self.assertIn("focus: options.focus,", companion_script)
         self.assertIn('currentMode === "explore"', companion_script)
-        self.assertIn('await actions?.perform?.("open_map_panel", mapContext);', companion_script)
+        self.assertIn('await actions?.perform?.("open_map_panel", passageOrBrowseContext);', companion_script)
+        map_panel = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
+        self.assertIn("const focusRequest = requestedMapFocus(context);", map_panel)
+        self.assertIn("const focusAcknowledgment = acknowledgeMapFocus({", map_panel)
+        self.assertIn("return mapController.focusSelection(result.kind, result.item) === true;", map_panel)
 
     def test_companion_questions_use_the_external_handoff_controller(self):
         companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
@@ -1344,7 +1352,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v45"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v47"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
         self.assertNotIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])

@@ -506,11 +506,11 @@
     if (options.trigger) lastResourceTrigger = options.trigger;
     if (options.mode) currentMode = options.mode;
     if (resourceId === "maps") {
-      await openLegacyResource(resourceId, options);
+      const acknowledgment = await openLegacyResource(resourceId, options);
       if (options.history !== false && historyController?.current()?.resource !== resourceId) {
         historyController?.push(historySnapshot());
       }
-      return;
+      return options.mapFocus?.acknowledgeFocus === true ? acknowledgment : undefined;
     }
     const engine = window.BHFStudyRecommendations;
     const resource = requestedResourceId === "narrative_explorer"
@@ -554,6 +554,7 @@
         ? {mode: "browse"}
         : selectedContext;
       const mapFocus = options.mapFocus || {};
+      const requestsAcknowledgment = mapFocus.acknowledgeFocus === true;
       const mapContext = {
         ...(baseMapContext || {}),
         ...(mapFocus.kind === "route" && mapFocus.targetId
@@ -562,21 +563,52 @@
         ...(mapFocus.kind === "place" && mapFocus.targetId
           ? {focusPlaceId: mapFocus.targetId}
           : {}),
+        ...(requestsAcknowledgment
+          ? {
+            acknowledgeFocus: true,
+            focusKind: mapFocus.kind,
+            focusTargetId: mapFocus.targetId,
+          }
+          : {}),
       };
+      const passageOrBrowseContext = mapContext?.book && mapContext?.chapter
+        ? mapContext
+        : {...mapContext, mode: "browse"};
       if (typeof window.BHFMaps?.openMapPanel === "function") {
-        await window.BHFMaps.openMapPanel(
-          mapContext?.book && mapContext?.chapter ? mapContext : {mode: "browse"},
-        );
-      } else {
-        // The MapPanel module can still be loading on a fresh page. The shared
-        // action bridge queues the context until it becomes available.
-        await actions?.perform?.("open_map_panel", mapContext);
+        const acknowledgment = await window.BHFMaps.openMapPanel(passageOrBrowseContext);
+        if (!requestsAcknowledgment) return undefined;
+        return acknowledgment?.status
+          ? acknowledgment
+          : mapFocusAcknowledgment(mapFocus, "unavailable", "map_panel_did_not_acknowledge_focus");
       }
+      // The MapPanel module can still be loading on a fresh page. The shared
+      // action bridge queues the context until it becomes available.
+      try {
+        await actions?.perform?.("open_map_panel", passageOrBrowseContext);
+      } catch (_error) {
+        if (requestsAcknowledgment) {
+          return mapFocusAcknowledgment(mapFocus, "failed", "map_panel_open_failed");
+        }
+      }
+      return requestsAcknowledgment
+        ? mapFocusAcknowledgment(mapFocus, "unavailable", "map_panel_not_ready")
+        : undefined;
     } else if (resourceId === "ask") {
       document.querySelector("[data-ask-bhf]")?.click();
     } else if (RESOURCE_ACTIONS.has(resourceId)) {
       await actions?.perform?.(resourceId);
     }
+  }
+
+  function mapFocusAcknowledgment(mapFocus, status, reason) {
+    return {
+      status,
+      requestedKind: String(mapFocus?.kind || ""),
+      requestedId: String(mapFocus?.targetId || ""),
+      selectedKind: null,
+      selectedId: null,
+      reason,
+    };
   }
 
   function ensureResourceVisible(resourceId, resource = null, options = {}) {

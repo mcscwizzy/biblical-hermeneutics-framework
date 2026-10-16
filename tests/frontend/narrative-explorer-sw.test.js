@@ -29,7 +29,7 @@ function createWorker() {
   const caches = {
     open: async (name) => makeCache(name),
     match: async () => undefined,
-    keys: async () => ["bhf-shell-v45", "bhf-static-v45", "bhf-api-v45"],
+    keys: async () => ["bhf-shell-v46", "bhf-static-v46", "bhf-api-v46"],
     delete: async (name) => {
       deletedCaches.push(name);
       return true;
@@ -66,14 +66,15 @@ test("service worker precaches the explorer module and retires the previous cach
   });
   await installPromise;
 
-  assert.equal(worker.cacheAssets.get("bhf-static-v46")?.has("/static/narrative-explorer.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v47")?.has("/static/narrative-explorer.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v47")?.has("/static/maps/MapFocusAcknowledgment.js"), true);
 
   let activatePromise;
   worker.listeners.get("activate")({
     waitUntil: (promise) => { activatePromise = promise; },
   });
   await activatePromise;
-  assert.deepEqual(worker.deletedCaches.sort(), ["bhf-api-v45", "bhf-shell-v45", "bhf-static-v45"]);
+  assert.deepEqual(worker.deletedCaches.sort(), ["bhf-api-v46", "bhf-shell-v46", "bhf-static-v46"]);
 });
 
 test("Narrative Explorer API requests bypass service-worker caching", async () => {
