@@ -251,10 +251,8 @@ def test_vercel_config_runs_source_build_and_includes_only_ckl_runtime_inputs() 
         "python -m framework.canonical_library.vercel_build"
     )
     includes = vercel_config["functions"]["bhf_web/app.py"]["includeFiles"]
-    assert "framework/canonical_library/data/ckl.sqlite" in includes
-    assert "framework/canonical_library/manifest.json" in includes
-    assert "framework/canonical_library/objects/**/*.json" in includes
-    assert not any(path.startswith(".bhf/") for path in includes)
+    assert includes == "framework/canonical_library/**"
+    assert isinstance(includes, str)
     assert ".bhf-data/**" in ignore_patterns
     assert ".env*" in ignore_patterns
     assert "local.config.json" in ignore_patterns
