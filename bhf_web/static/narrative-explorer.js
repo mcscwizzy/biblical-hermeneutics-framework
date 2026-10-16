@@ -30,7 +30,7 @@
     {
       id: "divine_council_cosmic_geography",
       title: "Divine Council & Cosmic Geography",
-      description: "Textual records about heavenly assemblies, divine beings, sacred space, and cosmic imagery; this lens does not settle interpretation.",
+      description: "Source-qualified conceptual readings of sacred space, assembly language, disputed divine beings, and ancient cosmology. This is not a literal map of heavenly realms and does not establish physical locations.",
     },
     {
       id: "themes_biblical_connections",
@@ -610,6 +610,15 @@
     appendTextElement(document, heading, "h4", definition.title);
     appendTextElement(document, heading, "p", definition.description);
     card.append(heading);
+    if (definition.id === "divine_council_cosmic_geography") {
+      appendTextElement(
+        document,
+        card,
+        "p",
+        "Comparative material describes an ancient cultural or literary context; it does not by itself prove borrowing, quotation, or dependence. Proposed symbolic readings remain interpretations, not archaeological findings.",
+        "narrative-explorer-caution",
+      );
+    }
 
     const state = normalizeState(section.state);
     const stateLabel = {
@@ -743,7 +752,7 @@
         ? readerText(item.description)
         : "";
     if (authoredText) appendTextElement(document, card, "p", authoredText, "narrative-explorer-item-copy");
-    const visibleKind = [item.evidence_category, item.claim_type, item.assertion_type, item.domain]
+    const visibleKind = [cosmicRoleLabel(item.cosmic_geography_role), item.evidence_category, item.claim_type, item.assertion_type, item.domain]
       .map(readerText)
       .filter(Boolean)
       .join(" · ");
@@ -788,6 +797,9 @@
     const lines = [`Projected source identity: ${readerText(item.id) || "unavailable"}`];
     const subject = readerText(item.parent_object_id || item.object_id);
     if (subject) lines.push(`CKL subject: ${subject}`);
+    if (readerText(item.domain) === "maps" && readerText(item.object_id || item.id)) {
+      lines.push(`Original map/record ID: ${readerText(item.object_id || item.id)}`);
+    }
     if (readerText(item.claim_id)) lines.push(`Claim ID: ${readerText(item.claim_id)}`);
     if (readerText(item.evidence_id)) lines.push(`Evidence ID: ${readerText(item.evidence_id)}`);
     if (readerText(item.evidence_category)) lines.push(`Evidence category: ${readerText(item.evidence_category)}`);
@@ -803,9 +815,17 @@
     const anchors = Array.isArray(item.applicable_passage_anchors) && item.applicable_passage_anchors.length
       ? item.applicable_passage_anchors
       : (Array.isArray(item.passage_anchors) ? item.passage_anchors : []);
+    const anchoredReferences = new Set();
     anchors.slice(0, 8).forEach((anchor) => {
       const reference = readerText(anchor.reference);
-      if (reference) lines.push(`Passage relationship: ${reference}${anchor.relationship ? ` · ${readerText(anchor.relationship)}` : ""}`);
+      if (reference) {
+        anchoredReferences.add(reference);
+        lines.push(`Passage relationship: ${reference}${anchor.relationship ? ` · ${readerText(anchor.relationship)}` : ""}`);
+      }
+    });
+    (Array.isArray(item.related_passages) ? item.related_passages : []).slice(0, 8).forEach((reference) => {
+      const text = readerText(reference);
+      if (text && !anchoredReferences.has(text)) lines.push(`Related passage: ${text}`);
     });
     [
       ["Confidence", item.confidence],
@@ -817,6 +837,7 @@
       ["Human review required", item.human_review_required],
       ["Temporal relation", item.temporal_relation],
       ["Geography kind", item.geography_kind],
+      ["Physical identification status", item.physical_identification_status || item.source_metadata?.physical_identification_status || item.source_metadata?.place_identification_status || item.source_metadata?.identification_status],
       ["Place identification confidence", item.place_identification_confidence],
     ].forEach(([label, value]) => {
       const text = metadataText(value);
@@ -825,6 +846,23 @@
     if (item.coordinates_displayable === false && item.geography_kind && PHYSICAL_GEOGRAPHY.has(item.geography_kind)) {
       if (readerText(item.coordinate_display_reason)) lines.push(`Map point withheld: ${readerText(item.coordinate_display_reason)}`);
       else lines.push("Map point withheld because the source does not establish a precise physical identification.");
+    }
+    if (item.geometry_displayable === false && item.geometry_display_reason && PHYSICAL_GEOGRAPHY.has(item.geography_kind)) {
+      lines.push(`Route geometry withheld: ${readerText(item.geometry_display_reason)}`);
+    }
+    if (PHYSICAL_GEOGRAPHY.has(item.geography_kind)) {
+      const sourceMetadata = item.source_metadata && typeof item.source_metadata === "object" ? item.source_metadata : {};
+      [
+        ["Ancient name", sourceMetadata.ancient_name || sourceMetadata.ancient_names],
+        ["Modern name", sourceMetadata.modern_name || sourceMetadata.modern_names],
+        ["Modern location", sourceMetadata.modern_location],
+        ["Region", sourceMetadata.region || sourceMetadata.ancient_region],
+        ["Territory", sourceMetadata.territory || sourceMetadata.territories],
+        ["Historical period", sourceMetadata.historical_period || sourceMetadata.historical_periods || sourceMetadata.period || sourceMetadata.periods],
+      ].forEach(([label, value]) => {
+        const text = metadataText(value);
+        if (text) lines.push(`${label}: ${text}`);
+      });
     }
     if (item.rationale && Object.keys(item.rationale).length) {
       lines.push(`Recorded basis: ${compactObject(item.rationale)}`);
@@ -837,6 +875,19 @@
       if (readerText(edge.temporal_layer)) lines.push(`Connection temporal layer: ${readerText(edge.temporal_layer)}`);
       if (edge.basis && Object.keys(edge.basis).length) lines.push(`Connection basis: ${compactObject(edge.basis)}`);
     });
+    if (readerText(item.domain) === "maps") {
+      const sourceMetadata = item.source_metadata && typeof item.source_metadata === "object" ? item.source_metadata : {};
+      const nestedSource = sourceMetadata.source && typeof sourceMetadata.source === "object" ? sourceMetadata.source : {};
+      const recordedSource = [
+        ["Source", sourceMetadata.source_name || nestedSource.source_name || nestedSource.label || nestedSource.title],
+        ["Source URL", sourceMetadata.source_url || nestedSource.source_url || nestedSource.url],
+        ["License", sourceMetadata.license || nestedSource.license],
+      ].map(([label, value]) => {
+        const text = metadataText(value);
+        return text ? `${label}: ${text}` : "";
+      }).filter(Boolean);
+      if (recordedSource.length) lines.push(`Recorded map provenance: ${recordedSource.join(" · ")}`);
+    }
     (Array.isArray(item.sources) ? item.sources : []).slice(0, 12).forEach((source) => {
       const id = readerText(source.id);
       const bibliography = source.bibliographic_details || {};
@@ -852,6 +903,17 @@
     const listedSources = new Set((Array.isArray(item.sources) ? item.sources : []).map((source) => readerText(source.id)).filter(Boolean));
     sourceIds.filter((id) => !listedSources.has(id)).slice(0, 12).forEach((id) => lines.push(`Source ID: ${id}`));
     return lines;
+  }
+
+  function cosmicRoleLabel(role) {
+    return ({
+      sacred_space_interpretation: "Sacred-space interpretation",
+      sacred_space_guarding_context: "Sacred-space guarding context",
+      divine_assembly_text: "Heavenly assembly language",
+      divine_assembly_comparison: "Divine assembly comparison",
+      ancient_cosmology_comparison: "Ancient cosmology comparison",
+      disputed_divine_beings_interpretation: "Divine beings with disputed interpretation",
+    })[readerText(role)] || "";
   }
 
   function supportedAction(item) {
@@ -1507,6 +1569,7 @@
   function metadataText(value) {
     if (value === null || value === undefined || value === "") return "";
     if (typeof value === "boolean") return value ? "Yes" : "No";
+    if (Array.isArray(value)) return value.map(metadataText).filter(Boolean).join(", ");
     if (typeof value === "object") return compactObject(value);
     return String(value);
   }

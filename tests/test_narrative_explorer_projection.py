@@ -409,6 +409,36 @@ def test_route_geometry_requires_an_established_physical_identification():
     assert item["geometry_display_reason"] == "geographic_identification_not_established"
 
 
+def test_verified_route_geometry_can_be_displayable_when_source_identification_is_established():
+    route = {
+        "id": "verified-route-fixture",
+        "name": "Verified route test fixture",
+        "marker_kind": "route",
+        "route_identification_status": "verified",
+        "dispute_status": "not_disputed",
+        "geojson": {
+            "type": "Feature",
+            "geometry": {"type": "LineString", "coordinates": [[35.0, 31.0], [36.0, 32.0]]},
+        },
+        "scripture_links": [
+            {
+                "book": "Exodus",
+                "chapter": 3,
+                "verse_start": 1,
+                "verse_end": 4,
+                "relationship_type": "direct",
+            }
+        ],
+    }
+    result = _project("Exodus 3", maps=_lookup("maps", records=[route]))
+    item = _item(result, "maps:verified-route-fixture")
+
+    assert item["geography_kind"] == "route"
+    assert item["stored_geometry"]["coordinates"] == [[35.0, 31.0], [36.0, 32.0]]
+    assert item["geometry_displayable"] is True
+    assert item["geometry_display_reason"] is None
+
+
 def test_archaeology_projection_preserves_explicit_source_and_uncertainty():
     record = {
         "id": "exodus-inscription",

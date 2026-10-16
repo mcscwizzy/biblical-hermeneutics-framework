@@ -395,7 +395,7 @@ test("overview renders bounded source records, coverage and provenance without H
     section_ids: ["biblical_narrative"],
   }));
   const mapItems = [
-    {id: "maps:00-eden-safe", title: "Supported site", coordinates_displayable: true},
+    {id: "maps:00-eden-safe", title: "Synthetic test fixture: identified physical site", coordinates_displayable: true},
     {id: "maps:01-eden-uncertain", title: "Eden", coordinates_displayable: false, coordinate_display_reason: "identification_unresolved"},
     {id: "maps:02-no-selection", title: "Collection-only place", coordinates_displayable: false, coordinate_display_reason: "identification_unresolved", selection_required: false},
     {id: "maps:99-conceptual", title: "Conceptual map result", coordinates_displayable: true, geography_kind: "unknown"},
@@ -472,6 +472,102 @@ test("overview renders bounded source records, coverage and provenance without H
   const unsupportedCard = descendants(geographyCard).find((element) => element.tagName === "ARTICLE" && element.textContent.includes("Collection-only place"));
   assert.equal(descendants(unsupportedCard).filter((element) => element.className.includes("narrative-explorer-item-action")).length, 0);
   assert.doesNotMatch(root.textContent, /shared motifs prove direct quotation/i);
+});
+
+test("physical and conceptual geography details keep their evidence domains distinct", () => {
+  const physical = {
+    ...projection().items[1],
+    id: "maps:pilot-place",
+    object_id: "pilot-place",
+    title: "Negeb",
+    domain: "maps",
+    record_kind: "map_place",
+    geography_kind: "physical_region",
+    physical_identification_status: "unidentified",
+    place_identification_confidence: "low",
+    dispute_status: "identification_uncertainty",
+    coordinates_displayable: false,
+    coordinate_display_reason: "identification_unresolved",
+    geometry_displayable: false,
+    geometry_display_reason: "no_geometry",
+    stored_coordinates: {latitude: 33.4, longitude: 35.8},
+    stored_geometry: {type: "Point", coordinates: [35.8, 33.4]},
+    source_metadata: {
+      ancient_names: ["Negeb (ancient region)"],
+      modern_names: ["Negev"],
+      modern_location: "Southern Levant",
+      ancient_region: "Southern Levant",
+      territories: ["Judah"],
+      historical_periods: ["Iron Age"],
+      source_name: "Test map catalog",
+      source_url: "https://example.test/map-source",
+      license: "CC BY 4.0",
+    },
+    original_relationship_types: ["direct"],
+    applicable_passage_anchors: [{reference: "Joshua 1:4", relationship: "direct"}],
+    related_passages: ["Joshua 1:4"],
+    section_ids: ["biblical_geography"],
+    navigation: {kind: "map_place", target_id: "pilot-place", selection_required: true},
+  };
+  const concepts = [
+    ["sacred_space_interpretation", "Sacred-space interpretation"],
+    ["sacred_space_guarding_context", "Sacred-space guarding context"],
+    ["divine_assembly_text", "Heavenly assembly language"],
+    ["ancient_cosmology_comparison", "Ancient cosmology comparison"],
+    ["disputed_divine_beings_interpretation", "Divine beings with disputed interpretation"],
+  ].map(([role, title], index) => ({
+    ...projection().items[0],
+    id: `ckl:concept-${index}`,
+    title,
+    domain: "ckl",
+    cosmic_geography_role: role,
+    section_ids: ["divine_council_cosmic_geography"],
+    navigation: null,
+  }));
+  const keywordTrap = {
+    ...projection().items[0],
+    id: "ckl:keyword-trap",
+    title: "Temple and mountain references",
+    cosmic_geography_role: null,
+    section_ids: ["divine_council_cosmic_geography"],
+    navigation: null,
+  };
+  const data = projection({
+    sections: projection().sections.map((entry) => entry.id === "biblical_geography"
+      ? {...entry, state: "available", item_ids: [physical.id]}
+      : entry.id === "divine_council_cosmic_geography"
+        ? {...entry, state: "available", item_ids: [...concepts, keywordTrap].map((item) => item.id)}
+        : {...entry, item_ids: []}),
+    items: [physical, ...concepts, keywordTrap],
+  });
+
+  const view = explorer.renderOverview(data, {document: fakeDocument()});
+  const cosmicCard = descendants(view).find((element) => element.dataset.sectionId === "divine_council_cosmic_geography");
+  cosmicCard.children.find((element) => element.className.includes("narrative-explorer-inspect")).click();
+  const lines = view.textContent;
+  assert.match(lines, /Original map\/record ID: pilot-place/);
+  assert.match(lines, /Ancient name: Negeb \(ancient region\)/);
+  assert.match(lines, /Modern name: Negev/);
+  assert.match(lines, /Modern location: Southern Levant/);
+  assert.match(lines, /Region: Southern Levant/);
+  assert.match(lines, /Territory: Judah/);
+  assert.match(lines, /Historical period: Iron Age/);
+  assert.match(lines, /Recorded map provenance: Source: Test map catalog · Source URL: https:\/\/example\.test\/map-source · License: CC BY 4\.0/);
+  assert.match(lines, /Physical identification status: unidentified/);
+  assert.match(lines, /Place identification confidence: low/);
+  assert.match(lines, /Dispute status: identification_uncertainty/);
+  assert.match(lines, /Passage relationship: Joshua 1:4 · direct/);
+  assert.match(lines, /Original relationship types: direct/);
+  assert.match(lines, /Map point withheld: identification_unresolved/);
+  assert.match(lines, /Sacred-space interpretation/);
+  assert.match(lines, /Sacred-space guarding context/);
+  assert.match(lines, /Heavenly assembly language/);
+  assert.match(lines, /Ancient cosmology comparison/);
+  assert.match(lines, /Divine beings with disputed interpretation/);
+  assert.match(lines, /not a literal map of heavenly realms and does not establish physical locations/i);
+  assert.match(lines, /does not by itself prove borrowing/i);
+  assert.doesNotMatch(lines, /33\.4|35\.8|\[35\.8,\s*33\.4\]|latitude|longitude/i);
+  assert.doesNotMatch(lines, /Temple and mountain references.*(?:Sacred-space|Heavenly assembly)/);
 });
 
 test("unavailable states are announced without turning a network failure into an empty result", () => {

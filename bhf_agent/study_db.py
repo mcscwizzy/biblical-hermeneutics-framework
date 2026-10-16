@@ -820,6 +820,11 @@ def _unique_preserve_order(values: list[str]) -> list[str]:
 
 
 def _ensure_schema(connection: sqlite3.Connection) -> None:
+    if int(connection.execute("PRAGMA query_only").fetchone()[0]) == 1:
+        database_row = connection.execute("PRAGMA database_list").fetchone()
+        database_path = str(database_row[2]) if database_row else ""
+        require_current_study_database(database_path)
+        return
     connection.execute(
         """
         CREATE TABLE IF NOT EXISTS schema_migrations (

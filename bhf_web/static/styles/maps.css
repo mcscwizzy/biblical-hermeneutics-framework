@@ -1157,3 +1157,14 @@ html[data-theme="dark"] .map-stage {
     transition: none;
   }
 }
+
+.map-study-header .map-panel-close {
+  flex: 0 0 auto;
+  min-height: 40px;
+}
+
+@media (max-width: 560px) {
+  .map-study-header .map-panel-close {
+    margin-top: 10px;
+  }
+}

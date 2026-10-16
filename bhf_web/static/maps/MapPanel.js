@@ -177,14 +177,71 @@ async function loadMapData(context = {}) {
   return mapMode === "browse" ? loadBrowseMapData() : loadPassageMapData(context);
 }
 
-function setStatus(message, kind = "loading") {
+function setStatus(message, kind = "loading", actions = []) {
   const { status } = getPanelElements();
   if (!status) {
     return;
   }
   status.hidden = false;
   status.dataset.state = kind;
-  status.textContent = message;
+  status.replaceChildren(document.createTextNode(message));
+  actions.forEach((action) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "secondary map-focus-status-action";
+    button.textContent = action.label;
+    button.addEventListener("click", action.onClick);
+    status.append(document.createTextNode(" "), button);
+  });
+}
+
+function showMapFocusAcknowledgment(acknowledgment, context = {}) {
+  if (!acknowledgment) return;
+  const {status, message, state, actions = []} = mapFocusAcknowledgmentPresentation(acknowledgment, context);
+  setStatus(message, state, actions);
+}
+
+function mapFocusAcknowledgmentPresentation(acknowledgment, context) {
+  const kind = acknowledgment.requestedKind === "route" ? "route" : "place";
+  const id = acknowledgment.requestedId || "requested item";
+  const selectedItems = kind === "route" ? loadedRoutes : loadedMarkers;
+  const item = selectedItems.find((candidate) => String(candidate?.id || "") === id);
+  const title = String(item?.title || item?.name || item?.label || id);
+  const browse = () => openMapPanel({mode: "browse"});
+  const retry = () => openMapPanel({...context, acknowledgeFocus: true});
+  if (acknowledgment.status === "selected") {
+    return {status: "selected", state: "selected", message: `Selected “${title}” in Maps.`, actions: []};
+  }
+  if (acknowledgment.status === "not_found") {
+    return {
+      status: "not_found",
+      state: "empty",
+      message: `Maps opened, but “${title}” was not found in the map results loaded for this passage. It has not been selected.`,
+      actions: [{label: "Browse maps", onClick: browse}],
+    };
+  }
+  if (acknowledgment.status === "unsupported") {
+    return {
+      status: "unsupported",
+      state: "empty",
+      message: `Maps opened, but “${title}” is unsupported by the current map layer and was not selected.`,
+      actions: [{label: "Browse maps", onClick: browse}],
+    };
+  }
+  if (acknowledgment.status === "unavailable") {
+    return {
+      status: "unavailable",
+      state: "warning",
+      message: `Maps opened, but the requested item “${title}” is unavailable in the current map data${window.navigator?.onLine === false ? " while offline" : ""}. It has not been selected.`,
+      actions: [{label: "Retry map lookup", onClick: retry}, {label: "Browse maps", onClick: browse}],
+    };
+  }
+  return {
+    status: "failed",
+    state: "error",
+    message: `Maps opened, but the map controller could not confirm selection of “${title}”. It has not been selected.`,
+    actions: [{label: "Retry map lookup", onClick: retry}, {label: "Browse maps", onClick: browse}],
+  };
 }
 
 function clearStatus() {
@@ -610,6 +667,10 @@ async function openMapPanel(context = {}) {
       kind: browseSearchKind,
       period: browseSearchPeriod,
     });
+  } else if (focusRequest) {
+    // A new acknowledged request must not inherit a selection from an earlier
+    // request for the same passage.
+    clearCurrentMapSelection();
   } else {
     const nextReference = formatReference(context);
     const previousReference = formatReference(lastPassageContext);
@@ -680,6 +741,7 @@ async function openMapPanel(context = {}) {
         renderBrowseInstructions("Browse the catalog, or search by topic, location, or route.");
         refreshBrowseMapResults([]);
       }
+      showMapFocusAcknowledgment(focusAcknowledgment, context);
       return focusAcknowledgment || undefined;
     }
 
@@ -730,16 +792,19 @@ async function openMapPanel(context = {}) {
         "warning"
       );
     }
+    showMapFocusAcknowledgment(focusAcknowledgment, context);
     return focusAcknowledgment || undefined;
   } catch (error) {
     setPinHint("");
     setStatus(error.message || "Could not load the map.", "error");
     renderEmptyDetails("Could not load place and route details.");
-    return acknowledgeMapFocus({
+    const focusAcknowledgment = acknowledgeMapFocus({
       request: focusRequest,
       offline: window.navigator?.onLine === false,
       failureReason: window.navigator?.onLine === false ? null : "map_lookup_or_controller_failed",
-    }) || undefined;
+    });
+    showMapFocusAcknowledgment(focusAcknowledgment, context);
+    return focusAcknowledgment || undefined;
   }
 }
 
@@ -753,6 +818,9 @@ function closeMapPanel() {
     emptyState.hidden = false;
   }
   setPinHint("");
+  if (emptyState && !emptyState.closest("[hidden]")) {
+    emptyState.querySelector("[data-open-map-browser]")?.focus({preventScroll: true});
+  }
   document.dispatchEvent(new CustomEvent("bhf:map-panel-closed"));
 }
 
@@ -955,6 +1023,10 @@ async function handleMapPanelClick(event) {
     return;
   }
   const button = target.closest("button, [role='button']");
+  if (button?.matches("[data-map-panel-close]")) {
+    closeMapPanel();
+    return;
+  }
   if (button?.matches("[data-map-modal-close]")) {
     closeMapModal();
     return;

@@ -173,8 +173,11 @@
       const startedAt = performanceNow();
       narrativeProjection = projection;
       if (!narrativeTrail) narrativeTrail = explorer.createTrail(narrativeSelection || projection?.passage || {});
-      const focusId = pendingNarrativeFocusId;
-      pendingNarrativeFocusId = "";
+      const expectedPassage = explorer.activeTrailStep(narrativeTrail)?.reference;
+      const projectionMatchesActivePassage = !expectedPassage
+        || normalizePassageReference(projectionPassageReference(projection)) === normalizePassageReference(expectedPassage);
+      const focusId = projectionMatchesActivePassage ? pendingNarrativeFocusId : "";
+      if (projectionMatchesActivePassage) pendingNarrativeFocusId = "";
       renderActiveNarrativeTrail({focusId});
       dispatchNarrativeMetric({
         phase: "render",
@@ -345,11 +348,21 @@
         await navigateReaderToSelection(origin);
         if (activeResourceId !== "narrative_explorer") return;
         notifyNarrativeTrailChanged();
+        const requestedFocusId = pendingNarrativeFocusId;
         await narrativeSession.open(origin);
-        const focusId = pendingNarrativeFocusId;
-        pendingNarrativeFocusId = "";
-        renderActiveNarrativeTrail({focusId});
+        if (activeResourceId !== "narrative_explorer") return;
+        // The requested projection may resolve after open() returns. Keep its
+        // focus target pending until that matching passage is rendered.
+        if (pendingNarrativeFocusId !== requestedFocusId) return;
+        const currentPassage = projectionPassageReference(narrativeProjection);
+        if (normalizePassageReference(currentPassage) === normalizePassageReference(origin.reference)) {
+          pendingNarrativeFocusId = "";
+          renderActiveNarrativeTrail({focusId: requestedFocusId});
+        } else {
+          renderActiveNarrativeTrail();
+        }
       } catch (error) {
+        pendingNarrativeFocusId = "";
         showTrailNotice(error?.message || "The original passage could not be restored.");
       }
     }
