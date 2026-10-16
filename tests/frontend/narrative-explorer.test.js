@@ -1,5 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 
 const explorer = require("../../bhf_web/static/narrative-explorer.js");
 
@@ -479,4 +481,521 @@ test("unavailable states are announced without turning a network failure into an
   assert.match(failure.textContent, /Not available offline/);
   assert.match(failure.textContent, /No saved Narrative Explorer projection is available for Exodus 3/);
   assert.match(failure.textContent, /Reconnect and try again/);
+});
+
+test("overview exposes an inspect control with the exact projected item identity", () => {
+  const data = projection();
+  const inspected = [];
+  const root = explorer.renderOverview(data, {
+    document: fakeDocument(),
+    onInspect: (item, button) => inspected.push({id: item.id, control: button.dataset.narrativeItemId}),
+  });
+  const button = descendants(root).find((element) => element.dataset.narrativeItemId === data.items[0].id);
+
+  assert.ok(button, "each visible projected item should be openable by its stable ID");
+  button.click();
+
+  assert.deepEqual(inspected, [{id: data.items[0].id, control: data.items[0].id}]);
+});
+
+test("trail state preserves the original passage and limits relationship hops", () => {
+  const origin = {
+    book: "Genesis",
+    chapter: 2,
+    startVerse: 8,
+    endVerse: 10,
+    selectedVerses: [8, 9, 10],
+    selectedText: "Garden passage",
+    translation: "kjv",
+    reference: "Genesis 2:8-10",
+  };
+  let trail = explorer.createTrail(origin);
+  trail = explorer.addEvidenceStep(trail, {
+    id: "ckl:genesis#evidence:g2-garden-planting-presence",
+    parent_object_id: "genesis",
+    title: "Eden evidence",
+  }, "item:ckl:genesis#evidence:g2-garden-planting-presence");
+
+  const first = explorer.followSubject(trail, {
+    targetId: "creation",
+    title: "Creation",
+  }, {
+    id: "connection-one",
+    direction: "one_way",
+    connectionType: "uncategorized",
+    originalRelationshipType: "narrative-context",
+  }, "connection:connection-one");
+  assert.equal(first.error, null);
+  trail = first.state;
+  const second = explorer.followSubject(trail, {targetId: "temple", title: "Temple"}, {
+    id: "connection-two",
+    direction: "one_way",
+    originalRelationshipType: "later-sanctuary-development",
+  }, "connection:connection-two").state;
+  const third = explorer.followPassage(second, {
+    reference: "John 1:14",
+    selection: {book: "John", chapter: 1, startVerse: 14, endVerse: 14, reference: "John 1:14"},
+  }, {id: "scripture-one", originalRelationshipType: "direct"}, "scripture:John 1:14");
+
+  assert.equal(third.error, null);
+  assert.equal(third.state.nodes.at(-1).relationshipHops, 3);
+  assert.deepEqual(third.state.originSelection, explorer.createTrail(origin).originSelection);
+  const blocked = explorer.followSubject(third.state, {targetId: "temple-theme", title: "Temple Theme"}, {
+    id: "connection-four",
+    direction: "one_way",
+    originalRelationshipType: "related-concept",
+  }, "connection:connection-four");
+  assert.equal(blocked.error, "depth_limit");
+});
+
+test("trail detects cycles and can return to its originating passage", () => {
+  const initial = explorer.createTrail({book: "Exodus", chapter: 3, reference: "Exodus 3"});
+  const evidence = explorer.addEvidenceStep(initial, {
+    id: "ckl:presence-theme#claim:presence",
+    parent_object_id: "presence-theme",
+    title: "Presence evidence",
+  }, "item:presence");
+  const cycle = explorer.followSubject(evidence, {targetId: "presence-theme", title: "Presence Theme"}, {
+    id: "self-edge",
+    direction: "one_way",
+    originalRelationshipType: "related-concept",
+  }, "connection:self-edge");
+  const linkedPassage = explorer.followPassage(evidence, {
+    reference: "Exodus 40:34-38",
+    selection: {book: "Exodus", chapter: 40, startVerse: 34, endVerse: 38, reference: "Exodus 40:34-38"},
+  }, {id: "anchor", originalRelationshipType: "scripture-anchor"}, "scripture:Exodus 40:34-38");
+  const returned = explorer.returnToOrigin(linkedPassage.state);
+
+  assert.equal(cycle.error, "cycle");
+  assert.equal(returned.nodes[returned.activeIndex].id, "passage:Exodus 3");
+  assert.deepEqual(returned.originSelection, initial.originSelection);
+});
+
+test("Scripture destinations require a canonical reader book, chapter, and valid verse range", () => {
+  const books = [
+    {value: "Genesis", chapters: 50},
+    {value: "John", chapters: 21},
+  ];
+
+  assert.deepEqual(explorer.validateScriptureReference("john 1:14", books), {
+    valid: true,
+    book: "John",
+    chapter: 1,
+    startVerse: 14,
+    endVerse: 14,
+    reference: "John 1:14",
+  });
+  assert.equal(explorer.validateScriptureReference("Unknown 1:1", books).valid, false);
+  assert.equal(explorer.validateScriptureReference("John 22:1", books).valid, false);
+  assert.equal(explorer.validateScriptureReference("John 1:8-3", books).valid, false);
+  assert.equal(explorer.validateScriptureReference("John 1:0", books).valid, false);
+});
+
+test("evidence detail displays only item provenance, uncertainty, bibliography, and safe connections", () => {
+  const data = projection();
+  const item = {
+    ...data.items[1],
+    title: "Ugaritic assembly comparison",
+    evidence_category: "ancient-text",
+    certainty: "probable",
+    dispute_status: "major_scholarly_disagreement",
+    interpretation_state: "disputed",
+    review_status: "in_review",
+    content_status: "draft",
+    human_review_required: true,
+    parent_summary: "This parent narrative must not appear in child evidence detail.",
+    sources: [{
+      id: "ugaritic-study",
+      details_available: true,
+      bibliographic_details: {
+        title: "The Baal Cycle",
+        author: "Mark S. Smith",
+        publisher: "Brill",
+        year: 1994,
+        locator: "Tablet II",
+        url: "https://example.test/baal-cycle",
+      },
+    }, {
+      id: "unsafe-source-url",
+      details_available: true,
+      bibliographic_details: {title: "Unsafe source URL", url: "javascript:alert(1)"},
+    }],
+  };
+  const connections = [
+    {
+      id: "edge-one-way",
+      source_id: item.id,
+      target_id: "ckl:tabernacle",
+      connection_type: "uncategorized",
+      original_relationship_type: "later-sanctuary-development",
+      relationship_mode: "not_recorded",
+      direction: "one_way",
+      reverse_edge_id: null,
+      temporal_layer: "unknown",
+      basis: {kind: "ckl_related_object", notes: "The CKL records a later sanctuary-development association."},
+    },
+    {
+      id: "edge-reciprocal",
+      source_id: item.id,
+      target_id: "ckl:temple-theme",
+      connection_type: "thematic_relationship",
+      original_relationship_type: "thematic-anchor",
+      relationship_mode: "not_recorded",
+      direction: "reciprocal",
+      reverse_edge_id: "reverse-edge",
+      temporal_layer: "unknown",
+      basis: {kind: "ckl_related_object", notes: "The reverse edge is recorded."},
+    },
+    {
+      id: "reverse-edge",
+      source_id: "ckl:temple-theme",
+      target_id: item.id,
+      connection_type: "thematic_relationship",
+      original_relationship_type: "thematic-anchor",
+      relationship_mode: "not_recorded",
+      direction: "reciprocal",
+      reverse_edge_id: "edge-reciprocal",
+      temporal_layer: "unknown",
+      basis: {kind: "ckl_related_object", notes: "The authored reverse edge confirms reciprocity."},
+    },
+    {
+      id: "incoming-one-way",
+      source_id: "ckl:unrelated-source",
+      target_id: item.id,
+      connection_type: "narrative_parallel",
+      original_relationship_type: "incoming-only",
+      relationship_mode: "not_recorded",
+      direction: "one_way",
+      reverse_edge_id: null,
+      temporal_layer: "unknown",
+      basis: {kind: "ckl_related_object", parent_object_id: "unrelated-source"},
+    },
+  ];
+  const view = explorer.renderEvidenceDetail(item, connections, explorer.createTrail({
+    book: "Psalm", chapter: 82, reference: "Psalm 82",
+  }), {
+    document: fakeDocument(),
+    knownBooks: [{value: "Psalm", chapters: 150}],
+    onFollowConnection: () => {},
+  });
+
+  assert.match(view.textContent, /ckl:creation#evidence:comparison/);
+  assert.match(view.textContent, /Ancient comparative literature/);
+  assert.match(view.textContent, /probable/);
+  assert.match(view.textContent, /major_scholarly_disagreement/);
+  assert.match(view.textContent, /in_review/);
+  assert.match(view.textContent, /draft/);
+  assert.match(view.textContent, /Human review required: Yes/);
+  assert.match(view.textContent, /The Baal Cycle/);
+  assert.match(view.textContent, /Mark S\. Smith/);
+  assert.match(view.textContent, /Brill/);
+  assert.match(view.textContent, /1994/);
+  assert.match(view.textContent, /Tablet II/);
+  assert.match(view.textContent, /ugaritic-study/);
+  assert.match(view.textContent, /original CKL label: later-sanctuary-development/);
+  assert.match(view.textContent, /Direction:.*one-way/);
+  assert.match(view.textContent, /Direction:.*reciprocal/);
+  assert.match(view.textContent, /incoming-only/);
+  assert.match(view.textContent, /does not create a reverse navigation edge/);
+  assert.match(view.textContent, /reciprocal CKL edge is recorded/i);
+  assert.match(view.textContent, /not, by itself, evidence of borrowing, quotation, fulfillment, or dependence/i);
+  assert.doesNotMatch(view.textContent, /This parent narrative must not appear/);
+  assert.equal(descendants(view).filter((element) => element.className.includes("narrative-explorer-trail-action")).length, 2);
+  assert.equal(descendants(view).some((element) => element.tagName === "IMG"), false);
+  assert.equal(descendants(view).some((element) => element.tagName === "A" && /^(?:javascript|data):/i.test(element.attributes.href || "")), false);
+  assert.match(view.textContent, /Unsafe source URL/);
+
+  const malformedReciprocal = explorer.renderEvidenceDetail(
+    item,
+    [connections[1]],
+    explorer.createTrail({book: "Psalm", chapter: 82, reference: "Psalm 82"}),
+    {document: fakeDocument()},
+  );
+  assert.match(malformedReciprocal.textContent, /Direction:.*one-way/);
+  assert.doesNotMatch(malformedReciprocal.textContent, /A reciprocal CKL edge is recorded/);
+});
+
+test("projected CKL connections follow the recorded target object and retain their relationship metadata", () => {
+  const item = {
+    id: "ckl:tabernacle#evidence:tabernacle-textual-evidence",
+    parent_object_id: "tabernacle",
+    title: "Tabernacle textual evidence",
+    evidence_category: "historical_context",
+    passage_anchors: [{reference: "Exodus 25:8-9", relationship: "direct"}],
+    applicable_passage_anchors: [{reference: "Exodus 25:8-9", relationship: "direct"}],
+  };
+  const edge = {
+    id: "tabernacle-temple-edge",
+    source_id: item.id,
+    target_id: "ckl:temple",
+    connection_type: "uncategorized",
+    original_relationship_type: "later-sanctuary-development",
+    relationship_mode: "not_recorded",
+    direction: "one_way",
+    reverse_edge_id: null,
+    temporal_layer: "unknown",
+    basis: {
+      kind: "ckl_related_object",
+      parent_object_id: "tabernacle",
+      notes: "The Jerusalem temple is a distinct permanent structure.",
+    },
+  };
+  const opened = [];
+  const trail = explorer.addEvidenceStep(
+    explorer.createTrail({book: "Exodus", chapter: 25, reference: "Exodus 25"}),
+    item,
+  );
+  const view = explorer.renderEvidenceDetail(item, [edge], trail, {
+    document: fakeDocument(),
+    onFollowConnection: (...args) => opened.push(args),
+  });
+
+  const targetButton = descendants(view).find((element) => element.tagName === "BUTTON" && element.textContent.includes("temple"));
+  assert.ok(targetButton);
+  targetButton.click();
+  assert.deepEqual(opened[0][0], {targetId: "temple", title: "temple"});
+  assert.equal(opened[0][1].originalRelationshipType, "later-sanctuary-development");
+  assert.equal(opened[0][1].id, "tabernacle-temple-edge");
+});
+
+test("the rendered evidence trail stops CKL and Scripture navigation at its hop limit", () => {
+  const origin = explorer.createTrail({book: "Exodus", chapter: 25, reference: "Exodus 25"});
+  const atLimit = {
+    ...origin,
+    nodes: [origin.nodes[0], {
+      kind: "subject",
+      id: "ckl:temple",
+      subjectId: "temple",
+      targetId: "temple",
+      label: "Temple",
+      relationshipHops: explorer.MAX_RELATIONSHIP_HOPS,
+      focusControlId: "",
+    }],
+    activeIndex: 1,
+  };
+  const item = {
+    id: "ckl:temple#evidence:temple-text",
+    parent_object_id: "temple",
+    title: "Temple textual evidence",
+  };
+  const edge = {
+    id: "temple-related-edge",
+    source_id: item.id,
+    target_id: "ckl:presence-theme",
+    connection_type: "thematic_relationship",
+    original_relationship_type: "related-concept",
+    direction: "one_way",
+  };
+  const evidenceView = explorer.renderEvidenceDetail(item, [edge], atLimit, {
+    document: fakeDocument(),
+    onFollowConnection() {},
+  });
+  const subjectView = explorer.renderSubjectDetail({
+    id: "temple",
+    type: "institution",
+    title: "Temple",
+    scripture_references: [{reference: "Genesis 1:1", relationship: "related"}],
+    related_object_links: [{id: "presence-theme", title: "Presence Theme", relationship: "related-concept"}],
+  }, atLimit, {
+    document: fakeDocument(),
+    knownBooks: [{value: "Genesis", chapters: 50}],
+    onOpenPassage() {},
+    onFollowSubject() {},
+  });
+
+  for (const view of [evidenceView, subjectView]) {
+    assert.match(view.textContent, /maximum of 3 relationship hops/i);
+    assert.equal(descendants(view).some((element) => element.tagName === "BUTTON" && /Open (?:connected CKL subject|linked passage)/.test(element.textContent)), false);
+  }
+});
+
+test("evidence detail exposes labelled trail landmarks and keyboard-native controls", () => {
+  const trail = explorer.addEvidenceStep(
+    explorer.createTrail({book: "Psalm", chapter: 82, reference: "Psalm 82"}),
+    {id: "ckl:psalm-82#evidence:assembly", title: "Assembly-language evidence"},
+    "overview-item:ckl:psalm-82#evidence:assembly",
+  );
+  const view = explorer.renderEvidenceDetail(
+    {id: "ckl:psalm-82#evidence:assembly", title: "Assembly-language evidence"},
+    [],
+    trail,
+    {document: fakeDocument(), onBack() {}, onReturnToOrigin() {}},
+  );
+  const nodes = descendants(view);
+  const navigation = nodes.find((element) => element.tagName === "NAV");
+  const currentStep = nodes.find((element) => element.attributes["aria-current"] === "page");
+  const heading = nodes.find((element) => element.dataset.narrativePrimary === "true");
+  const buttons = nodes.filter((element) => element.tagName === "BUTTON");
+
+  assert.equal(navigation.attributes["aria-label"], "Evidence trail");
+  assert.equal(currentStep.textContent, "Assembly-language evidence");
+  assert.equal(heading.attributes.tabindex, "-1");
+  assert.equal(buttons.length, 2);
+  assert.ok(buttons.every((button) => button.type === "button"));
+  assert.ok(buttons.some((button) => button.textContent === "Back to previous trail step"));
+  assert.ok(buttons.some((button) => button.textContent.startsWith("Return to Psalm 82")));
+});
+
+test("canonical subject identity must match the requested target ID", () => {
+  assert.equal(explorer.subjectMatchesId("temple", {id: "temple", type: "place"}), true);
+  assert.equal(explorer.subjectMatchesId("temple", {id: "tabernacle", type: "place"}), false);
+  assert.equal(explorer.subjectMatchesId("temple", {id: "temple"}), false);
+  assert.equal(explorer.subjectMatchesId("tabernacle", {id: "tabernacle", type: "archaeology_compatibility", status: "deprecated"}), false);
+});
+
+test("connected CKL detail follows only authored targets and validates Scripture links", () => {
+  const origin = explorer.createTrail({book: "Exodus", chapter: 25, reference: "Exodus 25"});
+  const evidence = explorer.addEvidenceStep(origin, {
+    id: "ckl:tabernacle#evidence:tabernacle-textual-evidence",
+    parent_object_id: "exodus",
+    title: "Tabernacle evidence",
+  });
+  const subjectStep = explorer.followSubject(evidence, {targetId: "tabernacle", title: "Tabernacle"}, {
+    originalRelationshipType: "authored-object-reference",
+  }).state;
+  const opened = [];
+  const subject = {
+    id: "tabernacle",
+    type: "institution",
+    title: "Tabernacle",
+    summary: "A portable sanctuary in Israel's wilderness narrative.",
+    confidence: "medium",
+    review_status: "in_review",
+    content_status: "complete",
+    human_review_required: true,
+    source_ids: ["exodus-text"],
+    sources: [{id: "exodus-text", title: "Exodus", author: "Canonical biblical text", locator: "Exodus 25"}],
+    scripture_references: [{reference: "Exodus 25:8-9", relationship: "primary", notes: "The text describes the dwelling."}],
+    related_object_links: [{
+      id: "temple",
+      title: "Temple",
+      type: "institution",
+      relationship: "later-sanctuary-development",
+      notes: "The Jerusalem temple is a distinct permanent structure.",
+    }],
+  };
+  const view = explorer.renderSubjectDetail(subject, subjectStep, {
+    document: fakeDocument(),
+    knownBooks: [{value: "Exodus", chapters: 40}],
+    onFollowSubject: (...args) => opened.push({kind: "subject", args}),
+    onOpenPassage: (...args) => opened.push({kind: "passage", args}),
+  });
+  const buttons = descendants(view).filter((element) => element.tagName === "BUTTON");
+
+  assert.match(view.textContent, /A portable sanctuary in Israel's wilderness narrative/);
+  assert.match(view.textContent, /later-sanctuary-development/);
+  assert.match(view.textContent, /without upgrading it/);
+  assert.match(view.textContent, /Exodus 25:8-9/);
+  assert.equal(buttons.length, 2);
+  buttons.find((button) => button.textContent.includes("Exodus 25:8-9")).click();
+  buttons.find((button) => button.textContent.includes("Temple")).click();
+  assert.equal(opened[0].kind, "passage");
+  assert.equal(opened[0].args[0].reference, "Exodus 25:8-9");
+  assert.deepEqual(opened[1].args[0], {targetId: "temple", title: "Temple"});
+  assert.equal(opened[1].args[1].originalRelationshipType, "later-sanctuary-development");
+});
+
+test("canonical subject loader fetches only on demand and shares identical pending requests", async () => {
+  let requests = 0;
+  let resolveRequest;
+  const loader = explorer.createSubjectLoader({
+    resolveUrl: (url) => url,
+    fetcher: (_url, options) => {
+      requests += 1;
+      assert.equal(options.cache, "no-store");
+      return new Promise((resolve) => { resolveRequest = resolve; });
+    },
+  });
+
+  assert.equal(requests, 0);
+  const first = loader.get("presence-theme");
+  const second = loader.get("presence-theme");
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(requests, 1);
+  resolveRequest({ok: true, status: 200, text: async () => JSON.stringify({id: "presence-theme", type: "theme", title: "Presence Theme"})});
+  assert.deepEqual(await first, {id: "presence-theme", type: "theme", title: "Presence Theme"});
+  assert.deepEqual(await second, {id: "presence-theme", type: "theme", title: "Presence Theme"});
+});
+
+test("canonical subject loader rejects an authoritative response with the wrong identity", async () => {
+  const loader = explorer.createSubjectLoader({
+    resolveUrl: (url) => url,
+    fetcher: async () => ({ok: true, status: 200, text: async () => JSON.stringify({id: "other-object", type: "theme", title: "Wrong target"})}),
+  });
+  await assert.rejects(loader.get("presence-theme"), /identity did not match/);
+});
+
+test("aborting the last subject subscriber cancels the pending target request", async () => {
+  let requests = 0;
+  let requestedSignal;
+  const loader = explorer.createSubjectLoader({
+    resolveUrl: (url) => url,
+    fetcher: (_url, options) => {
+      requests += 1;
+      requestedSignal = options.signal;
+      return new Promise((_resolve, reject) => {
+        options.signal.addEventListener("abort", () => {
+          const error = new Error("request aborted");
+          error.name = "AbortError";
+          reject(error);
+        }, {once: true});
+      });
+    },
+  });
+  const subscriber = new AbortController();
+  const pending = loader.get("presence-theme", subscriber.signal);
+  await new Promise((resolve) => setImmediate(resolve));
+  subscriber.abort();
+  await assert.rejects(pending, {name: "AbortError"});
+
+  assert.equal(requests, 1);
+  assert.equal(requestedSignal.aborted, true);
+});
+
+test("real NE-5A pilot projections retain their evidence distinctions and exact child identities", () => {
+  const fixturePath = (name) => path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline", name);
+  const readItem = (name, id) => {
+    const data = JSON.parse(fs.readFileSync(fixturePath(name), "utf8"));
+    const item = data.items.find((candidate) => candidate.id === id);
+    assert.ok(item, `expected ${id} in ${name}`);
+    return {data, item};
+  };
+  const render = ({data, item}) => explorer.renderEvidenceDetail(
+    item,
+    data.connections.filter((edge) => edge.source_id === item.id || edge.target_id === item.id),
+    explorer.createTrail({book: data.passage.book, chapter: data.passage.chapter, reference: data.passage.reference}),
+    {document: fakeDocument(), knownBooks: [{value: data.passage.book, chapters: 150}]},
+  );
+
+  const garden = render(readItem("genesis_2.json", "ckl:genesis#evidence:g2-garden-planting-presence"));
+  assert.match(garden.textContent, /geography and identification/i);
+  assert.match(garden.textContent, /Eden-as-sacred-space or temple analogies are interpretations/);
+  assert.match(garden.textContent, /interpretive_uncertainty/);
+
+  const cherubim = render(readItem("genesis_3.json", "ckl:genesis#evidence:g3-cherubim-biblical-sacred-space-context"));
+  assert.match(cherubim.textContent, /ckl:genesis#evidence:g3-cherubim-biblical-sacred-space-context/);
+  assert.match(cherubim.textContent, /Scholarly interpretation/);
+  assert.match(cherubim.textContent, /Exodus 25:18/);
+
+  const sons = render(readItem("genesis_6.json", "ckl:genesis-flood-postflood-context#evidence:g6-sons-of-god-interpretive-positions"));
+  const watchers = render(readItem("genesis_6.json", "ckl:genesis-flood-postflood-context#evidence:g6-second-temple-watchers-reception"));
+  assert.match(sons.textContent, /disputed position/i);
+  assert.match(sons.textContent, /major_scholarly_disagreement/);
+  assert.match(watchers.textContent, /Later reception/);
+  assert.match(watchers.textContent, /attest later interpretation rather than adding details to Genesis/);
+
+  const assembly = render(readItem("psalm_82.json", "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language"));
+  const ugaritic = render(readItem("psalm_82.json", "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison"));
+  assert.match(assembly.textContent, /Original biblical text · worldview language/);
+  assert.match(assembly.textContent, /Primary Observation/);
+  assert.match(assembly.textContent, /Scholarly Interpretation/);
+  assert.match(ugaritic.textContent, /Ancient comparative literature/);
+  assert.match(ugaritic.textContent, /does not decide the referents/);
+  assert.match(ugaritic.textContent, /not, by itself, evidence of borrowing, quotation, fulfillment, or dependence/);
+
+  const manuscript = render(readItem("deuteronomy_32.json", "ckl:ancient-divine-assembly-imagery#evidence:deuteronomy-32-8-manuscript-variant"));
+  assert.match(manuscript.textContent, /Manuscript\/textual witness/);
+  assert.match(manuscript.textContent, /textual_variant/);
+  assert.match(manuscript.textContent, /earliest reading and its conceptual implications remains a textual-critical judgment/);
+  assert.match(manuscript.textContent, /ckl:ancient-divine-assembly-imagery#evidence:deuteronomy-32-8-manuscript-variant/);
 });

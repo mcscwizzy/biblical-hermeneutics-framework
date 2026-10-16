@@ -254,6 +254,47 @@ def test_deuteronomy_32_ckl_manuscript_witness_survives_empty_archaeology_lookup
     assert all(edge["connection_type"] != "direct_quotation" for edge in payload["connections"])
 
 
+def test_acts7_nile_anchor_is_present_without_displayable_coordinates(ckl_library):
+    nile_lookup = DomainLookup(
+        domain="maps",
+        query_status="complete",
+        records=[{
+            "id": "openbible-a012705",
+            "name": "Nile",
+            "marker_kind": "place",
+            "description": "Existing Nile passage association.",
+            "confidence": "unknown",
+            "source_id": "openbible-info-bible-geocoding-data",
+            "source_name": "OpenBible.info Bible Geocoding Data",
+            "source_url": "https://www.openbible.info/geo/",
+            "periods": [],
+            "related_references": [{
+                "id": "openbible-ref-openbible-a012705-45",
+                "book": "Acts",
+                "chapter": 7,
+                "verse_start": 19,
+                "verse_end": 19,
+                "relationship_type": "directly_named",
+                "notes": "Imported from OpenBible.info Bible Geocoding Data.",
+            }],
+        }],
+    )
+    payload = _client(_service(ckl_library, map_provider=lambda **_request: nile_lookup)).get(
+        "/api/narrative-explorer/v1/passages/Acts/7"
+    ).json()
+    validate_projection(payload)
+
+    nile = _item(payload, "maps:openbible-a012705")
+    assert nile["title"] == "Nile"
+    assert any(
+        anchor["reference"] == "Acts 7:19" and anchor["relationship"] == "directly_named"
+        for anchor in nile["passage_anchors"]
+    )
+    assert nile.get("coordinates_displayable") is not True
+    assert nile.get("stored_coordinates") is None
+    assert nile["navigation"]["target_id"] == "openbible-a012705"
+
+
 def test_genesis_2_and_3_keep_eden_coordinates_unidentified_and_require_client_selection(ckl_library):
     client = _client(_service(ckl_library))
     for chapter in (2, 3):

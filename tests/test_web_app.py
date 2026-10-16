@@ -1867,6 +1867,28 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("scripture_reference_count", detail)
         self.assertIn("related_object_links", detail)
 
+    def test_canonical_detail_route_resolves_authored_trail_targets_without_relabeling(self):
+        expected_links = {
+            "tabernacle": ("temple", "later-sanctuary-development"),
+            "babylonian-exile": ("return-from-exile", "partial-restoration-event"),
+            "return-from-exile": ("babylonian-exile", "preceding-displacement"),
+            "divine-presence": ("presence-theme", "related-concept"),
+        }
+
+        for source_id, (target_id, relationship) in expected_links.items():
+            with self.subTest(source=source_id, target=target_id):
+                response = asgi_request("GET", f"/api/canonical/objects/{source_id}")
+                self.assertEqual(response["status"], 200)
+                detail = json.loads(response["body"])
+                self.assertEqual(detail["id"], source_id)
+                link = next(item for item in detail["related_object_links"] if item["id"] == target_id)
+                self.assertEqual(link["relationship"], relationship)
+                self.assertTrue(link["title"])
+                self.assertTrue(link["type"])
+
+        missing = asgi_request("GET", "/api/canonical/objects/not-a-real-ckl-object")
+        self.assertEqual(missing["status"], 404)
+
     def test_canonical_editor_routes_allow_editing_placeholder_objects(self):
         with self._temp_canonical_root() as canonical_root, patch.dict(
             os.environ,

@@ -346,6 +346,131 @@ body.companion-sheet-full {
   background: var(--surface-alt);
 }
 
+.narrative-explorer-trail-header,
+.narrative-explorer-evidence-detail,
+.narrative-explorer-subject-detail,
+.narrative-explorer-subject-failure {
+  display: grid;
+  min-width: 0;
+  gap: 12px;
+}
+
+.narrative-explorer-trail-header {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-alt);
+}
+
+.narrative-explorer-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.narrative-explorer-breadcrumbs li {
+  min-width: 0;
+  color: var(--page-muted);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+.narrative-explorer-breadcrumbs [aria-current="page"] {
+  color: var(--page-text);
+  font-weight: 750;
+}
+
+.narrative-explorer-trail-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.narrative-explorer-trail-depth,
+.narrative-explorer-evidence-distinction,
+.narrative-explorer-item-description,
+.narrative-explorer-subject-summary,
+.narrative-explorer-evidence-status,
+.narrative-explorer-connection,
+.narrative-explorer-bibliography-entry,
+.narrative-explorer-scripture-anchors,
+.narrative-explorer-subject-relations {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+.narrative-explorer-detail-title:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.narrative-explorer-detail-identity {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
+  gap: 5px 12px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.narrative-explorer-detail-identity dt {
+  color: var(--page-muted);
+  font-size: 0.82rem;
+}
+
+.narrative-explorer-detail-identity dd {
+  margin: 0;
+  font-size: 0.86rem;
+}
+
+.narrative-explorer-evidence-status,
+.narrative-explorer-connections ol,
+.narrative-explorer-bibliography ul,
+.narrative-explorer-scripture-anchors ul,
+.narrative-explorer-subject-relations ol {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.narrative-explorer-connection,
+.narrative-explorer-bibliography-entry,
+.narrative-explorer-subject-relationship {
+  display: grid;
+  gap: 5px;
+}
+
+.narrative-explorer-connection p,
+.narrative-explorer-bibliography-entry p,
+.narrative-explorer-scripture-anchors p,
+.narrative-explorer-subject-relationship p,
+.narrative-explorer-subject-detail > p,
+.narrative-explorer-evidence-detail > p {
+  margin: 0;
+}
+
+.narrative-explorer-bibliography summary {
+  min-height: 44px;
+  padding: 11px 0;
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.narrative-explorer-bibliography a:focus-visible,
+.narrative-explorer-bibliography summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.narrative-explorer-connection-label,
+.narrative-explorer-evidence-distinction {
+  font-weight: 750;
+}
+
 .narrative-explorer-item h5 {
   font-size: 0.88rem;
   line-height: 1.4;
@@ -420,6 +545,22 @@ body.companion-sheet-full {
 
   .narrative-explorer-section button {
     width: 100%;
+  }
+
+  .narrative-explorer-trail-controls {
+    display: grid;
+  }
+
+  .narrative-explorer-trail-controls button,
+  .narrative-explorer-trail-action,
+  .narrative-explorer-passage-link,
+  .narrative-explorer-bibliography a {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .narrative-explorer-detail-identity {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

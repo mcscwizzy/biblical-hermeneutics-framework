@@ -2712,7 +2712,7 @@ async function navigateToPassage(book, chapter, verseStart, verseEnd, options = 
     tab.selection = null;
     tab.verse = verseStart ? Number(verseStart) : null;
   }
-  await loadReaderChapter(book, chapter);
+  await loadReaderChapter(book, chapter, {translation: options.translation});
   if (!verseStart) {
     clearReaderSelection();
     return;
@@ -2722,10 +2722,14 @@ async function navigateToPassage(book, chapter, verseStart, verseEnd, options = 
     chapter: Number(chapter),
     startVerse: Number(verseStart),
     endVerse: Number(verseEnd || verseStart),
-    text: collectSelectedVerseText(
+    selectedVerses: Array.isArray(options.selectedVerses) && options.selectedVerses.length
+      ? options.selectedVerses.map(Number).filter((verse) => Number.isInteger(verse) && verse > 0)
+      : Array.from({length: Number(verseEnd || verseStart) - Number(verseStart) + 1}, (_value, index) => Number(verseStart) + index),
+    text: options.selectedText || collectSelectedVerseText(
       Number(verseStart),
       Number(verseEnd || verseStart),
     ),
+    selectedWord: options.selectedWord || null,
     isSelection: Number(verseEnd || verseStart) !== Number(verseStart),
   };
   applySelectionContext(context);

@@ -7,6 +7,9 @@
   "use strict";
 
   const PAGE_SIZE = 12;
+  const MAX_RELATIONSHIP_HOPS = 3;
+  const MAX_TRAIL_NODES = 12;
+  const CONNECTION_PAGE_SIZE = 12;
   const pendingRequests = new Map();
   const SECTIONS = [
     {
@@ -70,6 +73,286 @@
   function positiveInteger(value) {
     const number = Number(value || 0);
     return Number.isInteger(number) && number > 0 ? number : 0;
+  }
+
+  function selectionSnapshot(value) {
+    const book = readerText(value?.book);
+    const chapter = positiveInteger(value?.chapter);
+    if (!book || !chapter) return null;
+    const selectedVerses = Array.isArray(value?.selectedVerses)
+      ? [...new Set(value.selectedVerses.map(positiveInteger).filter(Boolean))].sort((a, b) => a - b)
+      : [];
+    const startVerse = selectedVerses[0] || positiveInteger(value?.startVerse ?? value?.verseStart) || null;
+    const endVerse = selectedVerses.at(-1) || positiveInteger(value?.endVerse ?? value?.verseEnd) || startVerse;
+    const reference = readerText(value?.reference) || formatSelectionReference(book, chapter, selectedVerses, startVerse, endVerse);
+    return {
+      book,
+      chapter,
+      startVerse,
+      endVerse: endVerse || null,
+      selectedVerses,
+      selectedText: readerText(value?.selectedText ?? value?.text),
+      translation: readerText(value?.translation).toLowerCase(),
+      selectedWord: value?.selectedWord && typeof value.selectedWord === "object" ? {...value.selectedWord} : null,
+      reference,
+    };
+  }
+
+  function formatSelectionReference(book, chapter, verses, startVerse, endVerse) {
+    if (verses.length) {
+      const ranges = [];
+      let start = verses[0];
+      let end = start;
+      verses.slice(1).forEach((verse) => {
+        if (verse === end + 1) end = verse;
+        else {
+          ranges.push(start === end ? String(start) : `${start}-${end}`);
+          start = verse;
+          end = verse;
+        }
+      });
+      ranges.push(start === end ? String(start) : `${start}-${end}`);
+      return `${book} ${chapter}:${ranges.join(",")}`;
+    }
+    if (startVerse) return `${book} ${chapter}:${startVerse}${endVerse > startVerse ? `-${endVerse}` : ""}`;
+    return `${book} ${chapter}`;
+  }
+
+  function createTrail(selection) {
+    const originSelection = selectionSnapshot(selection);
+    if (!originSelection) throw new Error("A selected passage is required to start an evidence trail.");
+    const origin = {
+      kind: "passage",
+      id: `passage:${originSelection.reference}`,
+      label: originSelection.reference,
+      reference: originSelection.reference,
+      selection: originSelection,
+      relationshipHops: 0,
+      focusControlId: "",
+    };
+    return {originSelection, nodes: [origin], activeIndex: 0};
+  }
+
+  function trailNodes(trail) {
+    if (!trail || !Array.isArray(trail.nodes) || !trail.nodes.length) return [];
+    const activeIndex = Math.min(Math.max(0, Number(trail.activeIndex) || 0), trail.nodes.length - 1);
+    return trail.nodes.slice(0, activeIndex + 1);
+  }
+
+  function activeTrailStep(trail) {
+    return trailNodes(trail).at(-1) || null;
+  }
+
+  function trailCurrentSelection(trail) {
+    const nodes = trailNodes(trail);
+    for (let index = nodes.length - 1; index >= 0; index -= 1) {
+      if (nodes[index].kind === "passage" && nodes[index].selection) return nodes[index].selection;
+    }
+    return selectionSnapshot(trail?.originSelection);
+  }
+
+  function currentRelationshipHops(trail) {
+    return Number(activeTrailStep(trail)?.relationshipHops || 0);
+  }
+
+  function appendTrailStep(trail, step) {
+    const nodes = trailNodes(trail);
+    const boundedNodes = nodes.length >= MAX_TRAIL_NODES
+      ? [nodes[0], ...nodes.slice(-(MAX_TRAIL_NODES - 2))]
+      : nodes;
+    return {
+      originSelection: selectionSnapshot(trail?.originSelection),
+      nodes: [...boundedNodes, step],
+      activeIndex: boundedNodes.length,
+    };
+  }
+
+  function addEvidenceStep(trail, item, focusControlId = "") {
+    const itemId = readerText(item?.id);
+    if (!itemId) throw new Error("A projected item ID is required to inspect evidence.");
+    const current = activeTrailStep(trail);
+    const parentObjectId = readerText(item.parent_object_id || item.object_id);
+    return appendTrailStep(trail, {
+      kind: "evidence",
+      id: itemId,
+      label: readerText(item.title || item.claim_text || item.description) || itemId,
+      parentObjectId,
+      selection: trailCurrentSelection(trail),
+      relationshipHops: currentRelationshipHops(trail),
+      focusControlId: readerText(focusControlId),
+    });
+  }
+
+  function followSubject(trail, subject, relationship, focusControlId = "") {
+    const targetId = readerText(subject?.targetId || subject?.id);
+    if (!targetId) return {state: trail, error: "missing_target"};
+    if (currentRelationshipHops(trail) >= MAX_RELATIONSHIP_HOPS) return {state: trail, error: "depth_limit"};
+    const visited = trailNodes(trail).flatMap((node) => [
+      readerText(node.subjectId), readerText(node.parentObjectId),
+    ]).filter(Boolean);
+    if (visited.includes(targetId)) return {state: trail, error: "cycle"};
+    const current = activeTrailStep(trail);
+    return {
+      state: appendTrailStep(trail, {
+        kind: "subject",
+        id: `ckl:${targetId}`,
+        targetId,
+        subjectId: targetId,
+        label: readerText(subject.title || subject.name) || targetId,
+        relationship: relationshipSnapshot(relationship),
+        selection: trailCurrentSelection(trail),
+        relationshipHops: currentRelationshipHops(trail) + 1,
+        focusControlId: readerText(focusControlId),
+      }),
+      error: null,
+    };
+  }
+
+  function followPassage(trail, destination, relationship, focusControlId = "") {
+    if (currentRelationshipHops(trail) >= MAX_RELATIONSHIP_HOPS) return {state: trail, error: "depth_limit"};
+    const selection = selectionSnapshot(destination?.selection || {});
+    const reference = readerText(destination?.reference || selection?.reference);
+    if (!selection || !reference) return {state: trail, error: "invalid_reference"};
+    const normalizedReference = normalizeReference(reference);
+    if (trailNodes(trail).some((node) => node.kind === "passage" && normalizeReference(node.reference) === normalizedReference)) {
+      return {state: trail, error: "cycle"};
+    }
+    selection.reference = reference;
+    return {
+      state: appendTrailStep(trail, {
+        kind: "passage",
+        id: `passage:${reference}`,
+        label: reference,
+        reference,
+        selection,
+        relationship: relationshipSnapshot(relationship),
+        relationshipHops: currentRelationshipHops(trail) + 1,
+        focusControlId: readerText(focusControlId),
+      }),
+      error: null,
+    };
+  }
+
+  function returnToOrigin(trail) {
+    if (!trail || !Array.isArray(trail.nodes) || !trail.nodes.length) return trail;
+    return {...trail, nodes: trail.nodes.slice(), activeIndex: 0};
+  }
+
+  function trailReturnFocusId(trail) {
+    const activeIndex = Math.min(Math.max(0, Number(trail?.activeIndex) || 0), (trail?.nodes?.length || 1) - 1);
+    return readerText(trail?.nodes?.[activeIndex + 1]?.focusControlId);
+  }
+
+  function relationshipSnapshot(value) {
+    if (!value || typeof value !== "object") return {};
+    return {
+      id: readerText(value.id),
+      connectionType: readerText(value.connectionType || value.connection_type),
+      originalRelationshipType: readerText(value.originalRelationshipType || value.original_relationship_type || value.relationship),
+      direction: readerText(value.direction),
+      relationshipMode: readerText(value.relationshipMode || value.relationship_mode),
+      temporalLayer: readerText(value.temporalLayer || value.temporal_layer),
+      notes: readerText(value.notes || value.basis?.notes),
+      anchor: readerText(value.anchor || value.reference || value.basis?.reference),
+    };
+  }
+
+  function normalizeReference(value) {
+    return readerText(value).toLowerCase().replace(/\s+/g, " ");
+  }
+
+  function passageIsInTrail(trail, normalizedReference) {
+    return trailNodes(trail).some((node) => node.kind === "passage"
+      && normalizeReference(node.reference) === normalizedReference);
+  }
+
+  function validateScriptureReference(reference, bookOptions = []) {
+    const match = readerText(reference).match(/^(.+?)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/);
+    if (!match) return {valid: false, reason: "The Scripture reference format is not supported."};
+    const normalizeBook = (value) => String(value || "").toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
+    const option = bookOptions.find((entry) => normalizeBook(entry?.value || entry?.label || entry) === normalizeBook(match[1]));
+    if (!option) return {valid: false, reason: "This book name is not in the reader's canonical book list."};
+    const book = readerText(option?.value || option?.label || option);
+    const chapter = positiveInteger(match[2]);
+    const chapterCount = positiveInteger(option?.chapters ?? option?.dataset?.chapters);
+    const startVerse = match[3] ? positiveInteger(match[3]) : null;
+    const endVerse = match[4] ? positiveInteger(match[4]) : startVerse;
+    if (!chapter || !chapterCount || chapter > chapterCount) return {valid: false, reason: "This chapter is outside the reader's canonical book range."};
+    if ((match[3] && !startVerse) || (match[4] && !endVerse) || (endVerse && startVerse && endVerse < startVerse)) {
+      return {valid: false, reason: "This verse range is invalid."};
+    }
+    const canonicalReference = `${book} ${chapter}${startVerse ? `:${startVerse}${endVerse > startVerse ? `-${endVerse}` : ""}` : ""}`;
+    return {valid: true, book, chapter, startVerse, endVerse, reference: canonicalReference};
+  }
+
+  function subjectMatchesId(expectedId, subject) {
+    return Boolean(
+      readerText(expectedId)
+      && subject
+      && typeof subject === "object"
+      && readerText(subject.id) === readerText(expectedId)
+      && readerText(subject.type)
+      && subject.type !== "archaeology_compatibility"
+      && subject.status !== "deprecated",
+    );
+  }
+
+  function createSubjectLoader(options = {}) {
+    const pending = new Map();
+    const fetcher = options.fetcher || root.fetch?.bind(root);
+    const resolveUrl = options.resolveUrl || resolveBackendUrl;
+
+    async function get(objectId, signal) {
+      const id = readerText(objectId);
+      if (!id) throw new Error("A CKL target ID is required.");
+      if (signal?.aborted) throw abortError();
+      const path = `/api/canonical/objects/${encodeURIComponent(id)}`;
+      let entry = pending.get(path);
+      if (!entry) {
+        if (typeof fetcher !== "function") throw new Error("Canonical subject details are unavailable in this browser.");
+        const controller = new AbortController();
+        entry = {url: path, controller, subscribers: 0, settled: false, promise: null};
+        const startedAt = now();
+        entry.promise = Promise.resolve()
+          .then(() => fetcher(resolveUrl(path), {
+            signal: controller.signal,
+            cache: "no-store",
+            headers: {Accept: "application/json"},
+          }))
+          .then(async (response) => {
+            const raw = await response.text();
+            dispatchMetric({
+              phase: "subject-response",
+              request_url: path,
+              target_id: id,
+              response_ms: elapsed(startedAt),
+              payload_bytes: byteLength(raw),
+              status: Number(response.status || 0),
+              network_requests: 1,
+            });
+            if (!response.ok) {
+              let message = "";
+              try { message = String(JSON.parse(raw)?.error || ""); } catch (_error) { message = ""; }
+              const error = new Error(message || `HTTP ${response.status}`);
+              error.status = response.status;
+              throw error;
+            }
+            const subject = JSON.parse(raw);
+            if (!subjectMatchesId(id, subject)) {
+              throw new Error(`Canonical subject identity did not match requested target ${id}.`);
+            }
+            return subject;
+          })
+          .finally(() => {
+            entry.settled = true;
+            if (pending.get(path) === entry) pending.delete(path);
+          });
+        pending.set(path, entry);
+      }
+      return subscribe(entry, signal, pending);
+    }
+
+    return Object.freeze({get});
   }
 
   async function load(selection, options = {}) {
@@ -153,7 +436,7 @@
     }
   }
 
-  function subscribe(entry, signal) {
+  function subscribe(entry, signal, requestMap = pendingRequests) {
     entry.subscribers += 1;
     return new Promise((resolve, reject) => {
       let complete = false;
@@ -163,7 +446,7 @@
         signal?.removeEventListener?.("abort", onAbort);
         entry.subscribers = Math.max(0, entry.subscribers - 1);
         if (aborted && entry.subscribers === 0 && !entry.settled) {
-          if (pendingRequests.get(entry.url) === entry) pendingRequests.delete(entry.url);
+          if (requestMap.get(entry.url) === entry) requestMap.delete(entry.url);
           entry.controller.abort();
         }
         return true;
@@ -287,7 +570,9 @@
     rootElement.dataset.narrativeExplorer = "";
 
     const header = element(document, "header", "narrative-explorer-header");
-    appendTextElement(document, header, "h3", "Narrative evidence and connections");
+    const heading = appendTextElement(document, header, "h3", "Narrative evidence and connections");
+    heading.setAttribute("tabindex", "-1");
+    heading.dataset.narrativePrimary = "true";
     appendTextElement(
       document,
       header,
@@ -300,6 +585,7 @@
     if (passage) {
       appendTextElement(document, rootElement, "p", `Evidence linked to ${passage}`, "narrative-explorer-passage");
     }
+    if (options.trail) rootElement.append(renderTrailHeader(options.trail, options));
     const sectionsHost = element(document, "div", "narrative-explorer-sections");
     const itemsById = new Map((Array.isArray(projection?.items) ? projection.items : []).map((item) => [item.id, item]));
     const connectionsByItem = groupConnections(projection?.connections);
@@ -354,7 +640,11 @@
     const fullList = element(document, "div", "narrative-explorer-record-list");
     fullList.hidden = true;
     const ordered = orderForPreview(items);
-    ordered.slice(0, 2).forEach((item) => previewList.append(renderItem(document, item, connectionsByItem.get(item.id) || [], options)));
+    const focusItem = ordered.find((item) => item.id === options.focusItemId);
+    const previewItems = focusItem
+      ? [focusItem, ...ordered.filter((item) => item.id !== focusItem.id).slice(0, 1)]
+      : ordered.slice(0, 2);
+    previewItems.forEach((item) => previewList.append(renderItem(document, item, connectionsByItem.get(item.id) || [], options)));
     card.append(previewList, fullList);
 
     const inspect = element(document, "button", "secondary narrative-explorer-inspect");
@@ -474,6 +764,15 @@
     card.append(provenance);
 
     const action = supportedAction(item);
+    if (typeof options.onInspect === "function") {
+      const inspect = element(document, "button", "secondary narrative-explorer-item-inspect");
+      inspect.type = "button";
+      inspect.textContent = "Inspect evidence and connections";
+      inspect.dataset.narrativeItemId = readerText(item.id);
+      inspect.dataset.narrativeFocusId = `item:${readerText(item.id)}`;
+      inspect.addEventListener("click", () => options.onInspect(item, inspect));
+      card.append(inspect);
+    }
     if (action && typeof options.onNavigate === "function") {
       const button = element(document, "button", "secondary narrative-explorer-item-action");
       button.type = "button";
@@ -595,11 +894,574 @@
     return grouped;
   }
 
+  function renderTrailHeader(trail, options = {}) {
+    const document = options.document || root.document;
+    const header = element(document, "section", "narrative-explorer-trail-header");
+    header.setAttribute("aria-label", "Evidence trail navigation");
+    const nodes = trailNodes(trail);
+    const currentIndex = nodes.length - 1;
+    const navigation = element(document, "nav", "narrative-explorer-breadcrumbs");
+    navigation.setAttribute("aria-label", "Evidence trail");
+    const list = element(document, "ol");
+    nodes.forEach((node, index) => {
+      const entry = element(document, "li");
+      const label = appendTextElement(document, entry, "span", readerText(node.label || node.reference || node.id));
+      if (index === currentIndex) label.setAttribute("aria-current", "page");
+      list.append(entry);
+    });
+    navigation.append(list);
+    header.append(navigation);
+
+    const controls = element(document, "div", "narrative-explorer-trail-controls");
+    if (currentIndex > 0 && typeof options.onBack === "function") {
+      const back = element(document, "button", "secondary narrative-explorer-trail-back");
+      back.type = "button";
+      back.textContent = "Back to previous trail step";
+      back.addEventListener("click", options.onBack);
+      controls.append(back);
+    }
+    if (currentIndex > 0 && typeof options.onReturnToOrigin === "function") {
+      const returnButton = element(document, "button", "secondary narrative-explorer-return-origin");
+      returnButton.type = "button";
+      returnButton.textContent = `Return to ${readerText(trail?.originSelection?.reference) || "original passage"}`;
+      returnButton.addEventListener("click", options.onReturnToOrigin);
+      controls.append(returnButton);
+    }
+    if (controls.children.length) header.append(controls);
+    appendTextElement(
+      document,
+      header,
+      "p",
+      `Relationship hops: ${currentRelationshipHops(trail)} of ${MAX_RELATIONSHIP_HOPS}.`,
+      "narrative-explorer-trail-depth",
+    );
+    return header;
+  }
+
+  function renderEvidenceDetail(item, connections = [], trail = null, options = {}) {
+    const document = options.document || root.document;
+    if (!document) throw new Error("A document is required to render evidence details.");
+    const view = element(document, "section", "narrative-explorer-evidence-detail");
+    view.setAttribute("aria-label", "Evidence detail");
+    if (trail) view.append(renderTrailHeader(trail, {...options, document}));
+    const title = readerText(item?.title || item?.claim_text || item?.description || item?.id) || "Evidence detail";
+    appendTextElement(document, view, "h3", title, "narrative-explorer-detail-title");
+    view.children[view.children.length - 1].setAttribute("tabindex", "-1");
+    view.children[view.children.length - 1].dataset.narrativePrimary = "true";
+
+    const category = evidenceCategoryLabel(item);
+    appendTextElement(document, view, "p", category, "narrative-explorer-evidence-distinction");
+    if (readerText(item?.claim_text)) appendTextElement(document, view, "p", readerText(item.claim_text), "narrative-explorer-item-copy");
+    if (readerText(item?.description) && readerText(item.description) !== readerText(item.claim_text)) {
+      appendTextElement(document, view, "p", readerText(item.description), "narrative-explorer-item-description");
+    }
+    if (isDisputed(item)) {
+      appendTextElement(document, view, "p", "This item records a disputed hypothesis or interpretation; it is not presented as settled evidence.", "narrative-explorer-caution");
+    }
+    if (category === "Ancient comparative literature") {
+      appendTextElement(document, view, "p", "Comparative material is not, by itself, evidence of borrowing, quotation, fulfillment, or dependence.", "narrative-explorer-caution");
+    }
+
+    const identity = element(document, "dl", "narrative-explorer-detail-identity");
+    appendDefinition(document, identity, "Projected item ID", item?.id);
+    appendDefinition(document, identity, "CKL parent object", item?.parent_object_id || item?.object_id);
+    appendDefinition(document, identity, "Record kind", item?.record_kind);
+    appendDefinition(document, identity, "Original claim ID", item?.claim_id);
+    appendDefinition(document, identity, "Original evidence ID", item?.evidence_id);
+    appendDefinition(document, identity, "CKL local ID", item?.local_id);
+    appendDefinition(document, identity, "Evidence category", item?.evidence_category);
+    appendDefinition(document, identity, "Claim type", item?.claim_type);
+    appendDefinition(document, identity, "Assertion type", item?.assertion_type);
+    view.append(identity);
+    appendRationaleDetails(document, view, item?.rationale);
+
+    const status = element(document, "ul", "narrative-explorer-evidence-status");
+    [
+      ["Confidence", item?.confidence],
+      ["Certainty", item?.certainty],
+      ["Dispute state", item?.dispute_status],
+      ["Interpretation state", item?.interpretation_state],
+      ["Review state", item?.review_status],
+      ["Content state", item?.content_status],
+      ["Human review required", item?.human_review_required],
+      ["Temporal relation", item?.temporal_relation],
+      ["Temporal scope", item?.temporal_scope],
+    ].forEach(([label, value]) => {
+      const entry = element(document, "li");
+      entry.textContent = `${label}: ${metadataText(value) || "not recorded in CKL"}`;
+      status.append(entry);
+    });
+    view.append(status);
+
+    const originalAnchors = Array.isArray(item?.passage_anchors) ? item.passage_anchors : [];
+    const applicable = Array.isArray(item?.applicable_passage_anchors) ? item.applicable_passage_anchors : [];
+    appendAnchorGroup(document, view, "Original Scripture anchors", originalAnchors, trail, options, {navigable: true});
+    if (applicable.length) {
+      appendAnchorGroup(document, view, "Anchors applicable to this passage", applicable, trail, options, {navigable: false});
+    } else {
+      appendTextElement(document, view, "p", "No passage anchors were returned for this item.", "narrative-explorer-missing-provenance");
+    }
+    appendBibliography(document, view, item?.sources, item?.source_ids);
+    appendConnectionList(document, view, item, connections, trail, options);
+    return view;
+  }
+
+  function renderSubjectDetail(subject, trail = null, options = {}) {
+    const document = options.document || root.document;
+    if (!document) throw new Error("A document is required to render CKL subject details.");
+    const view = element(document, "section", "narrative-explorer-subject-detail");
+    view.setAttribute("aria-label", "Connected CKL subject");
+    if (trail) view.append(renderTrailHeader(trail, {...options, document}));
+    const title = readerText(subject?.title || subject?.name || subject?.id) || "Connected CKL subject";
+    appendTextElement(document, view, "h3", title, "narrative-explorer-detail-title");
+    view.children[view.children.length - 1].setAttribute("tabindex", "-1");
+    view.children[view.children.length - 1].dataset.narrativePrimary = "true";
+    appendTextElement(document, view, "p", `CKL subject · ${readerText(subject?.type) || "type not recorded"} · ${readerText(subject?.id) || "identity unavailable"}`, "narrative-explorer-item-kind");
+    if (readerText(subject?.summary)) {
+      appendTextElement(document, view, "p", readerText(subject.summary), "narrative-explorer-subject-summary");
+    }
+    appendTextElement(
+      document,
+      view,
+      "p",
+      "This CKL subject was opened through a recorded relationship. Other claims in this subject are not evidence for the originating passage unless their own passage anchors support that use.",
+      "narrative-explorer-caution",
+    );
+    const status = element(document, "ul", "narrative-explorer-evidence-status");
+    [
+      ["Confidence", subject?.confidence],
+      ["Review state", subject?.review_status],
+      ["Content state", subject?.content_status],
+      ["Human review required", subject?.human_review_required],
+    ].forEach(([label, value]) => {
+      const entry = element(document, "li");
+      entry.textContent = `${label}: ${metadataText(value) || "not recorded in CKL"}`;
+      status.append(entry);
+    });
+    view.append(status);
+    appendBibliography(document, view, subject?.sources, subject?.source_ids);
+    appendSubjectScripture(document, view, subject, trail, options);
+    appendSubjectRelations(document, view, subject, trail, options);
+    return view;
+  }
+
+  function renderSubjectFailure(message, targetId, trail = null, options = {}) {
+    const document = options.document || root.document;
+    const view = element(document, "section", "narrative-explorer-subject-failure");
+    view.setAttribute("role", "alert");
+    if (trail) view.append(renderTrailHeader(trail, {...options, document}));
+    appendTextElement(document, view, "h3", "Connected subject unavailable");
+    appendTextElement(document, view, "p", `CKL target ${readerText(targetId) || "unknown"} could not be resolved: ${readerText(message) || "the detail request did not complete"}. The recorded relationship remains unchanged.`, "narrative-explorer-caution");
+    return view;
+  }
+
+  function appendDefinition(document, list, label, value) {
+    const text = metadataText(value);
+    const term = element(document, "dt");
+    const description = element(document, "dd");
+    term.textContent = label;
+    description.textContent = text || "not recorded in CKL";
+    list.append(term, description);
+  }
+
+  function evidenceCategoryLabel(item) {
+    const category = readerText(item?.evidence_category).toLowerCase().replace(/_/g, "-");
+    const claimType = readerText(item?.claim_type).toLowerCase().replace(/_/g, "-");
+    const temporal = [item?.temporal_relation, ...(Array.isArray(item?.temporal_relations) ? item.temporal_relations : [])]
+      .map((value) => readerText(value).toLowerCase().replace(/_/g, "-"));
+    const anchors = [...(Array.isArray(item?.passage_anchors) ? item.passage_anchors : []), ...(Array.isArray(item?.applicable_passage_anchors) ? item.applicable_passage_anchors : [])];
+    const comparative = anchors.some((anchor) => readerText(anchor?.relationship).toLowerCase() === "comparative")
+      || temporal.includes("earlier-comparative") || temporal.includes("later-comparative");
+    if (category.includes("manuscript") || category.includes("textual-witness") || item?.dispute_status === "textual_variant") return "Manuscript/textual witness";
+    if (temporal.some((value) => value.includes("later")) || category.includes("reception") || claimType.includes("reception")) return "Later reception";
+    if (["biblical-text", "biblical-textual", "textual-observation"].includes(category) || ["biblical-text", "textual-observation"].includes(claimType)) return "Original biblical text";
+    if (category === "worldview-concept") {
+      if (item?.assertion_type === "primary-evidence" && anchors.some((anchor) => readerText(anchor?.relationship).toLowerCase() === "direct")) return "Original biblical text · worldview language";
+      return isDisputed(item) ? "Scholarly interpretation · disputed position" : "Scholarly interpretation · worldview context";
+    }
+    if (category === "geography-environment") return "Original biblical text · geography and identification";
+    if (category === "ancient-text" || category === "ancient-literature" || claimType === "historical-cultural") {
+      return comparative ? "Ancient comparative literature" : "Historical or cultural background";
+    }
+    if (category.includes("artifact") || category.includes("historical") || category.includes("cultural") || category.includes("inscription") || category.includes("material-culture") || category.includes("archaeological")) return "Historical or cultural background";
+    if (category.includes("literary") || category.includes("thematic") || ["literary", "composition", "rhetorical"].includes(claimType)) return "Literary or thematic connection";
+    if (category.includes("scholarly") || category.includes("interpretive") || category.includes("theological") || claimType.includes("theolog") || item?.record_kind === "interpretive_note") return "Scholarly interpretation";
+    return `Source category: ${readerText(item?.evidence_category || item?.claim_type || item?.record_kind) || "not recorded"}`;
+  }
+
+  function isDisputed(item) {
+    const dispute = readerText(item?.dispute_status).toLowerCase().replace(/-/g, "_");
+    return dispute !== "" && !["none", "not_disputed", "not_applicable", "unknown"].includes(dispute)
+      || ["disputed", "unknown"].includes(readerText(item?.interpretation_state).toLowerCase().replace(/-/g, "_"));
+  }
+
+  function appendRationaleDetails(document, parent, rationale) {
+    if (!rationale || typeof rationale !== "object" || !Object.keys(rationale).length) return;
+    const details = element(document, "details", "narrative-explorer-recorded-rationale");
+    appendTextElement(document, details, "summary", "Recorded observations and interpretation");
+    const list = element(document, "dl", "narrative-explorer-detail-identity");
+    Object.entries(rationale).slice(0, 12).forEach(([key, value]) => {
+      if (value === null || value === undefined || value === "") return;
+      const term = element(document, "dt");
+      term.textContent = key.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+      const description = element(document, "dd");
+      description.textContent = metadataText(value);
+      list.append(term, description);
+    });
+    details.append(list);
+    parent.append(details);
+  }
+
+  function appendAnchorGroup(document, parent, title, anchors, trail, options, config = {}) {
+    if (!anchors.length) return;
+    const section = element(document, "section", "narrative-explorer-scripture-anchors");
+    appendTextElement(document, section, "h4", title);
+    const list = element(document, "ul");
+    const seen = new Set();
+    anchors.slice(0, 16).forEach((anchor, index) => {
+      const data = typeof anchor === "string" ? {reference: anchor} : anchor || {};
+      const reference = readerText(data.reference);
+      if (!reference || seen.has(reference)) return;
+      seen.add(reference);
+      const entry = element(document, "li");
+      const relationship = readerText(data.relationship);
+      const rationale = readerText(data.relevance_rationale || data.notes);
+      appendTextElement(document, entry, "p", `${reference}${relationship ? ` · ${relationship}` : ""}`);
+      if (rationale) appendTextElement(document, entry, "p", rationale, "narrative-explorer-provenance-note");
+      const currentReference = normalizeReference(trailCurrentSelection(trail)?.reference);
+      const resolved = validateScriptureReference(reference, options.knownBooks || []);
+      const normalizedReference = normalizeReference(resolved.reference || reference);
+      const alreadyVisited = passageIsInTrail(trail, normalizedReference);
+      if (!config.navigable || currentReference === normalizedReference) {
+        if (currentReference === normalizedReference) appendTextElement(document, entry, "span", "Current passage", "narrative-explorer-current-passage");
+      } else if (alreadyVisited) {
+        appendTextElement(document, entry, "span", "This passage already appears in the trail; the cycle was stopped.", "narrative-explorer-trail-cycle");
+      } else if (!resolved.valid) {
+        appendTextElement(document, entry, "span", `Passage navigation unavailable: ${resolved.reason}`, "narrative-explorer-missing-provenance");
+      } else if (typeof options.onOpenPassage === "function") {
+        const button = element(document, "button", "secondary narrative-explorer-passage-link");
+        button.type = "button";
+        button.textContent = `Open ${resolved.reference}`;
+        button.dataset.narrativeFocusId = `scripture:${resolved.reference}`;
+        button.addEventListener("click", () => options.onOpenPassage(resolved, relationshipSnapshot(data), button));
+        entry.append(button);
+      }
+      list.append(entry);
+    });
+    section.append(list);
+    parent.append(section);
+  }
+
+  function appendBibliography(document, parent, sources, sourceIds) {
+    const sourceList = Array.isArray(sources) ? sources : [];
+    const ids = Array.isArray(sourceIds) ? sourceIds.map(readerText).filter(Boolean) : [];
+    const details = element(document, "details", "narrative-explorer-bibliography");
+    appendTextElement(document, details, "summary", `Bibliography (${Math.max(sourceList.length, ids.length)} source${Math.max(sourceList.length, ids.length) === 1 ? "" : "s"})`);
+    const list = element(document, "ul");
+    const covered = new Set();
+    sourceList.slice(0, 12).forEach((source) => {
+      const id = readerText(source?.id);
+      const data = source?.bibliographic_details && typeof source.bibliographic_details === "object"
+        ? source.bibliographic_details
+        : source || {};
+      if (id) covered.add(id);
+      const entry = element(document, "li", "narrative-explorer-bibliography-entry");
+      const title = readerText(data.title);
+      const fields = [
+        ["Title", title], ["Author", data.author], ["Publisher", data.publisher],
+        ["Publication year", data.year], ["Locator", data.locator], ["Source type", data.source_type],
+      ].filter(([, value]) => value !== null && value !== undefined && value !== "");
+      appendTextElement(document, entry, "p", fields.map(([label, value]) => `${label}: ${metadataText(value)}`).join(" · ") || `Bibliographic details are not available in CKL for source ${id || "(ID missing)"}.`);
+      if (id) appendTextElement(document, entry, "p", `Source identifier: ${id}`, "narrative-explorer-source-id");
+      const missing = ["title", "author", "publisher", "year", "locator"].filter((key) => data[key] === null || data[key] === undefined || data[key] === "");
+      if (missing.length && source?.details_available !== false) {
+        appendTextElement(document, entry, "p", `Missing in CKL: ${missing.map((key) => ({title: "title", author: "author", publisher: "publisher", year: "publication year", locator: "locator"}[key])).join(", ")}.`, "narrative-explorer-missing-provenance");
+      }
+      if (readerText(data.notes)) appendTextElement(document, entry, "p", readerText(data.notes), "narrative-explorer-provenance-note");
+      const url = safeHttpUrl(data.url);
+      if (url) {
+        const link = element(document, "a");
+        link.setAttribute("href", url);
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+        link.textContent = "Open recorded source URL";
+        entry.append(link);
+      }
+      list.append(entry);
+    });
+    ids.filter((id) => !covered.has(id)).slice(0, 12).forEach((id) => {
+      const entry = element(document, "li");
+      entry.textContent = `Source details not available in CKL: ${id}`;
+      list.append(entry);
+    });
+    if (sourceList.length === 0 && ids.length === 0) {
+      const missing = element(document, "li");
+      missing.textContent = "No source identifiers or bibliographic details were returned for this item.";
+      list.append(missing);
+    }
+    details.append(list);
+    parent.append(details);
+  }
+
+  function safeHttpUrl(value) {
+    const text = readerText(value);
+    if (!text) return "";
+    try {
+      const url = new URL(text, root.location?.origin || "https://example.invalid");
+      return ["http:", "https:"].includes(url.protocol) && /^https?:\/\//i.test(text) ? url.href : "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function appendConnectionList(document, parent, item, connections, trail, options) {
+    const itemId = readerText(item?.id);
+    const allEdges = (Array.isArray(connections) ? connections : [])
+      .filter((edge) => edge?.source_id === itemId || edge?.target_id === itemId)
+      .map((edge) => {
+        if (edge?.direction !== "reciprocal") return edge;
+        const hasReverse = readerText(edge.reverse_edge_id)
+          && (Array.isArray(connections) ? connections : []).some((candidate) => (
+            candidate?.id === edge.reverse_edge_id
+            && candidate.source_id === edge.target_id
+            && candidate.target_id === edge.source_id
+            && candidate.direction === "reciprocal"
+            && candidate.reverse_edge_id === edge.id
+          ));
+        return hasReverse ? edge : {...edge, direction: "one_way", reverse_edge_id: null};
+      });
+    const edges = allEdges
+      .filter((edge) => !(edge?.direction === "reciprocal" && edge?.target_id === itemId && edge?.source_id !== itemId))
+      .sort((left, right) => readerText(left?.id).localeCompare(readerText(right?.id)));
+    const section = element(document, "section", "narrative-explorer-connections");
+    appendTextElement(document, section, "h4", `Authored connections (${edges.length})`);
+    if (!edges.length) {
+      appendTextElement(document, section, "p", "No authored connections for this item were returned in the current passage projection.");
+      parent.append(section);
+      return;
+    }
+    const list = element(document, "ol", "narrative-explorer-connection-list");
+    let next = 0;
+    let moreButton = null;
+    const addPage = () => {
+      const page = edges.slice(next, next + CONNECTION_PAGE_SIZE);
+      page.forEach((edge) => list.append(renderConnection(document, item, edge, trail, options)));
+      next += page.length;
+      if (moreButton) {
+        moreButton.hidden = next >= edges.length;
+        moreButton.textContent = `Show ${Math.min(CONNECTION_PAGE_SIZE, edges.length - next)} more connections`;
+      }
+    };
+    addPage();
+    section.append(list);
+    if (edges.length > CONNECTION_PAGE_SIZE) {
+      moreButton = element(document, "button", "secondary narrative-explorer-more-connections");
+      moreButton.type = "button";
+      moreButton.textContent = `Show ${Math.min(CONNECTION_PAGE_SIZE, edges.length - next)} more connections`;
+      moreButton.addEventListener("click", addPage);
+      section.append(moreButton);
+    }
+    parent.append(section);
+  }
+
+  function renderConnection(document, selectedItem, edge, trail, options) {
+    const entry = element(document, "li", "narrative-explorer-connection");
+    const outgoing = edge.source_id === selectedItem.id;
+    const source = readerText(edge.source_id);
+    const target = readerText(edge.target_id);
+    const sourceSubject = readerText(edge?.basis?.parent_object_id) || endpointSubjectId(source);
+    const targetSubject = endpointSubjectId(target);
+    const direction = edge.direction === "reciprocal" ? "reciprocal" : "one-way";
+    const category = connectionCategoryLabel(edge.connection_type);
+    appendTextElement(document, entry, "p", `Relationship: ${category}${edge.original_relationship_type ? ` · original CKL label: ${readerText(edge.original_relationship_type)}` : " · original CKL label unavailable"}`, "narrative-explorer-connection-label");
+    appendTextElement(document, entry, "p", `Source subject: ${sourceSubject} · Target subject: ${targetSubject} · Direction: ${sourceSubject} → ${targetSubject} (${direction}).`);
+    if (edge.direction === "reciprocal" && readerText(edge.reverse_edge_id)) {
+      appendTextElement(document, entry, "p", `A reciprocal CKL edge is recorded; reverse CKL edge ID: ${readerText(edge.reverse_edge_id)}.`, "narrative-explorer-connection-direction");
+    }
+    if (readerText(edge.relationship_mode)) appendTextElement(document, entry, "p", `Interpretive status: ${readerText(edge.relationship_mode)}.`, "narrative-explorer-connection-status");
+    if (readerText(edge.temporal_layer)) appendTextElement(document, entry, "p", `Temporal/reception classification: ${readerText(edge.temporal_layer)}.`, "narrative-explorer-connection-status");
+    if (edge.basis && Object.keys(edge.basis).length) {
+      appendTextElement(document, entry, "p", `Recorded support: ${readerText(edge.basis.notes || edge.basis.reference || edge.basis.kind) || "basis present; no explanatory note recorded"}.`, "narrative-explorer-provenance-note");
+      if (readerText(edge.basis.reference)) appendTextElement(document, entry, "p", `Evidence or Scripture anchor: ${readerText(edge.basis.reference)}.`);
+    }
+    if (edge.connection_type === "uncategorized" || !connectionCategoryLabel(edge.connection_type)) {
+      appendTextElement(document, entry, "p", "This authored label is a descriptive association; its relationship category is not established by the projection.", "narrative-explorer-caution");
+    }
+    if (outgoing) {
+      const targetObjectId = canonicalTargetObjectId(edge.target_id);
+      if (targetObjectId && typeof options.onFollowConnection === "function") {
+        if (currentRelationshipHops(trail) >= MAX_RELATIONSHIP_HOPS) {
+          appendTextElement(document, entry, "p", `The maximum of ${MAX_RELATIONSHIP_HOPS} relationship hops has been reached.`, "narrative-explorer-trail-limit");
+        } else {
+          appendActionButton(document, entry, `Open connected CKL subject: ${targetSubject}`, `connection:${readerText(edge.id)}`, (button) => options.onFollowConnection(
+            {targetId: targetObjectId, title: targetSubject},
+            relationshipSnapshot(edge),
+            button,
+          ));
+        }
+      } else if (String(edge.target_id || "").startsWith("passage:") && typeof options.onOpenPassage === "function") {
+        const reference = String(edge.target_id).slice("passage:".length);
+        const resolved = validateScriptureReference(reference, options.knownBooks || []);
+        if (passageIsInTrail(trail, normalizeReference(resolved.reference || reference))) appendTextElement(document, entry, "p", "This passage already appears in the trail; the cycle was stopped.", "narrative-explorer-trail-cycle");
+        else if (resolved.valid && currentRelationshipHops(trail) >= MAX_RELATIONSHIP_HOPS) appendTextElement(document, entry, "p", `The maximum of ${MAX_RELATIONSHIP_HOPS} relationship hops has been reached.`, "narrative-explorer-trail-limit");
+        else if (resolved.valid) appendActionButton(document, entry, `Open linked passage: ${resolved.reference}`, `connection:${readerText(edge.id)}`, (button) => options.onOpenPassage(resolved, relationshipSnapshot(edge), button));
+        else appendTextElement(document, entry, "p", `Passage navigation unavailable: ${resolved.reason}`, "narrative-explorer-missing-provenance");
+      } else {
+        appendTextElement(document, entry, "p", "This target has no supported destination in the current projection.", "narrative-explorer-missing-provenance");
+      }
+    } else {
+      appendTextElement(document, entry, "p", "This edge points toward the selected item; the UI does not create a reverse navigation edge.", "narrative-explorer-connection-direction");
+    }
+    return entry;
+  }
+
+  function connectionCategoryLabel(value) {
+    const labels = {
+      direct_quotation: "Direct quotation",
+      explicit_textual_reference: "Explicit textual reference",
+      shared_literary_motif: "Shared literary motif",
+      narrative_parallel: "Narrative parallel",
+      thematic_relationship: "Thematic relationship",
+      later_canonical_reception: "Later canonical reception",
+      proposed_intertextual_echo: "Proposed intertextual echo",
+      interpretive_association: "Interpretive association",
+      uncategorized: "Descriptive association",
+    };
+    return labels[readerText(value)] || "";
+  }
+
+  function canonicalTargetObjectId(value) {
+    const target = readerText(value);
+    if (!target.startsWith("ckl:")) return "";
+    const id = target.slice(4);
+    return id && !id.includes("#") ? id : "";
+  }
+
+  function endpointLabel(value, item) {
+    if (value === item.id) return readerText(item.title || item.claim_text || item.description) || value;
+    if (value.startsWith("ckl:")) return value.slice(4);
+    if (value.startsWith("passage:")) return value.slice("passage:".length);
+    return value;
+  }
+
+  function endpointSubjectId(value) {
+    const endpoint = readerText(value);
+    if (!endpoint.startsWith("ckl:")) return endpoint;
+    return endpoint.slice(4).split("#", 1)[0] || endpoint;
+  }
+
+  function appendSubjectScripture(document, parent, subject, trail, options) {
+    const anchors = Array.isArray(subject?.scripture_references) ? subject.scripture_references : [];
+    const section = element(document, "section", "narrative-explorer-subject-scripture");
+    appendTextElement(document, section, "h4", `Scripture anchors (${anchors.length})`);
+    if (!anchors.length) appendTextElement(document, section, "p", "No Scripture anchors are recorded on this CKL subject.");
+    const list = element(document, "ol");
+    let next = 0;
+    let moreButton = null;
+    const addPage = () => {
+      anchors.slice(next, next + PAGE_SIZE).forEach((raw) => {
+        const anchor = typeof raw === "string" ? {reference: raw} : raw || {};
+        const reference = readerText(anchor.reference);
+        if (!reference) return;
+        const entry = element(document, "li");
+        appendTextElement(document, entry, "p", `${reference}${anchor.relationship ? ` · ${readerText(anchor.relationship)}` : ""}`);
+        if (readerText(anchor.notes)) appendTextElement(document, entry, "p", readerText(anchor.notes), "narrative-explorer-provenance-note");
+        const resolved = validateScriptureReference(reference, options.knownBooks || []);
+        if (!resolved.valid) appendTextElement(document, entry, "p", `Passage navigation unavailable: ${resolved.reason}`, "narrative-explorer-missing-provenance");
+        else if (normalizeReference(resolved.reference) === normalizeReference(trailCurrentSelection(trail)?.reference)) {
+          appendTextElement(document, entry, "span", "Current passage", "narrative-explorer-current-passage");
+        } else if (passageIsInTrail(trail, normalizeReference(resolved.reference))) {
+          appendTextElement(document, entry, "span", "This passage already appears in the trail; the cycle was stopped.", "narrative-explorer-trail-cycle");
+        } else if (currentRelationshipHops(trail) >= MAX_RELATIONSHIP_HOPS) {
+          appendTextElement(document, entry, "p", `The maximum of ${MAX_RELATIONSHIP_HOPS} relationship hops has been reached.`, "narrative-explorer-trail-limit");
+        } else if (typeof options.onOpenPassage === "function") {
+          appendActionButton(document, entry, `Open linked passage: ${resolved.reference}`, `scripture:${resolved.reference}`, (button) => options.onOpenPassage(resolved, relationshipSnapshot(anchor), button));
+        }
+        list.append(entry);
+      });
+      next += Math.min(PAGE_SIZE, anchors.length - next);
+      if (moreButton) {
+        moreButton.hidden = next >= anchors.length;
+        moreButton.textContent = `Show ${Math.min(PAGE_SIZE, anchors.length - next)} more Scripture anchors`;
+      }
+    };
+    addPage();
+    section.append(list);
+    if (anchors.length > PAGE_SIZE) {
+      moreButton = element(document, "button", "secondary narrative-explorer-more-scripture");
+      moreButton.type = "button";
+      moreButton.textContent = `Show ${Math.min(PAGE_SIZE, anchors.length - next)} more Scripture anchors`;
+      moreButton.addEventListener("click", addPage);
+      section.append(moreButton);
+    }
+    parent.append(section);
+  }
+
+  function appendSubjectRelations(document, parent, subject, trail, options) {
+    const links = Array.isArray(subject?.related_object_links) ? [...subject.related_object_links] : [];
+    links.sort((left, right) => readerText(left?.id).localeCompare(readerText(right?.id)) || readerText(left?.relationship).localeCompare(readerText(right?.relationship)));
+    const section = element(document, "section", "narrative-explorer-subject-relations");
+    appendTextElement(document, section, "h4", `Authored CKL relationships (${links.length})`);
+    if (!links.length) appendTextElement(document, section, "p", "No further authored CKL relationships are available on this subject.");
+    const list = element(document, "ol");
+    let next = 0;
+    let moreButton = null;
+    const addPage = () => {
+      links.slice(next, next + CONNECTION_PAGE_SIZE).forEach((link) => {
+        const entry = element(document, "li", "narrative-explorer-subject-relationship");
+        const label = readerText(link.relationship) || "(original relationship label unavailable)";
+        const targetId = readerText(link.id);
+        const title = readerText(link.title || targetId) || "CKL target unavailable";
+        appendTextElement(document, entry, "p", `Relationship: descriptive association · original CKL label: ${label}`, "narrative-explorer-connection-label");
+        appendTextElement(document, entry, "p", `Source subject: ${readerText(subject.id)} · Target subject: ${title} (${targetId})${readerText(link.type) ? ` · type: ${readerText(link.type)}` : ""} · Direction: ${readerText(subject.id)} → ${targetId}.`);
+        appendTextElement(document, entry, "p", "Validated relationship category and reciprocal status are not included in this subject detail response; the original label is retained without upgrading it.", "narrative-explorer-caution");
+        appendTextElement(document, entry, "p", "Interpretive status: not recorded for this relationship in the subject detail response.", "narrative-explorer-connection-status");
+        if (Number.isFinite(Number(link.weight))) appendTextElement(document, entry, "p", `CKL relationship weight: ${Number(link.weight)} (recorded metadata; not an interpretation category).`, "narrative-explorer-connection-status");
+        if (readerText(link.notes)) appendTextElement(document, entry, "p", `Recorded rationale: ${readerText(link.notes)}`, "narrative-explorer-provenance-note");
+        appendTextElement(document, entry, "p", "Evidence or Scripture anchor: not included in this subject detail response.", "narrative-explorer-missing-provenance");
+        const currentHops = currentRelationshipHops(trail);
+        if (!targetId) appendTextElement(document, entry, "p", "No target CKL ID was returned; this relationship cannot be followed.", "narrative-explorer-missing-provenance");
+        else if (currentHops >= MAX_RELATIONSHIP_HOPS) appendTextElement(document, entry, "p", `The maximum of ${MAX_RELATIONSHIP_HOPS} relationship hops has been reached.`, "narrative-explorer-trail-limit");
+        else if (trailNodes(trail).some((node) => node.subjectId === targetId || node.parentObjectId === targetId)) appendTextElement(document, entry, "p", "This relationship returns to a subject already in the trail; the cycle is stopped.", "narrative-explorer-trail-cycle");
+        else if (typeof options.onFollowSubject === "function") {
+          appendActionButton(document, entry, `Open connected CKL subject: ${title}`, `subject-relationship:${targetId}`, (button) => options.onFollowSubject({targetId, title}, {originalRelationshipType: label, notes: readerText(link.notes)}, button));
+        }
+        list.append(entry);
+      });
+      next += Math.min(CONNECTION_PAGE_SIZE, links.length - next);
+      if (moreButton) {
+        moreButton.hidden = next >= links.length;
+        moreButton.textContent = `Show ${Math.min(CONNECTION_PAGE_SIZE, links.length - next)} more relationships`;
+      }
+    };
+    addPage();
+    section.append(list);
+    if (links.length > CONNECTION_PAGE_SIZE) {
+      moreButton = element(document, "button", "secondary narrative-explorer-more-subject-relations");
+      moreButton.type = "button";
+      moreButton.textContent = `Show ${Math.min(CONNECTION_PAGE_SIZE, links.length - next)} more relationships`;
+      moreButton.addEventListener("click", addPage);
+      section.append(moreButton);
+    }
+    parent.append(section);
+  }
+
+  function appendActionButton(document, parent, label, focusId, callback) {
+    const button = element(document, "button", "secondary narrative-explorer-trail-action");
+    button.type = "button";
+    button.textContent = label;
+    button.dataset.narrativeFocusId = focusId;
+    button.addEventListener("click", () => callback(button));
+    parent.append(button);
+    return button;
+  }
+
   function renderFailure(state, selection, options = {}) {
     const document = options.document || root.document;
     if (!document) throw new Error("A document is required to render Narrative Explorer status.");
     const container = element(document, "section", "narrative-explorer-state");
     container.setAttribute("role", "alert");
+    if (options.trail) container.append(renderTrailHeader(options.trail, {...options, document}));
     const offline = state === "offline";
     appendTextElement(document, container, "h3", offline ? "Not available offline" : "Narrative Explorer unavailable");
     const reference = readerText(selection?.reference) || "this passage";
@@ -678,10 +1540,29 @@
 
   return Object.freeze({
     SECTIONS,
+    MAX_RELATIONSHIP_HOPS,
+    MAX_TRAIL_NODES,
     urlFor,
     load,
+    createSubjectLoader,
     createSession,
+    createTrail,
+    addEvidenceStep,
+    followSubject,
+    followPassage,
+    returnToOrigin,
+    activeTrailStep,
+    trailNodes,
+    trailCurrentSelection,
+    trailReturnFocusId,
+    currentRelationshipHops,
+    validateScriptureReference,
+    subjectMatchesId,
     renderOverview,
+    renderTrailHeader,
+    renderEvidenceDetail,
+    renderSubjectDetail,
+    renderSubjectFailure,
     renderFailure,
     classifyError,
   });

@@ -28,6 +28,11 @@
     let activeResourceId = "";
     let activePassageKey = "";
     const explorer = window.BHFNarrativeExplorer;
+    const subjectLoader = explorer?.createSubjectLoader?.();
+    let narrativeTrail = null;
+    let narrativeProjection = null;
+    let narrativeSelection = null;
+    let pendingNarrativeFocusId = "";
     const narrativeSession = explorer?.createSession?.({
       enabled: window.BHFRuntimeConfig?.narrativeExplorerEnabled === true,
       onLoading(selection) {
@@ -39,6 +44,7 @@
       onError(state, _error, selection) {
         if (activeResourceId !== "narrative_explorer") return;
         const failure = explorer.renderFailure(state, selection, {
+          ...narrativeRenderOptions(),
           onRetry: () => void narrativeSession?.retry?.(),
         });
         host.replaceChildren(failure);
@@ -52,9 +58,13 @@
     async function open(resourceId, routeOptions = {}) {
       if (!NATIVE_RESOURCES.has(resourceId)) return false;
       const isNarrativeExplorer = resourceId === "narrative_explorer";
-      const selection = options.getSelection?.() || {};
+      const requestedTrail = isNarrativeExplorer ? routeOptions.trail || null : null;
+      const selection = isNarrativeExplorer && requestedTrail
+        ? explorer.trailCurrentSelection(requestedTrail) || options.getSelection?.() || {}
+        : options.getSelection?.() || {};
       if (isNarrativeExplorer && window.BHFRuntimeConfig?.narrativeExplorerEnabled !== true) return false;
       let passageKey = "";
+      const wasActiveNarrative = activeResourceId === "narrative_explorer";
       if (isNarrativeExplorer) {
         if (!explorer || !narrativeSession) return false;
         try {
@@ -62,6 +72,20 @@
         } catch (error) {
           renderError(host, error?.message || "Select a passage before opening Narrative Explorer.");
           return true;
+        }
+        if (activeResourceId === resourceId && requestedTrail) {
+          narrativeTrail = requestedTrail;
+          pendingNarrativeFocusId = explorer.trailReturnFocusId(narrativeTrail);
+          const currentSelectionKey = (() => {
+            try { return explorer.urlFor(explorer.trailCurrentSelection(narrativeTrail) || {}); } catch (_error) { return ""; }
+          })();
+          if (currentSelectionKey === activePassageKey && narrativeProjection) {
+            const focusId = pendingNarrativeFocusId;
+            pendingNarrativeFocusId = "";
+            renderActiveNarrativeTrail({focusId});
+            return true;
+          }
+          passageKey = currentSelectionKey || passageKey;
         }
         if (activeResourceId === resourceId && activePassageKey === passageKey && !routeOptions.force) return true;
       }
@@ -72,6 +96,17 @@
       narrativeSession?.close?.();
       activeResourceId = resourceId;
       activePassageKey = isNarrativeExplorer ? passageKey : "";
+      if (isNarrativeExplorer) {
+        narrativeTrail = requestedTrail || explorer.createTrail(selection);
+        narrativeSelection = selection;
+        pendingNarrativeFocusId = requestedTrail ? explorer.trailReturnFocusId(narrativeTrail) : "";
+        if (!requestedTrail) narrativeProjection = null;
+        options.onNarrativeTrailChange?.(narrativeTrail, {push: wasActiveNarrative});
+      } else {
+        narrativeTrail = null;
+        narrativeProjection = null;
+        narrativeSelection = null;
+      }
       nativeBackView = null;
       nativeBackFocusSelector = "";
       shell.classList.add("is-native-resource");
@@ -79,6 +114,11 @@
       if (!isNarrativeExplorer) renderLoading(host);
       try {
         if (isNarrativeExplorer) {
+          if (requestedTrail) {
+            let selectedKey = "";
+            try { selectedKey = explorer.urlFor(options.getSelection?.() || {}); } catch (_error) { selectedKey = ""; }
+            if (selectedKey && selectedKey !== passageKey) await navigateReaderToSelection(selection);
+          }
           await narrativeSession.open(selection, {force: routeOptions.force === true});
         } else if (routeOptions.mode === "explore") {
           await renderExplore(resourceId, requestSequence, controller.signal);
@@ -91,6 +131,15 @@
         }
       }
       return true;
+    }
+
+    function getNarrativeTrail() {
+      return narrativeTrail;
+    }
+
+    function restoreNarrativeTrail(trail) {
+      if (!trail || activeResourceId !== "narrative_explorer") return false;
+      return open("narrative_explorer", {trail, mode: "passage"});
     }
 
     function close() {
@@ -106,6 +155,10 @@
       shell.classList.remove("is-native-resource");
       nativeBackView = null;
       nativeBackFocusSelector = "";
+      narrativeTrail = null;
+      narrativeProjection = null;
+      narrativeSelection = null;
+      pendingNarrativeFocusId = "";
     }
 
     function showLegacy(resourceId) {
@@ -118,16 +171,251 @@
     function renderNarrativeProjection(projection) {
       if (activeResourceId !== "narrative_explorer") return;
       const startedAt = performanceNow();
-      const view = explorer.renderOverview(projection, {onNavigate: navigateNarrativeItem});
-      host.replaceChildren(view);
-      host.setAttribute("aria-busy", "false");
+      narrativeProjection = projection;
+      if (!narrativeTrail) narrativeTrail = explorer.createTrail(narrativeSelection || projection?.passage || {});
+      const focusId = pendingNarrativeFocusId;
+      pendingNarrativeFocusId = "";
+      renderActiveNarrativeTrail({focusId});
       dispatchNarrativeMetric({
         phase: "render",
         passage: projection?.passage?.reference || "",
         initial_overview_render_ms: Math.max(0, performanceNow() - startedAt),
-        dom_node_growth: countNodes(view),
+        dom_node_growth: countNodes(host.firstElementChild),
         network_requests: 0,
       });
+    }
+
+    function narrativeRenderOptions(extra = {}) {
+      return {
+        ...extra,
+        trail: narrativeTrail,
+        knownBooks: readerBookOptions(),
+        onNavigate: navigateNarrativeItem,
+        onInspect: inspectNarrativeItem,
+        onFollowConnection: followNarrativeSubject,
+        onFollowSubject: followNarrativeSubject,
+        onOpenPassage: followNarrativePassage,
+        onBack: () => options.backNarrativeTrail?.(),
+        onReturnToOrigin: returnToNarrativeOrigin,
+      };
+    }
+
+    function renderActiveNarrativeTrail(behavior = {}) {
+      if (activeResourceId !== "narrative_explorer" || !narrativeTrail) return;
+      const step = explorer.activeTrailStep(narrativeTrail);
+      if (step?.kind !== "subject") cancelNarrativeDetailRequest();
+      if (!step || step.kind === "passage") {
+        const currentPassage = projectionPassageReference(narrativeProjection);
+        if (!narrativeProjection || (step?.reference && normalizePassageReference(currentPassage) !== normalizePassageReference(step.reference))) {
+          renderLoading(host, `Loading narrative evidence for ${step?.reference || "the selected passage"}…`);
+          return;
+        }
+        const nextNode = narrativeTrail.nodes?.[Number(narrativeTrail.activeIndex || 0) + 1];
+        const view = explorer.renderOverview(narrativeProjection, narrativeRenderOptions({
+          focusItemId: nextNode?.kind === "evidence" ? nextNode.id : "",
+        }));
+        host.replaceChildren(view);
+        host.setAttribute("aria-busy", "false");
+        focusNarrativeView(behavior.focusId);
+        return;
+      }
+      if (step.kind === "evidence") {
+        const item = (Array.isArray(narrativeProjection?.items) ? narrativeProjection.items : []).find((candidate) => candidate.id === step.id);
+        if (!item) {
+          host.replaceChildren(explorer.renderSubjectFailure("the stable projected item is absent from the active passage projection", step.id, narrativeTrail, narrativeRenderOptions()));
+          host.setAttribute("aria-busy", "false");
+          focusNarrativeView(behavior.focusId);
+          return;
+        }
+        const connections = (Array.isArray(narrativeProjection?.connections) ? narrativeProjection.connections : [])
+          .filter((edge) => edge?.source_id === item.id || edge?.target_id === item.id);
+        const view = explorer.renderEvidenceDetail(item, connections, narrativeTrail, narrativeRenderOptions());
+        host.replaceChildren(view);
+        host.setAttribute("aria-busy", "false");
+        focusNarrativeView(behavior.focusId);
+        return;
+      }
+      if (step.kind === "subject") void loadNarrativeSubject(step, behavior);
+    }
+
+    async function loadNarrativeSubject(step, behavior = {}) {
+      const requestSequence = ++sequence;
+      controller?.abort();
+      controller = new AbortController();
+      renderLoading(host, "Loading connected CKL subject…");
+      host.setAttribute("aria-busy", "true");
+      try {
+        const subject = await subjectLoader.get(step.targetId, controller.signal);
+        if (requestSequence !== sequence || activeResourceId !== "narrative_explorer") return;
+        if (!explorer.subjectMatchesId(step.targetId, subject)) {
+          throw new Error("The CKL detail response did not match the recorded target identity.");
+        }
+        const view = explorer.renderSubjectDetail(subject, narrativeTrail, narrativeRenderOptions());
+        host.replaceChildren(view);
+        host.setAttribute("aria-busy", "false");
+        focusNarrativeView(behavior.focusId);
+      } catch (error) {
+        if (error?.name === "AbortError" || requestSequence !== sequence || activeResourceId !== "narrative_explorer") return;
+        const message = window.navigator?.onLine === false || error instanceof TypeError
+          ? `No saved detail is available offline (${error?.message || "network unavailable"}).`
+          : error?.message || "The CKL detail request did not complete.";
+        host.replaceChildren(explorer.renderSubjectFailure(message, step.targetId, narrativeTrail, narrativeRenderOptions()));
+        host.setAttribute("aria-busy", "false");
+        focusNarrativeView(behavior.focusId);
+      }
+    }
+
+    function cancelNarrativeDetailRequest() {
+      sequence += 1;
+      controller?.abort();
+      controller = null;
+    }
+
+    function inspectNarrativeItem(item, trigger) {
+      try {
+        narrativeTrail = explorer.addEvidenceStep(narrativeTrail, item, trigger?.dataset?.narrativeFocusId || "");
+        notifyNarrativeTrailChanged();
+        renderActiveNarrativeTrail();
+      } catch (error) {
+        showTrailNotice(error?.message || "This evidence item cannot be opened.");
+      }
+    }
+
+    function followNarrativeSubject(subject, relationship, trigger) {
+      const result = explorer.followSubject(
+        narrativeTrail,
+        subject,
+        relationship,
+        trigger?.dataset?.narrativeFocusId || "",
+      );
+      if (result.error) {
+        showTrailNotice(trailErrorMessage(result.error));
+        return;
+      }
+      narrativeTrail = result.state;
+      notifyNarrativeTrailChanged();
+      renderActiveNarrativeTrail();
+    }
+
+    async function followNarrativePassage(destination, relationship, trigger) {
+      const previousSelection = explorer.trailCurrentSelection(narrativeTrail) || {};
+      const selection = {
+        book: destination.book,
+        chapter: destination.chapter,
+        startVerse: destination.startVerse,
+        endVerse: destination.endVerse,
+        selectedVerses: destination.startVerse
+          ? Array.from({length: (destination.endVerse || destination.startVerse) - destination.startVerse + 1}, (_value, index) => destination.startVerse + index)
+          : [],
+        selectedText: "",
+        translation: previousSelection.translation || "",
+        reference: destination.reference,
+      };
+      const result = explorer.followPassage(
+        narrativeTrail,
+        {reference: destination.reference, selection},
+        relationship,
+        trigger?.dataset?.narrativeFocusId || "",
+      );
+      if (result.error) {
+        showTrailNotice(trailErrorMessage(result.error));
+        return;
+      }
+      narrativeTrail = result.state;
+      const nextSelection = explorer.trailCurrentSelection(narrativeTrail);
+      try {
+        cancelNarrativeDetailRequest();
+        activePassageKey = explorer.urlFor(nextSelection);
+        await navigateReaderToSelection(nextSelection);
+        if (activeResourceId !== "narrative_explorer") return;
+        notifyNarrativeTrailChanged();
+        await narrativeSession.open(nextSelection);
+      } catch (error) {
+        showTrailNotice(error?.message || "The linked passage could not be opened in the reader.");
+      }
+    }
+
+    async function returnToNarrativeOrigin() {
+      narrativeTrail = explorer.returnToOrigin(narrativeTrail);
+      const origin = explorer.trailCurrentSelection(narrativeTrail);
+      pendingNarrativeFocusId = explorer.trailReturnFocusId(narrativeTrail);
+      try {
+        cancelNarrativeDetailRequest();
+        activePassageKey = explorer.urlFor(origin);
+        await navigateReaderToSelection(origin);
+        if (activeResourceId !== "narrative_explorer") return;
+        notifyNarrativeTrailChanged();
+        await narrativeSession.open(origin);
+        const focusId = pendingNarrativeFocusId;
+        pendingNarrativeFocusId = "";
+        renderActiveNarrativeTrail({focusId});
+      } catch (error) {
+        showTrailNotice(error?.message || "The original passage could not be restored.");
+      }
+    }
+
+    async function navigateReaderToSelection(selection) {
+      const navigate = window.BHFReader?.navigateToPassage;
+      if (typeof navigate !== "function") throw new Error("BHF reader navigation is unavailable.");
+      const verses = Array.isArray(selection.selectedVerses) ? selection.selectedVerses : [];
+      return navigate(
+        selection.book,
+        selection.chapter,
+        selection.startVerse || null,
+        selection.endVerse || selection.startVerse || null,
+        {
+          translation: selection.translation,
+          selectedVerses: verses,
+          selectedText: selection.selectedText,
+          selectedWord: selection.selectedWord,
+        },
+      );
+    }
+
+    function notifyNarrativeTrailChanged() {
+      options.onNarrativeTrailChange?.(narrativeTrail, {push: true});
+    }
+
+    function focusNarrativeView(focusId = "") {
+      window.requestAnimationFrame?.(() => {
+        const controls = Array.from(host.querySelectorAll?.("[data-narrative-focus-id]") || []);
+        const launchingControl = controls.find((element) => element.dataset.narrativeFocusId === focusId);
+        const target = launchingControl || host.querySelector?.("[data-narrative-primary]");
+        target?.focus?.({preventScroll: true});
+      });
+    }
+
+    function showTrailNotice(message) {
+      const notice = document.createElement("p");
+      notice.className = "narrative-explorer-caution";
+      notice.setAttribute("role", "status");
+      notice.textContent = message;
+      const current = host.querySelector?.("[data-narrative-explorer], [aria-label='Evidence detail'], [aria-label='Connected CKL subject']");
+      current?.prepend(notice);
+    }
+
+    function trailErrorMessage(error) {
+      return ({
+        cycle: "This destination already appears in the current trail; the cycle was stopped.",
+        depth_limit: `The maximum of ${explorer.MAX_RELATIONSHIP_HOPS} relationship hops has been reached.`,
+        missing_target: "The authored relationship does not identify a CKL target ID.",
+        invalid_reference: "The linked Scripture reference is not available in the reader's canonical book list.",
+      })[error] || "This recorded relationship could not be followed.";
+    }
+
+    function readerBookOptions() {
+      return Array.from(document.querySelector("[data-reader-book]")?.options || []).map((option) => ({
+        value: option.value || option.label,
+        chapters: Number(option.dataset?.chapters || 0),
+      }));
+    }
+
+    function projectionPassageReference(projection) {
+      return String(projection?.passage?.reference || "");
+    }
+
+    function normalizePassageReference(value) {
+      return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
     }
 
     async function navigateNarrativeItem(item, action, trigger) {
@@ -863,6 +1151,8 @@
       open,
       close,
       showLegacy,
+      getNarrativeTrail,
+      restoreNarrativeTrail,
       openCanonicalDetail,
       openArchaeologyDetail,
     });

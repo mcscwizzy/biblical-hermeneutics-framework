@@ -53,5 +53,5 @@ def test_enabled_flag_exposes_only_the_passage_companion_entry(monkeypatch):
     assert response.status_code == 200
     assert 'data-companion-resource="narrative_explorer"' in response.text
     assert 'data-companion-resource-label="Explore the Narrative"' in response.text
-    assert "/narrative-explorer.js?v=20261015a" in response.text
+    assert "/narrative-explorer.js?v=20261015b" in response.text
     assert '"narrativeExplorerEnabled": true' in response.text

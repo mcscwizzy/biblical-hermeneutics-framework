@@ -77,6 +77,12 @@
       getSelection: () => selection,
       getContext: () => contextController?.getRecord?.().context || null,
       getContextRecord: () => contextController?.getRecord?.(),
+      onNarrativeTrailChange: (trail, behavior = {}) => {
+        const snapshot = {...historySnapshot(), trail};
+        if (behavior.push) historyController?.push(snapshot);
+        else historyController?.replace(snapshot);
+      },
+      backNarrativeTrail: () => historyController?.backFromResource(() => false),
       getReadableTranslations: () => window.BHFStudyActions?.loadReadableTranslations?.(),
       loadChapterData: (book, chapter, translation, requestOptions) =>
         window.BHFReader?.loadChapterData?.(book, chapter, translation, requestOptions),
@@ -102,7 +108,7 @@
           ...(context.entities?.places || []),
           ...(context.entities?.themes || []),
         ]);
-        if (currentResource && currentMode === "passage") {
+        if (isPassageContextResourceActive()) {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
         }
       },
@@ -111,7 +117,7 @@
         renderPresentationStatus("idle");
         renderDiscoveries({});
         renderAvailabilityError(message);
-        if (currentResource && currentMode === "passage") {
+        if (isPassageContextResourceActive()) {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
         }
       },
@@ -256,7 +262,7 @@
       historyController?.replace(historySnapshot());
     }
     if (selection?.book && selection?.chapter) {
-      if (currentResource && contextChange.changed) {
+      if (contextChange.changed && isPassageContextResourceActive()) {
         void resourceRouter?.open?.(currentResource, {mode: currentMode});
       }
     } else {
@@ -512,12 +518,18 @@
       : engine?.resources?.[requestedResourceId]
       || engine?.resources?.[resourceId]
       || {label: options.label || "Study Resource"};
-    ensureResourceVisible(resourceId, resource, {state: options.state});
+    if (!(resourceId === "narrative_explorer" && currentResource === resourceId)) {
+      ensureResourceVisible(resourceId, resource, {state: options.state});
+    }
     if (options.history !== false && historyController?.current()?.resource !== resourceId) {
       historyController?.push(historySnapshot());
     }
 
-    if (await resourceRouter?.open?.(resourceId, {mode: currentMode})) return true;
+    if (await resourceRouter?.open?.(resourceId, {
+      mode: currentMode,
+      trail: options.trail,
+      trigger: options.trigger,
+    })) return true;
     openLegacyResource(resourceId, options);
     return false;
   }
@@ -775,6 +787,7 @@
         history: false,
         mode: snapshot.mode,
         state: snapshot.state,
+        trail: snapshot.trail,
       });
       return;
     }
@@ -787,14 +800,25 @@
   }
 
   function historySnapshot() {
-    return {state: currentState, mode: currentMode, resource: currentResource};
+    return {
+      state: currentState,
+      mode: currentMode,
+      resource: currentResource,
+      trail: currentResource === "narrative_explorer" ? resourceRouter?.getNarrativeTrail?.() || null : null,
+    };
   }
 
   function handleContextInvalidated(event) {
     const invalidated = contextController?.invalidate?.(event.detail?.key, {load: currentMode === "passage"});
-    if (invalidated && currentMode === "passage" && currentResource) {
+    if (invalidated && isPassageContextResourceActive()) {
       void resourceRouter?.open?.(currentResource, {mode: currentMode});
     }
+  }
+
+  function isPassageContextResourceActive() {
+    // Narrative Explorer owns passage changes inside its evidence trail. A
+    // Companion context refresh must not reopen it without the active trail.
+    return Boolean(currentResource && currentResource !== "narrative_explorer" && currentMode === "passage");
   }
 
   function renderResourceHeader(resourceId, resource = null) {
