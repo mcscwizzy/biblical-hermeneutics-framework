@@ -35,12 +35,20 @@ NE6V_PLACE_ID = "ne6v_synthetic_place_001"
 NE6V_ROUTE_ID = "ne6v_synthetic_route_001"
 
 
-def _install_ne6v_map_fixture(driver, *, focus_override_id: str | None = None) -> None:
+def _install_ne6v_map_fixture(
+    driver,
+    *,
+    focus_override_id: str | None = None,
+    include_related_passages: bool = True,
+    detail_failure_count: int = 0,
+) -> None:
     """Inject labeled, test-only API responses without writing a data store."""
     driver.execute_script("""
         const placeRecordId = arguments[0];
         const routeRecordId = arguments[1];
         const focusOverrideId = arguments[2];
+        const includeRelatedPassages = arguments[3];
+        const detailFailureCount = Number(arguments[4] || 0);
         const placeItemId = `maps:${placeRecordId}`;
         const routeItemId = `maps:${routeRecordId}`;
         const place = {
@@ -62,7 +70,29 @@ def _install_ne6v_map_fixture(driver, *, focus_override_id: str | None = None) -
             book: 'Genesis', chapter: 2, verse_start: 8, verse_end: 8,
             relationship_type: 'synthetic_test_anchor',
           }],
+          related_passages: {
+            place_id: placeRecordId,
+            place_name: 'NE-6V Synthetic Test Place',
+            count: 1,
+            groups: [{
+              group_type: 'directly_mentioned',
+              label: 'Directly Mentioned',
+              summary: 'Synthetic test relationship only.',
+              count: 1,
+              passages: [{
+                book: 'Genesis', chapter: 2, verse_start: 8, verse_end: 8,
+                reference: 'Genesis 2:8', relationship_type: 'synthetic_test_anchor',
+                relationship_label: 'Synthetic test anchor', notes: 'Synthetic test data only.',
+                source: {kind: 'place', id: placeRecordId, name: 'NE-6V Synthetic Test Place',
+                  label: 'Synthetic test fixture', entity_type: 'test fixture', notes: '',
+                  confidence: 'Certain', confidence_rank: 100, source_url: '', periods: ['Test fixture']},
+              }],
+              testament_groups: [],
+            }],
+          },
         };
+        const syntheticRelatedPassages = place.related_passages;
+        if (!includeRelatedPassages) delete place.related_passages;
         const route = {
           id: routeRecordId,
           name: 'NE-6V Synthetic Test Route',
@@ -160,6 +190,7 @@ def _install_ne6v_map_fixture(driver, *, focus_override_id: str | None = None) -
         });
         window.__ne6vNativeFetch = window.fetch.bind(window);
         window.__ne6vFocusRequests = [];
+        window.__ne6vDetailRequests = [];
         window.fetch = async (input, init) => {
           const rawUrl = String(typeof input === 'string' ? input : input.url);
           const url = new URL(rawUrl, window.location.href);
@@ -172,6 +203,17 @@ def _install_ne6v_map_fixture(driver, *, focus_override_id: str | None = None) -
               && url.searchParams.get('book') === 'Genesis'
               && url.searchParams.get('chapter') === '2') {
             return makeJsonResponse({routes: [route], count: 1, empty_state: false});
+          }
+          if (url.pathname === '/api/maps/related-passages-for-place'
+              && url.searchParams.get('place_id') === placeRecordId) {
+            window.__ne6vDetailRequests.push(url.search);
+            if (window.__ne6vDetailRequests.length <= detailFailureCount) {
+              return new Response(JSON.stringify({error: 'Synthetic one-time detail failure.'}), {
+                status: 503,
+                headers: {'Content-Type': 'application/json'},
+              });
+            }
+            return makeJsonResponse(syntheticRelatedPassages);
           }
           const response = await window.__ne6vNativeFetch(input, init);
           if (url.pathname !== '/api/narrative-explorer/v1/passages/Genesis/2') return response;
@@ -201,7 +243,7 @@ def _install_ne6v_map_fixture(driver, *, focus_override_id: str | None = None) -
           return acknowledgment;
         };
         window.__ne6vFixtureRecordIds = {place: placeRecordId, route: routeRecordId};
-    """, NE6V_PLACE_ID, NE6V_ROUTE_ID, focus_override_id)
+    """, NE6V_PLACE_ID, NE6V_ROUTE_ID, focus_override_id, include_related_passages, detail_failure_count)
 
 
 def _free_port() -> int:
@@ -226,6 +268,20 @@ def _wait_for_url(url: str, timeout: float = 120.0) -> None:
 def _read_json(url: str) -> dict:
     with urlopen(url, timeout=120) as response:
         return json.loads(response.read().decode("utf-8"))
+
+
+def _read_http_body(url: str) -> tuple[bytes, dict[str, object]]:
+    started = time.perf_counter()
+    with urlopen(url, timeout=180) as response:
+        headers_received = time.perf_counter()
+        body = response.read()
+        completed = time.perf_counter()
+        return body, {
+            "status": response.status,
+            "content_length": response.headers.get("Content-Length"),
+            "ttfb_ms": round((headers_received - started) * 1000, 3),
+            "body_read_ms": round((completed - headers_received) * 1000, 3),
+        }
 
 
 @unittest.skipUnless(
@@ -373,7 +429,11 @@ class NE6FirefoxIntegrationTests(unittest.TestCase):
         ))
         self.assertTrue(driver.execute_script("return window.BHFRuntimeConfig.narrativeExplorerEnabled"))
         self.assertFalse(driver.execute_script("return Boolean(window.BHFTestMode)"))
-        _install_ne6v_map_fixture(driver)
+        _install_ne6v_map_fixture(
+            driver,
+            include_related_passages=False,
+            detail_failure_count=1,
+        )
 
         driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
@@ -413,6 +473,15 @@ class NE6FirefoxIntegrationTests(unittest.TestCase):
         self.assertIn("NE-6V Synthetic Test Place", place_details.text)
         self.assertIn(f"Synthetic test record ID: {NE6V_PLACE_ID}", place_details.text)
         self.assertIn(f"/api/maps/places/{NE6V_PLACE_ID}.kml", place_details.find_element(By.CSS_SELECTOR, ".map-kml-link").get_attribute("href"))
+        retry_details = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-related-passages-retry]")))
+        self.assertIn("authored links shown here are incomplete", place_details.text)
+        self.assertEqual(driver.execute_script("return window.__ne6vDetailRequests.length"), 1)
+        retry_details.click()
+        self.wait.until(lambda browser: browser.execute_script(
+            "return window.__ne6vDetailRequests.length === 2 "
+            "&& document.querySelectorAll('#map-details .map-related-passages-group').length > 0"
+        ))
+        self.assertIn("Genesis 2:8", driver.find_element(By.CSS_SELECTOR, "#map-details .map-details-card").text)
         self.wait.until(lambda browser: browser.find_elements(
             By.CSS_SELECTOR, '#map-stage .leaflet-marker-icon[title="NE-6V Synthetic Test Place"]'
         ))
@@ -434,15 +503,411 @@ class NE6FirefoxIntegrationTests(unittest.TestCase):
         driver.find_element(By.CSS_SELECTOR, "[data-map-panel-close]").click()
         self.wait.until(lambda browser: browser.find_element(By.ID, "map-panel").get_attribute("hidden") is not None)
         self.assertEqual(driver.switch_to.active_element.get_attribute("data-testid"), "map-browse-button")
-        driver.back()
-        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+
+    def test_firefox_john2_compact_maps_selection_mobile_cache_and_offline_retry(self):
+        driver = self.driver
+        runtime_config = self._app.state.runtime_config
+        had_auto_pack_setting = "autoInstallOfflinePacks" in runtime_config
+        previous_auto_pack_setting = runtime_config.get("autoInstallOfflinePacks")
+        runtime_config["autoInstallOfflinePacks"] = False
+
+        def restore_auto_pack_setting():
+            if had_auto_pack_setting:
+                runtime_config["autoInstallOfflinePacks"] = previous_auto_pack_setting
+            else:
+                runtime_config.pop("autoInstallOfflinePacks", None)
+
+        self.addCleanup(restore_auto_pack_setting)
+        self.open_home(390, 844, query="ne6r1-john2-compact=1")
         self.wait.until(lambda browser: browser.execute_script(
-            "return document.activeElement?.dataset?.narrativePrimary === 'true'"
+            "return Boolean(navigator.serviceWorker?.controller)"
         ))
+        worker_url = driver.execute_script("return navigator.serviceWorker.controller.scriptURL")
+        self.assertTrue(worker_url.endswith("/sw.js"), worker_url)
+        driver.execute_async_script("""
+            const done = arguments[0];
+            (async () => {
+              for (let index = localStorage.length - 1; index >= 0; index -= 1) {
+                const key = localStorage.key(index);
+                if (key?.startsWith('bhf.map-service:')) localStorage.removeItem(key);
+              }
+              done(true);
+            })().catch(error => done({error: String(error)}));
+        """)
+        driver.execute_script("""
+            window.__ne6r1MapApiTimings = [];
+            const originalFetch = window.fetch.bind(window);
+            window.fetch = async (input, init) => {
+              const url = String(typeof input === 'string' ? input : input.url);
+              const started = performance.now();
+              const response = await originalFetch(input, init);
+              if (!new URL(url, location.href).pathname.startsWith('/api/maps/')) return response;
+              const headersAt = performance.now();
+              const originalJson = response.json.bind(response);
+              response.json = async () => {
+                const bodyAndParseStarted = performance.now();
+                const value = await originalJson();
+                const completed = performance.now();
+                window.__ne6r1MapApiTimings.push({
+                  path: new URL(url, location.href).pathname,
+                  includeRecords: new URL(url, location.href).searchParams.get('include_records'),
+                  status: response.status,
+                  contentLength: response.headers.get('Content-Length'),
+                  offline: response.headers.get('X-BHF-Offline') === 'true',
+                  headerWaitMs: Number((headersAt - started).toFixed(2)),
+                  bodyAndJsonParseMs: Number((completed - bodyAndParseStarted).toFixed(2)),
+                  totalMs: Number((completed - started).toFixed(2)),
+                });
+                return value;
+              };
+              return response;
+            };
+        """)
+        opened = driver.execute_async_script("""
+            const done = arguments[0];
+            const started = performance.now();
+            window.BHFMaps.openMapPanel({book: 'John', chapter: 2}).then(() => done({
+              status: document.querySelector('#map-panel-status')?.dataset.state || '',
+              hidden: Boolean(document.querySelector('#map-panel-status')?.hidden),
+              width: innerWidth,
+              scrollWidth: document.documentElement.scrollWidth,
+              initialMapPanelMs: Number((performance.now() - started).toFixed(2)),
+            })).catch(error => done({error: String(error)}));
+        """)
+        self.assertNotIn("error", opened)
+        self.wait.until(lambda browser: browser.find_elements(By.CSS_SELECTOR, "#map-stage .leaflet-marker-icon"))
+        initial_catalog_timing = driver.execute_script("""
+            return window.__ne6r1MapApiTimings.find(entry => entry.path === '/api/maps/catalog') || null;
+        """)
+        self.assertIsNotNone(initial_catalog_timing)
+        self.assertEqual(initial_catalog_timing["includeRecords"], "false")
+        self.assertLess(int(initial_catalog_timing["contentLength"]), 4096)
+        compact_request = driver.execute_script("""
+            return performance.getEntriesByType('resource')
+              .map(entry => entry.name)
+              .find(name => name.includes('/api/maps/places-for-passage?')
+                && name.includes('book=John') && name.includes('chapter=2')) || '';
+        """)
+        self.assertIn("include_related_passages=false", compact_request)
+
+        candidate = driver.execute_script("""
+            const keys = Array.from({length: localStorage.length}, (_, index) => localStorage.key(index));
+            const key = keys.find(value => value?.startsWith('bhf.map-service:')
+              && value.includes('/api/maps/places-for-passage?') && value.includes('include_related_passages=false'));
+            const cached = key ? JSON.parse(localStorage.getItem(key))?.value : null;
+            const marker = cached?.markers?.find(value => value.id === 'openbible-aac6cda');
+            const icon = marker && Array.from(document.querySelectorAll('#map-stage .leaflet-marker-icon'))
+              .find(value => value.title === marker.name);
+            return marker && icon ? {
+              id: marker.id, name: marker.name, referenceCount: marker.reference_count,
+              markerCount: cached.markers.length, iconCount: document.querySelectorAll('#map-stage .leaflet-marker-icon').length,
+            } : null;
+        """)
+        self.assertIsNotNone(candidate, "the real compact passage result must include the stable source record")
+        self.assertEqual(candidate["id"], "openbible-aac6cda")
+        driver.execute_script("""
+            window.__ne6r1DetailStarted = performance.now();
+            const marker = Array.from(document.querySelectorAll('#map-stage .leaflet-marker-icon'))
+              .find(value => value.title === arguments[0]);
+            if (!marker) throw new Error('The requested rendered marker is missing.');
+            marker.click();
+        """, candidate["name"])
+        self.wait.until(lambda browser: browser.execute_script("""
+            const heading = document.querySelector('#map-details .map-details-card h3');
+            const column = document.querySelector('#map-details-column');
+            return heading?.textContent?.trim() === arguments[0]
+              && column?.classList.contains('is-mobile-open');
+        """, candidate["name"]))
+        self.wait.until(lambda browser: browser.find_elements(By.CSS_SELECTOR, "#map-details .map-related-passages-total"))
+        details = driver.find_element(By.CSS_SELECTOR, "#map-details .map-details-card")
+        selected_heading = driver.execute_script(
+            "return document.querySelector('#map-details .map-details-card h3')?.textContent?.trim() || '';"
+        )
+        self.assertEqual(selected_heading, candidate["name"])
+        kml_url = details.find_element(By.CSS_SELECTOR, ".map-kml-link").get_attribute("href")
+        self.assertTrue(kml_url.endswith(f"/api/maps/places/{candidate['id']}.kml"), kml_url)
+        detail_request = driver.execute_script("""
+            return performance.getEntriesByType('resource').map(entry => entry.name)
+              .find(name => name.includes('/api/maps/related-passages-for-place?')
+                && name.includes('place_id=' + encodeURIComponent(arguments[0]))) || '';
+        """, candidate["id"])
+        self.assertIn(f"place_id={candidate['id']}", detail_request)
+        self.assertGreater(len(driver.find_elements(By.CSS_SELECTOR, "#map-details .map-related-passages-group")), 0)
+        detail_timing = driver.execute_script("""
+            const name = arguments[0];
+            const entry = performance.getEntriesByName(name).at(-1);
+            return {
+              elapsedSinceMarkerSelectionMs: Number((performance.now() - window.__ne6r1DetailStarted).toFixed(2)),
+              durationMs: entry ? Number(entry.duration.toFixed(2)) : null,
+              transferSize: entry?.transferSize ?? null,
+              encodedBodySize: entry?.encodedBodySize ?? null,
+              decodedBodySize: entry?.decodedBodySize ?? null,
+            };
+        """, detail_request)
+        compact_timing = driver.execute_script("""
+            const name = arguments[0];
+            const entry = performance.getEntriesByName(name).at(-1);
+            return entry ? {
+              durationMs: Number(entry.duration.toFixed(2)),
+              transferSize: entry.transferSize,
+              encodedBodySize: entry.encodedBodySize,
+              decodedBodySize: entry.decodedBodySize,
+            } : null;
+        """, compact_request)
         self.assertLessEqual(
             driver.execute_script("return document.documentElement.scrollWidth"),
             driver.execute_script("return window.innerWidth"),
         )
+
+        driver.set_script_timeout(240)
+        offline_pack_install = driver.execute_async_script("""
+            const done = arguments[0];
+            const started = performance.now();
+            window.BHFPWA.installOfflinePack('maps').then(pack => done({
+              packId: pack.pack_id,
+              responseCount: pack.responses?.length || 0,
+              elapsedMs: Number((performance.now() - started).toFixed(2)),
+            })).catch(error => done({error: String(error)}));
+        """)
+        self.assertNotIn("error", offline_pack_install)
+        self.assertEqual(offline_pack_install["packId"], "maps")
+        self.assertEqual(offline_pack_install["responseCount"], 7)
+
+        cache_stats = driver.execute_async_script("""
+            const done = arguments[0];
+            (async () => {
+              const cache = await caches.open('bhf-api-v49');
+              const requests = (await cache.keys()).filter(request => new URL(request.url).pathname.startsWith('/api/maps/'));
+              let cacheBytes = 0;
+              const paths = [];
+              for (const request of requests) {
+                const response = await cache.match(request);
+                const bytes = await response.clone().arrayBuffer().then(value => value.byteLength);
+                cacheBytes += bytes;
+                paths.push({path: new URL(request.url).pathname, bytes});
+              }
+              const keys = Array.from({length: localStorage.length}, (_, index) => localStorage.key(index))
+                .filter(key => key?.startsWith('bhf.map-service:'));
+              const localStorageBytes = keys.reduce((sum, key) => sum + localStorage.getItem(key).length * 2, 0);
+              const packMetadata = await window.BHFOfflineDB.get('metadata', 'pack:maps');
+              const wholePack = await window.BHFOfflineDB.get('apiResponses', '/api/offline/packs/maps');
+              const indexedMapEntries = (await window.BHFOfflineDB.list('apiResponses'))
+                .filter(entry => String(entry.url || '').startsWith('/api/maps/'))
+                .map(entry => ({url: entry.url, bytes: new TextEncoder().encode(JSON.stringify(entry.payload)).byteLength}));
+              done({
+                cacheCount: requests.length, cacheBytes, paths,
+                localStorageCount: keys.length, localStorageBytes,
+                offlinePackVersion: packMetadata?.payload?.cache_version || '',
+                wholePackStoredInIndexedDb: Boolean(wholePack), indexedMapEntries,
+              });
+            })().catch(error => done({error: String(error)}));
+        """)
+        self.assertNotIn("error", cache_stats)
+        self.assertLessEqual(cache_stats["cacheCount"], 32)
+        self.assertLessEqual(cache_stats["cacheBytes"], 8 * 1024 * 1024)
+        self.assertTrue(all(path["bytes"] <= 4 * 1024 * 1024 for path in cache_stats["paths"]))
+        self.assertTrue(any(path["path"] == "/api/maps/places-for-passage" and path["bytes"] < 512 * 1024
+                            for path in cache_stats["paths"]))
+        self.assertIn("/api/maps/catalog", [path["path"] for path in cache_stats["paths"]])
+        self.assertIn("/api/maps/biblical-places", [path["path"] for path in cache_stats["paths"]])
+        self.assertNotIn("/api/offline/packs/maps", [path["path"] for path in cache_stats["paths"]])
+        self.assertLessEqual(cache_stats["localStorageCount"], 16)
+        self.assertLessEqual(cache_stats["localStorageBytes"], 2 * 1024 * 1024)
+        self.assertEqual(cache_stats["offlinePackVersion"], "v49")
+        self.assertFalse(cache_stats["wholePackStoredInIndexedDb"])
+        self.assertTrue(all(entry["bytes"] <= 512 * 1024 for entry in cache_stats["indexedMapEntries"]))
+
+        driver.execute_async_script("""
+            const done = arguments[0];
+            window.BHFMaps.openMapPanel({book: '3 John', chapter: 1}).then(() => done(true))
+              .catch(error => done({error: String(error)}));
+        """)
+        self.wait.until(lambda browser: browser.find_element(By.ID, "map-panel-status").get_attribute("data-state") != "loading")
+        self.assertEqual(driver.find_elements(By.CSS_SELECTOR, "#map-stage .leaflet-marker-icon"), [])
+        driver.execute_async_script("""
+            const done = arguments[0];
+            window.BHFMaps.openMapPanel({book: 'John', chapter: 2}).then(() => done(true))
+              .catch(error => done({error: String(error)}));
+        """)
+        self.wait.until(lambda browser: len(browser.find_elements(By.CSS_SELECTOR, "#map-stage .leaflet-marker-icon")) == 69)
+
+        # Stop the server so the active worker must serve cached Maps responses
+        # with its offline header. Restart in a finally block for later tests.
+        type(self)._server_runner.should_exit = True
+        type(self)._thread.join(timeout=15)
+        self.assertFalse(type(self)._thread.is_alive(), "test server must stop before the offline request")
+        try:
+            driver.execute_async_script("""
+                const done = arguments[0];
+                window.BHFMaps.openMapPanel({book: 'John', chapter: 2}).then(() => done(true))
+                  .catch(error => done({error: String(error)}));
+            """)
+            self.wait.until(lambda browser: browser.find_element(By.ID, "map-panel-status").get_attribute("data-state") == "warning")
+            offline_status_text = driver.execute_script(
+                "return document.querySelector('#map-panel-status')?.textContent?.trim() || '';"
+            )
+            self.assertIn("cached local map data", offline_status_text)
+        finally:
+            type(self)._server_runner = Server(Config(
+                type(self)._app,
+                host="127.0.0.1",
+                port=type(self)._port,
+                log_level="warning",
+                access_log=False,
+            ))
+            type(self)._thread = threading.Thread(target=type(self)._server_runner.run, daemon=True)
+            type(self)._thread.start()
+            _wait_for_url(self._base_url + "/api/health")
+
+        retried = driver.execute_async_script("""
+            const done = arguments[0];
+            window.BHFMaps.openMapPanel({book: 'John', chapter: 2}).then(() => done({
+              status: document.querySelector('#map-panel-status')?.dataset.state || '',
+              hidden: Boolean(document.querySelector('#map-panel-status')?.hidden),
+            })).catch(error => done({error: String(error)}));
+        """)
+        self.assertNotIn("error", retried)
+        self.assertNotEqual(retried["status"], "warning")
+        print("NE6R1_JOHN2_COMPACT", json.dumps({
+            "browser": driver.capabilities.get("browserVersion"),
+            "service_worker": worker_url,
+            "viewport": driver.execute_script("return {width: innerWidth, height: innerHeight, scrollWidth: document.documentElement.scrollWidth}"),
+            "compact_request": compact_request,
+            "initial_map_panel_ms": opened["initialMapPanelMs"],
+            "initial_catalog_timing": initial_catalog_timing,
+            "map_api_timings": driver.execute_script("return window.__ne6r1MapApiTimings || []"),
+            "compact_request_timing": compact_timing,
+            "selected_id": candidate["id"],
+            "details_request": detail_request,
+            "selected_detail_timing": detail_timing,
+            "offline_pack_install": offline_pack_install,
+            "cache_storage": cache_stats,
+            "offline_status_text": offline_status_text,
+            "offline_status": "warning with cached data, retry refreshed online",
+        }))
+
+    def test_firefox_repeated_john2_legacy_body_consumption_with_and_without_service_worker(self):
+        from fastapi.responses import JSONResponse
+        import bhf_web.routes.maps as map_routes
+
+        driver = self.driver
+        self.open_home(1280, 900, query="ne6r1-large-body-replay=1")
+        self.wait.until(lambda browser: browser.execute_script(
+            "return Boolean(navigator.serviceWorker?.controller)"
+        ))
+        legacy_url = self._base_url + "/api/maps/places-for-passage?book=John&chapter=2"
+        raw_body, direct_http = _read_http_body(legacy_url)
+        payload = json.loads(raw_body.decode("utf-8"))
+        body_sha256 = hashlib.sha256(raw_body).hexdigest()
+        self.assertEqual(direct_http["status"], 200)
+        self.assertEqual(len(raw_body), int(direct_http["content_length"]))
+        self.assertEqual(len(payload["markers"]), 69)
+        self.assertEqual(body_sha256, "fcb29f0111eb5f169c2541d4429ecd630f0e55f398b182515f24f06e486b243f")
+        self.assertEqual(hashlib.sha256(JSONResponse(payload).body).hexdigest(), body_sha256)
+
+        async_script = """
+          const baseUrl = arguments[0];
+          const runCount = arguments[1];
+          const expectedIds = arguments[2];
+          const done = arguments[3];
+          (async () => {
+            const runs = [];
+            for (let index = 0; index < runCount; index += 1) {
+              const url = `${baseUrl}&ne6r1_replay=${index}`;
+              const started = performance.now();
+              try {
+                const response = await fetch(url, {headers: {Accept: 'application/json'}, cache: 'no-store'});
+                const headersAt = performance.now();
+                const contentLength = Number(response.headers.get('Content-Length') || 0);
+                const text = await response.text();
+                const bodyCompleted = performance.now();
+                const result = JSON.parse(text);
+                const completed = performance.now();
+                const resource = performance.getEntriesByName(url).at(-1);
+                const ids = (result.markers || []).map(marker => marker.id);
+                runs.push({
+                  ok: response.status === 200 && JSON.stringify(ids) === JSON.stringify(expectedIds),
+                  status: response.status,
+                  contentLength,
+                  bodyBytes: new TextEncoder().encode(text).byteLength,
+                  markerCount: ids.length,
+                  exactIds: JSON.stringify(ids) === JSON.stringify(expectedIds),
+                  totalMs: Number((completed - started).toFixed(2)),
+                  headerWaitMs: Number((headersAt - started).toFixed(2)),
+                  bodyReadMs: Number((bodyCompleted - headersAt).toFixed(2)),
+                  jsonParseMs: Number((completed - bodyCompleted).toFixed(2)),
+                  ttfbMs: resource ? Number((resource.responseStart - resource.requestStart).toFixed(2)) : null,
+                  bodyMs: resource ? Number((resource.responseEnd - resource.responseStart).toFixed(2)) : null,
+                  encodedBodySize: resource?.encodedBodySize ?? null,
+                });
+              } catch (error) {
+                runs.push({ok: false, error: String(error)});
+              }
+            }
+            done(runs);
+          })().catch(error => done({fatal: String(error)}));
+        """
+        expected_ids = [marker["id"] for marker in payload["markers"]]
+        driver.set_script_timeout(240)
+        with patch.object(map_routes, "resolve_places_for_passage", return_value=payload):
+            service_worker_runs = driver.execute_async_script(
+                async_script,
+                self._base_url + "/api/maps/places-for-passage?book=John&chapter=2",
+                5,
+                expected_ids,
+            )
+            self.assertEqual(len(service_worker_runs), 5, service_worker_runs)
+            self.assertTrue(all(run.get("ok") for run in service_worker_runs), service_worker_runs)
+            no_large_cache_entries = driver.execute_async_script("""
+                const done = arguments[0];
+                (async () => {
+                  const cache = await caches.open('bhf-api-v49');
+                  const requests = await cache.keys();
+                  done(requests.filter(request => request.url.includes('ne6r1_replay=')).map(request => request.url));
+                })().catch(error => done({error: String(error)}));
+            """)
+            self.assertEqual(no_large_cache_entries, [])
+
+            control_options = FirefoxOptions()
+            control_options.add_argument("-headless")
+            control_options.set_preference("dom.serviceWorkers.enabled", False)
+            control = webdriver.Firefox(
+                service=FirefoxService(executable_path=str(GECKODRIVER)),
+                options=control_options,
+            )
+            control.set_page_load_timeout(90)
+            control.set_script_timeout(240)
+            try:
+                control.set_window_size(1280, 900)
+                control.get(self._base_url + "/")
+                WebDriverWait(control, 90).until(EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="reader-passage"]')))
+                self.assertFalse(control.execute_script("return Boolean(navigator.serviceWorker?.controller)"))
+                control_runs = control.execute_async_script(
+                    async_script,
+                    self._base_url + "/api/maps/places-for-passage?book=John&chapter=2",
+                    5,
+                    expected_ids,
+                )
+            finally:
+                control.quit()
+
+        self.assertEqual(len(control_runs), 5, control_runs)
+        self.assertTrue(all(run.get("ok") for run in control_runs), control_runs)
+        print("NE6R1_JOHN2_FULL_BODY", json.dumps({
+            "browser": driver.capabilities.get("browserVersion"),
+            "runs_per_mode": 5,
+            "service_worker_cache_state": "fresh v49 map cache; each 21.7 MB body deliberately uncached",
+            "direct_http": direct_http,
+            "body_bytes": len(raw_body),
+            "raw_sha256": body_sha256,
+            "marker_count": len(expected_ids),
+            "service_worker_successes": sum(bool(run.get("ok")) for run in service_worker_runs),
+            "service_worker_failures": sum(not run.get("ok") for run in service_worker_runs),
+            "service_worker_runs": service_worker_runs,
+            "sw_disabled_successes": sum(bool(run.get("ok")) for run in control_runs),
+            "sw_disabled_failures": sum(not run.get("ok") for run in control_runs),
+            "sw_disabled_runs": control_runs,
+        }))
 
     def test_firefox_positive_map_focus_selects_isolated_synthetic_route(self):
         driver = self.driver
@@ -603,7 +1068,9 @@ class NE6FirefoxIntegrationTests(unittest.TestCase):
         self.wait.until(lambda browser: "Genesis 1:1-31" in browser.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
         self.assertIn("2 of 3", driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-trail-depth").text)
         driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-return-origin").click()
-        self.wait.until(lambda browser: "Genesis 2:8" in browser.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
+        self.wait.until(lambda browser: browser.execute_script(
+            "return document.querySelector('.narrative-explorer-passage')?.textContent.includes('Genesis 2:8')"
+        ))
         self.wait.until(lambda browser: browser.switch_to.active_element.get_attribute("data-narrative-focus-id") == f"item:{garden_id}")
         restored = driver.execute_script("return window.BHFStudySelection.getState()")
         self.assertEqual(restored["book"], "Genesis")

@@ -2,9 +2,10 @@ import { createBibleMap } from "./BibleMap.js";
 import {
   loadMapCatalog,
   loadPlacesForPassage,
+  loadRelatedPassagesForPlace,
   loadRoutesForPassage,
   searchMapCatalog,
-} from "./mapService.js?v=20260729b";
+} from "./mapService.js?v=20261016-ne6r1";
 import {
   renderMapOrientationCard,
   renderSelectedMarker as renderSelectedMarkerHtml,
@@ -27,6 +28,7 @@ const BHF_HTTP = window.BHFApi || {};
 
 let mapController = null;
 let selectedMarker = null;
+const relatedPassageDetails = new Map();
 let selectedRoute = null;
 let mapMode = "passage";
 let lastPassageContext = null;
@@ -151,7 +153,7 @@ async function loadPassageMapData(context = {}) {
     placeResult,
     routeResult,
   ] = await Promise.all([
-    loadPlacesForPassage(loadContext),
+    loadPlacesForPassage({...loadContext, includeRelatedPassages: false}),
     loadRoutesForPassage(loadContext),
   ]);
   const offline = [
@@ -694,7 +696,7 @@ async function openMapPanel(context = {}) {
     // Put the panel into its usable state before waiting on catalog metadata.
     // This matters on slow/offline connections: Explore should still expose
     // its search and navigation controls while the catalog request resolves.
-    const catalog = await loadMapCatalog({ period: "all" });
+    const catalog = await loadMapCatalog({ period: "all", includeRecords: browseMode });
     if (catalog?.timeline?.period_options) {
       applyTimelineOptions(catalog.timeline.period_options);
     }
@@ -902,10 +904,38 @@ function renderSelectedMarker(marker, passageContext) {
   if (!details) {
     return;
   }
-  details.innerHTML = renderSelectedMarkerHtml(marker, passageContext, {
+  const key = `${String(marker.id || "")}|${normalizeHistoricalPeriod(historicalPeriod)}`;
+  let detailState = relatedPassageDetails.get(key) || null;
+  if (!detailState && !marker.related_passages) {
+    detailState = {status: "loading"};
+    relatedPassageDetails.set(key, detailState);
+    void requestRelatedPassageDetails(marker, passageContext, key);
+  }
+  const renderMarker = detailState?.status === "loaded"
+    ? {...marker, related_passages: detailState.data}
+    : marker;
+  details.innerHTML = renderSelectedMarkerHtml(renderMarker, passageContext, {
     historicalOverview: "",
+    relatedPassagesState: detailState,
+  });
+  details.querySelector("[data-related-passages-retry]")?.addEventListener("click", () => {
+    relatedPassageDetails.delete(key);
+    renderSelectedMarker(marker, passageContext);
   });
   syncDetailsState(true);
+}
+
+async function requestRelatedPassageDetails(marker, passageContext, key) {
+  try {
+    const result = await loadRelatedPassagesForPlace(marker.id, getLoadContext(passageContext || {}));
+    relatedPassageDetails.set(key, {status: "loaded", data: result});
+  } catch (error) {
+    relatedPassageDetails.set(key, {status: "error", message: error?.message || "Request failed."});
+  }
+  const currentKey = `${String(selectedMarker?.id || "")}|${normalizeHistoricalPeriod(historicalPeriod)}`;
+  if (currentKey === key) {
+    renderSelectedMarker(marker, lastPassageContext);
+  }
 }
 
 function renderSelectedRoute(route, passageContext) {
@@ -936,7 +966,7 @@ function buildHistoricalLayerCautionNote(layer) {
 }
 
 async function loadHistoricalLayers(context = {}) {
-  const module = await import("./mapService.js?v=20260729b");
+  const module = await import("./mapService.js?v=20261016-ne6r1");
   return module.loadHistoricalLayers(context);
 }
 

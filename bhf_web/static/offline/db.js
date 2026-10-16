@@ -1,6 +1,7 @@
 (function () {
   const DB_NAME = "bhf-offline";
-  const DB_VERSION = 8;
+  const DB_VERSION = 9;
+  const MAX_MAP_API_RESPONSE_BYTES = 512 * 1024;
   const STORES = [
     "apiResponses",
     "translations",
@@ -35,12 +36,34 @@
     }
     dbPromise = new Promise((resolve, reject) => {
       const request = indexedDB.open(DB_NAME, DB_VERSION);
-      request.onupgradeneeded = () => {
+      request.onupgradeneeded = (event) => {
         const db = request.result;
         for (const storeName of STORES) {
           if (!db.objectStoreNames.contains(storeName)) {
             db.createObjectStore(storeName, { keyPath: "id" });
           }
+        }
+        if (event.oldVersion < 9) {
+          const apiResponses = request.transaction.objectStore("apiResponses");
+          const cursorRequest = apiResponses.openCursor();
+          cursorRequest.onsuccess = () => {
+            const cursor = cursorRequest.result;
+            if (!cursor) return;
+            const url = String(cursor.value?.url || cursor.value?.id || "");
+            let byteLength = 0;
+            if (url.startsWith("/api/maps/")) {
+              try {
+                byteLength = new TextEncoder().encode(JSON.stringify(cursor.value?.payload)).byteLength;
+              } catch (_error) {
+                byteLength = MAX_MAP_API_RESPONSE_BYTES + 1;
+              }
+            }
+            if (url === "/api/offline/packs/maps" || (url.startsWith("/api/maps/") && byteLength > MAX_MAP_API_RESPONSE_BYTES)) {
+              cursor.delete();
+            }
+            cursor.continue();
+          };
+          request.transaction.objectStore("metadata").delete("pack:maps");
         }
       };
       request.onsuccess = () => resolve(request.result);
@@ -102,12 +125,26 @@
 
   async function cacheApiResponse(url, payload) {
     const id = normalizeUrlKey(url);
-    await put("apiResponses", {
-      id,
-      url: id,
-      cachedAt: nowIso(),
-      payload,
-    });
+    const isMapsOfflinePack = id === "/api/offline/packs/maps" && payload?.pack_id === "maps";
+    if (id.startsWith("/api/maps/")) {
+      let byteLength = MAX_MAP_API_RESPONSE_BYTES + 1;
+      try {
+        byteLength = new TextEncoder().encode(JSON.stringify(payload)).byteLength;
+      } catch (_error) {
+        // Treat an unmeasurable response as oversized and leave it uncached.
+      }
+      if (byteLength > MAX_MAP_API_RESPONSE_BYTES) return;
+    }
+    if (isMapsOfflinePack) {
+      await remove("apiResponses", id);
+    } else {
+      await put("apiResponses", {
+        id,
+        url: id,
+        cachedAt: nowIso(),
+        payload,
+      });
+    }
     if (isChapterUrl(id)) {
       await put("chapters", {
         id,
@@ -147,6 +184,7 @@
           label: payload.label,
           strategy: payload.strategy,
           version_fingerprint: payload.version_fingerprint || "",
+          cache_version: payload.cache_version || "",
           object_count: Array.isArray(payload.objects) ? payload.objects.length : undefined,
           response_count: Array.isArray(payload.responses) ? payload.responses.length : undefined,
         },

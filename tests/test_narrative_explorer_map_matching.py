@@ -87,6 +87,57 @@ def test_map_resolver_preserves_duplicate_unanchored_names_and_aliases(monkeypat
     }
 
 
+def test_compact_passage_resolution_preserves_marker_contract_and_omits_only_expansion(monkeypatch) -> None:
+    place = {
+        "id": "zion-a",
+        "name": "Zion",
+        "aliases": ["Holy City"],
+        "latitude": 31.78,
+        "longitude": 35.23,
+        "ancient_region": "Judea",
+        "confidence": "possible",
+        "related_references": [{
+            "id": "zion-ref-1",
+            "book": "John",
+            "chapter": 2,
+            "verse_start": 13,
+            "verse_end": 22,
+            "relationship_type": "directly_named",
+        }],
+    }
+
+    def marker(place_record, *_args, include_related_passages=True, **_kwargs):
+        result = {
+            "id": place_record["id"],
+            "name": place_record["name"],
+            "aliases": place_record["aliases"],
+            "latitude": place_record["latitude"],
+            "longitude": place_record["longitude"],
+            "ancient_region": place_record["ancient_region"],
+            "confidence": place_record["confidence"],
+            "related_references": place_record["related_references"],
+            "reference_count": len(place_record["related_references"]),
+        }
+        if include_related_passages:
+            result["related_passages"] = {"place_id": place_record["id"], "groups": [{"count": 1}]}
+        return result
+
+    monkeypatch.setattr(map_service, "list_biblical_places", lambda **_kwargs: [place])
+    monkeypatch.setattr(map_service, "_place_to_marker", marker)
+
+    complete = map_service.resolve_places_for_passage(passage_text="Zion appears here.")
+    compact = map_service.resolve_places_for_passage(
+        passage_text="Zion appears here.",
+        include_related_passages=False,
+    )
+
+    assert complete["matched_place_ids"] == compact["matched_place_ids"] == ["zion-a"]
+    assert complete["matched_terms"] == compact["matched_terms"] == {"zion-a": ["Zion"]}
+    assert complete["markers"][0]["related_passages"]["place_id"] == "zion-a"
+    assert "related_passages" not in compact["markers"][0]
+    assert {key: value for key, value in complete["markers"][0].items() if key != "related_passages"} == compact["markers"][0]
+
+
 def test_narrative_opt_in_place_resolution_adds_explicit_links_to_text_matches(monkeypatch) -> None:
     places = [
         {"id": "text-jericho", "name": "Jericho", "aliases": []},

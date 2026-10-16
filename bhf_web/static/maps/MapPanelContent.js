@@ -60,8 +60,11 @@ function confidenceClassName(value) {
 }
 
 function renderSelectedMarker(marker, passageContext, options = {}) {
-  const relatedPassages = marker.related_passages && Array.isArray(marker.related_passages.groups)
-    ? marker.related_passages
+  const detailState = options.relatedPassagesState || null;
+  const relatedPassages = detailState?.status === "loaded"
+    ? detailState.data
+    : marker.related_passages && Array.isArray(marker.related_passages.groups)
+      ? marker.related_passages
     : null;
   const relatedVerses = Array.isArray(marker.related_references) ? marker.related_references : [];
   const confidenceLabel = prettyConfidence(marker.confidence);
@@ -81,6 +84,13 @@ function renderSelectedMarker(marker, passageContext, options = {}) {
     ? `${Number(marker.latitude).toFixed(4)}, ${Number(marker.longitude).toFixed(4)}`
     : "";
   const relatedPassageMarkup = relatedPassages || relatedVerses;
+  const relatedPassageLoadMarkup = detailState?.status === "loading"
+    ? '<p class="map-related-passages-load-state" role="status" aria-live="polite">Loading complete related passage details…</p>'
+    : detailState?.status === "error"
+      ? '<p class="map-related-passages-load-state" role="alert">Complete related passage details could not be loaded. The authored links shown here are incomplete until the request succeeds. <button class="secondary" type="button" data-related-passages-retry>Retry related passage details</button></p>'
+      : detailState?.status === "loaded" && detailState.data?.offline
+        ? '<p class="map-related-passages-load-state" role="status">Showing cached related passage details. The source could not be refreshed while offline.</p>'
+        : "";
   const optionalSection = (heading, value) => value
     ? `<section class="map-detail-section"><h4>${escapeHtml(heading)}</h4><p>${escapeHtml(value)}</p></section>`
     : "";
@@ -105,6 +115,7 @@ function renderSelectedMarker(marker, passageContext, options = {}) {
       ${marker.description ? optionalSection("Description", marker.description) : ""}
       ${marker.notes ? optionalSection("Notes", marker.notes) : ""}
       ${hasRelatedPassages ? `<section class="map-detail-section"><h4>Biblical references</h4>${renderRelatedPassages(relatedPassageMarkup)}</section>` : ""}
+      ${relatedPassageLoadMarkup ? `<section class="map-detail-section map-related-passages-load">${relatedPassageLoadMarkup}</section>` : ""}
       ${explanation.why ? optionalSection("Why this location matters", explanation.why) : ""}
       ${explanation.context ? optionalSection("Historical / geographical context", explanation.context) : ""}
       ${hasSource ? `<section class="map-detail-section map-attribution"><h4>Source</h4>${renderSourceAttribution(marker, sourceText)}</section>` : ""}

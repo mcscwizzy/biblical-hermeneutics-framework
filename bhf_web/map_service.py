@@ -281,8 +281,9 @@ def _search_catalog_items(
 def get_map_catalog(
     period: str | None = None,
     path: str | Path | None = None,
+    include_records: bool = True,
 ) -> dict[str, Any]:
-    return {
+    catalog = {
         "timeline": {
             "default_period": "all",
             "period_options": [
@@ -296,13 +297,18 @@ def get_map_catalog(
             ],
             "canonical_periods": list(CANONICAL_PERIOD_LABELS),
             "broad_period_label": BROAD_PERIOD_LABEL,
-        },
+        }
+    }
+    if not include_records:
+        return catalog
+    catalog.update({
         "places": get_biblical_place_markers(period=period, path=path),
         "routes": get_map_routes(period=period, path=path),
         "historical_layers": get_historical_layers(period=period, path=path),
         "political_context": get_political_context_layers(period=period, path=path),
         "saved_map_studies": list_saved_map_studies(path=path),
-    }
+    })
+    return catalog
 
 
 def search_map_catalog(

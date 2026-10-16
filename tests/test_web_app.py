@@ -1352,7 +1352,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v47"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v49"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
         self.assertNotIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])
@@ -1509,7 +1509,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("reconcileCachedTranslations", pwa_script["body"])
         self.assertIn("installOfflinePack", pwa_script["body"])
         self.assertIn("warmDefaultOfflinePacks", pwa_script["body"])
-        self.assertIn('CACHE_VERSION = "v18"', pwa_script["body"])
+        self.assertIn('CACHE_VERSION = "v49"', pwa_script["body"])
         self.assertIn("ensureServiceWorkerReady", pwa_script["body"])
         self.assertIn("Installed, restart app", pwa_script["body"])
         self.assertIn("Needs HTTPS", pwa_script["body"])
@@ -1807,6 +1807,15 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(any(option["value"] == "Broad / uncertain period" for option in data["timeline"]["period_options"]))
         self.assertTrue(any(item["id"] == "capernaum" for item in data["places"]))
 
+    def test_map_catalog_route_can_return_timeline_without_catalog_records(self):
+        response = asgi_request("GET", "/api/maps/catalog?include_records=false")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(set(data), {"timeline"})
+        self.assertEqual(data["timeline"]["period_options"][0]["value"], "all")
+        self.assertIn("canonical_periods", data["timeline"])
+
     def test_map_search_route_filters_by_kind_and_query(self):
         response = asgi_request("GET", "/api/maps/search?q=Jerusalem")
 
@@ -2022,6 +2031,29 @@ class WebAppTests(unittest.TestCase):
         empty_data = json.loads(empty_response["body"])
         self.assertTrue(empty_data["empty_state"])
         self.assertEqual(empty_data["markers"], [])
+
+    def test_places_for_passage_route_exposes_explicit_related_passage_mode(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
+            with patch(
+                "bhf_web.routes.maps.resolve_places_for_passage",
+                return_value={"markers": [], "matched_place_ids": [], "match_count": 0, "empty_state": True},
+            ) as resolver:
+                default_response = asgi_request(
+                    "GET", "/api/maps/places-for-passage?book=John&chapter=2", test_app=test_app
+                )
+                compact_response = asgi_request(
+                    "GET",
+                    "/api/maps/places-for-passage?book=John&chapter=2&include_related_passages=false",
+                    test_app=test_app,
+                )
+
+        self.assertEqual(default_response["status"], 200)
+        self.assertEqual(compact_response["status"], 200)
+        self.assertEqual(resolver.call_args_list[0].kwargs["include_related_passages"], True)
+        self.assertEqual(resolver.call_args_list[1].kwargs["include_related_passages"], False)
 
     def test_related_passages_for_place_route_groups_location_links(self):
         response = asgi_request("GET", "/api/maps/related-passages-for-place?place_id=jerusalem")

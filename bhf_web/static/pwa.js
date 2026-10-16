@@ -8,9 +8,13 @@
     return url;
   };
   const enableServiceWorker = runtime.enableServiceWorker !== false;
-  const CACHE_VERSION = "v18";
+  const CACHE_VERSION = "v49";
   const API_CACHE_PREFIX = "bhf-api-";
   const API_CACHE = `${API_CACHE_PREFIX}${CACHE_VERSION}`;
+  const MAX_MAP_API_CACHE_BYTES = 512 * 1024;
+  const MAX_MAP_PACK_CATALOG_ITEM_BYTES = 4 * 1024 * 1024;
+  const MAX_MAP_API_CACHE_TOTAL_BYTES = 8 * 1024 * 1024;
+  const MAX_MAP_API_CACHE_ENTRIES = 32;
   const DEFAULT_AUTO_PACKS = ["study", "maps"];
   let deferredInstallPrompt = null;
   let serviceWorkerRegistration = null;
@@ -961,7 +965,9 @@
       const installed = offlineDb && typeof offlineDb.get === "function"
         ? await offlineDb.get("metadata", `pack:${packId}`)
         : null;
-      if (!installed) {
+      const currentMapsPack = packId !== "maps"
+        || installed?.payload?.cache_version === CACHE_VERSION;
+      if (!installed || !currentMapsPack) {
         await installOfflinePack(packId);
       }
     }
@@ -982,7 +988,8 @@
       throw new Error(pack.error || `Could not install offline pack: ${normalized}`);
     }
     if (offlineDb && typeof offlineDb.cacheApiResponse === "function") {
-      await offlineDb.cacheApiResponse(packUrl, pack);
+      const cachedPack = normalized === "maps" ? {...pack, cache_version: CACHE_VERSION} : pack;
+      await offlineDb.cacheApiResponse(packUrl, cachedPack);
       for (const entry of Array.isArray(pack.responses) ? pack.responses : []) {
         if (entry?.url && entry.payload !== undefined) {
           await offlineDb.cacheApiResponse(entry.url, entry.payload);
@@ -1100,15 +1107,63 @@
       if (!entry?.url || entry.payload === undefined) {
         continue;
       }
-      await cache.put(
-        new Request(entry.url, { headers: { Accept: "application/json" } }),
-        new Response(JSON.stringify(entry.payload), {
+      try {
+        const requestUrl = new URL(entry.url, window.location.origin);
+        if (requestUrl.origin !== window.location.origin) continue;
+        const isMapResponse = requestUrl.pathname.startsWith("/api/maps/");
+        const serialized = JSON.stringify(entry.payload);
+        const byteLength = new TextEncoder().encode(serialized).byteLength;
+        if (isMapResponse) {
+          const isCoreCatalog = requestUrl.pathname === "/api/maps/catalog"
+            || requestUrl.pathname === "/api/maps/biblical-places";
+          const limit = isCoreCatalog ? MAX_MAP_PACK_CATALOG_ITEM_BYTES : MAX_MAP_API_CACHE_BYTES;
+          if (byteLength > limit) continue;
+        }
+        await cache.put(
+          new Request(requestUrl.toString(), { headers: { Accept: "application/json" } }),
+          new Response(serialized, {
           headers: {
             "Content-Type": "application/json",
+            "Content-Length": String(byteLength),
             "X-BHF-Offline-Pack": pack.pack_id || "unknown",
           },
-        })
-      );
+          })
+        );
+        if (isMapResponse) await trimMapApiCache(cache);
+      } catch (_error) {
+        // An unavailable or over-limit item does not invalidate the other pack entries.
+      }
+    }
+  }
+
+  async function trimMapApiCache(cache) {
+    const mapRequests = (await cache.keys()).filter((request) => {
+      try {
+        return new URL(request.url).pathname.startsWith("/api/maps/");
+      } catch (_error) {
+        return false;
+      }
+    });
+    const entries = [];
+    let totalBytes = 0;
+    for (const request of mapRequests) {
+      const response = await cache.match(request);
+      const rawLength = response?.headers.get("Content-Length") || "";
+      const byteLength = /^\d+$/.test(rawLength) ? Number(rawLength) : MAX_MAP_API_CACHE_TOTAL_BYTES + 1;
+      entries.push({
+        request,
+        byteLength,
+        offlinePack: Boolean(response?.headers.get("X-BHF-Offline-Pack")),
+      });
+      totalBytes += byteLength;
+    }
+    while (entries.length > MAX_MAP_API_CACHE_ENTRIES || totalBytes > MAX_MAP_API_CACHE_TOTAL_BYTES) {
+      if (!entries.length) break;
+      const dynamicIndex = entries.findIndex((entry) => !entry.offlinePack);
+      const evictIndex = dynamicIndex >= 0 ? dynamicIndex : 0;
+      const [evicted] = entries.splice(evictIndex, 1);
+      await cache.delete(evicted.request);
+      totalBytes -= evicted.byteLength;
     }
   }
 

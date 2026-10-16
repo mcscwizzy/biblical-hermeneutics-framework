@@ -55,8 +55,17 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         )
 
     @app.get("/api/maps/catalog", response_class=JSONResponse)
-    async def maps_catalog(period: str | None = None) -> JSONResponse:
-        return JSONResponse(get_map_catalog(period=period, path=study_db_path))
+    async def maps_catalog(
+        period: str | None = None,
+        include_records: bool = True,
+    ) -> JSONResponse:
+        return JSONResponse(
+            get_map_catalog(
+                period=period,
+                path=study_db_path,
+                include_records=include_records,
+            )
+        )
 
     @app.get("/api/maps/biblical-places", response_class=JSONResponse)
     async def maps_biblical_places(period: str | None = None) -> JSONResponse:
@@ -132,6 +141,7 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         verse_end: int | None = None,
         passage_text: str | None = None,
         period: str | None = None,
+        include_related_passages: bool = True,
     ) -> JSONResponse:
         try:
             result = resolve_places_for_passage(
@@ -142,6 +152,7 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
                 passage_text=passage_text,
                 period=period,
                 path=study_db_path,
+                include_related_passages=include_related_passages,
             )
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)

@@ -1,8 +1,11 @@
-const CACHE_VERSION = "v48";
+const CACHE_VERSION = "v49";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
 const ALL_CACHES = [SHELL_CACHE, STATIC_CACHE, API_CACHE];
+const MAX_MAP_API_CACHE_BYTES = 512 * 1024;
+const MAX_MAP_API_CACHE_ENTRIES = 32;
+const MAX_MAP_API_CACHE_TOTAL_BYTES = 8 * 1024 * 1024;
 
 const SHELL_ASSETS = [
   "/",
@@ -148,7 +151,8 @@ self.addEventListener("fetch", (event) => {
   if (requestUrl.pathname.startsWith("/api/")) {
     if (isCacheableApiRequest(requestUrl)) {
       const preferNetwork = isRefreshRequest(event.request)
-        || requestUrl.pathname === "/api/study/companion-context";
+        || requestUrl.pathname === "/api/study/companion-context"
+        || requestUrl.pathname.startsWith("/api/maps/");
       let cacheWritePromise = Promise.resolve();
       const trackCacheWrite = (promise) => {
         cacheWritePromise = Promise.resolve(promise).catch(() => undefined);
@@ -214,9 +218,24 @@ async function networkFirstAsset(request) {
 async function networkFirstApi(request, trackCacheWrite = () => {}) {
   try {
     const response = await fetch(request);
-    if (response.ok) {
+    if (response.status === 200) {
+      const url = new URL(request.url);
+      const isMapResponse = url.pathname.startsWith("/api/maps/");
+      const isMapsOfflinePack = url.pathname === "/api/offline/packs/maps";
+      if (
+        (isMapResponse || isMapsOfflinePack)
+        && !isBoundedJsonMapResponse(response)
+      ) {
+        return response;
+      }
+      // The page can start consuming the response as soon as it is returned.
+      // Tee eligible map bodies before awaiting Cache Storage so Firefox never
+      // races page consumption against the cache clone.
+      const responseForCache = (isMapResponse || isMapsOfflinePack)
+        ? response.clone()
+        : response;
       const cache = await caches.open(API_CACHE);
-      trackCacheWrite(cache.put(request, response.clone()));
+      trackCacheWrite(cacheApiResponse(cache, request, responseForCache));
     }
     return response;
   } catch (_error) {
@@ -233,6 +252,88 @@ async function networkFirstApi(request, trackCacheWrite = () => {}) {
       503
     );
   }
+}
+
+async function cacheApiResponse(cache, request, response) {
+  const url = new URL(request.url);
+  const isMapResponse = url.pathname.startsWith("/api/maps/");
+  const isMapsOfflinePack = url.pathname === "/api/offline/packs/maps";
+  if ((isMapResponse || isMapsOfflinePack) && !isBoundedJsonMapResponse(response)) {
+    return;
+  }
+
+  let responseToCache = response;
+  if (isMapResponse) {
+    const existing = await cache.match(request);
+    const offlinePack = existing?.headers.get("X-BHF-Offline-Pack");
+    if (offlinePack) {
+      const headers = new Headers(response.headers);
+      headers.set("X-BHF-Offline-Pack", offlinePack);
+      responseToCache = new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+      });
+    }
+  } else if (!isMapsOfflinePack) {
+    // Non-map API responses still share their body with the page response.
+    responseToCache = response.clone();
+  }
+  await cache.put(request, responseToCache);
+  if (!isMapResponse) {
+    return;
+  }
+
+  const mapRequests = (await cache.keys()).filter((cachedRequest) => {
+    try {
+      return new URL(cachedRequest.url).pathname.startsWith("/api/maps/");
+    } catch {
+      return false;
+    }
+  });
+  const cachedMapEntries = [];
+  let totalBytes = 0;
+  for (const cachedRequest of mapRequests) {
+    const cachedResponse = await cache.match(cachedRequest);
+    const rawLength = cachedResponse?.headers.get("Content-Length") || "";
+    const byteLength = /^\d+$/.test(rawLength)
+      ? Number(rawLength)
+      : MAX_MAP_API_CACHE_TOTAL_BYTES + 1;
+    cachedMapEntries.push({
+      request: cachedRequest,
+      byteLength,
+      offlinePack: Boolean(cachedResponse?.headers.get("X-BHF-Offline-Pack")),
+    });
+    totalBytes += byteLength;
+  }
+  while (
+    cachedMapEntries.length > MAX_MAP_API_CACHE_ENTRIES
+    || totalBytes > MAX_MAP_API_CACHE_TOTAL_BYTES
+  ) {
+    if (!cachedMapEntries.length) break;
+    const dynamicIndex = cachedMapEntries.findIndex((entry) => !entry.offlinePack);
+    const evictIndex = dynamicIndex >= 0 ? dynamicIndex : 0;
+    const [evicted] = cachedMapEntries.splice(evictIndex, 1);
+    await cache.delete(evicted.request);
+    totalBytes -= evicted.byteLength;
+  }
+}
+
+function isBoundedJsonMapResponse(response) {
+  if (response.status !== 200) {
+    return false;
+  }
+  const contentType = response.headers.get("Content-Type") || "";
+  const rawLength = response.headers.get("Content-Length");
+  const contentEncoding = (response.headers.get("Content-Encoding") || "identity").toLowerCase();
+  if (!contentType.toLowerCase().includes("application/json") || contentEncoding !== "identity") {
+    return false;
+  }
+  if (!rawLength || !/^\d+$/.test(rawLength)) {
+    return false;
+  }
+  const byteLength = Number(rawLength);
+  return Number.isSafeInteger(byteLength) && byteLength <= MAX_MAP_API_CACHE_BYTES;
 }
 
 async function cacheFirstApi(request, trackCacheWrite = () => {}) {

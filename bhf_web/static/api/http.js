@@ -59,11 +59,13 @@
       method === "GET" &&
       isCompanionContextRequest(url) &&
       navigator.onLine !== false;
+    const preferLiveMaps = method === "GET" && isMapApiRequest(url) && navigator.onLine !== false;
     if (
       method === "GET" &&
       isCacheableOfflineGet(url) &&
       !preferLiveTranslationState &&
-      !preferLiveCompanionContext
+      !preferLiveCompanionContext &&
+      !preferLiveMaps
     ) {
       const local = await localJsonResponse(url);
       if (local) {
@@ -72,6 +74,7 @@
     }
     try {
       const requestOptions = preferLiveTranslationState || preferLiveCompanionContext
+        || preferLiveMaps
         ? withRefreshHeader(options)
         : options;
       const response = await fetch(resolvedUrl, requestOptions);
@@ -95,8 +98,13 @@
         error.retryAfterSeconds = Number.isFinite(retryAfter) ? retryAfter : 0;
         throw error;
       }
-      await cacheSuccessfulJson(url, method, data);
-      return response.headers.get("X-BHF-Offline") === "true"
+      const offlineResponse = response.headers.get("X-BHF-Offline") === "true";
+      const rawContentLength = response.headers.get("Content-Length");
+      const responseBytes = rawContentLength !== null && /^\d+$/.test(rawContentLength)
+        ? Number(rawContentLength)
+        : null;
+      await cacheSuccessfulJson(url, method, data, {responseBytes, offline: offlineResponse});
+      return offlineResponse
         ? markOffline(data)
         : data;
     } catch (error) {
@@ -179,13 +187,16 @@
     }
   }
 
-  async function cacheSuccessfulJson(url, method, data) {
+  async function cacheSuccessfulJson(url, method, data, {responseBytes = null, offline = false} = {}) {
     const offlineDb = window.BHFOfflineDB;
-    if (!offlineDb) {
+    if (!offlineDb || offline) {
       return;
     }
     try {
       if (isCommentaryPath(url) && !isCurrentCommentaryPayload(url, data)) {
+        return;
+      }
+      if (isMapApiRequest(url) && (!Number.isFinite(responseBytes) || responseBytes > 512 * 1024)) {
         return;
       }
       if (method === "GET" && isCacheableOfflineGet(url) && typeof offlineDb.cacheApiResponse === "function") {
@@ -322,6 +333,14 @@
       "/api/sources",
       "/api/commentary/",
     ].some((prefix) => path === prefix || path.startsWith(prefix));
+  }
+
+  function isMapApiRequest(url) {
+    try {
+      return new URL(String(url || "/"), window.location.origin).pathname.startsWith("/api/maps/");
+    } catch (_error) {
+      return false;
+    }
   }
 
   function isCommentaryPath(url) {
