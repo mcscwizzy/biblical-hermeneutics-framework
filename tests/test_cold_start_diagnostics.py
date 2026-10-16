@@ -165,6 +165,49 @@ def test_maps_and_study_database_stages_are_recorded_without_paths_or_passage_te
     assert str(tmp_path) not in log_text
 
 
+def test_study_database_acquisition_diagnostic_is_bounded_to_one_event_per_request(
+    tmp_path,
+    monkeypatch,
+    caplog,
+) -> None:
+    from bhf_agent.db.connection import connect
+    from bhf_web.cold_start_diagnostics import ColdStartDiagnosticsMiddleware
+
+    monkeypatch.setenv("BHF_COLD_START_DIAGNOSTICS", "1")
+    caplog.set_level(logging.INFO, logger="bhf.cold_start")
+    app = FastAPI()
+    app.add_middleware(ColdStartDiagnosticsMiddleware)
+
+    @app.get("/api/maps/places-for-passage")
+    async def places_for_passage() -> JSONResponse:
+        for _ in range(3):
+            with connect(tmp_path / "study.sqlite"):
+                pass
+        return JSONResponse({"ok": True})
+
+    async def call() -> bytes:
+        async with httpx.AsyncClient(
+            transport=httpx.ASGITransport(app=app),
+            base_url="http://test",
+        ) as client:
+            return (await client.get("/api/maps/places-for-passage")).content
+
+    assert asyncio.run(call()) == b'{"ok":true}'
+    events = [
+        json.loads(record.getMessage())
+        for record in caplog.records
+        if record.name == "bhf.cold_start"
+    ]
+    acquisition_events = [
+        event
+        for event in events
+        if event.get("event") == "stage_complete"
+        and event.get("stage") == "study_database_acquisition"
+    ]
+
+    assert len(acquisition_events) == 1
+
+
 def test_startup_stage_records_process_relative_timing_without_source_values(monkeypatch, caplog) -> None:
     from bhf_web.cold_start_diagnostics import record_startup_stage
 

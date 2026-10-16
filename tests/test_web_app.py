@@ -1702,10 +1702,22 @@ class WebAppTests(unittest.TestCase):
     def _temp_canonical_root(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir) / "canonical_library"
+            source_root = Path("framework/canonical_library").resolve()
+
+            def ignore_generated_package_data(directory, names):
+                ignored = {
+                    name
+                    for name in names
+                    if name == "__pycache__" or name.endswith(".pyc")
+                }
+                if Path(directory).resolve() == source_root:
+                    ignored.add("data")
+                return ignored
+
             shutil.copytree(
-                Path("framework/canonical_library").resolve(),
+                source_root,
                 root,
-                ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+                ignore=ignore_generated_package_data,
             )
             placeholder_path = root / "objects" / "archaeology" / "arad-ostraca.json"
             placeholder_data = json.loads(placeholder_path.read_text(encoding="utf-8"))
@@ -1906,6 +1918,10 @@ class WebAppTests(unittest.TestCase):
         missing = asgi_request("GET", "/api/canonical/objects/not-a-real-ckl-object")
         self.assertEqual(missing["status"], 404)
 
+    def test_temp_canonical_root_excludes_generated_package_index(self):
+        with self._temp_canonical_root() as canonical_root:
+            self.assertFalse((canonical_root / "data" / "ckl.sqlite").exists())
+
     def test_canonical_editor_routes_allow_editing_placeholder_objects(self):
         with self._temp_canonical_root() as canonical_root, patch.dict(
             os.environ,
@@ -1918,7 +1934,9 @@ class WebAppTests(unittest.TestCase):
             ckl_module._load_default_canonical_library.cache_clear()
             canonical_routes._canonical_library.cache_clear()
             test_app = create_app()
-            canonical_library = ckl_module.load_canonical_library(str(canonical_root))
+            # Reuse the route's cached instance instead of loading the full JSON
+            # inventory a second time in this test.
+            canonical_library = canonical_routes._canonical_library()
 
             detail_response = asgi_request("GET", "/api/canonical/objects/arad-ostraca", test_app=test_app)
             self.assertEqual(detail_response["status"], 200)

@@ -279,6 +279,12 @@ def _write_database(
                 source_inventory_signature=source_inventory_signature,
                 object_count=len(objects),
             )
+        checkpoint = conn.execute("PRAGMA wal_checkpoint(TRUNCATE)").fetchone()
+        if checkpoint is not None and int(checkpoint[0]) != 0:
+            raise RuntimeError("CKL SQLite WAL checkpoint was busy before finalizing the database")
+        journal_mode = str(conn.execute("PRAGMA journal_mode = DELETE").fetchone()[0]).lower()
+        if journal_mode != "delete":
+            raise RuntimeError(f"CKL SQLite database could not leave WAL mode: {journal_mode}")
     finally:
         conn.close()
 

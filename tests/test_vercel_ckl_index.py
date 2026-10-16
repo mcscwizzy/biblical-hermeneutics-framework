@@ -15,6 +15,7 @@ except ImportError:  # pragma: no cover - Python 3.9/3.10 compatibility
 
 from framework.canonical_library import database_schema
 from framework.canonical_library.repository import repository_config_from_env
+from framework.canonical_library.sqlite_repository import SQLiteCanonicalRepository
 from tests.canonical_library.helpers import make_object, write_library
 
 
@@ -74,6 +75,24 @@ def test_vercel_build_creates_and_verifies_index_from_source_root(tmp_path: Path
     assert report["source_inventory_signature"]
 
 
+def test_vercel_index_stays_a_single_file_after_read_only_runtime_access(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    package_root, source_root = _package_layout(tmp_path, monkeypatch)
+    output = _build_package_index(package_root, source_root)
+
+    connection = sqlite3.connect(f"file:{output.resolve()}?mode=ro", uri=True)
+    journal_mode = str(connection.execute("PRAGMA journal_mode").fetchone()[0]).lower()
+    connection.close()
+    repository = SQLiteCanonicalRepository(output, read_only=True)
+    assert repository.get_by_id("john") is not None
+    repository.close()
+
+    assert journal_mode == "delete"
+    assert sorted(path.name for path in output.parent.iterdir()) == [output.name]
+
+
 def test_vercel_runtime_selects_read_only_sqlite_without_json_fallback(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
@@ -126,6 +145,14 @@ def test_vercel_runtime_fails_when_index_is_missing(tmp_path: Path, monkeypatch:
     monkeypatch.setenv("VERCEL", "1")
     monkeypatch.delenv("BHF_CKL_DATABASE_PATH", raising=False)
     monkeypatch.delenv("BHF_CKL_BACKEND", raising=False)
+
+    import framework.canonical_library.database_builder as database_builder
+
+    monkeypatch.setattr(
+        database_builder,
+        "build_database",
+        lambda *_args, **_kwargs: pytest.fail("request-time CKL index rebuilding is forbidden"),
+    )
 
     from bhf_web.services.narrative_explorer import NarrativeExplorerService
 

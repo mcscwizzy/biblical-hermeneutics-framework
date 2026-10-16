@@ -32,7 +32,7 @@ def connect(path: str | Path | None = None, *, read_only: bool | None = None) ->
         return _connect(path, read_only=read_only)
     from bhf_web.cold_start_diagnostics import diagnostic_stage
 
-    with diagnostic_stage("study_database_acquisition"):
+    with diagnostic_stage("study_database_acquisition", once_per_request=True):
         return _connect(path, read_only=read_only)
 
 

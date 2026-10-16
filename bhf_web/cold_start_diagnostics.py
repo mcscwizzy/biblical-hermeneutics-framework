@@ -109,12 +109,22 @@ def record_import_completion(stage: str) -> None:
 
 
 @contextmanager
-def diagnostic_stage(stage: str) -> Iterator[None]:
+def diagnostic_stage(stage: str, *, once_per_request: bool = False) -> Iterator[None]:
     """Measure a fixed-name synchronous or coroutine-compatible code span."""
 
     if not diagnostics_enabled():
         yield
         return
+    state = _REQUEST_CONTEXT.get()
+    if once_per_request and state is not None:
+        with _REQUEST_LOCK:
+            recorded_stages = state["recorded_stages"]
+            skip_stage = stage in recorded_stages
+            if not skip_stage:
+                recorded_stages.add(stage)
+        if skip_stage:
+            yield
+            return
     started_at = time.perf_counter()
     try:
         yield
@@ -162,6 +172,7 @@ class ColdStartDiagnosticsMiddleware:
             "first_request": first_request,
             "route_first_request": route_first_request,
             "active_request_count": active_request_count,
+            "recorded_stages": set(),
         }
         token = _REQUEST_CONTEXT.set(state)
         request_started_at = time.perf_counter()
