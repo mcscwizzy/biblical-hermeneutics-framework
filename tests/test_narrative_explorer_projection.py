@@ -467,6 +467,7 @@ def test_genesis_6_projects_cultural_background_and_comparison_as_distinct_evide
     assert sons["object_type"] == "cultural_background"
     assert sons["evidence_category"] == "worldview-concept"
     assert sons["certainty"] == "disputed"
+    assert sons["cosmic_geography_role"] == "disputed_divine_beings_interpretation"
     assert sons["dispute_status"] == "major_scholarly_disagreement"
     assert sons["interpretation_state"] == "disputed"
     assert sons["claim_text"]
@@ -544,6 +545,7 @@ def test_psalm_82_cultural_context_is_discoverable_without_a_theme_object():
     assert evidence["object_id"] == "ancient-divine-assembly-imagery"
     assert evidence["record_kind"] == "evidence"
     assert evidence["evidence_category"] == "worldview-concept"
+    assert evidence["cosmic_geography_role"] == "divine_assembly_text"
     assert evidence["certainty"] == "textually_explicit"
     assert evidence["dispute_status"] == "interpretive_uncertainty"
     assert evidence["source_ids"] == [
@@ -558,6 +560,7 @@ def test_psalm_82_cultural_context_is_discoverable_without_a_theme_object():
     assert comparison["object_id"] == "ancient-divine-assembly-imagery"
     assert comparison["record_kind"] == "evidence"
     assert comparison["evidence_category"] == "ancient-text"
+    assert comparison["cosmic_geography_role"] == "divine_assembly_comparison"
     assert comparison["certainty"] == "probable"
     assert comparison["dispute_status"] == "major_scholarly_disagreement"
     assert comparison["source_ids"] == [
@@ -724,6 +727,7 @@ def test_genesis_2_and_3_keep_qualified_sacred_space_evidence_scoped_and_distinc
         if section["id"] == "biblical_geography"
     )
     assert garden["evidence_category"] == "geography-environment"
+    assert garden["cosmic_geography_role"] == "sacred_space_interpretation"
     assert garden["certainty"] == "plausible"
     assert garden["dispute_status"] == "interpretive_uncertainty"
     assert garden["source_ids"] == ["genesis-1-50", "sarna-genesis", "g1-amit-eden-exposition"]
@@ -751,6 +755,8 @@ def test_genesis_2_and_3_keep_qualified_sacred_space_evidence_scoped_and_distinc
     assert cherubim["object_id"] == "genesis"
     assert cherubim["record_kind"] == "evidence"
     assert cherubim["evidence_category"] == "worldview-concept"
+    assert cherubim["cosmic_geography_role"] == "sacred_space_guarding_context"
+    assert serpent["cosmic_geography_role"] is None
     assert cherubim["source_ids"] == [
         "genesis-1-50",
         "g1-exodus-text",
@@ -1397,3 +1403,63 @@ def test_projection_validator_rejects_malformed_navigation_and_connection_shapes
     malformed_connection["connections"] = [{"id": "bad", "connection_type": "uncategorized"}]
     with pytest.raises(ValueError, match="connection"):
         validate(malformed_connection)
+
+
+@pytest.mark.parametrize("mismatch", ["evidence_type", "anchor_relation"])
+def test_cosmic_role_requires_exact_source_identity_evidence_type_and_relation(mismatch):
+    records = deepcopy(_load_ckl("books/genesis.json"))
+    genesis = records[0]
+    garden = next(
+        evidence
+        for evidence in genesis["evidence_items"]
+        if evidence["id"] == "g2-garden-planting-presence"
+    )
+    if mismatch == "evidence_type":
+        garden["evidence_type"] = "worldview-concept"
+        garden["title"] = "A title mentioning sacred space and heavenly beings"
+    else:
+        garden["scripture_references"][0]["relationship"] = "comparative"
+
+    result = _project("Genesis 2", canonical=_lookup("ckl", records=records))
+    projected = _item(result, "ckl:genesis#evidence:g2-garden-planting-presence")
+
+    assert projected["cosmic_geography_role"] is None
+    assert "divine_council_cosmic_geography" not in projected["section_ids"]
+
+
+def test_physical_location_metadata_and_identification_uncertainty_are_preserved():
+    place = _map_place(
+        "uncertain-place",
+        "An uncertain ancient place",
+        "Joshua 1:4",
+        latitude=91.0,
+        longitude=35.0,
+        ancient_name="Ancient name",
+        modern_name="Modern name",
+        region="Negeb",
+        territory="Judah",
+        period="Iron Age",
+        physical_identification_status="unidentified",
+        place_identification_confidence="low",
+        dispute_status="identification_uncertainty",
+    )
+    result = _project("Joshua 1", maps=_lookup("maps", records=[place]))
+    projected = _item(result, "maps:uncertain-place")
+
+    assert projected["object_id"] == "uncertain-place"
+    assert projected["title"] == "An uncertain ancient place"
+    assert projected["source_metadata"]["ancient_name"] == "Ancient name"
+    assert projected["source_metadata"]["modern_name"] == "Modern name"
+    assert projected["source_metadata"]["region"] == "Negeb"
+    assert projected["source_metadata"]["territory"] == "Judah"
+    assert projected["source_metadata"]["period"] == "Iron Age"
+    assert projected["source_metadata"]["physical_identification_status"] == "unidentified"
+    assert projected["physical_identification_status"] == "unidentified"
+    assert projected["place_identification_confidence"] == "low"
+    assert projected["dispute_status"] == "identification_uncertainty"
+    assert projected["related_passages"] == ["Joshua 1:4"]
+    assert projected["original_relationship_types"] == ["direct"]
+    assert projected["sources"][0]["id"] == "map-source"
+    assert projected["stored_coordinates"] == {"latitude": 91.0, "longitude": 35.0}
+    assert projected["coordinates_displayable"] is False
+    assert projected["coordinate_display_reason"] == "invalid_stored_coordinates"

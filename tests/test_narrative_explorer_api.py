@@ -578,3 +578,19 @@ def test_app_registers_only_the_versioned_route_and_preserves_existing_api_route
     assert "/api/maps/places-for-passage" in paths
     assert "/api/archaeology/for-passage" in paths
     assert "/api/commentary/{book}/{chapter}" in paths
+
+
+def test_versioned_api_preserves_cosmic_role_and_uncertain_place_safety(ckl_library):
+    client = _client(_service(ckl_library))
+    payload = client.get("/api/narrative-explorer/v1/passages/Genesis/3").json()
+
+    cherubim = _item(
+        payload,
+        "ckl:genesis#evidence:g3-cherubim-biblical-sacred-space-context",
+    )
+    eden = _item(payload, "maps:eden")
+
+    assert cherubim["cosmic_geography_role"] == "sacred_space_guarding_context"
+    assert eden["place_identification_confidence"] == "unknown"
+    assert eden["coordinates_displayable"] is False
+    assert eden["stored_coordinates"] == {"latitude": 31.0, "longitude": 35.0}

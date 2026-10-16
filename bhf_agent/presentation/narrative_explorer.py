@@ -36,6 +36,14 @@ CONNECTION_MAPPING_POLICY_VERSION = "nea2-1"
 Domain = Literal["ckl", "maps", "archaeology"]
 QueryStatus = Literal["complete", "partial", "failed", "not_run"]
 CoverageState = Literal["available", "partial", "not_represented", "unknown"]
+CosmicGeographyRole = Literal[
+    "sacred_space_interpretation",
+    "sacred_space_guarding_context",
+    "ancient_cosmology_comparison",
+    "divine_assembly_text",
+    "divine_assembly_comparison",
+    "disputed_divine_beings_interpretation",
+]
 
 _SOURCE_DOMAIN = {
     "ckl": "canonical_knowledge_library",
@@ -255,7 +263,9 @@ class ProjectedItem:
     temporal_scope: Mapping[str, Any] | None = None
     rationale: Mapping[str, Any] = field(default_factory=dict)
     source_metadata: Mapping[str, Any] = field(default_factory=dict)
+    cosmic_geography_role: CosmicGeographyRole | None = None
     geography_kind: str = "unknown"
+    physical_identification_status: Any = None
     place_identification_confidence: Any = "unknown"
     stored_coordinates: Mapping[str, Any] | None = None
     coordinates_displayable: bool | None = None
@@ -959,6 +969,7 @@ def _project_external_lookup(
             rationale=_external_rationale(record),
             source_metadata=source_data,
             geography_kind=geography_kind,
+            physical_identification_status=_physical_identification_status(record),
             place_identification_confidence=deepcopy(
                 record.get("place_identification_confidence", record.get("identification_confidence", "unknown"))
             ),
@@ -1125,6 +1136,20 @@ _PHYSICAL_GEOGRAPHY_KINDS = {
     "route",
     "archaeological_site",
 }
+
+
+def _physical_identification_status(record: Mapping[str, Any]) -> Any:
+    metadata = mapping(record.get("metadata"))
+    for key in (
+        "physical_identification_status",
+        "place_identification_status",
+        "identification_status",
+        "route_identification_status",
+    ):
+        value = record.get(key, metadata.get(key))
+        if value not in (None, ""):
+            return deepcopy(value)
+    return None
 
 
 def _geography_kind(record: Mapping[str, Any], domain: Domain) -> str:
@@ -1362,8 +1387,16 @@ def _external_source_metadata(record: Mapping[str, Any], domain: Domain) -> dict
         "layer_type",
         "entity_type",
         "ancient_region",
+        "ancient_name",
+        "ancient_names",
+        "modern_name",
+        "modern_names",
         "modern_location",
         "region",
+        "territory",
+        "territories",
+        "historical_period",
+        "historical_periods",
         "site_id",
         "site_name",
         "item_type",
@@ -1591,7 +1624,18 @@ def _make_ckl_item(
         temporal_scope=deepcopy(temporal_scope),
         rationale=rationale,
         source_metadata=source_metadata,
+        cosmic_geography_role=(
+            _specialized_evidence_role(
+                parent_id=parent_id,
+                local_id=local_id,
+                evidence_type=_text(record.get("evidence_type")).casefold().replace("_", "-"),
+                applicable_anchors=applicable_anchors,
+            )
+            if record_kind == "evidence"
+            else None
+        ),
         geography_kind=_geography_kind(record, "ckl"),
+        physical_identification_status=_physical_identification_status(record),
         place_identification_confidence=deepcopy(
             record.get(
                 "place_identification_confidence",
@@ -1909,6 +1953,26 @@ def _child_sections(
     return tuple(sorted(sections))
 
 
+def _specialized_evidence_rule(
+    *,
+    parent_id: str | None,
+    local_id: str | None,
+    evidence_type: str,
+    applicable_anchors: Sequence[Mapping[str, Any]],
+) -> _SpecializedEvidenceRule | None:
+    if not parent_id or not local_id:
+        return None
+    rule = _SPECIALIZED_EVIDENCE_RULES.get((parent_id, local_id))
+    if rule is None or evidence_type != rule.evidence_type:
+        return None
+    relationships = {
+        _text(anchor.get("relationship")).casefold().replace("_", "-")
+        for anchor in applicable_anchors
+        if _text(anchor.get("relationship"))
+    }
+    return rule if relationships.intersection(rule.anchor_relationships) else None
+
+
 def _specialized_evidence_sections(
     *,
     parent_id: str | None,
@@ -1916,19 +1980,29 @@ def _specialized_evidence_sections(
     evidence_type: str,
     applicable_anchors: Sequence[Mapping[str, Any]],
 ) -> tuple[str, ...]:
-    if not parent_id or not local_id:
-        return ()
-    rule = _SPECIALIZED_EVIDENCE_RULES.get((parent_id, local_id))
-    if rule is None or evidence_type != rule.evidence_type:
-        return ()
-    relationships = {
-        _text(anchor.get("relationship")).casefold().replace("_", "-")
-        for anchor in applicable_anchors
-        if _text(anchor.get("relationship"))
-    }
-    if not relationships.intersection(rule.anchor_relationships):
-        return ()
-    return rule.section_ids
+    rule = _specialized_evidence_rule(
+        parent_id=parent_id,
+        local_id=local_id,
+        evidence_type=evidence_type,
+        applicable_anchors=applicable_anchors,
+    )
+    return rule.section_ids if rule is not None else ()
+
+
+def _specialized_evidence_role(
+    *,
+    parent_id: str | None,
+    local_id: str | None,
+    evidence_type: str,
+    applicable_anchors: Sequence[Mapping[str, Any]],
+) -> CosmicGeographyRole | None:
+    rule = _specialized_evidence_rule(
+        parent_id=parent_id,
+        local_id=local_id,
+        evidence_type=evidence_type,
+        applicable_anchors=applicable_anchors,
+    )
+    return rule.semantic_role if rule is not None else None
 
 
 def _passage_connection(
