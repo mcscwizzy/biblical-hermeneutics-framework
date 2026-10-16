@@ -163,9 +163,7 @@ def verify_database(
             source_fingerprint = expected_fingerprint or source_library.inventory_fingerprint()
             if metadata.get("inventory_fingerprint") != source_fingerprint:
                 raise RuntimeError("CKL SQLite database fingerprint does not match the JSON inventory")
-            source_manifest_fingerprint = _stable_json_fingerprint(
-                _stable_manifest_payload(source_library.manifest)
-            )
+            source_manifest_fingerprint = manifest_fingerprint(root_path)
             if metadata.get("source_manifest_fingerprint") != source_manifest_fingerprint:
                 raise RuntimeError("CKL SQLite source manifest fingerprint does not match the JSON manifest")
             source_inventory_signature = inventory_content_signature(root_path)
@@ -190,6 +188,20 @@ def verify_database(
         }
     finally:
         conn.close()
+
+
+def manifest_fingerprint(root: str | Path | None = None) -> str:
+    """Return the stable identity of the CKL manifest without loading objects."""
+
+    root_path = Path(root) if root is not None else Path(__file__).resolve().parent
+    manifest_path = root_path / "manifest.json"
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"CKL JSON manifest cannot be read: {manifest_path}") from exc
+    if not isinstance(manifest, Mapping):
+        raise RuntimeError(f"CKL JSON manifest must contain an object: {manifest_path}")
+    return _stable_json_fingerprint(_stable_manifest_payload(manifest))
 
 
 def database_info(path: str | Path) -> dict[str, Any]:

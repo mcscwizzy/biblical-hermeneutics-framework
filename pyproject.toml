@@ -47,6 +47,9 @@ ckl = "framework.canonical_library.__main__:main"
 [tool.vercel]
 entrypoint = "bhf_web.app:app"
 
+[tool.vercel.scripts]
+build = "python -m framework.canonical_library.vercel_build"
+
 [tool.setuptools]
 include-package-data = true
 

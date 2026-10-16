@@ -18,7 +18,11 @@ from bhf_agent.presentation.narrative_explorer import (
 from bhf_agent.study_db import require_current_study_database
 from framework.canonical_library import CKLRepositoryConfig
 from framework.canonical_library.json_repository import JsonCanonicalRepository
-from framework.canonical_library.repository import repository_config_from_env
+from framework.canonical_library.repository import (
+    is_vercel_runtime,
+    repository_config_from_env,
+    validate_vercel_runtime_repository,
+)
 from framework.canonical_library.sqlite_repository import (
     SQLiteCanonicalLibrary,
     SQLiteCanonicalRepository,
@@ -68,10 +72,8 @@ class NarrativeExplorerService:
 
     @staticmethod
     def _default_canonical_library() -> Any:
-        # Honor the configured repository while hardening its lifecycle for a
-        # GET request: an existing SQLite index is opened read-only, and a
-        # missing or stale index falls back to the committed JSON source. In
-        # particular, a configured "rebuild" policy never builds here.
+        # Honor the local repository configuration while forcing Vercel to use
+        # its packaged, verified, read-only index without request-time fallback.
         config = repository_config_from_env(CKLRepositoryConfig(read_only=True))
         json_root = (
             Path(config.json_root).expanduser()
@@ -86,6 +88,11 @@ class NarrativeExplorerService:
         database_path = Path(config.database_path).expanduser()
         stale_policy = config.stale_database_policy
         if not database_path.is_file():
+            if is_vercel_runtime():
+                raise FileNotFoundError(
+                    f"Vercel CKL SQLite index is missing at {database_path}; "
+                    "the deployment build must generate and bundle it"
+                )
             if stale_policy not in {"fallback_to_json", "rebuild"}:
                 raise FileNotFoundError("canonical repository is unavailable")
             return JsonCanonicalRepository(root=json_root).library
@@ -96,7 +103,11 @@ class NarrativeExplorerService:
             cache_size=config.cache_size,
         )
         try:
-            stale = stale_policy != "ignore" and repository.is_stale(json_root)
+            if is_vercel_runtime():
+                validate_vercel_runtime_repository(repository, json_root)
+                stale = False
+            else:
+                stale = stale_policy != "ignore" and repository.is_stale(json_root)
         except Exception:
             repository.close()
             raise

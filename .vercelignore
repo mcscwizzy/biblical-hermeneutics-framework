@@ -1,8 +1,10 @@
-# Commentary generation, evidence, and audit work is not production runtime data.
-.bhf-data/bhf-commentary-candidates/**
+# Local state and commentary generation/audit artifacts are never function inputs.
+.bhf-data/**
 
 # Local state and build caches are not part of the Git deployment source.
 .bhf/
+.env*
+local.config.json
 .venv/
 build/
 dist/

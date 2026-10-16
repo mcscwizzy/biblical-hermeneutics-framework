@@ -5,7 +5,12 @@
   "functions": {
     "bhf_web/app.py": {
       "maxDuration": 60,
-      "excludeFiles": ".bhf-data/bhf-commentary-candidates/**"
+      "excludeFiles": ".bhf-data/bhf-commentary-candidates/**",
+      "includeFiles": [
+        "framework/canonical_library/data/ckl.sqlite",
+        "framework/canonical_library/manifest.json",
+        "framework/canonical_library/objects/**/*.json"
+      ]
     }
   }
 }
