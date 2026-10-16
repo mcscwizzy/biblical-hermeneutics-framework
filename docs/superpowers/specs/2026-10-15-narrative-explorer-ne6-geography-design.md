@@ -1,0 +1,5 @@
+# Narrative Explorer NE-6 Geography Design
+
+The approved NE-6 design is recorded in [the geography interaction contract](../../narrative-explorer/ne6/01-geography-interaction-contract.md). That document is the normative design: physical place claims, identification certainty, and sacred/cosmic interpretation remain separate; all projection displayability gates and source-specific classification rules remain intact; MapPanel focus is acknowledged only after matching ID selection; NE-A2 explicit-reference retrieval remains Explorer-scoped; existing trail, provenance, Companion, Maps, and feature-flag contracts are reused.
+
+Implementation is bounded to presentation and integration plus tests and results documentation. It does not change CKL evidence, the study database/schema, global Maps resolver semantics, or deployment. The approved verification requires the existing study DB opened read-only through `BHF_STUDY_DB_PATH`, actual Firefox/Selenium desktop and mobile viewport integration checks, and explicit reporting of inaccessible checks.
