@@ -67,6 +67,8 @@ class SQLiteCKLStorageTests(unittest.TestCase):
 
             self.assertEqual(result.object_count, 2)
             self.assertEqual(report["database_schema_version"], CKL_DATABASE_SCHEMA_VERSION)
+            self.assertTrue(report["source_manifest_fingerprint"])
+            self.assertTrue(report["source_inventory_signature"])
             self.assertEqual(database_info(database)["object_count"], 2)
 
             conn = sqlite3.connect(f"file:{database}?mode=ro", uri=True)
@@ -89,6 +91,37 @@ class SQLiteCKLStorageTests(unittest.TestCase):
                 self.assertNotIn("SCAN canonical_aliases", plan)
             finally:
                 conn.close()
+
+    def test_verify_rejects_manifest_fingerprint_mismatch(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "ckl"
+            database = Path(tmp) / "ckl.sqlite"
+            write_library(root, [make_object("john", "book", "John", ["Gospel of John"])])
+            build_database(root, database)
+
+            with sqlite3.connect(database) as connection:
+                connection.execute(
+                    "UPDATE ckl_metadata SET value = 'wrong-manifest' "
+                    "WHERE key = 'source_manifest_fingerprint'"
+                )
+
+            with self.assertRaisesRegex(RuntimeError, "manifest fingerprint"):
+                verify_database(database, root=root)
+
+    def test_verify_rejects_exact_source_inventory_content_mismatch(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "ckl"
+            database = Path(tmp) / "ckl.sqlite"
+            write_library(root, [make_object("john", "book", "John", ["Gospel of John"])])
+            build_database(root, database)
+
+            # Whitespace preserves the parsed object fingerprint while changing
+            # the exact committed JSON inventory signature.
+            object_path = root / "objects" / "books" / "john.json"
+            object_path.write_text(object_path.read_text(encoding="utf-8") + "\n", encoding="utf-8")
+
+            with self.assertRaisesRegex(RuntimeError, "source inventory signature"):
+                verify_database(database, root=root)
 
     def test_invalid_build_does_not_replace_existing_database(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

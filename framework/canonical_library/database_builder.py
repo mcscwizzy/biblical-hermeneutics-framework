@@ -158,12 +158,19 @@ def verify_database(
             raise RuntimeError("missing required CKL SQLite indexes: " + ", ".join(missing_indexes))
 
         if compare_fingerprint:
-            source_fingerprint = expected_fingerprint
-            if source_fingerprint is None:
-                root_path = Path(root) if root is not None else Path(__file__).resolve().parent
-                source_fingerprint = CanonicalLibrary(root=root_path).load().inventory_fingerprint()
+            root_path = Path(root) if root is not None else Path(__file__).resolve().parent
+            source_library = CanonicalLibrary(root=root_path).load()
+            source_fingerprint = expected_fingerprint or source_library.inventory_fingerprint()
             if metadata.get("inventory_fingerprint") != source_fingerprint:
                 raise RuntimeError("CKL SQLite database fingerprint does not match the JSON inventory")
+            source_manifest_fingerprint = _stable_json_fingerprint(
+                _stable_manifest_payload(source_library.manifest)
+            )
+            if metadata.get("source_manifest_fingerprint") != source_manifest_fingerprint:
+                raise RuntimeError("CKL SQLite source manifest fingerprint does not match the JSON manifest")
+            source_inventory_signature = inventory_content_signature(root_path)
+            if metadata.get("source_inventory_signature") != source_inventory_signature:
+                raise RuntimeError("CKL SQLite source inventory signature does not match the JSON inventory")
 
         return {
             "path": str(db_path),
@@ -177,6 +184,8 @@ def verify_database(
             "evidence_count": evidence_count,
             "build_timestamp": metadata.get("build_timestamp"),
             "inventory_fingerprint": metadata.get("inventory_fingerprint"),
+            "source_manifest_fingerprint": metadata.get("source_manifest_fingerprint"),
+            "source_inventory_signature": metadata.get("source_inventory_signature"),
             "file_size": db_path.stat().st_size,
         }
     finally:
