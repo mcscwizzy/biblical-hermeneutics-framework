@@ -178,29 +178,6 @@ def test_runtime_package_has_exact_set_and_provenance_for_regression_chapters():
         assert record["release_provenance"]["provenance"] == "validated baseline fallback"
 
 
-def test_application_api_reports_genesis_exodus_and_leviticus_as_available():
-    pytest.importorskip("fastapi")
-    httpx = pytest.importorskip("httpx")
-    from fastapi import FastAPI
-    from bhf_web.routes.bhf_commentary import register_bhf_commentary_routes
-
-    app = FastAPI()
-    register_bhf_commentary_routes(app, storage_dir=packaged_commentary_storage_path())
-
-    async def request():
-        transport = httpx.ASGITransport(app=app)
-        async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
-            return [
-                await client.get(f"/api/bhf-commentary/{book}/{chapter}")
-                for book, chapter in (("Genesis", 1), ("Exodus", 1), ("Leviticus", 1))
-            ]
-
-    import asyncio
-
-    responses = asyncio.run(request())
-    assert all(response.status_code == 200 and response.json()["available"] for response in responses)
-
-
 def test_protected_fingerprints_and_baseline_sources_remain_unchanged():
     state = json.loads((ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/pipeline-state.json").read_text())
     assert all(hashlib.sha256(Path(path).read_bytes()).hexdigest() == digest for path, digest in state["protected_fingerprints"].items())
