@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from pathlib import Path
 
 from fastapi import FastAPI, Request
@@ -19,7 +20,7 @@ from bhf_agent.study_db import (
 )
 from bhf_agent.archaeology_service import ArchaeologyService
 
-from ..cold_start_diagnostics import diagnostic_stage
+from ..cold_start_diagnostics import diagnostic_stage, record_diagnostic_duration
 from ..map_service import (
     get_map_catalog,
     get_archaeology_markers,
@@ -103,17 +104,29 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         limit: int = 25,
     ) -> JSONResponse:
         try:
+            worker_submitted_at = time.perf_counter()
+
+            def search_in_worker() -> dict:
+                record_diagnostic_duration(
+                    "maps_threadpool_queue_wait",
+                    (time.perf_counter() - worker_submitted_at) * 1000,
+                )
+                with diagnostic_stage("maps_search_execution"):
+                    return search_map_catalog(
+                        q,
+                        kind=kind,
+                        period=period,
+                        limit=limit,
+                        path=study_db_path,
+                    )
+
             result = await run_in_threadpool(
-                search_map_catalog,
-                q,
-                kind=kind,
-                period=period,
-                limit=limit,
-                path=study_db_path,
+                search_in_worker,
             )
         except StudyDataError as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
-        return JSONResponse(result)
+        with diagnostic_stage("response_construction"):
+            return JSONResponse(result)
 
     @app.get("/api/maps/routes-for-passage", response_class=JSONResponse)
     async def maps_routes_for_passage(
@@ -204,7 +217,8 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
             )
         except StudyDataError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
-        return JSONResponse(result)
+        with diagnostic_stage("response_construction"):
+            return JSONResponse(result)
 
     @app.get("/api/maps/archaeology-for-passage", response_class=JSONResponse)
     async def maps_archaeology_for_passage(

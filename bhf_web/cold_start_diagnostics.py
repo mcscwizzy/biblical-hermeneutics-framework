@@ -102,6 +102,16 @@ def record_startup_stage(stage: str, started_at: float) -> None:
     )
 
 
+def record_diagnostic_duration(stage: str, elapsed_ms: float) -> None:
+    """Record a bounded request-stage duration measured by a worker thread."""
+
+    _emit(
+        "stage_complete",
+        stage=stage,
+        elapsed_ms=round(max(float(elapsed_ms), 0.0), 3),
+    )
+
+
 def record_import_completion(stage: str) -> None:
     """Record imports completed since this diagnostics module was first loaded."""
 

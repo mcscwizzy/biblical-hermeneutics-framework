@@ -69,6 +69,8 @@ from .routes.study import register_study_routes
 from .offline import build_offline_manifest, build_offline_pack
 from .runtime import load_cors_origins, load_runtime_config
 from .services.companion_context import CompanionContextService
+from .services.ckl_provider import VerifiedCKLProvider
+from .services.narrative_explorer import NarrativeExplorerService
 
 
 record_import_completion("fastapi_module_import")
@@ -161,6 +163,10 @@ def create_app() -> FastAPI:
         web_app.router.route_class = DiagnosticAPIRoute
     registration_started = time.perf_counter()
     web_app.state.runtime_config = runtime_config
+    ckl_provider = VerifiedCKLProvider()
+    web_app.state.ckl_provider = ckl_provider
+    web_app.add_event_handler("startup", ckl_provider.start)
+    web_app.add_event_handler("shutdown", ckl_provider.close)
     cors_origins = load_cors_origins()
     if cors_origins:
         web_app.add_middleware(
@@ -254,6 +260,7 @@ def create_app() -> FastAPI:
                 build_offline_pack,
                 pack_id,
                 study_db_path=STUDY_DB_PATH,
+                canonical_library_provider=ckl_provider.get_library,
             )
             return JSONResponse(payload)
         except ValueError as exc:
@@ -557,12 +564,29 @@ def create_app() -> FastAPI:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
     register_curation_routes(web_app, study_db_path=str(STUDY_DB_PATH), templates=templates)
-    register_canonical_routes(web_app, study_db_path=str(STUDY_DB_PATH))
-    register_canonical_editor_routes(web_app, templates=templates)
+    register_canonical_routes(
+        web_app,
+        study_db_path=str(STUDY_DB_PATH),
+        canonical_library_provider=ckl_provider.get_library,
+    )
+    register_canonical_editor_routes(
+        web_app,
+        templates=templates,
+        canonical_library_provider=ckl_provider.get_library,
+    )
     with diagnostic_stage("route_registration_maps"):
         register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
+    narrative_explorer_service = NarrativeExplorerService(
+        study_db_path=str(STUDY_DB_PATH),
+        canonical_library_provider=ckl_provider.get_library,
+    )
+    web_app.state.narrative_explorer_service = narrative_explorer_service
     with diagnostic_stage("route_registration_narrative_explorer"):
-        register_narrative_explorer_routes(web_app, study_db_path=str(STUDY_DB_PATH))
+        register_narrative_explorer_routes(
+            web_app,
+            study_db_path=str(STUDY_DB_PATH),
+            service=narrative_explorer_service,
+        )
     register_archaeology_routes(web_app, templates=templates)
     register_commentary_routes(web_app, database_path=str(COMMENTARY_DB_PATH))
     register_commentary_coverage_routes(
@@ -573,6 +597,7 @@ def create_app() -> FastAPI:
     companion_context_service = CompanionContextService(
         study_db_path=STUDY_DB_PATH,
         commentary_db_path=COMMENTARY_DB_PATH,
+        canonical_library_provider=ckl_provider.get_library,
     )
     register_bhf_commentary_routes(
         web_app,

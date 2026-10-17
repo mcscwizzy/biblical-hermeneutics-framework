@@ -68,10 +68,16 @@ def place_to_marker(
     period: str | None = None,
     path: str | Path | None = None,
     include_related_passages: bool = True,
+    references: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     latitude = place.get("latitude")
     longitude = place.get("longitude")
-    references = list_place_references(place["id"], path=path) if path else list_place_references(place["id"])
+    if references is None:
+        references = (
+            list_place_references(place["id"], path=path)
+            if path
+            else list_place_references(place["id"])
+        )
     marker = {
         "id": place["id"],
         "name": place["name"],

@@ -397,8 +397,19 @@ class SQLiteCanonicalRepository:
                 _SOURCE_FINGERPRINT_CACHE[root_key] = (signature, source_fingerprint)
         return self.inventory_fingerprint() != source_fingerprint
 
-    def verify(self, *, root: str | Path | None = None, compare_fingerprint: bool = True) -> dict[str, Any]:
-        return verify_database(self.path, root=root, compare_fingerprint=compare_fingerprint)
+    def verify(
+        self,
+        *,
+        root: str | Path | None = None,
+        compare_fingerprint: bool = True,
+        mmap_size_bytes: int = 0,
+    ) -> dict[str, Any]:
+        return verify_database(
+            self.path,
+            root=root,
+            compare_fingerprint=compare_fingerprint,
+            mmap_size_bytes=mmap_size_bytes,
+        )
 
     def book_alias_lookup(self) -> dict[str, str]:
         return dict(self._book_alias_lookup_cached())
@@ -819,7 +830,13 @@ class SQLiteCanonicalRepository:
 
     def _connect(self) -> sqlite3.Connection:
         if self.read_only:
-            conn = sqlite3.connect(f"file:{self.path}?mode=ro", uri=True)
+            # Connections remain thread-local; disabling this guard only allows
+            # the application shutdown thread to close worker-owned handles.
+            conn = sqlite3.connect(
+                f"file:{self.path}?mode=ro",
+                uri=True,
+                check_same_thread=False,
+            )
             conn.execute("PRAGMA query_only = ON")
         else:
             conn = sqlite3.connect(self.path)
