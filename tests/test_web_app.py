@@ -3809,7 +3809,23 @@ async def _asgi_request(target_app, method, path, data=None, json_data=None, hea
     async def send(message):
         messages.append(message)
 
-    await target_app(scope, receive, send)
+    loop = asyncio.get_running_loop()
+    wakeup = None
+
+    def schedule_wakeup():
+        nonlocal wakeup
+        wakeup = loop.call_later(0.05, schedule_wakeup)
+
+    # This direct ASGI runner has no socket activity to wake the selector while
+    # a route awaits AnyIO's worker thread. Keep the test loop ticking so a
+    # completed worker result is serviced just as it is by the live-server
+    # browser tests.
+    schedule_wakeup()
+    try:
+        await target_app(scope, receive, send)
+    finally:
+        if wakeup is not None:
+            wakeup.cancel()
     status = next(
         message["status"]
         for message in messages

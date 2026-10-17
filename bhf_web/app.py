@@ -20,6 +20,7 @@ from fastapi.routing import APIRoute
 from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.concurrency import run_in_threadpool
 
 from bhf_agent.bible import (
     BibleError,
@@ -249,7 +250,12 @@ def create_app() -> FastAPI:
     @web_app.get("/api/offline/packs/{pack_id}", response_class=JSONResponse)
     async def offline_pack(pack_id: str) -> JSONResponse:
         try:
-            return JSONResponse(build_offline_pack(pack_id, study_db_path=STUDY_DB_PATH))
+            payload = await run_in_threadpool(
+                build_offline_pack,
+                pack_id,
+                study_db_path=STUDY_DB_PATH,
+            )
+            return JSONResponse(payload)
         except ValueError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
 

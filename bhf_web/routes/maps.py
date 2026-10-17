@@ -6,6 +6,7 @@ from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse, Response
+from starlette.concurrency import run_in_threadpool
 
 from bhf_agent.bible import BibleError
 from bhf_agent.study_db import (
@@ -61,7 +62,8 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         period: str | None = None,
         include_records: bool = True,
     ) -> JSONResponse:
-        payload = get_map_catalog(
+        payload = await run_in_threadpool(
+            get_map_catalog,
             period=period,
             path=study_db_path,
             include_records=include_records,
@@ -101,7 +103,8 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         limit: int = 25,
     ) -> JSONResponse:
         try:
-            result = search_map_catalog(
+            result = await run_in_threadpool(
+                search_map_catalog,
                 q,
                 kind=kind,
                 period=period,

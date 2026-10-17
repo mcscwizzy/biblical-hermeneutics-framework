@@ -51,6 +51,9 @@ def load_runtime_config() -> dict[str, Any]:
         "backgroundColor": "#f6f7f8",
         "enableServiceWorker": mode != "capacitor",
         "offlinePath": "/offline",
+        # Study and map packs are optional, on-demand datasets. Building them
+        # during initial page load competes with reader and Maps requests.
+        "autoInstallOfflinePacks": _env_bool("BHF_AUTO_INSTALL_OFFLINE_PACKS", False),
         "commentaryRelease": configured_commentary_release(),
         "narrativeExplorerEnabled": _env_bool("BHF_NARRATIVE_EXPLORER_ENABLED", False),
         # OAuth client IDs and redirect URLs are public configuration. Secrets

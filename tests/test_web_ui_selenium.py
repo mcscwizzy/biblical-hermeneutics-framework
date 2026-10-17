@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.request import urlopen
 from unittest.mock import patch
 
+from bhf_agent import translation_registry, translation_settings
 from bhf_agent.study_db import initialize_database
 
 try:
@@ -83,6 +84,17 @@ class WebUiSeleniumTests(unittest.TestCase):
         cls._tmpdir = tempfile.TemporaryDirectory()
         cls._db_path = Path(cls._tmpdir.name) / "study.sqlite"
         initialize_database(cls._db_path)
+        cls._reader_settings_patch = patch.object(
+            translation_settings,
+            "SETTINGS_PATH",
+            Path(cls._tmpdir.name) / "reader-settings.json",
+        )
+        cls._reader_settings_patch.start()
+        cls._translation_registry_patch = patch(
+            "bhf_agent.translation_registry.registry_path",
+            return_value=Path(cls._tmpdir.name) / "translations.sqlite",
+        )
+        cls._translation_registry_patch.start()
         cls._patch = patch.object(web_app_module, "STUDY_DB_PATH", cls._db_path)
         cls._patch.start()
         cls._app = web_app_module.create_app()
@@ -108,6 +120,10 @@ class WebUiSeleniumTests(unittest.TestCase):
             cls._thread.join(timeout=10)
         if getattr(cls, "_patch", None) is not None:
             cls._patch.stop()
+        if getattr(cls, "_translation_registry_patch", None) is not None:
+            cls._translation_registry_patch.stop()
+        if getattr(cls, "_reader_settings_patch", None) is not None:
+            cls._reader_settings_patch.stop()
         if getattr(cls, "_tmpdir", None) is not None:
             cls._tmpdir.cleanup()
 
@@ -124,7 +140,7 @@ class WebUiSeleniumTests(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-    def open_home(self, *, wait_for_reader: bool = True):
+    def open_home(self, *, wait_for_reader: bool = True, wait_for_companion: bool = True):
         self.driver.get(self._base_url + "/")
         WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="reader-passage"]'))
@@ -137,9 +153,29 @@ class WebUiSeleniumTests(unittest.TestCase):
                     "document.querySelector('#chapter-reader h3')?.textContent?.trim());"
                 )
             )
+            if wait_for_companion:
+                self.wait_for_companion_context()
 
-    def open_mobile_workspace(self, section: str = "notes", *, wait_for_reader: bool = True):
-        self.open_home(wait_for_reader=wait_for_reader)
+    def wait_for_companion_context(self):
+        WebDriverWait(self.driver, 90).until(
+            lambda driver: driver.execute_script("""
+              const selection = window.BHFStudySelection?.getState?.() || {};
+              if (!selection.book || !selection.chapter) return true;
+              const record = window.BHFStudyCompanion?.getContextRecord?.();
+              const key = window.BHFCompanionContext?.requestKey?.(selection);
+              return Boolean(record && record.key === key &&
+                (record.status === 'ready' || record.status === 'error'));
+            """)
+        )
+
+    def open_mobile_workspace(
+        self,
+        section: str = "notes",
+        *,
+        wait_for_reader: bool = True,
+        wait_for_companion: bool = True,
+    ):
+        self.open_home(wait_for_reader=wait_for_reader, wait_for_companion=wait_for_companion)
         if section == "bible":
             return
         self.driver.find_element(By.CSS_SELECTOR, f'[data-testid="app-dock-{section}"]').click()
@@ -147,9 +183,227 @@ class WebUiSeleniumTests(unittest.TestCase):
             lambda driver: driver.execute_script("return document.body.dataset.appSection") == section
         )
 
+    def test_cold_reader_initializes_without_eager_optional_offline_packs(self):
+        self.open_home()
+        WebDriverWait(self.driver, 15).until(
+            lambda driver: driver.execute_script("""
+              return performance.getEntriesByType('resource').some((entry) =>
+                entry.name.includes('/api/offline/manifest')
+              );
+            """)
+        )
+
+        state = self.driver.execute_script("""
+            const chapterRequest = performance.getEntriesByType('resource').find((entry) =>
+              entry.name.includes('/api/bible/John/1?translation=kjv')
+            );
+            const selection = window.BHFStudySelection?.getState?.() || {};
+            return {
+              heading: document.querySelector('#chapter-reader h3')?.textContent?.trim() || '',
+              selection: {
+                book: selection.book || '',
+                chapter: selection.chapter || null,
+                translation: selection.translation || '',
+              },
+              chapterRequestCompleted: Boolean(chapterRequest && chapterRequest.responseEnd > 0),
+              autoInstallOfflinePacks: window.BHFRuntimeConfig?.autoInstallOfflinePacks,
+              optionalPackRequests: performance.getEntriesByType('resource')
+                .filter((entry) => entry.name.includes('/api/offline/packs/'))
+                .map((entry) => entry.name),
+              explorerRequests: performance.getEntriesByType('resource')
+                .filter((entry) => entry.name.includes('/api/narrative-explorer/'))
+                .map((entry) => entry.name),
+            };
+        """)
+
+        self.assertEqual(state["heading"], "John 1")
+        self.assertFalse(state["autoInstallOfflinePacks"])
+        self.assertEqual(
+            state["selection"],
+            {"book": "John", "chapter": 1, "translation": "kjv"},
+        )
+        self.assertTrue(state["chapterRequestCompleted"])
+        self.assertEqual(state["optionalPackRequests"], [])
+        self.assertEqual(state["explorerRequests"], [])
+
+    def test_reader_translation_range_and_chapter_return(self):
+        self.driver.set_window_size(1280, 900)
+        self.open_home()
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-book]")).select_by_value("Genesis")
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: "Genesis 1" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+        )
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("2")
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: "Genesis 2" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+        )
+
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-translation]")).select_by_value("asv")
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.execute_script(
+                "return window.BHFStudySelection?.getState?.().translation === 'asv' "
+                "&& document.querySelector('#chapter-reader h3')?.textContent?.trim() === 'Genesis 2';"
+            )
+        )
+        for verse in (8, 9, 10):
+            verse_button = self.driver.find_element(
+                By.CSS_SELECTOR, f'#chapter-reader [data-verse="{verse}"] [data-verse-select]'
+            )
+            self.driver.execute_script(
+                "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
+                verse_button,
+            )
+            verse_button.click()
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.execute_script(
+                "const state = window.BHFStudySelection?.getState?.(); "
+                "return state?.selectedVerses?.join(',') === '8,9,10' && state.translation === 'asv';"
+            )
+        )
+        range_state = self.driver.execute_script("return window.BHFStudySelection.getState()")
+        self.assertEqual(range_state["reference"], "Genesis 2:8-10")
+
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("3")
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.execute_script(
+                "const state = window.BHFStudySelection?.getState?.(); "
+                "return document.querySelector('#chapter-reader h3')?.textContent?.trim() === 'Genesis 3' "
+                "&& state?.book === 'Genesis' && state.chapter === 3 && state.translation === 'asv';"
+            )
+        )
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("2")
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.execute_script(
+                "const state = window.BHFStudySelection?.getState?.(); "
+                "return document.querySelector('#chapter-reader h3')?.textContent?.trim() === 'Genesis 2' "
+                "&& state?.book === 'Genesis' && state.chapter === 2 && state.translation === 'asv' "
+                "&& /ASV/i.test(document.querySelector('#chapter-reader')?.textContent || '');"
+            )
+        )
+
+    def test_companion_commentary_close_preserves_reading_context(self):
+        self.open_home()
+        self.driver.find_element(
+            By.CSS_SELECTOR, '#chapter-reader [data-verse="1"] [data-verse-select]'
+        ).click()
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.execute_script(
+                "const state = window.BHFStudySelection?.getState?.(); "
+                "return state?.book === 'John' && state.chapter === 1 "
+                "&& state.selectedVerses?.join(',') === '1';"
+            )
+        )
+        self.driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "study"
+        )
+        card = WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.find_element(By.CSS_SELECTOR, "[data-bhf-commentary-card]")
+            if driver.find_element(By.CSS_SELECTOR, "[data-bhf-commentary-card]").is_displayed()
+            and driver.find_element(By.CSS_SELECTOR, "[data-bhf-commentary-card]").get_attribute("data-state") == "ready"
+            else False
+        )
+        self.assertTrue(card.find_element(By.CSS_SELECTOR, "[data-bhf-commentary-body]").text.strip())
+        original = self.driver.execute_script("return window.BHFStudySelection.getState()")
+
+        self.driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "closed"
+        )
+        restored = self.driver.execute_script("return window.BHFStudySelection.getState()")
+        self.assertEqual(restored, original)
+        self.assertEqual(
+            self.driver.find_element(By.CSS_SELECTOR, '#chapter-reader h3').text.strip(),
+            "John 1",
+        )
+        self.assertEqual(
+            self.driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"] [data-verse-select]')
+            .get_attribute("aria-pressed"),
+            "true",
+        )
+
+    def test_reader_translation_request_completes_during_study_pack_generation(self):
+        self.open_home()
+        self.driver.execute_script("""
+            window.__studyPackState = {started: true, completed: false, status: null, packId: null};
+            window.__studyPackPromise = fetch('/api/offline/packs/study', {
+              headers: {Accept: 'application/json', 'X-BHF-Refresh': 'true'}
+            }).then(async (response) => {
+              const body = await response.json();
+              window.__studyPackState = {
+                started: true,
+                completed: true,
+                status: response.status,
+                packId: body.pack_id || null,
+              };
+              return body;
+            }, (error) => {
+              window.__studyPackState = {
+                started: true,
+                completed: true,
+                status: 0,
+                error: String(error),
+              };
+            });
+            window.__bibleDuringPackState = {completed: false, status: null, verseCount: 0};
+            window.__bibleDuringPackPromise = fetch('/api/bible/John/1?translation=asv', {
+              headers: {Accept: 'application/json'}
+            }).then(async (response) => {
+              const body = await response.json();
+              window.__bibleDuringPackState = {
+                completed: true,
+                status: response.status,
+                verseCount: Array.isArray(body.verses) ? body.verses.length : 0,
+              };
+              return body;
+            }, (error) => {
+              window.__bibleDuringPackState = {
+                completed: true,
+                status: 0,
+                verseCount: 0,
+                error: String(error),
+              };
+            });
+        """)
+        WebDriverWait(self.driver, 10).until(
+            lambda driver: driver.execute_script(
+                "return window.__bibleDuringPackState?.completed === true"
+            )
+        )
+        state = self.driver.execute_script("""
+            return {
+              pack: window.__studyPackState,
+              bible: window.__bibleDuringPackState,
+            };
+        """)
+        self.assertTrue(state["pack"]["started"])
+        self.assertFalse(state["pack"]["completed"])
+        self.assertEqual(state["bible"]["status"], 200)
+        self.assertEqual(state["bible"]["verseCount"], 51)
+
+        Select(self.driver.find_element(By.CSS_SELECTOR, '[data-reader-translation]')).select_by_value("asv")
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.execute_script("""
+              const state = window.BHFStudySelection?.getState?.() || {};
+              const heading = document.querySelector('#chapter-reader h3')?.textContent?.trim() || '';
+              const reader = document.querySelector('#chapter-reader')?.textContent || '';
+              return state.translation === 'asv' && heading === 'John 1' && /ASV/i.test(reader);
+            """)
+        )
+
+        WebDriverWait(self.driver, 90).until(
+            lambda driver: driver.execute_script("return window.__studyPackState?.completed === true")
+        )
+        pack_state = self.driver.execute_script("return window.__studyPackState")
+        self.assertEqual(pack_state["status"], 200)
+        self.assertEqual(pack_state["packId"], "study")
+
     def test_mobile_workspace_drawer_opens_at_the_top(self):
         self.open_mobile_workspace("notes")
         panel = self.driver.find_element(By.ID, "study-panel")
+        WebDriverWait(self.driver, 5).until(
+            lambda driver: driver.find_element(By.ID, "study-panel").rect["y"] <= 4
+        )
         rect = panel.rect
 
         self.assertLessEqual(rect["y"], 4)
@@ -159,7 +413,7 @@ class WebUiSeleniumTests(unittest.TestCase):
     def test_map_browse_search_is_available_without_selection(self):
         # Maps is opened from the Explore resource list. The workspace tab
         # bar is hidden in that app section.
-        self.open_mobile_workspace("explore", wait_for_reader=False)
+        self.open_mobile_workspace("explore", wait_for_companion=False)
         maps_entry = WebDriverWait(self.driver, 20).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, 'button[data-companion-resource="maps"]'))
         )
@@ -184,6 +438,14 @@ class WebUiSeleniumTests(unittest.TestCase):
 
         results = self.driver.find_elements(By.CSS_SELECTOR, "#map-search-results-list .map-search-result")
         self.assertGreater(len(results), 0)
+        map_requests = self.driver.execute_script("""
+            return performance.getEntriesByType('resource')
+              .filter((entry) => entry.name.includes('/api/maps/catalog') || entry.name.includes('/api/maps/search'))
+              .map((entry) => ({name: entry.name, completed: entry.responseEnd > 0}));
+        """)
+        self.assertTrue(any("/api/maps/catalog?include_records=false" in request["name"] for request in map_requests))
+        self.assertTrue(any("/api/maps/search?" in request["name"] and request["completed"] for request in map_requests))
+        self.assertTrue(all(request["completed"] for request in map_requests))
 
     def test_reader_search_selection_navigation_and_next_chapter_are_mobile_usable(self):
         self.open_home()
