@@ -19,7 +19,9 @@ def get_page(app):
 def test_narrative_explorer_ui_flag_defaults_off(monkeypatch):
     monkeypatch.delenv("BHF_NARRATIVE_EXPLORER_ENABLED", raising=False)
 
-    assert load_runtime_config().get("narrativeExplorerEnabled") is False
+    config = load_runtime_config()
+    assert config.get("narrativeExplorerEnabled") is False
+    assert "commentaryRelease" not in config
 
 
 def test_narrative_explorer_ui_flag_can_be_enabled_for_preview(monkeypatch):

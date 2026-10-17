@@ -65,8 +65,5 @@ namespaces = true
 "framework.lexical" = ["schema/*.json", "database/*.sqlite", "database/*.sqlite.gz"]
 "bhf_agent" = [
   "data/*.json",
-  "data/commentary-v1.2/*.json",
-  "data/commentary-v1.2/.bhf-commentary-release.json",
-  "data/commentary-v1.2/.bhf-commentary-release-checksums.json",
 ]
 "bhf_web" = ["templates/*.html", "static/**/*"]

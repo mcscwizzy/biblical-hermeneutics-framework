@@ -27,7 +27,7 @@ class RuntimeDataPaths:
     study_db_path: Path
     job_db_path: Path
     commentary_db_path: Path
-    bhf_commentary_storage_path: Path
+    bhf_commentary_storage_path: Path | None
     translations_path: Path
     reader_settings_path: Path
     web_config_path: Path
@@ -54,30 +54,25 @@ def configured_commentary_release(environ: Mapping[str, str] | None = None) -> s
 
 
 def packaged_commentary_storage_path(release: str = DEFAULT_COMMENTARY_RELEASE) -> Path:
-    """Return the immutable commentary corpus bundled with the application."""
+    """Return the conventional local path for an immutable authoring release."""
 
     project_root = Path(__file__).resolve().parents[1]
     packaged_dir = _PACKAGED_COMMENTARY_DIRS.get(release, _PACKAGED_COMMENTARY_DIRS[DEFAULT_COMMENTARY_RELEASE])
     source_checkout_path = project_root / packaged_dir
     if source_checkout_path.is_dir():
         return source_checkout_path
-    # Wheels cannot carry a repository-level ``.bhf-data`` directory.  The
-    # frozen v1.2 release is also included below the package for installed
-    # runtime verification and deployments outside a source checkout.
+    # The generated releases are not part of the reader package. Keep the
+    # conventional fallback for local authoring tools run outside a checkout.
     package_data_path = Path(__file__).resolve().parent / "data" / release
     return package_data_path if package_data_path.is_dir() else source_checkout_path
 
 
 def default_commentary_storage_path(environ: Mapping[str, str]) -> Path:
-    """Resolve commentary separately from writable runtime data.
+    """Resolve the generated release path for authoring and audit tools.
 
-    Vercel's ``/tmp`` directory is appropriate for mutable runtime state but
-    does not contain the released commentary corpus. The corpus is packaged
-    with the application and must be read from the resolved project root.
-    Local development uses the immutable packaged snapshot through a relative
-    source-checkout path. An explicit local override remains available for
-    development and audit tooling, but Vercel cannot redirect production to a
-    candidate workspace.
+    The browser app no longer uses this selector. Local tooling uses the
+    immutable source checkout path or an explicit override; candidate paths
+    remain blocked on Vercel.
     """
 
     release = configured_commentary_release(environ)
@@ -94,8 +89,10 @@ def default_commentary_storage_path(environ: Mapping[str, str]) -> Path:
 
 def resolve_runtime_data_paths(
     environ: Mapping[str, str] | None = None,
+    *,
+    include_bhf_commentary: bool = True,
 ) -> RuntimeDataPaths:
-    """Resolve writable runtime paths while preserving explicit overrides."""
+    """Resolve runtime paths, optionally including the authoring release path."""
 
     values = os.environ if environ is None else environ
     data_dir = Path(values.get("BHF_DATA_DIR") or default_runtime_data_dir(values))
@@ -108,7 +105,9 @@ def resolve_runtime_data_paths(
         commentary_db_path=Path(
             values.get("BHF_COMMENTARY_DB_PATH") or data_dir / "commentary.sqlite"
         ),
-        bhf_commentary_storage_path=default_commentary_storage_path(values),
+        bhf_commentary_storage_path=(
+            default_commentary_storage_path(values) if include_bhf_commentary else None
+        ),
         translations_path=Path(
             values.get("BHF_TRANSLATIONS_PATH") or data_dir / "translations"
         ),
@@ -127,7 +126,10 @@ def resolve_runtime_data_paths(
     )
 
 
-RUNTIME_DATA_PATHS = resolve_runtime_data_paths()
+# The running app uses Bible, Tyndale, user-state, and cache paths. Keep the
+# generated BHF release selector lazy and opt in only for authoring/reporting
+# tools that explicitly request it with resolve_runtime_data_paths().
+RUNTIME_DATA_PATHS = resolve_runtime_data_paths(include_bhf_commentary=False)
 
 
 __all__ = [

@@ -24,8 +24,8 @@ from bhf_agent.models import (
     ValidationResult,
 )
 from bhf_agent.study_db import get_source, initialize_database, list_sources
+from bhf_agent.runtime_paths import resolve_runtime_data_paths
 from bhf_web.runtime import load_cors_origins, load_runtime_config
-from bhf_web.settings import resolve_runtime_data_paths
 
 try:
     from bhf_web.app import app, create_app

@@ -8,14 +8,16 @@ import unittest
 from pathlib import Path
 
 from bhf_agent.db.common import DEFAULT_DB_PATH
-from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
-from bhf_web.settings import (
-    packaged_commentary_storage_path,
-    resolve_runtime_data_paths,
-)
+from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS, packaged_commentary_storage_path, resolve_runtime_data_paths
+from bhf_web import settings as web_settings
 
 
 class RuntimeDataPathTests(unittest.TestCase):
+    def test_web_settings_keep_tyndale_database_without_generated_release_path(self):
+        self.assertEqual(web_settings.COMMENTARY_DB_PATH.name, "commentary.sqlite")
+        self.assertFalse(hasattr(web_settings, "BHF_COMMENTARY_STORAGE_PATH"))
+        self.assertIsNone(web_settings.RUNTIME_DATA_PATHS.bhf_commentary_storage_path)
+
     def test_data_directory_supplies_default_database_paths(self):
         paths = resolve_runtime_data_paths({"BHF_DATA_DIR": "/tmp/test-data"})
 

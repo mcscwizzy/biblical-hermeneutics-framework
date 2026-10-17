@@ -84,6 +84,19 @@ class WebUiSeleniumTests(unittest.TestCase):
         cls._tmpdir = tempfile.TemporaryDirectory()
         cls._db_path = Path(cls._tmpdir.name) / "study.sqlite"
         initialize_database(cls._db_path)
+        commentary_db = Path(__file__).resolve().parents[1] / ".bhf" / "commentary.sqlite"
+        cls._commentary_db_patch = None
+        if commentary_db.is_file():
+            cls._commentary_db_path = Path(cls._tmpdir.name) / "commentary.sqlite"
+            shutil.copy2(commentary_db, cls._commentary_db_path)
+            cls._commentary_db_patch = patch.object(
+                web_app_module,
+                "COMMENTARY_DB_PATH",
+                cls._commentary_db_path,
+            )
+            cls._commentary_db_patch.start()
+        else:
+            cls._commentary_db_path = None
         cls._reader_settings_patch = patch.object(
             translation_settings,
             "SETTINGS_PATH",
@@ -120,6 +133,8 @@ class WebUiSeleniumTests(unittest.TestCase):
             cls._thread.join(timeout=10)
         if getattr(cls, "_patch", None) is not None:
             cls._patch.stop()
+        if getattr(cls, "_commentary_db_patch", None) is not None:
+            cls._commentary_db_patch.stop()
         if getattr(cls, "_translation_registry_patch", None) is not None:
             cls._translation_registry_patch.stop()
         if getattr(cls, "_reader_settings_patch", None) is not None:
@@ -182,6 +197,42 @@ class WebUiSeleniumTests(unittest.TestCase):
         WebDriverWait(self.driver, 20).until(
             lambda driver: driver.execute_script("return document.body.dataset.appSection") == section
         )
+
+    def test_retired_commentary_and_coverage_are_gone_and_reader_has_no_generated_ui(self):
+        self.open_home(wait_for_companion=False)
+        browser_state = self.driver.execute_async_script("""
+            const done = arguments[0];
+            const paths = [
+              '/api/bhf-commentary/diagnostics',
+              '/api/bhf-commentary/search?q=Abraham',
+              '/api/bhf-commentary/Genesis/1',
+              '/api/bhf-commentary/Genesis/1/evidence',
+              '/api/internal/bhf-commentary/coverage?scope=Genesis',
+              '/internal/commentary-coverage',
+            ];
+            Promise.all(paths.map(async (path) => {
+              const response = await fetch(path);
+              return {path, status: response.status, body: await response.json()};
+            })).then((responses) => done({
+              responses,
+              hasGeneratedCard: Boolean(document.querySelector('[data-bhf-commentary-card]')),
+              hasCoverageUi: Boolean(document.querySelector('[data-commentary-coverage]')),
+              bodyHasGeneratedTitle: document.body.innerText.includes('BHF Context'),
+              commentaryRelease: window.BHFRuntimeConfig?.commentaryRelease ?? null,
+              scriptSources: Array.from(document.scripts).map((script) => script.src),
+            }));
+        """)
+
+        self.assertEqual(len(browser_state["responses"]), 6)
+        for response in browser_state["responses"]:
+            self.assertEqual(response["status"], 410, response["path"])
+            self.assertEqual(response["body"]["reason"], "feature_retired", response["path"])
+        self.assertFalse(browser_state["hasGeneratedCard"])
+        self.assertFalse(browser_state["hasCoverageUi"])
+        self.assertFalse(browser_state["bodyHasGeneratedTitle"])
+        self.assertIsNone(browser_state["commentaryRelease"])
+        self.assertFalse(any("bhf-commentary-card.js" in src for src in browser_state["scriptSources"]))
+        self.assertFalse(any("commentary-coverage.js" in src for src in browser_state["scriptSources"]))
 
     def test_cold_reader_initializes_without_eager_optional_offline_packs(self):
         self.open_home()
@@ -281,8 +332,17 @@ class WebUiSeleniumTests(unittest.TestCase):
             )
         )
 
-    def test_companion_commentary_close_preserves_reading_context(self):
+    def test_tyndale_notes_and_translation_comparison_preserve_reading_context(self):
+        if self._commentary_db_path is None:
+            raise unittest.SkipTest("The local Tyndale Study Notes database is not available.")
+
         self.open_home()
+        notes = WebDriverWait(self.driver, 30).until(
+            lambda driver: driver.find_element(By.CSS_SELECTOR, "[data-commentary-body]")
+            if driver.find_elements(By.CSS_SELECTOR, "[data-commentary-body] .commentary-entry")
+            else False
+        )
+        self.assertTrue(notes.find_elements(By.CSS_SELECTOR, ".commentary-entry"))
         self.driver.find_element(
             By.CSS_SELECTOR, '#chapter-reader [data-verse="1"] [data-verse-select]'
         ).click()
@@ -297,13 +357,18 @@ class WebUiSeleniumTests(unittest.TestCase):
         WebDriverWait(self.driver, 20).until(
             lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "study"
         )
-        card = WebDriverWait(self.driver, 20).until(
-            lambda driver: driver.find_element(By.CSS_SELECTOR, "[data-bhf-commentary-card]")
-            if driver.find_element(By.CSS_SELECTOR, "[data-bhf-commentary-card]").is_displayed()
-            and driver.find_element(By.CSS_SELECTOR, "[data-bhf-commentary-card]").get_attribute("data-state") == "ready"
+        self.driver.find_element(
+            By.CSS_SELECTOR, '[data-companion-resource="translation_comparison"]'
+        ).click()
+        comparison = WebDriverWait(self.driver, 30).until(
+            lambda driver: driver.find_element(By.CSS_SELECTOR, ".translation-comparison")
+            if driver.find_elements(By.CSS_SELECTOR, ".translation-comparison [data-comparison-translation]")
             else False
         )
-        self.assertTrue(card.find_element(By.CSS_SELECTOR, "[data-bhf-commentary-body]").text.strip())
+        self.assertGreaterEqual(
+            len(comparison.find_elements(By.CSS_SELECTOR, "[data-comparison-translation]")),
+            2,
+        )
         original = self.driver.execute_script("return window.BHFStudySelection.getState()")
 
         self.driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
@@ -320,6 +385,9 @@ class WebUiSeleniumTests(unittest.TestCase):
             self.driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"] [data-verse-select]')
             .get_attribute("aria-pressed"),
             "true",
+        )
+        self.assertTrue(
+            self.driver.find_elements(By.CSS_SELECTOR, "[data-commentary-body] .commentary-entry")
         )
 
     def test_reader_translation_request_completes_during_study_pack_generation(self):

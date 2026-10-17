@@ -6,8 +6,6 @@ import os
 from typing import Any, Mapping
 from urllib.parse import urlsplit
 
-from bhf_agent.runtime_paths import configured_commentary_release
-
 from .settings import _env_bool
 
 DEFAULT_ASSISTANT_URL = (
@@ -54,7 +52,6 @@ def load_runtime_config() -> dict[str, Any]:
         # Study and map packs are optional, on-demand datasets. Building them
         # during initial page load competes with reader and Maps requests.
         "autoInstallOfflinePacks": _env_bool("BHF_AUTO_INSTALL_OFFLINE_PACKS", False),
-        "commentaryRelease": configured_commentary_release(),
         "narrativeExplorerEnabled": _env_bool("BHF_NARRATIVE_EXPLORER_ENABLED", False),
         # OAuth client IDs and redirect URLs are public configuration. Secrets
         # are never injected into the browser; OneDrive uses PKCE.
