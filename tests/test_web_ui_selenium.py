@@ -124,14 +124,22 @@ class WebUiSeleniumTests(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-    def open_home(self):
+    def open_home(self, *, wait_for_reader: bool = True):
         self.driver.get(self._base_url + "/")
         WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="reader-passage"]'))
         )
+        if wait_for_reader:
+            WebDriverWait(self.driver, 20).until(
+                lambda driver: driver.execute_script(
+                    "const state = window.BHFStudySelection?.getState?.(); "
+                    "return Boolean(state?.book && state?.chapter && "
+                    "document.querySelector('#chapter-reader h3')?.textContent?.trim());"
+                )
+            )
 
-    def open_mobile_workspace(self, section: str = "ask"):
-        self.open_home()
+    def open_mobile_workspace(self, section: str = "notes", *, wait_for_reader: bool = True):
+        self.open_home(wait_for_reader=wait_for_reader)
         if section == "bible":
             return
         self.driver.find_element(By.CSS_SELECTOR, f'[data-testid="app-dock-{section}"]').click()
@@ -140,7 +148,7 @@ class WebUiSeleniumTests(unittest.TestCase):
         )
 
     def test_mobile_workspace_drawer_opens_at_the_top(self):
-        self.open_mobile_workspace("ask")
+        self.open_mobile_workspace("notes")
         panel = self.driver.find_element(By.ID, "study-panel")
         rect = panel.rect
 
@@ -149,14 +157,19 @@ class WebUiSeleniumTests(unittest.TestCase):
         self.assertTrue(panel.is_displayed())
 
     def test_map_browse_search_is_available_without_selection(self):
-        self.open_mobile_workspace("explore")
-        self.driver.find_element(By.ID, "workspace-tab-maps").click()
-        WebDriverWait(self.driver, 20).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-open-map-browser]"))
+        # Maps is opened from the Explore resource list. The workspace tab
+        # bar is hidden in that app section.
+        self.open_mobile_workspace("explore", wait_for_reader=False)
+        maps_entry = WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, 'button[data-companion-resource="maps"]'))
         )
-        self.driver.find_element(By.CSS_SELECTOR, "[data-open-map-browser]").click()
+        maps_entry.click()
         WebDriverWait(self.driver, 20).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-map-browser]"))
+            EC.visibility_of_element_located((By.ID, "map-panel"))
+        )
+        self.driver.find_element(By.CSS_SELECTOR, "[data-map-navigator-open]").click()
+        WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-map-search-query]"))
         )
 
         search_input = self.driver.find_element(By.CSS_SELECTOR, "[data-map-search-query]")
@@ -164,7 +177,9 @@ class WebUiSeleniumTests(unittest.TestCase):
         search_input.send_keys("Jerusalem", Keys.ENTER)
 
         WebDriverWait(self.driver, 20).until(
-            lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#map-search-results-list .map-search-result")) > 0
+            lambda driver: len(
+                driver.find_elements(By.CSS_SELECTOR, "#map-search-results-list .map-search-result")
+            ) > 0
         )
 
         results = self.driver.find_elements(By.CSS_SELECTOR, "#map-search-results-list .map-search-result")
@@ -177,7 +192,11 @@ class WebUiSeleniumTests(unittest.TestCase):
         )
         query_input = self.driver.find_element(By.CSS_SELECTOR, "[data-bible-search] input[name='query']")
         query_input.clear()
-        query_input.send_keys("John 1:1")
+        # The browser smoke environment may serve the generated offline text
+        # search fallback, which searches verse text rather than parsing a
+        # reference string. Search the target verse's wording so the same
+        # reader-navigation assertion applies online and offline.
+        query_input.send_keys("In the beginning was the Word")
         self.driver.find_element(By.CSS_SELECTOR, "[data-bible-search] button[type='submit']").click()
 
         WebDriverWait(self.driver, 20).until(
@@ -280,6 +299,10 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         self.driver.set_window_size(1440, 1200)
         self.driver.get(self._base_url + "/")
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
+        wait.until(lambda driver: driver.execute_script(
+            "const selection = window.BHFStudySelection?.getState?.(); "
+            "return selection?.book === 'John' && Number(selection?.chapter) === 1;"
+        ))
         entry = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
         self.assertEqual(entry.text, "Explore the Narrative")
         self.driver.execute_script(
