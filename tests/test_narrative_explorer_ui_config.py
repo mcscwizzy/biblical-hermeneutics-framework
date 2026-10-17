@@ -28,7 +28,7 @@ def test_narrative_explorer_ui_flag_can_be_enabled_for_preview(monkeypatch):
     assert load_runtime_config().get("narrativeExplorerEnabled") is True
 
 
-def test_disabled_flag_keeps_existing_companion_controls_without_loading_explorer(monkeypatch):
+def test_disabled_flag_keeps_the_ordinary_reader_without_retired_commentary(monkeypatch):
     monkeypatch.delenv("BHF_NARRATIVE_EXPLORER_ENABLED", raising=False)
     app = create_app()
 
@@ -39,8 +39,14 @@ def test_disabled_flag_keeps_existing_companion_controls_without_loading_explore
     assert "/narrative-explorer.js" not in response.text
     assert 'data-workspace-tab="commentary"' in response.text
     assert 'data-workspace-tab="context"' in response.text
-    assert "BHF Context" in response.text
+    assert 'aria-label="Tyndale Study Notes"' in response.text
+    assert 'data-companion-resource="translation_comparison"' in response.text
+    assert "BHF Context" not in response.text
+    assert "data-bhf-commentary-card" not in response.text
+    assert "bhf-commentary-card.js" not in response.text
     assert "Tyndale Companion" in response.text
+    assert 'data-workspace-tab="notes"' in response.text
+    assert 'data-workspace-tab="highlights"' in response.text
     assert any(route.path == "/api/narrative-explorer/v1/passages/{book}/{chapter}" for route in app.routes)
 
 
@@ -54,4 +60,6 @@ def test_enabled_flag_exposes_only_the_passage_companion_entry(monkeypatch):
     assert 'data-companion-resource="narrative_explorer"' in response.text
     assert 'data-companion-resource-label="Explore the Narrative"' in response.text
     assert "/narrative-explorer.js?v=20261015b" in response.text
+    assert "BHF Context" not in response.text
+    assert 'aria-label="Tyndale Study Notes"' in response.text
     assert '"narrativeExplorerEnabled": true' in response.text

@@ -82,10 +82,10 @@
 - Tyndale resource id `commentary` continues to call `/api/commentary/*`.
 - Translation comparison fallback no longer targets the removed BHF status node; the comparison action remains available.
 
-- [ ] **Step 1: Add failing template/Node assertions** for absence of the generated card/assets and presence of the Tyndale and feature-off reader controls.
-- [ ] **Step 2: Run focused Python and Node tests** and confirm failures correspond to old UI dependencies.
-- [ ] **Step 3: Remove the generated card and coverage UI, cache prefixes, and styles; repair the translation-comparison fallback.** Keep the Tyndale reader and Companion route intact.
-- [ ] **Step 4: Run focused tests** with `.venv/bin/pytest -q tests/test_narrative_explorer_ui_config.py tests/test_commentary.py tests/test_companion_context.py` and `npm test`.
+- [x] **Step 1: Add failing template/Node assertions** for absence of the generated card/assets and presence of the Tyndale and feature-off reader controls.
+- [x] **Step 2: Run focused Python and Node tests** and confirm expected failures: the rendered page still contained `BHF Context`, and Compare Translations only existed inside that card.
+- [x] **Step 3: Remove the generated card and coverage UI, cache prefixes, and styles; repair the translation-comparison fallback.** Kept the Tyndale reader and Companion route intact, and put a direct translation comparison control in the Companion overview.
+- [x] **Step 4: Run focused tests**: reader and retirement Python checks → 6 passed; `npm test` → 12 passed.
 - [ ] **Step 5: Commit** as `refactor: remove generated commentary reader panel`.
 
 ### Task 3: Remove compiled release runtime packaging

@@ -4217,7 +4217,7 @@ async function dispatchStudyAction(studyAction) {
         trigger,
       });
     } else {
-      const status = document.querySelector("[data-bhf-commentary-status]");
+      const status = document.querySelector("[data-companion-action-status]");
       if (status) status.textContent = "Translation comparison is unavailable right now.";
     }
   } else if (window.BHFRuntimeConfig?.debug === true) {
