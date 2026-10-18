@@ -1,16 +1,11 @@
 import json
+import os
 from pathlib import Path
-
-from bhf_agent.chapter_commentary.storage import list_commentaries
-from bhf_agent.genre import classify_genre
-from bhf_agent.models import ReferenceContext
-from bhf_agent.runtime_paths import packaged_commentary_storage_path, resolve_runtime_data_paths
-from bhf_web.services.bhf_commentary import load_commentary_projection
+import subprocess
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RUNTIME_COMMENTARY = ROOT / ".bhf-data" / "bhf-commentary-v1.1"
-RUNTIME_FINGERPRINT = "fc905f3a095fd14bb5f557af624f3e40984bd67ee095477b5966eee3aea33b66"
 
 
 def _vercelignore_entries() -> list[str]:
@@ -37,7 +32,23 @@ def _is_explicitly_excluded(path: str) -> bool:
     return False
 
 
-def test_vercel_config_targets_fastapi_entrypoint_and_candidate_exclusion():
+def _vercel_python(command: str) -> subprocess.CompletedProcess[str]:
+    environment = os.environ.copy()
+    for name in tuple(environment):
+        if name.startswith("BHF_"):
+            environment.pop(name)
+    environment["VERCEL"] = "1"
+    return subprocess.run(
+        [sys.executable, "-c", command],
+        cwd=ROOT,
+        env=environment,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+
+
+def test_vercel_config_keeps_only_the_candidate_workspace_exclusion():
     config = json.loads((ROOT / "vercel.json").read_text())
     function = config["functions"]["bhf_web/app.py"]
     assert function["excludeFiles"] == ".bhf-data/bhf-commentary-candidates/**"
@@ -46,63 +57,45 @@ def test_vercel_config_targets_fastapi_entrypoint_and_candidate_exclusion():
     )
 
 
-def test_vercel_ignore_preserves_required_runtime_paths():
+def test_vercel_ignore_keeps_active_reader_resources_and_excludes_dev_inputs():
     required = {
         "bhf_web/app.py",
         "bhf_agent/data/asv_bible.json",
         "bhf_agent/data/kjv_bible.json",
         "framework/canonical_library/objects/books/genesis.json",
         "framework/lexical/database/lexicon.sqlite.gz",
-        ".bhf-data/bhf-commentary-v1.1/commentary-v1.1-manifest.json",
-        ".bhf-data/bhf-commentary-v1.1/deuteronomy_032.json",
-        "bhf_web/static/style.css",
-        "tools/commentary_health_report.py",
-        "tools/ckl_coverage_report.py",
+        "framework/commentary/service.py",
+        "bhf_web/routes/commentary.py",
+        "bhf_web/static/commentary.js",
+        "bhf_web/static/narrative-explorer.js",
     }
     assert all(not _is_explicitly_excluded(path) for path in required)
-    assert _is_explicitly_excluded("tests/test_vercel_packaging.py")
-    assert _is_explicitly_excluded("docs/vercel-function-bundle-audit.md")
-    assert _is_explicitly_excluded("requirements-gui.txt")
 
-
-def test_certified_runtime_corpus_count_and_fingerprint_are_unchanged():
-    assert len(list_commentaries(RUNTIME_COMMENTARY)) == 1189
-    manifest = json.loads(
-        (RUNTIME_COMMENTARY / "commentary-v1.1-manifest.json").read_text()
-    )
-    assert manifest["chapter_count"] == 1189
-    assert manifest["corpus_fingerprint"] == RUNTIME_FINGERPRINT
-
-
-def test_all_production_genres_and_remediated_chapters_load_from_runtime_corpus():
-    genre_references = {
-        "Torah": ("Deuteronomy", 32),
-        "narrative": ("Joshua", 1),
-        "poetry": ("Psalms", 119),
-        "wisdom literature": ("Proverbs", 1),
-        "prophecy": ("Isaiah", 40),
-        "Gospel": ("Matthew", 1),
-        "epistle": ("Romans", 1),
-        "apocalyptic": ("Revelation", 1),
+    excluded = {
+        ".bhf-data/bhf-commentary-v1.1/deuteronomy_032.json",
+        "bhf_agent/chapter_commentary/models.py",
+        "tools/commentary_health_report.py",
+        "tools/ckl_coverage_report.py",
+        "tests/test_vercel_packaging.py",
+        "docs/vercel-function-bundle-audit.md",
+        "requirements-gui.txt",
     }
-    for expected_genre, (book, chapter) in genre_references.items():
-        assert classify_genre(ReferenceContext(book=book)).primary_genre == expected_genre
-        projection = load_commentary_projection(RUNTIME_COMMENTARY, book, chapter)
-        assert projection is not None
-        assert projection["release"] == "commentary-v1.1"
-        assert projection["commentary"]
-
-    for book, chapter in (
-        ("Deuteronomy", 32),
-        ("Numbers", 6),
-        ("Isaiah", 40),
-        ("Psalms", 119),
-    ):
-        assert load_commentary_projection(RUNTIME_COMMENTARY, book, chapter) is not None
+    assert all(_is_explicitly_excluded(path) for path in excluded)
 
 
-def test_vercel_runtime_never_resolves_commentary_candidates():
-    paths = resolve_runtime_data_paths({"VERCEL": "1"})
-    assert paths.bhf_commentary_storage_path == packaged_commentary_storage_path()
-    assert "bhf-commentary-candidates" not in str(paths.bhf_commentary_storage_path)
-    assert paths.bhf_commentary_storage_path.name == "bhf-commentary-v1.1"
+def test_generated_v12_package_data_is_not_declared_or_present():
+    pyproject = (ROOT / "pyproject.toml").read_text()
+    assert "data/commentary-v1.2/" not in pyproject
+    assert not (ROOT / "bhf_agent/data/commentary-v1.2").exists()
+
+
+def test_vercel_app_import_does_not_load_generation_or_report_modules():
+    result = _vercel_python(
+        "import sys\n"
+        "from bhf_web.app import app\n"
+        "assert app.title == 'BHF Bible Reader'\n"
+        "assert not any(name == 'bhf_agent.chapter_commentary' or name.startswith('bhf_agent.chapter_commentary.') for name in sys.modules)\n"
+        "assert not any(name == 'tools' or name.startswith('tools.') for name in sys.modules)\n"
+    )
+
+    assert result.returncode == 0, result.stderr

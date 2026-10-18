@@ -26,7 +26,7 @@ from .scripture import (
     format_scripture_reference,
     parse_scripture_references,
 )
-from .schema import CanonicalObject
+from .schema import CanonicalObject, CanonicalValidationError, validate_library, validate_object
 
 
 @dataclass(frozen=True)
@@ -94,6 +94,7 @@ def verify_database(
     root: str | Path | None = None,
     compare_fingerprint: bool = True,
     expected_fingerprint: str | None = None,
+    mmap_size_bytes: int = 0,
 ) -> dict[str, Any]:
     """Verify database metadata, integrity, counts, indexes, and freshness."""
 
@@ -103,6 +104,9 @@ def verify_database(
 
     conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
     try:
+        bounded_mmap_size = max(0, int(mmap_size_bytes))
+        if bounded_mmap_size:
+            conn.execute(f"PRAGMA mmap_size = {bounded_mmap_size}")
         conn.row_factory = sqlite3.Row
         conn.execute("PRAGMA foreign_keys = ON")
         metadata = {
@@ -202,6 +206,65 @@ def manifest_fingerprint(root: str | Path | None = None) -> str:
     if not isinstance(manifest, Mapping):
         raise RuntimeError(f"CKL JSON manifest must contain an object: {manifest_path}")
     return _stable_json_fingerprint(_stable_manifest_payload(manifest))
+
+
+def source_inventory_fingerprint(root: str | Path | None = None) -> str:
+    """Validate CKL source records and fingerprint their canonical forms.
+
+    This intentionally avoids building the retrieval indexes in
+    :class:`CanonicalLibrary`. Runtime SQLite verification needs the same
+    canonical inventory fingerprint as a full library load, while it only
+    needs to parse and validate the authored records.
+    """
+
+    root_path = Path(root) if root is not None else Path(__file__).resolve().parent
+    library = CanonicalLibrary(root=root_path)
+    errors: list[str] = []
+    manifest = library._read_manifest(errors)
+    objects_root = root_path / "objects"
+    if not objects_root.exists():
+        errors.append(f"{objects_root}: objects directory does not exist")
+        paths: list[Path] = []
+    else:
+        paths = sorted(
+            (path for path in objects_root.rglob("*.json") if path.is_file()),
+            key=lambda path: path.relative_to(objects_root).as_posix(),
+        )
+
+    objects: dict[str, CanonicalObject] = {}
+    source_paths: dict[str, str] = {}
+    for path in paths:
+        if path.name.startswith("_"):
+            continue
+        relative_path = path.relative_to(root_path).as_posix()
+        try:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+            obj = validate_object(raw, path=relative_path)
+        except (OSError, json.JSONDecodeError, CanonicalValidationError) as exc:
+            errors.append(f"{relative_path}: {exc}")
+            continue
+        if obj.id in objects:
+            errors.append(
+                f"duplicate canonical id '{obj.id}' found in "
+                f"{relative_path} and {source_paths[obj.id]}"
+            )
+            continue
+        objects[obj.id] = obj
+        source_paths[obj.id] = relative_path
+
+    if errors:
+        raise CanonicalValidationError("\n".join(errors))
+    validate_library(
+        objects,
+        manifest=manifest,
+        source_paths=source_paths,
+        objects_are_validated=True,
+    )
+    payload = {
+        "manifest": _stable_manifest_payload(manifest),
+        "objects": [objects[object_id].to_dict() for object_id in sorted(objects)],
+    }
+    return _stable_json_fingerprint(payload)
 
 
 def database_info(path: str | Path) -> dict[str, Any]:

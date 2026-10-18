@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import json
 import re
+from collections.abc import Callable
 from functools import lru_cache
 from typing import Any
 
 from fastapi import FastAPI, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
+from starlette.concurrency import run_in_threadpool
 
 from bhf_agent.ckl import build_canonical_context, load_canonical_library
 from bhf_agent.archaeology_service import ArchaeologyService
@@ -23,8 +25,17 @@ def _canonical_library():
     return load_canonical_library()
 
 
-def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None) -> None:
+def register_canonical_routes(
+    app: FastAPI,
+    *,
+    study_db_path: str | None = None,
+    canonical_library_provider: Callable[[], Any] | None = None,
+) -> None:
     archaeology = ArchaeologyService(study_db_path) if study_db_path else ArchaeologyService()
+    library_provider = canonical_library_provider or _canonical_library
+
+    async def get_library() -> Any:
+        return await run_in_threadpool(library_provider)
 
     @app.get("/api/canonical/entities-for-passage", response_class=JSONResponse)
     async def canonical_entities_for_passage(
@@ -38,7 +49,7 @@ def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None)
         """Return compact, deterministic entity availability without full CKL retrieval."""
 
         results = _entities_for_passage(
-            _canonical_library(),
+            await get_library(),
             book=book,
             chapter=chapter,
             verse_start=verse_start,
@@ -61,7 +72,7 @@ def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None)
         content_status: str | None = None,
         include_placeholders: bool = True,
     ) -> JSONResponse:
-        library = _canonical_library()
+        library = await get_library()
         normalized_query = str(q or "").strip()
         results: list[dict[str, Any]]
         metadata: dict[str, Any]
@@ -129,7 +140,7 @@ def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None)
 
     @app.get("/api/canonical/objects/{object_id}", response_class=JSONResponse)
     async def canonical_object(object_id: str) -> JSONResponse:
-        library = _canonical_library()
+        library = await get_library()
         normalized_id = normalize_id(object_id)
         obj = library.objects_by_id.get(normalized_id)
         if obj is None:
@@ -156,7 +167,17 @@ def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None)
         return JSONResponse(_with_related_archaeology(_serialize_object_detail(obj, library), archaeology))
 
 
-def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
+def register_canonical_editor_routes(
+    app: FastAPI,
+    *,
+    templates: Any,
+    canonical_library_provider: Callable[[], Any] | None = None,
+) -> None:
+    library_provider = canonical_library_provider or _canonical_library
+
+    async def get_library() -> Any:
+        return await run_in_threadpool(library_provider)
+
     @app.get("/canonical/editor", response_class=HTMLResponse)
     async def canonical_editor(
         request: Request,
@@ -164,7 +185,7 @@ def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
         saved: str | None = None,
         error: str | None = None,
     ) -> HTMLResponse:
-        library = _canonical_library()
+        library = await get_library()
         draft_objects = _editor_candidates(library)
         selected = _select_editor_object(library, draft_objects, object_id)
         if object_id and selected is None:
@@ -198,7 +219,7 @@ def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
 
     @app.post("/canonical/editor/{object_id}", response_class=HTMLResponse)
     async def save_canonical_editor_object(request: Request, object_id: str) -> Response:
-        library = _canonical_library()
+        library = await get_library()
         source_path = library.source_path_for(object_id)
         if source_path is None:
             return templates.TemplateResponse(

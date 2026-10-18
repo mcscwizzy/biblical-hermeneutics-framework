@@ -67,6 +67,7 @@ class NarrativeExplorerService:
             if canonical_library_provider is _DEFAULT_PROVIDER
             else canonical_library_provider
         )
+        self._cache_canonical_library = canonical_library_provider is _DEFAULT_PROVIDER
         self.maps_lookup_provider = maps_lookup_provider
         self.archaeology_lookup_provider = archaeology_lookup_provider
         self._canonical_library: Any | None = None
@@ -208,10 +209,15 @@ class NarrativeExplorerService:
         if not callable(provider):
             raise CanonicalLookupUnavailable("canonical lookup provider is unavailable")
         try:
-            if self._canonical_library is None:
+            if self._cache_canonical_library:
+                if self._canonical_library is None:
+                    with diagnostic_stage("ckl_repository_initialization"):
+                        self._canonical_library = provider()
+                library = self._canonical_library
+            else:
                 with diagnostic_stage("ckl_repository_initialization"):
                     self._canonical_library = provider()
-            library = self._canonical_library
+                library = self._canonical_library
             lookup = getattr(library, "retrieve_by_scripture_reference", None)
             if not callable(lookup):
                 raise TypeError("canonical Scripture retrieval is unavailable")

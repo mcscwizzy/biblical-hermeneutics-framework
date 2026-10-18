@@ -8,6 +8,7 @@ from typing import Any
 
 from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
+from starlette.concurrency import run_in_threadpool
 
 from ..cold_start_diagnostics import diagnostic_stage
 from ..services.narrative_explorer import (
@@ -41,7 +42,8 @@ def register_narrative_explorer_routes(
         verse_end: int | None = Query(default=None),
     ) -> JSONResponse:
         try:
-            projection: dict[str, Any] = explorer_service.build(
+            projection: dict[str, Any] = await run_in_threadpool(
+                explorer_service.build,
                 book,
                 chapter,
                 verse_start=verse_start,

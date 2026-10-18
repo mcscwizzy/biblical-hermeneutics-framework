@@ -786,6 +786,123 @@ class NE6FirefoxIntegrationTests(unittest.TestCase):
             "offline_status": "warning with cached data, retry refreshed online",
         }))
 
+    def test_firefox_manual_study_pack_preserves_reader_data_and_works_offline(self):
+        driver = self.driver
+        self.open_home(390, 844, query="ne7r2-study-pack=1")
+        self.wait.until(lambda browser: browser.execute_script(
+            "return Boolean(navigator.serviceWorker?.controller)"
+        ))
+        self.assertFalse(self._app.state.runtime_config["autoInstallOfflinePacks"])
+        self.assertFalse(driver.execute_script(
+            "return performance.getEntriesByType('resource').some(entry => entry.name.includes('/api/offline/packs/'))"
+        ))
+
+        driver.execute_async_script("""
+            const done = arguments[0];
+            (async () => {
+              await BHFOfflineDB.put('notes', {id:'ne7r2-note', book:'John', chapter:1, body:'keep note'});
+              await BHFOfflineDB.put('highlights', {id:'ne7r2-highlight', book:'John', chapter:1, color:'blue'});
+              await BHFOfflineDB.put('vaultSettings', {id:'ne7r2-setting', value:'keep setting'});
+              done(true);
+            })().catch(error => done({error:String(error)}));
+        """)
+
+        failed_install = driver.execute_async_script("""
+            const done = arguments[0];
+            window.BHFPWA.installOfflinePack('unknown-ne7r2-pack')
+              .then(() => done({unexpectedSuccess:true}))
+              .catch(error => done({message:String(error)}));
+        """)
+        self.assertIn("unknown offline pack", failed_install["message"])
+
+        driver.set_script_timeout(120)
+        installed = driver.execute_async_script("""
+            const done = arguments[0];
+            const started = performance.now();
+            window.BHFPWA.installOfflinePack('study').then(pack => done({
+              packId:pack.pack_id,
+              objectCount:pack.objects?.length || 0,
+              elapsedMs:Number((performance.now()-started).toFixed(2)),
+            })).catch(error => done({error:String(error)}));
+        """)
+        self.assertNotIn("error", installed)
+        self.assertEqual(installed["packId"], "study")
+        self.assertEqual(installed["objectCount"], 637)
+
+        driver.refresh()
+        self.wait.until(lambda browser: browser.execute_script(
+            "return document.querySelector('#chapter-reader h3')?.textContent?.trim() === 'John 1'"
+        ))
+        stored = driver.execute_async_script("""
+            const done = arguments[0];
+            (async () => {
+              const [pack, objects, note, highlight, setting] = await Promise.all([
+                BHFOfflineDB.get('metadata','pack:study'),
+                BHFOfflineDB.list('canonicalObjects'),
+                BHFOfflineDB.get('notes','ne7r2-note'),
+                BHFOfflineDB.get('highlights','ne7r2-highlight'),
+                BHFOfflineDB.get('vaultSettings','ne7r2-setting'),
+              ]);
+              done({
+                packObjects:pack?.payload?.object_count || 0,
+                storedObjects:objects.length,
+                note:note?.body || '',
+                highlight:highlight?.color || '',
+                setting:setting?.value || '',
+              });
+            })().catch(error => done({error:String(error)}));
+        """)
+        self.assertEqual(stored["packObjects"], 637)
+        self.assertEqual(stored["storedObjects"], 637)
+        self.assertEqual(stored["note"], "keep note")
+        self.assertEqual(stored["highlight"], "blue")
+        self.assertEqual(stored["setting"], "keep setting")
+
+        type(self)._server_runner.should_exit = True
+        type(self)._thread.join(timeout=15)
+        self.assertFalse(type(self)._thread.is_alive(), "test server must stop before offline database access")
+        try:
+            # Keep the controlled reader open while offline. Firefox's WebDriver
+            # refresh bypasses the service-worker navigation fallback in this
+            # fixture, so this assertion exercises the installed local pack data.
+            offline = driver.execute_async_script("""
+                const done = arguments[0];
+                (async () => {
+                  const [objects, note, highlight, setting, pack] = await Promise.all([
+                    BHFOfflineDB.list('canonicalObjects'),
+                    BHFOfflineDB.get('notes','ne7r2-note'),
+                    BHFOfflineDB.get('highlights','ne7r2-highlight'),
+                    BHFOfflineDB.get('vaultSettings','ne7r2-setting'),
+                    BHFOfflineDB.get('metadata','pack:study'),
+                  ]);
+                  done({
+                    storedObjects:objects.length,
+                    firstObjectTitle:objects[0]?.title || '',
+                    packObjects:pack?.payload?.object_count || 0,
+                    note:note?.body || '',
+                    highlight:highlight?.color || '',
+                    setting:setting?.value || '',
+                  });
+                })().catch(error => done({error:String(error)}));
+            """)
+            self.assertEqual(offline["storedObjects"], 637)
+            self.assertTrue(offline["firstObjectTitle"])
+            self.assertEqual(offline["packObjects"], 637)
+            self.assertEqual(offline["note"], "keep note")
+            self.assertEqual(offline["highlight"], "blue")
+            self.assertEqual(offline["setting"], "keep setting")
+        finally:
+            type(self)._server_runner = Server(Config(
+                type(self)._app,
+                host="127.0.0.1",
+                port=type(self)._port,
+                log_level="warning",
+                access_log=False,
+            ))
+            type(self)._thread = threading.Thread(target=type(self)._server_runner.run, daemon=True)
+            type(self)._thread.start()
+            _wait_for_url(self._base_url + "/api/health")
+
     def test_firefox_repeated_john2_legacy_body_consumption_with_and_without_service_worker(self):
         from fastapi.responses import JSONResponse
         import bhf_web.routes.maps as map_routes

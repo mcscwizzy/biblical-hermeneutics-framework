@@ -3253,7 +3253,15 @@ def validate_library(
     *,
     manifest: Mapping[str, Any] | None = None,
     source_paths: Mapping[str, str | Path] | None = None,
+    objects_are_validated: bool = False,
 ) -> None:
+    """Validate library-wide consistency and, by default, each object schema.
+
+    Callers that have already produced these objects with ``validate_object``
+    may set ``objects_are_validated`` to avoid repeating the same per-record
+    validation while retaining all cross-record and manifest checks.
+    """
+
     if isinstance(objects, Mapping):
         items = list(objects.values())
     else:
@@ -3272,15 +3280,19 @@ def validate_library(
             errors.append(f"duplicate canonical id '{obj.id}'")
             continue
         seen_ids[obj.id] = obj
-        try:
-            validated_obj = validate_object(
-                obj.to_dict(),
-                path=source_paths.get(obj.id) if source_paths else None,
-            )
-            related_objects_lookup[obj.id] = validated_obj.related_objects
-            evidence_lookup[obj.id] = validated_obj.evidence_items
-        except CanonicalValidationError as exc:
-            errors.append(str(exc))
+        if objects_are_validated:
+            related_objects_lookup[obj.id] = obj.related_objects
+            evidence_lookup[obj.id] = obj.evidence_items
+        else:
+            try:
+                validated_obj = validate_object(
+                    obj.to_dict(),
+                    path=source_paths.get(obj.id) if source_paths else None,
+                )
+                related_objects_lookup[obj.id] = validated_obj.related_objects
+                evidence_lookup[obj.id] = validated_obj.evidence_items
+            except CanonicalValidationError as exc:
+                errors.append(str(exc))
         title_key = normalize_alias(obj.title)
         title_lookup.setdefault(title_key, set()).add(obj.id)
         id_lookup[normalize_id(obj.id)] = obj.id

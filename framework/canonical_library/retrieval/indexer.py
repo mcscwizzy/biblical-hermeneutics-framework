@@ -180,13 +180,19 @@ class CKLIndex:
 
 def inventory_signature(root: str | Path | None = None) -> str:
     root_path = _resolve_root(root)
-    payload: list[tuple[str, int, int, str]] = []
+    payload: list[tuple[str, int, int, int, str]] = []
     for path in _inventory_paths(root_path):
         try:
             stat = path.stat()
         except FileNotFoundError:
             continue
-        payload.append((path.relative_to(root_path).as_posix(), stat.st_size, stat.st_mtime_ns, "json"))
+        payload.append((
+            path.relative_to(root_path).as_posix(),
+            stat.st_size,
+            stat.st_mtime_ns,
+            stat.st_ctime_ns,
+            "json",
+        ))
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
 

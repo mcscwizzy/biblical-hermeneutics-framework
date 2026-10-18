@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -83,7 +84,6 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/api/translations/{translation_id}/offline-data",
                     "/api/bible/books",
                     "/api/commentary/",
-                    "/api/bhf-commentary/",
                 ],
                 "assets": [
                     "/static/style.css",
@@ -104,7 +104,6 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/static/companion-sheet.js",
                     "/static/resource-router.js",
                     "/static/companion-discoveries.js",
-                    "/static/bhf-commentary-card.js",
                     "/static/study-companion.js",
                     "/static/pwa.js",
                     "/static/icons/icon-192.png",
@@ -213,7 +212,12 @@ def build_offline_manifest() -> dict[str, Any]:
     }
 
 
-def build_offline_pack(pack_id: str, *, study_db_path: str | Path) -> dict[str, Any]:
+def build_offline_pack(
+    pack_id: str,
+    *,
+    study_db_path: str | Path,
+    canonical_library_provider: Callable[[], Any] | None = None,
+) -> dict[str, Any]:
     """Return installable offline pack data for a known pack id."""
 
     normalized = str(pack_id or "").strip().lower()
@@ -223,7 +227,8 @@ def build_offline_pack(pack_id: str, *, study_db_path: str | Path) -> dict[str, 
         raise ValueError(f"unknown offline pack: {pack_id}")
 
     if normalized == "study":
-        return _build_study_pack(pack_entry)
+        library = canonical_library_provider() if canonical_library_provider is not None else load_canonical_library()
+        return _build_study_pack(pack_entry, library=library)
     if normalized == "maps":
         return _build_maps_pack(pack_entry, study_db_path=study_db_path)
     if normalized == "core":
@@ -243,8 +248,7 @@ def build_offline_pack(pack_id: str, *, study_db_path: str | Path) -> dict[str, 
     raise ValueError(f"unknown offline pack: {pack_id}")
 
 
-def _build_study_pack(pack_entry: dict[str, Any]) -> dict[str, Any]:
-    library = load_canonical_library()
+def _build_study_pack(pack_entry: dict[str, Any], *, library: Any) -> dict[str, Any]:
     objects = [
         _serialize_object_detail(obj, library, browse=True)
         for obj in sorted(

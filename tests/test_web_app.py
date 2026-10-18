@@ -24,8 +24,8 @@ from bhf_agent.models import (
     ValidationResult,
 )
 from bhf_agent.study_db import get_source, initialize_database, list_sources
+from bhf_agent.runtime_paths import resolve_runtime_data_paths
 from bhf_web.runtime import load_cors_origins, load_runtime_config
-from bhf_web.settings import resolve_runtime_data_paths
 
 try:
     from bhf_web.app import app, create_app
@@ -1307,7 +1307,8 @@ class WebAppTests(unittest.TestCase):
         reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
 
         self.assertIn("/api/bible/search?", search_script)
-        self.assertIn("runBibleSearchFallback", search_script)
+        self.assertIn("submitBibleSearch", search_script)
+        self.assertNotIn("runBibleSearchFallback", search_script)
         self.assertNotIn("/api/bhf-commentary/search", search_script)
         self.assertNotIn("loadCommentarySearch", search_script)
         self.assertNotIn("commentary-search", search_script)
@@ -2888,37 +2889,19 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(payload["prompt"]["preview"])
         self.assertIn("shechem", payload["retrieval"]["selected_entry_ids"])
 
-    def test_reader_ask_job_inherits_selection_fields_with_typed_prompt(self):
-        CapturingAgent.questions = []
-        data = _valid_form()
-        data.update(
-            {
-                "question": "What should I observe before interpreting?",
-                "reader_book": "Romans",
-                "reader_chapter": "12",
-                "reader_start_verse": "1",
-                "reader_end_verse": "2",
-                "reader_selected_text": "present your bodies a living sacrifice",
-            }
+    def test_reader_ask_handoff_uses_current_selection_without_provider_job(self):
+        response = asgi_request("GET", "/")
+        companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
+        app_routes = {getattr(route, "path", None) for route in app.routes}
+
+        self.assertEqual(response["status"], 200)
+        self.assertIn('data-ask-bhf-reference', response["body"])
+        self.assertIn('window.BHFAssistantHandoff?.create?.({', companion_script)
+        self.assertIn(
+            'getSelection: () => window.BHFStudySelection?.getState?.() || {},',
+            companion_script,
         )
-
-        with patch("bhf_web.app.BHFAgent", CapturingAgent):
-            response = asgi_request("POST", "/ask/jobs", data=data)
-
-        self.assertEqual(response["status"], 202)
-        job = json.loads(response["body"])
-        status = wait_for_job(job["job_id"])
-        self.assertTrue(status["done"])
-        self.assertEqual(status["reader_reference"], "Romans 12:1-2")
-        self.assertEqual(len(CapturingAgent.questions), 1)
-        question = CapturingAgent.questions[0]
-        self.assertIn("Using BHF, explain ASV Romans 12:1-2.", question)
-        self.assertIn("User question: What should I observe before interpreting?", question)
-        self.assertIn("Selected text (ASV Romans 12:1-2):\npresent your bodies a living sacrifice", question)
-
-        result = asgi_request("GET", f"/ask/result/{job['job_id']}")
-        self.assertEqual(result["status"], 200)
-        self.assertIn("ASV Romans 12:1-2", result["body"])
+        self.assertNotIn("/ask/jobs", app_routes)
 
     def test_ancient_context_reader_job_builds_phase_one_prompt(self):
         CapturingAgent.questions = []
@@ -3826,7 +3809,23 @@ async def _asgi_request(target_app, method, path, data=None, json_data=None, hea
     async def send(message):
         messages.append(message)
 
-    await target_app(scope, receive, send)
+    loop = asyncio.get_running_loop()
+    wakeup = None
+
+    def schedule_wakeup():
+        nonlocal wakeup
+        wakeup = loop.call_later(0.05, schedule_wakeup)
+
+    # This direct ASGI runner has no socket activity to wake the selector while
+    # a route awaits AnyIO's worker thread. Keep the test loop ticking so a
+    # completed worker result is serviced just as it is by the live-server
+    # browser tests.
+    schedule_wakeup()
+    try:
+        await target_app(scope, receive, send)
+    finally:
+        if wakeup is not None:
+            wakeup.cancel()
     status = next(
         message["status"]
         for message in messages

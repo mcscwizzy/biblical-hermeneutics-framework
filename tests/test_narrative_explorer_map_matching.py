@@ -255,3 +255,55 @@ def test_narrative_opt_in_route_resolution_adds_explicit_links_to_text_matches(m
 
     assert explorer_result["matched_route_ids"] == ["text-route", "anchor-route"]
     assert [route["id"] for route in explorer_result["routes"]] == ["text-route", "anchor-route"]
+
+
+def test_map_marker_catalog_batches_place_references_without_changing_markers(monkeypatch, tmp_path) -> None:
+    places = [
+        {
+            "id": "place-a", "name": "Place A", "latitude": 31.0, "longitude": 35.0,
+            "ancient_region": "Judea", "description": "A place", "periods": [],
+            "aliases": [], "modern_location": "", "confidence": "possible",
+            "confidence_rank": 1, "source_id": "source-a", "source": None,
+            "source_name": "Catalog", "source_url": "", "license": "", "notes": "",
+        },
+        {
+            "id": "place-b", "name": "Place B", "latitude": None, "longitude": None,
+            "ancient_region": "Galilee", "description": "Another place", "periods": [],
+            "aliases": [], "modern_location": "", "confidence": "uncertain",
+            "confidence_rank": 0, "source_id": "source-b", "source": None,
+            "source_name": "Catalog", "source_url": "", "license": "", "notes": "",
+        },
+    ]
+    references = [
+        {"id": "ref-a", "place_id": "place-a", "book": "John", "chapter": 2,
+         "verse_start": 1, "verse_end": 11, "relationship_type": "directly_named", "notes": ""},
+        {"id": "ref-b", "place_id": "place-b", "book": "John", "chapter": 2,
+         "verse_start": 12, "verse_end": 17, "relationship_type": "contextual", "notes": ""},
+    ]
+    requested_ids = []
+
+    monkeypatch.setattr(
+        map_service,
+        "list_biblical_places",
+        lambda **_kwargs: places,
+    )
+
+    def load_references(place_id=None, **_kwargs):
+        requested_ids.append(place_id)
+        if place_id is None:
+            return references
+        return [reference for reference in references if reference["place_id"] == place_id]
+
+    monkeypatch.setattr(map_service, "list_place_references", load_references)
+
+    markers = map_service.get_biblical_place_markers(path=tmp_path / "study.sqlite")
+
+    assert requested_ids == [None]
+    assert [marker["id"] for marker in markers] == ["place-a", "place-b"]
+    assert [marker["related_references"] for marker in markers] == [
+        [references[0]],
+        [references[1]],
+    ]
+    assert [marker["reference_count"] for marker in markers] == [1, 1]
+    assert markers[0]["has_coordinates"] is True
+    assert markers[1]["has_coordinates"] is False

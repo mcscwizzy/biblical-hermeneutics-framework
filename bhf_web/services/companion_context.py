@@ -86,6 +86,7 @@ class CompanionContextService:
     ) -> None:
         self.study_db_path = Path(study_db_path)
         self.canonical_library_provider = canonical_library_provider
+        self._cache_canonical_library = canonical_library_provider is _default_canonical_library
         self.translation_provider = translation_provider
         self.word_study = word_study_service or _default_word_study_service()
         self.commentary = commentary_service or CommentaryService(commentary_db_path)
@@ -516,7 +517,9 @@ class CompanionContextService:
 
     def _canonical_results(self, reference: str) -> list[Any]:
         with self._canonical_cache_lock:
-            if self._canonical_library is None:
+            if self._cache_canonical_library and self._canonical_library is None:
+                self._canonical_library = self.canonical_library_provider()
+            elif not self._cache_canonical_library:
                 self._canonical_library = self.canonical_library_provider()
             library = self._canonical_library
         lookup = getattr(library, "retrieve_by_scripture_reference", None)

@@ -696,7 +696,7 @@ async function openMapPanel(context = {}) {
     // Put the panel into its usable state before waiting on catalog metadata.
     // This matters on slow/offline connections: Explore should still expose
     // its search and navigation controls while the catalog request resolves.
-    const catalog = await loadMapCatalog({ period: "all", includeRecords: browseMode });
+    const catalog = await loadMapCatalog({ period: "all", includeRecords: false });
     if (catalog?.timeline?.period_options) {
       applyTimelineOptions(catalog.timeline.period_options);
     }

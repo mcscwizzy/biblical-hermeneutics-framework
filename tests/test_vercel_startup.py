@@ -53,39 +53,32 @@ def test_vercel_health_endpoint_returns_expected_payload():
     assert result.returncode == 0, result.stderr
 
 
-def test_vercel_commentary_routes_read_packaged_corpus():
+def test_vercel_retired_commentary_route_returns_gone():
     result = _vercel_python(
         "import asyncio\n"
         "import httpx\n"
         "from bhf_web.app import app\n"
-        "async def check_commentary():\n"
+        "async def check_commentary_retirement():\n"
         "    transport = httpx.ASGITransport(app=app)\n"
         "    async with httpx.AsyncClient(\n"
         "        transport=transport, base_url='http://test'\n"
         "    ) as client:\n"
-        "        diagnostics = await client.get('/api/bhf-commentary/diagnostics')\n"
-        "        chapter = await client.get('/api/bhf-commentary/1%20Corinthians/1')\n"
-        "    assert diagnostics.status_code == 200\n"
-        "    assert diagnostics.json()['available'] is True\n"
-        "    assert diagnostics.json()['total_files'] == 1189\n"
-        "    assert chapter.status_code == 200\n"
-        "    assert chapter.json()['available'] is True\n"
-        "    assert chapter.json()['book'] == '1 Corinthians'\n"
-        "    assert chapter.json()['chapter'] == 1\n"
-        "asyncio.run(check_commentary())"
+        "        response = await client.get('/api/bhf-commentary/1%20Corinthians/1')\n"
+        "    assert response.status_code == 410\n"
+        "    assert response.json()['reason'] == 'feature_retired'\n"
+        "    assert 'commentary' not in response.json()\n"
+        "asyncio.run(check_commentary_retirement())"
     )
 
     assert result.returncode == 0, result.stderr
 
 
-def test_vercel_runtime_path_is_not_a_candidate_workspace():
+def test_vercel_runtime_path_helper_stays_out_of_candidate_workspace():
     result = _vercel_python(
         "from bhf_agent.runtime_paths import resolve_runtime_data_paths; "
-        "from bhf_web.services.bhf_commentary import load_commentary_projection; "
         "paths = resolve_runtime_data_paths({'VERCEL': '1'}); "
         "assert 'bhf-commentary-candidates' not in str(paths.bhf_commentary_storage_path); "
-        "assert paths.bhf_commentary_storage_path.name == 'bhf-commentary-v1.1'; "
-        "assert load_commentary_projection(paths.bhf_commentary_storage_path, 'Joshua', 1) is not None"
+        "assert paths.bhf_commentary_storage_path.name == 'bhf-commentary-v1.1'"
     )
 
     assert result.returncode == 0, result.stderr

@@ -1036,7 +1036,7 @@ def test_translation_comparison_reads_cached_bible_text_offline(driver, wait, ba
     assert "Install or import another translation" in comparison.text
 
 
-def test_bhf_context_compare_translations_opens_translation_comparison_resource(driver, wait, base_url):
+def test_compare_translations_opens_translation_comparison_resource(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().assert_shell_visible()
     wait.until(
         lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);")
@@ -1049,12 +1049,11 @@ def test_bhf_context_compare_translations_opens_translation_comparison_resource(
     ).get_attribute("data-workspace-tab")
 
     driver.execute_script(
-        """
-        const card = document.querySelector('[data-bhf-commentary-card]');
-        card.hidden = false;
-        card.querySelector('[data-bhf-commentary-personal-action="compare_translations"]').click();
-        """
+        "window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});"
     )
+    driver.find_element(
+        By.CSS_SELECTOR, '[data-companion-resource="translation_comparison"]'
+    ).click()
     wait.until(
         lambda _driver: driver.execute_script(
             "return window.BHFStudyCompanion.getState().resource === 'translation_comparison';"
@@ -1121,11 +1120,13 @@ def test_translation_comparison_preserves_selected_range_and_reads_unique_instal
     _prepare_translation_comparison(driver, selection, translations)
     before = driver.execute_script("return window.BHFStudySelection.getState();")
     driver.execute_script(
-        "document.querySelector('[data-bhf-commentary-card]').hidden = false;"
-        "document.querySelector('[data-bhf-commentary-personal-action=compare_translations]').click();"
+        "window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});"
     )
+    driver.find_element(
+        By.CSS_SELECTOR, '[data-companion-resource="translation_comparison"]'
+    ).click()
 
-    host = wait.until(
+    wait.until(
         EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-companion-resource-host] .translation-comparison"))
     )
     rendered = driver.execute_script(
@@ -1143,7 +1144,6 @@ def test_translation_comparison_preserves_selected_range_and_reads_unique_instal
         };
         """
     )
-    assert host.is_displayed()
     assert rendered["reference"] == "John 4:4-6"
     assert [item["id"] for item in rendered["translations"]] == ["kjv", "asv"]
     assert all(item["verses"] == [4, 5, 6] for item in rendered["translations"])
@@ -1220,9 +1220,7 @@ def test_translation_comparison_mobile_layout_back_navigation_and_focus(driver, 
     driver.execute_script(
         """
         window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});
-        const card = document.querySelector('[data-bhf-commentary-card]');
-        card.hidden = false;
-        const action = card.querySelector('[data-bhf-commentary-personal-action="compare_translations"]');
+        const action = document.querySelector('[data-companion-resource="translation_comparison"]');
         window.__comparisonAction = action;
         action.focus();
         window.__comparisonTriggerHadFocus = document.activeElement === action;

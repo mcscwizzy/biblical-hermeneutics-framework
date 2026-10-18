@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from bhf_agent.chapter_commentary.richness import audit_corpus, render_human_report
-from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
+from bhf_agent.runtime_paths import default_commentary_storage_path
 
 
 DEFAULT_OUTPUT_ROOT = Path(
@@ -42,7 +42,7 @@ def _write(path: Path, content: str) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--storage-dir", default=str(RUNTIME_DATA_PATHS.bhf_commentary_storage_path)
+        "--storage-dir", default=str(default_commentary_storage_path(os.environ))
     )
     parser.add_argument("--output-root", default=str(DEFAULT_OUTPUT_ROOT))
     args = parser.parse_args(argv)

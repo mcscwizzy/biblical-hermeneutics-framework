@@ -2,7 +2,7 @@ name: Validate
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
 
 jobs:
@@ -20,6 +20,22 @@ jobs:
 
       - name: Validate modules
         run: python tools/validate.py framework/
+
+      - name: Run NE7R3 retirement acceptance tests
+        run: >-
+          pytest -q
+          tests/test_commentary_retirement.py
+          tests/test_narrative_explorer_ui_config.py
+          tests/test_vercel_packaging.py
+          tests/canonical_library/test_manifest.py::CanonicalInventoryTests::test_manifest_counts_match_inventory
+          tests/canonical_library/test_release.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run reader retirement frontend acceptance
+        run: node --test tests/frontend/commentary-retirement.test.js
 
       - name: Verify committed profiles are up to date
         run: |
@@ -40,6 +56,7 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          from pathlib import PurePosixPath
           import tarfile
           import zipfile
 
@@ -50,7 +67,11 @@ jobs:
           with zipfile.ZipFile(wheel) as archive:
               wheel_names = set(archive.namelist())
           with tarfile.open(sdist, "r:gz") as archive:
-              sdist_names = set(archive.getnames())
+              sdist_names = {
+                  PurePosixPath(*PurePosixPath(name).parts[1:]).as_posix()
+                  for name in archive.getnames()
+                  if len(PurePosixPath(name).parts) > 1
+              }
 
           required_wheel_files = {
               "bhf_web/static/sw.js",
@@ -89,6 +110,25 @@ jobs:
 
           if missing:
               raise SystemExit("missing release artifact content: " + ", ".join(missing))
+
+          retired_payload_parts = ("bhf_agent", "data", "commentary-v1.2")
+
+          def has_retired_payload(name):
+              parts = PurePosixPath(name).parts
+              width = len(retired_payload_parts)
+              return any(
+                  parts[index:index + width] == retired_payload_parts
+                  for index in range(len(parts) - width + 1)
+              )
+
+          retired = [
+              *(f"wheel:{name}" for name in sorted(wheel_names) if has_retired_payload(name)),
+              *(f"sdist:{name}" for name in sorted(sdist_names) if has_retired_payload(name)),
+          ]
+          if retired:
+              raise SystemExit(
+                  "retired generated Commentary payload was repackaged: " + ", ".join(retired)
+              )
           PY
 
       - name: Smoke test installed wheel

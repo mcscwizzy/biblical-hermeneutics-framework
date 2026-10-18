@@ -302,13 +302,16 @@ def get_map_catalog(
     }
     if not include_records:
         return catalog
-    catalog.update({
-        "places": get_biblical_place_markers(period=period, path=path),
-        "routes": get_map_routes(period=period, path=path),
-        "historical_layers": get_historical_layers(period=period, path=path),
-        "political_context": get_political_context_layers(period=period, path=path),
-        "saved_map_studies": list_saved_map_studies(path=path),
-    })
+    with diagnostic_stage("maps_places_load_and_period_filter"):
+        catalog["places"] = get_biblical_place_markers(period=period, path=path)
+    with diagnostic_stage("maps_routes_load_and_period_filter"):
+        catalog["routes"] = get_map_routes(period=period, path=path)
+    with diagnostic_stage("maps_historical_layers_load_and_period_filter"):
+        catalog["historical_layers"] = get_historical_layers(period=period, path=path)
+    with diagnostic_stage("maps_political_context_load_and_period_filter"):
+        catalog["political_context"] = get_political_context_layers(period=period, path=path)
+    with diagnostic_stage("maps_saved_study_load"):
+        catalog["saved_map_studies"] = list_saved_map_studies(path=path)
     return catalog
 
 
@@ -330,7 +333,8 @@ def search_map_catalog(
             "total_results": 0,
         }
 
-    catalog = get_map_catalog(period=period, path=path)
+    with diagnostic_stage("maps_catalog_loading"):
+        catalog = get_map_catalog(period=period, path=path)
     search_kind = _normalize_map_search_kind(kind)
     allowed_kinds = {
         "all": {"place", "route", "historical_layer", "political_context"},
@@ -344,26 +348,27 @@ def search_map_catalog(
 
     all_hits: list[dict[str, Any]] = []
     if "place" in allowed_kinds:
-        all_hits.extend(
-            _search_catalog_items(
-                normalized_query,
-                catalog["places"],
-                kind="place",
-                kind_label="Location",
-                fields=[
-                    ("name", 5),
-                    ("aliases", 4),
-                    ("description", 2),
-                    ("ancient_region", 2),
-                    ("modern_location", 2),
-                    ("periods", 1),
-                    ("confidence", 1),
-                    ("notes", 1),
-                ],
-                subtitle_fields=["ancient_region", "modern_location"],
-                summary_fields=["description", "notes"],
+        with diagnostic_stage("maps_place_lookup_and_search_matching"):
+            all_hits.extend(
+                _search_catalog_items(
+                    normalized_query,
+                    catalog["places"],
+                    kind="place",
+                    kind_label="Location",
+                    fields=[
+                        ("name", 5),
+                        ("aliases", 4),
+                        ("description", 2),
+                        ("ancient_region", 2),
+                        ("modern_location", 2),
+                        ("periods", 1),
+                        ("confidence", 1),
+                        ("notes", 1),
+                    ],
+                    subtitle_fields=["ancient_region", "modern_location"],
+                    summary_fields=["description", "notes"],
+                )
             )
-        )
     if "route" in allowed_kinds:
         all_hits.extend(
             _search_catalog_items(
@@ -451,18 +456,31 @@ def get_biblical_place_markers(
 ) -> list[dict[str, Any]]:
     """Return places from the local SQLite data store in map-marker shape."""
 
-    places = list_biblical_places(period=period, path=path) if path else list_biblical_places(period=period)
-    return [
-        _place_to_marker(
-            place,
-            list_place_references,
-            _related_passages_for_place,
-            period=period,
-            path=path,
-            include_related_passages=include_related_passages,
+    with diagnostic_stage("maps_place_source_and_period_filter"):
+        places = (
+            list_biblical_places(period=period, path=path)
+            if path
+            else list_biblical_places(period=period)
         )
-        for place in places
-    ]
+    with diagnostic_stage("maps_place_reference_batch_lookup"):
+        references = list_place_references(path=path) if path else list_place_references()
+    references_by_place: dict[str, list[dict[str, Any]]] = {}
+    for reference in references:
+        references_by_place.setdefault(str(reference["place_id"]), []).append(reference)
+
+    with diagnostic_stage("maps_marker_serialization"):
+        return [
+            _place_to_marker(
+                place,
+                list_place_references,
+                _related_passages_for_place,
+                period=period,
+                path=path,
+                include_related_passages=include_related_passages,
+                references=references_by_place.get(str(place["id"]), []),
+            )
+            for place in places
+        ]
 
 
 def get_related_passages_for_place(
@@ -470,18 +488,20 @@ def get_related_passages_for_place(
     period: str | None = None,
     path: str | Path | None = None,
 ) -> dict[str, Any]:
-    place = get_biblical_place(place_id, path=path) if path else get_biblical_place(place_id)
-    return _related_passages_for_place(
-        place,
-        list_biblical_places,
-        list_map_routes,
-        list_political_context_layers,
-        list_place_references,
-        list_route_references,
-        list_political_context_references,
-        period=period,
-        path=path,
-    )
+    with diagnostic_stage("maps_selected_place_lookup"):
+        place = get_biblical_place(place_id, path=path) if path else get_biblical_place(place_id)
+    with diagnostic_stage("maps_relationship_expansion"):
+        return _related_passages_for_place(
+            place,
+            list_biblical_places,
+            list_map_routes,
+            list_political_context_layers,
+            list_place_references,
+            list_route_references,
+            list_political_context_references,
+            period=period,
+            path=path,
+        )
 
 
 def resolve_places_for_passage(

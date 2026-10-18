@@ -29,6 +29,22 @@ PILOTS = (
 )
 
 
+def _keep_direct_asgi_loop_waking() -> None:
+    """Schedule selector wake-ups for the in-process direct-ASGI harness."""
+
+    loop = asyncio.get_running_loop()
+    def schedule_wakeup() -> None:
+        loop.call_later(0.05, schedule_wakeup)
+
+    # This in-process harness has no socket activity to wake the selector
+    # while a route awaits AnyIO's worker thread. The timer services callbacks
+    # for the harness; it does not assert application concurrency behavior.
+    schedule_wakeup()
+
+    # Keep the timer alive through asyncio.run()'s executor shutdown; the
+    # loop itself cancels pending handles when it closes.
+
+
 @pytest.fixture(scope="module")
 def ckl_library():
     from framework.canonical_library.loader import CanonicalLibrary
@@ -129,6 +145,7 @@ class _ASGIClient:
 
     def get(self, path: str, *, params: dict[str, Any] | None = None) -> httpx.Response:
         async def request() -> httpx.Response:
+            _keep_direct_asgi_loop_waking()
             transport = httpx.ASGITransport(app=self.app)
             async with httpx.AsyncClient(
                 transport=transport,
@@ -580,6 +597,25 @@ def test_app_registers_only_the_versioned_route_and_preserves_existing_api_route
     assert "/api/commentary/{book}/{chapter}" in paths
 
 
+def test_app_ckl_provider_closes_and_reopens_with_application_lifecycle():
+    from bhf_web.app import create_app
+
+    app = create_app()
+    provider = app.state.ckl_provider
+
+    async def exercise_lifecycles() -> None:
+        await app.router.startup()
+        assert provider.snapshot()["closed"] is False
+        await app.router.shutdown()
+        assert provider.snapshot()["closed"] is True
+        await app.router.startup()
+        assert provider.snapshot()["closed"] is False
+        await app.router.shutdown()
+        assert provider.snapshot()["closed"] is True
+
+    asyncio.run(exercise_lifecycles())
+
+
 def test_versioned_api_preserves_cosmic_role_and_uncertain_place_safety(ckl_library):
     client = _client(_service(ckl_library))
     payload = client.get("/api/narrative-explorer/v1/passages/Genesis/3").json()
@@ -594,3 +630,172 @@ def test_versioned_api_preserves_cosmic_role_and_uncertain_place_safety(ckl_libr
     assert eden["place_identification_confidence"] == "unknown"
     assert eden["coordinates_displayable"] is False
     assert eden["stored_coordinates"] == {"latitude": 31.0, "longitude": 35.0}
+
+
+def test_explorer_initialization_does_not_block_unrelated_fastapi_route(tmp_path: Path) -> None:
+    import threading
+
+    from fastapi import FastAPI
+
+    entered = threading.Event()
+    release = threading.Event()
+    health_started = threading.Event()
+
+    class Library:
+        objects_by_id = {}
+
+        def retrieve_by_scripture_reference(self, _reference, *, limit, **_filters):
+            return []
+
+    def blocking_provider():
+        entered.set()
+        assert release.wait(timeout=3), "the test did not release Explorer initialization"
+        return Library()
+
+    service = NarrativeExplorerService(
+        study_db_path=tmp_path / "study.sqlite",
+        canonical_library_provider=blocking_provider,
+        maps_lookup_provider=lambda **_args: DomainLookup(
+            domain="maps", records=(), query_status="complete"
+        ),
+        archaeology_lookup_provider=lambda **_args: DomainLookup(
+            domain="archaeology", records=(), query_status="complete"
+        ),
+    )
+    app = FastAPI()
+    register_narrative_explorer_routes(app, service=service)
+
+    @app.get("/health")
+    async def health():
+        health_started.set()
+        return {"status": "ok"}
+
+    async def exercise() -> None:
+        nonlocal explorer_response
+        _keep_direct_asgi_loop_waking()
+        try:
+            async with httpx.AsyncClient(
+                transport=httpx.ASGITransport(app=app),
+                base_url="http://reader.test",
+            ) as client:
+                explorer = asyncio.create_task(
+                    client.get("/api/narrative-explorer/v1/passages/Genesis/2")
+                )
+                assert await asyncio.to_thread(entered.wait, 1)
+                health_response = await asyncio.wait_for(client.get("/health"), timeout=1)
+                assert health_response.json() == {"status": "ok"}
+                assert health_started.is_set()
+                release.set()
+                explorer_response = await explorer
+        finally:
+            release.set()
+
+    explorer_response = None
+    asyncio.run(exercise())
+    assert explorer_response is not None
+    assert explorer_response.status_code == 200
+
+
+def test_concurrent_explorer_requests_share_one_verified_provider_initialization(
+    tmp_path: Path,
+) -> None:
+    import json
+    import threading
+
+    from fastapi import FastAPI
+
+    from bhf_web.services.ckl_provider import VerifiedCKLProvider
+    from framework.canonical_library.repository import CKLRepositoryConfig
+
+    root = tmp_path / "ckl-source"
+    (root / "objects" / "books").mkdir(parents=True)
+    (root / "manifest.json").write_text(
+        json.dumps({"framework_version": "test", "schema_version": "test"}),
+        encoding="utf-8",
+    )
+    (root / "objects" / "books" / "fixture.json").write_text(
+        '{"id":"fixture"}',
+        encoding="utf-8",
+    )
+    entered = threading.Event()
+    release = threading.Event()
+    calls = 0
+    calls_lock = threading.Lock()
+
+    class Library:
+        objects_by_id = {}
+
+        def retrieve_by_scripture_reference(self, _reference, *, limit, **_filters):
+            return []
+
+    library = Library()
+
+    def loader(_config):
+        nonlocal calls
+        with calls_lock:
+            calls += 1
+        entered.set()
+        assert release.wait(timeout=5), "test did not release provider initialization"
+        return library
+
+    provider = VerifiedCKLProvider(
+        config_provider=lambda: CKLRepositoryConfig(
+            backend="json",
+            json_root=str(root),
+            read_only=True,
+        ),
+        library_loader=loader,
+    )
+    service = NarrativeExplorerService(
+        study_db_path=tmp_path / "study.sqlite",
+        canonical_library_provider=provider.get_library,
+        maps_lookup_provider=lambda **_args: DomainLookup(
+            domain="maps", records=(), query_status="complete"
+        ),
+        archaeology_lookup_provider=lambda **_args: DomainLookup(
+            domain="archaeology", records=(), query_status="complete"
+        ),
+    )
+    app = FastAPI()
+    register_narrative_explorer_routes(app, service=service)
+
+    async def exercise() -> list[httpx.Response]:
+        _keep_direct_asgi_loop_waking()
+        try:
+            async with httpx.AsyncClient(
+                transport=httpx.ASGITransport(app=app),
+                base_url="http://reader.test",
+            ) as client:
+                requests = [
+                    asyncio.create_task(
+                        client.get("/api/narrative-explorer/v1/passages/Genesis/2")
+                    )
+                    for _ in range(8)
+                ]
+                assert await asyncio.to_thread(entered.wait, 2)
+
+                def wait_for_all_requests() -> bool:
+                    with provider._condition:
+                        return provider._condition.wait_for(
+                            lambda: provider._initialization_waiters == 7,
+                            timeout=5,
+                        )
+
+                all_waiting = await asyncio.to_thread(wait_for_all_requests)
+                assert all_waiting
+                release.set()
+                return list(await asyncio.gather(*requests))
+        finally:
+            release.set()
+
+    try:
+        responses = asyncio.run(exercise())
+    finally:
+        release.set()
+        provider.close()
+
+    assert calls == 1
+    assert provider.snapshot()["successful_initializations"] == 1
+    assert provider.snapshot()["single_flight_waits"] == 7
+    assert all(response.status_code == 200 for response in responses)
+    assert all(response.content == responses[0].content for response in responses)
