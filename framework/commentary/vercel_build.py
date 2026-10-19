@@ -6,11 +6,14 @@ import hashlib
 import hmac
 import os
 import re
+import socket
+import ssl
 import tempfile
 from pathlib import Path
 from typing import Callable, Mapping
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 from .importer import import_tyndale_archive
 from .service import CommentaryService
@@ -19,6 +22,7 @@ TYNDALE_PUBLIC_SOURCE_URL = "https://tyndaleopenresources.com/"
 _ARCHIVE_SHA256_RE = re.compile(r"^[0-9a-fA-F]{64}$")
 _DOWNLOAD_TIMEOUT_SECONDS = 120
 _DOWNLOAD_CHUNK_BYTES = 1024 * 1024
+_DOWNLOAD_USER_AGENT = "BHF Framework Tyndale Archive Builder/1.0"
 
 
 def package_database_path() -> Path:
@@ -57,15 +61,19 @@ def build_vercel_tyndale_database(
     with tempfile.TemporaryDirectory(prefix="bhf-tyndale-") as temp_dir:
         archive_path = Path(temp_dir) / "tyndale-open-study-notes.zip"
         try:
-            with opener(archive_url, timeout=_DOWNLOAD_TIMEOUT_SECONDS) as response:
+            request = Request(
+                archive_url,
+                headers={"User-Agent": _DOWNLOAD_USER_AGENT},
+            )
+            with opener(request, timeout=_DOWNLOAD_TIMEOUT_SECONDS) as response:
                 with archive_path.open("wb") as archive_file:
                     while True:
                         chunk = response.read(_DOWNLOAD_CHUNK_BYTES)
                         if not chunk:
                             break
                         archive_file.write(chunk)
-        except Exception:
-            raise RuntimeError("Tyndale archive download failed.") from None
+        except Exception as exc:
+            raise RuntimeError(_download_failure_message(exc)) from None
 
         actual_sha256 = _sha256_file(archive_path)
         if not hmac.compare_digest(actual_sha256, expected_sha256.lower()):
@@ -101,3 +109,34 @@ def _sha256_file(path: Path) -> str:
         for chunk in iter(lambda: source.read(_DOWNLOAD_CHUNK_BYTES), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def _download_failure_message(exc: Exception) -> str:
+    """Describe transport failures without including exception text or URLs."""
+
+    if isinstance(exc, HTTPError):
+        return (
+            "Tyndale archive download failed "
+            f"(category=HTTPError, http_status={exc.code})."
+        )
+
+    reason = exc.reason if isinstance(exc, URLError) else exc
+    if isinstance(reason, socket.gaierror):
+        category = "DNS"
+    elif isinstance(reason, ssl.SSLError):
+        category = "TLS"
+    elif isinstance(reason, (TimeoutError, socket.timeout)):
+        category = "timeout"
+    elif isinstance(reason, ConnectionError):
+        category = "connection"
+    else:
+        category = type(reason).__name__
+
+    details = [f"category={category}"]
+    if isinstance(exc, URLError):
+        details.append(f"exception_type={type(exc).__name__}")
+        details.append(f"reason_type={type(reason).__name__}")
+    errno = getattr(reason, "errno", None)
+    if isinstance(errno, int):
+        details.append(f"errno={errno}")
+    return f"Tyndale archive download failed ({', '.join(details)})."

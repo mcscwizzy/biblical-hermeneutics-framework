@@ -3,6 +3,9 @@ from __future__ import annotations
 import hashlib
 import io
 import json
+import socket
+from urllib.error import HTTPError, URLError
+from urllib.request import Request
 import zipfile
 
 import pytest
@@ -46,9 +49,15 @@ def test_vercel_tyndale_build_verifies_archive_and_redacts_transport_url(
     transport_url = "https://archive.example.test/notes.zip?token=fixture-secret"
     output_path = tmp_path / "framework" / "commentary" / "data" / "tyndale.sqlite"
     requested_urls: list[str] = []
+    requested_user_agents: list[str | None] = []
+    requested_timeouts: list[float] = []
 
-    def fake_urlopen(url: str, *, timeout: float):
-        requested_urls.append(url)
+    def fake_urlopen(request: Request, *, timeout: float):
+        requested_urls.append(request.full_url if isinstance(request, Request) else request)
+        requested_user_agents.append(
+            request.get_header("User-agent") if isinstance(request, Request) else None
+        )
+        requested_timeouts.append(timeout)
         return io.BytesIO(archive_bytes)
 
     result = build_vercel_tyndale_database(
@@ -62,6 +71,8 @@ def test_vercel_tyndale_build_verifies_archive_and_redacts_transport_url(
     )
 
     assert requested_urls == [transport_url]
+    assert requested_user_agents == ["BHF Framework Tyndale Archive Builder/1.0"]
+    assert requested_timeouts == [120]
     assert result["available"] is True
     assert result["healthy"] is True
     assert result["entry_count"] == 1
@@ -107,6 +118,60 @@ def test_vercel_tyndale_build_requires_both_archive_settings_without_showing_val
         )
 
     assert "fixture-secret" not in str(error.value)
+
+
+def test_vercel_tyndale_download_error_reports_http_status_without_url_or_query(
+    tmp_path,
+):
+    transport_url = "https://archive.example.test/notes.zip?token=fixture-secret&sig=hidden"
+
+    def fake_urlopen(request: Request, *, timeout: float):
+        requested_url = request.full_url if isinstance(request, Request) else request
+        raise HTTPError(requested_url, 403, "Forbidden", {}, None)
+
+    with pytest.raises(RuntimeError) as error:
+        build_vercel_tyndale_database(
+            environ={
+                "VERCEL": "1",
+                "BHF_TYNDALE_ARCHIVE_URL": transport_url,
+                "BHF_TYNDALE_ARCHIVE_SHA256": "0" * 64,
+            },
+            output_path=tmp_path / "tyndale.sqlite",
+            urlopen_fn=fake_urlopen,
+        )
+
+    message = str(error.value)
+    assert "category=HTTPError" in message
+    assert "http_status=403" in message
+    assert transport_url not in message
+    assert "fixture-secret" not in message
+    assert "sig=hidden" not in message
+
+
+def test_vercel_tyndale_download_error_reports_dns_category_without_reason_text(
+    tmp_path,
+):
+    transport_url = "https://archive.example.test/notes.zip?token=fixture-secret"
+
+    def fake_urlopen(request: Request, *, timeout: float):
+        raise URLError(socket.gaierror(-2, "archive.example.test could not resolve"))
+
+    with pytest.raises(RuntimeError) as error:
+        build_vercel_tyndale_database(
+            environ={
+                "VERCEL": "1",
+                "BHF_TYNDALE_ARCHIVE_URL": transport_url,
+                "BHF_TYNDALE_ARCHIVE_SHA256": "0" * 64,
+            },
+            output_path=tmp_path / "tyndale.sqlite",
+            urlopen_fn=fake_urlopen,
+        )
+
+    message = str(error.value)
+    assert "category=DNS" in message
+    assert "archive.example.test could not resolve" not in message
+    assert "fixture-secret" not in message
+    assert "?token=" not in message
 
 
 def test_local_build_skips_tyndale_download():
