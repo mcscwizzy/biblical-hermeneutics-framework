@@ -619,6 +619,337 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
+    def test_ne8a_ask_bhf_and_compare_translations_remain_reachable(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        wait = WebDriverWait(self.driver, 60)
+        self.driver.set_window_size(1440, 1200)
+        self.driver.get(self._base_url + "/")
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
+        wait.until(lambda driver: driver.execute_script(
+            "const state=window.BHFStudySelection?.getState?.(); "
+            "return state?.book === 'John' && state.chapter === 1 "
+            "&& document.querySelector('#chapter-reader [data-verse=\"1\"] [data-verse-select]');"
+        ))
+        self.driver.find_element(
+            By.CSS_SELECTOR,
+            '#chapter-reader [data-verse="1"] [data-verse-select]',
+        ).click()
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().reference === 'John 1:1';"
+        ))
+
+        ask = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-ask-bhf]")))
+        ask.click()
+        dialog = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog]")))
+        self.assertIn("John 1:1", dialog.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text)
+        dialog.find_element(By.CSS_SELECTOR, "[data-ask-bhf-close]").click()
+        wait.until(lambda _driver: not dialog.get_attribute("open"))
+
+        self.driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+        wait.until(lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "study")
+        self.driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="translation_comparison"]').click()
+        comparison = wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, ".translation-comparison")
+            if driver.find_elements(By.CSS_SELECTOR, ".translation-comparison [data-comparison-translation]")
+            else False)
+        self.assertGreaterEqual(len(comparison.find_elements(By.CSS_SELECTOR, "[data-comparison-translation]")), 2)
+        self.assertEqual(
+            self.driver.execute_script("return window.BHFStudySelection.getState().reference"),
+            "John 1:1",
+        )
+
+    def test_ne8a_psalm_alias_navigation_preserves_reader_history_and_origin(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import Select, WebDriverWait
+
+        wait = WebDriverWait(self.driver, 90)
+        self.driver.set_window_size(1440, 1200)
+        self.driver.get(self._base_url + "/")
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().book === 'John';"
+        ))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-book]")).select_by_value("Psalms")
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().book === 'Psalms';"
+        ))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("82")
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); return s?.book === 'Psalms' && s.chapter === 82;"
+        ))
+        self.driver.find_element(
+            By.CSS_SELECTOR,
+            '#chapter-reader [data-verse="1"] [data-verse-select]',
+        ).click()
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "return s?.book === 'Psalms' && s.chapter === 82 && s.selectedVerses?.join(',') === '1';"
+        ))
+
+        self.driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+        wait.until(lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "study")
+        self.driver.find_element(By.CSS_SELECTOR, "[data-companion-resource='translation_comparison']").click()
+        comparison = wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, ".translation-comparison")
+            if driver.find_elements(By.CSS_SELECTOR, ".translation-comparison [data-comparison-translation]")
+            else False)
+        self.assertGreaterEqual(len(comparison.find_elements(By.CSS_SELECTOR, "[data-comparison-translation]")), 2)
+        self.assertEqual(
+            self.driver.execute_script("return window.BHFStudySelection.getState().book"),
+            "Psalms",
+        )
+        self.assertEqual(
+            self.driver.execute_script("return window.BHFStudySelection.getState().selectedVerses.join(',')"),
+            "1",
+        )
+        self.driver.back()
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().selectedVerses?.join(',') === '1';"
+        ))
+        wait.until(lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") in {"closed", "peek", "study"})
+        if self.driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") != "study":
+            self.driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+            wait.until(lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "study")
+
+        self.driver.find_element(By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']").click()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        section = wait.until(EC.presence_of_element_located((
+            By.CSS_SELECTOR,
+            "[data-section-id='divine_council_cosmic_geography']",
+        )))
+        section.find_element(By.CSS_SELECTOR, ".narrative-explorer-inspect").click()
+        item_id = "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language"
+        item_action = wait.until(lambda driver: next((element for element in driver.find_elements(
+            By.CSS_SELECTOR,
+            f'[data-narrative-item-id="{item_id}"]',
+        ) if element.is_displayed()), False))
+        item_action.click()
+        detail = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Evidence detail"]')))
+        anchor_group = detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-scripture-anchors")
+        self.assertTrue(any(
+            text.startswith("Psalm 82:1-8") for text in [
+                element.text for element in anchor_group.find_elements(By.TAG_NAME, "p")
+            ]
+        ), "the original CKL reference should retain its singular display spelling")
+        self.assertNotIn("Passage navigation unavailable", detail.text)
+        link = wait.until(EC.element_to_be_clickable((
+            By.XPATH,
+            "//section[contains(@class,'narrative-explorer-scripture-anchors')]//button[normalize-space()='Open Psalms 82:1-8']",
+        )))
+        history_length = self.driver.execute_script("return window.history.length")
+        link.click()
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "return s?.book === 'Psalms' && s.chapter === 82 && s.selectedVerses?.join(',') === '1,2,3,4,5,6,7,8';"
+        ))
+        self.assertGreater(self.driver.execute_script("return window.history.length"), history_length)
+        wait.until(lambda driver: driver.execute_script(
+            "const t=window.history.state?.bhfStudyCompanion?.trail; "
+            "const n=t?.nodes?.[t.activeIndex]; "
+            "return t?.originSelection?.book === 'Psalms' "
+            "&& n?.reference === 'Psalms 82:1-8' "
+            "&& n?.relationship?.anchor === 'Psalm 82:1-8';"
+        ))
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        self.assertIn("Psalms 82", self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
+
+        self.driver.back()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Evidence detail"]')))
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "const t=window.history.state?.bhfStudyCompanion?.trail; "
+            "return s?.book === 'Psalms' && s.chapter === 82 "
+            "&& t?.nodes?.[t.activeIndex]?.kind === 'evidence';"
+        ))
+        self.driver.forward()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "const t=window.history.state?.bhfStudyCompanion?.trail; "
+            "return s?.book === 'Psalms' && s.chapter === 82 "
+            "&& s.selectedVerses?.join(',') === '1,2,3,4,5,6,7,8' "
+            "&& t?.nodes?.[t.activeIndex]?.reference === 'Psalms 82:1-8';"
+        ))
+
+        self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-return-origin").click()
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "return s?.book === 'Psalms' && s.chapter === 82 && s.selectedVerses?.join(',') === '1';"
+        ))
+        origin_heading = wait.until(lambda driver: next((element for element in driver.find_elements(
+            By.CSS_SELECTOR,
+            ".narrative-explorer-passage",
+        ) if "Psalms 82" in element.text), False))
+        self.assertIn("Psalms 82", origin_heading.text)
+
+    def test_ne8a_passage_journeys_show_reader_labels_sources_uncertainty_and_return_path(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import Select, WebDriverWait
+
+        wait = WebDriverWait(self.driver, 90)
+        self.driver.set_window_size(1440, 1200)
+        self.driver.get(self._base_url + "/")
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().book === 'John';"
+        ))
+
+        def select_passage(book, chapter, verses=()):
+            Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-book]")).select_by_value(book)
+            wait.until(lambda driver: driver.execute_script(
+                "return window.BHFStudySelection?.getState?.().book === arguments[0];", book,
+            ))
+            Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value(str(chapter))
+            wait.until(lambda driver: driver.execute_script(
+                "const state=window.BHFStudySelection?.getState?.(); return state?.book === arguments[0] && state?.chapter === arguments[1];",
+                book,
+                chapter,
+            ))
+            for verse in verses:
+                self.driver.find_element(
+                    By.CSS_SELECTOR,
+                    f'#chapter-reader [data-verse="{verse}"] [data-verse-select]',
+                ).click()
+            if verses:
+                expected = ",".join(map(str, verses))
+                wait.until(lambda driver: driver.execute_script(
+                    "return window.BHFStudySelection?.getState?.().selectedVerses?.join(',') === arguments[0];",
+                    expected,
+                ))
+
+        def start_new_journey():
+            self.driver.get(self._base_url + "/")
+            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
+            wait.until(lambda driver: driver.execute_script(
+                "const state=window.BHFStudySelection?.getState?.(); "
+                "return Boolean(state?.book && state?.chapter && document.querySelector('#chapter-reader h3')?.textContent?.trim());"
+            ))
+
+        def open_explorer(reference):
+            entry = self.driver.find_element(By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")
+            self.driver.execute_script(
+                "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
+                entry,
+            )
+            wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
+            entry.click()
+            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+            self.assertIn(reference, self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
+            header_text = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-header").text
+            self.assertIn("Follow this passage into its sources", header_text)
+            self.assertIn("later reception", header_text.lower())
+            self.assertNotIn("CKL parent records", header_text)
+
+        def inspect_record(section_id, identity, expected_label, source_id, content_check, caution_check=None):
+            section = wait.until(EC.presence_of_element_located((
+                By.CSS_SELECTOR,
+                f'[data-section-id="{section_id}"]',
+            )))
+            section.find_element(By.CSS_SELECTOR, ".narrative-explorer-inspect").click()
+            item_action = wait.until(lambda driver: next((element for element in driver.find_elements(
+                By.CSS_SELECTOR,
+                f'[data-narrative-item-id="{identity}"]',
+            ) if element.is_displayed()), False))
+            item = item_action.find_element(By.XPATH, "ancestor::article")
+            self.assertTrue(
+                item.find_element(By.CSS_SELECTOR, ".narrative-explorer-item-kind").text.startswith(expected_label),
+                f"expected reader-facing layer {expected_label!r}",
+            )
+            provenance = item.find_element(By.CSS_SELECTOR, ".narrative-explorer-provenance")
+            provenance.find_element(By.TAG_NAME, "summary").click()
+            self.assertIn("Passage relationship:", provenance.text)
+            self.assertIn(source_id, provenance.text)
+            item_action.click()
+            detail = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Evidence detail"]')))
+            rationale_details = detail.find_elements(By.CSS_SELECTOR, ".narrative-explorer-recorded-rationale summary")
+            if rationale_details:
+                rationale_details[0].click()
+            self.assertIn(content_check, detail.text)
+            if caution_check:
+                cautions = " ".join(element.text for element in detail.find_elements(
+                    By.CSS_SELECTOR,
+                    ".narrative-explorer-caution",
+                ))
+                self.assertIn(caution_check, cautions)
+            self.assertIn("Original Scripture anchors", detail.text)
+            detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-bibliography summary").click()
+            self.assertIn(source_id, detail.text)
+            detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-return-origin").click()
+            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+
+        # Competing readings, the syntax limits around the Nephilim, and later reception.
+        select_passage("Genesis", 6, (1, 2, 3, 4))
+        open_explorer("Genesis 6:1-4")
+        inspect_record(
+            "divine_council_cosmic_geography",
+            "ckl:genesis-flood-postflood-context#evidence:g6-sons-of-god-interpretive-positions",
+            "Scholarly interpretation · disputed position",
+            "g2-doedens-sons-god",
+            "remain disputed",
+        )
+        inspect_record(
+            "biblical_narrative",
+            "ckl:genesis-flood-postflood-context#evidence:g6-nephilim-and-mighty-men",
+            "Scholarly interpretation · literary reading",
+            "g2-doedens-sons-god",
+            "does not unambiguously state",
+        )
+        inspect_record(
+            "archaeology_ancient_history",
+            "ckl:genesis-flood-postflood-context#evidence:g6-second-temple-watchers-reception",
+            "Later reception",
+            "g2-1-enoch-6",
+            "later interpretation rather than adding details",
+            "does not establish that reception as the earlier passage's original meaning",
+        )
+
+        start_new_journey()
+
+        # Psalm 82 separates the wording of the poem from its Ugaritic comparison.
+        select_passage("Psalms", 82)
+        open_explorer("Psalms 82")
+        inspect_record(
+            "divine_council_cosmic_geography",
+            "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+            "Original biblical text · worldview language",
+            "psalm-82-hebrew-text",
+            "identity of the judged figures",
+        )
+        inspect_record(
+            "divine_council_cosmic_geography",
+            "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+            "Ancient comparative literature",
+            "smith-ugaritic-baal-cycle-1994",
+            "relationship to Psalm 82 involve",
+        )
+
+        start_new_journey()
+
+        # Genesis 2 keeps sacred-space interpretation and physical place limits distinct.
+        select_passage("Genesis", 2)
+        open_explorer("Genesis 2")
+        inspect_record(
+            "biblical_geography",
+            "ckl:genesis#evidence:g2-garden-planting-presence",
+            "Geography and place identification",
+            "g1-amit-eden-exposition",
+            "sacred-space interpretation is a scholarly reading",
+        )
+        inspect_record(
+            "biblical_geography",
+            "ckl:genesis#evidence:g2-rivers-and-eden-geographic-limits",
+            "Geography and place identification",
+            "g1-amit-eden-exposition",
+            "The passage gives no coordinates",
+        )
+        self.assertLessEqual(
+            self.driver.execute_script("return document.documentElement.scrollWidth"),
+            self.driver.execute_script("return window.innerWidth"),
+        )
+
     def test_feature_flagged_explorer_uses_desktop_dock_and_mobile_sheet(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.common.keys import Keys

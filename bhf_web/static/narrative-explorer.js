@@ -270,7 +270,13 @@
     const match = readerText(reference).match(/^(.+?)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/);
     if (!match) return {valid: false, reason: "The Scripture reference format is not supported."};
     const normalizeBook = (value) => String(value || "").toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
-    const option = bookOptions.find((entry) => normalizeBook(entry?.value || entry?.label || entry) === normalizeBook(match[1]));
+    const requestedBook = normalizeBook(match[1]);
+    let option = bookOptions.find((entry) => normalizeBook(entry?.value || entry?.label || entry) === requestedBook);
+    if (!option && ["psalm", "psalms"].includes(requestedBook)) {
+      option = bookOptions.find((entry) => ["psalm", "psalms"].includes(
+        normalizeBook(entry?.value || entry?.label || entry),
+      ));
+    }
     if (!option) return {valid: false, reason: "This book name is not in the reader's canonical book list."};
     const book = readerText(option?.value || option?.label || option);
     const chapter = positiveInteger(match[2]);
@@ -577,7 +583,7 @@
       document,
       header,
       "p",
-      "Counts separate parent records, claims, and evidence entries. Multiple projections of one claim are not separate discoveries.",
+      "Follow this passage into its sources. Labels distinguish biblical wording, ancient comparisons, later reception, and scholarly interpretation. Open a record to check its passage link, sources, and uncertainty. Coverage shows what BHF has linked here; it is not a complete account or settled answer. Counts refer to linked records, not independent discoveries.",
     );
     rootElement.append(header);
 
@@ -628,7 +634,7 @@
       unknown: "Availability could not be checked",
     }[state];
     appendTextElement(document, card, "p", stateLabel, `narrative-explorer-availability is-${state}`);
-    const recordCounts = countRecords(items);
+    const recordCounts = countRecords(items, state);
     appendTextElement(document, card, "p", recordCounts, "narrative-explorer-counts");
 
     const sourceDomains = Array.isArray(section.source_domains) ? section.source_domains : [];
@@ -700,24 +706,12 @@
     return [...source].sort((left, right) => String(left.id || "").localeCompare(String(right.id || "")));
   }
 
-  function countRecords(items) {
-    const counts = {objects: 0, claims: 0, evidence: 0, notes: 0, maps: 0, archaeology: 0};
-    items.forEach((item) => {
-      if (item.domain === "ckl" && item.record_kind === "object") counts.objects += 1;
-      else if (item.domain === "ckl" && item.record_kind === "claim") counts.claims += 1;
-      else if (item.domain === "ckl" && item.record_kind === "evidence") counts.evidence += 1;
-      else if (item.domain === "ckl" && item.record_kind === "interpretive_note") counts.notes += 1;
-      else if (item.domain === "maps") counts.maps += 1;
-      else if (item.domain === "archaeology") counts.archaeology += 1;
-    });
-    return [
-      `${counts.objects} CKL parent ${counts.objects === 1 ? "record" : "records"}`,
-      `${counts.claims} ${counts.claims === 1 ? "claim" : "claims"}`,
-      `${counts.evidence} evidence ${counts.evidence === 1 ? "record" : "records"}`,
-      `${counts.notes} interpretive ${counts.notes === 1 ? "note" : "notes"}`,
-      `${counts.maps} map ${counts.maps === 1 ? "record" : "records"}`,
-      `${counts.archaeology} archaeology-service ${counts.archaeology === 1 ? "record" : "records"}`,
-    ].join(" · ");
+  function countRecords(items, state) {
+    if (state === "unknown") return "Record count unavailable because the lookup did not complete.";
+    if (state === "not_represented") return "No linked records were returned by the completed lookup.";
+    const count = items.length;
+    const label = `${count} linked ${count === 1 ? "record" : "records"}`;
+    return state === "partial" ? `${label} from partial results.` : `${label}.`;
   }
 
   function coverageLine(sourceDomain, entry) {
@@ -752,10 +746,13 @@
         ? readerText(item.description)
         : "";
     if (authoredText) appendTextElement(document, card, "p", authoredText, "narrative-explorer-item-copy");
-    const visibleKind = [cosmicRoleLabel(item.cosmic_geography_role), item.evidence_category, item.claim_type, item.assertion_type, item.domain]
-      .map(readerText)
-      .filter(Boolean)
-      .join(" · ");
+    const evidenceLabel = readerEvidenceLabel(item);
+    const cosmicRole = cosmicRoleLabel(item.cosmic_geography_role);
+    const redundantCosmicRole = cosmicRole.toLowerCase().includes("interpretation")
+      && evidenceLabel.toLowerCase().includes("interpretation");
+    const visibleKind = cosmicRole && !redundantCosmicRole
+      ? `${evidenceLabel} · ${cosmicRole}`
+      : evidenceLabel;
     if (visibleKind) appendTextElement(document, card, "p", visibleKind, "narrative-explorer-item-kind");
 
     const provenance = element(document, "details", "narrative-explorer-provenance");
@@ -1020,6 +1017,17 @@
     if (isDisputed(item)) {
       appendTextElement(document, view, "p", "This item records a disputed hypothesis or interpretation; it is not presented as settled evidence.", "narrative-explorer-caution");
     }
+    const temporalRelations = [item?.temporal_relation, ...(Array.isArray(item?.temporal_relations) ? item.temporal_relations : [])]
+      .map((value) => readerText(value).toLowerCase().replace(/_/g, "-"));
+    if (explicitlyDescribesLaterReception(item) && temporalRelations.includes("contemporary")) {
+      appendTextElement(
+        document,
+        view,
+        "p",
+        "This record documents later reception. It does not establish that reception as the earlier passage's original meaning. The CKL Scripture link is marked contemporary, so its temporal metadata needs review.",
+        "narrative-explorer-caution",
+      );
+    }
     if (category === "Ancient comparative literature") {
       appendTextElement(document, view, "p", "Comparative material is not, by itself, evidence of borrowing, quotation, fulfillment, or dependence.", "narrative-explorer-caution");
     }
@@ -1135,20 +1143,41 @@
     const comparative = anchors.some((anchor) => readerText(anchor?.relationship).toLowerCase() === "comparative")
       || temporal.includes("earlier-comparative") || temporal.includes("later-comparative");
     if (category.includes("manuscript") || category.includes("textual-witness") || item?.dispute_status === "textual_variant") return "Manuscript/textual witness";
-    if (temporal.some((value) => value.includes("later")) || category.includes("reception") || claimType.includes("reception")) return "Later reception";
+    if (temporal.some((value) => value.includes("later")) || category.includes("reception") || claimType.includes("reception") || explicitlyDescribesLaterReception(item)) return "Later reception";
     if (["biblical-text", "biblical-textual", "textual-observation"].includes(category) || ["biblical-text", "textual-observation"].includes(claimType)) return "Original biblical text";
     if (category === "worldview-concept") {
       if (item?.assertion_type === "primary-evidence" && anchors.some((anchor) => readerText(anchor?.relationship).toLowerCase() === "direct")) return "Original biblical text · worldview language";
       return isDisputed(item) ? "Scholarly interpretation · disputed position" : "Scholarly interpretation · worldview context";
     }
-    if (category === "geography-environment") return "Original biblical text · geography and identification";
+    if (category === "geography-environment") return "Geography and place identification";
     if (category === "ancient-text" || category === "ancient-literature" || claimType === "historical-cultural") {
       return comparative ? "Ancient comparative literature" : "Historical or cultural background";
     }
     if (category.includes("artifact") || category.includes("historical") || category.includes("cultural") || category.includes("inscription") || category.includes("material-culture") || category.includes("archaeological")) return "Historical or cultural background";
-    if (category.includes("literary") || category.includes("thematic") || ["literary", "composition", "rhetorical"].includes(claimType)) return "Literary or thematic connection";
+    if (category.includes("literary") || category.includes("thematic") || ["literary", "composition", "rhetorical"].includes(claimType)) {
+      if (item?.assertion_type === "secondary-evidence" || isDisputed(item)) return "Scholarly interpretation · literary reading";
+      if (item?.assertion_type === "primary-evidence" && anchors.some((anchor) => readerText(anchor?.relationship).toLowerCase() === "direct")) return "Original biblical text · literary observation";
+      return "Literary or thematic connection";
+    }
     if (category.includes("scholarly") || category.includes("interpretive") || category.includes("theological") || claimType.includes("theolog") || item?.record_kind === "interpretive_note") return "Scholarly interpretation";
-    return `Source category: ${readerText(item?.evidence_category || item?.claim_type || item?.record_kind) || "not recorded"}`;
+    return "Evidence type not recorded";
+  }
+
+  function explicitlyDescribesLaterReception(item) {
+    const rationale = item?.rationale && typeof item.rationale === "object" ? Object.values(item.rationale) : [];
+    const authoredText = [item?.title, item?.claim_text, item?.description, ...rationale]
+      .filter((value) => typeof value === "string")
+      .join(" ")
+      .toLowerCase();
+    return /later reception|later interpretation|reception source|reception witness|later interpretive/.test(authoredText);
+  }
+
+  function readerEvidenceLabel(item) {
+    const domain = readerText(item?.domain).toLowerCase();
+    if (domain === "maps") return item?.record_kind === "route" ? "Map route record" : "Map place record";
+    if (domain === "archaeology") return "Archaeology record";
+    if (domain && domain !== "ckl") return "Related source record";
+    return evidenceCategoryLabel(item);
   }
 
   function isDisputed(item) {
