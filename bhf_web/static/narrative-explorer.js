@@ -270,7 +270,13 @@
     const match = readerText(reference).match(/^(.+?)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/);
     if (!match) return {valid: false, reason: "The Scripture reference format is not supported."};
     const normalizeBook = (value) => String(value || "").toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
-    const option = bookOptions.find((entry) => normalizeBook(entry?.value || entry?.label || entry) === normalizeBook(match[1]));
+    const requestedBook = normalizeBook(match[1]);
+    let option = bookOptions.find((entry) => normalizeBook(entry?.value || entry?.label || entry) === requestedBook);
+    if (!option && ["psalm", "psalms"].includes(requestedBook)) {
+      option = bookOptions.find((entry) => ["psalm", "psalms"].includes(
+        normalizeBook(entry?.value || entry?.label || entry),
+      ));
+    }
     if (!option) return {valid: false, reason: "This book name is not in the reader's canonical book list."};
     const book = readerText(option?.value || option?.label || option);
     const chapter = positiveInteger(match[2]);
@@ -1010,6 +1016,17 @@
     }
     if (isDisputed(item)) {
       appendTextElement(document, view, "p", "This item records a disputed hypothesis or interpretation; it is not presented as settled evidence.", "narrative-explorer-caution");
+    }
+    const temporalRelations = [item?.temporal_relation, ...(Array.isArray(item?.temporal_relations) ? item.temporal_relations : [])]
+      .map((value) => readerText(value).toLowerCase().replace(/_/g, "-"));
+    if (explicitlyDescribesLaterReception(item) && temporalRelations.includes("contemporary")) {
+      appendTextElement(
+        document,
+        view,
+        "p",
+        "This record documents later reception. It does not establish that reception as the earlier passage's original meaning. The CKL Scripture link is marked contemporary, so its temporal metadata needs review.",
+        "narrative-explorer-caution",
+      );
     }
     if (category === "Ancient comparative literature") {
       appendTextElement(document, view, "p", "Comparative material is not, by itself, evidence of borrowing, quotation, fulfillment, or dependence.", "narrative-explorer-caution");

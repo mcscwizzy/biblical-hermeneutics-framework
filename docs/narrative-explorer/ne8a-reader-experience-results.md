@@ -12,11 +12,11 @@ The latest packaging work excludes generated build and retired Commentary candid
 
 | Journey | Findings before NE-8A | Current path and guardrails |
 | --- | --- | --- |
-| Genesis 6:1–4 | The passage-first entry is available after selecting the passage and opening “Explore the Narrative.” The overview used implementation-facing count language and previews exposed raw values such as `worldview-concept` and `literary-convention`. Detail records separate the textual wording, disputed readings, Nephilim syntax limits, and Second Temple reception; each can be inspected with its passage anchors and source references. | Preview labels now distinguish disputed interpretation, literary interpretation, and later reception. “Inspect evidence and connections” opens recorded observations, scholarly interpretation, uncertainty, scripture anchors, and bibliography. The trail returns to the originating passage. The Watchers record’s authored text calls it later reception, while its stored `temporal_relation` says `contemporary`; that metadata conflict remains visible in provenance and needs CKL-owner review. |
-| Psalm 82 | The overview can surface the poem’s assembly language and Ugaritic council comparison, but raw category metadata was not a reader-facing explanation. The records state that the identity of the judged figures and the history behind the imagery remain disputed; comparison does not establish borrowing or Israelite doctrine. | Cards distinguish “Original biblical text · worldview language” from “Ancient comparative literature.” The detail and bibliography expose the Hebrew-text and Ugaritic source records, their anchors, and the recorded limits on historical inference. “Return to Psalms 82” restores the originating passage. A same-passage Scripture anchor stored as “Psalm 82:1–8” is currently marked unavailable because the reader’s canonical book list uses “Psalms”; cross-reference navigation therefore has an alias gap even though returning to the origin works. |
+| Genesis 6:1–4 | The passage-first entry is available after selecting the passage and opening “Explore the Narrative.” The overview used implementation-facing count language and previews exposed raw values such as `worldview-concept` and `literary-convention`. Detail records separate the textual wording, disputed readings, Nephilim syntax limits, and Second Temple reception; each can be inspected with its passage anchors and source references. | Preview labels now distinguish disputed interpretation, literary interpretation, and later reception. “Inspect evidence and connections” opens recorded observations, scholarly interpretation, uncertainty, scripture anchors, and bibliography. The trail returns to the originating passage. NE-8A.1 adds a detail-level caution that distinguishes later reception from Genesis 6’s original meaning and calls out the record’s `contemporary` temporal label for review; the CKL source itself remains unchanged. |
+| Psalm 82 | The overview can surface the poem’s assembly language and Ugaritic council comparison, but raw category metadata was not a reader-facing explanation. The records state that the identity of the judged figures and the history behind the imagery remain disputed; comparison does not establish borrowing or Israelite doctrine. | Cards distinguish “Original biblical text · worldview language” from “Ancient comparative literature.” The detail and bibliography expose the Hebrew-text and Ugaritic source records, their anchors, and the recorded limits on historical inference. “Return to Psalms 82” restores the originating passage. NE-8A.1 resolves `Psalm` as the reader’s canonical `Psalms` name at the navigation boundary: CKL anchor/display text stays `Psalm 82:1–8`, while the reader target and trail use `Psalms 82:1–8`. |
 | Genesis 2 | Garden/sacred-space discussion and river geography are available from the passage. Geography labels could imply all such records were original-text claims even when their assertion type was secondary evidence. The record says Pishon and Gihon remain unidentified and Genesis supplies no coordinates. | The overview uses the neutral “Geography and place identification” label. Detail retains the explicit planting and river observations separately from sacred-space interpretation, and states that the text does not establish a recoverable garden location. The map projection continues to withhold display coordinates when physical identification is unestablished; the cosmic/geographic caution remains intact. |
 
-Across the three journeys, “Evidence and source details” provides the stored evidence category, passage relationship, IDs, and source IDs. Detail views show source bibliography and uncertainty. Connection trails retain the recorded relationship label, direction, and supporting rationale; authored descriptive associations remain distinguishable from established relationships. “Return to …” restores the originating passage. Ask BHF remains in the existing Study Companion flow; NE-8A does not change its handoff.
+Across the three journeys, “Evidence and source details” provides the stored evidence category, passage relationship, IDs, and source IDs. Detail views show source bibliography and uncertainty. Connection trails retain the recorded relationship label, direction, and supporting rationale; authored descriptive associations remain distinguishable from established relationships. “Return to …” restores the originating passage. Ask BHF remains in the existing Study Companion flow; NE-8A.1 does not change its handoff.
 
 Discoverability still depends on the feature flag. NE-8A leaves the default flag unchanged, so the ordinary default reader does not gain a new entry point.
 
@@ -40,8 +40,48 @@ No CKL/database records, API projection contracts, feature defaults, Commentary 
 
 The worktree does not contain `.bhf/commentary.sqlite`, so the existing browser test that reads a local Tyndale database will skip here. Template, API-contract, and parser tests still cover the retained Tyndale surface and data path.
 
+## NE-8A.1 findings and acceptance
+
+### Psalm/Psalms navigation
+
+The reader book selector exposes canonical `Psalms`. `validateScriptureReference` previously compared normalized book names literally, so an evidence anchor beginning `Psalm` failed the allowlist check before the reader navigation callback ran. The fix accepts the singular/plural Psalm aliases when either canonical option is present, prefers an exact reader option, and returns the reader’s canonical book value. It does not rewrite the CKL reference, evidence identity, verse range, or displayed source text.
+
+Firefox verification opened the `Psalm 82:1–8` anchor as `Psalms 82:1–8`, selected verses 1–8, retained the original anchor in trail history, survived browser Back/Forward, and returned to the originating `Psalms 82:1` selection. Compare Translations displayed multiple translations without changing that selection. The frontend regression covers both input spellings and checks that the callback receives canonical navigation text while the stored/displayed reference remains singular.
+
+### Watchers temporal metadata
+
+The CKL record is `framework/canonical_library/objects/cultural_background/genesis-flood-postflood-context.json`, parent object `genesis-flood-postflood-context`, evidence ID `g6-second-temple-watchers-reception`, source passage Genesis 6:1–4, and no claim ID (`claim_ids: []`). Its Scripture-link metadata is `relationship: direct`, `temporal_relation: contemporary`, with a rationale that says the Genesis passage contains the wording or event and that no later passage is indexed. Its temporal scope is empty. The evidence description, primary observation, scholarly interpretation, notes, and title instead explicitly distinguish Genesis wording from later Watchers reception.
+
+The supporting source IDs are `g2r2-local-genesis-1-50` (Genesis text), `g2-doedens-sons-god` (Doedens, 2019), `g2-1-enoch-6` (1 Enoch 6–16, source year -200), and `g2-jubilees-5` (Jubilees 5:1–11, source year -150). The 1 Enoch and Jubilees source notes call them later reception and state they are not evidence for Genesis 6’s immediate wording. There is no separate claim dividing the record’s textual observation from its later-reception material.
+
+The CKL evidence-link contract defines `temporal_relation` as the evidence’s historical relation to its Scripture passage, separate from source-composition or surviving-copy dates. Here, `contemporary` is attached to the Genesis 6:1–4 link; it is not a date for 1 Enoch or Jubilees. The projection passes the stored value through unchanged, so this is not a projection rewrite. The source record combines a direct observation about Genesis with later reception under one evidence ID, making the temporal label ambiguous at item level. Before NE-8A.1 the UI labeled the card “Later reception” from its authored text but also displayed “Temporal relation: contemporary” without explaining the conflict. The detail view now retains that raw provenance and adds a caution: later reception does not establish Genesis 6’s original meaning, and the CKL temporal metadata needs review.
+
+No CKL change was made. Proposed CKL-owner change for separate approval, if the item is confirmed to represent the later-reception evidence described by its title and sources:
+
+```text
+evidence_items[id="g6-second-temple-watchers-reception"]
+  scripture_references[reference="Genesis 6:1-4"].temporal_relation:
+    "contemporary" -> "later-comparative"
+  scripture_references[reference="Genesis 6:1-4"].relevance_rationale:
+    "This item records Second Temple reception of Genesis 6:1-4; the Watchers interpretation belongs to later reception and does not establish the passage's original meaning."
+```
+
+Keep the Scripture relationship, all four source IDs, source years, evidence ID, and source records unchanged. If CKL owners intend `contemporary` to describe only the item's separate Genesis wording observation, split or otherwise distinguish that observation from later reception before changing the temporal relation; the current single evidence record cannot express both layers clearly.
+
+### NE-8A.1 verification
+
+- Frontend: `npm test` — 12/12 test files passed. The Narrative Explorer tests now cover both Psalm spellings, canonical navigation output, preserved CKL anchor text, and the Watchers caveat.
+- Python: focused Narrative Explorer projection/API, UI configuration, packaging, and Commentary-retirement suite — 84 passed.
+- Python: Tyndale commentary, evidence, and Vercel-provisioning suite — 27 passed.
+- Firefox: Psalm alias navigation, selected verses, history Back/Forward, return to origin, and Compare Translations — 1 passed.
+- Firefox: Genesis 6, Psalm 82, and Genesis 2 reader journeys, including the Watchers source/caution; Ask BHF and Compare Translations handoff — 3 passed across the focused runs.
+- Firefox: existing Notes/Highlights study-pack and offline behavior, plus Maps fallback, mobile navigation, and geography safeguards — 2 passed.
+- The local `.bhf/commentary.sqlite` Tyndale fixture is absent, so its browser-backed data test is unavailable separately; the retained Tyndale Python checks passed. No Vercel environment or deployment was changed.
+
+**NE-8A.1 acceptance:** PASS for the Psalm navigation and reader-presentation findings. The temporal metadata source correction remains pending CKL-owner review and was not applied. Keep the feature flag default-off.
+
 ## Remaining concerns and readiness
 
-The explicit temporal metadata conflict on the Genesis 6 Watchers record should be resolved by the CKL owner before enabling the feature by default; NE-8A does not edit CKL. Psalm anchors use “Psalm” while the reader recognizes “Psalms,” so those cross-reference buttons remain unavailable. The default-off feature also still needs the outstanding screen-reader and hosted-package validation called out by NE-7. The latest packaging attempt needs the authorized Tyndale archive variable in its environment before a hosted preview can verify that path.
+The CKL owner should review the mixed-layer Genesis 6 Watchers record and proposed temporal metadata correction before enabling the feature by default. The default-off feature also still needs the outstanding screen-reader and hosted-package validation called out by NE-7. The latest packaging attempt needs the authorized Tyndale archive variable in its environment before a hosted preview can verify that path.
 
-**Recommendation:** NE-8A is a suitable local reader-experience improvement for continued gated review. Keep the feature default-off and do not treat this local validation as a release or rollout sign-off.
+**Recommendation:** Open a PR for the narrowly scoped reader changes and tests. Keep the feature default-off; include the CKL-owner correction proposal for separate review, and do not treat this local validation as a release or rollout sign-off.

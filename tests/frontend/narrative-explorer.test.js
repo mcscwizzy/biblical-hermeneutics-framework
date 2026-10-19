@@ -681,10 +681,60 @@ test("Scripture destinations require a canonical reader book, chapter, and valid
     endVerse: 14,
     reference: "John 1:14",
   });
+  const psalmBooks = [{value: "Psalms", chapters: 150}];
+  assert.deepEqual(explorer.validateScriptureReference("Psalm 82:1-8", psalmBooks), {
+    valid: true,
+    book: "Psalms",
+    chapter: 82,
+    startVerse: 1,
+    endVerse: 8,
+    reference: "Psalms 82:1-8",
+  });
+  assert.deepEqual(explorer.validateScriptureReference("Psalms 82:1-8", psalmBooks), {
+    valid: true,
+    book: "Psalms",
+    chapter: 82,
+    startVerse: 1,
+    endVerse: 8,
+    reference: "Psalms 82:1-8",
+  });
   assert.equal(explorer.validateScriptureReference("Unknown 1:1", books).valid, false);
   assert.equal(explorer.validateScriptureReference("John 22:1", books).valid, false);
   assert.equal(explorer.validateScriptureReference("John 1:8-3", books).valid, false);
   assert.equal(explorer.validateScriptureReference("John 1:0", books).valid, false);
+});
+
+test("Psalm anchor navigation canonicalizes the reader destination and preserves its CKL reference", () => {
+  const data = projection();
+  const item = {
+    ...data.items[1],
+    passage_anchors: [{
+      reference: "Psalm 82:1-8",
+      relationship: "direct",
+      temporal_relation: "contemporary",
+      relevance_rationale: "The recorded anchor remains attached to the source passage.",
+    }],
+    applicable_passage_anchors: [],
+  };
+  const trail = explorer.createTrail({book: "Deuteronomy", chapter: 32, reference: "Deuteronomy 32:8-9"});
+  const opened = [];
+  const view = explorer.renderEvidenceDetail(item, [], trail, {
+    document: fakeDocument(),
+    knownBooks: [{value: "Deuteronomy", chapters: 34}, {value: "Psalms", chapters: 150}],
+    onOpenPassage: (...args) => opened.push(args),
+  });
+  const link = descendants(view).find((element) => element.tagName === "BUTTON"
+    && element.textContent === "Open Psalms 82:1-8");
+  const sourceReference = descendants(view).find((element) => element.tagName === "P"
+    && element.textContent.startsWith("Psalm 82:1-8"));
+
+  assert.ok(link, "the singular CKL spelling should produce a canonical reader link");
+  assert.ok(sourceReference, "the original CKL reference remains visible");
+  assert.equal(item.passage_anchors[0].reference, "Psalm 82:1-8");
+  link.click();
+  assert.equal(opened.length, 1);
+  assert.equal(opened[0][0].reference, "Psalms 82:1-8");
+  assert.equal(opened[0][1].anchor, "Psalm 82:1-8");
 });
 
 test("evidence detail displays only item provenance, uncertainty, bibliography, and safe connections", () => {
@@ -1079,6 +1129,8 @@ test("real NE-5A pilot projections retain their evidence distinctions and exact 
   assert.match(sons.textContent, /major_scholarly_disagreement/);
   assert.match(watchers.textContent, /Later reception/);
   assert.match(watchers.textContent, /attest later interpretation rather than adding details to Genesis/);
+  assert.match(watchers.textContent, /does not establish that reception as the earlier passage's original meaning/i);
+  assert.match(watchers.textContent, /CKL Scripture link is marked contemporary/i);
 
   const assembly = render(readItem("psalm_82.json", "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language"));
   const ugaritic = render(readItem("psalm_82.json", "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison"));
