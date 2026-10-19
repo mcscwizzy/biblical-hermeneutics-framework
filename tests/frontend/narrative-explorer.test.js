@@ -1251,3 +1251,154 @@ test("passage overview cards label text, comparison, reception, and interpretati
     assert.match(provenance.textContent, /Passage relationship:/);
   }
 });
+
+test("overview exposes at most three evidence-backed connection previews with their recorded basis", () => {
+  const fixturePath = (name) => path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline", name);
+  const cases = [
+    {
+      file: "genesis_6_1_4.json",
+      titles: [
+        "Sons of God: documented interpretive positions",
+        "Second Temple Watchers reception of Genesis 6",
+        "Gilgamesh Tablet XI flood comparison",
+      ],
+    },
+    {
+      file: "psalm_82.json",
+      titles: ["Psalm 82 divine-assembly language", "Ugaritic council imagery comparison"],
+    },
+    {
+      file: "deuteronomy_32_8_9.json",
+      titles: ["Deuteronomy 32:8 manuscript variation"],
+    },
+    {
+      file: "genesis_2.json",
+      titles: ["Garden planting and divine presence", "Four rivers and limits of Eden identification"],
+    },
+  ];
+
+  for (const testCase of cases) {
+    const data = JSON.parse(fs.readFileSync(fixturePath(testCase.file), "utf8"));
+    const inspected = [];
+    const root = explorer.renderOverview(data, {
+      document: fakeDocument(),
+      onInspect: (item) => inspected.push(item.id),
+    });
+    const discovery = descendants(root).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
+
+    assert.ok(discovery, `${testCase.file} should expose the connection discovery entry point`);
+    assert.match(discovery.textContent, /Explore related passages and evidence/);
+    assert.match(discovery.textContent, /anchor shows where evidence applies/i);
+    const cards = descendants(discovery).filter((element) => element.dataset.narrativeConnectionPreview === "true");
+    assert.ok(cards.length > 0 && cards.length <= 3, `${testCase.file} should keep the preview concise`);
+    assert.deepEqual(
+      cards.map((card) => descendants(card).find((element) => element.tagName === "H5")?.textContent),
+      testCase.titles,
+      `${testCase.file} should order its compact preview by reader-facing evidence type`,
+    );
+
+    for (const title of testCase.titles) {
+      const card = cards.find((element) => element.textContent.includes(title));
+      assert.ok(card, `${testCase.file} should surface ${title}`);
+      assert.match(card.textContent, /Why this is linked:/);
+      assert.match(card.textContent, /Evidence anchor:|Comparison anchor:/);
+      assert.match(card.textContent, /not establish|does not establish/i);
+      const provenance = descendants(card).find((element) => element.className === "narrative-explorer-provenance");
+      assert.ok(provenance, `${title} should retain expandable evidence provenance`);
+      const previewBasis = descendants(card).find((element) => element.className === "narrative-explorer-preview-basis");
+      assert.ok(provenance.textContent.includes(previewBasis.textContent.replace(/^Why this is linked: /, "")), `${title} should retain the recorded preview basis in its details`);
+      const sourceIds = data.items.find((item) => item.title === title)?.source_ids || [];
+      assert.ok(sourceIds.some((sourceId) => provenance.textContent.includes(sourceId)), `${title} should retain a recorded source ID`);
+      assert.match(provenance.textContent, /Original relationship types:|Connection basis:/);
+      const inspect = descendants(card).find((element) => element.className.includes("narrative-explorer-item-inspect"));
+      assert.ok(inspect, `${title} should use the existing evidence detail action`);
+      inspect.click();
+    }
+
+    assert.equal(inspected.length, testCase.titles.length, "the preview action should reuse the existing inspect callback");
+    if (testCase.file === "genesis_6_1_4.json") {
+      const watchers = cards.find((element) => element.textContent.includes("Second Temple Watchers reception"));
+      assert.match(watchers.textContent, /Scripture link is marked contemporary/i);
+    }
+    if (testCase.file === "psalm_82.json") {
+      assert.match(cards[0].textContent, /identity of the judged figures.*disputed/i);
+      const comparison = cards.find((element) => element.textContent.includes("Ugaritic council imagery comparison"));
+      assert.match(comparison.textContent, /Ancient comparative literature/);
+      assert.match(comparison.textContent, /not decide the referents/);
+    }
+    if (testCase.file === "deuteronomy_32_8_9.json") {
+      assert.match(cards[0].textContent, /Manuscript\/textual witness/);
+      assert.match(cards[0].textContent, /earliest wording and its implications remain debated/i);
+      assert.match(cards[0].textContent, /textual_variant/);
+    }
+    if (testCase.file === "genesis_2.json") {
+      const rivers = cards.find((element) => element.textContent.includes("Four rivers and limits"));
+      assert.match(rivers.textContent, /identification_uncertainty/);
+      assert.match(rivers.textContent, /passage gives no coordinates/i);
+    }
+  }
+});
+
+test("connection preview distinguishes missing coverage from no recorded eligible relationships", () => {
+  const noEdges = projection({connections: []});
+  const noEdgeRoot = explorer.renderOverview(noEdges, {document: fakeDocument()});
+  const noEdgeDiscovery = descendants(noEdgeRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
+  assert.match(noEdgeDiscovery.textContent, /No evidence-linked CKL relationships with a recorded basis are available/i);
+  assert.doesNotMatch(noEdgeDiscovery.textContent, /No evidence exists/i);
+
+  const unavailable = projection({
+    coverage: projection().coverage.map((entry) => entry.domain === "ckl"
+      ? {...entry, state: "unknown", query_status: "failed", reason_code: "ckl_lookup_failed"}
+      : entry),
+    connections: [],
+  });
+  const unavailableRoot = explorer.renderOverview(unavailable, {document: fakeDocument()});
+  const unavailableDiscovery = descendants(unavailableRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
+  assert.match(unavailableDiscovery.textContent, /unavailable because the CKL lookup did not complete/i);
+
+  const partial = projection({
+    coverage: projection().coverage.map((entry) => entry.domain === "ckl"
+      ? {...entry, state: "partial", query_status: "partial", reason_code: "partial_results"}
+      : entry),
+    connections: [],
+  });
+  const partialRoot = explorer.renderOverview(partial, {document: fakeDocument()});
+  const partialDiscovery = descendants(partialRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
+  assert.match(partialDiscovery.textContent, /No previewable relationships are available in the returned partial CKL results/i);
+  assert.doesNotMatch(partialDiscovery.textContent, /No evidence exists/i);
+
+  const fixturePath = path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline/genesis_6_1_4.json");
+  const partialWithRecords = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  partialWithRecords.coverage = partialWithRecords.coverage.map((entry) => entry.domain === "ckl"
+    ? {...entry, state: "partial", query_status: "partial", reason_code: "partial_results"}
+    : entry);
+  const partialRecordsRoot = explorer.renderOverview(partialWithRecords, {document: fakeDocument()});
+  const partialRecordsDiscovery = descendants(partialRecordsRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
+  assert.match(partialRecordsDiscovery.textContent, /CKL results are partial; other linked records may not be available/i);
+  assert.ok(descendants(partialRecordsDiscovery).some((element) => element.dataset.narrativeConnectionPreview === "true"));
+});
+
+test("direct Scripture anchors are not rendered as unclassified CKL associations", () => {
+  const fixturePath = path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline/psalm_82.json");
+  const data = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  const item = data.items.find((candidate) => candidate.id === "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language");
+  const anchor = data.connections.find((edge) => edge.source_id === item.id && edge.basis?.kind === "ckl_scripture_anchor");
+  const detail = explorer.renderEvidenceDetail(item, [anchor], explorer.createTrail({book: "Psalms", chapter: 82, reference: "Psalms 82"}), {
+    document: fakeDocument(),
+    knownBooks: [{value: "Psalms", chapters: 150}],
+  });
+
+  assert.match(detail.textContent, /Scripture passage anchor/);
+  assert.match(detail.textContent, /shows the evidence's passage scope/i);
+  assert.doesNotMatch(detail.textContent, /This authored label is a descriptive association/);
+
+  const comparison = data.items.find((candidate) => candidate.id === "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison");
+  const comparisonAnchor = data.connections.find((edge) => edge.source_id === comparison.id && edge.basis?.kind === "ckl_scripture_anchor");
+  const comparisonDetail = explorer.renderEvidenceDetail(comparison, [comparisonAnchor], explorer.createTrail({book: "Psalms", chapter: 82, reference: "Psalms 82"}), {
+    document: fakeDocument(),
+    knownBooks: [{value: "Psalms", chapters: 150}],
+  });
+  assert.match(comparisonDetail.textContent, /Comparative passage anchor/);
+  assert.match(comparisonDetail.textContent, /does not establish a literary or theological relationship/);
+  assert.doesNotMatch(comparisonDetail.textContent, /This authored label is a descriptive association/);
+});

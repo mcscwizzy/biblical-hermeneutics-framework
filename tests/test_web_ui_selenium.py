@@ -928,6 +928,19 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
 
         start_new_journey()
 
+        # Deuteronomy 32 keeps the variant evidence distinct from its implications.
+        select_passage("Deuteronomy", 32, (8, 9))
+        open_explorer("Deuteronomy 32:8-9")
+        inspect_record(
+            "archaeology_ancient_history",
+            "ckl:ancient-divine-assembly-imagery#evidence:deuteronomy-32-8-manuscript-variant",
+            "Manuscript/textual witness",
+            "deuteronomy-32-text",
+            "4QDeuteronomy-j",
+        )
+
+        start_new_journey()
+
         # Genesis 2 keeps sacred-space interpretation and physical place limits distinct.
         select_passage("Genesis", 2)
         open_explorer("Genesis 2")
@@ -949,6 +962,85 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             self.driver.execute_script("return document.documentElement.scrollWidth"),
             self.driver.execute_script("return window.innerWidth"),
         )
+
+    def test_ne8b_connection_preview_desktop_mobile(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import Select, WebDriverWait
+
+        wait = WebDriverWait(self.driver, 90)
+        self.driver.set_window_size(1440, 1200)
+        self.driver.get(self._base_url + "/")
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().book === 'John';"
+        ))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-book]")).select_by_value("Genesis")
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().book === 'Genesis';"
+        ))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("6")
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); return s?.book === 'Genesis' && s.chapter === 6;"
+        ))
+        entry = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
+        self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", entry)
+        entry.click()
+        discovery = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")))
+        wait.until(lambda driver: len(driver.find_elements(
+            By.CSS_SELECTOR,
+            ".narrative-explorer-connection-discovery [data-narrative-connection-preview='true']",
+        )) == 3)
+        preview = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")
+        preview_text = preview.text
+        self.assertIn("Sons of God: documented interpretive positions", preview_text)
+        self.assertIn("Second Temple Watchers reception of Genesis 6", preview_text)
+        self.assertIn("Gilgamesh Tablet XI flood comparison", preview_text)
+        self.assertIn("The CKL Scripture link is marked contemporary", preview_text)
+        self.assertIn("does not by itself establish", discovery.text)
+        self.assertLessEqual(
+            self.driver.execute_script("return document.documentElement.scrollWidth"),
+            self.driver.execute_script("return window.innerWidth"),
+        )
+        self.assertTrue(self.driver.find_element(
+            By.CSS_SELECTOR,
+            ".narrative-explorer-connection-discovery .narrative-explorer-item-inspect",
+        ).is_enabled())
+        resource_host = self.driver.find_element(By.CSS_SELECTOR, ".companion-resource-host")
+        self.driver.execute_script("arguments[0].scrollTop=0;", resource_host)
+        self.driver.save_screenshot("/tmp/ne8b-connection-preview-desktop.png")
+        discovery.screenshot("/tmp/ne8b-connection-discovery-desktop.png")
+
+        inspect = discovery.find_element(By.CSS_SELECTOR, ".narrative-explorer-item-inspect")
+        inspect.send_keys(Keys.ENTER)
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Evidence detail"]')))
+        self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-return-origin").click()
+        discovery = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")))
+
+        self.driver.set_window_size(390, 1040)
+        wait.until(lambda driver: driver.execute_script("return window.matchMedia('(max-width: 760px)').matches"))
+        discovery = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")
+        resource_host = self.driver.find_element(By.CSS_SELECTOR, ".companion-resource-host")
+        self.driver.execute_script(
+            "arguments[0].scrollTop += arguments[1].getBoundingClientRect().top - arguments[0].getBoundingClientRect().top;",
+            resource_host,
+            discovery,
+        )
+        self.assertLessEqual(
+            self.driver.execute_script("return document.documentElement.scrollWidth"),
+            self.driver.execute_script("return window.innerWidth"),
+        )
+        self.assertGreaterEqual(self.driver.find_element(
+            By.CSS_SELECTOR,
+            ".narrative-explorer-connection-discovery .narrative-explorer-provenance summary",
+        ).rect["height"], 40)
+        self.driver.save_screenshot("/tmp/ne8b-connection-preview-mobile.png")
+        discovery.screenshot("/tmp/ne8b-connection-discovery-mobile.png")
+        provenance = discovery.find_element(By.CSS_SELECTOR, ".narrative-explorer-provenance")
+        summary = provenance.find_element(By.TAG_NAME, "summary")
+        summary.send_keys(Keys.ENTER)
+        self.assertTrue(provenance.get_attribute("open"))
 
     def test_feature_flagged_explorer_uses_desktop_dock_and_mobile_sheet(self):
         from selenium.webdriver.common.by import By
