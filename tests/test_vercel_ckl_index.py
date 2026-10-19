@@ -241,7 +241,7 @@ def test_vercel_runtime_rejects_database_path_override(tmp_path: Path, monkeypat
         repository_config_from_env()
 
 
-def test_vercel_config_runs_source_build_and_includes_only_ckl_runtime_inputs() -> None:
+def test_vercel_config_runs_source_build_and_includes_ckl_and_tyndale_runtime_inputs() -> None:
     repository_root = Path(__file__).resolve().parents[1]
     project_config = tomllib.loads((repository_root / "pyproject.toml").read_text(encoding="utf-8"))
     vercel_config = json.loads((repository_root / "vercel.json").read_text(encoding="utf-8"))
@@ -251,8 +251,16 @@ def test_vercel_config_runs_source_build_and_includes_only_ckl_runtime_inputs() 
         "python -m framework.canonical_library.vercel_build"
     )
     includes = vercel_config["functions"]["bhf_web/app.py"]["includeFiles"]
-    assert includes == "framework/canonical_library/**"
     assert isinstance(includes, str)
+    patterns = (
+        includes[1:-1].split(",")
+        if includes.startswith("{") and includes.endswith("}")
+        else [includes]
+    )
+    assert set(patterns) == {
+        "framework/canonical_library/**",
+        "framework/commentary/data/tyndale.sqlite",
+    }
     assert ".bhf-data/**" in ignore_patterns
     assert ".env*" in ignore_patterns
     assert "local.config.json" in ignore_patterns

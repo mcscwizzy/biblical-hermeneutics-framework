@@ -87,6 +87,20 @@ def test_vercel_config_excludes_build_generated_package_tree():
     )
 
 
+def test_vercel_function_explicitly_includes_built_tyndale_database():
+    config = json.loads((ROOT / "vercel.json").read_text())
+    function = config["functions"]["bhf_web/app.py"]
+    include_pattern = function["includeFiles"]
+    patterns = (
+        include_pattern[1:-1].split(",")
+        if include_pattern.startswith("{") and include_pattern.endswith("}")
+        else [include_pattern]
+    )
+
+    assert "framework/commentary/data/tyndale.sqlite" in patterns
+    assert not _is_explicitly_excluded("framework/commentary/data/tyndale.sqlite")
+
+
 def test_vercel_uv_sync_does_not_install_project_twice():
     project = tomllib.loads((ROOT / "pyproject.toml").read_text())
     assert project["tool"]["uv"]["package"] is False

@@ -43,6 +43,13 @@ def default_runtime_data_dir(environ: Mapping[str, str]) -> Path:
     return Path(".bhf-data")
 
 
+def packaged_tyndale_database_path() -> Path:
+    """Return the immutable Tyndale database bundled into Vercel functions."""
+
+    repository_root = Path(__file__).resolve().parents[1]
+    return repository_root / "framework" / "commentary" / "data" / "tyndale.sqlite"
+
+
 def configured_commentary_release(environ: Mapping[str, str] | None = None) -> str:
     """Return the validated immutable commentary release identifier."""
 
@@ -96,15 +103,21 @@ def resolve_runtime_data_paths(
 
     values = os.environ if environ is None else environ
     data_dir = Path(values.get("BHF_DATA_DIR") or default_runtime_data_dir(values))
+    configured_commentary_path = values.get("BHF_COMMENTARY_DB_PATH")
+    packaged_commentary_path = packaged_tyndale_database_path()
+    if configured_commentary_path:
+        commentary_db_path = Path(configured_commentary_path)
+    elif values.get("VERCEL") and packaged_commentary_path.is_file():
+        commentary_db_path = packaged_commentary_path
+    else:
+        commentary_db_path = data_dir / "commentary.sqlite"
     return RuntimeDataPaths(
         data_dir=data_dir,
         study_db_path=Path(
             values.get("BHF_STUDY_DB_PATH") or data_dir / "study.sqlite"
         ),
         job_db_path=Path(values.get("BHF_JOB_DB_PATH") or data_dir / "jobs.sqlite"),
-        commentary_db_path=Path(
-            values.get("BHF_COMMENTARY_DB_PATH") or data_dir / "commentary.sqlite"
-        ),
+        commentary_db_path=commentary_db_path,
         bhf_commentary_storage_path=(
             default_commentary_storage_path(values) if include_bhf_commentary else None
         ),
