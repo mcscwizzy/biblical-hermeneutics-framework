@@ -447,7 +447,7 @@ test("overview renders bounded source records, coverage and provenance without H
   assert.match(root.textContent, /Maps: lookup completed; 3 source records returned/);
   assert.match(root.textContent, /Archaeology service: lookup completed; no linked archaeology-service records returned/);
   assert.equal(narrativePreviewList.children.length, 2);
-  assert.match(narrativeCard.textContent, /80 claims/);
+  assert.match(narrativeCard.textContent, /80 linked records/);
   assert.match(root.textContent, /Genesis 1:1-31/);
   assert.match(root.textContent, /high/);
   assert.match(root.textContent, /probable/);
@@ -1064,7 +1064,7 @@ test("real NE-5A pilot projections retain their evidence distinctions and exact 
   );
 
   const garden = render(readItem("genesis_2.json", "ckl:genesis#evidence:g2-garden-planting-presence"));
-  assert.match(garden.textContent, /geography and identification/i);
+  assert.match(garden.textContent, /geography and place identification/i);
   assert.match(garden.textContent, /Eden-as-sacred-space or temple analogies are interpretations/);
   assert.match(garden.textContent, /interpretive_uncertainty/);
 
@@ -1094,4 +1094,108 @@ test("real NE-5A pilot projections retain their evidence distinctions and exact 
   assert.match(manuscript.textContent, /textual_variant/);
   assert.match(manuscript.textContent, /earliest reading and its conceptual implications remains a textual-critical judgment/);
   assert.match(manuscript.textContent, /ckl:ancient-divine-assembly-imagery#evidence:deuteronomy-32-8-manuscript-variant/);
+});
+
+test("overview guides readers and reports coverage-aware linked record counts", () => {
+  const data = projection({
+    passage: {reference: "Genesis 6:1-4", book: "Genesis", chapter: 6, verse_start: 1, verse_end: 4, scope: "verse_range"},
+    sections: [
+      section("biblical_narrative", ["ckl:creation#claim:days"], "available"),
+      section("archaeology_ancient_history", [], "not_represented"),
+      {...section("biblical_geography"), source_domains: ["canonical_knowledge_library", "passage_maps"], state: "unknown"},
+      section("divine_council_cosmic_geography", ["ckl:creation#claim:days"], "partial"),
+      section("themes_biblical_connections"),
+      section("people_events_relationships"),
+    ],
+    items: [projection().items[0]],
+  });
+
+  const root = explorer.renderOverview(data, {document: fakeDocument()});
+  const sectionsHost = descendants(root).find((element) => element.className === "narrative-explorer-sections");
+  const sectionCard = (id) => sectionsHost.children.find((element) => element.dataset.sectionId === id);
+
+  assert.match(root.textContent, /Follow this passage into its sources/);
+  assert.match(root.textContent, /biblical wording, ancient comparisons, later reception, and scholarly interpretation/i);
+  assert.match(root.textContent, /passage link, sources, and uncertainty/i);
+  assert.match(root.textContent, /coverage shows what BHF has linked here/i);
+  assert.match(root.textContent, /counts refer to linked records, not independent discoveries/i);
+  assert.match(sectionCard("biblical_narrative").textContent, /1 linked record/);
+  assert.match(sectionCard("archaeology_ancient_history").textContent, /No linked records were returned by the completed lookup/);
+  assert.match(sectionCard("biblical_geography").textContent, /Record count unavailable because the lookup did not complete/);
+  assert.match(sectionCard("divine_council_cosmic_geography").textContent, /1 linked record from partial results/);
+  assert.doesNotMatch(root.textContent, /CKL parent records|0 claims · 0 evidence records/);
+});
+
+test("passage overview cards label text, comparison, reception, and interpretation from CKL records", () => {
+  const cases = [
+    {
+      file: "genesis_6_1_4.json",
+      id: "ckl:genesis-flood-postflood-context#evidence:g6-sons-of-god-interpretive-positions",
+      label: "Scholarly interpretation · disputed position",
+      sourceId: "g2-doedens-sons-god",
+      rawCategory: "worldview-concept",
+    },
+    {
+      file: "genesis_6_1_4.json",
+      id: "ckl:genesis-flood-postflood-context#evidence:g6-nephilim-and-mighty-men",
+      label: "Scholarly interpretation · literary reading",
+      sourceId: "g2-doedens-sons-god",
+      rawCategory: "literary-convention",
+    },
+    {
+      file: "genesis_6_1_4.json",
+      id: "ckl:genesis-flood-postflood-context#evidence:g6-second-temple-watchers-reception",
+      label: "Later reception",
+      sourceId: "g2-1-enoch-6",
+      rawCategory: "ancient-text",
+    },
+    {
+      file: "psalm_82.json",
+      id: "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+      label: "Original biblical text · worldview language",
+      sourceId: "psalm-82-hebrew-text",
+      rawCategory: "worldview-concept",
+    },
+    {
+      file: "psalm_82.json",
+      id: "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+      label: "Ancient comparative literature",
+      sourceId: "smith-ugaritic-baal-cycle-1994",
+      rawCategory: "ancient-text",
+    },
+    {
+      file: "genesis_2.json",
+      id: "ckl:genesis#evidence:g2-garden-planting-presence",
+      label: "Geography and place identification",
+      sourceId: "g1-amit-eden-exposition",
+      rawCategory: "geography-environment",
+    },
+    {
+      file: "genesis_2.json",
+      id: "ckl:genesis#evidence:g2-rivers-and-eden-geographic-limits",
+      label: "Geography and place identification",
+      sourceId: "g1-amit-eden-exposition",
+      rawCategory: "geography-environment",
+    },
+  ];
+  const fixturePath = (name) => path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline", name);
+
+  for (const testCase of cases) {
+    const data = JSON.parse(fs.readFileSync(fixturePath(testCase.file), "utf8"));
+    const sectionId = data.sections.find((entry) => entry.item_ids.includes(testCase.id))?.id;
+    const root = explorer.renderOverview(data, {document: fakeDocument(), onInspect: () => {}});
+    const sectionCard = descendants(root).find((element) => element.dataset.sectionId === sectionId);
+    const inspect = descendants(sectionCard).find((element) => element.className.includes("narrative-explorer-inspect"));
+    inspect.click();
+    const itemCard = descendants(sectionCard).find((element) => element.tagName === "ARTICLE"
+      && descendants(element).some((child) => child.dataset.narrativeItemId === testCase.id));
+    const label = descendants(itemCard).find((element) => element.className === "narrative-explorer-item-kind");
+    const provenance = descendants(itemCard).find((element) => element.className === "narrative-explorer-provenance");
+
+    assert.equal(label.textContent, testCase.label, `${testCase.id} should use its reader-facing evidence layer`);
+    assert.doesNotMatch(label.textContent, /worldview-concept|ancient-text|geography-environment|literary-convention/);
+    assert.match(provenance.textContent, new RegExp(`Evidence category: ${testCase.rawCategory}`));
+    assert.match(provenance.textContent, new RegExp(testCase.sourceId));
+    assert.match(provenance.textContent, /Passage relationship:/);
+  }
 });
