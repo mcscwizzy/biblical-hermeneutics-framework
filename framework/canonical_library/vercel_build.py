@@ -54,6 +54,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     arguments = build_parser().parse_args(argv)
     report = build_vercel_ckl_index(source_root=arguments.source_root, output_path=arguments.output)
     print(json.dumps(report, sort_keys=True))
+    from framework.commentary.vercel_build import build_vercel_tyndale_database
+
+    tyndale_report = build_vercel_tyndale_database()
+    if tyndale_report is not None:
+        print(json.dumps({"tyndale": tyndale_report}, sort_keys=True))
     return 0
 
 

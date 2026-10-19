@@ -137,23 +137,32 @@ def _wait_for_service_worker_control(driver, wait) -> None:
 
 
 def _install_offline_packs(driver, *pack_ids: str) -> None:
-    result = driver.execute_async_script(
-        """
-        const packs = Array.from(arguments).slice(0, -1);
-        const done = arguments[arguments.length - 1];
-        (async () => {
-          if (!window.BHFPWA || typeof window.BHFPWA.installOfflinePack !== "function") {
-            done("PWA pack installer unavailable");
-            return;
-          }
-          for (const pack of packs) {
-            await window.BHFPWA.installOfflinePack(pack);
-          }
-          done(true);
-        })().catch((error) => done(String(error && error.message || error)));
-        """,
-        *pack_ids,
-    )
+    # The study pack is roughly 15 MB and takes about 24 seconds to build,
+    # transfer, and cache in local Chrome. Keep the assertion, but allow the
+    # measured operation to finish instead of timing out at the fixture's
+    # general 20-second script limit.
+    previous_script_timeout = driver.timeouts.script
+    driver.set_script_timeout(60)
+    try:
+        result = driver.execute_async_script(
+            """
+            const packs = Array.from(arguments).slice(0, -1);
+            const done = arguments[arguments.length - 1];
+            (async () => {
+              if (!window.BHFPWA || typeof window.BHFPWA.installOfflinePack !== "function") {
+                done("PWA pack installer unavailable");
+                return;
+              }
+              for (const pack of packs) {
+                await window.BHFPWA.installOfflinePack(pack);
+              }
+              done(true);
+            })().catch((error) => done(String(error && error.message || error)));
+            """,
+            *pack_ids,
+        )
+    finally:
+        driver.set_script_timeout(previous_script_timeout)
     assert result is True, result
 
 

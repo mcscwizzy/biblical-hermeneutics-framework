@@ -50,6 +50,11 @@ entrypoint = "bhf_web.app:app"
 [tool.vercel.scripts]
 build = "python -m framework.canonical_library.vercel_build"
 
+[tool.uv]
+# Vercel bundles the checked-out source; syncing dependencies must not install
+# a second copy of this project or create a build/lib tree in the function.
+package = false
+
 [tool.setuptools]
 include-package-data = true
 

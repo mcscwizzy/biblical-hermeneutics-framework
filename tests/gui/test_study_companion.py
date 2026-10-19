@@ -1005,7 +1005,7 @@ def test_tyndale_companion_tab_remains_independent_and_follows_chapter_and_selec
 
 
 def test_translation_comparison_reads_cached_bible_text_offline(driver, wait, base_url):
-    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    HomePage(driver, wait, base_url).open().wait_loaded().assert_shell_visible()
     wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFOfflineDB && window.BHFStudySelection);"))
     result = driver.execute_async_script(
         """
