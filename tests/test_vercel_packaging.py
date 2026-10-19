@@ -1,8 +1,14 @@
+import fnmatch
 import json
 import os
 from pathlib import Path
 import subprocess
 import sys
+
+try:
+    import tomllib
+except ImportError:  # pragma: no cover - Python 3.9/3.10 compatibility
+    import tomli as tomllib
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,6 +38,12 @@ def _is_explicitly_excluded(path: str) -> bool:
     return False
 
 
+def _matches_function_exclude(path: str, pattern: str) -> bool:
+    normalized = path.strip("/")
+    patterns = pattern[1:-1].split(",") if pattern.startswith("{") and pattern.endswith("}") else [pattern]
+    return any(fnmatch.fnmatchcase(normalized, item) for item in patterns)
+
+
 def _vercel_python(command: str) -> subprocess.CompletedProcess[str]:
     environment = os.environ.copy()
     for name in tuple(environment):
@@ -48,13 +60,36 @@ def _vercel_python(command: str) -> subprocess.CompletedProcess[str]:
     )
 
 
-def test_vercel_config_keeps_only_the_candidate_workspace_exclusion():
+def test_vercel_config_excludes_build_generated_package_tree():
     config = json.loads((ROOT / "vercel.json").read_text())
     function = config["functions"]["bhf_web/app.py"]
-    assert function["excludeFiles"] == ".bhf-data/bhf-commentary-candidates/**"
+    exclude_pattern = function["excludeFiles"]
+    assert isinstance(exclude_pattern, str)
+    assert exclude_pattern == "{.bhf-data/bhf-commentary-candidates/**,build/**}"
     assert _is_explicitly_excluded(
         ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-008/preflight-report.json"
     )
+    assert _matches_function_exclude(
+        ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-008/preflight-report.json",
+        exclude_pattern,
+    )
+    assert _matches_function_exclude(
+        "build/lib/framework/canonical_library/__init__.py",
+        exclude_pattern,
+    )
+    assert not _matches_function_exclude(
+        "framework/canonical_library/data/ckl.sqlite",
+        exclude_pattern,
+    )
+    assert not _matches_function_exclude(
+        "framework/lexical/database/lexicon.sqlite.gz",
+        exclude_pattern,
+    )
+
+
+def test_vercel_uv_sync_does_not_install_project_twice():
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text())
+    assert project["tool"]["uv"]["package"] is False
 
 
 def test_vercel_ignore_keeps_active_reader_resources_and_excludes_dev_inputs():
