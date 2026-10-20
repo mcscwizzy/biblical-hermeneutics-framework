@@ -1,0 +1,99 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Hebrews 1:1-4"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "later_canonical_reception",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "dense citation and echo",
+      "original_relationship_type": "epistle-example",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:what-is-intertextuality",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "what-is-intertextuality",
+          "source_id": "hebrews-1",
+          "title": "Hebrews 1"
+        },
+        {
+          "author": "Michael W. Holmes, editor",
+          "object_id": "hebrews",
+          "source_id": "heb-greek",
+          "title": "SBL Greek New Testament: Hebrews",
+          "year": 2010
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Hebrews 1:1-4"
+      ],
+      "supporting_records": [
+        "ckl:what-is-intertextuality#source:hebrews-1",
+        "ckl:hebrews#source:heb-greek"
+      ],
+      "target_id": "ckl:hebrews",
+      "textual_observation": "Hebrews 1:1-4 is an anchor owned by the source record. The authored note states: dense citation and echo",
+      "uncertainty": "Hebrews 1 quotes and reuses earlier texts; the relation is explicit at points, while the broader method and theological claims remain interpretive.",
+      "why": "At Hebrews 1:1-4, the source record gives a passage-level basis for this authored connection: dense citation and echo. The link retains the direction from What is intertextuality? to Hebrews."
+    },
+    {
+      "applicable_passages": [
+        "John 1:1-18"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "allusion-rich theology",
+      "original_relationship_type": "gospel-example",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:what-is-intertextuality",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "what-is-intertextuality",
+          "source_id": "john-1",
+          "title": "John 1"
+        },
+        {
+          "author": "",
+          "object_id": "john",
+          "source_id": "john-greek",
+          "title": "The Gospel according to John, Greek text",
+          "year": 2010
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "John 1:1-18"
+      ],
+      "supporting_records": [
+        "ckl:what-is-intertextuality#source:john-1",
+        "ckl:john#source:john-greek"
+      ],
+      "target_id": "ckl:john",
+      "textual_observation": "John 1:1-18 is an anchor owned by the source record. The authored note states: allusion-rich theology",
+      "uncertainty": "John 1's 'beginning' and creation language are commonly related to Genesis 1, but the degree of direct literary dependence versus shared scriptural motif remains interpretive.",
+      "why": "John's prologue opens with creation language that recalls Genesis 1; this is a proposed scriptural echo rather than a verbatim quotation."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "prophetic_reception_motifs",
+  "wave": 4
+}
