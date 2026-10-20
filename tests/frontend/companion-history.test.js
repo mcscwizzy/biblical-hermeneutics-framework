@@ -128,3 +128,42 @@ test("Companion Back and Forward restore the exact bounded Narrative Explorer tr
     restore();
   }
 });
+
+test("Companion history preserves the basis of an authored evidence relationship hop", () => {
+  const {controller, restore} = loadHistoryController();
+  const history = controller.create();
+  const selection = {book: "Genesis", chapter: 1, reference: "Genesis 1"};
+  const relationship = {
+    id: "evidence-edge",
+    sourceId: "ckl:creation#evidence:source",
+    targetId: "ckl:creation#evidence:target",
+    originalRelationshipType: "compared-with",
+    direction: "reciprocal",
+    basisKind: "ckl_related_evidence",
+    parentObjectId: "creation",
+    localRecordId: "source",
+    targetEvidenceId: "target",
+    targetResolutionStatus: "eligible",
+    notes: "The authored comparison basis.",
+    weight: "6",
+  };
+  try {
+    history.initialize({
+      state: "study",
+      mode: "passage",
+      resource: "narrative_explorer",
+      trail: {
+        originSelection: selection,
+        nodes: [
+          {kind: "passage", id: "passage:Genesis 1", label: "Genesis 1", selection, relationshipHops: 0},
+          {kind: "evidence", id: relationship.targetId, label: "Linked evidence", parentObjectId: "creation", selection, relationshipHops: 1, relationship},
+        ],
+        activeIndex: 1,
+      },
+    });
+    assert.deepEqual(history.current().trail.nodes[1].relationship, relationship);
+  } finally {
+    history.destroy();
+    restore();
+  }
+});

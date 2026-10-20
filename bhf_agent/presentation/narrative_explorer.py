@@ -11,6 +11,7 @@ from dataclasses import asdict, dataclass, field, replace
 import hashlib
 import json
 import math
+import re
 from typing import Any, Literal, Mapping, Sequence
 from urllib.parse import quote, urlencode
 
@@ -50,6 +51,7 @@ _SOURCE_DOMAIN = {
     "maps": "passage_maps",
     "archaeology": "archaeology_passage_resolver",
 }
+_CANONICAL_LOCAL_ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _DOMAIN_ORDER: tuple[Domain, ...] = ("ckl", "maps", "archaeology")
 _SECTION_DOMAINS: tuple[tuple[str, tuple[Domain, ...]], ...] = (
     ("biblical_narrative", ("ckl",)),
@@ -561,6 +563,11 @@ def validate_projection(value: Mapping[str, Any]) -> None:
             raise ValueError("projection connection endpoints and identity must be present")
         if not isinstance(connection.get("basis"), Mapping) or not connection["basis"]:
             raise ValueError("projection connection must preserve its relationship basis")
+        target_status = connection["basis"].get("target_resolution_status")
+        if target_status is not None and target_status not in {
+            "eligible", "filtered", "unavailable", "invalid"
+        }:
+            raise ValueError("projection connection has an invalid evidence target status")
         if connection["id"] in connection_ids:
             raise ValueError("projection connection IDs must be present and unique")
         connection_ids.add(connection["id"])
@@ -643,6 +650,7 @@ def _project_ckl_lookup(
     child_section_ids: dict[str, set[str]] = {}
     eligible_claim_ids: dict[str, set[str]] = {}
     eligible_evidence_ids: dict[str, set[str]] = {}
+    evidence_ids_by_parent: dict[str, set[str]] = {}
 
     for candidate in lookup.records:
         raw_object = getattr(candidate, "object", candidate)
@@ -703,6 +711,11 @@ def _project_ckl_lookup(
                     )
 
         source_index = _source_index(parent)
+        evidence_ids_by_parent[parent_id] = {
+            local_id
+            for raw_evidence in _sequence(parent.get("evidence_items"))
+            if (local_id := _child_local_id("evidence", mapping(raw_evidence)))
+        }
         for collection_name, record_kind in (
             ("claims", "claim"),
             ("evidence_items", "evidence"),
@@ -837,16 +850,37 @@ def _project_ckl_lookup(
         if sections != parent_item.section_ids:
             items_by_id[parent_item.id] = replace(parent_item, section_ids=sections)
 
-    # A local evidence edge is only navigable when its target independently
-    # passed the same passage filter; a scoped source item cannot pull an
-    # unrelated sibling into this projection.
-    connections_by_id = {
-        connection_id: connection
-        for connection_id, connection in connections_by_id.items()
-        if connection.basis.get("kind") != "ckl_related_evidence"
-        or _text(connection.basis.get("target_evidence_id"))
-        in eligible_evidence_ids.get(_text(connection.basis.get("parent_object_id")), set())
-    }
+    # Keep authored evidence edges visible, while resolving their exact
+    # parent-qualified targets only against independently eligible siblings.
+    # An incomplete lookup cannot prove that an absent target ID is invalid.
+    resolved_connections: dict[str, ProjectionConnection] = {}
+    for connection in connections_by_id.values():
+        if connection.basis.get("kind") != "ckl_related_evidence":
+            resolved_connections[connection.id] = connection
+            continue
+        parent_id = _text(connection.basis.get("parent_object_id"))
+        target_id = _text(connection.basis.get("target_evidence_id"))
+        if not _CANONICAL_LOCAL_ID_RE.fullmatch(target_id):
+            target_status = "invalid"
+        elif target_id in eligible_evidence_ids.get(parent_id, set()):
+            target_status = "eligible"
+        elif target_id in evidence_ids_by_parent.get(parent_id, set()):
+            target_status = "filtered"
+        elif lookup.query_status == "complete" and not lookup.missing_subdomains:
+            target_status = "invalid"
+        else:
+            target_status = "unavailable"
+        basis = {**connection.basis, "target_resolution_status": target_status}
+        resolved = _new_connection(
+            source_id=connection.source_id,
+            target_id=connection.target_id,
+            relationship=connection.original_relationship_type,
+            relationship_mode=connection.relationship_mode,
+            temporal_layer=connection.temporal_layer,
+            basis=basis,
+        )
+        resolved_connections[resolved.id] = resolved
+    connections_by_id = resolved_connections
 
     return (
         [items_by_id[key] for key in sorted(items_by_id)],

@@ -196,7 +196,10 @@
         onNavigate: navigateNarrativeItem,
         onInspect: inspectNarrativeItem,
         onFollowConnection: followNarrativeSubject,
+        onFollowEvidence: followNarrativeEvidence,
         onFollowSubject: followNarrativeSubject,
+        resolveEvidenceTarget: (targetId) => (Array.isArray(narrativeProjection?.items) ? narrativeProjection.items : [])
+          .find((candidate) => candidate?.id === targetId && candidate?.record_kind === "evidence") || null,
         onOpenPassage: followNarrativePassage,
         onBack: () => options.backNarrativeTrail?.(),
         onReturnToOrigin: returnToNarrativeOrigin,
@@ -224,8 +227,31 @@
       }
       if (step.kind === "evidence") {
         const item = (Array.isArray(narrativeProjection?.items) ? narrativeProjection.items : []).find((candidate) => candidate.id === step.id);
-        if (!item) {
-          host.replaceChildren(explorer.renderSubjectFailure("the stable projected item is absent from the active passage projection", step.id, narrativeTrail, narrativeRenderOptions()));
+        const parentId = String(item?.parent_object_id || item?.object_id || "");
+        const localId = String(item?.evidence_id || item?.local_id || "");
+        const exactEvidenceItem = item?.record_kind === "evidence"
+          && Boolean(item.id === `ckl:${parentId}#evidence:${localId}`)
+          && String(item.local_id || "") === localId
+          && String(item.evidence_id || "") === localId
+          && Array.isArray(item.applicable_passage_anchors)
+          && item.applicable_passage_anchors.length > 0;
+        const exactItem = Boolean(item)
+          && item.id === step.id
+          && (item.record_kind !== "evidence" || exactEvidenceItem)
+          && (!step.parentObjectId || step.parentObjectId === parentId);
+        const relationship = step.relationship;
+        const exactRelationshipTarget = relationship?.basisKind !== "ckl_related_evidence"
+          || (exactEvidenceItem
+            && relationship.targetId === step.id
+            && relationship.parentObjectId === parentId
+            && relationship.targetEvidenceId === localId);
+        if (!exactItem || !exactRelationshipTarget) {
+          host.replaceChildren(explorer.renderEvidenceUnavailable(
+            "the destination does not match an independently eligible evidence item by exact parent-qualified ID",
+            step.id,
+            narrativeTrail,
+            narrativeRenderOptions(),
+          ));
           host.setAttribute("aria-busy", "false");
           focusNarrativeView(behavior.focusId);
           return;
@@ -288,6 +314,22 @@
       const result = explorer.followSubject(
         narrativeTrail,
         subject,
+        relationship,
+        trigger?.dataset?.narrativeFocusId || "",
+      );
+      if (result.error) {
+        showTrailNotice(trailErrorMessage(result.error));
+        return;
+      }
+      narrativeTrail = result.state;
+      notifyNarrativeTrailChanged();
+      renderActiveNarrativeTrail();
+    }
+
+    function followNarrativeEvidence(item, relationship, trigger) {
+      const result = explorer.followEvidence(
+        narrativeTrail,
+        item,
         relationship,
         trigger?.dataset?.narrativeFocusId || "",
       );
@@ -412,6 +454,8 @@
         cycle: "This destination already appears in the current trail; the cycle was stopped.",
         depth_limit: `The maximum of ${explorer.MAX_RELATIONSHIP_HOPS} relationship hops has been reached.`,
         missing_target: "The authored relationship does not identify a CKL target ID.",
+        invalid_target: "The exact parent-qualified evidence destination is not valid in the current projection.",
+        invalid_relationship: "This evidence edge does not match the current directed relationship in the passage projection.",
         invalid_reference: "The linked Scripture reference is not available in the reader's canonical book list.",
       })[error] || "This recorded relationship could not be followed.";
     }
