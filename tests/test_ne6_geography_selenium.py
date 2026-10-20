@@ -1178,7 +1178,7 @@ class NE6FirefoxIntegrationTests(unittest.TestCase):
         connection_button = evidence.find_element(By.XPATH, ".//button[contains(normalize-space(), 'Open connected CKL subject: creation')]" )
         connection_button.click()
         subject = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Connected CKL subject"]')))
-        self.assertIn("Relationship hops: 1 of 3", subject.text)
+        self.assertIn("Connection trail: 1 of 3 links followed", subject.text)
         self.assertIn("Scripture anchors", subject.text)
         creation_anchor = subject.find_element(By.XPATH, ".//button[contains(normalize-space(), 'Open linked passage: Genesis 1:1-31')]" )
         creation_anchor.click()
