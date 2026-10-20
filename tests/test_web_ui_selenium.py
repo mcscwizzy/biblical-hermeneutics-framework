@@ -838,8 +838,8 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             ).text
             self.assertIn(f"Evidence about {reference}", discovery_heading)
             header_text = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-header").text
-            self.assertIn("Coverage and counts describe linked records", header_text)
-            self.assertIn("not proof of borrowing or dependence", self.driver.find_element(
+            self.assertIn("Sources and counts show what was returned for this passage", header_text)
+            self.assertIn("do not by themselves show borrowing", self.driver.find_element(
                 By.CSS_SELECTOR,
                 ".narrative-explorer-connection-discovery",
             ).text)
@@ -1008,10 +1008,17 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         self.assertIn("Sons of God: documented interpretive positions", preview_text)
         self.assertIn("Second Temple Watchers reception of Genesis 6", preview_text)
         self.assertIn("Gilgamesh Tablet XI flood comparison", preview_text)
-        self.assertIn("CKL link is marked contemporary", preview_text)
+        self.assertIn("Who the “sons of God” are and what the episode means remain disputed", preview_text)
+        self.assertIn("Scholars compare the flood motifs; how the traditions are related remains debated", preview_text)
+        self.assertIn("This record is later than Genesis, but its time label needs review", preview_text)
+        self.assertNotIn("Major scholarly disagreement", preview_text)
+        self.assertNotIn("CKL relationship", preview_text)
+        self.assertNotIn("metadata", preview_text.lower())
         self.assertNotIn("*bene ha'elohim*", preview_text)
-        self.assertIn("anchors mark where evidence applies", preview_text)
-        self.assertIn("Recorded basis:", preview_text)
+        self.assertIn("A Scripture reference shows where evidence applies", preview_text)
+        self.assertIn("doesn't automatically mean two passages are connected", preview_text)
+        self.assertIn("Connection context:", preview_text)
+        self.assertNotIn("CKL", preview_text)
         self.assertLessEqual(
             self.driver.execute_script("return document.documentElement.scrollWidth"),
             self.driver.execute_script("return window.innerWidth"),
@@ -1024,8 +1031,8 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         self.assertTrue(explore.is_enabled())
         resource_host = self.driver.find_element(By.CSS_SELECTOR, ".companion-resource-host")
         self.driver.execute_script("arguments[0].scrollTop=0;", resource_host)
-        self.driver.save_screenshot("/tmp/ne8b1-reader-overview-desktop.png")
-        discovery.screenshot("/tmp/ne8b1-reader-evidence-desktop.png")
+        self.driver.save_screenshot("/tmp/ne8b2-genesis6-overview-desktop.png")
+        discovery.screenshot("/tmp/ne8b2-genesis6-evidence-desktop.png")
 
         explore.send_keys(Keys.ENTER)
         wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Evidence detail"]')))
@@ -1050,8 +1057,8 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             By.CSS_SELECTOR,
             ".narrative-explorer-connection-discovery .narrative-explorer-provenance summary",
         ).rect["height"], 40)
-        self.driver.save_screenshot("/tmp/ne8b1-reader-overview-mobile.png")
-        discovery.screenshot("/tmp/ne8b1-reader-evidence-mobile.png")
+        self.driver.save_screenshot("/tmp/ne8b2-genesis6-overview-mobile.png")
+        discovery.screenshot("/tmp/ne8b2-genesis6-evidence-mobile.png")
         scroll_state = self.driver.execute_script("""
           const host = arguments[0];
           const dock = document.querySelector('.app-dock');
