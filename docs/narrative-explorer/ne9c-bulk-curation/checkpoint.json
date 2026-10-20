@@ -1,0 +1,166 @@
+{
+  "backlog_relationship_count": 3925,
+  "base_projection_type_counts": {
+    "direct_quotation": 1,
+    "interpretive_association": 2,
+    "later_canonical_reception": 5,
+    "narrative_parallel": 1,
+    "thematic_relationship": 104,
+    "uncategorized": 3948
+  },
+  "base_taxonomy_classified_count": 113,
+  "completed_wave_numbers": [
+    1
+  ],
+  "current_wave": 2,
+  "disposition_counts": {
+    "curated": 308,
+    "excluded": 64,
+    "held": 128
+  },
+  "existing_curation_count": 23,
+  "initial_curated_object_edge_ids": [
+    "edge:0e95b8a5e89d5df4efef9ece94123cf59ac838b19d30c68bf8732a6d467e339f",
+    "edge:17e3920148f36339ca590da5daab41e3c67ec30aeee9e543c486ff0d7e24db44",
+    "edge:1c579fdc01e3ee1d226657377c35fcd299059652434418026d00577b3aee0bb1",
+    "edge:1e731860b7ac1b6c4a8cca7566c412ce1552a0fb08a869b8a195ebdcd6531495",
+    "edge:228869ba2e77b95e78772d3b7db09fb782d7062d3666947e70a3300a105124c8",
+    "edge:22fc021d003288c52b39543d5ce45422d901a452fc6a0007482a7244e9784a1e",
+    "edge:28ea0de30ed9b98babfaa1ef399a510d8af316056c22058f7e5831ceb0b8fa65",
+    "edge:34506213794346da74ea6ddd26f386d50c164689721d7bedadc785e323249bb5",
+    "edge:54a644bd9c22ea11ddc052dfce700954c61f3de2b7dc404c247d401d53a4757e",
+    "edge:68222d7a304df29d0d6b8ff22dbd9f7a44c7dca3abe28888e5edbf0aa8df97aa",
+    "edge:69ffad01204143d6278c12c3d2b4f1669e1ad2ae9501d7a1b837a746e05c32b5",
+    "edge:71e722303015d651c3933115abb6d1c653ec6aba84f0986c909e1afd28b8a528",
+    "edge:76517319fa8455c1b8d41232b8144d4c4aa7f389b958dff70c42529add62d540",
+    "edge:7d1fffa1de5fd74d2f154e51fedb9547b9648994ae33056dd5f5bda441d7e9d0",
+    "edge:8879bcb0fb5461cb1f5a0f344319a77294abfa2e21929edc68b70d2496855f65",
+    "edge:96faa3bcb00534aa98af3f5ac1a39ab4a8e464331252153d1bd04f47d0600334",
+    "edge:9757b07bd4cc1d48a21a1787d3717550179796fba608c65a69ac01dfafe82b3d",
+    "edge:a714252886f3dd6c6d6892fe2e3638c9328a10d27558a625944be0477a0ad278",
+    "edge:a74147988a9c5207111042dc29ed0595e5fd8463888a48af5b9e1a67187faf4c",
+    "edge:a84171c3a2165a60794f9efb0735199e647c921b4c2ee452daa5df3f92ecda43",
+    "edge:ae203bf907a39a49af07b5a3ba3497abd0c1db4fe0e7b6369579f6b227cac7f7",
+    "edge:e6988692a6b335f16070d2cb0f667e85b8b5e97d6b3bc36257ebe736838ab130",
+    "edge:f6aae1156f6cce2480381c1ecb0a1e6d17cf595857c8163a0cda858689181679"
+  ],
+  "inventory_complete": true,
+  "inventory_relationship_count": 4061,
+  "object_source_tree_sha256": "e186df409fb6231c0e93f13d14677826e31684a355b4681aa3ca98bf299a6766",
+  "review_complete": false,
+  "reviewed_relationship_count": 500,
+  "schema_version": 1,
+  "triage_algorithm_version": 2,
+  "wave_size": 500,
+  "waves": [
+    {
+      "path": "waves/wave-0001.jsonl",
+      "relationship_count": 500,
+      "sha256": "ebd27ce18759b201a1a225e61c91773b1552c268734c0a1965ac0710443534e8",
+      "topic_cluster_counts": {
+        "covenant_exile_restoration": 171,
+        "creation_new_creation": 19,
+        "divine_assembly_nations": 23,
+        "historical_people_places_events": 201,
+        "kingship_messiah_kingdom": 34,
+        "other_authored_relationships": 17,
+        "prophetic_reception_motifs": 8,
+        "second_temple_reception": 2,
+        "temple_priesthood_presence": 25
+      },
+      "wave": 1
+    },
+    {
+      "path": "waves/wave-0002.jsonl",
+      "relationship_count": 500,
+      "sha256": "eeeed59498b25ed8183638005eeae722f1ca08162024fdec08a0fee65d224b00",
+      "topic_cluster_counts": {
+        "covenant_exile_restoration": 331,
+        "creation_new_creation": 42,
+        "divine_assembly_nations": 80,
+        "historical_people_places_events": 47
+      },
+      "wave": 2
+    },
+    {
+      "path": "waves/wave-0003.jsonl",
+      "relationship_count": 500,
+      "sha256": "c2d88594a3111e8d5baad7db4ba251156149de75519c3fe653950a4eb3145cf8",
+      "topic_cluster_counts": {
+        "historical_people_places_events": 481,
+        "kingship_messiah_kingdom": 19
+      },
+      "wave": 3
+    },
+    {
+      "path": "waves/wave-0004.jsonl",
+      "relationship_count": 500,
+      "sha256": "c1e0dbf4a7695f23a3f11006a27cf3d27f98f74cf9afb468b6955f9978ab3a1d",
+      "topic_cluster_counts": {
+        "kingship_messiah_kingdom": 240,
+        "other_authored_relationships": 257,
+        "prophetic_reception_motifs": 3
+      },
+      "wave": 4
+    },
+    {
+      "path": "waves/wave-0005.jsonl",
+      "relationship_count": 500,
+      "sha256": "683be600f2ebe71715d9a12a49ab2cf616b323c077858c4c46128c3b59486b46",
+      "topic_cluster_counts": {
+        "covenant_exile_restoration": 219,
+        "creation_new_creation": 26,
+        "divine_assembly_nations": 44,
+        "prophetic_reception_motifs": 42,
+        "second_temple_reception": 4,
+        "temple_priesthood_presence": 165
+      },
+      "wave": 5
+    },
+    {
+      "path": "waves/wave-0006.jsonl",
+      "relationship_count": 500,
+      "sha256": "3611b13744e1ae6fa69d2a2b2c84c457aaaa38ffef00e27b81c1792ede526de9",
+      "topic_cluster_counts": {
+        "divine_assembly_nations": 37,
+        "historical_people_places_events": 249,
+        "kingship_messiah_kingdom": 67,
+        "other_authored_relationships": 147
+      },
+      "wave": 6
+    },
+    {
+      "path": "waves/wave-0007.jsonl",
+      "relationship_count": 500,
+      "sha256": "79f721af8033f2e0dae04885a82e074efe938cfb2ea637ba3e24495cc670e692",
+      "topic_cluster_counts": {
+        "covenant_exile_restoration": 68,
+        "creation_new_creation": 11,
+        "divine_assembly_nations": 21,
+        "historical_people_places_events": 72,
+        "other_authored_relationships": 166,
+        "prophetic_reception_motifs": 32,
+        "second_temple_reception": 6,
+        "temple_priesthood_presence": 124
+      },
+      "wave": 7
+    },
+    {
+      "path": "waves/wave-0008.jsonl",
+      "relationship_count": 425,
+      "sha256": "246e8615d1099c9119069b979eb8d093b97f35db5e31bca751bc30b4c2d46d72",
+      "topic_cluster_counts": {
+        "covenant_exile_restoration": 1,
+        "creation_new_creation": 2,
+        "divine_assembly_nations": 6,
+        "historical_people_places_events": 9,
+        "kingship_messiah_kingdom": 42,
+        "other_authored_relationships": 343,
+        "second_temple_reception": 7,
+        "temple_priesthood_presence": 15
+      },
+      "wave": 8
+    }
+  ],
+  "workflow": "ne9c-scholarly-relationship-curation"
+}

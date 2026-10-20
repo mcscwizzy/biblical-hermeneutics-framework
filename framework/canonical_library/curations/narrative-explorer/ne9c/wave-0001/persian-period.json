@@ -1,0 +1,179 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Ezra 1:1-4",
+        "2 Chronicles 36:22-23"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "The relationship is comparative because the cylinder does not name the Judean return.",
+      "original_relationship_type": "comparative-restoration-context",
+      "original_weight": 8,
+      "relationship_kind": "object",
+      "source_id": "ckl:cyrus-cylinder",
+      "supporting_ckl_sources": [
+        {
+          "author": "British Museum",
+          "object_id": "cyrus-cylinder",
+          "source_id": "cyrus-cylinder",
+          "title": "Cyrus Cylinder",
+          "year": -539
+        },
+        {
+          "author": "Amélie Kuhrt",
+          "object_id": "cyrus-cylinder",
+          "source_id": "kuhrt-cylinder-policy",
+          "title": "The Cyrus Cylinder and Achaemenid Imperial Policy",
+          "year": 1983
+        },
+        {
+          "author": "",
+          "object_id": "return-from-exile",
+          "source_id": "ezra-return-text",
+          "title": "Second Chronicles 36:22-23 and Ezra 1-8"
+        },
+        {
+          "author": "H. G. M. Williamson",
+          "object_id": "return-from-exile",
+          "source_id": "williamson-return",
+          "title": "Ezra, Nehemiah",
+          "year": 1985
+        },
+        {
+          "author": "",
+          "object_id": "return-from-exile",
+          "source_id": "bm-cyrus-return",
+          "title": "The Cyrus Cylinder"
+        },
+        {
+          "author": "Tero Alstola",
+          "object_id": "return-from-exile",
+          "source_id": "alstola-return-diaspora",
+          "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+          "year": 2020
+        }
+      ],
+      "supporting_comparative_material": [
+        {
+          "kind": "ancient_comparative_literature",
+          "label": "Ancient Babylonian primary inscription; comparative historical context, not Scripture or the Judean decree.",
+          "reference": "Cyrus Cylinder (BM 90920), Babylonian building inscription, c. 539 BCE",
+          "source_id": "cyrus-cylinder"
+        }
+      ],
+      "supporting_passages": [
+        "Ezra 1:1-4",
+        "2 Chronicles 36:22-23"
+      ],
+      "supporting_records": [
+        "ckl:cyrus-cylinder#source:cyrus-cylinder",
+        "ckl:cyrus-cylinder#source:kuhrt-cylinder-policy",
+        "ckl:return-from-exile#source:ezra-return-text",
+        "ckl:return-from-exile#source:williamson-return",
+        "ckl:return-from-exile#source:bm-cyrus-return",
+        "ckl:return-from-exile#source:alstola-return-diaspora"
+      ],
+      "target_id": "ckl:return-from-exile",
+      "textual_observation": "Ezra 1:1-4 and 2 Chronicles 36:22-23 present Cyrus authorizing Jerusalem’s temple restoration. The Cyrus Cylinder is a Babylonian royal building inscription centered on Cyrus, Marduk, and Babylon; it does not name Judah, Jerusalem, or the Judean return.",
+      "uncertainty": "This is a historical comparison between distinct corpora, not a quotation or demonstrated literary dependence. The Cylinder’s Babylonian setting is explicit; scholarship differs over how broadly Cyrus’s actions should inform reconstruction of Persian policy and the historical background of Ezra’s proclamation.",
+      "why": "This route lets readers compare a Babylonian royal inscription with the biblical account of Cyrus and the return while keeping their geography, genre, and claims distinct."
+    },
+    {
+      "applicable_passages": [
+        "Ezra 1:1-4",
+        "2 Chronicles 36:22-23"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "The Babylonian inscription is not the Judean decree.",
+      "original_relationship_type": "comparative-imperial-context",
+      "original_weight": 8,
+      "relationship_kind": "object",
+      "source_id": "ckl:return-from-exile",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "return-from-exile",
+          "source_id": "ezra-return-text",
+          "title": "Second Chronicles 36:22-23 and Ezra 1-8"
+        },
+        {
+          "author": "H. G. M. Williamson",
+          "object_id": "return-from-exile",
+          "source_id": "williamson-return",
+          "title": "Ezra, Nehemiah",
+          "year": 1985
+        },
+        {
+          "author": "",
+          "object_id": "return-from-exile",
+          "source_id": "bm-cyrus-return",
+          "title": "The Cyrus Cylinder"
+        },
+        {
+          "author": "Tero Alstola",
+          "object_id": "return-from-exile",
+          "source_id": "alstola-return-diaspora",
+          "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+          "year": 2020
+        },
+        {
+          "author": "British Museum",
+          "object_id": "cyrus-cylinder",
+          "source_id": "cyrus-cylinder",
+          "title": "Cyrus Cylinder",
+          "year": -539
+        },
+        {
+          "author": "Amélie Kuhrt",
+          "object_id": "cyrus-cylinder",
+          "source_id": "kuhrt-cylinder-policy",
+          "title": "The Cyrus Cylinder and Achaemenid Imperial Policy",
+          "year": 1983
+        }
+      ],
+      "supporting_comparative_material": [
+        {
+          "kind": "ancient_comparative_literature",
+          "label": "Ancient Babylonian primary inscription; its historical comparison does not establish a Judean policy or decree.",
+          "reference": "Cyrus Cylinder (BM 90920), Babylonian building inscription, c. 539 BCE",
+          "source_id": "cyrus-cylinder"
+        }
+      ],
+      "supporting_passages": [
+        "Ezra 1:1-4",
+        "2 Chronicles 36:22-23"
+      ],
+      "supporting_records": [
+        "ckl:return-from-exile#source:ezra-return-text",
+        "ckl:return-from-exile#source:williamson-return",
+        "ckl:return-from-exile#source:bm-cyrus-return",
+        "ckl:return-from-exile#source:alstola-return-diaspora",
+        "ckl:cyrus-cylinder#source:cyrus-cylinder",
+        "ckl:cyrus-cylinder#source:kuhrt-cylinder-policy"
+      ],
+      "target_id": "ckl:cyrus-cylinder",
+      "textual_observation": "Ezra 1:1-4 and 2 Chronicles 36:22-23 present Cyrus authorizing Jerusalem’s temple restoration. The Cyrus Cylinder is a Babylonian royal building inscription centered on Cyrus, Marduk, and Babylon; it does not name Judah, Jerusalem, or the Judean return.",
+      "uncertainty": "This is a historical comparison between distinct corpora, not a quotation or demonstrated literary dependence. The Cylinder’s Babylonian setting is explicit; scholarship differs over how broadly Cyrus’s actions should inform reconstruction of Persian policy and the historical background of Ezra’s proclamation.",
+      "why": "The separately authored reverse route preserves the return event’s own wording and gives readers access to the comparative inscription without implying that it records Judah’s return."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "persian-period-and-exile-return",
+  "wave": 1
+}

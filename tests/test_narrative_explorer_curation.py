@@ -2,10 +2,20 @@
 
 from importlib import import_module
 import json
+import hashlib
 from pathlib import Path
+
+import pytest
+
+from bhf_agent.presentation.narrative_explorer_curations import CURATED_RELATIONSHIPS
 
 
 _OBJECT_ROOT = Path(__file__).resolve().parents[1] / "framework" / "canonical_library" / "objects"
+_CURATION_PASSAGE_CASES = [
+    (entry, passage)
+    for entry in CURATED_RELATIONSHIPS
+    for passage in entry["applicable_passages"]
+]
 
 
 def _load_objects(*paths):
@@ -66,7 +76,7 @@ def test_curated_registry_matches_exact_authored_identities_and_provenance():
     from bhf_agent.presentation.narrative_explorer_curations import CURATED_RELATIONSHIPS
 
     objects = _all_objects()
-    assert len(CURATED_RELATIONSHIPS) == 25
+    assert len(CURATED_RELATIONSHIPS) >= 25
     seen = set()
     for curation in CURATED_RELATIONSHIPS:
         identity = (
@@ -118,6 +128,8 @@ def test_curated_registry_matches_exact_authored_identities_and_provenance():
                 and edge["weight"] == curation["original_weight"]
             ]
             assert len(matches) == 1
+
+
         else:
             source_parent_id, source_suffix = curation["source_id"].removeprefix("ckl:").split("#evidence:", 1)
             target_parent_id, target_suffix = curation["target_id"].removeprefix("ckl:").split("#evidence:", 1)
@@ -148,57 +160,77 @@ def test_curated_registry_matches_exact_authored_identities_and_provenance():
                     assert support[metadata_key] == source_record[metadata_key]
             assert support["source_id"] in source_ids or support["object_id"] != source["id"]
         if curation["relationship_kind"] == "object":
-            assert curation["supporting_records"] == [
+            support_record_ids = set(curation["supporting_records"])
+            bibliography_record_ids = {
                 f"ckl:{support['object_id']}#source:{support['source_id']}"
                 for support in curation["supporting_ckl_sources"]
-            ]
+            }
+            assert bibliography_record_ids <= support_record_ids
+            for support_record_id in support_record_ids:
+                object_id, record_ref = support_record_id.removeprefix("ckl:").split("#", 1)
+                record_kind, record_id = record_ref.split(":", 1)
+                collection = {
+                    "source": "sources",
+                    "claim": "claims",
+                    "evidence": "evidence_items",
+                }[record_kind]
+                assert any(
+                    record.get("id") == record_id
+                    for record in objects[object_id].get(collection, [])
+                )
 
 
-def test_each_curated_relationship_projects_with_its_exact_basis_and_direction():
-    from bhf_agent.presentation.narrative_explorer_curations import CURATED_RELATIONSHIPS
-
+@pytest.mark.parametrize(
+    "case",
+    _CURATION_PASSAGE_CASES,
+    ids=[
+        f"{entry['source_id']}->{entry['target_id']}:{entry['original_relationship_type']}@{passage}"
+        for entry, passage in _CURATION_PASSAGE_CASES
+    ],
+)
+def test_each_curated_relationship_projects_with_its_exact_basis_and_direction(case):
+    curation, passage_reference = case
     objects = _all_objects()
-    for curation in CURATED_RELATIONSHIPS:
-        if curation["relationship_kind"] == "object":
-            source_object_id = curation["source_id"].removeprefix("ckl:")
-            target_object_id = curation["target_id"].removeprefix("ckl:")
-            record_ids = {source_object_id, target_object_id}
-        else:
-            record_ids = {curation["source_id"].removeprefix("ckl:").split("#", 1)[0]}
-        projection = _project(
-            curation["applicable_passages"][0],
-            [objects[record_id] for record_id in sorted(record_ids)],
-        )
-        edge = _edge(
-            projection,
-            curation["source_id"],
-            curation["target_id"],
-            curation["original_relationship_type"],
-        )
+    if curation["relationship_kind"] == "object":
+        source_object_id = curation["source_id"].removeprefix("ckl:")
+        target_object_id = curation["target_id"].removeprefix("ckl:")
+        record_ids = {source_object_id, target_object_id}
+    else:
+        record_ids = {curation["source_id"].removeprefix("ckl:").split("#", 1)[0]}
+    projection = _project(
+        passage_reference,
+        [objects[record_id] for record_id in sorted(record_ids)],
+    )
+    edge = _edge(
+        projection,
+        curation["source_id"],
+        curation["target_id"],
+        curation["original_relationship_type"],
+    )
 
-        assert edge["connection_type"] == curation["classification"]
-        assert edge["basis"]["notes"] == curation["original_notes"]
-        assert edge["basis"]["weight"] == curation["original_weight"]
-        reverse = [
-            candidate for candidate in projection["connections"]
-            if candidate["source_id"] == edge["target_id"]
-            and candidate["target_id"] == edge["source_id"]
-            and candidate["original_relationship_type"] == edge["original_relationship_type"]
-        ]
-        if reverse:
-            assert len(reverse) == 1
-            assert edge["direction"] == "reciprocal"
-            assert edge["reverse_edge_id"] == reverse[0]["id"]
-        else:
-            assert edge["direction"] == "one_way"
-            assert edge["reverse_edge_id"] is None
-        assert edge["curation"]["supporting_passages"] == curation["supporting_passages"]
-        assert edge["curation"]["supporting_records"] == curation["supporting_records"]
-        assert edge["curation"]["uncertainty"] == curation["uncertainty"]
-        assert edge["curation"]["curation_confidence"] == curation["curation_confidence"]
-        assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
-        if curation["relationship_kind"] == "evidence":
-            assert edge["basis"]["target_resolution_status"] == "eligible"
+    assert edge["connection_type"] == curation["classification"]
+    assert edge["basis"]["notes"] == curation["original_notes"]
+    assert edge["basis"]["weight"] == curation["original_weight"]
+    reverse = [
+        candidate for candidate in projection["connections"]
+        if candidate["source_id"] == edge["target_id"]
+        and candidate["target_id"] == edge["source_id"]
+        and candidate["original_relationship_type"] == edge["original_relationship_type"]
+    ]
+    if reverse:
+        assert len(reverse) == 1
+        assert edge["direction"] == "reciprocal"
+        assert edge["reverse_edge_id"] == reverse[0]["id"]
+    else:
+        assert edge["direction"] == "one_way"
+        assert edge["reverse_edge_id"] is None
+    assert edge["curation"]["supporting_passages"] == curation["supporting_passages"]
+    assert edge["curation"]["supporting_records"] == curation["supporting_records"]
+    assert edge["curation"]["uncertainty"] == curation["uncertainty"]
+    assert edge["curation"]["curation_confidence"] == curation["curation_confidence"]
+    assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
+    if curation["relationship_kind"] == "evidence":
+        assert edge["basis"]["target_resolution_status"] == "eligible"
 
 
 def test_later_canonical_reception_is_separate_from_unknown_ckl_temporal_layer():
@@ -234,6 +266,19 @@ def test_comparative_ancient_material_is_not_mislabeled_as_scripture():
         certainty = entry["ckl_evidence_certainty"]
         assert certainty["status"] == "recorded"
         assert {record["certainty"] for record in certainty["records"]} == {"textually_explicit", "probable"}
+
+
+def test_registry_rejects_cross_chapter_applicability_the_projection_cannot_scope():
+    from bhf_agent.presentation.narrative_explorer_curations import (
+        CURATED_RELATIONSHIPS,
+        validate_curation,
+    )
+
+    invalid = dict(CURATED_RELATIONSHIPS[0])
+    invalid["applicable_passages"] = ["Genesis 1:1-2:3"]
+
+    with pytest.raises(ValueError, match="single chapter"):
+        validate_curation(invalid)
 
 
 def test_batch_two_divine_assembly_and_restoration_edges_are_exact_and_scoped():
@@ -401,3 +446,84 @@ def test_original_relationship_metadata_mismatch_cannot_receive_curated_status()
     assert edge["connection_type"] == "uncategorized"
     assert edge["basis"]["notes"] == "rewritten note"
     assert edge["curation"] is None
+
+
+def test_registry_loads_versioned_data_and_keeps_legacy_curation_payload_unchanged():
+    from bhf_agent.presentation import narrative_explorer_curations as registry
+
+    entries = list(registry.CURATED_RELATIONSHIPS)
+    legacy_root = (
+        Path(__file__).resolve().parents[1]
+        / "framework" / "canonical_library" / "curations" / "narrative-explorer" / "ne9c" / "wave-legacy"
+    )
+    legacy_entries = []
+    for path in sorted(legacy_root.glob("batch-*.json")):
+        legacy_entries.extend(json.loads(path.read_text(encoding="utf-8"))["curations"])
+    assert len(legacy_entries) == 25
+    assert all(entry["authored_direction"] in {"one_way", "reciprocal"} for entry in entries)
+    assert len(registry.CURATION_BY_IDENTITY) == len(entries)
+
+    legacy_payloads = [
+        {key: value for key, value in entry.items() if key != "authored_direction"}
+        for entry in legacy_entries
+    ]
+    digest = hashlib.sha256(
+        json.dumps(legacy_payloads, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    assert digest == "063c0d9879cfef585462392890868622206556933089475a847dfdb8103ed886"
+
+    with pytest.raises(TypeError):
+        registry.CURATION_BY_IDENTITY[next(iter(registry.CURATION_BY_IDENTITY))] = entries[0]
+
+
+def test_registry_rejects_duplicate_and_malformed_data_entries():
+    from bhf_agent.presentation import narrative_explorer_curations as registry
+
+    entry = dict(registry.CURATED_RELATIONSHIPS[0])
+    with pytest.raises(ValueError, match="duplicate"):
+        registry.build_curation_index([entry, entry])
+
+    malformed = dict(entry)
+    malformed.pop("authored_direction")
+    with pytest.raises(ValueError, match="direction"):
+        registry.build_curation_index([malformed])
+
+
+def test_registry_preserves_a_missing_authored_note_as_null_metadata():
+    from bhf_agent.presentation import narrative_explorer_curations as registry
+
+    entry = dict(registry.CURATED_RELATIONSHIPS[0])
+    entry["original_notes"] = None
+
+    registry.validate_curation(entry, require_authored_direction=True)
+
+
+def test_cyrus_cylinder_and_return_edges_are_scoped_comparative_context_in_authored_directions():
+    cyrus, return_event = _load_objects(
+        "archaeology/cyrus-cylinder.json",
+        "events/return-from-exile.json",
+    )
+    projection = _project("Ezra 1", [cyrus, return_event])
+    forward = _edge(
+        projection,
+        "ckl:cyrus-cylinder",
+        "ckl:return-from-exile",
+        "comparative-restoration-context",
+    )
+    reverse = _edge(
+        projection,
+        "ckl:return-from-exile",
+        "ckl:cyrus-cylinder",
+        "comparative-imperial-context",
+    )
+
+    for edge in (forward, reverse):
+        assert edge["connection_type"] == "interpretive_association"
+        assert edge["curation"]["applicable_passages"] == ["Ezra 1:1-4", "2 Chronicles 36:22-23"]
+        assert edge["curation"]["supporting_comparative_material"][0]["kind"] == "ancient_comparative_literature"
+        assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
+        assert "authored_direction" not in edge["curation"]
+        assert "not a quotation" in edge["curation"]["uncertainty"]
+
+    assert forward["basis"]["notes"] == "The relationship is comparative because the cylinder does not name the Judean return."
+    assert reverse["basis"]["notes"] == "The Babylonian inscription is not the Judean decree."
