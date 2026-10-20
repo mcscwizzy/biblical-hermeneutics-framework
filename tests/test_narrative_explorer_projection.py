@@ -1114,6 +1114,7 @@ def test_related_evidence_cannot_pull_an_unanchored_sibling_into_scope():
             {
                 "id": "out-of-scope",
                 "description": "Evidence linked elsewhere in the chapter.",
+                "title": "Filtered sibling title must stay hidden.",
                 "evidence_type": "ancient-text",
                 "scripture_references": ["Genesis 6:10-12"],
             },
@@ -1124,10 +1125,166 @@ def test_related_evidence_cannot_pull_an_unanchored_sibling_into_scope():
 
     assert "ckl:siblings#evidence:in-scope" in {item["id"] for item in result["items"]}
     assert "ckl:siblings#evidence:out-of-scope" not in {item["id"] for item in result["items"]}
-    assert not any(
-        edge["target_id"] == "ckl:siblings#evidence:out-of-scope"
-        for edge in result["connections"]
+    edge = next(
+        edge for edge in result["connections"]
+        if edge["source_id"] == "ckl:siblings#evidence:in-scope"
+        and edge["basis"].get("kind") == "ckl_related_evidence"
     )
+    assert edge["target_id"] == "ckl:siblings#evidence:out-of-scope"
+    assert edge["basis"]["target_resolution_status"] == "filtered"
+    assert "Filtered sibling title must stay hidden." not in json.dumps(result)
+
+
+def test_related_evidence_target_status_is_unavailable_when_lookup_is_partial():
+    record = {
+        "id": "partial-parent",
+        "type": "cultural_background",
+        "evidence_items": [{
+            "id": "source-evidence",
+            "description": "Source item.",
+            "evidence_type": "ancient-text",
+            "scripture_references": ["Genesis 6:1-4"],
+            "related_evidence": [{"id": "not-returned", "relationship": "compared-with"}],
+        }],
+        "claims": [],
+    }
+    result = _project(
+        "Genesis 6",
+        canonical=_lookup("ckl", records=[record], query_status="partial"),
+    )
+
+    edge = next(edge for edge in result["connections"] if edge["basis"].get("kind") == "ckl_related_evidence")
+    assert edge["basis"]["target_resolution_status"] == "unavailable"
+    assert "ckl:partial-parent#evidence:not-returned" not in {item["id"] for item in result["items"]}
+
+
+def test_related_evidence_target_status_is_invalid_for_an_unknown_id_in_a_complete_parent():
+    record = {
+        "id": "complete-parent",
+        "type": "cultural_background",
+        "evidence_items": [{
+            "id": "source-evidence",
+            "description": "Source item.",
+            "evidence_type": "ancient-text",
+            "scripture_references": ["Genesis 6:1-4"],
+            "related_evidence": [{"id": "missing-evidence", "relationship": "compared-with"}],
+        }],
+        "claims": [],
+    }
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=[record]))
+
+    edge = next(edge for edge in result["connections"] if edge["basis"].get("kind") == "ckl_related_evidence")
+    assert edge["target_id"] == "ckl:complete-parent#evidence:missing-evidence"
+    assert edge["basis"]["target_resolution_status"] == "invalid"
+
+
+def test_related_evidence_malformed_target_id_is_invalid():
+    record = {
+        "id": "malformed-parent",
+        "type": "cultural_background",
+        "evidence_items": [{
+            "id": "source-evidence",
+            "description": "Source item.",
+            "evidence_type": "ancient-text",
+            "scripture_references": ["Genesis 6:1-4"],
+            "related_evidence": [{"id": "not a valid id", "relationship": "compared-with"}],
+        }],
+        "claims": [],
+    }
+    result = _project("Genesis 6", canonical=_lookup("ckl", records=[record]))
+
+    edge = next(edge for edge in result["connections"] if edge["basis"].get("kind") == "ckl_related_evidence")
+    assert edge["basis"]["target_resolution_status"] == "invalid"
+    assert edge["target_id"] == "ckl:malformed-parent#evidence:not a valid id"
+
+
+def test_related_evidence_never_resolves_a_target_from_another_parent():
+    source_parent = {
+        "id": "source-parent",
+        "type": "cultural_background",
+        "evidence_items": [{
+            "id": "source-evidence",
+            "description": "Source item.",
+            "evidence_type": "ancient-text",
+            "scripture_references": ["Genesis 6:1-4"],
+            "related_evidence": [{"id": "shared-target", "relationship": "compared-with"}],
+        }],
+        "claims": [],
+    }
+    other_parent = {
+        "id": "other-parent",
+        "type": "cultural_background",
+        "evidence_items": [{
+            "id": "shared-target",
+            "title": "A different parent's evidence",
+            "description": "This content must not resolve the source parent's edge.",
+            "evidence_type": "ancient-text",
+            "scripture_references": ["Genesis 6:1-4"],
+        }],
+        "claims": [],
+    }
+    result = _project(
+        "Genesis 6",
+        canonical=_lookup("ckl", records=[source_parent, other_parent]),
+    )
+
+    edge = next(edge for edge in result["connections"] if edge["basis"].get("kind") == "ckl_related_evidence")
+    assert edge["target_id"] == "ckl:source-parent#evidence:shared-target"
+    assert edge["basis"]["target_resolution_status"] == "invalid"
+    assert "ckl:other-parent#evidence:shared-target" in {item["id"] for item in result["items"]}
+    assert "This content must not resolve the source parent's edge." not in json.dumps(edge)
+
+
+def test_real_genesis_one_comparison_evidence_targets_are_independently_eligible():
+    parent = _load_ckl("cultural_background/mesopotamian-creation-and-flood-comparisons.json")[0]
+    result = _project("Genesis 1", canonical=_lookup("ckl", records=[parent]))
+    source_id = "ckl:mesopotamian-creation-and-flood-comparisons#evidence:genesis-ordered-worldview-observation"
+    target_id = "ckl:mesopotamian-creation-and-flood-comparisons#evidence:enuma-elish-cosmic-ordering-comparison"
+    source = _item(result, source_id)
+    target = _item(result, target_id)
+    edge = next(edge for edge in result["connections"] if edge["source_id"] == source_id and edge["target_id"] == target_id)
+
+    assert [anchor["reference"] for anchor in source["applicable_passage_anchors"]] == ["Genesis 1:1-2:3"]
+    assert [anchor["reference"] for anchor in target["applicable_passage_anchors"]] == ["Genesis 1:1-2:3"]
+    assert source["source_ids"] == ["genesis-1-11-text", "sarna-genesis-comparison"]
+    assert target["source_ids"] == ["lambert-babylonian-creation-2013", "sarna-genesis-comparison"]
+    assert edge["original_relationship_type"] == "compared-with"
+    assert edge["direction"] == "reciprocal"
+    assert edge["basis"]["target_resolution_status"] == "eligible"
+
+
+@pytest.mark.parametrize(
+    ("reference", "object_path", "expected_id"),
+    [
+        (
+            "Genesis 6",
+            "cultural_background/genesis-flood-postflood-context.json",
+            "ckl:genesis-flood-postflood-context#evidence:g6-second-temple-watchers-reception",
+        ),
+        (
+            "Psalm 82",
+            "cultural_background/ancient-divine-assembly-imagery.json",
+            "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+        ),
+        (
+            "Deuteronomy 32",
+            "cultural_background/ancient-divine-assembly-imagery.json",
+            "ckl:ancient-divine-assembly-imagery#evidence:deuteronomy-32-8-manuscript-variant",
+        ),
+        (
+            "Genesis 2",
+            "books/genesis.json",
+            "ckl:genesis#evidence:g2-garden-planting-presence",
+        ),
+    ],
+)
+def test_requested_passage_projection_retains_eligible_evidence(reference, object_path, expected_id):
+    records = _load_ckl(object_path)
+    result = _project(reference, canonical=_lookup("ckl", records=records))
+
+    item = _item(result, expected_id)
+    assert item["record_kind"] == "evidence"
+    assert item["applicable_passage_anchors"]
 
 
 def test_only_explicit_relationship_labels_receive_specific_connection_types():

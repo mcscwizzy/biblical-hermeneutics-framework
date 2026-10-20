@@ -667,6 +667,254 @@ test("trail detects cycles and can return to its originating passage", () => {
   assert.deepEqual(returned.originSelection, initial.originSelection);
 });
 
+test("authored evidence relationships resolve the exact eligible target and count one hop", () => {
+  const source = {
+    id: "ckl:creation#evidence:source-item",
+    parent_object_id: "creation",
+    record_kind: "evidence",
+    evidence_id: "source-item",
+    local_id: "source-item",
+    title: "Source evidence",
+    applicable_passage_anchors: [{reference: "Genesis 1:1-2:3", relationship: "direct"}],
+    source_ids: ["source-text"],
+  };
+  const target = {
+    id: "ckl:creation#evidence:target-item",
+    parent_object_id: "creation",
+    record_kind: "evidence",
+    evidence_id: "target-item",
+    local_id: "target-item",
+    title: "Target evidence",
+    applicable_passage_anchors: [{reference: "Genesis 1:1-2:3", relationship: "comparative"}],
+    description: "Recorded comparative evidence.",
+    source_ids: ["target-study"],
+    sources: [{id: "target-study", bibliographic_details: {title: "Comparative Study", author: "A. Scholar", year: 2013}}],
+    certainty: "probable",
+    dispute_status: "major_scholarly_disagreement",
+    review_status: "in_review",
+    content_status: "draft",
+  };
+  const edge = {
+    id: "evidence-edge",
+    source_id: source.id,
+    target_id: target.id,
+    connection_type: "uncategorized",
+    original_relationship_type: "compared-with",
+    relationship_mode: "not_recorded",
+    direction: "one_way",
+    reverse_edge_id: null,
+    temporal_layer: "unknown",
+    basis: {
+      kind: "ckl_related_evidence",
+      parent_object_id: "creation",
+      local_record_id: "source-item",
+      target_evidence_id: "target-item",
+      target_resolution_status: "eligible",
+      notes: "The comparison is recorded as secondary evidence.",
+    },
+  };
+  const trail = explorer.addEvidenceStep(
+    explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"}),
+    source,
+    "overview-item:source",
+  );
+  assert.equal(explorer.currentRelationshipHops(trail), 0);
+  const opened = [];
+  const view = explorer.renderEvidenceDetail(source, [edge], trail, {
+    document: fakeDocument(),
+    resolveEvidenceTarget: (id) => id === target.id ? target : null,
+    onFollowEvidence: (...args) => opened.push(args),
+  });
+  const button = descendants(view).find((element) => element.tagName === "BUTTON" && element.textContent.includes("Target evidence"));
+
+  assert.ok(button);
+  assert.match(view.textContent, /Recorded CKL relationships/);
+  assert.match(view.textContent, /recorded CKL evidence relationship.*compared-with/i);
+  button.click();
+  assert.equal(opened.length, 1);
+  assert.equal(opened[0][0], target);
+  assert.equal(opened[0][1].basisKind, "ckl_related_evidence");
+  assert.equal(opened[0][1].notes, "The comparison is recorded as secondary evidence.");
+  assert.equal(opened[0][2].dataset.narrativeFocusId, "connection:evidence-edge");
+  assert.equal(explorer.followEvidence(trail, target, {...opened[0][1], sourceId: "ckl:other-parent#evidence:source-item"}).error, "invalid_relationship");
+
+  const followed = explorer.followEvidence(trail, opened[0][0], opened[0][1], opened[0][2].dataset.narrativeFocusId);
+  assert.equal(followed.error, null);
+  assert.equal(followed.state.nodes.at(-1).id, target.id);
+  assert.equal(followed.state.nodes.at(-1).relationshipHops, 1);
+  assert.equal(followed.state.nodes.at(-1).relationship.basisKind, "ckl_related_evidence");
+  const detail = explorer.renderEvidenceDetail(target, [], followed.state, {document: fakeDocument()});
+  assert.match(detail.textContent, /Opened through recorded CKL evidence relationship: compared-with/i);
+  assert.match(detail.textContent, /This recorded relationship is not a Scripture anchor/i);
+  assert.match(detail.textContent, /Recorded evidence IDs: ckl:creation#evidence:source-item → ckl:creation#evidence:target-item/);
+  assert.match(detail.textContent, /Destination resolution: eligible/);
+  assert.match(detail.textContent, /does not establish literary borrowing or dependence/i);
+  assert.match(detail.textContent, /probable/);
+  assert.match(detail.textContent, /major_scholarly_disagreement/);
+  assert.match(detail.textContent, /in_review/);
+  assert.match(detail.textContent, /draft/);
+  assert.match(detail.textContent, /Source identifier: target-study/);
+  assert.match(detail.textContent, /Comparative Study/);
+});
+
+test("filtered, unavailable, invalid, and mismatched evidence targets never expose target content", () => {
+  const source = {
+    id: "ckl:parent#evidence:source",
+    parent_object_id: "parent",
+    record_kind: "evidence",
+    evidence_id: "source",
+    local_id: "source",
+    title: "Source item",
+    applicable_passage_anchors: [{reference: "Genesis 6:1-4", relationship: "direct"}],
+  };
+  const hiddenTarget = {
+    id: "ckl:parent#evidence:target",
+    parent_object_id: "parent",
+    record_kind: "evidence",
+    evidence_id: "target",
+    local_id: "target",
+    title: "Hidden target content",
+  };
+  const trail = explorer.addEvidenceStep(
+    explorer.createTrail({book: "Genesis", chapter: 6, reference: "Genesis 6"}),
+    source,
+  );
+  for (const [status, expected] of [
+    ["filtered", /filtered from this passage projection/i],
+    ["unavailable", /target could not be resolved in the current lookup/i],
+    ["invalid", /recorded target ID is invalid/i],
+    [undefined, /target cannot be verified from the current projection/i],
+  ]) {
+    let resolutionCalls = 0;
+    const edge = {
+      id: `edge-${status || "unknown"}`,
+      source_id: source.id,
+      target_id: hiddenTarget.id,
+      original_relationship_type: "compared-with",
+      direction: "one_way",
+      basis: {
+        kind: "ckl_related_evidence",
+        parent_object_id: "parent",
+        local_record_id: "source",
+        target_evidence_id: "target",
+        ...(status ? {target_resolution_status: status} : {}),
+      },
+    };
+    const view = explorer.renderEvidenceDetail(source, [edge], trail, {
+      document: fakeDocument(),
+      resolveEvidenceTarget: () => { resolutionCalls += 1; return hiddenTarget; },
+      onFollowEvidence() {},
+    });
+    assert.match(view.textContent, expected);
+    assert.doesNotMatch(view.textContent, /Hidden target content/);
+    assert.equal(descendants(view).some((element) => element.tagName === "BUTTON" && /Open linked evidence/.test(element.textContent)), false);
+    assert.equal(resolutionCalls, 0);
+  }
+
+  const wrongParent = {...hiddenTarget, id: "ckl:other-parent#evidence:target", parent_object_id: "other-parent"};
+  const edge = {
+    id: "edge-wrong-parent",
+    source_id: source.id,
+    target_id: hiddenTarget.id,
+    original_relationship_type: "compared-with",
+    direction: "one_way",
+    basis: {
+      kind: "ckl_related_evidence",
+      parent_object_id: "parent",
+      local_record_id: "source",
+      target_evidence_id: "target",
+      target_resolution_status: "eligible",
+    },
+  };
+  const wrongParentView = explorer.renderEvidenceDetail(source, [edge], trail, {
+    document: fakeDocument(),
+    resolveEvidenceTarget: () => wrongParent,
+    onFollowEvidence() {},
+  });
+  assert.match(wrongParentView.textContent, /exact parent-qualified target could not be verified/i);
+  assert.doesNotMatch(wrongParentView.textContent, /Hidden target content/);
+});
+
+test("evidence relationship navigation preserves edge direction, cycles, and the three-hop limit", () => {
+  const source = {
+    id: "ckl:parent#evidence:source",
+    parent_object_id: "parent",
+    record_kind: "evidence",
+    evidence_id: "source",
+    local_id: "source",
+    title: "Source",
+    applicable_passage_anchors: [{reference: "Genesis 1:1", relationship: "direct"}],
+  };
+  const reverse = {...source, id: "ckl:parent#evidence:reverse", evidence_id: "reverse", local_id: "reverse", title: "Reverse"};
+  const incoming = {
+    id: "incoming-edge",
+    source_id: source.id,
+    target_id: reverse.id,
+    original_relationship_type: "supports",
+    direction: "one_way",
+    basis: {kind: "ckl_related_evidence", parent_object_id: "parent", local_record_id: "source", target_evidence_id: "reverse", target_resolution_status: "eligible"},
+  };
+  const incomingView = explorer.renderEvidenceDetail(reverse, [incoming], explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"}), {
+    document: fakeDocument(),
+    resolveEvidenceTarget: () => source,
+    onFollowEvidence() {},
+  });
+  assert.match(incomingView.textContent, /does not create a reverse navigation edge/i);
+  assert.equal(descendants(incomingView).some((element) => element.tagName === "BUTTON" && /Open linked evidence/.test(element.textContent)), false);
+
+  const forwardReciprocal = {...incoming, direction: "reciprocal", reverse_edge_id: "reverse-edge"};
+  const reverseEdge = {
+    ...incoming,
+    id: "reverse-edge",
+    source_id: reverse.id,
+    target_id: source.id,
+    direction: "reciprocal",
+    reverse_edge_id: "incoming-edge",
+    basis: {kind: "ckl_related_evidence", parent_object_id: "parent", local_record_id: "reverse", target_evidence_id: "source", target_resolution_status: "eligible"},
+  };
+  const reciprocalOpened = [];
+  const reciprocalView = explorer.renderEvidenceDetail(reverse, [forwardReciprocal, reverseEdge], explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"}), {
+    document: fakeDocument(),
+    resolveEvidenceTarget: () => source,
+    onFollowEvidence: (...args) => reciprocalOpened.push(args),
+  });
+  const reciprocalButton = descendants(reciprocalView).find((element) => element.tagName === "BUTTON" && element.textContent.includes("Source"));
+  assert.ok(reciprocalButton, "an independently verified authored reverse edge remains navigable");
+  reciprocalButton.click();
+  assert.equal(reciprocalOpened[0][0], source);
+
+  const direct = explorer.addEvidenceStep(explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"}), source);
+  const forwardRelationship = {
+    id: "incoming-edge",
+    sourceId: source.id,
+    targetId: reverse.id,
+    originalRelationshipType: "supports",
+    direction: "one_way",
+    basisKind: "ckl_related_evidence",
+    parentObjectId: "parent",
+    localRecordId: "source",
+    targetEvidenceId: "reverse",
+    targetResolutionStatus: "eligible",
+  };
+  const reverseRelationship = {
+    id: "reverse-edge",
+    sourceId: reverse.id,
+    targetId: source.id,
+    originalRelationshipType: "supports",
+    direction: "reciprocal",
+    basisKind: "ckl_related_evidence",
+    parentObjectId: "parent",
+    localRecordId: "reverse",
+    targetEvidenceId: "source",
+    targetResolutionStatus: "eligible",
+  };
+  const visited = explorer.followEvidence(direct, reverse, forwardRelationship);
+  assert.equal(visited.error, null);
+  assert.equal(explorer.followEvidence(visited.state, source, reverseRelationship).error, "cycle");
+  const atLimit = {...visited.state, nodes: visited.state.nodes.map((node, index, nodes) => index === nodes.length - 1 ? {...node, relationshipHops: explorer.MAX_RELATIONSHIP_HOPS} : node)};
+  assert.equal(explorer.followEvidence(atLimit, source, reverseRelationship).error, "depth_limit");
+});
+
 test("Scripture destinations require a canonical reader book, chapter, and valid verse range", () => {
   const books = [
     {value: "Genesis", chapters: 50},
@@ -1147,6 +1395,50 @@ test("real NE-5A pilot projections retain their evidence distinctions and exact 
   assert.match(manuscript.textContent, /textual_variant/);
   assert.match(manuscript.textContent, /earliest reading and its conceptual implications remains a textual-critical judgment/);
   assert.match(manuscript.textContent, /ckl:ancient-divine-assembly-imagery#evidence:deuteronomy-32-8-manuscript-variant/);
+});
+
+test("the real Genesis 1 evidence pair preserves source, uncertainty, bibliography, and historical qualifications", () => {
+  const data = JSON.parse(fs.readFileSync(path.join(
+    __dirname,
+    "../fixtures/narrative_explorer/ne5a_baseline/genesis_1.json",
+  ), "utf8"));
+  const sourceId = "ckl:mesopotamian-creation-and-flood-comparisons#evidence:genesis-ordered-worldview-observation";
+  const targetId = "ckl:mesopotamian-creation-and-flood-comparisons#evidence:enuma-elish-cosmic-ordering-comparison";
+  const source = data.items.find((item) => item.id === sourceId);
+  const target = data.items.find((item) => item.id === targetId);
+  const connection = data.connections.find((edge) => edge.source_id === sourceId && edge.target_id === targetId);
+  const eligibleConnection = {...connection, basis: {...connection.basis, target_resolution_status: "eligible"}};
+  const trail = explorer.addEvidenceStep(
+    explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"}),
+    source,
+  );
+  let followed = null;
+  const sourceView = explorer.renderEvidenceDetail(source, [eligibleConnection], trail, {
+    document: fakeDocument(),
+    resolveEvidenceTarget: (id) => data.items.find((item) => item.id === id) || null,
+    onFollowEvidence: (item, relationship, button) => {
+      followed = explorer.followEvidence(trail, item, relationship, button.dataset.narrativeFocusId);
+    },
+  });
+  const button = descendants(sourceView).find((element) => element.tagName === "BUTTON" && element.textContent.includes("Enuma Elish cosmic-ordering comparison"));
+  assert.ok(button);
+  button.click();
+  assert.equal(followed.error, null);
+  assert.equal(followed.state.nodes.at(-1).id, targetId);
+  assert.equal(followed.state.nodes.at(-1).relationshipHops, 1);
+
+  const targetView = explorer.renderEvidenceDetail(target, [], followed.state, {document: fakeDocument()});
+  assert.deepEqual(target.source_ids, ["lambert-babylonian-creation-2013", "sarna-genesis-comparison"]);
+  assert.match(targetView.textContent, /lambert-babylonian-creation-2013/);
+  assert.match(targetView.textContent, /sarna-genesis-comparison/);
+  assert.match(targetView.textContent, /probable/);
+  assert.match(targetView.textContent, /major_scholarly_disagreement/);
+  assert.match(targetView.textContent, /in_review/);
+  assert.match(targetView.textContent, /draft/);
+  assert.match(targetView.textContent, /Babylonian Creation Myths/);
+  assert.match(targetView.textContent, /composition date, ritual uses, and genetic relationship to Genesis are reconstructed and debated/);
+  assert.match(targetView.textContent, /Known witnesses and proposed composition dates span a broad range/);
+  assert.match(targetView.textContent, /does not establish literary borrowing or dependence/);
 });
 
 test("overview guides readers and reports coverage-aware linked record counts", () => {

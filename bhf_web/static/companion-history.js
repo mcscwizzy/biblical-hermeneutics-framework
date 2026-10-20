@@ -135,7 +135,11 @@
   function normalizeRelationship(value) {
     if (!value || typeof value !== "object") return null;
     const result = {};
-    ["id", "connectionType", "originalRelationshipType", "direction", "relationshipMode", "temporalLayer", "notes", "anchor"]
+    [
+      "id", "sourceId", "targetId", "connectionType", "originalRelationshipType", "direction",
+      "relationshipMode", "temporalLayer", "basisKind", "parentObjectId", "localRecordId",
+      "targetEvidenceId", "targetResolutionStatus", "notes", "weight", "anchor",
+    ]
       .forEach((key) => {
         const text = historyText(value[key], 500);
         if (text) result[key] = text;
