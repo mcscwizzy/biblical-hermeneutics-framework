@@ -524,6 +524,78 @@ def test_api_serializes_passage_scoped_divine_assembly_curation_and_ckl_provenan
     assert edge["curation"]["supporting_passages"] == ["Deuteronomy 32:8-9"]
 
 
+def test_reader_journey_passages_return_their_exact_curated_ckl_relationships(ckl_library):
+    journeys = (
+        (
+            "Deuteronomy", 32, 8, 9, "ckl:ancient-divine-assembly-imagery", "ckl:deuteronomy",
+            "textual-variant-context", "interpretive_association", "Deuteronomy 32:8-9",
+            ["Deuteronomy 32:8-9"], ["Deuteronomy 32:8-9"],
+        ),
+        (
+            "Psalm", 82, 1, 8, "ckl:ancient-divine-assembly-imagery", "ckl:psalms",
+            "primary-textual-context", "interpretive_association", "Psalms 82:1-8",
+            ["Psalm 82:1-8"], ["Psalm 82:1-8"],
+        ),
+        (
+            "Job", 1, 6, 12, "ckl:ancient-divine-assembly-imagery", "ckl:job",
+            "heavenly-scene-context", "shared_literary_motif", "Job 1:6-12",
+            ["Job 1:6-12", "Job 2:1-7"], ["Job 1:6-12", "Job 2:1-7"],
+        ),
+        (
+            "Job", 2, 1, 7, "ckl:ancient-divine-assembly-imagery", "ckl:job",
+            "heavenly-scene-context", "shared_literary_motif", "Job 2:1-7",
+            ["Job 1:6-12", "Job 2:1-7"], ["Job 1:6-12", "Job 2:1-7"],
+        ),
+        (
+            "Exodus", 14, 21, 31, "ckl:the-exodus", "ckl:new-exodus-theme",
+            "fulfillment-framework", "thematic_relationship", "Exodus 14:21-31",
+            ["Exodus 14:21-31"], ["Exodus 14:21-31", "Isaiah 43:16-21", "Isaiah 40:1-11"],
+        ),
+        (
+            "2 Kings", 24, 8, 20, "ckl:exile-theme", "ckl:babylonian-exile",
+            "historical-anchor", "thematic_relationship", "2 Kings 24:8-20",
+            ["2 Kings 24:8-20", "2 Kings 25:1-30"],
+            ["2 Kings 24:8-20", "2 Kings 25:1-30", "Jeremiah 29:1-14"],
+        ),
+        (
+            "2 Kings", 25, 1, 30, "ckl:exile-theme", "ckl:babylonian-exile",
+            "historical-anchor", "thematic_relationship", "2 Kings 25:1-30",
+            ["2 Kings 24:8-20", "2 Kings 25:1-30"],
+            ["2 Kings 24:8-20", "2 Kings 25:1-30", "Jeremiah 29:1-14"],
+        ),
+    )
+    client = _client(_service(ckl_library))
+
+    for (
+        book, chapter, verse_start, verse_end, source_id, target_id, label, classification, passage,
+        applicable_passages, supporting_passages,
+    ) in journeys:
+        payload = client.get(
+            f"/api/narrative-explorer/v1/passages/{book}/{chapter}",
+            params={"verse_start": verse_start, "verse_end": verse_end},
+        ).json()
+        validate_projection(payload)
+        assert payload["passage"]["reference"] == passage
+        edge = next(
+            connection for connection in payload["connections"]
+            if connection["source_id"] == source_id
+            and connection["target_id"] == target_id
+            and connection["original_relationship_type"] == label
+        )
+        assert edge["direction"] == "one_way"
+        assert edge["reverse_edge_id"] is None
+        assert edge["basis"]["kind"] == "ckl_related_object"
+        assert edge["connection_type"] == classification
+        assert edge["curation"]["applicable_passages"]
+        assert edge["curation"]["applicable_passages"] == applicable_passages
+        assert edge["curation"]["supporting_passages"] == supporting_passages
+        assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
+        assert edge["curation"]["supporting_ckl_sources"]
+        assert edge["basis"]["notes"]
+        assert edge["basis"]["weight"] is not None
+        assert any(item["id"] == source_id for item in payload["items"])
+
+
 def test_archaeology_resolver_limit_is_reported_as_partial(monkeypatch):
     import bhf_web.services.narrative_explorer as service_module
 
