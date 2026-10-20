@@ -44,6 +44,76 @@ _SCHOLARLY_SOURCE_DETAILS: Mapping[str, Mapping[str, Any]] = {
         "author": "Theodore J. Lewis",
         "year": 2020,
     },
+    "ulrich-biblical-qumran-scrolls-2010": {
+        "title": "The Biblical Qumran Scrolls: Transcriptions and Textual Variants",
+        "author": "Eugene Ulrich",
+        "year": 2010,
+    },
+    "hossfeld-zenger-psalms": {
+        "title": "Psalms 2 and Psalms 3",
+        "author": "Frank-Lothar Hossfeld and Erich Zenger",
+        "year": 2011,
+    },
+    "goldingay-psalms": {
+        "title": "Psalms",
+        "author": "John Goldingay",
+        "year": 2008,
+    },
+    "newsom-contest-moral-imaginations": {
+        "title": "The Book of Job: A Contest of Moral Imaginations",
+        "author": "Carol A. Newsom",
+        "year": 2009,
+    },
+    "blenkinsopp-isaiah-40-55": {
+        "title": "Isaiah 40-55",
+        "author": "Joseph Blenkinsopp",
+        "year": 2002,
+    },
+    "paul-isaiah-40-66": {
+        "title": "Isaiah 40-66: A Commentary",
+        "author": "Shalom M. Paul",
+        "year": 2012,
+    },
+    "lundbom-jeremiah-1-20": {
+        "title": "Jeremiah 1-20",
+        "author": "Jack R. Lundbom",
+        "year": 1999,
+    },
+    "lundbom-jeremiah-21-36": {
+        "title": "Jeremiah 21-36",
+        "author": "Jack R. Lundbom",
+        "year": 2004,
+    },
+    "goldingay-hosea-recollection": {
+        "title": "Hosea 12-13 and Prophetic Composition, Rhetoric, and Recollection",
+        "author": "John Goldingay",
+        "year": 2024,
+    },
+    "kalmanofsky-hosea-marriage": {
+        "title": "Hosea 1-3, the Marriage Metaphor, and the Ties That Bind",
+        "author": "Amy Kalmanofsky",
+        "year": 2024,
+    },
+    "greenberg-ezekiel-21-37": {
+        "title": "Ezekiel 21-37",
+        "author": "Moshe Greenberg",
+        "year": 1995,
+    },
+    "block-ezekiel-25-48": {
+        "title": "The Book of Ezekiel, Chapters 25-48",
+        "author": "Daniel I. Block",
+        "year": 1998,
+    },
+    "albertz-israel-exile": {
+        "title": "Israel in Exile: The History and Literature of the Sixth Century B.C.E.",
+        "author": "Rainer Albertz",
+        "year": 2003,
+    },
+    "alstola-judeans-babylonia": {
+        "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+        "author": "Tero Alstola",
+        "year": 2020,
+    },
 }
 
 
@@ -69,7 +139,7 @@ def _object_edge(
     uncertainty: str,
     supporting_ckl_sources: Sequence[tuple[str, str]],
     *,
-    certainty: str = "moderate",
+    curation_confidence: str = "moderate",
 ) -> dict[str, Any]:
     source_records = [
         _source_reference(object_id, source_id)
@@ -93,8 +163,11 @@ def _object_edge(
         "textual_observation": textual_observation,
         "why": why,
         "uncertainty": uncertainty,
-        "certainty": certainty,
-        "review_status": "curated_for_explorer",
+        "curation_confidence": curation_confidence,
+        "curation_status": "curated_for_explorer",
+        "ckl_evidence_certainty": {"status": "not_recorded", "records": []},
+        "human_scholarly_approval": "not_recorded",
+        "supporting_comparative_material": [],
     }
 
 
@@ -112,7 +185,9 @@ def _evidence_edge(
     uncertainty: str,
     source_ids: Sequence[str],
     *,
-    certainty: str = "moderate",
+    curation_confidence: str = "moderate",
+    supporting_comparative_material: Sequence[Mapping[str, Any]] = (),
+    ckl_evidence_certainty_records: Sequence[Mapping[str, Any]] = (),
 ) -> dict[str, Any]:
     parent = "ckl:ancient-divine-assembly-imagery"
     return {
@@ -125,6 +200,7 @@ def _evidence_edge(
         "classification": classification,
         "applicable_passages": list(applicable_passages),
         "supporting_passages": list(supporting_passages),
+        "supporting_comparative_material": [dict(material) for material in supporting_comparative_material],
         "supporting_records": [
             f"{parent}#evidence:{source_evidence}",
             f"{parent}#evidence:{target_evidence}",
@@ -136,8 +212,13 @@ def _evidence_edge(
         "textual_observation": textual_observation,
         "why": why,
         "uncertainty": uncertainty,
-        "certainty": certainty,
-        "review_status": "curated_for_explorer",
+        "curation_confidence": curation_confidence,
+        "curation_status": "curated_for_explorer",
+        "ckl_evidence_certainty": {
+            "status": "recorded",
+            "records": [dict(record) for record in ckl_evidence_certainty_records],
+        },
+        "human_scholarly_approval": "not_recorded",
     }
 
 
@@ -152,7 +233,7 @@ CURATED_RELATIONSHIPS: tuple[Mapping[str, Any], ...] = (
         "The edge gives readers a canonical route from the creation account to Revelation's new-creation vision.",
         "This is a thematic canonical relationship, not a quotation claim or proof that Revelation depends on Genesis alone. Revelation also draws on prophetic restoration language, especially Isaiah 65-66.",
         [("creation", "genesis-1-2"), ("creation", "revelation-21"), ("new-creation-theme", "revelation-21")],
-        certainty="high",
+        curation_confidence="high",
     ),
     _object_edge(
         "creation", "the-fall", "narrative-contrast",
@@ -180,7 +261,7 @@ CURATED_RELATIONSHIPS: tuple[Mapping[str, Any], ...] = (
         "The two CKL subjects describe overlapping aspects of the same closing vision, making the city an entry point into the chapter's new-creation imagery.",
         "Revelation combines prophetic restoration traditions, including Isaiah 65-66, with its own apocalyptic vision. This classification does not settle how literally or symbolically the city should be read.",
         [("new-jerusalem", "revelation-21-22"), ("new-creation-theme", "revelation-21")],
-        certainty="high",
+        curation_confidence="high",
     ),
     _object_edge(
         "new-jerusalem", "temple-theme", "presence-fulfillment",
@@ -209,7 +290,7 @@ CURATED_RELATIONSHIPS: tuple[Mapping[str, Any], ...] = (
         "The tabernacle is a concrete textual setting for the broader sanctuary theme and helps readers trace dwelling, access, and mobility in the wilderness narrative.",
         "The category summarizes recurring literary and theological themes; interpretations of the tabernacle's historical construction and ancient Near Eastern parallels remain distinct questions.",
         [("sanctuary-theme", "exodus-25-40"), ("sanctuary-theme", "hundley-sacred-common-space"), ("tabernacle", "meyers-exodus-tabernacle")],
-        certainty="high",
+        curation_confidence="high",
     ),
     _object_edge(
         "tabernacle", "temple", "later-sanctuary-development",
@@ -220,7 +301,7 @@ CURATED_RELATIONSHIPS: tuple[Mapping[str, Any], ...] = (
         "Readers can follow the narrative and cultic transition from the portable tabernacle to Jerusalem's temple without treating the structures as identical.",
         "The relationship is supported by the biblical narrative. Ancient Near Eastern tent and temple comparisons can illuminate context, but resemblance alone does not prove borrowing or settle the tabernacle's historicity.",
         [("tabernacle", "tabernacle-pentateuch-text"), ("tabernacle", "meyers-exodus-tabernacle"), ("tabernacle", "hundley-sacred-space"), ("temple", "1-kings-8")],
-        certainty="high",
+        curation_confidence="high",
     ),
     _object_edge(
         "covenant-theme", "abraham", "covenant-founder", "initial promise line", 9,
@@ -230,7 +311,7 @@ CURATED_RELATIONSHIPS: tuple[Mapping[str, Any], ...] = (
         "This connection locates Abraham within the covenant theme's early narrative and gives readers a path to the promise traditions later texts reuse.",
         "The relationship among the ancestral promises, covenant language, and later covenant traditions is debated; the classification does not assume a single composition history or a simple linear system of covenants.",
         [("covenant-theme", "genesis-9-12-15-17"), ("abraham", "genesis-12-22")],
-        certainty="high",
+        curation_confidence="high",
     ),
     _object_edge(
         "covenant-theme", "moses", "covenant-mediator", "Sinai mediator", 9,
@@ -240,7 +321,7 @@ CURATED_RELATIONSHIPS: tuple[Mapping[str, Any], ...] = (
         "This links the covenant theme to the Sinai narrative and helps readers navigate the mediator, people, and covenant ceremony together.",
         "The interpretation of Sinai's covenant form and its relation to ancestral promises and later covenants remains disputed. The link describes the narrative focus rather than resolving that debate.",
         [("covenant-theme", "exodus-19-24"), ("moses", "exodus-3-24")],
-        certainty="high",
+        curation_confidence="high",
     ),
     _object_edge(
         "covenant-theme", "new-covenant", "fulfillment-anchor", "promised renewal", 9,
@@ -250,7 +331,7 @@ CURATED_RELATIONSHIPS: tuple[Mapping[str, Any], ...] = (
         "This route shows how a later biblical text receives Jeremiah's promise and makes the reception visible as reception rather than as Jeremiah's original setting.",
         "Christian interpretation of the new covenant's relation to Israel, the church, and the earlier covenant varies. The classification does not endorse supersessionism or claim that all traditions understand fulfillment alike.",
         [("covenant-theme", "jeremiah-31"), ("covenant-theme", "hebrews-8-10"), ("new-covenant", "jeremiah-31"), ("new-covenant", "hebrews-8-10")],
-        certainty="high",
+        curation_confidence="high",
     ),
     _object_edge(
         "exile-theme", "new-covenant", "restoration-anchor", "promise of renewal", 8,
@@ -315,27 +396,115 @@ CURATED_RELATIONSHIPS: tuple[Mapping[str, Any], ...] = (
         "The edge is present in CKL with its own note and weight; it is not generated by this registry. Acts 2 records a later Christian reception and does not settle the original referent of the Psalms for all interpreters.",
         [("resurrection-theme", "1-corinthians-15"), ("messiah-theme", "luke-24"), ("messiah-theme", "psalm-110")],
     ),
+    _object_edge(
+        "ancient-divine-assembly-imagery", "deuteronomy", "textual-variant-context",
+        "Deuteronomy 32:8-9 requires manuscript-specific handling.", 9,
+        "interpretive_association", ["Deuteronomy 32:8-9"],
+        ["Deuteronomy 32:8-9"],
+        "Deuteronomy 32:8 differs across witnesses: the Masoretic Text reads ‘sons of Israel’; 4QDeut-j preserves ‘sons of God’; the Old Greek reads ‘angels of God.’",
+        "This route opens the exact Song of Moses passage and its manuscript evidence before a reader draws conclusions about the nations or heavenly beings.",
+        "The textual witnesses must remain distinct. The variant alone does not establish the earliest wording, a single reconstruction of Israelite religion, or the same assembly model as Psalm 82, Job, or Daniel 10.",
+        [("ancient-divine-assembly-imagery", "deuteronomy-32-text"), ("ancient-divine-assembly-imagery", "ulrich-biblical-qumran-scrolls-2010"), ("deuteronomy", "tigay-deuteronomy")],
+        curation_confidence="high",
+    ),
+    _object_edge(
+        "ancient-divine-assembly-imagery", "job", "heavenly-scene-context",
+        "Job 1-2 supplies a distinct narrative assembly scene.", 9,
+        "shared_literary_motif", ["Job 1:6-12", "Job 2:1-7"],
+        ["Job 1:6-12", "Job 2:1-7"],
+        "Job’s prose frame twice places the ‘sons of God’ before YHWH; the figure called haśśāṭān appears within the scene as an accuser/adversary.",
+        "The shared heavenly-court imagery lets readers compare Job’s narrative frame with other biblical assembly passages while keeping Job’s literary role visible.",
+        "Job 1-2 frames the test of Job; it does not by itself establish that Job shares Psalm 82’s judicial scene, Deuteronomy 32’s textual problem, or Daniel 10’s apocalyptic national princes. Later Satan traditions should not be read back into haśśāṭān without qualification.",
+        [("ancient-divine-assembly-imagery", "job-1-2-text"), ("job", "job-masoretic-1-42"), ("job", "newsom-contest-moral-imaginations"), ("job", "seow-job-1-21")],
+    ),
+    _object_edge(
+        "ancient-divine-assembly-imagery", "psalms", "primary-textual-context",
+        "Psalm 82 is the cluster's primary assembly passage.", 10,
+        "interpretive_association", ["Psalm 82:1-8"],
+        ["Psalm 82:1-8"],
+        "Psalm 82:1-8 is the cluster’s primary biblical passage; the CKL keeps its poetic judgment scene separate from manuscript evidence for Deuteronomy and Job’s prose heavenly scene.",
+        "The route points readers from the passage-specific CKL evidence cluster to the Psalms record without making a claim about the identity of Psalm 82’s figures.",
+        "Psalm 82’s plural elohim and judicial verdict receive human and heavenly interpretations. The cluster’s organization is a research aid, not a ruling on that dispute or a claim of literary dependence among the passages.",
+        [("ancient-divine-assembly-imagery", "psalm-82-hebrew-text"), ("ancient-divine-assembly-imagery", "smith-origins-biblical-monotheism-2001"), ("psalms", "hossfeld-zenger-psalms")],
+    ),
+    _object_edge(
+        "the-exodus", "new-exodus-theme", "fulfillment-framework", "new exodus in Christ", 9,
+        "thematic_relationship", ["Exodus 14:21-31"],
+        ["Exodus 14:21-31", "Isaiah 43:16-21", "Isaiah 40:1-11"],
+        "Exodus 14 narrates deliverance through the sea; Isaiah 43:16-21 recalls YHWH making a way through the sea and then announces a ‘new thing,’ a way in the wilderness and water in the desert.",
+        "The exact textual route shows how Isaiah reuses exodus memory to describe a new deliverance and return, making the CKL’s exodus-to-theme link concrete.",
+        "‘New Exodus’ is a useful scholarly description for this cluster of images, not a quotation or a settled label for every restoration passage. The authored note ‘in Christ’ is a later theological reading and is not presented as Isaiah’s original historical setting or claim.",
+        [("the-exodus", "exodus-1-15"), ("the-exodus", "isaiah-43"), ("new-exodus-theme", "isaiah-40"), ("new-exodus-theme", "new-exodus-theme-historical-orientation")],
+        curation_confidence="moderate",
+    ),
+    _object_edge(
+        "exile-theme", "babylonian-exile", "historical-anchor",
+        "the central exile event", 10,
+        "thematic_relationship", ["2 Kings 24:8-20", "2 Kings 25:1-30"],
+        ["2 Kings 24:8-20", "2 Kings 25:1-30", "Jeremiah 29:1-14"],
+        "The Exile Theme record identifies the Babylonian exile as its central historical event; 2 Kings 24-25 narrates successive deportation, Jerusalem's fall, and the aftermath.",
+        "The edge gives readers a scoped route from the broader exile theme to the historically specific Babylonian event without treating every biblical exile or displacement as the same event.",
+        "The relation is a canonical-historical anchor, not an intertextual dependence claim. Judean deportation occurred in multiple stages, and historical reconstructions differ about the scale and social effects of displacement.",
+        [("exile-theme", "2-kings-24-25"), ("babylonian-exile", "kings-jeremiah-babylonian-exile"), ("babylonian-exile", "albertz-israel-exile"), ("babylonian-exile", "alstola-judeans-babylonia")],
+        curation_confidence="high",
+    ),
     _evidence_edge(
         "psalm-82-assembly-language", "ugaritic-council-comparison",
         "northwest-semitic-comparison",
         "The earlier comparison does not decide the referents in Psalm 82.", 7,
         "interpretive_association", ["Psalm 82:1-8"],
-        ["Psalm 82:1-8", "KTU 1.1-1.2"],
+        ["Psalm 82:1-8"],
         "Psalm 82 depicts God in an assembly and addresses plural elohim; Ugaritic texts portray divine council scenes. The CKL source explicitly says this comparison does not decide Psalm 82's referents.",
         "Readers can inspect the biblical language alongside an earlier Northwest Semitic comparison while seeing that the two evidence records remain distinct.",
         "Comparison establishes neither borrowing nor direct literary dependence. Psalm 82's figures are variously read as divine beings, human rulers or judges, national patrons, or rhetorically demoted gods; dating and reconstructed background remain contested.",
         ["smith-ugaritic-baal-cycle-1994", "smith-origins-biblical-monotheism-2001", "lewis-origin-character-god-2020"],
+        supporting_comparative_material=[{
+            "kind": "ancient_comparative_literature",
+            "reference": "KTU 1.1-1.2",
+            "label": "Ugaritic literature (ancient Northwest Semitic comparison; not Scripture)",
+            "source_id": "smith-ugaritic-baal-cycle-1994",
+        }],
+        ckl_evidence_certainty_records=[
+            {
+                "record_id": "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+                "certainty": "textually_explicit",
+                "dispute_status": "interpretive_uncertainty",
+            },
+            {
+                "record_id": "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+                "certainty": "probable",
+                "dispute_status": "major_scholarly_disagreement",
+            },
+        ],
     ),
     _evidence_edge(
         "ugaritic-council-comparison", "psalm-82-assembly-language",
         "compared-with",
         "The biblical text and Ugaritic texts retain separate observations.", 7,
         "interpretive_association", ["Psalm 82:1-8"],
-        ["Psalm 82:1-8", "KTU 1.1-1.2"],
+        ["Psalm 82:1-8"],
         "The comparative evidence record anchors Ugaritic material as earlier-comparative and Psalm 82 as comparative; its note preserves the distinction between corpora.",
         "This authored direction exposes the same comparison from the comparative record without turning it into a reverse biblical claim.",
         "The evidence supports comparison of assembly imagery, not a claim that Psalm 82 borrows from a specific Ugaritic text or that its speakers have one settled identity.",
         ["smith-ugaritic-baal-cycle-1994", "smith-origins-biblical-monotheism-2001", "lewis-origin-character-god-2020"],
+        supporting_comparative_material=[{
+            "kind": "ancient_comparative_literature",
+            "reference": "KTU 1.1-1.2",
+            "label": "Ugaritic literature (ancient Northwest Semitic comparison; not Scripture)",
+            "source_id": "smith-ugaritic-baal-cycle-1994",
+        }],
+        ckl_evidence_certainty_records=[
+            {
+                "record_id": "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+                "certainty": "probable",
+                "dispute_status": "major_scholarly_disagreement",
+            },
+            {
+                "record_id": "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+                "certainty": "textually_explicit",
+                "dispute_status": "interpretive_uncertainty",
+            },
+        ],
     ),
 )
 
@@ -389,16 +558,46 @@ def validate_curation(entry: Mapping[str, Any]) -> None:
     required_text = (
         "relationship_kind", "source_id", "target_id", "original_relationship_type",
         "original_notes", "classification", "textual_observation", "why",
-        "uncertainty", "certainty", "review_status",
+        "uncertainty", "curation_confidence", "curation_status", "human_scholarly_approval",
     )
     if any(not isinstance(entry.get(key), str) or not entry[key] for key in required_text):
         raise ValueError("curated relationship has missing explanatory metadata")
     if entry["relationship_kind"] not in {"object", "evidence"}:
         raise ValueError("curated relationship has an invalid relationship kind")
+    if entry["classification"] not in {
+        "direct_quotation", "explicit_textual_reference", "shared_literary_motif",
+        "narrative_parallel", "thematic_relationship", "later_canonical_reception",
+        "proposed_intertextual_echo", "interpretive_association",
+    }:
+        raise ValueError("curated relationship has an invalid classification")
+    if entry["curation_confidence"] not in {"high", "moderate", "low"}:
+        raise ValueError("curated relationship has an invalid curation confidence")
     if type(entry.get("original_weight")) is not int:
         raise ValueError("curated relationship has an invalid original weight")
-    if entry["review_status"] != "curated_for_explorer":
-        raise ValueError("curated relationship has an invalid review status")
+    if entry["curation_status"] != "curated_for_explorer":
+        raise ValueError("curated relationship has an invalid curation status")
+    if entry["human_scholarly_approval"] != "not_recorded":
+        raise ValueError("curated relationship has an invalid human approval status")
+    evidence_certainty = entry.get("ckl_evidence_certainty")
+    if not isinstance(evidence_certainty, Mapping) or evidence_certainty.get("status") not in {"not_recorded", "recorded"}:
+        raise ValueError("curated relationship has invalid CKL evidence certainty metadata")
+    if not isinstance(evidence_certainty.get("records"), list):
+        raise ValueError("curated relationship has invalid CKL evidence certainty records")
+    if entry["relationship_kind"] == "object" and evidence_certainty != {"status": "not_recorded", "records": []}:
+        raise ValueError("object relationships cannot claim evidence certainty that CKL does not record")
+    if entry["relationship_kind"] == "evidence" and evidence_certainty.get("status") != "recorded":
+        raise ValueError("evidence relationships must preserve their CKL evidence certainty")
+    if entry["relationship_kind"] == "evidence" and any(
+        not isinstance(record, Mapping)
+        or any(
+            not isinstance(record.get(key), str) or not record[key]
+            for key in ("record_id", "certainty")
+        )
+        for record in evidence_certainty["records"]
+    ):
+        raise ValueError("evidence curation is missing its recorded certainty provenance")
+    if not isinstance(entry.get("supporting_comparative_material", []), list):
+        raise ValueError("curated relationship has invalid comparative material metadata")
     if not all(
         isinstance(entry.get(key), list)
         and entry[key]
@@ -414,3 +613,9 @@ def validate_curation(entry: Mapping[str, Any]) -> None:
             for key in ("object_id", "source_id")
         ):
             raise ValueError("curated relationship has invalid CKL source provenance")
+    for material in entry.get("supporting_comparative_material", []):
+        if not isinstance(material, Mapping) or any(
+            not isinstance(material.get(key), str) or not material[key]
+            for key in ("kind", "reference", "source_id")
+        ):
+            raise ValueError("curated relationship has invalid comparative source provenance")

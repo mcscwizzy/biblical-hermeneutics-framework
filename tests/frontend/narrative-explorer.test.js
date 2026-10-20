@@ -716,7 +716,12 @@ test("authored evidence relationships resolve the exact eligible target and coun
       classification: "interpretive_association",
       textual_observation: "The two evidence records use separate corpora.",
       why: "Readers can inspect the comparison without treating it as borrowing.",
-      supporting_passages: ["Psalm 82:1-8", "KTU 1.1-1.2"],
+      supporting_passages: ["Psalm 82:1-8"],
+      supporting_comparative_material: [{
+        kind: "ancient_comparative_literature",
+        reference: "KTU 1.1-1.2",
+        source_id: "smith-ugaritic-baal-cycle-1994",
+      }],
       supporting_records: [source.id, target.id],
       supporting_ckl_sources: [{
         object_id: "creation",
@@ -726,8 +731,16 @@ test("authored evidence relationships resolve the exact eligible target and coun
         year: 2013,
       }],
       uncertainty: "Comparison does not establish literary dependence.",
-      certainty: "moderate",
-      review_status: "curated_for_explorer",
+      curation_confidence: "moderate",
+      curation_status: "curated_for_explorer",
+      ckl_evidence_certainty: {
+        status: "recorded",
+        records: [
+          {record_id: source.id, certainty: "textually_explicit", dispute_status: "interpretive_uncertainty"},
+          {record_id: target.id, certainty: "probable", dispute_status: "major_scholarly_disagreement"},
+        ],
+      },
+      human_scholarly_approval: "not_recorded",
     },
   };
   const trail = explorer.addEvidenceStep(
@@ -748,9 +761,14 @@ test("authored evidence relationships resolve the exact eligible target and coun
   assert.match(view.textContent, /Recorded CKL relationships/);
   assert.match(view.textContent, /recorded CKL evidence relationship.*compared-with/i);
   assert.match(view.textContent, /Why this connects: Readers can inspect the comparison without treating it as borrowing/);
-  assert.match(view.textContent, /Supporting passages: Psalm 82:1-8 · KTU 1.1-1.2/);
+  assert.match(view.textContent, /Supporting Scripture passages: Psalm 82:1-8/);
+  assert.match(view.textContent, /Ancient comparative material \(not Scripture\): KTU 1.1-1.2/);
   assert.match(view.textContent, /A. Scholar, 2013/);
   assert.match(view.textContent, /Interpretive uncertainty: Comparison does not establish literary dependence/);
+  assert.match(view.textContent, /Curation confidence: moderate/);
+  assert.match(view.textContent, /CKL evidence certainty:.*textually_explicit.*probable/);
+  assert.match(view.textContent, /Human scholarly approval: not recorded/);
+  assert.match(view.textContent, /Curation status: curated_for_explorer/);
   button.click();
   assert.equal(opened.length, 1);
   assert.equal(opened[0][0], target);
@@ -772,6 +790,7 @@ test("authored evidence relationships resolve the exact eligible target and coun
   assert.match(detail.textContent, /Destination resolution: eligible/);
   assert.match(detail.textContent, /does not establish literary borrowing or dependence/i);
   assert.match(detail.textContent, /Why this connects: Readers can inspect the comparison without treating it as borrowing/);
+  assert.match(detail.textContent, /Human scholarly approval: not recorded/);
   assert.match(detail.textContent, /Curation confidence: moderate/);
   assert.match(detail.textContent, /probable/);
   assert.match(detail.textContent, /major_scholarly_disagreement/);
@@ -779,6 +798,73 @@ test("authored evidence relationships resolve the exact eligible target and coun
   assert.match(detail.textContent, /draft/);
   assert.match(detail.textContent, /Source identifier: target-study/);
   assert.match(detail.textContent, /Comparative Study/);
+});
+
+test("projected curation reaches the subject-detail consumer without confusing unknown temporal metadata", () => {
+  const curation = {
+    classification: "later_canonical_reception",
+    textual_observation: "Acts 2:22-36 receives Psalms 16 and 110 in a resurrection and exaltation argument.",
+    why: "The connection records a later Christian reception of Israel's Scriptures.",
+    applicable_passages: ["Acts 2:22-36"],
+    supporting_passages: ["Psalm 16:8-11", "Psalm 110:1-7", "Acts 2:22-36"],
+    supporting_comparative_material: [],
+    supporting_records: ["ckl:messiah-theme#source:psalm-110"],
+    supporting_ckl_sources: [{object_id: "messiah-theme", source_id: "psalm-110", title: "Psalm 110"}],
+    uncertainty: "Acts 2 is a later Christian interpretation; it does not settle the Psalms' original referent.",
+    curation_confidence: "moderate",
+    curation_status: "curated_for_explorer",
+    ckl_evidence_certainty: {status: "not_recorded", records: []},
+    human_scholarly_approval: "not_recorded",
+  };
+  const subject = {
+    id: "messiah-theme",
+    title: "Messiah theme",
+    related_object_links: [{
+      id: "resurrection-theme",
+      title: "Resurrection theme",
+      type: "theme",
+      relationship: "vindication-pattern",
+      notes: "suffering leads to vindication",
+      weight: 8,
+    }],
+  };
+  const apiEdge = {
+    id: "ckl:messiah-theme->ckl:resurrection-theme:vindication-pattern",
+    source_id: "ckl:messiah-theme",
+    target_id: "ckl:resurrection-theme",
+    connection_type: "later_canonical_reception",
+    original_relationship_type: "vindication-pattern",
+    direction: "one_way",
+    reverse_edge_id: null,
+    relationship_mode: "not_recorded",
+    temporal_layer: "unknown",
+    basis: {kind: "ckl_related_object", notes: "suffering leads to vindication", weight: 8},
+    curation,
+  };
+  const decorated = explorer.applyProjectionCurationsToSubject(subject, {connections: [apiEdge]});
+  assert.equal(decorated.related_object_links[0].curation.classification, "later_canonical_reception");
+
+  const followed = [];
+  const view = explorer.renderSubjectDetail(decorated, explorer.createTrail({
+    book: "Acts", chapter: 2, startVerse: 22, endVerse: 36, reference: "Acts 2:22-36",
+  }), {
+    document: fakeDocument(),
+    onFollowSubject: (...args) => followed.push(args),
+  });
+  assert.match(view.textContent, /Curated classification: Later canonical reception/);
+  assert.match(view.textContent, /Curated passage scope: Acts 2:22-36/);
+  assert.match(view.textContent, /Original CKL temporal layer: unknown/);
+  assert.match(view.textContent, /separate curated relationship classification/i);
+  assert.match(view.textContent, /Curation confidence: moderate/);
+  assert.match(view.textContent, /CKL evidence certainty: not recorded/i);
+  assert.match(view.textContent, /Human scholarly approval: not recorded/);
+
+  const button = descendants(view).find((element) => element.tagName === "BUTTON" && element.textContent.includes("Resurrection theme"));
+  assert.ok(button);
+  button.click();
+  assert.equal(followed.length, 1);
+  assert.equal(followed[0][1].curation.classification, "later_canonical_reception");
+  assert.equal(followed[0][1].temporal_layer, "unknown");
 });
 
 test("filtered, unavailable, invalid, and mismatched evidence targets never expose target content", () => {

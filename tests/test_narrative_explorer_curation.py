@@ -54,7 +54,9 @@ def test_creation_to_new_creation_edge_explains_its_canonical_theme_link():
     assert edge["basis"]["notes"] == "renewed creation"
     assert edge["basis"]["weight"] == 9
     assert edge["direction"] == "one_way"
-    assert edge["curation"]["review_status"] == "curated_for_explorer"
+    assert edge["curation"]["curation_status"] == "curated_for_explorer"
+    assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
+    assert edge["curation"]["ckl_evidence_certainty"]["status"] == "not_recorded"
     assert "Revelation 21:1-5" in edge["curation"]["supporting_passages"]
     assert edge["curation"]["why"]
     assert edge["curation"]["uncertainty"]
@@ -64,7 +66,7 @@ def test_curated_registry_matches_exact_authored_identities_and_provenance():
     from bhf_agent.presentation.narrative_explorer_curations import CURATED_RELATIONSHIPS
 
     objects = _all_objects()
-    assert 10 <= len(CURATED_RELATIONSHIPS) <= 20
+    assert len(CURATED_RELATIONSHIPS) == 25
     seen = set()
     for curation in CURATED_RELATIONSHIPS:
         identity = (
@@ -78,14 +80,31 @@ def test_curated_registry_matches_exact_authored_identities_and_provenance():
         assert identity not in seen
         seen.add(identity)
         assert curation["classification"] != "uncategorized"
-        assert curation["review_status"] == "curated_for_explorer"
+        assert curation["curation_status"] == "curated_for_explorer"
+        assert curation["human_scholarly_approval"] == "not_recorded"
+        assert curation["curation_confidence"] in {"high", "moderate"}
+        assert curation["ckl_evidence_certainty"]["status"] in {"not_recorded", "recorded"}
         assert curation["applicable_passages"]
         assert curation["supporting_passages"]
+        assert "KTU 1.1-1.2" not in curation["supporting_passages"]
         assert curation["supporting_records"]
         assert curation["supporting_ckl_sources"]
         assert curation["textual_observation"]
         assert curation["why"]
         assert curation["uncertainty"]
+        assert isinstance(curation["supporting_comparative_material"], list)
+
+        for material in curation["supporting_comparative_material"]:
+            assert material["kind"] == "ancient_comparative_literature"
+            assert material["reference"]
+            assert material["source_id"]
+        certainty = curation["ckl_evidence_certainty"]
+        if curation["relationship_kind"] == "evidence":
+            assert certainty["status"] == "recorded"
+            assert certainty["records"]
+            assert all(record["certainty"] for record in certainty["records"])
+        else:
+            assert certainty == {"status": "not_recorded", "records": []}
 
         if curation["relationship_kind"] == "object":
             source_object_id = curation["source_id"].removeprefix("ckl:")
@@ -176,8 +195,106 @@ def test_each_curated_relationship_projects_with_its_exact_basis_and_direction()
         assert edge["curation"]["supporting_passages"] == curation["supporting_passages"]
         assert edge["curation"]["supporting_records"] == curation["supporting_records"]
         assert edge["curation"]["uncertainty"] == curation["uncertainty"]
+        assert edge["curation"]["curation_confidence"] == curation["curation_confidence"]
+        assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
         if curation["relationship_kind"] == "evidence":
             assert edge["basis"]["target_resolution_status"] == "eligible"
+
+
+def test_later_canonical_reception_is_separate_from_unknown_ckl_temporal_layer():
+    records = _load_objects("themes/messiah-theme.json", "themes/resurrection-theme.json")
+    projection = _project("Acts 2:22-36", records)
+    edge = _edge(
+        projection,
+        "ckl:messiah-theme",
+        "ckl:resurrection-theme",
+        "vindication-pattern",
+    )
+
+    assert edge["temporal_layer"] == "unknown"
+    assert edge["connection_type"] == "later_canonical_reception"
+    assert edge["curation"]["classification"] == "later_canonical_reception"
+    assert edge["curation"]["curation_confidence"] == "moderate"
+    assert edge["curation"]["ckl_evidence_certainty"]["status"] == "not_recorded"
+    assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
+
+
+def test_comparative_ancient_material_is_not_mislabeled_as_scripture():
+    from bhf_agent.presentation.narrative_explorer_curations import CURATED_RELATIONSHIPS
+
+    entries = [entry for entry in CURATED_RELATIONSHIPS if entry["relationship_kind"] == "evidence"]
+    assert entries
+    for entry in entries:
+        assert "KTU 1.1-1.2" not in entry["supporting_passages"]
+        assert any(
+            material["reference"] == "KTU 1.1-1.2"
+            and material["kind"] == "ancient_comparative_literature"
+            for material in entry["supporting_comparative_material"]
+        )
+        certainty = entry["ckl_evidence_certainty"]
+        assert certainty["status"] == "recorded"
+        assert {record["certainty"] for record in certainty["records"]} == {"textually_explicit", "probable"}
+
+
+def test_batch_two_divine_assembly_and_restoration_edges_are_exact_and_scoped():
+    from bhf_agent.presentation.narrative_explorer_curations import CURATED_RELATIONSHIPS
+
+    by_identity = {
+        (entry["source_id"], entry["target_id"], entry["original_relationship_type"]): entry
+        for entry in CURATED_RELATIONSHIPS
+    }
+    expected = {
+        ("ckl:ancient-divine-assembly-imagery", "ckl:deuteronomy", "textual-variant-context"): (
+            "interpretive_association", ["Deuteronomy 32:8-9"],
+        ),
+        ("ckl:ancient-divine-assembly-imagery", "ckl:job", "heavenly-scene-context"): (
+            "shared_literary_motif", ["Job 1:6-12", "Job 2:1-7"],
+        ),
+        ("ckl:ancient-divine-assembly-imagery", "ckl:psalms", "primary-textual-context"): (
+            "interpretive_association", ["Psalm 82:1-8"],
+        ),
+        ("ckl:the-exodus", "ckl:new-exodus-theme", "fulfillment-framework"): (
+            "thematic_relationship", ["Exodus 14:21-31"],
+        ),
+        ("ckl:exile-theme", "ckl:babylonian-exile", "historical-anchor"): (
+            "thematic_relationship", ["2 Kings 24:8-20", "2 Kings 25:1-30"],
+        ),
+    }
+    assert set(expected).issubset(by_identity)
+    objects = _all_objects()
+    for identity, (classification, passages) in expected.items():
+        entry = by_identity[identity]
+        assert entry["classification"] == classification
+        assert entry["applicable_passages"] == passages
+        source_id = entry["source_id"].removeprefix("ckl:")
+        target_id = entry["target_id"].removeprefix("ckl:")
+        for passage in passages:
+            projection = _project(passage, [objects[source_id], objects[target_id]])
+            edge = _edge(projection, *identity)
+            assert edge["connection_type"] == classification
+            assert edge["basis"]["notes"] == entry["original_notes"]
+            assert edge["basis"]["weight"] == entry["original_weight"]
+            assert edge["curation"]["supporting_ckl_sources"] == entry["supporting_ckl_sources"]
+            assert edge["direction"] == "one_way"
+            assert edge["reverse_edge_id"] is None
+
+
+def test_batch_two_holds_unlinked_and_generic_divine_council_candidates():
+    from bhf_agent.presentation.narrative_explorer_curations import CURATED_RELATIONSHIPS
+
+    identities = {
+        (entry["source_id"], entry["target_id"], entry["original_relationship_type"])
+        for entry in CURATED_RELATIONSHIPS
+    }
+    assert ("ckl:daniel", "ckl:ancient-divine-assembly-imagery", "related") not in identities
+    assert ("ckl:psalms", "ckl:ancient-divine-assembly-imagery", "passage-specific-worldview-evidence") not in identities
+    assert ("ckl:jeremiah", "ckl:restoration-theme", "major-theological-theme") not in identities
+    assert ("ckl:hosea", "ckl:exile-theme", "judgment-and-return") not in identities
+    assert ("ckl:isaiah", "ckl:babylonian-exile", "exilic-context") not in identities
+    assert ("ckl:ezekiel", "ckl:restoration-theme", "major-theological-theme") not in identities
+    assert ("ckl:jeremiah", "ckl:daniel", "seventy-years-reception") not in identities
+    assert ("ckl:new-exodus-theme", "ckl:exile-theme", "related-concept") not in identities
+    assert ("ckl:restoration-theme", "ckl:exile-theme", "related-concept") not in identities
 
 
 def test_curated_connection_scope_is_narrower_than_its_parent_anchor_scope():
@@ -218,19 +335,31 @@ def test_generic_related_book_level_and_shared_vocabulary_edges_stay_uncategoriz
     assert reverse_concept["connection_type"] == "uncategorized"
     assert reverse_concept["curation"] is None
 
-    assembly, deuteronomy = _load_objects(
+    psalms, job = _load_objects(
+        "books/psalms.json",
+        "books/job.json",
+    )
+    book_projection = _project("Psalm 89", [psalms, job])
+    assert not any(
+        edge["source_id"] == "ckl:psalms"
+        and edge["target_id"] == "ckl:job"
+        and edge["original_relationship_type"] == "wisdom-and-lament-dialogue"
+        for edge in book_projection["connections"]
+    )
+
+    assembly, psalms = _load_objects(
         "cultural_background/ancient-divine-assembly-imagery.json",
-        "books/deuteronomy.json",
+        "books/psalms.json",
     )
-    book_projection = _project("Deuteronomy 32", [assembly, deuteronomy])
-    broad_book_edge = _edge(
-        book_projection,
+    contextual_projection = _project("Psalm 82", [assembly, psalms])
+    book_edge = _edge(
+        contextual_projection,
         "ckl:ancient-divine-assembly-imagery",
-        "ckl:deuteronomy",
-        "textual-variant-context",
+        "ckl:psalms",
+        "primary-textual-context",
     )
-    assert broad_book_edge["connection_type"] == "uncategorized"
-    assert broad_book_edge["curation"] is None
+    assert book_edge["connection_type"] == "interpretive_association"
+    assert book_edge["curation"]["applicable_passages"] == ["Psalm 82:1-8"]
 
     vocabulary_records = [
         {

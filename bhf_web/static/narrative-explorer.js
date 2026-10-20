@@ -314,11 +314,23 @@
   function curationSnapshot(value) {
     if (!value || typeof value !== "object") return null;
     const sourceList = Array.isArray(value.supporting_ckl_sources) ? value.supporting_ckl_sources : [];
+    const certainty = value.ckl_evidence_certainty && typeof value.ckl_evidence_certainty === "object"
+      ? value.ckl_evidence_certainty
+      : {};
     return {
       classification: readerText(value.classification),
       textual_observation: readerText(value.textual_observation),
       why: readerText(value.why),
+      applicable_passages: Array.isArray(value.applicable_passages) ? value.applicable_passages.map(readerText).filter(Boolean) : [],
       supporting_passages: Array.isArray(value.supporting_passages) ? value.supporting_passages.map(readerText).filter(Boolean) : [],
+      supporting_comparative_material: Array.isArray(value.supporting_comparative_material)
+        ? value.supporting_comparative_material.map((material) => ({
+          kind: readerText(material?.kind),
+          reference: readerText(material?.reference),
+          label: readerText(material?.label),
+          source_id: readerText(material?.source_id),
+        })).filter((material) => material.reference && material.kind)
+        : [],
       supporting_records: Array.isArray(value.supporting_records) ? value.supporting_records.map(readerText).filter(Boolean) : [],
       supporting_ckl_sources: sourceList.map((source) => ({
         object_id: readerText(source?.object_id),
@@ -328,8 +340,17 @@
         year: metadataText(source?.year),
       })).filter((source) => source.object_id && source.source_id),
       uncertainty: readerText(value.uncertainty),
-      certainty: readerText(value.certainty),
-      review_status: readerText(value.review_status),
+      curation_confidence: readerText(value.curation_confidence),
+      curation_status: readerText(value.curation_status),
+      ckl_evidence_certainty: {
+        status: readerText(certainty.status),
+        records: Array.isArray(certainty.records) ? certainty.records.map((record) => ({
+          record_id: readerText(record?.record_id),
+          certainty: readerText(record?.certainty),
+          dispute_status: readerText(record?.dispute_status),
+        })).filter((record) => record.record_id && record.certainty) : [],
+      },
+      human_scholarly_approval: readerText(value.human_scholarly_approval),
     };
   }
 
@@ -341,8 +362,17 @@
       appendTextElement(document, parent, "p", `Textual observation: ${curation.textual_observation}`, "narrative-explorer-curation-observation");
     }
     if (curation.why) appendTextElement(document, parent, "p", `Why this connects: ${curation.why}`, "narrative-explorer-curation-explanation");
+    if (curation.applicable_passages.length) {
+      appendTextElement(document, parent, "p", `Curated passage scope: ${curation.applicable_passages.join(" · ")}.`, "narrative-explorer-curation-scope");
+    }
     if (curation.supporting_passages.length) {
-      appendTextElement(document, parent, "p", `Supporting passages: ${curation.supporting_passages.join(" · ")}.`, "narrative-explorer-curation-support");
+      appendTextElement(document, parent, "p", `Supporting Scripture passages: ${curation.supporting_passages.join(" · ")}.`, "narrative-explorer-curation-support");
+    }
+    if (curation.supporting_comparative_material.length) {
+      const labels = curation.supporting_comparative_material.map((material) => (
+        `${material.reference}${material.label ? ` (${material.label})` : ""}${material.source_id ? ` [CKL source: ${material.source_id}]` : ""}`
+      ));
+      appendTextElement(document, parent, "p", `Ancient comparative material (not Scripture): ${labels.join(" · ")}.`, "narrative-explorer-curation-comparative");
     }
     if (curation.supporting_ckl_sources.length) {
       const labels = curation.supporting_ckl_sources.map((source) => {
@@ -355,7 +385,59 @@
     if (curation.uncertainty) {
       appendTextElement(document, parent, "p", `Interpretive uncertainty: ${curation.uncertainty}`, "narrative-explorer-curation-uncertainty narrative-explorer-caution");
     }
-    if (curation.certainty) appendTextElement(document, parent, "p", `Curation confidence: ${curation.certainty}.`, "narrative-explorer-curation-certainty");
+    if (curation.curation_confidence) appendTextElement(document, parent, "p", `Curation confidence: ${curation.curation_confidence}.`, "narrative-explorer-curation-certainty");
+    if (curation.ckl_evidence_certainty.status === "recorded") {
+      const certaintyLabels = curation.ckl_evidence_certainty.records.map((record) => (
+        `${record.record_id}: ${record.certainty}${record.dispute_status ? ` (${record.dispute_status})` : ""}`
+      ));
+      appendTextElement(document, parent, "p", `CKL evidence certainty: ${certaintyLabels.join(" · ") || "recorded; record details unavailable"}.`, "narrative-explorer-curation-evidence-certainty");
+    } else {
+      appendTextElement(document, parent, "p", "CKL evidence certainty: not recorded for this object relationship.", "narrative-explorer-curation-evidence-certainty");
+    }
+    if (curation.curation_status) {
+      appendTextElement(document, parent, "p", `Curation status: ${curation.curation_status} (registry annotation; not human scholarly approval).`, "narrative-explorer-curation-status");
+    }
+    if (curation.human_scholarly_approval) {
+      appendTextElement(document, parent, "p", `Human scholarly approval: ${curation.human_scholarly_approval.replace(/_/g, " ")}.`, "narrative-explorer-curation-approval");
+    }
+  }
+
+  function applyProjectionCurationsToSubject(subject, projection) {
+    if (!subject || typeof subject !== "object") return subject;
+    const sourceId = `ckl:${readerText(subject.id)}`;
+    if (sourceId === "ckl:") return subject;
+    const connections = Array.isArray(projection?.connections) ? projection.connections : [];
+    const relatedObjectLinks = Array.isArray(subject.related_object_links) ? subject.related_object_links : [];
+    return {
+      ...subject,
+      related_object_links: relatedObjectLinks.map((link) => {
+        const targetId = `ckl:${readerText(link?.id)}`;
+        const exactMatches = connections.filter((edge) => (
+          edge?.source_id === sourceId
+          && edge?.target_id === targetId
+          && edge?.basis?.kind === "ckl_related_object"
+          && edge?.original_relationship_type === readerText(link?.relationship)
+          && edge?.basis?.notes === readerText(link?.notes)
+          && Number(edge?.basis?.weight) === Number(link?.weight)
+          && edge?.curation
+        ));
+        if (exactMatches.length !== 1) return link;
+        const edge = exactMatches[0];
+        return {
+          ...link,
+          source_id: edge.source_id,
+          target_id: edge.target_id,
+          connection_type: edge.connection_type,
+          original_relationship_type: edge.original_relationship_type,
+          relationship_mode: edge.relationship_mode,
+          temporal_layer: edge.temporal_layer,
+          direction: edge.direction,
+          reverse_edge_id: edge.reverse_edge_id,
+          basis: edge.basis,
+          curation: edge.curation,
+        };
+      }),
+    };
   }
 
   function normalizeReference(value) {
@@ -973,9 +1055,15 @@
         document,
         card,
         "p",
-        `Supporting passages: ${connectionPreview.edge.curation.supporting_passages.map(readerText).filter(Boolean).join(" · ")}.`,
+        `Supporting Scripture passages: ${connectionPreview.edge.curation.supporting_passages.map(readerText).filter(Boolean).join(" · ")}.`,
         "narrative-explorer-curation-support",
       );
+    }
+    if (connectionPreview?.edge?.curation?.supporting_comparative_material?.length) {
+      const materials = connectionPreview.edge.curation.supporting_comparative_material
+        .map((material) => `${readerText(material.reference)}${material.label ? ` (${readerText(material.label)})` : ""}`)
+        .filter(Boolean);
+      if (materials.length) appendTextElement(document, card, "p", `Ancient comparative material (not Scripture): ${materials.join(" · ")}.`, "narrative-explorer-curation-comparative");
     }
     const qualification = previewQualification(item, evidenceLabel);
     if (qualification) appendTextElement(document, card, "p", qualification, "narrative-explorer-item-qualification");
@@ -1203,13 +1291,16 @@
       if (relation) lines.push(`Connection: ${relation}${edge.original_relationship_type ? ` · original relationship ${readerText(edge.original_relationship_type)}` : ""}`);
       if (readerText(edge.relationship_mode)) lines.push(`Connection mode: ${readerText(edge.relationship_mode)}`);
       if (readerText(edge.direction)) lines.push(`Connection direction: ${readerText(edge.direction)}`);
-      if (readerText(edge.temporal_layer)) lines.push(`Connection temporal layer: ${readerText(edge.temporal_layer)}`);
+      if (readerText(edge.temporal_layer)) lines.push(`Original CKL temporal layer: ${readerText(edge.temporal_layer)}`);
       if (edge.basis && Object.keys(edge.basis).length) lines.push(`Connection basis: ${compactObject(edge.basis)}`);
       const curation = edge.curation && typeof edge.curation === "object" ? edge.curation : null;
       if (curation?.why) lines.push(`Why this connection: ${readerText(curation.why)}`);
       if (curation?.textual_observation) lines.push(`Curated textual observation: ${readerText(curation.textual_observation)}`);
       if (curation?.supporting_passages?.length) lines.push(`Curated supporting passages: ${curation.supporting_passages.map(readerText).filter(Boolean).join(", ")}`);
       if (curation?.uncertainty) lines.push(`Curated interpretive uncertainty: ${readerText(curation.uncertainty)}`);
+      if (curation?.classification) lines.push(`Curated classification: ${readerText(curation.classification)}`);
+      if (curation?.curation_confidence) lines.push(`Curation confidence: ${readerText(curation.curation_confidence)}`);
+      if (curation?.human_scholarly_approval) lines.push(`Human scholarly approval: ${readerText(curation.human_scholarly_approval)}`);
     });
     if (readerText(item.domain) === "maps") {
       const sourceMetadata = item.source_metadata && typeof item.source_metadata === "object" ? item.source_metadata : {};
@@ -1789,12 +1880,15 @@
       appendTextElement(document, entry, "p", `A reciprocal CKL edge is recorded; reverse CKL edge ID: ${readerText(edge.reverse_edge_id)}.`, "narrative-explorer-connection-direction");
     }
     if (readerText(edge.relationship_mode)) appendTextElement(document, entry, "p", `Interpretive status: ${readerText(edge.relationship_mode)}.`, "narrative-explorer-connection-status");
-    if (readerText(edge.temporal_layer)) appendTextElement(document, entry, "p", `Temporal/reception classification: ${readerText(edge.temporal_layer)}.`, "narrative-explorer-connection-status");
+    if (readerText(edge.temporal_layer)) appendTextElement(document, entry, "p", `Original CKL temporal layer: ${readerText(edge.temporal_layer)}.`, "narrative-explorer-connection-status");
     if (edge.basis && Object.keys(edge.basis).length) {
       appendTextElement(document, entry, "p", `Recorded support: ${readerText(edge.basis.notes || edge.basis.reference || edge.basis.kind) || "basis present; no explanatory note recorded"}.`, "narrative-explorer-provenance-note");
       if (readerText(edge.basis.reference)) appendTextElement(document, entry, "p", `Evidence or Scripture anchor: ${readerText(edge.basis.reference)}.`);
     }
     appendCurationSummary(document, entry, edge.curation);
+    if (edge.curation?.classification === "later_canonical_reception" && edge.temporal_layer === "unknown") {
+      appendTextElement(document, entry, "p", "Later canonical reception is a separate curated relationship classification; the original CKL temporal layer is unknown.", "narrative-explorer-connection-status");
+    }
     if (isScriptureAnchor) {
       appendTextElement(document, entry, "p", "This anchor shows the evidence's passage scope; by itself it does not establish a literary or theological relationship between passages.", "narrative-explorer-connection-direction");
     } else if (isRelatedEvidence) {
@@ -1991,19 +2085,43 @@
         const label = readerText(link.relationship) || "(original relationship label unavailable)";
         const targetId = readerText(link.id);
         const title = readerText(link.title || targetId) || "CKL target unavailable";
-        appendTextElement(document, entry, "p", `Relationship: descriptive association · original CKL label: ${label}`, "narrative-explorer-connection-label");
+        appendTextElement(document, entry, "p", `${link.curation ? "Original CKL relationship" : "Relationship: descriptive association"} · original CKL label: ${label}`, "narrative-explorer-connection-label");
         appendTextElement(document, entry, "p", `Source subject: ${readerText(subject.id)} · Target subject: ${title} (${targetId})${readerText(link.type) ? ` · type: ${readerText(link.type)}` : ""} · Direction: ${readerText(subject.id)} → ${targetId}.`);
-        appendTextElement(document, entry, "p", "Validated relationship category and reciprocal status are not included in this subject detail response; the original label is retained without upgrading it.", "narrative-explorer-caution");
-        appendTextElement(document, entry, "p", "Interpretive status: not recorded for this relationship in the subject detail response.", "narrative-explorer-connection-status");
+        if (link.curation) {
+          appendCurationSummary(document, entry, link.curation);
+          if (readerText(link.temporal_layer)) appendTextElement(document, entry, "p", `Original CKL temporal layer: ${readerText(link.temporal_layer)}.`, "narrative-explorer-connection-status");
+          if (link.curation.classification === "later_canonical_reception" && link.temporal_layer === "unknown") {
+            appendTextElement(document, entry, "p", "Later canonical reception is a separate curated relationship classification; the original CKL temporal layer is unknown.", "narrative-explorer-connection-status");
+          }
+        } else {
+          appendTextElement(document, entry, "p", "Validated relationship category and reciprocal status are not included in this subject detail response; the original label is retained without upgrading it.", "narrative-explorer-caution");
+          appendTextElement(document, entry, "p", "Interpretive status: not recorded for this relationship in the subject detail response.", "narrative-explorer-connection-status");
+        }
         if (Number.isFinite(Number(link.weight))) appendTextElement(document, entry, "p", `CKL relationship weight: ${Number(link.weight)} (recorded metadata; not an interpretation category).`, "narrative-explorer-connection-status");
         if (readerText(link.notes)) appendTextElement(document, entry, "p", `Recorded rationale: ${readerText(link.notes)}`, "narrative-explorer-provenance-note");
-        appendTextElement(document, entry, "p", "Evidence or Scripture anchor: not included in this subject detail response.", "narrative-explorer-missing-provenance");
+        if (!link.curation) appendTextElement(document, entry, "p", "Evidence or Scripture anchor: not included in this subject detail response.", "narrative-explorer-missing-provenance");
         const currentHops = currentRelationshipHops(trail);
         if (!targetId) appendTextElement(document, entry, "p", "No target CKL ID was returned; this relationship cannot be followed.", "narrative-explorer-missing-provenance");
         else if (currentHops >= MAX_RELATIONSHIP_HOPS) appendTextElement(document, entry, "p", `This connection trail has reached its ${MAX_RELATIONSHIP_HOPS}-link limit.`, "narrative-explorer-trail-limit");
         else if (trailNodes(trail).some((node) => node.subjectId === targetId || node.parentObjectId === targetId)) appendTextElement(document, entry, "p", "This relationship returns to a subject already in the trail; the cycle is stopped.", "narrative-explorer-trail-cycle");
         else if (typeof options.onFollowSubject === "function") {
-          appendActionButton(document, entry, `Open connected CKL subject: ${title}`, `subject-relationship:${targetId}`, (button) => options.onFollowSubject({targetId, title}, {originalRelationshipType: label, notes: readerText(link.notes)}, button));
+          appendActionButton(document, entry, `Open connected CKL subject: ${title}`, `subject-relationship:${targetId}`, (button) => options.onFollowSubject(
+            {targetId, title},
+            {
+              connection_type: link.connection_type,
+              originalRelationshipType: link.original_relationship_type || label,
+              original_relationship_type: link.original_relationship_type || label,
+              relationship_mode: link.relationship_mode,
+              temporal_layer: link.temporal_layer,
+              direction: link.direction,
+              reverse_edge_id: link.reverse_edge_id,
+              basis: link.basis || {notes: readerText(link.notes), weight: link.weight},
+              curation: link.curation,
+              notes: readerText(link.notes),
+              weight: link.weight,
+            },
+            button,
+          ));
         }
         list.append(entry);
       });
@@ -2161,6 +2279,7 @@
     followEvidence,
     followPassage,
     returnToOrigin,
+    applyProjectionCurationsToSubject,
     activeTrailStep,
     trailNodes,
     trailCurrentSelection,

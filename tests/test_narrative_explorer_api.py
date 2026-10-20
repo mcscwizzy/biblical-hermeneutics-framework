@@ -464,6 +464,66 @@ def test_narrative_map_lookup_adds_explicit_links_alongside_text_matches(monkeyp
     assert [record["id"] for record in lookup.records] == ["text-jericho", "anchor-nile"]
 
 
+def test_api_serializes_curated_reception_with_separate_temporal_and_approval_metadata(ckl_library):
+    payload = _client(_service(ckl_library)).get(
+        "/api/narrative-explorer/v1/passages/Acts/2"
+    ).json()
+    validate_projection(payload)
+    edge = next(
+        connection for connection in payload["connections"]
+        if connection["source_id"] == "ckl:messiah-theme"
+        and connection["target_id"] == "ckl:resurrection-theme"
+        and connection["original_relationship_type"] == "vindication-pattern"
+    )
+
+    assert edge["temporal_layer"] == "unknown"
+    assert edge["connection_type"] == "later_canonical_reception"
+    assert edge["curation"]["classification"] == "later_canonical_reception"
+    assert edge["curation"]["curation_confidence"] == "moderate"
+    assert edge["curation"]["ckl_evidence_certainty"] == {
+        "status": "not_recorded",
+        "records": [],
+    }
+    assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
+    assert edge["curation"]["curation_status"] == "curated_for_explorer"
+    assert edge["basis"]["notes"] == "suffering leads to vindication"
+    assert "Acts 2:22-36" in edge["curation"]["supporting_passages"]
+    assert edge["curation"]["supporting_ckl_sources"]
+
+
+def test_api_serializes_passage_scoped_divine_assembly_curation_and_ckl_provenance(ckl_library):
+    payload = _client(_service(ckl_library)).get(
+        "/api/narrative-explorer/v1/passages/Deuteronomy/32"
+    ).json()
+    validate_projection(payload)
+    edge = next(
+        connection for connection in payload["connections"]
+        if connection["source_id"] == "ckl:ancient-divine-assembly-imagery"
+        and connection["target_id"] == "ckl:deuteronomy"
+        and connection["original_relationship_type"] == "textual-variant-context"
+    )
+
+    assert edge["connection_type"] == "interpretive_association"
+    assert edge["basis"]["notes"] == "Deuteronomy 32:8-9 requires manuscript-specific handling."
+    assert edge["basis"]["weight"] == 9
+    assert edge["temporal_layer"] == "unknown"
+    assert edge["curation"]["applicable_passages"] == ["Deuteronomy 32:8-9"]
+    assert "Masoretic Text" in edge["curation"]["textual_observation"]
+    assert "4QDeut-j" in edge["curation"]["textual_observation"]
+    assert "Old Greek" in edge["curation"]["textual_observation"]
+    assert edge["curation"]["human_scholarly_approval"] == "not_recorded"
+    assert edge["curation"]["ckl_evidence_certainty"] == {
+        "status": "not_recorded",
+        "records": [],
+    }
+    assert any(
+        source["object_id"] == "ancient-divine-assembly-imagery"
+        and source["source_id"] == "ulrich-biblical-qumran-scrolls-2010"
+        for source in edge["curation"]["supporting_ckl_sources"]
+    )
+    assert edge["curation"]["supporting_passages"] == ["Deuteronomy 32:8-9"]
+
+
 def test_archaeology_resolver_limit_is_reported_as_partial(monkeypatch):
     import bhf_web.services.narrative_explorer as service_module
 
