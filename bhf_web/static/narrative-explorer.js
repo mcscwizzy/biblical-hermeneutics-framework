@@ -583,14 +583,11 @@
       document,
       header,
       "p",
-      "Follow this passage into its sources. Labels distinguish biblical wording, ancient comparisons, later reception, and scholarly interpretation. Open a record to check its passage link, sources, and uncertainty. Coverage shows what BHF has linked here; it is not a complete account or settled answer. Counts refer to linked records, not independent discoveries.",
+      "Explore the sources and connections recorded for this passage. Coverage and counts describe linked records, not a complete account or a settled answer.",
     );
     rootElement.append(header);
 
     const passage = projection?.passage?.reference;
-    if (passage) {
-      appendTextElement(document, rootElement, "p", `Evidence linked to ${passage}`, "narrative-explorer-passage");
-    }
     if (options.trail) rootElement.append(renderTrailHeader(options.trail, options));
     const sectionsHost = element(document, "div", "narrative-explorer-sections");
     const itemsById = new Map((Array.isArray(projection?.items) ? projection.items : []).map((item) => [item.id, item]));
@@ -600,6 +597,7 @@
 
     rootElement.append(renderConnectionDiscovery(
       document,
+      passage,
       [...itemsById.values()],
       connectionsByItem,
       coverageBySource,
@@ -618,16 +616,16 @@
     return rootElement;
   }
 
-  function renderConnectionDiscovery(document, items, connectionsByItem, coverageBySource, sectionsById, options) {
+  function renderConnectionDiscovery(document, passage, items, connectionsByItem, coverageBySource, sectionsById, options) {
     const section = element(document, "section", "narrative-explorer-connection-discovery");
     section.setAttribute("aria-labelledby", "narrative-explorer-connection-discovery-title");
-    const heading = appendTextElement(document, section, "h4", "Explore related passages and evidence");
+    const heading = appendTextElement(document, section, "h4", `Evidence about ${readerText(passage) || "the selected passage"}`);
     heading.id = "narrative-explorer-connection-discovery-title";
     appendTextElement(
       document,
       section,
       "p",
-      "These previews come from source-linked CKL records. A Scripture anchor shows where evidence applies; it does not by itself establish a literary or theological connection between passages.",
+      "Scripture anchors mark where evidence applies; a cross-passage connection needs a separate recorded CKL relationship and basis. Historical comparisons provide context, not proof of borrowing or dependence.",
       "narrative-explorer-section-heading",
     );
 
@@ -655,11 +653,11 @@
     }
 
     if (!coverage || coverage.state === "unknown" || (coverage.state !== "partial" && coverage.query_status !== "complete")) {
-      appendTextElement(document, section, "p", "Connection previews are unavailable because the CKL lookup did not complete.", "narrative-explorer-missing-provenance");
+      appendTextElement(document, section, "p", "Evidence previews are unavailable because the CKL lookup did not complete.", "narrative-explorer-missing-provenance");
     } else if (coverage.state === "partial") {
-      appendTextElement(document, section, "p", "No previewable relationships are available in the returned partial CKL results.", "narrative-explorer-missing-provenance");
+      appendTextElement(document, section, "p", "No source-linked previews are available in the returned partial CKL results.", "narrative-explorer-missing-provenance");
     } else {
-      appendTextElement(document, section, "p", "No evidence-linked CKL relationships with a recorded basis are available for this passage.", "narrative-explorer-missing-provenance");
+      appendTextElement(document, section, "p", "No source-linked evidence with a recorded basis is available for this passage.", "narrative-explorer-missing-provenance");
     }
     return section;
   }
@@ -771,7 +769,7 @@
 
     const inspect = element(document, "button", "secondary narrative-explorer-inspect");
     inspect.type = "button";
-    inspect.textContent = items.length ? `Inspect ${items.length} eligible records` : "No records to inspect";
+    inspect.textContent = items.length ? `Browse all ${items.length} linked records` : "No records available";
     inspect.disabled = items.length === 0;
     inspect.setAttribute("aria-expanded", "false");
     if (items.length) {
@@ -792,7 +790,7 @@
         inspect.setAttribute("aria-expanded", String(expanded));
         previewList.hidden = expanded;
         fullList.hidden = !expanded;
-        inspect.textContent = expanded ? "Hide records" : `Inspect ${items.length} eligible records`;
+        inspect.textContent = expanded ? "Hide records" : `Browse all ${items.length} linked records`;
         if (expanded && next === 0) addNextPage();
       });
       moreButton = element(document, "button", "secondary narrative-explorer-more");
@@ -848,12 +846,6 @@
     if (connectionPreview) card.dataset.narrativeConnectionPreview = "true";
     const title = readerText(item.title) || readerText(item.claim_text) || readerText(item.description) || readerText(item.id) || "Source record";
     appendTextElement(document, card, "h5", title);
-    const authoredText = readerText(item.claim_text) && readerText(item.claim_text) !== title
-      ? readerText(item.claim_text)
-      : readerText(item.description) && readerText(item.description) !== title
-        ? readerText(item.description)
-        : "";
-    if (authoredText) appendTextElement(document, card, "p", authoredText, "narrative-explorer-item-copy");
     const evidenceLabel = readerEvidenceLabel(item);
     const cosmicRole = cosmicRoleLabel(item.cosmic_geography_role);
     const redundantCosmicRole = cosmicRole.toLowerCase().includes("interpretation")
@@ -863,14 +855,21 @@
       : evidenceLabel;
     if (visibleKind) appendTextElement(document, card, "p", visibleKind, "narrative-explorer-item-kind");
 
-    if (connectionPreview) {
-      appendTextElement(document, card, "p", `Why this is linked: ${readerText(connectionPreview.edge?.basis?.notes)}`, "narrative-explorer-preview-basis");
-      appendConnectionPreviewAnchor(document, card, connectionPreview.anchor);
-      appendConnectionPreviewCautions(document, card, item, evidenceLabel);
+    const authoredSentence = previewDescription(item, title);
+    if (authoredSentence) appendTextElement(document, card, "p", authoredSentence, "narrative-explorer-item-copy");
+
+    const basis = previewBasis(item, connectionPreview);
+    if (basis.text) {
+      appendTextElement(document, card, "p", `${basis.label}: ${basis.text}`, "narrative-explorer-preview-basis");
+    } else {
+      appendTextElement(document, card, "p", "Relevance basis not recorded.", "narrative-explorer-preview-basis");
     }
+    const qualification = previewQualification(item, evidenceLabel);
+    if (qualification) appendTextElement(document, card, "p", qualification, "narrative-explorer-item-qualification");
 
     const provenance = element(document, "details", "narrative-explorer-provenance");
-    appendTextElement(document, provenance, "summary", "Evidence and source details");
+    appendTextElement(document, provenance, "summary", "Full evidence and source details");
+    appendFullEvidenceDetails(document, provenance, item);
     const metadataConnections = connectionPreview
       ? [connectionPreview.edge, ...connections.filter((edge) => edge !== connectionPreview.edge)]
       : connections;
@@ -879,24 +878,24 @@
       const list = element(document, "ul");
       metadata.forEach((line) => {
         const entry = element(document, "li");
-        entry.textContent = line;
+        setFormattedText(document, entry, line);
         list.append(entry);
       });
       provenance.append(list);
     }
     card.append(provenance);
 
-    const action = supportedAction(item);
     if (typeof options.onInspect === "function") {
       const inspect = element(document, "button", "secondary narrative-explorer-item-inspect");
       inspect.type = "button";
-      inspect.textContent = "Inspect evidence and connections";
+      inspect.textContent = "Explore this evidence";
       inspect.dataset.narrativeItemId = readerText(item.id);
       inspect.dataset.narrativeFocusId = `item:${readerText(item.id)}`;
       inspect.addEventListener("click", () => options.onInspect(item, inspect));
       card.append(inspect);
     }
-    if (action && typeof options.onNavigate === "function") {
+    const action = supportedAction(item);
+    if (action && item?.navigation?.kind !== "canonical_object" && typeof options.onNavigate === "function") {
       const button = element(document, "button", "secondary narrative-explorer-item-action");
       button.type = "button";
       button.textContent = action.label;
@@ -907,36 +906,66 @@
     return card;
   }
 
-  function appendConnectionPreviewAnchor(document, card, anchor) {
-    const reference = readerText(anchor?.reference) || "passage reference unavailable";
-    const relationship = readerText(anchor?.relationship).toLowerCase();
-    if (relationship === "comparative") {
-      appendTextElement(document, card, "p", `Comparison anchor: ${reference}. It marks comparative scope; comparison alone does not establish borrowing, quotation, fulfillment, or dependence.`, "narrative-explorer-caution");
-      return;
+  function previewDescription(item, title) {
+    const candidates = [item?.description, item?.claim_text, item?.rationale?.primary_observation, item?.rationale?.passage_relevance];
+    for (const candidate of candidates) {
+      const text = readerText(candidate);
+      if (!text || text === title) continue;
+      return conciseSourceText(text, 220);
     }
-    const type = relationship === "direct" ? "Scripture anchor" : "Passage anchor";
-    appendTextElement(document, card, "p", `Evidence anchor: ${reference} · ${type}. It shows where the evidence applies; it does not establish a cross-passage relationship.`, "narrative-explorer-preview-anchor");
+    return "";
   }
 
-  function appendConnectionPreviewCautions(document, card, item, evidenceLabel) {
-    if (evidenceLabel === "Later reception") {
-      appendTextElement(document, card, "p", "This record documents later interpretation, not the earlier passage's original meaning.", "narrative-explorer-caution");
-      const temporalRelations = [item?.temporal_relation, ...(Array.isArray(item?.temporal_relations) ? item.temporal_relations : [])]
-        .map((value) => readerText(value).toLowerCase().replace(/_/g, "-"));
-      if (temporalRelations.includes("contemporary")) {
-        appendTextElement(document, card, "p", "The CKL Scripture link is marked contemporary, so its temporal metadata needs review.", "narrative-explorer-caution");
-      }
-    } else if (evidenceLabel === "Manuscript/textual witness" && isDisputed(item)) {
-      appendTextElement(document, card, "p", "The manuscript differences are documented; the earliest wording and its implications remain debated.", "narrative-explorer-caution");
-    } else if (evidenceLabel.toLowerCase().startsWith("original biblical text") && isDisputed(item)) {
-      const qualification = readerText(item?.rationale?.confidence_rationale)
-        || "The passage's wording is observed directly; its identification and historical interpretation remain disputed.";
-      appendTextElement(document, card, "p", `Qualification: ${qualification}`, "narrative-explorer-caution");
-    } else if (evidenceLabel === "Ancient comparative literature") {
-      appendTextElement(document, card, "p", "Ancient literary comparison does not by itself establish borrowing or dependence.", "narrative-explorer-caution");
-    } else if (evidenceLabel.toLowerCase().startsWith("scholarly interpretation") || item?.assertion_type === "secondary-evidence") {
-      appendTextElement(document, card, "p", "This record includes a disputed interpretation; it is not a settled conclusion.", "narrative-explorer-caution");
+  function conciseSourceText(value, maxLength = 180) {
+    const text = readerText(value);
+    if (!text) return "";
+    const sentenceEnd = text.search(/[.!?](?=\s|$)/);
+    const sentence = sentenceEnd >= 0 ? text.slice(0, sentenceEnd + 1).trim() : text;
+    if (sentence.length <= maxLength) return sentence;
+    const limit = Math.max(1, maxLength - 1);
+    const boundary = sentence.slice(0, limit).lastIndexOf(" ");
+    const end = boundary >= Math.floor(limit * 0.6) ? boundary : limit;
+    return `${sentence.slice(0, end).trimEnd()}…`;
+  }
+
+  function previewBasis(item, connectionPreview) {
+    const recorded = readerText(connectionPreview?.edge?.basis?.notes);
+    if (recorded) return {label: "Recorded basis", text: conciseSourceText(recorded)};
+    const relevance = readerText(item?.rationale?.passage_relevance);
+    if (relevance) return {label: "Passage relevance", text: conciseSourceText(relevance)};
+    return {label: "", text: ""};
+  }
+
+  function previewQualification(item, evidenceLabel) {
+    const temporalRelations = [item?.temporal_relation, ...(Array.isArray(item?.temporal_relations) ? item.temporal_relations : [])]
+      .map((value) => readerText(value).toLowerCase().replace(/_/g, "-"));
+    if (evidenceLabel === "Later reception" && temporalRelations.includes("contemporary")) {
+      return "Later reception · CKL link is marked contemporary and needs review.";
     }
+    if (!isDisputed(item)) return "";
+    const dispute = readerText(item?.dispute_status).toLowerCase().replace(/-/g, "_");
+    if (dispute === "textual_variant") return "Textual variant · wording and implications remain debated.";
+    if (dispute === "identification_uncertainty") return "Identification remains uncertain.";
+    if (dispute === "major_scholarly_disagreement") return "Major scholarly disagreement.";
+    if (dispute === "minor_scholarly_disagreement") return "Some scholarly disagreement remains.";
+    if (dispute === "interpretive_uncertainty") return "Interpretation remains disputed.";
+    return "Interpretation status is disputed.";
+  }
+
+  function appendFullEvidenceDetails(document, parent, item) {
+    const original = element(document, "section", "narrative-explorer-original-evidence");
+    const claim = readerText(item?.claim_text);
+    const description = readerText(item?.description);
+    if (claim) {
+      appendTextElement(document, original, "h6", "Recorded claim");
+      appendTextElement(document, original, "p", claim, "narrative-explorer-original-claim");
+    }
+    if (description && description !== claim) {
+      appendTextElement(document, original, "h6", "Recorded description");
+      appendTextElement(document, original, "p", description, "narrative-explorer-original-description");
+    }
+    if (original.children.length) parent.append(original);
+    appendRationaleDetails(document, parent, item?.rationale);
   }
 
   function provenanceLines(item, connections) {
@@ -1192,6 +1221,16 @@
     appendDefinition(document, identity, "Claim type", item?.claim_type);
     appendDefinition(document, identity, "Assertion type", item?.assertion_type);
     view.append(identity);
+    const action = supportedAction(item);
+    if (action && typeof options.onNavigate === "function") {
+      const button = element(document, "button", "secondary narrative-explorer-item-action");
+      button.type = "button";
+      button.textContent = action.label;
+      if (action.ariaLabel) button.setAttribute("aria-label", action.ariaLabel.replace("{title}", title));
+      button.dataset.narrativeFocusId = `source:${readerText(item?.id)}`;
+      button.addEventListener("click", () => options.onNavigate(item, action, button));
+      view.append(button);
+    }
     appendRationaleDetails(document, view, item?.rationale);
 
     const status = element(document, "ul", "narrative-explorer-evidence-status");
@@ -1278,8 +1317,8 @@
     const text = metadataText(value);
     const term = element(document, "dt");
     const description = element(document, "dd");
-    term.textContent = label;
-    description.textContent = text || "not recorded in CKL";
+    setFormattedText(document, term, label);
+    setFormattedText(document, description, text || "not recorded in CKL");
     list.append(term, description);
   }
 
@@ -1340,12 +1379,12 @@
     const details = element(document, "details", "narrative-explorer-recorded-rationale");
     appendTextElement(document, details, "summary", "Recorded observations and interpretation");
     const list = element(document, "dl", "narrative-explorer-detail-identity");
-    Object.entries(rationale).slice(0, 12).forEach(([key, value]) => {
+    Object.entries(rationale).forEach(([key, value]) => {
       if (value === null || value === undefined || value === "") return;
       const term = element(document, "dt");
-      term.textContent = key.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+      setFormattedText(document, term, key.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase()));
       const description = element(document, "dd");
-      description.textContent = metadataText(value);
+      setFormattedText(document, description, metadataText(value));
       list.append(term, description);
     });
     details.append(list);
@@ -1474,10 +1513,37 @@
       .filter((edge) => !(edge?.direction === "reciprocal" && edge?.target_id === itemId && edge?.source_id !== itemId))
       .sort((left, right) => readerText(left?.id).localeCompare(readerText(right?.id)));
     const section = element(document, "section", "narrative-explorer-connections");
-    appendTextElement(document, section, "h4", `Authored connections (${edges.length})`);
+    const anchors = edges.filter((edge) => readerText(edge?.basis?.kind).endsWith("_scripture_anchor"));
+    const relationships = edges.filter((edge) => !readerText(edge?.basis?.kind).endsWith("_scripture_anchor"));
+    appendConnectionGroup(
+      document,
+      section,
+      `Recorded CKL relationships (${relationships.length})`,
+      relationships,
+      item,
+      trail,
+      options,
+      "No separate CKL relationship was returned for this item in the current passage projection.",
+    );
+    appendConnectionGroup(
+      document,
+      section,
+      `Passage anchors (${anchors.length})`,
+      anchors,
+      item,
+      trail,
+      options,
+      "No Scripture passage anchors were returned for this item.",
+    );
+    parent.append(section);
+  }
+
+  function appendConnectionGroup(document, parent, title, edges, item, trail, options, emptyMessage) {
+    const group = element(document, "section", "narrative-explorer-connection-group");
+    appendTextElement(document, group, "h4", title);
     if (!edges.length) {
-      appendTextElement(document, section, "p", "No authored connections for this item were returned in the current passage projection.");
-      parent.append(section);
+      appendTextElement(document, group, "p", emptyMessage);
+      parent.append(group);
       return;
     }
     const list = element(document, "ol", "narrative-explorer-connection-list");
@@ -1489,19 +1555,19 @@
       next += page.length;
       if (moreButton) {
         moreButton.hidden = next >= edges.length;
-        moreButton.textContent = `Show ${Math.min(CONNECTION_PAGE_SIZE, edges.length - next)} more connections`;
+        moreButton.textContent = `Show ${Math.min(CONNECTION_PAGE_SIZE, edges.length - next)} more ${title.startsWith("Passage anchors") ? "anchors" : "relationships"}`;
       }
     };
     addPage();
-    section.append(list);
+    group.append(list);
     if (edges.length > CONNECTION_PAGE_SIZE) {
       moreButton = element(document, "button", "secondary narrative-explorer-more-connections");
       moreButton.type = "button";
-      moreButton.textContent = `Show ${Math.min(CONNECTION_PAGE_SIZE, edges.length - next)} more connections`;
+      moreButton.textContent = `Show ${Math.min(CONNECTION_PAGE_SIZE, edges.length - next)} more ${title.startsWith("Passage anchors") ? "anchors" : "relationships"}`;
       moreButton.addEventListener("click", addPage);
-      section.append(moreButton);
+      group.append(moreButton);
     }
-    parent.append(section);
+    parent.append(group);
   }
 
   function renderConnection(document, selectedItem, edge, trail, options) {
@@ -1517,7 +1583,8 @@
     const category = isScriptureAnchor
       ? (anchorRelationship === "comparative" ? "Comparative passage anchor" : "Scripture passage anchor")
       : connectionCategoryLabel(edge.connection_type);
-    appendTextElement(document, entry, "p", `Relationship: ${category}${edge.original_relationship_type ? ` · original CKL label: ${readerText(edge.original_relationship_type)}` : " · original CKL label unavailable"}`, "narrative-explorer-connection-label");
+    const relationshipHeading = isScriptureAnchor ? `Evidence scope: ${category}` : `Recorded relationship: ${category}`;
+    appendTextElement(document, entry, "p", `${relationshipHeading}${edge.original_relationship_type ? ` · original CKL label: ${readerText(edge.original_relationship_type)}` : " · original CKL label unavailable"}`, "narrative-explorer-connection-label");
     appendTextElement(document, entry, "p", `Source subject: ${sourceSubject} · Target subject: ${targetSubject} · Direction: ${sourceSubject} → ${targetSubject} (${direction}).`);
     if (edge.direction === "reciprocal" && readerText(edge.reverse_edge_id)) {
       appendTextElement(document, entry, "p", `A reciprocal CKL edge is recorded; reverse CKL edge ID: ${readerText(edge.reverse_edge_id)}.`, "narrative-explorer-connection-direction");
@@ -1741,9 +1808,38 @@
 
   function appendTextElement(document, parent, tagName, text, className = "") {
     const value = element(document, tagName, className);
-    value.textContent = String(text ?? "");
+    setFormattedText(document, value, text);
     parent.append(value);
     return value;
+  }
+
+  function setFormattedText(document, parent, value) {
+    const source = String(value ?? "");
+    const emphasisPattern = /(\*\*|__)(\S[^*_\n]*?\S)\1|(?<![\w])([*_])(\S[^*_\n]*?\S)\3(?![\w])/g;
+    const matches = [...source.matchAll(emphasisPattern)];
+    if (!matches.length) {
+      parent.textContent = source;
+      return;
+    }
+    parent.textContent = "";
+    let cursor = 0;
+    matches.forEach((match) => {
+      const start = match.index ?? cursor;
+      if (start > cursor) appendInlineText(document, parent, source.slice(cursor, start));
+      const marker = match[1] || match[3];
+      const emphasized = element(document, marker.length === 2 ? "strong" : "em");
+      emphasized.textContent = match[2] || match[4];
+      parent.append(emphasized);
+      cursor = start + match[0].length;
+    });
+    if (cursor < source.length) appendInlineText(document, parent, source.slice(cursor));
+  }
+
+  function appendInlineText(document, parent, text) {
+    if (!text) return;
+    const value = element(document, "span");
+    value.textContent = text;
+    parent.append(value);
   }
 
   function readerText(value) {

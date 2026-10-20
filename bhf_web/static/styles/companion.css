@@ -487,6 +487,30 @@ body.companion-sheet-full {
   font-weight: 750;
 }
 
+.narrative-explorer-connections,
+.narrative-explorer-connection-group {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+}
+
+.narrative-explorer-connection-group + .narrative-explorer-connection-group {
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.narrative-explorer-connection-group h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.narrative-explorer-connection-group > p {
+  margin: 0;
+  color: var(--page-muted);
+  line-height: 1.45;
+}
+
 .narrative-explorer-item h5 {
   font-size: 0.88rem;
   line-height: 1.4;
@@ -504,9 +528,47 @@ body.companion-sheet-full {
   overflow-wrap: anywhere;
 }
 
+.narrative-explorer-preview-basis {
+  color: var(--page-muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.narrative-explorer-item-qualification {
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px 8px;
+  border-left: 3px solid var(--border-strong);
+  color: var(--page-text);
+  background: var(--surface);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.narrative-explorer-original-evidence {
+  display: grid;
+  gap: 5px;
+  margin: 5px 0 9px;
+}
+
+.narrative-explorer-original-evidence h6 {
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 0.78rem;
+}
+
+.narrative-explorer-original-evidence p {
+  margin: 0;
+  color: var(--page-text);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 .narrative-explorer-provenance summary {
   width: fit-content;
-  min-height: 40px;
+  min-height: 44px;
   padding: 9px 2px 5px;
   color: var(--accent-strong);
   cursor: pointer;
@@ -527,6 +589,7 @@ body.companion-sheet-full {
 
 .narrative-explorer-section button,
 .narrative-explorer-connection-discovery button,
+.narrative-explorer-evidence-detail button,
 .narrative-explorer-retry {
   min-height: 44px;
   width: fit-content;
@@ -565,7 +628,8 @@ body.companion-sheet-full {
   }
 
   .narrative-explorer-section button,
-  .narrative-explorer-connection-discovery button {
+  .narrative-explorer-connection-discovery button,
+  .narrative-explorer-evidence-detail button {
     width: 100%;
   }
 

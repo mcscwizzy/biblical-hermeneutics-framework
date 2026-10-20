@@ -568,18 +568,9 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         })
         cls._environment_patch.start()
         cls._app = web_app_module.create_app()
-        import httpx
-
-        async def warm_narrative_explorer():
-            async with httpx.AsyncClient(
-                transport=httpx.ASGITransport(app=cls._app),
-                base_url="http://testserver",
-            ) as client:
-                response = await client.get("/api/narrative-explorer/v1/passages/John/1")
-                if response.status_code != 200:
-                    raise AssertionError(f"NE-3 John 1 prewarm returned HTTP {response.status_code}")
-
-        asyncio.run(warm_narrative_explorer())
+        # Warm the expensive source projection directly. The browser journeys below
+        # exercise the real HTTP route once Uvicorn is serving the app.
+        cls._app.state.narrative_explorer_service.build("John", 1)
         cls._port = _free_port()
         cls._base_url = f"http://127.0.0.1:{cls._port}"
         cls._server_runner = Server(Config(
@@ -607,10 +598,14 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             cls._tmpdir.cleanup()
 
     def setUp(self):
+        from selenium.webdriver.firefox.service import Service
+
         options = FirefoxOptions()
         options.add_argument("-headless")
         try:
-            self.driver = webdriver.Firefox(options=options)
+            driver_path = shutil.which("geckodriver")
+            service = Service(executable_path=driver_path) if driver_path else None
+            self.driver = webdriver.Firefox(service=service, options=options)
         except Exception as exc:  # pragma: no cover - depends on local browser setup
             raise unittest.SkipTest(f"Firefox WebDriver could not start: {exc}") from exc
         self.driver.set_page_load_timeout(90)
@@ -837,10 +832,17 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
             entry.click()
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
-            self.assertIn(reference, self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
+            discovery_heading = self.driver.find_element(
+                By.CSS_SELECTOR,
+                ".narrative-explorer-connection-discovery h4",
+            ).text
+            self.assertIn(f"Evidence about {reference}", discovery_heading)
             header_text = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-header").text
-            self.assertIn("Follow this passage into its sources", header_text)
-            self.assertIn("later reception", header_text.lower())
+            self.assertIn("Coverage and counts describe linked records", header_text)
+            self.assertIn("not proof of borrowing or dependence", self.driver.find_element(
+                By.CSS_SELECTOR,
+                ".narrative-explorer-connection-discovery",
+            ).text)
             self.assertNotIn("CKL parent records", header_text)
 
         def inspect_record(section_id, identity, expected_label, source_id, content_check, caution_check=None):
@@ -974,11 +976,18 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         self.driver.get(self._base_url + "/")
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
         wait.until(lambda driver: driver.execute_script(
-            "return window.BHFStudySelection?.getState?.().book === 'John';"
+            "const state=window.BHFStudySelection?.getState?.(); "
+            "const book=document.querySelector('[data-reader-book]'); "
+            "const chapter=document.querySelector('[data-reader-chapter]'); "
+            "return state?.book === 'John' && state.chapter === 1 "
+            "&& book?.value === 'John' && chapter?.value === '1' "
+            "&& document.querySelector('#chapter-reader h3')?.textContent?.trim() === 'John 1';"
         ))
         Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-book]")).select_by_value("Genesis")
         wait.until(lambda driver: driver.execute_script(
-            "return window.BHFStudySelection?.getState?.().book === 'Genesis';"
+            "const state=window.BHFStudySelection?.getState?.(); "
+            "return state?.book === 'Genesis' "
+            "&& document.querySelector('[data-reader-book]')?.value === 'Genesis';"
         ))
         Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("6")
         wait.until(lambda driver: driver.execute_script(
@@ -994,27 +1003,37 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         )) == 3)
         preview = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")
         preview_text = preview.text
+        self.assertIn("Evidence about Genesis 6", preview_text)
+        self.assertNotIn("Explore related passages and evidence", preview_text)
         self.assertIn("Sons of God: documented interpretive positions", preview_text)
         self.assertIn("Second Temple Watchers reception of Genesis 6", preview_text)
         self.assertIn("Gilgamesh Tablet XI flood comparison", preview_text)
-        self.assertIn("The CKL Scripture link is marked contemporary", preview_text)
-        self.assertIn("does not by itself establish", discovery.text)
+        self.assertIn("CKL link is marked contemporary", preview_text)
+        self.assertNotIn("*bene ha'elohim*", preview_text)
+        self.assertIn("anchors mark where evidence applies", preview_text)
+        self.assertIn("Recorded basis:", preview_text)
         self.assertLessEqual(
             self.driver.execute_script("return document.documentElement.scrollWidth"),
             self.driver.execute_script("return window.innerWidth"),
         )
-        self.assertTrue(self.driver.find_element(
+        explore = self.driver.find_element(
             By.CSS_SELECTOR,
             ".narrative-explorer-connection-discovery .narrative-explorer-item-inspect",
-        ).is_enabled())
+        )
+        self.assertEqual(explore.text, "Explore this evidence")
+        self.assertTrue(explore.is_enabled())
         resource_host = self.driver.find_element(By.CSS_SELECTOR, ".companion-resource-host")
         self.driver.execute_script("arguments[0].scrollTop=0;", resource_host)
-        self.driver.save_screenshot("/tmp/ne8b-connection-preview-desktop.png")
-        discovery.screenshot("/tmp/ne8b-connection-discovery-desktop.png")
+        self.driver.save_screenshot("/tmp/ne8b1-reader-overview-desktop.png")
+        discovery.screenshot("/tmp/ne8b1-reader-evidence-desktop.png")
 
-        inspect = discovery.find_element(By.CSS_SELECTOR, ".narrative-explorer-item-inspect")
-        inspect.send_keys(Keys.ENTER)
+        explore.send_keys(Keys.ENTER)
         wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Evidence detail"]')))
+        self.assertTrue(self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-evidence-detail .narrative-explorer-item-action").is_displayed())
+        self.assertEqual(
+            self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-evidence-detail .narrative-explorer-item-action").text,
+            "Open CKL record",
+        )
         self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-return-origin").click()
         discovery = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")))
 
@@ -1022,11 +1041,7 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         wait.until(lambda driver: driver.execute_script("return window.matchMedia('(max-width: 760px)').matches"))
         discovery = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")
         resource_host = self.driver.find_element(By.CSS_SELECTOR, ".companion-resource-host")
-        self.driver.execute_script(
-            "arguments[0].scrollTop += arguments[1].getBoundingClientRect().top - arguments[0].getBoundingClientRect().top;",
-            resource_host,
-            discovery,
-        )
+        self.driver.execute_script("arguments[0].scrollTop=0;", resource_host)
         self.assertLessEqual(
             self.driver.execute_script("return document.documentElement.scrollWidth"),
             self.driver.execute_script("return window.innerWidth"),
@@ -1035,8 +1050,26 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             By.CSS_SELECTOR,
             ".narrative-explorer-connection-discovery .narrative-explorer-provenance summary",
         ).rect["height"], 40)
-        self.driver.save_screenshot("/tmp/ne8b-connection-preview-mobile.png")
-        discovery.screenshot("/tmp/ne8b-connection-discovery-mobile.png")
+        self.driver.save_screenshot("/tmp/ne8b1-reader-overview-mobile.png")
+        discovery.screenshot("/tmp/ne8b1-reader-evidence-mobile.png")
+        scroll_state = self.driver.execute_script("""
+          const host = arguments[0];
+          const dock = document.querySelector('.app-dock');
+          host.scrollTop = host.scrollHeight;
+          const actions = host.querySelectorAll('.narrative-explorer-item-inspect');
+          const lastAction = actions[actions.length - 1];
+          const actionRect = lastAction?.getBoundingClientRect();
+          const dockRect = dock?.getBoundingClientRect();
+          return {
+            scrollTop: host.scrollTop,
+            scrollHeight: host.scrollHeight,
+            clientHeight: host.clientHeight,
+            actionBottom: actionRect?.bottom ?? 0,
+            dockTop: dockRect?.top ?? window.innerHeight,
+          };
+        """, resource_host)
+        self.assertGreater(scroll_state["scrollTop"], 0, "the mobile evidence view should scroll through all cards")
+        self.assertLessEqual(scroll_state["actionBottom"], scroll_state["dockTop"], "the final card action should remain above the fixed dock")
         provenance = discovery.find_element(By.CSS_SELECTOR, ".narrative-explorer-provenance")
         summary = provenance.find_element(By.TAG_NAME, "summary")
         summary.send_keys(Keys.ENTER)

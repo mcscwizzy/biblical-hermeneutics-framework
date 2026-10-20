@@ -579,7 +579,7 @@ test("unavailable states are announced without turning a network failure into an
   assert.match(failure.textContent, /Reconnect and try again/);
 });
 
-test("overview exposes an inspect control with the exact projected item identity", () => {
+test("overview exposes a reader-facing evidence action with the exact projected item identity", () => {
   const data = projection();
   const inspected = [];
   const root = explorer.renderOverview(data, {
@@ -1166,11 +1166,9 @@ test("overview guides readers and reports coverage-aware linked record counts", 
   const sectionsHost = descendants(root).find((element) => element.className === "narrative-explorer-sections");
   const sectionCard = (id) => sectionsHost.children.find((element) => element.dataset.sectionId === id);
 
-  assert.match(root.textContent, /Follow this passage into its sources/);
-  assert.match(root.textContent, /biblical wording, ancient comparisons, later reception, and scholarly interpretation/i);
-  assert.match(root.textContent, /passage link, sources, and uncertainty/i);
-  assert.match(root.textContent, /coverage shows what BHF has linked here/i);
-  assert.match(root.textContent, /counts refer to linked records, not independent discoveries/i);
+  assert.match(root.textContent, /Explore the sources and connections recorded for this passage/);
+  assert.match(root.textContent, /Coverage and counts describe linked records/);
+  assert.match(root.textContent, /a cross-passage connection needs a separate recorded CKL relationship and basis/i);
   assert.match(sectionCard("biblical_narrative").textContent, /1 linked record/);
   assert.match(sectionCard("archaeology_ancient_history").textContent, /No linked records were returned by the completed lookup/);
   assert.match(sectionCard("biblical_geography").textContent, /Record count unavailable because the lookup did not complete/);
@@ -1252,7 +1250,7 @@ test("passage overview cards label text, comparison, reception, and interpretati
   }
 });
 
-test("overview exposes at most three evidence-backed connection previews with their recorded basis", () => {
+test("overview keeps passage evidence concise and separates anchors from recorded connection bases", () => {
   const fixturePath = (name) => path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline", name);
   const cases = [
     {
@@ -1287,8 +1285,9 @@ test("overview exposes at most three evidence-backed connection previews with th
     const discovery = descendants(root).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
 
     assert.ok(discovery, `${testCase.file} should expose the connection discovery entry point`);
-    assert.match(discovery.textContent, /Explore related passages and evidence/);
-    assert.match(discovery.textContent, /anchor shows where evidence applies/i);
+    assert.match(discovery.textContent, /Evidence about /);
+    assert.match(discovery.textContent, /anchors? mark where evidence applies/i);
+    assert.doesNotMatch(discovery.textContent, /Explore related passages and evidence/);
     const cards = descendants(discovery).filter((element) => element.dataset.narrativeConnectionPreview === "true");
     assert.ok(cards.length > 0 && cards.length <= 3, `${testCase.file} should keep the preview concise`);
     assert.deepEqual(
@@ -1300,50 +1299,96 @@ test("overview exposes at most three evidence-backed connection previews with th
     for (const title of testCase.titles) {
       const card = cards.find((element) => element.textContent.includes(title));
       assert.ok(card, `${testCase.file} should surface ${title}`);
-      assert.match(card.textContent, /Why this is linked:/);
-      assert.match(card.textContent, /Evidence anchor:|Comparison anchor:/);
-      assert.match(card.textContent, /not establish|does not establish/i);
+      const description = descendants(card).find((element) => element.className === "narrative-explorer-item-copy");
+      assert.ok(description, `${title} should have one source-grounded descriptive sentence`);
+      assert.equal((description.textContent.match(/[.!?](?:\s|$)/g) || []).length, 1, `${title} should have one concise sentence`);
+      assert.doesNotMatch(description.textContent, /(^|\s)[*_][^*_]+[*_](\s|$)/, `${title} should render Markdown emphasis without literal markers`);
+      assert.match(card.textContent, /Recorded basis:|Passage relevance:/);
+      assert.doesNotMatch(card.textContent, /Evidence anchor:|Comparison anchor:/, `${title} should not present an anchor as a connection`);
       const provenance = descendants(card).find((element) => element.className === "narrative-explorer-provenance");
       assert.ok(provenance, `${title} should retain expandable evidence provenance`);
       const previewBasis = descendants(card).find((element) => element.className === "narrative-explorer-preview-basis");
-      assert.ok(provenance.textContent.includes(previewBasis.textContent.replace(/^Why this is linked: /, "")), `${title} should retain the recorded preview basis in its details`);
+      assert.ok(previewBasis, `${title} should expose a recorded connection or relevance basis`);
+      assert.ok(provenance.textContent.includes(previewBasis.textContent.replace(/^(Recorded basis|Passage relevance): /, "")), `${title} should retain the recorded preview basis in its details`);
       const sourceIds = data.items.find((item) => item.title === title)?.source_ids || [];
       assert.ok(sourceIds.some((sourceId) => provenance.textContent.includes(sourceId)), `${title} should retain a recorded source ID`);
+      const sourceItem = data.items.find((item) => item.title === title);
+      [sourceItem.claim_text, sourceItem.description].filter(Boolean).forEach((sourceText) => {
+        assert.ok(provenance.textContent.includes(sourceText.replaceAll("*", "")), `${title} should retain the full original wording in expandable details`);
+      });
       assert.match(provenance.textContent, /Original relationship types:|Connection basis:/);
-      const inspect = descendants(card).find((element) => element.className.includes("narrative-explorer-item-inspect"));
-      assert.ok(inspect, `${title} should use the existing evidence detail action`);
-      inspect.click();
+      assert.match(provenance.textContent, /Passage relationship:/, `${title} should retain its passage anchor in details`);
+      const explore = descendants(card).find((element) => element.className.includes("narrative-explorer-item-inspect"));
+      assert.equal(explore?.textContent, "Explore this evidence", `${title} should use reader-facing detail navigation`);
+      explore.click();
     }
 
     assert.equal(inspected.length, testCase.titles.length, "the preview action should reuse the existing inspect callback");
     if (testCase.file === "genesis_6_1_4.json") {
       const watchers = cards.find((element) => element.textContent.includes("Second Temple Watchers reception"));
-      assert.match(watchers.textContent, /Scripture link is marked contemporary/i);
+      assert.match(watchers.textContent, /CKL (Scripture )?link is marked contemporary and needs review/i);
+      assert.match(watchers.textContent, /Later reception/);
     }
     if (testCase.file === "psalm_82.json") {
-      assert.match(cards[0].textContent, /identity of the judged figures.*disputed/i);
+      assert.match(cards[0].textContent, /disputed/i);
       const comparison = cards.find((element) => element.textContent.includes("Ugaritic council imagery comparison"));
       assert.match(comparison.textContent, /Ancient comparative literature/);
       assert.match(comparison.textContent, /not decide the referents/);
     }
     if (testCase.file === "deuteronomy_32_8_9.json") {
       assert.match(cards[0].textContent, /Manuscript\/textual witness/);
-      assert.match(cards[0].textContent, /earliest wording and its implications remain debated/i);
-      assert.match(cards[0].textContent, /textual_variant/);
+      assert.match(cards[0].textContent, /textual.*disputed|disputed.*textual/i);
     }
     if (testCase.file === "genesis_2.json") {
       const rivers = cards.find((element) => element.textContent.includes("Four rivers and limits"));
-      assert.match(rivers.textContent, /identification_uncertainty/);
-      assert.match(rivers.textContent, /passage gives no coordinates/i);
+      assert.match(rivers.textContent, /identification.*uncertain|location.*uncertain/i);
     }
   }
+});
+
+test("supported Markdown emphasis renders as safe text in evidence details without changing CKL data", () => {
+  const fixturePath = path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline/genesis_2.json");
+  const data = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  const item = data.items.find((candidate) => candidate.title === "Genesis 2:4 as literary hinge");
+  const originalDescription = item.description;
+  const detail = explorer.renderEvidenceDetail(item, [], null, {document: fakeDocument()});
+  const emphasis = descendants(detail).find((element) => element.tagName === "EM" && element.textContent === "toledot");
+
+  assert.ok(emphasis, "the Hebrew transliteration should render in an emphasis element");
+  assert.match(detail.textContent, /toledot/);
+  assert.doesNotMatch(detail.textContent, /\*toledot\*/);
+  assert.equal(item.description, originalDescription, "rendering must not modify the projected CKL wording");
+
+  const unsafeLookingText = explorer.renderEvidenceDetail({
+    ...item,
+    description: "A *safe term* with literal <img src=x onerror=alert(1)> text.",
+  }, [], null, {document: fakeDocument()});
+  assert.match(unsafeLookingText.textContent, /literal <img src=x onerror=alert\(1\)> text/);
+  assert.doesNotMatch(descendants(unsafeLookingText).map((element) => element.tagName).join(" "), /IMG/);
+});
+
+test("raw CKL record navigation remains available from the detailed evidence view", () => {
+  const fixturePath = path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline/genesis_6_1_4.json");
+  const data = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  const item = data.items.find((candidate) => candidate.title === "Sons of God: documented interpretive positions");
+  let opened = 0;
+  const detail = explorer.renderEvidenceDetail(item, [], null, {
+    document: fakeDocument(),
+    onNavigate: () => { opened += 1; },
+  });
+  const action = descendants(detail).find((element) => element.className.includes("narrative-explorer-item-action"));
+
+  assert.equal(action?.textContent, "Open CKL record");
+  action.click();
+  assert.equal(opened, 1);
+  assert.match(detail.textContent, /CKL parent object/);
 });
 
 test("connection preview distinguishes missing coverage from no recorded eligible relationships", () => {
   const noEdges = projection({connections: []});
   const noEdgeRoot = explorer.renderOverview(noEdges, {document: fakeDocument()});
   const noEdgeDiscovery = descendants(noEdgeRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
-  assert.match(noEdgeDiscovery.textContent, /No evidence-linked CKL relationships with a recorded basis are available/i);
+  assert.match(noEdgeDiscovery.textContent, /No source-linked evidence with a recorded basis is available/i);
   assert.doesNotMatch(noEdgeDiscovery.textContent, /No evidence exists/i);
 
   const unavailable = projection({
@@ -1364,7 +1409,7 @@ test("connection preview distinguishes missing coverage from no recorded eligibl
   });
   const partialRoot = explorer.renderOverview(partial, {document: fakeDocument()});
   const partialDiscovery = descendants(partialRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
-  assert.match(partialDiscovery.textContent, /No previewable relationships are available in the returned partial CKL results/i);
+  assert.match(partialDiscovery.textContent, /No source-linked previews are available in the returned partial CKL results/i);
   assert.doesNotMatch(partialDiscovery.textContent, /No evidence exists/i);
 
   const fixturePath = path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline/genesis_6_1_4.json");
@@ -1390,6 +1435,9 @@ test("direct Scripture anchors are not rendered as unclassified CKL associations
 
   assert.match(detail.textContent, /Scripture passage anchor/);
   assert.match(detail.textContent, /shows the evidence's passage scope/i);
+  assert.match(detail.textContent, /Recorded CKL relationships \(0\)/);
+  assert.match(detail.textContent, /Passage anchors \(1\)/);
+  assert.match(detail.textContent, /Evidence scope: Scripture passage anchor/);
   assert.doesNotMatch(detail.textContent, /This authored label is a descriptive association/);
 
   const comparison = data.items.find((candidate) => candidate.id === "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison");
@@ -1399,6 +1447,7 @@ test("direct Scripture anchors are not rendered as unclassified CKL associations
     knownBooks: [{value: "Psalms", chapters: 150}],
   });
   assert.match(comparisonDetail.textContent, /Comparative passage anchor/);
+  assert.match(comparisonDetail.textContent, /Evidence scope: Comparative passage anchor/);
   assert.match(comparisonDetail.textContent, /does not establish a literary or theological relationship/);
   assert.doesNotMatch(comparisonDetail.textContent, /This authored label is a descriptive association/);
 });
