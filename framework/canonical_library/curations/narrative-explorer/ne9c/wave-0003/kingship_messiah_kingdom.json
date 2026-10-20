@@ -1,0 +1,108 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Exodus 1:11-14"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Forced labor forms the narrative setting for Israel's deliverance.",
+      "original_relationship_type": "event-context",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:egyptian-forced-labor-and-brickmaking",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "egyptian-forced-labor-and-brickmaking",
+          "source_id": "exodus-forced-labor-text",
+          "title": "Exodus 1 and 5"
+        },
+        {
+          "author": "",
+          "object_id": "the-exodus",
+          "source_id": "exodus-1-15",
+          "title": "Exodus 1-15"
+        },
+        {
+          "author": "Norman de Garis Davies",
+          "object_id": "egyptian-forced-labor-and-brickmaking",
+          "source_id": "davies-rekhmire-1943",
+          "title": "The Tomb of Rekh-mi-Re at Thebes",
+          "year": 1943
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Exodus 1:11-14",
+        "Exodus 5:1-5",
+        "Exodus 12:31-42"
+      ],
+      "supporting_records": [
+        "ckl:egyptian-forced-labor-and-brickmaking#source:exodus-forced-labor-text",
+        "ckl:the-exodus#source:exodus-1-15",
+        "ckl:egyptian-forced-labor-and-brickmaking#source:davies-rekhmire-1943"
+      ],
+      "target_id": "ckl:the-exodus",
+      "textual_observation": "The source record anchors Exodus 1:11-14; its authored relationship note states: Forced labor forms the narrative setting for Israel's deliverance. The supporting CKL bibliography includes the primary-text record for this passage where available.",
+      "uncertainty": "Exodus 1 depicts forced labor before Moses’ confrontation with Pharaoh and the departure narrative. Egyptian labor parallels are contextual evidence, not identification of a pharaoh or proof of the narrated episode.",
+      "why": "Exodus 1:11-14 provides a passage-level route from Egyptian Forced Labor and Brickmaking to The Exodus: Forced labor forms the narrative setting for Israel's deliverance."
+    },
+    {
+      "applicable_passages": [
+        "Mark 1:14-15"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "the reign of God proclaimed in his ministry",
+      "original_relationship_type": "mission-anchor",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:jesus",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "jesus",
+          "source_id": "mark-1-16",
+          "title": "Mark 1-16"
+        },
+        {
+          "author": "",
+          "object_id": "kingdom-theme",
+          "source_id": "mark-1",
+          "title": "Mark 1"
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Mark 1:14-15",
+        "Luke 4:43"
+      ],
+      "supporting_records": [
+        "ckl:jesus#source:mark-1-16",
+        "ckl:kingdom-theme#source:mark-1"
+      ],
+      "target_id": "ckl:kingdom-theme",
+      "textual_observation": "The source record anchors Mark 1:14-15; its authored relationship note states: the reign of God proclaimed in his ministry The supporting CKL bibliography includes the primary-text record for this passage where available.",
+      "uncertainty": "Mark 1:14-15 reports Jesus proclaiming God’s kingdom. This records the Gospel’s theme without settling the phrase’s full political or eschatological scope.",
+      "why": "Mark 1:14-15 provides a passage-level route from Jesus to Kingdom Theme: the reign of God proclaimed in his ministry"
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "kingship_messiah_kingdom",
+  "wave": 3
+}
