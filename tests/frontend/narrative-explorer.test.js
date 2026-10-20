@@ -712,6 +712,23 @@ test("authored evidence relationships resolve the exact eligible target and coun
       target_resolution_status: "eligible",
       notes: "The comparison is recorded as secondary evidence.",
     },
+    curation: {
+      classification: "interpretive_association",
+      textual_observation: "The two evidence records use separate corpora.",
+      why: "Readers can inspect the comparison without treating it as borrowing.",
+      supporting_passages: ["Psalm 82:1-8", "KTU 1.1-1.2"],
+      supporting_records: [source.id, target.id],
+      supporting_ckl_sources: [{
+        object_id: "creation",
+        source_id: "comparison-source",
+        title: "A Comparative Study",
+        author: "A. Scholar",
+        year: 2013,
+      }],
+      uncertainty: "Comparison does not establish literary dependence.",
+      certainty: "moderate",
+      review_status: "curated_for_explorer",
+    },
   };
   const trail = explorer.addEvidenceStep(
     explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"}),
@@ -730,6 +747,10 @@ test("authored evidence relationships resolve the exact eligible target and coun
   assert.ok(button);
   assert.match(view.textContent, /Recorded CKL relationships/);
   assert.match(view.textContent, /recorded CKL evidence relationship.*compared-with/i);
+  assert.match(view.textContent, /Why this connects: Readers can inspect the comparison without treating it as borrowing/);
+  assert.match(view.textContent, /Supporting passages: Psalm 82:1-8 · KTU 1.1-1.2/);
+  assert.match(view.textContent, /A. Scholar, 2013/);
+  assert.match(view.textContent, /Interpretive uncertainty: Comparison does not establish literary dependence/);
   button.click();
   assert.equal(opened.length, 1);
   assert.equal(opened[0][0], target);
@@ -743,12 +764,15 @@ test("authored evidence relationships resolve the exact eligible target and coun
   assert.equal(followed.state.nodes.at(-1).id, target.id);
   assert.equal(followed.state.nodes.at(-1).relationshipHops, 1);
   assert.equal(followed.state.nodes.at(-1).relationship.basisKind, "ckl_related_evidence");
+  assert.equal(followed.state.nodes.at(-1).relationship.curation.classification, "interpretive_association");
   const detail = explorer.renderEvidenceDetail(target, [], followed.state, {document: fakeDocument()});
   assert.match(detail.textContent, /Opened through recorded CKL evidence relationship: compared-with/i);
   assert.match(detail.textContent, /This recorded relationship is not a Scripture anchor/i);
   assert.match(detail.textContent, /Recorded evidence IDs: ckl:creation#evidence:source-item → ckl:creation#evidence:target-item/);
   assert.match(detail.textContent, /Destination resolution: eligible/);
   assert.match(detail.textContent, /does not establish literary borrowing or dependence/i);
+  assert.match(detail.textContent, /Why this connects: Readers can inspect the comparison without treating it as borrowing/);
+  assert.match(detail.textContent, /Curation confidence: moderate/);
   assert.match(detail.textContent, /probable/);
   assert.match(detail.textContent, /major_scholarly_disagreement/);
   assert.match(detail.textContent, /in_review/);
