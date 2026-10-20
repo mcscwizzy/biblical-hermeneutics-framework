@@ -9,7 +9,9 @@ import pytest
 
 from scripts.ne9c_bulk_curation import (
     build_authored_object_relationships,
+    initialize_inventory,
     partition_relationship_waves,
+    record_decisions,
     validate_disposition_decision,
 )
 
@@ -110,3 +112,40 @@ def test_cli_inventory_can_import_repository_packages_when_run_by_script_path(tm
     assert inventory["backlog_relationship_count"] == sum(
         manifest["relationship_count"] for manifest in inventory["waves"]
     )
+
+
+def test_batch_decisions_are_idempotent_and_reject_conflicts_without_partial_writes(tmp_path):
+    repository = Path(__file__).resolve().parents[1]
+    state_dir = tmp_path / "state"
+    initialize_inventory(repository, state_dir)
+    first_wave = state_dir / "waves/wave-0001.jsonl"
+    edges = [json.loads(line) for line in first_wave.read_text(encoding="utf-8").splitlines()[:2]]
+    submissions = [
+        {
+            "edge_id": edge["edge_id"],
+            "decision": {
+                "disposition": "held",
+                "reason": f"Passage-level basis remains unresolved for {edge['source_id']}.",
+                "research_notes": "Reviewed owner records and checked for edge-specific passage support.",
+            },
+        }
+        for edge in edges
+    ]
+
+    first = record_decisions(repository, state_dir, submissions)
+    recorded_bytes = (state_dir / "decisions.jsonl").read_bytes()
+    replay = record_decisions(repository, state_dir, submissions)
+    assert first["reviewed_relationship_count"] == replay["reviewed_relationship_count"] == 2
+    assert (state_dir / "decisions.jsonl").read_bytes() == recorded_bytes
+
+    conflicting = [dict(submissions[0]), submissions[1]]
+    conflicting[0] = {
+        **submissions[0],
+        "decision": {
+            **submissions[0]["decision"],
+            "reason": "A conflicting disposition must not overwrite the recorded review.",
+        },
+    }
+    with pytest.raises(ValueError, match="conflicting disposition"):
+        record_decisions(repository, state_dir, conflicting)
+    assert (state_dir / "decisions.jsonl").read_bytes() == recorded_bytes

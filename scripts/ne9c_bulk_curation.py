@@ -314,6 +314,152 @@ def _persist_curation_entry(
     return path.relative_to(source_root).as_posix()
 
 
+def _curation_relative_path(wave_number: int, topic_cluster: str) -> str:
+    safe_cluster = "".join(
+        character if character.isalnum() or character in "-_" else "-"
+        for character in topic_cluster.casefold()
+    ).strip("-") or "other"
+    return (Path("framework/canonical_library/curations/narrative-explorer/ne9c")
+            / f"wave-{wave_number:04d}" / f"{safe_cluster}.json").as_posix()
+
+
+def _normalize_decision(
+    edge: Mapping[str, Any], wave_number: int, decision: Mapping[str, Any]
+) -> dict[str, Any]:
+    normalized = dict(decision)
+    validate_disposition_decision(edge, normalized)
+    normalized.update({
+        "edge_id": edge["edge_id"],
+        "authored_identity": edge["identity"],
+        "authored_direction": edge["authored_direction"],
+        "reviewer_type": "machine_assisted",
+        "human_scholarly_approval": "not_recorded",
+    })
+    if normalized["disposition"] == "curated":
+        normalized["curation_data_path"] = _curation_relative_path(wave_number, edge["topic_cluster"])
+        normalized["curation_topic_cluster"] = edge["topic_cluster"]
+    return normalized
+
+
+def _persist_curation_batch(source_root: Path, decisions: Sequence[Mapping[str, Any]]) -> None:
+    """Persist curation payloads grouped by wave and topic cluster."""
+
+    root = source_root / "framework/canonical_library/curations/narrative-explorer/ne9c"
+    documents: dict[Path, dict[str, Any]] = {}
+    identities: dict[tuple[Any, ...], tuple[dict[str, Any], Path]] = {}
+    for path in sorted(root.rglob("*.json")):
+        document = json.loads(path.read_text(encoding="utf-8"))
+        documents[path] = document
+        for entry in document.get("curations", []):
+            identity = _identity(entry)
+            if identity in identities:
+                raise ValueError("curation data contains duplicate exact authored identities")
+            identities[identity] = (entry, path)
+
+    changed: set[Path] = set()
+    for decision in decisions:
+        if decision["disposition"] != "curated":
+            continue
+        entry = dict(decision["curation"])
+        identity = _identity(entry)
+        target = source_root / decision["curation_data_path"]
+        existing = identities.get(identity)
+        if existing:
+            if _canonical_json(existing[0]) != _canonical_json(entry):
+                raise ValueError("curation data already contains conflicting metadata for this exact identity")
+            if existing[1].relative_to(source_root).as_posix() != decision["curation_data_path"]:
+                raise ValueError("curation data path changed while recovering a batch transaction")
+            continue
+        if target not in documents:
+            documents[target] = {
+                "schema_version": 1,
+                "wave": int(Path(decision["curation_data_path"]).parent.name.removeprefix("wave-")),
+                "topic_cluster": decision["curation_topic_cluster"],
+                "curations": [],
+            }
+        document = documents[target]
+        document["curations"].append(entry)
+        document["curations"].sort(key=lambda item: _canonical_json(list(_identity(item))))
+        identities[identity] = (entry, target)
+        changed.add(target)
+
+    for path in sorted(changed):
+        _atomic_write(path, json.dumps(documents[path], ensure_ascii=False, indent=2, sort_keys=True) + "\n")
+
+
+def _commit_batch_transaction(source_root: Path, state_dir: Path) -> dict[str, Any]:
+    transaction_path = state_dir / "pending-batch.json"
+    transaction = json.loads(transaction_path.read_text(encoding="utf-8"))
+    decisions = transaction["decisions"]
+    _persist_curation_batch(source_root, decisions)
+    current = _load_decisions(state_dir)
+    by_id = {item["edge_id"]: item for item in current}
+    for decision in decisions:
+        existing = by_id.get(decision["edge_id"])
+        if existing is not None:
+            if existing != decision:
+                raise ValueError(f"relationship already has a conflicting disposition: {decision['edge_id']}")
+            continue
+        current.append(decision)
+        by_id[decision["edge_id"]] = decision
+    current.sort(key=lambda item: item["edge_id"])
+    _atomic_write(state_dir / "decisions.jsonl", "".join(_canonical_json(item) + "\n" for item in current))
+    checkpoint = json.loads((state_dir / "checkpoint.json").read_text(encoding="utf-8"))
+    refreshed = _refresh_checkpoint(state_dir, checkpoint)
+    transaction_path.unlink()
+    return refreshed
+
+
+def record_decisions(
+    source_root: Path,
+    state_dir: Path,
+    submissions: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    """Validate and checkpoint a resumable slice of reviewed dispositions."""
+
+    transaction_path = state_dir / "pending-batch.json"
+    if transaction_path.exists():
+        _commit_batch_transaction(source_root, state_dir)
+    checkpoint = json.loads((state_dir / "checkpoint.json").read_text(encoding="utf-8"))
+    waves = _load_waves(state_dir, checkpoint)
+    edge_map = {
+        row["edge_id"]: (number, row)
+        for number, rows in waves.items()
+        for row in rows
+    }
+    current = _load_decisions(state_dir)
+    current_by_id = {item["edge_id"]: item for item in current}
+    normalized: list[dict[str, Any]] = []
+    submitted_ids: set[str] = set()
+    for submission in submissions:
+        if not isinstance(submission, Mapping):
+            raise ValueError("batch submission must contain edge_id and decision")
+        edge_id = submission.get("edge_id")
+        if not isinstance(edge_id, str) or edge_id not in edge_map:
+            raise ValueError(f"unknown uncategorized authored relationship: {edge_id}")
+        if edge_id in submitted_ids:
+            raise ValueError(f"batch repeats a relationship identity: {edge_id}")
+        submitted_ids.add(edge_id)
+        wave_number, edge = edge_map[edge_id]
+        decision = submission.get("decision")
+        if not isinstance(decision, Mapping):
+            raise ValueError(f"batch decision is malformed: {edge_id}")
+        item = _normalize_decision(edge, wave_number, decision)
+        existing = current_by_id.get(edge_id)
+        if existing is not None and existing != item:
+            raise ValueError(f"relationship already has a conflicting disposition: {edge_id}")
+        normalized.append(item)
+
+    if not normalized:
+        return _refresh_checkpoint(state_dir, checkpoint)
+    pending = [item for item in normalized if item["edge_id"] not in current_by_id]
+    if not pending:
+        return _refresh_checkpoint(state_dir, checkpoint)
+    _atomic_write(transaction_path, json.dumps({"schema_version": 1, "decisions": pending},
+                                                ensure_ascii=False, indent=2, sort_keys=True) + "\n")
+    return _commit_batch_transaction(source_root, state_dir)
+
+
 def _base_connection_type(label: str) -> str:
     from bhf_agent.presentation.narrative_explorer import _CONNECTION_TYPE_BY_LABEL, _normalized_label
 
@@ -596,6 +742,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     record_parser = commands.add_parser("record", help="record one reviewed edge disposition from JSON")
     record_parser.add_argument("edge_id")
     record_parser.add_argument("--decision-json", type=Path, required=True)
+    batch_parser = commands.add_parser("record-batch", help="record a validated resumable slice from JSON")
+    batch_parser.add_argument("--submissions-json", type=Path, required=True)
     commands.add_parser("validate", help="validate fingerprints, identities, waves, and decisions")
     args = parser.parse_args(argv)
     source_root = args.source_root.resolve()
@@ -630,6 +778,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             elif args.command == "record":
                 decision = json.loads(args.decision_json.read_text(encoding="utf-8"))
                 result = _status(record_decision(source_root, state_dir, args.edge_id, decision))
+            elif args.command == "record-batch":
+                payload = json.loads(args.submissions_json.read_text(encoding="utf-8"))
+                if not isinstance(payload, Mapping) or not isinstance(payload.get("decisions"), list):
+                    raise ValueError("batch JSON must contain a decisions array")
+                result = _status(record_decisions(source_root, state_dir, payload["decisions"]))
             else:
                 result = validate_inventory(source_root, state_dir)
         print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
