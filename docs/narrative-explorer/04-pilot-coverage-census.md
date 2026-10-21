@@ -1,5 +1,10 @@
 # Narrative Explorer: Pilot Coverage Census
 
+> Historical pilot census. It records retrieval and route snapshots from the
+> pilot implementation and is not the current NE-9C/NE-10 registry inventory.
+> Use the [current overview](README.md) and current CKL source for present
+> behavior.
+
 ## Method and scope
 
 This census was run against the checkout at b9812fd0236cc2341fd4b777fe92b009dfb05c8b. It uses the existing Companion service and local runtime data contract; it is not an HTTP session against a production deployment.

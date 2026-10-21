@@ -1,5 +1,13 @@
 # CKL Parent-Scope Integrity Audit
 
+> Historical diagnostic from the retired Commentary generation workflow. Its
+> generated `.bhf-data` inputs and `tools/ckl_scope_audit.py` implementation
+> have been removed from the current tree; the original report and code remain
+> in Git history. Findings below describe their recorded checkpoint, not a
+> current runtime population. See [CKL documentation](canonical_knowledge_library.md)
+> and the [current cleanup report](maintenance/repository-cleanup-report.md)
+> for present boundaries.
+
 Date: 2026-09-06
 
 ## Decision

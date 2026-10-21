@@ -98,7 +98,9 @@ python3 tools/evaluate_ckl_semantic.py \
 `import_lexicons.py` imports inspected local lexical data into the generated CKL
 SQLite database. It accepts either normalized JSON fixtures or a local source
 manifest. It does not download source repositories or parse raw upstream files
-during application startup.
+during application startup. The application’s packaged Word Study database is
+a separate artifact built through `framework.lexical`; see
+[`docs/compile-lexicon.md`](../docs/compile-lexicon.md).
 
 ```bash
 python -m framework.canonical_library build-db
@@ -221,6 +223,16 @@ python tools/validate_presentation_bundle.py \
 Add `--json` for automation. This is a structural deployment check; the engine
 still validates evidence IDs, entities, actions, and card claims against the
 current EvidenceBundle before selecting a bundled packet.
+
+## `asv_boundary_audit.py`
+
+Audits ASV verse text for Psalm headings embedded across verse boundaries. This
+read-only source check preserves the regression decision that Psalm 19:14 was
+one instance of a wider superscription pattern.
+
+```bash
+python -m tools.asv_boundary_audit
+```
 
 ## Code style
 

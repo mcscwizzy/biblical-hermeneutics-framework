@@ -1,5 +1,10 @@
 # Narrative Explorer: Product Experience
 
+This design reference describes the intended evidence-first interaction and
+classification safeguards. It is not a promise that every proposed view or
+category is populated. For shipped routes and current data inputs, see the
+[current Narrative Explorer overview](README.md).
+
 ## Product intent
 
 Narrative Explorer helps a reader discover what a passage connects to in Scripture, history, geography, and material evidence without requiring generated chapter commentary. Ask BHF remains the place for a reader's deeper interpretive question. Evidence labels, links, and source views distinguish what a text or artifact says from a reconstruction about it.
@@ -14,7 +19,7 @@ The experience belongs in the existing passage-first Study Companion. The Bible 
 4. The reader opens a category or individual subject.
 5. The detail view shows the authored claim, passage relationship, source, confidence, uncertainty, and explicit connection basis. Evidence details are expandable.
 6. The reader follows a cited passage, source, place, event, or connected topic. A breadcrumb and Companion browser history return to the original passage.
-7. The reader may open **Ask BHF** and type a question. NE-1 keeps the current handoff unchanged.
+7. The reader may open **Ask BHF** and prepare a question for the configured external assistant.
 
 There is no required AI request. The experience does not manufacture a story summary when CKL has no authored or mechanically supported narrative data.
 
@@ -105,4 +110,4 @@ Reuse CKL identities and relationship records for named people, historical figur
 
 ## Existing workflows retained
 
-Narrative Explorer does not replace the Tyndale Companion tab, note/highlight actions, lexicon, translation comparison, saved passages, Bible navigation, or map and archaeology workspaces. The BHF-generated Commentary card may coexist during rollout and later move to archived access under the phased transition plan.
+Narrative Explorer does not replace the Tyndale Study Notes pane, note/highlight actions, lexicon, translation comparison, saved passages, Bible navigation, or map and archaeology workspaces. Generated BHF Commentary was retired in NE7R3; it is not a parallel current reader feature.

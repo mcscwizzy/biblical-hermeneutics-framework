@@ -1,65 +1,56 @@
-# BHF Documentation
+# BHF documentation
 
-BHF is a deterministic Bible study workspace with an external assistant
-handoff, as well as a hermeneutical framework. Start with the guide that
-matches whether you want to use the app, understand its evidence model, or
-develop and maintain it.
+BHF is a Bible study workspace built around a documented hermeneutical method.
+Narrative Explorer is the primary evidence-exploration experience, with CKL as
+the authoritative reviewed research source.
 
 ## Use BHF
 
-- [Website and PWA](web-pwa.md) — use the hosted or self-hosted application,
-  use Ask BHF, install the PWA, and understand what works offline.
-- [Frontend and backend routing](deployment-routing.md) — configure same-origin
-  deployments, same-origin Vercel, or an optional durable remote backend.
-- [Study Vault Sync](study-vault-sync.md) — encrypt, back up, share, and
-  configure OneDrive or iCloud synchronization for personal study records.
-- [Docker](docker.md) — install, configure, operate, update, reset, and uninstall
-  a local containerized deployment.
-- [Local build and development](local-development.md) — run from source, build
-  databases, run tests, and build a Python package.
-- [ChatGPT, Claude, and Gemini](how-to-use/claude-chatgpt-gemini.md) — use the
-  prompt-only framework without the BHF application.
-- [Local models](how-to-use/local-models.md) and
-  [small models](how-to-use/small-models-7b.md) — prompt-only runtime guidance.
+- [Website and PWA](web-pwa.md) — reader workflow, Ask BHF, installation, and
+  offline behavior.
+- [Docker](docker.md) — local install, configuration, persistent data, and
+  operations.
+- [Local development](local-development.md) — setup, databases, tests, and
+  package builds.
+- [Frontend and backend routing](deployment-routing.md) — same-origin and
+  split-host deployment configuration.
+- [Study Vault Sync](study-vault-sync.md) — personal study record backup and
+  optional encrypted sync.
+- [Tyndale Open Study Notes](tyndale-study-notes.md) — active, separately
+  attributed notes service and reader.
+- [Ask BHF assistant handoff](assistant-handoff.md) — scope and privacy
+  boundary for external conversation.
 
 ## Understand BHF
 
-- [Architecture](architecture.md) — components, trust boundaries, and the full
-  path from a question to a validated answer.
-- [Contextual presentation](contextual-presentation.md) — EvidenceBundle,
-  salience ranking, validated discovery cards, Dig In, caching, and fallback.
-- [Philosophy](philosophy.md) — why BHF teaches method rather than conclusions.
-- [Glossary](glossary.md) — project terminology.
-- [Framework module specification](module-spec.md) — authoritative Markdown
-  module contract.
-- [Canonical Knowledge Library](canonical_knowledge_library.md) — CKL authoring,
-  retrieval, storage, and governance.
-- [Lexicon architecture](lexicon-architecture.md) and
-  [word study](word-study.md) — lexical storage and runtime behavior.
-- [Archaeology evidence and media policy](archaeology.md) — deterministic
-  first-class evidence, rights-aware media, importing, presentation, CKL links,
-  and offline behavior.
+- [Architecture](architecture.md) — runtime, evidence flow, services, and
+  packaging boundaries.
+- [Narrative Explorer](narrative-explorer/README.md) — passage routes,
+  evidence navigation, and curation inputs.
+- [Canonical Knowledge Library](canonical_knowledge_library.md) — CKL source,
+  authoring, retrieval, and governance.
+- [Maps and archaeology](archaeology.md) — catalog, evidence, media rights,
+  provenance, and offline behavior.
+- [Lexicon architecture](lexicon-architecture.md), [word study](word-study.md),
+  and [lexicon sources](lexicon-sources.md).
+- [Translation management](translations.md).
+- [Philosophy](philosophy.md), [glossary](glossary.md), and
+  [framework module specification](module-spec.md).
+- [Data retention](bhf-data-retention.md) — what is source data, runtime
+  output, and historical evidence.
+- [Historical decisions index](maintenance/historical-decisions.md) — Git
+  references for major research and architecture milestones.
 
-## Build and maintain data
+## Develop and maintain
 
 - [Tooling reference](../tools/README.md).
 - [Testing guide](../tests/README.md).
 - [Examples and sample configurations](../examples/README.md).
 - [Compile the lexicon](compile-lexicon.md).
-- [Lexicon source policy](lexicon-sources.md).
-- [Translation management](translations.md).
-- [Tyndale Open Study Notes](tyndale-study-notes.md) — install and use the attributed commentary reader companion.
-- [BHF chapter commentary](chapter-commentary.md) — generation contract, validation guarantees, and resumable progress.
-- [BHF Commentary UI](commentary-ui.md) — read-only reader integration, evidence exploration, availability states, search, and offline behavior.
-- [Evaluation](evals.md).
+- [Contributing guide](../CONTRIBUTING.md) and [style guide](style-guide.md).
+- [Repository cleanup report](maintenance/repository-cleanup-report.md).
 
-## Contribute content
-
-- [Style guide](style-guide.md).
-- [Framework module specification](module-spec.md).
-- [Canonical Knowledge Library](canonical_knowledge_library.md).
-- [Contributing guide](../CONTRIBUTING.md).
-
-Historical implementation prompts, completed repair plans, and dated progress
-reports are intentionally excluded from `docs/`. Git history remains the source
-for that project archaeology.
+Historical research decisions, CKL methodology, source identities, and
+hermeneutical classification rules remain part of the maintained research
+record. Superseded implementation reports are removed from the current docs
+tree or marked as historical snapshots; Git history preserves earlier copies.

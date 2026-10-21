@@ -1,71 +1,72 @@
 # BHF architecture
 
-BHF has two related concerns in one repository:
+BHF combines a reviewed hermeneutics framework with a local-first Bible study
+application. Narrative Explorer is the primary passage and evidence exploration
+experience. The Canonical Knowledge Library (CKL) is the authoritative source
+for curated research data.
 
-1. A composable Markdown hermeneutics framework and maintainer-side generation
-   tooling.
-2. A Python/FastAPI study application whose normal web runtime is
-   model-independent.
-
-## Runtime boundary
+## Request and evidence flow
 
 ```text
-Browser / BHF application
-    deterministic Scripture, Commentary, CKL, lexicon, archaeology, maps,
-    cross-references, notes, and offline study data
-        ↓
-    Ask BHF handoff modal
-        ↓ clipboard + new tab
-External BHF assistant
-    conversational synthesis and follow-up
+Browser passage reader
+    ├── Bible translation and passage navigation
+    ├── Narrative Explorer passage projection
+    ├── maps, archaeology, lexicon, and Tyndale notes
+    └── private notes, highlights, saved studies, and offline packs
+            │
+            ├── FastAPI routes and deterministic local services
+            ├── CKL objects, sources, schema, and reviewed curation data
+            └── NE-9C relationship curation + NE-10 passage bridge records
+                    │
+                    └── Ask BHF handoff → external conversational assistant
 ```
 
-The current external destination is the BHF assistant hosted in ChatGPT. It is
-configured through the generic `BHF_ASSISTANT_URL` setting and injected as
-`assistantUrl`. A future plugin or supported assistant destination can replace
-the URL without changing the reader or evidence layer.
+The read-only Narrative Explorer API is
+`GET /api/narrative-explorer/v1/passages/{book}/{chapter}`. Optional
+`verse_start` and `verse_end` parameters scope the response to a selected verse
+range. The route resolves passage evidence through the CKL runtime and returns
+provenance-bearing relationship and bridge data. The browser's passage links
+let a reader navigate from a connection into the related passage and inspect
+its evidence.
 
-The browser never embeds, scrapes, or automates the external assistant. Opening
-the modal, preparing text, browsing Scripture, and using deterministic study
-tools make no LLM/provider request. Users do not configure providers, API keys,
-models, endpoints, context windows, or output limits inside BHF.
+NE-9C curations classify CKL relationships for reader exploration. NE-10 adds
+the accepted passage bridge registry and its held-candidate decisions. These
+files preserve source identity and curation status and are inputs to the
+runtime; the application does not edit them.
 
-## Evidence domains
+## Active components
 
-Scripture, CKL, lexicon, archaeology, Commentary v1.2, maps, and timeline are
-peer evidence domains. The application retrieves and renders deterministic
-evidence, preserves provenance and uncertainty, and keeps device-local notes,
-highlights, and saved studies available offline where supported.
+- **Bible reader and translations:** bundled ASV and KJV data, passage
+  navigation, translation comparison, and device-local translation import.
+- **CKL:** version-controlled JSON records, object sources and evidence,
+  schema, manifest, source locks, and reviewed curation registries. SQLite is a
+  generated serving database.
+- **Maps and archaeology:** reviewed records, rights-aware media metadata,
+  routes, places, timelines, historical layers, and passage cross-links.
+- **Lexicon:** packaged compressed lexical database and deterministic word
+  lookup, with build/import tools and recorded licenses and revisions.
+- **Tyndale Open Study Notes:** a separate attributed dataset with schema,
+  importer, indexed repository, service, API, and reader pane. It is not the
+  retired generated BHF Commentary product.
+- **Private study and offline:** notes, highlights, saved studies, PWA assets,
+  service-worker caching, and IndexedDB data remain separate from canonical
+  research data.
+- **Ask BHF:** prepares a passage-aware prompt and opens the configured external
+  assistant. The reader does not embed or automate that assistant.
 
-The companion context endpoint returns deterministic evidence bundles and
-precomputed presentation packets. It does not perform runtime inference.
+Generated BHF Commentary was retired in NE7R3. Stable `/api/bhf-commentary`
+compatibility routes return HTTP 410. No generated Commentary release or
+generation package is loaded by current runtime routes.
 
-## Maintainer boundary
+## Packaging and deployment
 
-The repository still contains model adapters, provider modules, prompts,
-commentary-generation commands, renderer qualification, evidence compilation,
-and conformance tests needed for future offline release engineering and
-historical reproducibility. Those modules are not imported by the web runtime
-routes or browser assets.
+The Python wheel and source distribution package Python runtime modules and
+declared package data. Docker builds CKL and lexical databases and obtains the
+Tyndale source archive by pinned SHA-256 before creating its image. Vercel runs
+the CKL build hook and bundles CKL resources plus the Tyndale database when the
+build hook creates it. `.bhf-data` is local writable state and is excluded from
+deployment bundles and Docker contexts.
 
-The web application retains only deterministic routes such as:
-
-```text
-GET  /api/bible/{book}/{chapter}
-GET  /api/study/companion-context
-POST /api/study/actions
-GET  /api/bhf-commentary/{book}/{chapter}
-```
-
-There is no runtime `/ask`, provider health, fallback-inference, or presentation
-generation API surface.
-
-## Offline behavior
-
-The service worker and IndexedDB cache Bible/study assets and device-local
-records. Reader, Commentary, CKL/evidence, lexicon data, maps, notes,
-highlights, and saved studies remain independent of the assistant destination.
-Only the external conversation handoff naturally requires network access.
-
-See [Ask BHF assistant handoff](assistant-handoff.md) and
-[Frontend and backend routing](deployment-routing.md) for deployment details.
+See [local development](local-development.md), [Docker](docker.md),
+[Narrative Explorer](narrative-explorer/README.md), and
+[Ask BHF handoff](assistant-handoff.md) for operational details.

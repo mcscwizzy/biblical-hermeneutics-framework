@@ -15,17 +15,18 @@ The three passage-review passes covered Genesis; Deuteronomy/Psalm 82/Exodus 3; 
 
 ## Reproduction
 
-From a complete checkout of this branch, generate the inventory with:
+From a complete checkout, recreate and verify the inventory in a temporary location:
 
 ```sh
 python3 scripts/audit_ckl_connection_coverage.py \
   --source-root . \
-  --output docs/narrative-explorer/connection-audit/03-relationship-inventory.csv
+  --output /tmp/ne9a-relationship-inventory.csv
+python3 -c 'import hashlib; p="/tmp/ne9a-relationship-inventory.csv"; print(hashlib.sha256(open(p,"rb").read()).hexdigest())'
 ```
 
 The script imports the repository’s `CanonicalLibrary`, `evidence_graph_edges()`, `normalize_id()`, and Narrative Explorer’s exact `_CONNECTION_TYPE_BY_LABEL` mapping. It reads CKL JSON and writes only the requested CSV and a summary to stdout. It does not open SQLite, create a database, regenerate evidence, or edit CKL records.
 
-The completed run loaded 687 objects against a manifest count of 687. It emitted 53,097 CSV rows (53,638,723 bytes), SHA-256 `b03b5ce267e415b997e6d1cfbe8fe69049731b3a4b10262f1e77d8e395aedef4`. The SHA-256 of the raw CKL object tree and manifest are recorded in the executive summary. CSV row counts and exact edge totals should be recomputed from the export rather than inferred from the printed example passages.
+The expected export has 53,097 data rows (53,098 lines including the header), 53,638,723 bytes, and SHA-256 `b03b5ce267e415b997e6d1cfbe8fe69049731b3a4b10262f1e77d8e395aedef4`. The command's JSON summary must report `validation_status: passed`, 687 loaded and manifest objects, CKL fingerprint `90fa7547ea4146328ab1fc4f9e4ca1b262f810e0e503c589b64a5f9b8c4a08c6`, object-tree SHA-256 `e186df409fb6231c0e93f13d14677826e31684a355b4681aa3ca98bf299a6766`, and manifest SHA-256 `334c42fc5245779f22c7e68143a09e3ee8a1c724f74faacd833d088ba7cfc0a4`. The raw CKL object tree and manifest are the protected inputs; regenerate the export instead of checking in another duplicate snapshot.
 
 ## Classification boundaries
 

@@ -6,6 +6,10 @@ lexical, and Tyndale commentary databases. During the image build it downloads
 the checksum-pinned Tyndale archive and lexical sources, then validates each
 generated database.
 
+The Docker context excludes local `.bhf-data`, documentation, tests, and
+development tools. The image gets Tyndale notes from the pinned upstream
+archive; it does not use retired generated BHF Commentary artifacts.
+
 `docker-compose.yml` runs the deterministic BHF web application. Conversational
 follow-up is handed to the external assistant configured by
 `BHF_ASSISTANT_URL`.

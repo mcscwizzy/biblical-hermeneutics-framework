@@ -2,27 +2,28 @@
 
 > Read Scripture. Explore context. Ask deeper questions.
 
-BHF is an open-source, local-first Bible study workspace built around a
-hermeneutical method. It brings Scripture, literary and historical context,
-original-language data, archaeology, maps, commentary, and curated research
-together in a deterministic study layer. When users want conversation, **Ask
-BHF** hands the current Scripture context to an external BHF assistant.
+BHF is an open-source Bible study workspace grounded in a documented
+hermeneutical method. Narrative Explorer is its primary evidence-exploration
+experience. It connects a selected passage to reviewed Canonical Knowledge
+Library (CKL) evidence, including evidence relationships and passage bridges,
+while keeping source identity, uncertainty, and provenance visible.
 
-What began as a prompt framework has become a full study application: a Bible
-reader, reference library, archaeology explorer, map workspace, and private
-place for notes and saved studies. You can use its reading and research tools
-without configuring an AI provider. Ask BHF opens a handoff composer that
-copies a concise question and opens the external assistant.
+CKL is the authoritative research source. NE-9C relationship curations and
+NE-10 passage bridge records are read-only, provenance-bearing inputs to the
+explorer. BHF also provides Bible translations, maps, archaeology, original
+language tools, Tyndale Open Study Notes, offline study, and private notes and
+highlights. Ask BHF prepares a conversational handoff to the external BHF
+assistant; the local reader does not require an AI provider.
 
-BHF teaches a process: observe, interpret in context, distinguish evidence
-from inference, qualify uncertainty, and apply last. It does this without
-prescribing a denomination or doctrinal conclusion.
+Generated BHF Commentary was retired in NE7R3. Its old generated reader URLs
+remain stable HTTP 410 responses. Tyndale Open Study Notes is a separate active
+service and remains available in the reader.
 
-## Install BHF
+## Install with Docker
 
-Docker is the recommended path. It starts the web app and builds the generated
-reference databases for you. The first build takes longer because it prepares
-the lexical and commentary data; later builds can reuse Docker's cache.
+Docker builds the CKL, lexical, and Tyndale databases from checked-in source or
+checksum-pinned inputs. The first build downloads lexical sources and takes
+longer; later builds can reuse Docker's cache.
 
 ```bash
 git clone https://github.com/mcscwizzy/biblical-hermeneutics-framework.git
@@ -31,29 +32,11 @@ cp .env.example .env
 docker compose up -d --build
 ```
 
-Open <http://localhost:8080>. BHF does not require provider setup. Confirm that
-the app is running at <http://localhost:8080/api/health>.
+Open <http://localhost:8080> and check <http://localhost:8080/api/health>.
+See [Docker installation and operations](docs/docker.md) for configuration,
+persistent data, updates, and uninstallation.
 
-See [Docker installation and operations](docs/docker.md) for prerequisites,
-configuration, updates, data handling, and uninstallation.
-For the handoff boundary, see [Ask BHF assistant handoff](docs/assistant-handoff.md).
-For split-host production or same-origin PWA settings, see
-[Frontend and backend routing](docs/deployment-routing.md).
-
-## Other ways to use BHF
-
-### Use the hosted website
-
-Open the HTTPS address published by the BHF project maintainer. The repository
-does not currently declare or deploy a canonical production domain, so avoid
-bookmarks copied from test fixtures or old deployments.
-
-The reader has no provider setup dialog. Use **Ask BHF** when you want to
-continue a question with the external assistant. See [Using the website and
-PWA](docs/web-pwa.md) for the reader workflow, installation steps, and offline
-limitations.
-
-### Build and run from source
+## Run from source
 
 ```bash
 git clone https://github.com/mcscwizzy/biblical-hermeneutics-framework.git
@@ -66,103 +49,53 @@ python -m framework.canonical_library build-db --output .bhf/ckl.sqlite
 uvicorn bhf_web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Open <http://127.0.0.1:8000>. See [Local build and development](docs/local-development.md)
-for database builds, tests, packaging, maintainer tooling, and platform-specific
-virtual-environment activation.
+Open <http://127.0.0.1:8000>. See [local development](docs/local-development.md)
+for database preparation, tests, packaging, and maintainer tools.
 
-### Use only the prompt framework
+## Explore and study
 
-No application install is required. Copy one of the generated prompts from
-[`profiles/`](profiles/) into the system instructions of ChatGPT, Claude,
-Gemini, Ollama, LM Studio, or another compatible model:
+- Read ASV or KJV Scripture, compare translations, and import supported
+  device-local translations.
+- Open Narrative Explorer from a passage to follow curated relationships and
+  passage-scoped evidence. The read-only route is
+  `GET /api/narrative-explorer/v1/passages/{book}/{chapter}` with optional
+  `verse_start` and `verse_end` query parameters.
+- Browse biblical places, journeys, historical layers, manuscripts, maps, and
+  archaeology records.
+- Use Greek and Hebrew word study when lexical assets are available.
+- Read attributed Tyndale Open Study Notes in its separate companion pane.
+- Keep notes, highlights, saved studies, and map studies locally; install the
+  PWA for supported offline reading and study.
+- Use **Ask BHF** to copy passage context and a question into the configured
+  external assistant.
 
-- [`minimal-7b.md`](profiles/minimal-7b.md) for small context windows.
-- [`standard.md`](profiles/standard.md) for balanced use.
-- [`scholar.md`](profiles/scholar.md) for large context windows.
-
-These generated profiles are independent of the application runtime, which now
-uses one unified answer format.
-
-## How BHF arrives at an answer
-
-```mermaid
-flowchart LR
-    Q[Question or selected passage] --> D[Detect reference, genre, and question type]
-    D --> R[Retrieve Scripture and local evidence]
-    R --> E[Rank and package the evidence]
-    E --> S[Study tools and evidence views]
-    S --> H[Ask BHF handoff]
-    H --> A[External BHF assistant]
-```
-
-The important boundary is that BHF owns deterministic study data and evidence;
-the external BHF assistant owns conversational synthesis. The detailed
-component and request-flow diagrams are in [Architecture](docs/architecture.md).
-
-## What BHF includes today
-
-### Study Scripture in context
-
-- ASV and KJV Bible readers, with device-local translation import.
-- Passage, literary, historical, cultural, people, places, theme,
-  cross-reference, timeline, map, and translation-comparison actions.
-- Greek and Hebrew word study when the generated lexical database is present.
-- Tyndale Open Study Notes in a separate, attributed commentary reader.
-
-### Explore evidence
-
-- Curated Canonical Knowledge Library (CKL) retrieval with deterministic
-  ranking, structured evidence relationships, chronology safeguards,
-  provenance, confidence rationales, and bounded context packaging.
-- Archaeology records for sites, artifacts, inscriptions, media, provenance,
-  and related passages.
-- Interactive biblical places, journeys, historical layers, manuscript, and
-  political-context maps.
-
-### Keep your work private and portable
-
-- Notes, highlights, saved studies, map studies, and optional local session
-  memory.
-- Installable PWA with offline Bible reading, search, maps, reference packs,
-  and device-local records.
-- Encrypted study-vault backup and restore, plus optional OneDrive or iCloud
-  vault sync.
-
-### Continue with the external assistant
-
-- No AI connection is required for the reader and local research tools.
-- **Ask BHF** copies the current Scripture context and question, then opens the
-  configured external BHF assistant.
-- Maintainers still have separate CLI and offline generation tooling for
-  producing and validating future release artifacts; that tooling is not part
-  of the web application's runtime.
+BHF teaches users to observe the text, interpret it in literary and historical
+context, distinguish evidence from inference, qualify uncertainty, and apply
+last. It does not prescribe a denomination or doctrinal conclusion.
 
 ## Repository map
 
 | Path | Purpose |
 |---|---|
-| `bhf_agent/` | Retrieval, prompt construction, model adapters, validation, and CLI. |
-| `bhf_web/` | FastAPI UI/API, templates, browser code, service worker, and offline packs. |
-| `framework/` | Hermeneutics modules, CKL objects/runtime, and lexical tooling. |
-| `profiles/` | Generated copy/paste prompt profiles. |
-| `docs/` | User, operator, contributor, and subsystem documentation. |
-| `tools/` | Validation, composition, import, audit, and evaluation utilities. |
-| `tests/` | Unit, integration, regression, and GUI coverage. |
-| `examples/` | Agent configurations, fixtures, and worked examples. |
+| `bhf_agent/` | Agent CLI, retrieval, prompt construction, and validation. |
+| `bhf_web/` | FastAPI app, APIs, reader UI, service worker, and offline support. |
+| `framework/canonical_library/` | CKL objects, source records, schema, curations, and runtime. |
+| `framework/lexical/` | Lexical sources, build tools, and runtime data interfaces. |
+| `framework/commentary/` | Active Tyndale Open Study Notes service and importer. |
+| `profiles/` | Copy-and-paste hermeneutics framework profiles. |
+| `docs/` | User, development, architecture, and research-method documentation. |
+| `tools/` | CKL, translation, archaeology, validation, and evaluation utilities. |
+| `tests/` | Python, API, frontend, packaging, and integrity regression coverage. |
 
-Start with the [documentation index](docs/README.md) for the complete guide map.
-
-## Contributing
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md), the
-[Neutrality Charter](GOVERNANCE.md#1-neutrality-charter-the-constitution), and
-the [style guide](docs/style-guide.md) before changing framework content.
+Start with the [documentation index](docs/README.md). Read
+[CONTRIBUTING.md](CONTRIBUTING.md), the [Neutrality Charter](GOVERNANCE.md#1-neutrality-charter-the-constitution),
+and the [style guide](docs/style-guide.md) before changing framework content.
 
 ## License
 
 - Code is licensed under [MIT](LICENSE).
 - Framework content, documentation, profiles, and examples are licensed under
   [CC BY 4.0](LICENSE-CONTENT).
-- Bundled translations and imported lexical sources retain their own notices
-  and licenses; see [Translations](docs/translations.md) and
+- Imported translation and lexical sources retain their own notices, licenses,
+  and attribution. See [Translations](docs/translations.md) and
   [Lexicon sources](docs/lexicon-sources.md).

@@ -4,7 +4,7 @@
 
 Audit baseline: `origin/master` at `fc8234947fc01b3adc95437ccde709cce1cf1232`, including merged NE-8B PR #38. The source checkout remained on `master`; this report and its exporter are on the isolated local branch `audit/ckl-connection-coverage-ne9a`.
 
-This is a read-only inventory. No CKL or evidence record was edited, regenerated, or migrated. The requested relationship inventory is in [03-relationship-inventory.csv](03-relationship-inventory.csv); the repeatable exporter is `scripts/audit_ckl_connection_coverage.py`.
+This is a read-only inventory. No CKL or evidence record was edited, regenerated, or migrated. The 53,097-row relationship inventory is a deterministic export from the protected CKL inputs; the maintained exporter and verification steps are in [02-methodology.md](02-methodology.md). The generated CSV is not checked in.
 
 ## Verified baseline
 
@@ -25,7 +25,7 @@ This is a read-only inventory. No CKL or evidence record was edited, regenerated
 | Source records attached to CKL objects | 5,232 |
 | Distinct owner/source-ID pairs referenced | 5,234 (2 unresolved) |
 | Distinct raw source-ID strings referenced | 2,784 |
-| Inventory CSV rows / bytes | 53,097 / 53,638,723 |
+| Generated inventory CSV rows / bytes | 53,097 / 53,638,723 |
 
 The 113 typed top-level relationships comprise 104 thematic relationships, one narrative parallel, one direct quotation, five later canonical receptions, and two interpretive associations. The remaining 3,948 are not a count of missing biblical connections: most retain descriptive labels, and many lack edge-level rationale or a passage-specific scope. A specific label should not be upgraded to a literary or theological relationship based on its wording alone.
 
@@ -42,7 +42,7 @@ NE-A1’s historical audit reported all 4,061 top-level relationships as `uncate
 - Two interpretive-note source references in `roman-ephesus-civic-cultic-and-household-life` have no corresponding source record on that CKL object: `glancy-slavery` and `harland-associations`. The inventory retains both as unresolved instead of inventing bibliographic details.
 - No unknown target was found among the formal object edges. Unmatched free-text `related_people`, `key_places`, `maps`, and similar field values are recorded as descriptive values, not treated as broken IDs. The 144 human-readable `canonical_story` values are likewise sequence descriptions, not unresolved CKL object IDs.
 
-The CSV contains 53,097 rows across 15 relationship groups. It separately exports object relationships, evidence relationships, claim/evidence/source provenance, passage applicability anchors, typed evidence targets, historical-period links, canonical-sequence metadata, and field-level entity/domain values. A Scripture anchor is never counted as a cross-passage relationship.
+The generated CSV contains 53,097 rows across 15 relationship groups. It separately exports object relationships, evidence relationships, claim/evidence/source provenance, passage applicability anchors, typed evidence targets, historical-period links, canonical-sequence metadata, and field-level entity/domain values. A Scripture anchor is never counted as a cross-passage relationship.
 
 ## Main findings
 

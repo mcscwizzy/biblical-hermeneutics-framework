@@ -1,5 +1,9 @@
 # CKL Geography Pilot Candidate Dry Run
 
+> Historical dry-run snapshot. Counts below describe the recorded pilot input,
+> not the current CKL inventory. The maintained candidate tool reports CKL
+> changes only; generated Commentary preview output was retired in NE7R3.
+
 ## Source lock input
 
 - Statuses: {'LOCKED': 30, 'REJECTED': 6, 'UNRESOLVED': 5}
@@ -28,12 +32,6 @@
 
 - Direct: ['1 Samuel 17:1', '1 Samuel 17:2-3', '2 Kings 5:10', '2 Kings 5:12', '2 Kings 5:14', '2 Kings 5:5-6', '2 Kings 5:9-10', 'Acts 27:1-8', 'Acts 27:13-15', 'Acts 27:20', 'Acts 27:7-8', 'Genesis 13:1', 'Genesis 13:10', 'Genesis 13:11-12', 'Genesis 13:3', 'Genesis 34:20-21', 'Genesis 34:30', 'Isaiah 36:1', 'Isaiah 36:2', 'John 4:3-4', 'John 4:43', 'John 4:5-6', 'Joshua 6:1', 'Joshua 6:15', 'Joshua 6:3-4', 'Judges 20:1-3', 'Judges 20:19-20', 'Matthew 2:1', 'Matthew 2:13-15', 'Matthew 2:19-23', 'Matthew 2:22', 'Matthew 2:22-23', 'Matthew 2:8-11', 'Numbers 18:20', 'Numbers 18:21', 'Numbers 18:23-24', 'Numbers 18:24', 'Ruth 1:1', 'Ruth 1:1-2', 'Ruth 1:19-22']
 - Dependent: []
-
-## Commentary v1.2 preview
-
-- Preview mode: reference-only; synthesis was not recomputed.
-- EvidenceBundles and syntheses that would rebuild: 12
-- No production Commentary artifacts were modified.
 
 ## Protected chapters
 
