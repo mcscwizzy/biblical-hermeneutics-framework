@@ -241,6 +241,44 @@ def test_genesis_6_exposes_scoped_cultural_evidence_without_book_level_cross_ref
     assert "g6-evil-intention-and-violence" not in evidence_ids
 
 
+def test_related_passage_routes_cover_real_research_examples_without_shared_scope_inference(ckl_library):
+    client = _client(_service(ckl_library))
+    references = [
+        ("Genesis", 1), ("Genesis", 3), ("Genesis", 6),
+        ("Deuteronomy", 32), ("Psalm", 82), ("Job", 1),
+        ("Isaiah", 43), ("Ezekiel", 37), ("John", 1), ("John", 2),
+        ("Ephesians", 2), ("Revelation", 21),
+    ]
+    payloads = {}
+    for book, chapter in references:
+        response = client.get(f"/api/narrative-explorer/v1/passages/{book}/{chapter}")
+        assert response.status_code == 200
+        payload = response.json()
+        validate_projection(payload)
+        payloads[(book, chapter)] = payload
+
+    def bridge_destinations(book, chapter):
+        return {
+            route["destination_passage"]
+            for route in payloads[(book, chapter)]["related_passages"]["evidence_backed_bridges"]
+        }
+
+    assert "John 1:1-18" in bridge_destinations("Genesis", 1)
+    assert {"Revelation 12:9", "Exodus 25:18-22", "1 Kings 6:23-35"}.issubset(bridge_destinations("Genesis", 3))
+    assert "Jude 1:6" in bridge_destinations("Genesis", 6)
+    assert "Zechariah 3:1-2" in bridge_destinations("Job", 1)
+    assert "Genesis 1:1-5" in bridge_destinations("John", 1)
+    assert {"1 Kings 8:10-13", "Ephesians 2:19-22"}.issubset(bridge_destinations("John", 2))
+    assert {"John 2:19-21", "Revelation 21:1-3"}.issubset(bridge_destinations("Ephesians", 2))
+    assert "Ephesians 2:19-22" in bridge_destinations("Revelation", 21)
+    assert not bridge_destinations("Deuteronomy", 32)
+    assert not bridge_destinations("Psalm", 82)
+    assert not bridge_destinations("Isaiah", 43)
+    assert not bridge_destinations("Ezekiel", 37)
+    assert payloads[("Genesis", 1)]["related_passages"]["authored_relationships"]
+    assert payloads[("Revelation", 21)]["related_passages"]["authored_relationships"]
+
+
 def test_psalm_82_discloses_council_context_and_keeps_explicit_text_distinct_from_dispute(ckl_library):
     payload = _client(_service(ckl_library)).get(
         "/api/narrative-explorer/v1/passages/Psalm/82"

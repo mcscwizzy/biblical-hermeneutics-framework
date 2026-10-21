@@ -12,7 +12,7 @@ import hashlib
 import json
 import math
 import re
-from typing import Any, Literal, Mapping, Sequence
+from typing import Any, Callable, Literal, Mapping, Sequence
 from urllib.parse import quote, urlencode
 
 from framework.canonical_library.scripture import (
@@ -29,6 +29,7 @@ from .models import mapping
 from .references import references_overlap
 from .relevance import SEMANTICALLY_MISANCHORED, classify_semantic_relationship
 from .narrative_explorer_curations import curate_connection, validate_curation
+from .narrative_explorer_passages import build_related_passages, validate_related_passages
 
 
 SCHEMA_VERSION = "1.0"
@@ -317,6 +318,7 @@ class NarrativeExplorerProjection:
     items: tuple[ProjectedItem, ...] = ()
     connections: tuple[ProjectionConnection, ...] = ()
     navigation: tuple[NavigationDestination, ...] = ()
+    related_passages: Mapping[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         result = {
@@ -327,6 +329,7 @@ class NarrativeExplorerProjection:
             "items": [item.to_dict() for item in self.items],
             "connections": [edge.to_dict() for edge in self.connections],
             "navigation": [destination.to_dict() for destination in self.navigation],
+            "related_passages": _jsonable(self.related_passages),
         }
         validate_projection(result)
         return result
@@ -338,6 +341,8 @@ def project_narrative_explorer(
     canonical_lookup: DomainLookup,
     map_lookup: DomainLookup | None = None,
     archaeology_lookup: DomainLookup | None = None,
+    source_resolver: Callable[[str], Any] | None = None,
+    passage_bridge_records: Sequence[Mapping[str, Any]] | None = None,
 ) -> NarrativeExplorerProjection:
     """Build a deterministic v1.0 envelope from supplied evidence lookups."""
 
@@ -397,6 +402,21 @@ def project_narrative_explorer(
         curate_connection(connection, passage.reference)
         for connection in _reciprocal_edges(raw_connections + map_connections + archaeology_connections)
     )
+    source_objects: dict[str, Any] = {}
+    for candidate in lookups["ckl"].records:
+        raw_object = getattr(candidate, "object", candidate)
+        parent_id = _text(mapping(raw_object).get("id"))
+        if parent_id:
+            source_objects[parent_id] = raw_object
+    bridge_source_resolver = source_resolver or source_objects.get
+    related_passages = build_related_passages(
+        passage.reference,
+        connections=[connection.to_dict() for connection in connections],
+        source_resolver=bridge_source_resolver,
+        bridge_records=passage_bridge_records,
+        query_status=lookups["ckl"].query_status,
+        reason_code=lookups["ckl"].reason_code,
+    )
     navigation_by_id = {
         item.navigation.id: item.navigation
         for item in all_items
@@ -412,6 +432,7 @@ def project_narrative_explorer(
         items=all_items,
         connections=connections,
         navigation=tuple(navigation_by_id[key] for key in sorted(navigation_by_id)),
+        related_passages=related_passages,
     )
 
 
@@ -426,6 +447,7 @@ def validate_projection(value: Mapping[str, Any]) -> None:
         "items",
         "connections",
         "navigation",
+        "related_passages",
     }
     if set(value) != required_keys:
         raise ValueError("Narrative Explorer projection has an invalid envelope")
@@ -448,6 +470,7 @@ def validate_projection(value: Mapping[str, Any]) -> None:
     for key in ("coverage", "sections", "items", "connections", "navigation"):
         if not isinstance(value.get(key), list):
             raise ValueError(f"projection {key} must be a list")
+    validate_related_passages(value.get("related_passages"))
 
     items = value.get("items")
     item_ids = [item.get("id") for item in items if isinstance(item, Mapping)]

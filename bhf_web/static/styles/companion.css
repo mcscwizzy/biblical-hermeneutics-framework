@@ -299,6 +299,61 @@ body.companion-sheet-full {
   background: var(--surface);
 }
 
+.narrative-explorer-related-passages {
+  display: grid;
+  min-width: 0;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.narrative-explorer-related-passage-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.narrative-explorer-related-passage {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 88%, var(--page-muted));
+}
+
+.narrative-explorer-related-passage-kind,
+.narrative-explorer-related-passage-provenance {
+  color: var(--page-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.narrative-explorer-related-passage-details {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding-top: 5px;
+}
+
+.narrative-explorer-related-passage-details > summary {
+  min-height: 32px;
+  cursor: pointer;
+  color: var(--accent-strong);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.narrative-explorer-related-passage-details > p,
+.narrative-explorer-related-passage-details > h6 {
+  margin: 0;
+}
+
 .narrative-explorer-section h4 {
   font-size: 0.98rem;
   line-height: 1.3;
@@ -308,6 +363,18 @@ body.companion-sheet-full {
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.3;
+}
+
+.narrative-explorer-related-passages h4,
+.narrative-explorer-related-passages h5 {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.narrative-explorer-related-passages h5 {
+  margin-top: 4px;
+  font-size: 0.9rem;
 }
 
 .narrative-explorer-availability {
@@ -326,6 +393,12 @@ body.companion-sheet-full {
 
 .narrative-explorer-availability.is-unknown {
   border-style: dotted;
+}
+
+@media (max-width: 720px) {
+  .narrative-explorer-related-passage-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .narrative-explorer-counts {
