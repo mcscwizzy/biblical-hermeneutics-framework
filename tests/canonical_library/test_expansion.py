@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import replace
 from pathlib import Path
-from types import SimpleNamespace
 
 import pytest
 
@@ -11,7 +9,6 @@ from framework.canonical_library.expansion import (
     apply_candidate_queue,
     changed_chapter_references,
     changed_references,
-    selective_recompile,
     validate_candidate,
 )
 from framework.canonical_library.semantic_deduplication import semantic_claim_fingerprint
@@ -887,15 +884,6 @@ def test_parent_change_propagates_only_its_anchored_child_chapters(tmp_path: Pat
     assert changed_chapter_references(before, [changed]) == ["Ruth 1", "Ruth 2"]
 
 
-def test_selective_recompile_rejects_legacy_unvalidated_compiler_hooks():
-    with pytest.raises(ValueError, match="cannot certify Commentary v1.2"):
-        selective_recompile(
-            ["Ruth 1"],
-            bundle_builder=lambda reference: {"passage_ref": reference},
-            synthesis_compiler=lambda bundle: {"reference": bundle["passage_ref"]},
-        )
-
-
 def _territory_library(tmp_path: Path) -> CanonicalLibrary:
     root = tmp_path / "territory-ckl"
     write_library(
@@ -1183,210 +1171,3 @@ def test_interpretive_note_change_invalidates_its_v12_bundle_chapters() -> None:
     after = [{**before[0], "interpretive_notes": [{**note, "note": "Revised interpretation."}]}]
 
     assert changed_references(before, after) == ["Ruth 1:1-2"]
-
-
-def test_selective_recompile_uses_current_v12_evidence_and_synthesis_contract() -> None:
-    from bhf_agent.chapter_commentary.synthesis import (
-        SYNTHESIS_COMPILER_VERSION,
-        SYNTHESIS_SCHEMA_VERSION,
-    )
-    from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
-
-    first = selective_recompile(["Genesis 1"])
-    second = selective_recompile(["Genesis 1"])
-
-    assert first == second
-    assert len(first) == 1
-    row = first[0]
-    assert row["reference"] == "Genesis 1"
-    assert row["pipeline"] == "commentary-v1.2-enrichment"
-    assert row["operation"] == "evidence-synthesis-only"
-    assert row["evidence_bundle_version"] == EVIDENCE_BUNDLE_CANDIDATE_VERSION
-    assert row["synthesis_schema_version"] == SYNTHESIS_SCHEMA_VERSION
-    assert row["synthesis_compiler_version"] == SYNTHESIS_COMPILER_VERSION
-    assert row["evidence_hash"]
-    assert row["synthesis_hash"]
-    assert "sections" not in row
-    assert "commentary" not in row
-
-
-def test_selective_recompile_default_path_does_not_write_published_commentary() -> None:
-    import hashlib
-
-    from framework.commentary.v12_corpus import V12_RELEASE_ROOT
-
-    release_root = Path(V12_RELEASE_ROOT)
-    release_path = release_root / "ruth_001.json"
-    before = hashlib.sha256(release_path.read_bytes()).hexdigest()
-
-    result = selective_recompile(["Ruth 1"])
-
-    after = hashlib.sha256(release_path.read_bytes()).hexdigest()
-    assert result[0]["reference"] == "Ruth 1"
-    assert after == before
-
-
-def test_selective_recompile_map_input_does_not_prepare_database_schema(monkeypatch, tmp_path: Path) -> None:
-    from bhf_agent.chapter_commentary import evidence_bundling
-
-    calls: list[dict[str, object]] = []
-
-    def read_maps(book, chapter, **kwargs):
-        calls.append(kwargs)
-        return {"places": [], "routes": []}
-
-    monkeypatch.setattr(evidence_bundling, "list_passage_map_summaries", read_maps)
-
-    assert evidence_bundling._retrieve_geography("Ruth", 1, tmp_path / "study.sqlite") == {
-        "places": [],
-        "routes": [],
-    }
-    assert calls == [{
-        "start_verse": 1,
-        "end_verse": 9999,
-        "path": tmp_path / "study.sqlite",
-        "limit": 20,
-        "prepare_schema": False,
-    }]
-
-
-def test_selective_recompile_accepts_an_injected_current_v12_preparer() -> None:
-    from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
-    from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis
-    from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
-
-    bundle = get_chapter_evidence_bundle(
-        "Genesis", 1, evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION
-    )
-    assert bundle is not None
-    synthesis = compile_chapter_synthesis(bundle, book="Genesis", chapter=1)
-    calls: list[tuple[str, int]] = []
-
-    def prepare(book: str, chapter: int):
-        calls.append((book, chapter))
-        return SimpleNamespace(bundle=bundle, synthesis=synthesis)
-
-    result = selective_recompile(["Genesis 1"], chapter_preparer=prepare)
-
-    assert calls == [("Genesis", 1)]
-    assert result[0]["evidence_hash"] == bundle.evidence_hash
-    assert result[0]["synthesis_hash"] == synthesis.synthesis_hash
-    assert result[0]["evidence_count"] == len(bundle.evidence_items)
-    assert result[0]["evidence_ids"] == sorted(item.id for item in bundle.evidence_items)
-
-
-def test_selective_recompile_revalidates_prepared_v12_synthesis() -> None:
-    from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
-    from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis
-    from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
-
-    bundle = get_chapter_evidence_bundle(
-        "Genesis",
-        1,
-        evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
-    )
-    assert bundle is not None
-    synthesis = compile_chapter_synthesis(bundle, book="Genesis", chapter=1)
-    invalid = replace(synthesis, synthesis_hash="0" * 64)
-
-    with pytest.raises(ValueError, match="synthesis validation failed"):
-        selective_recompile(
-            ["Genesis 1"],
-            chapter_preparer=lambda _book, _chapter: SimpleNamespace(
-                bundle=bundle,
-                synthesis=invalid,
-            ),
-        )
-
-
-def test_selective_recompile_rejects_prepared_identity_from_another_chapter() -> None:
-    from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
-    from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis
-    from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
-
-    bundle = get_chapter_evidence_bundle(
-        "Genesis",
-        1,
-        evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
-    )
-    assert bundle is not None
-    synthesis = compile_chapter_synthesis(bundle, book="Genesis", chapter=1)
-
-    with pytest.raises(ValueError, match="bundle identity mismatch"):
-        selective_recompile(
-            ["Ruth 1"],
-            chapter_preparer=lambda _book, _chapter: SimpleNamespace(
-                bundle=bundle,
-                synthesis=synthesis,
-            ),
-        )
-
-
-def test_selective_recompile_rejects_deprecated_bundle_version() -> None:
-    from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
-    from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis
-    from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
-
-    current = get_chapter_evidence_bundle(
-        "Genesis",
-        1,
-        evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
-    )
-    assert current is not None
-    synthesis = compile_chapter_synthesis(current, book="Genesis", chapter=1)
-
-    with pytest.raises(ValueError, match="current v1.2 evidence bundle required"):
-        selective_recompile(
-            ["Genesis 1"],
-            chapter_preparer=lambda _book, _chapter: SimpleNamespace(
-                bundle=replace(current, version="1.0"),
-                synthesis=synthesis,
-            ),
-        )
-
-
-def test_selective_recompile_does_not_create_missing_study_database(tmp_path: Path) -> None:
-    from bhf_agent.db.common import StudyDataError
-
-    missing = tmp_path / "missing-study.sqlite"
-
-    with pytest.raises(StudyDataError, match="current study database required for read-only access"):
-        selective_recompile(["Genesis 1"], study_db_path=missing)
-
-    assert not missing.exists()
-
-
-def test_selective_recompile_normalizes_and_deduplicates_chapter_references() -> None:
-    calls: list[tuple[str, int]] = []
-
-    def prepare(book: str, chapter: int):
-        calls.append((book, chapter))
-        return None
-
-    with pytest.raises(ValueError, match="prepared chapter is required"):
-        selective_recompile(
-            ["Ruth 1:1-22", "Ruth 1"],
-            chapter_preparer=prepare,
-        )
-    assert calls == [("Ruth", 1)]
-
-
-@pytest.mark.parametrize("reference", ["Ruth", "Ruth 1-2", "not a reference"])
-def test_selective_recompile_rejects_non_chapter_identity(reference: str) -> None:
-    with pytest.raises(ValueError, match="single canonical chapter"):
-        selective_recompile([reference], chapter_preparer=lambda *_: None)
-
-
-def test_recompile_cli_has_no_artifact_output_option() -> None:
-    from framework.canonical_library.__main__ import build_parser
-
-    with pytest.raises(SystemExit):
-        build_parser().parse_args(
-            [
-                "recompile-chapters",
-                "--references",
-                "changed.json",
-                "--output",
-                "production.json",
-            ]
-        )

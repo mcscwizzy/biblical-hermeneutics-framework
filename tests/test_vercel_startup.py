@@ -73,12 +73,14 @@ def test_vercel_retired_commentary_route_returns_gone():
     assert result.returncode == 0, result.stderr
 
 
-def test_vercel_runtime_path_helper_stays_out_of_candidate_workspace():
+def test_vercel_runtime_paths_keep_tyndale_database_and_user_data():
     result = _vercel_python(
         "from bhf_agent.runtime_paths import resolve_runtime_data_paths; "
-        "paths = resolve_runtime_data_paths({'VERCEL': '1'}); "
-        "assert 'bhf-commentary-candidates' not in str(paths.bhf_commentary_storage_path); "
-        "assert paths.bhf_commentary_storage_path.name == 'bhf-commentary-v1.1'"
+        "from pathlib import Path; "
+        "paths = resolve_runtime_data_paths({'VERCEL': '1', 'BHF_COMMENTARY_DB_PATH': '/tmp/tyndale.sqlite'}); "
+        "assert paths.commentary_db_path == Path('/tmp/tyndale.sqlite'); "
+        "assert paths.study_db_path == Path('/tmp/bhf-data/study.sqlite'); "
+        "assert not hasattr(paths, 'bhf_commentary_storage_path')"
     )
 
     assert result.returncode == 0, result.stderr

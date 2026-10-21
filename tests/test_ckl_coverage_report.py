@@ -4,6 +4,12 @@ from types import SimpleNamespace
 import tools.ckl_coverage_report as report
 
 
+def test_coverage_status_uses_number_of_directly_anchored_records():
+    assert report.classify_anchored_coverage(0) == "DATA_GAP"
+    assert report.classify_anchored_coverage(1) == "THIN"
+    assert report.classify_anchored_coverage(2) == "AVAILABLE"
+
+
 def test_scope_filters_book_and_range(monkeypatch):
     monkeypatch.setattr(report.bible, 'list_books', lambda: [{'name': 'Genesis', 'chapters': 3}, {'name': 'Leviticus', 'chapters': 2}])
     assert report.chapters_for('Genesis 2-3') == [('Genesis', 2), ('Genesis', 3)]

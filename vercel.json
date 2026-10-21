@@ -10,7 +10,7 @@
   "functions": {
     "bhf_web/app.py": {
       "maxDuration": 60,
-      "excludeFiles": "{.bhf-data/bhf-commentary-candidates/**,build/**}",
+      "excludeFiles": "{.bhf-data/**,build/**}",
       "includeFiles": "{framework/canonical_library/**,framework/commentary/data/tyndale.sqlite}"
     }
   }

@@ -2,13 +2,10 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 
-from bhf_agent.chapter_commentary import evidence_bundling
 from framework.canonical_library.loader import CanonicalLibrary
-from framework.commentary.production.inputs import prepare_chapter
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,15 +20,6 @@ def _read(path: Path):
     return json.loads(path.read_text())
 
 
-def _identity(prepared):
-    return {
-        "evidence_count": prepared.row["evidence_count"],
-        "evidence_hash": prepared.row["input_identity"]["evidence_hash"],
-        "synthesis_unit_count": prepared.row["synthesis_unit_count"],
-        "synthesis_hash": prepared.row["input_identity"]["synthesis_hash"],
-    }
-
-
 _LIBRARY = None
 
 
@@ -39,11 +27,10 @@ def _library():
     global _LIBRARY
     if _LIBRARY is None:
         _LIBRARY = CanonicalLibrary(root=CKL_ROOT).load()
-    evidence_bundling._CANONICAL_LIBRARY_CACHE = _LIBRARY
     return _LIBRARY
 
 
-def test_g4a_object_and_candidate_queue_are_passage_scoped_and_synthesis_usable():
+def test_g4a_object_and_candidate_queue_are_passage_scoped():
     library = _library()
     assert OBJECT_PATH.is_file()
     obj = library.objects_by_id[OBJECT_ID]
@@ -57,6 +44,9 @@ def test_g4a_object_and_candidate_queue_are_passage_scoped_and_synthesis_usable(
 
     assert obj.type == "cultural_background"
     assert len(obj.evidence_items) == 46
+    assert {item.id for item in obj.evidence_items}.isdisjoint(
+        item.id for item in library.objects_by_id["genesis"].evidence_items
+    )
     assert candidate_items == production_items
     assert packet["candidate_replay"]["result"] == "PASS"
     assert packet["candidate_replay"]["changed_chapters"] == sorted(
@@ -72,20 +62,17 @@ def test_g4a_object_and_candidate_queue_are_passage_scoped_and_synthesis_usable(
         assert all(ref["reference"].startswith(tuple(allowed)) for ref in item["scripture_references"])
 
     for chapter in range(12, 18):
-        prepared = prepare_chapter("Genesis", chapter)
-        bundled = {item.id for item in prepared.bundle.evidence_items}
-        synthesized = {
-            evidence_id
-            for unit in prepared.synthesis.synthesis_units
-            for evidence_id in unit.evidence_ids
-        }
+        selected = library.retrieve_evidence_items(
+            "Abraham covenant", [OBJECT_ID],
+            scripture_references=[f"Genesis {chapter}"], limit_per_object=100,
+        )
+        selected_ids = {item.evidence_id for item in selected[OBJECT_ID]}
         chapter_ids = {
             item_id
             for item_id in production_items
             if any(ref["reference"].startswith(f"Genesis {chapter}:") for ref in production_items[item_id]["scripture_references"])
         }
-        assert chapter_ids <= bundled
-        assert chapter_ids <= synthesized
+        assert chapter_ids <= selected_ids
 
 
 def test_g4a_sources_are_local_and_historical_owner_rows_are_unchanged():
@@ -144,7 +131,7 @@ def test_g4a_links_are_one_way_and_comparative_reception_is_context_only():
     )
 
 
-def test_g4a_all_1189_chapter_identities_and_frozen_commentary_match_contract():
+def test_g4a_exact_chapter_impact_contract_remains_recorded():
     _library()
     impact = _read(ARTIFACTS / "g4a-chapter-impact.json")
     post = _read(ARTIFACTS / "g4a-post-apply-validation.json")
@@ -155,27 +142,4 @@ def test_g4a_all_1189_chapter_identities_and_frozen_commentary_match_contract():
     assert post["whole_corpus_exact_set_pass"] is True
     assert all(post["controls"].values())
 
-    frozen = _read(ARTIFACTS / "g4a-existing-evidence-audit.json")["base_commentary_v1_2_identity"]
-    release_dir = ROOT / ".bhf-data/bhf-commentary-v1.2"
-    manifest = _read(release_dir / ".bhf-commentary-release.json")
-    checksum_path = release_dir / ".bhf-commentary-release-checksums.json"
-    assert manifest["manifest_identity"] == frozen["manifest_identity"]
-    assert hashlib.sha256(checksum_path.read_bytes()).hexdigest() == frozen["checksum_index_sha256"]
-
-
-def test_g4a_keeps_genesis_one_legacy_theme_fallback_exact():
-    prepared = prepare_chapter("Genesis", 1)
-    fallback_ids = {
-        item.id
-        for item in prepared.bundle.evidence_items
-        if item.relevance_metadata.get("parent_object_id") == "image-of-god-theme"
-        and item.relevance_metadata.get("source_kind") == "ckl_legacy_field"
-    }
-    assert fallback_ids == {
-        "image-of-god-theme:ancient_near_east_context:0",
-        "image-of-god-theme:hebraic_worldview:0",
-        "image-of-god-theme:historical_context:0",
-        "image-of-god-theme:second_temple_context:0",
-    }
-    g4a_ids = {item.id for item in _library().objects_by_id[OBJECT_ID].evidence_items}
-    assert not g4a_ids.intersection(item.id for item in prepared.bundle.evidence_items)
+    assert set(post["controls"]) >= {"Genesis 1", "Genesis 5", "Genesis 6"}

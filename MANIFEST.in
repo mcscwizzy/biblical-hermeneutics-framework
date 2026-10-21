@@ -7,6 +7,7 @@ recursive-include framework/canonical_library/objects *.json
 recursive-include framework/canonical_library/curations *.json
 include framework/canonical_library/manifest.json
 recursive-include framework/canonical_library/schema *.json
+recursive-include framework/commentary/data *.sqlite
 recursive-include framework/lexical/schema *.json
 recursive-include bhf_agent/data *.json
 recursive-include bhf_web/templates *.html

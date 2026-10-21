@@ -70,12 +70,6 @@ def run(
     all_changed_chapters = transaction.changed_chapters
     direct_chapters = _chapters_from_records(queue["candidates"])
     dependent_chapters = sorted(set(all_changed_chapters) - set(direct_chapters))
-    preview_references = sorted(set(all_changed_chapters))
-    commentary_preview = [
-        {"reference": reference, "pipeline": "commentary-v1.2-enrichment", "operation": "would-rebuild"}
-        for reference in preview_references
-    ]
-
     report = _report(
         source_locks,
         queue,
@@ -84,7 +78,6 @@ def run(
         dependent=dependent,
         direct_chapters=direct_chapters,
         dependent_chapters=dependent_chapters,
-        commentary_preview=commentary_preview,
     )
     queue["dry_run"] = report
     return {"queue": queue, "report": report}
@@ -115,7 +108,7 @@ def _structural_conflict_report(
     report = _report(
         source_locks, queue,
         transaction=SimpleNamespace(changed_object_ids=[], simulated_objects={}, wrote=False),
-        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[], commentary_preview=[],
+        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[],
     )
     report["dry_run"].update(
         full_library_validation="FAIL", transaction_result="BLOCKED",
@@ -173,7 +166,7 @@ def _bootstrap_conflict_report(
     report = _report(
         source_locks, queue,
         transaction=SimpleNamespace(changed_object_ids=[], simulated_objects={}, wrote=False),
-        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[], commentary_preview=[],
+        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[],
     )
     report["dry_run"].update(
         full_library_validation="FAIL", transaction_result="BLOCKED",
@@ -292,7 +285,6 @@ def _report(
     dependent: list[str],
     direct_chapters: list[str],
     dependent_chapters: list[str],
-    commentary_preview: list[dict[str, Any]],
 ) -> dict[str, Any]:
     records = list(queue["candidates"])
     source_statuses = Counter(
@@ -395,12 +387,6 @@ def _report(
             "dependent_chapters": dependent_chapters,
             "unexpected_propagation": [],
         },
-        "commentary_v12_preview": {
-            "preview_mode": "reference-only",
-            "evidence_bundles_that_would_rebuild": commentary_preview,
-            "chapter_syntheses_that_would_rebuild": [item["reference"] for item in commentary_preview],
-            "production_artifacts_modified": False,
-        },
         "protected_chapters": protected,
     }
 
@@ -412,7 +398,6 @@ def render_markdown(report: Mapping[str, Any]) -> str:
     candidates = report["candidates"]
     dry_run = report["dry_run"]
     changed = report["changed_references"]
-    preview = report["commentary_v12_preview"]
     protected = report["protected_chapters"]
     return "\n".join(
         [
@@ -446,12 +431,6 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             "",
             f"- Direct: {changed['direct']}",
             f"- Dependent: {changed['dependent']}",
-            "",
-            "## Commentary v1.2 preview",
-            "",
-            f"- Preview mode: {preview['preview_mode']}; synthesis was not recomputed.",
-            f"- EvidenceBundles and syntheses that would rebuild: {len(preview['evidence_bundles_that_would_rebuild'])}",
-            "- No production Commentary artifacts were modified.",
             "",
             "## Protected chapters",
             "",

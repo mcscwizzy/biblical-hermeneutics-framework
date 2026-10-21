@@ -25,6 +25,11 @@ jobs:
         run: >-
           pytest -q
           tests/test_commentary_retirement.py
+          tests/test_retired_commentary_runtime.py
+          tests/test_tyndale_study_notes.py
+          tests/test_tyndale_evidence.py
+          tests/test_tyndale_vercel_provisioning.py
+          tests/test_ckl_structured_claims.py
           tests/test_narrative_explorer_ui_config.py
           tests/test_vercel_packaging.py
           tests/canonical_library/test_manifest.py::CanonicalInventoryTests::test_manifest_counts_match_inventory
@@ -77,6 +82,14 @@ jobs:
               "bhf_web/static/sw.js",
               "bhf_web/templates/index.html",
               "framework/canonical_library/manifest.json",
+              "framework/canonical_library/curations/narrative-explorer/ne10/passage-bridges.json",
+              "framework/canonical_library/curations/narrative-explorer/ne10/research-candidates-held.json",
+              "framework/canonical_library/curations/narrative-explorer/ne9c/wave-0008/other_authored_relationships.json",
+              "framework/commentary/service.py",
+              "framework/commentary/importer.py",
+              "framework/commentary/evidence.py",
+              "bhf_web/routes/commentary.py",
+              "bhf_web/routes/retired_commentary.py",
           }
           required_wheel_prefixes = {
               "framework/canonical_library/objects/",
@@ -89,6 +102,14 @@ jobs:
               "bhf_web/static/sw.js",
               "bhf_web/templates/index.html",
               "framework/canonical_library/manifest.json",
+              "framework/canonical_library/curations/narrative-explorer/ne10/passage-bridges.json",
+              "framework/canonical_library/curations/narrative-explorer/ne10/research-candidates-held.json",
+              "framework/canonical_library/curations/narrative-explorer/ne9c/wave-0008/other_authored_relationships.json",
+              "framework/commentary/service.py",
+              "framework/commentary/importer.py",
+              "framework/commentary/evidence.py",
+              "bhf_web/routes/commentary.py",
+              "bhf_web/routes/retired_commentary.py",
           }
           required_sdist_prefixes = {
               "framework/canonical_library/objects/",
@@ -111,15 +132,24 @@ jobs:
           if missing:
               raise SystemExit("missing release artifact content: " + ", ".join(missing))
 
-          retired_payload_parts = ("bhf_agent", "data", "commentary-v1.2")
+          retired_prefixes = (
+              "bhf_agent/chapter_commentary/",
+              "framework/commentary/production/",
+          )
+          retired_files = {
+              "framework/commentary/orchestrator.py",
+              "framework/commentary/publish.py",
+              "framework/commentary/reconciliation.py",
+              "framework/commentary/recovery.py",
+              "framework/commentary/remediation.py",
+              "framework/commentary/remediation_groups.py",
+              "framework/commentary/v12_config.py",
+              "framework/commentary/v12_corpus.py",
+              "framework/commentary/v12_current_lineage.py",
+          }
 
           def has_retired_payload(name):
-              parts = PurePosixPath(name).parts
-              width = len(retired_payload_parts)
-              return any(
-                  parts[index:index + width] == retired_payload_parts
-                  for index in range(len(parts) - width + 1)
-              )
+              return name in retired_files or name.startswith(retired_prefixes)
 
           retired = [
               *(f"wheel:{name}" for name in sorted(wheel_names) if has_retired_payload(name)),
@@ -139,6 +169,7 @@ jobs:
           /tmp/bhf-wheel-venv/bin/python -m pip install "$GITHUB_WORKSPACE"/dist/*.whl
           /tmp/bhf-wheel-venv/bin/ckl-version --json
           VERCEL=1 /tmp/bhf-wheel-venv/bin/python -c "from bhf_web.app import app; print(app)"
+          /tmp/bhf-wheel-venv/bin/python -m framework.commentary --help
           /tmp/bhf-wheel-venv/bin/python - <<'PY'
           from framework.canonical_library import CanonicalLibrary
 

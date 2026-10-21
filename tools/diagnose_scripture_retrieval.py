@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Development-only explainable CKL Scripture-reference retrieval diagnostic.
 
-This utility intentionally uses the same CKL loader and EvidenceBundle
-projection as chapter commentary. It does not call an AI provider or write CKL
-or commentary data.
+This utility uses the same CKL loader and evidence projection as study context
+retrieval. It does not call an AI provider or write CKL data.
 """
 
 from __future__ import annotations
@@ -128,7 +127,7 @@ def diagnose(reference: str, library: Any) -> dict[str, Any]:
                 },
                 "match": "scripture" if object_id in result_by_id else "rejected",
                 "score": getattr(result_by_id.get(object_id), "score", None),
-                "admissible_for_chapter_commentary": bool(admitted_by_parent.get(object_id)),
+                "included_in_evidence_bundle": bool(admitted_by_parent.get(object_id)),
                 "admitted_evidence_ids": admitted_by_parent.get(object_id, []),
             }
         )
@@ -140,7 +139,7 @@ def diagnose(reference: str, library: Any) -> dict[str, Any]:
         "valid_scripture_anchored_result_count": len(results),
         "rejected_candidate_count": sum(candidate["match"] == "rejected" for candidate in candidates),
         "evidence_categories": sorted({item.category for item in bundle.evidence_items}),
-        "commentary_evidence_count": len(bundle.evidence_items),
+        "evidence_item_count": len(bundle.evidence_items),
         "data_gap": not bool(bundle.evidence_items),
         "candidates": candidates,
     }
