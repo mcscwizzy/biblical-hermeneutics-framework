@@ -129,6 +129,33 @@ def _validate_bridge_shape(bridge: Any) -> None:
         normalized.append(format_scripture_reference(spans[0]))
     if normalized[0].casefold() == normalized[1].casefold():
         raise ValueError("passage bridge endpoints must differ")
+    directional_fields = ("source_text_passage", "receiving_text_passage")
+    if bridge["direction"] == "source_to_receiving_text":
+        if any(not isinstance(bridge.get(key), str) or not bridge[key] for key in directional_fields):
+            raise ValueError("source-to-receiving bridge must identify both historical text endpoints")
+        for key in directional_fields:
+            spans = parse_scripture_references(bridge[key], book_alias_lookup=_BOOK_ALIASES)
+            if len(spans) != 1 or format_scripture_reference(spans[0]).casefold() not in {
+                value.casefold() for value in normalized
+            }:
+                raise ValueError("historical text direction must use the bridge's exact passage endpoints")
+        if (
+            format_scripture_reference(
+                parse_scripture_references(
+                    bridge["source_text_passage"], book_alias_lookup=_BOOK_ALIASES
+                )[0]
+            ).casefold() != normalized[0].casefold()
+            or format_scripture_reference(
+                parse_scripture_references(
+                    bridge["receiving_text_passage"], book_alias_lookup=_BOOK_ALIASES
+                )[0]
+            ).casefold() != normalized[1].casefold()
+        ):
+            raise ValueError("source-to-receiving bridge endpoints must be ordered source first")
+        if bridge["source_text_passage"].casefold() == bridge["receiving_text_passage"].casefold():
+            raise ValueError("historical source and receiving text endpoints must differ")
+    elif any(key in bridge for key in directional_fields):
+        raise ValueError("comparison bridge cannot claim a one-way historical text direction")
     for record in bridge["supporting_records"]:
         if not isinstance(record, Mapping) or any(
             not isinstance(record.get(key), str) or not record[key]
@@ -395,7 +422,7 @@ def build_related_passages(
         source_passage, destination_passage = bridge["passages"]
         if references_overlap(passage_reference, destination_passage):
             source_passage, destination_passage = destination_passage, source_passage
-        bridges.append({
+        route = {
             "id": bridge["id"],
             "provenance": "ckl_documented_" + bridge["supporting_records"][0]["record_kind"],
             "source_passage": source_passage,
@@ -409,7 +436,11 @@ def build_related_passages(
             "human_scholarly_approval": "not_recorded",
             "supporting_records": support_payloads,
             "supporting_sources": source_payloads,
-        })
+        }
+        if bridge["direction"] == "source_to_receiving_text":
+            route["source_text_passage"] = bridge["source_text_passage"]
+            route["receiving_text_passage"] = bridge["receiving_text_passage"]
+        bridges.append(route)
     bridges.sort(key=lambda item: (item["destination_passage"], item["id"]))
     authored.sort(key=lambda item: (item["destination_passage"], item["id"]))
 

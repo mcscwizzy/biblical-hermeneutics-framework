@@ -504,6 +504,42 @@ class NE6FirefoxIntegrationTests(unittest.TestCase):
         self.wait.until(lambda browser: browser.find_element(By.ID, "map-panel").get_attribute("hidden") is not None)
         self.assertEqual(driver.switch_to.active_element.get_attribute("data-testid"), "map-browse-button")
 
+    def test_firefox_passage_bridge_keyboard_follow_and_return_origin(self):
+        driver = self.driver
+        self.open_home(1280, 1000)
+        Select(driver.find_element(By.ID, "book-select")).select_by_visible_text("Genesis")
+        self.wait.until(lambda browser: browser.find_element(By.ID, "chapter-select").get_attribute("value") == "1")
+        self.select_value("#chapter-select", "1")
+        self.wait.until(lambda browser: "Genesis 1" in browser.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+        verse_one = driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"] [data-verse-select]')
+        verse_one.click()
+        self.wait.until(lambda browser: browser.find_element(
+            By.CSS_SELECTOR, '#chapter-reader [data-verse="1"] [data-verse-select]'
+        ).get_attribute("aria-pressed") == "true")
+
+        driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
+        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        route = self.wait.until(EC.element_to_be_clickable((
+            By.XPATH,
+            "//button[contains(normalize-space(), 'Open related passage: John 1:1-5')]",
+        )))
+        route.send_keys(Keys.ENTER)
+        self.wait.until(lambda browser: "John 1:1-5" in browser.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
+        related_passages = driver.find_element(
+            By.CSS_SELECTOR,
+            ".narrative-explorer-related-passages",
+        ).text
+        self.assertIn("Thematic interpretation · Interpretive association", related_passages)
+        self.assertNotIn("Textual direction:", related_passages)
+
+        return_button = driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-return-origin")
+        return_button.send_keys(Keys.ENTER)
+        self.wait.until(lambda browser: "Genesis 1:1" in browser.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
+        restored = driver.execute_script("return window.BHFStudySelection.getState()")
+        self.assertEqual(restored["book"], "Genesis")
+        self.assertEqual(restored["chapter"], 1)
+        self.assertEqual(restored["selectedVerses"], [1])
+
     def test_firefox_john2_compact_maps_selection_mobile_cache_and_offline_retry(self):
         driver = self.driver
         runtime_config = self._app.state.runtime_config

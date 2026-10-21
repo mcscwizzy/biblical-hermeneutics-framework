@@ -39,6 +39,8 @@ def _bridge() -> dict:
     return {
         "id": "genesis-1-john-1-logos",
         "passages": ["Genesis 1:1-5", "John 1:1-18"],
+        "source_text_passage": "Genesis 1:1-5",
+        "receiving_text_passage": "John 1:1-18",
         "direction": "source_to_receiving_text",
         "relationship_category": "interpretive_association",
         "evidence_layer": "thematic_interpretation",
@@ -82,6 +84,39 @@ def test_explicit_ckl_claim_creates_a_separate_scoped_passage_bridge():
     assert bridge["supporting_records"][0]["id"] == "ckl:john#claim:john-logos"
     assert [source["id"] for source in bridge["supporting_sources"]] == ["john-greek", "boyarin-logos"]
     assert all(source["id"] != "unrelated" for source in bridge["supporting_sources"])
+
+
+@pytest.mark.parametrize(
+    ("selected_passage", "expected_destination"),
+    [
+        ("Genesis 1:1-5", "John 1:1-18"),
+        ("John 1:1-18", "Genesis 1:1-5"),
+    ],
+)
+def test_reverse_navigation_preserves_the_original_textual_direction(
+    selected_passage, expected_destination
+):
+    object_record = _claim_object()
+    bridge_record = {
+        **_bridge(),
+        "source_text_passage": "Genesis 1:1-5",
+        "receiving_text_passage": "John 1:1-18",
+    }
+
+    result = build_related_passages(
+        selected_passage,
+        connections=[],
+        bridge_records=[bridge_record],
+        source_resolver=_resolver(object_record),
+        query_status="complete",
+    )
+
+    route = result["evidence_backed_bridges"][0]
+    assert route["source_passage"] == selected_passage
+    assert route["destination_passage"] == expected_destination
+    assert route["source_text_passage"] == "Genesis 1:1-5"
+    assert route["receiving_text_passage"] == "John 1:1-18"
+    assert route["direction"] == "source_to_receiving_text"
 
 
 def test_shared_parent_source_keyword_or_anchor_does_not_infer_a_bridge():
@@ -279,3 +314,83 @@ def test_checked_in_registry_keeps_only_current_exact_ckl_records_and_record_sou
     bridges = load_passage_bridges()
     assert bridges
     assert validate_passage_bridge_registry(bridges, records.get) == len(bridges)
+
+
+def test_final_acceptance_classifications_match_the_connection_contract():
+    bridges = {bridge["id"]: bridge for bridge in load_passage_bridges()}
+    expected = {
+        "exodus-40-leviticus-1-continuation": "shared_literary_motif",
+        "exodus-12-numbers-33-egypt-gods": "thematic_relationship",
+        "luke-3-psalm-2-variant": "direct_quotation",
+        "galatians-3-deut-21-23": "direct_quotation",
+        "galatians-3-deut-27-26": "direct_quotation",
+        "james-2-gen-22": "later_canonical_reception",
+        "james-2-josh-2": "later_canonical_reception",
+        "hebrews-7-genesis-14": "later_canonical_reception",
+        "hebrews-7-psalm-110": "direct_quotation",
+        "jude-2-peter-literary-relation": "proposed_intertextual_echo",
+    }
+    assert {bridge_id: bridges[bridge_id]["relationship_category"] for bridge_id in expected} == expected
+
+
+def test_source_to_receiving_bridges_record_both_historical_text_endpoints():
+    for bridge in load_passage_bridges():
+        if bridge["direction"] != "source_to_receiving_text":
+            continue
+        assert bridge["source_text_passage"] == bridge["passages"][0]
+        assert bridge["receiving_text_passage"] == bridge["passages"][1]
+        assert bridge["source_text_passage"] != bridge["receiving_text_passage"]
+
+
+def test_priority_quote_and_reception_routes_keep_the_source_text_first():
+    bridges = {bridge["id"]: bridge for bridge in load_passage_bridges()}
+    expected = {
+        "mark-1-exodus-23-20": ("Exodus 23:20", "Mark 1:2-3"),
+        "mark-1-malachi-3-1": ("Malachi 3:1", "Mark 1:2-3"),
+        "mark-1-isaiah-40-3": ("Isaiah 40:3", "Mark 1:2-3"),
+        "mark-11-isaiah-56-7": ("Isaiah 56:7", "Mark 11:17"),
+        "mark-11-jeremiah-7-11": ("Jeremiah 7:11", "Mark 11:17"),
+        "luke-3-psalm-2-variant": ("Psalm 2:7", "Luke 3:22"),
+        "galatians-3-genesis-12-3": ("Genesis 12:3", "Galatians 3:6-9"),
+        "galatians-3-genesis-15-6": ("Genesis 15:6", "Galatians 3:6-9"),
+        "galatians-3-deut-21-23": ("Deuteronomy 21:23", "Galatians 3:10-14"),
+        "galatians-3-deut-27-26": ("Deuteronomy 27:26", "Galatians 3:10-14"),
+        "james-2-gen-22": ("Genesis 22:1-19", "James 2:21-25"),
+        "james-2-josh-2": ("Joshua 2:1-21", "James 2:21-25"),
+        "hebrews-7-psalm-110": ("Psalm 110", "Hebrews 7:1-28"),
+        "hebrews-7-genesis-14": ("Genesis 14", "Hebrews 7:1-28"),
+    }
+    assert {
+        bridge_id: (
+            bridges[bridge_id]["source_text_passage"],
+            bridges[bridge_id]["receiving_text_passage"],
+        )
+        for bridge_id in expected
+    } == expected
+
+
+def test_each_registry_bridge_navigates_from_both_endpoints():
+    object_root = Path(__file__).resolve().parents[1] / "framework" / "canonical_library" / "objects"
+    records = {}
+    for path in object_root.rglob("*.json"):
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if isinstance(value, dict) and isinstance(value.get("id"), str):
+            records[value["id"]] = value
+
+    for bridge in load_passage_bridges():
+        for selected, destination in (
+            (bridge["passages"][0], bridge["passages"][1]),
+            (bridge["passages"][1], bridge["passages"][0]),
+        ):
+            routes = build_related_passages(
+                selected,
+                connections=[],
+                bridge_records=[bridge],
+                source_resolver=records.get,
+            )["evidence_backed_bridges"]
+            route = next(route for route in routes if route["id"] == bridge["id"])
+            assert route["source_passage"] == selected
+            assert route["destination_passage"] == destination

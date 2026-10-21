@@ -825,6 +825,9 @@
       "p",
       "Explore the sources and connections recorded for this passage. Sources and counts show what was returned for this passage; they do not measure its importance or give a complete account.",
     );
+    if (projection?.passage?.reference) {
+      appendTextElement(document, header, "p", `Current passage: ${readerText(projection.passage.reference)}`, "narrative-explorer-passage");
+    }
     rootElement.append(header);
 
     const passage = projection?.passage?.reference;
@@ -899,6 +902,17 @@
         const article = element(document, "article", "narrative-explorer-related-passage");
         const category = connectionCategoryLabel(route.relationship_category) || readerText(route.relationship_category).replace(/_/g, " ");
         appendTextElement(document, article, "p", `${passageEvidenceLayerLabel(route.evidence_layer)} · ${category}`, "narrative-explorer-related-passage-kind");
+        if (route.direction === "source_to_receiving_text"
+          && readerText(route.source_text_passage)
+          && readerText(route.receiving_text_passage)) {
+          appendTextElement(
+            document,
+            article,
+            "p",
+            `Textual direction: ${readerText(route.source_text_passage)} → ${readerText(route.receiving_text_passage)}. This route can be followed from either passage.`,
+            "narrative-explorer-related-passage-direction",
+          );
+        }
         const destination = validateScriptureReference(route.destination_passage, options.knownBooks || []);
         const inCurrent = destination.valid && currentReference === normalizeReference(destination.reference);
         const inTrail = destination.valid && passageIsInTrail(options.trail, normalizeReference(destination.reference));

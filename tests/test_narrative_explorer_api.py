@@ -263,7 +263,7 @@ def test_related_passage_routes_cover_real_research_examples_without_shared_scop
             for route in payloads[(book, chapter)]["related_passages"]["evidence_backed_bridges"]
         }
 
-    assert "John 1:1-18" in bridge_destinations("Genesis", 1)
+    assert "John 1:1-5" in bridge_destinations("Genesis", 1)
     assert {"Revelation 12:9", "Exodus 25:18-22", "1 Kings 6:23-35"}.issubset(bridge_destinations("Genesis", 3))
     assert "Jude 1:6" in bridge_destinations("Genesis", 6)
     assert "Zechariah 3:1-2" in bridge_destinations("Job", 1)
@@ -277,6 +277,41 @@ def test_related_passage_routes_cover_real_research_examples_without_shared_scop
     assert not bridge_destinations("Ezekiel", 37)
     assert payloads[("Genesis", 1)]["related_passages"]["authored_relationships"]
     assert payloads[("Revelation", 21)]["related_passages"]["authored_relationships"]
+
+
+def test_mark_1_composite_quotation_keeps_source_direction_from_both_endpoints(ckl_library):
+    client = _client(_service(ckl_library))
+    routes = {
+        "Exodus 23:20": ("Exodus", 23, "mark-1-exodus-23-20"),
+        "Malachi 3:1": ("Malachi", 3, "mark-1-malachi-3-1"),
+        "Isaiah 40:3": ("Isaiah", 40, "mark-1-isaiah-40-3"),
+    }
+
+    mark_payload = client.get("/api/narrative-explorer/v1/passages/Mark/1").json()
+    mark_routes = {
+        route["id"]: route
+        for route in mark_payload["related_passages"]["evidence_backed_bridges"]
+    }
+    for source_reference, (book, chapter, bridge_id) in routes.items():
+        route = mark_routes[bridge_id]
+        assert route["source_passage"] == "Mark 1:2-3"
+        assert route["destination_passage"] == source_reference
+        assert route["source_text_passage"] == source_reference
+        assert route["receiving_text_passage"] == "Mark 1:2-3"
+        assert route["relationship_category"] == "direct_quotation"
+
+        source_payload = client.get(
+            f"/api/narrative-explorer/v1/passages/{book}/{chapter}"
+        ).json()
+        reverse = next(
+            bridge
+            for bridge in source_payload["related_passages"]["evidence_backed_bridges"]
+            if bridge["id"] == bridge_id
+        )
+        assert reverse["source_passage"] == source_reference
+        assert reverse["destination_passage"] == "Mark 1:2-3"
+        assert reverse["source_text_passage"] == source_reference
+        assert reverse["receiving_text_passage"] == "Mark 1:2-3"
 
 
 def test_psalm_82_discloses_council_context_and_keeps_explicit_text_distinct_from_dispute(ckl_library):

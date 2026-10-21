@@ -305,6 +305,7 @@ test("related passage routes show provenance and uncertainty, then use the exist
     onOpenPassage: (destination, relationship) => opened.push({destination, relationship}),
   });
 
+  assert.ok(descendants(root).some((item) => item.className === "narrative-explorer-passage" && item.textContent === "Current passage: Genesis 1"));
   assert.match(root.textContent, /Related Biblical Passages/);
   assert.match(root.textContent, /Existing authored CKL relationships/);
   assert.match(root.textContent, /Original relationship type: canonical-fulfillment/);
@@ -342,6 +343,7 @@ test("related passage routes show provenance and uncertainty, then use the exist
   const destinationView = explorer.renderOverview(projection({
     passage: {reference: "John 1:1-18", book: "John", chapter: 1, verse_start: 1, verse_end: 18, scope: "verse_range"},
   }), {document: fakeDocument(), trail: followed.state});
+  assert.ok(descendants(destinationView).some((item) => item.className === "narrative-explorer-passage" && item.textContent === "Current passage: John 1:1-18"));
   assert.match(destinationView.textContent, /Connection used to open this passage/);
   assert.match(destinationView.textContent, /CKL-documented claim/);
   assert.match(destinationView.textContent, /ckl:john#claim:john-logos/);
@@ -402,6 +404,38 @@ test("related passage routes disclose long lists in keyboard-operable pages", ()
   more.click();
   assert.equal(list.children.length, 6);
   assert.equal(more.hidden, true);
+});
+
+test("reverse passage navigation displays the original source-to-receiver direction", () => {
+  const view = explorer.renderOverview(projection({
+    passage: {reference: "John 1:1-18", book: "John", chapter: 1, verse_start: 1, verse_end: 18, scope: "verse_range"},
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      description: "Passage routes are available from the records listed here.",
+      authored_relationships: [],
+      evidence_backed_bridges: [{
+        id: "genesis-1-john-1-creation-word",
+        provenance: "ckl_documented_claim",
+        source_passage: "John 1:1-18",
+        destination_passage: "Genesis 1:1-5",
+        source_text_passage: "Genesis 1:1-5",
+        receiving_text_passage: "John 1:1-18",
+        relationship_category: "interpretive_association",
+        evidence_layer: "thematic_interpretation",
+        direction: "source_to_receiving_text",
+        relationship_mode: "documented_interpretation",
+        explanation: "John's prologue places the Logos with God in the beginning.",
+        uncertainty: "Conceptual genealogy is debated.",
+        human_scholarly_approval: "not_recorded",
+        supporting_records: [],
+        supporting_sources: [],
+      }],
+    },
+  }), {document: fakeDocument()});
+
+  assert.match(view.textContent, /Textual direction: Genesis 1:1-5 → John 1:1-18/);
+  assert.match(view.textContent, /this route can be followed from either passage/i);
 });
 
 test("simultaneous loads for the same passage share one uncached network response", async () => {

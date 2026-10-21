@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "description": "Read-only, record-verified NE-10 passage bridges. Each route identifies exact CKL records and only sources attached to those records; this registry remains separate from authored CKL relationships.",
+  "description": "Read-only, record-verified NE-10 passage bridges. Each route identifies exact CKL records and only sources attached to those records; this registry remains separate from authored CKL relationships. For source_to_receiving_text entries, explicit source_text_passage and receiving_text_passage fields preserve the historical direction while route navigation remains reversible.",
   "bridges": [
     {
       "id": "genesis-1-john-1-creation-word",
       "passages": [
         "Genesis 1:1-5",
-        "John 1:1-18"
+        "John 1:1-5"
       ],
       "direction": "interpretive_comparison",
       "relationship_category": "interpretive_association",
@@ -48,7 +48,9 @@
           ],
           "record_id": "g3-serpent-later-canonical-reception"
         }
-      ]
+      ],
+      "source_text_passage": "Genesis 3:1",
+      "receiving_text_passage": "Revelation 12:9"
     },
     {
       "id": "genesis-3-exodus-25-cherubim",
@@ -165,11 +167,11 @@
         "Exodus 40:34-38",
         "Leviticus 1:1"
       ],
-      "direction": "source_to_receiving_text",
-      "relationship_category": "narrative_parallel",
+      "direction": "bidirectional_comparison",
+      "relationship_category": "shared_literary_motif",
       "evidence_layer": "direct_textual_relationship",
-      "explanation": "Leviticus opens with YHWH calling Moses from the tent of meeting immediately after Exodus closes with cloud and glory filling the completed dwelling.",
-      "uncertainty": "Narrative continuity is explicit; it does not settle compositional history.",
+      "explanation": "Exodus closes as cloud and glory fill the completed tent; Leviticus opens with the LORD calling Moses from the tent of meeting, continuing the sanctuary scene.",
+      "uncertainty": "The adjacent literary sequence supports narrative continuity; it does not establish quotation or literary dependence.",
       "supporting_records": [
         {
           "object_id": "leviticus",
@@ -185,13 +187,13 @@
       "id": "exodus-12-numbers-33-egypt-gods",
       "passages": [
         "Exodus 12:12",
-        "Numbers 33:3-4"
+        "Numbers 33:4"
       ],
       "direction": "bidirectional_comparison",
-      "relationship_category": "explicit_textual_reference",
-      "evidence_layer": "direct_textual_relationship",
-      "explanation": "Both passages associate Israel's departure from Egypt with judgment on Egypt's gods.",
-      "uncertainty": "Neither text provides a plague-by-plague list of individual divine targets.",
+      "relationship_category": "thematic_relationship",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "Exodus 12:12 announces judgment on Egypt’s gods; Numbers 33:4 retrospectively says the LORD executed judgment on Egypt’s gods during the departure.",
+      "uncertainty": "Neither passage identifies the individual gods or assigns specific divine targets to individual plagues; those reconstructions remain disputed.",
       "supporting_records": [
         {
           "object_id": "egyptian-kingship-and-divine-order",
@@ -209,8 +211,8 @@
     {
       "id": "hosea-11-matthew-2-son-egypt",
       "passages": [
-        "Hosea 11:1-12",
-        "Matthew 2:13-15"
+        "Hosea 11:1",
+        "Matthew 2:15"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "later_canonical_reception",
@@ -228,13 +230,15 @@
           ],
           "content_hash": "3258d45212399ffb0055de005ff45b356f6813038ea4cf7c965a925228d9b43e"
         }
-      ]
+      ],
+      "source_text_passage": "Hosea 11:1",
+      "receiving_text_passage": "Matthew 2:15"
     },
     {
       "id": "hosea-13-first-corinthians-15",
       "passages": [
-        "Hosea 13:1-16",
-        "1 Corinthians 15:50-58"
+        "Hosea 13:14",
+        "1 Corinthians 15:54-55"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "later_canonical_reception",
@@ -252,13 +256,15 @@
           ],
           "content_hash": "21692049bc4f1eabb47a288486eaf523e638d1e1e5a52390e1f8a5323b9d096f"
         }
-      ]
+      ],
+      "source_text_passage": "Hosea 13:14",
+      "receiving_text_passage": "1 Corinthians 15:54-55"
     },
     {
       "id": "mark-1-exodus-23-20",
       "passages": [
-        "Mark 1:2-3",
-        "Exodus 23:20"
+        "Exodus 23:20",
+        "Mark 1:2-3"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "direct_quotation",
@@ -275,13 +281,15 @@
           ],
           "record_id": "mark-opening-citation"
         }
-      ]
+      ],
+      "source_text_passage": "Exodus 23:20",
+      "receiving_text_passage": "Mark 1:2-3"
     },
     {
       "id": "mark-1-malachi-3-1",
       "passages": [
-        "Mark 1:2-3",
-        "Malachi 3:1"
+        "Malachi 3:1",
+        "Mark 1:2-3"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "direct_quotation",
@@ -298,13 +306,15 @@
           ],
           "record_id": "mark-opening-citation"
         }
-      ]
+      ],
+      "source_text_passage": "Malachi 3:1",
+      "receiving_text_passage": "Mark 1:2-3"
     },
     {
       "id": "mark-1-isaiah-40-3",
       "passages": [
-        "Mark 1:2-3",
-        "Isaiah 40:3"
+        "Isaiah 40:3",
+        "Mark 1:2-3"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "direct_quotation",
@@ -321,7 +331,9 @@
           ],
           "record_id": "mark-opening-citation"
         }
-      ]
+      ],
+      "source_text_passage": "Isaiah 40:3",
+      "receiving_text_passage": "Mark 1:2-3"
     },
     {
       "id": "luke-3-psalm-2-variant",
@@ -329,11 +341,11 @@
         "Psalm 2:7",
         "Luke 3:22"
       ],
-      "direction": "bidirectional_comparison",
-      "relationship_category": "explicit_textual_reference",
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
       "evidence_layer": "textual_critical_evidence",
-      "explanation": "Most witnesses give the Synoptic form in Luke 3:22; Codex Bezae and patristic evidence preserve Psalm 2:7 wording.",
-      "uncertainty": "This is a variant, not the reading of all manuscripts; textual evidence and christological interpretation are distinct.",
+      "explanation": "A variant of Luke 3:22 in Codex Bezae and patristic evidence uses the wording of Psalm 2:7; most witnesses preserve the Synoptic-form declaration.",
+      "uncertainty": "The Psalm 2:7 wording is a textual variant, not the reading found in most witnesses; textual and christological judgments remain distinct.",
       "supporting_records": [
         {
           "object_id": "luke",
@@ -345,13 +357,15 @@
           ],
           "record_id": "luke-baptism-variant"
         }
-      ]
+      ],
+      "source_text_passage": "Psalm 2:7",
+      "receiving_text_passage": "Luke 3:22"
     },
     {
       "id": "mark-11-isaiah-56-7",
       "passages": [
-        "Mark 11:12-25",
-        "Isaiah 56:7"
+        "Isaiah 56:7",
+        "Mark 11:17"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "direct_quotation",
@@ -369,13 +383,15 @@
           ],
           "record_id": "mark-temple-action"
         }
-      ]
+      ],
+      "source_text_passage": "Isaiah 56:7",
+      "receiving_text_passage": "Mark 11:17"
     },
     {
       "id": "mark-11-jeremiah-7-11",
       "passages": [
-        "Mark 11:12-25",
-        "Jeremiah 7:11"
+        "Jeremiah 7:11",
+        "Mark 11:17"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "direct_quotation",
@@ -393,7 +409,9 @@
           ],
           "record_id": "mark-temple-action"
         }
-      ]
+      ],
+      "source_text_passage": "Jeremiah 7:11",
+      "receiving_text_passage": "Mark 11:17"
     },
     {
       "id": "isaiah-53-mark-10-ransom",
@@ -422,7 +440,7 @@
       "id": "daniel-7-mark-13-son-of-man",
       "passages": [
         "Daniel 7:13-14",
-        "Mark 13:1-37"
+        "Mark 13:26"
       ],
       "direction": "interpretive_comparison",
       "relationship_category": "interpretive_association",
@@ -445,8 +463,8 @@
     {
       "id": "isaiah-7-matthew-1-immanuel",
       "passages": [
-        "Isaiah 7:1-25",
-        "Matthew 1:18-25"
+        "Isaiah 7:14",
+        "Matthew 1:22-23"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "later_canonical_reception",
@@ -466,18 +484,20 @@
           ],
           "record_id": "isaiah-immanuel-sign"
         }
-      ]
+      ],
+      "source_text_passage": "Isaiah 7:14",
+      "receiving_text_passage": "Matthew 1:22-23"
     },
     {
       "id": "isaiah-53-acts-8",
       "passages": [
-        "Isaiah 53:1-12",
-        "Acts 8:26-40"
+        "Isaiah 53:7-8",
+        "Acts 8:32-35"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "later_canonical_reception",
       "evidence_layer": "later_reception",
-      "explanation": "CKL documents Acts 8:26-40 as later reception of Isaiah's suffering-servant passage.",
+      "explanation": "Acts 8:32-35 records the Ethiopian official reading Isaiah’s servant passage and Philip interpreting the passage in relation to Jesus.",
       "uncertainty": "Isaiah does not name the servant; collective, individual, prophetic, messianic, and christological readings persist.",
       "supporting_records": [
         {
@@ -492,12 +512,14 @@
           ],
           "record_id": "isaiah-suffering-servant"
         }
-      ]
+      ],
+      "source_text_passage": "Isaiah 53:7-8",
+      "receiving_text_passage": "Acts 8:32-35"
     },
     {
       "id": "isaiah-53-1-peter-2",
       "passages": [
-        "Isaiah 53:1-12",
+        "Isaiah 53:4-12",
         "1 Peter 2:21-25"
       ],
       "direction": "source_to_receiving_text",
@@ -518,7 +540,9 @@
           ],
           "record_id": "isaiah-suffering-servant"
         }
-      ]
+      ],
+      "source_text_passage": "Isaiah 53:4-12",
+      "receiving_text_passage": "1 Peter 2:21-25"
     },
     {
       "id": "micah-4-isaiah-2-zion",
@@ -565,7 +589,9 @@
           ],
           "record_id": "micah-jeremiah-reception"
         }
-      ]
+      ],
+      "source_text_passage": "Micah 3:12",
+      "receiving_text_passage": "Jeremiah 26:18-19"
     },
     {
       "id": "amos-5-acts-7-quotation",
@@ -589,13 +615,15 @@
           ],
           "record_id": "amos-acts7-reuse"
         }
-      ]
+      ],
+      "source_text_passage": "Amos 5:25-27",
+      "receiving_text_passage": "Acts 7:42-43"
     },
     {
       "id": "amos-9-acts-15-quotation",
       "passages": [
-        "Amos 9:11-15",
-        "Acts 15:13-21"
+        "Amos 9:11-12",
+        "Acts 15:16-18"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "direct_quotation",
@@ -614,18 +642,20 @@
           ],
           "record_id": "amos-acts15-reuse"
         }
-      ]
+      ],
+      "source_text_passage": "Amos 9:11-12",
+      "receiving_text_passage": "Acts 15:16-18"
     },
     {
       "id": "habakkuk-2-romans-1",
       "passages": [
         "Habakkuk 2:4",
-        "Romans 1:16-17"
+        "Romans 1:17"
       ],
       "direction": "source_to_receiving_text",
-      "relationship_category": "explicit_textual_reference",
+      "relationship_category": "direct_quotation",
       "evidence_layer": "direct_textual_relationship",
-      "explanation": "Romans 1:16-17 links the gospel and revelation of God's righteousness to Habakkuk 2:4.",
+      "explanation": "Romans 1:17 quotes Habakkuk 2:4 within Paul’s account of the gospel and the revelation of God’s righteousness.",
       "uncertainty": "The wording and force of righteousness and faith/faithfulness remain disputed.",
       "supporting_records": [
         {
@@ -638,7 +668,9 @@
           ],
           "record_id": "romans-thesis"
         }
-      ]
+      ],
+      "source_text_passage": "Habakkuk 2:4",
+      "receiving_text_passage": "Romans 1:17"
     },
     {
       "id": "genesis-15-romans-4",
@@ -661,13 +693,15 @@
           ],
           "record_id": "romans-abraham"
         }
-      ]
+      ],
+      "source_text_passage": "Genesis 15:6",
+      "receiving_text_passage": "Romans 4:1-25"
     },
     {
       "id": "galatians-3-genesis-12-3",
       "passages": [
-        "Galatians 3:6-9",
-        "Genesis 12:3"
+        "Genesis 12:3",
+        "Galatians 3:6-9"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "direct_quotation",
@@ -685,13 +719,15 @@
           ],
           "record_id": "gal-abraham"
         }
-      ]
+      ],
+      "source_text_passage": "Genesis 12:3",
+      "receiving_text_passage": "Galatians 3:6-9"
     },
     {
       "id": "galatians-3-genesis-15-6",
       "passages": [
-        "Galatians 3:6-9",
-        "Genesis 15:6"
+        "Genesis 15:6",
+        "Galatians 3:6-9"
       ],
       "direction": "source_to_receiving_text",
       "relationship_category": "direct_quotation",
@@ -709,17 +745,19 @@
           ],
           "record_id": "gal-abraham"
         }
-      ]
+      ],
+      "source_text_passage": "Genesis 15:6",
+      "receiving_text_passage": "Galatians 3:6-9"
     },
     {
       "id": "galatians-3-deut-21-23",
       "passages": [
-        "Galatians 3:10-14",
-        "Deuteronomy 21:23"
+        "Deuteronomy 21:23",
+        "Galatians 3:10-14"
       ],
-      "direction": "interpretive_comparison",
-      "relationship_category": "explicit_textual_reference",
-      "evidence_layer": "thematic_interpretation",
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
       "explanation": "Galatians juxtaposes Deuteronomy 21:23 with Torah performance and the Messiah's crucifixion.",
       "uncertainty": "The CKL claim cautions that Galatians does not say Torah, Jews, or Jewish practice are themselves cursed.",
       "supporting_records": [
@@ -733,17 +771,19 @@
           ],
           "record_id": "gal-curse-law"
         }
-      ]
+      ],
+      "source_text_passage": "Deuteronomy 21:23",
+      "receiving_text_passage": "Galatians 3:10-14"
     },
     {
       "id": "galatians-3-deut-27-26",
       "passages": [
-        "Galatians 3:10-14",
-        "Deuteronomy 27:26"
+        "Deuteronomy 27:26",
+        "Galatians 3:10-14"
       ],
-      "direction": "interpretive_comparison",
-      "relationship_category": "explicit_textual_reference",
-      "evidence_layer": "thematic_interpretation",
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
       "explanation": "Galatians juxtaposes Deuteronomy 27:26 with Torah performance and the Messiah's crucifixion.",
       "uncertainty": "The CKL claim cautions that Galatians does not say Torah, Jews, or Jewish practice are themselves cursed.",
       "supporting_records": [
@@ -757,19 +797,21 @@
           ],
           "record_id": "gal-curse-law"
         }
-      ]
+      ],
+      "source_text_passage": "Deuteronomy 27:26",
+      "receiving_text_passage": "Galatians 3:10-14"
     },
     {
       "id": "james-2-gen-22",
       "passages": [
-        "James 2:21-25",
-        "Genesis 22:1-19"
+        "Genesis 22:1-19",
+        "James 2:21-25"
       ],
-      "direction": "interpretive_comparison",
-      "relationship_category": "explicit_textual_reference",
-      "evidence_layer": "thematic_interpretation",
-      "explanation": "James pairs this scriptural figure with Abraham and argues that deeds enact or complete faith (Genesis 22:1-19).",
-      "uncertainty": "The comparison belongs to James argument about faith and works.",
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "James takes up this earlier scriptural episode and interprets the figure’s action as a deed that enacts or completes faith in James 2:21-25.",
+      "uncertainty": "James names the figure and event without a formal citation formula; the examples’ force in James’s argument and its relation to Paul remain disputed.",
       "supporting_records": [
         {
           "object_id": "james",
@@ -782,19 +824,21 @@
           ],
           "record_id": "jas-abraham-rahab"
         }
-      ]
+      ],
+      "source_text_passage": "Genesis 22:1-19",
+      "receiving_text_passage": "James 2:21-25"
     },
     {
       "id": "james-2-josh-2",
       "passages": [
-        "James 2:21-25",
-        "Joshua 2:1-21"
+        "Joshua 2:1-21",
+        "James 2:21-25"
       ],
-      "direction": "interpretive_comparison",
-      "relationship_category": "explicit_textual_reference",
-      "evidence_layer": "thematic_interpretation",
-      "explanation": "James pairs this scriptural figure with Abraham and argues that deeds enact or complete faith (Joshua 2:1-21).",
-      "uncertainty": "The comparison belongs to James argument about faith and works.",
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "James takes up this earlier scriptural episode and interprets the figure’s action as a deed that enacts or completes faith in James 2:21-25.",
+      "uncertainty": "James names the figure and event without a formal citation formula; the examples’ force in James’s argument and its relation to Paul remain disputed.",
       "supporting_records": [
         {
           "object_id": "james",
@@ -807,7 +851,9 @@
           ],
           "record_id": "jas-abraham-rahab"
         }
-      ]
+      ],
+      "source_text_passage": "Joshua 2:1-21",
+      "receiving_text_passage": "James 2:21-25"
     },
     {
       "id": "exodus-34-nahum-1",
@@ -882,13 +928,13 @@
     {
       "id": "hebrews-7-genesis-14",
       "passages": [
-        "Hebrews 7:1-28",
-        "Genesis 14"
+        "Genesis 14",
+        "Hebrews 7:1-28"
       ],
-      "direction": "interpretive_comparison",
-      "relationship_category": "interpretive_association",
-      "evidence_layer": "thematic_interpretation",
-      "explanation": "Hebrews 7 interprets Genesis 14:18-20 through Melchizedek as a literary analogy for Jesus' enduring priesthood.",
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "Hebrews 7 takes up the Melchizedek encounter in Genesis 14 and interprets it as a literary analogy for Jesus’ enduring priesthood.",
       "uncertainty": "This later scriptural argument is not a neutral biography or uncontested historical identification.",
       "supporting_records": [
         {
@@ -901,18 +947,20 @@
           ],
           "record_id": "heb-melchizedek"
         }
-      ]
+      ],
+      "source_text_passage": "Genesis 14",
+      "receiving_text_passage": "Hebrews 7:1-28"
     },
     {
       "id": "hebrews-7-psalm-110",
       "passages": [
-        "Hebrews 7:1-28",
-        "Psalm 110"
+        "Psalm 110",
+        "Hebrews 7:1-28"
       ],
-      "direction": "interpretive_comparison",
-      "relationship_category": "interpretive_association",
-      "evidence_layer": "thematic_interpretation",
-      "explanation": "Hebrews 7 interprets Psalm 110:4 through Melchizedek as a literary analogy for Jesus' enduring priesthood.",
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Hebrews 7:17 explicitly invokes the priest-forever oracle of Psalm 110 in its argument for Jesus’ enduring priesthood.",
       "uncertainty": "This later scriptural argument is not a neutral biography or uncontested historical identification.",
       "supporting_records": [
         {
@@ -925,7 +973,9 @@
           ],
           "record_id": "heb-melchizedek"
         }
-      ]
+      ],
+      "source_text_passage": "Psalm 110",
+      "receiving_text_passage": "Hebrews 7:1-28"
     },
     {
       "id": "jude-2-peter-literary-relation",
@@ -934,10 +984,10 @@
         "2 Peter 2:1-22"
       ],
       "direction": "bidirectional_comparison",
-      "relationship_category": "narrative_parallel",
+      "relationship_category": "proposed_intertextual_echo",
       "evidence_layer": "literary_parallel",
-      "explanation": "Jude 4-18 and 2 Peter 2 have a close literary relationship in wording and sequence.",
-      "uncertainty": "Direction and mechanism of dependence remain disputed; neither letter is simply a copy without its own voice.",
+      "explanation": "Jude 1:4-18 and 2 Peter 2:1-22 share extensive wording and sequence; the CKL claim records the literary relationship while leaving dependence direction open.",
+      "uncertainty": "The relation is strongly evidenced, but which text depends on the other and how that relation arose remain disputed.",
       "supporting_records": [
         {
           "object_id": "jude",
