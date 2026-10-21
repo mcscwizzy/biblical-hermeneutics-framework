@@ -125,13 +125,6 @@
           "source_id": "2-kings-17-25",
           "title": "2 Kings 17-25",
           "year": null
-        },
-        {
-          "author": "",
-          "object_id": "assyria",
-          "source_id": "assyria-historical-orientation",
-          "title": "Canonical historical orientation for Assyria",
-          "year": 2026
         }
       ],
       "supporting_comparative_material": [],
@@ -147,8 +140,7 @@
         "ckl:assyrian-tribute-and-royal-representation#source:taylor-prism-bm-91032",
         "ckl:assyrian-tribute-and-royal-representation#source:lachish-relief-bm-124911",
         "ckl:assyrian-tribute-and-royal-representation#source:oracc-assyrian-royal-inscriptions",
-        "ckl:assyria#source:2-kings-17-25",
-        "ckl:assyria#source:assyria-historical-orientation"
+        "ckl:assyria#source:2-kings-17-25"
       ],
       "target_id": "ckl:assyria",
       "textual_observation": "The dossier gathers Assyrian royal inscriptions and reliefs alongside biblical accounts of imperial campaigns and tribute; these sources illuminate Assyria’s political reach and royal self-presentation.",
@@ -189,17 +181,31 @@
           "year": null
         },
         {
-          "author": "",
-          "object_id": "messiah-theme",
-          "source_id": "isaiah-9",
-          "title": "Isaiah 9",
-          "year": null
+          "author": "Joseph Blenkinsopp",
+          "object_id": "isaiah",
+          "source_id": "blenkinsopp-isaiah-1-39",
+          "title": "Isaiah 1-39",
+          "year": 2000
+        },
+        {
+          "author": "J. J. M. Roberts",
+          "object_id": "isaiah",
+          "source_id": "roberts-first-isaiah",
+          "title": "First Isaiah",
+          "year": 2015
         },
         {
           "author": "",
           "object_id": "messiah-theme",
           "source_id": "2-samuel-7",
           "title": "2 Samuel 7",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "messiah-theme",
+          "source_id": "isaiah-9",
+          "title": "Isaiah 9",
           "year": null
         }
       ],
@@ -213,8 +219,10 @@
       "supporting_records": [
         "ckl:birth-of-jesus#source:isaiah-9",
         "ckl:birth-of-jesus#source:matthew-1-2",
-        "ckl:messiah-theme#source:isaiah-9",
-        "ckl:messiah-theme#source:2-samuel-7"
+        "ckl:isaiah#source:blenkinsopp-isaiah-1-39",
+        "ckl:isaiah#source:roberts-first-isaiah",
+        "ckl:messiah-theme#source:2-samuel-7",
+        "ckl:messiah-theme#source:isaiah-9"
       ],
       "target_id": "ckl:messiah-theme",
       "textual_observation": "Isaiah 9 presents a royal child and enduring Davidic rule; later Christian interpretation reads this text alongside Gospel birth and kingship traditions.",
@@ -260,6 +268,13 @@
           "source_id": "john-19",
           "title": "John 19",
           "year": null
+        },
+        {
+          "author": "",
+          "object_id": "1-peter",
+          "source_id": "1pet-scripture",
+          "title": "The First Letter of Peter",
+          "year": null
         }
       ],
       "supporting_comparative_material": [],
@@ -271,12 +286,13 @@
       "supporting_records": [
         "ckl:crucifixion#source:isaiah-53",
         "ckl:messiah-theme#source:isaiah-53",
-        "ckl:crucifixion#source:john-19"
+        "ckl:crucifixion#source:john-19",
+        "ckl:1-peter#source:1pet-scripture"
       ],
       "target_id": "ckl:messiah-theme",
-      "textual_observation": "The passion narratives depict Jesus’ execution under the charge “King of the Jews,” while 1 Peter applies servant language from Isaiah 53 to Christ’s suffering.",
+      "textual_observation": "The passion narratives depict Jesus’ execution under the charge “King of the Jews,” while 1 Peter 2:21–25 applies servant language from Isaiah 53 to Christ’s suffering.",
       "uncertainty": "The Gospel title “King of the Jews” is not identical to an explicit “Messiah” title in every passage, and Christian readings of Isaiah 53 are not the only Jewish interpretation of the servant.",
-      "why": "The edge is a later Christian reception connecting the crucifixion with messianic and servant traditions, supported by sources cited on both endpoint records."
+      "why": "This later Christian reading joins the crucifixion with messianic and servant traditions while keeping the Gospel and epistle settings distinct."
     },
     {
       "applicable_passages": [
@@ -324,6 +340,13 @@
           "source_id": "psalm-110",
           "title": "Psalm 110",
           "year": null
+        },
+        {
+          "author": "Frank-Lothar Hossfeld and Erich Zenger",
+          "object_id": "psalms",
+          "source_id": "hossfeld-zenger-psalms",
+          "title": "Psalms 2 and Psalms 3",
+          "year": 2011
         }
       ],
       "supporting_comparative_material": [],
@@ -337,158 +360,13 @@
         "ckl:david#source:2-samuel-5-7",
         "ckl:david#source:psalm-110",
         "ckl:messiah-theme#source:2-samuel-7",
-        "ckl:messiah-theme#source:psalm-110"
+        "ckl:messiah-theme#source:psalm-110",
+        "ckl:psalms#source:hossfeld-zenger-psalms"
       ],
       "target_id": "ckl:messiah-theme",
       "textual_observation": "The promise of a continuing Davidic house in 2 Samuel 7 and the royal speaker of Psalm 110 are later read within scriptural traditions of enduring kingship and messianic hope.",
       "uncertainty": "This is a later interpretive association, not proof that David predicted a specific later figure; Psalm 110’s original speaker and referent remain debated.",
       "why": "The shared Davidic covenant and royal psalm support the authored canonical-foreshadowing relation."
-    },
-    {
-      "applicable_passages": [
-        "1 Samuel 17:1-58"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "The narrative develops David's public role after his anointing.",
-      "original_relationship_type": "principal-person",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:david-and-goliath",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "david-and-goliath",
-          "source_id": "1-samuel-17",
-          "title": "1 Samuel 17",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "david",
-          "source_id": "1-samuel-16-17",
-          "title": "1 Samuel 16-17",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "1 Samuel 16:1-13",
-        "1 Samuel 17:1-58"
-      ],
-      "supporting_records": [
-        "ckl:david-and-goliath#source:1-samuel-17",
-        "ckl:david#source:1-samuel-16-17"
-      ],
-      "target_id": "ckl:david",
-      "textual_observation": "First Samuel 17 narrates David’s encounter with Goliath and names David as the young combatant whose public role grows through the episode.",
-      "uncertainty": "The narrative’s theological and literary presentation is clear; archaeological comparisons concerning Philistine metallurgy cannot verify the individual duel.",
-      "why": "Both records cite the same chapter, directly grounding the event-to-person relation."
-    },
-    {
-      "applicable_passages": [
-        "2 Kings 25:1-21"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "Judah falls",
-      "original_relationship_type": "southern-kingdom",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:fall-of-jerusalem",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "fall-of-jerusalem",
-          "source_id": "kings-jeremiah-fall-jerusalem",
-          "title": "Second Kings 25; Jeremiah 39 and 52; Lamentations 1",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "what-is-the-kingdom-of-judah",
-          "source_id": "2-kings-25",
-          "title": "2 Kings 25",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "2 Kings 25:1-21",
-        "Jeremiah 39:1-10",
-        "Jeremiah 52:1-30"
-      ],
-      "supporting_records": [
-        "ckl:fall-of-jerusalem#source:kings-jeremiah-fall-jerusalem",
-        "ckl:what-is-the-kingdom-of-judah#source:2-kings-25"
-      ],
-      "target_id": "ckl:what-is-the-kingdom-of-judah",
-      "textual_observation": "Second Kings 25 narrates the Babylonian capture of Jerusalem and the deportation of Judah’s leadership, marking the kingdom’s political collapse.",
-      "uncertainty": "The fall unfolded in stages and is represented with different emphases in Kings, Jeremiah, and Chronicles; this link does not flatten those accounts into one chronology.",
-      "why": "The event account and Judah FAQ both cite the chapter that directly grounds this relationship."
-    },
-    {
-      "applicable_passages": [
-        "2 Kings 17:1-23"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "Israel falls",
-      "original_relationship_type": "northern-kingdom",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:fall-of-samaria",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "fall-of-samaria",
-          "source_id": "2-kings-17",
-          "title": "2 Kings 17",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "what-is-the-kingdom-of-israel",
-          "source_id": "2-kings-17",
-          "title": "2 Kings 17",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "2 Kings 17:1-23",
-        "2 Kings 17:24-41",
-        "Hosea 1:1-11"
-      ],
-      "supporting_records": [
-        "ckl:fall-of-samaria#source:2-kings-17",
-        "ckl:what-is-the-kingdom-of-israel#source:2-kings-17"
-      ],
-      "target_id": "ckl:what-is-the-kingdom-of-israel",
-      "textual_observation": "Second Kings 17 narrates the fall of Samaria and the end of the northern kingdom, while the FAQ describes the history of Israel’s kingdom.",
-      "uncertainty": "Kings gives a theological account of the fall alongside political events; Hosea and other sources interpret the kingdom’s history from different literary settings.",
-      "why": "The shared chapter directly supports the event-to-kingdom relation."
     },
     {
       "applicable_passages": [
@@ -499,7 +377,7 @@
         "records": [],
         "status": "not_recorded"
       },
-      "classification": "explicit_textual_reference",
+      "classification": "interpretive_association",
       "curation_confidence": "high",
       "curation_status": "curated_for_explorer",
       "human_scholarly_approval": "not_recorded",
@@ -534,8 +412,7 @@
       "supporting_comparative_material": [],
       "supporting_passages": [
         "Genesis 1:26-28",
-        "Colossians 1:15-20",
-        "2 Corinthians 4:4-6"
+        "Colossians 1:15-20"
       ],
       "supporting_records": [
         "ckl:image-of-god-theme#source:colossians-1-15-20",
@@ -543,9 +420,9 @@
         "ckl:jesus#source:colossians-1"
       ],
       "target_id": "ckl:jesus",
-      "textual_observation": "Colossians 1:15 calls the Son the image of the invisible God; Genesis 1 uses image language for humanity, providing a textual basis for comparison.",
-      "uncertainty": "Colossians does not quote Genesis 1 here; whether its language deliberately evokes Adam and the creation account is an interpretive question.",
-      "why": "Both records cite Colossians’ explicit description of Christ as image, making this a direct New Testament presentation relevant to the image-of-God theme."
+      "textual_observation": "Colossians calls the Son “the image of the invisible God”; Genesis uses image language for humanity. This supports a theological comparison between the passages.",
+      "uncertainty": "Colossians does not quote Genesis 1 here. The comparison is a theological reading and does not by itself establish a deliberate allusion.",
+      "why": "The connection relates Colossians’ description of Christ to the creation account’s image language; the relationship is interpretive, not an explicit quotation."
     },
     {
       "applicable_passages": [
@@ -567,15 +444,22 @@
       "source_id": "ckl:messiah-theme",
       "supporting_ckl_sources": [
         {
-          "author": "",
-          "object_id": "messiah-theme",
-          "source_id": "isaiah-53",
-          "title": "Isaiah 53",
-          "year": null
+          "author": "Steve Moyise",
+          "object_id": "isaiah",
+          "source_id": "moyise-isaiah-nt",
+          "title": "Isaiah in the New Testament",
+          "year": 2020
+        },
+        {
+          "author": "Lena-Sofia Tiemeyer, editor",
+          "object_id": "isaiah",
+          "source_id": "oxford-handbook-isaiah",
+          "title": "The Oxford Handbook of Isaiah",
+          "year": 2020
         },
         {
           "author": "",
-          "object_id": "sacrifice-theme",
+          "object_id": "messiah-theme",
           "source_id": "isaiah-53",
           "title": "Isaiah 53",
           "year": null
@@ -586,6 +470,13 @@
           "source_id": "hebrews-9-10",
           "title": "Hebrews 9-10",
           "year": null
+        },
+        {
+          "author": "",
+          "object_id": "sacrifice-theme",
+          "source_id": "isaiah-53",
+          "title": "Isaiah 53",
+          "year": null
         }
       ],
       "supporting_comparative_material": [],
@@ -595,9 +486,11 @@
         "Hebrews 9:11-28"
       ],
       "supporting_records": [
+        "ckl:isaiah#source:moyise-isaiah-nt",
+        "ckl:isaiah#source:oxford-handbook-isaiah",
         "ckl:messiah-theme#source:isaiah-53",
-        "ckl:sacrifice-theme#source:isaiah-53",
-        "ckl:sacrifice-theme#source:hebrews-9-10"
+        "ckl:sacrifice-theme#source:hebrews-9-10",
+        "ckl:sacrifice-theme#source:isaiah-53"
       ],
       "target_id": "ckl:sacrifice-theme",
       "textual_observation": "The Messiah Theme and Sacrifice Theme both cite Isaiah 53, whose suffering servant is interpreted in Christian texts through the language of bearing sin and sacrificial offering.",
@@ -613,7 +506,7 @@
         "records": [],
         "status": "not_recorded"
       },
-      "classification": "explicit_textual_reference",
+      "classification": "later_canonical_reception",
       "curation_confidence": "high",
       "curation_status": "curated_for_explorer",
       "human_scholarly_approval": "not_recorded",
@@ -641,17 +534,16 @@
       "supporting_comparative_material": [],
       "supporting_passages": [
         "Luke 24:25-27",
-        "Luke 24:44-49",
-        "Acts 2:22-36"
+        "Luke 24:44-49"
       ],
       "supporting_records": [
-        "ckl:resurrection#source:luke-24",
-        "ckl:messiah-theme#source:luke-24"
+        "ckl:messiah-theme#source:luke-24",
+        "ckl:resurrection#source:luke-24"
       ],
       "target_id": "ckl:messiah-theme",
-      "textual_observation": "In Luke 24 the risen Jesus interprets his suffering and vindication through Scripture and identifies the messianic significance of these events.",
-      "uncertainty": "Luke’s account is a theological narrative; it does not settle how every cited Scripture was interpreted before or apart from this Christian reception.",
-      "why": "The shared Luke 24 source directly joins resurrection and messianic interpretation in the narrative."
+      "textual_observation": "In Luke 24, the risen Jesus interprets his suffering and vindication through Scripture and identifies their messianic significance.",
+      "uncertainty": "Luke gives a Christian theological interpretation; it does not settle how each cited Scripture was understood in its earlier setting.",
+      "why": "Luke’s narrative presents the resurrection in a scriptural and messianic frame, a clear example of later canonical interpretation."
     },
     {
       "applicable_passages": [
@@ -662,7 +554,7 @@
         "records": [],
         "status": "not_recorded"
       },
-      "classification": "explicit_textual_reference",
+      "classification": "later_canonical_reception",
       "curation_confidence": "high",
       "curation_status": "curated_for_explorer",
       "human_scholarly_approval": "not_recorded",
@@ -689,18 +581,18 @@
       ],
       "supporting_comparative_material": [],
       "supporting_passages": [
+        "Leviticus 16:1-34",
         "Hebrews 9:11-28",
-        "Hebrews 10:1-18",
-        "Leviticus 16:1-34"
+        "Hebrews 10:1-18"
       ],
       "supporting_records": [
-        "ckl:sacrificial-system#source:hebrews-9-10",
-        "ckl:crucifixion#source:hebrews-10"
+        "ckl:crucifixion#source:hebrews-10",
+        "ckl:sacrificial-system#source:hebrews-9-10"
       ],
       "target_id": "ckl:crucifixion",
-      "textual_observation": "Hebrews 9-10 interprets Jesus’ self-offering and death through Israel’s sacrificial vocabulary and contrasts repeated offerings with the claimed efficacy of Christ’s offering.",
-      "uncertainty": "Hebrews develops a particular theological argument; it should not be generalized as the only Jewish or Christian account of sacrifice or atonement.",
-      "why": "Both records cite Hebrews 10, which directly grounds the New Testament’s sacrificial interpretation of Jesus’ death."
+      "textual_observation": "Hebrews 9–10 interprets Jesus’ self-offering through Israel’s sacrificial vocabulary and contrasts repeated offerings with Christ’s offering.",
+      "uncertainty": "Hebrews develops a particular theological argument and should not be treated as the only Jewish or Christian account of sacrifice or atonement.",
+      "why": "Hebrews explicitly places Jesus’ death within an argument about Israel’s sacrificial system."
     },
     {
       "applicable_passages": [
@@ -741,13 +633,6 @@
           "source_id": "2-kings-17-25",
           "title": "2 Kings 17-25",
           "year": null
-        },
-        {
-          "author": "",
-          "object_id": "assyria",
-          "source_id": "assyria-historical-orientation",
-          "title": "Canonical historical orientation for Assyria",
-          "year": 2026
         }
       ],
       "supporting_comparative_material": [],
@@ -759,62 +644,12 @@
       "supporting_records": [
         "ckl:sennacherib-prism#source:taylor-prism",
         "ckl:sennacherib-prism#source:kings-isaiah-sennacherib-texts",
-        "ckl:assyria#source:2-kings-17-25",
-        "ckl:assyria#source:assyria-historical-orientation"
+        "ckl:assyria#source:2-kings-17-25"
       ],
       "target_id": "ckl:assyria",
       "textual_observation": "Sennacherib’s royal account and the biblical narratives both concern the Assyrian campaign against Judah under Hezekiah, including the siege of Jerusalem.",
       "uncertainty": "The prism’s campaign account and Kings/Isaiah have distinct aims and emphases; royal claims, omissions, and biblical theology should remain distinguishable.",
       "why": "The inscription object is a primary route into Assyrian imperial history and can be compared with Kings and Isaiah."
-    },
-    {
-      "applicable_passages": [
-        "Psalm 2:1-12"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "the king and his reign",
-      "original_relationship_type": "royal-context",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:what-is-the-messiah",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "what-is-the-messiah",
-          "source_id": "psalm-2",
-          "title": "Psalm 2",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "kingdom-theme",
-          "source_id": "psalm-2",
-          "title": "Psalm 2",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Psalm 2:1-12",
-        "Acts 4:25-27",
-        "Acts 13:32-33"
-      ],
-      "supporting_records": [
-        "ckl:what-is-the-messiah#source:psalm-2",
-        "ckl:kingdom-theme#source:psalm-2"
-      ],
-      "target_id": "ckl:kingdom-theme",
-      "textual_observation": "Psalm 2 describes the nations, YHWH’s anointed king, and the king’s rule; both the Messiah FAQ and Kingdom Theme cite this royal psalm.",
-      "uncertainty": "Psalm 2 has an ancient royal setting and its later messianic readings arise through reception history; this link does not claim a single uncontested interpretation.",
-      "why": "The same passage directly grounds the relation between messianic kingship and kingdom rule."
     },
     {
       "applicable_passages": [
@@ -836,24 +671,38 @@
       "source_id": "ckl:what-is-the-messiah",
       "supporting_ckl_sources": [
         {
-          "author": "",
-          "object_id": "what-is-the-messiah",
-          "source_id": "isaiah-53",
-          "title": "Isaiah 53",
-          "year": null
+          "author": "Steve Moyise",
+          "object_id": "isaiah",
+          "source_id": "moyise-isaiah-nt",
+          "title": "Isaiah in the New Testament",
+          "year": 2020
         },
         {
-          "author": "",
-          "object_id": "sacrifice-theme",
-          "source_id": "isaiah-53",
-          "title": "Isaiah 53",
-          "year": null
+          "author": "Lena-Sofia Tiemeyer, editor",
+          "object_id": "isaiah",
+          "source_id": "oxford-handbook-isaiah",
+          "title": "The Oxford Handbook of Isaiah",
+          "year": 2020
         },
         {
           "author": "",
           "object_id": "sacrifice-theme",
           "source_id": "hebrews-9-10",
           "title": "Hebrews 9-10",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "sacrifice-theme",
+          "source_id": "isaiah-53",
+          "title": "Isaiah 53",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "what-is-the-messiah",
+          "source_id": "isaiah-53",
+          "title": "Isaiah 53",
           "year": null
         }
       ],
@@ -864,63 +713,16 @@
         "Hebrews 9:11-28"
       ],
       "supporting_records": [
-        "ckl:what-is-the-messiah#source:isaiah-53",
+        "ckl:isaiah#source:moyise-isaiah-nt",
+        "ckl:isaiah#source:oxford-handbook-isaiah",
+        "ckl:sacrifice-theme#source:hebrews-9-10",
         "ckl:sacrifice-theme#source:isaiah-53",
-        "ckl:sacrifice-theme#source:hebrews-9-10"
+        "ckl:what-is-the-messiah#source:isaiah-53"
       ],
       "target_id": "ckl:sacrifice-theme",
       "textual_observation": "Isaiah 52-53 portrays a servant who suffers and bears others’ wrongdoing; later Christian texts apply servant language to Jesus, while sacrificial readings connect this suffering with atonement.",
       "uncertainty": "The servant’s identity and the force of the guilt-offering language are disputed; Jewish and Christian interpreters have read the passage in different ways, and not all identify the servant as a future Messiah.",
       "why": "The shared Isaiah 53 source explains the authored Messiah-to-sacrifice association as an interpretive reading rather than a direct identity stated in Isaiah."
-    },
-    {
-      "applicable_passages": [
-        "1 Samuel 16:1-13"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "Israel's king",
-      "original_relationship_type": "kingly-anchor",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:who-was-david",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "who-was-david",
-          "source_id": "1-samuel-16",
-          "title": "1 Samuel 16",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "david",
-          "source_id": "1-samuel-16-17",
-          "title": "1 Samuel 16-17",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "1 Samuel 16:1-13",
-        "2 Samuel 5:1-5",
-        "2 Samuel 7:8-16"
-      ],
-      "supporting_records": [
-        "ckl:who-was-david#source:1-samuel-16",
-        "ckl:david#source:1-samuel-16-17"
-      ],
-      "target_id": "ckl:david",
-      "textual_observation": "The David FAQ and person record both cite Samuel’s anointing narrative, where David is introduced and selected for kingship.",
-      "uncertainty": "Samuel’s narrative presents divine selection and kingship theologically; the link does not resolve historical debates about David’s reign.",
-      "why": "The shared passage directly anchors the explanatory record to the named person."
     },
     {
       "applicable_passages": [
@@ -943,28 +745,35 @@
       "supporting_ckl_sources": [
         {
           "author": "",
-          "object_id": "who-was-david",
+          "object_id": "messiah-theme",
           "source_id": "2-samuel-7",
           "title": "2 Samuel 7",
           "year": null
         },
         {
           "author": "",
-          "object_id": "who-was-david",
+          "object_id": "messiah-theme",
           "source_id": "psalm-110",
           "title": "Psalm 110",
           "year": null
         },
         {
+          "author": "Frank-Lothar Hossfeld and Erich Zenger",
+          "object_id": "psalms",
+          "source_id": "hossfeld-zenger-psalms",
+          "title": "Psalms 2 and Psalms 3",
+          "year": 2011
+        },
+        {
           "author": "",
-          "object_id": "messiah-theme",
+          "object_id": "who-was-david",
           "source_id": "2-samuel-7",
           "title": "2 Samuel 7",
           "year": null
         },
         {
           "author": "",
-          "object_id": "messiah-theme",
+          "object_id": "who-was-david",
           "source_id": "psalm-110",
           "title": "Psalm 110",
           "year": null
@@ -978,10 +787,11 @@
         "Luke 24:25-27"
       ],
       "supporting_records": [
-        "ckl:who-was-david#source:2-samuel-7",
-        "ckl:who-was-david#source:psalm-110",
         "ckl:messiah-theme#source:2-samuel-7",
-        "ckl:messiah-theme#source:psalm-110"
+        "ckl:messiah-theme#source:psalm-110",
+        "ckl:psalms#source:hossfeld-zenger-psalms",
+        "ckl:who-was-david#source:2-samuel-7",
+        "ckl:who-was-david#source:psalm-110"
       ],
       "target_id": "ckl:messiah-theme",
       "textual_observation": "The Davidic promise in 2 Samuel 7 and the royal language of Psalm 110 form part of the later scriptural framework through which messianic expectation is expressed.",

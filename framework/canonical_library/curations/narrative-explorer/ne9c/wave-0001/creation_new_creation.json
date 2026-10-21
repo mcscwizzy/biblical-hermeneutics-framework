@@ -9,87 +9,6 @@
         "records": [],
         "status": "not_recorded"
       },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "theology of creation",
-      "original_relationship_type": "doctrinal-anchor",
-      "original_weight": 9,
-      "relationship_kind": "object",
-      "source_id": "ckl:creation",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "creation",
-          "source_id": "genesis-1-2",
-          "title": "Genesis 1-2",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "creation",
-          "source_id": "psalm-104",
-          "title": "Psalm 104",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "creation",
-          "source_id": "psalm-8",
-          "title": "Psalm 8",
-          "year": null
-        },
-        {
-          "author": "Nahum M. Sarna",
-          "object_id": "creation",
-          "source_id": "sarna-genesis-creation",
-          "title": "The JPS Torah Commentary: Genesis",
-          "year": 1989
-        },
-        {
-          "author": "",
-          "object_id": "creation-doctrine",
-          "source_id": "genesis-1-2",
-          "title": "Genesis 1-2",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "creation-doctrine",
-          "source_id": "psalm-8",
-          "title": "Psalm 8",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Genesis 1:1-31",
-        "Genesis 2:1-25",
-        "Psalm 104:1-35"
-      ],
-      "supporting_records": [
-        "ckl:creation#source:genesis-1-2",
-        "ckl:creation#source:psalm-104",
-        "ckl:creation#source:psalm-8",
-        "ckl:creation#source:sarna-genesis-creation",
-        "ckl:creation-doctrine#source:genesis-1-2",
-        "ckl:creation-doctrine#source:psalm-8"
-      ],
-      "target_id": "ckl:creation-doctrine",
-      "textual_observation": "Genesis 1:1-31 narrates creation’s ordered sequence; the doctrine record also draws on Genesis 2, Psalm 104, John 1, and other canonical texts.",
-      "uncertainty": "A doctrine of creation is interpretive synthesis; readers differ over genre, chronology, and relations among these texts.",
-      "why": "The creation event is the textual basis interpreted by the Creation Doctrine record."
-    },
-    {
-      "applicable_passages": [
-        "Genesis 1:1-31"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
       "classification": "shared_literary_motif",
       "curation_confidence": "moderate",
       "curation_status": "curated_for_explorer",
@@ -160,218 +79,8 @@
       ],
       "target_id": "ckl:mesopotamian-creation-and-flood-comparisons",
       "textual_observation": "Genesis 1:1-2:3 narrates cosmic ordering through divine speech, separation, naming, and appointment. Enuma Elish narrates divine conflict culminating in Marduk’s ordering of the cosmos and supremacy. Genesis 1:2 uses Hebrew tĕhôm (“the deep”); comparisons with Tiamat have a history in scholarship, but vocabulary alone does not establish a literary link, and Genesis does not narrate Marduk’s combat or divine succession.",
-      "uncertainty": "Scholars differ on how Genesis relates to Mesopotamian creation traditions: proposed models include shared cultural motifs, polemical engagement, dependence, or comparison without a direct literary relationship. CKL marks the issue as major scholarly disagreement. Tsumura’s linguistic study cautions against a simple equation of tĕhôm with the goddess Tiamat; no single model is encoded by this curation.",
-      "why": "This connection offers readers a bounded comparison between Genesis’s account of cosmic ordering and Enuma Elish while preserving the texts’ distinct plots and the disputed nature of dependence claims."
-    },
-    {
-      "applicable_passages": [
-        "Genesis 1:1-31"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "opening creation event",
-      "original_relationship_type": "event-anchor",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:creation-doctrine-framework",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "creation",
-          "source_id": "genesis-1-2",
-          "title": "Genesis 1-2",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "creation",
-          "source_id": "psalm-104",
-          "title": "Psalm 104",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "creation",
-          "source_id": "psalm-8",
-          "title": "Psalm 8",
-          "year": null
-        },
-        {
-          "author": "Nahum M. Sarna",
-          "object_id": "creation",
-          "source_id": "sarna-genesis-creation",
-          "title": "The JPS Torah Commentary: Genesis",
-          "year": 1989
-        },
-        {
-          "author": "",
-          "object_id": "creation-doctrine-framework",
-          "source_id": "creation-doctrine-framework-historical-orientation",
-          "title": "Canonical historical orientation for Creation Doctrine Framework",
-          "year": 2026
-        },
-        {
-          "author": "",
-          "object_id": "creation-doctrine-framework",
-          "source_id": "genesis-1-2",
-          "title": "Genesis 1-2",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "creation-doctrine-framework",
-          "source_id": "psalm-104",
-          "title": "Psalm 104",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Genesis 1:1-31",
-        "Genesis 2:1-25",
-        "Psalm 104:1-35"
-      ],
-      "supporting_records": [
-        "ckl:creation#source:genesis-1-2",
-        "ckl:creation#source:psalm-104",
-        "ckl:creation#source:psalm-8",
-        "ckl:creation#source:sarna-genesis-creation",
-        "ckl:creation-doctrine-framework#source:creation-doctrine-framework-historical-orientation",
-        "ckl:creation-doctrine-framework#source:genesis-1-2",
-        "ckl:creation-doctrine-framework#source:psalm-104"
-      ],
-      "target_id": "ckl:creation",
-      "textual_observation": "Genesis 1:1-31 narrates the ordering of the heavens and earth and the creation of living things and humanity. Psalm 104 is a later poetic reflection.",
-      "uncertainty": "Interpretations of Genesis 1’s genre, structure, and relation to ancient cosmologies differ. This curation does not settle scientific or chronological questions.",
-      "why": "The doctrine framework interprets the creation event narrated in Genesis 1, and both objects cite the passage."
-    },
-    {
-      "applicable_passages": [
-        "Genesis 1:26-28"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "humanity's role within creation",
-      "original_relationship_type": "human-vocation",
-      "original_weight": 9,
-      "relationship_kind": "object",
-      "source_id": "ckl:creation-doctrine-framework",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "creation-doctrine-framework",
-          "source_id": "colossians-1",
-          "title": "Colossians 1",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "creation-doctrine-framework",
-          "source_id": "creation-doctrine-framework-historical-orientation",
-          "title": "Canonical historical orientation for Creation Doctrine Framework",
-          "year": 2026
-        },
-        {
-          "author": "",
-          "object_id": "creation-doctrine-framework",
-          "source_id": "genesis-1-2",
-          "title": "Genesis 1-2",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "creation-doctrine-framework",
-          "source_id": "psalm-104",
-          "title": "Psalm 104",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "image-of-god-theme",
-          "source_id": "colossians-1-15-20",
-          "title": "Colossians 1:15-20",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "image-of-god-theme",
-          "source_id": "colossians-3-9-10",
-          "title": "Colossians 3:9-10",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "image-of-god-theme",
-          "source_id": "genesis-1-26-28",
-          "title": "Genesis 1:26-28",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "image-of-god-theme",
-          "source_id": "genesis-5-1-3",
-          "title": "Genesis 5:1-3",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "image-of-god-theme",
-          "source_id": "genesis-9-1-7",
-          "title": "Genesis 9:1-7",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "image-of-god-theme",
-          "source_id": "image-of-god-theme-historical-orientation",
-          "title": "Canonical historical orientation for Image of God Theme",
-          "year": 2026
-        },
-        {
-          "author": "",
-          "object_id": "image-of-god-theme",
-          "source_id": "psalm-8-1-9",
-          "title": "Psalm 8:1-9",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Genesis 1:1-31",
-        "Psalm 8:1-9",
-        "Colossians 1:15-20"
-      ],
-      "supporting_records": [
-        "ckl:creation-doctrine-framework#source:colossians-1",
-        "ckl:creation-doctrine-framework#source:creation-doctrine-framework-historical-orientation",
-        "ckl:creation-doctrine-framework#source:genesis-1-2",
-        "ckl:creation-doctrine-framework#source:psalm-104",
-        "ckl:image-of-god-theme#source:colossians-1-15-20",
-        "ckl:image-of-god-theme#source:colossians-3-9-10",
-        "ckl:image-of-god-theme#source:genesis-1-26-28",
-        "ckl:image-of-god-theme#source:genesis-5-1-3",
-        "ckl:image-of-god-theme#source:genesis-9-1-7",
-        "ckl:image-of-god-theme#source:image-of-god-theme-historical-orientation",
-        "ckl:image-of-god-theme#source:psalm-8-1-9"
-      ],
-      "target_id": "ckl:image-of-god-theme",
-      "textual_observation": "Genesis 1:26-28 describes humanity in God’s image and assigns a vocation in creation; Psalm 8 rereads human status, and Colossians 1 presents Christ as image in later Christian reception.",
-      "uncertainty": "The Hebrew image/likeness terms and the relation between representation and vocation have several scholarly readings. Later reception does not replace Genesis’s setting.",
-      "why": "The creation framework includes humanity’s creation, and the Image of God Theme is anchored in the same verses."
+      "uncertainty": "The texts share creation imagery, but this comparison alone does not establish direct literary dependence or a single direction of influence.",
+      "why": "The connection presents Genesis alongside Mesopotamian creation traditions as comparative context while keeping their distinct settings visible."
     },
     {
       "applicable_passages": [
@@ -602,13 +311,6 @@
         {
           "author": "",
           "object_id": "resurrection-theme",
-          "source_id": "resurrection-theme-historical-orientation",
-          "title": "Canonical historical orientation for Resurrection Theme",
-          "year": 2026
-        },
-        {
-          "author": "",
-          "object_id": "resurrection-theme",
           "source_id": "revelation-20-21",
           "title": "Revelation 20-21",
           "year": null
@@ -624,7 +326,6 @@
         "ckl:creation-theme#source:revelation-21",
         "ckl:creation-theme#source:romans-8",
         "ckl:resurrection-theme#source:1-corinthians-15",
-        "ckl:resurrection-theme#source:resurrection-theme-historical-orientation",
         "ckl:resurrection-theme#source:revelation-20-21"
       ],
       "target_id": "ckl:resurrection-theme",
@@ -696,13 +397,6 @@
         {
           "author": "",
           "object_id": "image-of-god-theme",
-          "source_id": "image-of-god-theme-historical-orientation",
-          "title": "Canonical historical orientation for Image of God Theme",
-          "year": 2026
-        },
-        {
-          "author": "",
-          "object_id": "image-of-god-theme",
           "source_id": "psalm-8-1-9",
           "title": "Psalm 8:1-9",
           "year": null
@@ -721,13 +415,12 @@
         "ckl:image-of-god-theme#source:genesis-1-26-28",
         "ckl:image-of-god-theme#source:genesis-5-1-3",
         "ckl:image-of-god-theme#source:genesis-9-1-7",
-        "ckl:image-of-god-theme#source:image-of-god-theme-historical-orientation",
         "ckl:image-of-god-theme#source:psalm-8-1-9"
       ],
       "target_id": "ckl:creation-theme",
       "textual_observation": "Genesis 1:26-28 places humanity’s image and rule in the creation account; Genesis 9:1-7 recalls the image after the flood and grounds accountability for bloodshed in it.",
-      "uncertainty": "Interpretations include royal representation, relational, and functional accounts; none is treated here as exclusive consensus.",
-      "why": "The Image of God Theme identifies a human vocation within the Creation Theme where Genesis introduces humanity."
+      "uncertainty": "Genesis 1:26–28 connects image-bearing humanity with dominion in this passage; broader theological categories are interpretive.",
+      "why": "The passage connects creation with the vocation of humanity made in God’s image."
     },
     {
       "applicable_passages": [
@@ -808,8 +501,8 @@
       ],
       "target_id": "ckl:creation",
       "textual_observation": "Genesis 1:1-2:3 narrates cosmic ordering through divine speech, separation, naming, and appointment. Enuma Elish narrates divine conflict culminating in Marduk’s ordering of the cosmos and supremacy. Genesis 1:2 uses Hebrew tĕhôm (“the deep”); comparisons with Tiamat have a history in scholarship, but vocabulary alone does not establish a literary link, and Genesis does not narrate Marduk’s combat or divine succession.",
-      "uncertainty": "Scholars differ on how Genesis relates to Mesopotamian creation traditions: proposed models include shared cultural motifs, polemical engagement, dependence, or comparison without a direct literary relationship. CKL marks the issue as major scholarly disagreement. Tsumura’s linguistic study cautions against a simple equation of tĕhôm with the goddess Tiamat; no single model is encoded by this curation.",
-      "why": "This connection offers readers a bounded comparison between Genesis’s account of cosmic ordering and Enuma Elish while preserving the texts’ distinct plots and the disputed nature of dependence claims."
+      "uncertainty": "The texts share creation imagery, but this comparison alone does not establish direct literary dependence or a single direction of influence.",
+      "why": "The connection presents Genesis alongside Mesopotamian creation traditions as comparative context while keeping their distinct settings visible."
     },
     {
       "applicable_passages": [
@@ -942,13 +635,6 @@
         {
           "author": "",
           "object_id": "resurrection-doctrine",
-          "source_id": "resurrection-doctrine-historical-orientation",
-          "title": "Canonical historical orientation for Resurrection Doctrine",
-          "year": 2026
-        },
-        {
-          "author": "",
-          "object_id": "resurrection-doctrine",
           "source_id": "revelation-20-21",
           "title": "Revelation 20-21",
           "year": null
@@ -964,7 +650,6 @@
         "ckl:new-creation-theme#source:revelation-21",
         "ckl:resurrection-doctrine#source:1-corinthians-15",
         "ckl:resurrection-doctrine#source:philippians-3",
-        "ckl:resurrection-doctrine#source:resurrection-doctrine-historical-orientation",
         "ckl:resurrection-doctrine#source:revelation-20-21"
       ],
       "target_id": "ckl:new-creation-theme",
@@ -1015,13 +700,6 @@
         {
           "author": "",
           "object_id": "resurrection-theme",
-          "source_id": "resurrection-theme-historical-orientation",
-          "title": "Canonical historical orientation for Resurrection Theme",
-          "year": 2026
-        },
-        {
-          "author": "",
-          "object_id": "resurrection-theme",
           "source_id": "revelation-20-21",
           "title": "Revelation 20-21",
           "year": null
@@ -1037,7 +715,6 @@
         "ckl:new-creation-theme#source:revelation-21",
         "ckl:new-creation-theme#source:romans-8",
         "ckl:resurrection-theme#source:1-corinthians-15",
-        "ckl:resurrection-theme#source:resurrection-theme-historical-orientation",
         "ckl:resurrection-theme#source:revelation-20-21"
       ],
       "target_id": "ckl:new-creation-theme",
@@ -1135,55 +812,6 @@
     },
     {
       "applicable_passages": [
-        "Exodus 31:12-17"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "rest as covenant sign",
-      "original_relationship_type": "creation-sign",
-      "original_weight": 8,
-      "relationship_kind": "object",
-      "source_id": "ckl:what-is-a-covenant-sign",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "what-is-a-covenant-sign",
-          "source_id": "exodus-31",
-          "title": "Exodus 31",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "sabbath-theme",
-          "source_id": "exodus-31-12-17",
-          "title": "Exodus 31:12-17",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Exodus 31:12-17",
-        "Genesis 2:1-3",
-        "Deuteronomy 5:12-15"
-      ],
-      "supporting_records": [
-        "ckl:what-is-a-covenant-sign#source:exodus-31",
-        "ckl:sabbath-theme#source:exodus-31-12-17"
-      ],
-      "target_id": "ckl:sabbath-theme",
-      "textual_observation": "Exodus 31:12-17 explicitly calls Sabbath observance a sign between YHWH and Israel and describes it as a perpetual covenant; verse 17 connects it to creation.",
-      "uncertainty": "The passage addresses Israel within the Sinai covenant. Later Jewish and Christian interpretations of Sabbath’s continuing scope differ.",
-      "why": "This passage establishes the specific covenant-sign relationship and lets readers distinguish the Sinai Sabbath claim from other biblical covenant signs."
-    },
-    {
-      "applicable_passages": [
         "Revelation 21:1-5"
       ],
       "authored_direction": "one_way",
@@ -1221,13 +849,6 @@
           "source_id": "revelation-20-21",
           "title": "Revelation 20-21",
           "year": null
-        },
-        {
-          "author": "",
-          "object_id": "what-is-resurrection",
-          "source_id": "what-is-resurrection-historical-orientation",
-          "title": "Canonical historical orientation for What is Resurrection?",
-          "year": 2026
         }
       ],
       "supporting_comparative_material": [],
@@ -1239,8 +860,7 @@
       "supporting_records": [
         "ckl:new-creation-theme#source:revelation-21",
         "ckl:what-is-resurrection#source:1-corinthians-15",
-        "ckl:what-is-resurrection#source:revelation-20-21",
-        "ckl:what-is-resurrection#source:what-is-resurrection-historical-orientation"
+        "ckl:what-is-resurrection#source:revelation-20-21"
       ],
       "target_id": "ckl:new-creation-theme",
       "textual_observation": "First Corinthians 15 argues for resurrection and transformed life; Revelation 21:1-5 depicts new creation and says death, mourning, and pain will be no more. Revelation 21 does not narrate resurrection.",

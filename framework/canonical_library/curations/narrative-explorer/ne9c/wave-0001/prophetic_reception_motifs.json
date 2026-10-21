@@ -132,55 +132,6 @@
     },
     {
       "applicable_passages": [
-        "1 Corinthians 15:12-28"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "life from death motif",
-      "original_relationship_type": "canonical-anchor",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:resurrection-doctrine",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "resurrection-doctrine",
-          "source_id": "1-corinthians-15",
-          "title": "1 Corinthians 15",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "resurrection-theme",
-          "source_id": "1-corinthians-15",
-          "title": "1 Corinthians 15",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "1 Corinthians 15:12-28",
-        "Daniel 12:1-3",
-        "Ezekiel 37:1-14"
-      ],
-      "supporting_records": [
-        "ckl:resurrection-doctrine#source:1-corinthians-15",
-        "ckl:resurrection-theme#source:1-corinthians-15"
-      ],
-      "target_id": "ckl:resurrection-theme",
-      "textual_observation": "Paul’s argument in 1 Corinthians 15 is a central New Testament exposition of resurrection and anchors both the doctrine record and the broader theme record.",
-      "uncertainty": "The doctrine record focuses especially on Pauline and New Testament claims; the broader theme also includes prophetic and apocalyptic texts with different original settings.",
-      "why": "The shared source directly grounds the doctrine-to-theme route."
-    },
-    {
-      "applicable_passages": [
         "Acts 28:11-16"
       ],
       "authored_direction": "one_way",
@@ -260,7 +211,7 @@
         "records": [],
         "status": "not_recorded"
       },
-      "classification": "explicit_textual_reference",
+      "classification": "later_canonical_reception",
       "curation_confidence": "high",
       "curation_status": "curated_for_explorer",
       "human_scholarly_approval": "not_recorded",
@@ -292,119 +243,13 @@
         "Hebrews 10:1-18"
       ],
       "supporting_records": [
-        "ckl:sacrificial-system#source:hebrews-9-10",
-        "ckl:sacrifice-theme#source:hebrews-9-10"
+        "ckl:sacrifice-theme#source:hebrews-9-10",
+        "ckl:sacrificial-system#source:hebrews-9-10"
       ],
       "target_id": "ckl:sacrifice-theme",
-      "textual_observation": "Hebrews 9-10 interprets Christ’s offering through the vocabulary and ritual framework of Israel’s sacrificial system.",
-      "uncertainty": "Hebrews makes a particular theological argument about cult and atonement; its interpretation should not be generalized as the sole meaning of the Levitical texts.",
-      "why": "The shared source grounds the specific canonical link between the sacrificial institution and the broader sacrifice motif."
-    },
-    {
-      "applicable_passages": [
-        "1 Samuel 12:6-15"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "curated canonical context",
-      "original_relationship_type": "narrative-context",
-      "original_weight": 8,
-      "relationship_kind": "object",
-      "source_id": "ckl:samuel-the-prophet",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "samuel-the-prophet",
-          "source_id": "1-samuel-1-12",
-          "title": "1 Samuel 1-12",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "saul",
-          "source_id": "1-samuel-1-12",
-          "title": "1 Samuel 1-12",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "1 Samuel 9:15-27",
-        "1 Samuel 10:1-8",
-        "1 Samuel 12:1-25"
-      ],
-      "supporting_records": [
-        "ckl:samuel-the-prophet#source:1-samuel-1-12",
-        "ckl:saul#source:1-samuel-1-12"
-      ],
-      "target_id": "ckl:saul",
-      "textual_observation": "In Samuel’s public address, he names the king chosen by the people and recounts Israel’s earlier leadership; both person records anchor this scene.",
-      "uncertainty": "Samuel’s role in the monarchy narrative is not equivalent to modern constitutional appointment; the curation follows the biblical narrative’s presentation.",
-      "why": "The shared passage directly situates Samuel’s address within Saul’s kingship narrative."
-    },
-    {
-      "applicable_passages": [
-        "Acts 2:1-18"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "Spirit motif across Scripture",
-      "original_relationship_type": "canonical-anchor",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:what-is-the-significance-of-the-holy-spirit",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "what-is-the-significance-of-the-holy-spirit",
-          "source_id": "acts-2",
-          "title": "Acts 2",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "spirit-theme",
-          "source_id": "acts-2",
-          "title": "Acts 2",
-          "year": null
-        },
-        {
-          "author": "",
-          "object_id": "spirit-theme",
-          "source_id": "ezekiel-36-37",
-          "title": "Ezekiel 36-37",
-          "year": null
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Acts 2:1-18",
-        "Ezekiel 36:24-28",
-        "Joel 2:28-32"
-      ],
-      "supporting_records": [
-        "ckl:what-is-the-significance-of-the-holy-spirit#source:acts-2",
-        "ckl:spirit-theme#source:acts-2",
-        "ckl:spirit-theme#source:ezekiel-36-37"
-      ],
-      "target_id": "ckl:spirit-theme",
-      "textual_observation": "Acts 2 narrates the Spirit’s coming at Pentecost and cites prophetic language; the FAQ and Spirit Theme both use this passage.",
-      "uncertainty": "Acts presents a particular narrative and theological interpretation of Pentecost; this link does not settle how all traditions understand the Spirit’s work.",
-      "why": "The shared source directly grounds the explanatory link between the FAQ and canonical theme."
+      "textual_observation": "Hebrews 9–10 uses Israel’s sacrificial vocabulary and ritual framework to explain Christ’s offering.",
+      "uncertainty": "Hebrews makes a particular theological argument about cult and atonement; this does not establish the sole meaning of the Levitical texts.",
+      "why": "Hebrews supplies a later interpretation of Israel’s sacrificial practice in its account of Christ’s offering."
     }
   ],
   "schema_version": 1,

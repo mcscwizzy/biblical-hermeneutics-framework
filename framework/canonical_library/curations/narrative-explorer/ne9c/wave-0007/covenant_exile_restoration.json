@@ -2,51 +2,6 @@
   "curations": [
     {
       "applicable_passages": [
-        "Genesis 9:8-17"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "",
-      "original_relationship_type": "related-concept",
-      "original_weight": 7,
-      "relationship_kind": "object",
-      "source_id": "ckl:berit",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "berit",
-          "source_id": "genesis-9",
-          "title": "Genesis 9"
-        },
-        {
-          "author": "",
-          "object_id": "what-is-covenant",
-          "source_id": "genesis-9-12-15-17",
-          "title": "Genesis 9, 12, 15, 17"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Genesis 9:8-17"
-      ],
-      "supporting_records": [
-        "ckl:berit#source:genesis-9",
-        "ckl:what-is-covenant#source:genesis-9-12-15-17"
-      ],
-      "target_id": "ckl:what-is-covenant",
-      "textual_observation": "Genesis repeatedly uses בְּרִית for the covenant with Noah and all living creatures.",
-      "uncertainty": "The term is broader than a single covenant form; the passage’s narrative and theological setting should not be generalized to every use of ברית.",
-      "why": "Genesis repeatedly uses בְּרִית for the covenant with Noah and all living creatures. This gives readers a passage-anchored connection from berit to What is Covenant? while preserving the authored direction."
-    },
-    {
-      "applicable_passages": [
         "Hebrews 8:6-13"
       ],
       "authored_direction": "one_way",
@@ -90,52 +45,7 @@
       "target_id": "ckl:hebrews",
       "textual_observation": "Hebrews 8 quotes Jeremiah 31:31-34 at length and interprets the new-covenant oracle within its argument about priestly mediation.",
       "uncertainty": "This is an identifiable quotation and later reception, not proof that Jeremiah originally addressed Hebrews’ later theological questions or that the passage simply nullifies Israel’s covenantal identity.",
-      "why": "Hebrews 8 quotes Jeremiah 31:31-34 at length and interprets the new-covenant oracle within its argument about priestly mediation. This gives readers a passage-anchored connection from New Covenant Prophecy to Hebrews while preserving the authored direction."
-    },
-    {
-      "applicable_passages": [
-        "Jeremiah 31:31-34"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "",
-      "original_relationship_type": "related-concept",
-      "original_weight": 8,
-      "relationship_kind": "object",
-      "source_id": "ckl:new-covenant-prophecy",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "new-covenant-prophecy",
-          "source_id": "jeremiah-31",
-          "title": "Jeremiah 31"
-        },
-        {
-          "author": "",
-          "object_id": "jeremiah",
-          "source_id": "jeremiah-masoretic",
-          "title": "Masoretic Jeremiah"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Jeremiah 31:31-34"
-      ],
-      "supporting_records": [
-        "ckl:new-covenant-prophecy#source:jeremiah-31",
-        "ckl:jeremiah#source:jeremiah-masoretic"
-      ],
-      "target_id": "ckl:jeremiah",
-      "textual_observation": "Jeremiah’s oracle promises a new covenant with Israel and Judah and describes instruction written on the heart and forgiveness.",
-      "uncertainty": "The oracle addresses a restoration context and does not by itself define all later uses of “new covenant” or erase its named Israel/Judah audience.",
-      "why": "Jeremiah’s oracle promises a new covenant with Israel and Judah and describes instruction written on the heart and forgiveness. This gives readers a passage-anchored connection from New Covenant Prophecy to Jeremiah while preserving the authored direction."
+      "why": "Hebrews 8 quotes Jeremiah 31:31-34 at length and interprets the new-covenant oracle within its argument about priestly mediation."
     }
   ],
   "schema_version": 1,

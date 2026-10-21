@@ -63,12 +63,15 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         period: str | None = None,
         include_records: bool = True,
     ) -> JSONResponse:
-        payload = await run_in_threadpool(
-            get_map_catalog,
-            period=period,
-            path=study_db_path,
-            include_records=include_records,
-        )
+        if include_records:
+            payload = await run_in_threadpool(
+                get_map_catalog,
+                period=period,
+                path=study_db_path,
+                include_records=True,
+            )
+        else:
+            payload = get_map_catalog(period=period, include_records=False)
         with diagnostic_stage("response_construction"):
             return JSONResponse(payload)
 

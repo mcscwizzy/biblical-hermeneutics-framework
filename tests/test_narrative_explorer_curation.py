@@ -281,6 +281,20 @@ def test_registry_rejects_cross_chapter_applicability_the_projection_cannot_scop
         validate_curation(invalid)
 
 
+def test_curation_validation_reuses_the_cached_scripture_alias_lookup(monkeypatch):
+    from framework.canonical_library import scripture
+    from bhf_agent.presentation.narrative_explorer_curations import (
+        CURATED_RELATIONSHIPS,
+        validate_curation,
+    )
+
+    def unexpected_alias_rebuild(*args, **kwargs):
+        pytest.fail("curation validation rebuilt the shared scripture alias lookup")
+
+    monkeypatch.setattr(scripture, "build_book_alias_lookup", unexpected_alias_rebuild)
+    validate_curation(CURATED_RELATIONSHIPS[0], require_authored_direction=True)
+
+
 def test_batch_two_divine_assembly_and_restoration_edges_are_exact_and_scoped():
     from bhf_agent.presentation.narrative_explorer_curations import CURATED_RELATIONSHIPS
 

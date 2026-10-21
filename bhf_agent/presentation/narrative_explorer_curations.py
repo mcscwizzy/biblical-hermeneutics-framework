@@ -12,7 +12,7 @@ from pathlib import Path
 from types import MappingProxyType
 from typing import Any, Mapping
 
-from .references import references_overlap
+from .references import _BOOK_ALIASES, references_overlap
 
 
 _CURATION_DATA_ROOT = (
@@ -174,11 +174,10 @@ def validate_curation(
         for key in ("applicable_passages", "supporting_passages", "supporting_records")
     ):
         raise ValueError("curated relationship has incomplete passage or record support")
-    from framework.canonical_library.scripture import build_book_alias_lookup, parse_scripture_references
+    from framework.canonical_library.scripture import parse_scripture_references
 
-    aliases = build_book_alias_lookup(())
     for reference in entry["applicable_passages"]:
-        spans = parse_scripture_references(reference, book_alias_lookup=aliases)
+        spans = parse_scripture_references(reference, book_alias_lookup=_BOOK_ALIASES)
         if (
             len(spans) != 1
             or spans[0].start_chapter is None

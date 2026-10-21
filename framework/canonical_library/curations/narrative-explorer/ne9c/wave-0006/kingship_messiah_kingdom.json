@@ -2,51 +2,6 @@
   "curations": [
     {
       "applicable_passages": [
-        "Luke 24:25-27"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "",
-      "original_relationship_type": "related-concept",
-      "original_weight": 9,
-      "relationship_kind": "object",
-      "source_id": "ckl:christos",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "christos",
-          "source_id": "luke-24",
-          "title": "Luke 24"
-        },
-        {
-          "author": "",
-          "object_id": "messiah-theme",
-          "source_id": "luke-24",
-          "title": "Luke 24"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Luke 24:25-27"
-      ],
-      "supporting_records": [
-        "ckl:christos#source:luke-24",
-        "ckl:messiah-theme#source:luke-24"
-      ],
-      "target_id": "ckl:messiah-theme",
-      "textual_observation": "Luke 24:26 uses Χριστός (Christos, “Messiah/Anointed One”) as Jesus explains the scriptural necessity of suffering before glory.",
-      "uncertainty": "Christos translates the broader “anointed” title and does not make every occurrence an identical eschatological claim; Luke presents a later scriptural interpretation.",
-      "why": "Luke 24:26 uses Χριστός (Christos, “Messiah/Anointed One”) as Jesus explains the scriptural necessity of suffering before glory. This passage-anchored explanation connects christos to Messiah Theme in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
         "Exodus 1:8-14"
       ],
       "authored_direction": "one_way",
@@ -88,52 +43,7 @@
       "target_id": "ckl:exodus",
       "textual_observation": "Exodus 1 narrates state-directed oppression and forced labor in Egypt; comparative Egyptian labor evidence can contextualize the narrative’s setting.",
       "uncertainty": "The comparison does not identify the unnamed Pharaoh, establish a precise date, or independently verify the narrated events; brick quotas are described separately in Exodus 5.",
-      "why": "Exodus 1 narrates state-directed oppression and forced labor in Egypt; comparative Egyptian labor evidence can contextualize the narrative’s setting. This passage-anchored explanation connects Egyptian Forced Labor and Brickmaking to Exodus in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Psalm 2:1-12"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "",
-      "original_relationship_type": "related-concept",
-      "original_weight": 9,
-      "relationship_kind": "object",
-      "source_id": "ckl:mashiach",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "mashiach",
-          "source_id": "psalm-2",
-          "title": "Psalm 2"
-        },
-        {
-          "author": "",
-          "object_id": "messiah-theme",
-          "source_id": "psalm-2",
-          "title": "Psalm 2"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Psalm 2:1-12"
-      ],
-      "supporting_records": [
-        "ckl:mashiach#source:psalm-2",
-        "ckl:messiah-theme#source:psalm-2"
-      ],
-      "target_id": "ckl:messiah-theme",
-      "textual_observation": "Psalm 2:2 uses the Hebrew term מָשִׁיחַ (māšîaḥ, “anointed”) for the king opposed by rulers, giving the word-study record a passage-specific link to the Messiah theme.",
-      "uncertainty": "The lexeme can denote an anointed person in more than one setting; Psalm 2’s royal-poetic context does not by itself settle later messianic identification.",
-      "why": "Psalm 2:2 uses the Hebrew term מָשִׁיחַ (māšîaḥ, “anointed”) for the king opposed by rulers, giving the word-study record a passage-specific link to the Messiah theme. This passage-anchored explanation connects mashiach to Messiah Theme in the authored direction while stating the limits of the evidence."
+      "why": "Exodus 1 and 5 supply the direct textual evidence."
     },
     {
       "applicable_passages": [
@@ -166,12 +76,6 @@
           "source_id": "iaa-jerusalem-stepped-street-2023",
           "title": "Jerusalem, City of David, the Stepped Street",
           "year": 2023
-        },
-        {
-          "author": "",
-          "object_id": "city-of-david-excavations",
-          "source_id": "city-of-david-and-southern-ridge-excavations",
-          "title": "City of David and southern ridge excavations"
         }
       ],
       "supporting_comparative_material": [],
@@ -180,13 +84,12 @@
       ],
       "supporting_records": [
         "ckl:pilgrimage-road-in-jerusalem#source:jerusalem-entry-passages",
-        "ckl:pilgrimage-road-in-jerusalem#source:iaa-jerusalem-stepped-street-2023",
-        "ckl:city-of-david-excavations#source:city-of-david-and-southern-ridge-excavations"
+        "ckl:pilgrimage-road-in-jerusalem#source:iaa-jerusalem-stepped-street-2023"
       ],
       "target_id": "ckl:city-of-david-excavations",
       "textual_observation": "The Israel Antiquities Authority excavation report describes a first-century stepped street running from the Siloam Pool toward the Temple Mount; Luke situates Jesus’ approach to Jerusalem in this passage.",
       "uncertainty": "Luke does not name this street, and the archaeological report does not show that Jesus travelled it. The relationship supplies topographical context only.",
-      "why": "The Israel Antiquities Authority excavation report describes a first-century stepped street running from the Siloam Pool toward the Temple Mount; Luke situates Jesus’ approach to Jerusalem in this passage. This passage-anchored explanation connects Pilgrimage Road in Jerusalem to City of David Excavations in the authored direction while stating the limits of the evidence."
+      "why": "The street lies within the City of David excavation area."
     },
     {
       "applicable_passages": [
@@ -208,16 +111,30 @@
       "source_id": "ckl:suffering-servant-prophecy",
       "supporting_ckl_sources": [
         {
-          "author": "",
-          "object_id": "suffering-servant-prophecy",
-          "source_id": "isaiah-52-53",
-          "title": "Isaiah 52-53"
+          "author": "Steve Moyise",
+          "object_id": "isaiah",
+          "source_id": "moyise-isaiah-nt",
+          "title": "Isaiah in the New Testament",
+          "year": 2020
+        },
+        {
+          "author": "Lena-Sofia Tiemeyer, editor",
+          "object_id": "isaiah",
+          "source_id": "oxford-handbook-isaiah",
+          "title": "The Oxford Handbook of Isaiah",
+          "year": 2020
         },
         {
           "author": "",
           "object_id": "messiah-theme",
           "source_id": "isaiah-53",
           "title": "Isaiah 53"
+        },
+        {
+          "author": "",
+          "object_id": "suffering-servant-prophecy",
+          "source_id": "isaiah-52-53",
+          "title": "Isaiah 52-53"
         }
       ],
       "supporting_comparative_material": [],
@@ -225,59 +142,15 @@
         "Isaiah 53:1-12"
       ],
       "supporting_records": [
-        "ckl:suffering-servant-prophecy#source:isaiah-52-53",
-        "ckl:messiah-theme#source:isaiah-53"
+        "ckl:isaiah#source:moyise-isaiah-nt",
+        "ckl:isaiah#source:oxford-handbook-isaiah",
+        "ckl:messiah-theme#source:isaiah-53",
+        "ckl:suffering-servant-prophecy#source:isaiah-52-53"
       ],
       "target_id": "ckl:messiah-theme",
       "textual_observation": "Isaiah 53 portrays a suffering servant whose affliction and vindication have been read in Christian interpretation as messianic.",
       "uncertainty": "The servant’s identity and the passage’s historical and literary referent remain disputed in Jewish and Christian scholarship; this is a reception history, not an uncontested prediction naming Jesus.",
-      "why": "Isaiah 53 portrays a suffering servant whose affliction and vindication have been read in Christian interpretation as messianic. This passage-anchored explanation connects Suffering Servant Prophecy to Messiah Theme in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Romans 5:12-19"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "Adam and Christ comparison",
-      "original_relationship_type": "adamic-pattern",
-      "original_weight": 8,
-      "relationship_kind": "object",
-      "source_id": "ckl:what-is-typology",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "what-is-typology",
-          "source_id": "romans-5",
-          "title": "Romans 5"
-        },
-        {
-          "author": "Michael W. Holmes, ed.",
-          "object_id": "romans",
-          "source_id": "romans-greek",
-          "title": "The Greek New Testament: Romans",
-          "year": 2010
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Romans 5:12-19"
-      ],
-      "supporting_records": [
-        "ckl:what-is-typology#source:romans-5",
-        "ckl:romans#source:romans-greek"
-      ],
-      "target_id": "ckl:romans",
-      "textual_observation": "Romans 5:14 calls Adam a τύπος (type) of the coming one and develops an Adam–Christ comparison, giving the typology FAQ a specific Pauline example.",
-      "uncertainty": "Paul’s use of a type-pattern does not settle the full range of later typological methods or make Adam and Christ equivalent figures.",
-      "why": "Romans 5:14 calls Adam a τύπος (type) of the coming one and develops an Adam–Christ comparison, giving the typology FAQ a specific Pauline example. This passage-anchored explanation connects What is typology? to Romans in the authored direction while stating the limits of the evidence."
+      "why": "Isaiah 53 portrays a suffering servant whose affliction and vindication have been read in Christian interpretation as messianic."
     }
   ],
   "schema_version": 1,

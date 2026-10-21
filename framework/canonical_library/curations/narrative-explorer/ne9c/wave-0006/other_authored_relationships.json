@@ -2,96 +2,6 @@
   "curations": [
     {
       "applicable_passages": [
-        "Romans 8:14-17"
-      ],
-      "authored_direction": "reciprocal",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "",
-      "original_relationship_type": "related-concept",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:abba",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "abba",
-          "source_id": "romans-8",
-          "title": "Romans 8"
-        },
-        {
-          "author": "",
-          "object_id": "adoption-theme",
-          "source_id": "romans-8",
-          "title": "Romans 8"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Romans 8:14-17"
-      ],
-      "supporting_records": [
-        "ckl:abba#source:romans-8",
-        "ckl:adoption-theme#source:romans-8"
-      ],
-      "target_id": "ckl:adoption-theme",
-      "textual_observation": "Romans 8:15 explicitly joins the cry “Abba, Father” with adoption language, grounding the directed link from the Abba word study to adoption theme.",
-      "uncertainty": "Abba is an Aramaic form of address represented in Greek; it is not lexically identical with the full social and theological concept of adoption.",
-      "why": "Romans 8:15 explicitly joins the cry “Abba, Father” with adoption language, grounding the directed link from the Abba word study to adoption theme. This passage-anchored explanation connects abba to Adoption Theme in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Romans 8:14-17"
-      ],
-      "authored_direction": "reciprocal",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "",
-      "original_relationship_type": "related-concept",
-      "original_weight": 6,
-      "relationship_kind": "object",
-      "source_id": "ckl:adoption-theme",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "adoption-theme",
-          "source_id": "romans-8",
-          "title": "Romans 8"
-        },
-        {
-          "author": "",
-          "object_id": "abba",
-          "source_id": "romans-8",
-          "title": "Romans 8"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Romans 8:14-17"
-      ],
-      "supporting_records": [
-        "ckl:adoption-theme#source:romans-8",
-        "ckl:abba#source:romans-8"
-      ],
-      "target_id": "ckl:abba",
-      "textual_observation": "Romans 8:15 explicitly joins the Spirit of adoption with the cry “Abba, Father,” grounding the directed link from adoption theme to the Abba word study.",
-      "uncertainty": "Abba is an Aramaic form of address represented in Greek; it is not lexically identical with the full social and theological concept of adoption.",
-      "why": "Romans 8:15 explicitly joins the Spirit of adoption with the cry “Abba, Father,” grounding the directed link from adoption theme to the Abba word study. This passage-anchored explanation connects Adoption Theme to abba in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
         "1 Peter 1:13-16"
       ],
       "authored_direction": "one_way",
@@ -133,7 +43,7 @@
       "target_id": "ckl:holiness-theme",
       "textual_observation": "First Peter uses ἅγιος (hagios, “holy”) and explicitly recalls Leviticus’ call to holiness, linking the Greek word study to the theme through a later canonical use.",
       "uncertainty": "The Greek and Hebrew word families overlap in the cited reception but do not have identical semantic ranges; First Peter reuses Israel’s instruction in its own argument.",
-      "why": "First Peter uses ἅγιος (hagios, “holy”) and explicitly recalls Leviticus’ call to holiness, linking the Greek word study to the theme through a later canonical use. This passage-anchored explanation connects agios to Holiness Theme in the authored direction while stating the limits of the evidence."
+      "why": "First Peter uses ἅγιος (hagios, “holy”) and explicitly recalls Leviticus’ call to holiness, linking the Greek word study to the theme through a later canonical use."
     },
     {
       "applicable_passages": [
@@ -178,52 +88,7 @@
       "target_id": "ckl:sacrifice-theme",
       "textual_observation": "Leviticus 16 describes the Day of Atonement rites, including offerings and blood rites, providing a textual meeting point for atonement and sacrifice themes.",
       "uncertainty": "The chapter contains several ritual actions and theological dimensions; it should not be collapsed into one later theory of atonement or treated as the whole biblical account.",
-      "why": "Leviticus 16 describes the Day of Atonement rites, including offerings and blood rites, providing a textual meeting point for atonement and sacrifice themes. This passage-anchored explanation connects Atonement to Sacrifice Theme in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "John 1:14"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "",
-      "original_relationship_type": "related-concept",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:doxa",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "doxa",
-          "source_id": "john-1",
-          "title": "John 1"
-        },
-        {
-          "author": "",
-          "object_id": "glory-theme",
-          "source_id": "john-1",
-          "title": "John 1"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "John 1:14"
-      ],
-      "supporting_records": [
-        "ckl:doxa#source:john-1",
-        "ckl:glory-theme#source:john-1"
-      ],
-      "target_id": "ckl:glory-theme",
-      "textual_observation": "John 1:14 says the Word became flesh and dwelt among humanity, and that the witnesses saw his glory (δόξα, doxa), directly illustrating the word–theme link.",
-      "uncertainty": "Doxa has a range of meanings across Greek literature and the New Testament; this verse does not define every occurrence of the word or the whole theme.",
-      "why": "John 1:14 says the Word became flesh and dwelt among humanity, and that the witnesses saw his glory (δόξα, doxa), directly illustrating the word–theme link. This passage-anchored explanation connects doxa to Glory Theme in the authored direction while stating the limits of the evidence."
+      "why": "Leviticus 16 describes the Day of Atonement rites, including offerings and blood rites, providing a textual meeting point for atonement and sacrifice themes."
     },
     {
       "applicable_passages": [
@@ -249,13 +114,6 @@
           "object_id": "theology-of-the-cross",
           "source_id": "isaiah-53",
           "title": "Isaiah 53"
-        },
-        {
-          "author": "",
-          "object_id": "honor-and-shame",
-          "source_id": "honor-and-shame-historical-orientation",
-          "title": "Canonical historical orientation for Honor And Shame",
-          "year": 2026
         }
       ],
       "supporting_comparative_material": [],
@@ -263,13 +121,12 @@
         "Isaiah 53:3-5"
       ],
       "supporting_records": [
-        "ckl:theology-of-the-cross#source:isaiah-53",
-        "ckl:honor-and-shame#source:honor-and-shame-historical-orientation"
+        "ckl:theology-of-the-cross#source:isaiah-53"
       ],
       "target_id": "ckl:theology-of-the-cross",
       "textual_observation": "Isaiah depicts the servant as despised and suffering; this offers a passage-specific point of contact for honor-and-shame interpretation of the cross.",
       "uncertainty": "Isaiah 53 does not identify the servant as Jesus or describe crucifixion in its original setting; honor/shame models are context-dependent and should not be reduced to a universal reversal formula.",
-      "why": "Isaiah depicts the servant as despised and suffering; this offers a passage-specific point of contact for honor-and-shame interpretation of the cross. This passage-anchored explanation connects Honor And Shame to Theology of the Cross in the authored direction while stating the limits of the evidence."
+      "why": "The cross reverses ordinary honor expectations."
     },
     {
       "applicable_passages": [
@@ -298,13 +155,6 @@
           "year": 2010
         },
         {
-          "author": "",
-          "object_id": "patronage",
-          "source_id": "patronage-historical-orientation",
-          "title": "Canonical historical orientation for Patronage",
-          "year": 2026
-        },
-        {
           "author": "John M. G. Barclay",
           "object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
           "source_id": "barclay-paul-gift",
@@ -325,14 +175,13 @@
       ],
       "supporting_records": [
         "ckl:pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity#source:second-corinth-economics-text",
-        "ckl:patronage#source:patronage-historical-orientation",
         "ckl:pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity#source:barclay-paul-gift",
         "ckl:pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity#source:downs-offering-gentiles"
       ],
       "target_id": "ckl:pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
       "textual_observation": "Paul describes the Macedonian collection as grace, willing participation, partnership, and a pursuit of equality; patronage scholarship supplies a comparison for ancient gift expectations.",
       "uncertainty": "The passage must not be reduced to patron–client reciprocity: Paul stresses voluntary giving, recipient dignity, and equality. Ancient gift systems varied, and analogy is not identity.",
-      "why": "Paul describes the Macedonian collection as grace, willing participation, partnership, and a pursuit of equality; patronage scholarship supplies a comparison for ancient gift expectations. This passage-anchored explanation connects Patronage to Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity in the authored direction while stating the limits of the evidence."
+      "why": "Links ancient gift expectations and patronage comparison to compensation, collection, equality, partnership, recipient dignity, donor freedom, and accountable administration."
     },
     {
       "applicable_passages": [
@@ -378,8 +227,8 @@
       ],
       "target_id": "ckl:roman-corinth-civic-household-and-association-life",
       "textual_observation": "Paul rebukes believers for taking disputes before outside judges; Corinthian civic evidence provides historical context for the passage’s dispute setting.",
-      "uncertainty": "Whether Paul refers to formal Roman litigation or private arbitration is debated. Roi Ziv (2024) argues for private arbitration, while the Roman-court reading remains common; the curation does not resolve the venue.",
-      "why": "Paul rebukes believers for taking disputes before outside judges; Corinthian civic evidence provides historical context for the passage’s dispute setting. This passage-anchored explanation connects Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance to Roman Corinth: Civic, Household, and Association Life in the authored direction while stating the limits of the evidence."
+      "uncertainty": "Paul rebukes believers for bringing disputes before outside judges, but the passage does not identify the procedure. This connection does not infer formal Roman litigation or private arbitration.",
+      "why": "Owns Corinthian court, status, and civic comparanda."
     },
     {
       "applicable_passages": [
@@ -426,99 +275,7 @@
       "target_id": "ckl:acts",
       "textual_observation": "In the farewell speech Acts attributes to Paul, he recalls working to support himself and help the weak, a passage-level point of contact with the labor-and-economics context.",
       "uncertainty": "Acts is a later narrative witness rather than a Pauline letter, and its speech is not a verbatim transcript or a complete account of Paul’s economic practice.",
-      "why": "In the farewell speech Acts attributes to Paul, he recalls working to support himself and help the weak, a passage-level point of contact with the labor-and-economics context. This passage-anchored explanation connects Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity to Acts in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Leviticus 19:1-2"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "",
-      "original_relationship_type": "related-concept",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:qadosh",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "qadosh",
-          "source_id": "leviticus-19",
-          "title": "Leviticus 19"
-        },
-        {
-          "author": "",
-          "object_id": "holiness-theme",
-          "source_id": "leviticus-19",
-          "title": "Leviticus 19"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Leviticus 19:1-2"
-      ],
-      "supporting_records": [
-        "ckl:qadosh#source:leviticus-19",
-        "ckl:holiness-theme#source:leviticus-19"
-      ],
-      "target_id": "ckl:holiness-theme",
-      "textual_observation": "Leviticus 19:2 uses קָדוֹשׁ (qādôš, “holy”) in the command that Israel be holy because the LORD is holy.",
-      "uncertainty": "The Hebrew term’s semantic range includes more than this command; ritual, ethical, and relational uses should not be treated as interchangeable.",
-      "why": "Leviticus 19:2 uses קָדוֹשׁ (qādôš, “holy”) in the command that Israel be holy because the LORD is holy. This passage-anchored explanation connects qadosh to Holiness Theme in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Acts 18:1"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "Acts moves from Athens to Corinth, whose evidence remains city-specific.",
-      "original_relationship_type": "following-city-context",
-      "original_weight": 7,
-      "relationship_kind": "object",
-      "source_id": "ckl:roman-athens-agora-cult-and-philosophy",
-      "supporting_ckl_sources": [
-        {
-          "author": "Pausanias",
-          "object_id": "roman-athens-agora-cult-and-philosophy",
-          "source_id": "pausanias-phaleron-unknown",
-          "title": "Description of Greece",
-          "year": 1918
-        },
-        {
-          "author": "",
-          "object_id": "roman-corinth-civic-household-and-association-life",
-          "source_id": "gallio-delphi",
-          "title": "Delphi inscription of Claudius naming Gallio",
-          "year": 52
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Acts 18:1"
-      ],
-      "supporting_records": [
-        "ckl:roman-athens-agora-cult-and-philosophy#source:pausanias-phaleron-unknown",
-        "ckl:roman-corinth-civic-household-and-association-life#source:gallio-delphi"
-      ],
-      "target_id": "ckl:roman-corinth-civic-household-and-association-life",
-      "textual_observation": "Acts says Paul left Athens and came to Corinth, explicitly linking the two city settings in Luke’s itinerary.",
-      "uncertainty": "The narrative transition does not transfer Athens’ civic or cultic evidence to Corinth or establish a complete chronology of Paul’s mission.",
-      "why": "Acts says Paul left Athens and came to Corinth, explicitly linking the two city settings in Luke’s itinerary. This passage-anchored explanation connects Roman Athens: Agora, Cult, Philosophy, and the Areopagus Speech to Roman Corinth: Civic, Household, and Association Life in the authored direction while stating the limits of the evidence."
+      "why": "Acts 18 and 20 remain later narrative witnesses."
     },
     {
       "applicable_passages": [
@@ -564,8 +321,8 @@
       ],
       "target_id": "ckl:pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
       "textual_observation": "Paul rebukes believers for taking disputes before outside judges; Corinthian civic evidence provides historical context for the passage’s dispute setting.",
-      "uncertainty": "Whether Paul refers to formal Roman litigation or private arbitration is debated. Roi Ziv (2024) argues for private arbitration, while the Roman-court reading remains common; the curation does not resolve the venue.",
-      "why": "Paul rebukes believers for taking disputes before outside judges; Corinthian civic evidence provides historical context for the passage’s dispute setting. This passage-anchored explanation connects Roman Corinth: Civic, Household, and Association Life to Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance in the authored direction while stating the limits of the evidence."
+      "uncertainty": "Paul rebukes believers for bringing disputes before outside judges, but the passage does not identify the procedure. This connection does not infer formal Roman litigation or private arbitration.",
+      "why": "The synthesis relates Corinth's civic adjudication and imperial imagery to First and Second Corinthians while preserving civil-dispute, reporting, metaphor, and nonviolence boundaries."
     },
     {
       "applicable_passages": [
@@ -587,16 +344,30 @@
       "source_id": "ckl:suffering-servant-prophecy",
       "supporting_ckl_sources": [
         {
-          "author": "",
-          "object_id": "suffering-servant-prophecy",
-          "source_id": "isaiah-52-53",
-          "title": "Isaiah 52-53"
+          "author": "Steve Moyise",
+          "object_id": "isaiah",
+          "source_id": "moyise-isaiah-nt",
+          "title": "Isaiah in the New Testament",
+          "year": 2020
+        },
+        {
+          "author": "Lena-Sofia Tiemeyer, editor",
+          "object_id": "isaiah",
+          "source_id": "oxford-handbook-isaiah",
+          "title": "The Oxford Handbook of Isaiah",
+          "year": 2020
         },
         {
           "author": "",
           "object_id": "sacrifice-theme",
           "source_id": "isaiah-53",
           "title": "Isaiah 53"
+        },
+        {
+          "author": "",
+          "object_id": "suffering-servant-prophecy",
+          "source_id": "isaiah-52-53",
+          "title": "Isaiah 52-53"
         }
       ],
       "supporting_comparative_material": [],
@@ -604,13 +375,15 @@
         "Isaiah 53:1-12"
       ],
       "supporting_records": [
-        "ckl:suffering-servant-prophecy#source:isaiah-52-53",
-        "ckl:sacrifice-theme#source:isaiah-53"
+        "ckl:isaiah#source:moyise-isaiah-nt",
+        "ckl:isaiah#source:oxford-handbook-isaiah",
+        "ckl:sacrifice-theme#source:isaiah-53",
+        "ckl:suffering-servant-prophecy#source:isaiah-52-53"
       ],
       "target_id": "ckl:sacrifice-theme",
       "textual_observation": "Isaiah 53’s servant bears suffering and iniquity, a passage later Christian interpretations connect with sacrificial language and that the sacrifice theme record also treats.",
       "uncertainty": "The poem does not use a single technical sacrificial label to settle its meaning; servant identity, ritual analogy, and later atonement interpretations remain debated.",
-      "why": "Isaiah 53’s servant bears suffering and iniquity, a passage later Christian interpretations connect with sacrificial language and that the sacrifice theme record also treats. This passage-anchored explanation connects Suffering Servant Prophecy to Sacrifice Theme in the authored direction while stating the limits of the evidence."
+      "why": "Isaiah 53’s servant bears suffering and iniquity, a passage later Christian interpretations connect with sacrificial language and that the sacrifice theme record also treats."
     },
     {
       "applicable_passages": [
@@ -656,188 +429,7 @@
       "target_id": "ckl:acts",
       "textual_observation": "Peter’s Pentecost speech quotes and interprets Psalms, including Psalm 16 and Psalm 110, as part of its claim about Jesus.",
       "uncertainty": "This is Luke’s presentation of Peter’s scriptural reading; it does not imply that every Psalm has the same later interpretation or original setting.",
-      "why": "Peter’s Pentecost speech quotes and interprets Psalms, including Psalm 16 and Psalm 110, as part of its claim about Jesus. This passage-anchored explanation connects What is a psalm? to Acts in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Job 28:28"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "wisdom under suffering",
-      "original_relationship_type": "wisdom-book",
-      "original_weight": 9,
-      "relationship_kind": "object",
-      "source_id": "ckl:what-is-biblical-wisdom",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "what-is-biblical-wisdom",
-          "source_id": "job-28",
-          "title": "Job 28"
-        },
-        {
-          "author": "",
-          "object_id": "job",
-          "source_id": "job-masoretic-1-42",
-          "title": "Job 1-42"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Job 28:28"
-      ],
-      "supporting_records": [
-        "ckl:what-is-biblical-wisdom#source:job-28",
-        "ckl:job#source:job-masoretic-1-42"
-      ],
-      "target_id": "ckl:job",
-      "textual_observation": "Job 28:28 associates fear of the Lord with wisdom and turning from evil with understanding, giving the FAQ a specific example from Job.",
-      "uncertainty": "The poem’s account of wisdom belongs to Job’s literary argument and should not be collapsed into Proverbs’ distinct framing.",
-      "why": "Job 28:28 associates fear of the Lord with wisdom and turning from evil with understanding, giving the FAQ a specific example from Job. This passage-anchored explanation connects What is biblical wisdom? to Job in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Matthew 7:24-27"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "teaching shaped by wisdom",
-      "original_relationship_type": "wisdom-gospel",
-      "original_weight": 9,
-      "relationship_kind": "object",
-      "source_id": "ckl:what-is-biblical-wisdom",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "what-is-biblical-wisdom",
-          "source_id": "matthew-7",
-          "title": "Matthew 7"
-        },
-        {
-          "author": "Holmes, Michael W., editor",
-          "object_id": "matthew",
-          "source_id": "matthew-greek",
-          "title": "The Greek New Testament: SBL Edition, Matthew",
-          "year": 2010
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Matthew 7:24-27"
-      ],
-      "supporting_records": [
-        "ckl:what-is-biblical-wisdom#source:matthew-7",
-        "ckl:matthew#source:matthew-greek"
-      ],
-      "target_id": "ckl:matthew",
-      "textual_observation": "Jesus’ comparison of the wise builder with the one who hears and acts makes wisdom language explicit in Matthew’s teaching.",
-      "uncertainty": "This wisdom-shaped teaching does not reclassify Matthew as a Wisdom book or exhaust the Gospel’s meaning of wisdom.",
-      "why": "Jesus’ comparison of the wise builder with the one who hears and acts makes wisdom language explicit in Matthew’s teaching. This passage-anchored explanation connects What is biblical wisdom? to Matthew in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Proverbs 1:7"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "primary wisdom collection",
-      "original_relationship_type": "wisdom-book",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:what-is-biblical-wisdom",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "what-is-biblical-wisdom",
-          "source_id": "proverbs-1",
-          "title": "Proverbs 1"
-        },
-        {
-          "author": "",
-          "object_id": "proverbs",
-          "source_id": "proverbs-masoretic",
-          "title": "Masoretic Proverbs"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Proverbs 1:7"
-      ],
-      "supporting_records": [
-        "ckl:what-is-biblical-wisdom#source:proverbs-1",
-        "ckl:proverbs#source:proverbs-masoretic"
-      ],
-      "target_id": "ckl:proverbs",
-      "textual_observation": "Proverbs 1:7 presents fear of the LORD as the beginning of knowledge, a concrete text for the biblical-wisdom FAQ.",
-      "uncertainty": "This is one programmatic framing in Proverbs, not an exhaustive definition of wisdom across biblical genres.",
-      "why": "Proverbs 1:7 presents fear of the LORD as the beginning of knowledge, a concrete text for the biblical-wisdom FAQ. This passage-anchored explanation connects What is biblical wisdom? to Proverbs in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Romans 5:12-19"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "formal doctrine of typology",
-      "original_relationship_type": "doctrinal-anchor",
-      "original_weight": 10,
-      "relationship_kind": "object",
-      "source_id": "ckl:what-is-typology",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "what-is-typology",
-          "source_id": "romans-5",
-          "title": "Romans 5"
-        },
-        {
-          "author": "",
-          "object_id": "typology",
-          "source_id": "romans-5",
-          "title": "Romans 5"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Romans 5:12-19"
-      ],
-      "supporting_records": [
-        "ckl:what-is-typology#source:romans-5",
-        "ckl:typology#source:romans-5"
-      ],
-      "target_id": "ckl:typology",
-      "textual_observation": "Romans 5:14 calls Adam a τύπος (type) of the one to come, a specific textual example for the typology teaching record.",
-      "uncertainty": "The passage supports this example, not every later doctrinal account of typology or every proposed biblical correspondence.",
-      "why": "Romans 5:14 calls Adam a τύπος (type) of the one to come, a specific textual example for the typology teaching record. This passage-anchored explanation connects What is typology? to Typology in the authored direction while stating the limits of the evidence."
+      "why": "Psalms in Acts."
     },
     {
       "applicable_passages": [
@@ -882,52 +474,7 @@
       "target_id": "ckl:ecclesiology",
       "textual_observation": "Matthew places Peter’s confession and Jesus’ response about the rock and keys in a passage central to later ecclesiological interpretation.",
       "uncertainty": "Christian traditions differ over the referent of “rock,” the keys, and the passage’s institutional implications; this curation records the interpretive link without adjudicating those claims.",
-      "why": "Matthew places Peter’s confession and Jesus’ response about the rock and keys in a passage central to later ecclesiological interpretation. This passage-anchored explanation connects Who was Peter? to Ecclesiology in the authored direction while stating the limits of the evidence."
-    },
-    {
-      "applicable_passages": [
-        "Acts 2:14-21"
-      ],
-      "authored_direction": "one_way",
-      "ckl_evidence_certainty": {
-        "records": [],
-        "status": "not_recorded"
-      },
-      "classification": "explicit_textual_reference",
-      "curation_confidence": "high",
-      "curation_status": "curated_for_explorer",
-      "human_scholarly_approval": "not_recorded",
-      "original_notes": "empowered witness",
-      "original_relationship_type": "spirit-empowerment",
-      "original_weight": 8,
-      "relationship_kind": "object",
-      "source_id": "ckl:who-was-peter",
-      "supporting_ckl_sources": [
-        {
-          "author": "",
-          "object_id": "who-was-peter",
-          "source_id": "acts-2",
-          "title": "Acts 2"
-        },
-        {
-          "author": "",
-          "object_id": "what-is-the-holy-spirit",
-          "source_id": "acts-2",
-          "title": "Acts 2"
-        }
-      ],
-      "supporting_comparative_material": [],
-      "supporting_passages": [
-        "Acts 2:14-21"
-      ],
-      "supporting_records": [
-        "ckl:who-was-peter#source:acts-2",
-        "ckl:what-is-the-holy-spirit#source:acts-2"
-      ],
-      "target_id": "ckl:what-is-the-holy-spirit",
-      "textual_observation": "After the Spirit’s outpouring, Acts presents Peter standing with the eleven and explaining the event, directly linking Peter’s witness with the Spirit FAQ.",
-      "uncertainty": "This is Luke’s literary and theological narration of Pentecost; it is not an independent transcript of Peter’s speech.",
-      "why": "After the Spirit’s outpouring, Acts presents Peter standing with the eleven and explaining the event, directly linking Peter’s witness with the Spirit FAQ. This passage-anchored explanation connects Who was Peter? to What is the Holy Spirit? in the authored direction while stating the limits of the evidence."
+      "why": "Leadership in the church."
     }
   ],
   "schema_version": 1,

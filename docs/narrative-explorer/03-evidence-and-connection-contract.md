@@ -67,6 +67,24 @@ The projection connection_type is one of:
 
 Each edge also carries basis (a reference, claim, evidence ID, authored relationship note, or source citation), relationship_mode (direct, inferred, or not_recorded), direction (one_way or reciprocal), reverse_edge_id (only when actually represented), and temporal_layer (original passage context, comparative background, later reception, or unknown).
 
+### Operational classification rules
+
+Assign a type to the relationship supported by the cited passage and source, not to a subject that happens to occur in the passage. In particular, a biblical text's mention of a person, event, place, institution, doctrine, or topic is not by itself a reference to another biblical text. Co-occurrence, an object title, an authored CKL label, or a source record's presence in CKL cannot supply a missing textual relation.
+
+| Type | Minimum support required |
+|---|---|
+| `direct_quotation` | A source passage reproduces identifiable, substantial wording from another biblical passage. Shared vocabulary or a quotation formula without a traceable source is insufficient. |
+| `explicit_textual_reference` | A biblical passage explicitly identifies another biblical text as a source or object of reference—for example, naming a writing, prophet's oracle, law, or earlier passage in that textual role. Merely naming a person, event, place, institution, doctrine, or subject does not qualify. |
+| `later_canonical_reception` | A later biblical passage demonstrably takes up earlier scriptural material and applies or interprets it in a later textual setting. Preserve the receiving text's claim and the source text's own setting separately. |
+| `narrative_parallel` | Two scoped biblical narratives share a specific event sequence or plot structure. A single passage naming two people or places is not a parallel. |
+| `shared_literary_motif` | Two scoped texts share a concrete image, scene, or literary motif. This label does not assert borrowing, dependence, or a common source. |
+| `thematic_relationship` | The passages make a substantive connection around a shared theme or proposition; a broad topic label or one-off subject mention alone is insufficient. |
+| `proposed_intertextual_echo` | A tentative relation is proposed from specific wording, imagery, or structure, with the uncertainty stated. General resemblance alone is insufficient. |
+| `interpretive_association` | A text-to-text or text-to-subject link depends on a stated scholarly, theological, or canonical interpretation beyond what the passage directly says. Identify the interpretation as interpretation and preserve material alternatives. |
+| `uncategorized` | The authored relationship is ambiguous or lacks enough passage-specific support to meet one of the thresholds above. Retain the authored basis without inferring a more specific type. |
+
+These types describe distinct evidence claims, not a confidence scale. A defensible connection may still be held when its authored relation has no suitable type or its passage/source support is insufficient. Confidence does not relax the evidence threshold.
+
 The semantic labels cannot be safely inferred from a shared theme string. Preserve the original CKL relationship alongside the UI vocabulary. A curation decision is required before mapping ambiguous free-text relationships to a more specific label. If that decision is not recorded, return uncategorized and retain the original label/notes.
 
 ## Evidence status and absence semantics
