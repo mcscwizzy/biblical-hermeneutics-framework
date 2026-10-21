@@ -55,10 +55,14 @@ The inventory has exactly one entry for each baseline tracked file (19,993 rows,
 
 | Classification | Files | Baseline bytes | Decision |
 | --- | ---: | ---: | --- |
-| KEEP | 1,861 | 130,459,871 | Retain in the current tree |
-| RETIRE | 17,911 | 527,830,275 | Remove after source/dependency updates; Git history retains the baseline |
+| KEEP | 1,859 | 130,449,920 | Retain in the current tree |
+| RETIRE | 17,913 | 527,840,226 | Remove after source/dependency updates; Git history retains the baseline |
 | CONSOLIDATE | 85 | 829,419 | Replace redundant generation documentation with maintained current references |
 | HISTORICAL | 8 | 64,553 | Retain retirement rationale and pinned freeze reference |
 | INVESTIGATE | 128 | 1,884,084 | Retain while the Sol artifact workflow's branch trigger remains unverified |
 
 These are baseline source-tree byte totals, not compressed Git object sizes. The derived CSV is separately classified RETIRE and verified by the reproducibility check above. Retired code/data categories are not deleted until their active consumers and preservation references are checked.
+
+## Inventory refinement before source changes
+
+The initial filename pass had left several generation-only test and diagnostic filenames classified as KEEP because they did not use the common `test_commentary_`/`tools/commentary_` prefixes. Before any deletion, the inventory was refined to classify the generated chapter-commentary, dense-reader, reader-projection, renderer-presentation, Transaction C3, and commentary-consolidation diagnostic tests/tools as RETIRE. `tests/test_ckl_coverage_report.py` and `tools/ckl_coverage_report.py` remain KEEP as CKL development tooling; the tool will be decoupled from the retired availability classifier while preserving its report behavior. Genesis G0–G6 evidence-isolation tests remain KEEP and will be refactored only where they call generated Commentary synthesis APIs.
