@@ -1,0 +1,52 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Ezekiel 36:24-28"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "",
+      "original_relationship_type": "related-concept",
+      "original_weight": 7,
+      "relationship_kind": "object",
+      "source_id": "ckl:new-covenant-prophecy",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "new-covenant-prophecy",
+          "source_id": "ezekiel-36",
+          "title": "Ezekiel 36"
+        },
+        {
+          "author": "",
+          "object_id": "ezekiel",
+          "source_id": "ezekiel-masoretic",
+          "title": "Masoretic Ezekiel"
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Ezekiel 36:24-28"
+      ],
+      "supporting_records": [
+        "ckl:new-covenant-prophecy#source:ezekiel-36",
+        "ckl:ezekiel#source:ezekiel-masoretic"
+      ],
+      "target_id": "ckl:ezekiel",
+      "textual_observation": "Ezekiel promises restoration, a new heart, and a new spirit; this passage is grouped with new-covenant hope in the CKL prophecy cluster.",
+      "uncertainty": "Ezekiel 36:24-28 does not use the Hebrew term berit (“covenant”); the relationship is a thematic grouping, not an explicit covenant formula or a direct quotation.",
+      "why": "Ezekiel promises restoration, a new heart, and a new spirit; this passage is grouped with new-covenant hope in the CKL prophecy cluster. This gives readers a passage-anchored connection from New Covenant Prophecy to Ezekiel while preserving the authored direction."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "covenant_exile_restoration",
+  "wave": 8
+}
