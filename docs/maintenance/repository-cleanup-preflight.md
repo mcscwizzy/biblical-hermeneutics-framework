@@ -33,7 +33,7 @@ The file-level decisions are in [repository-cleanup-inventory.csv](repository-cl
 - **R02–R06 — retired generation implementation:** old root generation status/resume files, generated reader package, generated modules under `framework.commentary`, generator experiments, and their generation-only tests have no active runtime or product consumers after the runtime edges are removed. Keep `framework.commentary` Tyndale modules, the Tyndale CLI/API/UI/reader, and 410 compatibility routes.
 - **C01 — redundant generation records:** consolidate the 84-page/file generated Commentary documentation set into a historical index; retain NE7R3 decision and CKL research methodology.
 - **R07 — reproducible export:** `scripts/audit_ckl_connection_coverage.py` regenerated the CSV byte-for-byte to `/tmp` before any deletion: 53,097 data rows, 53,638,723 bytes, SHA-256 `b03b5ce267e415b997e6d1cfbe8fe69049731b3a4b10262f1e77d8e395aedef4`; CKL count 687, canonical inventory fingerprint `90fa7547ea4146328ab1fc4f9e4ca1b262f810e0e503c589b64a5f9b8c4a08c6`, manifest SHA-256 `334c42fc5245779f22c7e68143a09e3ee8a1c724f74faacd833d088ba7cfc0a4`, CKL tree SHA-256 `e186df409fb6231c0e93f13d14677826e31684a355b4681aa3ca98bf299a6766`. Retain the exporter and methodology, remove only the checked-in derived CSV after another verification.
-- **R08 — stale generation verification:** two remaining Terra batch tests exercised retired v1.1 prose-generation code, and the old Vercel bundle audit files described obsolete package inputs. Their implementation is removed and the historical release rationale remains reachable through Git history and the historical index.
+- **R08 — stale generation verification:** remaining Luna/Terra batch tests, CKL scope census code/tests, the pre-NE7R3 transition plan, and old Vercel bundle audit files depended on or described retired generation. Their source and outputs are historical Git material; current CKL and Narrative Explorer checks remain active.
 
 ## Runtime and build graph
 
@@ -56,8 +56,8 @@ The inventory has exactly one entry for each baseline tracked file (19,993 rows,
 
 | Classification | Files | Baseline bytes | Decision |
 | --- | ---: | ---: | --- |
-| KEEP | 1,851 | 130,304,740 | Retain in the current tree |
-| RETIRE | 17,920 | 527,932,458 | Remove after source/dependency updates; Git history retains the baseline |
+| KEEP | 1,842 | 130,247,549 | Retain in the current tree |
+| RETIRE | 17,929 | 527,989,649 | Remove after source/dependency updates; Git history retains the baseline |
 | CONSOLIDATE | 85 | 829,419 | Replace redundant generation documentation with maintained current references |
 | HISTORICAL | 9 | 117,501 | Retain retirement rationale and pinned freeze reference |
 | INVESTIGATE | 128 | 1,884,084 | Retain while the Sol artifact workflow's branch trigger remains unverified |
@@ -72,4 +72,4 @@ The final path-level pass also identified the generated chapter-commentary, dens
 
 ## Post-refinement dependency sweep
 
-After the first source removal, a focused repository-wide search found two remaining `KEEP` tests that still depended on retired v1.1 prose generation, plus two old Vercel bundle-size reports that described the pre-cleanup payload. Their inventory rows were reclassified as R08 before those paths are removed. This updates the baseline class counts to KEEP 1,847, RETIRE 17,924, CONSOLIDATE 85, HISTORICAL 9, INVESTIGATE 128; baseline byte totals are unchanged by reclassification. The active ASV Bible-data boundary regression is retained with a standalone audit helper so it no longer imports a retired Commentary enforcement script.
+After the first source removal, a focused repository-wide search found remaining tests and a CKL scope census tied only to the retired generation corpus, plus old Vercel bundle-size reports and a pre-NE7R3 transition plan. Their inventory rows were reclassified as R08 before removal. The refreshed baseline class counts are shown above. The active ASV Bible-data boundary regression remains, with a standalone audit helper in place of its retired Commentary enforcement import. The CKL geography dry-run tool remains and is being decoupled from its obsolete Commentary preview output.

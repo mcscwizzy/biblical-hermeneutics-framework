@@ -18424,7 +18424,7 @@ docs/narrative-explorer/01-existing-capabilities-audit.md,12073,KEEP,K01
 docs/narrative-explorer/02-product-experience.md,10125,KEEP,K01
 docs/narrative-explorer/03-evidence-and-connection-contract.md,12929,KEEP,K01
 docs/narrative-explorer/04-pilot-coverage-census.md,14087,KEEP,K01
-docs/narrative-explorer/05-commentary-transition-plan.md,7458,KEEP,K01
+docs/narrative-explorer/05-commentary-transition-plan.md,7458,RETIRE,R08
 docs/narrative-explorer/06-implementation-roadmap.md,9332,KEEP,K01
 docs/narrative-explorer/connection-audit/01-executive-summary.md,6896,KEEP,K01
 docs/narrative-explorer/connection-audit/02-methodology.md,7223,KEEP,K01
@@ -19739,7 +19739,7 @@ tests/test_chapter_commentary.py,25436,RETIRE,R06
 tests/test_ckl_commentary_v12_structured_claims.py,3054,KEEP,K05
 tests/test_ckl_coverage_report.py,1616,KEEP,K01
 tests/test_ckl_provider_consumers.py,2322,KEEP,K01
-tests/test_ckl_scope_audit.py,1749,KEEP,K01
+tests/test_ckl_scope_audit.py,1749,RETIRE,R08
 tests/test_ckl_scope_semantics.py,5707,KEEP,K01
 tests/test_cli.py,8626,KEEP,K01
 tests/test_cold_start_diagnostics.py,10946,KEEP,K01
@@ -19825,7 +19825,7 @@ tests/test_genesis_g6b_joseph_reconciliation_conclusion_isolation.py,8759,KEEP,K
 tests/test_genre_classification.py,1180,KEEP,K01
 tests/test_knowledge.py,3065,KEEP,K01
 tests/test_lexical_engine.py,32765,KEEP,K01
-tests/test_luna_commentary_batch.py,531,KEEP,K01
+tests/test_luna_commentary_batch.py,531,RETIRE,R08
 tests/test_map_kml.py,2351,KEEP,K01
 tests/test_map_tools.py,3345,KEEP,K01
 tests/test_memory.py,6377,KEEP,K01
@@ -19870,7 +19870,7 @@ tests/test_repair.py,6046,KEEP,K01
 tests/test_response_validation.py,6710,KEEP,K01
 tests/test_runner.py,77984,KEEP,K01
 tests/test_study_actions.py,27910,KEEP,K01
-tests/test_terra_commentary_canary.py,946,KEEP,K01
+tests/test_terra_commentary_canary.py,946,RETIRE,R08
 tests/test_terra_commentary_scaled_batch.py,4975,RETIRE,R08
 tests/test_terra_commentary_supplemental_control.py,2470,RETIRE,R08
 tests/test_transaction_c2_commentary_candidates.py,8757,RETIRE,R06
@@ -19902,7 +19902,7 @@ tools/ckl_graph_audit.py,4014,KEEP,K01
 tools/ckl_manifest.py,2523,KEEP,K01
 tools/ckl_migrate.py,3072,KEEP,K01
 tools/ckl_report.py,2158,KEEP,K01
-tools/ckl_scope_audit.py,24837,KEEP,K01
+tools/ckl_scope_audit.py,24837,RETIRE,R08
 tools/ckl_validate.py,1584,KEEP,K01
 tools/commentary_artifact_inventory.py,6853,RETIRE,R05
 tools/commentary_canary_import.py,23362,RETIRE,R05
