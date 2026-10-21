@@ -18302,7 +18302,7 @@ bhf_web/templates/offline.html,713,KEEP,K01
 bhf_web/templates/partials/answer.html,12589,KEEP,K01
 bhf_web/templates/source.html,1595,KEEP,K01
 bhf_web/templates/sources.html,1283,KEEP,K01
-config/commentary-v1.2-prose.json,503,KEEP,K01
+config/commentary-v1.2-prose.json,503,RETIRE,R09
 data_sources/archaeology/babylon-context-manifest.json,966,KEEP,K01
 data_sources/archaeology/corpus-expansion-manifest.json,2761,KEEP,K01
 data_sources/archaeology/full-coverage-wikimedia-manifest.json,8678,KEEP,K01
@@ -19736,14 +19736,14 @@ tests/test_asv_passage_boundary.py,1223,KEEP,K01
 tests/test_bhf_lib.py,888,KEEP,K01
 tests/test_bible.py,13802,KEEP,K01
 tests/test_chapter_commentary.py,25436,RETIRE,R06
-tests/test_ckl_commentary_v12_structured_claims.py,3054,KEEP,K05
+tests/test_ckl_commentary_v12_structured_claims.py,3054,CONSOLIDATE,C02
 tests/test_ckl_coverage_report.py,1616,KEEP,K01
 tests/test_ckl_provider_consumers.py,2322,KEEP,K01
 tests/test_ckl_scope_audit.py,1749,RETIRE,R08
 tests/test_ckl_scope_semantics.py,5707,KEEP,K01
 tests/test_cli.py,8626,KEEP,K01
 tests/test_cold_start_diagnostics.py,10946,KEEP,K01
-tests/test_commentary.py,12766,KEEP,K04
+tests/test_commentary.py,12766,CONSOLIDATE,C02
 tests/test_commentary_availability.py,5100,RETIRE,R06
 tests/test_commentary_canonical_runtime.py,8107,RETIRE,R06
 tests/test_commentary_consolidation.py,5656,RETIRE,R06

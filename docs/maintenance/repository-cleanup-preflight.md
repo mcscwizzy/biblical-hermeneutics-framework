@@ -32,8 +32,10 @@ The file-level decisions are in [repository-cleanup-inventory.csv](repository-cl
 - **R01 — generated artifact trees:** other `.bhf-data/bhf-commentary*` data are retired generation outputs and candidates. Their source and provenance remain available from the base commit and immutable Commentary release tags; none are CKL authority. The explicit G0–G6C, attestation, and I01 exceptions above are preserved.
 - **R02–R06 — retired generation implementation:** old root generation status/resume files, generated reader package, generated modules under `framework.commentary`, generator experiments, and their generation-only tests have no active runtime or product consumers after the runtime edges are removed. Keep `framework.commentary` Tyndale modules, the Tyndale CLI/API/UI/reader, and 410 compatibility routes.
 - **C01 — redundant generation records:** consolidate the 84-page/file generated Commentary documentation set into a historical index; retain NE7R3 decision and CKL research methodology.
+- **C02 — clarify retained test ownership:** rename the Tyndale behavior test and CKL structured-claim regression so their paths identify the maintained components; keep their test contents and add them to the focused Validate workflow.
 - **R07 — reproducible export:** `scripts/audit_ckl_connection_coverage.py` regenerated the CSV byte-for-byte to `/tmp` before any deletion: 53,097 data rows, 53,638,723 bytes, SHA-256 `b03b5ce267e415b997e6d1cfbe8fe69049731b3a4b10262f1e77d8e395aedef4`; CKL count 687, canonical inventory fingerprint `90fa7547ea4146328ab1fc4f9e4ca1b262f810e0e503c589b64a5f9b8c4a08c6`, manifest SHA-256 `334c42fc5245779f22c7e68143a09e3ee8a1c724f74faacd833d088ba7cfc0a4`, CKL tree SHA-256 `e186df409fb6231c0e93f13d14677826e31684a355b4681aa3ca98bf299a6766`. Retain the exporter and methodology, remove only the checked-in derived CSV after another verification.
 - **R08 — stale generation verification:** remaining Luna/Terra batch tests, CKL scope census code/tests, the pre-NE7R3 transition plan, and old Vercel bundle audit files depended on or described retired generation. Their source and outputs are historical Git material; current CKL and Narrative Explorer checks remain active.
+- **R09 — retired generation configuration:** remove the unused Commentary v1.2 prose-generation settings file after confirming no current code, tests, package manifest, or workflow reads it. The pinned freeze workflow retains its own immutable copy.
 
 ## Runtime and build graph
 
@@ -56,9 +58,9 @@ The inventory has exactly one entry for each baseline tracked file (19,993 rows,
 
 | Classification | Files | Baseline bytes | Decision |
 | --- | ---: | ---: | --- |
-| KEEP | 1,842 | 130,247,549 | Retain in the current tree |
-| RETIRE | 17,929 | 527,989,649 | Remove after source/dependency updates; Git history retains the baseline |
-| CONSOLIDATE | 85 | 829,419 | Replace redundant generation documentation with maintained current references |
+| KEEP | 1,839 | 130,231,226 | Retain in the current tree |
+| RETIRE | 17,930 | 527,990,152 | Remove after source/dependency updates; Git history retains the baseline |
+| CONSOLIDATE | 87 | 845,239 | Replace obsolete paths/docs with maintained current references |
 | HISTORICAL | 9 | 117,501 | Retain retirement rationale and pinned freeze reference |
 | INVESTIGATE | 128 | 1,884,084 | Retain while the Sol artifact workflow's branch trigger remains unverified |
 
