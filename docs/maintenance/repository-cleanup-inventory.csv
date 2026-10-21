@@ -19735,7 +19735,7 @@ tests/test_assistant_handoff.py,2198,KEEP,K01
 tests/test_asv_passage_boundary.py,1223,KEEP,K01
 tests/test_bhf_lib.py,888,KEEP,K01
 tests/test_bible.py,13802,KEEP,K01
-tests/test_chapter_commentary.py,25436,KEEP,K01
+tests/test_chapter_commentary.py,25436,RETIRE,R06
 tests/test_ckl_commentary_v12_structured_claims.py,3054,KEEP,K05
 tests/test_ckl_coverage_report.py,1616,KEEP,K01
 tests/test_ckl_provider_consumers.py,2322,KEEP,K01
@@ -19806,7 +19806,7 @@ tests/test_context_pipeline.py,12118,KEEP,K01
 tests/test_coverage.py,4876,KEEP,K01
 tests/test_cultural_context.py,4545,KEEP,K01
 tests/test_db_connection_read_only.py,2224,KEEP,K01
-tests/test_dense_reader.py,8278,KEEP,K01
+tests/test_dense_reader.py,8278,RETIRE,R06
 tests/test_docker_compose.py,1561,KEEP,K01
 tests/test_eval_local.py,4645,KEEP,K01
 tests/test_eval_suite.py,12187,KEEP,K01
@@ -19861,11 +19861,11 @@ tests/test_prompt_building.py,24593,KEEP,K01
 tests/test_public_cache.py,6852,KEEP,K01
 tests/test_question_driven_retrieval.py,3972,KEEP,K01
 tests/test_question_types.py,3212,KEEP,K01
-tests/test_reader_level_idea_projection.py,11798,KEEP,K01
-tests/test_reader_provenance_binding_v2.py,7869,KEEP,K01
+tests/test_reader_level_idea_projection.py,11798,RETIRE,R06
+tests/test_reader_provenance_binding_v2.py,7869,RETIRE,R06
 tests/test_reference_detection.py,1781,KEEP,K01
 tests/test_release_path_sanitization.py,963,KEEP,K01
-tests/test_renderer_reference_presentation_v1.py,9282,KEEP,K01
+tests/test_renderer_reference_presentation_v1.py,9282,RETIRE,R06
 tests/test_repair.py,6046,KEEP,K01
 tests/test_response_validation.py,6710,KEEP,K01
 tests/test_runner.py,77984,KEEP,K01
@@ -19875,7 +19875,7 @@ tests/test_terra_commentary_scaled_batch.py,4975,KEEP,K01
 tests/test_terra_commentary_supplemental_control.py,2470,KEEP,K01
 tests/test_transaction_c2_commentary_candidates.py,8757,RETIRE,R06
 tests/test_transaction_c3_selective_promotion.py,7550,RETIRE,R06
-tests/test_transaction_c_commentary_impact.py,3972,KEEP,K01
+tests/test_transaction_c_commentary_impact.py,3972,RETIRE,R06
 tests/test_translation_catalog.py,7291,KEEP,K01
 tests/test_translation_registry.py,1296,KEEP,K01
 tests/test_translation_settings.py,2043,KEEP,K01
@@ -19893,7 +19893,7 @@ tools/README.md,8341,KEEP,K01
 tools/benchmark_ckl_retrieval.py,2915,KEEP,K01
 tools/benchmark_ckl_storage.py,4476,KEEP,K01
 tools/bhf_lib.py,5367,KEEP,K01
-tools/build_final_four_audit_artifacts.py,25597,KEEP,K01
+tools/build_final_four_audit_artifacts.py,25597,RETIRE,R05
 tools/ckl_coverage_report.py,4564,KEEP,K01
 tools/ckl_create.py,2896,KEEP,K01
 tools/ckl_expansion_backlog.py,10721,KEEP,K01
@@ -19972,7 +19972,7 @@ tools/eval_local.py,2634,KEEP,K01
 tools/eval_presentation.py,2314,KEEP,K01
 tools/evaluate_ckl_semantic.py,2404,KEEP,K01
 tools/export_presentation_bundle.py,1853,KEEP,K01
-tools/genesis_g0_evidence_census.py,52948,KEEP,K01
+tools/genesis_g0_evidence_census.py,52948,HISTORICAL,H03
 tools/import_archaeology.py,1537,KEEP,K01
 tools/import_lexicons.py,394,KEEP,K01
 tools/import_openbible_places.py,8138,KEEP,K01
