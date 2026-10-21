@@ -300,9 +300,12 @@ class ProjectionConnection:
     temporal_layer: str
     basis: Mapping[str, Any]
     curation: Mapping[str, Any] | None = None
+    _authored_notes: Any = field(default=None, repr=False, compare=False)
 
     def to_dict(self) -> dict[str, Any]:
-        return _jsonable(asdict(self))
+        result = asdict(self)
+        result.pop("_authored_notes", None)
+        return _jsonable(result)
 
 
 @dataclass(frozen=True)
@@ -902,6 +905,7 @@ def _project_ckl_lookup(
             relationship_mode=connection.relationship_mode,
             temporal_layer=connection.temporal_layer,
             basis=basis,
+            authored_notes=connection._authored_notes,
         )
         resolved_connections[resolved.id] = resolved
     connections_by_id = resolved_connections
@@ -2126,6 +2130,7 @@ def _related_object_connection(
         relationship_mode=mode,
         temporal_layer=temporal_layer,
         basis=basis,
+        authored_notes=deepcopy(data.get("notes")),
     )
 
 
@@ -2156,6 +2161,7 @@ def _related_evidence_connection(
             "notes": deepcopy(data.get("notes")) if data.get("notes") not in (None, "") else None,
             "weight": deepcopy(data.get("weight")) if data.get("weight") is not None else None,
         },
+        authored_notes=deepcopy(data.get("notes")),
     )
 
 
@@ -2181,6 +2187,7 @@ def _new_connection(
     relationship_mode: str,
     temporal_layer: str,
     basis: Mapping[str, Any],
+    authored_notes: Any = None,
 ) -> ProjectionConnection:
     label = _text(relationship) or None
     connection_type = _CONNECTION_TYPE_BY_LABEL.get(_normalized_label(label), "uncategorized")
@@ -2203,6 +2210,7 @@ def _new_connection(
         reverse_edge_id=None,
         temporal_layer=temporal_layer,
         basis=deepcopy(dict(basis)),
+        _authored_notes=deepcopy(authored_notes),
     )
 
 

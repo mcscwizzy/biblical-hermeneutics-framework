@@ -87,7 +87,7 @@ def curate_connection(connection: Any, passage_reference: str) -> Any:
         connection.source_id,
         connection.target_id,
         connection.original_relationship_type,
-        connection.basis.get("notes"),
+        connection._authored_notes,
         connection.basis.get("weight"),
     )
     entry = CURATION_BY_IDENTITY.get(identity)
@@ -100,9 +100,13 @@ def curate_connection(connection: Any, passage_reference: str) -> Any:
         return connection
     from dataclasses import replace
 
+    basis = dict(connection.basis)
+    if "notes" in basis:
+        basis["notes"] = entry["original_notes"]
     return replace(
         connection,
         connection_type=entry["classification"],
+        basis=basis,
         curation=_public_curation(entry),
     )
 

@@ -1,0 +1,61 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Acts 16:25-34"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "explicit_textual_reference",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "The Philippi cluster distinguishes Lydia's and the jailer's households, hospitality, baptism, enslavement, profit, and later assembly inferences.",
+      "original_relationship_type": "evidence-cluster",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:household",
+      "supporting_ckl_sources": [
+        {
+          "author": "Packard Humanities Institute",
+          "object_id": "roman-philippi-colonial-civic-and-household-life",
+          "source_id": "packard-philippi-inscriptions",
+          "title": "Searchable Greek Inscriptions: Macedonia and Philippi"
+        },
+        {
+          "author": "",
+          "object_id": "household",
+          "source_id": "household-historical-orientation",
+          "title": "Canonical historical orientation for Household",
+          "year": 2026
+        },
+        {
+          "author": "Michael W. Holmes, ed.",
+          "object_id": "roman-philippi-colonial-civic-and-household-life",
+          "source_id": "acts-philippi-texts",
+          "title": "Acts 16:11-40 and 20:1-6",
+          "year": 2010
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Acts 16:25-34"
+      ],
+      "supporting_records": [
+        "ckl:roman-philippi-colonial-civic-and-household-life#source:packard-philippi-inscriptions",
+        "ckl:household#source:household-historical-orientation",
+        "ckl:roman-philippi-colonial-civic-and-household-life#source:acts-philippi-texts"
+      ],
+      "target_id": "ckl:roman-philippi-colonial-civic-and-household-life",
+      "textual_observation": "Acts narrates the Philippian jailer and the people of his household hearing the message and being baptized after Paul and Silas are freed.",
+      "uncertainty": "The jailer’s household is distinct from Lydia’s household in Acts 16; the passage does not establish either household as the location of every Philippian assembly.",
+      "why": "Acts narrates the Philippian jailer and the people of his household hearing the message and being baptized after Paul and Silas are freed. This passage-anchored explanation connects Household to Roman Philippi: Colonial, Civic, and Household Life in the authored direction while stating the limits of the evidence."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "divine_assembly_nations",
+  "wave": 6
+}
