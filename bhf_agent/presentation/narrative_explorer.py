@@ -28,6 +28,7 @@ from .eligibility import (
 from .models import mapping
 from .references import references_overlap
 from .relevance import SEMANTICALLY_MISANCHORED, classify_semantic_relationship
+from .narrative_explorer_curations import curate_connection, validate_curation
 
 
 SCHEMA_VERSION = "1.0"
@@ -298,9 +299,13 @@ class ProjectionConnection:
     reverse_edge_id: str | None
     temporal_layer: str
     basis: Mapping[str, Any]
+    curation: Mapping[str, Any] | None = None
+    _authored_notes: Any = field(default=None, repr=False, compare=False)
 
     def to_dict(self) -> dict[str, Any]:
-        return _jsonable(asdict(self))
+        result = asdict(self)
+        result.pop("_authored_notes", None)
+        return _jsonable(result)
 
 
 @dataclass(frozen=True)
@@ -388,7 +393,10 @@ def project_narrative_explorer(
         )
         for section_id, domains in _SECTION_DOMAINS
     )
-    connections = _reciprocal_edges(raw_connections + map_connections + archaeology_connections)
+    connections = tuple(
+        curate_connection(connection, passage.reference)
+        for connection in _reciprocal_edges(raw_connections + map_connections + archaeology_connections)
+    )
     navigation_by_id = {
         item.navigation.id: item.navigation
         for item in all_items
@@ -563,6 +571,25 @@ def validate_projection(value: Mapping[str, Any]) -> None:
             raise ValueError("projection connection endpoints and identity must be present")
         if not isinstance(connection.get("basis"), Mapping) or not connection["basis"]:
             raise ValueError("projection connection must preserve its relationship basis")
+        curation = connection.get("curation")
+        if curation is not None:
+            if not isinstance(curation, Mapping):
+                raise ValueError("projection connection curation has an invalid shape")
+            validate_curation(curation)
+            if connection["connection_type"] != curation.get("classification"):
+                raise ValueError("curated connection type must match its reviewed classification")
+            expected_kind = "evidence" if connection["basis"].get("kind") == "ckl_related_evidence" else "object"
+            if (
+                curation.get("relationship_kind") != expected_kind
+                or curation.get("source_id") != connection.get("source_id")
+                or curation.get("target_id") != connection.get("target_id")
+                or curation.get("original_relationship_type") != connection.get("original_relationship_type")
+                or curation.get("original_notes") != connection["basis"].get("notes")
+                or curation.get("original_weight") != connection["basis"].get("weight")
+            ):
+                raise ValueError("projection curation does not match its authored relationship")
+            if expected_kind == "evidence" and connection["basis"].get("target_resolution_status") != "eligible":
+                raise ValueError("curated evidence relationship target must be passage-eligible")
         target_status = connection["basis"].get("target_resolution_status")
         if target_status is not None and target_status not in {
             "eligible", "filtered", "unavailable", "invalid"
@@ -878,6 +905,7 @@ def _project_ckl_lookup(
             relationship_mode=connection.relationship_mode,
             temporal_layer=connection.temporal_layer,
             basis=basis,
+            authored_notes=connection._authored_notes,
         )
         resolved_connections[resolved.id] = resolved
     connections_by_id = resolved_connections
@@ -2102,6 +2130,7 @@ def _related_object_connection(
         relationship_mode=mode,
         temporal_layer=temporal_layer,
         basis=basis,
+        authored_notes=deepcopy(data.get("notes")),
     )
 
 
@@ -2132,6 +2161,7 @@ def _related_evidence_connection(
             "notes": deepcopy(data.get("notes")) if data.get("notes") not in (None, "") else None,
             "weight": deepcopy(data.get("weight")) if data.get("weight") is not None else None,
         },
+        authored_notes=deepcopy(data.get("notes")),
     )
 
 
@@ -2157,6 +2187,7 @@ def _new_connection(
     relationship_mode: str,
     temporal_layer: str,
     basis: Mapping[str, Any],
+    authored_notes: Any = None,
 ) -> ProjectionConnection:
     label = _text(relationship) or None
     connection_type = _CONNECTION_TYPE_BY_LABEL.get(_normalized_label(label), "uncategorized")
@@ -2179,6 +2210,7 @@ def _new_connection(
         reverse_edge_id=None,
         temporal_layer=temporal_layer,
         basis=deepcopy(dict(basis)),
+        _authored_notes=deepcopy(authored_notes),
     )
 
 

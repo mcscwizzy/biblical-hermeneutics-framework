@@ -279,7 +279,8 @@
         if (!explorer.subjectMatchesId(step.targetId, subject)) {
           throw new Error("The CKL detail response did not match the recorded target identity.");
         }
-        const view = explorer.renderSubjectDetail(subject, narrativeTrail, narrativeRenderOptions());
+        const subjectWithCurations = explorer.applyProjectionCurationsToSubject(subject, narrativeProjection);
+        const view = explorer.renderSubjectDetail(subjectWithCurations, narrativeTrail, narrativeRenderOptions());
         host.replaceChildren(view);
         host.setAttribute("aria-busy", "false");
         focusNarrativeView(behavior.focusId);

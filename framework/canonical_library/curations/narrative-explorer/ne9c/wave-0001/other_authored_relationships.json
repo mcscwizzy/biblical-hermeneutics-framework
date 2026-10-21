@@ -1,0 +1,358 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Galatians 4:1-7"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "The cluster preserves differences between Galatians and Romans and limits one-model adoption readings.",
+      "original_relationship_type": "evidence-cluster",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:adoption-theme",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "adoption-theme",
+          "source_id": "galatians-4",
+          "title": "Galatians 4",
+          "year": null
+        },
+        {
+          "author": "Paul",
+          "object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+          "source_id": "galatians-adoption-text",
+          "title": "Galatians 3:23-4:11",
+          "year": null
+        },
+        {
+          "author": "Gaius",
+          "object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+          "source_id": "gaius-institutes",
+          "title": "Institutes of Roman Law",
+          "year": 1904
+        },
+        {
+          "author": "J. Louis Martyn",
+          "object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+          "source_id": "martyn-galatians",
+          "title": "Galatians: A New Translation with Introduction and Commentary",
+          "year": 2004
+        },
+        {
+          "author": "John K. Goodrich",
+          "object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+          "source_id": "goodrich-guardians",
+          "title": "Guardians, not Taskmasters: The Cultural Resonances of Paul's Metaphor in Galatians 4.1-2",
+          "year": 2010
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Galatians 3:23-4:7",
+        "Romans 8:14-25",
+        "Ephesians 1:3-6"
+      ],
+      "supporting_records": [
+        "ckl:adoption-theme#source:galatians-4",
+        "ckl:pauline-kinship-guardianship-slavery-and-inheritance#source:galatians-adoption-text",
+        "ckl:pauline-kinship-guardianship-slavery-and-inheritance#source:gaius-institutes",
+        "ckl:pauline-kinship-guardianship-slavery-and-inheritance#source:martyn-galatians",
+        "ckl:pauline-kinship-guardianship-slavery-and-inheritance#source:goodrich-guardians"
+      ],
+      "target_id": "ckl:pauline-kinship-guardianship-slavery-and-inheritance",
+      "textual_observation": "Galatians 4 uses the language of children, guardians, heirship, and adoption; the kinship dossier compares Paul’s metaphor with ancient legal and social evidence.",
+      "uncertainty": "Roman adoption law is comparative context, not a direct template that explains every feature of Paul’s argument; Galatians and Romans make related but distinct claims.",
+      "why": "The shared Galatians source grounds the thematic link and the cluster adds historical context for interpreting Paul’s family and inheritance language."
+    },
+    {
+      "applicable_passages": [
+        "Ezekiel 37:1-14"
+      ],
+      "authored_direction": "reciprocal",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "the Spirit as life-giver",
+      "original_relationship_type": "life-giving-power",
+      "original_weight": 7,
+      "relationship_kind": "object",
+      "source_id": "ckl:resurrection-theme",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "resurrection-theme",
+          "source_id": "ezekiel-37",
+          "title": "Ezekiel 37",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "spirit-theme",
+          "source_id": "ezekiel-36-37",
+          "title": "Ezekiel 36-37",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Ezekiel 37:1-14",
+        "Romans 8:11",
+        "1 Corinthians 15:42-49"
+      ],
+      "supporting_records": [
+        "ckl:resurrection-theme#source:ezekiel-37",
+        "ckl:spirit-theme#source:ezekiel-36-37"
+      ],
+      "target_id": "ckl:spirit-theme",
+      "textual_observation": "Ezekiel’s vision uses breath/Spirit language to portray the restoration of Israel; later Christian texts also speak of the Spirit in relation to resurrection life.",
+      "uncertainty": "Ezekiel 37 explicitly interprets the bones as the house of Israel’s restoration, not as an individual resurrection scene; the New Testament comparison is a later theological association.",
+      "why": "Both theme records cite Ezekiel 37, grounding a canonical association between Spirit and life from death."
+    },
+    {
+      "applicable_passages": [
+        "Acts 2:1-18"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Spirit / wind / breath language",
+      "original_relationship_type": "word-study-anchor",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:spirit-theme",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "spirit-theme",
+          "source_id": "acts-2",
+          "title": "Acts 2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "pneuma",
+          "source_id": "acts-2",
+          "title": "Acts 2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "pneuma",
+          "source_id": "john-14-16",
+          "title": "John 14-16",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Acts 2:1-18",
+        "John 14:15-26",
+        "Ezekiel 36:24-28"
+      ],
+      "supporting_records": [
+        "ckl:spirit-theme#source:acts-2",
+        "ckl:pneuma#source:acts-2",
+        "ckl:pneuma#source:john-14-16"
+      ],
+      "target_id": "ckl:pneuma",
+      "textual_observation": "The Greek noun pneuma is used in New Testament passages for spirit, including Acts 2 and John 14; the broader biblical Spirit Theme also includes Hebrew texts whose key term is ruach.",
+      "uncertainty": "Pneuma and ruach have overlapping but non-identical semantic ranges; Hebrew usage should not be treated as a Greek lexical claim, and context determines sense.",
+      "why": "The word-study object supports a precise route from the canonical theme to Greek-language passages where pneuma is discussed."
+    },
+    {
+      "applicable_passages": [
+        "Acts 2:1-18"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "theology of the Spirit",
+      "original_relationship_type": "doctrinal-anchor",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:spirit-theme",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "spirit-theme",
+          "source_id": "acts-2",
+          "title": "Acts 2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "pneumatology",
+          "source_id": "acts-2",
+          "title": "Acts 2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "pneumatology",
+          "source_id": "ezekiel-36-37",
+          "title": "Ezekiel 36-37",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Acts 2:1-18",
+        "Ezekiel 36:24-28",
+        "Ezekiel 37:1-14",
+        "Romans 8:1-17"
+      ],
+      "supporting_records": [
+        "ckl:spirit-theme#source:acts-2",
+        "ckl:pneumatology#source:acts-2",
+        "ckl:pneumatology#source:ezekiel-36-37"
+      ],
+      "target_id": "ckl:pneumatology",
+      "textual_observation": "The Spirit Theme follows recurring scriptural portrayals, while Pneumatology gathers texts used in theological reflection on the Spirit, including Acts 2 and Ezekiel 36-37.",
+      "uncertainty": "Pneumatology is a later scholarly and theological category; Christian traditions differ in how they systematize these texts and their claims.",
+      "why": "The shared passages make the movement from biblical theme to focused doctrinal inquiry explicit for readers."
+    },
+    {
+      "applicable_passages": [
+        "Ezekiel 37:1-14"
+      ],
+      "authored_direction": "reciprocal",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Spirit and life",
+      "original_relationship_type": "life-giving-power",
+      "original_weight": 8,
+      "relationship_kind": "object",
+      "source_id": "ckl:spirit-theme",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "spirit-theme",
+          "source_id": "ezekiel-36-37",
+          "title": "Ezekiel 36-37",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "resurrection-theme",
+          "source_id": "ezekiel-37",
+          "title": "Ezekiel 37",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Ezekiel 37:1-14",
+        "Romans 8:11",
+        "1 Corinthians 15:42-49"
+      ],
+      "supporting_records": [
+        "ckl:spirit-theme#source:ezekiel-36-37",
+        "ckl:resurrection-theme#source:ezekiel-37"
+      ],
+      "target_id": "ckl:resurrection-theme",
+      "textual_observation": "Ezekiel’s vision describes national restoration through the prophetic use of breath/Spirit imagery; the wider canon also relates the Spirit to resurrection life.",
+      "uncertainty": "The vision’s own interpretation is Israel’s restoration (Ezekiel 37:11); later resurrection readings are reception and analogy, not the chapter’s direct historical referent.",
+      "why": "The shared passage supports the authored association while keeping the original setting visible."
+    },
+    {
+      "applicable_passages": [
+        "Exodus 34:6-7"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "hesed and mercy overlap",
+      "original_relationship_type": "compassionate-love",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:what-does-hesed-mean",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "what-does-hesed-mean",
+          "source_id": "exodus-34",
+          "title": "Exodus 34",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "mercy-theme",
+          "source_id": "exodus-34",
+          "title": "Exodus 34",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "what-does-hesed-mean",
+          "source_id": "micah-6",
+          "title": "Micah 6",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "mercy-theme",
+          "source_id": "micah-7",
+          "title": "Micah 7",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Exodus 34:6-7",
+        "Micah 7:18-20",
+        "Psalm 136:1-9"
+      ],
+      "supporting_records": [
+        "ckl:what-does-hesed-mean#source:exodus-34",
+        "ckl:mercy-theme#source:exodus-34",
+        "ckl:what-does-hesed-mean#source:micah-6",
+        "ckl:mercy-theme#source:micah-7"
+      ],
+      "target_id": "ckl:mercy-theme",
+      "textual_observation": "Exodus 34 describes YHWH as abundant in ḥesed, a term often rendered steadfast love, loyalty, or loving-kindness; the Mercy Theme gathers texts about compassion and forgiveness.",
+      "uncertainty": "Ḥesed is not a simple synonym for mercy: translation depends on context, covenant, and relational nuance, and Micah 7 uses distinct Hebrew vocabulary.",
+      "why": "The shared Exodus text grounds a lexical and thematic association between ḥesed and mercy."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "other_authored_relationships",
+  "wave": 1
+}

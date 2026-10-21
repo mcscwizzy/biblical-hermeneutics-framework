@@ -1,0 +1,236 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Romans 4:1-25"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "later_canonical_reception",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Paul on Abraham",
+      "original_relationship_type": "apostolic-interpretation",
+      "original_weight": 8,
+      "relationship_kind": "object",
+      "source_id": "ckl:call-of-abraham",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "call-of-abraham",
+          "source_id": "romans-4",
+          "title": "Romans 4"
+        },
+        {
+          "author": "Michael W. Holmes, ed.",
+          "object_id": "romans",
+          "source_id": "romans-greek",
+          "title": "The Greek New Testament: Romans",
+          "year": 2010
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 12:1-3",
+        "Genesis 15:6",
+        "Romans 4:1-25"
+      ],
+      "supporting_records": [
+        "ckl:call-of-abraham#source:romans-4",
+        "ckl:romans#source:romans-greek"
+      ],
+      "target_id": "ckl:romans",
+      "textual_observation": "Romans 4:1–25 uses Abraham’s trust in God and the timing of circumcision to argue that Abraham is ancestor of both circumcised and uncircumcised believers.",
+      "uncertainty": "Romans 4 is Paul’s later argument about Abraham and Genesis. This curation marks reception, not a direct quotation at every point or the original historical meaning of Genesis.",
+      "why": "This is Paul’s argument about Abraham in Romans, not a neutral biography of the patriarch."
+    },
+    {
+      "applicable_passages": [
+        "2 Thessalonians 3:7-10"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Second Thessalonians 3 is retained under authorship and chronology controls.",
+      "original_relationship_type": "work-disorder-and-sibling-correction-text",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+      "supporting_ckl_sources": [
+        {
+          "author": "Michael W. Holmes, ed.",
+          "object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+          "source_id": "second-thess-economics-text",
+          "title": "The Greek New Testament: 2 Thessalonians",
+          "year": 2010
+        },
+        {
+          "author": "Michael W. Holmes, ed.",
+          "object_id": "2-thessalonians",
+          "source_id": "2th-greek",
+          "title": "SBL Greek New Testament: 2 Thessalonians",
+          "year": 2010
+        },
+        {
+          "author": "Jeffrey A. D. Weima",
+          "object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+          "source_id": "weima-thessalonians",
+          "title": "1-2 Thessalonians",
+          "year": 2014
+        },
+        {
+          "author": "Abraham J. Malherbe",
+          "object_id": "2-thessalonians",
+          "source_id": "malherbe",
+          "title": "The Letters to the Thessalonians",
+          "year": 2000
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "2 Thessalonians 3:7-10",
+        "1 Thessalonians 4:9-12"
+      ],
+      "supporting_records": [
+        "ckl:pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity#source:second-thess-economics-text",
+        "ckl:2-thessalonians#source:2th-greek",
+        "ckl:pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity#source:weima-thessalonians",
+        "ckl:2-thessalonians#source:malherbe"
+      ],
+      "target_id": "ckl:2-thessalonians",
+      "textual_observation": "2 Thessalonians 3:7–10 appeals to the writers’ work among the community and tells those able to work not to live in idleness.",
+      "uncertainty": "Second Thessalonians 3 addresses work and disorder, while authorship and chronology remain debated. The link does not assume Pauline authorship; compare the competing discussion in New Testament Studies and Foster’s study.",
+      "why": "The passage supports the dossier’s work and mutual maintenance themes; the letter’s authorship and chronology remain debated."
+    },
+    {
+      "applicable_passages": [
+        "Exodus 14:1-31"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Places the crossing within the exodus-to-Sinai timeline anchor.",
+      "original_relationship_type": "related",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:red-sea-crossing",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "red-sea-crossing",
+          "source_id": "exodus-sea-crossing-text",
+          "title": "Exodus 13-15"
+        },
+        {
+          "author": "",
+          "object_id": "exodus-to-sinai-timeline",
+          "source_id": "exodus-3-24",
+          "title": "Exodus 3-24"
+        },
+        {
+          "author": "G. I. Davies",
+          "object_id": "red-sea-crossing",
+          "source_id": "davies-way-wilderness-1979",
+          "title": "The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament",
+          "year": 1979
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Exodus 14:1-31"
+      ],
+      "supporting_records": [
+        "ckl:red-sea-crossing#source:exodus-sea-crossing-text",
+        "ckl:exodus-to-sinai-timeline#source:exodus-3-24",
+        "ckl:red-sea-crossing#source:davies-way-wilderness-1979"
+      ],
+      "target_id": "ckl:exodus-to-sinai-timeline",
+      "textual_observation": "Exodus 14:1–31 narrates Israel’s crossing of the sea on the route from Egypt toward the wilderness.",
+      "uncertainty": "Exodus 14 narrates the crossing within the sequence leading toward Sinai. The curation follows the text’s narrative order and does not resolve route or chronology reconstructions.",
+      "why": "It places the crossing within the exodus-to-Sinai sequence; it does not settle the route’s modern geographic reconstruction."
+    },
+    {
+      "applicable_passages": [
+        "Acts 28:16-31"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Romans precedes his visit; Acts narrates it.",
+      "original_relationship_type": "correspondent-and-guarded-witness",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:rome",
+      "supporting_ckl_sources": [
+        {
+          "author": "Philo of Alexandria",
+          "object_id": "rome",
+          "source_id": "philo-rome",
+          "title": "On the Embassy to Gaius",
+          "year": 40
+        },
+        {
+          "author": "",
+          "object_id": "paul",
+          "source_id": "acts-9-28",
+          "title": "Acts 9-28"
+        },
+        {
+          "author": "Michael W. Holmes, ed.",
+          "object_id": "rome",
+          "source_id": "acts-rome",
+          "title": "Acts 18:1-3 and 28:11-31",
+          "year": 2010
+        },
+        {
+          "author": "Peter Lampe",
+          "object_id": "rome",
+          "source_id": "lampe-rome-place",
+          "title": "Christians at Rome in the First Two Centuries",
+          "year": 2003
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Romans 1:10-15",
+        "Romans 15:22-29",
+        "Acts 28:16-31"
+      ],
+      "supporting_records": [
+        "ckl:rome#source:philo-rome",
+        "ckl:paul#source:acts-9-28",
+        "ckl:rome#source:acts-rome",
+        "ckl:rome#source:lampe-rome-place"
+      ],
+      "target_id": "ckl:paul",
+      "textual_observation": "Acts 28:16–31 places Paul under guard in Rome, where he receives visitors and proclaims the kingdom.",
+      "uncertainty": "Romans records Paul’s intention to visit Rome and Acts narrates his later arrival there. Their sequence is useful for navigation but does not resolve the precise chronology or composition date of Romans.",
+      "why": "This is Luke’s narrative account of Paul in Rome; it should not alone establish chronology relative to the letters."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "historical_people_places_events",
+  "wave": 3
+}

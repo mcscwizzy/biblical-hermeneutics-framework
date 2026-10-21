@@ -712,6 +712,36 @@ test("authored evidence relationships resolve the exact eligible target and coun
       target_resolution_status: "eligible",
       notes: "The comparison is recorded as secondary evidence.",
     },
+    curation: {
+      classification: "interpretive_association",
+      textual_observation: "The two evidence records use separate corpora.",
+      why: "Readers can inspect the comparison without treating it as borrowing.",
+      supporting_passages: ["Psalm 82:1-8"],
+      supporting_comparative_material: [{
+        kind: "ancient_comparative_literature",
+        reference: "KTU 1.1-1.2",
+        source_id: "smith-ugaritic-baal-cycle-1994",
+      }],
+      supporting_records: [source.id, target.id],
+      supporting_ckl_sources: [{
+        object_id: "creation",
+        source_id: "comparison-source",
+        title: "A Comparative Study",
+        author: "A. Scholar",
+        year: 2013,
+      }],
+      uncertainty: "Comparison does not establish literary dependence.",
+      curation_confidence: "moderate",
+      curation_status: "curated_for_explorer",
+      ckl_evidence_certainty: {
+        status: "recorded",
+        records: [
+          {record_id: source.id, certainty: "textually_explicit", dispute_status: "interpretive_uncertainty"},
+          {record_id: target.id, certainty: "probable", dispute_status: "major_scholarly_disagreement"},
+        ],
+      },
+      human_scholarly_approval: "not_recorded",
+    },
   };
   const trail = explorer.addEvidenceStep(
     explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"}),
@@ -730,6 +760,15 @@ test("authored evidence relationships resolve the exact eligible target and coun
   assert.ok(button);
   assert.match(view.textContent, /Recorded CKL relationships/);
   assert.match(view.textContent, /recorded CKL evidence relationship.*compared-with/i);
+  assert.match(view.textContent, /Why this connects: Readers can inspect the comparison without treating it as borrowing/);
+  assert.match(view.textContent, /Supporting Scripture passages: Psalm 82:1-8/);
+  assert.match(view.textContent, /Ancient comparative material \(not Scripture\): KTU 1.1-1.2/);
+  assert.match(view.textContent, /A. Scholar, 2013/);
+  assert.match(view.textContent, /Interpretive uncertainty: Comparison does not establish literary dependence/);
+  assert.match(view.textContent, /Curation confidence: moderate/);
+  assert.match(view.textContent, /CKL evidence certainty:.*textually_explicit.*probable/);
+  assert.match(view.textContent, /Human scholarly approval: not recorded/);
+  assert.match(view.textContent, /Curation status: curated_for_explorer/);
   button.click();
   assert.equal(opened.length, 1);
   assert.equal(opened[0][0], target);
@@ -743,18 +782,188 @@ test("authored evidence relationships resolve the exact eligible target and coun
   assert.equal(followed.state.nodes.at(-1).id, target.id);
   assert.equal(followed.state.nodes.at(-1).relationshipHops, 1);
   assert.equal(followed.state.nodes.at(-1).relationship.basisKind, "ckl_related_evidence");
+  assert.equal(followed.state.nodes.at(-1).relationship.curation.classification, "interpretive_association");
   const detail = explorer.renderEvidenceDetail(target, [], followed.state, {document: fakeDocument()});
   assert.match(detail.textContent, /Opened through recorded CKL evidence relationship: compared-with/i);
   assert.match(detail.textContent, /This recorded relationship is not a Scripture anchor/i);
   assert.match(detail.textContent, /Recorded evidence IDs: ckl:creation#evidence:source-item → ckl:creation#evidence:target-item/);
   assert.match(detail.textContent, /Destination resolution: eligible/);
   assert.match(detail.textContent, /does not establish literary borrowing or dependence/i);
+  assert.match(detail.textContent, /Why this connects: Readers can inspect the comparison without treating it as borrowing/);
+  assert.match(detail.textContent, /Human scholarly approval: not recorded/);
+  assert.match(detail.textContent, /Curation confidence: moderate/);
   assert.match(detail.textContent, /probable/);
   assert.match(detail.textContent, /major_scholarly_disagreement/);
   assert.match(detail.textContent, /in_review/);
   assert.match(detail.textContent, /draft/);
   assert.match(detail.textContent, /Source identifier: target-study/);
   assert.match(detail.textContent, /Comparative Study/);
+});
+
+test("projected curation reaches the subject-detail consumer without confusing unknown temporal metadata", () => {
+  const curation = {
+    classification: "later_canonical_reception",
+    textual_observation: "Acts 2:22-36 receives Psalms 16 and 110 in a resurrection and exaltation argument.",
+    why: "The connection records a later Christian reception of Israel's Scriptures.",
+    applicable_passages: ["Acts 2:22-36"],
+    supporting_passages: ["Psalm 16:8-11", "Psalm 110:1-7", "Acts 2:22-36"],
+    supporting_comparative_material: [],
+    supporting_records: ["ckl:messiah-theme#source:psalm-110"],
+    supporting_ckl_sources: [{object_id: "messiah-theme", source_id: "psalm-110", title: "Psalm 110"}],
+    uncertainty: "Acts 2 is a later Christian interpretation; it does not settle the Psalms' original referent.",
+    curation_confidence: "moderate",
+    curation_status: "curated_for_explorer",
+    ckl_evidence_certainty: {status: "not_recorded", records: []},
+    human_scholarly_approval: "not_recorded",
+  };
+  const subject = {
+    id: "messiah-theme",
+    title: "Messiah theme",
+    related_object_links: [{
+      id: "resurrection-theme",
+      title: "Resurrection theme",
+      type: "theme",
+      relationship: "vindication-pattern",
+      notes: "suffering leads to vindication",
+      weight: 8,
+    }],
+  };
+  const apiEdge = {
+    id: "ckl:messiah-theme->ckl:resurrection-theme:vindication-pattern",
+    source_id: "ckl:messiah-theme",
+    target_id: "ckl:resurrection-theme",
+    connection_type: "later_canonical_reception",
+    original_relationship_type: "vindication-pattern",
+    direction: "one_way",
+    reverse_edge_id: null,
+    relationship_mode: "not_recorded",
+    temporal_layer: "unknown",
+    basis: {kind: "ckl_related_object", notes: "suffering leads to vindication", weight: 8},
+    curation,
+  };
+  const decorated = explorer.applyProjectionCurationsToSubject(subject, {connections: [apiEdge]});
+  assert.equal(decorated.related_object_links[0].curation.classification, "later_canonical_reception");
+
+  const followed = [];
+  const openedPassages = [];
+  const view = explorer.renderSubjectDetail(decorated, explorer.createTrail({
+    book: "Acts", chapter: 2, startVerse: 22, endVerse: 36, reference: "Acts 2:22-36",
+  }), {
+    document: fakeDocument(),
+    knownBooks: [{value: "Acts", chapters: 28}, {value: "Psalms", chapters: 150}],
+    onOpenPassage: (...args) => openedPassages.push(args),
+    onFollowSubject: (...args) => followed.push(args),
+  });
+  assert.match(view.textContent, /Curated classification: Later canonical reception/);
+  assert.match(view.textContent, /Curated passage scope: Acts 2:22-36/);
+  assert.match(view.textContent, /Original CKL temporal layer: unknown/);
+  assert.match(view.textContent, /separate curated relationship classification/i);
+  assert.match(view.textContent, /Curation confidence: moderate/);
+  assert.match(view.textContent, /CKL evidence certainty: not recorded/i);
+  assert.match(view.textContent, /Human scholarly approval: not recorded/);
+
+  const passageButtons = descendants(view).filter((element) => element.tagName === "BUTTON"
+    && element.textContent.startsWith("Open supporting passage:"));
+  assert.deepEqual(passageButtons.map((button) => button.textContent), [
+    "Open supporting passage: Psalms 16:8-11",
+    "Open supporting passage: Psalms 110:1-7",
+  ]);
+  assert.doesNotMatch(view.textContent, /Open supporting passage: Acts 2:22-36/);
+  passageButtons[0].click();
+  assert.equal(openedPassages.length, 1);
+  assert.equal(openedPassages[0][0].reference, "Psalms 16:8-11");
+  assert.equal(openedPassages[0][1].sourceId, apiEdge.source_id);
+  assert.equal(openedPassages[0][1].targetId, apiEdge.target_id);
+  assert.equal(openedPassages[0][1].curation.classification, "later_canonical_reception");
+
+  const button = descendants(view).find((element) => element.tagName === "BUTTON" && element.textContent.includes("Resurrection theme"));
+  assert.ok(button);
+  button.click();
+  assert.equal(followed.length, 1);
+  assert.equal(followed[0][1].curation.classification, "later_canonical_reception");
+  assert.equal(followed[0][1].temporal_layer, "unknown");
+});
+
+test("curated CKL relationships open their exact supporting Scripture passages", () => {
+  const passages = [
+    {reference: "Isaiah 43:16-21", book: "Isaiah", chapters: 66},
+    {reference: "Isaiah 40:1-11", book: "Isaiah", chapters: 66},
+  ];
+  const opened = [];
+  const trail = explorer.createTrail({
+    book: "Genesis",
+    chapter: 1,
+    reference: "Genesis 1",
+  });
+  const curation = {
+    classification: "thematic_relationship",
+    textual_observation: "Exodus 14 narrates deliverance through the sea; Isaiah 43:16-21 recalls YHWH making a way through the sea and then announces a new thing.",
+    why: "The exact textual route shows how Isaiah reuses exodus memory to describe a new deliverance and return.",
+    applicable_passages: ["Exodus 14:21-31"],
+    supporting_passages: ["Exodus 14:21-31", ...passages.map((passage) => passage.reference)],
+    supporting_comparative_material: [],
+    supporting_records: [],
+    supporting_ckl_sources: [
+      {object_id: "the-exodus", source_id: "exodus-1-15"},
+      {object_id: "the-exodus", source_id: "isaiah-43"},
+      {object_id: "new-exodus-theme", source_id: "isaiah-40"},
+      {object_id: "new-exodus-theme", source_id: "new-exodus-theme-historical-orientation"},
+    ],
+    uncertainty: "New Exodus is a useful scholarly description for this cluster of images, not a quotation or a settled label for every restoration passage. The authored note in Christ is a later theological reading and is not presented as Isaiah’s original historical setting or claim.",
+    curation_confidence: "moderate",
+    curation_status: "curated_for_explorer",
+    ckl_evidence_certainty: {status: "not_recorded", records: []},
+    human_scholarly_approval: "not_recorded",
+  };
+  const edge = {
+    id: "ckl:the-exodus->ckl:new-exodus-theme:fulfillment-framework",
+    source_id: "ckl:the-exodus",
+    target_id: "ckl:new-exodus-theme",
+    connection_type: "thematic_relationship",
+    original_relationship_type: "fulfillment-framework",
+    direction: "one_way",
+    reverse_edge_id: null,
+    temporal_layer: "unknown",
+    basis: {kind: "ckl_related_object", notes: "new exodus in Christ", weight: 9},
+    curation,
+  };
+  const item = {
+    id: "ckl:the-exodus",
+    object_id: "the-exodus",
+    record_kind: "object",
+    title: "The Exodus",
+    passage_anchors: [{reference: "Exodus 14:21-31", relationship: "primary"}],
+    applicable_passage_anchors: [{reference: "Exodus 14:21-31", relationship: "primary"}],
+  };
+  const view = explorer.renderEvidenceDetail(item, [edge], trail, {
+    document: fakeDocument(),
+    knownBooks: passages.map(({book, chapters}) => ({value: book, chapters})),
+    onOpenPassage: (...args) => opened.push(args),
+  });
+
+  assert.match(view.textContent, /Curated passage scope: Exodus 14:21-31/);
+  assert.match(view.textContent, /CKL source records:.*the-exodus\/isaiah-43/);
+  assert.match(view.textContent, /Interpretive uncertainty: New Exodus is a useful scholarly description/);
+  assert.match(view.textContent, /Human scholarly approval: not recorded/);
+  assert.match(view.textContent, /Source subject: the-exodus · Target subject: new-exodus-theme · Direction: the-exodus → new-exodus-theme \(one-way\)/);
+
+  const controls = descendants(view).filter((element) => element.tagName === "BUTTON"
+    && element.textContent.startsWith("Open supporting passage:"));
+  assert.equal(controls.length, passages.length);
+  for (const passage of passages) {
+    const canonicalReference = passage.reference === "Psalm 82:1-8" ? "Psalms 82:1-8" : passage.reference;
+    const control = controls.find((element) => element.textContent.endsWith(canonicalReference));
+    assert.ok(control, `missing navigation for ${passage.reference}`);
+    control.click();
+    const [destination, relationship] = opened.at(-1);
+    assert.equal(destination.reference, canonicalReference);
+    assert.equal(relationship.sourceId, edge.source_id);
+    assert.equal(relationship.targetId, edge.target_id);
+    assert.equal(relationship.originalRelationshipType, edge.original_relationship_type);
+    assert.equal(relationship.direction, "one_way");
+    assert.equal(relationship.notes, edge.basis.notes);
+    assert.equal(relationship.curation.classification, curation.classification);
+  }
 });
 
 test("filtered, unavailable, invalid, and mismatched evidence targets never expose target content", () => {

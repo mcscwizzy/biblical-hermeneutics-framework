@@ -1,0 +1,54 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Hebrews 8:6-13"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "later_canonical_reception",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "",
+      "original_relationship_type": "related-concept",
+      "original_weight": 6,
+      "relationship_kind": "object",
+      "source_id": "ckl:new-covenant-prophecy",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "new-covenant-prophecy",
+          "source_id": "hebrews-8",
+          "title": "Hebrews 8"
+        },
+        {
+          "author": "Michael W. Holmes, editor",
+          "object_id": "hebrews",
+          "source_id": "heb-greek",
+          "title": "SBL Greek New Testament: Hebrews",
+          "year": 2010
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Jeremiah 31:31-34",
+        "Hebrews 8:6-13"
+      ],
+      "supporting_records": [
+        "ckl:new-covenant-prophecy#source:hebrews-8",
+        "ckl:hebrews#source:heb-greek"
+      ],
+      "target_id": "ckl:hebrews",
+      "textual_observation": "Hebrews 8 quotes Jeremiah 31:31-34 at length and interprets the new-covenant oracle within its argument about priestly mediation.",
+      "uncertainty": "This is an identifiable quotation and later reception, not proof that Jeremiah originally addressed Hebrews’ later theological questions or that the passage simply nullifies Israel’s covenantal identity.",
+      "why": "Hebrews 8 quotes Jeremiah 31:31-34 at length and interprets the new-covenant oracle within its argument about priestly mediation."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "covenant_exile_restoration",
+  "wave": 7
+}

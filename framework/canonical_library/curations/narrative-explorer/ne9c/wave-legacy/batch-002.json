@@ -1,0 +1,421 @@
+{
+  "schema_version": 1,
+  "wave": "legacy",
+  "batch": 2,
+  "curations": [
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:ancient-divine-assembly-imagery",
+      "target_id": "ckl:deuteronomy",
+      "original_relationship_type": "textual-variant-context",
+      "original_notes": "Deuteronomy 32:8-9 requires manuscript-specific handling.",
+      "original_weight": 9,
+      "classification": "interpretive_association",
+      "applicable_passages": [
+        "Deuteronomy 32:8-9"
+      ],
+      "supporting_passages": [
+        "Deuteronomy 32:8-9"
+      ],
+      "supporting_records": [
+        "ckl:ancient-divine-assembly-imagery#source:deuteronomy-32-text",
+        "ckl:ancient-divine-assembly-imagery#source:ulrich-biblical-qumran-scrolls-2010",
+        "ckl:deuteronomy#source:tigay-deuteronomy"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "deuteronomy-32-text"
+        },
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "ulrich-biblical-qumran-scrolls-2010",
+          "title": "The Biblical Qumran Scrolls: Transcriptions and Textual Variants",
+          "author": "Eugene Ulrich",
+          "year": 2010
+        },
+        {
+          "object_id": "deuteronomy",
+          "source_id": "tigay-deuteronomy"
+        }
+      ],
+      "textual_observation": "Deuteronomy 32:8 differs across witnesses: the Masoretic Text reads ‘sons of Israel’; 4QDeut-j preserves ‘sons of God’; the Old Greek reads ‘angels of God.’",
+      "why": "This route opens the exact Song of Moses passage and its manuscript evidence before a reader draws conclusions about the nations or heavenly beings.",
+      "uncertainty": "The textual witnesses must remain distinct. The variant alone does not establish the earliest wording, a single reconstruction of Israelite religion, or the same assembly model as Psalm 82, Job, or Daniel 10.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:ancient-divine-assembly-imagery",
+      "target_id": "ckl:job",
+      "original_relationship_type": "heavenly-scene-context",
+      "original_notes": "Job 1-2 supplies a distinct narrative assembly scene.",
+      "original_weight": 9,
+      "classification": "shared_literary_motif",
+      "applicable_passages": [
+        "Job 1:6-12",
+        "Job 2:1-7"
+      ],
+      "supporting_passages": [
+        "Job 1:6-12",
+        "Job 2:1-7"
+      ],
+      "supporting_records": [
+        "ckl:ancient-divine-assembly-imagery#source:job-1-2-text",
+        "ckl:job#source:job-masoretic-1-42",
+        "ckl:job#source:newsom-contest-moral-imaginations",
+        "ckl:job#source:seow-job-1-21"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "job-1-2-text"
+        },
+        {
+          "object_id": "job",
+          "source_id": "job-masoretic-1-42"
+        },
+        {
+          "object_id": "job",
+          "source_id": "newsom-contest-moral-imaginations",
+          "title": "The Book of Job: A Contest of Moral Imaginations",
+          "author": "Carol A. Newsom",
+          "year": 2009
+        },
+        {
+          "object_id": "job",
+          "source_id": "seow-job-1-21"
+        }
+      ],
+      "textual_observation": "Job’s prose frame twice places the ‘sons of God’ before YHWH; the figure called haśśāṭān appears within the scene as an accuser/adversary.",
+      "why": "The shared heavenly-court imagery lets readers compare Job’s narrative frame with other biblical assembly passages while keeping Job’s literary role visible.",
+      "uncertainty": "Job 1-2 frames the test of Job; it does not by itself establish that Job shares Psalm 82’s judicial scene, Deuteronomy 32’s textual problem, or Daniel 10’s apocalyptic national princes. Later Satan traditions should not be read back into haśśāṭān without qualification.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:ancient-divine-assembly-imagery",
+      "target_id": "ckl:psalms",
+      "original_relationship_type": "primary-textual-context",
+      "original_notes": "Psalm 82 is the cluster's primary assembly passage.",
+      "original_weight": 10,
+      "classification": "interpretive_association",
+      "applicable_passages": [
+        "Psalm 82:1-8"
+      ],
+      "supporting_passages": [
+        "Psalm 82:1-8"
+      ],
+      "supporting_records": [
+        "ckl:ancient-divine-assembly-imagery#source:psalm-82-hebrew-text",
+        "ckl:ancient-divine-assembly-imagery#source:smith-origins-biblical-monotheism-2001",
+        "ckl:psalms#source:hossfeld-zenger-psalms"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "psalm-82-hebrew-text"
+        },
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "smith-origins-biblical-monotheism-2001",
+          "title": "The Origins of Biblical Monotheism: Israel's Polytheistic Background and the Ugaritic Texts",
+          "author": "Mark S. Smith",
+          "year": 2001
+        },
+        {
+          "object_id": "psalms",
+          "source_id": "hossfeld-zenger-psalms",
+          "title": "Psalms 2 and Psalms 3",
+          "author": "Frank-Lothar Hossfeld and Erich Zenger",
+          "year": 2011
+        }
+      ],
+      "textual_observation": "Psalm 82:1-8 is the cluster’s primary biblical passage; the CKL keeps its poetic judgment scene separate from manuscript evidence for Deuteronomy and Job’s prose heavenly scene.",
+      "why": "The route points readers from the passage-specific CKL evidence cluster to the Psalms record without making a claim about the identity of Psalm 82’s figures.",
+      "uncertainty": "Psalm 82’s plural elohim and judicial verdict receive human and heavenly interpretations. The cluster’s organization is a research aid, not a ruling on that dispute or a claim of literary dependence among the passages.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:the-exodus",
+      "target_id": "ckl:new-exodus-theme",
+      "original_relationship_type": "fulfillment-framework",
+      "original_notes": "new exodus in Christ",
+      "original_weight": 9,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Exodus 14:21-31"
+      ],
+      "supporting_passages": [
+        "Exodus 14:21-31",
+        "Isaiah 43:16-21",
+        "Isaiah 40:1-11"
+      ],
+      "supporting_records": [
+        "ckl:the-exodus#source:exodus-1-15",
+        "ckl:the-exodus#source:isaiah-43",
+        "ckl:new-exodus-theme#source:isaiah-40",
+        "ckl:new-exodus-theme#source:new-exodus-theme-historical-orientation"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "the-exodus",
+          "source_id": "exodus-1-15"
+        },
+        {
+          "object_id": "the-exodus",
+          "source_id": "isaiah-43"
+        },
+        {
+          "object_id": "new-exodus-theme",
+          "source_id": "isaiah-40"
+        },
+        {
+          "object_id": "new-exodus-theme",
+          "source_id": "new-exodus-theme-historical-orientation"
+        }
+      ],
+      "textual_observation": "Exodus 14 narrates deliverance through the sea; Isaiah 43:16-21 recalls YHWH making a way through the sea and then announces a ‘new thing,’ a way in the wilderness and water in the desert.",
+      "why": "The exact textual route shows how Isaiah reuses exodus memory to describe a new deliverance and return, making the CKL’s exodus-to-theme link concrete.",
+      "uncertainty": "‘New Exodus’ is a useful scholarly description for this cluster of images, not a quotation or a settled label for every restoration passage. The authored note ‘in Christ’ is a later theological reading and is not presented as Isaiah’s original historical setting or claim.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:exile-theme",
+      "target_id": "ckl:babylonian-exile",
+      "original_relationship_type": "historical-anchor",
+      "original_notes": "the central exile event",
+      "original_weight": 10,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "2 Kings 24:8-20",
+        "2 Kings 25:1-30"
+      ],
+      "supporting_passages": [
+        "2 Kings 24:8-20",
+        "2 Kings 25:1-30",
+        "Jeremiah 29:1-14"
+      ],
+      "supporting_records": [
+        "ckl:exile-theme#source:2-kings-24-25",
+        "ckl:babylonian-exile#source:kings-jeremiah-babylonian-exile",
+        "ckl:babylonian-exile#source:albertz-israel-exile",
+        "ckl:babylonian-exile#source:alstola-judeans-babylonia"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "exile-theme",
+          "source_id": "2-kings-24-25"
+        },
+        {
+          "object_id": "babylonian-exile",
+          "source_id": "kings-jeremiah-babylonian-exile"
+        },
+        {
+          "object_id": "babylonian-exile",
+          "source_id": "albertz-israel-exile",
+          "title": "Israel in Exile: The History and Literature of the Sixth Century B.C.E.",
+          "author": "Rainer Albertz",
+          "year": 2003
+        },
+        {
+          "object_id": "babylonian-exile",
+          "source_id": "alstola-judeans-babylonia",
+          "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+          "author": "Tero Alstola",
+          "year": 2020
+        }
+      ],
+      "textual_observation": "The Exile Theme record identifies the Babylonian exile as its central historical event; 2 Kings 24-25 narrates successive deportation, Jerusalem's fall, and the aftermath.",
+      "why": "The edge gives readers a scoped route from the broader exile theme to the historically specific Babylonian event without treating every biblical exile or displacement as the same event.",
+      "uncertainty": "The relation is a canonical-historical anchor, not an intertextual dependence claim. Judean deportation occurred in multiple stages, and historical reconstructions differ about the scale and social effects of displacement.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "evidence",
+      "source_id": "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+      "target_id": "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+      "original_relationship_type": "northwest-semitic-comparison",
+      "original_notes": "The earlier comparison does not decide the referents in Psalm 82.",
+      "original_weight": 7,
+      "classification": "interpretive_association",
+      "applicable_passages": [
+        "Psalm 82:1-8"
+      ],
+      "supporting_passages": [
+        "Psalm 82:1-8"
+      ],
+      "supporting_comparative_material": [
+        {
+          "kind": "ancient_comparative_literature",
+          "reference": "KTU 1.1-1.2",
+          "label": "Ugaritic literature (ancient Northwest Semitic comparison; not Scripture)",
+          "source_id": "smith-ugaritic-baal-cycle-1994"
+        }
+      ],
+      "supporting_records": [
+        "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+        "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "smith-ugaritic-baal-cycle-1994",
+          "title": "The Ugaritic Baal Cycle, Volume I: Introduction with Text, Translation and Commentary of KTU 1.1-1.2",
+          "author": "Mark S. Smith",
+          "year": 1994
+        },
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "smith-origins-biblical-monotheism-2001",
+          "title": "The Origins of Biblical Monotheism: Israel's Polytheistic Background and the Ugaritic Texts",
+          "author": "Mark S. Smith",
+          "year": 2001
+        },
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "lewis-origin-character-god-2020",
+          "title": "The Origin and Character of God: Ancient Israelite Religion through the Lens of Divinity",
+          "author": "Theodore J. Lewis",
+          "year": 2020
+        }
+      ],
+      "textual_observation": "Psalm 82 depicts God in an assembly and addresses plural elohim; Ugaritic texts portray divine council scenes. The CKL source explicitly says this comparison does not decide Psalm 82's referents.",
+      "why": "Readers can inspect the biblical language alongside an earlier Northwest Semitic comparison while seeing that the two evidence records remain distinct.",
+      "uncertainty": "Comparison establishes neither borrowing nor direct literary dependence. Psalm 82's figures are variously read as divine beings, human rulers or judges, national patrons, or rhetorically demoted gods; dating and reconstructed background remain contested.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "recorded",
+        "records": [
+          {
+            "record_id": "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+            "certainty": "textually_explicit",
+            "dispute_status": "interpretive_uncertainty"
+          },
+          {
+            "record_id": "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+            "certainty": "probable",
+            "dispute_status": "major_scholarly_disagreement"
+          }
+        ]
+      },
+      "human_scholarly_approval": "not_recorded",
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "evidence",
+      "source_id": "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+      "target_id": "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+      "original_relationship_type": "compared-with",
+      "original_notes": "The biblical text and Ugaritic texts retain separate observations.",
+      "original_weight": 7,
+      "classification": "interpretive_association",
+      "applicable_passages": [
+        "Psalm 82:1-8"
+      ],
+      "supporting_passages": [
+        "Psalm 82:1-8"
+      ],
+      "supporting_comparative_material": [
+        {
+          "kind": "ancient_comparative_literature",
+          "reference": "KTU 1.1-1.2",
+          "label": "Ugaritic literature (ancient Northwest Semitic comparison; not Scripture)",
+          "source_id": "smith-ugaritic-baal-cycle-1994"
+        }
+      ],
+      "supporting_records": [
+        "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+        "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "smith-ugaritic-baal-cycle-1994",
+          "title": "The Ugaritic Baal Cycle, Volume I: Introduction with Text, Translation and Commentary of KTU 1.1-1.2",
+          "author": "Mark S. Smith",
+          "year": 1994
+        },
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "smith-origins-biblical-monotheism-2001",
+          "title": "The Origins of Biblical Monotheism: Israel's Polytheistic Background and the Ugaritic Texts",
+          "author": "Mark S. Smith",
+          "year": 2001
+        },
+        {
+          "object_id": "ancient-divine-assembly-imagery",
+          "source_id": "lewis-origin-character-god-2020",
+          "title": "The Origin and Character of God: Ancient Israelite Religion through the Lens of Divinity",
+          "author": "Theodore J. Lewis",
+          "year": 2020
+        }
+      ],
+      "textual_observation": "The comparative evidence record anchors Ugaritic material as earlier-comparative and Psalm 82 as comparative; its note preserves the distinction between corpora.",
+      "why": "This authored direction exposes the same comparison from the comparative record without turning it into a reverse biblical claim.",
+      "uncertainty": "The evidence supports comparison of assembly imagery, not a claim that Psalm 82 borrows from a specific Ugaritic text or that its speakers have one settled identity.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "recorded",
+        "records": [
+          {
+            "record_id": "ckl:ancient-divine-assembly-imagery#evidence:ugaritic-council-comparison",
+            "certainty": "probable",
+            "dispute_status": "major_scholarly_disagreement"
+          },
+          {
+            "record_id": "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
+            "certainty": "textually_explicit",
+            "dispute_status": "interpretive_uncertainty"
+          }
+        ]
+      },
+      "human_scholarly_approval": "not_recorded",
+      "authored_direction": "one_way"
+    }
+  ]
+}

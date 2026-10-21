@@ -1,0 +1,143 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "2 Kings 18:13-37"
+      ],
+      "authored_direction": "reciprocal",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "",
+      "original_relationship_type": "historical-background",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:lachish-city-gate",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "lachish-city-gate",
+          "source_id": "2-kings-18-13-37",
+          "title": "2 Kings 18:13-37"
+        },
+        {
+          "author": "",
+          "object_id": "lachish-reliefs",
+          "source_id": "2-kings-18-13-37",
+          "title": "2 Kings 18:13-37"
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "2 Kings 18:13-37"
+      ],
+      "supporting_records": [
+        "ckl:lachish-city-gate#source:2-kings-18-13-37",
+        "ckl:lachish-reliefs#source:2-kings-18-13-37"
+      ],
+      "target_id": "ckl:lachish-reliefs",
+      "textual_observation": "The passage places Lachish within Sennacherib’s campaign, the historical setting represented by the Assyrian reliefs and investigated at the city gate.",
+      "uncertainty": "The text and relief are distinct witnesses, and the passage does not identify the excavated gate as the exact gate shown in the palace relief.",
+      "why": "The passage places Lachish within Sennacherib’s campaign, the historical setting represented by the Assyrian reliefs and investigated at the city gate."
+    },
+    {
+      "applicable_passages": [
+        "Isaiah 36:1-22"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "",
+      "original_relationship_type": "historical-background",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:lachish-reliefs",
+      "supporting_ckl_sources": [
+        {
+          "author": "British Museum",
+          "object_id": "lachish-reliefs",
+          "source_id": "bm-lachish-relief-124911",
+          "title": "Sennacherib Watches the Capture of Lachish",
+          "year": -696
+        },
+        {
+          "author": "",
+          "object_id": "isaiah",
+          "source_id": "isaiah-masoretic",
+          "title": "Masoretic Isaiah"
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Isaiah 36:1-22"
+      ],
+      "supporting_records": [
+        "ckl:lachish-reliefs#source:bm-lachish-relief-124911",
+        "ckl:isaiah#source:isaiah-masoretic"
+      ],
+      "target_id": "ckl:isaiah",
+      "textual_observation": "Isaiah names Lachish in its account of Sennacherib’s campaign, while the Lachish reliefs preserve an Assyrian royal depiction of a siege at the city.",
+      "uncertainty": "The relief is an independent Assyrian representation, not an illustration of Isaiah or proof of every biblical detail; the exact relation between royal imagery and the biblical account remains interpretive.",
+      "why": "Isaiah names Lachish in its account of Sennacherib’s campaign, while the Lachish reliefs preserve an Assyrian royal depiction of a siege at the city."
+    },
+    {
+      "applicable_passages": [
+        "2 Kings 18:13-37"
+      ],
+      "authored_direction": "reciprocal",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "",
+      "original_relationship_type": "historical-background",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:lachish-reliefs",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "lachish-reliefs",
+          "source_id": "2-kings-18-13-37",
+          "title": "2 Kings 18:13-37"
+        },
+        {
+          "author": "",
+          "object_id": "lachish-city-gate",
+          "source_id": "2-kings-18-13-37",
+          "title": "2 Kings 18:13-37"
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "2 Kings 18:13-37"
+      ],
+      "supporting_records": [
+        "ckl:lachish-reliefs#source:2-kings-18-13-37",
+        "ckl:lachish-city-gate#source:2-kings-18-13-37"
+      ],
+      "target_id": "ckl:lachish-city-gate",
+      "textual_observation": "The passage places Lachish within Sennacherib’s campaign, the historical setting represented by the Assyrian reliefs and investigated at the city gate.",
+      "uncertainty": "The text and relief are distinct witnesses, and the passage does not identify the excavated gate as the exact gate shown in the palace relief.",
+      "why": "The passage places Lachish within Sennacherib’s campaign, the historical setting represented by the Assyrian reliefs and investigated at the city gate."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "historical_people_places_events",
+  "wave": 6
+}

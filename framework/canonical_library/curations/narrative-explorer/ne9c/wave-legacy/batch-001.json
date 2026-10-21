@@ -1,0 +1,875 @@
+{
+  "schema_version": 1,
+  "wave": "legacy",
+  "batch": 1,
+  "curations": [
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:creation",
+      "target_id": "ckl:new-creation-theme",
+      "original_relationship_type": "eschatological-fulfillment",
+      "original_notes": "renewed creation",
+      "original_weight": 9,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Genesis 1:1-31"
+      ],
+      "supporting_passages": [
+        "Genesis 1:1-31",
+        "Revelation 21:1-5"
+      ],
+      "supporting_records": [
+        "ckl:creation#source:genesis-1-2",
+        "ckl:creation#source:revelation-21",
+        "ckl:new-creation-theme#source:revelation-21"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "creation",
+          "source_id": "genesis-1-2"
+        },
+        {
+          "object_id": "creation",
+          "source_id": "revelation-21"
+        },
+        {
+          "object_id": "new-creation-theme",
+          "source_id": "revelation-21"
+        }
+      ],
+      "textual_observation": "Genesis 1 presents ordered creation; Revelation 21:1-5 depicts a new heaven and earth and says that all things are being made new.",
+      "why": "The edge gives readers a canonical route from the creation account to Revelation's new-creation vision.",
+      "uncertainty": "This is a thematic canonical relationship, not a quotation claim or proof that Revelation depends on Genesis alone. Revelation also draws on prophetic restoration language, especially Isaiah 65-66.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:creation",
+      "target_id": "ckl:the-fall",
+      "original_relationship_type": "narrative-contrast",
+      "original_notes": "creation broken by sin",
+      "original_weight": 8,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Genesis 2:4-25"
+      ],
+      "supporting_passages": [
+        "Genesis 2:4-25",
+        "Genesis 3:1-24",
+        "Romans 5:12-21"
+      ],
+      "supporting_records": [
+        "ckl:creation#source:genesis-1-2",
+        "ckl:the-fall#source:genesis-3",
+        "ckl:the-fall#source:romans-5"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "creation",
+          "source_id": "genesis-1-2"
+        },
+        {
+          "object_id": "the-fall",
+          "source_id": "genesis-3"
+        },
+        {
+          "object_id": "the-fall",
+          "source_id": "romans-5"
+        }
+      ],
+      "textual_observation": "Genesis 2-3 places human vocation and garden life immediately before the disobedience and its consequences.",
+      "why": "This connection helps readers follow the movement from creation and vocation into the Genesis 3 disruption and later reflection on sin and death.",
+      "uncertainty": "The phrase 'creation broken by sin' is a theological synthesis; Genesis 3 itself narrates disobedience and expulsion. Romans 5 is a later canonical interpretation, not the original setting of Genesis.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "reciprocal"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:resurrection",
+      "target_id": "ckl:new-creation-theme",
+      "original_relationship_type": "eschatological-fulfillment",
+      "original_notes": "firstfruits of new creation",
+      "original_weight": 9,
+      "classification": "interpretive_association",
+      "applicable_passages": [
+        "1 Corinthians 15:20-28"
+      ],
+      "supporting_passages": [
+        "1 Corinthians 15:20-28",
+        "Romans 8:18-23",
+        "Revelation 21:1-5"
+      ],
+      "supporting_records": [
+        "ckl:resurrection#source:1-corinthians-15",
+        "ckl:resurrection#source:romans-6",
+        "ckl:new-creation-theme#source:romans-8",
+        "ckl:new-creation-theme#source:revelation-21"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "resurrection",
+          "source_id": "1-corinthians-15"
+        },
+        {
+          "object_id": "resurrection",
+          "source_id": "romans-6"
+        },
+        {
+          "object_id": "new-creation-theme",
+          "source_id": "romans-8"
+        },
+        {
+          "object_id": "new-creation-theme",
+          "source_id": "revelation-21"
+        }
+      ],
+      "textual_observation": "Paul calls the raised Christ the firstfruits in 1 Corinthians 15:20; Romans 8 pictures creation awaiting liberation, and Revelation 21 depicts renewed creation.",
+      "why": "The route links resurrection hope with the wider canonical hope for creation's renewal while keeping each passage's claim visible.",
+      "uncertainty": "In 1 Corinthians 15 'firstfruits' directly describes Christ's resurrection and the coming resurrection of the dead; the new-creation framing is a broader canonical synthesis. It should not be presented as Paul's explicit phrase in this passage.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:new-jerusalem",
+      "target_id": "ckl:new-creation-theme",
+      "original_relationship_type": "canonical-fulfillment",
+      "original_notes": "renewed heaven and earth",
+      "original_weight": 10,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Revelation 21:1-5"
+      ],
+      "supporting_passages": [
+        "Revelation 21:1-5",
+        "Isaiah 65:17-25"
+      ],
+      "supporting_records": [
+        "ckl:new-jerusalem#source:revelation-21-22",
+        "ckl:new-creation-theme#source:revelation-21"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "new-jerusalem",
+          "source_id": "revelation-21-22"
+        },
+        {
+          "object_id": "new-creation-theme",
+          "source_id": "revelation-21"
+        }
+      ],
+      "textual_observation": "Revelation 21:1 introduces a new heaven and new earth; verses 2-5 describe the city, God's dwelling, and the making-new of all things.",
+      "why": "The two CKL subjects describe overlapping aspects of the same closing vision, making the city an entry point into the chapter's new-creation imagery.",
+      "uncertainty": "Revelation combines prophetic restoration traditions, including Isaiah 65-66, with its own apocalyptic vision. This classification does not settle how literally or symbolically the city should be read.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:new-jerusalem",
+      "target_id": "ckl:temple-theme",
+      "original_relationship_type": "presence-fulfillment",
+      "original_notes": "no temple because God is present",
+      "original_weight": 8,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Revelation 21:22-27"
+      ],
+      "supporting_passages": [
+        "Revelation 21:3",
+        "Revelation 21:22-27",
+        "Ezekiel 40:1-48:35"
+      ],
+      "supporting_records": [
+        "ckl:new-jerusalem#source:revelation-21-22",
+        "ckl:temple-theme#source:revelation-21",
+        "ckl:temple-theme#source:hebrews-9-10"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "new-jerusalem",
+          "source_id": "revelation-21-22"
+        },
+        {
+          "object_id": "temple-theme",
+          "source_id": "revelation-21"
+        },
+        {
+          "object_id": "temple-theme",
+          "source_id": "hebrews-9-10"
+        }
+      ],
+      "textual_observation": "Revelation 21:22 says John sees no temple in the city because the Lord God and the Lamb are its temple; 21:3 has already announced God's dwelling with humanity.",
+      "why": "This connects the city's presence imagery with temple language and invites readers to compare the vision with earlier sanctuary traditions.",
+      "uncertainty": "The passage explicitly denies a temple building in the city, but interpreters differ on whether the city is itself temple-like, whether divine presence renders a building unnecessary, or how Revelation reworks Ezekiel's temple vision. No single model is encoded as fact.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:temple",
+      "target_id": "ckl:new-jerusalem",
+      "original_relationship_type": "eschatological-fulfillment",
+      "original_notes": "final dwelling without a temple",
+      "original_weight": 8,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Revelation 21:22-27"
+      ],
+      "supporting_passages": [
+        "Revelation 21:3",
+        "Revelation 21:22-27",
+        "1 Kings 8:10-13"
+      ],
+      "supporting_records": [
+        "ckl:temple#source:1-kings-8",
+        "ckl:temple#source:revelation-21",
+        "ckl:new-jerusalem#source:revelation-21-22"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "temple",
+          "source_id": "1-kings-8"
+        },
+        {
+          "object_id": "temple",
+          "source_id": "revelation-21"
+        },
+        {
+          "object_id": "new-jerusalem",
+          "source_id": "revelation-21-22"
+        }
+      ],
+      "textual_observation": "Revelation 21:22-27 depicts God's presence in the city without a separate sanctuary building; 1 Kings 8:10-13 narrates the cloud filling Solomon's temple.",
+      "why": "The connection lets readers compare temple-dedication presence language with Revelation's final city and its explicit no-temple statement.",
+      "uncertainty": "The texts belong to distinct literary and historical settings. Revelation's image may transform temple symbolism rather than predict the disappearance of every temple concept; Jewish and Christian readings vary.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:sanctuary-theme",
+      "target_id": "ckl:tabernacle",
+      "original_relationship_type": "foundational-sanctuary-form",
+      "original_notes": "Exodus, Leviticus, and Numbers ground the theme in dwelling, holiness, access, and mobility.",
+      "original_weight": 10,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Exodus 25:8-9"
+      ],
+      "supporting_passages": [
+        "Exodus 25:8-9",
+        "Exodus 40:34-38"
+      ],
+      "supporting_records": [
+        "ckl:sanctuary-theme#source:exodus-25-40",
+        "ckl:sanctuary-theme#source:hundley-sacred-common-space",
+        "ckl:tabernacle#source:meyers-exodus-tabernacle"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "sanctuary-theme",
+          "source_id": "exodus-25-40"
+        },
+        {
+          "object_id": "sanctuary-theme",
+          "source_id": "hundley-sacred-common-space",
+          "title": "Sacred Space and Common Space",
+          "author": "Michael B. Hundley",
+          "year": 2020
+        },
+        {
+          "object_id": "tabernacle",
+          "source_id": "meyers-exodus-tabernacle",
+          "title": "Exodus",
+          "author": "Carol Meyers",
+          "year": 2005
+        }
+      ],
+      "textual_observation": "Exodus 25:8-9 commands a sanctuary so that God may dwell among Israel and gives a pattern for the tent; Exodus 40:34-38 narrates the cloud and glory filling it.",
+      "why": "The tabernacle is a concrete textual setting for the broader sanctuary theme and helps readers trace dwelling, access, and mobility in the wilderness narrative.",
+      "uncertainty": "The category summarizes recurring literary and theological themes; interpretations of the tabernacle's historical construction and ancient Near Eastern parallels remain distinct questions.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:tabernacle",
+      "target_id": "ckl:temple",
+      "original_relationship_type": "later-sanctuary-development",
+      "original_notes": "The Jerusalem temple receives ark, cloud, glory, priestly, and spatial traditions while remaining a distinct permanent structure.",
+      "original_weight": 9,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "1 Kings 8:1-13"
+      ],
+      "supporting_passages": [
+        "Exodus 40:34-38",
+        "1 Kings 8:1-13"
+      ],
+      "supporting_records": [
+        "ckl:tabernacle#source:tabernacle-pentateuch-text",
+        "ckl:tabernacle#source:meyers-exodus-tabernacle",
+        "ckl:tabernacle#source:hundley-sacred-space",
+        "ckl:temple#source:1-kings-8"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "tabernacle",
+          "source_id": "tabernacle-pentateuch-text"
+        },
+        {
+          "object_id": "tabernacle",
+          "source_id": "meyers-exodus-tabernacle",
+          "title": "Exodus",
+          "author": "Carol Meyers",
+          "year": 2005
+        },
+        {
+          "object_id": "tabernacle",
+          "source_id": "hundley-sacred-space",
+          "title": "Sacred Space and Common Space",
+          "author": "Michael B. Hundley",
+          "year": 2020
+        },
+        {
+          "object_id": "temple",
+          "source_id": "1-kings-8"
+        }
+      ],
+      "textual_observation": "In 1 Kings 8:4 the tent of meeting and its holy vessels are brought up with the ark; in 8:10-13 the cloud fills the temple. The narrative connects the sanctuaries while distinguishing the permanent building from the tent.",
+      "why": "Readers can follow the narrative and cultic transition from the portable tabernacle to Jerusalem's temple without treating the structures as identical.",
+      "uncertainty": "The relationship is supported by the biblical narrative. Ancient Near Eastern tent and temple comparisons can illuminate context, but resemblance alone does not prove borrowing or settle the tabernacle's historicity.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:covenant-theme",
+      "target_id": "ckl:abraham",
+      "original_relationship_type": "covenant-founder",
+      "original_notes": "initial promise line",
+      "original_weight": 9,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Genesis 15:1-21"
+      ],
+      "supporting_passages": [
+        "Genesis 12:1-3",
+        "Genesis 15:1-21",
+        "Genesis 17:1-14"
+      ],
+      "supporting_records": [
+        "ckl:covenant-theme#source:genesis-9-12-15-17",
+        "ckl:abraham#source:genesis-12-22"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "covenant-theme",
+          "source_id": "genesis-9-12-15-17"
+        },
+        {
+          "object_id": "abraham",
+          "source_id": "genesis-12-22"
+        }
+      ],
+      "textual_observation": "Genesis 12 gives Abram a promise of land, descendants, and blessing; Genesis 15 narrates a covenant-making scene, and Genesis 17 names covenant signs and obligations.",
+      "why": "This connection locates Abraham within the covenant theme's early narrative and gives readers a path to the promise traditions later texts reuse.",
+      "uncertainty": "The relationship among the ancestral promises, covenant language, and later covenant traditions is debated; the classification does not assume a single composition history or a simple linear system of covenants.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:covenant-theme",
+      "target_id": "ckl:moses",
+      "original_relationship_type": "covenant-mediator",
+      "original_notes": "Sinai mediator",
+      "original_weight": 9,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Exodus 19:1-6"
+      ],
+      "supporting_passages": [
+        "Exodus 19:1-6",
+        "Exodus 24:1-11"
+      ],
+      "supporting_records": [
+        "ckl:covenant-theme#source:exodus-19-24",
+        "ckl:moses#source:exodus-3-24"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "covenant-theme",
+          "source_id": "exodus-19-24"
+        },
+        {
+          "object_id": "moses",
+          "source_id": "exodus-3-24"
+        }
+      ],
+      "textual_observation": "Exodus 19 frames Israel's arrival at Sinai and covenant vocation; Exodus 24 narrates covenant words, assent, and blood rite with Moses as mediator.",
+      "why": "This links the covenant theme to the Sinai narrative and helps readers navigate the mediator, people, and covenant ceremony together.",
+      "uncertainty": "The interpretation of Sinai's covenant form and its relation to ancestral promises and later covenants remains disputed. The link describes the narrative focus rather than resolving that debate.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:covenant-theme",
+      "target_id": "ckl:new-covenant",
+      "original_relationship_type": "fulfillment-anchor",
+      "original_notes": "promised renewal",
+      "original_weight": 9,
+      "classification": "later_canonical_reception",
+      "applicable_passages": [
+        "Hebrews 8:6-13"
+      ],
+      "supporting_passages": [
+        "Jeremiah 31:31-34",
+        "Hebrews 8:6-13"
+      ],
+      "supporting_records": [
+        "ckl:covenant-theme#source:jeremiah-31",
+        "ckl:covenant-theme#source:hebrews-8-10",
+        "ckl:new-covenant#source:jeremiah-31",
+        "ckl:new-covenant#source:hebrews-8-10"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "covenant-theme",
+          "source_id": "jeremiah-31"
+        },
+        {
+          "object_id": "covenant-theme",
+          "source_id": "hebrews-8-10"
+        },
+        {
+          "object_id": "new-covenant",
+          "source_id": "jeremiah-31"
+        },
+        {
+          "object_id": "new-covenant",
+          "source_id": "hebrews-8-10"
+        }
+      ],
+      "textual_observation": "Hebrews 8:8-12 quotes Jeremiah 31:31-34 and applies its new-covenant promise to the argument about Jesus' priesthood and covenant.",
+      "why": "This route shows how a later biblical text receives Jeremiah's promise and makes the reception visible as reception rather than as Jeremiah's original setting.",
+      "uncertainty": "Christian interpretation of the new covenant's relation to Israel, the church, and the earlier covenant varies. The classification does not endorse supersessionism or claim that all traditions understand fulfillment alike.",
+      "curation_confidence": "high",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:exile-theme",
+      "target_id": "ckl:new-covenant",
+      "original_relationship_type": "restoration-anchor",
+      "original_notes": "promise of renewal",
+      "original_weight": 8,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Ezekiel 36:24-28"
+      ],
+      "supporting_passages": [
+        "Ezekiel 36:24-28",
+        "Jeremiah 31:31-34"
+      ],
+      "supporting_records": [
+        "ckl:exile-theme#source:ezekiel-36",
+        "ckl:new-covenant#source:ezekiel-36",
+        "ckl:new-covenant#source:jeremiah-31"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "exile-theme",
+          "source_id": "ezekiel-36"
+        },
+        {
+          "object_id": "new-covenant",
+          "source_id": "ezekiel-36"
+        },
+        {
+          "object_id": "new-covenant",
+          "source_id": "jeremiah-31"
+        }
+      ],
+      "textual_observation": "Ezekiel 36:24-28 promises gathering from the nations, cleansing, a new heart, and the divine spirit; Jeremiah 31:31-34 separately names a new covenant.",
+      "why": "The passages connect exile-era restoration hopes with covenant renewal and let readers compare related prophetic promises without collapsing their wording.",
+      "uncertainty": "Ezekiel 36:24-28 does not use Jeremiah's 'new covenant' formula in these verses. This is a thematic association across prophetic texts, not an explicit quotation or a claim that their historical settings and promises are identical.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:covenant-theme",
+      "target_id": "ckl:messiah-theme",
+      "original_relationship_type": "covenant-fulfillment",
+      "original_notes": "kingly promise and blessing",
+      "original_weight": 7,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "2 Samuel 7:8-16"
+      ],
+      "supporting_passages": [
+        "2 Samuel 7:8-16",
+        "Psalm 2:1-12"
+      ],
+      "supporting_records": [
+        "ckl:covenant-theme#source:2-samuel-7",
+        "ckl:messiah-theme#source:2-samuel-7",
+        "ckl:messiah-theme#source:psalm-2"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "covenant-theme",
+          "source_id": "2-samuel-7"
+        },
+        {
+          "object_id": "messiah-theme",
+          "source_id": "2-samuel-7"
+        },
+        {
+          "object_id": "messiah-theme",
+          "source_id": "psalm-2"
+        }
+      ],
+      "textual_observation": "Second Samuel 7 promises David a house and enduring rule; Psalm 2 portrays a king installed in Zion and called God's son.",
+      "why": "The route connects Davidic kingship and covenant promises with later royal and messianic interpretation.",
+      "uncertainty": "The immediate royal setting of these texts and their later messianic reception must be distinguished. Jewish and Christian interpreters differ about the identity and scope of the promised ruler.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:messiah-theme",
+      "target_id": "ckl:covenant-theme",
+      "original_relationship_type": "promise-fulfillment",
+      "original_notes": "covenant promise reaches fulfillment",
+      "original_weight": 8,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "2 Samuel 7:8-16"
+      ],
+      "supporting_passages": [
+        "2 Samuel 7:8-16",
+        "Luke 24:25-27",
+        "Acts 2:22-36"
+      ],
+      "supporting_records": [
+        "ckl:messiah-theme#source:2-samuel-7",
+        "ckl:messiah-theme#source:luke-24",
+        "ckl:covenant-theme#source:2-samuel-7"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "messiah-theme",
+          "source_id": "2-samuel-7"
+        },
+        {
+          "object_id": "messiah-theme",
+          "source_id": "luke-24"
+        },
+        {
+          "object_id": "covenant-theme",
+          "source_id": "2-samuel-7"
+        }
+      ],
+      "textual_observation": "Second Samuel 7:8-16 is a Davidic dynastic promise; Luke 24 and Acts 2 show later Christian readings that relate Israel's Scriptures to Jesus.",
+      "why": "The existing reverse-directed CKL edge is retained as authored and gives a second route for comparing covenant and messianic themes.",
+      "uncertainty": "This is a separate authored direction, not an automatically created reverse edge. The New Testament's Christian reception does not establish that the original oracle had only a later messianic referent.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:messiah-theme",
+      "target_id": "ckl:kingdom-theme",
+      "original_relationship_type": "royal-context",
+      "original_notes": "the king who reigns",
+      "original_weight": 10,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Psalm 2:1-12"
+      ],
+      "supporting_passages": [
+        "Psalm 2:1-12",
+        "Daniel 7:13-14",
+        "Mark 1:14-15"
+      ],
+      "supporting_records": [
+        "ckl:messiah-theme#source:psalm-2",
+        "ckl:kingdom-theme#source:psalm-2",
+        "ckl:kingdom-theme#source:daniel-2-7"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "messiah-theme",
+          "source_id": "psalm-2"
+        },
+        {
+          "object_id": "kingdom-theme",
+          "source_id": "psalm-2"
+        },
+        {
+          "object_id": "kingdom-theme",
+          "source_id": "daniel-2-7"
+        }
+      ],
+      "textual_observation": "Psalm 2 joins an anointed ruler in Zion with royal rule over the nations; Daniel 7 and Mark 1 offer distinct later kingdom settings.",
+      "why": "The connection helps readers explore the relationship between royal or messianic figures and the biblical kingdom theme.",
+      "uncertainty": "Psalm 2's original royal setting, its possible enthronement use, and its later Jewish and Christian messianic readings are distinct questions. Daniel 7's 'one like a son of man' is interpreted as collective, angelic, divine, or messianic in different scholarship.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:kingdom-theme",
+      "target_id": "ckl:messiah-theme",
+      "original_relationship_type": "messianic-rule",
+      "original_notes": "kingdom arrives through the anointed king",
+      "original_weight": 9,
+      "classification": "thematic_relationship",
+      "applicable_passages": [
+        "Psalm 2:1-12"
+      ],
+      "supporting_passages": [
+        "Psalm 2:1-12",
+        "Daniel 7:13-14",
+        "Mark 1:14-15"
+      ],
+      "supporting_records": [
+        "ckl:kingdom-theme#source:psalm-2",
+        "ckl:kingdom-theme#source:mark-1",
+        "ckl:messiah-theme#source:psalm-2"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "kingdom-theme",
+          "source_id": "psalm-2"
+        },
+        {
+          "object_id": "kingdom-theme",
+          "source_id": "mark-1"
+        },
+        {
+          "object_id": "messiah-theme",
+          "source_id": "psalm-2"
+        }
+      ],
+      "textual_observation": "Psalm 2 supplies an anointed royal figure and rule over nations; Mark 1:14-15 announces God's kingdom without quoting Psalm 2 in these verses.",
+      "why": "The reverse-directed authored edge makes the kingdom-to-king relationship discoverable from the kingdom theme itself.",
+      "uncertainty": "This is not a fabricated reverse edge. The precise relation between Israel's kingship, the kingdom of God, and later messianic expectation is interpreted in more than one way.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "one_way"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:messiah-theme",
+      "target_id": "ckl:resurrection-theme",
+      "original_relationship_type": "vindication-pattern",
+      "original_notes": "suffering leads to vindication",
+      "original_weight": 8,
+      "classification": "later_canonical_reception",
+      "applicable_passages": [
+        "Acts 2:22-36"
+      ],
+      "supporting_passages": [
+        "Psalm 16:8-11",
+        "Psalm 110:1-7",
+        "Acts 2:22-36"
+      ],
+      "supporting_records": [
+        "ckl:messiah-theme#source:luke-24",
+        "ckl:messiah-theme#source:psalm-110",
+        "ckl:resurrection-theme#source:1-corinthians-15"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "messiah-theme",
+          "source_id": "luke-24"
+        },
+        {
+          "object_id": "messiah-theme",
+          "source_id": "psalm-110"
+        },
+        {
+          "object_id": "resurrection-theme",
+          "source_id": "1-corinthians-15"
+        }
+      ],
+      "textual_observation": "In Acts 2:22-36 Peter interprets Jesus' resurrection and exaltation through Psalm 16 and Psalm 110 and relates them to Davidic kingship.",
+      "why": "This makes an identifiable New Testament reception path between messianic kingship and resurrection hope visible to readers.",
+      "uncertainty": "Acts 2 is a later Christian interpretation of Israel's Scriptures. Its claims should not be projected back as the sole original meaning of Psalms 16 or 110, and traditions differ on the identity and scope of the messianic reading.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "reciprocal"
+    },
+    {
+      "relationship_kind": "object",
+      "source_id": "ckl:resurrection-theme",
+      "target_id": "ckl:messiah-theme",
+      "original_relationship_type": "vindication-pattern",
+      "original_notes": "the Messiah is vindicated",
+      "original_weight": 9,
+      "classification": "later_canonical_reception",
+      "applicable_passages": [
+        "Acts 2:22-36"
+      ],
+      "supporting_passages": [
+        "Psalm 16:8-11",
+        "Psalm 110:1-7",
+        "Acts 2:22-36"
+      ],
+      "supporting_records": [
+        "ckl:resurrection-theme#source:1-corinthians-15",
+        "ckl:messiah-theme#source:luke-24",
+        "ckl:messiah-theme#source:psalm-110"
+      ],
+      "supporting_ckl_sources": [
+        {
+          "object_id": "resurrection-theme",
+          "source_id": "1-corinthians-15"
+        },
+        {
+          "object_id": "messiah-theme",
+          "source_id": "luke-24"
+        },
+        {
+          "object_id": "messiah-theme",
+          "source_id": "psalm-110"
+        }
+      ],
+      "textual_observation": "Acts 2:22-36 interprets Jesus' resurrection and exaltation through Psalm 16 and Psalm 110 and relates that reading to Davidic kingship.",
+      "why": "This separately authored reverse edge makes the resurrection-to-messianic-kingship route discoverable from the resurrection theme.",
+      "uncertainty": "The edge is present in CKL with its own note and weight; it is not generated by this registry. Acts 2 records a later Christian reception and does not settle the original referent of the Psalms for all interpreters.",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "ckl_evidence_certainty": {
+        "status": "not_recorded",
+        "records": []
+      },
+      "human_scholarly_approval": "not_recorded",
+      "supporting_comparative_material": [],
+      "authored_direction": "reciprocal"
+    }
+  ]
+}

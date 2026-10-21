@@ -1,0 +1,159 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Exodus 1:8-14"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Exodus 1 and 5 supply the direct textual evidence.",
+      "original_relationship_type": "primary-biblical-context",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:egyptian-forced-labor-and-brickmaking",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "egyptian-forced-labor-and-brickmaking",
+          "source_id": "exodus-forced-labor-text",
+          "title": "Exodus 1 and 5"
+        },
+        {
+          "author": "",
+          "object_id": "exodus",
+          "source_id": "exodus-1-40",
+          "title": "Exodus 1-40"
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Exodus 1:8-14"
+      ],
+      "supporting_records": [
+        "ckl:egyptian-forced-labor-and-brickmaking#source:exodus-forced-labor-text",
+        "ckl:exodus#source:exodus-1-40"
+      ],
+      "target_id": "ckl:exodus",
+      "textual_observation": "Exodus 1 narrates state-directed oppression and forced labor in Egypt; comparative Egyptian labor evidence can contextualize the narrative’s setting.",
+      "uncertainty": "The comparison does not identify the unnamed Pharaoh, establish a precise date, or independently verify the narrated events; brick quotas are described separately in Exodus 5.",
+      "why": "Exodus 1 and 5 supply the direct textual evidence."
+    },
+    {
+      "applicable_passages": [
+        "Luke 19:41-44"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "The street lies within the City of David excavation area.",
+      "original_relationship_type": "excavation-context",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:pilgrimage-road-in-jerusalem",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "pilgrimage-road-in-jerusalem",
+          "source_id": "jerusalem-entry-passages",
+          "title": "Luke and John Jerusalem passages"
+        },
+        {
+          "author": "Ari Levy and Yuval Baruch",
+          "object_id": "pilgrimage-road-in-jerusalem",
+          "source_id": "iaa-jerusalem-stepped-street-2023",
+          "title": "Jerusalem, City of David, the Stepped Street",
+          "year": 2023
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Luke 19:41-44"
+      ],
+      "supporting_records": [
+        "ckl:pilgrimage-road-in-jerusalem#source:jerusalem-entry-passages",
+        "ckl:pilgrimage-road-in-jerusalem#source:iaa-jerusalem-stepped-street-2023"
+      ],
+      "target_id": "ckl:city-of-david-excavations",
+      "textual_observation": "The Israel Antiquities Authority excavation report describes a first-century stepped street running from the Siloam Pool toward the Temple Mount; Luke situates Jesus’ approach to Jerusalem in this passage.",
+      "uncertainty": "Luke does not name this street, and the archaeological report does not show that Jesus travelled it. The relationship supplies topographical context only.",
+      "why": "The street lies within the City of David excavation area."
+    },
+    {
+      "applicable_passages": [
+        "Isaiah 53:1-12"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "",
+      "original_relationship_type": "related-concept",
+      "original_weight": 8,
+      "relationship_kind": "object",
+      "source_id": "ckl:suffering-servant-prophecy",
+      "supporting_ckl_sources": [
+        {
+          "author": "Steve Moyise",
+          "object_id": "isaiah",
+          "source_id": "moyise-isaiah-nt",
+          "title": "Isaiah in the New Testament",
+          "year": 2020
+        },
+        {
+          "author": "Lena-Sofia Tiemeyer, editor",
+          "object_id": "isaiah",
+          "source_id": "oxford-handbook-isaiah",
+          "title": "The Oxford Handbook of Isaiah",
+          "year": 2020
+        },
+        {
+          "author": "",
+          "object_id": "messiah-theme",
+          "source_id": "isaiah-53",
+          "title": "Isaiah 53"
+        },
+        {
+          "author": "",
+          "object_id": "suffering-servant-prophecy",
+          "source_id": "isaiah-52-53",
+          "title": "Isaiah 52-53"
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Isaiah 53:1-12"
+      ],
+      "supporting_records": [
+        "ckl:isaiah#source:moyise-isaiah-nt",
+        "ckl:isaiah#source:oxford-handbook-isaiah",
+        "ckl:messiah-theme#source:isaiah-53",
+        "ckl:suffering-servant-prophecy#source:isaiah-52-53"
+      ],
+      "target_id": "ckl:messiah-theme",
+      "textual_observation": "Isaiah 53 portrays a suffering servant whose affliction and vindication have been read in Christian interpretation as messianic.",
+      "uncertainty": "The servant’s identity and the passage’s historical and literary referent remain disputed in Jewish and Christian scholarship; this is a reception history, not an uncontested prediction naming Jesus.",
+      "why": "Isaiah 53 portrays a suffering servant whose affliction and vindication have been read in Christian interpretation as messianic."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "kingship_messiah_kingdom",
+  "wave": 6
+}

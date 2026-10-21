@@ -1,0 +1,583 @@
+{
+  "curations": [
+    {
+      "applicable_passages": [
+        "Genesis 1:26-28"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "God’s rule over creation",
+      "original_relationship_type": "royal-context",
+      "original_weight": 7,
+      "relationship_kind": "object",
+      "source_id": "ckl:creation-theme",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "creation-theme",
+          "source_id": "genesis-1-2",
+          "title": "Genesis 1-2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "creation-theme",
+          "source_id": "psalm-8",
+          "title": "Psalm 8",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "kingdom-theme",
+          "source_id": "exodus-15",
+          "title": "Exodus 15",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 1:26-28"
+      ],
+      "supporting_records": [
+        "ckl:creation-theme#source:genesis-1-2",
+        "ckl:creation-theme#source:psalm-8",
+        "ckl:kingdom-theme#source:exodus-15"
+      ],
+      "target_id": "ckl:kingdom-theme",
+      "textual_observation": "Genesis 1:26–28 gives humankind rule over other creatures as part of its image-bearing vocation.",
+      "uncertainty": "This is a thematic comparison across distinct settings; it does not by itself demonstrate direct literary dependence.",
+      "why": "This supports a relationship between creation and rule, without making the passage a full account of the biblical kingdom theme."
+    },
+    {
+      "applicable_passages": [
+        "Genesis 7:11-12"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "shared_literary_motif",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Supports qualified de-creation/re-creation resonance.",
+      "original_relationship_type": "creation-resonance",
+      "original_weight": 8,
+      "relationship_kind": "object",
+      "source_id": "ckl:genesis-flood-postflood-context",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "genesis-flood-postflood-context",
+          "source_id": "g2r2-local-genesis-1-50",
+          "title": "Genesis 1-50",
+          "year": null
+        },
+        {
+          "author": "Jaap J. T. Doedens",
+          "object_id": "genesis-flood-postflood-context",
+          "source_id": "g2-doedens-sons-god",
+          "title": "The Sons of God in Genesis 6:1–4: Analysis and History of Exegesis",
+          "year": 2019
+        },
+        {
+          "author": "",
+          "object_id": "creation",
+          "source_id": "genesis-1-2",
+          "title": "Genesis 1-2",
+          "year": null
+        },
+        {
+          "author": "Nahum M. Sarna",
+          "object_id": "creation",
+          "source_id": "sarna-genesis-creation",
+          "title": "The JPS Torah Commentary: Genesis",
+          "year": 1989
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 7:11-12"
+      ],
+      "supporting_records": [
+        "ckl:creation#source:genesis-1-2",
+        "ckl:creation#source:sarna-genesis-creation",
+        "ckl:genesis-flood-postflood-context#source:g2-doedens-sons-god",
+        "ckl:genesis-flood-postflood-context#source:g2r2-local-genesis-1-50"
+      ],
+      "target_id": "ckl:creation",
+      "textual_observation": "Genesis 7:11–12 depicts the ordered world overwhelmed by the flood, a possible de-creation resonance with Genesis 1.",
+      "uncertainty": "The flood narrative and creation texts share water-and-order imagery; motif similarity does not prove direct literary dependence or a single transmission route.",
+      "why": "The shared waters imagery supports a literary motif; it does not establish dependence."
+    },
+    {
+      "applicable_passages": [
+        "Genesis 7:11-12"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "shared_literary_motif",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Links comparanda outside Scripture applicability anchors.",
+      "original_relationship_type": "ancient-flood-comparison",
+      "original_weight": 8,
+      "relationship_kind": "object",
+      "source_id": "ckl:genesis-flood-postflood-context",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "genesis-flood-postflood-context",
+          "source_id": "g2r2-local-genesis-1-50",
+          "title": "Genesis 1-50",
+          "year": null
+        },
+        {
+          "author": "Jaap J. T. Doedens",
+          "object_id": "genesis-flood-postflood-context",
+          "source_id": "g2-doedens-sons-god",
+          "title": "The Sons of God in Genesis 6:1–4: Analysis and History of Exegesis",
+          "year": 2019
+        },
+        {
+          "author": "",
+          "object_id": "mesopotamian-creation-and-flood-comparisons",
+          "source_id": "genesis-1-11-text",
+          "title": "Genesis 1-11",
+          "year": null
+        },
+        {
+          "author": "Andrew R. George",
+          "object_id": "mesopotamian-creation-and-flood-comparisons",
+          "source_id": "george-gilgamesh-2003",
+          "title": "The Babylonian Gilgamesh Epic: Introduction, Critical Edition and Cuneiform Texts",
+          "year": 2003
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 7:11-12"
+      ],
+      "supporting_records": [
+        "ckl:genesis-flood-postflood-context#source:g2-doedens-sons-god",
+        "ckl:genesis-flood-postflood-context#source:g2r2-local-genesis-1-50",
+        "ckl:mesopotamian-creation-and-flood-comparisons#source:genesis-1-11-text",
+        "ckl:mesopotamian-creation-and-flood-comparisons#source:george-gilgamesh-2003"
+      ],
+      "target_id": "ckl:mesopotamian-creation-and-flood-comparisons",
+      "textual_observation": "Genesis 7:11–12 provides a biblical flood account for comparison with Mesopotamian flood traditions.",
+      "uncertainty": "The flood comparison is limited to observable motifs and ancient comparanda; it does not establish direct dependence, one source, or a settled composition history for Genesis 6-9.",
+      "why": "The comparison is thematic and contextual; this passage alone does not establish literary dependence."
+    },
+    {
+      "applicable_passages": [
+        "Genesis 1:26-28"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Links human vocation in the image of God to the broader creation doctrine framework.",
+      "original_relationship_type": "related",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:image-of-god-theme",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "image-of-god-theme",
+          "source_id": "genesis-1-26-28",
+          "title": "Genesis 1:26-28",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "creation-doctrine-framework",
+          "source_id": "genesis-1-2",
+          "title": "Genesis 1-2",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 1:26-28"
+      ],
+      "supporting_records": [
+        "ckl:creation-doctrine-framework#source:genesis-1-2",
+        "ckl:image-of-god-theme#source:genesis-1-26-28"
+      ],
+      "target_id": "ckl:creation-doctrine-framework",
+      "textual_observation": "Genesis 1:26–28 says humanity is made in God’s image and entrusted with dominion over other creatures.",
+      "uncertainty": "This is a bounded interpretive or historical association; the cited material does not establish a stronger causal or identity claim.",
+      "why": "These verses ground the human-vocation strand of creation doctrine; broader doctrinal conclusions are interpretive."
+    },
+    {
+      "applicable_passages": [
+        "1 Corinthians 15:20-28"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Eschatology situates resurrection, parousia, and new creation.",
+      "original_relationship_type": "future-hope-context",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead",
+      "supporting_ckl_sources": [
+        {
+          "author": "Paul",
+          "object_id": "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead",
+          "source_id": "romans-resurrection-text",
+          "title": "Romans 6:1-8:39 and 14:1-12",
+          "year": 2010
+        },
+        {
+          "author": "Douglas J. Moo",
+          "object_id": "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead",
+          "source_id": "moo-romans-resurrection",
+          "title": "The Letter to the Romans",
+          "year": 2018
+        },
+        {
+          "author": "",
+          "object_id": "eschatology",
+          "source_id": "daniel-7",
+          "title": "Daniel 7",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "1 Corinthians 15:20-28"
+      ],
+      "supporting_records": [
+        "ckl:eschatology#source:daniel-7",
+        "ckl:pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead#source:moo-romans-resurrection",
+        "ckl:pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead#source:romans-resurrection-text"
+      ],
+      "target_id": "ckl:eschatology",
+      "textual_observation": "In 1 Corinthians 15:20–28 Paul connects Christ’s resurrection, the resurrection of those who belong to him, and the handing over of the kingdom to God.",
+      "uncertainty": "This is a thematic comparison across distinct settings; it does not by itself demonstrate direct literary dependence.",
+      "why": "The passage joins resurrection hope with eschatological reign in Paul’s argument."
+    },
+    {
+      "applicable_passages": [
+        "Genesis 3:22-24"
+      ],
+      "authored_direction": "reciprocal",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "the goodness that is lost",
+      "original_relationship_type": "narrative-contrast",
+      "original_weight": 10,
+      "relationship_kind": "object",
+      "source_id": "ckl:the-fall",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "the-fall",
+          "source_id": "genesis-3",
+          "title": "Genesis 3",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "creation",
+          "source_id": "genesis-1-2",
+          "title": "Genesis 1-2",
+          "year": null
+        },
+        {
+          "author": "Nahum M. Sarna",
+          "object_id": "creation",
+          "source_id": "sarna-genesis-creation",
+          "title": "The JPS Torah Commentary: Genesis",
+          "year": 1989
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 3:22-24"
+      ],
+      "supporting_records": [
+        "ckl:creation#source:genesis-1-2",
+        "ckl:creation#source:sarna-genesis-creation",
+        "ckl:the-fall#source:genesis-3"
+      ],
+      "target_id": "ckl:creation",
+      "textual_observation": "Genesis 3:22–24 depicts the humans’ expulsion from the garden and loss of access to the tree of life.",
+      "uncertainty": "This is a bounded interpretive or historical association; the cited material does not establish a stronger causal or identity claim.",
+      "why": "This gives the fall narrative a concrete contrast with the garden’s life-giving setting; avoid treating “the goodness lost” as the verse’s wording."
+    },
+    {
+      "applicable_passages": [
+        "Genesis 1:2"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "Spirit and creation",
+      "original_relationship_type": "creation-life",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:what-does-ruach-mean",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "what-does-ruach-mean",
+          "source_id": "genesis-1",
+          "title": "Genesis 1",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "creation-theme",
+          "source_id": "genesis-1-2",
+          "title": "Genesis 1-2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "creation-theme",
+          "source_id": "psalm-8",
+          "title": "Psalm 8",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 1:2"
+      ],
+      "supporting_records": [
+        "ckl:creation-theme#source:genesis-1-2",
+        "ckl:creation-theme#source:psalm-8",
+        "ckl:what-does-ruach-mean#source:genesis-1"
+      ],
+      "target_id": "ckl:creation-theme",
+      "textual_observation": "Genesis 1:2 places rûaḥ ʾĕlōhîm over the waters as creation begins.",
+      "uncertainty": "This is a thematic comparison across distinct settings; it does not by itself demonstrate direct literary dependence.",
+      "why": "The verse connects the word study with creation imagery, while leaving “wind,” “breath,” or “Spirit” translation open."
+    },
+    {
+      "applicable_passages": [
+        "Colossians 3:9-10"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "interpretive_association",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "image restored in new creation",
+      "original_relationship_type": "renewal-framework",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:what-is-the-image-of-god",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "what-is-the-image-of-god",
+          "source_id": "genesis-1",
+          "title": "Genesis 1",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "what-is-the-image-of-god",
+          "source_id": "psalm-8",
+          "title": "Psalm 8",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "new-creation-theme",
+          "source_id": "genesis-1-2",
+          "title": "Genesis 1-2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "what-is-the-image-of-god",
+          "source_id": "colossians-3",
+          "title": "Colossians 3",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 1:26-28",
+        "Colossians 3:9-10"
+      ],
+      "supporting_records": [
+        "ckl:new-creation-theme#source:genesis-1-2",
+        "ckl:what-is-the-image-of-god#source:genesis-1",
+        "ckl:what-is-the-image-of-god#source:psalm-8",
+        "ckl:what-is-the-image-of-god#source:colossians-3"
+      ],
+      "target_id": "ckl:new-creation-theme",
+      "textual_observation": "Colossians 3:9–10 describes the new self as renewed according to the image of its creator.",
+      "uncertainty": "Colossians uses renewed-image language; “new creation” is explicit elsewhere in Paul, so this link is a canonical-theological synthesis rather than a direct quotation.",
+      "why": "Paul applies image language to renewal in Christ; connecting that renewal with the broader new-creation theme is an interpretation."
+    },
+    {
+      "applicable_passages": [
+        "Hebrews 4:1-11"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "final rest in new creation",
+      "original_relationship_type": "eschatological-rest",
+      "original_weight": 8,
+      "relationship_kind": "object",
+      "source_id": "ckl:what-is-the-significance-of-the-sabbath",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "what-is-the-significance-of-the-sabbath",
+          "source_id": "genesis-2",
+          "title": "Genesis 2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "new-creation-theme",
+          "source_id": "genesis-1-2",
+          "title": "Genesis 1-2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "new-creation-theme",
+          "source_id": "psalm-8",
+          "title": "Psalm 8",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "what-is-the-significance-of-the-sabbath",
+          "source_id": "hebrews-4",
+          "title": "Hebrews 4",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "Genesis 2:2-3",
+        "Hebrews 4:1-11"
+      ],
+      "supporting_records": [
+        "ckl:new-creation-theme#source:genesis-1-2",
+        "ckl:new-creation-theme#source:psalm-8",
+        "ckl:what-is-the-significance-of-the-sabbath#source:genesis-2",
+        "ckl:what-is-the-significance-of-the-sabbath#source:hebrews-4"
+      ],
+      "target_id": "ckl:new-creation-theme",
+      "textual_observation": "Hebrews 4:1–11 speaks of a Sabbath rest that remains open to God’s people.",
+      "uncertainty": "Hebrews does not call this rest “new creation”; that endpoint connection is thematic interpretation.",
+      "why": "The text links creation’s seventh-day rest with continuing rest; it does not name this rest “new creation,” so the endpoint link is thematic."
+    },
+    {
+      "applicable_passages": [
+        "2 Corinthians 5:17"
+      ],
+      "authored_direction": "one_way",
+      "ckl_evidence_certainty": {
+        "records": [],
+        "status": "not_recorded"
+      },
+      "classification": "thematic_relationship",
+      "curation_confidence": "moderate",
+      "curation_status": "curated_for_explorer",
+      "human_scholarly_approval": "not_recorded",
+      "original_notes": "new creation language shapes identity",
+      "original_relationship_type": "identity-renewal",
+      "original_weight": 9,
+      "relationship_kind": "object",
+      "source_id": "ckl:what-verses-show-identity-in-christ",
+      "supporting_ckl_sources": [
+        {
+          "author": "",
+          "object_id": "what-verses-show-identity-in-christ",
+          "source_id": "john-1",
+          "title": "John 1",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "new-creation-theme",
+          "source_id": "genesis-1-2",
+          "title": "Genesis 1-2",
+          "year": null
+        },
+        {
+          "author": "",
+          "object_id": "new-creation-theme",
+          "source_id": "psalm-8",
+          "title": "Psalm 8",
+          "year": null
+        }
+      ],
+      "supporting_comparative_material": [],
+      "supporting_passages": [
+        "2 Corinthians 5:17"
+      ],
+      "supporting_records": [
+        "ckl:new-creation-theme#source:genesis-1-2",
+        "ckl:new-creation-theme#source:psalm-8",
+        "ckl:what-verses-show-identity-in-christ#source:john-1"
+      ],
+      "target_id": "ckl:new-creation-theme",
+      "textual_observation": "In 2 Corinthians 5:17 Paul calls the person in Christ a new creation.",
+      "uncertainty": "This is a thematic comparison across distinct settings; it does not by itself demonstrate direct literary dependence.",
+      "why": "The verse directly links new-creation language with identity in Christ."
+    }
+  ],
+  "schema_version": 1,
+  "topic_cluster": "creation_new_creation",
+  "wave": 2
+}
