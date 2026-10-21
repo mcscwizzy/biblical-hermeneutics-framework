@@ -67,6 +67,7 @@ namespaces = true
 
 [tool.setuptools.package-data]
 "framework.canonical_library" = ["manifest.json", "objects/**/*.json", "curations/**/*.json", "schema/*.json", "benchmarks/*.json", "data/*.sqlite"]
+"framework.commentary" = ["data/*.sqlite"]
 "framework.lexical" = ["schema/*.json", "database/*.sqlite", "database/*.sqlite.gz"]
 "bhf_agent" = [
   "data/*.json",

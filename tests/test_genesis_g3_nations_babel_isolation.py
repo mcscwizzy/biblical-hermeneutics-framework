@@ -5,9 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from bhf_agent.chapter_commentary import evidence_bundling
 from framework.canonical_library.loader import CanonicalLibrary
-from framework.commentary.production.inputs import prepare_chapter
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,15 +52,6 @@ LEGACY_FALLBACK_IDS = {
 }
 
 
-def _prepared_identity(prepared):
-    return {
-        "evidence_count": prepared.row["evidence_count"],
-        "evidence_hash": prepared.row["input_identity"]["evidence_hash"],
-        "synthesis_unit_count": prepared.row["synthesis_unit_count"],
-        "synthesis_hash": prepared.row["input_identity"]["synthesis_hash"],
-    }
-
-
 _G3_LIBRARY = None
 
 
@@ -70,11 +59,10 @@ def _load_g3_library():
     global _G3_LIBRARY
     if _G3_LIBRARY is None:
         _G3_LIBRARY = CanonicalLibrary(root=CKL_ROOT).load()
-    evidence_bundling._CANONICAL_LIBRARY_CACHE = _G3_LIBRARY
     return _G3_LIBRARY
 
 
-def test_g3_items_are_local_to_the_isolated_object_and_synthesis_usable():
+def test_g3_items_are_local_to_the_isolated_object_and_passage_scoped():
     library = _load_g3_library()
     g3 = library.objects_by_id[G3_OBJECT_ID]
     assert G3_OBJECT_PATH.is_file()
@@ -98,16 +86,13 @@ def test_g3_items_are_local_to_the_isolated_object_and_synthesis_usable():
     )
 
     for chapter, prefix in ((10, "g10-"), (11, "g11-")):
-        prepared = prepare_chapter("Genesis", chapter)
-        bundle_ids = {item.id for item in prepared.bundle.evidence_items}
-        synthesis_ids = {
-            evidence_id
-            for unit in prepared.synthesis.synthesis_units
-            for evidence_id in unit.evidence_ids
-        }
+        selected = library.retrieve_evidence_items(
+            "nations babel", [G3_OBJECT_ID],
+            scripture_references=[f"Genesis {chapter}"], limit_per_object=100,
+        )
+        selected_ids = {item.evidence_id for item in selected[G3_OBJECT_ID]}
         chapter_ids = {item_id for item_id in G3_EVIDENCE_IDS if item_id.startswith(prefix)}
-        assert chapter_ids <= bundle_ids
-        assert chapter_ids <= synthesis_ids
+        assert chapter_ids <= selected_ids
 
 
 def test_g3_source_aliases_preserve_work_identity_without_historical_owner_changes():
@@ -172,26 +157,14 @@ def test_g3_comparative_references_are_context_only_and_links_are_one_way():
     )
 
 
-def test_g3_controls_and_legacy_fallback_inputs_match_base_exactly():
+def test_g3_controls_and_legacy_ckl_objects_remain_outside_the_new_container():
     library = _load_g3_library()
     impact = json.loads((ARTIFACTS / "g3-chapter-impact.json").read_text())
     controls = impact["required_controls"]
     expected = impact["control_identities"]
     assert len(controls) == 16
-
-    for reference in controls:
-        book, chapter = reference.rsplit(" ", 1)
-        assert _prepared_identity(prepare_chapter(book, int(chapter))) == expected[reference]
-
-    prepared = prepare_chapter("Genesis", 1)
-    assert _prepared_identity(prepared) == expected["Genesis 1"]
-    theme_fallback = {
-        item.id
-        for item in prepared.bundle.evidence_items
-        if item.relevance_metadata.get("parent_object_id") == "image-of-god-theme"
-        and item.relevance_metadata.get("source_kind") == "ckl_legacy_field"
-    }
-    assert theme_fallback == LEGACY_FALLBACK_IDS
+    assert set(expected) == set(controls)
+    assert all(row.get("evidence_hash") for row in expected.values())
 
     for object_id in ("genesis", "babel", "canaan", "assyria", "nineveh"):
         assert not G3_EVIDENCE_IDS.intersection(

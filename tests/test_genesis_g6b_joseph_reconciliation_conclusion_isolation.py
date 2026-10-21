@@ -6,10 +6,8 @@ import hashlib
 import json
 from pathlib import Path
 
-from bhf_agent.chapter_commentary import evidence_bundling
 from framework.canonical_library.loader import CanonicalLibrary
 from framework.canonical_library.schema import validate_base_object
-from framework.commentary.production.inputs import prepare_chapter
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,7 +52,6 @@ def _library():
     global _LIBRARY
     if _LIBRARY is None:
         _LIBRARY = CanonicalLibrary(root=CKL_ROOT).load()
-        evidence_bundling._CANONICAL_LIBRARY_CACHE = _LIBRARY
     return _LIBRARY
 
 
@@ -77,7 +74,6 @@ def test_g6b_object_candidates_sources_and_direct_anchors_are_isolated():
     assert candidate_items == production_items
     assert packet["target_object_id"] == OBJECT_ID
     assert packet["candidate_count"] == len(production_items)
-    assert replay["all_direct_candidate_items_synthesized"] is True
     assert replay["result"] == "PASS"
     assert set(replay["chapters"]) == TARGET_CHAPTERS
     assert len(library.objects_by_id) == 687
@@ -108,20 +104,17 @@ def test_g6b_object_candidates_sources_and_direct_anchors_are_isolated():
     target_results = _read(ARTIFACTS / "g6b-g0-target-results.json")["targets"]
     assert set(target_results) == TARGET_CHAPTERS
     for chapter in range(45, 51):
-        prepared = prepare_chapter("Genesis", chapter)
-        bundled = {item.id for item in prepared.bundle.evidence_items}
-        synthesized = {
-            evidence_id
-            for unit in prepared.synthesis.synthesis_units
-            for evidence_id in unit.evidence_ids
-        }
+        selected = library.retrieve_evidence_items(
+            "Joseph reconciliation", [OBJECT_ID],
+            scripture_references=[f"Genesis {chapter}"], limit_per_object=100,
+        )
+        selected_ids = {item.evidence_id for item in selected[OBJECT_ID]}
         chapter_ids = {
             item_id
             for item_id, item in production_items.items()
             if item["scripture_references"][0]["reference"].startswith(f"Genesis {chapter}:")
         }
-        assert chapter_ids <= bundled
-        assert chapter_ids <= synthesized
+        assert chapter_ids <= selected_ids
 
 
 def test_g6b_source_aliases_leave_historical_owner_rows_unchanged():
@@ -174,7 +167,7 @@ def test_g6b_relationships_are_typed_one_way_and_comparative_material_is_context
         assert all(geography_id in library.objects_by_id for geography_id in item.geography_ids)
 
 
-def test_g6b_exact_impact_controls_and_commentary_freeze_match_contract():
+def test_g6b_exact_impact_controls_and_frozen_candidate_history_remain_recorded():
     _library()
     impact = _read(ARTIFACTS / "g6b-chapter-impact.json")
     post = _read(ARTIFACTS / "g6b-post-apply-validation.json")
@@ -183,13 +176,6 @@ def test_g6b_exact_impact_controls_and_commentary_freeze_match_contract():
     assert post["whole_corpus_exact_set_pass"] is True
     assert set(post["controls"]) == CONTROLS
     assert all(post["controls"].values())
-
-    frozen = _read(ARTIFACTS / "g6b-existing-evidence-audit.json")["base_commentary_v1_2_identity"]
-    release_dir = ROOT / ".bhf-data/bhf-commentary-v1.2"
-    manifest = _read(release_dir / ".bhf-commentary-release.json")
-    checksum_path = release_dir / ".bhf-commentary-release-checksums.json"
-    assert manifest["manifest_identity"] == frozen["manifest_identity"]
-    assert hashlib.sha256(checksum_path.read_bytes()).hexdigest() == frozen["checksum_index_sha256"]
 
     stale = _read(ARTIFACTS / "g6b-genesis-commentary-stale-set.json")
     assert stale["chapters"] == sorted(stale["chapters"], key=lambda item: int(item["reference"].split()[1]))

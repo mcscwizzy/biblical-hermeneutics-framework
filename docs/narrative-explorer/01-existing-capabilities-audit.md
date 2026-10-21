@@ -1,5 +1,9 @@
 # Narrative Explorer: Existing Capabilities Audit
 
+> Historical NE-1 snapshot recorded against the repository revision shown
+> below. It predates NE7R3, NE-9C, and NE-10 and is not a description of
+> current runtime state. See this directory's [current overview](README.md).
+
 ## Scope and baseline
 
 This is a read-only audit for design transaction NE-1. It does not change runtime behavior, CKL, source evidence, release data, or Ask BHF.

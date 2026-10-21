@@ -5,6 +5,10 @@ and the installable Progressive Web App (PWA). The PWA is not a separate native
 application; it is the BHF website installed with a standalone window, service
 worker, browser caches, and IndexedDB storage.
 
+Narrative Explorer is the primary passage-evidence exploration experience.
+Generated BHF Commentary was retired in NE7R3 and its old generated routes
+return HTTP 410; the separate Tyndale Open Study Notes reader remains active.
+
 ## Open the website
 
 Use the HTTPS address published by the BHF project maintainer, or open your

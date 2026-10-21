@@ -329,7 +329,7 @@ def test_report_counts_staged_entities_and_provenance_merges() -> None:
 
     report = _report(
         source_locks, {"candidates": [record]}, transaction=transaction,
-        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[], commentary_preview=[],
+        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[],
     )
 
     assert report["candidates"]["duplicate_existing_provenance_merged"] == 1
@@ -341,6 +341,7 @@ def test_report_counts_staged_entities_and_provenance_merges() -> None:
     assert "framework/canonical_library/objects/places/bethlehem-1.json" in report["dry_run"]["files_that_would_change"]
     assert report["dry_run"]["provenance_merges"][0]["survivor_evidence_id"] == "z-canonical"
     assert report["dry_run"]["wrote"] is False
+    assert "commentary_v12_preview" not in report
 
 
 def test_report_excludes_unchanged_duplicate_files() -> None:
@@ -356,9 +357,10 @@ def test_report_excludes_unchanged_duplicate_files() -> None:
     report = _report(
         {"chapters": [{"claims": [{"status": "LOCKED"}]}]}, {"candidates": [record]},
         transaction=SimpleNamespace(changed_object_ids=[], simulated_objects={}, wrote=False),
-        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[], commentary_preview=[],
+        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[],
     )
     assert report["dry_run"]["files_that_would_change"] == []
+    assert "commentary_v12_preview" not in report
 
 
 def test_dry_run_reports_loaded_structural_conflict_without_writing(

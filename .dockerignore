@@ -1,4 +1,5 @@
 .git
+.vercel/
 .agents/
 .codex/
 __pycache__/
@@ -10,6 +11,7 @@ venv/
 env/
 node_modules/
 .bhf/
+.bhf-data/
 local.config.json
 .env
 *.local
@@ -22,3 +24,14 @@ build/
 .DS_Store
 .idea/
 .vscode/
+
+# Development-only inputs are not used by the production image build.
+docs/
+tests/
+.github/
+mobile/
+tools/
+examples/
+profiles/
+requirements-gui.txt
+docker-compose*.yml

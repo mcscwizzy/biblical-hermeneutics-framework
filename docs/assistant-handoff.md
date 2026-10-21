@@ -1,30 +1,28 @@
 # Ask BHF assistant handoff
 
-BHF's web application owns the deterministic study experience: Scripture,
-Commentary v1.2, CKL evidence, lexicons, archaeology, maps, cross-references,
-notes, highlights, and offline study data. It does not run conversational model
-inference at runtime.
+BHF owns the local study experience: Scripture, Narrative Explorer evidence,
+CKL, lexical tools, archaeology, maps, Tyndale Open Study Notes, private study
+records, and supported offline features. Conversational synthesis happens in
+the configured external assistant; the web runtime does not make a provider
+request for ordinary reader or evidence navigation.
 
-When a reader wants conversation or follow-up interpretation, **Ask BHF** opens
-a compact handoff composer. The composer uses the current book and chapter (and
-an existing verse/range selection when available), builds concise text, copies
-it to the clipboard, and opens the configured external assistant in a new tab.
-It never embeds or automates the assistant.
+When a reader chooses **Ask BHF**, the handoff composer uses the current
+passage and any selected verse range, prepares concise text, copies it when
+clipboard access is available, and opens the configured assistant in a new
+tab. The user can review and edit the prepared question. BHF does not embed or
+automate the external assistant.
 
-The destination is configured with `BHF_ASSISTANT_URL`. The current default is
-the BHF assistant hosted in ChatGPT, but the setting is intentionally generic so
-it can later point to a BHF Plugin or another supported assistant destination
-without changing the reader.
+Set `BHF_ASSISTANT_URL` to choose the destination. If automatic clipboard
+access is unavailable, the prepared question remains selectable for manual
+copy. If the browser blocks the new tab, the explicit **Open BHF** action
+remains available.
 
-If automatic clipboard access is unavailable, the prepared question remains
-visible and selectable. The user can copy it manually and use the explicit
-**Open BHF** fallback. Popup opening is initiated by the direct button click;
-if a browser blocks it, the same explicit fallback remains available.
+The handoff is an online convenience. It does not affect passage navigation,
+CKL evidence, Tyndale notes, translations, maps, archaeology, notes, highlights,
+or locally cached study resources. Private notes and highlights are not added
+to the handoff automatically.
 
-The handoff is an online convenience. It does not affect Bible reading,
-Commentary, CKL/evidence, lexicons, notes, highlights, maps, or other offline
-capabilities.
-
-Maintainer-side model adapters and generation tooling remain separate from the
-web runtime for future corpus/release work. They are not exposed through BHF
-user settings or browser requests.
+Generated BHF Commentary was retired in NE7R3. Tyndale Open Study Notes remains
+an active, separate source and is included only through its documented source
+provider behavior. See [Tyndale Open Study Notes](tyndale-study-notes.md) and
+[Narrative Explorer](narrative-explorer/README.md).

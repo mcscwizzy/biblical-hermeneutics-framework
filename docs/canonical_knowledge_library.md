@@ -1,5 +1,13 @@
 # Canonical Knowledge Library
 
+CKL is BHF's authoritative, reviewed research source. Narrative Explorer reads
+CKL records through the repository and passage-evidence services. NE-9C
+relationship curations and the NE-10 passage bridge registry are separate,
+read-only presentation inputs with their own acceptance and provenance
+records; they do not replace CKL objects. Tyndale Open Study Notes is a
+separately attributed source service. Generated BHF Commentary was retired in
+NE7R3.
+
 ## Archaeology boundary
 
 CKL is not the authoritative home of archaeological catalog or media data. It stores
@@ -30,15 +38,15 @@ source files and can be rebuilt without modifying the repository. Release builds
 may place a generated database under package data, but generated SQLite files
 should not be manually edited or committed as source.
 
-Lexical data uses the same generated SQLite artifact. Because Greek/Hebrew
-source licensing may differ from the curated CKL JSON inventory, production
-must explicitly choose one of these runtime policies:
-
-- **Local-generated:** build `.bhf/ckl.sqlite` during deployment from local,
-  ignored source checkouts under `data_sources/lexicons/`.
-- **Bundled artifact:** distribute a generated lexical SQLite artifact only
-  after every imported source permits redistribution and attribution is
-  recorded.
+The Word Study runtime also uses a separately built lexical database with its
+own schema, source locks, and licenses. The packaged compressed lexical asset is
+`framework/lexical/database/lexicon.sqlite.gz`; a local build writes
+`.bhf/lexicon.sqlite`. The CKL SQLite schema can also hold lexical tables for
+CKL import and onboarding workflows. `tools/import_lexicons.py`,
+`lexicon_onboard.py`, and `lexicon_smoke.py` default to `.bhf/ckl.sqlite`;
+their examples below use that database. These are distinct artifacts with
+different build procedures. See [lexicon sources](lexicon-sources.md) before
+changing imported content or redistribution policy.
 
 Application startup must not download or parse raw lexical source files.
 

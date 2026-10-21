@@ -65,12 +65,12 @@ def test_vercel_config_excludes_build_generated_package_tree():
     function = config["functions"]["bhf_web/app.py"]
     exclude_pattern = function["excludeFiles"]
     assert isinstance(exclude_pattern, str)
-    assert exclude_pattern == "{.bhf-data/bhf-commentary-candidates/**,build/**}"
+    assert exclude_pattern == "{.bhf-data/**,build/**}"
     assert _is_explicitly_excluded(
-        ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-008/preflight-report.json"
+        ".bhf-data/local-study-output.sqlite"
     )
     assert _matches_function_exclude(
-        ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-008/preflight-report.json",
+        ".bhf-data/local-study-output.sqlite",
         exclude_pattern,
     )
     assert _matches_function_exclude(
@@ -121,21 +121,20 @@ def test_vercel_ignore_keeps_active_reader_resources_and_excludes_dev_inputs():
     assert all(not _is_explicitly_excluded(path) for path in required)
 
     excluded = {
-        ".bhf-data/bhf-commentary-v1.1/deuteronomy_032.json",
-        "bhf_agent/chapter_commentary/models.py",
-        "tools/commentary_health_report.py",
+        ".bhf-data/local-study-output.sqlite",
         "tools/ckl_coverage_report.py",
         "tests/test_vercel_packaging.py",
-        "docs/vercel-function-bundle-audit.md",
+        "docs/architecture.md",
         "requirements-gui.txt",
     }
     assert all(_is_explicitly_excluded(path) for path in excluded)
 
 
-def test_generated_v12_package_data_is_not_declared_or_present():
-    pyproject = (ROOT / "pyproject.toml").read_text()
-    assert "data/commentary-v1.2/" not in pyproject
-    assert not (ROOT / "bhf_agent/data/commentary-v1.2").exists()
+def test_retired_generated_package_is_absent_and_tyndale_source_remains():
+    assert not (ROOT / "bhf_agent/chapter_commentary").exists()
+    assert (ROOT / "framework/commentary/service.py").is_file()
+    assert (ROOT / "framework/commentary/importer.py").is_file()
+    assert (ROOT / "framework/commentary/evidence.py").is_file()
 
 
 def test_vercel_app_import_does_not_load_generation_or_report_modules():

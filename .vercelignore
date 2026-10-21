@@ -1,7 +1,8 @@
-# Local state and commentary generation/audit artifacts are never function inputs.
+# Runtime databases and private study state are local inputs only.
 .bhf-data/**
 
 # Local state and build caches are not part of the Git deployment source.
+.vercel/
 .bhf/
 .env*
 local.config.json
@@ -18,7 +19,6 @@ docs/**
 mobile/**
 scripts/**
 tools/**
-bhf_agent/chapter_commentary/**
 requirements-gui.txt
 Dockerfile
 docker-compose*.yml

@@ -2,9 +2,7 @@
 
 from pathlib import Path
 
-from bhf_agent.chapter_commentary import evidence_bundling
 from framework.canonical_library.loader import CanonicalLibrary
-from framework.commentary.production.inputs import prepare_chapter
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,20 +14,23 @@ COMPARATIVE_IDS = {
 }
 
 
-def test_genesis_3_comparative_references_do_not_apply_to_later_chapters(monkeypatch):
+def test_genesis_3_comparative_references_do_not_apply_to_later_chapters():
     library = CanonicalLibrary(root=CKL_ROOT).load()
-    monkeypatch.setattr(evidence_bundling, "_CANONICAL_LIBRARY_CACHE", library)
 
-    genesis_three = prepare_chapter("Genesis", 3)
-    evidence_by_id = {
-        item.id: item for item in genesis_three.bundle.evidence_items
-    }
+    genesis_three = library.retrieve_evidence_items(
+        "reception and cherubim", ["genesis"], scripture_references=["Genesis 3"],
+        limit_per_object=100,
+    )
+    evidence_by_id = {item.evidence_id: item for item in genesis_three["genesis"]}
     assert COMPARATIVE_IDS <= evidence_by_id.keys()
 
     for book, chapter in (("Exodus", 25), ("1 Kings", 6), ("Revelation", 12)):
-        prepared = prepare_chapter(book, chapter)
+        prepared = library.retrieve_evidence_items(
+            "reception and cherubim", ["genesis"],
+            scripture_references=[f"{book} {chapter}"], limit_per_object=100,
+        )
         assert COMPARATIVE_IDS.isdisjoint(
-            item.id for item in prepared.bundle.evidence_items
+            item.evidence_id for item in prepared["genesis"]
         )
 
 

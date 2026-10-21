@@ -52,15 +52,15 @@ def test_geography_and_unrelated_controls_are_recorded_without_entering_genesis_
     assert not any(row["reference"] in controls for row in census["chapters"])
 
 
-def test_frozen_release_and_ckl_identities_match_at_start_and_finish():
+def test_captured_ckl_identity_matches_at_start_and_finish():
     identities = _census()["frozen_identities"]
 
     assert identities["unchanged"] is True
-    assert identities["before"] == identities["after"]
-    assert identities["before"]["release"]["release"] == "commentary-v1.2"
-    assert identities["before"]["release"]["all_indexed_files_valid"] is True
-    assert identities["before"]["ckl"]["object_count"] == identities["before"]["ckl"]["manifest_object_count"]
-    assert identities["before"]["ckl"]["byte_signature"] == "0bd8259ce0af2a8cd748d1c82cda732010954ee98173e72238950f8de2661c40"
+    before = identities["before"]["ckl"]
+    after = identities["after"]["ckl"]
+    assert before == after
+    assert before["object_count"] == before["manifest_object_count"] == 679
+    assert before["byte_signature"] == "0bd8259ce0af2a8cd748d1c82cda732010954ee98173e72238950f8de2661c40"
 
 
 def test_expansion_plan_is_domain_grouped_and_marks_g0_as_plan_only():
