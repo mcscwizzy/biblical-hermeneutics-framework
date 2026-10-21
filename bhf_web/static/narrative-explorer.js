@@ -292,6 +292,24 @@
     const basis = value.basis && typeof value.basis === "object" ? value.basis : value;
     return {
       id: readerText(value.id),
+      provenance: readerText(value.provenance),
+      sourcePassage: readerText(value.source_passage || value.sourcePassage),
+      destinationPassage: readerText(value.destination_passage || value.destinationPassage),
+      relationshipCategory: readerText(value.relationshipCategory || value.relationship_category || value.connectionType || value.connection_type),
+      evidenceLayer: readerText(value.evidenceLayer || value.evidence_layer),
+      explanation: readerText(value.explanation),
+      uncertainty: readerText(value.uncertainty),
+      humanScholarlyApproval: readerText(value.humanScholarlyApproval || value.human_scholarly_approval),
+      supportingRecordIds: (Array.isArray(value.supporting_records)
+        ? value.supporting_records.map((record) => record?.id || record?.record_locator)
+        : Array.isArray(value.supportingRecordIds)
+          ? value.supportingRecordIds
+          : Array.isArray(value.supporting_record_ids) ? value.supporting_record_ids : []).map(readerText).filter(Boolean),
+      supportingSourceIds: (Array.isArray(value.supporting_sources)
+        ? value.supporting_sources.map((source) => source?.id)
+        : Array.isArray(value.supportingSourceIds)
+          ? value.supportingSourceIds
+          : Array.isArray(value.supporting_ckl_sources) ? value.supporting_ckl_sources.map((source) => source?.source_id) : []).map(readerText).filter(Boolean),
       sourceId: readerText(value.sourceId || value.source_id),
       targetId: readerText(value.targetId || value.target_id),
       connectionType: readerText(value.connectionType || value.connection_type),
@@ -807,6 +825,9 @@
       "p",
       "Explore the sources and connections recorded for this passage. Sources and counts show what was returned for this passage; they do not measure its importance or give a complete account.",
     );
+    if (projection?.passage?.reference) {
+      appendTextElement(document, header, "p", `Current passage: ${readerText(projection.passage.reference)}`, "narrative-explorer-passage");
+    }
     rootElement.append(header);
 
     const passage = projection?.passage?.reference;
@@ -826,6 +847,7 @@
       sectionsById,
       options,
     ));
+    rootElement.append(renderRelatedPassages(document, passage, projection?.related_passages, options));
 
     SECTIONS.forEach((definition) => {
       const section = sectionsById.get(definition.id) || {id: definition.id, state: "unknown", item_ids: [], source_domains: []};
@@ -836,6 +858,151 @@
     });
     rootElement.append(sectionsHost);
     return rootElement;
+  }
+
+  function renderRelatedPassages(document, passage, related, options) {
+    const section = element(document, "section", "narrative-explorer-related-passages");
+    section.setAttribute("aria-labelledby", "narrative-explorer-related-passages-title");
+    const heading = appendTextElement(document, section, "h4", "Related Biblical Passages");
+    heading.id = "narrative-explorer-related-passages-title";
+    const routes = related && typeof related === "object" ? related : {};
+    const state = normalizeState(routes.state);
+    section.dataset.coverageState = state;
+    appendTextElement(document, section, "p", readerText(routes.description)
+      || `Passage route coverage for ${readerText(passage) || "the selected passage"} is unknown.`,
+    state === "partial" || state === "unknown" ? "narrative-explorer-missing-provenance" : "narrative-explorer-section-heading");
+
+    const authored = Array.isArray(routes.authored_relationships) ? routes.authored_relationships : [];
+    const bridges = Array.isArray(routes.evidence_backed_bridges) ? routes.evidence_backed_bridges : [];
+    if (authored.length) {
+      appendTextElement(document, section, "h5", "Existing authored CKL relationships");
+      appendTextElement(document, section, "p", "These routes retain relationships explicitly recorded in CKL and their reviewed classifications.", "narrative-explorer-section-heading");
+      renderPassageRouteList(document, section, authored, "authored", options);
+    }
+    if (bridges.length) {
+      appendTextElement(document, section, "h5", "CKL-documented passage routes");
+      appendTextElement(document, section, "p", "These routes come from exact CKL claims, evidence items, or interpretive notes. They are not authored CKL relationship edges; human scholarly approval is not recorded.", "narrative-explorer-section-heading");
+      renderPassageRouteList(document, section, bridges, "bridge", options);
+    }
+    if (!authored.length && !bridges.length && state === "available") {
+      appendTextElement(document, section, "p", "No verified route is available in this response; route coverage may be incomplete.", "narrative-explorer-missing-provenance");
+    }
+    return section;
+  }
+
+  function renderPassageRouteList(document, parent, routes, routeKind, options) {
+    const list = element(document, "div", "narrative-explorer-related-passage-list");
+    const pageSize = 4;
+    let visible = 0;
+    let moreButton = null;
+    const currentReference = normalizeReference(trailCurrentSelection(options.trail)?.reference || "");
+    const addPage = () => {
+      const next = Math.min(routes.length, visible + pageSize);
+      routes.slice(visible, next).forEach((route) => {
+        const article = element(document, "article", "narrative-explorer-related-passage");
+        const category = connectionCategoryLabel(route.relationship_category) || readerText(route.relationship_category).replace(/_/g, " ");
+        appendTextElement(document, article, "p", `${passageEvidenceLayerLabel(route.evidence_layer)} · ${category}`, "narrative-explorer-related-passage-kind");
+        if (route.direction === "source_to_receiving_text"
+          && readerText(route.source_text_passage)
+          && readerText(route.receiving_text_passage)) {
+          appendTextElement(
+            document,
+            article,
+            "p",
+            `Textual direction: ${readerText(route.source_text_passage)} → ${readerText(route.receiving_text_passage)}. This route can be followed from either passage.`,
+            "narrative-explorer-related-passage-direction",
+          );
+        }
+        const destination = validateScriptureReference(route.destination_passage, options.knownBooks || []);
+        const inCurrent = destination.valid && currentReference === normalizeReference(destination.reference);
+        const inTrail = destination.valid && passageIsInTrail(options.trail, normalizeReference(destination.reference));
+        const hopsAtLimit = currentRelationshipHops(options.trail) >= MAX_RELATIONSHIP_HOPS;
+        if (inCurrent) {
+          appendTextElement(document, article, "p", `Current passage: ${destination.reference}`, "narrative-explorer-current-passage");
+        } else if (inTrail) {
+          appendTextElement(document, article, "p", `This passage already appears in the trail: ${destination.reference}`, "narrative-explorer-trail-cycle");
+        } else if (hopsAtLimit) {
+          appendTextElement(document, article, "p", `This connection trail has reached its ${MAX_RELATIONSHIP_HOPS}-link limit.`, "narrative-explorer-trail-limit");
+        } else if (!destination.valid) {
+          appendTextElement(document, article, "p", `Passage navigation unavailable: ${destination.reason}`, "narrative-explorer-missing-provenance");
+        } else if (typeof options.onOpenPassage === "function") {
+          appendActionButton(
+            document,
+            article,
+            `Open related passage: ${destination.reference}`,
+            `related-passage:${readerText(route.id)}`,
+            (button) => options.onOpenPassage(destination, relationshipSnapshot({
+              ...route,
+              connection_type: route.relationship_category,
+              basis: {kind: routeKind === "authored" ? route.basis?.kind : "ckl_documented_passage_bridge", notes: route.explanation},
+            }), button),
+          );
+        }
+        appendTextElement(document, article, "p", readerText(route.explanation), "narrative-explorer-related-passage-explanation");
+        appendPassageRouteDetails(document, article, route, routeKind);
+        list.append(article);
+      });
+      visible = next;
+      if (moreButton) {
+        const remaining = routes.length - visible;
+        moreButton.hidden = remaining <= 0;
+        moreButton.textContent = `Show ${Math.min(pageSize, remaining)} more passages`;
+      }
+    };
+    addPage();
+    parent.append(list);
+    if (routes.length > pageSize) {
+      moreButton = element(document, "button", "secondary narrative-explorer-more-passages");
+      moreButton.type = "button";
+      moreButton.textContent = `Show ${Math.min(pageSize, routes.length - visible)} more passages`;
+      moreButton.addEventListener("click", addPage);
+      parent.append(moreButton);
+    }
+  }
+
+  function appendPassageRouteDetails(document, parent, route, routeKind) {
+    const details = element(document, "details", "narrative-explorer-related-passage-details");
+    appendTextElement(document, details, "summary", routeKind === "authored" ? "Inspect CKL relationship and sources" : "Inspect CKL records and sources");
+    appendTextElement(document, details, "p", `Provenance: ${routeKind === "authored" ? "authored CKL relationship" : "CKL-documented interpretation; not an authored relationship"}.`, "narrative-explorer-related-passage-provenance");
+    appendTextElement(document, details, "p", `Relationship category: ${connectionCategoryLabel(route.relationship_category) || readerText(route.relationship_category)}.`);
+    if (routeKind === "authored") {
+      appendTextElement(document, details, "p", `Original CKL relationship: ${readerText(route.source_id)} → ${readerText(route.target_id)} · ${readerText(route.direction)} · ${readerText(route.relationship_mode)} · ${readerText(route.temporal_layer)}.`);
+      if (route.original_relationship_type) appendTextElement(document, details, "p", `Original relationship type: ${readerText(route.original_relationship_type)}.`);
+      const sources = Array.isArray(route.supporting_ckl_sources) ? route.supporting_ckl_sources : [];
+      appendTextElement(document, details, "p", `Supporting CKL record IDs: ${(route.supporting_record_ids || []).join("; ") || "not recorded"}.`);
+      appendTextElement(document, details, "p", `Supporting CKL source IDs: ${sources.map((source) => `${readerText(source.object_id)}:${readerText(source.source_id)}`).join("; ") || "not recorded"}.`);
+      appendTextElement(document, details, "p", `Curation explanation: ${readerText(route.curation?.why || route.explanation) || "not recorded"}`);
+    } else {
+      appendTextElement(document, details, "p", "Human scholarly approval: not recorded.", "narrative-explorer-related-passage-approval");
+      (Array.isArray(route.supporting_records) ? route.supporting_records : []).forEach((record) => {
+        const identity = readerText(record.id) || `${readerText(record.object_id)} · ${readerText(record.record_locator) || "record ID unavailable"}`;
+        appendTextElement(document, details, "h6", `CKL ${readerText(record.record_kind)}: ${identity}`);
+        if (record.identity_status === "no_standalone_id") {
+          appendTextElement(document, details, "p", "This CKL interpretive note has no standalone record ID; its content hash identifies the recorded note.");
+        }
+        if (readerText(record.statement)) appendTextElement(document, details, "p", readerText(record.statement), "narrative-explorer-original-claim");
+        if (record.certainty) appendTextElement(document, details, "p", `Recorded certainty: ${readerText(record.certainty)}.`);
+        if (record.dispute_status) appendTextElement(document, details, "p", `Recorded dispute status: ${readerText(record.dispute_status)}.`);
+        appendTextElement(document, details, "p", `Record-attached source IDs: ${(record.source_ids || []).join("; ") || "not recorded"}.`);
+      });
+      appendBibliography(document, details, route.supporting_sources, (route.supporting_sources || []).map((source) => source.id));
+    }
+    appendTextElement(document, details, "p", `Interpretive uncertainty: ${readerText(route.uncertainty)}`, "narrative-explorer-caution");
+    parent.append(details);
+  }
+
+  function passageEvidenceLayerLabel(value) {
+    const labels = {
+      direct_textual_relationship: "Direct textual relationship",
+      thematic_interpretation: "Thematic interpretation",
+      later_reception: "Later canonical reception",
+      historical_background: "Historical background",
+      ancient_comparative_evidence: "Ancient comparative evidence",
+      textual_critical_evidence: "Textual-critical evidence",
+      lexical_comparison: "Lexical comparison",
+      literary_parallel: "Literary parallel",
+    };
+    return labels[readerText(value)] || "Documented passage comparison";
   }
 
   function renderConnectionDiscovery(document, passage, items, connectionsByItem, coverageBySource, sectionsById, options) {
@@ -1471,6 +1638,27 @@
       `Connection trail: ${currentRelationshipHops(trail)} of ${MAX_RELATIONSHIP_HOPS} links followed.`,
       "narrative-explorer-trail-depth",
     );
+    const activeRelationship = activeTrailStep(trail)?.relationship;
+    if (activeRelationship?.provenance) {
+      const provenance = element(document, "section", "narrative-explorer-trail-relationship");
+      appendTextElement(document, provenance, "h4", "Connection used to open this passage");
+      const label = activeRelationship.provenance === "authored_ckl_relationship"
+        ? "authored CKL relationship"
+        : String(activeRelationship.provenance).replace(/^ckl_documented_/, "CKL-documented ").replace(/_/g, " ");
+      appendTextElement(document, provenance, "p", `${label} · ${connectionCategoryLabel(activeRelationship.relationshipCategory) || activeRelationship.relationshipCategory || "relationship category not recorded"}.`);
+      if (activeRelationship.sourcePassage || activeRelationship.destinationPassage) {
+        appendTextElement(document, provenance, "p", `${activeRelationship.sourcePassage || "Source passage unavailable"} → ${activeRelationship.destinationPassage || "Destination passage unavailable"}.`);
+      }
+      if (activeRelationship.explanation) appendTextElement(document, provenance, "p", activeRelationship.explanation);
+      if (activeRelationship.uncertainty) appendTextElement(document, provenance, "p", `Uncertainty: ${activeRelationship.uncertainty}`, "narrative-explorer-caution");
+      if (activeRelationship.supportingRecordIds?.length) {
+        appendTextElement(document, provenance, "p", `Supporting CKL records: ${activeRelationship.supportingRecordIds.join("; ")}.`, "narrative-explorer-source-id");
+      }
+      if (activeRelationship.humanScholarlyApproval) {
+        appendTextElement(document, provenance, "p", `Human scholarly approval: ${activeRelationship.humanScholarlyApproval.replace(/_/g, " ")}.`);
+      }
+      header.append(provenance);
+    }
     return header;
   }
 

@@ -111,6 +111,7 @@ def test_projection_normalizes_chapter_and_verse_range_and_exposes_v1_envelope()
         "items",
         "connections",
         "navigation",
+        "related_passages",
     }
     assert result["schema_version"] == "1.0"
     assert result["passage"] == {

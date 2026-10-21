@@ -169,6 +169,7 @@ class NarrativeExplorerService:
                 canonical_lookup=canonical_lookup,
                 map_lookup=map_lookup,
                 archaeology_lookup=archaeology_lookup,
+                source_resolver=self._lookup_bridge_source,
             ).to_dict()
         with diagnostic_stage("narrative_projection_validation"):
             validate_projection(result)
@@ -234,6 +235,20 @@ class NarrativeExplorerService:
         except Exception as exc:  # noqa: BLE001 - public errors must not reveal provider details
             LOGGER.error("Narrative Explorer CKL retrieval failed (%s)", type(exc).__name__)
             raise CanonicalLookupUnavailable("canonical lookup is unavailable") from exc
+
+    def _lookup_bridge_source(self, object_id: str) -> Any | None:
+        """Resolve exact CKL support records through the already-open library."""
+
+        library = self._canonical_library
+        inventory = getattr(library, "objects_by_id", None)
+        getter = getattr(inventory, "get", None)
+        if not callable(getter):
+            return None
+        try:
+            return getter(object_id)
+        except Exception as exc:  # noqa: BLE001 - an incomplete support lookup stays visibly unknown
+            LOGGER.warning("Narrative Explorer bridge support lookup failed (%s)", type(exc).__name__)
+            return None
 
     @staticmethod
     def _lookup_domain(

@@ -219,6 +219,14 @@ function projection(overrides = {}) {
     ],
     connections: [],
     navigation: [],
+    related_passages: {
+      state: "not_represented",
+      query_status: "complete",
+      reason_code: null,
+      description: "No route was returned from this passage pathway. This does not establish that no relationship exists.",
+      authored_relationships: [],
+      evidence_backed_bridges: [],
+    },
     ...overrides,
   };
 }
@@ -232,6 +240,202 @@ test("chapter and verse selections map to the NE-3 route contract", () => {
     explorer.urlFor({book: "Song of Songs", chapter: 2, startVerse: 3, endVerse: 7}),
     "/api/narrative-explorer/v1/passages/Song%20of%20Songs/2?verse_start=3&verse_end=7",
   );
+});
+
+test("related passage routes show provenance and uncertainty, then use the existing passage trail callback", () => {
+  const opened = [];
+  const data = projection({
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      reason_code: null,
+      description: "Passage routes are available from the records listed here.",
+      authored_relationships: [{
+        id: "authored:ckl:genesis#evidence:new-creation:Revelation 21:1-5",
+        provenance: "authored_ckl_relationship",
+        source_passage: "Genesis 1:1-31",
+        destination_passage: "Revelation 21:1-5",
+        relationship_category: "thematic_relationship",
+        original_relationship_type: "canonical-fulfillment",
+        source_id: "ckl:genesis#evidence:new-creation",
+        target_id: "ckl:new-creation-theme",
+        direction: "one_way",
+        relationship_mode: "inferred",
+        temporal_layer: "later_reception",
+        basis: {kind: "ckl_related_object", notes: "Original authored basis."},
+        curation: {why: "This is the existing authored CKL pathway.", uncertainty: "This does not assert direct quotation."},
+        explanation: "This is the existing authored CKL pathway.",
+        uncertainty: "This does not assert direct quotation.",
+        supporting_record_ids: ["ckl:genesis#evidence:new-creation"],
+        supporting_ckl_sources: [{object_id: "genesis", source_id: "genesis-1-2"}],
+      }],
+      evidence_backed_bridges: [{
+        id: "genesis-1-john-1-creation-word",
+        provenance: "ckl_documented_claim",
+        source_passage: "Genesis 1:1-5",
+        destination_passage: "John 1:1-18",
+        relationship_category: "interpretive_association",
+        evidence_layer: "thematic_interpretation",
+        direction: "interpretive_comparison",
+        relationship_mode: "documented_interpretation",
+        explanation: "John's prologue places the Logos in the beginning and associates it with creation and life.",
+        uncertainty: "The conceptual genealogy is debated; this is not proof of direct borrowing.",
+        human_scholarly_approval: "not_recorded",
+        supporting_records: [{
+          id: "ckl:john#claim:john-logos",
+          object_id: "john",
+          record_kind: "claim",
+          record_id: "john-logos",
+          identity_status: "recorded",
+          statement: "John's prologue presents the Logos with God in the beginning.",
+          certainty: "textually_explicit",
+          dispute_status: "major_scholarly_disagreement",
+          source_ids: ["john-greek", "boyarin-logos"],
+        }],
+        supporting_sources: [
+          {id: "john-greek", title: "Greek New Testament", source_type: "scripture"},
+          {id: "boyarin-logos", title: "The Jewish Gospels", author: "Daniel Boyarin", year: 2012},
+        ],
+      }],
+    },
+  });
+  const root = explorer.renderOverview(data, {
+    document: fakeDocument(),
+    knownBooks: [{value: "John", chapters: 21}, {value: "Revelation", chapters: 22}],
+    onOpenPassage: (destination, relationship) => opened.push({destination, relationship}),
+  });
+
+  assert.ok(descendants(root).some((item) => item.className === "narrative-explorer-passage" && item.textContent === "Current passage: Genesis 1"));
+  assert.match(root.textContent, /Related Biblical Passages/);
+  assert.match(root.textContent, /Existing authored CKL relationships/);
+  assert.match(root.textContent, /Original relationship type: canonical-fulfillment/);
+  assert.match(root.textContent, /Original CKL relationship: ckl:genesis#evidence:new-creation → ckl:new-creation-theme · one_way/);
+  assert.match(root.textContent, /CKL-documented passage route/);
+  assert.match(root.textContent, /Interpretive association/);
+  assert.match(root.textContent, /major_scholarly_disagreement/);
+  assert.match(root.textContent, /Human scholarly approval: not recorded/);
+  assert.match(root.textContent, /ckl:john#claim:john-logos/);
+  assert.match(root.textContent, /The Jewish Gospels/);
+  const button = descendants(root).find((item) => item.tagName === "BUTTON" && item.textContent.includes("John 1:1-18"));
+  assert.ok(button, "the exact destination passage should be an accessible route button");
+  button.click();
+
+  assert.equal(opened.length, 1);
+  assert.equal(opened[0].destination.reference, "John 1:1-18");
+  assert.equal(opened[0].destination.startVerse, 1);
+  assert.equal(opened[0].destination.endVerse, 18);
+  assert.equal(opened[0].relationship.provenance, "ckl_documented_claim");
+  assert.equal(opened[0].relationship.uncertainty, "The conceptual genealogy is debated; this is not proof of direct borrowing.");
+  assert.deepEqual(opened[0].relationship.supportingRecordIds, ["ckl:john#claim:john-logos"]);
+
+  const originTrail = explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"});
+  const followed = explorer.followPassage(originTrail, {
+    reference: opened[0].destination.reference,
+    selection: {
+      book: opened[0].destination.book,
+      chapter: opened[0].destination.chapter,
+      startVerse: opened[0].destination.startVerse,
+      endVerse: opened[0].destination.endVerse,
+      reference: opened[0].destination.reference,
+    },
+  }, opened[0].relationship, "related-passage:genesis-1-john-1-creation-word");
+  assert.equal(followed.error, null);
+  const destinationView = explorer.renderOverview(projection({
+    passage: {reference: "John 1:1-18", book: "John", chapter: 1, verse_start: 1, verse_end: 18, scope: "verse_range"},
+  }), {document: fakeDocument(), trail: followed.state});
+  assert.ok(descendants(destinationView).some((item) => item.className === "narrative-explorer-passage" && item.textContent === "Current passage: John 1:1-18"));
+  assert.match(destinationView.textContent, /Connection used to open this passage/);
+  assert.match(destinationView.textContent, /CKL-documented claim/);
+  assert.match(destinationView.textContent, /ckl:john#claim:john-logos/);
+  assert.match(destinationView.textContent, /The conceptual genealogy is debated/);
+  const returned = explorer.returnToOrigin(followed.state);
+  assert.equal(returned.nodes[returned.activeIndex].reference, "Genesis 1");
+});
+
+test("incomplete related passage coverage never reads as proof that a route does not exist", () => {
+  const view = explorer.renderOverview(projection({
+    related_passages: {
+      state: "unknown",
+      query_status: "failed",
+      reason_code: "bridge_support_unavailable",
+      description: "The CKL lookup did not finish; more passage routes may be available.",
+      authored_relationships: [],
+      evidence_backed_bridges: [],
+    },
+  }), {document: fakeDocument()});
+
+  assert.match(view.textContent, /Related Biblical Passages/);
+  assert.match(view.textContent, /lookup did not finish/);
+  assert.match(view.textContent, /more passage routes may be available/);
+  assert.doesNotMatch(view.textContent, /No biblical passage connection exists/);
+});
+
+test("related passage routes disclose long lists in keyboard-operable pages", () => {
+  const routes = Array.from({length: 6}, (_value, index) => ({
+    id: `route-${index + 1}`,
+    provenance: "ckl_documented_claim",
+    source_passage: "Genesis 1:1-5",
+    destination_passage: `John 1:${index + 1}`,
+    relationship_category: "interpretive_association",
+    evidence_layer: "thematic_interpretation",
+    direction: "interpretive_comparison",
+    relationship_mode: "documented_interpretation",
+    explanation: `Documented route ${index + 1}.`,
+    uncertainty: "The relationship remains interpretive.",
+    human_scholarly_approval: "not_recorded",
+    supporting_records: [],
+    supporting_sources: [],
+  }));
+  const view = explorer.renderOverview(projection({
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      description: "Passage routes are available from the records listed here.",
+      authored_relationships: [],
+      evidence_backed_bridges: routes,
+    },
+  }), {document: fakeDocument()});
+  const list = descendants(view).find((element) => element.className === "narrative-explorer-related-passage-list");
+  const more = descendants(view).find((element) => element.className.includes("narrative-explorer-more-passages"));
+
+  assert.equal(list.children.length, 4);
+  assert.ok(more);
+  assert.equal(more.type, "button");
+  more.click();
+  assert.equal(list.children.length, 6);
+  assert.equal(more.hidden, true);
+});
+
+test("reverse passage navigation displays the original source-to-receiver direction", () => {
+  const view = explorer.renderOverview(projection({
+    passage: {reference: "John 1:1-18", book: "John", chapter: 1, verse_start: 1, verse_end: 18, scope: "verse_range"},
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      description: "Passage routes are available from the records listed here.",
+      authored_relationships: [],
+      evidence_backed_bridges: [{
+        id: "genesis-1-john-1-creation-word",
+        provenance: "ckl_documented_claim",
+        source_passage: "John 1:1-18",
+        destination_passage: "Genesis 1:1-5",
+        source_text_passage: "Genesis 1:1-5",
+        receiving_text_passage: "John 1:1-18",
+        relationship_category: "interpretive_association",
+        evidence_layer: "thematic_interpretation",
+        direction: "source_to_receiving_text",
+        relationship_mode: "documented_interpretation",
+        explanation: "John's prologue places the Logos with God in the beginning.",
+        uncertainty: "Conceptual genealogy is debated.",
+        human_scholarly_approval: "not_recorded",
+        supporting_records: [],
+        supporting_sources: [],
+      }],
+    },
+  }), {document: fakeDocument()});
+
+  assert.match(view.textContent, /Textual direction: Genesis 1:1-5 → John 1:1-18/);
+  assert.match(view.textContent, /this route can be followed from either passage/i);
 });
 
 test("simultaneous loads for the same passage share one uncached network response", async () => {

@@ -241,6 +241,79 @@ def test_genesis_6_exposes_scoped_cultural_evidence_without_book_level_cross_ref
     assert "g6-evil-intention-and-violence" not in evidence_ids
 
 
+def test_related_passage_routes_cover_real_research_examples_without_shared_scope_inference(ckl_library):
+    client = _client(_service(ckl_library))
+    references = [
+        ("Genesis", 1), ("Genesis", 3), ("Genesis", 6),
+        ("Deuteronomy", 32), ("Psalm", 82), ("Job", 1),
+        ("Isaiah", 43), ("Ezekiel", 37), ("John", 1), ("John", 2),
+        ("Ephesians", 2), ("Revelation", 21),
+    ]
+    payloads = {}
+    for book, chapter in references:
+        response = client.get(f"/api/narrative-explorer/v1/passages/{book}/{chapter}")
+        assert response.status_code == 200
+        payload = response.json()
+        validate_projection(payload)
+        payloads[(book, chapter)] = payload
+
+    def bridge_destinations(book, chapter):
+        return {
+            route["destination_passage"]
+            for route in payloads[(book, chapter)]["related_passages"]["evidence_backed_bridges"]
+        }
+
+    assert "John 1:1-5" in bridge_destinations("Genesis", 1)
+    assert {"Revelation 12:9", "Exodus 25:18-22", "1 Kings 6:23-35"}.issubset(bridge_destinations("Genesis", 3))
+    assert "Jude 1:6" in bridge_destinations("Genesis", 6)
+    assert "Zechariah 3:1-2" in bridge_destinations("Job", 1)
+    assert "Genesis 1:1-5" in bridge_destinations("John", 1)
+    assert {"1 Kings 8:10-13", "Ephesians 2:19-22"}.issubset(bridge_destinations("John", 2))
+    assert {"John 2:19-21", "Revelation 21:1-3"}.issubset(bridge_destinations("Ephesians", 2))
+    assert "Ephesians 2:19-22" in bridge_destinations("Revelation", 21)
+    assert not bridge_destinations("Deuteronomy", 32)
+    assert not bridge_destinations("Psalm", 82)
+    assert not bridge_destinations("Isaiah", 43)
+    assert not bridge_destinations("Ezekiel", 37)
+    assert payloads[("Genesis", 1)]["related_passages"]["authored_relationships"]
+    assert payloads[("Revelation", 21)]["related_passages"]["authored_relationships"]
+
+
+def test_mark_1_composite_quotation_keeps_source_direction_from_both_endpoints(ckl_library):
+    client = _client(_service(ckl_library))
+    routes = {
+        "Exodus 23:20": ("Exodus", 23, "mark-1-exodus-23-20"),
+        "Malachi 3:1": ("Malachi", 3, "mark-1-malachi-3-1"),
+        "Isaiah 40:3": ("Isaiah", 40, "mark-1-isaiah-40-3"),
+    }
+
+    mark_payload = client.get("/api/narrative-explorer/v1/passages/Mark/1").json()
+    mark_routes = {
+        route["id"]: route
+        for route in mark_payload["related_passages"]["evidence_backed_bridges"]
+    }
+    for source_reference, (book, chapter, bridge_id) in routes.items():
+        route = mark_routes[bridge_id]
+        assert route["source_passage"] == "Mark 1:2-3"
+        assert route["destination_passage"] == source_reference
+        assert route["source_text_passage"] == source_reference
+        assert route["receiving_text_passage"] == "Mark 1:2-3"
+        assert route["relationship_category"] == "direct_quotation"
+
+        source_payload = client.get(
+            f"/api/narrative-explorer/v1/passages/{book}/{chapter}"
+        ).json()
+        reverse = next(
+            bridge
+            for bridge in source_payload["related_passages"]["evidence_backed_bridges"]
+            if bridge["id"] == bridge_id
+        )
+        assert reverse["source_passage"] == source_reference
+        assert reverse["destination_passage"] == "Mark 1:2-3"
+        assert reverse["source_text_passage"] == source_reference
+        assert reverse["receiving_text_passage"] == "Mark 1:2-3"
+
+
 def test_psalm_82_discloses_council_context_and_keeps_explicit_text_distinct_from_dispute(ckl_library):
     payload = _client(_service(ckl_library)).get(
         "/api/narrative-explorer/v1/passages/Psalm/82"

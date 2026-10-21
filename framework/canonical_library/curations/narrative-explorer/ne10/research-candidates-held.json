@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "status": "research_candidates_only_excluded_from_confirmed_passage_graph",
+  "description": "Source suggestions found during the corpus-wide NE-10 audit. These routes are deliberately not projected as confirmed relationships; advancing one requires the missing exact-scope CKL claim/evidence and its record-attached sources described below.",
+  "candidates": [
+    {
+      "id": "deuteronomy-32-psalm-82-job-1-divine-assembly",
+      "passages": [
+        "Deuteronomy 32:8-9",
+        "Psalm 82:1-8",
+        "Job 1:6-12"
+      ],
+      "observed_ckl_record": {
+        "object_id": "ancient-divine-assembly-imagery",
+        "record_kind": "interpretive_note",
+        "content_hash": "cd088cceec827e8b5c2c5f5d1749bc9a6cab9d6e76adafce479c7f96ff7334b4"
+      },
+      "observation": "The note groups these heavenly-being texts while cautioning that a reconstructed divine-council system is not the only possible reading.",
+      "held_because": "A shared CKL parent and a methodological caution do not establish a specific literary or thematic relation between every pair.",
+      "evidence_needed": "A passage-specific claim comparing the particular endpoints, with its argument and sources attached."
+    },
+    {
+      "id": "isaiah-43-exodus-12-15-new-exodus",
+      "passages": [
+        "Isaiah 43:14-21",
+        "Exodus 12-15"
+      ],
+      "observed_ckl_record": {
+        "object_id": "isaiah",
+        "record_kind": "claim",
+        "record_id": "isaiah-comfort-new-exodus"
+      },
+      "observation": "Isaiah 40-55 and Isaiah 43:14-21 use new-homecoming and exodus imagery.",
+      "held_because": "The scoped claim identifies Isaiah passages but no exact Exodus passage; shared exodus vocabulary cannot supply the missing endpoint.",
+      "evidence_needed": "An exact Exodus passage scope and claim-level evidence that connects it with Isaiah 43."
+    },
+    {
+      "id": "ezekiel-40-48-revelation-21-22-temple",
+      "passages": [
+        "Ezekiel 40-48",
+        "Revelation 21-22"
+      ],
+      "observed_ckl_record": {
+        "object_id": "ezekiel",
+        "field": "new_testament_connections[7]",
+        "content_hash": "b3248591983ce24c8afbc2f2daf9252e17f0b95564541edc011ebe6cc2e22bf7"
+      },
+      "observation": "Book-level reception metadata says Revelation recomposes Ezekiel 40-48 imagery and distinguishes its city without a temple.",
+      "held_because": "The statement is a top-level reception field, not a scoped claim/evidence record with attached bibliography; it is therefore not promoted to the B bridge collection.",
+      "evidence_needed": "An independently citable claim or interpretive note scoped to both passages with sources attached to that record."
+    },
+    {
+      "id": "ezekiel-37-john-3-water-spirit",
+      "passages": [
+        "Ezekiel 37",
+        "John 3:5-8",
+        "John 7:37-39"
+      ],
+      "observed_ckl_record": {
+        "object_id": "ezekiel",
+        "field": "new_testament_connections[1]",
+        "content_hash": "96e7b2859cdd1fdbc3b56a63ea94d738eacea126e3e398575985dc367104cbd6"
+      },
+      "observation": "Book-level metadata says John 3 and 7 are often read with Ezekiel water-and-Spirit traditions and explicitly notes debate about exact allusions.",
+      "held_because": "The metadata does not identify Ezekiel 37 as the precise source passage or attach a claim-level source set to that pair.",
+      "evidence_needed": "An exact Ezekiel scope and source-backed argument for each proposed John passage."
+    },
+    {
+      "id": "exodus-12-1-corinthians-5-passover",
+      "passages": [
+        "Exodus 12:21-30",
+        "1 Corinthians 5:7-8"
+      ],
+      "observed_ckl_locations": [
+        {
+          "object_id": "exodus",
+          "field": "new_testament_connections",
+          "text": "1 Corinthians 5:7 uses Passover imagery for Christ."
+        },
+        {
+          "object_id": "passover",
+          "field": "scripture_references",
+          "entry": {
+            "reference": "1 Corinthians 5:7-8",
+            "relationship": "typology",
+            "notes": "Christ our Passover"
+          }
+        }
+      ],
+      "observation": "Exodus metadata says 1 Corinthians 5:7 uses Passover imagery; the Passover event entry lists 1 Corinthians 5:7-8 as typology.",
+      "held_because": "The linkage is present in parent-level connection/anchor fields, without one exact CKL claim/evidence record and record-attached sources for both passage scopes.",
+      "evidence_needed": "An exact scoped claim or interpretive note comparing Exodus 12 with 1 Corinthians 5:7-8 and its own attached sources."
+    },
+    {
+      "id": "psalm-110-acts-2-enthronement",
+      "passages": [
+        "Psalm 110:1",
+        "Acts 2:22-36"
+      ],
+      "observed_ckl_record": {
+        "object_id": "psalms",
+        "field": "new_testament_connections[2]",
+        "content_hash": "9a0dc0eaed0808153a558e203460374d90033288b53d259e0ddeacd49afcf98a"
+      },
+      "observation": "Book-level metadata says Acts applies Psalms 2, 16, 69, 109, 110, and 118 to Jesus and enthronement.",
+      "held_because": "The list does not specify the Psalm 110 / Acts 2:34-36 pair or attach evidence to that specific claim.",
+      "evidence_needed": "An exact Psalm 110 and Acts 2 passage claim with source-attached discussion of the quotation and its use."
+    },
+    {
+      "id": "genesis-2-3-revelation-21-22-eden-tree-life",
+      "passages": [
+        "Genesis 2-3",
+        "Revelation 21-22"
+      ],
+      "observed_ckl_record": {
+        "object_id": "revelation",
+        "record_kind": "interpretive_note",
+        "content_hash": "99a7149a5e249bbdf26867a545b6a347f6ba78a7077d09947b74d7dc08b83f0f"
+      },
+      "observation": "Revelation metadata links its tree of life and river imagery with Genesis, Ezekiel, and Zechariah; Revelation cross-references Genesis 2-3 at book level.",
+      "held_because": "The note does not name the exact Genesis passage or attach a claim-level comparison to both endpoints; broad Eden language alone is not a bridge.",
+      "evidence_needed": "A claim-level comparison scoped to a specific Genesis garden/tree passage and Revelation 21-22 with its exact sources."
+    }
+  ]
+}

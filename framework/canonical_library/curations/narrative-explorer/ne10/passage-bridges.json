@@ -1,0 +1,1109 @@
+{
+  "schema_version": 1,
+  "description": "Read-only, record-verified NE-10 passage bridges. Each route identifies exact CKL records and only sources attached to those records; this registry remains separate from authored CKL relationships. For source_to_receiving_text entries, explicit source_text_passage and receiving_text_passage fields preserve the historical direction while route navigation remains reversible.",
+  "bridges": [
+    {
+      "id": "genesis-1-john-1-creation-word",
+      "passages": [
+        "Genesis 1:1-5",
+        "John 1:1-5"
+      ],
+      "direction": "interpretive_comparison",
+      "relationship_category": "interpretive_association",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "John's prologue places the Logos with God 'in the beginning' and associates it with creation and life, read with Genesis alongside wider Jewish wisdom and word traditions.",
+      "uncertainty": "Conceptual genealogy is debated; this is an interpretive association, not proof of direct borrowing or a single source.",
+      "supporting_records": [
+        {
+          "object_id": "john",
+          "record_kind": "claim",
+          "source_ids": [
+            "john-greek",
+            "boyarin-logos",
+            "oxford-johannine"
+          ],
+          "record_id": "john-logos"
+        }
+      ]
+    },
+    {
+      "id": "genesis-3-revelation-12-serpent",
+      "passages": [
+        "Genesis 3:1",
+        "Revelation 12:9"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "Revelation 12:9 identifies its 'ancient serpent' with the devil and Satan; Genesis 3:1 names the serpent without those identifications.",
+      "uncertainty": "Explicit later reception; do not read the later names back into Genesis original wording.",
+      "supporting_records": [
+        {
+          "object_id": "genesis",
+          "record_kind": "evidence",
+          "source_ids": [
+            "genesis-1-50",
+            "g1-revelation-text",
+            "g1-zhakevich-genesis-315"
+          ],
+          "record_id": "g3-serpent-later-canonical-reception"
+        }
+      ],
+      "source_text_passage": "Genesis 3:1",
+      "receiving_text_passage": "Revelation 12:9"
+    },
+    {
+      "id": "genesis-3-exodus-25-cherubim",
+      "passages": [
+        "Genesis 3:24",
+        "Exodus 25:18-22"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "thematic_relationship",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "Genesis stations cherubim to guard the way to the tree of life; the later sanctuary text places cherubim in sacred space, offered as context rather than a physical description.",
+      "uncertainty": "The texts assign distinct functions; the comparison does not establish one appearance for Eden cherubim.",
+      "supporting_records": [
+        {
+          "object_id": "genesis",
+          "record_kind": "evidence",
+          "source_ids": [
+            "genesis-1-50",
+            "g1-exodus-text",
+            "g1-kings-text",
+            "g1-lexham-cherubim"
+          ],
+          "record_id": "g3-cherubim-biblical-sacred-space-context"
+        }
+      ]
+    },
+    {
+      "id": "genesis-3-kings-6-cherubim",
+      "passages": [
+        "Genesis 3:24",
+        "1 Kings 6:23-35"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "thematic_relationship",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "Genesis stations cherubim to guard the way to the tree of life; the later sanctuary text places cherubim in sacred space, offered as context rather than a physical description.",
+      "uncertainty": "The texts assign distinct functions; the comparison does not establish one appearance for Eden cherubim.",
+      "supporting_records": [
+        {
+          "object_id": "genesis",
+          "record_kind": "evidence",
+          "source_ids": [
+            "genesis-1-50",
+            "g1-exodus-text",
+            "g1-kings-text",
+            "g1-lexham-cherubim"
+          ],
+          "record_id": "g3-cherubim-biblical-sacred-space-context"
+        }
+      ]
+    },
+    {
+      "id": "genesis-6-jude-1-watchers-reception",
+      "passages": [
+        "Genesis 6:1-4",
+        "Jude 1:6"
+      ],
+      "direction": "interpretive_comparison",
+      "relationship_category": "interpretive_association",
+      "evidence_layer": "ancient_comparative_evidence",
+      "explanation": "Genesis does not name Watchers; 1 Enoch and Jubilees develop that reading, and Jude angels are often read beside Genesis 6 and those traditions.",
+      "uncertainty": "This reception route does not add Watchers to Genesis or show that Jude retells all Second Temple details.",
+      "supporting_records": [
+        {
+          "object_id": "genesis-flood-postflood-context",
+          "record_kind": "evidence",
+          "source_ids": [
+            "g2r2-local-genesis-1-50",
+            "g2-doedens-sons-god",
+            "g2-1-enoch-6",
+            "g2-jubilees-5"
+          ],
+          "record_id": "g6-second-temple-watchers-reception"
+        },
+        {
+          "object_id": "jude",
+          "record_kind": "interpretive_note",
+          "source_ids": [
+            "enoch",
+            "davids",
+            "levine-jant"
+          ],
+          "content_hash": "72f468081b3d212f8e7a02fed786c60f9b02badac47c23b83a40b7bb33a6d984"
+        }
+      ]
+    },
+    {
+      "id": "job-1-zechariah-3-accuser",
+      "passages": [
+        "Job 1:6-12",
+        "Zechariah 3:1-2"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "interpretive_association",
+      "evidence_layer": "lexical_comparison",
+      "explanation": "In Job 1-2, ha-satan bears the Hebrew article and functions as accuser/adversary in the heavenly council; CKL compares Zechariah 3 and distinguishes later identifications with the devil.",
+      "uncertainty": "Lexical role, literary function, and later theology are related but distinct questions.",
+      "supporting_records": [
+        {
+          "object_id": "job",
+          "record_kind": "interpretive_note",
+          "source_ids": [
+            "job-masoretic-1-42",
+            "seow-job-1-21",
+            "pope-job-anchor"
+          ],
+          "content_hash": "2151c6ce80fcfe05e33e3971f4fb64e3da5489915559b67733dd42f195d38dda"
+        }
+      ]
+    },
+    {
+      "id": "exodus-40-leviticus-1-continuation",
+      "passages": [
+        "Exodus 40:34-38",
+        "Leviticus 1:1"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "shared_literary_motif",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Exodus closes as cloud and glory fill the completed tent; Leviticus opens with the LORD calling Moses from the tent of meeting, continuing the sanctuary scene.",
+      "uncertainty": "The adjacent literary sequence supports narrative continuity; it does not establish quotation or literary dependence.",
+      "supporting_records": [
+        {
+          "object_id": "leviticus",
+          "record_kind": "claim",
+          "source_ids": [
+            "leviticus-1-27"
+          ],
+          "record_id": "leviticus-called-from-tent"
+        }
+      ]
+    },
+    {
+      "id": "exodus-12-numbers-33-egypt-gods",
+      "passages": [
+        "Exodus 12:12",
+        "Numbers 33:4"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "thematic_relationship",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "Exodus 12:12 announces judgment on Egypt’s gods; Numbers 33:4 retrospectively says the LORD executed judgment on Egypt’s gods during the departure.",
+      "uncertainty": "Neither passage identifies the individual gods or assigns specific divine targets to individual plagues; those reconstructions remain disputed.",
+      "supporting_records": [
+        {
+          "object_id": "egyptian-kingship-and-divine-order",
+          "record_kind": "claim",
+          "source_ids": [
+            "exodus-royal-conflict-text",
+            "numbers-33-judgment-text",
+            "sarna-exodus-1991",
+            "meyers-exodus-2005"
+          ],
+          "record_id": "exodus-judgments-egyptian-gods"
+        }
+      ]
+    },
+    {
+      "id": "hosea-11-matthew-2-son-egypt",
+      "passages": [
+        "Hosea 11:1",
+        "Matthew 2:15"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "Hosea recalls Israel as God's son called out of Egypt; Matthew rereads Hosea 11:1 in Jesus' return from Egypt while Israel remains Hosea's referent.",
+      "uncertainty": "Matthew is later figural reception and does not erase Hosea reference to Israel.",
+      "supporting_records": [
+        {
+          "object_id": "hosea",
+          "record_kind": "interpretive_note",
+          "source_ids": [
+            "hosea-masoretic",
+            "new-testament-hosea-reuse",
+            "moyise-hosea-new-testament"
+          ],
+          "content_hash": "3258d45212399ffb0055de005ff45b356f6813038ea4cf7c965a925228d9b43e"
+        }
+      ],
+      "source_text_passage": "Hosea 11:1",
+      "receiving_text_passage": "Matthew 2:15"
+    },
+    {
+      "id": "hosea-13-first-corinthians-15",
+      "passages": [
+        "Hosea 13:14",
+        "1 Corinthians 15:54-55"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "textual_critical_evidence",
+      "explanation": "CKL identifies Paul's reuse of Hosea 13:14 within his later resurrection argument.",
+      "uncertainty": "Hosea 13:14 is textually and rhetorically disputed; Paul reuse does not remove Hosea threat-filled context.",
+      "supporting_records": [
+        {
+          "object_id": "hosea",
+          "record_kind": "interpretive_note",
+          "source_ids": [
+            "new-testament-hosea-reuse",
+            "moyise-hosea-new-testament",
+            "nets-twelve"
+          ],
+          "content_hash": "21692049bc4f1eabb47a288486eaf523e638d1e1e5a52390e1f8a5323b9d096f"
+        }
+      ],
+      "source_text_passage": "Hosea 13:14",
+      "receiving_text_passage": "1 Corinthians 15:54-55"
+    },
+    {
+      "id": "mark-1-exodus-23-20",
+      "passages": [
+        "Exodus 23:20",
+        "Mark 1:2-3"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Mark 1:2-3 combines wording associated with Exodus 23:20 in a composite citation presented under an Isaiah heading.",
+      "uncertainty": "The citation is composite and should not be flattened into a quotation from only one source.",
+      "supporting_records": [
+        {
+          "object_id": "mark",
+          "record_kind": "claim",
+          "source_ids": [
+            "mark-greek",
+            "marcus-mark-1-8"
+          ],
+          "record_id": "mark-opening-citation"
+        }
+      ],
+      "source_text_passage": "Exodus 23:20",
+      "receiving_text_passage": "Mark 1:2-3"
+    },
+    {
+      "id": "mark-1-malachi-3-1",
+      "passages": [
+        "Malachi 3:1",
+        "Mark 1:2-3"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Mark 1:2-3 combines wording associated with Malachi 3:1 in a composite citation presented under an Isaiah heading.",
+      "uncertainty": "The citation is composite and should not be flattened into a quotation from only one source.",
+      "supporting_records": [
+        {
+          "object_id": "mark",
+          "record_kind": "claim",
+          "source_ids": [
+            "mark-greek",
+            "marcus-mark-1-8"
+          ],
+          "record_id": "mark-opening-citation"
+        }
+      ],
+      "source_text_passage": "Malachi 3:1",
+      "receiving_text_passage": "Mark 1:2-3"
+    },
+    {
+      "id": "mark-1-isaiah-40-3",
+      "passages": [
+        "Isaiah 40:3",
+        "Mark 1:2-3"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Mark 1:2-3 combines wording associated with Isaiah 40:3 in a composite citation presented under an Isaiah heading.",
+      "uncertainty": "The citation is composite and should not be flattened into a quotation from only one source.",
+      "supporting_records": [
+        {
+          "object_id": "mark",
+          "record_kind": "claim",
+          "source_ids": [
+            "mark-greek",
+            "marcus-mark-1-8"
+          ],
+          "record_id": "mark-opening-citation"
+        }
+      ],
+      "source_text_passage": "Isaiah 40:3",
+      "receiving_text_passage": "Mark 1:2-3"
+    },
+    {
+      "id": "luke-3-psalm-2-variant",
+      "passages": [
+        "Psalm 2:7",
+        "Luke 3:22"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "textual_critical_evidence",
+      "explanation": "A variant of Luke 3:22 in Codex Bezae and patristic evidence uses the wording of Psalm 2:7; most witnesses preserve the Synoptic-form declaration.",
+      "uncertainty": "The Psalm 2:7 wording is a textual variant, not the reading found in most witnesses; textual and christological judgments remain distinct.",
+      "supporting_records": [
+        {
+          "object_id": "luke",
+          "record_kind": "claim",
+          "source_ids": [
+            "bezae-luke",
+            "ntvmr-luke",
+            "baptism-variant"
+          ],
+          "record_id": "luke-baptism-variant"
+        }
+      ],
+      "source_text_passage": "Psalm 2:7",
+      "receiving_text_passage": "Luke 3:22"
+    },
+    {
+      "id": "mark-11-isaiah-56-7",
+      "passages": [
+        "Isaiah 56:7",
+        "Mark 11:17"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Mark's temple action places wording from Isaiah 56:7 within its scriptural interpretation of prayer, nations, commerce, and judgment.",
+      "uncertainty": "Keep the critique in its Jewish context; it does not authorize contempt for Judaism or sacred places.",
+      "supporting_records": [
+        {
+          "object_id": "mark",
+          "record_kind": "claim",
+          "source_ids": [
+            "mark-greek",
+            "marcus-mark-8-16",
+            "jewish-annotated-nt"
+          ],
+          "record_id": "mark-temple-action"
+        }
+      ],
+      "source_text_passage": "Isaiah 56:7",
+      "receiving_text_passage": "Mark 11:17"
+    },
+    {
+      "id": "mark-11-jeremiah-7-11",
+      "passages": [
+        "Jeremiah 7:11",
+        "Mark 11:17"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Mark's temple action places wording from Jeremiah 7:11 within its scriptural interpretation of prayer, nations, commerce, and judgment.",
+      "uncertainty": "Keep the critique in its Jewish context; it does not authorize contempt for Judaism or sacred places.",
+      "supporting_records": [
+        {
+          "object_id": "mark",
+          "record_kind": "claim",
+          "source_ids": [
+            "mark-greek",
+            "marcus-mark-8-16",
+            "jewish-annotated-nt"
+          ],
+          "record_id": "mark-temple-action"
+        }
+      ],
+      "source_text_passage": "Jeremiah 7:11",
+      "receiving_text_passage": "Mark 11:17"
+    },
+    {
+      "id": "isaiah-53-mark-10-ransom",
+      "passages": [
+        "Isaiah 53:11-12",
+        "Mark 10:45"
+      ],
+      "direction": "interpretive_comparison",
+      "relationship_category": "interpretive_association",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "Mark's saying about the Son of Man giving his life as ransom is read alongside the servant's suffering and benefit to others.",
+      "uncertainty": "CKL lists several possible readings and establishes no uncontested source or theory.",
+      "supporting_records": [
+        {
+          "object_id": "mark",
+          "record_kind": "claim",
+          "source_ids": [
+            "mark-greek",
+            "marcus-mark-8-16"
+          ],
+          "record_id": "mark-ransom"
+        }
+      ]
+    },
+    {
+      "id": "daniel-7-mark-13-son-of-man",
+      "passages": [
+        "Daniel 7:13-14",
+        "Mark 13:26"
+      ],
+      "direction": "interpretive_comparison",
+      "relationship_category": "interpretive_association",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "CKL reads Mark 13's Son of Man imagery with Daniel 7 in a discourse on temple destruction, suffering, uncertain timing, and watchfulness.",
+      "uncertainty": "This is an interpretive connection, not a direct quotation or modern prediction chart.",
+      "supporting_records": [
+        {
+          "object_id": "mark",
+          "record_kind": "claim",
+          "source_ids": [
+            "mark-greek",
+            "marcus-mark-8-16",
+            "collins-mark"
+          ],
+          "record_id": "mark-apocalypse"
+        }
+      ]
+    },
+    {
+      "id": "isaiah-7-matthew-1-immanuel",
+      "passages": [
+        "Isaiah 7:14",
+        "Matthew 1:22-23"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "Matthew applies Isaiah's Immanuel sign to Jesus' birth; Isaiah 7 addresses Ahaz during the Syro-Ephraimite crisis.",
+      "uncertainty": "The immediate identity of the child and relation of Isaiah setting to Matthew reuse remain disputed.",
+      "supporting_records": [
+        {
+          "object_id": "isaiah",
+          "record_kind": "claim",
+          "source_ids": [
+            "isaiah-masoretic",
+            "blenkinsopp-isaiah-1-39",
+            "williamson-book-called-isaiah",
+            "greek-esaias-nets",
+            "moyise-isaiah-nt"
+          ],
+          "record_id": "isaiah-immanuel-sign"
+        }
+      ],
+      "source_text_passage": "Isaiah 7:14",
+      "receiving_text_passage": "Matthew 1:22-23"
+    },
+    {
+      "id": "isaiah-53-acts-8",
+      "passages": [
+        "Isaiah 53:7-8",
+        "Acts 8:32-35"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "Acts 8:32-35 records the Ethiopian official reading Isaiah’s servant passage and Philip interpreting the passage in relation to Jesus.",
+      "uncertainty": "Isaiah does not name the servant; collective, individual, prophetic, messianic, and christological readings persist.",
+      "supporting_records": [
+        {
+          "object_id": "isaiah",
+          "record_kind": "claim",
+          "source_ids": [
+            "isaiah-masoretic",
+            "blenkinsopp-isaiah-40-55",
+            "paul-isaiah-40-66",
+            "oxford-handbook-isaiah",
+            "moyise-isaiah-nt"
+          ],
+          "record_id": "isaiah-suffering-servant"
+        }
+      ],
+      "source_text_passage": "Isaiah 53:7-8",
+      "receiving_text_passage": "Acts 8:32-35"
+    },
+    {
+      "id": "isaiah-53-1-peter-2",
+      "passages": [
+        "Isaiah 53:4-12",
+        "1 Peter 2:21-25"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "CKL documents 1 Peter 2:21-25 as later reception of Isaiah's suffering-servant passage.",
+      "uncertainty": "Isaiah does not name the servant; collective, individual, prophetic, messianic, and christological readings persist.",
+      "supporting_records": [
+        {
+          "object_id": "isaiah",
+          "record_kind": "claim",
+          "source_ids": [
+            "isaiah-masoretic",
+            "blenkinsopp-isaiah-40-55",
+            "paul-isaiah-40-66",
+            "oxford-handbook-isaiah",
+            "moyise-isaiah-nt"
+          ],
+          "record_id": "isaiah-suffering-servant"
+        }
+      ],
+      "source_text_passage": "Isaiah 53:4-12",
+      "receiving_text_passage": "1 Peter 2:21-25"
+    },
+    {
+      "id": "micah-4-isaiah-2-zion",
+      "passages": [
+        "Micah 4:1-3",
+        "Isaiah 2:2-4"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "shared_literary_motif",
+      "evidence_layer": "literary_parallel",
+      "explanation": "Both passages share close wording about Zion, divine instruction, international adjudication, and weapons transformed for agriculture.",
+      "uncertainty": "Direction of dependence and a shared source remain debated.",
+      "supporting_records": [
+        {
+          "object_id": "micah",
+          "record_kind": "claim",
+          "source_ids": [
+            "micah-canonical-comparanda",
+            "kessler-micah",
+            "sbl-new-form-twelve"
+          ],
+          "record_id": "micah-isaiah-parallel"
+        }
+      ]
+    },
+    {
+      "id": "micah-3-jeremiah-26-reception",
+      "passages": [
+        "Micah 3:12",
+        "Jeremiah 26:18-19"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "Jeremiah 26 attributes Micah 3:12 to Micah of Moresheth and uses it in a later dispute over prophetic judgment.",
+      "uncertainty": "Jeremiah is one narrated later use and does not replace Micah original setting.",
+      "supporting_records": [
+        {
+          "object_id": "micah",
+          "record_kind": "claim",
+          "source_ids": [
+            "micah-canonical-comparanda",
+            "kessler-micah"
+          ],
+          "record_id": "micah-jeremiah-reception"
+        }
+      ],
+      "source_text_passage": "Micah 3:12",
+      "receiving_text_passage": "Jeremiah 26:18-19"
+    },
+    {
+      "id": "amos-5-acts-7-quotation",
+      "passages": [
+        "Amos 5:25-27",
+        "Acts 7:42-43"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "textual_critical_evidence",
+      "explanation": "Acts 7:42-43 explicitly quotes a Greek form of Amos 5:25-27, including forms rendered Moloch and Rephan.",
+      "uncertainty": "The Greek form and textual history matter within Stephen argument about Israel worship history.",
+      "supporting_records": [
+        {
+          "object_id": "amos",
+          "record_kind": "claim",
+          "source_ids": [
+            "amos-acts-reuse",
+            "nets-twelve-amos",
+            "catss-amos"
+          ],
+          "record_id": "amos-acts7-reuse"
+        }
+      ],
+      "source_text_passage": "Amos 5:25-27",
+      "receiving_text_passage": "Acts 7:42-43"
+    },
+    {
+      "id": "amos-9-acts-15-quotation",
+      "passages": [
+        "Amos 9:11-12",
+        "Acts 15:16-18"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "textual_critical_evidence",
+      "explanation": "Acts 15:16-18 quotes a Greek form of Amos 9:11-12 and applies restored Davidic-tent language to the nations.",
+      "uncertainty": "Acts fulfillment logic is debated; compare Greek wording with Amos restoration context.",
+      "supporting_records": [
+        {
+          "object_id": "amos",
+          "record_kind": "claim",
+          "source_ids": [
+            "amos-acts-reuse",
+            "nets-twelve-amos",
+            "catss-amos",
+            "barton-theology-amos"
+          ],
+          "record_id": "amos-acts15-reuse"
+        }
+      ],
+      "source_text_passage": "Amos 9:11-12",
+      "receiving_text_passage": "Acts 15:16-18"
+    },
+    {
+      "id": "habakkuk-2-romans-1",
+      "passages": [
+        "Habakkuk 2:4",
+        "Romans 1:17"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Romans 1:17 quotes Habakkuk 2:4 within Paul’s account of the gospel and the revelation of God’s righteousness.",
+      "uncertainty": "The wording and force of righteousness and faith/faithfulness remain disputed.",
+      "supporting_records": [
+        {
+          "object_id": "romans",
+          "record_kind": "claim",
+          "source_ids": [
+            "romans-greek",
+            "nets-lxx",
+            "stanley-scripture"
+          ],
+          "record_id": "romans-thesis"
+        }
+      ],
+      "source_text_passage": "Habakkuk 2:4",
+      "receiving_text_passage": "Romans 1:17"
+    },
+    {
+      "id": "genesis-15-romans-4",
+      "passages": [
+        "Genesis 15:6",
+        "Romans 4:1-25"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Romans 4 builds its Abraham argument around Genesis 15:6 and the scriptural promise narrative.",
+      "uncertainty": "Paul argument belongs to its audience and must not become contempt for Jewish practice or Torah.",
+      "supporting_records": [
+        {
+          "object_id": "romans",
+          "record_kind": "claim",
+          "source_ids": [
+            "romans-greek",
+            "stanley-scripture"
+          ],
+          "record_id": "romans-abraham"
+        }
+      ],
+      "source_text_passage": "Genesis 15:6",
+      "receiving_text_passage": "Romans 4:1-25"
+    },
+    {
+      "id": "galatians-3-genesis-12-3",
+      "passages": [
+        "Genesis 12:3",
+        "Galatians 3:6-9"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Galatians 3 invokes Genesis 12:3 as scriptural ground for Abraham, blessing, and the nations.",
+      "uncertainty": "Paul later reading does not erase Genesis narrative or Jewish interpretation.",
+      "supporting_records": [
+        {
+          "object_id": "galatians",
+          "record_kind": "claim",
+          "source_ids": [
+            "gal-greek",
+            "nets-lxx",
+            "martyn-galatians"
+          ],
+          "record_id": "gal-abraham"
+        }
+      ],
+      "source_text_passage": "Genesis 12:3",
+      "receiving_text_passage": "Galatians 3:6-9"
+    },
+    {
+      "id": "galatians-3-genesis-15-6",
+      "passages": [
+        "Genesis 15:6",
+        "Galatians 3:6-9"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Galatians 3 invokes Genesis 15:6 as scriptural ground for Abraham, blessing, and the nations.",
+      "uncertainty": "Paul later reading does not erase Genesis narrative or Jewish interpretation.",
+      "supporting_records": [
+        {
+          "object_id": "galatians",
+          "record_kind": "claim",
+          "source_ids": [
+            "gal-greek",
+            "nets-lxx",
+            "martyn-galatians"
+          ],
+          "record_id": "gal-abraham"
+        }
+      ],
+      "source_text_passage": "Genesis 15:6",
+      "receiving_text_passage": "Galatians 3:6-9"
+    },
+    {
+      "id": "galatians-3-deut-21-23",
+      "passages": [
+        "Deuteronomy 21:23",
+        "Galatians 3:10-14"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Galatians juxtaposes Deuteronomy 21:23 with Torah performance and the Messiah's crucifixion.",
+      "uncertainty": "The CKL claim cautions that Galatians does not say Torah, Jews, or Jewish practice are themselves cursed.",
+      "supporting_records": [
+        {
+          "object_id": "galatians",
+          "record_kind": "claim",
+          "source_ids": [
+            "gal-greek",
+            "nets-lxx",
+            "thiessen-gentile-problem"
+          ],
+          "record_id": "gal-curse-law"
+        }
+      ],
+      "source_text_passage": "Deuteronomy 21:23",
+      "receiving_text_passage": "Galatians 3:10-14"
+    },
+    {
+      "id": "galatians-3-deut-27-26",
+      "passages": [
+        "Deuteronomy 27:26",
+        "Galatians 3:10-14"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Galatians juxtaposes Deuteronomy 27:26 with Torah performance and the Messiah's crucifixion.",
+      "uncertainty": "The CKL claim cautions that Galatians does not say Torah, Jews, or Jewish practice are themselves cursed.",
+      "supporting_records": [
+        {
+          "object_id": "galatians",
+          "record_kind": "claim",
+          "source_ids": [
+            "gal-greek",
+            "nets-lxx",
+            "thiessen-gentile-problem"
+          ],
+          "record_id": "gal-curse-law"
+        }
+      ],
+      "source_text_passage": "Deuteronomy 27:26",
+      "receiving_text_passage": "Galatians 3:10-14"
+    },
+    {
+      "id": "james-2-gen-22",
+      "passages": [
+        "Genesis 22:1-19",
+        "James 2:21-25"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "James takes up this earlier scriptural episode and interprets the figure’s action as a deed that enacts or completes faith in James 2:21-25.",
+      "uncertainty": "James names the figure and event without a formal citation formula; the examples’ force in James’s argument and its relation to Paul remain disputed.",
+      "supporting_records": [
+        {
+          "object_id": "james",
+          "record_kind": "claim",
+          "source_ids": [
+            "james-greek",
+            "nets-lxx",
+            "ward",
+            "allison"
+          ],
+          "record_id": "jas-abraham-rahab"
+        }
+      ],
+      "source_text_passage": "Genesis 22:1-19",
+      "receiving_text_passage": "James 2:21-25"
+    },
+    {
+      "id": "james-2-josh-2",
+      "passages": [
+        "Joshua 2:1-21",
+        "James 2:21-25"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "James takes up this earlier scriptural episode and interprets the figure’s action as a deed that enacts or completes faith in James 2:21-25.",
+      "uncertainty": "James names the figure and event without a formal citation formula; the examples’ force in James’s argument and its relation to Paul remain disputed.",
+      "supporting_records": [
+        {
+          "object_id": "james",
+          "record_kind": "claim",
+          "source_ids": [
+            "james-greek",
+            "nets-lxx",
+            "ward",
+            "allison"
+          ],
+          "record_id": "jas-abraham-rahab"
+        }
+      ],
+      "source_text_passage": "Joshua 2:1-21",
+      "receiving_text_passage": "James 2:21-25"
+    },
+    {
+      "id": "exodus-34-nahum-1",
+      "passages": [
+        "Exodus 34:6-7",
+        "Nahum 1:2-3"
+      ],
+      "direction": "interpretive_comparison",
+      "relationship_category": "shared_literary_motif",
+      "evidence_layer": "lexical_comparison",
+      "explanation": "Nahum 1:2-3 adapts language associated with Exodus 34:6-7 while emphasizing jealousy, vengeance, patience, power, and refusal to acquit.",
+      "uncertainty": "This is lexical adaptation, not a flattened contradiction or verbatim quotation.",
+      "supporting_records": [
+        {
+          "object_id": "nahum",
+          "record_kind": "claim",
+          "source_ids": [
+            "nahum-masoretic",
+            "nahum-canonical-comparanda",
+            "lim-nahum"
+          ],
+          "record_id": "nahum-divine-character"
+        }
+      ]
+    },
+    {
+      "id": "nahum-1-isaiah-52-messenger",
+      "passages": [
+        "Nahum 1:15",
+        "Isaiah 52:7"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "shared_literary_motif",
+      "evidence_layer": "literary_parallel",
+      "explanation": "Nahum 1:15 and Isaiah 52:7 share good-news messenger language; CKL calls them a parallel, not Paul direct source.",
+      "uncertainty": "Shared imagery does not establish direct borrowing.",
+      "supporting_records": [
+        {
+          "object_id": "nahum",
+          "record_kind": "claim",
+          "source_ids": [
+            "nahum-canonical-comparanda",
+            "nahum-new-testament"
+          ],
+          "record_id": "nahum-new-testament"
+        }
+      ]
+    },
+    {
+      "id": "nahum-1-romans-10-parallel",
+      "passages": [
+        "Nahum 1:15",
+        "Romans 10:15"
+      ],
+      "direction": "interpretive_comparison",
+      "relationship_category": "interpretive_association",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "Romans 10:15 directly cites Isaiah 52:7; CKL calls Nahum 1:15 a related messenger parallel, not Paul direct source.",
+      "uncertainty": "This preserves the distinction between Paul Isaiah citation and Nahum parallel wording.",
+      "supporting_records": [
+        {
+          "object_id": "nahum",
+          "record_kind": "claim",
+          "source_ids": [
+            "nahum-canonical-comparanda",
+            "nahum-new-testament"
+          ],
+          "record_id": "nahum-new-testament"
+        }
+      ]
+    },
+    {
+      "id": "hebrews-7-genesis-14",
+      "passages": [
+        "Genesis 14",
+        "Hebrews 7:1-28"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "Hebrews 7 takes up the Melchizedek encounter in Genesis 14 and interprets it as a literary analogy for Jesus’ enduring priesthood.",
+      "uncertainty": "This later scriptural argument is not a neutral biography or uncontested historical identification.",
+      "supporting_records": [
+        {
+          "object_id": "hebrews",
+          "record_kind": "claim",
+          "source_ids": [
+            "heb-greek",
+            "nets-lxx",
+            "mason"
+          ],
+          "record_id": "heb-melchizedek"
+        }
+      ],
+      "source_text_passage": "Genesis 14",
+      "receiving_text_passage": "Hebrews 7:1-28"
+    },
+    {
+      "id": "hebrews-7-psalm-110",
+      "passages": [
+        "Psalm 110",
+        "Hebrews 7:1-28"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "direct_quotation",
+      "evidence_layer": "direct_textual_relationship",
+      "explanation": "Hebrews 7:17 explicitly invokes the priest-forever oracle of Psalm 110 in its argument for Jesus’ enduring priesthood.",
+      "uncertainty": "This later scriptural argument is not a neutral biography or uncontested historical identification.",
+      "supporting_records": [
+        {
+          "object_id": "hebrews",
+          "record_kind": "claim",
+          "source_ids": [
+            "heb-greek",
+            "nets-lxx",
+            "mason"
+          ],
+          "record_id": "heb-melchizedek"
+        }
+      ],
+      "source_text_passage": "Psalm 110",
+      "receiving_text_passage": "Hebrews 7:1-28"
+    },
+    {
+      "id": "jude-2-peter-literary-relation",
+      "passages": [
+        "Jude 1:4-18",
+        "2 Peter 2:1-22"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "proposed_intertextual_echo",
+      "evidence_layer": "literary_parallel",
+      "explanation": "Jude 1:4-18 and 2 Peter 2:1-22 share extensive wording and sequence; the CKL claim records the literary relationship while leaving dependence direction open.",
+      "uncertainty": "The relation is strongly evidenced, but which text depends on the other and how that relation arose remain disputed.",
+      "supporting_records": [
+        {
+          "object_id": "jude",
+          "record_kind": "claim",
+          "source_ids": [
+            "bauckham",
+            "frey",
+            "davids"
+          ],
+          "record_id": "jude-2peter-relation"
+        }
+      ]
+    },
+    {
+      "id": "sanctuary-tabernacle-first-temple-presence",
+      "passages": [
+        "Exodus 25:8-9",
+        "1 Kings 8:10-13"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "thematic_relationship",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "The tabernacle instructions and the First Temple dedication both describe divine dwelling and holiness, while referring to distinct sanctuaries and settings.",
+      "uncertainty": "The CKL note explicitly distinguishes sanctuary, First Temple, Christological metaphor, community metaphor, and new-creation referents; shared language does not make them identical.",
+      "supporting_records": [
+        {
+          "object_id": "sanctuary-theme",
+          "record_kind": "interpretive_note",
+          "content_hash": "c2c350f879dbe697bc3080b5bb44b14557b8522dbff62903d258a47553cf2bfb",
+          "source_ids": [
+            "exodus-25-40",
+            "1-kings-8",
+            "john-1-2",
+            "ephesians-2",
+            "revelation-21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sanctuary-first-temple-john-temple-presence",
+      "passages": [
+        "1 Kings 8:10-13",
+        "John 2:19-21"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "thematic_relationship",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "John 2 uses temple language christologically; the CKL note relates it to sanctuary traditions while keeping the temple and Christological metaphor distinct.",
+      "uncertainty": "The CKL note explicitly distinguishes sanctuary, First Temple, Christological metaphor, community metaphor, and new-creation referents; shared language does not make them identical.",
+      "supporting_records": [
+        {
+          "object_id": "sanctuary-theme",
+          "record_kind": "interpretive_note",
+          "content_hash": "c2c350f879dbe697bc3080b5bb44b14557b8522dbff62903d258a47553cf2bfb",
+          "source_ids": [
+            "exodus-25-40",
+            "1-kings-8",
+            "john-1-2",
+            "ephesians-2",
+            "revelation-21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sanctuary-john-temple-ephesians-community",
+      "passages": [
+        "John 2:19-21",
+        "Ephesians 2:19-22"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "thematic_relationship",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "Ephesians uses community-as-temple imagery; the CKL note places it in conversation with temple and Christological sanctuary language.",
+      "uncertainty": "The CKL note explicitly distinguishes sanctuary, First Temple, Christological metaphor, community metaphor, and new-creation referents; shared language does not make them identical.",
+      "supporting_records": [
+        {
+          "object_id": "sanctuary-theme",
+          "record_kind": "interpretive_note",
+          "content_hash": "c2c350f879dbe697bc3080b5bb44b14557b8522dbff62903d258a47553cf2bfb",
+          "source_ids": [
+            "exodus-25-40",
+            "1-kings-8",
+            "john-1-2",
+            "ephesians-2",
+            "revelation-21"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sanctuary-ephesians-community-revelation-new-creation",
+      "passages": [
+        "Ephesians 2:19-22",
+        "Revelation 21:1-3"
+      ],
+      "direction": "bidirectional_comparison",
+      "relationship_category": "thematic_relationship",
+      "evidence_layer": "thematic_interpretation",
+      "explanation": "Revelation pictures God dwelling with humanity in new creation; the CKL note compares this with community-temple language while preserving distinct referents.",
+      "uncertainty": "The CKL note explicitly distinguishes sanctuary, First Temple, Christological metaphor, community metaphor, and new-creation referents; shared language does not make them identical.",
+      "supporting_records": [
+        {
+          "object_id": "sanctuary-theme",
+          "record_kind": "interpretive_note",
+          "content_hash": "c2c350f879dbe697bc3080b5bb44b14557b8522dbff62903d258a47553cf2bfb",
+          "source_ids": [
+            "exodus-25-40",
+            "1-kings-8",
+            "john-1-2",
+            "ephesians-2",
+            "revelation-21"
+          ]
+        }
+      ]
+    }
+  ]
+}
