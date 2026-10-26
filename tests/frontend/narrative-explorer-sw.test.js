@@ -19,10 +19,10 @@ function createWorker({fetchResponse, cachePut, cachedResponse, cachedMapEntries
   const cachePutCalls = [];
   for (const entry of cachedMapEntries) {
     const url = String(entry.url);
-    const entries = cacheAssets.get("bhf-api-v49") || new Set();
+    const entries = cacheAssets.get("bhf-api-v50") || new Set();
     entries.add(url);
-    cacheAssets.set("bhf-api-v49", entries);
-    cacheResponses.set(`bhf-api-v49:${url}`, entry.response.clone());
+    cacheAssets.set("bhf-api-v50", entries);
+    cacheResponses.set(`bhf-api-v50:${url}`, entry.response.clone());
   }
   const makeCache = (name) => ({
     add: async (asset) => {
@@ -88,8 +88,9 @@ test("service worker precaches the explorer module and retires the previous cach
   });
   await installPromise;
 
-  assert.equal(worker.cacheAssets.get("bhf-static-v49")?.has("/static/narrative-explorer.js"), true);
-  assert.equal(worker.cacheAssets.get("bhf-static-v49")?.has("/static/maps/MapFocusAcknowledgment.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v50")?.has("/static/narrative-explorer.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v50")?.has("/static/maps/MapFocusAcknowledgment.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v50")?.has("/static/companion-locations.js"), true);
 
   let activatePromise;
   worker.listeners.get("activate")({
@@ -114,6 +115,30 @@ test("Narrative Explorer API requests bypass service-worker caching", async () =
   assert.equal(responsePromise, null);
   assert.deepEqual(worker.networkRequests, []);
   assert.equal(worker.cacheAssets.size, 0);
+});
+
+
+test("Study Companion location pages use network-first caching and remain readable offline", async () => {
+  const url = "https://reader.example/api/study/companion-locations?book=Joshua&chapter=15&cursor=25&limit=25";
+  const worker = createWorker({
+    cachedResponse: new Response(JSON.stringify({items: [{id: "map-id"}], next_cursor: null}), {
+      status: 200,
+      headers: {"Content-Type": "application/json"},
+    }),
+    fetchResponse: async () => { throw new Error("offline"); },
+  });
+  let responsePromise = null;
+  worker.listeners.get("fetch")({
+    request: new Request(url),
+    respondWith: (promise) => { responsePromise = promise; },
+    waitUntil: () => {},
+  });
+
+  const response = await responsePromise;
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("X-BHF-Offline"), "true");
+  assert.deepEqual(await response.json(), {items: [{id: "map-id"}], next_cursor: null});
+  assert.deepEqual(worker.networkRequests, [url]);
 });
 
 test("service worker lifetime includes successful map response cache writes", async () => {
@@ -247,7 +272,7 @@ test("network refresh preserves the offline-pack retention marker on the updated
 
   assert.deepEqual(await (await responsePromise).json(), {source: "current"});
   await lifetimePromise;
-  const cached = worker.cacheResponses.get(`bhf-api-v49:${url}`);
+  const cached = worker.cacheResponses.get(`bhf-api-v50:${url}`);
   assert.equal(cached.headers.get("X-BHF-Offline-Pack"), "maps");
   assert.deepEqual(await cached.json(), {source: "current"});
 });
@@ -273,7 +298,7 @@ test("map cache keeps a fixed number of the newest small responses", async () =>
     await lifetimePromise;
   }
 
-  const storedMapRequests = Array.from(worker.cacheAssets.get("bhf-api-v49") || [])
+  const storedMapRequests = Array.from(worker.cacheAssets.get("bhf-api-v50") || [])
     .filter((url) => url.includes("/api/maps/"));
   assert.equal(storedMapRequests.length, 32);
   assert.equal(storedMapRequests[0], "https://reader.example/api/maps/search?q=8");
@@ -345,7 +370,7 @@ test("map cache enforces an aggregate eight-megabyte bound", async () => {
     await lifetimePromise;
   }
 
-  const storedMapRequests = Array.from(worker.cacheAssets.get("bhf-api-v49") || [])
+  const storedMapRequests = Array.from(worker.cacheAssets.get("bhf-api-v50") || [])
     .filter((url) => url.includes("/api/maps/search?large="));
   assert.equal(storedMapRequests.length, 20);
   assert.equal(storedMapRequests[0], "https://reader.example/api/maps/search?large=4");

@@ -215,6 +215,92 @@ body.companion-sheet-full {
   display: none;
 }
 
+.companion-locations {
+  gap: 12px;
+}
+
+.companion-location-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.companion-location-card {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 94%, var(--accent));
+}
+
+.companion-location-card h4,
+.companion-location-card p {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.companion-location-card h4 {
+  font-size: 1rem;
+}
+
+.companion-location-reference {
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 680;
+}
+
+.companion-location-role,
+.companion-location-description,
+.companion-location-region,
+.companion-location-modern,
+.companion-location-uncertainty,
+.companion-location-confidence,
+.companion-location-source {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.companion-location-action,
+.companion-locations-more {
+  min-height: 44px;
+  justify-self: start;
+}
+
+.companion-location-action:focus-visible,
+.companion-locations-more:focus-visible,
+.companion-location-source-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.companion-location-status {
+  min-height: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.companion-location-status:not(:empty) {
+  padding: 4px 2px;
+}
+
+.companion-location-status[role="alert"] {
+  color: var(--danger, #9f2d25);
+}
+
+.companion-location-source-link {
+  width: fit-content;
+  color: var(--accent-strong);
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
 .narrative-explorer-entry {
   min-height: 44px;
   color: var(--accent-strong);
@@ -1633,6 +1719,17 @@ body.companion-sheet-full {
 
   .passage-action-strip {
     padding: 5px;
+  }
+
+  .companion-location-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .companion-location-action,
+  .companion-locations-more {
+    width: 100%;
+    min-height: 46px;
   }
 
   .passage-action-list button {

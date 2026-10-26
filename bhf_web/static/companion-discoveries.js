@@ -12,9 +12,22 @@
     const cards = options.visible !== false && Array.isArray(context.presentation_packet?.cards)
       ? context.presentation_packet.cards
       : [];
-    renderSection(panel, "[data-companion-land-section]", "[data-companion-land]", cards, "walk_the_land", 1, context);
-    renderSection(panel, "[data-companion-discoveries-section]", "[data-companion-discoveries]", cards, "did_you_know", 3, context);
-    renderSection(panel, "[data-companion-significance-section]", "[data-companion-significance]", cards, "why_it_matters", 1, context);
+    const visibleMapIds = new Set(
+      (Array.isArray(context.locations?.items) ? context.locations.items : [])
+        .filter((item) => item?.origin === "maps" && (item.map_focus_id || item.id))
+        .map((item) => String(item.map_focus_id || item.id)),
+    );
+    const visibleCards = cards.filter((card) => !isConsolidatedWalkCard(card, visibleMapIds));
+    renderSection(panel, "[data-companion-land-section]", "[data-companion-land]", visibleCards, "walk_the_land", 1, context);
+    renderSection(panel, "[data-companion-discoveries-section]", "[data-companion-discoveries]", visibleCards, "did_you_know", 3, context);
+    renderSection(panel, "[data-companion-significance-section]", "[data-companion-significance]", visibleCards, "why_it_matters", 1, context);
+  }
+
+  function isConsolidatedWalkCard(card, visibleMapIds) {
+    if (card?.type !== "walk_the_land" || !visibleMapIds.size) return false;
+    return (Array.isArray(card.dig_deeper_actions) ? card.dig_deeper_actions : [])
+      .some((action) => action?.type === "open_map"
+        && visibleMapIds.has(String(action.target_id || "")));
   }
 
   function renderSection(panel, sectionSelector, listSelector, cards, type, maximum, context) {

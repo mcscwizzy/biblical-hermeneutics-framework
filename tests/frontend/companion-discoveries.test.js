@@ -163,6 +163,30 @@ test("hidden discovery mode clears cards and sections", () => {
 });
 
 
+test("Walk the Land navigation consolidates only an exact map ID already shown in Locations", () => {
+  const {panel, selectors} = fixturePanel();
+  const shared = card("walk-shared", "walk_the_land", {
+    type: "open_map", label: "Open map", target_id: "map-exact-1",
+  });
+  const distinct = card("walk-distinct", "walk_the_land", {
+    type: "open_map", label: "Open map", target_id: "map-exact-2",
+  });
+  discoveries.render(panel, {
+    presentation_packet: {cards: [shared]},
+    locations: {items: [{origin: "maps", id: "map-exact-1", title: "Same Place"}]},
+  });
+  assert.equal(selectors["[data-companion-land-section]"].hidden, true);
+  assert.equal(selectors["[data-companion-land]"].children.length, 0);
+
+  discoveries.render(panel, {
+    presentation_packet: {cards: [distinct]},
+    locations: {items: [{origin: "maps", id: "map-exact-1", title: "Same Place"}]},
+  });
+  assert.equal(selectors["[data-companion-land-section]"].hidden, false);
+  assert.equal(selectors["[data-companion-land]"].children.length, 1);
+});
+
+
 test("grounded map and entity actions dispatch to existing BHF resources", async () => {
   const calls = [];
   const options = {

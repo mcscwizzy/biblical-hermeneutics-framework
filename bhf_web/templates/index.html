@@ -56,6 +56,7 @@
   {% endif %}
   <script src="{{ static_asset('/resource-router.js') }}?v=20261015a" defer></script>
   <script src="{{ static_asset('/companion-discoveries.js') }}?v=20260901b" defer></script>
+  <script src="{{ static_asset('/companion-locations.js') }}?v=20261026a" defer></script>
   <script src="{{ static_asset('/study-companion.js') }}?v=20261015a" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
@@ -245,6 +246,16 @@
                 <p>Explore a place or route linked directly to this passage.</p>
               </div>
               <div class="companion-discovery-list" data-companion-land></div>
+            </section>
+
+            <section class="companion-section companion-locations" data-companion-locations-section aria-labelledby="companion-locations-title" hidden>
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">⌖</span><h3 id="companion-locations-title">Locations</h3></div>
+                <p>Passage-anchored places from Maps and CKL, with source provenance kept distinct.</p>
+              </div>
+              <ol class="companion-location-list" id="companion-locations-list" data-companion-locations-list></ol>
+              <p class="companion-location-status" data-companion-locations-status role="status" aria-live="polite" tabindex="-1"></p>
+              <button type="button" class="secondary companion-locations-more" data-companion-locations-more hidden>View all locations</button>
             </section>
 
             <section class="companion-section companion-discoveries" data-companion-discoveries-section aria-labelledby="companion-discoveries-title" hidden>

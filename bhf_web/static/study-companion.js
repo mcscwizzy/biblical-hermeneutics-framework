@@ -97,11 +97,13 @@
         if (currentMode !== "passage") return;
         renderLoadingState();
         renderDiscoveries({});
+        renderLocations({});
         renderEntities([]);
       },
       onReady: (context) => {
         if (currentMode !== "passage") return;
         renderDiscoveries(context);
+        renderLocations(context);
         renderRecommendations(context);
         renderEntities([
           ...(context.entities?.people || []),
@@ -116,6 +118,7 @@
         if (currentMode !== "passage") return;
         renderPresentationStatus("idle");
         renderDiscoveries({});
+        renderLocations({});
         renderAvailabilityError(message);
         if (isPassageContextResourceActive()) {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
@@ -268,6 +271,7 @@
     } else {
       renderRecommendations({resources: {}});
       renderDiscoveries({});
+      renderLocations({});
       renderPresentationStatus("idle");
       renderEntities([]);
     }
@@ -345,6 +349,7 @@
     setText("[data-companion-resource-count]", `${resources.length} research collections`);
     panel.querySelector("[data-companion-entities-section]")?.setAttribute("hidden", "");
     renderDiscoveries({});
+    renderLocations({});
     renderPresentationStatus("idle");
     renderExploreAskCard();
   }
@@ -352,6 +357,36 @@
   function renderDiscoveries(context = {}) {
     window.BHFCompanionDiscoveries?.render?.(panel, context, {
       visible: currentMode === "passage",
+    });
+  }
+
+  function renderLocations(context = {}) {
+    window.BHFCompanionLocations?.render?.(panel, context.locations, {
+      selection: selection || window.BHFStudySelection?.getState?.() || {},
+      offline: context.offline === true || navigator.onLine === false,
+      loadPage: async (page) => {
+        const url = window.BHFCompanionLocations.urlFor(page, page.cursor, page.limit);
+        if (window.BHFApi?.requestJson) {
+          return window.BHFApi.requestJson(
+            url,
+            {headers: {Accept: "application/json"}, signal: page.signal},
+            "Additional Study Companion locations could not be loaded.",
+          );
+        }
+        const response = await fetch(url, {headers: {Accept: "application/json"}, signal: page.signal});
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
+        return data;
+      },
+      openMap: (placeId, trigger) => openResource("maps", {
+        trigger,
+        mapFocus: {kind: "place", targetId: placeId, acknowledgeFocus: true},
+      }),
+      openCkl: async (objectId, trigger) => {
+        await openResource("canonical", {trigger});
+        return resourceRouter?.openCanonicalDetail?.(objectId);
+      },
+      onChange: (locations) => renderDiscoveries({...context, locations}),
     });
   }
 

@@ -29,6 +29,7 @@ from bhf_agent.presentation.eligibility import (
 from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
 from bhf_agent.study_db import (
     list_archaeology_passage_summaries,
+    list_passage_location_summaries,
     list_passage_map_summaries,
 )
 from bhf_agent.translation_installer import list_installed_translations
@@ -36,6 +37,7 @@ from framework.commentary.service import CommentaryService
 from framework.canonical_library import CKLRepositoryConfig
 from framework.canonical_library.narration import CanonicalNarrator
 from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
+from .companion_locations import compose_location_page, select_ckl_locations
 
 
 AVAILABLE = "available"
@@ -218,6 +220,27 @@ class CompanionContextService:
             resources.update(canonical["resources"])
             summaries.update(canonical["summaries"])
 
+        locations = self._probe(
+            "locations",
+            subsystems,
+            lambda: self._locations_page(
+                book=canonical_book,
+                chapter=chapter_number,
+                verse_start=range_start,
+                verse_end=range_end,
+                reference=reference,
+                canonical_results=canonical_results,
+                limit=5,
+            ),
+            fallback={
+                "reference": reference,
+                "items": [],
+                "total": 0,
+                "page_size": 5,
+                "next_cursor": None,
+            },
+        )
+
         map_places = (map_context or {}).get("places", [])
         combined_places = _unique_summaries([*canonical_places, *map_places])
         entities["places"] = combined_places
@@ -275,6 +298,9 @@ class CompanionContextService:
             "resources": resources,
             "entities": entities,
             "summaries": summaries,
+            # A dedicated source-grounded list, independent of compact map
+            # summaries, People & Places chips, and presentation ranking.
+            "locations": locations,
             "narration": summaries.get("narration", {"reference": reference, "by_context": {}}),
             **presentation_payload,
             "presentation_enhancement": {
@@ -290,6 +316,70 @@ class CompanionContextService:
             },
             "subsystems": subsystems,
         }
+
+    def locations_page(
+        self,
+        *,
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        cursor: str | int | None = None,
+        limit: int = 25,
+    ) -> dict[str, Any]:
+        """Return a bounded continuation page for the Locations section."""
+
+        canonical_book = normalize_book_name(str(book))
+        chapter_number = _positive_int(chapter, "chapter")
+        start = _optional_positive_int(verse_start, "verse_start")
+        end = _optional_positive_int(verse_end, "verse_end") or start
+        if start is not None and end is not None and end < start:
+            raise ValueError("verse_end must be greater than or equal to verse_start")
+        offset = _location_cursor_offset(cursor)
+        reference = _format_reference(canonical_book, chapter_number, start, end)
+        return self._locations_page(
+            book=canonical_book,
+            chapter=chapter_number,
+            verse_start=start or 1,
+            verse_end=end or 9999,
+            reference=reference,
+            canonical_results=self._canonical_results(reference),
+            cursor=offset,
+            limit=limit,
+        )
+
+    def _locations_page(
+        self,
+        *,
+        book: str,
+        chapter: int,
+        verse_start: int,
+        verse_end: int,
+        reference: str,
+        canonical_results: list[Any],
+        cursor: str | int | None = None,
+        limit: int = 5,
+    ) -> dict[str, Any]:
+        offset = _location_cursor_offset(cursor)
+        bounded_limit = max(1, min(int(limit), 25))
+        map_page = list_passage_location_summaries(
+            book,
+            chapter,
+            verse_start,
+            verse_end,
+            path=self.study_db_path,
+            limit=bounded_limit,
+            offset=offset,
+            prepare_schema=False,
+        )
+        ckl_items = select_ckl_locations(reference, canonical_results)
+        return compose_location_page(
+            map_page=map_page,
+            ckl_items=ckl_items,
+            cursor=offset,
+            limit=bounded_limit,
+            reference=reference,
+        )
 
     def _local_presentation(self, bundle: EvidenceBundle) -> PresentationResult:
         local = getattr(self.presentation_engine, "present_local", None)
@@ -744,6 +834,18 @@ def _optional_positive_int(value: Any, label: str) -> int | None:
     if number <= 0:
         raise ValueError(f"{label} must be a positive integer")
     return number
+
+
+def _location_cursor_offset(value: str | int | None) -> int:
+    if value in (None, ""):
+        return 0
+    try:
+        offset = int(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("location cursor must be a non-negative integer") from exc
+    if offset < 0:
+        raise ValueError("location cursor must be a non-negative integer")
+    return offset
 
 
 def _format_reference(book: str, chapter: int, start: int | None, end: int | None) -> str:

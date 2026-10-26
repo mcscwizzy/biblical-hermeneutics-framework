@@ -70,6 +70,33 @@ def register_study_routes(
         except Exception as exc:  # noqa: BLE001 - invalid books surface as a compact client error
             return JSONResponse({"error": str(exc)}, status_code=400)
 
+    @app.get("/api/study/companion-locations", response_class=JSONResponse)
+    async def get_companion_locations(
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        cursor: str | None = None,
+        limit: int = 25,
+    ) -> JSONResponse:
+        """Return one bounded page of source-grounded passage locations."""
+
+        try:
+            context = await run_in_threadpool(
+                companion_context.locations_page,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                cursor=cursor,
+                limit=limit,
+            )
+            return JSONResponse(context)
+        except (ValueError, StudyDataError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        except Exception as exc:  # noqa: BLE001 - API failures remain compact JSON
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
     @app.post("/api/study/actions", response_class=JSONResponse)
     async def post_study_action(request: Request) -> JSONResponse:
         try:

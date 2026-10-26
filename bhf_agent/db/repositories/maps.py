@@ -247,6 +247,178 @@ def list_passage_map_summaries(
     }
 
 
+def list_passage_location_summaries(
+    book: str,
+    chapter: int,
+    verse_start: int,
+    verse_end: int,
+    *,
+    path: str | Path = DEFAULT_DB_PATH,
+    ensure_schema: EnsureSchema,
+    limit: int = 5,
+    offset: int = 0,
+    prepare_schema: bool = True,
+) -> dict[str, Any]:
+    """Return one bounded, deterministically ordered page of directly named places.
+
+    This reader is independent of the compact map summaries used for resource
+    availability and PresentationPacket construction. Map references are
+    source records in their own right, so the returned verse labels retain the
+    catalog's exact verse bounds.
+    """
+
+    bounded_limit = max(1, min(int(limit), 25))
+    bounded_offset = max(0, int(offset))
+    reference_parameters = (
+        str(book).strip(),
+        int(chapter),
+        int(verse_end),
+        int(verse_start),
+    )
+    relation_filter = "r.relationship_type = 'directly_named'"
+    source_filter = (
+        "trim(coalesce(p.name, '')) <> '' AND "
+        "(trim(coalesce(p.source_name, '')) <> '' OR trim(coalesce(p.source_url, '')) <> '')"
+    )
+
+    with connect(path) as connection:
+        if prepare_schema:
+            ensure_schema(connection)
+        total = int(connection.execute(
+            f"""
+            SELECT COUNT(*)
+            FROM (
+                SELECT p.id
+                FROM place_references AS r
+                JOIN biblical_places AS p ON p.id = r.place_id
+                WHERE lower(r.book) = lower(?)
+                  AND r.chapter = ?
+                  AND r.verse_start <= ?
+                  AND r.verse_end >= ?
+                  AND {relation_filter}
+                  AND {source_filter}
+                GROUP BY p.id
+            )
+            """,
+            reference_parameters,
+        ).fetchone()[0])
+        page_offset = min(bounded_offset, total)
+        place_rows = connection.execute(
+            f"""
+            SELECT p.id, p.name, p.description, p.modern_location,
+                   p.ancient_region, p.confidence, p.confidence_rank,
+                   p.source_name, p.source_url, p.license,
+                   MIN(r.verse_end - r.verse_start) AS anchor_span
+            FROM place_references AS r
+            JOIN biblical_places AS p ON p.id = r.place_id
+            WHERE lower(r.book) = lower(?)
+              AND r.chapter = ?
+              AND r.verse_start <= ?
+              AND r.verse_end >= ?
+              AND {relation_filter}
+              AND {source_filter}
+            GROUP BY p.id, p.name, p.description, p.modern_location,
+                     p.ancient_region, p.confidence, p.confidence_rank,
+                     p.source_name, p.source_url, p.license
+            ORDER BY anchor_span ASC, p.confidence_rank DESC,
+                     lower(p.name) ASC, p.id ASC
+            LIMIT ? OFFSET ?
+            """,
+            (*reference_parameters, bounded_limit, page_offset),
+        ).fetchall()
+
+        references_by_place: dict[str, list[dict[str, Any]]] = {}
+        if place_rows:
+            place_ids = [str(row["id"]) for row in place_rows]
+            placeholders = ",".join("?" for _ in place_ids)
+            ref_rows = connection.execute(
+                f"""
+                SELECT place_id, book, chapter, verse_start, verse_end,
+                       relationship_type, notes
+                FROM place_references
+                WHERE place_id IN ({placeholders})
+                  AND lower(book) = lower(?)
+                  AND chapter = ?
+                  AND verse_start <= ?
+                  AND verse_end >= ?
+                  AND relationship_type = 'directly_named'
+                ORDER BY place_id, verse_start, verse_end, relationship_type, id
+                """,
+                (*place_ids, *reference_parameters),
+            ).fetchall()
+            for row in ref_rows:
+                references_by_place.setdefault(str(row["place_id"]), []).append({
+                    "book": str(row["book"]),
+                    "chapter": int(row["chapter"]),
+                    "verse_start": int(row["verse_start"]),
+                    "verse_end": int(row["verse_end"]),
+                    "relationship": str(row["relationship_type"]),
+                    "notes": str(row["notes"] or ""),
+                })
+
+    items = []
+    for row in place_rows:
+        place_id = str(row["id"])
+        references = references_by_place.get(place_id, [])
+        labels = sorted({
+            _location_reference_label(reference)
+            for reference in references
+        }, key=_reference_sort_key)
+        confidence = str(row["confidence"] or "unknown").strip().casefold() or "unknown"
+        item = {
+            "id": place_id,
+            "origin": "maps",
+            "title": str(row["name"] or "").strip(),
+            "references": labels,
+            "relationship": "directly_named",
+            "region": str(row["ancient_region"] or "").strip(),
+            "modern_location": str(row["modern_location"] or "").strip(),
+            "description": str(row["description"] or "").strip(),
+            "map_confidence": confidence,
+            "provenance": {
+                "name": str(row["source_name"] or "").strip(),
+                "url": str(row["source_url"] or "").strip(),
+                "license": str(row["license"] or "").strip(),
+            },
+            # The map resource id comes from the exact joined catalog row.
+            "map_focus_id": place_id,
+        }
+        if confidence in {"possible", "uncertain", "unknown"}:
+            item["identification_uncertainty"] = (
+                f"The map catalog rates this identification as {confidence}; "
+                "that rating does not establish historical or archaeological certainty."
+            )
+        specific_notes = [
+            reference["notes"]
+            for reference in references
+            if reference["notes"]
+            and not reference["notes"].startswith("Imported from OpenBible.info")
+        ]
+        if specific_notes:
+            item["passage_role"] = specific_notes[0]
+        items.append(item)
+
+    return {"items": items, "total": total, "offset": page_offset, "limit": bounded_limit}
+
+
+def _location_reference_label(reference: dict[str, Any]) -> str:
+    label = f"{reference['book']} {reference['chapter']}"
+    start = int(reference["verse_start"])
+    end = int(reference["verse_end"])
+    if start == end:
+        return f"{label}:{start}"
+    return f"{label}:{start}-{end}"
+
+
+def _reference_sort_key(reference: str) -> tuple[str, int, int]:
+    prefix, _, verse = reference.partition(":")
+    start, separator, end = verse.partition("-")
+    try:
+        return prefix.casefold(), int(start), int(end if separator else start)
+    except ValueError:
+        return reference.casefold(), 0, 0
+
+
 def list_historical_layers(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
