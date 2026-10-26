@@ -404,6 +404,34 @@ def list_passage_map_summaries(
     )
 
 
+def list_passage_location_summaries(
+    book: str,
+    chapter: int,
+    verse_start: int,
+    verse_end: int,
+    *,
+    path: str | Path = DEFAULT_DB_PATH,
+    limit: int = 5,
+    offset: int = 0,
+    prepare_schema: bool = True,
+) -> dict[str, Any]:
+    """Return a bounded page of directly anchored place records for Companion."""
+
+    if not prepare_schema:
+        ensure_study_database_ready(path)
+    return _maps_repo.list_passage_location_summaries(
+        book,
+        chapter,
+        verse_start,
+        verse_end,
+        path=path,
+        ensure_schema=_ensure_schema,
+        limit=limit,
+        offset=offset,
+        prepare_schema=prepare_schema,
+    )
+
+
 def list_historical_layers(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,

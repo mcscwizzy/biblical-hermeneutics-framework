@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v49";
+const CACHE_VERSION = "v50";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -38,6 +38,7 @@ const STATIC_ASSETS = [
   "/static/narrative-explorer.js",
   "/static/resource-router.js",
   "/static/companion-discoveries.js",
+  "/static/companion-locations.js",
   "/static/study-companion.js",
   "/static/htmx-status.js",
   "/static/htmx-study-panels.js",
@@ -151,6 +152,7 @@ self.addEventListener("fetch", (event) => {
     if (isCacheableApiRequest(requestUrl)) {
       const preferNetwork = isRefreshRequest(event.request)
         || requestUrl.pathname === "/api/study/companion-context"
+        || requestUrl.pathname === "/api/study/companion-locations"
         || requestUrl.pathname.startsWith("/api/maps/");
       let cacheWritePromise = Promise.resolve();
       const trackCacheWrite = (promise) => {
@@ -376,6 +378,7 @@ function isCacheableApiRequest(url) {
     "/api/canonical/search",
     "/api/canonical/entities-for-passage",
     "/api/study/companion-context",
+    "/api/study/companion-locations",
     "/api/canonical/objects/",
     "/api/maps/",
     "/api/map-studies",

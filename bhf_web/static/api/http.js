@@ -319,6 +319,7 @@
       "/api/canonical/search",
       "/api/canonical/objects/",
       "/api/study/companion-context",
+      "/api/study/companion-locations",
       "/api/maps/",
       "/api/sources",
       "/api/commentary/",
@@ -345,7 +346,8 @@
 
   function isCompanionContextRequest(url) {
     const path = new URL(String(url || "/"), window.location.origin).pathname;
-    return path === "/api/study/companion-context";
+    return path === "/api/study/companion-context"
+      || path === "/api/study/companion-locations";
   }
 
   function emptyDeviceOnlyResponse(url) {
