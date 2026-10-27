@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import re
+from dataclasses import replace
 
 from .models import (
     PRESENTATION_SCHEMA_VERSION,
     DigDeeperAction,
     EvidenceBundle,
+    EvidenceItem,
     GeneratedFrom,
     PresentationCard,
     PresentationPacket,
@@ -17,6 +19,14 @@ from .walk_the_land import build_walk_the_land_card
 
 
 DETERMINISTIC_PROMPT_VERSION = "deterministic-v5"
+_WORD_RE = re.compile(r"[a-z0-9]+")
+_SUPPORT_STOP_WORDS = frozenset(
+    {
+        "a", "about", "after", "also", "and", "as", "at", "be", "becomes",
+        "by", "for", "from", "in", "into", "is", "it", "later", "of", "on",
+        "or", "that", "the", "their", "this", "to", "with",
+    }
+)
 
 
 def deterministic_presentation(
@@ -66,6 +76,114 @@ def deterministic_presentation(
             model="deterministic",
         ),
     )
+
+
+def attach_relevant_support_evidence(
+    bundle: EvidenceBundle,
+    packet: PresentationPacket,
+    ranked: list[RankedEvidence],
+) -> PresentationPacket:
+    """Cite one tightly related dig-deeper record on an existing discovery.
+
+    The supporting item must already be inside the deterministic candidate
+    shortlist. It must have the same CKL parent, exact verse anchors, and at
+    least one shared subject term and source as a selected direct-context
+    discovery. This adds evidence to a card without allocating another card.
+    """
+
+    cited_ids = {
+        evidence_id
+        for card in packet.cards
+        for evidence_id in card.evidence_ids
+    }
+    support_candidates = [
+        candidate.item
+        for candidate in ranked
+        if candidate.item.id not in cited_ids
+        and candidate.item.relevance_metadata.get("presentation_role") == "dig_deeper"
+        and candidate.item.relevance_metadata.get("source_kind")
+        in {"ckl_claim", "ckl_evidence_item"}
+    ]
+    if not support_candidates:
+        return packet
+
+    evidence_by_id = bundle.evidence_by_id
+    for card_index, card in enumerate(packet.cards):
+        if card.type != "did_you_know":
+            continue
+        primary_items = [
+            evidence_by_id[evidence_id]
+            for evidence_id in card.evidence_ids
+            if evidence_id in evidence_by_id
+        ]
+        for primary in primary_items:
+            support = next(
+                (
+                    item
+                    for item in support_candidates
+                    if item.id not in cited_ids
+                    and _is_relevant_support(bundle, primary, item)
+                ),
+                None,
+            )
+            if support is None:
+                continue
+            cards = list(packet.cards)
+            cards[card_index] = replace(
+                card,
+                evidence_ids=[*card.evidence_ids, support.id],
+            )
+            return replace(packet, cards=cards)
+    return packet
+
+
+def _is_relevant_support(
+    bundle: EvidenceBundle,
+    primary: EvidenceItem,
+    support: EvidenceItem,
+) -> bool:
+    primary_metadata = primary.relevance_metadata
+    support_metadata = support.relevance_metadata
+    parent_id = str(primary_metadata.get("parent_object_id") or "")
+    if not parent_id or support_metadata.get("parent_object_id") != parent_id:
+        return False
+    if primary_metadata.get("source_kind") not in {"ckl_claim", "ckl_evidence_item"}:
+        return False
+    if primary_metadata.get("semantic_relationship") != "DIRECT_CONTEXT":
+        return False
+    if presentation_relationship(bundle, support) not in {
+        "LATER_RECEPTION",
+        "COMPARATIVE_CONTEXT",
+        "INTERTEXTUAL_REUSE",
+    }:
+        return False
+    if primary_metadata.get("applicability_scope") != "passage":
+        return False
+    if support_metadata.get("applicability_scope") != "passage":
+        return False
+    if primary_metadata.get("anchor_specificity") != "verse":
+        return False
+    if support_metadata.get("anchor_specificity") != "verse":
+        return False
+    primary_anchors = {
+        " ".join(str(anchor).split()).casefold()
+        for anchor in primary.passage_anchors
+    }
+    support_anchors = {
+        " ".join(str(anchor).split()).casefold()
+        for anchor in support.passage_anchors
+    }
+    if not primary_anchors or primary_anchors != support_anchors:
+        return False
+    if not set(primary.source_ids).intersection(support.source_ids):
+        return False
+    parent_terms = set(
+        _WORD_RE.findall(str(primary_metadata.get("parent_title") or "").casefold())
+    )
+    primary_terms = set(_WORD_RE.findall(primary.claim.casefold()))
+    support_terms = set(_WORD_RE.findall(support.claim.casefold()))
+    shared_terms = primary_terms.intersection(support_terms) - parent_terms - _SUPPORT_STOP_WORDS
+    return bool(shared_terms)
 
 
 def _is_map_candidate(bundle: EvidenceBundle, value: RankedEvidence) -> bool:

@@ -4,12 +4,12 @@ from __future__ import annotations
 
 import logging
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Any, Mapping
 
 from .cache import MemoryPresentationCache, PresentationCache, presentation_cache_key
 from .coalescing import RequestCoalescer
-from .fallback import deterministic_presentation
+from .fallback import attach_relevant_support_evidence, deterministic_presentation
 from .metrics import PresentationMetrics
 from .models import (
     PRESENTATION_SCHEMA_VERSION,
@@ -231,8 +231,23 @@ class PresentationEngine:
         diagnostics: list[str] = []
         reusable = self._read_reusable(bundle, cache_key, bundle_key, diagnostics)
         if reusable is not None:
-            return reusable
-        return self._deterministic(bundle, ranked, diagnostics)
+            return replace(
+                reusable,
+                packet=attach_relevant_support_evidence(
+                    bundle,
+                    reusable.packet,
+                    ranked,
+                ),
+            )
+        fallback = self._deterministic(bundle, ranked, diagnostics)
+        return replace(
+            fallback,
+            packet=attach_relevant_support_evidence(
+                bundle,
+                fallback.packet,
+                ranked,
+            ),
+        )
 
     def _generate_after_recheck(
         self,
