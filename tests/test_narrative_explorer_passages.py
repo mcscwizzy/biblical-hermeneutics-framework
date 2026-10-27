@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import hashlib
 import json
 from pathlib import Path
 
@@ -314,6 +315,57 @@ def test_checked_in_registry_keeps_only_current_exact_ckl_records_and_record_sou
     bridges = load_passage_bridges()
     assert bridges
     assert validate_passage_bridge_registry(bridges, records.get) == len(bridges)
+
+
+def test_registry_adds_only_the_approved_jonah_bridge_and_preserves_existing_routes():
+    bridges = load_passage_bridges()
+    assert len(bridges) == 44
+
+    existing_routes = sorted(
+        (bridge for bridge in bridges if bridge["id"] != "jonah-1-17-matthew-12-40-sign-of-jonah"),
+        key=lambda bridge: bridge["id"],
+    )
+    payload = json.dumps(existing_routes, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    assert hashlib.sha256(payload.encode("utf-8")).hexdigest() == (
+        "a3a6dd437fb4812a6b74a77e8f1e12c246abaf938aa24faf1cbf730803549d79"
+    )
+
+    bridge = next(
+        bridge for bridge in bridges
+        if bridge["id"] == "jonah-1-17-matthew-12-40-sign-of-jonah"
+    )
+    assert bridge["passages"] == ["Jonah 1:17", "Matthew 12:40"]
+    assert bridge["source_text_passage"] == "Jonah 1:17"
+    assert bridge["receiving_text_passage"] == "Matthew 12:40"
+    assert bridge["direction"] == "source_to_receiving_text"
+    assert bridge["relationship_category"] == "later_canonical_reception"
+    assert bridge["evidence_layer"] == "later_reception"
+    assert bridge["supporting_records"] == [{
+        "object_id": "jonah",
+        "record_kind": "claim",
+        "record_id": "jonah-three-days",
+        "source_ids": ["jonah-masoretic", "jonah-new-testament"],
+    }]
+
+
+def test_all_seven_ne10_held_candidates_remain_excluded():
+    held_path = (
+        Path(__file__).resolve().parents[1]
+        / "framework" / "canonical_library" / "curations" / "narrative-explorer" / "ne10"
+        / "research-candidates-held.json"
+    )
+    held = json.loads(held_path.read_text(encoding="utf-8"))
+
+    assert held["status"] == "research_candidates_only_excluded_from_confirmed_passage_graph"
+    assert {candidate["id"] for candidate in held["candidates"]} == {
+        "deuteronomy-32-psalm-82-job-1-divine-assembly",
+        "exodus-12-1-corinthians-5-passover",
+        "ezekiel-37-john-3-water-spirit",
+        "ezekiel-40-48-revelation-21-22-temple",
+        "genesis-2-3-revelation-21-22-eden-tree-life",
+        "isaiah-43-exodus-12-15-new-exodus",
+        "psalm-110-acts-2-enthronement",
+    }
 
 
 def test_final_acceptance_classifications_match_the_connection_contract():

@@ -314,6 +314,94 @@ def test_mark_1_composite_quotation_keeps_source_direction_from_both_endpoints(c
         assert reverse["receiving_text_passage"] == "Mark 1:2-3"
 
 
+def test_jonah_matthew_reception_bridge_projects_exact_support_in_both_directions(ckl_library):
+    client = _client(_service(ckl_library))
+    bridge_id = "jonah-1-17-matthew-12-40-sign-of-jonah"
+    endpoints = (
+        ("Jonah", 1, "Jonah 1:17", "Matthew 12:40"),
+        ("Matthew", 12, "Matthew 12:40", "Jonah 1:17"),
+    )
+
+    routes = []
+    for book, chapter, selected, destination in endpoints:
+        payload = client.get(f"/api/narrative-explorer/v1/passages/{book}/{chapter}").json()
+        validate_projection(payload)
+        candidates = [
+            route for route in payload["related_passages"]["evidence_backed_bridges"]
+            if route["id"] == bridge_id
+        ]
+        assert len(candidates) == 1
+        pair_routes = [
+            route for route in payload["related_passages"]["evidence_backed_bridges"]
+            if route.get("source_text_passage") == "Jonah 1:17"
+            and route.get("receiving_text_passage") == "Matthew 12:40"
+        ]
+        assert len(pair_routes) == 1
+        assert pair_routes[0]["id"] == bridge_id
+        route = candidates[0]
+        assert route["source_passage"] == selected
+        assert route["destination_passage"] == destination
+        assert route["source_text_passage"] == "Jonah 1:17"
+        assert route["receiving_text_passage"] == "Matthew 12:40"
+        assert route["direction"] == "source_to_receiving_text"
+        assert route["relationship_category"] == "later_canonical_reception"
+        assert route["evidence_layer"] == "later_reception"
+        assert "predict" not in route["explanation"].casefold()
+        assert route["explanation"] == (
+            "Matthew 12:40 explicitly compares Jonah’s narrated three days and nights in the fish "
+            "with the Son of Man’s time in the heart of the earth. Jonah 1:17 is standard English "
+            "numbering for MT/LXX Jonah 2:1."
+        )
+        assert route["uncertainty"] == (
+            "Ancient time reckoning and idiom leave the chronology unsettled; the expression "
+            "‘heart of the earth’ and the comparison’s broader theological interpretation also "
+            "remain uncertain."
+        )
+        assert route["supporting_records"] == [{
+            "id": "ckl:jonah#claim:jonah-three-days",
+            "object_id": "jonah",
+            "record_kind": "claim",
+            "record_id": "jonah-three-days",
+            "record_locator": None,
+            "identity_status": "recorded",
+            "statement": (
+                "Three days and three nights is a narrated duration for Jonah in the fish and later "
+                "becomes important in Matthew 12:40; attempts to derive a precise biological "
+                "chronology exceed the text."
+            ),
+            "certainty": "textually_explicit",
+            "dispute_status": "minor_scholarly_disagreement",
+            "source_ids": ["jonah-masoretic", "jonah-new-testament"],
+        }]
+        assert [
+            {key: source[key] for key in ("id", "object_id", "title", "locator", "source_type")}
+            for source in route["supporting_sources"]
+        ] == [
+            {
+                "id": "jonah-masoretic",
+                "object_id": "jonah",
+                "title": "Masoretic Text of Jonah",
+                "locator": "Jonah 1:1-4:11, with MT chapter numbering",
+                "source_type": "scripture",
+            },
+            {
+                "id": "jonah-new-testament",
+                "object_id": "jonah",
+                "title": "New Testament sign-of-Jonah passages",
+                "locator": "Matthew 12:38-41; 16:1-4; Luke 11:29-32",
+                "source_type": "scripture",
+            },
+        ]
+        assert all(source["object_id"] == "jonah" for source in route["supporting_sources"])
+        assert len(payload["related_passages"]["evidence_backed_bridges"]) == len({
+            route["id"] for route in payload["related_passages"]["evidence_backed_bridges"]
+        })
+        routes.append(route)
+
+    assert routes[0]["source_passage"] == "Jonah 1:17"
+    assert routes[1]["source_passage"] == "Matthew 12:40"
+
+
 def test_psalm_82_discloses_council_context_and_keeps_explicit_text_distinct_from_dispute(ckl_library):
     payload = _client(_service(ckl_library)).get(
         "/api/narrative-explorer/v1/passages/Psalm/82"
