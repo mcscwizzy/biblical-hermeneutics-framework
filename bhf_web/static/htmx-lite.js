@@ -338,8 +338,10 @@ function syncReaderControlsToActiveTab() {
   }
   const book = resolveReaderBookValue(tab.book, bookSelect);
   if (book) {
-    bookSelect.value = book;
-    populateChapterOptions(bookSelect, chapterSelect);
+    if (bookSelect.value !== book) {
+      bookSelect.value = book;
+      populateChapterOptions(bookSelect, chapterSelect);
+    }
   }
   chapterSelect.value = resolveReaderChapterValue(tab.chapter, chapterSelect, "1");
   if (translationSelect) {

@@ -130,8 +130,11 @@ def test_vercel_ignore_keeps_active_reader_resources_and_excludes_dev_inputs():
     assert all(_is_explicitly_excluded(path) for path in excluded)
 
 
-def test_retired_generated_package_is_absent_and_tyndale_source_remains():
-    assert not (ROOT / "bhf_agent/chapter_commentary").exists()
+def test_retired_reader_payload_and_python_sources_are_absent():
+    assert not (ROOT / "bhf_agent/data/commentary-v1.2").exists()
+    legacy_source = ROOT / "bhf_agent/chapter_commentary"
+    if legacy_source.exists():
+        assert not list(legacy_source.rglob("*.py"))
     assert (ROOT / "framework/commentary/service.py").is_file()
     assert (ROOT / "framework/commentary/importer.py").is_file()
     assert (ROOT / "framework/commentary/evidence.py").is_file()
