@@ -31,6 +31,10 @@ from .validation import validate_presentation_packet
 LOGGER = logging.getLogger(__name__)
 
 
+class _LegacySignificanceCardError(ValueError):
+    """A current provider packet still allocates a standalone significance card."""
+
+
 def _failure_diagnostic(stage: str, exc: BaseException) -> str:
     """Describe a failure without retaining arbitrary exception payload text."""
 
@@ -85,6 +89,16 @@ def _is_rate_limit_error(exc: BaseException) -> bool:
     name = type(exc).__name__.casefold()
     status_code = getattr(exc, "status_code", None)
     return "ratelimit" in name or "rate_limit" in name or status_code == 429
+
+
+def _contains_legacy_significance_card(value: Any) -> bool:
+    if not isinstance(value, Mapping):
+        return False
+    cards = value.get("cards")
+    return isinstance(cards, list) and any(
+        isinstance(card, Mapping) and card.get("type") == "why_it_matters"
+        for card in cards
+    )
 
 
 @dataclass(frozen=True)
@@ -271,6 +285,8 @@ class PresentationEngine:
                     generated_value = (
                         generated.to_dict() if hasattr(generated, "to_dict") else generated
                     )
+                    if _contains_legacy_significance_card(generated_value):
+                        raise _LegacySignificanceCardError()
                     validation = validate_presentation_packet(
                         generated_value,
                         bundle,
@@ -387,6 +403,17 @@ class PresentationEngine:
                             **_provider_log_metadata(provider, bundle),
                         },
                     )
+                except _LegacySignificanceCardError:
+                    self.metrics.record_event("provider_rejections")
+                    diagnostics.append("provider returned a legacy significance card")
+                    LOGGER.warning(
+                        "presentation provider returned a legacy significance card; deterministic fallback used",
+                        extra={
+                            "event": "presentation_validation",
+                            "reason": "legacy_significance_card",
+                            **_provider_log_metadata(provider, bundle),
+                        },
+                    )
                 except Exception as exc:  # noqa: BLE001
                     self.metrics.record_event("provider_failures")
                     diagnostics.append(_failure_diagnostic("provider failure", exc))
@@ -426,6 +453,12 @@ class PresentationEngine:
             return cached_result
         bundled = self.bundled_packets.get(bundle_key)
         if bundled is not None:
+            if _contains_legacy_significance_card(bundled):
+                self.metrics.record_event("bundle_rejections")
+                diagnostics.append(
+                    "bundled: legacy standalone significance card is not current presentation"
+                )
+                return None
             validation = validate_presentation_packet(
                 bundled,
                 bundle,
@@ -485,6 +518,19 @@ class PresentationEngine:
             LOGGER.warning("presentation cache read failed: %s", diagnostics[-1])
             return None
         if cached is None:
+            return None
+
+        if _contains_legacy_significance_card(cached):
+            diagnostics.append(
+                "cached: legacy standalone significance card is not current presentation"
+            )
+            discard = getattr(self.cache, "discard", None)
+            if callable(discard):
+                try:
+                    discard(cache_key)
+                except Exception as exc:  # noqa: BLE001 - cache is optional
+                    self.metrics.record_event("cache_discard_failures")
+                    diagnostics.append(_failure_diagnostic("cache discard failure", exc))
             return None
 
         validation = validate_presentation_packet(

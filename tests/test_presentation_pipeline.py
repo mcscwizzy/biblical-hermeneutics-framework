@@ -10,6 +10,7 @@ from types import SimpleNamespace
 import pytest
 
 from bhf_agent.models import ChatResponse
+from bhf_agent.adapters.base import ResponseFormatCapability
 from bhf_agent.presentation import (
     AdapterPresentationProvider,
     GeneratedFrom,
@@ -29,7 +30,9 @@ from bhf_agent.presentation import (
     rank_evidence,
     validate_presentation_packet,
 )
-from bhf_agent.presentation.providers import PRESENTATION_PROMPT_VERSION
+from bhf_agent.presentation.providers import PRESENTATION_PROMPT_VERSION, _response_format
+from bhf_agent.presentation.models import EvidenceBundle, EvidenceItem
+from bhf_agent.presentation.ranking import presentation_relationship
 
 
 FIXTURES = json.loads(
@@ -282,7 +285,7 @@ def test_no_evidence_returns_valid_zero_card_packet():
     assert validate_presentation_packet(result.packet.to_dict(), bundle).valid
 
 
-def test_explicit_ckl_passage_relevance_becomes_why_it_matters_card():
+def test_explicit_ckl_passage_relevance_stays_metadata_without_a_standalone_card():
     evidence_item = {
         "id": "corinth-meal-visibility",
         "evidence_type": "cultural-practice",
@@ -311,26 +314,15 @@ def test_explicit_ckl_passage_relevance_becomes_why_it_matters_card():
 
     significance = bundle.evidence_by_id["corinth-meal-visibility:passage-relevance"]
     packet = deterministic_presentation(bundle)
-    card = next(card for card in packet.cards if card.type == "why_it_matters")
 
     assert significance.relevance_metadata["presentation_role"] == "significance"
     assert significance.relevance_metadata["supports_evidence_ids"] == ["corinth-meal-visibility"]
-    assert card.type == "why_it_matters"
-    assert card.evidence_ids == ["corinth-meal-visibility", significance.id]
-    assert card.interpretation_level == "inference"
-    assert [card.type for card in packet.cards] == ["did_you_know", "why_it_matters"]
+    assert [card.type for card in packet.cards] == ["did_you_know"]
+    assert packet.cards[0].evidence_ids == ["corinth-meal-visibility"]
+    assert packet.cards[0].body == evidence_item["description"]
     assert validate_presentation_packet(packet.to_dict(), bundle).valid
 
-    as_fact = packet.to_dict()
-    next(
-        card for card in as_fact["cards"] if card["type"] == "why_it_matters"
-    )["interpretation_level"] = "fact"
-    invalid = validate_presentation_packet(as_fact, bundle)
-    assert not invalid.valid
-    assert any("inference or disputed" in error for error in invalid.errors)
-
-
-def test_did_you_know_keeps_a_slot_when_map_and_significance_evidence_exist():
+def test_significance_evidence_does_not_consume_a_slot_when_map_and_context_exist():
     objects = copy.deepcopy(FIXTURES[0]["objects"])
     objects[1]["evidence_items"][0]["passage_relevance"] = (
         "The provisioning custom explains why the request carries social weight here."
@@ -354,9 +346,321 @@ def test_did_you_know_keeps_a_slot_when_map_and_significance_evidence_exist():
     assert [card.type for card in packet.cards] == [
         "did_you_know",
         "walk_the_land",
-        "why_it_matters",
+        "did_you_know",
     ]
+    significance_id = objects[1]["evidence_items"][0]["id"] + ":passage-relevance"
+    assert all(
+        value.item.id != significance_id
+        for value in rank_evidence(bundle)
+    )
+    assert all(significance_id not in card.evidence_ids for card in packet.cards)
+    assert any(
+        objects[1]["evidence_items"][0]["id"] in card.evidence_ids
+        for card in packet.cards
+        if card.type == "did_you_know"
+    )
     assert validate_presentation_packet(packet.to_dict(), bundle).valid
+
+
+def test_later_scriptural_reception_and_comparison_get_explicit_presentation_labels():
+    item = EvidenceItem(
+        id="abrahamic-seed-reception",
+        claim=(
+            "Galatians concludes that those belonging to Messiah are Abraham's seed, "
+            "drawing the promise into a sustained rereading."
+        ),
+        category="culture",
+        source_ids=["galatians-source"],
+        related_entity_ids=[],
+        passage_anchors=["Genesis 12:1-3"],
+        confidence="high",
+        relevance_metadata={
+            "passage_relationship": "direct",
+            "anchor_specificity": "verse",
+            "applicability_scope": "passage",
+            "semantic_relationship": "DIRECT_CONTEXT",
+            "source_kind": "ckl_evidence_item",
+        },
+    )
+    bundle = EvidenceBundle(
+        passage_ref="Genesis 12",
+        entities={},
+        evidence_items=[item],
+        geography={},
+        provenance={"sources": [{"id": "galatians-source", "title": "Galatians 3:23-4:11"}]},
+        evidence_hash="a" * 64,
+    )
+
+    assert presentation_relationship(bundle, item) == "LATER_RECEPTION"
+    packet = deterministic_presentation(bundle)
+    assert packet.cards[0].headline.startswith("Later biblical reception:")
+
+    comparative = EvidenceItem(
+        id="ugaritic-comparison",
+        claim="Ancient Near Eastern texts offer a comparison for the passage's assembly language.",
+        category="culture",
+        source_ids=[],
+        related_entity_ids=[],
+        passage_anchors=["Psalms 82:1-8"],
+        confidence="medium",
+        relevance_metadata={
+            "passage_relationship": "direct",
+            "anchor_specificity": "verse",
+            "applicability_scope": "passage",
+            "semantic_relationship": "DIRECT_CONTEXT",
+            "source_kind": "ckl_evidence_item",
+        },
+    )
+    psalm_bundle = EvidenceBundle(
+        passage_ref="Psalms 82",
+        entities={},
+        evidence_items=[comparative],
+        geography={},
+        provenance={"sources": []},
+        evidence_hash="b" * 64,
+    )
+    assert presentation_relationship(psalm_bundle, comparative) == "COMPARATIVE_CONTEXT"
+
+    reception = EvidenceItem(
+        id="second-temple-reception",
+        claim=(
+            "Second Temple texts such as 1 Enoch and Jubilees develop an angelic reading "
+            "of the sons of God episode."
+        ),
+        category="history",
+        source_ids=[],
+        related_entity_ids=[],
+        passage_anchors=["Genesis 6:1-4"],
+        confidence="high",
+        relevance_metadata={
+            "passage_relationship": "direct",
+            "anchor_specificity": "verse",
+            "applicability_scope": "passage",
+            "semantic_relationship": "DIRECT_CONTEXT",
+            "source_kind": "ckl_evidence_item",
+        },
+    )
+    genesis_six = EvidenceBundle(
+        passage_ref="Genesis 6",
+        entities={},
+        evidence_items=[reception],
+        geography={},
+        provenance={"sources": []},
+        evidence_hash="d" * 64,
+    )
+    assert presentation_relationship(genesis_six, reception) == "LATER_RECEPTION"
+    assert deterministic_presentation(genesis_six).cards[0].headline.startswith(
+        "Second Temple reception:"
+    )
+
+    caution = EvidenceItem(
+        id="interpretive-caution",
+        claim="Do not present a reconstructed reading as the only possible option.",
+        category="culture",
+        source_ids=[],
+        related_entity_ids=[],
+        passage_anchors=["Psalms 82:1-8"],
+        confidence="high",
+        relevance_metadata={
+            "passage_relationship": "direct",
+            "anchor_specificity": "verse",
+            "applicability_scope": "passage",
+            "semantic_relationship": "INTERTEXTUAL_REUSE",
+            "source_kind": "ckl_interpretive_note",
+        },
+    )
+    psalm_bundle_with_caution = EvidenceBundle(
+        passage_ref="Psalms 82",
+        entities={},
+        evidence_items=[comparative, caution],
+        geography={},
+        provenance={"sources": []},
+        evidence_hash="c" * 64,
+    )
+    assert caution.id in psalm_bundle_with_caution.evidence_by_id
+    assert caution.id not in {item.item.id for item in rank_evidence(psalm_bundle_with_caution)}
+
+
+def test_cross_chapter_claim_is_penalized_for_a_chapter_selection():
+    direct = EvidenceItem(
+        id="jonah-sailors-direct",
+        claim="Jonah 1 describes the sailors praying during the storm.",
+        category="culture",
+        source_ids=["source"],
+        related_entity_ids=[],
+        passage_anchors=["Jonah 1:4-16"],
+        confidence="high",
+        relevance_metadata={
+            "passage_relationship": "direct",
+            "anchor_specificity": "verse",
+            "applicability_scope": "passage",
+            "semantic_relationship": "DIRECT_CONTEXT",
+            "source_kind": "ckl_claim",
+        },
+    )
+    cross_chapter = EvidenceItem(
+        id="jonah-flight-cross-chapter",
+        claim="Jonah 4:2 retrospectively explains Jonah's flight in chapter 1.",
+        category="culture",
+        source_ids=["source"],
+        related_entity_ids=[],
+        passage_anchors=["Jonah 1:3"],
+        confidence="high",
+        relevance_metadata={
+            **direct.relevance_metadata,
+        },
+    )
+    bundle = EvidenceBundle(
+        passage_ref="Jonah 1",
+        entities={},
+        evidence_items=[direct, cross_chapter],
+        geography={},
+        provenance={"sources": [{"id": "source", "title": "Jonah"}]},
+        evidence_hash="e" * 64,
+    )
+
+    ranked = {item.item.id: item for item in rank_evidence(bundle, minimum_score=0)}
+
+    assert "cross-chapter claim penalty" not in ranked[direct.id].reasons
+    assert "cross-chapter claim penalty" in ranked[cross_chapter.id].reasons
+    assert ranked[direct.id].score > ranked[cross_chapter.id].score
+
+
+def test_passage_scope_and_direct_relationship_outrank_broad_and_comparative_evidence():
+    common = {
+        "source_kind": "ckl_evidence_item",
+        "parent_type": "cultural_background",
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "applicability_scope": "passage",
+        "presentation_role": "historical_context",
+        "exploration_potential": 0.3,
+    }
+    items = [
+        EvidenceItem(
+            id="a-wide-range",
+            claim="A broad account surveys origins, ancestors, rivers, peoples, cities, and distant periods.",
+            category="culture",
+            source_ids=["source-wide"],
+            related_entity_ids=[],
+            passage_anchors=["Genesis 1:1-11:26"],
+            confidence="high",
+            relevance_metadata=dict(common),
+        ),
+        EvidenceItem(
+            id="b-later-reading",
+            claim="A later scriptural writer rereads these words within another historical setting.",
+            category="history",
+            source_ids=["source-later"],
+            related_entity_ids=[],
+            passage_anchors=["Genesis 1:1-2"],
+            confidence="high",
+            relevance_metadata={
+                **common,
+                "semantic_relationship": "LATER_RECEPTION",
+                "passage_relationship": "comparative",
+                "presentation_role": "dig_deeper",
+            },
+        ),
+        EvidenceItem(
+            id="c-comparison",
+            claim="A comparative source describes a related ancient practice without establishing identity.",
+            category="culture",
+            source_ids=["source-comparison"],
+            related_entity_ids=[],
+            passage_anchors=["Genesis 1:1-2"],
+            confidence="high",
+            relevance_metadata={
+                **common,
+                "semantic_relationship": "COMPARATIVE_CONTEXT",
+                "passage_relationship": "comparative",
+                "presentation_role": "dig_deeper",
+            },
+        ),
+        EvidenceItem(
+            id="z-exact-passage",
+            claim="This chapter names light and darkness as distinct features of its opening scene.",
+            category="culture",
+            source_ids=["source-direct"],
+            related_entity_ids=[],
+            passage_anchors=["Genesis 1:1-5"],
+            confidence="high",
+            relevance_metadata={**common, "semantic_relationship": "DIRECT_CONTEXT"},
+        ),
+    ]
+    bundle = EvidenceBundle(
+        passage_ref="Genesis 1",
+        entities={},
+        evidence_items=items,
+        geography={},
+        provenance={},
+    )
+
+    ranked = rank_evidence(bundle, minimum_score=0.0)
+
+    assert ranked[0].item.id == "z-exact-passage"
+    assert ranked.index(next(item for item in ranked if item.item.id == "z-exact-passage")) < ranked.index(
+        next(item for item in ranked if item.item.id == "c-comparison")
+    )
+    assert ranked.index(next(item for item in ranked if item.item.id == "z-exact-passage")) < ranked.index(
+        next(item for item in ranked if item.item.id == "b-later-reading")
+    )
+
+
+def test_exact_authored_passage_claim_remains_eligible_when_semantic_classifier_is_weak():
+    item = EvidenceItem(
+        id="direct-claim-with-weak-classification",
+        claim="This chapter describes a directly anchored cultural detail.",
+        category="culture",
+        source_ids=["source-direct"],
+        related_entity_ids=[],
+        passage_anchors=["Genesis 1:1-2"],
+        confidence="high",
+        relevance_metadata={
+            "source_kind": "ckl_claim",
+            "passage_relationship": "direct",
+            "anchor_specificity": "verse",
+            "verse_distance": 0,
+            "applicability_scope": "passage",
+            "semantic_relationship": "WEAKLY_RELATED",
+        },
+    )
+    bundle = EvidenceBundle(
+        passage_ref="Genesis 1",
+        entities={},
+        evidence_items=[item],
+        geography={},
+        provenance={},
+    )
+
+    ranked = rank_evidence(bundle)
+
+    assert [value.item.id for value in ranked] == [item.id]
+
+
+def test_comparative_fallback_headline_marks_the_evidence_as_comparative():
+    source = {
+        "id": "ugaritic-council",
+        "type": "cultural_background",
+        "title": "Ugaritic council texts",
+        "sources": [{"id": "ugaritic-source", "title": "Ugaritic text edition"}],
+        "evidence_items": [{
+            "id": "ugaritic-council-evidence",
+            "evidence_type": "ancient-text",
+            "description": "Late Bronze Age Ugaritic literary texts place El and other divine figures in council scenes.",
+            "confidence": "high",
+            "certainty": "textually_explicit",
+            "scripture_references": [{"reference": "Psalm 82:1-8", "relationship": "comparative"}],
+        }],
+    }
+    bundle = build_evidence_bundle("Psalm 82", canonical_results=_results([source]))
+
+    packet = deterministic_presentation(bundle)
+
+    assert len(packet.cards) == 1
+    assert packet.cards[0].headline.startswith("Comparative evidence:")
+    assert packet.cards[0].body == source["evidence_items"][0]["description"]
 
 
 def test_map_only_evidence_does_not_manufacture_did_you_know():
@@ -377,7 +681,7 @@ def test_map_only_evidence_does_not_manufacture_did_you_know():
     assert [card.type for card in packet.cards] == ["walk_the_land"]
 
 
-def test_archaeology_passage_significance_uses_existing_archaeology_explorer():
+def test_independent_archaeology_evidence_remains_visible_without_a_significance_card():
     bundle = build_evidence_bundle(
         "John 9:7-11",
         archaeology=[{
@@ -390,9 +694,15 @@ def test_archaeology_passage_significance_uses_existing_archaeology_explorer():
     )
 
     packet = deterministic_presentation(bundle)
-    card = packet.cards[0]
+    evidence = bundle.evidence_by_id["pool-of-siloam"]
 
-    assert card.type == "why_it_matters"
+    assert evidence.relevance_metadata["presentation_role"] == "significance"
+    assert "supports_evidence_ids" not in evidence.relevance_metadata
+    assert len(packet.cards) == 1
+    card = packet.cards[0]
+    assert card.type == "did_you_know"
+    assert card.evidence_ids == ["pool-of-siloam"]
+    assert card.body == evidence.claim
     assert card.confidence == "high"
     assert card.interpretation_level == "inference"
     assert any(action.type == "archaeology" for action in card.dig_deeper_actions)
@@ -413,6 +723,99 @@ def test_why_it_matters_rejects_evidence_without_explicit_significance_role():
 
     assert not result.valid
     assert any("explicit significance evidence" in error for error in result.errors)
+
+
+def test_legacy_why_it_matters_card_remains_valid_for_compatibility():
+    bundle = build_evidence_bundle(
+        "John 9:7-11",
+        archaeology=[{
+            "id": "pool-of-siloam",
+            "title": "Pool of Siloam",
+            "summary": "The pool gives concrete urban context for John's reference to Siloam.",
+            "caution": "The remains do not determine the passage's interpretation.",
+            "confidence": "strong",
+        }],
+    )
+    evidence = bundle.evidence_by_id["pool-of-siloam"]
+    packet = deterministic_presentation(bundle).to_dict()
+    packet["cards"] = [{
+        "id": "legacy-significance",
+        "type": "why_it_matters",
+        "headline": "Why It Matters Here",
+        "body": evidence.claim,
+        "evidence_ids": [evidence.id],
+        "confidence": evidence.confidence,
+        "interpretation_level": "inference",
+        "dig_in_summary": None,
+        "related_entity_ids": [],
+        "map_focus": None,
+        "dig_deeper_actions": [],
+    }]
+
+    result = validate_presentation_packet(packet, bundle)
+
+    assert result.valid, result.errors
+    assert result.packet.cards[0].type == "why_it_matters"
+
+
+def test_old_significance_packets_cannot_suppress_current_visible_evidence():
+    bundle = build_evidence_bundle(
+        "John 9:7-11",
+        archaeology=[{
+            "id": "pool-of-siloam",
+            "title": "Pool of Siloam",
+            "summary": "The pool gives concrete urban context for John's reference to Siloam.",
+            "caution": "The remains do not determine the passage's interpretation.",
+            "confidence": "strong",
+        }],
+    )
+    evidence = bundle.evidence_by_id["pool-of-siloam"]
+    legacy = deterministic_presentation(bundle).to_dict()
+    legacy["cards"] = [{
+        "id": "legacy-significance",
+        "type": "why_it_matters",
+        "headline": "Why It Matters Here",
+        "body": evidence.claim,
+        "evidence_ids": [evidence.id],
+        "confidence": evidence.confidence,
+        "interpretation_level": "inference",
+        "dig_in_summary": None,
+        "related_entity_ids": [],
+        "map_focus": None,
+        "dig_deeper_actions": [],
+    }]
+    legacy["generated_from"]["prompt_version"] = "presentation-v5"
+    old_key = presentation_cache_key(bundle, prompt_version="presentation-v5")
+    old_cache = MemoryPresentationCache()
+    old_cache.put(old_key, legacy)
+
+    result = PresentationEngine(
+        cache=old_cache,
+        bundled_packets={old_key: legacy},
+    ).present(bundle)
+
+    assert result.mode == "deterministic_fallback"
+    assert result.packet.cards
+    assert all(card.type != "why_it_matters" for card in result.packet.cards)
+
+    current_semantics = copy.deepcopy(legacy)
+    current_semantics["generated_from"]["prompt_version"] = PRESENTATION_PROMPT_VERSION
+    current_key = presentation_cache_key(
+        bundle,
+        prompt_version=PRESENTATION_PROMPT_VERSION,
+    )
+    current_cache = MemoryPresentationCache()
+    current_cache.put(current_key, current_semantics)
+    current_result = PresentationEngine(
+        cache=current_cache,
+        bundled_packets={current_key: current_semantics},
+    ).present(bundle)
+
+    assert current_result.mode == "deterministic_fallback"
+    assert current_result.packet.cards
+    assert all(card.type != "why_it_matters" for card in current_result.packet.cards)
+    assert current_cache.get(current_key) is None
+    assert any("legacy standalone significance" in item for item in current_result.diagnostics)
 
 
 def test_unrelated_entities_and_evidence_are_suppressed_before_ranking():
@@ -552,6 +955,19 @@ def test_dig_in_summary_is_optional_bounded_and_checked_against_cited_evidence()
     )
 
     assert validate_presentation_packet(packet, bundle).valid
+    assert validate_presentation_packet(packet, bundle).packet.cards[0].dig_in_summary
+
+    duplicate = copy.deepcopy(packet)
+    duplicate["cards"][0]["dig_in_summary"] = duplicate["cards"][0]["body"]
+    duplicate_result = validate_presentation_packet(duplicate, bundle)
+    assert duplicate_result.valid
+    assert duplicate_result.packet.cards[0].dig_in_summary is None
+
+    boilerplate = copy.deepcopy(packet)
+    boilerplate["cards"][0]["dig_in_summary"] = "This detail matters."
+    boilerplate_result = validate_presentation_packet(boilerplate, bundle)
+    assert boilerplate_result.valid
+    assert boilerplate_result.packet.cards[0].dig_in_summary is None
 
     too_long = copy.deepcopy(packet)
     too_long["cards"][0]["dig_in_summary"] = "x" * 801
@@ -778,6 +1194,38 @@ class _WorkingProvider(PresentationProvider):
         packet = deterministic_presentation(bundle).to_dict()
         packet["generated_from"] = generated_from.to_dict()
         return packet
+
+
+def test_provider_legacy_significance_card_cannot_reduce_deterministic_visible_slots():
+    fixture = FIXTURES[2]
+    bundle = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(fixture["objects"])
+    )
+    fallback_cards = deterministic_presentation(bundle).to_dict()["cards"]
+
+    class LegacyProvider(PresentationProvider):
+        model = "fixture-model"
+
+        def generate(self, bundle, ranked, generated_from):
+            legacy = copy.deepcopy(fallback_cards[0])
+            legacy.update({
+                "id": "legacy-why-it-matters",
+                "type": "why_it_matters",
+                "headline": "Why It Matters Here",
+                "interpretation_level": "inference",
+            })
+            return {
+                "passage_ref": bundle.passage_ref,
+                "cards": [*copy.deepcopy(fallback_cards[:2]), legacy],
+                "generated_from": generated_from.to_dict(),
+            }
+
+    result = PresentationEngine(provider=LegacyProvider()).present(bundle)
+
+    assert result.mode == "deterministic_fallback"
+    assert [card.to_dict() for card in result.packet.cards] == fallback_cards
+    assert all(card.type != "why_it_matters" for card in result.packet.cards)
+    assert any("legacy significance" in item for item in result.diagnostics)
 
 
 class _FailingProvider(PresentationProvider):
@@ -1074,8 +1522,8 @@ def test_adapter_provider_receives_only_ranked_evidence_and_strict_grounding_pro
     requests = []
 
     class Adapter:
-        def supports_json_schema_response_format(self):
-            return False
+        def presentation_response_format_capability(self, model):
+            return ResponseFormatCapability.NONE
 
         def chat(self, request):
             requests.append(request)
@@ -1114,6 +1562,11 @@ def test_adapter_provider_receives_only_ranked_evidence_and_strict_grounding_pro
             "assertion_type",
             "presentation_role",
             "supports_evidence_ids",
+            "semantic_relationship",
+            "presentation_relationship",
+            "applicability_scope",
+            "source_kind",
+            "broad_tag_only",
             "map_resource_kind",
             "map_resource_id",
         })
@@ -1123,11 +1576,16 @@ def test_adapter_provider_receives_only_ranked_evidence_and_strict_grounding_pro
     assert ranked[0].item.id in requests[0].user_prompt
     assert "use model memory as a factual source" in requests[0].system_prompt
     assert "return no card" in requests[0].system_prompt
-    assert "Use why_it_matters only" in requests[0].system_prompt
-    assert "do not add application, doctrine" in requests[0].system_prompt
+    assert "Do not create a standalone significance card" in requests[0].system_prompt
+    normalized_prompt = " ".join(requests[0].system_prompt.split())
+    assert "Independently useful, sourced evidence remains eligible" in normalized_prompt
+    assert "later biblical reception" in requests[0].system_prompt
     assert "dig_in_summary" in supplied["output_shape"]["cards"][0]
     assert supplied["limits"]["dig_in_summary_characters"] == 800
-    assert "same response" in requests[0].system_prompt
+    assert _response_format()["json_schema"]["schema"]["properties"]["cards"]["items"]["properties"]["type"]["enum"] == [
+        "did_you_know",
+        "walk_the_land",
+    ]
     assert "those same" in requests[0].system_prompt
 
 
@@ -1146,8 +1604,8 @@ def test_provider_receives_only_ranked_geography_resources():
     requests = []
 
     class Adapter:
-        def supports_json_schema_response_format(self):
-            return False
+        def presentation_response_format_capability(self, model):
+            return ResponseFormatCapability.NONE
 
         def chat(self, request):
             requests.append(request)
@@ -1172,8 +1630,4 @@ def test_provider_receives_only_ranked_geography_resources():
     assert supplied["geography"]["places"][0]["id"] == ranked[0].item.relevance_metadata["map_resource_id"]
     assert set(supplied["geography"]["places"][0]) == {"id", "title", "kind"}
     assert "summary" not in supplied["geography"]["places"][0]
-    assert supplied["limits"]["card_types"] == [
-        "did_you_know",
-        "walk_the_land",
-        "why_it_matters",
-    ]
+    assert supplied["limits"]["card_types"] == ["did_you_know", "walk_the_land"]

@@ -22,7 +22,7 @@ passage selection
   -> deterministic salience ranker
   -> cache / bundled packet / deterministic presentation
   -> validated PresentationPacket V1
-  -> Did You Know? / Walk the Land / Why It Matters Here / Dig In
+  -> Did You Know? / Walk the Land / Dig In
 
 optional browser request
   -> POST /api/study/presentation with the evidence fingerprint
@@ -106,6 +106,13 @@ entry. Credentials never enter fingerprints or cache keys. The
 engine accepts cache and bundled-packet interfaces so browser/PWA stores can
 use the same identifiers.
 
+The `presentation-v6` prompt intentionally bypasses cache and bundle
+fingerprints made with the previous prompt semantics. `deterministic-v5` also
+rebuilds deterministic cards. EvidenceBundle V1, PresentationPacket V1, legacy
+packet parsing, and the evidence hash contract stay unchanged. The web service
+worker is `v51`, which rotates browser API and static caches; the reader also
+filters legacy standalone significance cards if an older packet is present.
+
 The Study Companion uses a lazy `SQLitePresentationCache` by default. Its file
 is `<study-db-stem>.presentation-cache.sqlite`, separate from both CKL and the
 study database, and can be overridden with `BHF_PRESENTATION_CACHE_PATH`.
@@ -142,7 +149,7 @@ use this versioned envelope:
         "evidence_hash": "0000000000000000000000000000000000000000000000000000000000000000",
         "evidence_bundle_version": "1.0",
         "presentation_schema_version": "1.0",
-        "prompt_version": "presentation-v4",
+        "prompt_version": "presentation-v6",
         "model": "pre-generated"
       }
     }
@@ -283,20 +290,20 @@ failures, coalesced requests, and
 aggregate latency. These diagnostics retain no passage references, evidence,
 prompts, generated prose, or credentials.
 
-## Presentation slices
+## Current reader presentation
 
-The first UI slice renders `did_you_know` cards. When ordinary context and map
-or significance evidence all exist, the deterministic selector reserves room
-for at least one ordinary discovery rather than letting the special cards use
-all three slots. Map-only evidence does not manufacture trivia.
+The normal reader shows `did_you_know` and `walk_the_land` cards. There is no
+standalone significance section. Explicit `passage_relevance` remains in the
+EvidenceBundle with its link to the underlying fact; the deterministic selector
+does not let that derived duplicate consume a card slot. Independent evidence,
+including passage-indexed archaeology, remains eligible as a discovery. Map-
+only evidence does not manufacture trivia.
 
-“Dig In” first renders an optional, bounded two-to-four-sentence
-`dig_in_summary`, generated in the same provider request and grounded by the
-card's visible `evidence_ids`. It then renders the exact cited claims and source
-labels. Other action buttons appear only when BHF has a
-real target and route to existing canonical entity, maps, archaeology,
-language, history, or related-passage views. Dig In does not trigger another
-model request; without AI it simply shows evidence, sources, and actions.
+“Dig In” may show an optional one- or two-sentence `dig_in_summary` only when it
+adds a useful clarification beyond the card and cited claim. Duplicate and
+generic summaries are suppressed. The cited claims and source labels remain
+available, and actions appear only when BHF has a real target. Dig In does not
+trigger another model request.
 
 The next incremental slice, `walk_the_land`, selects at most one salient
 passage-linked place or route. Its action opens the existing map workspace,
@@ -305,20 +312,20 @@ existing curated details. A map-only evidence set produces one geography card
 rather than repetitive map trivia. If no useful map evidence is available, the
 section stays hidden.
 
-The third slice, `why_it_matters`, appears only when CKL or archaeology has
-authored an explicit passage-significance statement. It cites both that
-statement and its supporting factual evidence when available, is labeled as
-inference or disputed rather than fact, and offers only existing evidence,
-entity, map, archaeology, language, or history exploration actions. It does
-not generate devotional application, doctrine, ethical instruction, or a
-model-created conclusion.
+The provider prompt permits only `did_you_know` and `walk_the_land`. It receives
+passage applicability and semantic relationship metadata so it can label
+comparative evidence and later biblical reception accurately. Later reception
+is not presented as a fact about the original setting. The ranker favors
+passage-specific, direct, sourced discoveries and penalizes generic,
+misanchored, broad-scope, comparative, or weakly related candidates without
+requiring category quotas. The current deterministic fallback is versioned
+`deterministic-v5`; the provider prompt is `presentation-v6`.
 
-The provider prompt permits all three current card types, with at most one
-`walk_the_land` and one `why_it_matters` card. Validation independently checks
-the card count, stable targets, evidence roles, confidence, interpretation
-level, and actionable resources. Geography contracts have slots for regions,
-political territories, ancient names, modern identification, terrain,
-elevation, and archaeology metadata without coupling cards to Leaflet.
+Validation still accepts the historical `why_it_matters` packet type and its
+significance requirements so old serialized packets remain safely parseable.
+The current provider schema no longer offers that type, and the engine falls
+back to a fresh deterministic packet if a provider still returns one. Geography
+contracts and their existing map actions remain unchanged.
 
 ## Evaluation passages
 
@@ -358,7 +365,7 @@ without making a provider or network call:
 ```bash
 python tools/validate_presentation_bundle.py \
   --bundle deployment/presentation-bundle.json \
-  --expect-prompt-version deterministic-v4 \
+  --expect-prompt-version deterministic-v5 \
   --expect-model deterministic
 ```
 

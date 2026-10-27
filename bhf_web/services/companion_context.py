@@ -6,7 +6,7 @@ import logging
 import os
 import threading
 import time
-from collections.abc import Callable, Iterable
+from collections.abc import Callable, Iterable, Mapping
 from pathlib import Path
 from typing import Any
 
@@ -289,7 +289,11 @@ class CompanionContextService:
                 mode="deterministic_fallback",
                 diagnostics=("presentation subsystem unavailable",),
             )
-        resources["discoveries"] = _resource_from_count(len(presentation.packet.cards))
+        visible_discoveries = _visible_discovery_count(
+            presentation.packet.cards,
+            locations,
+        )
+        resources["discoveries"] = _resource_from_count(visible_discoveries)
 
         presentation_payload = _presentation_payload(evidence_bundle, presentation)
         return {
@@ -749,6 +753,33 @@ def _entity_bucket(object_type: str) -> str:
         "event": "events",
         "timeline": "events",
     }[object_type]
+
+
+def _visible_discovery_count(cards: list[Any], locations: Any) -> int:
+    location_items = locations.get("items", []) if isinstance(locations, Mapping) else []
+    visible_map_ids = {
+        str(item.get("map_focus_id") or item.get("id") or "")
+        for item in location_items
+        if isinstance(item, Mapping)
+        and item.get("origin") == "maps"
+        and (item.get("map_focus_id") or item.get("id"))
+    }
+    count = 0
+    for card in cards:
+        card_type = getattr(card, "type", None)
+        if card_type == "did_you_know":
+            count += 1
+            continue
+        if card_type != "walk_the_land":
+            continue
+        consolidated = any(
+            getattr(action, "type", None) == "open_map"
+            and str(getattr(action, "target_id", None) or "") in visible_map_ids
+            for action in getattr(card, "dig_deeper_actions", [])
+        )
+        if not consolidated:
+            count += 1
+    return count
 
 
 def _presentation_payload(
