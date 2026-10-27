@@ -16,4 +16,11 @@ def test_runtime_paths_keep_the_tyndale_database_override():
 def test_runtime_package_keeps_tyndale_and_drops_generated_commentary():
     assert find_spec("framework.commentary.service") is not None
     assert find_spec("framework.commentary.importer") is not None
-    assert find_spec("bhf_agent.chapter_commentary") is None
+
+    # Ignored bytecode directories can leave an empty namespace package in a
+    # reused checkout. The deployment contract is that no retired Python
+    # source or compiled reader payload is packaged.
+    legacy_source = Path(__file__).resolve().parents[1] / "bhf_agent" / "chapter_commentary"
+    if legacy_source.exists():
+        assert not list(legacy_source.rglob("*.py"))
+    assert not (legacy_source.parent / "data" / "commentary-v1.2").exists()
