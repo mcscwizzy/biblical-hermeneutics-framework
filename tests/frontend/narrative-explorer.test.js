@@ -438,6 +438,48 @@ test("reverse passage navigation displays the original source-to-receiver direct
   assert.match(view.textContent, /this route can be followed from either passage/i);
 });
 
+test("the Jonah-Matthew route displays its reception direction, explanation, and uncertainty from Matthew", () => {
+  const view = explorer.renderOverview(projection({
+    passage: {reference: "Matthew 12:40", book: "Matthew", chapter: 12, verse_start: 40, verse_end: 40, scope: "verse_range"},
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      description: "Passage routes are available from the records listed here.",
+      authored_relationships: [],
+      evidence_backed_bridges: [{
+        id: "jonah-1-17-matthew-12-40-sign-of-jonah",
+        provenance: "ckl_documented_claim",
+        source_passage: "Matthew 12:40",
+        destination_passage: "Jonah 1:17",
+        source_text_passage: "Jonah 1:17",
+        receiving_text_passage: "Matthew 12:40",
+        relationship_category: "later_canonical_reception",
+        evidence_layer: "later_reception",
+        direction: "source_to_receiving_text",
+        relationship_mode: "documented_interpretation",
+        explanation: "Matthew 12:40 explicitly compares Jonah’s narrated three days and nights in the fish with the Son of Man’s time in the heart of the earth. Jonah 1:17 is standard English numbering for MT/LXX Jonah 2:1.",
+        uncertainty: "Ancient time reckoning and idiom leave the chronology unsettled; the expression ‘heart of the earth’ and the comparison’s broader theological interpretation also remain uncertain.",
+        human_scholarly_approval: "not_recorded",
+        supporting_records: [{id: "ckl:jonah#claim:jonah-three-days", source_ids: ["jonah-masoretic", "jonah-new-testament"]}],
+        supporting_sources: [
+          {id: "jonah-masoretic", title: "Masoretic Text of Jonah", source_type: "scripture"},
+          {id: "jonah-new-testament", title: "New Testament sign-of-Jonah passages", source_type: "scripture"},
+        ],
+      }],
+    },
+  }), {document: fakeDocument(), knownBooks: [{value: "Jonah", chapters: 4}, {value: "Matthew", chapters: 28}]});
+
+  assert.match(view.textContent, /Later canonical reception · Later canonical reception/);
+  assert.match(view.textContent, /Textual direction: Jonah 1:17 → Matthew 12:40/);
+  assert.match(view.textContent, /Matthew 12:40 explicitly compares Jonah’s narrated three days and nights/);
+  assert.match(view.textContent, /MT\/LXX Jonah 2:1/);
+  assert.match(view.textContent, /Ancient time reckoning and idiom leave the chronology unsettled/);
+  assert.match(view.textContent, /the comparison’s broader theological interpretation also remain uncertain/);
+  assert.match(view.textContent, /ckl:jonah#claim:jonah-three-days/);
+  assert.match(view.textContent, /Masoretic Text of Jonah/);
+  assert.match(view.textContent, /New Testament sign-of-Jonah passages/);
+});
+
 test("simultaneous loads for the same passage share one uncached network response", async () => {
   let requests = 0;
   let requestedUrl = "";

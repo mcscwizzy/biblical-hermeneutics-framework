@@ -1104,6 +1104,31 @@
           ]
         }
       ]
+    },
+    {
+      "id": "jonah-1-17-matthew-12-40-sign-of-jonah",
+      "passages": [
+        "Jonah 1:17",
+        "Matthew 12:40"
+      ],
+      "direction": "source_to_receiving_text",
+      "relationship_category": "later_canonical_reception",
+      "evidence_layer": "later_reception",
+      "explanation": "Matthew 12:40 explicitly compares Jonah’s narrated three days and nights in the fish with the Son of Man’s time in the heart of the earth. Jonah 1:17 is standard English numbering for MT/LXX Jonah 2:1.",
+      "uncertainty": "Ancient time reckoning and idiom leave the chronology unsettled; the expression ‘heart of the earth’ and the comparison’s broader theological interpretation also remain uncertain.",
+      "supporting_records": [
+        {
+          "object_id": "jonah",
+          "record_kind": "claim",
+          "source_ids": [
+            "jonah-masoretic",
+            "jonah-new-testament"
+          ],
+          "record_id": "jonah-three-days"
+        }
+      ],
+      "source_text_passage": "Jonah 1:17",
+      "receiving_text_passage": "Matthew 12:40"
     }
   ]
 }
