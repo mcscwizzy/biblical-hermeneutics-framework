@@ -370,6 +370,108 @@ test("incomplete related passage coverage never reads as proof that a route does
   assert.doesNotMatch(view.textContent, /No biblical passage connection exists/);
 });
 
+
+test("selected passage route expands hidden pages and exposes a focusable highlighted heading", () => {
+  const targetId = "route-6";
+  const routes = Array.from({length: 6}, (_value, index) => ({
+    id: `route-${index + 1}`,
+    provenance: "ckl_documented_claim",
+    source_passage: "Genesis 1:1-5",
+    destination_passage: `John 1:${index + 1}`,
+    relationship_category: "interpretive_association",
+    evidence_layer: "thematic_interpretation",
+    direction: "interpretive_comparison",
+    explanation: "The texts are read in comparison.",
+    uncertainty: "The relationship remains interpretive.",
+    supporting_records: [{
+      id: "ckl:john#claim:john-logos",
+      object_id: "john",
+      record_kind: "claim",
+      record_id: "john-logos",
+      source_ids: ["john-greek"],
+    }],
+    supporting_sources: [{id: "john-greek", title: "Greek New Testament"}],
+  }));
+  const view = explorer.renderOverview(projection({
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      description: "Passage routes are available from the records listed here.",
+      authored_relationships: [],
+      evidence_backed_bridges: routes,
+    },
+  }), {
+    document: fakeDocument(),
+    knownBooks: [{value: "John", chapters: 21}],
+    selectedRouteId: targetId,
+  });
+
+  const articles = descendants(view).filter((item) => item.className === "narrative-explorer-related-passage"
+    || item.className === "narrative-explorer-related-passage is-selected");
+  const target = articles.find((item) => item.dataset.routeId === targetId);
+  const heading = descendants(view).find((item) => item.dataset.narrativeRouteFocusId === targetId);
+  assert.equal(articles.length, 6);
+  assert.ok(target, "the hidden target route should be expanded into view");
+  assert.match(target.className, /is-selected/);
+  assert.equal(target.attributes["aria-current"], "true");
+  assert.ok(heading, "the selected route should have a focusable heading");
+  assert.equal(heading.attributes.tabindex, "-1");
+  assert.match(heading.textContent, /John 1:6/);
+  assert.ok(descendants(view).some((item) => item.attributes.role === "status" && /selected connection/i.test(item.textContent)));
+});
+
+
+test("route handoff resolves only a complete exact CKL record identity in the selected projection", () => {
+  const route = {
+    id: "jonah-1-17-matthew-12-40-sign-of-jonah",
+    provenance: "ckl_documented_claim",
+    source_passage: "Jonah 1:17",
+    destination_passage: "Matthew 12:40",
+    relationship_category: "later_canonical_reception",
+    explanation: "Matthew compares Jonah's narrated duration with the Son of Man's time in the earth.",
+    uncertainty: "The idiom and chronology remain uncertain.",
+    supporting_records: [{object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"}],
+  };
+  const data = projection({
+    passage: {reference: "Jonah 1:17", book: "Jonah", chapter: 1, verse_start: 17, verse_end: 17, scope: "verse_range"},
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      description: "Passage routes are available from the records listed here.",
+      authored_relationships: [],
+      evidence_backed_bridges: [route],
+      held_candidates: [{id: route.id, supporting_records: route.supporting_records}],
+    },
+  });
+  const identity = {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"};
+
+  assert.equal(
+    explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 1:17")?.id,
+    route.id,
+  );
+  for (const wrongIdentity of [
+    {object_id: "wrong-parent", record_kind: "claim", record_id: "jonah-three-days"},
+    {object_id: "jonah", record_kind: "evidence", record_id: "jonah-three-days"},
+    {object_id: "jonah", record_kind: "claim", record_id: "another-claim"},
+  ]) {
+    assert.equal(explorer.findVerifiedPassageRoute(data, route.id, wrongIdentity, "Jonah 1:17"), null);
+  }
+  assert.equal(explorer.findVerifiedPassageRoute(data, "unknown-route", identity, "Jonah 1:17"), null);
+  assert.equal(explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 2:1"), null);
+
+  data.related_passages.query_status = "partial";
+  assert.equal(explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 1:17"), null);
+  data.related_passages.query_status = "complete";
+  data.related_passages.authored_relationships = [{
+    ...route,
+    id: route.id,
+    provenance: "authored_ckl_relationship",
+    supporting_records: undefined,
+    supporting_record_ids: ["ckl:jonah#claim:jonah-three-days"],
+  }];
+  assert.equal(explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 1:17"), null);
+});
+
 test("related passage routes disclose long lists in keyboard-operable pages", () => {
   const routes = Array.from({length: 6}, (_value, index) => ({
     id: `route-${index + 1}`,
@@ -469,7 +571,8 @@ test("the Jonah-Matthew route displays its reception direction, explanation, and
     },
   }), {document: fakeDocument(), knownBooks: [{value: "Jonah", chapters: 4}, {value: "Matthew", chapters: 28}]});
 
-  assert.match(view.textContent, /Later canonical reception · Later canonical reception/);
+  assert.match(view.textContent, /Later canonical reception/);
+  assert.doesNotMatch(view.textContent, /Later canonical reception · Later canonical reception/);
   assert.match(view.textContent, /Textual direction: Jonah 1:17 → Matthew 12:40/);
   assert.match(view.textContent, /Matthew 12:40 explicitly compares Jonah’s narrated three days and nights/);
   assert.match(view.textContent, /MT\/LXX Jonah 2:1/);

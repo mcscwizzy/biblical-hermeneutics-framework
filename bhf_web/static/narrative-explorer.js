@@ -75,6 +75,65 @@
     return Number.isInteger(number) && number > 0 ? number : 0;
   }
 
+  function findVerifiedPassageRoute(projection, routeId, identity, passageReference) {
+    const related = projection?.related_passages;
+    if (related?.state !== "available" || related?.query_status !== "complete") return null;
+    if (normalizePassageRouteReference(projection?.passage?.reference) !== normalizePassageRouteReference(passageReference)) return null;
+    const requestedIdentity = normalizedCklRecordIdentity(identity);
+    const requestedRouteId = typeof routeId === "string" ? routeId : "";
+    if (!requestedRouteId || requestedRouteId.trim() !== requestedRouteId || !requestedIdentity) return null;
+
+    const routes = [
+      ...(Array.isArray(related.authored_relationships) ? related.authored_relationships : [])
+        .map((route) => ({route, kind: "authored"})),
+      ...(Array.isArray(related.evidence_backed_bridges) ? related.evidence_backed_bridges : [])
+        .map((route) => ({route, kind: "bridge"})),
+    ];
+    const matches = routes.filter(({route}) => readerText(route?.id) === requestedRouteId);
+    if (matches.length !== 1) return null;
+    const {route, kind} = matches[0];
+    if (!readerText(route?.source_passage)
+      || !readerText(route?.destination_passage)
+      || !readerText(route?.relationship_category)
+      || !readerText(route?.explanation)
+      || !readerText(route?.uncertainty)) return null;
+
+    const supports = kind === "bridge"
+      ? (Array.isArray(route.supporting_records) ? route.supporting_records : [])
+        .map((record) => normalizedCklRecordIdentity(record))
+      : (Array.isArray(route.supporting_record_ids) ? route.supporting_record_ids : [])
+        .map(parseCklRecordIdentity)
+        .filter(Boolean);
+    return supports.some((support) => sameCklRecordIdentity(support, requestedIdentity)) ? route : null;
+  }
+
+  function normalizedCklRecordIdentity(value) {
+    const objectId = value?.object_id;
+    const recordKind = value?.record_kind;
+    const recordId = value?.record_id;
+    if ([objectId, recordKind, recordId].some((part) => typeof part !== "string" || !part || part.trim() !== part)
+      || !["claim", "evidence"].includes(recordKind)) return null;
+    return {object_id: objectId, record_kind: recordKind, record_id: recordId};
+  }
+
+  function parseCklRecordIdentity(value) {
+    if (typeof value !== "string" || !value || value.trim() !== value) return null;
+    const match = value.match(/^ckl:([^#]+)#(claim|evidence):(.+)$/);
+    if (!match) return null;
+    return {object_id: match[1], record_kind: match[2], record_id: match[3]};
+  }
+
+  function sameCklRecordIdentity(left, right) {
+    return Boolean(left && right)
+      && left.object_id === right.object_id
+      && left.record_kind === right.record_kind
+      && left.record_id === right.record_id;
+  }
+
+  function normalizePassageRouteReference(value) {
+    return readerText(value).toLocaleLowerCase().replace(/[‐‑‒–—−]/g, "-").replace(/\s+/g, " ");
+  }
+
   function selectionSnapshot(value) {
     const book = readerText(value?.book);
     const chapter = positiveInteger(value?.chapter);
@@ -893,6 +952,7 @@
   function renderPassageRouteList(document, parent, routes, routeKind, options) {
     const list = element(document, "div", "narrative-explorer-related-passage-list");
     const pageSize = 4;
+    const selectedRouteId = String(options.selectedRouteId || "");
     let visible = 0;
     let moreButton = null;
     const currentReference = normalizeReference(trailCurrentSelection(options.trail)?.reference || "");
@@ -900,8 +960,29 @@
       const next = Math.min(routes.length, visible + pageSize);
       routes.slice(visible, next).forEach((route) => {
         const article = element(document, "article", "narrative-explorer-related-passage");
+        const isSelected = Boolean(selectedRouteId) && route.id === selectedRouteId;
+        article.dataset.routeId = readerText(route.id);
+        if (isSelected) {
+          article.className += " is-selected";
+          article.setAttribute("aria-current", "true");
+        }
+        const routeHeading = appendTextElement(
+          document,
+          article,
+          "h6",
+          `Connection to ${readerText(route.destination_passage)}`,
+          "narrative-explorer-related-passage-heading",
+        );
+        routeHeading.setAttribute("tabindex", "-1");
+        routeHeading.dataset.narrativeRouteFocusId = readerText(route.id);
+        if (isSelected) {
+          const status = appendTextElement(document, article, "p", "Selected connection from Study Companion.", "narrative-explorer-related-passage-selected");
+          status.setAttribute("role", "status");
+        }
+        const layer = passageEvidenceLayerLabel(route.evidence_layer);
         const category = connectionCategoryLabel(route.relationship_category) || readerText(route.relationship_category).replace(/_/g, " ");
-        appendTextElement(document, article, "p", `${passageEvidenceLayerLabel(route.evidence_layer)} · ${category}`, "narrative-explorer-related-passage-kind");
+        const labels = [...new Set([layer, category].filter(Boolean).map((value) => value.trim()))];
+        appendTextElement(document, article, "p", labels.join(" · "), "narrative-explorer-related-passage-kind");
         if (route.direction === "source_to_receiving_text"
           && readerText(route.source_text_passage)
           && readerText(route.receiving_text_passage)) {
@@ -950,13 +1031,16 @@
       }
     };
     addPage();
-    parent.append(list);
     if (routes.length > pageSize) {
       moreButton = element(document, "button", "secondary narrative-explorer-more-passages");
       moreButton.type = "button";
       moreButton.textContent = `Show ${Math.min(pageSize, routes.length - visible)} more passages`;
       moreButton.addEventListener("click", addPage);
-      parent.append(moreButton);
+      const selectedIndex = routes.findIndex((route) => route.id === selectedRouteId);
+      while (selectedIndex >= visible) addPage();
+      parent.append(list, moreButton);
+    } else {
+      parent.append(list);
     }
   }
 
@@ -2506,6 +2590,7 @@
     MAX_TRAIL_NODES,
     urlFor,
     load,
+    findVerifiedPassageRoute,
     createSubjectLoader,
     createSession,
     createTrail,

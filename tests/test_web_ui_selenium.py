@@ -1165,6 +1165,155 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         self.driver.find_element(By.CSS_SELECTOR, "[data-companion-state-control='closed']").click()
         wait.until(lambda driver: driver.find_element(By.ID, "study-panel").get_attribute("data-companion-state") == "closed")
 
+    def test_companion_discovery_handoff_highlights_verified_route_and_returns_to_origin(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import Select, WebDriverWait
+
+        wait = WebDriverWait(self.driver, 90)
+        self.driver.set_window_size(1440, 1200)
+        self.driver.get(self._base_url + "/")
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-testid='reader-passage']")))
+        wait.until(lambda driver: driver.execute_script("return window.BHFStudySelection?.getState?.().book === 'John';"))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-book]")).select_by_value("Genesis")
+        wait.until(lambda driver: driver.execute_script("return window.BHFStudySelection?.getState?.().book === 'Genesis';"))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("1")
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); return s?.book === 'Genesis' && s.chapter === 1;",
+        ))
+        for verse in range(1, 6):
+            self.driver.find_element(
+                By.CSS_SELECTOR,
+                f'#chapter-reader [data-verse="{verse}"] [data-verse-select]',
+            ).click()
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().selectedVerses?.join(',') === '1,2,3,4,5';",
+        ))
+
+        setup = self.driver.execute_async_script("""
+          const done = arguments[0];
+          (async () => {
+            const selection = window.BHFStudySelection.getState();
+            const projection = await window.BHFNarrativeExplorer.load(selection);
+            const context = {
+              reference: selection.reference,
+              presentation_packet: {cards: [{
+                id: 'browser-genesis-john-discovery',
+                type: 'did_you_know',
+                headline: 'John opens with the Word at the beginning',
+                body: 'The prologue places the Logos with God in the beginning.',
+                confidence: 'high',
+                interpretation_level: 'interpretation',
+                evidence_ids: ['browser-john-logos'],
+                dig_deeper_actions: [{type: 'show_evidence', label: 'View evidence'}],
+              }]},
+              presentation_evidence: [{
+                id: 'browser-john-logos',
+                claim: 'John’s prologue presents the Logos with God in the beginning.',
+                category: 'theological claim',
+                confidence: 'high',
+                ckl_record_identity: {object_id: 'john', record_kind: 'claim', record_id: 'john-logos'},
+                sources: [{title: 'Canonical Knowledge Library'}],
+              }],
+            };
+            const renderDiscoveries = window.BHFCompanionDiscoveries.render.bind(window.BHFCompanionDiscoveries);
+            window.BHFCompanionDiscoveries.render = (panel, _value, options) => renderDiscoveries(
+              panel,
+              context,
+              {...options, visible: true, narrativeExplorerEnabled: true, verifiedProjection: projection},
+            );
+            window.BHFCompanionDiscoveries.render(
+              document.querySelector('[data-study-companion]'),
+              context,
+              {visible: true, narrativeExplorerEnabled: true, verifiedProjection: projection},
+            );
+            window.BHFCompanionDiscoveries.render = () => {};
+            window.BHFStudyCompanion.setState('study', {focus: false, history: false});
+            done({
+              reference: selection.reference,
+              routeIds: (projection.related_passages?.evidence_backed_bridges || []).map(route => route.id),
+              matchIds: window.BHFCompanionDiscoveries.findVerifiedConnections(
+                context.presentation_packet.cards[0], context, projection, {narrativeExplorerEnabled: true},
+              ).map(route => route.id),
+              actionCount: document.querySelectorAll("[data-presentation-action='explore_connection']").length,
+              cardText: document.querySelector('.companion-discovery-card')?.textContent || '',
+              resourceState: window.BHFStudyCompanion.getState(),
+              overviewHidden: document.querySelector('[data-companion-overview]')?.hidden ?? null,
+              discoverySectionHidden: document.querySelector('[data-companion-discoveries-section]')?.hidden ?? null,
+              panelHidden: document.querySelector('[data-study-companion]')?.hidden ?? null,
+            });
+          })().catch(error => done({error: String(error)}));
+        """)
+        self.assertNotIn("error", setup)
+        self.assertIn("genesis-1-john-1-creation-word", setup["routeIds"])
+        self.assertEqual(setup["matchIds"], ["genesis-1-john-1-creation-word"])
+        self.assertEqual(setup["actionCount"], 1)
+        self.assertEqual(setup["reference"], "Genesis 1:1-5")
+        self.assertIn("John opens with the Word at the beginning", setup["cardText"])
+        self.assertFalse(setup["overviewHidden"], repr(setup))
+        self.assertFalse(setup["discoverySectionHidden"], repr(setup))
+        self.assertFalse(setup["panelHidden"], repr(setup))
+
+        discovery = self.driver.find_element(By.CSS_SELECTOR, ".companion-discovery-card")
+        self.driver.execute_script("arguments[0].querySelector('details').open = true;", discovery)
+        action = self.driver.find_element(By.CSS_SELECTOR, "[data-presentation-action='explore_connection']")
+        self.assertEqual(self.driver.execute_script("return arguments[0].textContent;", action), "Explore this connection")
+        self.assertEqual(action.tag_name.lower(), "button")
+        self.assertEqual(action.get_attribute("aria-label"), "Explore this connection")
+        focus_result = self.driver.execute_script("""
+          const button = document.querySelector("[data-presentation-action='explore_connection']");
+          if (!button) return {found: false};
+          const details = button.closest('details');
+          if (details) details.open = true;
+          button.scrollIntoView({block: 'center'});
+          button.focus();
+          return document.activeElement === button;
+        """)
+        self.assertTrue(focus_result)
+        active_action = self.driver.find_element(By.CSS_SELECTOR, "[data-presentation-action='explore_connection']")
+        self.assertEqual(self.driver.execute_script("return document.activeElement.dataset.presentationAction;"), "explore_connection")
+        active_action.send_keys(Keys.ENTER)
+        WebDriverWait(self.driver, 20).until(lambda driver: driver.execute_script(
+            "return window.BHFStudyCompanion.getState().resource === 'narrative_explorer';",
+        ))
+
+        route_article = wait.until(EC.presence_of_element_located((
+            By.CSS_SELECTOR,
+            "[data-route-id='genesis-1-john-1-creation-word'][aria-current='true']",
+        )))
+        active_route = self.driver.execute_script(
+            "return document.activeElement?.dataset?.narrativeRouteFocusId || '';",
+        )
+        self.assertEqual(active_route, "genesis-1-john-1-creation-word")
+        route_text = self.driver.execute_script("return arguments[0].textContent.toLowerCase();", route_article)
+        self.assertIsNotNone(route_article.find_element(By.CSS_SELECTOR, "[role='status']"))
+        self.assertIn("interpretive association", route_text)
+        self.assertIn("not proof of direct borrowing", route_text)
+        inspection = route_article.find_element(By.CSS_SELECTOR, ".narrative-explorer-related-passage-details")
+        self.driver.execute_script("arguments[0].open = true;", inspection)
+        self.assertIn("john#claim:john-logos", self.driver.execute_script("return arguments[0].textContent;", inspection))
+
+        follow_button = route_article.find_element(
+            By.CSS_SELECTOR,
+            "button[data-narrative-focus-id^='related-passage:']",
+        )
+        self.driver.execute_script("arguments[0].click();", follow_button)
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "const t=window.history.state?.bhfStudyCompanion?.trail; "
+            "const active=t?.nodes?.[t.activeIndex]; "
+            "return s?.book === 'John' && s?.selectedVerses?.join(',') === '1,2,3,4,5' "
+            "&& active?.kind === 'passage' && active.reference === 'John 1:1-5' "
+            "&& Number(t.activeIndex) > 0;",
+        ))
+        return_button = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-return-origin")))
+        self.driver.execute_script("arguments[0].click();", return_button)
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "return s?.book === 'Genesis' && s?.selectedVerses?.join(',') === '1,2,3,4,5';",
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()

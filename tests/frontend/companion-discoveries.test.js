@@ -266,3 +266,300 @@ test("unknown or unfulfillable actions do not navigate", async () => {
   assert.equal(handled, false);
   assert.deepEqual(calls, []);
 });
+
+
+function verifiedHandoffFixture(identity) {
+  const discovery = {
+    id: "discovery-1",
+    type: "did_you_know",
+    evidence_ids: ["evidence-1"],
+  };
+  const route = {
+    id: "genesis-1-john-1-creation-word",
+    provenance: "ckl_documented_claim",
+    source_passage: "Genesis 1:1-5",
+    destination_passage: "John 1:1-5",
+    relationship_category: "interpretive_association",
+    evidence_layer: "thematic_interpretation",
+    direction: "interpretive_comparison",
+    explanation: "John's Logos language is read alongside creation and wisdom traditions.",
+    uncertainty: "This does not establish direct borrowing or a single source.",
+    supporting_records: [{
+      id: "ckl:john#claim:john-logos",
+      object_id: "john",
+      record_kind: "claim",
+      record_id: "john-logos",
+    }],
+  };
+  return {
+    discovery,
+    context: {
+      reference: "Genesis 1:1-5",
+      presentation_packet: {cards: [discovery]},
+      presentation_evidence: [{id: "evidence-1", ckl_record_identity: identity}],
+    },
+    projection: {
+      passage: {reference: "Genesis 1:1-5"},
+      related_passages: {
+        state: "available",
+        query_status: "complete",
+        authored_relationships: [],
+        evidence_backed_bridges: [route],
+      },
+    },
+  };
+}
+
+
+test("verified handoff matches the complete CKL parent, record kind, and local ID", () => {
+  const fixture = verifiedHandoffFixture({
+    object_id: "john",
+    record_kind: "claim",
+    record_id: "john-logos",
+  });
+
+  const matches = discoveries.findVerifiedConnections(
+    fixture.discovery,
+    fixture.context,
+    fixture.projection,
+    {narrativeExplorerEnabled: true},
+  );
+
+  assert.deepEqual(matches.map((route) => route.id), ["genesis-1-john-1-creation-word"]);
+});
+
+
+test("wrong CKL identity, source-only matches, and topic matches never create a handoff", () => {
+  for (const identity of [
+    {object_id: "wrong-parent", record_kind: "claim", record_id: "john-logos"},
+    {object_id: "john", record_kind: "evidence", record_id: "john-logos"},
+    {object_id: "john", record_kind: "claim", record_id: "another-claim"},
+    null,
+  ]) {
+    const fixture = verifiedHandoffFixture(identity);
+    fixture.context.presentation_evidence[0].sources = [{id: "john-greek"}];
+    fixture.context.presentation_evidence[0].topics = ["creation"];
+
+    assert.deepEqual(discoveries.findVerifiedConnections(
+      fixture.discovery,
+      fixture.context,
+      fixture.projection,
+      {narrativeExplorerEnabled: true},
+    ), []);
+  }
+});
+
+
+test("only complete confirmed routes match, and multiple verified routes remain distinct choices", () => {
+  const fixture = verifiedHandoffFixture({
+    object_id: "john",
+    record_kind: "claim",
+    record_id: "john-logos",
+  });
+  const authored = {
+    ...fixture.projection.related_passages.evidence_backed_bridges[0],
+    id: "authored:curated-relationship:John 1:1-5",
+    provenance: "authored_ckl_relationship",
+    supporting_records: undefined,
+    supporting_record_ids: ["ckl:john#claim:john-logos"],
+  };
+  fixture.projection.related_passages.authored_relationships.push(authored);
+  fixture.projection.related_passages.held_candidates = [{
+    id: "held-candidate",
+    supporting_records: [{object_id: "john", record_kind: "claim", record_id: "john-logos"}],
+  }];
+
+  assert.deepEqual(discoveries.findVerifiedConnections(
+    fixture.discovery,
+    fixture.context,
+    fixture.projection,
+    {narrativeExplorerEnabled: true},
+  ).map((route) => route.id), [
+    "authored:curated-relationship:John 1:1-5",
+    "genesis-1-john-1-creation-word",
+  ]);
+
+  fixture.projection.related_passages.query_status = "partial";
+  assert.deepEqual(discoveries.findVerifiedConnections(
+    fixture.discovery,
+    fixture.context,
+    fixture.projection,
+    {narrativeExplorerEnabled: true},
+  ), []);
+  assert.deepEqual(discoveries.findVerifiedConnections(
+    fixture.discovery,
+    fixture.context,
+    {...fixture.projection, related_passages: {
+      ...fixture.projection.related_passages,
+      query_status: "complete",
+      authored_relationships: [],
+      evidence_backed_bridges: [],
+    }},
+    {narrativeExplorerEnabled: false},
+  ), []);
+  assert.deepEqual(discoveries.findVerifiedConnections(
+    fixture.discovery,
+    fixture.context,
+    {...fixture.projection, related_passages: {
+      ...fixture.projection.related_passages,
+      query_status: "complete",
+      authored_relationships: [],
+      evidence_backed_bridges: [{...fixture.projection.related_passages.evidence_backed_bridges[0], uncertainty: ""}],
+    }},
+    {narrativeExplorerEnabled: true},
+  ), []);
+});
+
+
+test("Jonah to Matthew reception is offered only for the precise selected passage and supporting claim", () => {
+  const discovery = {id: "jonah-discovery", type: "did_you_know", evidence_ids: ["three-days"]};
+  const route = {
+    id: "jonah-1-17-matthew-12-40-sign-of-jonah",
+    provenance: "ckl_documented_claim",
+    source_passage: "Jonah 1:17",
+    destination_passage: "Matthew 12:40",
+    relationship_category: "later_canonical_reception",
+    explanation: "Matthew compares the narrated duration in Jonah with the time in the earth.",
+    uncertainty: "The idiom and chronology remain uncertain.",
+    supporting_records: [{object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"}],
+  };
+  const context = {
+    reference: "Jonah 1:17",
+    presentation_packet: {cards: [discovery]},
+    presentation_evidence: [{
+      id: "three-days",
+      ckl_record_identity: {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"},
+    }],
+  };
+  const projection = {
+    passage: {reference: "Jonah 1:17"},
+    related_passages: {state: "available", query_status: "complete", authored_relationships: [], evidence_backed_bridges: [route]},
+  };
+
+  assert.deepEqual(discoveries.findVerifiedConnections(discovery, context, projection, {narrativeExplorerEnabled: true}).map((value) => value.id), [route.id]);
+  assert.deepEqual(discoveries.findVerifiedConnections(discovery, context, {
+    ...projection,
+    passage: {reference: "Jonah 1"},
+  }, {narrativeExplorerEnabled: true}), []);
+  assert.deepEqual(discoveries.findVerifiedConnections(discovery, {
+    ...context,
+    reference: "Matthew 12:40",
+  }, projection, {narrativeExplorerEnabled: true}), []);
+});
+
+
+test("held, absent, topic-only, and source-only candidates never create a route action", () => {
+  const discovery = {id: "negative-control", type: "did_you_know", evidence_ids: ["evidence"]};
+  const contextFor = (reference, identity = null) => ({
+    reference,
+    presentation_packet: {cards: [discovery]},
+    presentation_evidence: [{
+      id: "evidence",
+      topics: ["Psalm 110", "enthronement"],
+      sources: [{id: "psalm-110"}],
+      ...(identity ? {ckl_record_identity: identity} : {}),
+    }],
+  });
+  const context = contextFor("Acts 2:22-36");
+  const authoredPsalm110Route = {
+    id: "authored:existing-acts2-psalm110-route",
+    provenance: "authored_ckl_relationship",
+    source_passage: "Acts 2",
+    destination_passage: "Psalm 110:1-7",
+    relationship_category: "later_canonical_reception",
+    explanation: "This existing authored pathway records Acts 2's reception of Psalm 110.",
+    uncertainty: "Acts 2 is a later Christian interpretation of Israel's Scriptures.",
+    supporting_record_ids: ["ckl:messiah-theme#source:psalm-110"],
+  };
+  const projection = {
+    passage: {reference: "Acts 2:22-36"},
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      authored_relationships: [authoredPsalm110Route],
+      evidence_backed_bridges: [],
+      held_candidates: [{id: "psalm-110-acts-2-enthronement", supporting_records: authoredPsalm110Route.supporting_record_ids}],
+    },
+  };
+
+  assert.deepEqual(discoveries.findVerifiedConnections(discovery, context, projection, {narrativeExplorerEnabled: true}), []);
+  const psalm22Context = contextFor("Psalm 22:1-31", {
+    object_id: "psalms", record_kind: "claim", record_id: "passion-psalms",
+  });
+  assert.deepEqual(discoveries.findVerifiedConnections(discovery, psalm22Context, {
+    passage: {reference: "Psalm 22:1-31"},
+    related_passages: {state: "not_represented", query_status: "complete", authored_relationships: [], evidence_backed_bridges: []},
+  }, {narrativeExplorerEnabled: true}), []);
+  const deuteronomyContext = contextFor("Deuteronomy 32:8-9", {
+    object_id: "ancient-divine-assembly-imagery", record_kind: "claim", record_id: "assembly-textual-comparison",
+  });
+  assert.deepEqual(discoveries.findVerifiedConnections(discovery, deuteronomyContext, {
+    passage: {reference: "Deuteronomy 32:8-9"},
+    related_passages: {
+      state: "not_represented",
+      query_status: "complete",
+      authored_relationships: [],
+      evidence_backed_bridges: [],
+      held_candidates: [{id: "deuteronomy-32-psalm-82-job-1-divine-assembly", supporting_records: ["ckl:ancient-divine-assembly-imagery#interpretive_note_sha256:held"]}],
+    },
+  }, {narrativeExplorerEnabled: true}), []);
+});
+
+
+test("a confirmed discovery renders the direct action with its route and exact CKL key", () => {
+  const {panel, selectors} = fixturePanel();
+  const fixture = verifiedHandoffFixture({
+    object_id: "john",
+    record_kind: "claim",
+    record_id: "john-logos",
+  });
+
+  discoveries.render(panel, fixture.context, {
+    narrativeExplorerEnabled: true,
+    verifiedProjection: fixture.projection,
+  });
+
+  const details = selectors["[data-companion-discoveries]"].children[0].children[3];
+  const actions = details.children.find((child) => child.className === "companion-discovery-actions");
+  const button = actions.children[1];
+  assert.equal(button.textContent, "Explore this connection");
+  assert.equal(button.attributes["aria-label"], "Explore this connection");
+  assert.equal(button.dataset.presentationAction, "explore_connection");
+  assert.equal(button.dataset.presentationRouteId, "genesis-1-john-1-creation-word");
+  assert.equal(button.dataset.presentationPassageReference, "Genesis 1:1-5");
+  assert.equal(button.dataset.presentationObjectId, "john");
+  assert.equal(button.dataset.presentationRecordKind, "claim");
+  assert.equal(button.dataset.presentationRecordId, "john-logos");
+});
+
+
+test("direct action falls back to generic cross-references if its route is no longer available", async () => {
+  const calls = [];
+  const button = {
+    dataset: {
+      presentationAction: "explore_connection",
+      presentationRouteId: "jonah-1-17-matthew-12-40-sign-of-jonah",
+      presentationPassageReference: "Jonah 1:17",
+      presentationObjectId: "jonah",
+      presentationRecordKind: "claim",
+      presentationRecordId: "jonah-three-days",
+    },
+  };
+
+  const handled = await discoveries.dispatchAction(button, {
+    narrativeExplorerEnabled: true,
+    openResource: async (resource, values) => {
+      calls.push([resource, values]);
+      return false;
+    },
+  });
+
+  assert.equal(handled, true);
+  assert.equal(calls[0][0], "narrative_explorer");
+  assert.deepEqual(calls[0][1].routeHandoff, {
+    routeId: "jonah-1-17-matthew-12-40-sign-of-jonah",
+    identity: {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"},
+    passageReference: "Jonah 1:17",
+  });
+  assert.equal(calls[1][0], "cross_references");
+});

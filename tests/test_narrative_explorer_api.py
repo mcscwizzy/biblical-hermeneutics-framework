@@ -402,6 +402,29 @@ def test_jonah_matthew_reception_bridge_projects_exact_support_in_both_direction
     assert routes[1]["source_passage"] == "Matthew 12:40"
 
 
+def test_handoff_projection_keeps_held_or_unrefined_pairs_out_of_confirmed_routes(ckl_library):
+    client = _client(_service(ckl_library))
+    for book, chapter in (("Psalm", 22), ("Mark", 15), ("Deuteronomy", 32), ("Psalm", 82)):
+        response = client.get(f"/api/narrative-explorer/v1/passages/{book}/{chapter}")
+        assert response.status_code == 200
+        related = response.json()["related_passages"]
+        assert related["authored_relationships"] == []
+        assert related["evidence_backed_bridges"] == []
+        assert "held_candidates" not in related
+
+    acts = client.get("/api/narrative-explorer/v1/passages/Acts/2").json()["related_passages"]
+    authored_psalm_routes = [
+        route for route in acts["authored_relationships"]
+        if route["destination_passage"] == "Psalm 110:1-7"
+    ]
+    assert authored_psalm_routes
+    assert any(
+        "ckl:messiah-theme#source:psalm-110" in route["supporting_record_ids"]
+        for route in authored_psalm_routes
+    )
+    assert "held_candidates" not in acts
+
+
 def test_psalm_82_discloses_council_context_and_keeps_explicit_text_distinct_from_dispute(ckl_library):
     payload = _client(_service(ckl_library)).get(
         "/api/narrative-explorer/v1/passages/Psalm/82"
