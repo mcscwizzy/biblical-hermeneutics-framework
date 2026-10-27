@@ -34,10 +34,13 @@ function loadCompanion(options = {}) {
     querySelector(selector) { return selector === "[data-study-companion]" ? panel : null; },
   };
   const routerCalls = [];
+  const historyCalls = [];
+  const discoveryRenders = [];
+  const projectionCalls = [];
   let selectionListener = null;
   let contextOptions = null;
   const window = {
-    BHFRuntimeConfig: {narrativeExplorerEnabled: true},
+    BHFRuntimeConfig: {narrativeExplorerEnabled: options.narrativeExplorerEnabled !== false},
     matchMedia: () => ({matches: false}),
     addEventListener() {},
     requestAnimationFrame(callback) { callback(); },
@@ -51,12 +54,44 @@ function loadCompanion(options = {}) {
     BHFStudyRecommendations: {
       rank() { return {reason: "", recommended: [], deeper: [], all: []}; },
     },
+    BHFCompanionContext: {
+      requestKey(value) {
+        return [value?.book, value?.chapter, value?.startVerse || 0, value?.endVerse || 0].join("|");
+      },
+    },
+    BHFCompanionDiscoveries: {
+      render(_panel, context, renderOptions) {
+        discoveryRenders.push({context, renderOptions});
+      },
+    },
+    BHFNarrativeExplorer: {
+      urlFor(value) {
+        return `/api/narrative-explorer/v1/passages/${value?.book}/${value?.chapter}`
+          + (value?.startVerse ? `?verse_start=${value.startVerse}&verse_end=${value.endVerse || value.startVerse}` : "");
+      },
+      ...(options.narrativeExplorer || {
+        load(selection, requestOptions) {
+          projectionCalls.push({selection, requestOptions});
+          return Promise.resolve(null);
+        },
+      }),
+    },
     BHFResourceRouter: {
-      create() {
+      create(routerOptions) {
+        contextOptions = routerOptions;
         return {
-          open(...args) { routerCalls.push(args); return Promise.resolve(true); },
+          open(...args) {
+            routerCalls.push(args);
+            if (args[1]?.routeHandoff) {
+              if (options.routeHandoffReady === false) return Promise.resolve(false);
+              routerOptions.onVerifiedRouteHandoff?.();
+              routerOptions.onNarrativeTrailChange?.({originSelection: {reference: "Jonah 1:17"}, nodes: [], activeIndex: 0}, {push: false});
+            }
+            return Promise.resolve(true);
+          },
           close() {},
           getNarrativeTrail() { return null; },
+          cancelPendingRouteHandoff() {},
         };
       },
     },
@@ -75,14 +110,14 @@ function loadCompanion(options = {}) {
         return {
           initialize() {},
           current() { return {resource: null}; },
-          push() {},
-          replace() {},
+          push(snapshot) { historyCalls.push({kind: "push", snapshot}); },
+          replace(snapshot) { historyCalls.push({kind: "replace", snapshot}); },
           backFromResource() { return true; },
         };
       },
     },
   };
-  const context = vm.createContext({window, document, console, setTimeout, clearTimeout, Promise});
+  const context = vm.createContext({window, document, console, setTimeout, clearTimeout, Promise, AbortController});
   vm.runInContext(fs.readFileSync("bhf_web/static/study-companion.js", "utf8"), context);
   listeners.get("DOMContentLoaded")();
   return {
@@ -90,6 +125,9 @@ function loadCompanion(options = {}) {
     contextOptions,
     select(next) { selectionListener(next); },
     routerCalls,
+    historyCalls,
+    discoveryRenders,
+    projectionCalls,
   };
 }
 
@@ -167,4 +205,162 @@ test("a requested map focus reports unavailable while the MapPanel module is loa
   assert.equal(result.requestedKind, "place");
   assert.equal(result.requestedId, "negeb");
   assert.equal(result.reason, "map_panel_not_ready");
+});
+
+
+test("Study Companion preflights exact cited records through the selected Narrative Explorer projection", async () => {
+  let resolveProjection;
+  const fixture = loadCompanion({
+    selection: {
+      book: "Jonah",
+      chapter: 1,
+      startVerse: 17,
+      endVerse: 17,
+      reference: "Jonah 1:17",
+      hasPassageSelection: true,
+    },
+    narrativeExplorer: {
+      load(selection, requestOptions) {
+        fixture.projectionCalls.push({selection, requestOptions});
+        return new Promise((resolve) => { resolveProjection = resolve; });
+      },
+    },
+  });
+  const selection = {
+    book: "Jonah",
+    chapter: 1,
+    startVerse: 17,
+    endVerse: 17,
+    reference: "Jonah 1:17",
+    hasPassageSelection: true,
+  };
+  fixture.select(selection);
+  const context = {
+    reference: "Jonah 1:17",
+    presentation_packet: {
+      cards: [{type: "did_you_know", evidence_ids: ["jonah-three-days"]}],
+    },
+    presentation_evidence: [{
+      id: "jonah-three-days",
+      ckl_record_identity: {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"},
+    }],
+  };
+
+  fixture.contextOptions.onReady(context, selection);
+  await Promise.resolve();
+
+  assert.equal(fixture.projectionCalls.length, 1);
+  assert.equal(fixture.projectionCalls[0].selection.startVerse, 17);
+  assert.equal(fixture.projectionCalls[0].selection.endVerse, 17);
+  assert.equal(fixture.projectionCalls[0].requestOptions.signal.aborted, false);
+  const projection = {
+    passage: {reference: "Jonah 1:17"},
+    related_passages: {state: "available", query_status: "complete", authored_relationships: [], evidence_backed_bridges: []},
+  };
+  resolveProjection(projection);
+  await new Promise((resolve) => setImmediate(resolve));
+
+  assert.equal(fixture.discoveryRenders.at(-1).renderOptions.verifiedProjection, projection);
+  assert.equal(fixture.discoveryRenders.at(-1).renderOptions.narrativeExplorerEnabled, true);
+});
+
+
+test("projection preflight aborts and discards a stale chapter response", async () => {
+  const pending = [];
+  const fixture = loadCompanion({
+    narrativeExplorer: {
+      load(selection, requestOptions) {
+        return new Promise((resolve) => pending.push({selection, signal: requestOptions.signal, resolve}));
+      },
+    },
+  });
+  const firstSelection = {book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, reference: "Jonah 1:17"};
+  const secondSelection = {book: "Matthew", chapter: 12, startVerse: 40, endVerse: 40, reference: "Matthew 12:40"};
+  const contextFor = (reference, recordId) => ({
+    reference,
+    presentation_packet: {cards: [{type: "did_you_know", evidence_ids: [recordId]}]},
+    presentation_evidence: [{
+      id: recordId,
+      ckl_record_identity: {object_id: "jonah", record_kind: "claim", record_id: recordId},
+    }],
+  });
+
+  fixture.select(firstSelection);
+  fixture.contextOptions.onReady(contextFor("Jonah 1:17", "jonah-three-days"), firstSelection);
+  await new Promise((resolve) => setImmediate(resolve));
+  fixture.select(secondSelection);
+  fixture.contextOptions.onReady(contextFor("Matthew 12:40", "matthew-sign-of-jonah"), secondSelection);
+  await new Promise((resolve) => setImmediate(resolve));
+
+  assert.equal(pending.length, 2);
+  assert.equal(pending[0].signal.aborted, true);
+  const staleProjection = {passage: {reference: "Jonah 1:17"}, related_passages: {state: "available", query_status: "complete"}};
+  pending[0].resolve(staleProjection);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(fixture.discoveryRenders.some((entry) => entry.renderOptions.verifiedProjection === staleProjection), false);
+
+  const currentProjection = {passage: {reference: "Matthew 12:40"}, related_passages: {state: "available", query_status: "complete"}};
+  pending[1].resolve(currentProjection);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(fixture.discoveryRenders.at(-1).renderOptions.verifiedProjection, currentProjection);
+});
+
+
+test("disabled Narrative Explorer does not trigger a route projection request", async () => {
+  const fixture = loadCompanion({
+    selection: {book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, reference: "Jonah 1:17"},
+    narrativeExplorerEnabled: false,
+  });
+  const selection = {book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, reference: "Jonah 1:17"};
+  fixture.select(selection);
+  fixture.contextOptions.onReady({
+    reference: "Jonah 1:17",
+    presentation_packet: {cards: [{type: "did_you_know", evidence_ids: ["jonah-three-days"]}]},
+    presentation_evidence: [{
+      id: "jonah-three-days",
+      ckl_record_identity: {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"},
+    }],
+  }, selection);
+  await new Promise((resolve) => setImmediate(resolve));
+
+  assert.equal(fixture.projectionCalls.length, 0);
+  assert.equal(fixture.discoveryRenders.at(-1).renderOptions.narrativeExplorerEnabled, false);
+});
+
+
+test("route handoff records origin history only after the router confirms the verified relationship", async () => {
+  const fixture = loadCompanion({
+    selection: {book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, reference: "Jonah 1:17"},
+  });
+  const routeHandoff = {
+    routeId: "jonah-1-17-matthew-12-40-sign-of-jonah",
+    identity: {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"},
+    passageReference: "Jonah 1:17",
+  };
+
+  assert.equal(await fixture.companion.openResource("narrative_explorer", {routeHandoff}), true);
+  assert.deepEqual(fixture.routerCalls[0][1].routeHandoff, routeHandoff);
+  assert.deepEqual(fixture.historyCalls.map((call) => call.kind), ["push", "replace"]);
+  assert.equal(fixture.historyCalls[0].snapshot.resource, null);
+  assert.equal(fixture.historyCalls[1].snapshot.resource, "narrative_explorer");
+  assert.equal(fixture.companion.getState().resource, "narrative_explorer");
+});
+
+
+test("failed route handoff leaves the Companion origin and browser history unchanged", async () => {
+  const fixture = loadCompanion({
+    selection: {book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, reference: "Jonah 1:17"},
+    routeHandoffReady: false,
+  });
+  const result = await fixture.companion.openResource("narrative_explorer", {
+    routeHandoff: {
+      routeId: "jonah-1-17-matthew-12-40-sign-of-jonah",
+      identity: {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"},
+      passageReference: "Jonah 1:17",
+    },
+  });
+
+  assert.equal(result, false);
+  assert.equal(fixture.historyCalls.length, 0);
+  assert.equal(fixture.companion.getState().resource, null);
 });

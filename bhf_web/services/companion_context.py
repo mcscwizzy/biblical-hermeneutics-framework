@@ -801,26 +801,28 @@ def _presentation_payload(
     for item in bundle.evidence_items:
         if item.id not in evidence_ids:
             continue
-        compact_evidence.append(
-            {
-                "id": item.id,
-                "claim": item.claim,
-                "category": item.category,
-                "confidence": item.confidence,
-                "sources": [
-                    {
-                        "id": source_id,
-                        "title": str(
-                            sources_by_id.get(source_id, {}).get("title") or source_id
-                        ),
-                        "source_type": str(
-                            sources_by_id.get(source_id, {}).get("source_type") or ""
-                        ),
-                    }
-                    for source_id in item.source_ids
-                ],
-            }
-        )
+        evidence_payload = {
+            "id": item.id,
+            "claim": item.claim,
+            "category": item.category,
+            "confidence": item.confidence,
+            "sources": [
+                {
+                    "id": source_id,
+                    "title": str(
+                        sources_by_id.get(source_id, {}).get("title") or source_id
+                    ),
+                    "source_type": str(
+                        sources_by_id.get(source_id, {}).get("source_type") or ""
+                    ),
+                }
+                for source_id in item.source_ids
+            ],
+        }
+        record_identity = _presentation_ckl_record_identity(item)
+        if record_identity is not None:
+            evidence_payload["ckl_record_identity"] = record_identity
+        compact_evidence.append(evidence_payload)
     return {
         # A compatibility shell retains fingerprint and map navigation fields
         # without exposing the full internal EvidenceBundle to the browser.
@@ -845,6 +847,31 @@ def _presentation_payload(
         },
         "presentation_packet": presentation.to_dict(include_diagnostics=False),
         "presentation_evidence": compact_evidence,
+    }
+
+
+def _presentation_ckl_record_identity(item: Any) -> dict[str, str] | None:
+    """Return a complete identity only for structured, standalone CKL records."""
+
+    metadata = getattr(item, "relevance_metadata", None)
+    if not isinstance(metadata, Mapping) or metadata.get("presentation_role") == "significance":
+        return None
+    source_kind = metadata.get("source_kind")
+    record_kind = {
+        "ckl_claim": "claim",
+        "ckl_evidence_item": "evidence",
+    }.get(source_kind) if isinstance(source_kind, str) else None
+    object_id = metadata.get("parent_object_id")
+    record_id = getattr(item, "id", None)
+    if any(
+        not isinstance(value, str) or not value or value.strip() != value
+        for value in (object_id, record_id)
+    ) or not record_kind:
+        return None
+    return {
+        "object_id": object_id,
+        "record_kind": record_kind,
+        "record_id": record_id,
     }
 
 

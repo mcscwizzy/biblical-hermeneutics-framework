@@ -30,6 +30,12 @@
   let lastResourceTrigger = null;
   let lastCompact = null;
   let resizeFrame = null;
+  let discoveryProjectionSequence = 0;
+  let discoveryProjectionController = null;
+  let discoveryProjectionPendingKey = "";
+  let discoveryProjectionPendingContext = null;
+  let discoveryProjectionCacheKey = "";
+  let discoveryProjectionCache = null;
 
   function compactViewport() {
     return window.matchMedia(`(max-width: ${breakpoint}px)`).matches;
@@ -81,6 +87,15 @@
         const snapshot = {...historySnapshot(), trail};
         if (behavior.push) historyController?.push(snapshot);
         else historyController?.replace(snapshot);
+      },
+      onVerifiedRouteHandoff: () => {
+        if (historyController?.current()?.resource !== "narrative_explorer") {
+          historyController?.push(historySnapshot());
+        }
+        ensureResourceVisible("narrative_explorer", {label: "Explore the Narrative"}, {
+          focus: false,
+          preserveResourceRouter: true,
+        });
       },
       backNarrativeTrail: () => historyController?.backFromResource(() => false),
       getReadableTranslations: () => window.BHFStudyActions?.loadReadableTranslations?.(),
@@ -185,6 +200,10 @@
     const previousState = currentState;
     let normalized = STATES.has(nextState) ? nextState : "study";
     if (!compactViewport() && normalized === "closed") normalized = "study";
+    if (normalized === "closed") {
+      cancelDiscoveryProjection();
+      resourceRouter?.cancelPendingRouteHandoff?.();
+    }
     if (normalized === "closed" && currentResource === "narrative_explorer") {
       resourceRouter?.close?.();
       currentResource = null;
@@ -251,7 +270,12 @@
     }
   }
 
-  function handleSelectionChange(nextSelection) {
+  function handleSelectionChange(nextSelection, change = {}) {
+    cancelDiscoveryProjection();
+    resourceRouter?.cancelPendingRouteHandoff?.();
+    const managedNarrativeSelection = resourceRouter?.isManagedReaderSelection?.(nextSelection, {
+      source: change?.source || change?.detail?.source || "",
+    }) === true;
     selection = nextSelection;
     saveStateController?.setSelection(selection);
     const contextChange = contextController?.setSelection?.(selection, {load: currentMode !== "explore"}) || {changed: false};
@@ -265,7 +289,7 @@
       historyController?.replace(historySnapshot());
     }
     if (selection?.book && selection?.chapter) {
-      if (contextChange.changed && isPassageContextResourceActive()) {
+      if (contextChange.changed && isPassageContextResourceActive() && !managedNarrativeSelection) {
         void resourceRouter?.open?.(currentResource, {mode: currentMode});
       }
     } else {
@@ -355,9 +379,131 @@
   }
 
   function renderDiscoveries(context = {}) {
+    const visible = currentMode === "passage";
+    const narrativeExplorerEnabled = window.BHFRuntimeConfig?.narrativeExplorerEnabled === true;
+    const identitySignature = citedRecordIdentitySignature(context);
+    const selectionKey = narrativeProjectionRequestKey(selection);
+    const contextReference = normalizeDiscoveryReference(context.reference);
+    const selectionReference = normalizeDiscoveryReference(selection?.reference);
+    if (
+      !visible
+      || !narrativeExplorerEnabled
+      || !identitySignature
+      || !selectionKey
+      || !contextReference
+      || contextReference !== selectionReference
+      || typeof window.BHFNarrativeExplorer?.load !== "function"
+    ) {
+      cancelDiscoveryProjection();
+      window.BHFCompanionDiscoveries?.render?.(panel, context, {
+        visible,
+        narrativeExplorerEnabled,
+      });
+      return;
+    }
+
+    const cacheKey = `${selectionKey}\u0000${identitySignature}`;
+    if (discoveryProjectionCache && discoveryProjectionCacheKey === cacheKey) {
+      window.BHFCompanionDiscoveries?.render?.(panel, context, {
+        visible,
+        narrativeExplorerEnabled,
+        verifiedProjection: discoveryProjectionCache,
+      });
+      return;
+    }
+    if (discoveryProjectionPendingKey === cacheKey) {
+      discoveryProjectionPendingContext = context;
+      window.BHFCompanionDiscoveries?.render?.(panel, context, {
+        visible,
+        narrativeExplorerEnabled,
+      });
+      return;
+    }
+
+    cancelDiscoveryProjection();
+    const requestSequence = ++discoveryProjectionSequence;
+    const requestController = new AbortController();
+    discoveryProjectionController = requestController;
+    discoveryProjectionPendingKey = cacheKey;
+    discoveryProjectionPendingContext = context;
     window.BHFCompanionDiscoveries?.render?.(panel, context, {
-      visible: currentMode === "passage",
+      visible,
+      narrativeExplorerEnabled,
     });
+    Promise.resolve()
+      .then(() => window.BHFNarrativeExplorer.load(selection, {signal: requestController.signal}))
+      .then((projection) => {
+        if (
+          requestSequence !== discoveryProjectionSequence
+          || requestController.signal.aborted
+          || narrativeProjectionRequestKey(selection) !== selectionKey
+          || currentMode !== "passage"
+        ) return;
+        const latestContext = discoveryProjectionPendingContext || context;
+        discoveryProjectionController = null;
+        discoveryProjectionPendingKey = "";
+        discoveryProjectionPendingContext = null;
+        discoveryProjectionCacheKey = cacheKey;
+        discoveryProjectionCache = projection;
+        window.BHFCompanionDiscoveries?.render?.(panel, latestContext, {
+          visible: true,
+          narrativeExplorerEnabled: true,
+          verifiedProjection: projection,
+        });
+      })
+      .catch((_error) => {
+        if (requestSequence !== discoveryProjectionSequence || requestController.signal.aborted) return;
+        discoveryProjectionController = null;
+        discoveryProjectionPendingKey = "";
+        discoveryProjectionPendingContext = null;
+        discoveryProjectionCacheKey = "";
+        discoveryProjectionCache = null;
+        // The initial render retains the original evidence and generic actions.
+      });
+  }
+
+  function cancelDiscoveryProjection() {
+    discoveryProjectionSequence += 1;
+    discoveryProjectionController?.abort();
+    discoveryProjectionController = null;
+    discoveryProjectionPendingKey = "";
+    discoveryProjectionPendingContext = null;
+    discoveryProjectionCacheKey = "";
+    discoveryProjectionCache = null;
+  }
+
+  function narrativeProjectionRequestKey(value) {
+    try {
+      return window.BHFNarrativeExplorer?.urlFor?.(value) || "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function normalizeDiscoveryReference(value) {
+    return String(value || "").trim().toLowerCase()
+      .replace(/[\u2010-\u2015\u2212]/g, "-")
+      .replace(/\s+/g, " ");
+  }
+
+  function citedRecordIdentitySignature(context) {
+    const evidenceIds = new Set();
+    (Array.isArray(context?.presentation_packet?.cards) ? context.presentation_packet.cards : [])
+      .filter((card) => ["did_you_know", "walk_the_land"].includes(card?.type))
+      .forEach((card) => (Array.isArray(card.evidence_ids) ? card.evidence_ids : [])
+        .forEach((id) => evidenceIds.add(id)));
+    const identities = (Array.isArray(context?.presentation_evidence) ? context.presentation_evidence : [])
+      .filter((item) => evidenceIds.has(item?.id))
+      .map((item) => {
+        const identity = item?.ckl_record_identity;
+        if (!identity || typeof identity !== "object") return "";
+        const values = [identity.object_id, identity.record_kind, identity.record_id];
+        if (values.some((value) => typeof value !== "string" || !value || value.trim() !== value)) return "";
+        if (!["claim", "evidence"].includes(identity.record_kind)) return "";
+        return JSON.stringify([item.id, ...values]);
+      })
+      .filter(Boolean);
+    return [...new Set(identities)].sort().join("|");
   }
 
   function renderLocations(context = {}) {
@@ -538,6 +684,7 @@
   async function openResource(resourceId, options = {}) {
     const requestedResourceId = resourceId;
     if (resourceId === "compare_translations") resourceId = "translation_comparison";
+    cancelDiscoveryProjection();
     if (options.trigger) lastResourceTrigger = options.trigger;
     if (options.mode) currentMode = options.mode;
     if (resourceId === "maps") {
@@ -546,6 +693,14 @@
         historyController?.push(historySnapshot());
       }
       return options.mapFocus?.acknowledgeFocus === true ? acknowledgment : undefined;
+    }
+    if (options.routeHandoff) {
+      if (resourceId !== "narrative_explorer") return false;
+      return await resourceRouter?.open?.("narrative_explorer", {
+        mode: currentMode,
+        trigger: options.trigger,
+        routeHandoff: options.routeHandoff,
+      }) === true;
     }
     const engine = window.BHFStudyRecommendations;
     const resource = requestedResourceId === "narrative_explorer"
@@ -650,7 +805,7 @@
     const engine = window.BHFStudyRecommendations;
     const resolved = resource || engine?.resources?.[resourceId] || {label: "Study Resource"};
     currentResource = resourceId;
-    resourceRouter?.close?.();
+    if (!options.preserveResourceRouter) resourceRouter?.close?.();
     shell.dataset.companionResource = resourceId;
     shell.classList.add("is-resource-detail");
     overview.hidden = true;
@@ -706,6 +861,7 @@
   function handlePresentationAction(button) {
     void window.BHFCompanionDiscoveries?.dispatchAction?.(button, {
       openResource,
+      narrativeExplorerEnabled: window.BHFRuntimeConfig?.narrativeExplorerEnabled === true,
       openArchaeologyDetail: (target) => resourceRouter?.openArchaeologyDetail?.(target),
       openCanonicalDetail: (target) => resourceRouter?.openCanonicalDetail?.(target),
       mapPlaceIds: currentMapPlaceIds(),

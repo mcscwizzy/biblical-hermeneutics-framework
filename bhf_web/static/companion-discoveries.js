@@ -20,8 +20,8 @@
         .map((item) => String(item.map_focus_id || item.id)),
     );
     const visibleCards = supportedCards.filter((card) => !isConsolidatedWalkCard(card, visibleMapIds));
-    renderSection(panel, "[data-companion-land-section]", "[data-companion-land]", visibleCards, "walk_the_land", 1, context);
-    renderSection(panel, "[data-companion-discoveries-section]", "[data-companion-discoveries]", visibleCards, "did_you_know", 3, context);
+    renderSection(panel, "[data-companion-land-section]", "[data-companion-land]", visibleCards, "walk_the_land", 1, context, options);
+    renderSection(panel, "[data-companion-discoveries-section]", "[data-companion-discoveries]", visibleCards, "did_you_know", 3, context, options);
   }
 
   function isConsolidatedWalkCard(card, visibleMapIds) {
@@ -31,17 +31,17 @@
         && visibleMapIds.has(String(action.target_id || "")));
   }
 
-  function renderSection(panel, sectionSelector, listSelector, cards, type, maximum, context) {
+  function renderSection(panel, sectionSelector, listSelector, cards, type, maximum, context, options) {
     const section = panel?.querySelector(sectionSelector);
     const list = panel?.querySelector(listSelector);
     if (!section || !list) return;
     const visibleCards = cards.filter((card) => card?.type === type).slice(0, maximum);
     section.hidden = visibleCards.length === 0;
     const document = list.ownerDocument || globalThis.document;
-    list.replaceChildren(...visibleCards.map((card) => discoveryCard(card, context, document)));
+    list.replaceChildren(...visibleCards.map((card) => discoveryCard(card, context, document, options)));
   }
 
-  function discoveryCard(card, context, document) {
+  function discoveryCard(card, context, document, options) {
     const article = document.createElement("article");
     article.className = "companion-discovery-card";
     if (card.type === "walk_the_land") article.classList.add("companion-land-card");
@@ -78,6 +78,21 @@
     const usefulActions = Array.isArray(card.dig_deeper_actions)
       ? card.dig_deeper_actions.filter((action) => action?.type !== "show_evidence")
       : [];
+    const connectionChoices = findVerifiedConnections(
+      card,
+      context,
+      options?.verifiedProjection,
+      {narrativeExplorerEnabled: options?.narrativeExplorerEnabled === true},
+    );
+    usefulActions.push(...connectionChoices.map((route) => ({
+      type: "explore_connection",
+      target_id: route.id,
+      route_identity: route.handoff_record_identity,
+      passage_reference: context.reference,
+      label: connectionChoices.length === 1
+        ? "Explore this connection"
+        : `Explore this connection: ${route.destination_passage} · ${titleCase(route.relationship_category)}`,
+    })));
     if (usefulActions.length) {
       const actionsHeading = document.createElement("h5");
       actionsHeading.textContent = "Actions";
@@ -166,9 +181,17 @@
     const button = document.createElement("button");
     button.type = "button";
     button.className = "secondary companion-discovery-action";
+    button.setAttribute("aria-label", action.label || "Explore");
     button.dataset.presentationAction = action.type || "";
     if (action.target_id) button.dataset.presentationTarget = action.target_id;
     if (action.reference) button.dataset.presentationReference = action.reference;
+    if (action.type === "explore_connection") {
+      button.dataset.presentationRouteId = action.target_id || "";
+      button.dataset.presentationPassageReference = action.passage_reference || "";
+      button.dataset.presentationObjectId = action.route_identity?.object_id || "";
+      button.dataset.presentationRecordKind = action.route_identity?.record_kind || "";
+      button.dataset.presentationRecordId = action.route_identity?.record_id || "";
+    }
     button.textContent = action.label || "Explore";
     return button;
   }
@@ -202,6 +225,30 @@
       await openResource("historical_context", {trigger: button});
     } else if (action === "related_passages") {
       await openResource("cross_references", {trigger: button});
+    } else if (action === "explore_connection") {
+      const identity = {
+        object_id: button.dataset.presentationObjectId || "",
+        record_kind: button.dataset.presentationRecordKind || "",
+        record_id: button.dataset.presentationRecordId || "",
+      };
+      if (!options.narrativeExplorerEnabled || !isCompleteRecordIdentity(identity) || !button.dataset.presentationRouteId) {
+        await openResource("cross_references", {trigger: button});
+        return true;
+      }
+      let opened = false;
+      try {
+        opened = await openResource("narrative_explorer", {
+          trigger: button,
+          routeHandoff: {
+            routeId: button.dataset.presentationRouteId,
+            identity,
+            passageReference: button.dataset.presentationPassageReference || "",
+          },
+        });
+      } catch (_error) {
+        opened = false;
+      }
+      if (opened !== true) await openResource("cross_references", {trigger: button});
     } else if (
       action === "explore_place"
       && target
@@ -223,5 +270,122 @@
     return true;
   }
 
-  return Object.freeze({dispatchAction, render});
+  function findVerifiedConnections(card, context, projection, options = {}) {
+    if (options.narrativeExplorerEnabled !== true) return [];
+    const related = projection?.related_passages;
+    const contextReference = normalizeReference(context?.reference);
+    const projectionReference = normalizeReference(projection?.passage?.reference);
+    if (
+      !related
+      || related.state !== "available"
+      || related.query_status !== "complete"
+      || !contextReference
+      || !projectionReference
+      || contextReference !== projectionReference
+    ) return [];
+
+    const citedIds = new Set(Array.isArray(card?.evidence_ids) ? card.evidence_ids : []);
+    const identitiesByEvidence = new Map();
+    (Array.isArray(context?.presentation_evidence) ? context.presentation_evidence : []).forEach((item) => {
+      if (!citedIds.has(item?.id)) return;
+      const identity = normalizeRecordIdentity(item?.ckl_record_identity);
+      if (!identity) return;
+      const key = recordIdentityKey(identity);
+      const keys = identitiesByEvidence.get(item.id) || new Set();
+      keys.add(key);
+      identitiesByEvidence.set(item.id, keys);
+    });
+    const identities = new Map();
+    identitiesByEvidence.forEach((keys, evidenceId) => {
+      if (keys.size !== 1) return;
+      const key = [...keys][0];
+      const identity = (context.presentation_evidence || []).find((item) => {
+        if (item?.id !== evidenceId) return false;
+        const normalized = normalizeRecordIdentity(item?.ckl_record_identity);
+        return normalized && recordIdentityKey(normalized) === key;
+      })?.ckl_record_identity;
+      const normalized = normalizeRecordIdentity(identity);
+      if (normalized) identities.set(key, normalized);
+    });
+    if (!identities.size) return [];
+
+    const matches = new Map();
+    const ambiguousIds = new Set();
+    const routeGroups = [
+      [related.authored_relationships, "authored_ckl_relationship"],
+      [related.evidence_backed_bridges, null],
+    ];
+    routeGroups.forEach(([routes, expectedProvenance]) => {
+      (Array.isArray(routes) ? routes : []).forEach((route) => {
+        if (!isConfirmedRoute(route, expectedProvenance)) return;
+        const provenance = expectedProvenance || String(route.provenance || "");
+        const routeIdentities = provenance === "authored_ckl_relationship"
+          ? (Array.isArray(route.supporting_record_ids) ? route.supporting_record_ids : [])
+            .map(parseStableRecordIdentity)
+            .filter(Boolean)
+          : (Array.isArray(route.supporting_records) ? route.supporting_records : [])
+            .map((record) => normalizeRecordIdentity(record))
+            .filter(Boolean);
+        const identity = routeIdentities.find((candidate) => identities.has(recordIdentityKey(candidate)));
+        if (!identity) return;
+        if (matches.has(route.id)) {
+          ambiguousIds.add(route.id);
+          return;
+        }
+        matches.set(route.id, {...route, handoff_record_identity: identity});
+      });
+    });
+    ambiguousIds.forEach((id) => matches.delete(id));
+    return [...matches.values()].sort((left, right) => left.id.localeCompare(right.id));
+  }
+
+  function isConfirmedRoute(route, expectedProvenance) {
+    if (!route || typeof route !== "object"
+      || [route.id, route.source_passage, route.destination_passage, route.relationship_category, route.explanation]
+        .some((value) => typeof value !== "string" || !value)
+      || typeof route.uncertainty !== "string"
+      || !route.uncertainty) return false;
+    if (expectedProvenance) return route.provenance === expectedProvenance;
+    return ["ckl_documented_claim", "ckl_documented_evidence", "ckl_documented_interpretive_note"]
+      .includes(route.provenance);
+  }
+
+  function normalizeRecordIdentity(identity) {
+    if (!identity || typeof identity !== "object") return null;
+    const {object_id: objectId, record_kind: recordKind, record_id: recordId} = identity;
+    if ([objectId, recordKind, recordId].some((value) => typeof value !== "string" || !value || value.trim() !== value)) return null;
+    if (!["claim", "evidence"].includes(recordKind)) return null;
+    return {object_id: objectId, record_kind: recordKind, record_id: recordId};
+  }
+
+  function isCompleteRecordIdentity(identity) {
+    return normalizeRecordIdentity(identity) !== null;
+  }
+
+  function parseStableRecordIdentity(value) {
+    if (typeof value !== "string" || !value.startsWith("ckl:")) return null;
+    const hashIndex = value.indexOf("#", 4);
+    if (hashIndex <= 4) return null;
+    const objectId = value.slice(4, hashIndex);
+    const remainder = value.slice(hashIndex + 1);
+    const colonIndex = remainder.indexOf(":");
+    if (colonIndex <= 0) return null;
+    return normalizeRecordIdentity({
+      object_id: objectId,
+      record_kind: remainder.slice(0, colonIndex),
+      record_id: remainder.slice(colonIndex + 1),
+    });
+  }
+
+  function recordIdentityKey(identity) {
+    return JSON.stringify([identity.object_id, identity.record_kind, identity.record_id]);
+  }
+
+  function normalizeReference(value) {
+    return String(value || "").trim().toLowerCase()
+      .replace(/[\u2010-\u2015\u2212]/g, "-")
+      .replace(/\s+/g, " ");
+  }
+
+  return Object.freeze({dispatchAction, findVerifiedConnections, render});
 });

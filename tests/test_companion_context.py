@@ -15,6 +15,8 @@ import httpx
 
 from bhf_agent.presentation import (
     DigDeeperAction,
+    EvidenceBundle,
+    EvidenceItem,
     GeneratedFrom,
     PresentationCard,
     PresentationEngine,
@@ -34,6 +36,7 @@ from bhf_agent.study_db import (
 from bhf_web.routes.study import register_study_routes
 from bhf_web.services.companion_context import (
     CompanionContextService,
+    _presentation_payload,
 )
 from bhf_web.services.web_helpers import build_ask_question, reader_context_from_form
 
@@ -148,6 +151,162 @@ class CompanionContextServiceTests(unittest.TestCase):
             presentation_engine=presentation_engine,
         )
         return service, library
+
+    def test_compact_presentation_evidence_exposes_complete_ckl_record_identity(self):
+        bundle = EvidenceBundle(
+            passage_ref="Jonah 1:17",
+            entities={},
+            evidence_items=[
+                EvidenceItem(
+                    id="jonah-three-days",
+                    claim="Jonah is in the fish for three days and nights.",
+                    category="history",
+                    source_ids=["jonah-masoretic"],
+                    related_entity_ids=[],
+                    passage_anchors=["Jonah 1:17"],
+                    confidence="high",
+                    relevance_metadata={
+                        "source_kind": "ckl_claim",
+                        "parent_object_id": "jonah",
+                    },
+                ),
+                EvidenceItem(
+                    id="john-logos-evidence",
+                    claim="The Logos is associated with creation.",
+                    category="history",
+                    source_ids=["john-greek"],
+                    related_entity_ids=[],
+                    passage_anchors=["John 1:1-5"],
+                    confidence="high",
+                    relevance_metadata={
+                        "source_kind": "ckl_evidence_item",
+                        "parent_object_id": "john",
+                    },
+                ),
+                EvidenceItem(
+                    id="legacy-summary",
+                    claim="A broad background summary.",
+                    category="history",
+                    source_ids=["jonah-masoretic"],
+                    related_entity_ids=[],
+                    passage_anchors=["Jonah 1"],
+                    confidence="medium",
+                    relevance_metadata={
+                        "source_kind": "ckl_legacy_field",
+                        "parent_object_id": "jonah",
+                    },
+                ),
+                EvidenceItem(
+                    id="orphaned-claim",
+                    claim="An identity without a parent is incomplete.",
+                    category="history",
+                    source_ids=["jonah-masoretic"],
+                    related_entity_ids=[],
+                    passage_anchors=["Jonah 1:17"],
+                    confidence="medium",
+                    relevance_metadata={"source_kind": "ckl_claim"},
+                ),
+                EvidenceItem(
+                    id="spaced-parent-claim",
+                    claim="A padded parent ID must not be normalized into a match.",
+                    category="history",
+                    source_ids=["jonah-masoretic"],
+                    related_entity_ids=[],
+                    passage_anchors=["Jonah 1:17"],
+                    confidence="medium",
+                    relevance_metadata={
+                        "source_kind": "ckl_claim",
+                        "parent_object_id": " jonah ",
+                    },
+                ),
+                EvidenceItem(
+                    id=" spaced-local-id ",
+                    claim="A padded local ID must not be normalized into a match.",
+                    category="history",
+                    source_ids=["jonah-masoretic"],
+                    related_entity_ids=[],
+                    passage_anchors=["Jonah 1:17"],
+                    confidence="medium",
+                    relevance_metadata={
+                        "source_kind": "ckl_claim",
+                        "parent_object_id": "jonah",
+                    },
+                ),
+                EvidenceItem(
+                    id="jonah:interpretive_note:3",
+                    claim="An indexed note without its own stable CKL record ID.",
+                    category="history",
+                    source_ids=["jonah-masoretic"],
+                    related_entity_ids=[],
+                    passage_anchors=["Jonah 1:17"],
+                    confidence="medium",
+                    relevance_metadata={
+                        "source_kind": "ckl_interpretive_note",
+                        "parent_object_id": "jonah",
+                    },
+                ),
+                EvidenceItem(
+                    id="jonah-three-days:passage-relevance",
+                    claim="This claim is significant in context.",
+                    category="history",
+                    source_ids=["jonah-masoretic"],
+                    related_entity_ids=[],
+                    passage_anchors=["Jonah 1:17"],
+                    confidence="medium",
+                    relevance_metadata={
+                        "source_kind": "ckl_claim",
+                        "parent_object_id": "jonah",
+                        "presentation_role": "significance",
+                    },
+                ),
+            ],
+            geography={},
+            provenance={
+                "sources": [
+                    {"id": "jonah-masoretic", "title": "Jonah Hebrew text"},
+                    {"id": "john-greek", "title": "John Greek text"},
+                ]
+            },
+        )
+        packet = PresentationPacket(
+            passage_ref="Jonah 1:17",
+            cards=[
+                PresentationCard(
+                    id="discovery",
+                    type="did_you_know",
+                    headline="A discovery",
+                    body="A brief observation.",
+                    evidence_ids=[item.id for item in bundle.evidence_items],
+                    confidence="high",
+                    interpretation_level="fact",
+                )
+            ],
+            generated_from=GeneratedFrom(
+                evidence_hash="hash",
+                evidence_bundle_version="1.0",
+                presentation_schema_version="1.0",
+                prompt_version="test",
+                model="test",
+            ),
+        )
+
+        payload = _presentation_payload(bundle, PresentationResult(packet=packet, mode="local"))
+        evidence = {item["id"]: item for item in payload["presentation_evidence"]}
+
+        self.assertEqual(
+            evidence["jonah-three-days"]["ckl_record_identity"],
+            {"object_id": "jonah", "record_kind": "claim", "record_id": "jonah-three-days"},
+        )
+        self.assertEqual(
+            evidence["john-logos-evidence"]["ckl_record_identity"],
+            {"object_id": "john", "record_kind": "evidence", "record_id": "john-logos-evidence"},
+        )
+        self.assertNotIn("ckl_record_identity", evidence["legacy-summary"])
+        self.assertNotIn("ckl_record_identity", evidence["orphaned-claim"])
+        self.assertNotIn("ckl_record_identity", evidence["spaced-parent-claim"])
+        self.assertNotIn("ckl_record_identity", evidence[" spaced-local-id "])
+        self.assertNotIn("ckl_record_identity", evidence["jonah:interpretive_note:3"])
+        self.assertNotIn("ckl_record_identity", evidence["jonah-three-days:passage-relevance"])
 
     def test_default_engine_uses_lazy_cache_outside_study_database(self):
         with tempfile.TemporaryDirectory() as temporary:
