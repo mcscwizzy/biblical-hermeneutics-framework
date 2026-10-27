@@ -12,15 +12,16 @@
     const cards = options.visible !== false && Array.isArray(context.presentation_packet?.cards)
       ? context.presentation_packet.cards
       : [];
+    const supportedCards = cards.filter((card) =>
+      card && ["did_you_know", "walk_the_land"].includes(card.type));
     const visibleMapIds = new Set(
       (Array.isArray(context.locations?.items) ? context.locations.items : [])
         .filter((item) => item?.origin === "maps" && (item.map_focus_id || item.id))
         .map((item) => String(item.map_focus_id || item.id)),
     );
-    const visibleCards = cards.filter((card) => !isConsolidatedWalkCard(card, visibleMapIds));
+    const visibleCards = supportedCards.filter((card) => !isConsolidatedWalkCard(card, visibleMapIds));
     renderSection(panel, "[data-companion-land-section]", "[data-companion-land]", visibleCards, "walk_the_land", 1, context);
     renderSection(panel, "[data-companion-discoveries-section]", "[data-companion-discoveries]", visibleCards, "did_you_know", 3, context);
-    renderSection(panel, "[data-companion-significance-section]", "[data-companion-significance]", visibleCards, "why_it_matters", 1, context);
   }
 
   function isConsolidatedWalkCard(card, visibleMapIds) {
@@ -44,7 +45,6 @@
     const article = document.createElement("article");
     article.className = "companion-discovery-card";
     if (card.type === "walk_the_land") article.classList.add("companion-land-card");
-    if (card.type === "why_it_matters") article.classList.add("companion-significance-card");
     const headline = document.createElement("h4");
     headline.textContent = card.headline || "A detail worth noticing";
     const body = document.createElement("p");
@@ -56,13 +56,13 @@
     details.className = "companion-discovery-details";
     const summary = document.createElement("summary");
     summary.textContent = "Dig In";
-    const explanation = card.dig_in_summary
-      ? labeledSection(
-        "Why this is worth noticing",
-        card.dig_in_summary,
-        "companion-discovery-explanation",
-        document,
-      )
+    const evidence = evidenceForCard(card, context);
+    const explanation = shouldShowExplanation(card.dig_in_summary, [
+      card.headline,
+      card.body,
+      ...evidence.map((item) => item.claim),
+    ])
+      ? textParagraph(card.dig_in_summary, "companion-discovery-explanation", document)
       : null;
     const evidenceList = document.createElement("div");
     evidenceList.className = "companion-discovery-evidence";
@@ -70,7 +70,7 @@
     evidenceHeading.textContent = "Evidence";
     evidenceList.append(evidenceHeading);
     evidenceList.append(
-      ...evidenceForCard(card, context)
+      ...evidence
         .map((item) => evidenceDetail(item, document)),
     );
     const actions = document.createElement("div");
@@ -91,15 +91,38 @@
     return article;
   }
 
-  function labeledSection(label, text, className, document) {
-    const section = document.createElement("section");
-    section.className = className;
-    const heading = document.createElement("h5");
-    heading.textContent = label;
+  function textParagraph(text, className, document) {
     const body = document.createElement("p");
+    body.className = className;
     body.textContent = text;
-    section.append(heading, body);
-    return section;
+    return body;
+  }
+
+  function shouldShowExplanation(summary, visibleText) {
+    const normalized = normalizeText(summary);
+    if (!normalized || isBoilerplate(normalized)) return false;
+    const summaryWords = normalized.split(" ");
+    for (const candidate of visibleText) {
+      const candidateNormalized = normalizeText(candidate);
+      if (!candidateNormalized) continue;
+      if (normalized === candidateNormalized) return false;
+      const candidateWords = candidateNormalized.split(" ");
+      const shorter = Math.min(summaryWords.length, candidateWords.length);
+      const longer = Math.max(summaryWords.length, candidateWords.length);
+      const shared = new Set(summaryWords.filter((word) => candidateWords.includes(word))).size;
+      const addedWords = Math.abs(summaryWords.length - candidateWords.length);
+      if (addedWords <= 3 && shorter / longer >= 0.62 && shared / shorter >= 0.84) return false;
+    }
+    return true;
+  }
+
+  function normalizeText(value) {
+    return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().replace(/\s+/g, " ");
+  }
+
+  function isBoilerplate(value) {
+    return /^(this|these) (detail|details|fact|facts|context|evidence) (matters|is important|is significant)( here)?$/.test(value)
+      || /^(it is|this is) (important|significant) (because|for) (the passage|the text|the reader)$/.test(value);
   }
 
   function evidenceForCard(card, context) {
@@ -131,7 +154,9 @@
     const claim = document.createElement("p");
     claim.textContent = item.claim || "";
     const provenance = document.createElement("small");
-    const labels = Array.isArray(item.sourceLabels) ? item.sourceLabels.filter(Boolean) : [];
+    const labels = Array.isArray(item.sourceLabels)
+      ? [...new Set(item.sourceLabels.filter(Boolean))]
+      : [];
     provenance.textContent = `${titleCase(item.category || "context")} · ${titleCase(item.confidence || "low")} confidence${labels.length ? ` · Sources: ${labels.join(", ")}` : ""}`;
     detail.append(claim, provenance);
     return detail;

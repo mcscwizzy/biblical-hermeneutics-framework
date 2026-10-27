@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from enum import Enum
 from typing import Any, Mapping
 
@@ -305,6 +306,11 @@ def validate_presentation_card(
         errors,
         reason_codes,
     )
+    if dig_in_summary and _is_redundant_explanation(
+        dig_in_summary,
+        [headline, body, *(item.claim for item in supplied)],
+    ):
+        dig_in_summary = None
 
     actions_raw = raw.get("dig_deeper_actions", [])
     if not isinstance(actions_raw, list):
@@ -495,6 +501,52 @@ def _date_key(value: str) -> tuple[str, int]:
     era = str(era_match.group(1) if era_match else "").upper()
     normalized_era = "BC" if era in {"BC", "BCE"} else "AD"
     return normalized_era, int(number_match.group(1) if number_match else 0)
+
+
+def _is_redundant_explanation(summary: str, visible_text: list[str]) -> bool:
+    normalized_summary = _normalized_words(summary)
+    if not normalized_summary:
+        return True
+    generic_patterns = (
+        r"^(?:this|these) (?:detail|details|fact|facts|context|evidence) "
+        r"(?:matters|is important|is significant)(?: here)?$",
+        r"^(?:this|these) (?:detail|fact|context|evidence) "
+        r"(?:helps explain why|shows why) (?:it|this) matters$",
+        r"^(?:it is|this is) (?:important|significant) (?:because|for) .{0,35}$",
+    )
+    if any(re.fullmatch(pattern, normalized_summary) for pattern in generic_patterns):
+        return True
+    for candidate in visible_text:
+        normalized_candidate = _normalized_words(candidate)
+        if not normalized_candidate:
+            continue
+        summary_words = normalized_summary.split()
+        candidate_words = normalized_candidate.split()
+        word_difference = abs(len(summary_words) - len(candidate_words))
+        if normalized_summary == normalized_candidate:
+            return True
+        similarity = SequenceMatcher(
+            None, normalized_summary, normalized_candidate
+        ).ratio()
+        shorter = min(len(normalized_summary), len(normalized_candidate))
+        longer = max(len(normalized_summary), len(normalized_candidate))
+        contained_ratio = shorter / longer if longer else 0
+        if word_difference <= 3 and (
+            similarity >= 0.86
+            or (
+                contained_ratio >= 0.78
+                and (
+                    normalized_summary in normalized_candidate
+                    or normalized_candidate in normalized_summary
+                )
+            )
+        ):
+            return True
+    return False
+
+
+def _normalized_words(value: str) -> str:
+    return " ".join(re.findall(r"[a-z0-9]+", str(value or "").casefold()))
 
 
 def _is_disputed(metadata: Mapping[str, Any]) -> bool:

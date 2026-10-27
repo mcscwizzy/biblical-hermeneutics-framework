@@ -43,7 +43,7 @@ function fixturePanel() {
     createElement: (tagName) => new FakeElement(tagName, document),
   };
   const selectors = {};
-  for (const name of ["land", "discoveries", "significance"]) {
+  for (const name of ["land", "discoveries"]) {
     selectors[`[data-companion-${name}-section]`] = new FakeElement("section", document);
     selectors[`[data-companion-${name}]`] = new FakeElement("div", document);
   }
@@ -61,7 +61,9 @@ function card(id, type, action = null) {
     type,
     headline: `Headline ${id}`,
     body: `Body ${id}`,
-    dig_in_summary: id === "place" ? "A grounded explanation from the same evidence." : null,
+    dig_in_summary: id === "place"
+      ? "The linked place locates the passage's travel detail in the lakeside setting."
+      : null,
     evidence_ids: ["evidence-1"],
     confidence: "high",
     interpretation_level: type === "why_it_matters" ? "inference" : "fact",
@@ -101,10 +103,9 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
 
   assert.equal(selectors["[data-companion-land-section]"].hidden, false);
   assert.equal(selectors["[data-companion-discoveries-section]"].hidden, false);
-  assert.equal(selectors["[data-companion-significance-section]"].hidden, false);
+  assert.equal(selectors["[data-companion-significance-section]"], undefined);
   assert.equal(selectors["[data-companion-land]"].children.length, 1);
   assert.equal(selectors["[data-companion-discoveries]"].children.length, 3);
-  assert.equal(selectors["[data-companion-significance]"].children.length, 1);
 
   const rendered = selectors["[data-companion-land]"].children[0];
   const details = rendered.children[3];
@@ -114,8 +115,8 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
   const actions = details.children[3];
   assert.equal(details.tagName, "DETAILS");
   assert.equal(details.children[0].textContent, "Dig In");
-  assert.equal(explanation.children[0].textContent, "Why this is worth noticing");
-  assert.equal(explanation.children[1].textContent, "A grounded explanation from the same evidence.");
+  assert.equal(explanation.className, "companion-discovery-explanation");
+  assert.equal(explanation.textContent, "The linked place locates the passage's travel detail in the lakeside setting.");
   assert.equal(evidenceList.children[0].textContent, "Evidence");
   assert.equal(evidence.children[0].textContent, "The supplied evidence claim.");
   assert.match(evidence.children[1].textContent, /Sources: Curated map source/);
@@ -126,7 +127,7 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
 });
 
 
-test("Dig In fallback keeps evidence and actions when no AI explanation exists", () => {
+test("Dig In omits duplicate explanations while keeping evidence and actions", () => {
   const {panel, selectors} = fixturePanel();
   const fallback = card("fallback", "did_you_know", {
     type: "explore_history",
@@ -145,10 +146,51 @@ test("Dig In fallback keeps evidence and actions when no AI explanation exists",
   });
 
   const details = selectors["[data-companion-discoveries]"].children[0].children[3];
-  assert.equal(details.children.length, 3);
-  assert.equal(details.children[1].children[0].textContent, "Evidence");
-  assert.equal(details.children[1].children[1].children[0].textContent, "Visible raw evidence remains available.");
-  assert.equal(details.children[2].children[1].dataset.presentationAction, "explore_history");
+  fallback.dig_in_summary = "Body fallback";
+  discoveries.render(panel, {
+    presentation_packet: {cards: [fallback]},
+    presentation_evidence: [{
+      id: "evidence-1",
+      claim: "Visible raw evidence remains available.",
+      category: "history",
+      confidence: "high",
+      sources: [{title: "Curated source"}],
+    }],
+  });
+  const duplicateDetails = selectors["[data-companion-discoveries]"].children[0].children[3];
+  assert.equal(duplicateDetails.children.length, 3);
+  assert.equal(duplicateDetails.children[1].children[0].textContent, "Evidence");
+  assert.equal(duplicateDetails.children[1].children[1].children[0].textContent, "Visible raw evidence remains available.");
+  assert.equal(duplicateDetails.children[2].children[1].dataset.presentationAction, "explore_history");
+  assert.equal(duplicateDetails.children.some((child) => child.className === "companion-discovery-explanation"), false);
+
+  fallback.dig_in_summary = "This detail matters.";
+  discoveries.render(panel, {
+    presentation_packet: {cards: [fallback]},
+    presentation_evidence: [{
+      id: "evidence-1",
+      claim: "Visible raw evidence remains available.",
+      category: "history",
+      confidence: "high",
+      sources: [{title: "Curated source"}],
+    }],
+  });
+  assert.equal(
+    selectors["[data-companion-discoveries]"].children[0].children[3].children
+      .some((child) => child.className === "companion-discovery-explanation"),
+    false,
+  );
+});
+
+
+test("legacy standalone significance packets never render as discovery cards", () => {
+  const {panel, selectors} = fixturePanel();
+  discoveries.render(panel, {
+    presentation_packet: {cards: [card("legacy", "why_it_matters")]},
+  });
+
+  assert.equal(selectors["[data-companion-discoveries-section]"].hidden, true);
+  assert.deepEqual(selectors["[data-companion-discoveries]"].children, []);
 });
 
 

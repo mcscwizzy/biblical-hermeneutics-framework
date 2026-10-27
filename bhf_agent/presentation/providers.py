@@ -12,10 +12,10 @@ from bhf_agent.adapters.base import ResponseFormatCapability
 from bhf_agent.models import ChatRequest, ChatResponse
 
 from .models import EvidenceBundle, GeneratedFrom
-from .ranking import RankedEvidence
+from .ranking import RankedEvidence, presentation_relationship
 
 
-PRESENTATION_PROMPT_VERSION = "presentation-v5"
+PRESENTATION_PROMPT_VERSION = "presentation-v6"
 
 
 class PresentationResponseParseError(ValueError):
@@ -123,8 +123,8 @@ PRESENTATION_SYSTEM_PROMPT = """You curate concise discoveries for the BHF Bible
 BHF has supplied all factual material you may use. Return one JSON object matching the
 provided schema; never return Markdown or explanatory text outside the JSON object.
 
-You may select, prioritize, combine compatible supplied facts, simplify academic wording,
-write concise hooks, and suggest only the supplied exploration capabilities.
+You may select and prioritize supplied evidence, combine compatible facts, simplify academic
+wording, write a concise evidence-led headline, and suggest only supplied exploration actions.
 
 You may not invent historical or archaeological claims, dates, entities, relationships,
 or evidence IDs; use model memory as a factual source; turn disputed interpretation into
@@ -150,19 +150,25 @@ The output_constraints object on each evidence item is authoritative guidance fo
 choices. When a card cites multiple evidence items, apply the strictest constraint from
 all of them.
 
-When suitable ranked contextual evidence exists, prefer at least one did_you_know card,
-without manufacturing one from map-only or significance-only material. For every card,
-write dig_in_summary in the same response as a concise two-to-four-sentence explanation,
-or null when the evidence cannot support a useful explanation. It may connect and explain
-the card's cited evidence, but every historical, cultural, geographical, archaeological,
+When suitable ranked contextual evidence exists, prefer a did_you_know card, without
+manufacturing one from map-only or derived significance-only material. Independently useful,
+sourced evidence remains eligible even when tagged with significance metadata. Use only
+did_you_know and walk_the_land cards. Do not create a standalone significance card;
+significance metadata may qualify linked factual evidence but does not take a separate slot.
+
+Distinguish direct historical evidence from comparative evidence. Use the
+presentation_relationship supplied for each item when choosing how to label it.
+Label cultural or textual comparisons as comparisons, and later biblical reception as later reception; never present
+later reception as a fact about the original passage's cultural setting. Preserve uncertainty
+and competing interpretations.
+
+For each card, set dig_in_summary to null unless it adds a useful, evidence-supported
+clarification beyond the visible headline, body, and cited evidence. If useful, keep it to
+one or two concise sentences. Every historical, cultural, geographical, archaeological,
 chronological, linguistic, or social factual statement must be supported by those same
 evidence IDs. Do not add facts, dates, people, places, customs, doctrine, application, or
-sermon material from model memory.
-
-Use why_it_matters only when a supplied evidence item has presentation_role=significance.
-Keep that card to the authored passage significance: do not add application, doctrine,
-ethical instruction, or a model-created conclusion. Label it inference or disputed,
-never fact.
+sermon material from model memory. Avoid generic importance claims and explanations that
+merely repeat the evidence.
 """
 
 
@@ -263,12 +269,12 @@ def _provider_packet(
             "Use did_you_know for contextual discoveries and at most one walk_the_land card when "
             "a supplied geography resource gives the reader a useful place or route to explore. "
             "Every walk_the_land card must use that resource as map_focus and include its matching "
-            "open_map or show_route action. Use at most one why_it_matters card, and only from "
-            "evidence explicitly marked with presentation_role=significance."
+            "open_map or show_route action. Use only did_you_know and walk_the_land; significance "
+            "metadata does not create a standalone card."
         ),
         "passage_ref": bundle.passage_ref,
         "generated_from_must_equal": generated_from.to_dict(),
-        "evidence": [_provider_evidence(value) for value in ranked],
+        "evidence": [_provider_evidence(value, bundle) for value in ranked],
         "entities": entities,
         "geography": _available_geography(bundle, ranked),
         "available_actions": _available_actions(bundle, ranked),
@@ -277,17 +283,17 @@ def _provider_packet(
             "headline_characters": 100,
             "body_characters": 420,
             "dig_in_summary_characters": 800,
-            "card_types": ["did_you_know", "walk_the_land", "why_it_matters"],
+            "card_types": ["did_you_know", "walk_the_land"],
         },
         "output_shape": {
             "passage_ref": "string",
             "cards": [
                 {
                     "id": "string",
-                    "type": "did_you_know|walk_the_land|why_it_matters",
+                    "type": "did_you_know|walk_the_land",
                     "headline": "string",
                     "body": "string",
-                    "dig_in_summary": "2-4 sentence string or null",
+                    "dig_in_summary": "1-2 sentence string or null",
                     "evidence_ids": ["supplied evidence id"],
                     "confidence": "high|medium|low",
                     "interpretation_level": "fact|inference|disputed",
@@ -309,7 +315,7 @@ def _provider_packet(
     }
 
 
-def _provider_evidence(value: RankedEvidence) -> dict[str, Any]:
+def _provider_evidence(value: RankedEvidence, bundle: EvidenceBundle) -> dict[str, Any]:
     """Expose claims and validation controls, not arbitrary factual metadata."""
 
     item = value.item
@@ -321,6 +327,11 @@ def _provider_evidence(value: RankedEvidence) -> dict[str, Any]:
         "assertion_type",
         "presentation_role",
         "supports_evidence_ids",
+        "semantic_relationship",
+        "presentation_relationship",
+        "applicability_scope",
+        "source_kind",
+        "broad_tag_only",
         "map_resource_kind",
         "map_resource_id",
     }
@@ -333,9 +344,13 @@ def _provider_evidence(value: RankedEvidence) -> dict[str, Any]:
         "passage_anchors": item.passage_anchors,
         "confidence": item.confidence,
         "relevance_metadata": {
-            key: item.relevance_metadata[key]
-            for key in allowed_metadata
-            if item.relevance_metadata.get(key) not in (None, "", [])
+            **{
+                key: item.relevance_metadata[key]
+                for key in allowed_metadata
+                if key != "presentation_relationship"
+                and item.relevance_metadata.get(key) not in (None, "", [])
+            },
+            "presentation_relationship": presentation_relationship(bundle, item),
         },
         "output_constraints": _output_constraints(item.confidence, item.relevance_metadata),
         "salience": {"score": value.score, "reasons": list(value.reasons)},
@@ -477,7 +492,7 @@ def _response_format() -> dict[str, Any]:
             "id": {"type": "string"},
             "type": {
                 "type": "string",
-                "enum": ["did_you_know", "walk_the_land", "why_it_matters"],
+                "enum": ["did_you_know", "walk_the_land"],
             },
             "headline": {"type": "string"},
             "body": {"type": "string"},

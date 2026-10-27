@@ -12,12 +12,11 @@ from .models import (
     PresentationCard,
     PresentationPacket,
 )
-from .ranking import RankedEvidence, rank_evidence
+from .ranking import RankedEvidence, presentation_relationship, rank_evidence
 from .walk_the_land import build_walk_the_land_card
-from .why_it_matters import build_why_it_matters_card
 
 
-DETERMINISTIC_PROMPT_VERSION = "deterministic-v4"
+DETERMINISTIC_PROMPT_VERSION = "deterministic-v5"
 
 
 def deterministic_presentation(
@@ -31,10 +30,14 @@ def deterministic_presentation(
         value
         for value in candidates
         if not _is_map_candidate(bundle, value)
-        and value.item.relevance_metadata.get("presentation_role") != "significance"
+        and not (
+            value.item.relevance_metadata.get("presentation_role") == "significance"
+            and value.item.relevance_metadata.get("supports_evidence_ids")
+        )
     ]
-    # Reserve the first slot for ordinary context whenever it exists. Map and
-    # significance cards must not crowd useful Did You Know evidence out.
+    # Reserve the first slot for ordinary context whenever it exists. Derived
+    # significance duplicates stay in evidence metadata; independent sourced
+    # items such as archaeology remain eligible as ordinary discoveries.
     selected = _diverse_candidates(ordinary, 1 if maximum_cards > 0 else 0)
     cards = [_card(bundle, candidate) for candidate in selected]
     used_evidence = {item.item.id for item in selected}
@@ -47,15 +50,6 @@ def deterministic_presentation(
     if walk_card is not None:
         cards.append(walk_card)
         used_evidence.update(walk_card.evidence_ids)
-    why_card = (
-        build_why_it_matters_card(bundle, candidates)
-        if len(cards) < maximum_cards
-        else None
-    )
-    if why_card is not None:
-        cards.append(why_card)
-        used_evidence.update(why_card.evidence_ids)
-
     remaining = [value for value in ordinary if value.item.id not in used_evidence]
     cards.extend(
         _card(bundle, candidate)
@@ -115,14 +109,26 @@ def _card(bundle: EvidenceBundle, ranked: RankedEvidence) -> PresentationCard:
     item = ranked.item
     body = _truncate(item.claim, 360)
     related = [entity_id for entity_id in item.related_entity_ids if entity_id in bundle.entities_by_id]
+    interpretation_level = _interpretation_level(item.relevance_metadata)
+    if (
+        item.relevance_metadata.get("presentation_role") == "significance"
+        and interpretation_level == "fact"
+    ):
+        interpretation_level = "inference"
     return PresentationCard(
         id="did-you-know-" + _slug(item.id),
         type="did_you_know",
-        headline=_headline(item.claim, item.category),
+        headline=_headline(
+            item.claim,
+            {
+                **item.relevance_metadata,
+                "presentation_relationship": presentation_relationship(bundle, item),
+            },
+        ),
         body=body,
         evidence_ids=[item.id],
         confidence=item.confidence,
-        interpretation_level=_interpretation_level(item.relevance_metadata),
+        interpretation_level=interpretation_level,
         related_entity_ids=related,
         map_focus=_map_focus(bundle, related),
         dig_deeper_actions=_actions(bundle, item.id, item.category, related),
@@ -179,23 +185,32 @@ def _interpretation_level(metadata: dict[str, object]) -> str:
     return "fact"
 
 
-def _headline(claim: str, category: str) -> str:
-    first_clause = re.split(r"[.;:]", claim, maxsplit=1)[0].strip()
-    words = first_clause.split()
-    if 4 <= len(words) <= 11 and len(first_clause) <= 92:
-        return first_clause.rstrip(".?!")
-    labels = {
-        "culture": "A cultural detail worth noticing",
-        "geography": "The setting changes how this reads",
-        "history": "A historical detail worth noticing",
-        "archaeology": "Material evidence to explore",
-        "language": "A language detail worth noticing",
-        "politics": "Power in the background",
-        "economics": "The economics behind the passage",
-        "social": "The social world behind the passage",
-        "chronology": "A timing detail worth noticing",
-    }
-    return labels.get(category, "A detail worth noticing")
+def _headline(
+    claim: str,
+    metadata: dict[str, object] | None = None,
+) -> str:
+    first_clause = re.split(r"[.;]", claim, maxsplit=1)[0].strip()
+    excerpt = first_clause or " ".join(str(claim or "").split())
+    relationship = str(
+        (metadata or {}).get("presentation_relationship")
+        or (metadata or {}).get("semantic_relationship")
+        or ""
+    ).upper()
+    if excerpt.casefold().startswith(("do not ", "avoid ", "must not ")):
+        relationship = ""
+    prefix = {
+        "COMPARATIVE_CONTEXT": "Comparative evidence",
+        "LATER_RECEPTION": (
+            "Second Temple reception"
+            if re.search(r"\b(?:Second Temple|1 Enoch|Jubilees)\b", claim, re.IGNORECASE)
+            else "Later biblical reception"
+        ),
+        "INTERTEXTUAL_REUSE": "Biblical reuse",
+    }.get(relationship)
+    if prefix:
+        excerpt = _truncate(excerpt, max(24, 96 - len(prefix) - 2))
+        return f"{prefix}: {excerpt}".rstrip(".?!")
+    return _truncate(excerpt, 96).rstrip(".?!")
 
 
 def _truncate(value: str, maximum: int) -> str:

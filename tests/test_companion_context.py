@@ -14,7 +14,11 @@ from fastapi.testclient import TestClient
 import httpx
 
 from bhf_agent.presentation import (
+    DigDeeperAction,
+    GeneratedFrom,
+    PresentationCard,
     PresentationEngine,
+    PresentationPacket,
     PresentationProvider,
     PresentationResult,
     SQLitePresentationCache,
@@ -299,6 +303,84 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertEqual(commentary.calls, [("count_passage", "John", 4, 23, 23)])
         self.assertEqual(library.calls[0][0], "John 4:23")
         map_lookup.assert_called_once_with("John", 4, 23, 23, path=service.study_db_path, limit=12, prepare_schema=False)
+
+    @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
+    @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
+    def test_invisible_significance_and_consolidated_map_cards_do_not_inflate_count(
+        self, _map_lookup, _archaeology_lookup
+    ):
+        class LegacyPacketEngine:
+            enhancement_available = False
+
+            def present_local(self, bundle):
+                factual = PresentationCard(
+                    id="fixture-discovery",
+                    type="did_you_know",
+                    headline="A passage detail",
+                    body="A source-backed detail from this passage.",
+                    evidence_ids=[],
+                    confidence="high",
+                    interpretation_level="fact",
+                )
+                legacy = PresentationCard(
+                    id="legacy-why",
+                    type="why_it_matters",
+                    headline="Why It Matters Here",
+                    body="Historical significance text.",
+                    evidence_ids=[],
+                    confidence=factual.confidence,
+                    interpretation_level="inference",
+                )
+                walk = PresentationCard(
+                    id="walk-card",
+                    type="walk_the_land",
+                    headline="Walk the Land: Selected Place",
+                    body="A map-linked place.",
+                    evidence_ids=[],
+                    confidence="high",
+                    interpretation_level="fact",
+                    map_focus={"kind": "place", "target_id": "exact-map"},
+                    dig_deeper_actions=[
+                        DigDeeperAction(
+                            type="open_map",
+                            label="Open map",
+                            target_id="exact-map",
+                        )
+                    ],
+                )
+                packet = PresentationPacket(
+                    passage_ref=bundle.passage_ref,
+                    cards=[factual, walk, legacy],
+                    generated_from=GeneratedFrom(
+                        evidence_hash=bundle.evidence_hash,
+                        evidence_bundle_version=bundle.version,
+                        presentation_schema_version="1.0",
+                        prompt_version="presentation-v5",
+                        model="legacy-fixture",
+                    ),
+                )
+                return PresentationResult(packet=packet, mode="bundled")
+
+        service, _library = self._service(presentation_engine=LegacyPacketEngine())
+        with patch.object(
+            service,
+            "_locations_page",
+            return_value={
+                "reference": "John 4",
+                "items": [{"origin": "maps", "id": "exact-map"}],
+                "total": 1,
+                "page_size": 5,
+                "next_cursor": None,
+            },
+        ):
+            result = service.build(book="John", chapter=4)
+
+        assert [card["type"] for card in result["presentation_packet"]["cards"]] == [
+            "did_you_know",
+            "walk_the_land",
+            "why_it_matters",
+        ]
+        assert result["resources"]["discoveries"]["count"] == 1
 
     @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
     @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})

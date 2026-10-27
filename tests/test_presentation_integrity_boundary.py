@@ -184,7 +184,7 @@ def test_packet_provenance_failure_rejects_every_card():
     assert any("stale" in error for error in result.packet_errors)
 
 
-def test_provider_constraints_are_explicit_and_prompt_is_v5():
+def test_provider_constraints_are_explicit_and_prompt_is_v6():
     bundle = _bundle()
     ranked = rank_evidence(bundle, limit=2)
     requests = []
@@ -210,7 +210,7 @@ def test_provider_constraints_are_explicit_and_prompt_is_v5():
     )
     supplied = json.loads(requests[0].user_prompt)
 
-    assert PRESENTATION_PROMPT_VERSION == "presentation-v5"
+    assert PRESENTATION_PROMPT_VERSION == "presentation-v6"
     assert all(
         set(item["output_constraints"])
         == {"allowed_interpretation_levels", "fact_allowed", "maximum_card_confidence"}
