@@ -329,6 +329,30 @@ test("verified handoff matches the complete CKL parent, record kind, and local I
 });
 
 
+test("duplicate verified route IDs are treated as ambiguous and withheld", () => {
+  const fixture = verifiedHandoffFixture({
+    object_id: "john",
+    record_kind: "claim",
+    record_id: "john-logos",
+  });
+  const bridge = fixture.projection.related_passages.evidence_backed_bridges[0];
+  const duplicateAuthoredRoute = {
+    ...bridge,
+    provenance: "authored_ckl_relationship",
+    supporting_records: undefined,
+    supporting_record_ids: ["ckl:john#claim:john-logos"],
+  };
+  fixture.projection.related_passages.authored_relationships = [duplicateAuthoredRoute];
+
+  assert.deepEqual(discoveries.findVerifiedConnections(
+    fixture.discovery,
+    fixture.context,
+    fixture.projection,
+    {narrativeExplorerEnabled: true},
+  ), []);
+});
+
+
 test("wrong CKL identity, source-only matches, and topic matches never create a handoff", () => {
   for (const identity of [
     {object_id: "wrong-parent", record_kind: "claim", record_id: "john-logos"},
