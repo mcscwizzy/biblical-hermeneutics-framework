@@ -28,6 +28,12 @@ _SUPPORT_STOP_WORDS = frozenset(
     }
 )
 
+# These pairs have been reviewed as describing the same discovery. A shared
+# word, source and passage alone cannot establish a semantic association.
+_REVIEWED_SUPPORT_PAIRS = frozenset({
+    ("jonah", "jonah-great-fish", "jonah-three-days"),
+})
+
 
 def deterministic_presentation(
     bundle: EvidenceBundle,
@@ -88,7 +94,8 @@ def attach_relevant_support_evidence(
     The supporting item must already be inside the deterministic candidate
     shortlist. It must have the same CKL parent, exact verse anchors, and at
     least one shared subject term and source as a selected direct-context
-    discovery. This adds evidence to a card without allocating another card.
+    discovery, and the record pair must have been reviewed. This adds evidence
+    to a card without allocating another card.
     """
 
     cited_ids = {
@@ -146,6 +153,8 @@ def _is_relevant_support(
     support_metadata = support.relevance_metadata
     parent_id = str(primary_metadata.get("parent_object_id") or "")
     if not parent_id or support_metadata.get("parent_object_id") != parent_id:
+        return False
+    if (parent_id, primary.id, support.id) not in _REVIEWED_SUPPORT_PAIRS:
         return False
     if primary_metadata.get("source_kind") not in {"ckl_claim", "ckl_evidence_item"}:
         return False
