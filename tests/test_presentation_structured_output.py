@@ -8,6 +8,8 @@ import pytest
 
 from bhf_agent.adapters.openrouter import OpenRouterAdapter
 from bhf_agent.adapters.openai_compatible import OpenAICompatibleAdapter
+from bhf_agent.adapters.base import ChatAdapter
+from bhf_agent.models import ChatRequest
 from bhf_agent.presentation import (
     AdapterPresentationProvider,
     GeneratedFrom,
@@ -17,7 +19,7 @@ from bhf_agent.presentation import (
 )
 
 
-class CaptureAdapter:
+class CaptureAdapter(ChatAdapter):
     """Adapter that captures requests for inspection."""
 
     def __init__(self, supports_structured: bool = False):

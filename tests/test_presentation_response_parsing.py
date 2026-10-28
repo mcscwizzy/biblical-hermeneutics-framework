@@ -4,6 +4,7 @@ import json
 
 import pytest
 
+from bhf_agent.adapters.base import ChatAdapter
 from bhf_agent.models import ChatResponse
 from bhf_agent.presentation import (
     AdapterPresentationProvider,
@@ -84,7 +85,7 @@ def test_parse_presentation_json_response_rejects_non_object_or_malformed_json(r
         parse_presentation_json_response(response)
 
 
-class _ResponseAdapter:
+class _ResponseAdapter(ChatAdapter):
     def __init__(self, response_factory):
         self.response_factory = response_factory
         self.requests = []
