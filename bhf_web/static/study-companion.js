@@ -689,9 +689,6 @@
     if (options.mode) currentMode = options.mode;
     if (resourceId === "maps") {
       const acknowledgment = await openLegacyResource(resourceId, options);
-      if (options.history !== false && historyController?.current()?.resource !== resourceId) {
-        historyController?.push(historySnapshot());
-      }
       return options.mapFocus?.acknowledgeFocus === true ? acknowledgment : undefined;
     }
     if (options.routeHandoff) {
@@ -739,6 +736,9 @@
         window.BHFStudyRecommendations?.resources?.maps,
         {focus: false},
       );
+      if (options.history !== false && historyController?.current()?.resource !== resourceId) {
+        historyController?.push(historySnapshot());
+      }
       const selectedContext = window.BHFStudySelection?.getState?.();
       const baseMapContext = currentMode === "explore"
         ? {mode: "browse"}

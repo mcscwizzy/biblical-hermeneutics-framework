@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import pytest
 
+from bhf_agent.adapters.base import ChatAdapter
 from bhf_agent.models import ChatResponse
 from bhf_agent.presentation import (
     AdapterPresentationProvider,
@@ -18,7 +19,7 @@ from bhf_agent.presentation.providers import (
 )
 
 
-class MockAdapter:
+class MockAdapter(ChatAdapter):
     """Mock adapter for testing presentation provider error handling."""
 
     def __init__(self, response: ChatResponse) -> None:

@@ -75,6 +75,18 @@ class QueryAnalysisTests(unittest.TestCase):
 
         self.assertEqual(terms, ["child", "woman", "visit", "city"])
 
+    def test_extract_terms_omits_common_auxiliary_words(self) -> None:
+        terms = extract_terms("What does baptism have to do with new creation?")
+        meal_terms = extract_terms(
+            "What do weakness, illness, and death mean at the Corinthian meal?"
+        )
+
+        self.assertEqual(terms, ["baptism", "new", "creation"])
+        self.assertEqual(
+            meal_terms,
+            ["weakness", "illness", "death", "corinthian", "meal"],
+        )
+
     def test_extract_phrases_preserves_theological_phrases(self) -> None:
         phrases = extract_phrases("What is the Holy Spirit and the Kingdom of God?")
 

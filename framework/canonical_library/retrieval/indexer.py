@@ -22,6 +22,7 @@ from ..schema import CanonicalObject, CanonicalValidationError, interpretive_not
 from ..schema.validator import validate_base_object
 from .legacy import collect_field_search_terms
 from .models import CKLIndexStats
+from .tokenizer import canonical_search_terms
 
 
 LOGGER = logging.getLogger(__name__)
@@ -48,6 +49,7 @@ class IndexedCKLEntry:
     confidence: str | None = None
     importance: int = 0
     field_terms: dict[str, set[str]] = field(default_factory=dict)
+    coherent_term_groups: list[tuple[str, str, set[str]]] = field(default_factory=list)
     search_text: str = ""
     high_signal_text: str = ""
     scripture_spans: list[ScriptureReferenceSpan] = field(default_factory=list)
@@ -267,6 +269,7 @@ def _index_object(
             source_path = path.as_posix()
 
     field_terms = _expand_field_search_terms(collect_field_search_terms(obj))
+    coherent_term_groups = _coherent_evidence_term_groups(obj)
     evidence_search_values = [
         text
         for item in getattr(obj, "evidence_items", []) or []
@@ -422,6 +425,7 @@ def _index_object(
         confidence=str(getattr(obj, "confidence", "") or "") or None,
         importance=int(getattr(obj, "importance", 0) or 0),
         field_terms=field_terms,
+        coherent_term_groups=coherent_term_groups,
         search_text=search_text,
         high_signal_text=high_signal_text,
         scripture_spans=scripture_spans,
@@ -603,6 +607,59 @@ def _expand_field_search_terms(field_terms: Mapping[str, set[str]]) -> dict[str,
         if expanded_terms:
             expanded[field_name] = expanded_terms
     return expanded
+
+
+def _coherent_evidence_term_groups(
+    obj: CanonicalObject,
+) -> list[tuple[str, str, set[str]]]:
+    """Index vocabulary within individual authored claims and evidence items.
+
+    Legacy field-term indexes union values across whole fields. These groups
+    retain claim and evidence-item boundaries so ranking
+    can distinguish one passage-level statement from terms scattered across
+    unrelated parts of a record. Only claim text and the descriptive text for
+    an evidence item count; interpretive notes, rationales, scholarly caveats,
+    references, and general record context cannot make an otherwise unrelated
+    item look like a coherent match.
+    """
+
+    groups: list[tuple[str, str, set[str]]] = []
+
+    def add(source_field: str, source_id: str, values: Iterable[Any]) -> None:
+        text = " ".join(
+            str(value).strip()
+            for value in values
+            if isinstance(value, str) and value.strip()
+        )
+        terms = canonical_search_terms(text)
+        if terms:
+            groups.append((source_field, source_id, terms))
+
+    def record_data(record: Any) -> Mapping[str, Any]:
+        if hasattr(record, "to_dict"):
+            record = record.to_dict()
+        return record if isinstance(record, Mapping) else {}
+
+    for index, claim in enumerate(getattr(obj, "claims", []) or []):
+        data = record_data(claim)
+        source_id = str(data.get("id") or f"claim-{index}")
+        add("claims", source_id, [data.get("claim")])
+
+    for index, item in enumerate(getattr(obj, "evidence_items", []) or []):
+        data = record_data(item)
+        source_id = str(data.get("id") or data.get("title") or f"evidence-{index}")
+        values = [
+            data.get(key)
+            for key in (
+                "title",
+                "description",
+                "primary_observation",
+                "passage_relevance",
+            )
+        ]
+        add("evidence_items", source_id, values)
+
+    return groups
 
 
 def _singularize_term(token: str) -> str:

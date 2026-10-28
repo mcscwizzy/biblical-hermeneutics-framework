@@ -114,7 +114,11 @@ def base_url() -> str:
     yield local_base_url
 
     server.should_exit = True
-    thread.join(timeout=10)
+    # In-flight CKL requests can take longer than ten seconds to finish.  Do
+    # not delete their database while the server is still using the fixture.
+    thread.join(timeout=120)
+    if thread.is_alive():
+        raise RuntimeError("GUI test server did not stop before fixture cleanup")
     temp_dir.cleanup()
     if original_ckl_root is None:
         os.environ.pop("BHF_CKL_ROOT", None)

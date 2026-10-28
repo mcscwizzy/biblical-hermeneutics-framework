@@ -6,6 +6,7 @@ from pathlib import Path
 
 from framework.canonical_library import CanonicalLibrary
 from framework.canonical_library.retrieval import CKLRetrievalService
+from framework.canonical_library.retrieval.ranker import coherent_evidence_coverage
 
 from .helpers import make_object, write_library
 
@@ -160,12 +161,90 @@ class CKLRetrievalServiceTests(unittest.TestCase):
 
         self.assertEqual(response.results[0].id, "galatians")
 
+    def test_explicit_book_and_verse_outranks_a_homonymous_place(self) -> None:
+        response = self.service.search(
+            "Philippians What does politeuesthe mean in Philippians 1:27?"
+        )
+
+        self.assertTrue(
+            any(
+                reference.book == "Philippians"
+                and reference.start_chapter == 1
+                and reference.start_verse == 27
+                for reference in response.analysis.scripture_references
+            )
+        )
+        self.assertEqual(response.results[0].id, "philippians")
+
     def test_search_prioritizes_joseph_bones_over_generic_significance_entries(self) -> None:
         response = self.service.search("What is the significance of Joseph's bones?")
         ids = [result.id for result in response.results]
 
         self.assertIn("shechem", ids[:3])
         self.assertNotIn("what-is-a-parable", ids)
+
+    def test_coherent_passage_evidence_outranks_scattered_overlap(self) -> None:
+        response = self.service.search(
+            "What does one body and many members mean?",
+            debug=True,
+        )
+        ids = [result.id for result in response.results]
+
+        self.assertEqual(
+            ids[0],
+            "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        )
+        self.assertIn("1-corinthians", ids)
+        signal = next(
+            signal
+            for signal in response.results[0].score_details
+            if signal.name == "keyword_match"
+        )
+        self.assertIn("single-unit query-term coverage: 1.00", signal.note or "")
+        evidence_signal = next(
+            signal
+            for signal in response.results[0].score_details
+            if signal.name == "coherent_evidence_match"
+        )
+        self.assertEqual(evidence_signal.matched_terms, ["one", "body", "many", "member"])
+        self.assertEqual(evidence_signal.value, 16.0)
+
+    def test_interpretive_caveats_do_not_create_false_coherent_matches(self) -> None:
+        query = "What were the Corinthian factions and slogans?"
+        analysis = self.service.search(query).analysis
+        faction_record = self.service.index.entries_by_id[
+            "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+        ritual_record = self.service.index.entries_by_id[
+            "ritual-purity-and-communal-holiness"
+        ]
+
+        self.assertEqual(coherent_evidence_coverage(analysis, faction_record), 1.0)
+        self.assertLess(coherent_evidence_coverage(analysis, ritual_record), 1.0)
+
+    def test_related_subject_alias_does_not_displace_direct_passage_evidence(self) -> None:
+        response = self.service.search(
+            "What does Paul mean by judging nothing before the time?",
+            debug=True,
+        )
+
+        self.assertEqual(response.results[0].id, "1-corinthians")
+
+    def test_scattered_baptism_and_creation_terms_do_not_form_a_coherent_signal(self) -> None:
+        response = self.service.search(
+            "What does baptism have to do with new creation?",
+            debug=True,
+        )
+        result = next(
+            result
+            for result in response.results
+            if result.id
+            == "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+        )
+
+        self.assertFalse(
+            any(signal.name == "coherent_evidence_match" for signal in result.score_details)
+        )
 
     def test_search_filters_irrelevant_kingdom_noise(self) -> None:
         response = self.service.search("What is the Kingdom of God?")

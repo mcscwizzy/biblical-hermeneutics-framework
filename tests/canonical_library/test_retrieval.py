@@ -373,6 +373,14 @@ class CanonicalRetrievalTests(unittest.TestCase):
         self.assertEqual(fuzzy_result.match_type, "fuzzy_alias")
         self.assertEqual(fuzzy_result.matched_alias, "Abraham")
 
+    def test_short_person_name_prefers_fuzzy_name_over_context_mentions(self) -> None:
+        with loaded_library([
+            make_object("abraham", "person", "Abraham", ["patriarch Abraham"], summary="A patriarch.", importance=8),
+            make_object("context", "cultural_background", "Context", ["Abram background"], summary="Abram appears in context.", importance=10),
+        ]) as library:
+            self.assertEqual(library.retrieve_hybrid("Abram", limit=1)[0].object.id, "abraham")
+            self.assertEqual(library.retrieve_hybrid("Abraham", limit=1)[0].object.id, "abraham")
+
     def test_phrase_matching_can_prefer_a_more_specific_object(self) -> None:
         with loaded_library(phrase_matching_objects()) as library:
             results = library.retrieve_by_keywords("covenant renewal at Shechem", limit=3)

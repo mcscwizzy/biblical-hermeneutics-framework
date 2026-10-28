@@ -119,8 +119,8 @@ Interface: one data-ask-bhf action opens the handoff controller; each open reads
 - [ ] Add responsive styles: desktop max width, mobile viewport-constrained height, internal scrolling, keyboard-safe action area, focus restoration, and no horizontal overflow.
 - [ ] Run npm test and these exact focused backend/GUI commands:
   npm test
-  /home/johnwalker/Documents/github/biblical-hermeneutics-framework/.venv/bin/pytest -q tests/test_web_app.py -k "ask or reader_toolbar or explore_questions"
-  /home/johnwalker/Documents/github/biblical-hermeneutics-framework/.venv/bin/pytest -q tests/gui/test_ask.py tests/gui/test_study_companion.py -k "ask or chapter"
+  ./.venv/bin/pytest -q tests/test_web_app.py -k "ask or reader_toolbar or explore_questions"
+  ./.venv/bin/pytest -q tests/gui/test_ask.py tests/gui/test_study_companion.py -k "ask or chapter"
 - [ ] Commit the UI replacement:
   git add bhf_web/templates/index.html bhf_web/static/study-companion.js bhf_web/static/style.css bhf_web/static/styles tests/test_web_app.py tests/gui/test_ask.py tests/gui/pages/ask.py
   git commit -m "feat: replace internal Ask workspace with handoff modal"
@@ -141,7 +141,7 @@ Interface: deterministic companion-context, Bible, commentary, CKL, notes, highl
 - [ ] Remove presentation-generation endpoint/action branches and Ask/presentation job classes. If deterministic Bible-search fallback shares the job file, extract it into a focused deterministic module and preserve its route/tests.
 - [ ] Delete bhf_web/ai_config.py and bhf_web/presentation_runtime.py only after the import audit proves they are web-only; do not alter bhf_agent maintainer modules.
 - [ ] Update obsolete web tests while retaining provider/adapters/commentary-generation tests. Run:
-  /home/johnwalker/Documents/github/biblical-hermeneutics-framework/.venv/bin/pytest -q tests/test_assistant_handoff.py tests/test_web_app.py tests/test_companion_context.py tests/test_study_actions.py tests/test_web_settings.py
+  ./.venv/bin/pytest -q tests/test_assistant_handoff.py tests/test_web_app.py tests/test_companion_context.py tests/test_study_actions.py tests/test_web_settings.py
 - [ ] Commit the route/runtime removal:
   git add bhf_web tests/test_assistant_handoff.py tests/test_web_app.py tests/test_companion_context.py tests/test_study_actions.py tests/test_web_settings.py tests/test_ai_setup.py tests/test_job_store.py tests/test_presentation_jobs.py tests/test_presentation_runtime.py
   git commit -m "refactor: remove web runtime model inference surface"
@@ -169,7 +169,7 @@ Files: .env.example, Docker/deployment files, README/docs, and dependency tests.
 - [ ] Remove runtime provider defaults and obsolete Ollama runtime overlay only when no supported runtime or maintainer workflow uses them. Preserve packages/providers used by generation/release tests.
 - [ ] Document BHF_ASSISTANT_URL, clipboard handoff, manual fallback, popup behavior, and offline expectation. State that current hosting is ChatGPT without making the architecture Custom GPT-specific.
 - [ ] Run dependency, compose, and documentation tests:
-  /home/johnwalker/Documents/github/biblical-hermeneutics-framework/.venv/bin/pytest -q tests/test_docker_compose.py tests/test_project_dependencies.py tests/test_assistant_handoff.py
+  ./.venv/bin/pytest -q tests/test_docker_compose.py tests/test_project_dependencies.py tests/test_assistant_handoff.py
 - [ ] Commit the environment and documentation changes:
   git add .env.example docker-compose.yml docker-compose.ollama.yml Dockerfile vercel.json README.md docs tests/test_docker_compose.py tests/test_project_dependencies.py
   git commit -m "docs: document deterministic BHF and external assistant boundary"

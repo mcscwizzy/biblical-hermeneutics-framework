@@ -21,7 +21,7 @@ These results do not directly compare with NE-7’s 76.4-second browser wait or 
 
 The general Firefox test ran from the isolated worktree, where the ignored default `.bhf/ckl.sqlite` file was absent. The default local configuration selects the SQLite backend but uses `fallback_to_json` when the index file is missing. This was a **missing-index fallback**, not a stale-index check. The browser fixture did not create or rebuild the index.
 
-A read-only index was available at `/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite`. `framework.canonical_library verify-db` verified it against the worktree’s CKL sources: 687 objects, schema version 4, retrieval index version 3, and the expected inventory fingerprint. Browser acceptance explicitly configured this index with stale policy `error`; the environment override was local to the test command.
+A read-only index was available at `./.bhf/ckl.sqlite`. `framework.canonical_library verify-db` verified it against the worktree’s CKL sources: 687 objects, schema version 4, retrieval index version 3, and the expected inventory fingerprint. Browser acceptance explicitly configured this index with stale policy `error`; the environment override was local to the test command.
 
 ## Browser overlap and remaining contention
 

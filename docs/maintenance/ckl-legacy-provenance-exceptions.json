@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "exceptions": [
+    {
+      "object_id": "genesis-flood-postflood-context",
+      "path": "framework/canonical_library/objects/cultural_background/genesis-flood-postflood-context.json",
+      "sha256": "d22862694a5b6a9799074703a36d4a572d14731a51ab4e8ed70a574734e7c44b",
+      "introduced_in_commit": "ce3a58e195a82af086fbce7dfecccbcc80ad99ae",
+      "transaction": "GENESIS_G2R2_ISOLATED_EVIDENCE_CONTAINER",
+      "audit_manifest": ".bhf-data/bhf-commentary-candidates/genesis-g2-flood-postflood-evidence-expansion/g2-production-apply-manifest.json",
+      "reason": "Original generator attribution was not documented in the retained transaction evidence; generator identity remains unverified.",
+      "status": "legacy_attribution_unverified",
+      "required_review_status": "in_review",
+      "human_review_required": true
+    },
+    {
+      "object_id": "genesis-nations-babel-context",
+      "path": "framework/canonical_library/objects/cultural_background/genesis-nations-babel-context.json",
+      "sha256": "ee22202a8bfc1be62469d1e710ae2383149ecad445dc4d721008a18d42a22f23",
+      "introduced_in_commit": "3991acf388822065eac171fa4cf2b81834726968",
+      "transaction": "GENESIS_G3_NATIONS_BABEL_EVIDENCE_EXPANSION",
+      "audit_manifest": ".bhf-data/bhf-commentary-candidates/genesis-g3-nations-babel-evidence-expansion/g3-production-apply-manifest.json",
+      "reason": "Original generator attribution was not documented in the retained transaction evidence; generator identity remains unverified.",
+      "status": "legacy_attribution_unverified",
+      "required_review_status": "in_review",
+      "human_review_required": true
+    },
+    {
+      "object_id": "genesis-abraham-call-covenant-context",
+      "path": "framework/canonical_library/objects/cultural_background/genesis-abraham-call-covenant-context.json",
+      "sha256": "02aeceb005539c7175afa4631cffc808ef377b73185b760f582e48119fb38aa9",
+      "introduced_in_commit": "42c821a7639366a2338963b11a475958f586d2fa",
+      "transaction": "GENESIS_G4A_ABRAHAM_CALL_COVENANT_EVIDENCE_EXPANSION",
+      "audit_manifest": ".bhf-data/bhf-commentary-candidates/genesis-g4a-abraham-call-covenant-evidence-expansion/g4a-production-apply-manifest.json",
+      "reason": "Original generator attribution was not documented in the retained transaction evidence; generator identity remains unverified.",
+      "status": "legacy_attribution_unverified",
+      "required_review_status": "in_review",
+      "human_review_required": true
+    },
+    {
+      "object_id": "genesis-abraham-late-cycle-context",
+      "path": "framework/canonical_library/objects/cultural_background/genesis-abraham-late-cycle-context.json",
+      "sha256": "95413e73224c3242589c0d9891444f3c7b438bd562d70cdb6ae239d7fd5d7408",
+      "introduced_in_commit": "52a77843ae0be8c94ca33494278be7b209911ac6",
+      "transaction": "GENESIS_G4B_ABRAHAM_LATE_CYCLE_EVIDENCE_EXPANSION",
+      "audit_manifest": ".bhf-data/bhf-commentary-candidates/genesis-g4b-abraham-late-cycle-evidence-expansion/g4b-production-apply-manifest.json",
+      "reason": "Original generator attribution was not documented in the retained transaction evidence; generator identity remains unverified.",
+      "status": "legacy_attribution_unverified",
+      "required_review_status": "in_review",
+      "human_review_required": true
+    },
+    {
+      "object_id": "genesis-isaac-jacob-transition-context",
+      "path": "framework/canonical_library/objects/cultural_background/genesis-isaac-jacob-transition-context.json",
+      "sha256": "22f8d2d0b6c7625b1267193ab1fb4e500981ad95713f702b83466b031bcb28cb",
+      "introduced_in_commit": "76c5beabd4ba98093f02d22d2eb95ed9a9372acb",
+      "transaction": "GENESIS_G5A_ISAAC_JACOB_TRANSITION_EVIDENCE_EXPANSION",
+      "audit_manifest": ".bhf-data/bhf-commentary-candidates/genesis-g5a-isaac-jacob-transition-evidence-expansion/g5a-production-apply-manifest.json",
+      "reason": "Original generator attribution was not documented in the retained transaction evidence; generator identity remains unverified.",
+      "status": "legacy_attribution_unverified",
+      "required_review_status": "in_review",
+      "human_review_required": true
+    }
+  ]
+}

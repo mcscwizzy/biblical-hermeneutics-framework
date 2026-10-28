@@ -103,6 +103,7 @@ class CKLRetrievalService:
             limit=limit,
             threshold=threshold,
             query=query,
+            analysis=analysis,
             has_scripture_reference=any(
                 reference.start_chapter is not None
                 for reference in analysis.scripture_references
@@ -182,6 +183,7 @@ class CKLRetrievalService:
         limit: int,
         threshold: float,
         query: str,
+        analysis: QueryAnalysis,
         has_scripture_reference: bool = False,
         named_books: Sequence[str] = (),
         result_sources: Mapping[str, int] | None = None,
@@ -193,11 +195,18 @@ class CKLRetrievalService:
                 deduped[result.id] = result
 
         query_alignment = {result.id: _result_alignment_rank(query, result) for result in deduped.values()}
-        ordered = sorted(
-            deduped.values(),
-            key=lambda result: (
-                query_alignment.get(result.id, 3),
+        homonymous_places = {
+            result.id
+            for result in deduped.values()
+            if _explicit_book_place_homonym_rank(result, analysis, named_books)
+        }
+
+        def ordering_key(result: CKLSearchResult) -> tuple[Any, ...]:
+            homonym_scope_rank = int(result.id in homonymous_places)
+            return (
                 (result_sources or {}).get(result.id, 1),
+                homonym_scope_rank,
+                query_alignment.get(result.id, 3),
                 _focused_category_rank(query, result),
                 _named_book_rank(
                     result,
@@ -224,8 +233,9 @@ class CKLRetrievalService:
                 result.category,
                 normalize_query(result.title).lower(),
                 result.id,
-            ),
-        )
+            )
+
+        ordered = sorted(deduped.values(), key=ordering_key)
 
         limited: list[CKLSearchResult] = []
         category_counts: dict[str, int] = {}
@@ -349,6 +359,62 @@ def _named_book_rank(
     ):
         return 0
     return 1
+
+
+def _named_book_reference_match_count(
+    result: CKLSearchResult,
+    analysis: QueryAnalysis,
+    named_books: Sequence[str],
+) -> int:
+    """Count passage references shared with an explicitly named book query."""
+
+    if not named_books:
+        return 0
+    record_references = [
+        normalize_alias(reference).lower()
+        for reference in result.scripture_references
+    ]
+    matched = 0
+    for reference in analysis.scripture_references:
+        if reference.start_chapter is None:
+            continue
+        prefix = normalize_alias(
+            f"{reference.book} {reference.start_chapter}"
+        ).lower()
+        if any(
+            record_reference == prefix
+            or record_reference.startswith(f"{prefix} ")
+            for record_reference in record_references
+        ):
+            matched += 1
+    return matched
+
+
+def _explicit_book_place_homonym_rank(
+    result: CKLSearchResult,
+    analysis: QueryAnalysis,
+    named_books: Sequence[str],
+) -> int:
+    """Keep a referenced book ahead of a similarly named place record."""
+
+    if (
+        not named_books
+        or result.category != "place"
+        or _named_book_reference_match_count(result, analysis, named_books) == 0
+    ):
+        return 0
+    candidate_names = [result.title, *result.aliases]
+    for book in named_books:
+        book_name = normalize_alias(book).replace(" ", "").lower()
+        if len(book_name) < 5:
+            continue
+        for candidate in candidate_names:
+            candidate_name = normalize_alias(candidate).replace(" ", "").lower()
+            if len(candidate_name) < 5:
+                continue
+            if SequenceMatcher(None, book_name, candidate_name).ratio() >= 0.8:
+                return 1
+    return 0
 
 
 def _knowledge_layer_rank(value: str | None) -> int:

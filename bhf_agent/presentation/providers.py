@@ -240,7 +240,10 @@ class AdapterPresentationProvider(PresentationProvider):
                 response.error_category or "unknown",
                 "; ".join(response.errors) if response.errors else "no details available",
             )
-        return parse_presentation_json_response(response.text)
+        result = parse_presentation_json_response(response.text)
+        if not isinstance(result.get("generated_from"), dict):
+            raise PresentationResponseParseError()
+        return result
 
 
 def _provider_packet(
