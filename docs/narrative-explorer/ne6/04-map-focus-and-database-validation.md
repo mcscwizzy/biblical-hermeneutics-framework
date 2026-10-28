@@ -8,7 +8,7 @@ The browser and API runs additionally set `BHF_STUDY_DB_READ_ONLY=1`. Connection
 
 | Check | Result |
 | --- | --- |
-| Configured file | `/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/study.sqlite`, 3,416,064 bytes |
+| Configured file | `./.bhf-data/study.sqlite`, 3,416,064 bytes |
 | Current database check | `require_current_study_database` passed; latest `schema_migrations.version` is 37 |
 | SQLite integrity | `PRAGMA integrity_check` returned `ok` |
 | Read-only guard | SQLite URI mode `ro`; query-only verification and attempted-DDL rejection passed in the disposable unit fixture |

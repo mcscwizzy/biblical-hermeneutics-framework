@@ -25,7 +25,7 @@ The general browser suite also exercises the 390 × 844 requested Firefox window
 All commands ran from the isolated NE-7R1 worktree. The Python 3.12.3 environment used the repository package dependencies staged in `/tmp/bhf-ne6-python-deps`. Protected study-database tests used read-only mode. The general Firefox fixture used a disposable study DB and its default CKL path; the missing worktree-local SQLite index caused JSON fallback. The matched SQLite/JSON profile separately used the verified read-only index from the original checkout.
 
 ```sh
-env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/study.sqlite BHF_STUDY_DB_READ_ONLY=1 python3 -m pytest -q --tb=short \
+env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=./.bhf-data/study.sqlite BHF_STUDY_DB_READ_ONLY=1 python3 -m pytest -q --tb=short \
   tests/test_narrative_explorer_projection.py \
   tests/test_narrative_explorer_api.py \
   tests/test_narrative_explorer_coverage_audit.py \
@@ -37,13 +37,13 @@ env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=/home/johnwalker/Docum
   tests/canonical_library/test_sqlite_storage.py \
   tests/test_vercel_ckl_index.py tests/test_db_connection_read_only.py
 
-env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/study.sqlite BHF_STUDY_DB_READ_ONLY=1 python3 -m pytest -q -s --tb=short tests/test_ne6_geography_selenium.py
+env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=./.bhf-data/study.sqlite BHF_STUDY_DB_READ_ONLY=1 python3 -m pytest -q -s --tb=short tests/test_ne6_geography_selenium.py
 
 env PYTHONPATH=/tmp:/tmp/bhf-ne6-python-deps python3 -m pytest -q -s --tb=short -p ne7_firefox_adapter tests/test_web_ui_selenium.py
 
-env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/study.sqlite BHF_STUDY_DB_READ_ONLY=1 python3 -m pytest -q --tb=short tests/test_web_app.py
+env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=./.bhf-data/study.sqlite BHF_STUDY_DB_READ_ONLY=1 python3 -m pytest -q --tb=short tests/test_web_app.py
 
-env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/study.sqlite BHF_STUDY_DB_READ_ONLY=1 python3 -m pytest -q --tb=short \
+env PYTHONPATH=/tmp/bhf-ne6-python-deps BHF_STUDY_DB_PATH=./.bhf-data/study.sqlite BHF_STUDY_DB_READ_ONLY=1 python3 -m pytest -q --tb=short \
   tests/test_archaeology_ai_packet.py tests/test_archaeology_corpus_coverage.py \
   tests/test_archaeology_import.py tests/test_archaeology_media.py \
   tests/test_archaeology_offline.py tests/test_archaeology_resolver.py \
@@ -79,9 +79,9 @@ The 137-test core command above is the exact NE-7 group; the compatibility comma
 - `PYTHONPATH=/tmp/bhf-ne6-python-deps:$PWD python3 -m compileall -q bhf_agent bhf_web framework tests`: passed after the test-helper adjustment.
 - `find bhf_web/static -type f -name '*.js' -print0 | xargs -0 -n1 node --check`: passed after the test-helper adjustment.
 - `git diff --check`: passed before final document edits; the final pre-commit check is still required.
-- `PYTHONPATH=/tmp/bhf-ne6-python-deps:$PWD python3 -m framework.canonical_library --root framework/canonical_library verify-db --database /home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite`: passed read-only. CKL object count **687**, schema v4, retrieval index v3, inventory fingerprint `90fa7547ea4146328ab1fc4f9e4ca1b262f810e0e503c589b64a5f9b8c4a08c6`.
+- `PYTHONPATH=/tmp/bhf-ne6-python-deps:$PWD python3 -m framework.canonical_library --root framework/canonical_library verify-db --database ./.bhf/ckl.sqlite`: passed read-only. CKL object count **687**, schema v4, retrieval index v3, inventory fingerprint `90fa7547ea4146328ab1fc4f9e4ca1b262f810e0e503c589b64a5f9b8c4a08c6`.
 - Recomputed source inventory signature `5f03bdb3701e4cf8beb578933c50679324611b379417493bb3750008e044e5ea` and source manifest fingerprint `e3207f9e64825167531d08af531fc1aa22e583f9a7b9526feb7e191b9b64cc40`; both match NE-7.
-- Protected study DB `/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/study.sqlite`: final observed SHA-256 `2bd8f59ec0f44cef7dee7da692b9fe80ef21edd6d88cd2af1b57ee7b44f195bf`.
+- Protected study DB `./.bhf-data/study.sqlite`: final observed SHA-256 `2bd8f59ec0f44cef7dee7da692b9fe80ef21edd6d88cd2af1b57ee7b44f195bf`.
 
 ## Legitimate skips and remaining validation
 
