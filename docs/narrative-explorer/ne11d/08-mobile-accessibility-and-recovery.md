@@ -1,0 +1,11 @@
+# NE-11D2 mobile, accessibility and recovery
+
+The frontend suite includes fixture-based fail-closed tests for duplicate route IDs, incomplete or failed projections, flag-off behavior, stale selection and history. These are regression evidence, not real-data browser acceptance. Separate rapid dual activation, closing Companion during verification, return before delayed completion, refreshed route removal and multi-step return scenarios remain unverified in this phase.
+
+Keyboard-only operation, screen-reader operation, focus transfer and restoration, live announcements, Escape and browser Back were not established by the baseline browser suite. No screen-reader pass is claimed. Actual offline browser disconnection and reconnection were not exercised. The harness seeds KJV IndexedDB data; that does not establish an installed offline pack, locally available Companion context, or offline Narrative Explorer projection. Simulated frontend service-worker tests do not establish those conditions.
+
+Mobile acceptance requires measured 390 CSS pixels, narrower mobile, tablet and desktop, with usable disclosures, route selection, return and focus. A viewport measurement test was added to the existing harness; its result and limitations are recorded below after execution. No application breakpoint was changed.
+
+Chrome 156.0.8078.47 mobile emulation at 390 × 844 with device scale factor 1 measured `innerWidth=390`, `documentElement.clientWidth=390`, DPR 1 and document scroll width 390 after selecting Jonah 1:17. The initial Selenium click was intercepted by the fixed More dock when WebDriver scrolled the verse to the viewport bottom. Centering the verse before clicking permitted selection; this observation does not establish a user-facing defect or a full mobile journey. Effective Companion state, card readability, disclosures, handoff, selected route, sheet controls, return and focus remain untested. Narrower, tablet and desktop viewport measurements remain untested.
+
+The first centered measurement run reached its assertions but ended with `OSError: [Errno 39] Directory not empty` during temporary server teardown. A rerun waits for the Companion context before teardown; the rerun passed both added tests in 49.55 seconds, with the same measured widths.
