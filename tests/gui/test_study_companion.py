@@ -678,6 +678,7 @@ def test_browser_back_unwinds_resource_then_companion_overview(driver, wait, bas
 
     driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
+    selection = driver.execute_script("return window.BHFStudySelection.getState().reference;")
     driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
     driver.execute_script("window.BHFStudyCompanion.openResource('maps');")
@@ -695,6 +696,16 @@ def test_browser_back_unwinds_resource_then_companion_overview(driver, wait, bas
     driver.back()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
     assert driver.current_url.startswith(base_url)
+    assert driver.execute_script("return window.BHFStudySelection.getState().reference;") == selection
+
+    driver.forward()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+    assert driver.execute_script("return window.BHFStudyCompanion.getState().resource;") is None
+    driver.forward()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getState().resource === 'maps';"
+    ))
+    assert driver.execute_script("return window.BHFStudySelection.getState().reference;") == selection
 
 
 def test_breakpoint_and_orientation_transitions_preserve_resource_and_selection(driver, wait, base_url):
