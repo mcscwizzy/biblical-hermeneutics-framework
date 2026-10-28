@@ -17,6 +17,23 @@ from framework.canonical_library.sqlite_repository import SQLiteCanonicalLibrary
 from .helpers import make_object, write_library
 
 
+def test_sqlite_hybrid_prefers_close_person_name_to_context(tmp_path: Path) -> None:
+    root = tmp_path / "ckl"
+    write_library(root, [
+        make_object("abraham", "person", "Abraham", ["Ibrahim"], summary="A patriarch.", importance=8),
+        make_object("context", "cultural_background", "Context", ["Abram background"], summary="Abram appears in context.", importance=10),
+    ])
+    database = tmp_path / "ckl.sqlite"
+    build_database(root, database)
+    library = SQLiteCanonicalLibrary.from_path(database, root=root)
+    try:
+        assert library.retrieve_hybrid("Abram", limit=1)[0].object.id == "abraham"
+        assert library.retrieve_hybrid("Abraham", limit=1)[0].object.id == "abraham"
+        assert library.retrieve_hybrid("Ibrahm", limit=1)[0].object.id == "abraham"
+    finally:
+        library.close()
+
+
 def test_sqlite_payload_round_trip_preserves_absent_and_present_target_fields(tmp_path: Path) -> None:
     original = json.loads((Path(__file__).resolve().parents[2] / "framework/canonical_library/objects/events/david-and-goliath.json").read_text())
     legacy = dict(original["evidence_items"][0])

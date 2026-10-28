@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import sqlite3
 import threading
+from difflib import SequenceMatcher
 from collections.abc import Mapping
 from functools import lru_cache
 from pathlib import Path
@@ -639,6 +640,18 @@ class SQLiteCanonicalRepository:
             ).fetchall()
             candidate_ids.update(str(row["object_id"]) for row in rows)
         normalized_query = normalize_alias(query)
+        fuzzy_person_ids: set[str] = set()
+        if not scripture_mode and len(tokenize_query(query)) == 1 and len(normalized_query) >= 4:
+            rows = self._conn.execute(
+                "SELECT id, title AS name FROM canonical_objects WHERE type = 'person' "
+                "UNION ALL SELECT o.id, a.original_alias AS name FROM canonical_objects o "
+                "JOIN canonical_aliases a ON a.object_id = o.id WHERE o.type = 'person'"
+            ).fetchall()
+            fuzzy_person_ids = {
+                str(row["id"]) for row in rows
+                if SequenceMatcher(None, normalized_query, normalize_alias(str(row["name"]))).ratio() >= 0.82
+            }
+            candidate_ids.update(fuzzy_person_ids)
         if normalized_query:
             candidate_ids.update(self.title_matches(query))
             candidate_ids.update(self.alias_matches(query))
@@ -682,6 +695,7 @@ class SQLiteCanonicalRepository:
             object_id
             for _score, object_id in sorted(preliminary, key=lambda item: (-item[0], item[1]))[:competitive_limit]
         ]
+        competitive_ids = list(dict.fromkeys([*competitive_ids, *sorted(fuzzy_person_ids)]))
         objects_by_id = self._objects_by_ids(competitive_ids)
         results: list[RetrievalResult] = []
         for object_id in competitive_ids:
@@ -733,6 +747,12 @@ class SQLiteCanonicalRepository:
                 )
             )
         results = sort_retrieval_results(results)
+        if not scripture_mode and len(tokenize_query(query)) == 1:
+            results.sort(key=lambda result: (
+                0 if result.match_type in {"id", "title", "alias"} else
+                1 if result.match_type == "fuzzy_alias" and result.object.type == "person"
+                and result.matched_alias is not None else 2
+            ))
         if apply_thresholds:
             results = apply_relevance_thresholds(results)
         return results[:limit]
@@ -824,6 +844,12 @@ class SQLiteCanonicalRepository:
                 )
             )
         fused = sort_retrieval_results(fused)
+        if len(tokenize_query(query)) == 1:
+            fused.sort(key=lambda result: (
+                0 if result.match_type in {"id", "title", "alias"} else
+                1 if result.match_type == "fuzzy_alias" and result.object.type == "person"
+                and result.matched_alias is not None else 2
+            ))
         if apply_thresholds:
             fused = apply_relevance_thresholds(fused)
         return fused[:limit]
