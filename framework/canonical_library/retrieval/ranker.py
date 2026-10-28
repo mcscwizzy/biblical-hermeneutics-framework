@@ -22,6 +22,9 @@ FACT_MATCH_WEIGHT = 20.0
 RELATED_MATCH_WEIGHT = 10.0
 CATEGORY_MATCH_WEIGHT = 15.0
 MAX_RAW_SCORE = 100.0
+COHERENT_EVIDENCE_TERM_WEIGHT = 4.0
+MAX_COHERENT_EVIDENCE_SIGNAL = 16.0
+MIN_COHERENT_EVIDENCE_COVERAGE = 0.75
 
 RANKING_BOILERPLATE_TERMS = {
     "important",
@@ -194,11 +197,35 @@ def score_indexed_entry(
         value = KEYWORD_MATCH_WEIGHT * keyword_score * keyword_quality
         if not direct_keyword_hit:
             value *= 0.6
+        coherence = coherent_evidence_coverage(analysis, entry)
         add_signal(
             "keyword_match",
             value,
             terms=keyword_overlap,
             fields=keyword_fields,
+            note=(
+                f"best single-unit query-term coverage: {coherence:.2f}"
+                if coherence
+                else None
+            ),
+        )
+
+    coherence, coherent_terms, coherent_source = coherent_evidence_match(analysis, entry)
+    if coherence >= MIN_COHERENT_EVIDENCE_COVERAGE and coherent_terms:
+        coherent_value = min(
+            MAX_COHERENT_EVIDENCE_SIGNAL,
+            COHERENT_EVIDENCE_TERM_WEIGHT * len(coherent_terms),
+        )
+        source_field = coherent_source.split(":", maxsplit=1)[0] if coherent_source else ""
+        add_signal(
+            "coherent_evidence_match",
+            coherent_value,
+            terms=coherent_terms,
+            fields=[source_field] if source_field else [],
+            note=(
+                f"one {source_field} unit {coherent_source.split(':', maxsplit=1)[1]} "
+                f"covers {len(coherent_terms)}/{len([term for term in analysis.terms if term not in RANKING_BOILERPLATE_TERMS])} substantive query terms"
+            ),
         )
 
     # Theme terms get a separate bump when the result is thematic.
@@ -273,6 +300,46 @@ def score_indexed_candidates(
         if scored is not None:
             results.append(scored)
     return results
+
+
+def coherent_evidence_coverage(analysis: QueryAnalysis, entry: Any) -> float:
+    """Return the strongest proportion of query terms found in one evidence unit."""
+
+    return coherent_evidence_match(analysis, entry)[0]
+
+
+def coherent_evidence_match(
+    analysis: QueryAnalysis,
+    entry: Any,
+) -> tuple[float, list[str], str | None]:
+    """Return the best claim/evidence-unit coverage and its exact source key."""
+
+    query_terms = {
+        term
+        for term in analysis.terms
+        if term not in RANKING_BOILERPLATE_TERMS
+    }
+    groups = getattr(entry, "coherent_term_groups", ()) or ()
+    if len(query_terms) < 2 or not groups:
+        return 0.0, [], None
+
+    best_source: tuple[str, str, set[str]] | None = None
+    best_terms: set[str] = set()
+    for source_field, source_id, group_terms in groups:
+        matched = query_terms.intersection(group_terms)
+        if len(matched) > len(best_terms):
+            best_source = (source_field, source_id, group_terms)
+            best_terms = matched
+
+    if not best_terms or best_source is None:
+        return 0.0, [], None
+
+    ordered_terms = [term for term in analysis.terms if term in best_terms]
+    return (
+        round(len(best_terms) / len(query_terms), 4),
+        ordered_terms,
+        f"{best_source[0]}:{best_source[1]}",
+    )
 
 
 def _field_quality_multiplier(fields: Sequence[str]) -> float:
