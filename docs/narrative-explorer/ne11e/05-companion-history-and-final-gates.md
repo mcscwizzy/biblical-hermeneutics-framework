@@ -17,7 +17,7 @@ Additional checks: real CKL journey and keyboard browser batch 11 passed; additi
 ## Release decision
 
 - NE-11 feature readiness: **BLOCKED**, the complete requested release verification remains pending.
-- Repository-wide CI health: **FAIL**, manifest, First Corinthians and four broader retrieval control tests remain failing.
+- Repository-wide CI health: **FAIL**, manifest, First Corinthians and three golden-query subtests remain failing; the separate hybrid person-name failure was corrected.
 - CKL governance: **BLOCKED**, missing authoritative generation identity.
 - Vercel build readiness: **BLOCKED**, no exact final-commit Preview verified.
 - Manual accessibility readiness: **BLOCKED**, spoken screen-reader test not performed.

@@ -479,6 +479,16 @@ class CanonicalLibrary:
                 )
             )
         results = sort_retrieval_results(results)
+        # A short name lookup should surface a close person-name match before
+        # broad records that only mention that name. Exact identities still
+        # take precedence, and passage and multiword searches keep their usual
+        # relevance ordering.
+        if not scripture_mode and len(tokenize_query(query)) == 1:
+            results.sort(key=lambda result: (
+                0 if result.match_type in {"id", "title", "alias"} else
+                1 if result.match_type == "fuzzy_alias" and result.object.type == "person"
+                and result.matched_alias is not None else 2
+            ))
         if apply_thresholds:
             results = apply_relevance_thresholds(results)
         return results[:limit]
