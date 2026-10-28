@@ -1754,6 +1754,23 @@ body.companion-sheet-full {
   }
 }
 
+@media (max-width: 680px) {
+  .companion-overview-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .companion-overview-actions > button {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    flex: none;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .study-panel,
   .companion-skeleton {
