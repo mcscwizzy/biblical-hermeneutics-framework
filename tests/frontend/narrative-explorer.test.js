@@ -991,6 +991,10 @@ test("trail state preserves the original passage and limits relationship hops", 
     originalRelationshipType: "related-concept",
   }, "connection:connection-four");
   assert.equal(blocked.error, "depth_limit");
+  const returned = explorer.returnToOrigin(third.state);
+  assert.equal(returned.activeIndex, 0);
+  assert.deepEqual(returned.originSelection, explorer.createTrail(origin).originSelection);
+  assert.equal(explorer.trailReturnFocusId(returned), "item:ckl:genesis#evidence:g2-garden-planting-presence");
 });
 
 test("trail detects cycles and can return to its originating passage", () => {

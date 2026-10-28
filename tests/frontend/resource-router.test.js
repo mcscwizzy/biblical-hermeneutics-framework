@@ -255,3 +255,60 @@ test("router-driven destination selection preserves the existing origin trail", 
   assert.equal(value.router.getNarrativeTrail().originSelection.reference, "Jonah 1:17");
   assert.equal(value.router.getNarrativeTrail().nodes[value.router.getNarrativeTrail().activeIndex].reference, "Matthew 12:40");
 });
+
+test("closing during verification discards the delayed route and history", async () => {
+  let resolveProjection;
+  const value = fixture({loadProjection: () => new Promise((resolve) => { resolveProjection = resolve; })});
+  const pending = value.router.open("narrative_explorer", {routeHandoff: handoff()});
+  await Promise.resolve();
+  value.router.close();
+  resolveProjection(projection());
+  assert.equal(await pending, false);
+  assert.equal(value.records.handoffs.length, 0);
+  assert.equal(value.records.trailChanges.length, 0);
+  assert.equal(value.heading.focused, false);
+  assert.equal(value.router.getNarrativeTrail(), null);
+});
+
+test("a removed route at activation does not open or add history", async () => {
+  const value = fixture({projectionOverrides: {related_passages: {
+    state: "available", query_status: "complete", authored_relationships: [], evidence_backed_bridges: [],
+  }}});
+  assert.equal(await value.router.open("narrative_explorer", {routeHandoff: handoff()}), false);
+  assert.equal(value.records.handoffs.length, 0);
+  assert.equal(value.records.trailChanges.length, 0);
+  assert.equal(value.heading.focused, false);
+});
+
+test("a second rapid activation wins when the first response arrives last", async () => {
+  const pending = [];
+  const secondRoute = {...route, id: "second-route"};
+  const value = fixture({loadProjection: () => new Promise((resolve) => pending.push(resolve))});
+  const first = value.router.open("narrative_explorer", {routeHandoff: handoff()});
+  await Promise.resolve();
+  const second = value.router.open("narrative_explorer", {routeHandoff: handoff({routeId: secondRoute.id})});
+  await Promise.resolve();
+  const both = projection({related_passages: {state: "available", query_status: "complete", authored_relationships: [], evidence_backed_bridges: [route, secondRoute]}});
+  pending[1](both);
+  assert.equal(await second, true);
+  pending[0](both);
+  assert.equal(await first, false);
+  assert.equal(value.records.handoffs.length, 1);
+  assert.equal(value.records.trailChanges.length, 1);
+  assert.equal(value.records.rendered.at(-1).selectedRouteId, secondRoute.id);
+});
+
+test("opening a different resource cancels delayed verification", async () => {
+  let resolveProjection;
+  const value = fixture({loadProjection: () => new Promise((resolve) => { resolveProjection = resolve; })});
+  const pending = value.router.open("narrative_explorer", {routeHandoff: handoff()});
+  await Promise.resolve();
+  const other = value.router.open("cross_references");
+  resolveProjection(projection());
+  assert.equal(await pending, false);
+  assert.equal(await other, true);
+  assert.equal(value.records.handoffs.length, 0);
+  assert.equal(value.records.trailChanges.length, 0);
+  assert.equal(value.heading.focused, false);
+  assert.equal(value.router.getNarrativeTrail(), null);
+});
