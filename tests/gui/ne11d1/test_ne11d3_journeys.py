@@ -57,20 +57,36 @@ def test_real_jonah_verification_interrupted_by_chapter_change(driver, base_url)
     _, action = wait.until(lambda b: _connection_action(b, identity))
     driver.execute_script("""
       const original = window.fetch;
-      window.ne11d3Pending = false;
       window.ne11d3Release = null;
+      window.ne11d3RequestOutcomes = [];
       window.fetch = function(input, options) {
         const request = original.call(this, input, options);
         if (!String(input).includes('/api/narrative-explorer/v1/passages/')) return request;
-        window.ne11d3Pending = true;
-        return request.then(response => new Promise(resolve => { window.ne11d3Release = () => resolve(response); }));
+        const signal = options?.signal;
+        const outcome = {status: null, bodyBytes: null, abortObserved: false, released: false};
+        window.ne11d3RequestOutcomes.push(outcome);
+        signal?.addEventListener('abort', () => { outcome.abortObserved = true; }, {once: true});
+        return request.then(async response => {
+          outcome.status = response.status;
+          outcome.bodyBytes = (await response.clone().arrayBuffer()).byteLength;
+          return new Promise(resolve => {
+            window.ne11d3Release = () => { outcome.released = true; resolve(response); };
+          });
+        });
       };
     """)
     action.click()
     wait.until(lambda b: b.execute_script("return window.ne11d3Release !== null"))
+    outcome = driver.execute_script("return window.ne11d3RequestOutcomes[0]")
+    assert outcome and outcome["status"] == 200 and outcome["bodyBytes"] > 0, outcome
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="chapter-input"]')).select_by_value("2")
     wait.until(lambda b: b.execute_script("return window.BHFStudySelection?.getState?.().chapter === 2"))
+    outcome = driver.execute_script("return window.ne11d3RequestOutcomes[0]")
+    assert outcome["abortObserved"] is True, outcome
     driver.execute_script("window.ne11d3Release();")
     wait.until(lambda b: b.execute_script("return window.BHFStudyCompanion?.getContext?.()?.reference === 'Jonah 2'"))
     assert not driver.find_elements(By.CSS_SELECTOR, '[data-route-id="jonah-1-17-matthew-12-40-sign-of-jonah"][aria-current="true"]')
     assert driver.execute_script("return window.history.state?.bhfStudyCompanion?.trail || null") is None
+    outcome = driver.execute_script("return window.ne11d3RequestOutcomes[0]")
+    assert outcome["released"] is True and outcome["abortObserved"] is True, outcome
+    print("NE11D4_CANCELLED_ACTIVATION=" + str(outcome), flush=True)

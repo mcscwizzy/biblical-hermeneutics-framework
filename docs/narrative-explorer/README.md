@@ -43,6 +43,7 @@ include the generated Commentary corpus or generator.
 - [NE-10 evidence discovery audit](ne10-evidence-discovery-audit.md) and
   [NE-10 results](ne10-results.md)
 - [NE-11C1 Jonah / Matthew bridge implementation](ne11c1-jonah-matthew-bridge.md)
+- [NE-11D4 final feature acceptance gate closure](ne11d/13-feature-gate-closure.md)
 - [Historical architecture index](../maintenance/historical-decisions.md)
 
 The numbered `ne7`, `ne8`, and earlier pilot/audit pages describe their
