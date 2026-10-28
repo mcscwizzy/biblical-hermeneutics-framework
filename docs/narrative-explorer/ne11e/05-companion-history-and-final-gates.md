@@ -13,7 +13,7 @@ Counts below are per test command and can overlap; they are not additive. **FAIL
 | Phase | Original issue | Final result |
 | --- | --- | --- |
 | **E1 — Structured output/provider validation** | Six presentation/adapter contract failures | **PASS:** 133 structured-output, response parsing, pipeline, provider, bundle, and integrity tests. |
-| **E2 — CKL governance** | The reviewed `genesis-abraham-call-covenant-context` object has no authoritative generator identity | **FAIL / BLOCKED:** the full integrity batch passed 571 tests and failed one manifest assertion; the manifest suite independently reproduced 7 passes and that same 1 failure. No provenance or CKL content was fabricated. |
+| **E2 — CKL governance** | Five populated Genesis drafts have no recorded generator attribution | **PASS under explicit legacy exceptions:** the full inventory identifies exactly five; their hashes and historical transaction evidence are pinned in the registry. The manifest suite passes 18 tests and 13 subtests; the CKL governance batch passes 128 tests and 13 subtests. Generator identities remain unknown and all five records remain `draft` / `in_review` with human review required. |
 | **E3 — Release-path sanitization** | The scanner initially flagged 24 retained paths | **PASS:** sanitizer and Vercel startup tests, 7 passed; Vercel package/provider tests, 19 passed. The sanitizer distinguishes machine paths from scholarly URLs. |
 | **E4 — Retrieval remediation** | Three First Corinthians ranking failures and three golden-query failures | **PASS:** 44 retrieval-matrix tests and 215 subtests, including 17 retrieval-service tests. JSON/SQLite storage and alias parity passes 27 tests and 4 subtests; question-driven entity disambiguation passes 7 tests. Evidence, scores, and contract decisions are in [the E4 diagnostic](04-first-corinthians-retrieval.md). |
 | **E5 — Companion history** | First Back returned to `peek` instead of unwinding Maps to the `study` overview | **PASS:** 2 browser Back/focus tests and all 14 frontend tests. Back, Forward, selection, keyboard focus, and Narrative Explorer origin history checks pass. |
@@ -22,7 +22,9 @@ Additional consolidated checks:
 
 - `python3 tools/validate.py framework/` — **PASS**, 94 framework modules.
 - `tools/ckl_validate.py --root framework/canonical_library --json` — **PASS**, 687 valid objects, 0 validation errors, and 14 existing warnings.
-- Source locks, schema, Scripture-reference integrity, NE-9C curation, NE-10 passage identity, Narrative Explorer API/projection, and parity batch — **571 passed, 1 failed**; the sole failure is the E2 manifest assertion above. A separate Narrative Explorer/NE-9C/NE-10 integration batch passed **113 tests**.
+- Source locks, schema, Scripture-reference integrity, and release metadata — **128 passed, 13 subtests passed**. The exact former manifest assertion passes; the complete manifest suite passes **18 tests and 13 subtests**. The standalone source-lock suite passes **27 tests**.
+- CKL validation — **687 valid objects, 0 errors, 14 existing warnings**. NE-9C identity validation passes with **4,061 authored relationships**, **3,925 reviewed** (408 curated, 1,895 held, 1,622 excluded). NE-10 retains **44 verified passage bridges** and **7 held research candidates**.
+- Narrative Explorer curation, NE-9C/NE-10 projection, passage bridge, API, and parity tests — **505 passed**. Release-path sanitization, Vercel packaging/startup, and verified provider identity tests — **26 passed**.
 - `npm test` — **PASS**, 14 frontend tests.
 - Release-path, packaging, and startup verification — **PASS**, 7 sanitizer/startup tests plus 19 packaging/provider tests.
 - Full 2 Corinthians, Galatians, Romans, and Philippians retrieval suites — **PASS**, 32 tests and 608 subtests. The Romans 11:29 query remains specialist-first because it names no book; the explicit Philippians 1:27 query ranks the book above the homonymous city.
@@ -46,7 +48,7 @@ The retrieval changes did not lower relevance thresholds, create query-specific 
 
 ## Release status and remaining review
 
-**NOT READY FOR RELEASE.** E2 needs a governance owner to establish the actual generator identity for `genesis-abraham-call-covenant-context` from authoritative records, or to decide a truthful schema-compliant treatment that preserves the global provenance invariant. Its current `in_review` status and empty `generated_by` value must not be guessed or filled with the commit author. The exact outstanding assertion is `CanonicalInventoryTests.test_all_inventory_json_files_validate_and_receive_governance_defaults` in `tests/canonical_library/test_manifest.py`.
+**NOT READY FOR RELEASE.** E2's manifest and governance gates now pass under the narrow, hash-pinned legacy exception registry at [the E2 governance report](02-ckl-governance.md). The five original generator identities remain unknown; no commit author or later generator was substituted. The five populated Genesis objects remain `draft` / `in_review`, have empty `generated_by` and `reviewed_by` arrays, and require human review. The registry records uncertainty only; it does not satisfy or attest to those reviews. Release readiness requires a governance owner to complete and record the content reviews before these objects are promoted or treated as reviewed.
 
 **SKIPPED:** no Vercel Preview was built because deployment was explicitly out of scope; the checked-in packaging and startup tests pass. A manual spoken screen-reader run was not performed; the automated keyboard-focus checks passed. Do not treat either skipped acceptance activity as verified.
 
