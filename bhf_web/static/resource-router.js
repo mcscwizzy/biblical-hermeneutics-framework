@@ -1052,12 +1052,27 @@
           : `No ${label} records are available${contextual ? " for this passage" : ""}.`,
       );
       items.slice(0, 12).forEach((item) => {
-        const card = summaryCard(item.title || item.name || item.id, item.summary || "", item.type || item.relationship || "");
+        const title = item.title || item.name || item.id;
+        const governanceNotice = item.content_status === "draft"
+          && item.review_status === "in_review"
+          && item.human_review_required === true
+          ? "Draft evidence — awaiting human review"
+          : "";
+        const card = summaryCard(title, item.summary || "", item.type || item.relationship || "");
+        if (governanceNotice) {
+          const notice = document.createElement("p");
+          notice.className = "companion-summary-meta companion-summary-governance";
+          notice.textContent = governanceNotice;
+          card.append(notice);
+        }
         if (item.id || item.title) {
           card.dataset.canonicalId = item.id || item.title;
           card.tabIndex = 0;
           card.setAttribute("role", "button");
-          card.setAttribute("aria-label", `View ${item.title || item.name || item.id} details`);
+          card.setAttribute(
+            "aria-label",
+            `View ${title} details${governanceNotice ? `. ${governanceNotice}` : ""}`,
+          );
         }
         body.append(card);
       });

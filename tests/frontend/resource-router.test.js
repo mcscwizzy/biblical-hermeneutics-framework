@@ -66,16 +66,21 @@ function fixture(options = {}) {
       return [];
     },
     querySelector() { return null; },
+    get content() { return currentView; },
   };
   const panel = {querySelector: (selector) => selector === "[data-companion-resource-host]" ? host : null};
   const shell = {classList: {add() {}, remove() {}}};
   const document = {
     querySelector() { return null; },
-    createElement() {
+    createElement(tagName) {
       return {
-        setAttribute() {},
-        append() {},
+        tagName: String(tagName || "div").toUpperCase(),
+        attributes: {},
+        dataset: {},
         children: [],
+        textContent: "",
+        setAttribute(name, value) { this.attributes[name] = String(value); },
+        append(...children) { this.children.push(...children); },
       };
     },
   };
@@ -141,6 +146,7 @@ function fixture(options = {}) {
     panel,
     shell,
     getSelection: () => selection,
+    getContextRecord: () => options.contextRecord || {key: "", status: "ready", context: null},
     onVerifiedRouteHandoff: (...args) => records.handoffs.push(args),
     onNarrativeTrailChange: (...args) => records.trailChanges.push(args),
   });
@@ -151,6 +157,14 @@ function fixture(options = {}) {
     heading,
     setSelection(value) { selection = value; },
   };
+}
+
+function nodesWithin(node) {
+  return [node, ...(node?.children || []).flatMap(nodesWithin)];
+}
+
+function renderedText(node) {
+  return nodesWithin(node).map((item) => item?.textContent || "").join(" ");
 }
 
 function handoff(overrides = {}) {
@@ -176,6 +190,62 @@ test("verified route handoff retains verse scope, replaces history only after va
   assert.equal(value.heading.focused, true);
   assert.equal(value.heading.scrolled, true);
   assert.equal(value.router.getNarrativeTrail().originSelection.reference, "Jonah 1:17");
+});
+
+test("canonical Companion cards disclose pending editorial review without inventing approval", async () => {
+  const notice = "Draft evidence — awaiting human review";
+  const draft = fixture({
+    contextRecord: {
+      key: "",
+      status: "ready",
+      context: {
+        summaries: {
+          canonical: [{
+            id: "genesis-context",
+            title: "Genesis context",
+            type: "cultural background",
+            summary: "Existing canonical summary.",
+            content_status: "draft",
+            review_status: "in_review",
+            human_review_required: true,
+          }],
+        },
+      },
+    },
+  });
+  await draft.router.open("canonical");
+  const draftNodes = nodesWithin(draft.host.content);
+  const draftCard = draftNodes.find((item) => item?.className === "companion-summary-card");
+  const noticeNode = draftNodes.find((item) =>
+    item?.className?.split(/\s+/).includes("companion-summary-governance"));
+
+  assert.ok(draftCard);
+  assert.ok(noticeNode);
+  assert.equal(noticeNode.textContent, notice);
+  assert.match(draftCard.attributes["aria-label"], /Draft evidence — awaiting human review/);
+  assert.match(renderedText(draft.host.content), /Genesis context/);
+  assert.match(renderedText(draft.host.content), /Existing canonical summary\./);
+  assert.match(renderedText(draft.host.content), /cultural background/);
+
+  for (const governance of [
+    {content_status: "complete", review_status: "approved", human_review_required: false},
+    {},
+  ]) {
+    const other = fixture({
+      contextRecord: {
+        key: "",
+        status: "ready",
+        context: {summaries: {canonical: [{id: "other-context", title: "Other context", ...governance}]}},
+      },
+    });
+    await other.router.open("canonical");
+    assert.doesNotMatch(renderedText(other.host.content), /Draft evidence — awaiting human review/);
+    assert.doesNotMatch(
+      nodesWithin(other.host.content).find((item) => item?.className === "companion-summary-card")
+        ?.attributes?.["aria-label"] || "",
+      /approved/i,
+    );
+  }
 });
 
 test("partial, mismatched, and disabled route handoffs leave no trail or reader visible error", async () => {

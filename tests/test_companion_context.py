@@ -1063,6 +1063,77 @@ class CompactPassageRepositoryTests(unittest.TestCase):
 
 
 class CompanionContextRouteTests(unittest.TestCase):
+    @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
+    @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
+    def test_companion_context_api_preserves_ckl_governance_without_approval_defaults(
+        self,
+        _map_lookup,
+        _archaeology_lookup,
+    ):
+        with tempfile.TemporaryDirectory() as temporary:
+            database = Path(temporary) / "study.sqlite"
+            objects = [
+                SimpleNamespace(
+                    id="draft-genesis-context",
+                    title="Genesis context",
+                    type="event",
+                    summary="A concise passage summary.",
+                    scripture_references=[{"reference": "Genesis 6", "relationship": "direct"}],
+                    content_status="draft",
+                    review_status="in_review",
+                    human_review_required=True,
+                ),
+                SimpleNamespace(
+                    id="governance-metadata-absent",
+                    title="Context without governance metadata",
+                    type="theme",
+                    summary="A second passage summary.",
+                    scripture_references=[{"reference": "Genesis 6", "relationship": "direct"}],
+                ),
+            ]
+            service = CompanionContextService(
+                study_db_path=database,
+                commentary_db_path=Path(temporary) / "commentary.sqlite",
+                commentary_service=_Commentary(),
+                word_study_service=_WordService(0),
+                canonical_library_provider=lambda: _CanonicalLibrary(objects),
+                translation_provider=lambda: [],
+            )
+            app = FastAPI()
+            register_study_routes(
+                app,
+                study_db_path=str(database),
+                templates=None,
+                companion_context_service=service,
+            )
+
+            async def request_context():
+                transport = httpx.ASGITransport(app=app)
+                async with httpx.AsyncClient(
+                    transport=transport,
+                    base_url="http://testserver",
+                ) as client:
+                    return await client.get(
+                        "/api/study/companion-context",
+                        params={"book": "Genesis", "chapter": 6},
+                    )
+
+            async def test_threadpool(callable_, *args, **kwargs):
+                return callable_(*args, **kwargs)
+
+            with patch("bhf_web.routes.study.run_in_threadpool", new=test_threadpool):
+                response = asyncio.run(request_context())
+
+            self.assertEqual(response.status_code, 200)
+            summaries = response.json()["summaries"]["canonical"]
+            by_id = {item["id"]: item for item in summaries}
+            self.assertEqual(by_id["draft-genesis-context"]["content_status"], "draft")
+            self.assertEqual(by_id["draft-genesis-context"]["review_status"], "in_review")
+            self.assertIs(by_id["draft-genesis-context"]["human_review_required"], True)
+            self.assertIsNone(by_id["governance-metadata-absent"]["content_status"])
+            self.assertIsNone(by_id["governance-metadata-absent"]["review_status"])
+            self.assertIsNone(by_id["governance-metadata-absent"]["human_review_required"])
+
     def test_fresh_study_database_returns_http_200_with_canonical_context(self):
         with tempfile.TemporaryDirectory() as temporary:
             database = Path(temporary) / "study.sqlite"
