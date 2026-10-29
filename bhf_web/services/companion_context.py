@@ -599,6 +599,9 @@ class CompanionContextService:
                         "title": str(getattr(item, "title", "") or ""),
                         "type": str(getattr(item, "type", "") or ""),
                         "summary": str(getattr(item, "summary", "") or ""),
+                        "content_status": getattr(item, "content_status", None),
+                        "review_status": getattr(item, "review_status", None),
+                        "human_review_required": getattr(item, "human_review_required", None),
                     }
                     for item in eligible_objects[:12]
                 ],
