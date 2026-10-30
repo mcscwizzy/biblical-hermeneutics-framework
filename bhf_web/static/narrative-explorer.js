@@ -886,7 +886,7 @@
     if (passage) appendTextElement(document, header, "p", `Current passage: ${passage}`, "narrative-explorer-passage");
     rootElement.append(header);
 
-    if (options.trail) rootElement.append(renderTrailHeader(options.trail, options));
+    if (trailNodes(options.trail).length > 1) rootElement.append(renderTrailHeader(options.trail, options));
     const itemsById = new Map((Array.isArray(projection?.items) ? projection.items : []).map((item) => [item.id, item]));
     const connectionsByItem = groupConnections(projection?.connections);
     const sectionsById = new Map((Array.isArray(projection?.sections) ? projection.sections : []).map((section) => [section.id, section]));
@@ -1818,10 +1818,19 @@
     const currentIndex = nodes.length - 1;
     const navigation = element(document, "nav", "narrative-explorer-breadcrumbs");
     navigation.setAttribute("aria-label", "Evidence trail");
-    const list = element(document, "ol");
+    const list = element(document, "ol", "narrative-explorer-breadcrumb-steps");
     nodes.forEach((node, index) => {
-      const entry = element(document, "li");
-      const label = appendTextElement(document, entry, "span", readerText(node.label || node.reference || node.id));
+      if (index > 0 && node.relationship) list.append(renderTrailConnectionStep(document, node.relationship));
+      const entry = element(document, "li", `narrative-explorer-trail-step is-${node.kind || "record"}`);
+      const role = index === 0
+        ? "Origin passage"
+        : node.kind === "passage"
+          ? "Related passage"
+          : node.kind === "evidence"
+            ? "Evidence record"
+            : "Connected CKL subject";
+      appendTextElement(document, entry, "span", role, "narrative-explorer-trail-step-kind");
+      const label = appendTextElement(document, entry, "span", readerText(node.label || node.reference || node.id), "narrative-explorer-trail-step-label");
       if (index === currentIndex) label.setAttribute("aria-current", "page");
       list.append(entry);
     });
@@ -1862,10 +1871,19 @@
       if (activeRelationship.sourcePassage || activeRelationship.destinationPassage) {
         appendTextElement(document, provenance, "p", `${activeRelationship.sourcePassage || "Source passage unavailable"} → ${activeRelationship.destinationPassage || "Destination passage unavailable"}.`);
       }
+      if (activeRelationship.originalRelationshipType) {
+        appendTextElement(document, provenance, "p", `Original relationship type: ${activeRelationship.originalRelationshipType}.`);
+      }
+      if (activeRelationship.direction) {
+        appendTextElement(document, provenance, "p", `Recorded direction: ${activeRelationship.direction.replace(/_/g, " ")}.`);
+      }
       if (activeRelationship.explanation) appendTextElement(document, provenance, "p", activeRelationship.explanation);
       if (activeRelationship.uncertainty) appendTextElement(document, provenance, "p", `Uncertainty: ${activeRelationship.uncertainty}`, "narrative-explorer-caution");
       if (activeRelationship.supportingRecordIds?.length) {
         appendTextElement(document, provenance, "p", `Supporting CKL records: ${activeRelationship.supportingRecordIds.join("; ")}.`, "narrative-explorer-source-id");
+      }
+      if (activeRelationship.supportingSourceIds?.length) {
+        appendTextElement(document, provenance, "p", `Supporting CKL sources: ${activeRelationship.supportingSourceIds.join("; ")}.`, "narrative-explorer-source-id");
       }
       if (activeRelationship.humanScholarlyApproval) {
         appendTextElement(document, provenance, "p", `Human scholarly approval: ${activeRelationship.humanScholarlyApproval.replace(/_/g, " ")}.`);
@@ -1873,6 +1891,28 @@
       header.append(provenance);
     }
     return header;
+  }
+
+  function renderTrailConnectionStep(document, relationship) {
+    const step = element(document, "li", "narrative-explorer-trail-step is-connection");
+    const provenance = readerText(relationship?.provenance);
+    const provenanceLabel = provenance === "authored_ckl_relationship"
+      ? "Authored CKL relationship"
+      : provenance.startsWith("ckl_documented_")
+        ? `CKL-documented ${provenance.slice("ckl_documented_".length).replace(/_/g, " ")}`
+        : "Recorded connection";
+    appendTextElement(document, step, "span", "Recorded connection", "narrative-explorer-trail-step-kind");
+    appendTextElement(document, step, "span", provenanceLabel, "narrative-explorer-trail-step-label");
+    const source = readerText(relationship?.sourcePassage);
+    const destination = readerText(relationship?.destinationPassage);
+    if (source || destination) appendTextElement(document, step, "span", `${source || "Source passage unavailable"} → ${destination || "Related passage unavailable"}`, "narrative-explorer-trail-step-direction");
+    if (relationship?.originalRelationshipType) {
+      appendTextElement(document, step, "span", `Original relationship type: ${readerText(relationship.originalRelationshipType)}`, "narrative-explorer-trail-step-direction");
+    }
+    if (relationship?.direction) {
+      appendTextElement(document, step, "span", `Direction: ${readerText(relationship.direction).replace(/_/g, " ")}`, "narrative-explorer-trail-step-direction");
+    }
+    return step;
   }
 
   function renderEvidenceDetail(item, connections = [], trail = null, options = {}) {
@@ -1929,6 +1969,16 @@
     if (category === "Ancient comparative literature") {
       appendTextElement(document, view, "p", "Comparative material is not, by itself, evidence of borrowing, quotation, fulfillment, or dependence.", "narrative-explorer-caution");
     }
+    const contentStatus = readerText(item?.content_status).toLowerCase();
+    if (contentStatus === "draft" || item?.human_review_required === true) {
+      const notice = contentStatus === "draft" && item?.human_review_required === true
+        ? "Draft evidence — awaiting human review."
+        : contentStatus === "draft"
+          ? "Draft evidence — review information is available below."
+          : "Human review is required; see the review details below.";
+      const governance = appendTextElement(document, view, "p", notice, "narrative-explorer-governance");
+      governance.setAttribute("role", "status");
+    }
 
     const identity = element(document, "dl", "narrative-explorer-detail-identity");
     appendDefinition(document, identity, "Projected item ID", item?.id);
@@ -1940,7 +1990,6 @@
     appendDefinition(document, identity, "Evidence category", item?.evidence_category);
     appendDefinition(document, identity, "Claim type", item?.claim_type);
     appendDefinition(document, identity, "Assertion type", item?.assertion_type);
-    view.append(identity);
     const action = supportedAction(item);
     if (action && typeof options.onNavigate === "function") {
       const button = element(document, "button", "secondary narrative-explorer-item-action");
@@ -1951,7 +2000,6 @@
       button.addEventListener("click", () => options.onNavigate(item, action, button));
       view.append(button);
     }
-    appendRationaleDetails(document, view, item?.rationale);
 
     const status = element(document, "ul", "narrative-explorer-evidence-status");
     [
@@ -1962,6 +2010,7 @@
       ["Review state", item?.review_status],
       ["Content state", item?.content_status],
       ["Human review required", item?.human_review_required],
+      ["Human scholarly approval", item?.human_scholarly_approval],
       ["Temporal relation", item?.temporal_relation],
       ["Temporal scope", item?.temporal_scope],
     ].forEach(([label, value]) => {
@@ -1969,21 +2018,34 @@
       entry.textContent = `${label}: ${metadataText(value) || "not recorded in CKL"}`;
       status.append(entry);
     });
-    view.append(status);
     if (readerText(item?.temporal_scope?.notes)) {
       appendTextElement(document, view, "p", `Recorded historical qualification: ${readerText(item.temporal_scope.notes)}`, "narrative-explorer-caution");
     }
 
+    const reviewDetails = element(document, "details", "narrative-explorer-detail-review");
+    appendTextElement(document, reviewDetails, "summary", "Review, provenance and source details");
+    reviewDetails.append(identity);
+    appendRationaleDefinitionList(document, reviewDetails, item?.rationale);
+    reviewDetails.append(status);
+    view.append(reviewDetails);
+
     const originalAnchors = Array.isArray(item?.passage_anchors) ? item.passage_anchors : [];
     const applicable = Array.isArray(item?.applicable_passage_anchors) ? item.applicable_passage_anchors : [];
-    appendAnchorGroup(document, view, "Original Scripture anchors", originalAnchors, trail, options, {navigable: true});
+    const sourceDetails = element(document, "details", "narrative-explorer-detail-sources");
+    appendTextElement(document, sourceDetails, "summary", "Scripture anchors and sources");
+    appendAnchorGroup(document, sourceDetails, "Original Scripture anchors", originalAnchors, trail, options, {navigable: true});
     if (applicable.length) {
-      appendAnchorGroup(document, view, "Anchors applicable to this passage", applicable, trail, options, {navigable: false});
+      appendAnchorGroup(document, sourceDetails, "Anchors applicable to this passage", applicable, trail, options, {navigable: false});
     } else {
-      appendTextElement(document, view, "p", "No passage anchors were returned for this item.", "narrative-explorer-missing-provenance");
+      appendTextElement(document, sourceDetails, "p", "No passage anchors were returned for this item.", "narrative-explorer-missing-provenance");
     }
-    appendBibliography(document, view, item?.sources, item?.source_ids);
-    appendConnectionList(document, view, item, connections, trail, options);
+    appendBibliography(document, sourceDetails, item?.sources, item?.source_ids, {disclosure: false});
+    view.append(sourceDetails);
+
+    const connectionDetails = element(document, "details", "narrative-explorer-detail-connections");
+    appendTextElement(document, connectionDetails, "summary", "Recorded relationships and further connections");
+    appendConnectionList(document, connectionDetails, item, connections, trail, options);
+    view.append(connectionDetails);
     return view;
   }
 
@@ -2113,6 +2175,12 @@
     if (!rationale || typeof rationale !== "object" || !Object.keys(rationale).length) return;
     const details = element(document, "details", "narrative-explorer-recorded-rationale");
     appendTextElement(document, details, "summary", "Recorded observations and interpretation");
+    appendRationaleDefinitionList(document, details, rationale);
+    parent.append(details);
+  }
+
+  function appendRationaleDefinitionList(document, parent, rationale) {
+    if (!rationale || typeof rationale !== "object" || !Object.keys(rationale).length) return;
     const list = element(document, "dl", "narrative-explorer-detail-identity");
     Object.entries(rationale).forEach(([key, value]) => {
       if (value === null || value === undefined || value === "") return;
@@ -2122,8 +2190,7 @@
       setFormattedText(document, description, metadataText(value));
       list.append(term, description);
     });
-    details.append(list);
-    parent.append(details);
+    parent.append(list);
   }
 
   function appendAnchorGroup(document, parent, title, anchors, trail, options, config = {}) {
@@ -2166,11 +2233,13 @@
     parent.append(section);
   }
 
-  function appendBibliography(document, parent, sources, sourceIds) {
+  function appendBibliography(document, parent, sources, sourceIds, config = {}) {
     const sourceList = Array.isArray(sources) ? sources : [];
     const ids = Array.isArray(sourceIds) ? sourceIds.map(readerText).filter(Boolean) : [];
-    const details = element(document, "details", "narrative-explorer-bibliography");
-    appendTextElement(document, details, "summary", `Bibliography (${Math.max(sourceList.length, ids.length)} source${Math.max(sourceList.length, ids.length) === 1 ? "" : "s"})`);
+    const disclosure = config.disclosure !== false;
+    const details = element(document, disclosure ? "details" : "section", "narrative-explorer-bibliography");
+    const title = `Bibliography (${Math.max(sourceList.length, ids.length)} source${Math.max(sourceList.length, ids.length) === 1 ? "" : "s"})`;
+    appendTextElement(document, details, disclosure ? "summary" : "h4", title);
     const list = element(document, "ul");
     const covered = new Set();
     sourceList.slice(0, 12).forEach((source) => {

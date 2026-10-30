@@ -222,14 +222,13 @@
       const route = explorer.findVerifiedPassageRoute(projection, routeId, handoff?.identity, passageReference);
       if (!route) return false;
 
-      const wasActiveNarrative = activeResourceId === "narrative_explorer";
       options.onVerifiedRouteHandoff?.(selection, route);
       sequence += 1;
       controller?.abort();
       controller = null;
       activeResourceId = "narrative_explorer";
       activePassageKey = passageKey;
-      narrativeView = {kind: "overview"};
+      narrativeView = {kind: "category", categoryId: "themes_biblical_connections"};
       narrativeSelection = selection;
       narrativeProjection = projection;
       narrativeTrail = explorer.createTrail(selection);
@@ -241,7 +240,8 @@
       shell.classList.add("is-native-resource");
       host.hidden = false;
       renderActiveNarrativeTrail({focusRouteId: route.id});
-      options.onNarrativeTrailChange?.(narrativeTrail, {push: wasActiveNarrative});
+      options.onNarrativeViewChange?.({kind: "overview"}, {push: true});
+      options.onNarrativeTrailChange?.(narrativeTrail, {push: true});
       return true;
     }
 

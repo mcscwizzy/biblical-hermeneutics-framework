@@ -638,6 +638,26 @@ body.companion-sheet-full {
   .narrative-explorer-related-passage-list {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .narrative-explorer-breadcrumbs ol {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .narrative-explorer-trail-step {
+    width: 100%;
+  }
+
+  .narrative-explorer-trail-step:not(:last-child)::after {
+    content: "↓";
+    position: static;
+    display: block;
+    width: auto;
+    margin: -1px auto -4px;
+    background: transparent;
+    transform: none;
+  }
 }
 
 .narrative-explorer-counts {
@@ -692,22 +712,73 @@ body.companion-sheet-full {
 
 .narrative-explorer-breadcrumbs ol {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
+  align-items: stretch;
+  gap: 8px;
   margin: 0;
-  padding-left: 20px;
+  padding: 0;
+  list-style: none;
 }
 
-.narrative-explorer-breadcrumbs li {
+.narrative-explorer-trail-step {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  flex: 1 1 0;
   min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--surface);
+}
+
+.narrative-explorer-trail-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -14px;
+  width: 20px;
+  color: var(--accent-strong);
+  background: var(--surface-alt);
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.narrative-explorer-trail-step.is-connection {
+  border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+}
+
+.narrative-explorer-trail-step-kind {
   color: var(--page-muted);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.narrative-explorer-trail-step-label {
+  color: var(--page-text);
+  font-size: 0.84rem;
+  font-weight: 750;
+  line-height: 1.4;
   overflow-wrap: anywhere;
 }
 
-.narrative-explorer-breadcrumbs [aria-current="page"] {
-  color: var(--page-text);
-  font-weight: 750;
+.narrative-explorer-trail-step-direction {
+  color: var(--page-muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.narrative-explorer-trail-step-label[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-strong);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 .narrative-explorer-trail-controls {
@@ -733,6 +804,45 @@ body.companion-sheet-full {
 .narrative-explorer-detail-title:focus {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
+}
+
+.narrative-explorer-governance {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--border));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  color: var(--page-text);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.narrative-explorer-detail-review,
+.narrative-explorer-detail-sources,
+.narrative-explorer-detail-connections {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.narrative-explorer-detail-review > summary,
+.narrative-explorer-detail-sources > summary,
+.narrative-explorer-detail-connections > summary {
+  min-height: 44px;
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.narrative-explorer-detail-sources h4 {
+  margin: 0;
+  font-size: 0.92rem;
 }
 
 .narrative-explorer-detail-identity {

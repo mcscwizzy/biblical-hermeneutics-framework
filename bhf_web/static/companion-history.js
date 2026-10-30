@@ -155,6 +155,8 @@
     const result = {};
     [
       "id", "sourceId", "targetId", "connectionType", "originalRelationshipType", "direction",
+      "provenance", "sourcePassage", "destinationPassage", "relationshipCategory", "evidenceLayer",
+      "explanation", "uncertainty", "humanScholarlyApproval",
       "relationshipMode", "temporalLayer", "basisKind", "parentObjectId", "localRecordId",
       "targetEvidenceId", "targetResolutionStatus", "notes", "weight", "anchor",
     ]
@@ -162,6 +164,11 @@
         const text = historyText(value[key], 500);
         if (text) result[key] = text;
       });
+    ["supportingRecordIds", "supportingSourceIds"].forEach((key) => {
+      if (!Array.isArray(value[key])) return;
+      const identifiers = value[key].map((identifier) => historyText(identifier, 240)).filter(Boolean).slice(0, 12);
+      if (identifiers.length) result[key] = identifiers;
+    });
     return Object.keys(result).length ? result : null;
   }
 

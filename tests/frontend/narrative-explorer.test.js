@@ -284,6 +284,30 @@ test("overview shows six concise category cards and no evidence inventory", () =
   assert.equal(opened[0].trigger, connectionEntry);
 });
 
+test("overview defers the empty origin-only trail until a connection is followed", () => {
+  const origin = explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"});
+  const overview = explorer.renderOverview(projection(), {document: fakeDocument(), trail: origin});
+
+  assert.equal(descendants(overview).filter((element) => element.className === "narrative-explorer-trail-header").length, 0);
+
+  const followed = explorer.followPassage(origin, {
+    reference: "John 1",
+    selection: {book: "John", chapter: 1, reference: "John 1"},
+  }, {
+    provenance: "authored_ckl_relationship",
+    source_passage: "Genesis 1",
+    destination_passage: "John 1",
+    original_relationship_type: "thematic_relationship",
+    direction: "one_way",
+  });
+  const connected = explorer.renderOverview(projection(), {document: fakeDocument(), trail: followed.state});
+
+  assert.equal(descendants(connected).filter((element) => element.className === "narrative-explorer-trail-header").length, 1);
+  assert.match(connected.textContent, /Origin passage/);
+  assert.match(connected.textContent, /Recorded connection/);
+  assert.match(connected.textContent, /John 1/);
+});
+
 test("focused category shows only its previews and passage return controls", () => {
   const actions = [];
   const root = explorer.renderOverview(projection(), {
@@ -410,6 +434,50 @@ test("Follow a Connection opens the focused view with recorded passage routes", 
   assert.match(focused.textContent, /Original relationship type: canonical-fulfillment/);
   assert.match(focused.textContent, /Human scholarly approval: not recorded/);
   assert.ok(passageButton);
+});
+
+test("trail header shows readable progression and preserves recorded direction", () => {
+  const origin = {book: "Psalms", chapter: 22, reference: "Psalm 22"};
+  const destination = {book: "Mark", chapter: 15, startVerse: 34, endVerse: 34, reference: "Mark 15:34"};
+  const relationship = {
+    id: "psalm-22-mark-15-lament",
+    provenance: "authored_ckl_relationship",
+    source_passage: "Psalm 22",
+    destination_passage: "Mark 15:34",
+    relationship_category: "thematic_relationship",
+    original_relationship_type: "canonical-fulfillment",
+    direction: "one_way",
+    explanation: "The recorded relationship links the lament language in these passages.",
+    uncertainty: "The relationship does not establish direct quotation or fulfillment.",
+    human_scholarly_approval: "not_recorded",
+    supporting_record_ids: ["ckl:psalm-22#evidence:psalm-22-lament"],
+    supporting_ckl_sources: [{source_id: "source:psalm-22-lament", object_id: "psalm-22"}],
+  };
+  const followed = explorer.followPassage(
+    explorer.createTrail(origin),
+    {reference: destination.reference, selection: destination},
+    relationship,
+  );
+  const root = renderCategory(projection({
+    passage: {reference: destination.reference, book: "Mark", chapter: 15, verse_start: 34, verse_end: 34},
+  }), "themes_biblical_connections", {document: fakeDocument(), trail: followed.state});
+  const navigation = descendants(root).find((element) => element.tagName === "NAV"
+    && element.attributes["aria-label"] === "Evidence trail");
+  const steps = descendants(navigation).filter((element) => element.className.split(" ").includes("narrative-explorer-trail-step"));
+  const currentStep = descendants(steps[2]).find((element) => element.attributes["aria-current"] === "page");
+
+  assert.equal(steps.length, 3);
+  assert.match(steps[0].textContent, /Origin passage.*Psalm 22/);
+  assert.match(steps[1].textContent, /Recorded connection.*Psalm 22 → Mark 15:34/);
+  assert.match(steps[1].textContent, /one way/);
+  assert.match(steps[2].textContent, /Related passage.*Mark 15:34/);
+  assert.equal(currentStep.textContent, "Mark 15:34");
+  assert.match(root.textContent, /Connection trail: 1 of 3 links followed/);
+  assert.match(root.textContent, /Original relationship type: canonical-fulfillment/);
+  assert.match(root.textContent, /does not establish direct quotation or fulfillment/);
+  assert.match(root.textContent, /Supporting CKL records: ckl:psalm-22#evidence:psalm-22-lament/);
+  assert.match(root.textContent, /Supporting CKL sources: source:psalm-22-lament/);
+  assert.match(root.textContent, /Human scholarly approval: not recorded/);
 });
 
 test("related passage routes show provenance and uncertainty, then use the existing passage trail callback", () => {
@@ -1846,6 +1914,48 @@ test("evidence detail displays only item provenance, uncertainty, bibliography, 
   );
   assert.match(malformedReciprocal.textContent, /Direction:.*one-way/);
   assert.doesNotMatch(malformedReciprocal.textContent, /A reciprocal CKL edge is recorded/);
+});
+
+test("focused draft evidence keeps review and missing-source disclosures expandable", () => {
+  const item = {
+    ...projection().items[2],
+    title: "Unreviewed cosmic language note",
+    claim_text: "A draft observation that needs editorial review.",
+    review_status: "in_review",
+    content_status: "draft",
+    human_review_required: true,
+    source_ids: ["missing-source-record"],
+    sources: [],
+  };
+  const view = explorer.renderEvidenceDetail(item, [], null, {document: fakeDocument()});
+  const warning = descendants(view).find((element) => element.className === "narrative-explorer-governance");
+  const disclosure = descendants(view).find((element) => element.className === "narrative-explorer-detail-review");
+  const sources = descendants(view).find((element) => element.className === "narrative-explorer-detail-sources");
+  const status = descendants(disclosure).find((element) => element.className === "narrative-explorer-evidence-status");
+  const textWithoutReviewDisclosure = (element) => element === disclosure
+    ? ""
+    : (element._text || "") + element.children.map(textWithoutReviewDisclosure).join("");
+
+  assert.ok(warning);
+  assert.equal(warning.attributes.role, "status");
+  assert.match(warning.textContent, /Draft evidence — awaiting human review/);
+  assert.ok(disclosure);
+  assert.ok(sources);
+  assert.equal(disclosure.children[0].tagName, "SUMMARY");
+  assert.match(disclosure.children[0].textContent, /Review, provenance and source details/);
+  assert.equal(disclosure.attributes.open, undefined);
+  assert.equal(sources.children[0].tagName, "SUMMARY");
+  assert.match(sources.children[0].textContent, /Scripture anchors and sources/);
+  assert.equal(sources.attributes.open, undefined);
+  assert.ok(status);
+  assert.match(status.textContent, /Review state: in_review/);
+  assert.match(status.textContent, /Content state: draft/);
+  assert.match(status.textContent, /Human review required: Yes/);
+  assert.match(sources.textContent, /missing-source-record/);
+  assert.match(sources.textContent, /Source details not available in CKL/);
+  assert.doesNotMatch(sources.textContent, /missing-source-record[^.]*title/i);
+  assert.doesNotMatch(disclosure.textContent, /approved/i);
+  assert.doesNotMatch(textWithoutReviewDisclosure(view), /Review state: in_review|Content state: draft|Human review required: Yes/);
 });
 
 test("projected CKL connections follow the recorded target object and retain their relationship metadata", () => {

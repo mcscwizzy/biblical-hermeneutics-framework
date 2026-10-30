@@ -710,9 +710,14 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
 
         self.driver.find_element(By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']").click()
         wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        category = wait.until(EC.element_to_be_clickable((
+            By.CSS_SELECTOR,
+            ".narrative-explorer-category-card[data-section-id='divine_council_cosmic_geography']",
+        )))
+        category.click()
         section = wait.until(EC.presence_of_element_located((
             By.CSS_SELECTOR,
-            "[data-section-id='divine_council_cosmic_geography']",
+            ".narrative-explorer-section[data-section-id='divine_council_cosmic_geography']",
         )))
         section.find_element(By.CSS_SELECTOR, ".narrative-explorer-inspect").click()
         item_id = "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language"
@@ -722,6 +727,7 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         ) if element.is_displayed()), False))
         item_action.click()
         detail = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Evidence detail"]')))
+        detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-detail-sources summary").click()
         anchor_group = detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-scripture-anchors")
         self.assertTrue(any(
             text.startswith("Psalm 82:1-8") for text in [
@@ -747,7 +753,7 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             "&& n?.reference === 'Psalms 82:1-8' "
             "&& n?.relationship?.anchor === 'Psalm 82:1-8';"
         ))
-        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-category-controls")))
         self.assertIn("Psalms 82", self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
 
         self.driver.back()
@@ -759,7 +765,7 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             "&& t?.nodes?.[t.activeIndex]?.kind === 'evidence';"
         ))
         self.driver.forward()
-        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-category-controls")))
         wait.until(lambda driver: driver.execute_script(
             "const s=window.BHFStudySelection?.getState?.(); "
             "const t=window.history.state?.bhfStudyCompanion?.trail; "
@@ -831,24 +837,21 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             )
             wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
             entry.click()
-            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
-            discovery_heading = self.driver.find_element(
-                By.CSS_SELECTOR,
-                ".narrative-explorer-connection-discovery h4",
-            ).text
-            self.assertIn(f"Evidence about {reference}", discovery_heading)
-            header_text = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-header").text
-            self.assertIn("Sources and counts show what was returned for this passage", header_text)
-            self.assertIn("do not by themselves show borrowing", self.driver.find_element(
-                By.CSS_SELECTOR,
-                ".narrative-explorer-connection-discovery",
-            ).text)
-            self.assertNotIn("CKL parent records", header_text)
+            explorer = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer")))
+            wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")) == 6)
+            self.assertIn(f"Current passage: {reference}", explorer.text)
+            self.assertIn("Explore this passage", explorer.text)
+            self.assertEqual(explorer.find_elements(By.CSS_SELECTOR, "article.narrative-explorer-item"), [])
 
         def inspect_record(section_id, identity, expected_label, source_id, content_check, caution_check=None):
+            category = wait.until(EC.element_to_be_clickable((
+                By.CSS_SELECTOR,
+                f'.narrative-explorer-category-card[data-section-id="{section_id}"]',
+            )))
+            category.click()
             section = wait.until(EC.presence_of_element_located((
                 By.CSS_SELECTOR,
-                f'[data-section-id="{section_id}"]',
+                f'.narrative-explorer-section[data-section-id="{section_id}"]',
             )))
             section.find_element(By.CSS_SELECTOR, ".narrative-explorer-inspect").click()
             item_action = wait.until(lambda driver: next((element for element in driver.find_elements(
@@ -866,6 +869,8 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             self.assertIn(source_id, provenance.text)
             item_action.click()
             detail = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Evidence detail"]')))
+            review_details = detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-detail-review")
+            review_details.find_element(By.TAG_NAME, "summary").click()
             rationale_details = detail.find_elements(By.CSS_SELECTOR, ".narrative-explorer-recorded-rationale summary")
             if rationale_details:
                 rationale_details[0].click()
@@ -876,8 +881,9 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
                     ".narrative-explorer-caution",
                 ))
                 self.assertIn(caution_check, cautions)
+            source_details = detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-detail-sources")
+            source_details.find_element(By.TAG_NAME, "summary").click()
             self.assertIn("Original Scripture anchors", detail.text)
-            detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-bibliography summary").click()
             self.assertIn(source_id, detail.text)
             detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-return-origin").click()
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
@@ -996,20 +1002,20 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         entry = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
         self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", entry)
         entry.click()
+        overview = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer")))
+        overview.find_element(By.CSS_SELECTOR, ".narrative-explorer-follow-connection").click()
         discovery = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")))
         wait.until(lambda driver: len(driver.find_elements(
             By.CSS_SELECTOR,
             ".narrative-explorer-connection-discovery [data-narrative-connection-preview='true']",
-        )) == 3)
+        )) == 2)
         preview = self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")
         preview_text = preview.text
         self.assertIn("Evidence about Genesis 6", preview_text)
         self.assertNotIn("Explore related passages and evidence", preview_text)
         self.assertIn("Sons of God: documented interpretive positions", preview_text)
         self.assertIn("Second Temple Watchers reception of Genesis 6", preview_text)
-        self.assertIn("Gilgamesh Tablet XI flood comparison", preview_text)
         self.assertIn("Who the “sons of God” are and what the episode means remain disputed", preview_text)
-        self.assertIn("Scholars compare the flood motifs; how the traditions are related remains debated", preview_text)
         self.assertIn("This record is later than Genesis, but its time label needs review", preview_text)
         self.assertNotIn("Major scholarly disagreement", preview_text)
         self.assertNotIn("CKL relationship", preview_text)
@@ -1042,6 +1048,8 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             "Open CKL record",
         )
         self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-return-origin").click()
+        overview = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer")))
+        overview.find_element(By.CSS_SELECTOR, ".narrative-explorer-follow-connection").click()
         discovery = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-connection-discovery")))
 
         self.driver.set_window_size(390, 1040)
@@ -1082,6 +1090,25 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         summary.send_keys(Keys.ENTER)
         self.assertTrue(provenance.get_attribute("open"))
 
+        self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-back-topics").click()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-topic-choices")))
+        self.driver.find_element(
+            By.CSS_SELECTOR,
+            ".narrative-explorer-category-card[data-section-id='archaeology_ancient_history']",
+        ).click()
+        archaeology = wait.until(EC.visibility_of_element_located((
+            By.CSS_SELECTOR,
+            ".narrative-explorer-section[data-section-id='archaeology_ancient_history']",
+        )))
+        archaeology.find_element(By.CSS_SELECTOR, ".narrative-explorer-inspect").click()
+        item_id = "ckl:mesopotamian-creation-and-flood-comparisons#evidence:gilgamesh-tablet-xi-flood-comparison"
+        item_action = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, f'[data-narrative-item-id="{item_id}"]')))
+        item = item_action.find_element(By.XPATH, "ancestor::article")
+        self.assertIn("Gilgamesh Tablet XI flood comparison", item.text)
+        evidence_details = item.find_element(By.CSS_SELECTOR, ".narrative-explorer-provenance")
+        evidence_details.find_element(By.TAG_NAME, "summary").click()
+        self.assertIn("relationship to Genesis require reconstruction", evidence_details.text)
+
     def test_feature_flagged_explorer_uses_desktop_dock_and_mobile_sheet(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.common.keys import Keys
@@ -1108,10 +1135,10 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         self.driver.save_screenshot("/tmp/ne4-narrative-explorer-desktop.png")
         entry.send_keys(Keys.ENTER)
         wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-sections")))
-        cards = self.driver.find_elements(By.CSS_SELECTOR, ".narrative-explorer-section")
+        cards = self.driver.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")
         self.assertEqual(len(cards), 6)
         self.assertIn("John 1", self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-passage").text)
-        self.assertGreater(len(self.driver.find_elements(By.CSS_SELECTOR, ".narrative-explorer-item")), 0)
+        self.assertEqual(len(self.driver.find_elements(By.CSS_SELECTOR, ".narrative-explorer-item")), 0)
         self.assertLessEqual(
             self.driver.execute_script("return document.documentElement.scrollWidth"),
             self.driver.execute_script("return window.innerWidth"),
@@ -1291,6 +1318,14 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         self.assertIsNotNone(route_article.find_element(By.CSS_SELECTOR, "[role='status']"))
         self.assertIn("interpretive association", route_text)
         self.assertIn("not proof of direct borrowing", route_text)
+        self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-back-topics").click()
+        wait.until(lambda driver: len(driver.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")) == 6)
+        self.assertEqual(self.driver.execute_script("return window.BHFStudySelection?.getState?.().reference;"), "Genesis 1:1-5")
+        self.driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-follow-connection").click()
+        route_article = wait.until(EC.presence_of_element_located((
+            By.CSS_SELECTOR,
+            "[data-route-id='genesis-1-john-1-creation-word']",
+        )))
         inspection = route_article.find_element(By.CSS_SELECTOR, ".narrative-explorer-related-passage-details")
         self.driver.execute_script("arguments[0].open = true;", inspection)
         self.assertIn("john#claim:john-logos", self.driver.execute_script("return arguments[0].textContent;", inspection))

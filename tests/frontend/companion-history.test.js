@@ -210,6 +210,19 @@ test("Narrative Explorer Back and Forward restore focused category and exact tra
     activeIndex: 0,
   };
   const categoryView = {kind: "category", categoryId: "themes_biblical_connections"};
+  const relationship = {
+    id: "genesis-john-route",
+    provenance: "ckl_documented_claim",
+    sourcePassage: "Genesis 1:1",
+    destinationPassage: "John 1:1",
+    relationshipCategory: "thematic_connection",
+    explanation: "A documented relationship with an explanation that remains attached to the route.",
+    uncertainty: "The relationship does not establish literary dependence.",
+    humanScholarlyApproval: "not_recorded",
+    direction: "one_way",
+    supportingRecordIds: Array.from({length: 14}, (_, index) => `ckl:genesis#evidence:${index}`),
+    supportingSourceIds: Array.from({length: 14}, (_, index) => `source-${index}`),
+  };
   try {
     history.initialize({state: "study", mode: "passage", resource: "narrative_explorer", trail, narrativeView: {kind: "overview"}});
     history.push({state: "study", mode: "passage", resource: "narrative_explorer", trail, narrativeView: categoryView});
@@ -221,6 +234,7 @@ test("Narrative Explorer Back and Forward restore focused category and exact tra
         kind: "evidence",
         id: "ckl:genesis#evidence:creation",
         label: "Creation evidence",
+        relationship,
         parentObjectId: "genesis",
         selection,
         relationshipHops: 0,
@@ -245,6 +259,19 @@ test("Narrative Explorer Back and Forward restore focused category and exact tra
     await new Promise((resolve) => setImmediate(resolve));
     assert.deepEqual(history.current().narrativeView, categoryView);
     assert.equal(history.current().trail.nodes.length, 2);
+    assert.deepEqual(history.current().trail.nodes[1].relationship, {
+      id: relationship.id,
+      provenance: relationship.provenance,
+      sourcePassage: relationship.sourcePassage,
+      destinationPassage: relationship.destinationPassage,
+      relationshipCategory: relationship.relationshipCategory,
+      explanation: relationship.explanation,
+      uncertainty: relationship.uncertainty,
+      humanScholarlyApproval: relationship.humanScholarlyApproval,
+      direction: relationship.direction,
+      supportingRecordIds: relationship.supportingRecordIds.slice(0, 12),
+      supportingSourceIds: relationship.supportingSourceIds.slice(0, 12),
+    });
     assert.equal(applied.length, 4);
   } finally {
     history.destroy();

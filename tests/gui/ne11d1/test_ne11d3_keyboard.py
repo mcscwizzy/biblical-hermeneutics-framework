@@ -76,7 +76,7 @@ def test_keyboard_discovery_route_focus_and_escape(driver, base_url, width, mobi
         """,
         article,
     )
-    assert {"tag": "H3", "text": "Narrative evidence and connections"} in accessibility["headings"], accessibility
+    assert {"tag": "H3", "text": "Themes & Biblical Connections"} in accessibility["headings"], accessibility
     assert {"tag": "H4", "text": "Related Biblical Passages"} in accessibility["headings"], accessibility
     assert accessibility["actionName"] == "Explore this connection", accessibility
     assert accessibility["routeName"] == "Open related passage: Matthew 12:40", accessibility
