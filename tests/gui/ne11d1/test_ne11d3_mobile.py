@@ -72,6 +72,11 @@ def _journey(driver, base_url, width, mobile, artifacts_dir):
     metrics = driver.execute_script("return {width: innerWidth, client: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth}")
     assert metrics["width"] == width
     assert metrics["scroll"] <= metrics["client"]
+    print(f"NE11H_PASSAGE_LAYOUT_{width}=" + str({
+        "document": metrics,
+        "discovery": discovery_readability["roots"],
+        "related_passage": route_readability["roots"],
+    }), flush=True)
     assert driver.save_screenshot(str(artifacts_dir / f"ne11d4-route-{width}.png"))
     button = article.find_element(By.CSS_SELECTOR, "button[data-narrative-focus-id^='related-passage:']")
     driver.execute_script("arguments[0].scrollIntoView({block:'center'});", button)
@@ -90,8 +95,13 @@ def _clipping_report(driver, *roots):
         const roots = arguments[0];
         const clipped = [];
         const widths = [];
+        const rootMetrics = [];
         for (const root of roots) {
-          widths.push(root.getBoundingClientRect().width);
+          const bounds = root.getBoundingClientRect();
+          widths.push(bounds.width);
+          rootMetrics.push({left: bounds.left, right: bounds.right, top: bounds.top, bottom: bounds.bottom,
+            width: bounds.width, clientWidth: root.clientWidth, scrollWidth: root.scrollWidth,
+            clientHeight: root.clientHeight, scrollHeight: root.scrollHeight});
           const candidates = [root, ...root.querySelectorAll("h1,h2,h3,h4,h5,h6,p,summary,button,li,dt,dd")];
           for (const element of candidates) {
             if (!element.getClientRects().length || !element.textContent.trim()) continue;
@@ -107,7 +117,7 @@ def _clipping_report(driver, *roots):
             }
           }
         }
-        return {widths, clipped};
+        return {widths, roots: rootMetrics, clipped};
         """,
         list(roots),
     )

@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 import pytest
 from selenium.webdriver.support.ui import Select, WebDriverWait
@@ -44,6 +45,18 @@ def test_keyboard_discovery_route_focus_and_escape(driver, base_url, width, mobi
     wait.until(lambda b: b.find_elements(By.CSS_SELECTOR, "[data-presentation-action='explore_connection']"))
     action = _tab_until(driver, lambda e: e.get_attribute("data-presentation-action") == "explore_connection")
     assert action.get_attribute("aria-label") == "Explore this connection"
+    ActionChains(driver).key_down(Keys.SHIFT).send_keys(Keys.TAB).key_up(Keys.SHIFT).perform()
+    wait.until(lambda b: b.execute_script(
+        "return document.activeElement !== arguments[0] "
+        "&& ['SUMMARY', 'BUTTON', 'A', 'INPUT'].includes(document.activeElement?.tagName) "
+        "&& document.activeElement?.getClientRects().length > 0;",
+        action,
+    ))
+    driver.switch_to.active_element.send_keys(Keys.TAB)
+    wait.until(lambda b: b.execute_script(
+        "return document.activeElement?.getAttribute('data-presentation-action') === 'explore_connection';"
+    ))
+    action = driver.switch_to.active_element
     action.send_keys(Keys.ENTER)
     article = _route_article(driver, wait, "jonah-1-17-matthew-12-40-sign-of-jonah")
     wait.until(lambda b: b.execute_script("return document.activeElement?.dataset?.narrativeRouteFocusId === 'jonah-1-17-matthew-12-40-sign-of-jonah'"))
