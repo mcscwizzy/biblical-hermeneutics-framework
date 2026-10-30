@@ -8,6 +8,8 @@ the authoritative reviewed research source.
 
 - [Website and PWA](web-pwa.md) — reader workflow, Ask BHF, installation, and
   offline behavior.
+- [Study Companion UI modernization roadmap](study-companion-ui-modernization-roadmap.md) —
+  follow-on Tyndale integration, Narrative Explorer redesign, and verification.
 - [Docker](docker.md) — local install, configuration, persistent data, and
   operations.
 - [Local development](local-development.md) — setup, databases, tests, and
