@@ -213,12 +213,14 @@ test("a later chapter shows chapter notes without the book introduction", async 
   const fixture = createFixture(async () => payload("Genesis", 2, [
     entry(1, "book_introduction", "Published full Genesis introduction.", anchor("Genesis", null, null, null, null)),
     entry(2, "chapter_note", "Published Genesis chapter two note.", anchor("Genesis", 2, null, 2, null)),
+    entry(3, "chapter_note", "Published Genesis chapter range note.", anchor("Genesis", 1, null, 2, null)),
   ]));
 
   fixture.publish({book: "Genesis", chapter: 2, selectedVerses: [], reference: "Genesis 2"});
   await fixture.flush();
 
   assert.match(fixture.slot.textContent, /Published Genesis chapter two note\./);
+  assert.match(fixture.slot.textContent, /Published Genesis chapter range note\./);
   assert.doesNotMatch(fixture.slot.textContent, /Published full Genesis introduction\./);
 });
 

@@ -91,9 +91,8 @@
       if (isIntroduction(entry)) return false;
       const anchor = entry?.anchor;
       if (!anchorOverlapsChapter(anchor, selection)) return false;
-      const {start, end} = anchorChapterRange(anchor);
-      return start === Number(selection.chapter)
-        && (end || start) === Number(selection.chapter)
+      const {start} = anchorChapterRange(anchor);
+      return Boolean(start)
         && anchor.start_verse == null
         && anchor.end_verse == null;
     });
