@@ -1329,8 +1329,11 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
         "return document.querySelector('[data-companion-tyndale-card-slot]').textContent;"
     ))
     assert driver.execute_script("return window.BHFStudySelection.getState().reference;") == "Ruth 1:4"
-    driver.execute_script("window.BHFStudyActions.openWorkspaceTab('commentary');")
+    driver.find_element(By.CSS_SELECTOR, ".companion-tyndale-card .tyndale-workspace-action").click()
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="commentary"]').get_attribute("aria-selected") == "true")
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-pane="commentary"]').is_displayed())
+    assert driver.find_element(By.CSS_SELECTOR, "[data-commentary-body]").is_displayed()
+    assert "Restored Ruth verse four note." in driver.find_element(By.CSS_SELECTOR, "[data-commentary-body]").text
     assert driver.find_element(By.CSS_SELECTOR, "[data-commentary-panel]").get_attribute("aria-label") == "Tyndale Study Notes"
 
 
