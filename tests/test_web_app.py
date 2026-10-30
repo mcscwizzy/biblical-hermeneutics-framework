@@ -776,7 +776,7 @@ class WebAssetTests(unittest.TestCase):
     def test_commentary_selection_marks_notes_without_scrolling_the_reader(self):
         script = Path("bhf_web/static/commentary.js").read_text(encoding="utf-8")
 
-        self.assertIn("entry.classList.toggle(\"is-focused\"", script)
+        self.assertIn('element.classList.toggle("is-focused", relevant)', script)
         self.assertNotIn("scrollIntoView", script)
 
     def test_reader_mode_uses_browser_native_verse_speech_with_cleanup(self):
@@ -1350,7 +1350,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v49"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v52"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
         self.assertNotIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])
