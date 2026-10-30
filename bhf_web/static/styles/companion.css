@@ -965,6 +965,92 @@ body.companion-sheet-full {
   padding-left: 22px;
 }
 
+.companion-canonical-disclosure {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-alt);
+  overflow-wrap: anywhere;
+}
+
+.companion-canonical-disclosure > summary {
+  min-height: 44px;
+  padding: 10px 14px;
+  color: var(--page-text);
+  cursor: pointer;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.companion-canonical-disclosure > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+  border-radius: 10px;
+}
+
+.companion-canonical-source-list,
+.companion-canonical-evidence-list {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px;
+}
+
+.companion-canonical-source-content,
+.companion-canonical-evidence-content {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 10px 12px 12px;
+  overflow-wrap: anywhere;
+}
+
+.companion-canonical-source-content > p,
+.companion-canonical-evidence-content > p,
+.companion-canonical-empty,
+.companion-canonical-source-note {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.companion-canonical-source-note {
+  padding: 0 14px 10px;
+  color: var(--page-muted);
+  font-size: 0.88rem;
+}
+
+.companion-canonical-source-content a {
+  overflow-wrap: anywhere;
+}
+
+.companion-canonical-source-supports,
+.companion-canonical-evidence-sources,
+.companion-canonical-evidence-claims {
+  min-width: 0;
+}
+
+.companion-canonical-source-supports h5,
+.companion-canonical-evidence-sources h5,
+.companion-canonical-evidence-claims h5 {
+  margin: 2px 0 6px;
+  font-size: 0.82rem;
+}
+
+.companion-canonical-source-supports ul,
+.companion-canonical-evidence-sources ul,
+.companion-canonical-evidence-claims ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 20px;
+  overflow-wrap: anywhere;
+}
+
+.companion-canonical-evidence-sources p {
+  margin: 0;
+  color: var(--page-muted);
+}
+
 .study-companion .workspace-pane {
   padding: 0;
 }
