@@ -154,4 +154,4 @@
 - [x] Review the full diff, all generated/screenshot artifacts, test output, and the clean status on the feature worktree.
 - [x] Run the focused GUI suite and relevant reader tests; report browser-driver skips or pre-existing failures exactly.
 - [x] Confirm preserved Tyndale, Ask BHF, Bible navigation/comparison, personal study, map/archaeology, feature-gate, API, and Commentary 410 behavior in the targeted regression tests.
-- [ ] Push `feat/bhf-narrative-explorer-ux-ui-03` to `origin`; do not create a PR, merge, or deploy.
+- [x] Push `feat/bhf-narrative-explorer-ux-ui-03` to `origin`; do not create a PR, merge, or deploy.
