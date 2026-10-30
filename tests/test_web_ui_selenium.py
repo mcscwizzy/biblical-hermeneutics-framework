@@ -1097,7 +1097,8 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             "return selection?.book === 'John' && Number(selection?.chapter) === 1;"
         ))
         entry = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")))
-        self.assertEqual(entry.text, "Explore the Narrative")
+        self.assertEqual(entry.find_element(By.CSS_SELECTOR, "strong").text, "Explore the Narrative")
+        self.assertIn("Follow connections", entry.text)
         self.driver.execute_script(
             """
             window.__ne4ExplorerMetrics = [];

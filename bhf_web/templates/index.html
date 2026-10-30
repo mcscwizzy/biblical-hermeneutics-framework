@@ -233,77 +233,89 @@
             <div class="companion-overview-actions">
               <button type="button" class="secondary" data-companion-action="note">＋ Add Note</button>
               <button type="button" class="secondary" data-companion-action="save" data-save-state="not-saved" disabled aria-disabled="true" aria-busy="false" aria-label="Save Passage unavailable; select a verse or passage">☆ Save Passage</button>
-              {% if runtime_config.narrativeExplorerEnabled %}
-                <button type="button" class="secondary narrative-explorer-entry" data-testid="companion-narrative-explorer" data-companion-resource="narrative_explorer" data-companion-resource-label="Explore the Narrative" aria-label="Explore the narrative for the selected passage">Explore the Narrative</button>
-              {% endif %}
               <button type="button" class="secondary" data-companion-resource="translation_comparison" data-companion-resource-label="Compare Translations">Compare Translations</button>
             </div>
             <p class="visually-hidden" data-companion-action-status role="status" aria-live="polite"></p>
-
-            <section class="companion-section companion-discoveries companion-land" data-companion-land-section aria-labelledby="companion-land-title" hidden>
-              <div class="companion-section-heading">
-                <div><span aria-hidden="true">⌖</span><h3 id="companion-land-title">Walk the Land</h3></div>
-                <p>Explore a place or route linked directly to this passage.</p>
-              </div>
-              <div class="companion-discovery-list" data-companion-land></div>
-            </section>
-
-            <section class="companion-section companion-locations" data-companion-locations-section aria-labelledby="companion-locations-title" hidden>
-              <div class="companion-section-heading">
-                <div><span aria-hidden="true">⌖</span><h3 id="companion-locations-title">Locations</h3></div>
-                <p>Passage-anchored places from Maps and CKL, with source provenance kept distinct.</p>
-              </div>
-              <ol class="companion-location-list" id="companion-locations-list" data-companion-locations-list></ol>
-              <p class="companion-location-status" data-companion-locations-status role="status" aria-live="polite" tabindex="-1"></p>
-              <button type="button" class="secondary companion-locations-more" data-companion-locations-more hidden>View all locations</button>
-            </section>
-
-            <section class="companion-section companion-discoveries" data-companion-discoveries-section aria-labelledby="companion-discoveries-title" hidden>
-              <div class="companion-section-heading">
-                <div><span aria-hidden="true">✦</span><h3 id="companion-discoveries-title">Did You Know?</h3></div>
-                <p>Concise discoveries grounded in BHF evidence.</p>
-              </div>
-              <div class="companion-discovery-list" data-companion-discoveries></div>
-            </section>
-
-            <section class="companion-section" aria-labelledby="companion-recommended-title">
-              <div class="companion-section-heading">
-                <div><span aria-hidden="true">★</span><h3 id="companion-recommended-title">Recommended</h3></div>
-                <p data-companion-recommendation-reason></p>
-              </div>
-              <div class="companion-resource-grid" data-companion-recommended aria-live="polite">
-                <div class="companion-skeleton"></div><div class="companion-skeleton"></div>
-              </div>
-            </section>
-
-            <section class="companion-section" data-companion-entities-section aria-labelledby="companion-entities-title" hidden>
-              <div class="companion-section-heading companion-section-heading-inline">
-                <div><span aria-hidden="true">◎</span><h3 id="companion-entities-title">People &amp; Places</h3></div>
-                <button type="button" class="companion-text-button" data-companion-route="canonical">View All</button>
-              </div>
-              <div class="companion-entity-list" data-companion-entities></div>
-            </section>
 
             <section class="companion-section companion-ask-card" aria-labelledby="companion-ask-title">
               <div class="companion-section-heading">
                 <div><span aria-hidden="true">◇</span><h3 id="companion-ask-title">Ask BHF</h3></div>
                 <p>Bring a question from this Scripture and research context to the BHF assistant.</p>
               </div>
-              <p>BHF keeps Scripture and research context here; continue the conversation in the BHF assistant.</p>
               <button type="button" data-ask-bhf aria-haspopup="dialog">Ask BHF</button>
             </section>
 
-            <section class="companion-section" aria-labelledby="companion-deeper-title">
-              <div class="companion-section-heading">
-                <div><span aria-hidden="true">⌄</span><h3 id="companion-deeper-title">Dig Deeper</h3></div>
-              </div>
-              <div class="companion-resource-list" data-companion-deeper></div>
-            </section>
+            <section class="companion-tyndale-card-slot" data-companion-tyndale-card-slot aria-label="Tyndale passage notes" hidden></section>
 
-            <section class="companion-advanced-links" aria-label="Advanced research workspaces">
-              <button type="button" class="companion-text-button" data-companion-route="canonical">Open Canonical Knowledge →</button>
-              <button type="button" class="companion-text-button" data-companion-route="maps">Open Maps Explorer →</button>
-              <a class="companion-text-button" href="/archaeology">Open Archaeology Library →</a>
+            <section class="companion-section companion-dig-deeper" data-companion-dig-deeper aria-labelledby="companion-deeper-title">
+              <div class="companion-section-heading companion-dig-deeper-heading">
+                <div><span aria-hidden="true">⌄</span><h3 id="companion-deeper-title">Dig Deeper</h3></div>
+                <p>Explore passage evidence, places, and BHF research tools.</p>
+              </div>
+
+              {% if runtime_config.narrativeExplorerEnabled %}
+                <button type="button" class="companion-narrative-card narrative-explorer-entry" data-testid="companion-narrative-explorer" data-companion-resource="narrative_explorer" data-companion-resource-label="Explore the Narrative" aria-label="Explore the narrative for the selected passage">
+                  <span class="companion-narrative-card-icon" aria-hidden="true">✦</span>
+                  <span class="companion-narrative-card-copy"><strong>Explore the Narrative</strong><small>Follow connections across Scripture and reviewed research.</small></span>
+                  <span class="companion-narrative-card-arrow" aria-hidden="true">→</span>
+                </button>
+              {% endif %}
+
+              <section class="companion-section companion-locations" data-companion-locations-section aria-labelledby="companion-locations-title" hidden>
+                <div class="companion-section-heading">
+                  <div><span aria-hidden="true">⌖</span><h4 id="companion-locations-title">Locations</h4></div>
+                  <p>Passage-anchored places from Maps and CKL, with source provenance kept distinct.</p>
+                </div>
+                <ol class="companion-location-list" id="companion-locations-list" data-companion-locations-list></ol>
+                <p class="companion-location-status" data-companion-locations-status role="status" aria-live="polite" tabindex="-1"></p>
+                <button type="button" class="secondary companion-locations-more" data-companion-locations-more hidden>View all locations</button>
+              </section>
+
+              <section class="companion-section companion-discoveries" data-companion-discoveries-section aria-labelledby="companion-discoveries-title" hidden>
+                <div class="companion-section-heading">
+                  <div><span aria-hidden="true">✦</span><h4 id="companion-discoveries-title">Did You Know?</h4></div>
+                  <p>Concise discoveries grounded in BHF evidence.</p>
+                </div>
+                <div class="companion-discovery-list" data-companion-discoveries></div>
+              </section>
+
+              <section class="companion-section companion-discoveries companion-land" data-companion-land-section aria-labelledby="companion-land-title" hidden>
+                <div class="companion-section-heading">
+                  <div><span aria-hidden="true">⌖</span><h4 id="companion-land-title">Walk the Land</h4></div>
+                  <p>Explore source-linked maps and journeys connected to this passage.</p>
+                </div>
+                <div class="companion-discovery-list" data-companion-land></div>
+              </section>
+
+              <section class="companion-section companion-research-tools" aria-labelledby="companion-research-tools-title">
+                <div class="companion-section-heading">
+                  <div><span aria-hidden="true">★</span><h4 id="companion-research-tools-title">Research tools</h4></div>
+                  <p data-companion-recommendation-reason></p>
+                </div>
+                <div class="companion-resource-grid" data-companion-recommended aria-live="polite">
+                  <div class="companion-skeleton"></div><div class="companion-skeleton"></div>
+                </div>
+                <div class="companion-resource-list" data-companion-deeper></div>
+              </section>
+
+              <section class="companion-section" data-companion-entities-section aria-labelledby="companion-entities-title" hidden>
+                <div class="companion-section-heading companion-section-heading-inline">
+                  <div><span aria-hidden="true">◎</span><h4 id="companion-entities-title">People &amp; Places</h4></div>
+                  <button type="button" class="companion-text-button" data-companion-route="canonical">View All</button>
+                </div>
+                <div class="companion-entity-list" data-companion-entities></div>
+              </section>
+
+              <section class="companion-section companion-advanced-links" aria-labelledby="companion-advanced-links-title">
+                <div class="companion-section-heading">
+                  <div><span aria-hidden="true">↗</span><h4 id="companion-advanced-links-title">Advanced research workspaces</h4></div>
+                </div>
+                <div class="companion-advanced-links-list">
+                  <button type="button" class="companion-text-button" data-companion-route="canonical">Open Canonical Knowledge →</button>
+                  <button type="button" class="companion-text-button" data-companion-route="maps">Open Maps Explorer →</button>
+                  <a class="companion-text-button" href="/archaeology">Open Archaeology Library →</a>
+                </div>
+              </section>
             </section>
           </section>
 

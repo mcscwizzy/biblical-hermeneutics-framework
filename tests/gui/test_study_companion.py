@@ -197,7 +197,7 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
     ) == "sticky"
     assert expand.get_attribute("aria-label") == "Expand Study Companion"
 
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="canonical"]'))).click()
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".companion-advanced-links [data-companion-route='canonical']"))).click()
     wait.until(lambda _driver: "is-resource-detail" in _driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class"))
     back = driver.find_element(By.CSS_SELECTOR, "[data-companion-back]")
     assert back.is_displayed()

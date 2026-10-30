@@ -68,7 +68,7 @@ def explorer_disabled_base_url(base_url):
     thread.join(timeout=10)
 
 
-def test_overview_actions_fit_at_supported_widths_with_explorer_enabled(
+def test_overview_actions_and_narrative_entry_fit_at_supported_widths_with_explorer_enabled(
     driver, base_url, artifacts_dir
 ):
     wait = WebDriverWait(driver, 90)
@@ -85,7 +85,7 @@ def test_overview_actions_fit_at_supported_widths_with_explorer_enabled(
     saved = False
     for width, mobile in VIEWPORTS:
         _set_viewport(driver, width, mobile)
-        metrics = _measure_actions(driver, artifacts_dir, width, expected_count=4)
+        metrics = _measure_actions(driver, artifacts_dir, width, expected_count=3)
         assert metrics["rowScrollWidth"] <= metrics["rowClientWidth"], metrics
         assert metrics["overviewScrollWidth"] <= metrics["overviewClientWidth"], metrics
         assert metrics["documentScrollWidth"] <= metrics["documentClientWidth"], metrics
@@ -98,9 +98,15 @@ def test_overview_actions_fit_at_supported_widths_with_explorer_enabled(
             assert button["height"] >= (44 if width <= 680 else 38), (width, button)
         save_label = "✓ Passage Saved" if saved else "☆ Save Passage"
         assert metrics["labels"] == [
-            "＋ Add Note", save_label, "Explore the Narrative", "Compare Translations"
+            "＋ Add Note", save_label, "Compare Translations"
         ], (width, metrics)
-        _assert_keyboard_order(driver, expected_count=4)
+        _assert_keyboard_order(driver, expected_count=3)
+        narrative = _measure_narrative_card(driver)
+        assert narrative["insideOverview"] and narrative["insidePanel"], (width, narrative)
+        assert narrative["horizontalOverflow"] is False, (width, narrative)
+        assert narrative["verticalOverflow"] is False, (width, narrative)
+        assert narrative["height"] >= (44 if width <= 680 else 38), (width, narrative)
+        assert narrative["accessibleName"] == "Explore the narrative for the selected passage"
 
         if width == 320:
             _exercise_note_and_save_actions(driver, wait)
@@ -251,6 +257,32 @@ def _measure_actions(driver, artifacts_dir, width, expected_count, flag="on"):
         flush=True,
     )
     return metrics
+
+
+def _measure_narrative_card(driver):
+    button = driver.find_element(By.CSS_SELECTOR, "[data-testid='companion-narrative-explorer']")
+    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", button)
+    return driver.execute_script(
+        """
+        const button = arguments[0];
+        const overview = button.closest('.companion-overview');
+        const panel = button.closest('.study-panel');
+        const bounds = button.getBoundingClientRect();
+        const overviewBounds = overview.getBoundingClientRect();
+        const panelBounds = panel.getBoundingClientRect();
+        const left = overviewBounds.left + overview.clientLeft;
+        const right = left + overview.clientWidth;
+        return {
+          accessibleName: button.getAttribute('aria-label') || button.textContent.trim(),
+          height: bounds.height,
+          horizontalOverflow: button.scrollWidth > button.clientWidth + 1,
+          verticalOverflow: button.scrollHeight > button.clientHeight + 1,
+          insideOverview: bounds.left >= left - 0.5 && bounds.right <= right + 0.5,
+          insidePanel: bounds.left >= panelBounds.left - 0.5 && bounds.right <= panelBounds.right + 0.5,
+        };
+        """,
+        button,
+    )
 
 
 def _assert_keyboard_order(driver, expected_count):
