@@ -33,6 +33,25 @@ def make_archive(path: Path) -> Path:
     return archive
 
 
+def make_book_identity_archive(path: Path) -> Path:
+    archive = path / "book-identity-tyndale.zip"
+    with zipfile.ZipFile(archive, "w") as output:
+        output.writestr(
+            "notes.json",
+            json.dumps(
+                {
+                    "entries": [
+                        {"id": "genesis-intro", "book": "Genesis", "kind": "book_introduction", "body": "Genesis introduction."},
+                        {"id": "ruth-intro", "book": "Ruth", "kind": "book_introduction", "body": "Ruth introduction."},
+                        {"id": "unanchored-intro", "kind": "book_introduction", "body": "Unanchored introduction."},
+                        {"id": "unanchored-profile", "kind": "profile", "body": "Unanchored profile."},
+                    ]
+                }
+            ),
+        )
+    return archive
+
+
 def make_official_xml_archive(path: Path) -> Path:
     archive = path / "official-tyndale.zip"
     with zipfile.ZipFile(archive, "w") as output:
@@ -88,6 +107,20 @@ def test_import_is_safe_attributed_and_normalizes_books(tmp_path):
     assert {entry.anchor.book for entry in passage_entries} == {"Ruth"}
     assert service.count_chapter("Ruth", 3) == len(chapter_entries)
     assert service.count_passage("Ruth", 3, 4, 4) == len(passage_entries)
+
+
+def test_chapter_lookup_returns_only_entries_anchored_to_requested_book(tmp_path):
+    database = tmp_path / "commentary.sqlite"
+    import_tyndale_archive(make_book_identity_archive(tmp_path), database)
+    service = CommentaryService(database)
+
+    genesis_entries = service.lookup_chapter("Genesis", 1)
+    ruth_entries = service.lookup_chapter("Ruth", 1)
+
+    assert [entry.external_id for entry in genesis_entries] == ["genesis-intro"]
+    assert [entry.external_id for entry in ruth_entries] == ["ruth-intro"]
+    assert service.count_chapter("Genesis", 1) == 1
+    assert service.count_chapter("Ruth", 1) == 1
 
 
 def test_import_maps_official_tyndale_xml_records_and_osis_references(tmp_path):
@@ -319,3 +352,56 @@ def test_commentary_api_success_and_unavailable_response(tmp_path):
         "chapter": 3,
         "entries": [],
     }
+
+
+def test_commentary_chapter_api_keeps_book_specific_response_shape(tmp_path):
+    from bhf_web.app import create_app
+
+    database = tmp_path / "commentary.sqlite"
+    import_tyndale_archive(make_book_identity_archive(tmp_path), database)
+
+    async def request(app, path):
+        parsed = urlsplit(path)
+        messages = []
+
+        async def receive():
+            return {"type": "http.request", "body": b"", "more_body": False}
+
+        async def send(message):
+            messages.append(message)
+
+        await app(
+            {
+                "type": "http",
+                "http_version": "1.1",
+                "method": "GET",
+                "scheme": "http",
+                "path": parsed.path,
+                "raw_path": parsed.path.encode(),
+                "query_string": parsed.query.encode(),
+                "headers": [],
+                "client": ("testclient", 50000),
+                "server": ("testserver", 80),
+            },
+            receive,
+            send,
+        )
+        status = next(message["status"] for message in messages if message["type"] == "http.response.start")
+        body = b"".join(message.get("body", b"") for message in messages if message["type"] == "http.response.body")
+        return status, json.loads(body)
+
+    with patch("bhf_web.app.COMMENTARY_DB_PATH", database):
+        app = create_app()
+
+    for book, external_id, body in (
+        ("Genesis", "genesis-intro", "Genesis introduction."),
+        ("Ruth", "ruth-intro", "Ruth introduction."),
+    ):
+        status, payload = asyncio.run(request(app, f"/api/commentary/{book}/1"))
+        assert status == 200
+        assert set(payload) == {"available", "book", "chapter", "source", "entries"}
+        assert payload["available"] is True
+        assert payload["book"] == book
+        assert payload["chapter"] == 1
+        assert [entry["external_id"] for entry in payload["entries"]] == [external_id]
+        assert payload["entries"][0]["body"] == body

@@ -7,6 +7,14 @@ const template = fs.readFileSync(
   path.resolve(__dirname, "../../bhf_web/templates/index.html"),
   "utf8",
 );
+const commentary = fs.readFileSync(
+  path.resolve(__dirname, "../../bhf_web/static/commentary.js"),
+  "utf8",
+);
+const companionStyles = fs.readFileSync(
+  path.resolve(__dirname, "../../bhf_web/static/styles/companion.css"),
+  "utf8",
+);
 
 
 function sectionWithAttribute(source, attribute) {
@@ -35,9 +43,31 @@ test("Study Companion puts personal actions and Ask BHF before its reserved Tynd
 
   assert.ok(actions >= 0 && actions < ask);
   assert.ok(ask < tyndaleSlot && tyndaleSlot < deeper);
+  assert.match(overview, /data-companion-tyndale-card-slot[^>]*aria-label="Tyndale passage notes"/);
   assert.match(overview, /data-ask-bhf/);
   assert.equal([...overview.matchAll(/data-testid="companion-narrative-explorer"/g)].length, 1);
   assert.doesNotMatch(overview.slice(actions, ask), /data-testid="companion-narrative-explorer"/);
+});
+
+
+test("the Tyndale card exposes a named heading, live status, and full workspace action", () => {
+  assert.match(commentary, /title\.textContent = "Tyndale Study Notes"/);
+  assert.match(commentary, /card\.setAttribute\("aria-labelledby", "companion-tyndale-title"\)/);
+  assert.match(commentary, /status\.setAttribute\("role", "status"\)/);
+  assert.match(commentary, /status\.setAttribute\("aria-live", "polite"\)/);
+  assert.match(commentary, /button\.textContent = "Open full Tyndale workspace"/);
+  assert.match(commentary, /openWorkspaceTab\?\.\("commentary"\)/);
+});
+
+
+test("Tyndale card styles wrap note text and keep native disclosures free of nested scrolling", () => {
+  const cardRule = /\.companion-tyndale-card\s*\{([^}]*)\}/.exec(companionStyles);
+  assert.ok(cardRule, "expected a first-class Tyndale card rule");
+  assert.match(cardRule[1], /min-width:\s*0/);
+  assert.match(cardRule[1], /overflow-wrap:\s*anywhere/);
+  assert.doesNotMatch(cardRule[1], /overflow-y\s*:/);
+  assert.match(companionStyles, /\.tyndale-note-details\s+summary[\s\S]*?min-height:\s*44px/);
+  assert.match(companionStyles, /@media\s*\(max-width:\s*680px\)[\s\S]*?\.companion-tyndale-card/);
 });
 
 

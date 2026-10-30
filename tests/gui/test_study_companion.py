@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import pytest
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 
-from .pages import HomePage
+from .pages import BibleReaderPage, HomePage
 
 
 pytestmark = [pytest.mark.gui]
@@ -964,20 +966,23 @@ def test_my_study_consolidates_personal_material(driver, wait, base_url):
 def test_tyndale_companion_tab_remains_independent_and_follows_chapter_and_selection(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().assert_shell_visible()
     wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFCommentary);"))
+    wait.until(lambda _driver: "John 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
     driver.execute_script(
         """
+        const originalRequest = window.BHFApi.requestJson.bind(window.BHFApi);
         window.__tyndaleRequests = [];
-        window.BHFApi.requestJson = async (url) => {
+        window.BHFApi.requestJson = async (url, options, fallback) => {
           const value = String(url);
+          if (!value.startsWith('/api/commentary/')) return originalRequest(url, options, fallback);
           window.__tyndaleRequests.push(value);
-          if (value.endsWith('/3')) return {available: false, reason: 'commentary_not_installed'};
+          if (value.endsWith('/12')) return {available: false, reason: 'commentary_not_installed'};
           const chapter = Number(value.match(/\\/(\\d+)$/)?.[1] || 1);
           return {
-            available: true, book: 'John', chapter,
+            available: true, book: 'Mark', chapter,
             entries: [{
               id: `tyndale-${chapter}`, title: `Tyndale note ${chapter}`,
               kind: 'study_note', body: `Published Tyndale text for ${chapter}.`,
-              anchor: {book: 'John', start_chapter: chapter, start_verse: 4, end_chapter: chapter, end_verse: 4},
+              anchor: {book: 'Mark', start_chapter: chapter, start_verse: 4, end_chapter: chapter, end_verse: 4},
             }],
             source: {name: 'Tyndale Open Study Notes', attribution: 'Published secondary study notes'},
           };
@@ -991,12 +996,12 @@ def test_tyndale_companion_tab_remains_independent_and_follows_chapter_and_selec
         """
         const done = arguments[0];
         (async () => {
-          await window.BHFCommentary.loadChapter('John', 1);
-          window.BHFCommentary.focusSelection({book: 'John', chapter: 1, startVerse: 4, endVerse: 4});
+          await window.BHFCommentary.loadChapter('Mark', 10);
+          window.BHFCommentary.focusSelection({book: 'Mark', chapter: 10, startVerse: 4, endVerse: 4});
           const focused = document.querySelector('[data-commentary-body] .commentary-entry')?.classList.contains('is-focused');
-          await window.BHFCommentary.loadChapter('John', 2);
+          await window.BHFCommentary.loadChapter('Mark', 11);
           const chapterTwo = document.querySelector('[data-commentary-body]').textContent;
-          await window.BHFCommentary.loadChapter('John', 3);
+          await window.BHFCommentary.loadChapter('Mark', 12);
           const missingDatabase = document.querySelector('[data-commentary-body]').textContent;
           done({focused, chapterTwo, missingDatabase, requests: window.__tyndaleRequests});
         })().catch((error) => done({error: String(error)}));
@@ -1005,13 +1010,327 @@ def test_tyndale_companion_tab_remains_independent_and_follows_chapter_and_selec
 
     assert "error" not in result, result
     assert result["focused"] is True
-    assert "Published Tyndale text for 2." in result["chapterTwo"]
+    assert "Published Tyndale text for 11." in result["chapterTwo"]
     assert "not installed" in result["missingDatabase"].lower()
-    assert result["requests"][:3] == [
-        "/api/commentary/John/1", "/api/commentary/John/2", "/api/commentary/John/3",
-    ]
-    assert "/api/commentary/John/4" in result["requests"]
+    assert "/api/commentary/Mark/10" in result["requests"]
+    assert "/api/commentary/Mark/11" in result["requests"]
+    assert "/api/commentary/Mark/12" in result["requests"]
+    assert result["requests"].count("/api/commentary/Mark/11") == 1
     assert tab.get_attribute("data-workspace-tab") == "commentary"
+    assert driver.find_element(By.CSS_SELECTOR, "[data-commentary-panel]").get_attribute("aria-label") == "Tyndale Study Notes"
+
+
+def test_reader_chapter_change_starts_tyndale_loading_before_scripture_response(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    wait.until(lambda _driver: "John 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    page = BibleReaderPage(driver, wait, base_url)
+    driver.execute_script(
+        """
+        const originalRequest = window.BHFApi.requestJson.bind(window.BHFApi);
+        window.BHFApi.requestJson = (url, options, fallback) => {
+          if (String(url) === '/api/commentary/Genesis/1') {
+            return Promise.resolve({
+              available: true, book: 'Genesis', chapter: 1,
+              entries: [{
+                id: 'genesis-introduction', kind: 'book_introduction',
+                title: 'Genesis introduction', body: 'Old Genesis introduction.',
+                anchor: {book: 'Genesis', start_chapter: null, start_verse: null, end_chapter: null, end_verse: null},
+              }],
+              source: {name: 'Tyndale Open Study Notes', attribution: 'Published attribution.'},
+            });
+          }
+          return originalRequest(url, options, fallback);
+        };
+        """
+    )
+    page.select_book("Genesis")
+    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "Old Genesis introduction." in _driver.find_element(By.CSS_SELECTOR, "[data-companion-tyndale-card-slot]").text)
+
+    fixture = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        (async () => {
+          const translation = document.querySelector('[data-testid="translation-select"]')?.value || 'asv';
+          const bibleUrl = `/api/bible/Genesis/4?translation=${encodeURIComponent(translation)}`;
+          const response = await fetch(bibleUrl);
+          if (!response.ok) throw new Error(`Genesis 4 fixture returned HTTP ${response.status}`);
+          window.__genesisChapterTwoFixture = await response.json();
+          const originalRequest = window.BHFApi.requestJson.bind(window.BHFApi);
+          window.__bibleStarted = false;
+          window.__tyndaleStarted = false;
+          window.BHFApi.requestJson = (url, options, fallback) => {
+            const value = String(url);
+            if (value === bibleUrl) {
+              window.__bibleStarted = true;
+              return new Promise((resolve) => {
+                window.__resolveBible = () => resolve(window.__genesisChapterTwoFixture);
+              });
+            }
+          if (value === '/api/commentary/Genesis/4') {
+              window.__tyndaleStarted = true;
+              return new Promise((resolve) => {
+                window.__resolveTyndale = () => resolve({
+                  available: true, book: 'Genesis', chapter: 4,
+                  entries: [{
+                    id: 'genesis-chapter-four', kind: 'range_note',
+                    title: 'Genesis 4 chapter note', body: 'New Genesis chapter four note.',
+                    anchor: {book: 'Genesis', start_chapter: 4, start_verse: 1, end_chapter: 4, end_verse: 26},
+                  }],
+                  source: {name: 'Tyndale Open Study Notes', attribution: 'Published attribution.'},
+                });
+              });
+            }
+            return originalRequest(url, options, fallback);
+          };
+          done({translation, bibleUrl});
+        })().catch((error) => done({error: String(error)}));
+        """
+    )
+    assert "error" not in fixture, fixture
+
+    page.set_chapter(4)
+    wait.until(lambda _driver: _driver.execute_script("return window.__bibleStarted === true;"))
+    before_scripture_response = driver.execute_script(
+        """
+        return {
+          bibleStarted: window.__bibleStarted,
+          tyndaleStarted: window.__tyndaleStarted,
+          cardText: document.querySelector('[data-companion-tyndale-card-slot]')?.textContent || '',
+        };
+        """
+    )
+    try:
+        assert before_scripture_response["tyndaleStarted"] is True
+        assert "Old Genesis introduction." not in before_scripture_response["cardText"]
+        assert "Loading Tyndale Study Notes for Genesis 4" in before_scripture_response["cardText"]
+    finally:
+        driver.execute_script("window.__resolveBible?.(); window.__resolveTyndale?.();")
+        driver.execute_async_script(
+            "const done = arguments[0]; setTimeout(() => { window.__resolveTyndale?.(); done(); }, 300);"
+        )
+
+    wait.until(lambda _driver: "Genesis 4" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "New Genesis chapter four note." in _driver.find_element(By.CSS_SELECTOR, "[data-companion-tyndale-card-slot]").text)
+
+
+def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(driver, wait, base_url):
+    driver.set_window_size(1440, 1100)
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFCommentary && window.BHFStudySelection);"))
+    wait.until(lambda _driver: "John 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    driver.execute_script(
+        """
+        const originalRequest = window.BHFApi.requestJson.bind(window.BHFApi);
+        const source = {name: 'Tyndale Open Study Notes', attribution: 'Published by Tyndale House Publishers. CC BY-SA 4.0.'};
+        const entry = (id, kind, title, body, book, startChapter, startVerse, endChapter, endVerse) => ({
+          id, kind, title, body,
+          anchor: {book, start_chapter: startChapter, start_verse: startVerse, end_chapter: endChapter, end_verse: endVerse},
+        });
+        const makePayload = (book, chapter, entries) => ({available: true, book, chapter, entries, source});
+        const fixtures = {
+          'Genesis/1': makePayload('Genesis', 1, [
+            entry('genesis-summary', 'book_introduction_summary', 'Genesis summary', 'Published Genesis summary preview.', 'Genesis', null, null, null, null),
+            entry('genesis-intro', 'book_introduction', 'Genesis introduction', 'Published full Genesis introduction for the selected book.', 'Genesis', null, null, null, null),
+            entry('ruth-intro-cross-book', 'book_introduction', 'Ruth introduction', 'Wrong Ruth introduction must not appear in Genesis.', 'Ruth', null, null, null, null),
+          ]),
+          'Ruth/1': makePayload('Ruth', 1, [
+            entry('ruth-intro', 'book_introduction', 'Ruth introduction', 'Published Ruth introduction for the selected book.', 'Ruth', null, null, null, null),
+            entry('genesis-intro-cross-book', 'book_introduction', 'Genesis introduction', 'Wrong Genesis introduction must not appear in Ruth.', 'Genesis', null, null, null, null),
+            entry('ruth-verse-four', 'verse_note', 'Ruth 1:4 note', 'Restored Ruth verse four note.', 'Ruth', 1, 4, 1, 4),
+          ]),
+          'Genesis/2': makePayload('Genesis', 2, [
+            entry('genesis-chapter-two', 'range_note', 'Genesis 2 chapter note', 'Published Genesis chapter two note.', 'Genesis', 2, 1, 2, 25),
+            entry('genesis-v1', 'verse_note', 'Genesis 2:1 note', 'Verse one only note.', 'Genesis', 2, 1, 2, 1),
+            entry('genesis-v2', 'verse_note', 'Genesis 2:2 note', 'Verse two matching note.', 'Genesis', 2, 2, 2, 2),
+            entry('genesis-v3', 'verse_note', 'Genesis 2:3 note', 'Verse three matching note.', 'Genesis', 2, 3, 2, 3),
+            entry('genesis-v1-3', 'range_note', 'Genesis 2:1-3 note', 'Broader note spanning verses one through three.', 'Genesis', 2, 1, 2, 3),
+            entry('genesis-other-intro', 'book_introduction', 'Genesis introduction', 'Introduction must not appear in chapter two.', 'Genesis', null, null, null, null),
+          ]),
+          'Genesis/4': makePayload('Genesis', 4, [
+            entry('genesis-four', 'range_note', 'Genesis 4 chapter note', 'Newest Genesis four note.', 'Genesis', 4, 1, 4, 26),
+          ]),
+          'Ruth/4': makePayload('Ruth', 4, [
+            entry('ruth-four', 'range_note', 'Ruth 4 chapter note', 'Newest Ruth four note.', 'Ruth', 4, 1, 4, 22),
+          ]),
+        };
+        window.__tyndalePending = {};
+        window.__tyndaleRequests = [];
+        window.BHFApi.requestJson = (url, options, fallback) => {
+          const value = String(url);
+          if (!value.startsWith('/api/commentary/')) return originalRequest(url, options, fallback);
+          window.__tyndaleRequests.push(value);
+          const key = value.replace('/api/commentary/', '');
+          if (key === 'Esther/1') {
+            return new Promise((resolve) => { window.__tyndalePending.esther = resolve; });
+          }
+          if (key === 'Genesis/3') return Promise.reject(new Error('offline fixture'));
+          if (key === 'Genesis/5') return Promise.resolve({available: false, reason: 'commentary_not_installed', entries: [], source});
+          return Promise.resolve(fixtures[key] || makePayload(...key.split('/').slice(0, 1), Number(key.split('/')[1]), []));
+        };
+        """
+    )
+
+    page = BibleReaderPage(driver, wait, base_url)
+    page.select_book("Genesis")
+    slot = driver.find_element(By.CSS_SELECTOR, "[data-companion-tyndale-card-slot]")
+    try:
+        wait.until(lambda _driver: "Published full Genesis introduction" in _driver.execute_script("return arguments[0].textContent;", slot))
+    except Exception as exc:
+        detail = driver.execute_script(
+            """
+            return {
+              requests: window.__tyndaleRequests,
+              state: window.BHFStudySelection?.getState?.(),
+              heading: document.querySelector('#chapter-reader h3')?.textContent,
+              hidden: document.querySelector('[data-companion-tyndale-card-slot]')?.hidden,
+              card: document.querySelector('[data-companion-tyndale-card-slot]')?.textContent,
+            };
+            """
+        )
+        raise AssertionError(f"Genesis contextual card did not load: {detail}") from exc
+    card = driver.find_element(By.CSS_SELECTOR, ".companion-tyndale-card")
+    assert "Published Genesis summary preview." in driver.execute_script("return arguments[0].textContent;", card)
+    assert "Wrong Ruth introduction" not in driver.execute_script("return arguments[0].textContent;", card)
+    assert "CC BY-SA 4.0" in driver.execute_script("return arguments[0].textContent;", card)
+    assert card.get_attribute("aria-labelledby") == "companion-tyndale-title"
+    assert driver.find_element(By.ID, "companion-tyndale-title").text == "Tyndale Study Notes"
+    status = slot.find_element(By.CSS_SELECTOR, '[role="status"]')
+    assert status.get_attribute("aria-live") == "polite"
+
+    summary = card.find_element(By.CSS_SELECTOR, "details summary")
+    assert summary.get_attribute("tabindex") in (None, "0")
+    summary.send_keys(Keys.ENTER)
+    wait.until(lambda _driver: _driver.execute_script("return document.querySelector('.tyndale-introduction details').open;"))
+    assert "Published full Genesis introduction" in driver.execute_script("return arguments[0].textContent;", card)
+
+    page.select_book("Ruth")
+    wait.until(lambda _driver: "Published Ruth introduction" in _driver.execute_script("return arguments[0].textContent;", slot))
+    assert "Wrong Genesis introduction" not in driver.execute_script("return arguments[0].textContent;", slot)
+
+    page.select_book("Genesis").set_chapter(2)
+    wait.until(lambda _driver: "Published Genesis chapter two note." in _driver.execute_script("return arguments[0].textContent;", slot))
+    assert "Introduction must not appear" not in driver.execute_script("return arguments[0].textContent;", slot)
+
+    verse_two = driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="2"] [data-verse-select]')
+    verse_two.click()
+    wait.until(lambda _driver: _driver.execute_script("return window.BHFStudySelection.getState().reference === 'Genesis 2:2';"))
+    wait.until(lambda _driver: "Verse two matching note." in _driver.execute_script("return arguments[0].textContent;", slot))
+    assert "Verse one only note." not in driver.execute_script("return arguments[0].textContent;", slot)
+    assert "Published Genesis chapter two note." in driver.execute_script("return arguments[0].textContent;", slot)
+    selected_card_text = driver.execute_script("return arguments[0].textContent;", slot)
+    assert selected_card_text.index("Verse two matching note.") < selected_card_text.index("Published Genesis chapter two note.")
+    assert driver.execute_script("return document.activeElement.matches('.verse-number');") is True
+
+    verse_three = driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="3"] [data-verse-select]')
+    ActionChains(driver).key_down(Keys.SHIFT).click(verse_three).key_up(Keys.SHIFT).perform()
+    wait.until(lambda _driver: _driver.execute_script("return window.BHFStudySelection.getState().reference === 'Genesis 2:2-3';"))
+    wait.until(lambda _driver: "Verse three matching note." in _driver.execute_script("return arguments[0].textContent;", slot))
+    card_text = driver.execute_script("return arguments[0].textContent;", slot)
+    assert "Verse two matching note." in card_text
+    assert "Broader note spanning verses one through three." in card_text
+    assert "Verse one only note." not in card_text
+    assert driver.execute_script("return document.activeElement.matches('.verse-number');") is True
+
+    page.select_book("Esther")
+    page.select_book("Genesis").set_chapter(4)
+    wait.until(lambda _driver: "Newest Genesis four note." in _driver.execute_script("return arguments[0].textContent;", slot))
+    driver.execute_script(
+        """
+        window.__tyndalePending.esther?.({
+          available: true, book: 'Esther', chapter: 1,
+          entries: [{id: 'stale-esther', kind: 'book_introduction', title: 'Esther introduction', body: 'Stale Esther response.', anchor: {book: 'Esther', start_chapter: null, start_verse: null, end_chapter: null, end_verse: null}}],
+          source: {name: 'Tyndale Open Study Notes', attribution: 'Published attribution.'},
+        });
+        """
+    )
+    wait.until(lambda _driver: "Newest Genesis four note." in _driver.execute_script("return arguments[0].textContent;", slot))
+    assert "Stale Esther response." not in driver.execute_script("return arguments[0].textContent;", slot)
+
+    page.set_chapter(3)
+    wait.until(lambda _driver: "Tyndale Study Notes are unavailable" in _driver.execute_script("return arguments[0].textContent;", slot))
+    page.set_chapter(5)
+    wait.until(lambda _driver: "not installed" in _driver.execute_script("return arguments[0].textContent;", slot).lower())
+
+    for width in (390, 768, 1440):
+        driver.set_window_size(width, 1000)
+        driver.execute_script("window.BHFStudyCompanion.setState('full', {focus: false, history: false});")
+        wait.until(lambda _driver: driver.execute_script("return document.querySelector('[data-study-companion]').getAttribute('data-companion-state') === 'full';"))
+        dimensions = driver.execute_script(
+            """
+            const card = document.querySelector('.companion-tyndale-card');
+            const rect = card.getBoundingClientRect();
+            return {
+              width: window.innerWidth,
+              documentWidth: document.documentElement.scrollWidth,
+              cardWidth: rect.width,
+              cardRight: rect.right,
+              clientWidth: card.clientWidth,
+              scrollWidth: card.scrollWidth,
+              overflowY: getComputedStyle(card).overflowY,
+              slotLabel: card.parentElement.getAttribute('aria-label'),
+              statusRole: card.parentElement.querySelector('[role="status"]')?.getAttribute('aria-live'),
+            };
+            """
+        )
+        assert dimensions["documentWidth"] <= dimensions["width"] + 1, dimensions
+        assert dimensions["cardWidth"] > 0 and dimensions["cardRight"] <= dimensions["width"] + 1, dimensions
+        assert dimensions["scrollWidth"] <= dimensions["clientWidth"] + 1, dimensions
+        assert dimensions["overflowY"] not in {"auto", "scroll"}, dimensions
+        assert dimensions["slotLabel"] == "Tyndale passage notes"
+        assert dimensions["statusRole"] == "polite"
+
+    # Exercise the existing local tab restoration path with a selected verse.
+    driver.execute_cdp_cmd(
+        "Page.addScriptToEvaluateOnNewDocument",
+        {
+            "source": """
+              (() => {
+                let api;
+                Object.defineProperty(window, 'BHFApi', {
+                  configurable: true,
+                  get: () => api,
+                  set: (value) => {
+                    api = value;
+                    const original = value.requestJson.bind(value);
+                    value.requestJson = (url, options, fallback) => {
+                      if (String(url) === '/api/commentary/Ruth/1') {
+                        return Promise.resolve({
+                          available: true, book: 'Ruth', chapter: 1,
+                          entries: [{id: 'restored-ruth-four', kind: 'verse_note', title: 'Ruth 1:4 restored note', body: 'Restored Ruth verse four note.', anchor: {book: 'Ruth', start_chapter: 1, start_verse: 4, end_chapter: 1, end_verse: 4}}],
+                          source: {name: 'Tyndale Open Study Notes', attribution: 'Published attribution.'},
+                        });
+                      }
+                      return original(url, options, fallback);
+                    };
+                  },
+                });
+              })();
+            """
+        },
+    )
+    driver.execute_script(
+        """
+        localStorage.setItem('bhf-reader-tabs', JSON.stringify({
+          version: 1,
+          activeTabId: 'restored-ruth-tab',
+          updatedAt: new Date(Date.now() + 3600000).toISOString(),
+          tabs: [{
+            id: 'restored-ruth-tab', book: 'Ruth', chapter: 1, translation: 'asv', verse: 4,
+            updatedAt: new Date(Date.now() + 3600000).toISOString(),
+            selection: {book: 'Ruth', chapter: 1, startVerse: 4, endVerse: 4, selectedVerses: [4], text: 'restored selection'},
+          }],
+        }));
+        """
+    )
+    driver.refresh()
+    wait.until(lambda _driver: "Ruth 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "Restored Ruth verse four note." in _driver.execute_script(
+        "return document.querySelector('[data-companion-tyndale-card-slot]').textContent;"
+    ))
+    assert driver.execute_script("return window.BHFStudySelection.getState().reference;") == "Ruth 1:4"
+    driver.execute_script("window.BHFStudyActions.openWorkspaceTab('commentary');")
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="commentary"]').get_attribute("aria-selected") == "true")
     assert driver.find_element(By.CSS_SELECTOR, "[data-commentary-panel]").get_attribute("aria-label") == "Tyndale Study Notes"
 
 

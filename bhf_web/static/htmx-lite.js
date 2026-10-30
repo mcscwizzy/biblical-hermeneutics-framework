@@ -2555,6 +2555,17 @@ async function loadReaderChapter(book, chapter, options = {}) {
     tab.chapter = Number(chapter);
     tab.translation = translationId;
   }
+  if (window.BHFCommentary) {
+    const savedSelection = tab?.selection
+      && String(tab.selection.book || "").trim().toLowerCase() === String(book).trim().toLowerCase()
+      && Number(tab.selection.chapter) === Number(chapter)
+      ? {...tab.selection, book, chapter: Number(chapter)}
+      : {book, chapter: Number(chapter), selectedVerses: [], reference: `${book} ${chapter}`};
+    window.BHFCommentary.focusSelection?.(savedSelection);
+    if (typeof window.BHFCommentary.loadChapter === "function") {
+      void window.BHFCommentary.loadChapter(book, chapter);
+    }
+  }
   reader.setAttribute("aria-busy", "true");
   renderChapter(null);
   try {

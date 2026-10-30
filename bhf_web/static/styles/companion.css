@@ -1284,6 +1284,128 @@ body.companion-sheet-full {
   font-weight: 800;
 }
 
+.companion-tyndale-card {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  padding: 16px clamp(15px, 2vw, 20px);
+  color: var(--page-text);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent-soft) 34%, var(--surface));
+  box-shadow: 0 7px 20px rgb(24 53 74 / 5%);
+  overflow-wrap: anywhere;
+}
+
+.companion-tyndale-card > * {
+  min-width: 0;
+}
+
+.tyndale-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin: 0;
+}
+
+.tyndale-card-heading h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  letter-spacing: -0.02em;
+}
+
+.tyndale-card-reference,
+.tyndale-note-reference {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+  font-weight: 680;
+  overflow-wrap: anywhere;
+}
+
+.tyndale-card-content {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.tyndale-introduction,
+.tyndale-note {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.tyndale-introduction h4,
+.tyndale-note h4 {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.tyndale-introduction-preview,
+.tyndale-note-body {
+  margin: 0;
+  color: var(--page-text);
+  font-size: 0.94rem;
+  line-height: 1.58;
+  overflow-wrap: anywhere;
+}
+
+.tyndale-note-details {
+  min-width: 0;
+}
+
+.tyndale-note-details summary {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.tyndale-note-details summary:focus-visible,
+.tyndale-workspace-action:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.tyndale-note-details p {
+  margin: 8px 0 0;
+  color: var(--page-text);
+  font-size: 0.93rem;
+  line-height: 1.58;
+  overflow-wrap: anywhere;
+}
+
+.tyndale-source {
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  color: var(--page-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.tyndale-source p {
+  margin: 3px 0 0;
+}
+
+.tyndale-workspace-action {
+  min-height: 44px;
+  justify-self: start;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
 .companion-tyndale-card-slot:not([hidden]) {
   margin-top: 20px;
 }
@@ -1980,6 +2102,21 @@ body.companion-sheet-full {
     flex: none;
     white-space: normal;
     text-align: center;
+  }
+
+  .companion-tyndale-card {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .tyndale-card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tyndale-workspace-action {
+    width: 100%;
+    justify-self: stretch;
   }
 }
 
