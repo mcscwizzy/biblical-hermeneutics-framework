@@ -88,6 +88,11 @@
         if (behavior.push) historyController?.push(snapshot);
         else historyController?.replace(snapshot);
       },
+      onNarrativeViewChange: (view, behavior = {}) => {
+        const snapshot = {...historySnapshot(), narrativeView: view};
+        if (behavior.push) historyController?.push(snapshot);
+        else historyController?.replace(snapshot);
+      },
       onVerifiedRouteHandoff: () => {
         if (historyController?.current()?.resource !== "narrative_explorer") {
           historyController?.push(historySnapshot());
@@ -98,6 +103,7 @@
         });
       },
       backNarrativeTrail: () => historyController?.backFromResource(() => false),
+      backNarrativeView: () => historyController?.backFromResource(() => false),
       getReadableTranslations: () => window.BHFStudyActions?.loadReadableTranslations?.(),
       loadChapterData: (book, chapter, translation, requestOptions) =>
         window.BHFReader?.loadChapterData?.(book, chapter, translation, requestOptions),
@@ -715,6 +721,9 @@
     if (await resourceRouter?.open?.(resourceId, {
       mode: currentMode,
       trail: options.trail,
+      ...(options.narrativeView || options.view
+        ? {view: options.narrativeView || options.view}
+        : {}),
       trigger: options.trigger,
     })) return true;
     openLegacyResource(resourceId, options);
@@ -1011,6 +1020,7 @@
         mode: snapshot.mode,
         state: snapshot.state,
         trail: snapshot.trail,
+        narrativeView: snapshot.narrativeView,
       });
       return;
     }
@@ -1028,6 +1038,9 @@
       mode: currentMode,
       resource: currentResource,
       trail: currentResource === "narrative_explorer" ? resourceRouter?.getNarrativeTrail?.() || null : null,
+      ...(currentResource === "narrative_explorer"
+        ? {narrativeView: resourceRouter?.getNarrativeView?.() || {kind: "overview"}}
+        : {}),
     };
   }
 

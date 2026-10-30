@@ -36,7 +36,7 @@ function projection(overrides = {}) {
 }
 
 function fixture(options = {}) {
-  const records = {trailChanges: [], handoffs: [], rendered: [], sessions: []};
+  const records = {trailChanges: [], viewChanges: [], handoffs: [], rendered: [], sessions: []};
   let selection = {
     book: "Jonah",
     chapter: 1,
@@ -162,6 +162,8 @@ function fixture(options = {}) {
     getContextRecord: () => options.contextRecord || {key: "", status: "ready", context: null},
     onVerifiedRouteHandoff: (...args) => records.handoffs.push(args),
     onNarrativeTrailChange: (...args) => records.trailChanges.push(args),
+    onNarrativeViewChange: (...args) => records.viewChanges.push(args),
+    backNarrativeView: () => options.backNarrativeView?.() ?? false,
   });
   return {
     router,
@@ -190,7 +192,7 @@ function handoff(overrides = {}) {
   };
 }
 
-test("verified route handoff retains verse scope, replaces history only after validation, and focuses the selected route", async () => {
+test("verified route handoff retains verse scope, records its overview and focused view, and focuses the selected route", async () => {
   const value = fixture();
   const opened = await value.router.open("narrative_explorer", {routeHandoff: handoff()});
 
@@ -198,8 +200,13 @@ test("verified route handoff retains verse scope, replaces history only after va
   assert.equal(value.records.sessions.length, 1);
   assert.deepEqual(value.records.sessions[0].selectedVerses, [17]);
   assert.equal(value.records.handoffs.length, 1);
+  assert.equal(value.records.viewChanges.length, 1);
+  assert.equal(value.records.viewChanges[0][0].kind, "overview");
+  assert.equal(value.records.viewChanges[0][1].push, true);
   assert.equal(value.records.trailChanges.length, 1);
-  assert.equal(value.records.trailChanges[0][1].push, false);
+  assert.equal(value.records.trailChanges[0][1].push, true);
+  assert.equal(value.records.rendered[0].view.kind, "category");
+  assert.equal(value.records.rendered[0].view.categoryId, "themes_biblical_connections");
   assert.equal(value.records.rendered[0].selectedRouteId, route.id);
   assert.equal(value.heading.focused, true);
   assert.equal(value.heading.scrolled, true);
@@ -500,6 +507,86 @@ test("router-driven destination selection preserves the existing origin trail", 
   assert.equal(value.records.sessions.length, 1);
   assert.equal(value.router.getNarrativeTrail().originSelection.reference, "Jonah 1:17");
   assert.equal(value.router.getNarrativeTrail().nodes[value.router.getNarrativeTrail().activeIndex].reference, "Matthew 12:40");
+});
+
+test("Narrative Explorer router restores a focused category from its view option without another projection", async () => {
+  const value = fixture();
+  const view = {kind: "category", categoryId: "themes_biblical_connections"};
+
+  assert.equal(await value.router.open("narrative_explorer", {view}), true);
+
+  assert.equal(value.router.getNarrativeView().kind, view.kind);
+  assert.equal(value.router.getNarrativeView().categoryId, view.categoryId);
+  assert.equal(value.records.rendered.at(-1).view.kind, view.kind);
+  assert.equal(value.records.rendered.at(-1).view.categoryId, view.categoryId);
+  assert.equal(value.records.sessions.length, 1);
+});
+
+test("category navigation reuses the passage projection and supports Back to topics", async () => {
+  let historyBacks = 0;
+  const value = fixture({backNarrativeView: () => { historyBacks += 1; return false; }});
+  assert.equal(await value.router.open("narrative_explorer"), true);
+  const initialSessions = value.records.sessions.length;
+  const card = {dataset: {narrativeFocusId: "themes_biblical_connections"}};
+
+  value.records.rendered.at(-1).onOpenCategory("themes_biblical_connections", card);
+
+  assert.equal(value.router.getNarrativeView().categoryId, "themes_biblical_connections");
+  assert.equal(value.records.rendered.at(-1).view.categoryId, "themes_biblical_connections");
+  assert.equal(value.records.sessions.length, initialSessions);
+  assert.equal(value.records.viewChanges[0][0].kind, "category");
+  assert.equal(value.records.viewChanges[0][0].categoryId, "themes_biblical_connections");
+  assert.equal(value.records.viewChanges[0][1].push, true);
+
+  value.records.rendered.at(-1).onBackToOverview(card);
+
+  assert.equal(historyBacks, 1);
+  assert.equal(value.router.getNarrativeView().kind, "overview");
+  assert.equal(value.records.rendered.at(-1).view.kind, "overview");
+  assert.equal(value.records.sessions.length, initialSessions);
+});
+
+test("Return to Passage restores the origin selection and clears the focused category", async () => {
+  const origin = {
+    book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, selectedVerses: [17], reference: "Jonah 1:17",
+  };
+  const destination = {
+    book: "Matthew", chapter: 12, startVerse: 40, endVerse: 40, selectedVerses: [40], reference: "Matthew 12:40",
+  };
+  const trail = explorerCore.followPassage(
+    explorerCore.createTrail(origin),
+    {reference: destination.reference, selection: destination},
+    {
+      provenance: "ckl_documented_claim",
+      source_passage: "Jonah 1:17",
+      destination_passage: "Matthew 12:40",
+      relationship_category: "later_canonical_reception",
+      direction: "source_to_receiving_text",
+      explanation: "Matthew compares Jonah's narrated duration with the Son of Man's time in the earth.",
+      uncertainty: "The idiom and chronology remain uncertain.",
+    },
+  ).state;
+  const value = fixture({loadProjection: (selection) => Promise.resolve(projection({
+    passage: {
+      reference: selection.reference,
+      book: selection.book,
+      chapter: selection.chapter,
+      verse_start: selection.startVerse,
+      verse_end: selection.endVerse,
+    },
+  }))});
+  value.setSelection(destination);
+  assert.equal(await value.router.open("narrative_explorer", {
+    trail,
+    view: {kind: "category", categoryId: "themes_biblical_connections"},
+  }), true);
+
+  await value.records.rendered.at(-1).onReturnToOrigin();
+
+  assert.equal(value.getSelection().reference, "Jonah 1:17");
+  assert.equal(value.router.getNarrativeView().kind, "overview");
+  assert.equal(value.records.rendered.at(-1).view.kind, "overview");
+  assert.equal(value.records.sessions.at(-1).reference, "Jonah 1:17");
 });
 
 test("closing during verification discards the delayed route and history", async () => {

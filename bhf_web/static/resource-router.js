@@ -31,6 +31,7 @@
     const explorer = window.BHFNarrativeExplorer;
     const subjectLoader = explorer?.createSubjectLoader?.();
     let narrativeTrail = null;
+    let narrativeView = {kind: "overview"};
     let narrativeProjection = null;
     let narrativeSelection = null;
     let pendingNarrativeFocusId = "";
@@ -68,12 +69,21 @@
         cancelManagedReaderSelection();
         return openVerifiedRouteHandoff(options.getSelection?.() || {}, routeOptions.routeHandoff);
       }
+      const isNarrativeExplorer = resourceId === "narrative_explorer";
+      const hasRequestedView = isNarrativeExplorer && Object.hasOwn(routeOptions, "view");
+      const requestedView = hasRequestedView
+        ? normalizeNarrativeView(routeOptions.view)
+        : activeResourceId === resourceId
+          ? narrativeView
+          : {kind: "overview"};
+      const viewChanged = isNarrativeExplorer && !sameNarrativeView(narrativeView, requestedView);
       if (resourceId === "narrative_explorer"
         && activeResourceId === "narrative_explorer"
-        && isManagedReaderSelection(options.getSelection?.() || {})) return true;
+        && isManagedReaderSelection(options.getSelection?.() || {})
+        && !viewChanged) return true;
       cancelManagedReaderSelection();
       cancelPendingRouteHandoff();
-      const isNarrativeExplorer = resourceId === "narrative_explorer";
+      if (isNarrativeExplorer) narrativeView = requestedView;
       if (isNarrativeExplorer) selectedNarrativeRouteId = "";
       const requestedTrail = isNarrativeExplorer ? routeOptions.trail || null : null;
       const selection = isNarrativeExplorer && requestedTrail
@@ -104,7 +114,10 @@
           }
           passageKey = currentSelectionKey || passageKey;
         }
-        if (activeResourceId === resourceId && activePassageKey === passageKey && !routeOptions.force) return true;
+        if (activeResourceId === resourceId && activePassageKey === passageKey && !routeOptions.force) {
+          if (viewChanged && narrativeProjection) renderActiveNarrativeTrail();
+          return true;
+        }
         selectedNarrativeRouteId = "";
       }
       sequence += 1;
@@ -157,6 +170,23 @@
       return narrativeTrail;
     }
 
+    function getNarrativeView() {
+      return narrativeView;
+    }
+
+    function normalizeNarrativeView(value) {
+      if (value?.kind === "overview") return {kind: "overview"};
+      const categoryId = typeof value?.categoryId === "string" ? value.categoryId : "";
+      if (value?.kind === "category" && explorer?.SECTIONS?.some((section) => section.id === categoryId)) {
+        return {kind: "category", categoryId};
+      }
+      return {kind: "overview"};
+    }
+
+    function sameNarrativeView(left, right) {
+      return left?.kind === right?.kind && left?.categoryId === right?.categoryId;
+    }
+
     async function openVerifiedRouteHandoff(selection, handoff) {
       if (window.BHFRuntimeConfig?.narrativeExplorerEnabled !== true
         || !explorer || !narrativeSession
@@ -192,13 +222,13 @@
       const route = explorer.findVerifiedPassageRoute(projection, routeId, handoff?.identity, passageReference);
       if (!route) return false;
 
-      const wasActiveNarrative = activeResourceId === "narrative_explorer";
       options.onVerifiedRouteHandoff?.(selection, route);
       sequence += 1;
       controller?.abort();
       controller = null;
       activeResourceId = "narrative_explorer";
       activePassageKey = passageKey;
+      narrativeView = {kind: "category", categoryId: "themes_biblical_connections"};
       narrativeSelection = selection;
       narrativeProjection = projection;
       narrativeTrail = explorer.createTrail(selection);
@@ -210,7 +240,8 @@
       shell.classList.add("is-native-resource");
       host.hidden = false;
       renderActiveNarrativeTrail({focusRouteId: route.id});
-      options.onNarrativeTrailChange?.(narrativeTrail, {push: wasActiveNarrative});
+      options.onNarrativeViewChange?.({kind: "overview"}, {push: true});
+      options.onNarrativeTrailChange?.(narrativeTrail, {push: true});
       return true;
     }
 
@@ -262,6 +293,7 @@
       nativeBackFocusSelector = "";
       nativeBackFocusTarget = null;
       narrativeTrail = null;
+      narrativeView = {kind: "overview"};
       narrativeProjection = null;
       narrativeSelection = null;
       pendingNarrativeFocusId = "";
@@ -298,6 +330,7 @@
     function narrativeRenderOptions(extra = {}) {
       return {
         ...extra,
+        view: narrativeView,
         trail: narrativeTrail,
         knownBooks: readerBookOptions(),
         onNavigate: navigateNarrativeItem,
@@ -310,7 +343,25 @@
         onOpenPassage: followNarrativePassage,
         onBack: () => options.backNarrativeTrail?.(),
         onReturnToOrigin: returnToNarrativeOrigin,
+        onOpenCategory: openNarrativeCategory,
+        onBackToOverview: backToNarrativeOverview,
       };
+    }
+
+    function openNarrativeCategory(categoryId) {
+      const view = normalizeNarrativeView({kind: "category", categoryId});
+      if (view.kind !== "category" || sameNarrativeView(view, narrativeView)) return;
+      narrativeView = view;
+      options.onNarrativeViewChange?.(view, {push: true});
+      renderActiveNarrativeTrail();
+    }
+
+    function backToNarrativeOverview() {
+      if (narrativeView.kind !== "category") return;
+      if (options.backNarrativeView?.()) return;
+      narrativeView = {kind: "overview"};
+      options.onNarrativeViewChange?.(narrativeView, {push: false});
+      renderActiveNarrativeTrail();
     }
 
     function renderActiveNarrativeTrail(behavior = {}) {
@@ -489,6 +540,10 @@
     }
 
     async function returnToNarrativeOrigin() {
+      if (narrativeView.kind !== "overview") {
+        narrativeView = {kind: "overview"};
+        options.onNarrativeViewChange?.(narrativeView, {push: false});
+      }
       narrativeTrail = explorer.returnToOrigin(narrativeTrail);
       const origin = explorer.trailCurrentSelection(narrativeTrail);
       pendingNarrativeFocusId = explorer.trailReturnFocusId(narrativeTrail);
@@ -1612,6 +1667,7 @@
       close,
       showLegacy,
       getNarrativeTrail,
+      getNarrativeView,
       restoreNarrativeTrail,
       openCanonicalDetail,
       openArchaeologyDetail,

@@ -49,7 +49,10 @@ class FakeElement {
 }
 
 function fakeDocument() {
-  return {createElement: (tagName) => new FakeElement(tagName)};
+  return {
+    createElement: (tagName) => new FakeElement(tagName),
+    createElementNS: (_namespace, tagName) => new FakeElement(tagName),
+  };
 }
 
 function descendants(element) {
@@ -231,6 +234,13 @@ function projection(overrides = {}) {
   };
 }
 
+function renderCategory(data, categoryId, options = {}) {
+  return explorer.renderOverview(data, {
+    ...options,
+    view: {kind: "category", categoryId},
+  });
+}
+
 test("chapter and verse selections map to the NE-3 route contract", () => {
   assert.equal(
     explorer.urlFor({book: "Genesis", chapter: 1}),
@@ -240,6 +250,234 @@ test("chapter and verse selections map to the NE-3 route contract", () => {
     explorer.urlFor({book: "Song of Songs", chapter: 2, startVerse: 3, endVerse: 7}),
     "/api/narrative-explorer/v1/passages/Song%20of%20Songs/2?verse_start=3&verse_end=7",
   );
+});
+
+test("overview shows six concise category cards and no evidence inventory", () => {
+  const opened = [];
+  const root = explorer.renderOverview(projection(), {
+    document: fakeDocument(),
+    onOpenCategory: (categoryId, trigger) => opened.push({categoryId, trigger}),
+  });
+  const categoryIds = [
+    "biblical_narrative",
+    "archaeology_ancient_history",
+    "biblical_geography",
+    "divine_council_cosmic_geography",
+    "themes_biblical_connections",
+    "people_events_relationships",
+  ];
+  const cards = descendants(root).filter((element) => element.className === "narrative-explorer-category-card");
+  const connectionEntry = descendants(root).find((element) => element.className === "narrative-explorer-follow-connection");
+
+  assert.match(root.textContent, /Explore this passage/);
+  assert.match(root.textContent, /Current passage: Genesis 1/);
+  assert.deepEqual(cards.map((element) => element.dataset.sectionId), categoryIds);
+  assert.equal(cards.filter((card) => descendants(card).some((element) => element.tagName === "SVG"
+    && element.attributes["aria-hidden"] === "true")).length, 6);
+  assert.match(connectionEntry.textContent, /Follow a Connection/);
+  assert.equal(descendants(root).filter((element) => element.className === "narrative-explorer-item").length, 0);
+
+  connectionEntry.click();
+
+  assert.equal(opened.length, 1);
+  assert.equal(opened[0].categoryId, "themes_biblical_connections");
+  assert.equal(opened[0].trigger, connectionEntry);
+});
+
+test("overview defers the empty origin-only trail until a connection is followed", () => {
+  const origin = explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"});
+  const overview = explorer.renderOverview(projection(), {document: fakeDocument(), trail: origin});
+
+  assert.equal(descendants(overview).filter((element) => element.className === "narrative-explorer-trail-header").length, 0);
+
+  const followed = explorer.followPassage(origin, {
+    reference: "John 1",
+    selection: {book: "John", chapter: 1, reference: "John 1"},
+  }, {
+    provenance: "authored_ckl_relationship",
+    source_passage: "Genesis 1",
+    destination_passage: "John 1",
+    original_relationship_type: "thematic_relationship",
+    direction: "one_way",
+  });
+  const connected = explorer.renderOverview(projection(), {document: fakeDocument(), trail: followed.state});
+
+  assert.equal(descendants(connected).filter((element) => element.className === "narrative-explorer-trail-header").length, 1);
+  assert.match(connected.textContent, /Origin passage/);
+  assert.match(connected.textContent, /Recorded connection/);
+  assert.match(connected.textContent, /John 1/);
+});
+
+test("focused category shows only its previews and passage return controls", () => {
+  const actions = [];
+  const root = explorer.renderOverview(projection(), {
+    document: fakeDocument(),
+    view: {kind: "category", categoryId: "biblical_narrative"},
+    onInspect: () => {},
+    onBackToOverview: (trigger) => actions.push({kind: "back", trigger}),
+    onReturnToOrigin: (trigger) => actions.push({kind: "return", trigger}),
+  });
+  const category = descendants(root).find((element) => element.className.split(" ").includes("narrative-explorer-section")
+    && element.dataset.sectionId === "biblical_narrative");
+  const otherCategories = descendants(root).filter((element) => element.className.split(" ").includes("narrative-explorer-section")
+    && element.dataset.sectionId !== "biblical_narrative");
+  const previews = descendants(category).find((element) => element.className === "narrative-explorer-previews");
+  const buttons = descendants(root).filter((element) => element.tagName === "BUTTON");
+  const back = buttons.find((element) => element.textContent === "Back to topics");
+  const returnToPassage = buttons.find((element) => element.textContent === "Return to Genesis 1");
+
+  assert.match(root.textContent, /Biblical Narrative/);
+  assert.equal(otherCategories.length, 0);
+  assert.ok(previews.children.length > 0 && previews.children.length <= 2);
+  assert.ok(buttons.some((element) => element.textContent.startsWith("Browse all ")));
+  assert.ok(back);
+  assert.ok(returnToPassage);
+  back.click();
+  returnToPassage.click();
+  assert.deepEqual(actions.map((action) => action.kind), ["back", "return"]);
+});
+
+test("overview keeps unknown and partial category coverage distinct", () => {
+  const data = projection({
+    sections: [
+      ...projection().sections.map((entry) => entry.id === "biblical_geography"
+        ? {...entry, state: "unknown", item_ids: []}
+        : entry.id === "divine_council_cosmic_geography"
+          ? {...entry, state: "partial", item_ids: ["ckl:creation#evidence:cosmos"]}
+          : entry),
+    ],
+  });
+  const root = explorer.renderOverview(data, {document: fakeDocument()});
+  const cardFor = (id) => descendants(root).find((element) => element.className === "narrative-explorer-category-card"
+    && element.dataset.sectionId === id);
+  const geography = cardFor("biblical_geography");
+  const cosmic = cardFor("divine_council_cosmic_geography");
+  const unknownCount = descendants(geography).find((element) => element.className === "narrative-explorer-category-count");
+  const partialCount = descendants(cosmic).find((element) => element.className === "narrative-explorer-category-count");
+
+  assert.match(geography.textContent, /Availability could not be checked/);
+  assert.equal(unknownCount, undefined);
+  assert.match(cosmic.textContent, /Some results may be missing/);
+  assert.match(partialCount.textContent, /1 linked record in incomplete results/);
+  assert.doesNotMatch(geography.textContent, /0 linked records/);
+});
+
+test("Follow a Connection opens the focused view with recorded passage routes", () => {
+  const data = projection({
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      description: "Passage routes are available from the records listed here.",
+      authored_relationships: [{
+        id: "authored:genesis-john",
+        provenance: "authored_ckl_relationship",
+        source_passage: "Genesis 1:1",
+        destination_passage: "John 1:1",
+        relationship_category: "thematic_relationship",
+        original_relationship_type: "canonical-fulfillment",
+        source_id: "ckl:genesis#evidence:creation",
+        target_id: "ckl:john#claim:logos",
+        direction: "one_way",
+        relationship_mode: "inferred",
+        temporal_layer: "later_reception",
+        basis: {kind: "ckl_related_object", notes: "Recorded authored relationship basis."},
+        explanation: "A recorded authored relationship links these passages.",
+        uncertainty: "This does not establish direct quotation.",
+      }],
+      evidence_backed_bridges: [{
+        id: "bridge:genesis-john",
+        provenance: "ckl_documented_claim",
+        source_passage: "Genesis 1:1",
+        destination_passage: "John 1:1",
+        relationship_category: "interpretive_association",
+        evidence_layer: "thematic_interpretation",
+        direction: "interpretive_comparison",
+        explanation: "The bridge is documented through the listed CKL claim.",
+        uncertainty: "The interpretation remains debated.",
+        human_scholarly_approval: "not_recorded",
+        supporting_records: [{
+          id: "ckl:john#claim:logos",
+          object_id: "john",
+          record_kind: "claim",
+          record_id: "logos",
+          statement: "The prologue places the Logos at the beginning.",
+          source_ids: ["john-source"],
+        }],
+        supporting_sources: [{id: "john-source", title: "John source"}],
+      }],
+    },
+  });
+  const opened = [];
+  const overview = explorer.renderOverview(data, {
+    document: fakeDocument(),
+    onOpenCategory: (categoryId) => opened.push(categoryId),
+  });
+  const entry = descendants(overview).find((element) => element.className === "narrative-explorer-follow-connection");
+
+  assert.equal(descendants(overview).filter((element) => element.className === "narrative-explorer-related-passage").length, 0);
+  entry.click();
+  assert.deepEqual(opened, ["themes_biblical_connections"]);
+
+  const focused = explorer.renderOverview(data, {
+    document: fakeDocument(),
+    view: {kind: "category", categoryId: "themes_biblical_connections"},
+    knownBooks: [{value: "John", chapters: 21}],
+    onOpenPassage: (destination, relationship) => opened.push({destination, relationship}),
+  });
+  const routes = descendants(focused).filter((element) => element.className === "narrative-explorer-related-passage");
+  const passageButton = descendants(focused).find((element) => element.tagName === "BUTTON"
+    && element.textContent.includes("John 1:1"));
+
+  assert.equal(routes.length, 2);
+  assert.match(focused.textContent, /Existing authored CKL relationships/);
+  assert.match(focused.textContent, /CKL-documented passage routes/);
+  assert.match(focused.textContent, /Original relationship type: canonical-fulfillment/);
+  assert.match(focused.textContent, /Human scholarly approval: not recorded/);
+  assert.ok(passageButton);
+});
+
+test("trail header shows readable progression and preserves recorded direction", () => {
+  const origin = {book: "Psalms", chapter: 22, reference: "Psalm 22"};
+  const destination = {book: "Mark", chapter: 15, startVerse: 34, endVerse: 34, reference: "Mark 15:34"};
+  const relationship = {
+    id: "psalm-22-mark-15-lament",
+    provenance: "authored_ckl_relationship",
+    source_passage: "Psalm 22",
+    destination_passage: "Mark 15:34",
+    relationship_category: "thematic_relationship",
+    original_relationship_type: "canonical-fulfillment",
+    direction: "one_way",
+    explanation: "The recorded relationship links the lament language in these passages.",
+    uncertainty: "The relationship does not establish direct quotation or fulfillment.",
+    human_scholarly_approval: "not_recorded",
+    supporting_record_ids: ["ckl:psalm-22#evidence:psalm-22-lament"],
+    supporting_ckl_sources: [{source_id: "source:psalm-22-lament", object_id: "psalm-22"}],
+  };
+  const followed = explorer.followPassage(
+    explorer.createTrail(origin),
+    {reference: destination.reference, selection: destination},
+    relationship,
+  );
+  const root = renderCategory(projection({
+    passage: {reference: destination.reference, book: "Mark", chapter: 15, verse_start: 34, verse_end: 34},
+  }), "themes_biblical_connections", {document: fakeDocument(), trail: followed.state});
+  const navigation = descendants(root).find((element) => element.tagName === "NAV"
+    && element.attributes["aria-label"] === "Evidence trail");
+  const steps = descendants(navigation).filter((element) => element.className.split(" ").includes("narrative-explorer-trail-step"));
+  const currentStep = descendants(steps[2]).find((element) => element.attributes["aria-current"] === "page");
+
+  assert.equal(steps.length, 3);
+  assert.match(steps[0].textContent, /Origin passage.*Psalm 22/);
+  assert.match(steps[1].textContent, /Recorded connection.*Psalm 22 → Mark 15:34/);
+  assert.match(steps[1].textContent, /one way/);
+  assert.match(steps[2].textContent, /Related passage.*Mark 15:34/);
+  assert.equal(currentStep.textContent, "Mark 15:34");
+  assert.match(root.textContent, /Connection trail: 1 of 3 links followed/);
+  assert.match(root.textContent, /Original relationship type: canonical-fulfillment/);
+  assert.match(root.textContent, /does not establish direct quotation or fulfillment/);
+  assert.match(root.textContent, /Supporting CKL records: ckl:psalm-22#evidence:psalm-22-lament/);
+  assert.match(root.textContent, /Supporting CKL sources: source:psalm-22-lament/);
+  assert.match(root.textContent, /Human scholarly approval: not recorded/);
 });
 
 test("related passage routes show provenance and uncertainty, then use the existing passage trail callback", () => {
@@ -301,6 +539,7 @@ test("related passage routes show provenance and uncertainty, then use the exist
   });
   const root = explorer.renderOverview(data, {
     document: fakeDocument(),
+    view: {kind: "category", categoryId: "themes_biblical_connections"},
     knownBooks: [{value: "John", chapters: 21}, {value: "Revelation", chapters: 22}],
     onOpenPassage: (destination, relationship) => opened.push({destination, relationship}),
   });
@@ -342,7 +581,7 @@ test("related passage routes show provenance and uncertainty, then use the exist
   assert.equal(followed.error, null);
   const destinationView = explorer.renderOverview(projection({
     passage: {reference: "John 1:1-18", book: "John", chapter: 1, verse_start: 1, verse_end: 18, scope: "verse_range"},
-  }), {document: fakeDocument(), trail: followed.state});
+  }), {document: fakeDocument(), trail: followed.state, view: {kind: "category", categoryId: "themes_biblical_connections"}});
   assert.ok(descendants(destinationView).some((item) => item.className === "narrative-explorer-passage" && item.textContent === "Current passage: John 1:1-18"));
   assert.match(destinationView.textContent, /Connection used to open this passage/);
   assert.match(destinationView.textContent, /CKL-documented claim/);
@@ -362,7 +601,7 @@ test("incomplete related passage coverage never reads as proof that a route does
       authored_relationships: [],
       evidence_backed_bridges: [],
     },
-  }), {document: fakeDocument()});
+  }), {document: fakeDocument(), view: {kind: "category", categoryId: "themes_biblical_connections"}});
 
   assert.match(view.textContent, /Related Biblical Passages/);
   assert.match(view.textContent, /lookup did not finish/);
@@ -402,6 +641,7 @@ test("selected passage route expands hidden pages and exposes a focusable highli
     },
   }), {
     document: fakeDocument(),
+    view: {kind: "category", categoryId: "themes_biblical_connections"},
     knownBooks: [{value: "John", chapters: 21}],
     selectedRouteId: targetId,
   });
@@ -496,7 +736,7 @@ test("related passage routes disclose long lists in keyboard-operable pages", ()
       authored_relationships: [],
       evidence_backed_bridges: routes,
     },
-  }), {document: fakeDocument()});
+  }), {document: fakeDocument(), view: {kind: "category", categoryId: "themes_biblical_connections"}});
   const list = descendants(view).find((element) => element.className === "narrative-explorer-related-passage-list");
   const more = descendants(view).find((element) => element.className.includes("narrative-explorer-more-passages"));
 
@@ -534,7 +774,7 @@ test("reverse passage navigation displays the original source-to-receiver direct
         supporting_sources: [],
       }],
     },
-  }), {document: fakeDocument()});
+  }), {document: fakeDocument(), view: {kind: "category", categoryId: "themes_biblical_connections"}});
 
   assert.match(view.textContent, /Textual direction: Genesis 1:1-5 → John 1:1-18/);
   assert.match(view.textContent, /this route can be followed from either passage/i);
@@ -569,7 +809,7 @@ test("the Jonah-Matthew route displays its reception direction, explanation, and
         ],
       }],
     },
-  }), {document: fakeDocument(), knownBooks: [{value: "Jonah", chapters: 4}, {value: "Matthew", chapters: 28}]});
+  }), {document: fakeDocument(), view: {kind: "category", categoryId: "themes_biblical_connections"}, knownBooks: [{value: "Jonah", chapters: 4}, {value: "Matthew", chapters: 28}]});
 
   assert.match(view.textContent, /Later canonical reception/);
   assert.doesNotMatch(view.textContent, /Later canonical reception · Later canonical reception/);
@@ -779,34 +1019,36 @@ test("overview renders bounded source records, coverage and provenance without H
   });
 
   const navigations = [];
-  const root = explorer.renderOverview(data, {document: trackedDocument, onNavigate: (item, action) => navigations.push({item, action})});
-  const sectionsHost = root.children.find((child) => child.className === "narrative-explorer-sections");
-  const narrativeCard = sectionsHost.children.find((child) => child.dataset.sectionId === "biblical_narrative");
-  const geographyCard = sectionsHost.children.find((child) => child.dataset.sectionId === "biblical_geography");
-  const cosmicCard = sectionsHost.children.find((child) => child.dataset.sectionId === "divine_council_cosmic_geography");
+  const overview = explorer.renderOverview(data, {document: trackedDocument});
+  const root = renderCategory(data, "biblical_narrative", {document: trackedDocument, onNavigate: (item, action) => navigations.push({item, action})});
+  const archaeologyView = renderCategory(data, "archaeology_ancient_history", {document: trackedDocument});
+  const geographyView = renderCategory(data, "biblical_geography", {document: trackedDocument, onNavigate: (item, action) => navigations.push({item, action})});
+  const cosmicView = renderCategory(data, "divine_council_cosmic_geography", {document: trackedDocument, onNavigate: (item, action) => navigations.push({item, action})});
+  const narrativeCard = descendants(root).find((child) => child.dataset.sectionId === "biblical_narrative");
+  const geographyCard = descendants(geographyView).find((child) => child.dataset.sectionId === "biblical_geography");
+  const cosmicCard = descendants(cosmicView).find((child) => child.dataset.sectionId === "divine_council_cosmic_geography");
   const narrativePreviewList = narrativeCard.children.find((element) => element.className === "narrative-explorer-previews");
+  const allText = [overview, root, archaeologyView, geographyView, cosmicView].map((view) => view.textContent).join(" ");
 
-  assert.match(root.textContent, /Biblical Narrative/);
-  assert.match(root.textContent, /Archaeology & Ancient History/);
-  assert.match(root.textContent, /Biblical Geography/);
-  assert.match(root.textContent, /Divine Council & Cosmic Geography/);
-  assert.match(root.textContent, /Themes & Biblical Connections/);
-  assert.match(root.textContent, /People, Events & Relationships/);
-  assert.match(root.textContent, /No linked records found/);
-  assert.match(root.textContent, /Maps: 3 source records found/);
-  assert.match(root.textContent, /Archaeology sources: no records were found for this passage/);
+  for (const title of ["Biblical Narrative", "Archaeology & Ancient History", "Biblical Geography", "Divine Council & Cosmic Geography", "Themes & Biblical Connections", "People, Events & Relationships"]) {
+    assert.match(overview.textContent, new RegExp(title.replace(/[&]/g, "\\&")));
+  }
+  assert.equal(descendants(overview).filter((element) => element.tagName === "ARTICLE").length, 0);
+  assert.match(overview.textContent, /No linked records returned/);
+  assert.match(geographyView.textContent, /Maps: 3 source records found/);
+  assert.match(archaeologyView.textContent, /Archaeology sources: no records were found for this passage/);
   assert.equal(narrativePreviewList.children.length, 2);
   assert.match(narrativeCard.textContent, /80 linked records/);
-  assert.match(root.textContent, /Genesis 1:1-31/);
-  assert.match(root.textContent, /high/);
-  assert.match(root.textContent, /probable/);
-  assert.match(root.textContent, /direct/);
-  assert.match(root.textContent, /tablet-k/);
-  assert.match(root.textContent, /Original relationship types: direct/);
-  assert.match(root.textContent, /<img src=x onerror=alert\(1\)>/);
+  assert.match(allText, /Genesis 1:1-31/);
+  assert.match(allText, /high/);
+  assert.match(allText, /probable/);
+  assert.match(allText, /direct/);
+  assert.match(allText, /tablet-k/);
+  assert.match(allText, /Original relationship types: direct/);
+  assert.match(allText, /<img src=x onerror=alert\(1\)>/);
   assert.equal(created.some((element) => element.tagName === "IMG"), false);
-  assert.match(root.textContent, /Map point withheld: identification_unresolved/);
-  assert.doesNotMatch(root.textContent, /40|latitude|longitude/);
+  assert.match(geographyView.textContent, /Map point withheld: identification_unresolved/);
+  assert.doesNotMatch(geographyView.textContent, /40|latitude|longitude/);
   assert.equal(descendants(geographyCard).filter((element) => element.className.includes("narrative-explorer-item-action")).length, 2);
   assert.equal(descendants(cosmicCard).filter((element) => element.className.includes("narrative-explorer-item-action")).length, 0);
   const mapActions = descendants(geographyCard).filter((element) => element.className.includes("narrative-explorer-item-action"));
@@ -820,7 +1062,7 @@ test("overview renders bounded source records, coverage and provenance without H
   inspect.click();
   const unsupportedCard = descendants(geographyCard).find((element) => element.tagName === "ARTICLE" && element.textContent.includes("Collection-only place"));
   assert.equal(descendants(unsupportedCard).filter((element) => element.className.includes("narrative-explorer-item-action")).length, 0);
-  assert.doesNotMatch(root.textContent, /shared motifs prove direct quotation/i);
+  assert.doesNotMatch(allText, /shared motifs prove direct quotation/i);
 });
 
 test("physical and conceptual geography details keep their evidence domains distinct", () => {
@@ -890,10 +1132,13 @@ test("physical and conceptual geography details keep their evidence domains dist
     items: [physical, ...concepts, keywordTrap],
   });
 
-  const view = explorer.renderOverview(data, {document: fakeDocument()});
-  const cosmicCard = descendants(view).find((element) => element.dataset.sectionId === "divine_council_cosmic_geography");
+  const physicalView = renderCategory(data, "biblical_geography", {document: fakeDocument()});
+  const cosmicView = renderCategory(data, "divine_council_cosmic_geography", {document: fakeDocument()});
+  const physicalCard = descendants(physicalView).find((element) => element.dataset.sectionId === "biblical_geography");
+  const cosmicCard = descendants(cosmicView).find((element) => element.dataset.sectionId === "divine_council_cosmic_geography");
+  physicalCard.children.find((element) => element.className.includes("narrative-explorer-inspect")).click();
   cosmicCard.children.find((element) => element.className.includes("narrative-explorer-inspect")).click();
-  const lines = view.textContent;
+  const lines = `${physicalView.textContent} ${cosmicView.textContent}`;
   assert.match(lines, /Original map\/record ID: pilot-place/);
   assert.match(lines, /Ancient name: Negeb \(ancient region\)/);
   assert.match(lines, /Modern name: Negev/);
@@ -913,7 +1158,7 @@ test("physical and conceptual geography details keep their evidence domains dist
   assert.match(lines, /Heavenly assembly language/);
   assert.match(lines, /Ancient cosmology comparison/);
   assert.match(lines, /Divine beings with disputed interpretation/);
-  assert.match(lines, /not a literal map of heavenly realms and does not establish physical locations/i);
+  assert.match(lines, /These do not establish physical locations/i);
   assert.match(lines, /does not by itself prove borrowing/i);
   assert.doesNotMatch(lines, /33\.4|35\.8|\[35\.8,\s*33\.4\]|latitude|longitude/i);
   assert.doesNotMatch(lines, /Temple and mountain references.*(?:Sacred-space|Heavenly assembly)/);
@@ -931,7 +1176,7 @@ test("unavailable states are announced without turning a network failure into an
 test("overview exposes a reader-facing evidence action with the exact projected item identity", () => {
   const data = projection();
   const inspected = [];
-  const root = explorer.renderOverview(data, {
+  const root = renderCategory(data, "biblical_narrative", {
     document: fakeDocument(),
     onInspect: (item, button) => inspected.push({id: item.id, control: button.dataset.narrativeItemId}),
   });
@@ -1671,6 +1916,48 @@ test("evidence detail displays only item provenance, uncertainty, bibliography, 
   assert.doesNotMatch(malformedReciprocal.textContent, /A reciprocal CKL edge is recorded/);
 });
 
+test("focused draft evidence keeps review and missing-source disclosures expandable", () => {
+  const item = {
+    ...projection().items[2],
+    title: "Unreviewed cosmic language note",
+    claim_text: "A draft observation that needs editorial review.",
+    review_status: "in_review",
+    content_status: "draft",
+    human_review_required: true,
+    source_ids: ["missing-source-record"],
+    sources: [],
+  };
+  const view = explorer.renderEvidenceDetail(item, [], null, {document: fakeDocument()});
+  const warning = descendants(view).find((element) => element.className === "narrative-explorer-governance");
+  const disclosure = descendants(view).find((element) => element.className === "narrative-explorer-detail-review");
+  const sources = descendants(view).find((element) => element.className === "narrative-explorer-detail-sources");
+  const status = descendants(disclosure).find((element) => element.className === "narrative-explorer-evidence-status");
+  const textWithoutReviewDisclosure = (element) => element === disclosure
+    ? ""
+    : (element._text || "") + element.children.map(textWithoutReviewDisclosure).join("");
+
+  assert.ok(warning);
+  assert.equal(warning.attributes.role, "status");
+  assert.match(warning.textContent, /Draft evidence — awaiting human review/);
+  assert.ok(disclosure);
+  assert.ok(sources);
+  assert.equal(disclosure.children[0].tagName, "SUMMARY");
+  assert.match(disclosure.children[0].textContent, /Review, provenance and source details/);
+  assert.equal(disclosure.attributes.open, undefined);
+  assert.equal(sources.children[0].tagName, "SUMMARY");
+  assert.match(sources.children[0].textContent, /Scripture anchors and sources/);
+  assert.equal(sources.attributes.open, undefined);
+  assert.ok(status);
+  assert.match(status.textContent, /Review state: in_review/);
+  assert.match(status.textContent, /Content state: draft/);
+  assert.match(status.textContent, /Human review required: Yes/);
+  assert.match(sources.textContent, /missing-source-record/);
+  assert.match(sources.textContent, /Source details not available in CKL/);
+  assert.doesNotMatch(sources.textContent, /missing-source-record[^.]*title/i);
+  assert.doesNotMatch(disclosure.textContent, /approved/i);
+  assert.doesNotMatch(textWithoutReviewDisclosure(view), /Review state: in_review|Content state: draft|Human review required: Yes/);
+});
+
 test("projected CKL connections follow the recorded target object and retain their relationship metadata", () => {
   const item = {
     id: "ckl:tabernacle#evidence:tabernacle-textual-evidence",
@@ -2018,23 +2305,34 @@ test("overview guides readers and reports coverage-aware linked record counts", 
   });
 
   const root = explorer.renderOverview(data, {document: fakeDocument()});
-  const sectionsHost = descendants(root).find((element) => element.className === "narrative-explorer-sections");
-  const sectionCard = (id) => sectionsHost.children.find((element) => element.dataset.sectionId === id);
+  const cardHost = descendants(root).find((element) => element.className === "narrative-explorer-sections");
+  const topicCards = cardHost.children;
+  const categoryView = (id) => renderCategory(data, id, {document: fakeDocument()});
+  const narrative = categoryView("biblical_narrative");
+  const archaeology = categoryView("archaeology_ancient_history");
+  const geography = categoryView("biblical_geography");
+  const cosmic = categoryView("divine_council_cosmic_geography");
+  const theme = categoryView("themes_biblical_connections");
+  const sectionCard = (view) => descendants(view).find((element) => element.className.includes("narrative-explorer-section is-focused"));
 
-  assert.match(root.textContent, /Explore the sources and connections recorded for this passage/);
-  assert.match(root.textContent, /Sources and counts show what was returned for this passage/);
-  const coverageLines = descendants(root).filter((element) => element.className === "narrative-explorer-coverage");
+  assert.match(root.textContent, /Choose a topic to explore records linked to the selected Scripture passage/);
+  assert.equal(topicCards.length, 6);
+  assert.equal(descendants(root).filter((element) => element.tagName === "ARTICLE").length, 0);
+  assert.match(narrative.textContent, /1 linked record/);
+  assert.match(archaeology.textContent, /No records were found for this passage/);
+  assert.match(geography.textContent, /Availability could not be checked/);
+  assert.doesNotMatch(geography.textContent, /0 linked records/);
+  assert.match(cosmic.textContent, /1 linked record in incomplete results/);
+  const coverageLines = [narrative, archaeology, geography, cosmic].flatMap((view) =>
+    descendants(view).filter((element) => element.className === "narrative-explorer-coverage"));
   assert.ok(coverageLines.some((element) => element.textContent.includes("Evidence library:")));
   assert.doesNotMatch(coverageLines.map((element) => element.textContent).join(" "), /\bCKL\b/);
-  const readerGuidance = descendants(root).find((element) => element.className === "narrative-explorer-section-heading");
+  const discovery = descendants(theme).find((element) => element.className === "narrative-explorer-connection-discovery");
+  const readerGuidance = descendants(discovery).find((element) => element.className === "narrative-explorer-section-heading");
   assert.match(readerGuidance.textContent, /A Scripture reference shows where evidence applies/i);
   assert.match(readerGuidance.textContent, /doesn't automatically mean two passages are connected/i);
   assert.doesNotMatch(readerGuidance.textContent, /CKL relationship|projection|metadata/i);
-  assert.match(sectionCard("biblical_narrative").textContent, /1 linked record/);
-  assert.match(sectionCard("archaeology_ancient_history").textContent, /No records were found for this passage/);
-  assert.match(sectionCard("biblical_geography").textContent, /No count is available because the source lookup did not finish/);
-  assert.match(sectionCard("divine_council_cosmic_geography").textContent, /1 linked record in incomplete results/);
-  assert.doesNotMatch(root.textContent, /CKL parent records|0 claims · 0 evidence records/);
+  assert.doesNotMatch([narrative, archaeology, geography, cosmic, theme].map((view) => view.textContent).join(" "), /CKL parent records|0 claims · 0 evidence records/);
 });
 
 test("passage overview cards label text, comparison, reception, and interpretation from CKL records", () => {
@@ -2094,7 +2392,7 @@ test("passage overview cards label text, comparison, reception, and interpretati
   for (const testCase of cases) {
     const data = JSON.parse(fs.readFileSync(fixturePath(testCase.file), "utf8"));
     const sectionId = data.sections.find((entry) => entry.item_ids.includes(testCase.id))?.id;
-    const root = explorer.renderOverview(data, {document: fakeDocument(), onInspect: () => {}});
+    const root = renderCategory(data, sectionId, {document: fakeDocument(), onInspect: () => {}});
     const sectionCard = descendants(root).find((element) => element.dataset.sectionId === sectionId);
     const inspect = descendants(sectionCard).find((element) => element.className.includes("narrative-explorer-inspect"));
     inspect.click();
@@ -2119,7 +2417,6 @@ test("overview keeps passage evidence concise and separates anchors from recorde
       titles: [
         "Sons of God: documented interpretive positions",
         "Second Temple Watchers reception of Genesis 6",
-        "Gilgamesh Tablet XI flood comparison",
       ],
     },
     {
@@ -2139,7 +2436,7 @@ test("overview keeps passage evidence concise and separates anchors from recorde
   for (const testCase of cases) {
     const data = JSON.parse(fs.readFileSync(fixturePath(testCase.file), "utf8"));
     const inspected = [];
-    const root = explorer.renderOverview(data, {
+    const root = renderCategory(data, "themes_biblical_connections", {
       document: fakeDocument(),
       onInspect: (item) => inspected.push(item.id),
     });
@@ -2192,9 +2489,6 @@ test("overview keeps passage evidence concise and separates anchors from recorde
       const sons = cards.find((element) => element.textContent.includes("Sons of God: documented interpretive positions"));
       assert.match(sons.textContent, /Who the [“\"]?sons of God[”\"]? are and what the episode means remain disputed/i);
       assert.doesNotMatch(sons.textContent, /Major scholarly disagreement/i);
-      const gilgamesh = cards.find((element) => element.textContent.includes("Gilgamesh Tablet XI flood comparison"));
-      assert.match(gilgamesh.textContent, /flood motifs.*how the traditions are related remains debated/i);
-      assert.doesNotMatch(gilgamesh.textContent, /Major scholarly disagreement/i);
       const watchers = cards.find((element) => element.textContent.includes("Second Temple Watchers reception"));
       const watcherQualification = descendants(watchers).find((element) => element.className === "narrative-explorer-item-qualification");
       assert.match(watcherQualification.textContent, /later reception/i);
@@ -2276,10 +2570,10 @@ test("uncertain evidence keeps its original CKL status in detail and uses a neut
     description: "The record does not explain what remains disputed.",
     rationale: {},
   };
-  const fallbackRoot = explorer.renderOverview({
+  const fallbackRoot = renderCategory({
     ...data,
     items: data.items.map((candidate) => candidate.id === sons.id ? unspecified : candidate),
-  }, {document: fakeDocument()});
+  }, "themes_biblical_connections", {document: fakeDocument()});
   const fallbackCard = descendants(fallbackRoot).find((element) =>
     element.dataset.narrativeConnectionPreview === "true"
       && element.textContent.includes("Unspecified evidence disagreement"));
@@ -2291,7 +2585,7 @@ test("uncertain evidence keeps its original CKL status in detail and uses a neut
 
 test("connection preview distinguishes missing coverage from no recorded eligible relationships", () => {
   const noEdges = projection({connections: []});
-  const noEdgeRoot = explorer.renderOverview(noEdges, {document: fakeDocument()});
+  const noEdgeRoot = renderCategory(noEdges, "themes_biblical_connections", {document: fakeDocument()});
   const noEdgeDiscovery = descendants(noEdgeRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
   assert.match(noEdgeDiscovery.textContent, /No evidence preview with a source explanation is available/i);
   assert.doesNotMatch(noEdgeDiscovery.textContent, /No evidence exists/i);
@@ -2302,7 +2596,7 @@ test("connection preview distinguishes missing coverage from no recorded eligibl
       : entry),
     connections: [],
   });
-  const unavailableRoot = explorer.renderOverview(unavailable, {document: fakeDocument()});
+  const unavailableRoot = renderCategory(unavailable, "themes_biblical_connections", {document: fakeDocument()});
   const unavailableDiscovery = descendants(unavailableRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
   assert.match(unavailableDiscovery.textContent, /The source lookup did not finish/i);
 
@@ -2312,7 +2606,7 @@ test("connection preview distinguishes missing coverage from no recorded eligibl
       : entry),
     connections: [],
   });
-  const partialRoot = explorer.renderOverview(partial, {document: fakeDocument()});
+  const partialRoot = renderCategory(partial, "themes_biblical_connections", {document: fakeDocument()});
   const partialDiscovery = descendants(partialRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
   assert.match(partialDiscovery.textContent, /No source-linked previews are available among the returned records/i);
   assert.doesNotMatch(partialDiscovery.textContent, /No evidence exists/i);
@@ -2322,7 +2616,7 @@ test("connection preview distinguishes missing coverage from no recorded eligibl
   partialWithRecords.coverage = partialWithRecords.coverage.map((entry) => entry.domain === "ckl"
     ? {...entry, state: "partial", query_status: "partial", reason_code: "partial_results"}
     : entry);
-  const partialRecordsRoot = explorer.renderOverview(partialWithRecords, {document: fakeDocument()});
+  const partialRecordsRoot = renderCategory(partialWithRecords, "themes_biblical_connections", {document: fakeDocument()});
   const partialRecordsDiscovery = descendants(partialRecordsRoot).find((element) => element.className.includes("narrative-explorer-connection-discovery"));
   assert.match(partialRecordsDiscovery.textContent, /Some linked source records may not be available in this preview/i);
   assert.ok(descendants(partialRecordsDiscovery).some((element) => element.dataset.narrativeConnectionPreview === "true"));

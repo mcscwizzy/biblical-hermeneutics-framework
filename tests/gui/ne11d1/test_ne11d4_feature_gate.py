@@ -70,6 +70,12 @@ def test_controlled_empty_projection_has_no_actions_and_recovers(driver, base_ur
     wait.until(lambda browser: browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer"))
     explorer = driver.find_element(By.CSS_SELECTOR, ".narrative-explorer")
     assert "Jonah 1:17" in explorer.text
+    assert len(explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")) == 6
+    assert not explorer.find_elements(By.CSS_SELECTOR, "article.narrative-explorer-item")
+    assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-related-passage")
+    explorer.find_element(By.CSS_SELECTOR, '[data-section-id="themes_biblical_connections"]').click()
+    wait.until(lambda browser: browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer-related-passages"))
+    explorer = driver.find_element(By.CSS_SELECTOR, ".narrative-explorer")
     assert "No linked passage routes were found in this controlled empty-response fixture." in explorer.text
     assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-related-passage")
     assert not explorer.find_elements(By.CSS_SELECTOR, "button[data-narrative-focus-id^='related-passage:']")

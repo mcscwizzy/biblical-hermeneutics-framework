@@ -167,3 +167,114 @@ test("Companion history preserves the basis of an authored evidence relationship
     restore();
   }
 });
+
+test("Narrative Explorer history preserves known views and rejects invalid categories", () => {
+  const {controller, restore} = loadHistoryController();
+  const history = controller.create();
+  const view = {kind: "category", categoryId: "themes_biblical_connections"};
+  try {
+    history.initialize({state: "study", mode: "passage", resource: "narrative_explorer", narrativeView: view});
+    assert.deepEqual(history.current().narrativeView, view);
+
+    [
+      {kind: "category", categoryId: "made_up_category"},
+      {kind: "category", categoryId: "x".repeat(1000)},
+      {kind: "other", categoryId: "themes_biblical_connections"},
+      null,
+    ].forEach((narrativeView) => {
+      history.replace({state: "study", mode: "passage", resource: "narrative_explorer", narrativeView});
+      assert.deepEqual(history.current().narrativeView, {kind: "overview"});
+    });
+  } finally {
+    history.destroy();
+    restore();
+  }
+});
+
+test("Narrative Explorer Back and Forward restore focused category and exact trail", async () => {
+  const {controller, browserHistory, restore} = loadHistoryController();
+  const applied = [];
+  const history = controller.create({apply: async (snapshot) => applied.push(snapshot)});
+  const selection = {book: "Genesis", chapter: 1, reference: "Genesis 1"};
+  const trail = {
+    originSelection: selection,
+    nodes: [{
+      kind: "passage",
+      id: "passage:Genesis 1",
+      label: "Genesis 1",
+      reference: "Genesis 1",
+      selection,
+      relationshipHops: 0,
+      focusControlId: "category:themes_biblical_connections",
+    }],
+    activeIndex: 0,
+  };
+  const categoryView = {kind: "category", categoryId: "themes_biblical_connections"};
+  const relationship = {
+    id: "genesis-john-route",
+    provenance: "ckl_documented_claim",
+    sourcePassage: "Genesis 1:1",
+    destinationPassage: "John 1:1",
+    relationshipCategory: "thematic_connection",
+    explanation: "A documented relationship with an explanation that remains attached to the route.",
+    uncertainty: "The relationship does not establish literary dependence.",
+    humanScholarlyApproval: "not_recorded",
+    direction: "one_way",
+    supportingRecordIds: Array.from({length: 14}, (_, index) => `ckl:genesis#evidence:${index}`),
+    supportingSourceIds: Array.from({length: 14}, (_, index) => `source-${index}`),
+  };
+  try {
+    history.initialize({state: "study", mode: "passage", resource: "narrative_explorer", trail, narrativeView: {kind: "overview"}});
+    history.push({state: "study", mode: "passage", resource: "narrative_explorer", trail, narrativeView: categoryView});
+    history.push({
+      state: "study",
+      mode: "passage",
+      resource: "narrative_explorer",
+      trail: {...trail, nodes: [...trail.nodes, {
+        kind: "evidence",
+        id: "ckl:genesis#evidence:creation",
+        label: "Creation evidence",
+        relationship,
+        parentObjectId: "genesis",
+        selection,
+        relationshipHops: 0,
+        focusControlId: "evidence:creation",
+      }], activeIndex: 1},
+      narrativeView: categoryView,
+    });
+
+    history.backFromResource();
+    await new Promise((resolve) => setImmediate(resolve));
+    assert.deepEqual(history.current().narrativeView, categoryView);
+    assert.equal(history.current().trail.nodes.length, 1);
+    history.backFromResource();
+    await new Promise((resolve) => setImmediate(resolve));
+    assert.deepEqual(history.current().narrativeView, {kind: "overview"});
+
+    browserHistory.forward();
+    await new Promise((resolve) => setImmediate(resolve));
+    assert.deepEqual(history.current().narrativeView, categoryView);
+    assert.equal(history.current().trail.nodes.length, 1);
+    browserHistory.forward();
+    await new Promise((resolve) => setImmediate(resolve));
+    assert.deepEqual(history.current().narrativeView, categoryView);
+    assert.equal(history.current().trail.nodes.length, 2);
+    assert.deepEqual(history.current().trail.nodes[1].relationship, {
+      id: relationship.id,
+      provenance: relationship.provenance,
+      sourcePassage: relationship.sourcePassage,
+      destinationPassage: relationship.destinationPassage,
+      relationshipCategory: relationship.relationshipCategory,
+      explanation: relationship.explanation,
+      uncertainty: relationship.uncertainty,
+      humanScholarlyApproval: relationship.humanScholarlyApproval,
+      direction: relationship.direction,
+      supportingRecordIds: relationship.supportingRecordIds.slice(0, 12),
+      supportingSourceIds: relationship.supportingSourceIds.slice(0, 12),
+    });
+    assert.equal(applied.length, 4);
+  } finally {
+    history.destroy();
+    restore();
+  }
+});

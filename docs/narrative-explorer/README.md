@@ -49,3 +49,8 @@ include the generated Commentary corpus or generator.
 The numbered `ne7`, `ne8`, and earlier pilot/audit pages describe their
 original checkpoints. Treat them as historical snapshots rather than current
 runtime documentation.
+
+## Current reader experience
+
+- [UI-03 reader acceptance, accessibility, and browser journeys](ui03/01-reader-acceptance.md)
+- [UI-03 performance comparison and screenshots](ui03/02-performance-and-visual-results.md)
