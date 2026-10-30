@@ -29,6 +29,8 @@ function createWorker({fetchResponse, cachePut, cachedResponse, cachedMapEntries
       const entries = cacheAssets.get(name) || new Set();
       entries.add(asset);
       cacheAssets.set(name, entries);
+      const absoluteUrl = new URL(asset, self.location.origin).href;
+      cacheResponses.set(`${name}:${absoluteUrl}`, new Response(`cached ${asset}`, {status: 200}));
     },
     put: async (request, response) => {
       cachePutCalls.push(request.url);
@@ -50,7 +52,14 @@ function createWorker({fetchResponse, cachePut, cachedResponse, cachedMapEntries
   });
   const caches = {
     open: async (name) => makeCache(name),
-    match: async () => cachedResponse,
+    match: async (request) => {
+      if (cachedResponse) return cachedResponse.clone?.() || cachedResponse;
+      const url = request?.url || new URL(String(request), self.location.origin).href;
+      for (const [key, response] of cacheResponses.entries()) {
+        if (key.endsWith(`:${url}`)) return response.clone();
+      }
+      return undefined;
+    },
     keys: async () => ["bhf-shell-v48", "bhf-static-v48", "bhf-api-v48"],
     delete: async (name) => {
       deletedCaches.push(name);
@@ -92,6 +101,7 @@ test("service worker precaches the explorer module and retires the previous cach
   assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/maps/MapFocusAcknowledgment.js"), true);
   assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/companion-locations.js"), true);
   assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/commentary.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/commentary.js?v=20261030a"), true);
 
   let activatePromise;
   worker.listeners.get("activate")({
@@ -99,6 +109,26 @@ test("service worker precaches the explorer module and retires the previous cach
   });
   await activatePromise;
   assert.deepEqual(worker.deletedCaches.sort(), ["bhf-api-v48", "bhf-shell-v48", "bhf-static-v48"]);
+});
+
+
+test("the exact versioned Tyndale script stays available after an offline reload", async () => {
+  const worker = createWorker({fetchResponse: async () => { throw new Error("offline"); }});
+  let installPromise;
+  worker.listeners.get("install")({waitUntil: (promise) => { installPromise = promise; }});
+  await installPromise;
+
+  const url = "https://reader.example/static/commentary.js?v=20261030a";
+  let responsePromise = null;
+  worker.listeners.get("fetch")({
+    request: new Request(url),
+    respondWith: (promise) => { responsePromise = promise; },
+  });
+
+  const response = await responsePromise;
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), "cached /static/commentary.js?v=20261030a");
+  assert.deepEqual(worker.networkRequests, [url]);
 });
 
 test("Narrative Explorer API requests bypass service-worker caching", async () => {

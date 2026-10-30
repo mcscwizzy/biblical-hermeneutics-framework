@@ -75,8 +75,16 @@ class FakeElement {
     const matches = [];
     const predicate = selector.startsWith(".")
       ? (element) => element.classList.contains(selector.slice(1))
+      : selector === "h3"
+        ? (element) => element.tagName === "H3"
+        : selector === "[data-verse]"
+          ? (element) => Object.hasOwn(element.dataset, "verse")
       : selector === "[data-commentary-entry-id]"
         ? (element) => Object.hasOwn(element.dataset, "commentaryEntryId")
+        : selector === "[data-tyndale-live-status]"
+          ? (element) => Object.hasOwn(element.dataset, "tyndaleLiveStatus")
+          : selector === "[data-tyndale-card-content]"
+            ? (element) => Object.hasOwn(element.dataset, "tyndaleCardContent")
         : () => false;
     const visit = (element) => {
       element.children.forEach((child) => {
@@ -141,11 +149,14 @@ function createFixture(requestJson = async () => payload("Genesis", 1, [])) {
   const requests = [];
   const slot = new FakeElement("section");
   slot.hidden = true;
+  const readerPane = new FakeElement("article");
+  readerPane.classList.add("is-active");
   const fullBody = new FakeElement("div");
   const document = {
     querySelector(selector) {
       if (selector === "[data-companion-tyndale-card-slot]") return slot;
       if (selector === "[data-commentary-body]") return fullBody;
+      if (selector === "#chapter-reader .reader-pane.is-active") return readerPane;
       return null;
     },
     createElement(tagName) {
@@ -179,6 +190,17 @@ function createFixture(requestJson = async () => payload("Genesis", 1, [])) {
     slot,
     fullBody,
     requests,
+    setReaderChapter(book, chapter, verseCount) {
+      readerPane.replaceChildren();
+      const heading = new FakeElement("h3");
+      heading.textContent = `${book} ${chapter}`;
+      readerPane.appendChild(heading);
+      for (let verse = 1; verse <= verseCount; verse += 1) {
+        const verseElement = new FakeElement("span");
+        verseElement.dataset.verse = String(verse);
+        readerPane.appendChild(verseElement);
+      }
+    },
     publish(next) {
       selection = next;
       selectionListener?.(selection, {selection, source: "test"});
@@ -225,6 +247,21 @@ test("a later chapter shows chapter notes without the book introduction", async 
 });
 
 
+test("an unselected chapter shows full-chapter ranges but not narrow verse ranges", async () => {
+  const fixture = createFixture(async () => payload("1 Chronicles", 3, [
+    entry(1, "range_note", "Published full-chapter range note.", anchor("1 Chronicles", 3, 1, 3, 24)),
+    entry(2, "range_note", "Published narrow verse range note.", anchor("1 Chronicles", 3, 1, 3, 4)),
+  ]));
+  fixture.setReaderChapter("1 Chronicles", 3, 24);
+
+  fixture.publish({book: "1 Chronicles", chapter: 3, selectedVerses: [], reference: "1 Chronicles 3"});
+  await fixture.flush();
+
+  assert.match(fixture.slot.textContent, /Published full-chapter range note\./);
+  assert.doesNotMatch(fixture.slot.textContent, /Published narrow verse range note\./);
+});
+
+
 test("a single verse selection displays matching and overlapping notes only", async () => {
   const fixture = createFixture(async () => payload("John", 1, [
     entry(1, "verse_note", "Published John 1:3 note.", anchor("John", 1, 3, 1, 3)),
@@ -261,6 +298,20 @@ test("non-contiguous selections use selected verse numbers and rank direct notes
 });
 
 
+test("a same-chapter exact range ranks ahead of a broader cross-chapter range", async () => {
+  const fixture = createFixture(async () => payload("Genesis", 2, [
+    entry(1, "range_note", "Broader Genesis 1:1-2:3 note.", anchor("Genesis", 1, 1, 2, 3)),
+    entry(2, "range_note", "Exact Genesis 2:1-3 note.", anchor("Genesis", 2, 1, 2, 3)),
+  ]));
+
+  fixture.publish({book: "Genesis", chapter: 2, startVerse: 1, endVerse: 3, selectedVerses: [1, 2, 3], reference: "Genesis 2:1-3"});
+  await fixture.flush();
+
+  const text = fixture.slot.textContent;
+  assert.ok(text.indexOf("Exact Genesis 2:1-3 note.") < text.indexOf("Broader Genesis 1:1-2:3 note."));
+});
+
+
 test("missing selected notes use a fallback that does not dismiss broader book information", async () => {
   const fixture = createFixture(async () => payload("Ruth", 3, [
     entry(1, "verse_note", "A note for Ruth 3:4.", anchor("Ruth", 3, 4, 3, 4)),
@@ -281,6 +332,8 @@ test("uninstalled and offline Tyndale data render a readable unavailable state",
     fixture.publish({book: "Genesis", chapter: 1, selectedVerses: [], reference: "Genesis 1"});
     await fixture.flush();
     assert.match(fixture.slot.textContent, /Tyndale Study Notes are not installed/i);
+    assert.match(fixture.slot.querySelector("[data-tyndale-live-status]").textContent, /not installed/i);
+    assert.doesNotMatch(fixture.slot.querySelector("[data-tyndale-live-status]").textContent, /ready/i);
   });
 
   await t.test("offline request failure", async () => {
@@ -288,7 +341,30 @@ test("uninstalled and offline Tyndale data render a readable unavailable state",
     fixture.publish({book: "Genesis", chapter: 1, selectedVerses: [], reference: "Genesis 1"});
     await fixture.flush();
     assert.match(fixture.slot.textContent, /Tyndale Study Notes are unavailable/i);
+    assert.match(fixture.slot.querySelector("[data-tyndale-live-status]").textContent, /unavailable/i);
+    assert.doesNotMatch(fixture.slot.querySelector("[data-tyndale-live-status]").textContent, /ready/i);
   });
+});
+
+
+test("card updates preserve one live status node for screen-reader announcements", async () => {
+  const fixture = createFixture(async (url) => {
+    const book = url.split("/").at(-2);
+    return payload(book, 1, [entry(book, "book_introduction", `${book} introduction.`, anchor(book, null, null, null, null))]);
+  });
+
+  fixture.publish({book: "Genesis", chapter: 1, selectedVerses: [], reference: "Genesis 1"});
+  await fixture.flush();
+  const status = fixture.slot.querySelector("[data-tyndale-live-status]");
+  assert.ok(status);
+  assert.equal(status.getAttribute("role"), "status");
+  assert.equal(status.getAttribute("aria-live"), "polite");
+
+  fixture.publish({book: "Ruth", chapter: 1, selectedVerses: [], reference: "Ruth 1"});
+  await fixture.flush();
+
+  assert.equal(fixture.slot.querySelector("[data-tyndale-live-status]"), status);
+  assert.match(status.textContent, /Ruth 1/);
 });
 
 

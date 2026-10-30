@@ -41,6 +41,7 @@ const STATIC_ASSETS = [
   "/static/companion-locations.js",
   "/static/study-companion.js",
   "/static/commentary.js",
+  "/static/commentary.js?v=20261030a",
   "/static/htmx-status.js",
   "/static/htmx-study-panels.js",
   "/static/htmx-search.js",

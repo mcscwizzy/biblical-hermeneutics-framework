@@ -9,6 +9,7 @@
   let pendingSelection = null;
   let contextSequence = 0;
   let contextKey = "";
+  let renderedContextSignature = "";
 
   function key(book, chapter) {
     return `${String(book || "").trim().toLowerCase()}|${Number(chapter || 0)}`;
@@ -82,19 +83,39 @@
     return (!start || start <= chapter) && (!end || end >= chapter);
   }
 
+  function readerVerseCount(selection) {
+    const pane = document.querySelector("#chapter-reader .reader-pane.is-active");
+    if (!pane) return 0;
+    const heading = pane.querySelector("h3")?.textContent?.trim() || "";
+    if (heading && heading.toLowerCase() !== `${selection.book} ${selection.chapter}`.toLowerCase()) return 0;
+    return Array.from(pane.querySelectorAll("[data-verse]")).reduce((count, element) =>
+      Math.max(count, Number(element.dataset.verse) || 0), 0);
+  }
+
+  function coversWholeChapter(anchor, selection, verseCount) {
+    if (!verseCount || !anchorOverlapsChapter(anchor, selection)) return false;
+    const chapter = Number(selection.chapter);
+    const {start, end} = anchorChapterRange(anchor);
+    return start === chapter
+      && end === chapter
+      && (Number(anchor.start_verse) || 1) <= 1
+      && (Number(anchor.end_verse || anchor.start_verse) || Number.MAX_SAFE_INTEGER) >= verseCount;
+  }
+
   function isIntroduction(entry) {
     return entry?.kind === "book_introduction" || entry?.kind === "book_introduction_summary";
   }
 
-  function entriesForChapter(entries, selection) {
+  function entriesForChapter(entries, selection, verseCount) {
     return (entries || []).filter((entry) => {
       if (isIntroduction(entry)) return false;
       const anchor = entry?.anchor;
       if (!anchorOverlapsChapter(anchor, selection)) return false;
       const {start} = anchorChapterRange(anchor);
-      return Boolean(start)
-        && anchor.start_verse == null
-        && anchor.end_verse == null;
+      return Boolean(start) && (
+        (anchor.start_verse == null && anchor.end_verse == null)
+        || coversWholeChapter(anchor, selection, verseCount)
+      );
     });
   }
 
@@ -126,12 +147,14 @@
     const selectedStart = verses[0];
     const selectedEnd = verses[verses.length - 1];
 
-    if (startVerse === endVerse && verses.includes(startVerse)) return 0;
-    if (contiguous && startVerse === selectedStart && endVerse === selectedEnd) return 1;
+    const sameChapter = startChapter === chapter && endChapter === chapter;
+    if (sameChapter && startVerse === endVerse && verses.includes(startVerse)) return 0;
+    if (sameChapter && contiguous && startVerse === selectedStart && endVerse === selectedEnd) return 1;
     if (Number.isSafeInteger(endVerse) && Number.isSafeInteger(startVerse)) {
-      return 10 + Math.max(0, endVerse - startVerse);
+      return (sameChapter ? 10 : 1000 + Math.max(0, endChapter - startChapter) * 100)
+        + Math.max(0, endVerse - startVerse);
     }
-    return 500;
+    return sameChapter ? 500 : 1000 + Math.max(0, endChapter - startChapter) * 100;
   }
 
   function orderedEntries(entries, selection, verses) {
@@ -195,16 +218,34 @@
     parent.appendChild(button);
   }
 
+  function cardParts(slot) {
+    let status = slot.querySelector("[data-tyndale-live-status]");
+    if (!status) {
+      status = document.createElement("p");
+      status.className = "visually-hidden tyndale-card-status";
+      status.dataset.tyndaleLiveStatus = "true";
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+      slot.appendChild(status);
+    }
+    let card = slot.querySelector(".companion-tyndale-card");
+    if (!card) {
+      card = document.createElement("article");
+      card.className = "companion-section companion-tyndale-card";
+      slot.appendChild(card);
+    }
+    return {card, status};
+  }
+
   function cardFrame(selection, {statusText = "", busy = false, source = null} = {}) {
     const slot = cardSlot();
     if (!slot) return null;
-    slot.replaceChildren();
     slot.hidden = false;
-
-    const card = document.createElement("article");
-    card.className = "companion-section companion-tyndale-card";
+    const {card, status} = cardParts(slot);
+    card.replaceChildren();
     card.setAttribute("aria-labelledby", "companion-tyndale-title");
     card.setAttribute("aria-busy", String(busy));
+    status.textContent = statusText;
 
     const header = document.createElement("header");
     header.className = "companion-section-heading tyndale-card-heading";
@@ -217,19 +258,12 @@
     header.append(title, location);
     card.appendChild(header);
 
-    const status = document.createElement("p");
-    status.className = "visually-hidden tyndale-card-status";
-    status.setAttribute("role", "status");
-    status.setAttribute("aria-live", "polite");
-    status.textContent = statusText;
-    card.appendChild(status);
-
     const content = document.createElement("div");
     content.className = "tyndale-card-content";
+    content.dataset.tyndaleCardContent = "true";
     card.appendChild(content);
     sourceFooter(card, source);
     appendWorkspaceButton(card);
-    slot.appendChild(card);
     return {card, content, status};
   }
 
@@ -328,16 +362,18 @@
 
   function renderContextPayload(selection, payload) {
     const verses = selectedVerses(selection);
-    const frame = cardFrame(selection, {
-      statusText: `Tyndale notes for ${selection.reference || formatReference(selection)} are ready.`,
-      source: payload?.source,
-    });
+    const verseCount = readerVerseCount(selection);
+    const contextSignature = `${selectionKey(selection)}|${verseCount}|${payload?.available}|${(payload?.entries || []).length}`;
+    if (contextSignature === renderedContextSignature) return;
+    renderedContextSignature = contextSignature;
+    const frame = cardFrame(selection, {source: payload?.source});
     if (!frame) return;
     if (!payload?.available) {
       const message = document.createElement("p");
       message.className = "empty tyndale-card-empty";
       message.textContent = unavailableMessage(payload);
       frame.content.appendChild(message);
+      frame.status.textContent = unavailableMessage(payload);
       return;
     }
 
@@ -348,9 +384,11 @@
         message.className = "empty tyndale-card-empty";
         message.textContent = emptyMessage(selection, verses);
         frame.content.appendChild(message);
+        frame.status.textContent = `No matching Tyndale note is linked to ${selection.reference || formatReference(selection)}.`;
         return;
       }
       matches.forEach((entry) => renderNote(frame.content, entry));
+      frame.status.textContent = `${matches.length} Tyndale ${matches.length === 1 ? "note" : "notes"} linked to ${selection.reference || formatReference(selection)}.`;
       return;
     }
 
@@ -361,15 +399,17 @@
       const summary = introductions.find((entry) => entry.kind === "book_introduction_summary") || null;
       if (full || summary) {
         renderIntroduction(frame.content, full, summary);
+        frame.status.textContent = `Tyndale book introduction loaded for ${selection.reference || formatReference(selection)}.`;
         return;
       }
     } else {
-      const matches = entriesForChapter(payload.entries, selection)
+      const matches = entriesForChapter(payload.entries, selection, verseCount)
         .slice()
         .sort((left, right) => (Number(left.anchor.start_verse) || 0) - (Number(right.anchor.start_verse) || 0)
           || (Number(left.sort_order) || 0) - (Number(right.sort_order) || 0));
       if (matches.length) {
         matches.forEach((entry) => renderNote(frame.content, entry));
+        frame.status.textContent = `${matches.length} Tyndale ${matches.length === 1 ? "chapter note" : "chapter notes"} loaded for ${selection.reference || formatReference(selection)}.`;
         return;
       }
     }
@@ -378,6 +418,9 @@
     message.className = "empty tyndale-card-empty";
     message.textContent = emptyMessage(selection, verses);
     frame.content.appendChild(message);
+    frame.status.textContent = Number(selection.chapter) === 1
+      ? `No Tyndale book introduction is available for ${selection.book}.`
+      : `No Tyndale chapter notes are linked to ${selection.reference || formatReference(selection)}.`;
   }
 
   function showContextLoading(selection) {
@@ -408,8 +451,11 @@
     if (!selection?.book || !Number(selection.chapter)) {
       contextSequence += 1;
       contextKey = "";
+      renderedContextSignature = "";
       if (slot) {
-        slot.replaceChildren();
+        const parts = cardParts(slot);
+        parts.status.textContent = "";
+        parts.card.replaceChildren();
         slot.hidden = true;
       }
       return;
@@ -417,6 +463,7 @@
     const currentKey = selectionKey(selection);
     if (currentKey === contextKey) return;
     contextKey = currentKey;
+    renderedContextSignature = "";
     const requestId = ++contextSequence;
     const currentSelection = {...selection};
     showContextLoading(currentSelection);
@@ -532,7 +579,13 @@
     const target = body();
     if (!target) return;
     if (cache.has(currentKey)) {
-      render(cache.get(currentKey));
+      const payload = cache.get(currentKey);
+      render(payload);
+      const latestSelection = window.BHFStudySelection?.getState?.();
+      renderContextPayload(
+        selectionMatchesChapter(latestSelection, book, chapter) ? latestSelection : selectionForChapter,
+        payload,
+      );
       return;
     }
     const loading = document.createElement("p");
@@ -543,6 +596,11 @@
       const payload = await loadPayload(book, chapter);
       if (requestId !== requestSequence || activeKey !== currentKey) return;
       render(payload);
+      const latestSelection = window.BHFStudySelection?.getState?.();
+      renderContextPayload(
+        selectionMatchesChapter(latestSelection, book, chapter) ? latestSelection : selectionForChapter,
+        payload,
+      );
       for (const neighbor of [Number(chapter) - 1, Number(chapter) + 1]) {
         if (neighbor > 0) prefetch(book, neighbor);
       }

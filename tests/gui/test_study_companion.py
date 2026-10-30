@@ -1073,9 +1073,9 @@ def test_reader_chapter_change_starts_tyndale_loading_before_scripture_response(
                 window.__resolveTyndale = () => resolve({
                   available: true, book: 'Genesis', chapter: 4,
                   entries: [{
-                    id: 'genesis-chapter-four', kind: 'chapter_note',
+                    id: 'genesis-chapter-four', kind: 'range_note',
                     title: 'Genesis 4 chapter note', body: 'New Genesis chapter four note.',
-                    anchor: {book: 'Genesis', start_chapter: 4, start_verse: null, end_chapter: 4, end_verse: null},
+                    anchor: {book: 'Genesis', start_chapter: 4, start_verse: 1, end_chapter: 4, end_verse: 26},
                   }],
                   source: {name: 'Tyndale Open Study Notes', attribution: 'Published attribution.'},
                 });
@@ -1140,7 +1140,7 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
             entry('ruth-verse-four', 'verse_note', 'Ruth 1:4 note', 'Restored Ruth verse four note.', 'Ruth', 1, 4, 1, 4),
           ]),
           'Genesis/2': makePayload('Genesis', 2, [
-            entry('genesis-chapter-two', 'chapter_note', 'Genesis 2 chapter note', 'Published Genesis chapter two note.', 'Genesis', 2, null, 2, null),
+            entry('genesis-chapter-two', 'range_note', 'Genesis 2 chapter note', 'Published Genesis chapter two note.', 'Genesis', 2, 1, 2, 25),
             entry('genesis-v1', 'verse_note', 'Genesis 2:1 note', 'Verse one only note.', 'Genesis', 2, 1, 2, 1),
             entry('genesis-v2', 'verse_note', 'Genesis 2:2 note', 'Verse two matching note.', 'Genesis', 2, 2, 2, 2),
             entry('genesis-v3', 'verse_note', 'Genesis 2:3 note', 'Verse three matching note.', 'Genesis', 2, 3, 2, 3),
@@ -1148,10 +1148,10 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
             entry('genesis-other-intro', 'book_introduction', 'Genesis introduction', 'Introduction must not appear in chapter two.', 'Genesis', null, null, null, null),
           ]),
           'Genesis/4': makePayload('Genesis', 4, [
-            entry('genesis-four', 'chapter_note', 'Genesis 4 chapter note', 'Newest Genesis four note.', 'Genesis', 4, null, 4, null),
+            entry('genesis-four', 'range_note', 'Genesis 4 chapter note', 'Newest Genesis four note.', 'Genesis', 4, 1, 4, 26),
           ]),
           'Ruth/4': makePayload('Ruth', 4, [
-            entry('ruth-four', 'chapter_note', 'Ruth 4 chapter note', 'Newest Ruth four note.', 'Ruth', 4, null, 4, null),
+            entry('ruth-four', 'range_note', 'Ruth 4 chapter note', 'Newest Ruth four note.', 'Ruth', 4, 1, 4, 22),
           ]),
         };
         window.__tyndalePending = {};
@@ -1195,7 +1195,7 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
     assert "CC BY-SA 4.0" in driver.execute_script("return arguments[0].textContent;", card)
     assert card.get_attribute("aria-labelledby") == "companion-tyndale-title"
     assert driver.find_element(By.ID, "companion-tyndale-title").text == "Tyndale Study Notes"
-    status = card.find_element(By.CSS_SELECTOR, '[role="status"]')
+    status = slot.find_element(By.CSS_SELECTOR, '[role="status"]')
     assert status.get_attribute("aria-live") == "polite"
 
     summary = card.find_element(By.CSS_SELECTOR, "details summary")
@@ -1217,7 +1217,9 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
     wait.until(lambda _driver: _driver.execute_script("return window.BHFStudySelection.getState().reference === 'Genesis 2:2';"))
     wait.until(lambda _driver: "Verse two matching note." in _driver.execute_script("return arguments[0].textContent;", slot))
     assert "Verse one only note." not in driver.execute_script("return arguments[0].textContent;", slot)
-    assert "Genesis 2 chapter note." not in driver.execute_script("return arguments[0].textContent;", slot)
+    assert "Published Genesis chapter two note." in driver.execute_script("return arguments[0].textContent;", slot)
+    selected_card_text = driver.execute_script("return arguments[0].textContent;", slot)
+    assert selected_card_text.index("Verse two matching note.") < selected_card_text.index("Published Genesis chapter two note.")
     assert driver.execute_script("return document.activeElement.matches('.verse-number');") is True
 
     verse_three = driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="3"] [data-verse-select]')
@@ -1267,7 +1269,7 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
               scrollWidth: card.scrollWidth,
               overflowY: getComputedStyle(card).overflowY,
               slotLabel: card.parentElement.getAttribute('aria-label'),
-              statusRole: card.querySelector('[role="status"]')?.getAttribute('aria-live'),
+              statusRole: card.parentElement.querySelector('[role="status"]')?.getAttribute('aria-live'),
             };
             """
         )
