@@ -133,7 +133,6 @@ class CommentaryRepository:
             WHERE (a.book = ? AND (
                 (COALESCE(a.start_chapter, ?) <= ? AND COALESCE(a.end_chapter, a.start_chapter, ?) >= ?)
             ))
-               OR (a.entry_id IS NULL AND e.kind IN ('book_introduction', 'profile'))
             ORDER BY CASE WHEN a.start_chapter IS NULL THEN 3
                           WHEN a.start_verse IS NULL THEN 2 ELSE 1 END,
                      COALESCE(a.start_chapter, 0), COALESCE(a.start_verse, 0),
@@ -154,7 +153,6 @@ class CommentaryRepository:
                 COALESCE(a.start_chapter, ?) <= ?
                 AND COALESCE(a.end_chapter, a.start_chapter, ?) >= ?
             ))
-               OR (a.entry_id IS NULL AND e.kind IN ('book_introduction', 'profile'))
         """
         with self.connection() as connection:
             return int(
