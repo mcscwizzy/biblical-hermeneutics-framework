@@ -15,32 +15,32 @@
     {
       id: "biblical_narrative",
       title: "Biblical Narrative",
-      description: "Literary observations and narrative records linked to this passage.",
+      description: "Notice how this passage is told: its sequence, structure, and literary features.",
     },
     {
       id: "archaeology_ancient_history",
       title: "Archaeology & Ancient History",
-      description: "Artifacts, manuscripts, historical records, and ancient literary comparisons, kept distinct by evidence type.",
+      description: "Explore material remains, inscriptions, historical records, and ancient writings with evidence types kept clear.",
     },
     {
       id: "biblical_geography",
       title: "Biblical Geography",
-      description: "Physical places, regions, and routes with the identification limits recorded by BHF.",
+      description: "Explore physical places and routes with the identification limits recorded by BHF.",
     },
     {
       id: "divine_council_cosmic_geography",
       title: "Divine Council & Cosmic Geography",
-      description: "Source-qualified conceptual readings of sacred space, assembly language, disputed divine beings, and ancient cosmology. This is not a literal map of heavenly realms and does not establish physical locations.",
+      description: "Explore source-based readings of sacred space, divine assembly, and ancient cosmology. These do not establish physical locations.",
     },
     {
       id: "themes_biblical_connections",
       title: "Themes & Biblical Connections",
-      description: "Themes and passage connections described in the sources.",
+      description: "Explore themes and documented relationships between biblical passages.",
     },
     {
       id: "people_events_relationships",
       title: "People, Events & Relationships",
-      description: "People, groups, events, and institutions linked in the sources.",
+      description: "Explore people, events, groups, and institutions linked by the sources.",
     },
   ];
   const SOURCE_LABELS = {
@@ -874,49 +874,177 @@
     const rootElement = element(document, "div", "narrative-explorer");
     rootElement.dataset.narrativeExplorer = "";
 
-    const header = element(document, "header", "narrative-explorer-header");
-    const heading = appendTextElement(document, header, "h3", "Narrative evidence and connections");
+    const view = normalizeNarrativeView(options.view);
+    const passage = readerText(projection?.passage?.reference);
+    const definition = view.kind === "category" ? SECTIONS.find((entry) => entry.id === view.categoryId) : null;
+    const header = element(document, "header", `narrative-explorer-header${definition ? " is-focused" : ""}`);
+    const heading = appendTextElement(document, header, "h3", definition?.title || "Explore this passage");
     heading.setAttribute("tabindex", "-1");
     heading.dataset.narrativePrimary = "true";
-    appendTextElement(
-      document,
-      header,
-      "p",
-      "Explore the sources and connections recorded for this passage. Sources and counts show what was returned for this passage; they do not measure its importance or give a complete account.",
-    );
-    if (projection?.passage?.reference) {
-      appendTextElement(document, header, "p", `Current passage: ${readerText(projection.passage.reference)}`, "narrative-explorer-passage");
-    }
+    appendTextElement(document, header, "p", definition?.description
+      || "Choose a topic to explore records linked to the selected Scripture passage.");
+    if (passage) appendTextElement(document, header, "p", `Current passage: ${passage}`, "narrative-explorer-passage");
     rootElement.append(header);
 
-    const passage = projection?.passage?.reference;
     if (options.trail) rootElement.append(renderTrailHeader(options.trail, options));
-    const sectionsHost = element(document, "div", "narrative-explorer-sections");
     const itemsById = new Map((Array.isArray(projection?.items) ? projection.items : []).map((item) => [item.id, item]));
     const connectionsByItem = groupConnections(projection?.connections);
     const sectionsById = new Map((Array.isArray(projection?.sections) ? projection.sections : []).map((section) => [section.id, section]));
     const coverageBySource = new Map((Array.isArray(projection?.coverage) ? projection.coverage : []).map((entry) => [entry.source_domain, entry]));
 
-    rootElement.append(renderConnectionDiscovery(
-      document,
-      passage,
-      [...itemsById.values()],
-      connectionsByItem,
-      coverageBySource,
-      sectionsById,
-      options,
-    ));
-    rootElement.append(renderRelatedPassages(document, passage, projection?.related_passages, options));
+    if (view.kind === "overview" || !definition) {
+      const intro = element(document, "section", "narrative-explorer-discovery");
+      appendTextElement(document, intro, "h4", "Follow a Connection");
+      appendTextElement(document, intro, "p", "Explore passage relationships recorded in CKL or documented through CKL evidence. Similarity alone is not a verified connection.");
+      const related = projection?.related_passages || {};
+      const routeState = routeAvailabilityState(related);
+      intro.append(renderAvailability(document, routeState, categoryAvailabilityLabel(routeState), routeCountLabel(related, routeState)));
+      const follow = element(document, "button", "narrative-explorer-follow-connection");
+      follow.type = "button";
+      follow.textContent = "Follow a Connection";
+      follow.setAttribute("aria-label", passage ? `Follow a Connection from ${passage}` : "Follow a Connection");
+      follow.addEventListener("click", (event) => options.onOpenCategory?.("themes_biblical_connections", event.currentTarget || follow));
+      intro.append(follow);
+      rootElement.append(intro);
 
-    SECTIONS.forEach((definition) => {
-      const section = sectionsById.get(definition.id) || {id: definition.id, state: "unknown", item_ids: [], source_domains: []};
-      const items = (Array.isArray(section.item_ids) ? section.item_ids : [])
-        .map((id) => itemsById.get(id))
-        .filter(Boolean);
-      sectionsHost.append(renderSection(document, definition, section, items, coverageBySource, connectionsByItem, options));
-    });
-    rootElement.append(sectionsHost);
+      const choices = element(document, "section", "narrative-explorer-topic-choices");
+      choices.setAttribute("aria-labelledby", "narrative-explorer-topics-title");
+      const choicesHeading = appendTextElement(document, choices, "h4", "Explore by Topic");
+      choicesHeading.id = "narrative-explorer-topics-title";
+      const cards = element(document, "div", "narrative-explorer-sections");
+      SECTIONS.forEach((category) => {
+        const section = sectionsById.get(category.id) || {state: "unknown", item_ids: []};
+        const state = normalizeState(section.state);
+        const itemIds = Array.isArray(section.item_ids) ? section.item_ids : [];
+        const card = element(document, "button", "narrative-explorer-category-card");
+        card.type = "button";
+        card.dataset.sectionId = category.id;
+        const icon = renderCategoryIcon(document, category.id);
+        const text = element(document, "span", "narrative-explorer-category-copy");
+        appendTextElement(document, text, "span", category.title, "narrative-explorer-category-title");
+        appendTextElement(document, text, "span", categoryCardDescription(category.id), "narrative-explorer-category-description");
+        appendTextElement(document, text, "span", categoryAvailabilityLabel(state), `narrative-explorer-category-availability is-${state}`);
+        if (state === "available" || state === "partial") {
+          appendTextElement(document, text, "span", state === "partial"
+            ? `${itemIds.length} linked record${itemIds.length === 1 ? "" : "s"} in incomplete results`
+            : `${itemIds.length} linked record${itemIds.length === 1 ? "" : "s"}`, "narrative-explorer-category-count");
+        }
+        card.append(icon, text);
+        card.addEventListener("click", (event) => options.onOpenCategory?.(category.id, event.currentTarget || card));
+        cards.append(card);
+      });
+      choices.append(cards);
+      rootElement.append(choices);
+      return rootElement;
+    }
+
+    const back = element(document, "button", "secondary narrative-explorer-back-topics");
+    back.type = "button";
+    back.textContent = "Back to topics";
+    back.addEventListener("click", (event) => options.onBackToOverview?.(event.currentTarget || back));
+    const returnToPassage = element(document, "button", "secondary narrative-explorer-return-passage");
+    returnToPassage.type = "button";
+    returnToPassage.textContent = `Return to ${readerText(options.trail?.originSelection?.reference) || passage || "passage"}`;
+    returnToPassage.addEventListener("click", (event) => options.onReturnToOrigin?.(event.currentTarget || returnToPassage));
+    const controls = element(document, "nav", "narrative-explorer-category-controls");
+    controls.setAttribute("aria-label", "Passage topic navigation");
+    controls.append(back, returnToPassage);
+    rootElement.append(controls);
+
+    const section = sectionsById.get(definition.id) || {id: definition.id, state: "unknown", item_ids: [], source_domains: []};
+    const items = (Array.isArray(section.item_ids) ? section.item_ids : []).map((id) => itemsById.get(id)).filter(Boolean);
+    let hasConnectionPreview = false;
+    if (definition.id === "themes_biblical_connections") {
+      rootElement.append(renderRelatedPassages(document, passage, projection?.related_passages, options));
+      const candidates = selectConnectionPreviews(connectionPreviewCandidates(
+        [...itemsById.values()], connectionsByItem, sectionsById,
+      ));
+      hasConnectionPreview = candidates.length > 0;
+      rootElement.append(renderConnectionDiscovery(
+        document, passage, [...itemsById.values()], connectionsByItem, coverageBySource, sectionsById, options,
+      ));
+    }
+    rootElement.append(renderSection(document, definition, section, items, coverageBySource, connectionsByItem, options, {
+      focused: true,
+      hidePreviews: definition.id === "themes_biblical_connections" && hasConnectionPreview,
+    }));
     return rootElement;
+  }
+
+  function normalizeNarrativeView(value) {
+    const categoryId = typeof value?.categoryId === "string" ? value.categoryId : "";
+    return value?.kind === "category" && SECTIONS.some((section) => section.id === categoryId)
+      ? {kind: "category", categoryId}
+      : {kind: "overview"};
+  }
+
+  function categoryCardDescription(id) {
+    return ({
+      biblical_narrative: "Story, structure, and literary observations.",
+      archaeology_ancient_history: "Material finds and ancient historical sources.",
+      biblical_geography: "Physical places, regions, and routes.",
+      divine_council_cosmic_geography: "Source-based readings of sacred and cosmic space.",
+      themes_biblical_connections: "Themes and documented passage relationships.",
+      people_events_relationships: "People and events linked in the sources.",
+    })[id] || "Explore records linked to this passage.";
+  }
+
+  function categoryAvailabilityLabel(state) {
+    return ({
+      available: "Source lookup complete",
+      partial: "Some results may be missing",
+      not_represented: "No linked records returned",
+      unknown: "Availability could not be checked",
+    })[state] || "Availability could not be checked";
+  }
+
+  function routeAvailabilityState(related) {
+    const state = normalizeState(related?.state);
+    const queryStatus = readerText(related?.query_status);
+    if (state === "available" && queryStatus !== "complete") return queryStatus === "partial" ? "partial" : "unknown";
+    if (state === "not_represented" && queryStatus !== "complete") return "unknown";
+    return state;
+  }
+
+  function routeCountLabel(related, state = routeAvailabilityState(related)) {
+    if (state !== "available" && state !== "partial") return "";
+    if (state === "partial" && related?.query_status !== "partial") return "";
+    const count = (Array.isArray(related?.authored_relationships) ? related.authored_relationships.length : 0)
+      + (Array.isArray(related?.evidence_backed_bridges) ? related.evidence_backed_bridges.length : 0);
+    return `${count} documented passage connection${count === 1 ? "" : "s"}${state === "partial" ? " in incomplete results" : ""}`;
+  }
+
+  function renderAvailability(document, stateValue, label, countLabel = "") {
+    const state = normalizeState(stateValue);
+    const status = element(document, "div", "narrative-explorer-connection-status");
+    appendTextElement(document, status, "span", label, `narrative-explorer-availability is-${state}`);
+    if (countLabel) appendTextElement(document, status, "span", countLabel, "narrative-explorer-category-count");
+    return status;
+  }
+
+  function renderCategoryIcon(document, categoryId) {
+    const paths = {
+      biblical_narrative: "M4 5h16M4 10h16M4 15h10M4 20h8",
+      archaeology_ancient_history: "M4 19h16M6 16l2-7 4 2 3-7 3 12",
+      biblical_geography: "M4 6l5-2 6 3 5-2v13l-5 2-6-3-5 2zM9 4v13m6-10v13",
+      divine_council_cosmic_geography: "M12 3l2.2 5.3L20 10l-5.8 1.7L12 17l-2.2-5.3L4 10l5.8-1.7zM19 16v5m-2.5-2.5h5",
+      themes_biblical_connections: "M9 12a4 4 0 0 1 0-5.7l2-2a4 4 0 0 1 5.7 5.7l-1.2 1.2M15 12a4 4 0 0 1 0 5.7l-2 2a4 4 0 0 1-5.7-5.7l1.2-1.2M8 16l8-8",
+      people_events_relationships: "M16 20v-1.5a4.5 4.5 0 0 0-4.5-4.5h-3A4.5 4.5 0 0 0 4 18.5V20m6-9a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m7-6a3 3 0 0 1 0 6m2 2a4 4 0 0 1 3 4v1",
+    }[categoryId] || "M4 12h16M12 4v16";
+    const icon = document.createElementNS?.("http://www.w3.org/2000/svg", "svg") || document.createElement("span");
+    icon.setAttribute("viewBox", "0 0 24 24");
+    icon.setAttribute("aria-hidden", "true");
+    icon.setAttribute("focusable", "false");
+    icon.setAttribute("class", "narrative-explorer-category-icon");
+    const path = document.createElementNS?.("http://www.w3.org/2000/svg", "path") || document.createElement("span");
+    path.setAttribute("d", paths);
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "currentColor");
+    path.setAttribute("stroke-width", "1.7");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    icon.append(path);
+    return icon;
   }
 
   function renderRelatedPassages(document, passage, related, options) {
@@ -1172,7 +1300,7 @@
       connectionPreviewRank(left.item) - connectionPreviewRank(right.item)
       || String(left.item.id || "").localeCompare(String(right.item.id || ""))
     ));
-    return ranked.slice(0, 3);
+    return ranked.slice(0, 2);
   }
 
   function connectionPreviewRank(item) {
@@ -1187,12 +1315,12 @@
     return isDisputed(item) ? 6 : 7;
   }
 
-  function renderSection(document, definition, section, items, coverageBySource, connectionsByItem, options) {
-    const card = element(document, "section", "narrative-explorer-section");
+  function renderSection(document, definition, section, items, coverageBySource, connectionsByItem, options, renderOptions = {}) {
+    const card = element(document, "section", `narrative-explorer-section${renderOptions.focused ? " is-focused" : ""}`);
     card.dataset.sectionId = definition.id;
     const heading = element(document, "div", "narrative-explorer-section-heading");
-    appendTextElement(document, heading, "h4", definition.title);
-    appendTextElement(document, heading, "p", definition.description);
+    appendTextElement(document, heading, "h4", renderOptions.focused ? "Evidence linked to this passage" : definition.title);
+    if (!renderOptions.focused) appendTextElement(document, heading, "p", definition.description);
     card.append(heading);
     if (definition.id === "divine_council_cosmic_geography") {
       appendTextElement(
@@ -1238,7 +1366,8 @@
       ? [focusItem, ...ordered.filter((item) => item.id !== focusItem.id).slice(0, 1)]
       : ordered.slice(0, 2);
     previewItems.forEach((item) => previewList.append(renderItem(document, item, connectionsByItem.get(item.id) || [], options)));
-    card.append(previewList, fullList);
+    if (!renderOptions.hidePreviews) card.append(previewList);
+    card.append(fullList);
 
     const inspect = element(document, "button", "secondary narrative-explorer-inspect");
     inspect.type = "button";

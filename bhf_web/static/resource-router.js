@@ -343,7 +343,25 @@
         onOpenPassage: followNarrativePassage,
         onBack: () => options.backNarrativeTrail?.(),
         onReturnToOrigin: returnToNarrativeOrigin,
+        onOpenCategory: openNarrativeCategory,
+        onBackToOverview: backToNarrativeOverview,
       };
+    }
+
+    function openNarrativeCategory(categoryId) {
+      const view = normalizeNarrativeView({kind: "category", categoryId});
+      if (view.kind !== "category" || sameNarrativeView(view, narrativeView)) return;
+      narrativeView = view;
+      options.onNarrativeViewChange?.(view, {push: true});
+      renderActiveNarrativeTrail();
+    }
+
+    function backToNarrativeOverview() {
+      if (narrativeView.kind !== "category") return;
+      if (options.backNarrativeView?.()) return;
+      narrativeView = {kind: "overview"};
+      options.onNarrativeViewChange?.(narrativeView, {push: false});
+      renderActiveNarrativeTrail();
     }
 
     function renderActiveNarrativeTrail(behavior = {}) {
@@ -522,6 +540,10 @@
     }
 
     async function returnToNarrativeOrigin() {
+      if (narrativeView.kind !== "overview") {
+        narrativeView = {kind: "overview"};
+        options.onNarrativeViewChange?.(narrativeView, {push: false});
+      }
       narrativeTrail = explorer.returnToOrigin(narrativeTrail);
       const origin = explorer.trailCurrentSelection(narrativeTrail);
       pendingNarrativeFocusId = explorer.trailReturnFocusId(narrativeTrail);

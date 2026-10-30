@@ -60,19 +60,19 @@
 - Produces resource-router `getNarrativeView()` and accepts `{view}` in `open("narrative_explorer", options)`; category changes notify `onNarrativeViewChange(view, {push})` without reopening or refetching the projection.
 - `study-companion.js` maps the normalized view to/from snapshots and sends category Back through the existing Companion history controller.
 
-- [ ] **Step 1: Write failing history, router, and Companion snapshot tests.** Add `testNarrativeExplorerHistoryPreservesKnownViewAndFallsBackForInvalidCategory` to round-trip the themes category and reject an unknown ID, oversized ID, and malformed view. Add `testNarrativeExplorerBackAndForwardRestoreFocusedCategoryAndTrail` to push overview/category/evidence snapshots and assert Back/Forward restores the category together with the exact trail. Add `testNarrativeExplorerRouterRestoresFocusedCategoryFromViewOption` to open with a valid category, assert that render options and `getNarrativeView()` contain it, and assert only the passage's existing session load occurred. Add `testNarrativeExplorerViewIsIncludedInCompanionHistorySnapshot` to assert study-companion snapshots carry the router's normalized category view.
-- [ ] **Step 2: Run the targeted tests and confirm they fail.**
+- [x] **Step 1: Write failing history, router, and Companion snapshot tests.** Add `testNarrativeExplorerHistoryPreservesKnownViewAndFallsBackForInvalidCategory` to round-trip the themes category and reject an unknown ID, oversized ID, and malformed view. Add `testNarrativeExplorerBackAndForwardRestoreFocusedCategoryAndTrail` to push overview/category/evidence snapshots and assert Back/Forward restores the category together with the exact trail. Add `testNarrativeExplorerRouterRestoresFocusedCategoryFromViewOption` to open with a valid category, assert that render options and `getNarrativeView()` contain it, and assert only the passage's existing session load occurred. Add `testNarrativeExplorerViewIsIncludedInCompanionHistorySnapshot` to assert study-companion snapshots carry the router's normalized category view.
+- [x] **Step 2: Run the targeted tests and confirm they fail.**
 
   Run: `node --test tests/frontend/companion-history.test.js tests/frontend/resource-router.test.js`
 
   Expected: FAIL because Companion history drops `narrativeView` and the resource router does not expose view state.
-- [ ] **Step 3: Implement the bounded view contract.** Normalize a plain allowlisted view object in `companion-history.js`; keep all existing trail node validation unchanged. Initialize and expose view state in the resource router, pass it to `renderOverview`, and notify the Companion only when a view changes. Include the view in `historySnapshot()` and pass it through `applyHistoryState()`/`openResource()`.
-- [ ] **Step 4: Run the focused tests.**
+- [x] **Step 3: Implement the bounded view contract.** Normalize a plain allowlisted view object in `companion-history.js`; keep all existing trail node validation unchanged. Initialize and expose view state in the resource router, pass it to `renderOverview`, and notify the Companion only when a view changes. Include the view in `historySnapshot()` and pass it through `applyHistoryState()`/`openResource()`.
+- [x] **Step 4: Run the focused tests.**
 
   Run: `node --test tests/frontend/companion-history.test.js tests/frontend/resource-router.test.js tests/frontend/study-companion-context.test.js`
 
   Expected: PASS, including the existing trail bounds and exact passage/translation/verse restoration tests.
-- [ ] **Step 5: Commit the approved design artifacts and history contract together.**
+- [x] **Step 5: Commit the approved design artifacts and history contract together.**
 
   Commit message: `feat: preserve Narrative Explorer focused view history`
 
@@ -90,21 +90,21 @@
 - `renderOverview(projection, options)` renders the overview for `{kind: "overview"}` and one focused category for `{kind: "category", categoryId}`. It calls `onOpenCategory(categoryId, trigger)` and `onBackToOverview(trigger)` for local view controls; it continues to use existing `onInspect`, `onOpenPassage`, `onNavigate`, and trail callbacks for evidence and destination navigation.
 - The six category IDs remain `biblical_narrative`, `archaeology_ancient_history`, `biblical_geography`, `divine_council_cosmic_geography`, `themes_biblical_connections`, and `people_events_relationships`.
 
-- [ ] **Step 1: Write failing renderer tests.** Add `testOverviewShowsSixConciseCategoryCardsAndNoEvidenceInventory`, asserting the passage header, six labelled cards, a prominent Follow a Connection entry, and no evidence-item articles in the initial view. Add `testFocusedCategoryShowsOnlySelectedCategoryAndTwoPreviews`, asserting one selected category, at most two preview records, and a Browse records action. Add `testUnknownAndPartialCategoryCoverageDoNotShowZeroCount`, asserting distinct unknown/partial status with no invented count. Add `testConnectionEntryOpensThemeCategoryWithRecordedPassageRoutes`, asserting that the theme category retains authored/bridge labels and exact destinations. Add `testNarrativeCategoryNavigationReusesPassageProjectionAndHistory` in `resource-router.test.js`, asserting category selection pushes one view snapshot, opens no second projection session, and Back restores the overview.
-- [ ] **Step 2: Run the targeted renderer/router tests and confirm they fail.**
+- [x] **Step 1: Write failing renderer tests.** Add `testOverviewShowsSixConciseCategoryCardsAndNoEvidenceInventory`, asserting the passage header, six labelled cards, a prominent Follow a Connection entry, and no evidence-item articles in the initial view. Add `testFocusedCategoryShowsOnlySelectedCategoryAndTwoPreviews`, asserting one selected category, at most two preview records, and a Browse records action. Add `testUnknownAndPartialCategoryCoverageDoNotShowZeroCount`, asserting distinct unknown/partial status with no invented count. Add `testConnectionEntryOpensThemeCategoryWithRecordedPassageRoutes`, asserting that the theme category retains authored/bridge labels and exact destinations. Add `testNarrativeCategoryNavigationReusesPassageProjectionAndHistory` in `resource-router.test.js`, asserting category selection pushes one view snapshot, opens no second projection session, and Back restores the overview.
+- [x] **Step 2: Run the targeted renderer/router tests and confirm they fail.**
 
   Run: `node --test tests/frontend/narrative-explorer.test.js tests/frontend/resource-router.test.js`
 
   Expected: FAIL because the default renderer currently appends connection routes and all six evidence panels instead of a landing screen.
-- [ ] **Step 3: Implement the concise overview.** Add decorative inline SVG icons with `aria-hidden="true"` and no dependency. Keep the passage identity and short explanation. Render the Follow a Connection entry with availability/counts derived from `related_passages` state. Render all six topic cards with short plain-English descriptions, `normalizeState(section.state)`, and counts only for completed queries. Do not attach record lists to overview cards.
-- [ ] **Step 4: Implement focused category rendering.** Render a focused header, selected passage, Back and Return to Passage controls, one or two available previews, and the existing paginated record list. For the themes category, place related passage routes before evidence records; retain separate authored CKL and CKL-documented bridge groups and their expanded provenance. Keep the current exact destination validator and relationship callbacks.
-- [ ] **Step 5: Reconcile existing tests with the new view boundary.** Move assertions that inspect complete related passage routes or stacked panels to the focused themes/category renderer. Keep tests for projection semantics, source provenance, draft status, map restrictions, connection labels, cycle protection, and page limits intact. Do not weaken assertions to text-only checks when a navigation callback or exact identifier is available.
-- [ ] **Step 6: Run targeted frontend tests.**
+- [x] **Step 3: Implement the concise overview.** Add decorative inline SVG icons with `aria-hidden="true"` and no dependency. Keep the passage identity and short explanation. Render the Follow a Connection entry with availability/counts derived from `related_passages` state. Render all six topic cards with short plain-English descriptions, `normalizeState(section.state)`, and counts only for completed queries. Do not attach record lists to overview cards.
+- [x] **Step 4: Implement focused category rendering.** Render a focused header, selected passage, Back and Return to Passage controls, one or two available previews, and the existing paginated record list. For the themes category, place related passage routes before evidence records; retain separate authored CKL and CKL-documented bridge groups and their expanded provenance. Keep the current exact destination validator and relationship callbacks.
+- [x] **Step 5: Reconcile existing tests with the new view boundary.** Move assertions that inspect complete related passage routes or stacked panels to the focused themes/category renderer. Keep tests for projection semantics, source provenance, draft status, map restrictions, connection labels, cycle protection, and page limits intact. Do not weaken assertions to text-only checks when a navigation callback or exact identifier is available.
+- [x] **Step 6: Run targeted frontend tests.**
 
   Run: `node --test tests/frontend/narrative-explorer.test.js tests/frontend/resource-router.test.js tests/frontend/study-companion-context.test.js`
 
   Expected: PASS with six overview choices, no initial evidence inventory, focused evidence browsing, and unchanged exact passage navigation.
-- [ ] **Step 7: Commit.**
+- [x] **Step 7: Commit.**
 
   Commit message: `feat: add focused Narrative Explorer discovery views`
 

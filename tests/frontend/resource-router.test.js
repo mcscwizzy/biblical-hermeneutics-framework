@@ -36,7 +36,7 @@ function projection(overrides = {}) {
 }
 
 function fixture(options = {}) {
-  const records = {trailChanges: [], handoffs: [], rendered: [], sessions: []};
+  const records = {trailChanges: [], viewChanges: [], handoffs: [], rendered: [], sessions: []};
   let selection = {
     book: "Jonah",
     chapter: 1,
@@ -162,6 +162,8 @@ function fixture(options = {}) {
     getContextRecord: () => options.contextRecord || {key: "", status: "ready", context: null},
     onVerifiedRouteHandoff: (...args) => records.handoffs.push(args),
     onNarrativeTrailChange: (...args) => records.trailChanges.push(args),
+    onNarrativeViewChange: (...args) => records.viewChanges.push(args),
+    backNarrativeView: () => options.backNarrativeView?.() ?? false,
   });
   return {
     router,
@@ -513,6 +515,30 @@ test("Narrative Explorer router restores a focused category from its view option
   assert.equal(value.records.rendered.at(-1).view.kind, view.kind);
   assert.equal(value.records.rendered.at(-1).view.categoryId, view.categoryId);
   assert.equal(value.records.sessions.length, 1);
+});
+
+test("category navigation reuses the passage projection and supports Back to topics", async () => {
+  let historyBacks = 0;
+  const value = fixture({backNarrativeView: () => { historyBacks += 1; return false; }});
+  assert.equal(await value.router.open("narrative_explorer"), true);
+  const initialSessions = value.records.sessions.length;
+  const card = {dataset: {narrativeFocusId: "themes_biblical_connections"}};
+
+  value.records.rendered.at(-1).onOpenCategory("themes_biblical_connections", card);
+
+  assert.equal(value.router.getNarrativeView().categoryId, "themes_biblical_connections");
+  assert.equal(value.records.rendered.at(-1).view.categoryId, "themes_biblical_connections");
+  assert.equal(value.records.sessions.length, initialSessions);
+  assert.equal(value.records.viewChanges[0][0].kind, "category");
+  assert.equal(value.records.viewChanges[0][0].categoryId, "themes_biblical_connections");
+  assert.equal(value.records.viewChanges[0][1].push, true);
+
+  value.records.rendered.at(-1).onBackToOverview(card);
+
+  assert.equal(historyBacks, 1);
+  assert.equal(value.router.getNarrativeView().kind, "overview");
+  assert.equal(value.records.rendered.at(-1).view.kind, "overview");
+  assert.equal(value.records.sessions.length, initialSessions);
 });
 
 test("closing during verification discards the delayed route and history", async () => {
