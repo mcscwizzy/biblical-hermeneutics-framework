@@ -25,6 +25,7 @@
     let controller = null;
     let nativeBackView = null;
     let nativeBackFocusSelector = "";
+    let nativeBackFocusTarget = null;
     let activeResourceId = "";
     let activePassageKey = "";
     const explorer = window.BHFNarrativeExplorer;
@@ -127,6 +128,7 @@
       }
       nativeBackView = null;
       nativeBackFocusSelector = "";
+      nativeBackFocusTarget = null;
       shell.classList.add("is-native-resource");
       host.hidden = false;
       if (!isNarrativeExplorer) renderLoading(host);
@@ -204,6 +206,7 @@
       selectedNarrativeRouteId = route.id;
       nativeBackView = null;
       nativeBackFocusSelector = "";
+      nativeBackFocusTarget = null;
       shell.classList.add("is-native-resource");
       host.hidden = false;
       renderActiveNarrativeTrail({focusRouteId: route.id});
@@ -257,6 +260,7 @@
       shell.classList.remove("is-native-resource");
       nativeBackView = null;
       nativeBackFocusSelector = "";
+      nativeBackFocusTarget = null;
       narrativeTrail = null;
       narrativeProjection = null;
       narrativeSelection = null;
@@ -1172,11 +1176,11 @@
       const canonicalCard = event.target.closest("[data-canonical-id]");
       const archaeologyCard = event.target.closest("[data-archaeology-id]");
       if (archaeologyCard) {
-        void openArchaeologyDetail(archaeologyCard.dataset.archaeologyId);
+        void openArchaeologyDetail(archaeologyCard.dataset.archaeologyId, archaeologyCard);
         return;
       }
       if (canonicalCard) {
-        void openCanonicalDetail(canonicalCard.dataset.canonicalId);
+        void openCanonicalDetail(canonicalCard.dataset.canonicalId, canonicalCard);
         return;
       }
       const nativeBack = event.target.closest("[data-native-resource-back]");
@@ -1198,10 +1202,10 @@
       interactiveCard.click();
     }
 
-    async function openCanonicalDetail(objectId) {
+    async function openCanonicalDetail(objectId, trigger = null) {
       const normalized = String(objectId || "").trim();
       if (!normalized) return;
-      saveNativeBackView("[data-canonical-id]");
+      saveNativeBackView("[data-canonical-id]", trigger);
       sequence += 1;
       const requestSequence = sequence;
       controller?.abort();
@@ -1210,6 +1214,9 @@
       try {
         const detail = await requestJson(`/api/canonical/objects/${encodeURIComponent(normalized)}`, controller.signal);
         if (requestSequence !== sequence) return;
+        if (String(detail?.id || "").trim() !== normalized) {
+          throw new Error("The canonical object returned does not match the selected canonical record.");
+        }
         renderCanonicalDetail(detail);
       } catch (error) {
         if (error?.name !== "AbortError" && requestSequence === sequence) {
@@ -1218,10 +1225,10 @@
       }
     }
 
-    async function openArchaeologyDetail(itemId) {
+    async function openArchaeologyDetail(itemId, trigger = null) {
       const normalized = String(itemId || "").trim();
       if (!normalized) return;
-      saveNativeBackView("[data-archaeology-id]");
+      saveNativeBackView("[data-archaeology-id]", trigger);
       sequence += 1;
       const requestSequence = sequence;
       controller?.abort();
@@ -1240,6 +1247,17 @@
 
     function renderCanonicalDetail(detail) {
       const body = resourceBody(detail.title || detail.name || detail.id, detail.summary || "Canonical knowledge detail");
+      body.dataset.canonicalObjectId = String(detail.id || "");
+      if (
+        detail.content_status === "draft"
+        && detail.review_status === "in_review"
+        && detail.human_review_required === true
+      ) {
+        const notice = document.createElement("p");
+        notice.className = "companion-summary-meta companion-summary-governance";
+        notice.textContent = "Draft evidence — awaiting human review";
+        body.append(notice);
+      }
       const sections = [
         ["Historical context", detail.historical_context],
         ["Canonical context", detail.canonical_context || detail.canonical_role],
@@ -1259,11 +1277,222 @@
         .map((item) => typeof item === "string" ? item : item.reference)
         .filter(Boolean);
       if (references.length) appendGroup(body, "Scripture", references.map((reference) => ({title: reference})));
+      appendCanonicalSources(body, detail);
+      appendCanonicalEvidence(body, detail);
       const back = actionButton("← Back to results", "");
       delete back.dataset.openLegacyResource;
       back.dataset.nativeResourceBack = "";
       body.append(back, actionButton("Open Canonical Knowledge →", "canonical"));
       commit(body);
+    }
+
+    function appendCanonicalSources(body, detail) {
+      const hasSourceDetails = Array.isArray(detail?.sources);
+      const sources = Array.isArray(detail?.sources)
+        ? detail.sources.filter((source) => source && typeof source === "object" && !Array.isArray(source))
+        : [];
+      const evidenceItems = Array.isArray(detail?.evidence_items)
+        ? detail.evidence_items.filter((item) => item && typeof item === "object" && !Array.isArray(item))
+        : [];
+      const evidenceById = new Map(evidenceItems.map((item) => [String(item.id || "").trim(), item]));
+      const section = sources.length ? document.createElement("details") : document.createElement("section");
+      section.className = "companion-canonical-sources companion-canonical-disclosure";
+      section.dataset.canonicalSourcesFor = String(detail?.id || "");
+
+      if (sources.length) {
+        const summary = document.createElement("summary");
+        summary.textContent = `Sources and attribution · ${sources.length} record${sources.length === 1 ? "" : "s"}`;
+        const note = document.createElement("p");
+        note.className = "companion-canonical-source-note";
+        note.textContent = "Source records are listed for this object. Open evidence items below to see their recorded source links.";
+        section.append(summary, note);
+      } else {
+        const heading = document.createElement("h4");
+        heading.textContent = "Sources and attribution";
+        const empty = document.createElement("p");
+        empty.className = "companion-canonical-empty";
+        empty.textContent = hasSourceDetails
+          ? "No source records are recorded for this object."
+          : "Source details are unavailable for this object.";
+        section.append(heading, empty);
+      }
+
+      if (sources.length) {
+        const list = document.createElement("div");
+        list.className = "companion-canonical-source-list";
+        sources.forEach((source) => {
+          const sourceId = String(source.id || "").trim();
+          const sourceDetail = document.createElement("details");
+          sourceDetail.className = "companion-canonical-source companion-canonical-disclosure";
+          if (sourceId) sourceDetail.dataset.sourceId = sourceId;
+          const sourceSummary = document.createElement("summary");
+          sourceSummary.textContent = String(source.title || sourceId || "Source record");
+          sourceDetail.append(sourceSummary);
+
+          const content = document.createElement("div");
+          content.className = "companion-canonical-source-content";
+          appendCanonicalField(content, "Author", source.author);
+          appendCanonicalField(content, "Publisher", source.publisher);
+          appendCanonicalField(content, "Year", source.year);
+          appendCanonicalField(content, "Locator", source.locator);
+          appendCanonicalField(content, "Source type", source.source_type);
+          appendCanonicalField(content, "Source ID", sourceId);
+          appendCanonicalUrl(content, source.url);
+          appendCanonicalField(content, "Notes", source.notes);
+
+          const supportedIds = Array.isArray(source.supports)
+            ? source.supports.map((value) => String(value || "").trim()).filter(Boolean)
+            : [];
+          if (supportedIds.length) {
+            const supports = document.createElement("section");
+            supports.className = "companion-canonical-source-supports";
+            const heading = document.createElement("h5");
+            heading.textContent = "Recorded support links";
+            const links = document.createElement("ul");
+            supportedIds.forEach((supportedId) => {
+              const item = evidenceById.get(supportedId);
+              const entry = document.createElement("li");
+              entry.textContent = item
+                ? `${String(item.title || item.id || supportedId)} · ${supportedId}`
+                : supportedId;
+              links.append(entry);
+            });
+            supports.append(heading, links);
+            content.append(supports);
+          }
+
+          sourceDetail.append(content);
+          list.append(sourceDetail);
+        });
+        section.append(list);
+      }
+
+      body.append(section);
+    }
+
+    function appendCanonicalEvidence(body, detail) {
+      const evidenceItems = Array.isArray(detail?.evidence_items)
+        ? detail.evidence_items.filter((item) => item && typeof item === "object" && !Array.isArray(item))
+        : [];
+      if (!evidenceItems.length) return;
+
+      const sources = Array.isArray(detail?.sources)
+        ? detail.sources.filter((source) => source && typeof source === "object" && !Array.isArray(source))
+        : [];
+      const sourceById = new Map(sources.map((source) => [String(source.id || "").trim(), source]));
+      const section = document.createElement("details");
+      section.className = "companion-canonical-evidence companion-canonical-disclosure";
+      section.dataset.canonicalEvidenceFor = String(detail?.id || "");
+      const summary = document.createElement("summary");
+      summary.textContent = `Evidence items and recorded source links · ${evidenceItems.length}`;
+      section.append(summary);
+
+      const list = document.createElement("div");
+      list.className = "companion-canonical-evidence-list";
+      evidenceItems.forEach((evidence) => {
+        const evidenceId = String(evidence.id || "").trim();
+        const item = document.createElement("details");
+        item.className = "companion-canonical-evidence-item companion-canonical-disclosure";
+        if (evidenceId) item.dataset.evidenceId = evidenceId;
+        const itemSummary = document.createElement("summary");
+        itemSummary.textContent = String(evidence.title || evidenceId || "Evidence record");
+        item.append(itemSummary);
+
+        const content = document.createElement("div");
+        content.className = "companion-canonical-evidence-content";
+        appendCanonicalField(content, "Description", evidence.description || evidence.primary_observation || evidence.passage_relevance);
+        appendCanonicalField(content, "Evidence type", evidence.evidence_type);
+        appendCanonicalField(content, "Certainty", evidence.certainty);
+        appendCanonicalField(content, "Dispute status", evidence.dispute_status);
+
+        const sourceIds = Array.isArray(evidence.source_ids)
+          ? evidence.source_ids.map((value) => String(value || "").trim()).filter(Boolean)
+          : [];
+        const sourceLinks = document.createElement("section");
+        sourceLinks.className = "companion-canonical-evidence-sources";
+        const sourceHeading = document.createElement("h5");
+        sourceHeading.textContent = "Recorded source links for this item";
+        sourceLinks.append(sourceHeading);
+        if (sourceIds.length) {
+          const sourceList = document.createElement("ul");
+          sourceIds.forEach((sourceId) => {
+            const source = sourceById.get(sourceId);
+            const entry = document.createElement("li");
+            entry.textContent = source
+              ? `${String(source.title || source.id || sourceId)} · ${sourceId}`
+              : sourceId;
+            sourceList.append(entry);
+          });
+          sourceLinks.append(sourceList);
+        } else {
+          const empty = document.createElement("p");
+          empty.textContent = "No source links are recorded for this evidence item.";
+          sourceLinks.append(empty);
+        }
+        content.append(sourceLinks);
+
+        const claimIds = Array.isArray(evidence.claim_ids)
+          ? evidence.claim_ids.map((value) => String(value || "").trim()).filter(Boolean)
+          : [];
+        if (claimIds.length) {
+          const claims = document.createElement("section");
+          claims.className = "companion-canonical-evidence-claims";
+          const claimHeading = document.createElement("h5");
+          claimHeading.textContent = "Recorded claim links";
+          const claimList = document.createElement("ul");
+          claimIds.forEach((claimId) => {
+            const entry = document.createElement("li");
+            entry.textContent = claimId;
+            claimList.append(entry);
+          });
+          claims.append(claimHeading, claimList);
+          content.append(claims);
+        }
+
+        item.append(content);
+        list.append(item);
+      });
+      section.append(list);
+      body.append(section);
+    }
+
+    function appendCanonicalField(container, label, value) {
+      if (
+        value === null
+        || value === undefined
+        || typeof value === "object"
+        || String(value).trim() === ""
+      ) return;
+      const field = document.createElement("p");
+      field.className = "companion-canonical-field";
+      const name = document.createElement("strong");
+      name.textContent = `${label}: `;
+      const text = document.createElement("span");
+      text.textContent = String(value);
+      field.append(name, text);
+      container.append(field);
+    }
+
+    function appendCanonicalUrl(container, value) {
+      const url = typeof value === "string" ? value.trim() : "";
+      if (!url) return;
+      const field = document.createElement("p");
+      field.className = "companion-canonical-field";
+      const name = document.createElement("strong");
+      name.textContent = "URL: ";
+      if (/^https?:\/\//i.test(url)) {
+        const link = document.createElement("a");
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = url;
+        field.append(name, link);
+      } else {
+        const text = document.createElement("span");
+        text.textContent = url;
+        field.append(name, text);
+      }
+      container.append(field);
     }
 
     function renderArchaeologyDetail(detail) {
@@ -1352,12 +1581,13 @@
       body.append(section);
     }
 
-    function saveNativeBackView(focusSelector) {
+    function saveNativeBackView(focusSelector, focusTarget = null) {
       if (nativeBackView) return;
       const fragment = document.createDocumentFragment();
       while (host.firstChild) fragment.append(host.firstChild);
       nativeBackView = fragment;
       nativeBackFocusSelector = focusSelector;
+      nativeBackFocusTarget = focusTarget || document.activeElement?.closest?.(focusSelector) || null;
     }
 
     function restoreNativeBackView() {
@@ -1367,8 +1597,9 @@
       host.replaceChildren(nativeBackView);
       host.setAttribute("aria-busy", "false");
       nativeBackView = null;
-      host.querySelector(nativeBackFocusSelector)?.focus({preventScroll: true});
+      (nativeBackFocusTarget || host.querySelector(nativeBackFocusSelector))?.focus({preventScroll: true});
       nativeBackFocusSelector = "";
+      nativeBackFocusTarget = null;
     }
 
     function commit(content) {

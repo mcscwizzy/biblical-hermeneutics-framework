@@ -83,6 +83,12 @@ function fixture(options = {}) {
         append(...children) { this.children.push(...children); },
       };
     },
+    createDocumentFragment() {
+      return {
+        children: [],
+        append(child) { this.children.push(child); },
+      };
+    },
   };
   const explorer = {
     ...explorerCore,
@@ -111,6 +117,13 @@ function fixture(options = {}) {
   let router;
   const window = {
     BHFRuntimeConfig: {narrativeExplorerEnabled: options.enabled !== false},
+    BHFApi: options.api || {
+      async requestJson(url) {
+        records.apiRequests = [...(records.apiRequests || []), url];
+        if (options.canonicalDetail) return options.canonicalDetail;
+        throw new Error(`Unexpected API request: ${url}`);
+      },
+    },
     BHFNarrativeExplorer: explorer,
     BHFReader: {
       async navigateToPassage(book, chapter, startVerse, endVerse, settings = {}) {
@@ -156,6 +169,7 @@ function fixture(options = {}) {
     host,
     heading,
     setSelection(value) { selection = value; },
+    getSelection() { return selection; },
   };
 }
 
@@ -246,6 +260,168 @@ test("canonical Companion cards disclose pending editorial review without invent
       /approved/i,
     );
   }
+});
+
+test("canonical detail uses exact object lookup and keeps source links attached to their evidence", async () => {
+  const objectId = "genesis-abraham-call-covenant-context";
+  const detail = {
+    id: objectId,
+    title: "Genesis Abraham Call and Covenant Context",
+    summary: "The selected Genesis 12 context record.",
+    content_status: "draft",
+    review_status: "in_review",
+    human_review_required: true,
+    sources: [{
+      id: "target-source",
+      title: "Target source title",
+      author: "Recorded author",
+      publisher: "Recorded publisher",
+      year: 2024,
+      locator: "Genesis 12:1–4",
+      source_type: "commentary",
+      url: "https://example.test/target-source",
+      supports: ["target-evidence"],
+      notes: "Recorded source note.",
+    }],
+    evidence_items: [{
+      id: "target-evidence",
+      title: "Target evidence item",
+      description: "Evidence text linked to the target source.",
+      source_ids: ["target-source"],
+      claim_ids: [],
+    }],
+  };
+  const value = fixture({canonicalDetail: detail});
+
+  await value.router.openCanonicalDetail(objectId);
+
+  assert.deepEqual(value.records.apiRequests, [
+    `/api/canonical/objects/${objectId}`,
+  ]);
+  const body = value.host.content;
+  const text = renderedText(body);
+  const sourceDisclosure = nodesWithin(body).find((item) =>
+    item?.className?.split(/\s+/).includes("companion-canonical-sources"));
+  const sourceRecord = nodesWithin(body).find((item) =>
+    item?.className?.split(/\s+/).includes("companion-canonical-source"));
+  const evidenceRecord = nodesWithin(body).find((item) =>
+    item?.dataset?.evidenceId === "target-evidence");
+
+  assert.equal(body.dataset.canonicalObjectId, objectId);
+  assert.equal(body.children[0].textContent, "Genesis Abraham Call and Covenant Context");
+  assert.match(text, /The selected Genesis 12 context record\./);
+  assert.match(text, /Draft evidence — awaiting human review/);
+  assert.equal(sourceDisclosure.tagName, "DETAILS");
+  assert.match(renderedText(sourceDisclosure), /Sources and attribution · 1 record/);
+  assert.equal(sourceRecord.dataset.sourceId, "target-source");
+  assert.match(renderedText(sourceRecord), /Recorded author/);
+  assert.match(renderedText(sourceRecord), /Recorded publisher/);
+  assert.match(renderedText(sourceRecord), /2024/);
+  assert.match(renderedText(sourceRecord), /Genesis 12:1–4/);
+  assert.match(renderedText(sourceRecord), /Recorded source note\./);
+  assert.match(renderedText(sourceRecord), /Recorded support links/);
+  assert.match(renderedText(sourceRecord), /Target evidence item/);
+  assert.equal(evidenceRecord.tagName, "DETAILS");
+  assert.match(renderedText(evidenceRecord), /Target source title/);
+  assert.doesNotMatch(text, /abraham-only-source/);
+});
+
+test("canonical detail safely reports missing source records and partial attribution", async () => {
+  const noSources = fixture({canonicalDetail: {
+    id: "ordinary-context",
+    title: "Ordinary context",
+    summary: "A non-draft CKL record.",
+    content_status: "complete",
+    review_status: "in_review",
+    human_review_required: true,
+    sources: [],
+    evidence_items: [],
+  }});
+  await noSources.router.openCanonicalDetail("ordinary-context");
+  assert.match(renderedText(noSources.host.content), /No source records are recorded/);
+  assert.doesNotMatch(renderedText(noSources.host.content), /Draft evidence — awaiting human review/);
+
+  const unavailable = fixture({canonicalDetail: {
+    id: "unavailable-context",
+    title: "Unavailable context",
+    evidence_items: [],
+  }});
+  await unavailable.router.openCanonicalDetail("unavailable-context");
+  assert.match(renderedText(unavailable.host.content), /Source details are unavailable/);
+
+  const partial = fixture({canonicalDetail: {
+    id: "partial-context",
+    title: "Partial context",
+    sources: [{id: "only-an-id", supports: []}],
+    evidence_items: [],
+  }});
+  await partial.router.openCanonicalDetail("partial-context");
+  assert.match(renderedText(partial.host.content), /only-an-id/);
+  assert.doesNotMatch(renderedText(partial.host.content), /approved/i);
+});
+
+test("canonical detail rejects a response for a different object ID", async () => {
+  const value = fixture({canonicalDetail: {
+    id: "abraham",
+    title: "Abraham",
+    sources: [{id: "abraham-only-source", title: "Unrelated source"}],
+  }});
+
+  await value.router.openCanonicalDetail("genesis-abraham-call-covenant-context");
+
+  assert.doesNotMatch(renderedText(value.host.content), /Unrelated source/);
+  assert.match(renderedText(value.host.content), /does not match the selected canonical record/i);
+});
+
+test("canonical detail failure leaves the selected passage intact and exposes an alert", async () => {
+  const value = fixture({api: {
+    async requestJson(url) {
+      value.records.apiRequests = [...(value.records.apiRequests || []), url];
+      throw new Error("canonical object not found");
+    },
+  }});
+
+  await value.router.openCanonicalDetail("not-a-real-ckl-object");
+
+  const alert = nodesWithin(value.host.content).find((item) => item?.attributes?.role === "alert");
+  assert.ok(alert);
+  assert.match(renderedText(alert), /canonical object not found/);
+  assert.equal(value.getSelection().reference, "Jonah 1:17");
+});
+
+test("a delayed canonical detail response cannot replace a newer exact selection", async () => {
+  const targetId = "genesis-abraham-call-covenant-context";
+  let resolveTarget;
+  const value = fixture({api: {
+    requestJson(url) {
+      value.records.apiRequests = [...(value.records.apiRequests || []), url];
+      if (url.endsWith(targetId)) {
+        return new Promise((resolve) => { resolveTarget = resolve; });
+      }
+      return Promise.resolve({
+        id: "shechem",
+        title: "Shechem",
+        summary: "Newer selected object.",
+        sources: [],
+        evidence_items: [],
+      });
+    },
+  }});
+
+  const delayed = value.router.openCanonicalDetail(targetId);
+  await Promise.resolve();
+  await value.router.openCanonicalDetail("shechem");
+  resolveTarget({
+    id: targetId,
+    title: "Genesis Abraham Call and Covenant Context",
+    sources: [{id: "stale-source", title: "Stale target source"}],
+    evidence_items: [],
+  });
+  await delayed;
+
+  assert.equal(value.host.content.dataset.canonicalObjectId, "shechem");
+  assert.doesNotMatch(renderedText(value.host.content), /Stale target source/);
+  assert.equal(value.getSelection().reference, "Jonah 1:17");
 });
 
 test("partial, mismatched, and disabled route handoffs leave no trail or reader visible error", async () => {

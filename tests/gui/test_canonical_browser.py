@@ -75,6 +75,33 @@ def test_canonical_browser_search_detail_and_source_view(driver, wait, base_url)
     assert "/curation?collection=place" in curation_href
 
 
+def test_canonical_browser_id_query_remains_general_relevance_search(driver, wait, base_url):
+    object_id = "genesis-abraham-call-covenant-context"
+    driver.set_window_size(1440, 1000)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = WorkspacePage(driver, wait, base_url)
+    _show_canonical_workspace(driver)
+    search_input = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="canonical-search-input"]')))
+    search_input.clear()
+    search_input.send_keys(object_id)
+    page.click('[data-testid="canonical-search-button"]')
+    wait.until(lambda browser: {
+        item_id for item_id in browser.execute_script(
+            "return Array.from(document.querySelectorAll('[data-canonical-browser-results] [data-canonical-object-id]')).map(item => item.dataset.canonicalObjectId);"
+        )
+    } >= {object_id, "abraham"})
+
+    result_ids = set(driver.execute_script(
+        "return Array.from(document.querySelectorAll('[data-canonical-browser-results] [data-canonical-object-id]')).map(item => item.dataset.canonicalObjectId);"
+    ))
+    assert object_id in result_ids
+    assert "abraham" in result_ids
+    assert "Direct object lookup" not in driver.find_element(
+        By.CSS_SELECTOR,
+        "[data-canonical-browser-results]",
+    ).text
+
+
 def test_canonical_browser_linking_object_to_note_adds_canonical_ids(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     BibleReaderPage(driver, wait, base_url).select_verse(1)

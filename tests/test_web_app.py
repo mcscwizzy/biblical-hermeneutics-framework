@@ -1894,6 +1894,28 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("scripture_reference_count", detail)
         self.assertIn("related_object_links", detail)
 
+    def test_canonical_exact_object_lookup_is_distinct_from_relevance_search(self):
+        object_id = "genesis-abraham-call-covenant-context"
+
+        detail_response = asgi_request("GET", f"/api/canonical/objects/{object_id}")
+        self.assertEqual(detail_response["status"], 200)
+        detail = json.loads(detail_response["body"])
+        self.assertEqual(detail["id"], object_id)
+        self.assertEqual(detail["title"], "Genesis Abraham Call and Covenant Context")
+        self.assertEqual(detail["reason"], "Direct object lookup.")
+        self.assertEqual(detail["source_count"], 17)
+        self.assertEqual(len(detail["sources"]), 17)
+        self.assertEqual(detail["evidence_count"], 46)
+        self.assertEqual(len(detail["evidence_items"]), 46)
+
+        search_response = asgi_request("GET", f"/api/canonical/search?q={object_id}&limit=25")
+        self.assertEqual(search_response["status"], 200)
+        search = json.loads(search_response["body"])
+        self.assertEqual(search["query"], object_id)
+        result_ids = [item["id"] for item in search["results"]]
+        self.assertIn(object_id, result_ids)
+        self.assertIn("abraham", result_ids)
+
     def test_canonical_detail_route_resolves_authored_trail_targets_without_relabeling(self):
         expected_links = {
             "tabernacle": ("temple", "later-sanctuary-development"),
