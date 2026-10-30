@@ -18,6 +18,13 @@ def test_acts_authored_psalm_route_and_return(driver, base_url):
     assert result["matches"] == [] and result["actionCount"] == 0, result
     driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
     article = wait.until(lambda b: next((a for a in b.find_elements(By.CSS_SELECTOR, '.narrative-explorer-related-passage') if 'Psalm 110' in a.text), False))
+    details = article.find_element(By.CSS_SELECTOR, ".narrative-explorer-related-passage-details")
+    driver.execute_script("arguments[0].open = true;", details)
+    detail_text = details.text
+    assert "authored CKL relationship" in detail_text
+    assert "ckl:messiah-theme#source:luke-24" in detail_text
+    assert "ckl:messiah-theme#source:psalm-110" in detail_text
+    assert "ckl:resurrection-theme#source:1-corinthians-15" in detail_text
     button = article.find_element(By.CSS_SELECTOR, "button[data-narrative-focus-id^='related-passage:']")
     button.click()
     wait.until(lambda b: b.execute_script("return window.BHFStudySelection?.getState?.().book === 'Psalms' && window.BHFStudySelection?.getState?.().chapter === 110"))
