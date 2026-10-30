@@ -31,6 +31,7 @@
     const explorer = window.BHFNarrativeExplorer;
     const subjectLoader = explorer?.createSubjectLoader?.();
     let narrativeTrail = null;
+    let narrativeView = {kind: "overview"};
     let narrativeProjection = null;
     let narrativeSelection = null;
     let pendingNarrativeFocusId = "";
@@ -68,12 +69,21 @@
         cancelManagedReaderSelection();
         return openVerifiedRouteHandoff(options.getSelection?.() || {}, routeOptions.routeHandoff);
       }
+      const isNarrativeExplorer = resourceId === "narrative_explorer";
+      const hasRequestedView = isNarrativeExplorer && Object.hasOwn(routeOptions, "view");
+      const requestedView = hasRequestedView
+        ? normalizeNarrativeView(routeOptions.view)
+        : activeResourceId === resourceId
+          ? narrativeView
+          : {kind: "overview"};
+      const viewChanged = isNarrativeExplorer && !sameNarrativeView(narrativeView, requestedView);
       if (resourceId === "narrative_explorer"
         && activeResourceId === "narrative_explorer"
-        && isManagedReaderSelection(options.getSelection?.() || {})) return true;
+        && isManagedReaderSelection(options.getSelection?.() || {})
+        && !viewChanged) return true;
       cancelManagedReaderSelection();
       cancelPendingRouteHandoff();
-      const isNarrativeExplorer = resourceId === "narrative_explorer";
+      if (isNarrativeExplorer) narrativeView = requestedView;
       if (isNarrativeExplorer) selectedNarrativeRouteId = "";
       const requestedTrail = isNarrativeExplorer ? routeOptions.trail || null : null;
       const selection = isNarrativeExplorer && requestedTrail
@@ -104,7 +114,10 @@
           }
           passageKey = currentSelectionKey || passageKey;
         }
-        if (activeResourceId === resourceId && activePassageKey === passageKey && !routeOptions.force) return true;
+        if (activeResourceId === resourceId && activePassageKey === passageKey && !routeOptions.force) {
+          if (viewChanged && narrativeProjection) renderActiveNarrativeTrail();
+          return true;
+        }
         selectedNarrativeRouteId = "";
       }
       sequence += 1;
@@ -157,6 +170,23 @@
       return narrativeTrail;
     }
 
+    function getNarrativeView() {
+      return narrativeView;
+    }
+
+    function normalizeNarrativeView(value) {
+      if (value?.kind === "overview") return {kind: "overview"};
+      const categoryId = typeof value?.categoryId === "string" ? value.categoryId : "";
+      if (value?.kind === "category" && explorer?.SECTIONS?.some((section) => section.id === categoryId)) {
+        return {kind: "category", categoryId};
+      }
+      return {kind: "overview"};
+    }
+
+    function sameNarrativeView(left, right) {
+      return left?.kind === right?.kind && left?.categoryId === right?.categoryId;
+    }
+
     async function openVerifiedRouteHandoff(selection, handoff) {
       if (window.BHFRuntimeConfig?.narrativeExplorerEnabled !== true
         || !explorer || !narrativeSession
@@ -199,6 +229,7 @@
       controller = null;
       activeResourceId = "narrative_explorer";
       activePassageKey = passageKey;
+      narrativeView = {kind: "overview"};
       narrativeSelection = selection;
       narrativeProjection = projection;
       narrativeTrail = explorer.createTrail(selection);
@@ -262,6 +293,7 @@
       nativeBackFocusSelector = "";
       nativeBackFocusTarget = null;
       narrativeTrail = null;
+      narrativeView = {kind: "overview"};
       narrativeProjection = null;
       narrativeSelection = null;
       pendingNarrativeFocusId = "";
@@ -298,6 +330,7 @@
     function narrativeRenderOptions(extra = {}) {
       return {
         ...extra,
+        view: narrativeView,
         trail: narrativeTrail,
         knownBooks: readerBookOptions(),
         onNavigate: navigateNarrativeItem,
@@ -1612,6 +1645,7 @@
       close,
       showLegacy,
       getNarrativeTrail,
+      getNarrativeView,
       restoreNarrativeTrail,
       openCanonicalDetail,
       openArchaeologyDetail,

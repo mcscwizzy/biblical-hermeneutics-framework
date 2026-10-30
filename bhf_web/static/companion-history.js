@@ -3,6 +3,14 @@
   "use strict";
 
   const STATE_KEY = "bhfStudyCompanion";
+  const NARRATIVE_VIEW_CATEGORY_IDS = new Set([
+    "biblical_narrative",
+    "archaeology_ancient_history",
+    "biblical_geography",
+    "divine_council_cosmic_geography",
+    "themes_biblical_connections",
+    "people_events_relationships",
+  ]);
 
   function create(options = {}) {
     let applying = false;
@@ -67,7 +75,17 @@
       mode: value.mode === "explore" ? "explore" : "passage",
       resource: value.resource ? String(value.resource) : null,
       trail: normalizeTrail(value.trail),
+      narrativeView: normalizeNarrativeView(value.narrativeView),
     };
+  }
+
+  function normalizeNarrativeView(value) {
+    if (value?.kind === "overview") return {kind: "overview"};
+    const categoryId = typeof value?.categoryId === "string" ? value.categoryId : "";
+    if (value?.kind === "category" && NARRATIVE_VIEW_CATEGORY_IDS.has(categoryId)) {
+      return {kind: "category", categoryId};
+    }
+    return {kind: "overview"};
   }
 
   function normalizeTrail(value) {

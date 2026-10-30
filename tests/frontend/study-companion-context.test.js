@@ -39,6 +39,8 @@ function loadCompanion(options = {}) {
   const projectionCalls = [];
   let selectionListener = null;
   let contextOptions = null;
+  let resourceRouterOptions = null;
+  let narrativeView = {kind: "overview"};
   const window = {
     BHFRuntimeConfig: {narrativeExplorerEnabled: options.narrativeExplorerEnabled !== false},
     matchMedia: () => ({matches: false}),
@@ -78,7 +80,7 @@ function loadCompanion(options = {}) {
     },
     BHFResourceRouter: {
       create(routerOptions) {
-        contextOptions = routerOptions;
+        resourceRouterOptions = routerOptions;
         return {
           open(...args) {
             routerCalls.push(args);
@@ -91,6 +93,7 @@ function loadCompanion(options = {}) {
           },
           close() {},
           getNarrativeTrail() { return null; },
+          getNarrativeView() { return narrativeView; },
           cancelPendingRouteHandoff() {},
         };
       },
@@ -128,6 +131,8 @@ function loadCompanion(options = {}) {
     historyCalls,
     discoveryRenders,
     projectionCalls,
+    resourceRouterOptions,
+    setNarrativeView(value) { narrativeView = value; },
   };
 }
 
@@ -143,6 +148,20 @@ test("reader selection changes leave Narrative Explorer passage navigation to it
   fixture.contextOptions.onReady({});
   fixture.contextOptions.onError("unavailable");
   assert.equal(fixture.routerCalls.length, 1);
+});
+
+test("Narrative Explorer focused view changes are included in Companion history snapshots", async () => {
+  const fixture = loadCompanion();
+  const view = {kind: "category", categoryId: "themes_biblical_connections"};
+  await fixture.companion.openResource("narrative_explorer");
+  fixture.setNarrativeView(view);
+
+  fixture.resourceRouterOptions.onNarrativeViewChange(view, {push: true});
+
+  const historyChange = fixture.historyCalls.at(-1);
+  assert.equal(historyChange.kind, "push");
+  assert.equal(historyChange.snapshot.resource, "narrative_explorer");
+  assert.deepEqual(historyChange.snapshot.narrativeView, view);
 });
 
 

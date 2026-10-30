@@ -502,6 +502,19 @@ test("router-driven destination selection preserves the existing origin trail", 
   assert.equal(value.router.getNarrativeTrail().nodes[value.router.getNarrativeTrail().activeIndex].reference, "Matthew 12:40");
 });
 
+test("Narrative Explorer router restores a focused category from its view option without another projection", async () => {
+  const value = fixture();
+  const view = {kind: "category", categoryId: "themes_biblical_connections"};
+
+  assert.equal(await value.router.open("narrative_explorer", {view}), true);
+
+  assert.equal(value.router.getNarrativeView().kind, view.kind);
+  assert.equal(value.router.getNarrativeView().categoryId, view.categoryId);
+  assert.equal(value.records.rendered.at(-1).view.kind, view.kind);
+  assert.equal(value.records.rendered.at(-1).view.categoryId, view.categoryId);
+  assert.equal(value.records.sessions.length, 1);
+});
+
 test("closing during verification discards the delayed route and history", async () => {
   let resolveProjection;
   const value = fixture({loadProjection: () => new Promise((resolve) => { resolveProjection = resolve; })});
