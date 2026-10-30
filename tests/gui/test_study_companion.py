@@ -4,7 +4,7 @@ import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-from .pages import HomePage
+from .pages import BibleReaderPage, HomePage
 
 
 pytestmark = [pytest.mark.gui]
@@ -1013,6 +1013,99 @@ def test_tyndale_companion_tab_remains_independent_and_follows_chapter_and_selec
     assert "/api/commentary/John/4" in result["requests"]
     assert tab.get_attribute("data-workspace-tab") == "commentary"
     assert driver.find_element(By.CSS_SELECTOR, "[data-commentary-panel]").get_attribute("aria-label") == "Tyndale Study Notes"
+
+
+def test_reader_chapter_change_starts_tyndale_loading_before_scripture_response(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    page = BibleReaderPage(driver, wait, base_url)
+    driver.execute_script(
+        """
+        const originalRequest = window.BHFApi.requestJson.bind(window.BHFApi);
+        window.BHFApi.requestJson = (url, options, fallback) => {
+          if (String(url) === '/api/commentary/Genesis/1') {
+            return Promise.resolve({
+              available: true, book: 'Genesis', chapter: 1,
+              entries: [{
+                id: 'genesis-introduction', kind: 'book_introduction',
+                title: 'Genesis introduction', body: 'Old Genesis introduction.',
+                anchor: {book: 'Genesis', start_chapter: null, start_verse: null, end_chapter: null, end_verse: null},
+              }],
+              source: {name: 'Tyndale Open Study Notes', attribution: 'Published attribution.'},
+            });
+          }
+          return originalRequest(url, options, fallback);
+        };
+        """
+    )
+    page.select_book("Genesis")
+    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "Old Genesis introduction." in _driver.find_element(By.CSS_SELECTOR, "[data-companion-tyndale-card-slot]").text)
+
+    fixture = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        (async () => {
+          const translation = document.querySelector('[data-testid="translation-select"]')?.value || 'asv';
+          const bibleUrl = `/api/bible/Genesis/4?translation=${encodeURIComponent(translation)}`;
+          const response = await fetch(bibleUrl);
+          if (!response.ok) throw new Error(`Genesis 2 fixture returned HTTP ${response.status}`);
+          window.__genesisChapterTwoFixture = await response.json();
+          const originalRequest = window.BHFApi.requestJson.bind(window.BHFApi);
+          window.__bibleStarted = false;
+          window.__tyndaleStarted = false;
+          window.BHFApi.requestJson = (url, options, fallback) => {
+            const value = String(url);
+            if (value === bibleUrl) {
+              window.__bibleStarted = true;
+              return new Promise((resolve) => {
+                window.__resolveBible = () => resolve(window.__genesisChapterTwoFixture);
+              });
+            }
+          if (value === '/api/commentary/Genesis/4') {
+              window.__tyndaleStarted = true;
+              return new Promise((resolve) => {
+                window.__resolveTyndale = () => resolve({
+                  available: true, book: 'Genesis', chapter: 4,
+                  entries: [{
+                    id: 'genesis-chapter-four', kind: 'chapter_note',
+                    title: 'Genesis 4 chapter note', body: 'New Genesis chapter four note.',
+                    anchor: {book: 'Genesis', start_chapter: 4, start_verse: null, end_chapter: 4, end_verse: null},
+                  }],
+                  source: {name: 'Tyndale Open Study Notes', attribution: 'Published attribution.'},
+                });
+              });
+            }
+            return originalRequest(url, options, fallback);
+          };
+          done({translation, bibleUrl});
+        })().catch((error) => done({error: String(error)}));
+        """
+    )
+    assert "error" not in fixture, fixture
+
+    page.set_chapter(4)
+    wait.until(lambda _driver: _driver.execute_script("return window.__bibleStarted === true;"))
+    before_scripture_response = driver.execute_script(
+        """
+        return {
+          bibleStarted: window.__bibleStarted,
+          tyndaleStarted: window.__tyndaleStarted,
+          cardText: document.querySelector('[data-companion-tyndale-card-slot]')?.textContent || '',
+        };
+        """
+    )
+    try:
+        assert before_scripture_response["tyndaleStarted"] is True
+        assert "Old Genesis introduction." not in before_scripture_response["cardText"]
+        assert "Loading Tyndale Study Notes for Genesis 4" in before_scripture_response["cardText"]
+    finally:
+        driver.execute_script("window.__resolveBible?.(); window.__resolveTyndale?.();")
+        driver.execute_async_script(
+            "const done = arguments[0]; setTimeout(() => { window.__resolveTyndale?.(); done(); }, 300);"
+        )
+
+    wait.until(lambda _driver: "Genesis 4" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "New Genesis chapter four note." in _driver.find_element(By.CSS_SELECTOR, "[data-companion-tyndale-card-slot]").text)
 
 
 def test_translation_comparison_reads_cached_bible_text_offline(driver, wait, base_url):
