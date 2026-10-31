@@ -71,20 +71,20 @@ test("Tyndale card styles wrap note text and keep native disclosures free of nes
 });
 
 
-test("Dig Deeper groups the gated Narrative Explorer, passage research, and advanced workspaces", () => {
+test("Dig Deeper keeps one prominent Narrative Explorer and Places & Locations entry", () => {
   const deeper = sectionWithAttribute(template, "data-companion-dig-deeper");
   const narrative = deeper.indexOf('data-testid="companion-narrative-explorer"');
-  const locations = deeper.indexOf("data-companion-locations-section");
-  const discoveries = deeper.indexOf("data-companion-discoveries-section");
-  const land = deeper.indexOf("data-companion-land-section");
+  const places = deeper.indexOf('data-companion-resource="places_locations"');
   const resources = deeper.indexOf("data-companion-recommended");
   const remainingResources = deeper.indexOf("data-companion-deeper");
-  const entities = deeper.indexOf("data-companion-entities-section");
   const advanced = deeper.indexOf("companion-advanced-links");
 
-  assert.ok(narrative >= 0 && narrative < locations);
-  assert.ok(locations < discoveries && discoveries < land);
-  assert.ok(land < resources && resources < entities);
-  assert.ok(resources < remainingResources && remainingResources < entities && entities < advanced);
+  assert.ok(narrative >= 0 && narrative < places);
+  assert.ok(places < resources);
+  assert.ok(resources < remainingResources && remainingResources < advanced);
+  assert.equal([...deeper.matchAll(/data-companion-resource="places_locations"/g)].length, 1);
+  assert.match(deeper, /<strong>Places &amp; Locations<\/strong>/);
+  assert.match(deeper, /Explore biblical places, geography, maps, and journeys connected to this passage\./);
+  assert.doesNotMatch(deeper, /Did You Know\?|data-companion-locations-section|data-companion-discoveries-section|data-companion-land-section|data-companion-entities-section|People &amp; Places/);
   assert.match(deeper, /\{% if runtime_config\.narrativeExplorerEnabled %\}[\s\S]*?data-testid="companion-narrative-explorer"[\s\S]*?\{% endif %\}/);
 });

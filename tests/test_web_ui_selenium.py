@@ -1219,6 +1219,9 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             "return window.BHFStudySelection?.getState?.().selectedVerses?.join(',') === '1,2,3,4,5';",
         ))
 
+        self.driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="places_locations"]').click()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".companion-places-locations")))
+
         setup = self.driver.execute_async_script("""
           const done = arguments[0];
           (async () => {
@@ -1228,7 +1231,7 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
               reference: selection.reference,
               presentation_packet: {cards: [{
                 id: 'browser-genesis-john-discovery',
-                type: 'did_you_know',
+                type: 'walk_the_land',
                 headline: 'John opens with the Word at the beginning',
                 body: 'The prologue places the Logos with God in the beginning.',
                 confidence: 'high',
@@ -1245,19 +1248,11 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
                 sources: [{title: 'Canonical Knowledge Library'}],
               }],
             };
-            const renderDiscoveries = window.BHFCompanionDiscoveries.render.bind(window.BHFCompanionDiscoveries);
-            window.BHFCompanionDiscoveries.render = (panel, _value, options) => renderDiscoveries(
-              panel,
-              context,
-              {...options, visible: true, narrativeExplorerEnabled: true, verifiedProjection: projection},
-            );
             window.BHFCompanionDiscoveries.render(
-              document.querySelector('[data-study-companion]'),
+              document.querySelector('.companion-places-locations'),
               context,
               {visible: true, narrativeExplorerEnabled: true, verifiedProjection: projection},
             );
-            window.BHFCompanionDiscoveries.render = () => {};
-            window.BHFStudyCompanion.setState('study', {focus: false, history: false});
             done({
               reference: selection.reference,
               routeIds: (projection.related_passages?.evidence_backed_bridges || []).map(route => route.id),
@@ -1268,7 +1263,8 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
               cardText: document.querySelector('.companion-discovery-card')?.textContent || '',
               resourceState: window.BHFStudyCompanion.getState(),
               overviewHidden: document.querySelector('[data-companion-overview]')?.hidden ?? null,
-              discoverySectionHidden: document.querySelector('[data-companion-discoveries-section]')?.hidden ?? null,
+              discoverySectionExists: document.querySelector('[data-companion-discoveries-section]') !== null,
+              landSectionHidden: document.querySelector('[data-companion-land-section]')?.hidden ?? null,
               panelHidden: document.querySelector('[data-study-companion]')?.hidden ?? null,
             });
           })().catch(error => done({error: String(error)}));
@@ -1279,8 +1275,9 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
         self.assertEqual(setup["actionCount"], 1)
         self.assertEqual(setup["reference"], "Genesis 1:1-5")
         self.assertIn("John opens with the Word at the beginning", setup["cardText"])
-        self.assertFalse(setup["overviewHidden"], repr(setup))
-        self.assertFalse(setup["discoverySectionHidden"], repr(setup))
+        self.assertTrue(setup["overviewHidden"], repr(setup))
+        self.assertFalse(setup["discoverySectionExists"], repr(setup))
+        self.assertFalse(setup["landSectionHidden"], repr(setup))
         self.assertFalse(setup["panelHidden"], repr(setup))
 
         discovery = self.driver.find_element(By.CSS_SELECTOR, ".companion-discovery-card")
@@ -1349,6 +1346,150 @@ class NarrativeExplorerWebUiTests(unittest.TestCase):
             "const s=window.BHFStudySelection?.getState?.(); "
             "return s?.book === 'Genesis' && s?.selectedVerses?.join(',') === '1,2,3,4,5';",
         ))
+
+    def test_ui06_places_locations_preserves_selection_history_and_mobile_focus(self):
+        from selenium.webdriver.common.keys import Keys
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import Select, WebDriverWait
+
+        wait = WebDriverWait(self.driver, 90)
+        self.driver.set_window_size(1440, 1200)
+        self.driver.get(self._base_url + "/")
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="reader-passage"]')))
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); return s?.book === 'John' && s.chapter === 1;",
+        ))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-book]")).select_by_value("Genesis")
+        wait.until(lambda driver: driver.execute_script("return window.BHFStudySelection?.getState?.().book === 'Genesis';"))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("12")
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); return s?.book === 'Genesis' && s.chapter === 12;",
+        ))
+        for verse in range(5, 10):
+            verse_button = self.driver.find_element(
+                By.CSS_SELECTOR,
+                f'#chapter-reader [data-verse="{verse}"] [data-verse-select]',
+            )
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", verse_button)
+            verse_button.click()
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().selectedVerses?.join(',') === '5,6,7,8,9';",
+        ))
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "const r=window.BHFStudyCompanion?.getContextRecord?.(); "
+            "return r?.status === 'ready' && r.key === window.BHFCompanionContext.requestKey(s);",
+        ))
+
+        overview = self.driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]")
+        self.assertEqual(len(overview.find_elements(By.CSS_SELECTOR, '[data-companion-resource="places_locations"]')), 1)
+        self.assertEqual(len(overview.find_elements(By.CSS_SELECTOR, '[data-companion-resource="places"]')), 0)
+        self.assertFalse(overview.find_elements(By.CSS_SELECTOR, "[data-companion-discoveries-section]"))
+        self.assertFalse(overview.find_elements(By.CSS_SELECTOR, "[data-companion-locations-section]"))
+        self.assertFalse(overview.find_elements(By.CSS_SELECTOR, "[data-companion-land-section]"))
+        self.assertFalse(overview.find_elements(By.CSS_SELECTOR, "[data-companion-entities-section]"))
+        self.driver.save_screenshot("/tmp/bhf-ui06-after-overview-desktop.png")
+
+        self.driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="places_locations"]').click()
+        geography = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".companion-places-locations")))
+        wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, ".companion-places-locations-reference").text == "Genesis 12:5-9")
+        self.assertEqual(
+            self.driver.execute_script("return window.BHFStudySelection?.getState?.().selectedVerses?.join(',');"),
+            "5,6,7,8,9",
+        )
+        self.assertEqual(
+            self.driver.execute_script("return Array.from(document.querySelectorAll('[data-geography-section]')).map(node => node.dataset.geographySection);"),
+            ["locations", "biblical-places", "walk-the-land"],
+        )
+        self.driver.save_screenshot("/tmp/bhf-ui06-after-geography-desktop.png")
+
+        self.driver.back()
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudyCompanion?.getState?.().resource === null;",
+        ))
+        wait.until(lambda driver: self.driver.execute_script(
+            "return document.activeElement?.dataset?.companionResource === 'places_locations';",
+        ))
+        self.driver.forward()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".companion-places-locations")))
+        wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, ".companion-places-locations-reference").text == "Genesis 12:5-9")
+
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("13")
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "const r=window.BHFStudyCompanion?.getContextRecord?.(); "
+            "return s?.book === 'Genesis' && s.chapter === 13 && r?.key === window.BHFCompanionContext.requestKey(s);",
+        ))
+        wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, ".companion-places-locations-reference").text.startswith("Genesis 13"))
+        self.assertNotIn("Genesis 12", self.driver.find_element(By.CSS_SELECTOR, ".companion-places-locations").text)
+
+        self.driver.execute_script("""
+          const frame = document.createElement('iframe');
+          frame.id = 'ui06-mobile-viewport';
+          frame.title = '390 pixel mobile Study Companion test viewport';
+          frame.style.cssText = 'position:fixed;z-index:2147483647;inset:0 auto auto 0;width:390px;height:844px;border:0;background:#fff';
+          frame.src = window.location.href;
+          document.body.append(frame);
+        """)
+        mobile_frame = wait.until(EC.presence_of_element_located((By.ID, "ui06-mobile-viewport")))
+        wait.until(lambda driver: driver.execute_script("return document.querySelector('#ui06-mobile-viewport')?.contentDocument?.readyState === 'complete';"))
+        self.driver.switch_to.frame(mobile_frame)
+        wait.until(lambda driver: driver.execute_script("return window.innerWidth === 390;"))
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="reader-passage"]')))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-book]")).select_by_value("Genesis")
+        wait.until(lambda driver: driver.execute_script("return window.BHFStudySelection?.getState?.().book === 'Genesis';"))
+        Select(self.driver.find_element(By.CSS_SELECTOR, "[data-reader-chapter]")).select_by_value("12")
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); return s?.book === 'Genesis' && s.chapter === 12;",
+        ))
+        for verse in range(5, 10):
+            verse_button = self.driver.find_element(
+                By.CSS_SELECTOR,
+                f'#chapter-reader [data-verse="{verse}"] [data-verse-select]',
+            )
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", verse_button)
+            verse_button.click()
+        wait.until(lambda driver: driver.execute_script(
+            "return window.BHFStudySelection?.getState?.().selectedVerses?.join(',') === '5,6,7,8,9';",
+        ))
+        wait.until(lambda driver: driver.execute_script(
+            "const s=window.BHFStudySelection?.getState?.(); "
+            "const r=window.BHFStudyCompanion?.getContextRecord?.(); "
+            "return r?.status === 'ready' && r.key === window.BHFCompanionContext.requestKey(s);",
+        ))
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.companion-peek:not([hidden])'))).click()
+        wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, "[data-study-companion]").get_attribute("data-companion-state") == "study")
+        mobile_entry = self.driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="places_locations"]')
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
+            mobile_entry,
+        )
+        mobile_entry.click()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".companion-places-locations")))
+        wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, ".companion-places-locations-reference").text == "Genesis 12:5-9")
+        self.assertLessEqual(
+            self.driver.execute_script("return document.documentElement.scrollWidth"),
+            self.driver.execute_script("return window.innerWidth"),
+        )
+        self.driver.switch_to.default_content()
+        mobile_frame = self.driver.find_element(By.ID, "ui06-mobile-viewport")
+        mobile_frame.screenshot("/tmp/bhf-ui06-after-geography-mobile-390.png")
+        self.driver.switch_to.frame(mobile_frame)
+        back = self.driver.find_element(By.CSS_SELECTOR, "[data-companion-back]")
+        back.click()
+        wait.until(lambda driver: driver.execute_script("return window.BHFStudyCompanion?.getState?.().resource === null;"))
+        self.driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="places_locations"]').click()
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".companion-places-locations")))
+        self.driver.switch_to.active_element.send_keys(Keys.ESCAPE)
+        wait.until(lambda driver: driver.execute_script("return window.BHFStudyCompanion?.getState?.().resource === null;"))
+        self.assertEqual(
+            self.driver.execute_script("return document.activeElement?.dataset?.companionResource || '';"),
+            "places_locations",
+        )
+        self.assertLessEqual(
+            self.driver.execute_script("return document.documentElement.scrollWidth"),
+            self.driver.execute_script("return window.innerWidth"),
+        )
 
 
 if __name__ == "__main__":

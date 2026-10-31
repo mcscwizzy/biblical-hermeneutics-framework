@@ -43,7 +43,7 @@ function fixturePanel() {
     createElement: (tagName) => new FakeElement(tagName, document),
   };
   const selectors = {};
-  for (const name of ["land", "discoveries"]) {
+  for (const name of ["land"]) {
     selectors[`[data-companion-${name}-section]`] = new FakeElement("section", document);
     selectors[`[data-companion-${name}]`] = new FakeElement("div", document);
   }
@@ -75,7 +75,7 @@ function card(id, type, action = null) {
 }
 
 
-test("discovery cards render bounded sections with grounded Dig In evidence", () => {
+test("Walk the Land keeps grounded evidence while Did You Know cards are not rendered", () => {
   const {panel, selectors} = fixturePanel();
   const context = {
     presentation_packet: {
@@ -102,10 +102,9 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
   discoveries.render(panel, context);
 
   assert.equal(selectors["[data-companion-land-section]"].hidden, false);
-  assert.equal(selectors["[data-companion-discoveries-section]"].hidden, false);
+  assert.equal(selectors["[data-companion-discoveries-section]"], undefined);
   assert.equal(selectors["[data-companion-significance-section]"], undefined);
   assert.equal(selectors["[data-companion-land]"].children.length, 1);
-  assert.equal(selectors["[data-companion-discoveries]"].children.length, 3);
 
   const rendered = selectors["[data-companion-land]"].children[0];
   const details = rendered.children[3];
@@ -127,9 +126,9 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
 });
 
 
-test("Dig In omits duplicate explanations while keeping evidence and actions", () => {
+test("Walk the Land Dig In omits duplicate explanations while keeping evidence and actions", () => {
   const {panel, selectors} = fixturePanel();
-  const fallback = card("fallback", "did_you_know", {
+  const fallback = card("fallback", "walk_the_land", {
     type: "explore_history",
     label: "Explore the historical setting",
   });
@@ -145,7 +144,7 @@ test("Dig In omits duplicate explanations while keeping evidence and actions", (
     }],
   });
 
-  const details = selectors["[data-companion-discoveries]"].children[0].children[3];
+  const details = selectors["[data-companion-land]"].children[0].children[3];
   fallback.dig_in_summary = "Body fallback";
   discoveries.render(panel, {
     presentation_packet: {cards: [fallback]},
@@ -157,7 +156,7 @@ test("Dig In omits duplicate explanations while keeping evidence and actions", (
       sources: [{title: "Curated source"}],
     }],
   });
-  const duplicateDetails = selectors["[data-companion-discoveries]"].children[0].children[3];
+  const duplicateDetails = selectors["[data-companion-land]"].children[0].children[3];
   assert.equal(duplicateDetails.children.length, 3);
   assert.equal(duplicateDetails.children[1].children[0].textContent, "Evidence");
   assert.equal(duplicateDetails.children[1].children[1].children[0].textContent, "Visible raw evidence remains available.");
@@ -176,7 +175,7 @@ test("Dig In omits duplicate explanations while keeping evidence and actions", (
     }],
   });
   assert.equal(
-    selectors["[data-companion-discoveries]"].children[0].children[3].children
+    selectors["[data-companion-land]"].children[0].children[3].children
       .some((child) => child.className === "companion-discovery-explanation"),
     false,
   );
@@ -189,8 +188,8 @@ test("legacy standalone significance packets never render as discovery cards", (
     presentation_packet: {cards: [card("legacy", "why_it_matters")]},
   });
 
-  assert.equal(selectors["[data-companion-discoveries-section]"].hidden, true);
-  assert.deepEqual(selectors["[data-companion-discoveries]"].children, []);
+  assert.equal(selectors["[data-companion-land-section]"].hidden, true);
+  assert.deepEqual(selectors["[data-companion-land]"].children, []);
 });
 
 
@@ -200,12 +199,12 @@ test("hidden discovery mode clears cards and sections", () => {
     presentation_packet: {cards: [card("fact", "did_you_know")]},
   }, {visible: false});
 
-  assert.equal(selectors["[data-companion-discoveries-section]"].hidden, true);
-  assert.deepEqual(selectors["[data-companion-discoveries]"].children, []);
+  assert.equal(selectors["[data-companion-land-section]"].hidden, true);
+  assert.deepEqual(selectors["[data-companion-land]"].children, []);
 });
 
 
-test("Walk the Land navigation consolidates only an exact map ID already shown in Locations", () => {
+test("Walk the Land stays separate when its map identity is also listed under Locations", () => {
   const {panel, selectors} = fixturePanel();
   const shared = card("walk-shared", "walk_the_land", {
     type: "open_map", label: "Open map", target_id: "map-exact-1",
@@ -217,8 +216,8 @@ test("Walk the Land navigation consolidates only an exact map ID already shown i
     presentation_packet: {cards: [shared]},
     locations: {items: [{origin: "maps", id: "map-exact-1", title: "Same Place"}]},
   });
-  assert.equal(selectors["[data-companion-land-section]"].hidden, true);
-  assert.equal(selectors["[data-companion-land]"].children.length, 0);
+  assert.equal(selectors["[data-companion-land-section]"].hidden, false);
+  assert.equal(selectors["[data-companion-land]"].children.length, 1);
 
   discoveries.render(panel, {
     presentation_packet: {cards: [distinct]},
@@ -271,7 +270,7 @@ test("unknown or unfulfillable actions do not navigate", async () => {
 function verifiedHandoffFixture(identity) {
   const discovery = {
     id: "discovery-1",
-    type: "did_you_know",
+    type: "walk_the_land",
     evidence_ids: ["evidence-1"],
   };
   const route = {
@@ -530,7 +529,7 @@ test("held, absent, topic-only, and source-only candidates never create a route 
 });
 
 
-test("a confirmed discovery renders the direct action with its route and exact CKL key", () => {
+test("a retained Walk the Land card renders the direct action with its route and exact CKL key", () => {
   const {panel, selectors} = fixturePanel();
   const fixture = verifiedHandoffFixture({
     object_id: "john",
@@ -543,7 +542,7 @@ test("a confirmed discovery renders the direct action with its route and exact C
     verifiedProjection: fixture.projection,
   });
 
-  const details = selectors["[data-companion-discoveries]"].children[0].children[3];
+  const details = selectors["[data-companion-land]"].children[0].children[3];
   const actions = details.children.find((child) => child.className === "companion-discovery-actions");
   const button = actions.children[1];
   assert.equal(button.textContent, "Explore this connection");

@@ -125,6 +125,7 @@ function loadCompanion(options = {}) {
   listeners.get("DOMContentLoaded")();
   return {
     companion: window.BHFStudyCompanion,
+    panel,
     contextOptions,
     select(next) { selectionListener(next); },
     routerCalls,
@@ -227,7 +228,7 @@ test("a requested map focus reports unavailable while the MapPanel module is loa
 });
 
 
-test("Study Companion preflights exact cited records through the selected Narrative Explorer projection", async () => {
+test("Places & Locations preflights exact Walk the Land records through Narrative Explorer", async () => {
   let resolveProjection;
   const fixture = loadCompanion({
     selection: {
@@ -257,7 +258,7 @@ test("Study Companion preflights exact cited records through the selected Narrat
   const context = {
     reference: "Jonah 1:17",
     presentation_packet: {
-      cards: [{type: "did_you_know", evidence_ids: ["jonah-three-days"]}],
+      cards: [{type: "walk_the_land", evidence_ids: ["jonah-three-days"]}],
     },
     presentation_evidence: [{
       id: "jonah-three-days",
@@ -265,7 +266,8 @@ test("Study Companion preflights exact cited records through the selected Narrat
     }],
   };
 
-  fixture.contextOptions.onReady(context, selection);
+  await fixture.companion.openResource("places_locations");
+  fixture.resourceRouterOptions.onPlacesLocationsRendered(context, fixture.panel, selection);
   await Promise.resolve();
 
   assert.equal(fixture.projectionCalls.length, 1);
@@ -297,18 +299,22 @@ test("projection preflight aborts and discards a stale chapter response", async 
   const secondSelection = {book: "Matthew", chapter: 12, startVerse: 40, endVerse: 40, reference: "Matthew 12:40"};
   const contextFor = (reference, recordId) => ({
     reference,
-    presentation_packet: {cards: [{type: "did_you_know", evidence_ids: [recordId]}]},
+    presentation_packet: {cards: [{type: "walk_the_land", evidence_ids: [recordId]}]},
     presentation_evidence: [{
       id: recordId,
       ckl_record_identity: {object_id: "jonah", record_kind: "claim", record_id: recordId},
     }],
   });
 
-  fixture.select(firstSelection);
-  fixture.contextOptions.onReady(contextFor("Jonah 1:17", "jonah-three-days"), firstSelection);
+  await fixture.companion.openResource("places_locations");
+  fixture.resourceRouterOptions.onPlacesLocationsRendered(
+    contextFor("Jonah 1:17", "jonah-three-days"), fixture.panel, firstSelection,
+  );
   await new Promise((resolve) => setImmediate(resolve));
   fixture.select(secondSelection);
-  fixture.contextOptions.onReady(contextFor("Matthew 12:40", "matthew-sign-of-jonah"), secondSelection);
+  fixture.resourceRouterOptions.onPlacesLocationsRendered(
+    contextFor("Matthew 12:40", "matthew-sign-of-jonah"), fixture.panel, secondSelection,
+  );
   await new Promise((resolve) => setImmediate(resolve));
 
   assert.equal(pending.length, 2);
@@ -332,18 +338,45 @@ test("disabled Narrative Explorer does not trigger a route projection request", 
   });
   const selection = {book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, reference: "Jonah 1:17"};
   fixture.select(selection);
-  fixture.contextOptions.onReady({
+  const context = {
     reference: "Jonah 1:17",
     presentation_packet: {cards: [{type: "did_you_know", evidence_ids: ["jonah-three-days"]}]},
     presentation_evidence: [{
       id: "jonah-three-days",
       ckl_record_identity: {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"},
     }],
-  }, selection);
+  };
+  await fixture.companion.openResource("places_locations");
+  fixture.resourceRouterOptions.onPlacesLocationsRendered(context, fixture.panel, selection);
   await new Promise((resolve) => setImmediate(resolve));
 
   assert.equal(fixture.projectionCalls.length, 0);
   assert.equal(fixture.discoveryRenders.at(-1).renderOptions.narrativeExplorerEnabled, false);
+});
+
+
+test("Did You Know only evidence does not trigger a projection for the removed overview section", async () => {
+  const fixture = loadCompanion({
+    selection: {book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, reference: "Jonah 1:17"},
+  });
+  const selection = {book: "Jonah", chapter: 1, startVerse: 17, endVerse: 17, reference: "Jonah 1:17"};
+  const context = {
+    reference: "Jonah 1:17",
+    presentation_packet: {cards: [{type: "did_you_know", evidence_ids: ["jonah-three-days"]}]},
+    presentation_evidence: [{
+      id: "jonah-three-days",
+      ckl_record_identity: {object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"},
+    }],
+  };
+
+  fixture.contextOptions.onReady(context, selection);
+  await Promise.resolve();
+  assert.equal(fixture.projectionCalls.length, 0);
+
+  await fixture.companion.openResource("places_locations");
+  fixture.resourceRouterOptions.onPlacesLocationsRendered(context, fixture.panel, selection);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(fixture.projectionCalls.length, 0);
 });
 
 

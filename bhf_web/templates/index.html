@@ -57,6 +57,7 @@
   <script src="{{ static_asset('/resource-router.js') }}?v=20261027a" defer></script>
   <script src="{{ static_asset('/companion-discoveries.js') }}?v=20261027a" defer></script>
   <script src="{{ static_asset('/companion-locations.js') }}?v=20261026a" defer></script>
+  <script src="{{ static_asset('/companion-places-locations.js') }}?v=20261031a" defer></script>
   <script src="{{ static_asset('/study-companion.js') }}?v=20261027a" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20261030a" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
@@ -250,7 +251,7 @@
             <section class="companion-section companion-dig-deeper" data-companion-dig-deeper aria-labelledby="companion-deeper-title">
               <div class="companion-section-heading companion-dig-deeper-heading">
                 <div><span aria-hidden="true">⌄</span><h3 id="companion-deeper-title">Dig Deeper</h3></div>
-                <p>Explore passage evidence, places, and BHF research tools.</p>
+                <p>Explore contextual evidence and BHF research tools for this passage.</p>
               </div>
 
               {% if runtime_config.narrativeExplorerEnabled %}
@@ -261,31 +262,11 @@
                 </button>
               {% endif %}
 
-              <section class="companion-section companion-locations" data-companion-locations-section aria-labelledby="companion-locations-title" hidden>
-                <div class="companion-section-heading">
-                  <div><span aria-hidden="true">⌖</span><h4 id="companion-locations-title">Locations</h4></div>
-                  <p>Passage-anchored places from Maps and CKL, with source provenance kept distinct.</p>
-                </div>
-                <ol class="companion-location-list" id="companion-locations-list" data-companion-locations-list></ol>
-                <p class="companion-location-status" data-companion-locations-status role="status" aria-live="polite" tabindex="-1"></p>
-                <button type="button" class="secondary companion-locations-more" data-companion-locations-more hidden>View all locations</button>
-              </section>
-
-              <section class="companion-section companion-discoveries" data-companion-discoveries-section aria-labelledby="companion-discoveries-title" hidden>
-                <div class="companion-section-heading">
-                  <div><span aria-hidden="true">✦</span><h4 id="companion-discoveries-title">Did You Know?</h4></div>
-                  <p>Concise discoveries grounded in BHF evidence.</p>
-                </div>
-                <div class="companion-discovery-list" data-companion-discoveries></div>
-              </section>
-
-              <section class="companion-section companion-discoveries companion-land" data-companion-land-section aria-labelledby="companion-land-title" hidden>
-                <div class="companion-section-heading">
-                  <div><span aria-hidden="true">⌖</span><h4 id="companion-land-title">Walk the Land</h4></div>
-                  <p>Explore source-linked maps and journeys connected to this passage.</p>
-                </div>
-                <div class="companion-discovery-list" data-companion-land></div>
-              </section>
+              <button type="button" class="companion-narrative-card companion-places-locations-entry" data-companion-resource="places_locations" data-companion-resource-label="Places &amp; Locations" aria-label="Explore places and locations for the selected passage">
+                <span class="companion-narrative-card-icon" aria-hidden="true">⌖</span>
+                <span class="companion-narrative-card-copy"><strong>Places &amp; Locations</strong><small>Explore biblical places, geography, maps, and journeys connected to this passage.</small></span>
+                <span class="companion-narrative-card-arrow" aria-hidden="true">→</span>
+              </button>
 
               <section class="companion-section companion-research-tools" aria-labelledby="companion-research-tools-title">
                 <div class="companion-section-heading">
@@ -296,14 +277,6 @@
                   <div class="companion-skeleton"></div><div class="companion-skeleton"></div>
                 </div>
                 <div class="companion-resource-list" data-companion-deeper></div>
-              </section>
-
-              <section class="companion-section" data-companion-entities-section aria-labelledby="companion-entities-title" hidden>
-                <div class="companion-section-heading companion-section-heading-inline">
-                  <div><span aria-hidden="true">◎</span><h4 id="companion-entities-title">People &amp; Places</h4></div>
-                  <button type="button" class="companion-text-button" data-companion-route="canonical">View All</button>
-                </div>
-                <div class="companion-entity-list" data-companion-entities></div>
               </section>
 
               <section class="companion-section companion-advanced-links" aria-labelledby="companion-advanced-links-title">

@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v52";
+const CACHE_VERSION = "v53";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -39,6 +39,7 @@ const STATIC_ASSETS = [
   "/static/resource-router.js",
   "/static/companion-discoveries.js",
   "/static/companion-locations.js",
+  "/static/companion-places-locations.js",
   "/static/study-companion.js",
   "/static/commentary.js",
   "/static/commentary.js?v=20261030a",

@@ -34,6 +34,7 @@
   let discoveryProjectionController = null;
   let discoveryProjectionPendingKey = "";
   let discoveryProjectionPendingContext = null;
+  let discoveryProjectionPendingTarget = null;
   let discoveryProjectionCacheKey = "";
   let discoveryProjectionCache = null;
 
@@ -102,6 +103,7 @@
           preserveResourceRouter: true,
         });
       },
+      onPlacesLocationsRendered: renderPlacesLocationsDiscoveries,
       backNarrativeTrail: () => historyController?.backFromResource(() => false),
       backNarrativeView: () => historyController?.backFromResource(() => false),
       getReadableTranslations: () => window.BHFStudyActions?.loadReadableTranslations?.(),
@@ -117,14 +119,10 @@
       onLoading: () => {
         if (currentMode !== "passage") return;
         renderLoadingState();
-        renderDiscoveries({});
-        renderLocations({});
         renderEntities([]);
       },
       onReady: (context) => {
         if (currentMode !== "passage") return;
-        renderDiscoveries(context);
-        renderLocations(context);
         renderRecommendations(context);
         renderEntities([
           ...(context.entities?.people || []),
@@ -137,9 +135,6 @@
       },
       onError: (message) => {
         if (currentMode !== "passage") return;
-        renderPresentationStatus("idle");
-        renderDiscoveries({});
-        renderLocations({});
         renderAvailabilityError(message);
         if (isPassageContextResourceActive()) {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
@@ -300,9 +295,6 @@
       }
     } else {
       renderRecommendations({resources: {}});
-      renderDiscoveries({});
-      renderLocations({});
-      renderPresentationStatus("idle");
       renderEntities([]);
     }
   }
@@ -339,16 +331,20 @@
   function renderRecommendations(availability = {}) {
     const engine = window.BHFStudyRecommendations;
     const ranking = engine.rank(selection, availability);
+    const geographyResources = new Set(["maps", "places"]);
+    const recommendedResources = ranking.recommended.filter((resource) => !geographyResources.has(resource.id));
+    const deeperResources = ranking.deeper.filter((resource) => !geographyResources.has(resource.id));
+    const remainingResources = ranking.all.filter((resource) => !geographyResources.has(resource.id));
     const recommended = panel.querySelector("[data-companion-recommended]");
     const deeper = panel.querySelector("[data-companion-deeper]");
     const reason = panel.querySelector("[data-companion-recommendation-reason]");
     if (reason) reason.textContent = ranking.reason;
     if (recommended) {
-      recommended.replaceChildren(...ranking.recommended.map((resource) => resourceCard(resource)));
-      if (!ranking.recommended.length) recommended.append(emptyAvailability("No verified resources are available for this selection."));
+      recommended.replaceChildren(...recommendedResources.map((resource) => resourceCard(resource)));
+      if (!recommendedResources.length) recommended.append(emptyAvailability("No verified resources are available for this selection."));
     }
-    if (deeper) deeper.replaceChildren(...ranking.deeper.map((resource) => resourceRow(resource)));
-    setText("[data-companion-resource-count]", `${ranking.all.length} study resources available`);
+    if (deeper) deeper.replaceChildren(...deeperResources.map((resource) => resourceRow(resource)));
+    setText("[data-companion-resource-count]", `${remainingResources.length} study resources available`);
   }
 
   function renderAvailabilityError(message) {
@@ -371,26 +367,33 @@
 
   function renderExploreOverview() {
     const engine = window.BHFStudyRecommendations;
-    const ids = ["maps", "archaeology", "people", "places", "themes", "timeline", "commentary", "canonical"];
+    const ids = ["archaeology", "people", "themes", "timeline", "commentary", "canonical"];
     const resources = ids.map((id) => ({id, ...engine.resources[id]})).filter((item) => item.label);
     panel.querySelector("[data-companion-recommended]")?.replaceChildren(...resources.slice(0, 4).map(resourceCard));
     panel.querySelector("[data-companion-deeper]")?.replaceChildren(...resources.slice(4).map(resourceRow));
     setText("[data-companion-recommendation-reason]", "Browse BHF’s local research collections independently of a selected passage.");
     setText("[data-companion-resource-count]", `${resources.length} research collections`);
     panel.querySelector("[data-companion-entities-section]")?.setAttribute("hidden", "");
-    renderDiscoveries({});
-    renderLocations({});
-    renderPresentationStatus("idle");
     renderExploreAskCard();
   }
 
-  function renderDiscoveries(context = {}) {
-    const visible = currentMode === "passage";
+  function renderPlacesLocationsDiscoveries(context = {}, target, requestedSelection = selection) {
+    const visible = currentMode === "passage"
+      && currentResource === "places_locations"
+      && Boolean(target);
     const narrativeExplorerEnabled = window.BHFRuntimeConfig?.narrativeExplorerEnabled === true;
     const identitySignature = citedRecordIdentitySignature(context);
-    const selectionKey = narrativeProjectionRequestKey(selection);
+    const selectionKey = narrativeProjectionRequestKey(requestedSelection);
     const contextReference = normalizeDiscoveryReference(context.reference);
-    const selectionReference = normalizeDiscoveryReference(selection?.reference);
+    const selectionReference = normalizeDiscoveryReference(requestedSelection?.reference);
+    const renderWalkLand = (verifiedProjection = null) => {
+      window.BHFCompanionDiscoveries?.render?.(target, context, {
+        visible: visible === true,
+        showEmpty: true,
+        narrativeExplorerEnabled,
+        ...(verifiedProjection ? {verifiedProjection} : {}),
+      });
+    };
     if (
       !visible
       || !narrativeExplorerEnabled
@@ -401,28 +404,19 @@
       || typeof window.BHFNarrativeExplorer?.load !== "function"
     ) {
       cancelDiscoveryProjection();
-      window.BHFCompanionDiscoveries?.render?.(panel, context, {
-        visible,
-        narrativeExplorerEnabled,
-      });
+      renderWalkLand();
       return;
     }
 
     const cacheKey = `${selectionKey}\u0000${identitySignature}`;
     if (discoveryProjectionCache && discoveryProjectionCacheKey === cacheKey) {
-      window.BHFCompanionDiscoveries?.render?.(panel, context, {
-        visible,
-        narrativeExplorerEnabled,
-        verifiedProjection: discoveryProjectionCache,
-      });
+      renderWalkLand(discoveryProjectionCache);
       return;
     }
     if (discoveryProjectionPendingKey === cacheKey) {
       discoveryProjectionPendingContext = context;
-      window.BHFCompanionDiscoveries?.render?.(panel, context, {
-        visible,
-        narrativeExplorerEnabled,
-      });
+      discoveryProjectionPendingTarget = target;
+      renderWalkLand();
       return;
     }
 
@@ -432,27 +426,31 @@
     discoveryProjectionController = requestController;
     discoveryProjectionPendingKey = cacheKey;
     discoveryProjectionPendingContext = context;
-    window.BHFCompanionDiscoveries?.render?.(panel, context, {
-      visible,
-      narrativeExplorerEnabled,
-    });
+    discoveryProjectionPendingTarget = target;
+    renderWalkLand();
     Promise.resolve()
-      .then(() => window.BHFNarrativeExplorer.load(selection, {signal: requestController.signal}))
+      .then(() => window.BHFNarrativeExplorer.load(requestedSelection, {signal: requestController.signal}))
       .then((projection) => {
         if (
           requestSequence !== discoveryProjectionSequence
           || requestController.signal.aborted
           || narrativeProjectionRequestKey(selection) !== selectionKey
+          || currentResource !== "places_locations"
           || currentMode !== "passage"
         ) return;
         const latestContext = discoveryProjectionPendingContext || context;
+        const latestTarget = discoveryProjectionPendingTarget || target;
         discoveryProjectionController = null;
         discoveryProjectionPendingKey = "";
         discoveryProjectionPendingContext = null;
+        discoveryProjectionPendingTarget = null;
         discoveryProjectionCacheKey = cacheKey;
         discoveryProjectionCache = projection;
-        window.BHFCompanionDiscoveries?.render?.(panel, latestContext, {
+        if (latestTarget.isConnected === false) return;
+        if (latestContext === context && latestTarget === target) renderWalkLand(projection);
+        else window.BHFCompanionDiscoveries?.render?.(latestTarget, latestContext, {
           visible: true,
+          showEmpty: true,
           narrativeExplorerEnabled: true,
           verifiedProjection: projection,
         });
@@ -462,6 +460,7 @@
         discoveryProjectionController = null;
         discoveryProjectionPendingKey = "";
         discoveryProjectionPendingContext = null;
+        discoveryProjectionPendingTarget = null;
         discoveryProjectionCacheKey = "";
         discoveryProjectionCache = null;
         // The initial render retains the original evidence and generic actions.
@@ -474,6 +473,7 @@
     discoveryProjectionController = null;
     discoveryProjectionPendingKey = "";
     discoveryProjectionPendingContext = null;
+    discoveryProjectionPendingTarget = null;
     discoveryProjectionCacheKey = "";
     discoveryProjectionCache = null;
   }
@@ -495,7 +495,7 @@
   function citedRecordIdentitySignature(context) {
     const evidenceIds = new Set();
     (Array.isArray(context?.presentation_packet?.cards) ? context.presentation_packet.cards : [])
-      .filter((card) => ["did_you_know", "walk_the_land"].includes(card?.type))
+      .filter((card) => card?.type === "walk_the_land")
       .forEach((card) => (Array.isArray(card.evidence_ids) ? card.evidence_ids : [])
         .forEach((id) => evidenceIds.add(id)));
     const identities = (Array.isArray(context?.presentation_evidence) ? context.presentation_evidence : [])
@@ -510,40 +510,6 @@
       })
       .filter(Boolean);
     return [...new Set(identities)].sort().join("|");
-  }
-
-  function renderLocations(context = {}) {
-    window.BHFCompanionLocations?.render?.(panel, context.locations, {
-      selection: selection || window.BHFStudySelection?.getState?.() || {},
-      offline: context.offline === true || navigator.onLine === false,
-      loadPage: async (page) => {
-        const url = window.BHFCompanionLocations.urlFor(page, page.cursor, page.limit);
-        if (window.BHFApi?.requestJson) {
-          return window.BHFApi.requestJson(
-            url,
-            {headers: {Accept: "application/json"}, signal: page.signal},
-            "Additional Study Companion locations could not be loaded.",
-          );
-        }
-        const response = await fetch(url, {headers: {Accept: "application/json"}, signal: page.signal});
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
-        return data;
-      },
-      openMap: (placeId, trigger) => openResource("maps", {
-        trigger,
-        mapFocus: {kind: "place", targetId: placeId, acknowledgeFocus: true},
-      }),
-      openCkl: async (objectId, trigger) => {
-        await openResource("canonical", {trigger});
-        return resourceRouter?.openCanonicalDetail?.(objectId);
-      },
-      onChange: (locations) => renderDiscoveries({...context, locations}),
-    });
-  }
-
-  function renderPresentationStatus(state, reason = "") {
-    window.BHFCompanionDiscoveries?.renderStatus?.(panel, state, reason);
   }
 
   function renderExploreAskCard() {
@@ -638,6 +604,7 @@
       return;
     }
     const previousResourceTrigger = lastResourceTrigger;
+    cancelDiscoveryProjection();
     resourceRouter?.close?.();
     currentResource = null;
     delete shell.dataset.companionResource;
@@ -708,6 +675,8 @@
     const engine = window.BHFStudyRecommendations;
     const resource = requestedResourceId === "narrative_explorer"
       ? {label: options.label || "Explore the Narrative"}
+      : requestedResourceId === "places_locations"
+        ? {label: options.label || "Places & Locations"}
       : engine?.resources?.[requestedResourceId]
       || engine?.resources?.[resourceId]
       || {label: options.label || "Study Resource"};
