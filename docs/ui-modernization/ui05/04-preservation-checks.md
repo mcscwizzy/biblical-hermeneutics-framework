@@ -21,5 +21,6 @@
 - Narrative Explorer feature-gate, history, responsive-action, and real-CKL handoff journeys passed in targeted browser runs. No Narrative Explorer implementation, feature flag, relationship data, history, or disclosure file appears in the diff.
 - No deployment configuration was changed.
 - Frontend tests passed **16/16**, framework validation accepted **94 modules**, CKL source validation reported **0 errors**, packaging tests passed, and retired Commentary route/runtime tests passed in the Python/API batch.
+- The final full GUI acceptance passed **141/141** on tested source SHA `77a9901f549057703351ecc0b00afe633a8a45aa`, with zero failures, errors, or skips. No browser processes remained after teardown.
 
 The reports [failure classification](01-failure-classification.md) and [remediation evidence](02-remediation-evidence.md) describe how the existing contracts were tested. Full-suite and source SHA evidence is recorded in [the acceptance run](03-full-gui-rerun.md) and [release decision](05-release-decision.md).
