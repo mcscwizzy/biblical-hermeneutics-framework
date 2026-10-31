@@ -19,10 +19,10 @@ function createWorker({fetchResponse, cachePut, cachedResponse, cachedMapEntries
   const cachePutCalls = [];
   for (const entry of cachedMapEntries) {
     const url = String(entry.url);
-    const entries = cacheAssets.get("bhf-api-v52") || new Set();
+    const entries = cacheAssets.get("bhf-api-v53") || new Set();
     entries.add(url);
-    cacheAssets.set("bhf-api-v52", entries);
-    cacheResponses.set(`bhf-api-v52:${url}`, entry.response.clone());
+    cacheAssets.set("bhf-api-v53", entries);
+    cacheResponses.set(`bhf-api-v53:${url}`, entry.response.clone());
   }
   const makeCache = (name) => ({
     add: async (asset) => {
@@ -97,11 +97,12 @@ test("service worker precaches the explorer module and retires the previous cach
   });
   await installPromise;
 
-  assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/narrative-explorer.js"), true);
-  assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/maps/MapFocusAcknowledgment.js"), true);
-  assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/companion-locations.js"), true);
-  assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/commentary.js"), true);
-  assert.equal(worker.cacheAssets.get("bhf-static-v52")?.has("/static/commentary.js?v=20261030a"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v53")?.has("/static/narrative-explorer.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v53")?.has("/static/maps/MapFocusAcknowledgment.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v53")?.has("/static/companion-locations.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v53")?.has("/static/companion-places-locations.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v53")?.has("/static/commentary.js"), true);
+  assert.equal(worker.cacheAssets.get("bhf-static-v53")?.has("/static/commentary.js?v=20261030a"), true);
 
   let activatePromise;
   worker.listeners.get("activate")({
@@ -303,7 +304,7 @@ test("network refresh preserves the offline-pack retention marker on the updated
 
   assert.deepEqual(await (await responsePromise).json(), {source: "current"});
   await lifetimePromise;
-  const cached = worker.cacheResponses.get(`bhf-api-v52:${url}`);
+  const cached = worker.cacheResponses.get(`bhf-api-v53:${url}`);
   assert.equal(cached.headers.get("X-BHF-Offline-Pack"), "maps");
   assert.deepEqual(await cached.json(), {source: "current"});
 });
@@ -329,7 +330,7 @@ test("map cache keeps a fixed number of the newest small responses", async () =>
     await lifetimePromise;
   }
 
-  const storedMapRequests = Array.from(worker.cacheAssets.get("bhf-api-v52") || [])
+  const storedMapRequests = Array.from(worker.cacheAssets.get("bhf-api-v53") || [])
     .filter((url) => url.includes("/api/maps/"));
   assert.equal(storedMapRequests.length, 32);
   assert.equal(storedMapRequests[0], "https://reader.example/api/maps/search?q=8");
@@ -401,7 +402,7 @@ test("map cache enforces an aggregate eight-megabyte bound", async () => {
     await lifetimePromise;
   }
 
-  const storedMapRequests = Array.from(worker.cacheAssets.get("bhf-api-v52") || [])
+  const storedMapRequests = Array.from(worker.cacheAssets.get("bhf-api-v53") || [])
     .filter((url) => url.includes("/api/maps/search?large="));
   assert.equal(storedMapRequests.length, 20);
   assert.equal(storedMapRequests[0], "https://reader.example/api/maps/search?large=4");

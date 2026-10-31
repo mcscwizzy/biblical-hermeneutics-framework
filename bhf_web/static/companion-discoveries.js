@@ -12,23 +12,8 @@
     const cards = options.visible !== false && Array.isArray(context.presentation_packet?.cards)
       ? context.presentation_packet.cards
       : [];
-    const supportedCards = cards.filter((card) =>
-      card && ["did_you_know", "walk_the_land"].includes(card.type));
-    const visibleMapIds = new Set(
-      (Array.isArray(context.locations?.items) ? context.locations.items : [])
-        .filter((item) => item?.origin === "maps" && (item.map_focus_id || item.id))
-        .map((item) => String(item.map_focus_id || item.id)),
-    );
-    const visibleCards = supportedCards.filter((card) => !isConsolidatedWalkCard(card, visibleMapIds));
-    renderSection(panel, "[data-companion-land-section]", "[data-companion-land]", visibleCards, "walk_the_land", 1, context, options);
-    renderSection(panel, "[data-companion-discoveries-section]", "[data-companion-discoveries]", visibleCards, "did_you_know", 3, context, options);
-  }
-
-  function isConsolidatedWalkCard(card, visibleMapIds) {
-    if (card?.type !== "walk_the_land" || !visibleMapIds.size) return false;
-    return (Array.isArray(card.dig_deeper_actions) ? card.dig_deeper_actions : [])
-      .some((action) => action?.type === "open_map"
-        && visibleMapIds.has(String(action.target_id || "")));
+    const walkCards = cards.filter((card) => card?.type === "walk_the_land");
+    renderSection(panel, "[data-companion-land-section]", "[data-companion-land]", walkCards, "walk_the_land", 1, context, options);
   }
 
   function renderSection(panel, sectionSelector, listSelector, cards, type, maximum, context, options) {
@@ -36,9 +21,19 @@
     const list = panel?.querySelector(listSelector);
     if (!section || !list) return;
     const visibleCards = cards.filter((card) => card?.type === type).slice(0, maximum);
-    section.hidden = visibleCards.length === 0;
+    section.hidden = visibleCards.length === 0 && options?.showEmpty !== true;
     const document = list.ownerDocument || globalThis.document;
-    list.replaceChildren(...visibleCards.map((card) => discoveryCard(card, context, document, options)));
+    if (visibleCards.length) {
+      list.replaceChildren(...visibleCards.map((card) => discoveryCard(card, context, document, options)));
+    } else if (options?.showEmpty === true && type === "walk_the_land") {
+      const empty = document.createElement("p");
+      empty.className = "companion-geography-empty";
+      empty.dataset.geographyEmpty = "";
+      empty.textContent = `No source-grounded journeys are available for ${context.reference || "this passage"}.`;
+      list.replaceChildren(empty);
+    } else {
+      list.replaceChildren();
+    }
   }
 
   function discoveryCard(card, context, document, options) {

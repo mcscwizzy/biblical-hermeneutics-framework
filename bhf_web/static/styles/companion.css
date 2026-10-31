@@ -219,6 +219,74 @@ body.companion-sheet-full {
   gap: 12px;
 }
 
+.companion-places-locations {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.companion-places-locations-title,
+.companion-places-locations-reference {
+  margin: 0;
+}
+
+.companion-places-locations-title {
+  font-size: 1.18rem;
+  letter-spacing: -0.025em;
+}
+
+.companion-places-locations-reference,
+.companion-geography-status,
+.companion-geography-empty,
+.companion-location-identity,
+.companion-location-license,
+.companion-location-review,
+.companion-location-content-status,
+.companion-location-source-lock-id {
+  color: var(--page-muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.companion-geography-status:empty {
+  display: none;
+}
+
+.companion-geography-section {
+  min-width: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.companion-geography-section > h4 {
+  margin: 0 0 11px;
+  font-size: 1rem;
+}
+
+.companion-biblical-place-list {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.companion-biblical-place {
+  display: grid;
+  min-width: 0;
+  gap: 9px;
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  overflow-wrap: anywhere;
+}
+
+.companion-places-locations-entry {
+  border-color: color-mix(in srgb, var(--accent) 56%, var(--border));
+  background: color-mix(in srgb, var(--accent) 11%, var(--surface));
+}
+
 .companion-location-list {
   display: grid;
   gap: 10px;
@@ -242,6 +310,14 @@ body.companion-sheet-full {
   min-width: 0;
   margin: 0;
   overflow-wrap: anywhere;
+}
+
+.companion-location-empty-item {
+  list-style: none;
+}
+
+.companion-location-empty-item p {
+  margin: 0;
 }
 
 .companion-location-card h4 {
@@ -2337,6 +2413,10 @@ body.companion-sheet-full {
   .companion-locations-more {
     width: 100%;
     min-height: 46px;
+  }
+
+  .companion-biblical-place .companion-location-action {
+    width: 100%;
   }
 
   .passage-action-list button {

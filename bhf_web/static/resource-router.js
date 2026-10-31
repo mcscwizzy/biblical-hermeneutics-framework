@@ -4,7 +4,7 @@
 
   const NATIVE_RESOURCES = new Set([
     // `commentary` is the persisted Tyndale resource ID and remains compatible.
-    "commentary", "translation_comparison", "canonical", "archaeology", "people", "places",
+    "commentary", "translation_comparison", "canonical", "archaeology", "people", "places", "places_locations",
     "narrative_explorer",
     "themes", "timeline", "cross_references", "historical_context",
     "cultural_context", "original_audience", "literary_context", "covenant_context",
@@ -28,6 +28,7 @@
     let nativeBackFocusTarget = null;
     let activeResourceId = "";
     let activePassageKey = "";
+    let activePlacesLocationsView = null;
     const explorer = window.BHFNarrativeExplorer;
     const subjectLoader = explorer?.createSubjectLoader?.();
     let narrativeTrail = null;
@@ -64,6 +65,7 @@
 
     async function open(resourceId, routeOptions = {}) {
       if (!NATIVE_RESOURCES.has(resourceId)) return false;
+      cancelPlacesLocationsView();
       if (routeOptions.routeHandoff) {
         if (resourceId !== "narrative_explorer") return false;
         cancelManagedReaderSelection();
@@ -144,7 +146,14 @@
       nativeBackFocusTarget = null;
       shell.classList.add("is-native-resource");
       host.hidden = false;
-      if (!isNarrativeExplorer) renderLoading(host);
+      if (!isNarrativeExplorer) {
+        renderLoading(
+          host,
+          resourceId === "places_locations"
+            ? `Loading Places & Locations for ${selection.reference || "this passage"}…`
+            : "Loading resource…",
+        );
+      }
       try {
         if (isNarrativeExplorer) {
           if (requestedTrail) {
@@ -277,6 +286,7 @@
     }
 
     function close() {
+      cancelPlacesLocationsView();
       cancelManagedReaderSelection();
       cancelPendingRouteHandoff();
       sequence += 1;
@@ -759,7 +769,9 @@
         return;
       }
       const context = contextRecord.context;
-      if (["historical_context", "cultural_context", "original_audience", "literary_context", "covenant_context", "archaeology"].includes(resourceId)) {
+      if (resourceId === "places_locations") {
+        renderPlacesLocations(context, selection, requestSequence);
+      } else if (["historical_context", "cultural_context", "original_audience", "literary_context", "covenant_context", "archaeology"].includes(resourceId)) {
         const narration = context.summaries?.narration?.by_context?.[resourceId];
         if (resourceId === "archaeology" && !narration) {
           renderArchaeology(context.summaries?.archaeology || [], true);
@@ -778,6 +790,17 @@
     }
 
     async function renderExplore(resourceId, requestSequence, signal) {
+      if (resourceId === "places_locations") {
+        const selection = options.getSelection?.() || {};
+        const key = window.BHFCompanionContext?.requestKey?.(selection) || "";
+        const record = options.getContextRecord?.() || {};
+        if (record.status === "ready" && record.key === key && record.context) {
+          renderPlacesLocations(record.context, selection, requestSequence);
+        } else {
+          renderError(host, "Open a Bible passage to view its Places & Locations.");
+        }
+        return;
+      }
       if (resourceId === "archaeology") {
         const data = await requestJson("/api/archaeology?limit=12&include_media=false", signal);
         if (requestSequence !== sequence) return;
@@ -796,6 +819,49 @@
       const data = await requestJson(`/api/canonical/search?${parameters}`, signal);
       if (requestSequence !== sequence) return;
       renderCanonicalCards(data.results || [], resourceId === "canonical" ? "canonical knowledge" : resourceId, false);
+    }
+
+    function renderPlacesLocations(context, selection, requestSequence) {
+      const view = window.BHFCompanionPlacesLocations?.render?.(context, {
+        document,
+        selection,
+        locationRenderer: window.BHFCompanionLocations,
+        locationOptions: {
+          offline: context.offline === true,
+          loadPage: async (page) => requestJson(
+            window.BHFCompanionLocations.urlFor(page, page.cursor, page.limit),
+            page.signal,
+          ),
+          openMap: (placeId, trigger) => options.openResource?.("maps", {
+            trigger,
+            mapFocus: {kind: "place", targetId: placeId, acknowledgeFocus: true},
+          }),
+          openCkl: async (objectId, trigger) => {
+            await options.openResource?.("canonical", {trigger});
+            return openCanonicalDetail(objectId);
+          },
+        },
+        renderWalkTheLand: (target, value) => window.BHFCompanionDiscoveries?.render?.(
+          target,
+          value,
+          {visible: true, showEmpty: true, narrativeExplorerEnabled: window.BHFRuntimeConfig?.narrativeExplorerEnabled === true},
+        ),
+      });
+      if (requestSequence !== sequence) return;
+      if (!view) {
+        renderError(host, "Places & Locations could not be displayed.");
+        return;
+      }
+      cancelPlacesLocationsView();
+      activePlacesLocationsView = view;
+      commit(view);
+      options.onPlacesLocationsRendered?.(context, view, selection);
+    }
+
+    function cancelPlacesLocationsView() {
+      if (!activePlacesLocationsView) return;
+      window.BHFCompanionLocations?.cancel?.(activePlacesLocationsView);
+      activePlacesLocationsView = null;
     }
 
     function renderCommentary(data) {

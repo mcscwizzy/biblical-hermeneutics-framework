@@ -24,19 +24,31 @@
       previous.controller.abort();
     }
 
+    const document = list.ownerDocument || rootDocument();
     const items = Array.isArray(payload?.items) ? payload.items.filter(isLocation) : [];
     if (!items.length) {
-      section.hidden = true;
+      section.hidden = options.showEmpty !== true;
       list.replaceChildren();
       status.textContent = "";
       status.setAttribute("role", "status");
       more.hidden = true;
       more.disabled = false;
       states.delete(panel);
+      if (options.showEmpty === true) {
+        const emptyItem = document.createElement("li");
+        emptyItem.className = "companion-location-empty-item";
+        const empty = textBlock(
+          document,
+          "companion-geography-empty",
+          `No source-grounded locations for ${payload?.reference || options.selection?.reference || "this passage"}.`,
+        );
+        empty.dataset.geographyEmpty = "";
+        emptyItem.append(empty);
+        list.append(emptyItem);
+      }
       return null;
     }
 
-    const document = list.ownerDocument || rootDocument();
     const state = {
       panel,
       section,
@@ -80,6 +92,15 @@
     return state;
   }
 
+  function cancel(panel) {
+    const state = states.get(panel);
+    if (!state) return false;
+    state.active = false;
+    state.controller.abort();
+    states.delete(panel);
+    return true;
+  }
+
   function appendUniqueItems(state, items) {
     for (const item of items) {
       const key = itemKey(item);
@@ -102,6 +123,12 @@
     const heading = document.createElement("h4");
     heading.textContent = item.title;
     article.append(heading);
+
+    article.append(textBlock(
+      document,
+      "companion-location-identity",
+      `${item.origin === "maps" ? "Maps" : "CKL"} identity: ${item.id}`,
+    ));
 
     const references = Array.isArray(item.references) && item.references.length
       ? item.references
@@ -135,6 +162,9 @@
       if (item.map_confidence) {
         article.append(textBlock(document, "companion-location-confidence", `Map catalog confidence: ${item.map_confidence}.`));
       }
+      if (item.license || item.provenance?.license) {
+        article.append(textBlock(document, "companion-location-license", `License: ${item.license || item.provenance.license}`));
+      }
     } else if (item.source_lock?.status === "locked") {
       article.append(textBlock(document, "companion-location-provenance", "Includes source-locked geography evidence."));
     } else if (item.source_lock?.status && item.source_lock.status !== "not_recorded") {
@@ -143,6 +173,18 @@
         "companion-location-uncertainty",
         `Related geography evidence is ${item.source_lock.status}; it is not used for identification.`,
       ));
+    }
+
+    if (item.origin === "ckl") {
+      if (item.review_status) {
+        article.append(textBlock(document, "companion-location-review", `Review status: ${formatStatus(item.review_status)}`));
+      }
+      if (item.content_status) {
+        article.append(textBlock(document, "companion-location-content-status", `Content status: ${formatStatus(item.content_status)}`));
+      }
+      if (item.source_lock?.id) {
+        article.append(textBlock(document, "companion-location-source-lock-id", `Source-lock identity: ${item.source_lock.id}`));
+      }
     }
 
     const source = item.provenance || {};
@@ -156,6 +198,9 @@
         ? `${label}: ${sourceNames.join(", ")}`
         : `Source: ${label}`;
       article.append(sourceLine);
+    }
+    if (source.license && item.origin !== "maps") {
+      article.append(textBlock(document, "companion-location-license", `License: ${source.license}`));
     }
     if (source.url && isHttpUrl(source.url)) {
       const sourceLink = document.createElement("a");
@@ -323,6 +368,10 @@
     }
   }
 
+  function formatStatus(value) {
+    return String(value || "").replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  }
+
   function rootNavigator() {
     return typeof navigator !== "undefined" ? navigator : null;
   }
@@ -331,5 +380,5 @@
     return typeof document !== "undefined" ? document : null;
   }
 
-  return Object.freeze({render, urlFor, pageSize: PAGE_SIZE});
+  return Object.freeze({render, cancel, urlFor, pageSize: PAGE_SIZE});
 });

@@ -36,7 +36,7 @@ function projection(overrides = {}) {
 }
 
 function fixture(options = {}) {
-  const records = {trailChanges: [], viewChanges: [], handoffs: [], rendered: [], sessions: []};
+  const records = {trailChanges: [], viewChanges: [], handoffs: [], rendered: [], sessions: [], geographyRenders: [], geographyReady: []};
   let selection = {
     book: "Jonah",
     chapter: 1,
@@ -115,6 +115,7 @@ function fixture(options = {}) {
     },
   };
   let router;
+  let currentContextRecord = options.contextRecord || {key: "", status: "ready", context: null};
   const window = {
     BHFRuntimeConfig: {narrativeExplorerEnabled: options.enabled !== false},
     BHFApi: options.api || {
@@ -125,6 +126,19 @@ function fixture(options = {}) {
       },
     },
     BHFNarrativeExplorer: explorer,
+    BHFCompanionContext: {
+      requestKey(value) {
+        return [value?.book, value?.chapter, value?.startVerse || 0, value?.endVerse || 0].join("|");
+      },
+    },
+    BHFCompanionPlacesLocations: {
+      render(context, renderOptions) {
+        const view = document.createElement("div");
+        view.dataset.placesLocationsView = "";
+        records.geographyRenders.push({context, renderOptions, view});
+        return view;
+      },
+    },
     BHFReader: {
       async navigateToPassage(book, chapter, startVerse, endVerse, settings = {}) {
         const selectedVerses = settings.selectedVerses || [];
@@ -159,10 +173,11 @@ function fixture(options = {}) {
     panel,
     shell,
     getSelection: () => selection,
-    getContextRecord: () => options.contextRecord || {key: "", status: "ready", context: null},
+    getContextRecord: () => currentContextRecord,
     onVerifiedRouteHandoff: (...args) => records.handoffs.push(args),
     onNarrativeTrailChange: (...args) => records.trailChanges.push(args),
     onNarrativeViewChange: (...args) => records.viewChanges.push(args),
+    onPlacesLocationsRendered: (...args) => records.geographyReady.push(args),
     backNarrativeView: () => options.backNarrativeView?.() ?? false,
   });
   return {
@@ -171,6 +186,7 @@ function fixture(options = {}) {
     host,
     heading,
     setSelection(value) { selection = value; },
+    setContextRecord(value) { currentContextRecord = value; },
     getSelection() { return selection; },
   };
 }
@@ -217,7 +233,7 @@ test("canonical Companion cards disclose pending editorial review without invent
   const notice = "Draft evidence — awaiting human review";
   const draft = fixture({
     contextRecord: {
-      key: "",
+      key: "Jonah|1|17|17",
       status: "ready",
       context: {
         summaries: {
@@ -254,7 +270,7 @@ test("canonical Companion cards disclose pending editorial review without invent
   ]) {
     const other = fixture({
       contextRecord: {
-        key: "",
+        key: "Jonah|1|17|17",
         status: "ready",
         context: {summaries: {canonical: [{id: "other-context", title: "Other context", ...governance}]}},
       },
@@ -267,6 +283,66 @@ test("canonical Companion cards disclose pending editorial review without invent
       /approved/i,
     );
   }
+});
+
+
+test("Places & Locations is a new selection-scoped resource and preserves the places contract", async () => {
+  const selectedContext = {
+    reference: "Jonah 1:17",
+    locations: {reference: "Jonah 1:17", items: [{id: "map-place", origin: "maps", title: "A Place"}]},
+    entities: {places: [{id: "jonah-place", title: "Jonah Place", type: "place"}]},
+    presentation_packet: {cards: []},
+  };
+  const value = fixture({contextRecord: {
+    key: "Jonah|1|17|17",
+    status: "ready",
+    context: selectedContext,
+  }});
+
+  assert.equal(await value.router.open("places_locations"), true);
+  assert.equal(value.records.geographyRenders.length, 1);
+  assert.equal(value.records.geographyRenders[0].context, selectedContext);
+  assert.deepEqual(value.records.geographyRenders[0].renderOptions.selection, value.getSelection());
+  assert.equal(value.records.geographyReady.length, 1);
+  assert.equal(value.records.geographyReady[0][0], selectedContext);
+
+  assert.equal(await value.router.open("places"), true);
+  assert.equal(value.records.geographyRenders.length, 1);
+});
+
+test("Places & Locations refreshes for the selected chapter and holds while context is stale", async () => {
+  const firstContext = {
+    reference: "Jonah 1:17",
+    locations: {reference: "Jonah 1:17", items: [{id: "jonah-map", origin: "maps", title: "Jonah place"}]},
+  };
+  const value = fixture({contextRecord: {
+    key: "Jonah|1|17|17",
+    status: "ready",
+    context: firstContext,
+  }});
+
+  await value.router.open("places_locations");
+  assert.equal(value.records.geographyRenders[0].context.reference, "Jonah 1:17");
+
+  const secondSelection = {
+    book: "Matthew", chapter: 12, startVerse: 40, endVerse: 40,
+    reference: "Matthew 12:40", selectedVerses: [40],
+  };
+  value.setSelection(secondSelection);
+  await value.router.open("places_locations");
+  assert.equal(value.records.geographyRenders.length, 1);
+  assert.match(renderedText(value.host.content), /Loading Matthew 12:40 resources/);
+
+  const secondContext = {
+    reference: "Matthew 12:40",
+    locations: {reference: "Matthew 12:40", items: [{id: "matthew-map", origin: "maps", title: "Matthew place"}]},
+  };
+  value.setContextRecord({key: "Matthew|12|40|40", status: "ready", context: secondContext});
+  await value.router.open("places_locations");
+  assert.equal(value.records.geographyRenders.length, 2);
+  assert.equal(value.records.geographyRenders[1].context, secondContext);
+  assert.deepEqual(value.records.geographyRenders[1].renderOptions.selection, secondSelection);
+  assert.doesNotMatch(renderedText(value.host.content), /Jonah place/);
 });
 
 test("canonical detail uses exact object lookup and keeps source links attached to their evidence", async () => {

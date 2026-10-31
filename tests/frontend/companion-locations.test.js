@@ -85,6 +85,11 @@ function findAll(node, predicate, found = []) {
 }
 
 
+function textContent(node) {
+  return [node.textContent || "", ...(node.children || []).map(textContent)].join(" ");
+}
+
+
 test("Locations renders independent items with native accessible actions and exact map focus", async () => {
   const {panel, selectors} = fixturePanel();
   const opened = [];
@@ -105,6 +110,8 @@ test("Locations renders independent items with native accessible actions and exa
   assert.equal(action.tagName, "BUTTON");
   assert.equal(action.type, "button");
   assert.equal(action.dataset.locationId, "openbible-exact-id");
+  assert.match(textContent(section), /Maps identity: openbible-exact-id/);
+  assert.match(textContent(section), /OpenBible map catalog/);
   await action.click();
   assert.deepEqual(opened, ["openbible-exact-id"]);
   assert.match(selectors["[data-companion-locations-status]"].textContent, /Maps focused on Myra/);
@@ -160,6 +167,9 @@ test("CKL-only places open CKL details and do not acquire a map action", async (
   assert.equal(findAll(section, (item) => item.dataset.locationAction === "open-map").length, 0);
   const action = findAll(section, (item) => item.dataset.locationAction === "open-ckl")[0];
   assert.equal(action.dataset.locationId, "ckl-lasea");
+  assert.match(textContent(section), /CKL identity: ckl-lasea/);
+  assert.match(textContent(section), /Review status: Unreviewed/);
+  assert.match(textContent(section), /Content status: Draft/);
   await action.click();
   assert.deepEqual(opened, ["ckl-lasea"]);
 });
@@ -185,6 +195,25 @@ test("disputed map identification is labeled as catalog uncertainty", () => {
 });
 
 
+test("held CKL source locks retain their classification without claiming identification", () => {
+  const {panel, selectors} = fixturePanel();
+  locations.render(panel, {
+    reference: "Acts 27",
+    items: [{
+      ...cklItem("lasea-held", "Lasea"),
+      source_lock: {status: "held", id: "lasea-geography-lock"},
+    }],
+    total: 1,
+  });
+
+  const text = textContent(selectors["[data-companion-locations-list]"]);
+  assert.match(text, /Related geography evidence is held/);
+  assert.match(text, /not used for identification/);
+  assert.match(text, /Source-lock identity: lasea-geography-lock/);
+  assert.doesNotMatch(text, /independently verified|verified identification/i);
+});
+
+
 test("the Locations section is absent when no eligible physical geography is available", () => {
   const {panel, selectors} = fixturePanel();
   const state = locations.render(panel, {reference: "Psalm 82", items: [], total: 0});
@@ -192,6 +221,16 @@ test("the Locations section is absent when no eligible physical geography is ava
   assert.equal(state, null);
   assert.equal(selectors["[data-companion-locations-section]"].hidden, true);
   assert.equal(selectors["[data-companion-locations-list]"].children.length, 0);
+});
+
+
+test("the focused view can keep an explicit empty Locations section", () => {
+  const {panel, selectors} = fixturePanel();
+  locations.render(panel, {reference: "Psalm 82", items: [], total: 0}, {showEmpty: true});
+
+  assert.equal(selectors["[data-companion-locations-section]"].hidden, false);
+  assert.equal(selectors["[data-companion-locations-list]"].children.length, 1);
+  assert.match(textContent(selectors["[data-companion-locations-list]"].children[0]), /No source-grounded locations for Psalm 82/);
 });
 
 
