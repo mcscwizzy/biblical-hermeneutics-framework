@@ -669,7 +669,10 @@ class WebAssetTests(unittest.TestCase):
         router_script = Path("bhf_web/static/resource-router.js").read_text(encoding="utf-8")
 
         self.assertIn("dataset.archaeologyId", router_script)
-        self.assertIn("function openArchaeologyDetail(itemId)", router_script)
+        self.assertIn(
+            "void openArchaeologyDetail(archaeologyCard.dataset.archaeologyId, archaeologyCard)",
+            router_script,
+        )
         self.assertIn("openArchaeologyDetail,", router_script)
         self.assertIn("/api/archaeology/items/${encodeURIComponent(normalized)}", router_script)
         self.assertIn("function renderArchaeologyDetail(detail)", router_script)

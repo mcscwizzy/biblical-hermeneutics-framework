@@ -21,6 +21,19 @@ def _show_canonical_workspace(driver):
     )
 
 
+def _click_visible_result_view_button(driver):
+    clicked = driver.execute_script(
+        """
+        const button = Array.from(document.querySelectorAll('[data-testid="canonical-result-view-button"]'))
+          .find((candidate) => candidate.getClientRects().length > 0 && !candidate.disabled);
+        if (!button) return false;
+        button.click();
+        return true;
+        """
+    )
+    assert clicked, "No visible canonical result view button was available"
+
+
 def _open_canonical_browser(driver, wait, base_url, query: str = "Shechem") -> WorkspacePage:
     driver.set_window_size(1440, 1000)
     HomePage(driver, wait, base_url).open().wait_loaded()
@@ -57,7 +70,7 @@ def test_canonical_browser_starts_empty_until_searched(driver, wait, base_url):
 def test_canonical_browser_search_detail_and_source_view(driver, wait, base_url):
     page = _open_canonical_browser(driver, wait, base_url)
 
-    page.click('[data-testid="canonical-result-view-button"]')
+    _click_visible_result_view_button(driver)
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-canonical-detail-title]').text == "Shechem")
 
     assert driver.find_element(By.CSS_SELECTOR, '[data-canonical-detail-status]').text == "In Review"
@@ -122,10 +135,10 @@ def test_canonical_browser_linking_object_to_note_adds_canonical_ids(driver, wai
     wait.until(lambda _driver: len(_driver.find_elements(By.CSS_SELECTOR, "#notes-list [data-canonical-object-id='shechem']")) > 0)
 
 
-def test_canonical_browser_opens_editor_for_draft_object(driver, wait, base_url):
-    page = _open_canonical_browser(driver, wait, base_url, query="Joel")
+def test_canonical_browser_opens_editor_for_draft_object(driver, wait, canonical_editor_base_url):
+    page = _open_canonical_browser(driver, wait, canonical_editor_base_url, query="Joel")
 
-    page.click('[data-testid="canonical-result-view-button"]')
+    _click_visible_result_view_button(driver)
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-canonical-detail-title]').text == "Joel")
     editor_link = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="canonical-open-editor"]')))
     assert editor_link.is_displayed()

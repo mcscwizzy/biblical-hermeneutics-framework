@@ -32,6 +32,7 @@ const relatedPassageDetails = new Map();
 let selectedRoute = null;
 let mapMode = "passage";
 let lastPassageContext = null;
+let mapPanelRequestId = 0;
 let loadedMarkers = [];
 let loadedRoutes = [];
 let browseSearchResults = [];
@@ -657,6 +658,7 @@ function ensureMapController(markers, routes, routeVisibility) {
 }
 
 async function openMapPanel(context = {}) {
+  const requestId = ++mapPanelRequestId;
   const focusRequest = requestedMapFocus(context);
   const browseMode = context.mode === "browse" || (!context.book && !context.chapter);
   setMapMode(browseMode ? "browse" : "passage");
@@ -697,6 +699,7 @@ async function openMapPanel(context = {}) {
     // This matters on slow/offline connections: Explore should still expose
     // its search and navigation controls while the catalog request resolves.
     const catalog = await loadMapCatalog({ period: "all", includeRecords: false });
+    if (requestId !== mapPanelRequestId) return;
     if (catalog?.timeline?.period_options) {
       applyTimelineOptions(catalog.timeline.period_options);
     }
@@ -706,6 +709,7 @@ async function openMapPanel(context = {}) {
       routeResult,
       offline,
     } = await loadMapData(context);
+    if (requestId !== mapPanelRequestId) return;
     loadedRoutes = routeResult.routes || [];
     loadedMarkers = placeResult.markers || [];
     if (selectedMarker && !loadedMarkers.some((marker) => marker.id === selectedMarker.id)) {
@@ -797,6 +801,7 @@ async function openMapPanel(context = {}) {
     showMapFocusAcknowledgment(focusAcknowledgment, context);
     return focusAcknowledgment || undefined;
   } catch (error) {
+    if (requestId !== mapPanelRequestId) return;
     setPinHint("");
     setStatus(error.message || "Could not load the map.", "error");
     renderEmptyDetails("Could not load place and route details.");

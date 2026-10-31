@@ -535,6 +535,7 @@ class StudyActionRouterTests(unittest.TestCase):
             )
 
             self.assertEqual(result.status, "complete")
+            self.assertEqual(result.confidence, 0.92)
             self.assertTrue(result.agent_fallback_allowed)
             self.assertEqual(result.metadata["word_study"]["strongs_number"], "G3056")
             self.assertTrue(any(section["title"] == "Original Word" for section in result.sections))
@@ -542,6 +543,37 @@ class StudyActionRouterTests(unittest.TestCase):
             prompt = format_fact_packet_for_prompt(packet)
             self.assertIn("LEXICAL CONTEXT", prompt)
             self.assertIn("Strong's: G3056", prompt)
+
+    def test_word_study_action_does_not_load_unrelated_canonical_library(self):
+        class UnusedCanonicalLibrary:
+            def retrieve_exact(self, _book):
+                raise AssertionError("word study should not retrieve CKL objects")
+
+            def retrieve_by_scripture_reference(self, _reference, *, limit):
+                raise AssertionError("word study should not retrieve CKL objects")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            database = _build_lexicon_database(Path(tmp))
+            service = WordStudyService(repository=LexiconRepository(database))
+            router = StudyActionRouter(
+                DeterministicStudyEngine(UnusedCanonicalLibrary(), word_study_service=service)
+            )
+
+            result = router.execute(
+                "word_study",
+                passage={
+                    "book": "John",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "end_verse": 1,
+                    "selected_text": "Word",
+                },
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.confidence, 0.92)
+            self.assertEqual(result.metadata["word_study"]["strongs_number"], "G3056")
+            self.assertEqual(result.metadata["object_ids"], [])
 
     def test_word_study_action_reports_ambiguity_without_guessing(self):
         with tempfile.TemporaryDirectory() as tmp:

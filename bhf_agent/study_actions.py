@@ -188,7 +188,7 @@ class DeterministicStudyEngine:
 
         passage_data = self._resolve_passage(passage or selection or {})
         reference = str(passage_data.get("reference") or "").strip()
-        objects = self._objects_for_passage(passage_data)
+        objects = [] if canonical_action == "word_study" else self._objects_for_passage(passage_data)
         sections: list[dict[str, Any]] = []
         missing_fields: list[str] = []
         word_study: WordStudyResult | None = None
@@ -275,6 +275,9 @@ class DeterministicStudyEngine:
             source = "deterministic"
         else:
             source = "deterministic"
+        has_supporting_evidence = bool(object_ids) or bool(
+            word_study and word_study.status in {"complete", "ambiguous"}
+        )
 
         return StudyActionResult(
             action=canonical_action,
@@ -283,7 +286,7 @@ class DeterministicStudyEngine:
             title=f"{ACTION_TITLES[canonical_action]} for {reference or 'selected passage'}",
             sections=sections,
             references=references,
-            confidence=self._confidence(status, object_ids, sections),
+            confidence=self._confidence(status, has_supporting_evidence, sections),
             missing_fields=_unique(missing_fields),
             agent_fallback_allowed=(
                 bool(word_study and word_study.is_complete)
@@ -651,10 +654,10 @@ class DeterministicStudyEngine:
         return refs
 
     @staticmethod
-    def _confidence(status: str, object_ids: list[str], sections: list[dict[str, Any]]) -> float:
+    def _confidence(status: str, has_supporting_evidence: bool, sections: list[dict[str, Any]]) -> float:
         if status == "unavailable":
             return 0.0
-        if object_ids:
+        if has_supporting_evidence:
             return 0.92 if status == "complete" else 0.78
         return 0.86 if sections else 0.0
 

@@ -4,7 +4,7 @@ import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-from .pages import AskPage, BibleReaderPage, HomePage, WorkspacePage
+from .pages import BibleReaderPage, HomePage, WorkspacePage
 
 
 pytestmark = [pytest.mark.gui]
@@ -137,14 +137,15 @@ def test_mobile_passage_heading_updates_with_translation_badge(driver, wait, bas
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)
 
+    selected_translation = page.current_translation_abbreviation()
     wait.until(lambda _driver: "John 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
-    assert driver.find_element(By.CSS_SELECTOR, ".reader-translation-badge").text == "ASV"
+    assert driver.find_element(By.CSS_SELECTOR, ".reader-translation-badge").text == selected_translation
 
     page.select_book("Genesis")
     wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
     page.set_chapter(2)
     wait.until(lambda _driver: "Genesis 2" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
-    assert driver.find_element(By.CSS_SELECTOR, ".reader-translation-badge").text == "ASV"
+    assert driver.find_element(By.CSS_SELECTOR, ".reader-translation-badge").text == selected_translation
 
 
 @pytest.mark.parametrize(
@@ -316,15 +317,45 @@ def test_mobile_ask_submit_still_works(driver, wait, base_url):
     _set_mobile_viewport(driver)
     HomePage(driver, wait, base_url).open().wait_loaded()
 
-    page = WorkspacePage(driver, wait, base_url)
-    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-passage-action="ask"]'))).click()
-    question = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]')))
-    question.clear()
+    driver.find_element(
+        By.CSS_SELECTOR,
+        '#chapter-reader .reader-pane.is-active [data-verse="1"] [data-verse-select]',
+    ).click()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudySelection.getState().reference === 'John 1:1';"
+    ))
+    companion = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+    if companion.get_attribute("data-companion-state") == "peek":
+        driver.find_element(By.CSS_SELECTOR, ".companion-peek").click()
+    wait.until(lambda _driver: companion.get_attribute("data-companion-state") in {"study", "full"})
+
+    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf]").click()
+    dialog = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog][open]")))
+    assert "John 1:1" in dialog.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text
+
+    question = dialog.find_element(By.CSS_SELECTOR, "[data-ask-bhf-question]")
     question.send_keys("What does John 1 emphasize?")
-    page.click('[data-testid="ask-submit"]')
-    AskPage(driver, wait, base_url).wait_for_status_started()
-    wait.until(lambda _driver: "Test answer" in _driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text)
+    prepared = dialog.find_element(By.CSS_SELECTOR, "[data-ask-bhf-prepared]")
+    driver.execute_script(
+        """
+        window.__ui05OriginalOpen = window.open;
+        window.open = (...args) => {
+          window.__ui05OpenedAssistant = args;
+          return {};
+        };
+        Object.defineProperty(navigator, 'clipboard', {
+          configurable: true,
+          value: {writeText: async (text) => { window.__ui05CopiedQuestion = text; }},
+        });
+        """
+    )
+    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-primary]").click()
+    wait.until(lambda _driver: "What does John 1 emphasize?" in prepared.get_attribute("value"))
+    assert "John 1:1" in prepared.get_attribute("value")
+    assert driver.execute_script("return window.__ui05CopiedQuestion;") == prepared.get_attribute("value")
+    assert driver.execute_script("return window.__ui05OpenedAssistant?.[0];")
+    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-close]").click()
+    wait.until(lambda _driver: not driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-dialog]").get_attribute("open"))
 
 
 def test_my_study_remembers_group_subtabs_on_mobile(driver, wait, base_url):
