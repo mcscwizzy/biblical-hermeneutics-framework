@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pytest
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 from .pages import HomePage, WorkspacePage
 
@@ -22,13 +23,12 @@ def test_workspace_tabs_switch(driver, wait, base_url):
     assert not tab_bar().is_displayed()
 
     driver.execute_script("window.BHFStudyCompanion.openResource('ask');")
-    wait.until(
-        lambda _driver: _driver.execute_script(
-            "return window.BHFStudyCompanion.getState().resource === 'ask';"
-        )
-    )
-    page.assert_tab_visible("ask")
+    ask_dialog = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog][open]")))
+    assert "John 1" in ask_dialog.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text
+    assert not driver.find_elements(By.CSS_SELECTOR, "#workspace-pane-ask")
     assert page.active_app_section() == "bible"
+    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-close]").click()
+    wait.until(lambda _driver: not driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-dialog]").get_attribute("open"))
 
     page.open_app_section("notes")
     wait.until(lambda _driver: page.active_app_section() == "notes")
@@ -73,8 +73,12 @@ def test_desktop_primary_navigation_preserves_reader_split(driver, wait, base_ur
     assert_split()
 
     driver.execute_script("window.BHFStudyCompanion.openResource('ask');")
-    page.assert_tab_visible("ask")
+    ask_dialog = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog][open]")))
+    assert "John 1" in ask_dialog.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text
+    assert not driver.find_elements(By.CSS_SELECTOR, "#workspace-pane-ask")
     assert_split()
+    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-close]").click()
+    wait.until(lambda _driver: not driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-dialog]").get_attribute("open"))
 
     page.open_app_section("notes")
     wait.until(lambda _driver: page.active_app_section() == "notes")
@@ -96,24 +100,26 @@ def test_desktop_primary_navigation_preserves_reader_split(driver, wait, base_ur
 def test_context_result_header_keeps_title_readable_in_study_panel(driver, wait, base_url):
     driver.set_window_size(1440, 1000)
     HomePage(driver, wait, base_url).open().wait_loaded()
+    driver.find_element(
+        By.CSS_SELECTOR,
+        '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text',
+    ).click()
+    open_result = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        window.BHFStudyCompanion.openResource('word_study')
+          .then(() => done({ok: true}))
+          .catch((error) => done({ok: false, error: String(error)}));
+        """
+    )
+    assert open_result["ok"], open_result
+    wait.until(lambda _driver: driver.find_elements(By.CSS_SELECTOR, "#lexicon-panel [data-deterministic-study-result]"))
 
+    # The retired embedded Ask answer host is gone. Exercise the same shared
+    # deterministic result header in the current Lexicon output panel.
     metrics = driver.execute_script(
         """
-        const output = document.querySelector('[data-testid="answer-output"]');
-        output.innerHTML = `
-          <article class="answer deterministic-study-result context-presentation">
-            <header class="answer-header">
-              <div>
-                <p class="answer-eyebrow">Validated CKL evidence</p>
-                <h2>Full Context for John 1:1</h2>
-              </div>
-              <div class="answer-actions">
-                <button type="button" class="secondary answer-save">Save Study</button>
-                <button type="button" class="secondary">Explain with BHF</button>
-                <button type="button" class="secondary">Ask a Question</button>
-              </div>
-            </header>
-          </article>`;
+        const output = document.querySelector('#lexicon-panel');
         const header = output.querySelector('.answer-header').getBoundingClientRect();
         const title = output.querySelector('.answer-header > div').getBoundingClientRect();
         const eyebrow = output.querySelector('.answer-eyebrow').getBoundingClientRect();

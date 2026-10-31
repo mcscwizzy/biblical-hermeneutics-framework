@@ -429,58 +429,111 @@ def test_stale_context_response_cannot_replace_newer_selection(driver, wait, bas
 def test_native_resource_never_renders_previous_selection_context(driver, wait, base_url):
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()
-    wait.until(lambda _driver: _driver.execute_script(
-        "return window.BHFStudyCompanion?.getContext?.()?.scope === 'chapter';"
-    ))
 
     driver.execute_script(
         """
-        window.__originalCompanionFetch = window.fetch;
-        window.BHFCompanionContext.clear();
+        window.__ui05OriginalFetch = window.fetch;
+        window.__ui05MapRequests = [];
+        window.__ui05DelayedMapRequests = [];
+        const mapResponse = (path, verse) => {
+          const reference = `John 1:${verse}`;
+          const body = path.endsWith('/places-for-passage')
+            ? {
+                reference,
+                passage_text: '',
+                markers: [{
+                  id: `place-${verse}`,
+                  name: verse === 4 ? 'A stale place' : 'B current place',
+                  title: verse === 4 ? 'A stale place' : 'B current place',
+                  latitude: 31.7,
+                  longitude: 35.2,
+                  aliases: [],
+                  periods: [],
+                }],
+                matched_place_ids: [`place-${verse}`],
+                matched_terms: {},
+                match_count: 1,
+                empty_state: false,
+              }
+            : {
+                reference,
+                passage_text: '',
+                routes: [],
+                matched_route_ids: [],
+                matched_terms: {},
+                match_count: 0,
+                empty_state: true,
+              };
+          return new Response(JSON.stringify(body), {
+            status: 200,
+            headers: {'Content-Type': 'application/json'},
+          });
+        };
         window.fetch = async function(url, options = {}) {
           const value = String(url);
-          if (!value.includes('/api/study/companion-context')) {
-            return window.__originalCompanionFetch(url, options);
-          }
           const parsed = new URL(value, window.location.origin);
+          const isPlaceRequest = parsed.pathname === '/api/maps/places-for-passage';
+          const isRouteRequest = parsed.pathname === '/api/maps/routes-for-passage';
+          if (!isPlaceRequest && !isRouteRequest) return window.__ui05OriginalFetch(url, options);
           const verse = Number(parsed.searchParams.get('verse_start'));
-          if (verse === 5) await new Promise((resolve) => setTimeout(resolve, 450));
-          const label = verse === 4 ? 'A stale place' : 'B current place';
-          return new Response(JSON.stringify({
-            reference: `John 1:${verse}`,
-            scope: 'passage',
-            resources: {maps: {state: 'available', available: true, count: 1}},
-            entities: {people: [], places: [], themes: []},
-            summaries: {maps: {places: [{id: `place-${verse}`, title: label}], routes: []}},
-            subsystems: {},
-          }), {status: 200, headers: {'Content-Type': 'application/json'}});
+          window.__ui05MapRequests.push({path: parsed.pathname, verse});
+          if (verse === 4) {
+            return await new Promise((resolve) => {
+              window.__ui05DelayedMapRequests.push({
+                resolve,
+                response: mapResponse(parsed.pathname, verse),
+              });
+            });
+          }
+          return mapResponse(parsed.pathname, verse);
         };
         """
     )
     try:
         driver.execute_script(
-            "window.BHFStudySelection.setSelection({book: 'John', chapter: 1, startVerse: 4, endVerse: 4, selectedVerses: [4], selectedText: 'Selection A', translation: 'asv'}, 'stale-resource-test');"
+            """
+            window.BHFStudySelection.setSelection({book: 'John', chapter: 1, startVerse: 4, endVerse: 4, selectedVerses: [4], selectedText: 'Selection A', translation: 'kjv'}, 'stale-resource-test');
+            window.__ui05FirstMapOpen = window.BHFStudyCompanion.openResource('maps', {
+              mapFocus: {kind: 'place', targetId: 'place-4'},
+            });
+            """
         )
-        wait.until(lambda _driver: _driver.execute_script(
-            "return window.BHFStudyCompanion.getContext()?.reference === 'John 1:4';"
-        ))
+        wait.until(lambda _driver: _driver.execute_script("return window.__ui05DelayedMapRequests.length === 2;"))
 
         driver.execute_script(
             """
-            window.BHFStudySelection.setSelection({book: 'John', chapter: 1, startVerse: 5, endVerse: 5, selectedVerses: [5], selectedText: 'Selection B', translation: 'asv'}, 'stale-resource-test');
-            window.BHFStudyCompanion.openResource('maps');
+            window.BHFStudySelection.setSelection({book: 'John', chapter: 1, startVerse: 5, endVerse: 5, selectedVerses: [5], selectedText: 'Selection B', translation: 'kjv'}, 'stale-resource-test');
             """
         )
-        host = driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]")
-        wait.until(lambda _driver: "Loading John 1:5 resources" in host.text)
-        assert "A stale place" not in host.text
-        assert driver.execute_script("return window.BHFStudyCompanion.getContext();") is None
+        latest_map_open = driver.execute_async_script(
+            """
+            const done = arguments[0];
+            window.BHFStudyCompanion.openResource('maps', {
+              mapFocus: {kind: 'place', targetId: 'place-5'},
+            })
+              .then(() => done({ok: true}))
+              .catch((error) => done({ok: false, error: String(error)}));
+            """
+        )
+        assert latest_map_open == {"ok": True}, latest_map_open
+        wait.until(lambda _driver: "B current place" in _driver.find_element(By.CSS_SELECTOR, "#map-details").text)
+        assert driver.find_element(By.CSS_SELECTOR, "#map-panel-reference").text == "John 1:5"
 
-        wait.until(lambda _driver: "B current place" in host.text)
-        assert "A stale place" not in host.text
-        assert driver.execute_script("return window.BHFStudyCompanion.getContext().reference;") == "John 1:5"
+        first_map_open = driver.execute_async_script(
+            """
+            const done = arguments[0];
+            window.__ui05DelayedMapRequests.forEach((request) => request.resolve(request.response));
+            window.__ui05FirstMapOpen
+              .then(() => done({ok: true}))
+              .catch((error) => done({ok: false, error: String(error)}));
+            """
+        )
+        assert first_map_open == {"ok": True}, first_map_open
+        assert "A stale place" not in driver.find_element(By.CSS_SELECTOR, "#map-details").text
+        assert "B current place" in driver.find_element(By.CSS_SELECTOR, "#map-details").text
+        assert driver.find_element(By.CSS_SELECTOR, "#map-panel-reference").text == "John 1:5"
     finally:
-        driver.execute_script("window.fetch = window.__originalCompanionFetch;")
+        driver.execute_script("window.fetch = window.__ui05OriginalFetch;")
 
 
 def test_save_passage_state_follows_exact_current_selection(driver, wait, base_url):
@@ -751,7 +804,12 @@ def test_companion_context_cache_refreshes_after_explicit_invalidation(driver, w
         const originalFetch = window.fetch;
         let calls = 0;
         window.fetch = async function(url, options = {}) {
-          if (!String(url).includes('/api/study/companion-context')) return originalFetch(url, options);
+          const parsed = new URL(String(url), window.location.origin);
+          if (
+            parsed.pathname !== '/api/study/companion-context'
+            || parsed.searchParams.get('book') !== selection.book
+            || Number(parsed.searchParams.get('chapter')) !== selection.chapter
+          ) return originalFetch(url, options);
           calls += 1;
           return new Response(JSON.stringify({
             reference: 'Romans 16:1', scope: 'passage',
@@ -1329,8 +1387,11 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
         "return document.querySelector('[data-companion-tyndale-card-slot]').textContent;"
     ))
     assert driver.execute_script("return window.BHFStudySelection.getState().reference;") == "Ruth 1:4"
-    driver.execute_script("window.BHFStudyActions.openWorkspaceTab('commentary');")
+    driver.find_element(By.CSS_SELECTOR, ".companion-tyndale-card .tyndale-workspace-action").click()
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="commentary"]').get_attribute("aria-selected") == "true")
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-pane="commentary"]').is_displayed())
+    assert driver.find_element(By.CSS_SELECTOR, "[data-commentary-body]").is_displayed()
+    assert "Restored Ruth verse four note." in driver.find_element(By.CSS_SELECTOR, "[data-commentary-body]").text
     assert driver.find_element(By.CSS_SELECTOR, "[data-commentary-panel]").get_attribute("aria-label") == "Tyndale Study Notes"
 
 
@@ -1434,8 +1495,10 @@ def _prepare_translation_comparison(driver, selection, translations):
 
 
 def test_translation_comparison_preserves_selected_range_and_reads_unique_installed_text(driver, wait, base_url):
-    HomePage(driver, wait, base_url).open().assert_shell_visible()
-    wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);"))
+    HomePage(driver, wait, base_url).open().assert_shell_visible().wait_loaded()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudySelection?.getState?.().reference === 'John 1';"
+    ))
     selection = {
         "book": "John", "chapter": 4, "startVerse": 4, "endVerse": 6,
         "selectedVerses": [4, 5, 6], "selectedText": "selected source text",
@@ -1448,6 +1511,9 @@ def test_translation_comparison_preserves_selected_range_and_reads_unique_instal
         {"id": "niv", "abbreviation": "NIV", "name": "Not installed", "installed": False},
     ]
     _prepare_translation_comparison(driver, selection, translations)
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudySelection.getState().reference === 'John 4:4-6';"
+    ))
     before = driver.execute_script("return window.BHFStudySelection.getState();")
     driver.execute_script(
         "window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});"

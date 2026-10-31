@@ -57,6 +57,11 @@ class FakeElement {
     this.listeners.set(name, listener);
   }
 
+  click() {
+    this.clicked = true;
+    this.listeners.get("click")?.({target: this});
+  }
+
   set innerHTML(value) {
     this.children = [];
     this.text = String(value || "").replace(/<[^>]*>/g, "");
@@ -75,6 +80,8 @@ class FakeElement {
     const matches = [];
     const predicate = selector.startsWith(".")
       ? (element) => element.classList.contains(selector.slice(1))
+      : selector === "button"
+        ? (element) => element.tagName === "BUTTON"
       : selector === "h3"
         ? (element) => element.tagName === "H3"
         : selector === "[data-verse]"
@@ -152,10 +159,14 @@ function createFixture(requestJson = async () => payload("Genesis", 1, [])) {
   const readerPane = new FakeElement("article");
   readerPane.classList.add("is-active");
   const fullBody = new FakeElement("div");
+  const notesDock = new FakeElement("button");
+  const navigationActions = [];
+  notesDock.addEventListener("click", () => navigationActions.push("notes"));
   const document = {
     querySelector(selector) {
       if (selector === "[data-companion-tyndale-card-slot]") return slot;
       if (selector === "[data-commentary-body]") return fullBody;
+      if (selector === '[data-app-section="notes"]') return notesDock;
       if (selector === "#chapter-reader .reader-pane.is-active") return readerPane;
       return null;
     },
@@ -179,7 +190,10 @@ function createFixture(requestJson = async () => payload("Genesis", 1, [])) {
       },
     },
     BHFStudyActions: {
-      openWorkspaceTab(tab) { window.openedWorkspaceTab = tab; },
+      openWorkspaceTab(tab) {
+        navigationActions.push(tab);
+        window.openedWorkspaceTab = tab;
+      },
     },
   };
   const context = vm.createContext({window, document, console, Promise, URLSearchParams});
@@ -189,6 +203,8 @@ function createFixture(requestJson = async () => payload("Genesis", 1, [])) {
     window,
     slot,
     fullBody,
+    notesDock,
+    navigationActions,
     requests,
     setReaderChapter(book, chapter, verseCount) {
       readerPane.replaceChildren();
@@ -211,6 +227,21 @@ function createFixture(requestJson = async () => payload("Genesis", 1, [])) {
     },
   };
 }
+
+
+test("opening the full Tyndale workspace navigates to My Study first", async () => {
+  const fixture = createFixture(async () => payload("Genesis", 1, [
+    entry(1, "book_introduction", "Genesis introduction.", anchor("Genesis", null, null, null, null)),
+  ]));
+  fixture.publish({book: "Genesis", chapter: 1, selectedVerses: [], reference: "Genesis 1"});
+  await fixture.flush();
+
+  fixture.slot.querySelector("button").click();
+
+  assert.equal(fixture.notesDock.clicked, true);
+  assert.equal(fixture.window.openedWorkspaceTab, "commentary");
+  assert.deepEqual(fixture.navigationActions, ["notes", "commentary"]);
+});
 
 
 test("chapter 1 shows the matching book introduction with its published summary", async () => {

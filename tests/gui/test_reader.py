@@ -140,9 +140,12 @@ def test_clicking_verse_number_selects_entire_verse(driver, wait, base_url):
     driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] [data-verse-select]').click()
 
     wait.until(lambda _driver: "selected" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"]').get_attribute("class"))
-    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_start_verse"]').get_attribute("value") == "1"
-    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_end_verse"]').get_attribute("value") == "1"
-    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_selected_text"]').get_attribute("value")
+    selection = driver.execute_script("return window.BHFStudySelection.getState();")
+    assert selection["book"] == "John"
+    assert selection["chapter"] == 1
+    assert selection["level"] == "verse"
+    assert selection["selectedVerses"] == [1]
+    assert selection["selectedText"]
 
 
 def test_last_reader_location_is_stored_locally_and_restored_after_refresh(driver, wait, base_url):
@@ -205,6 +208,7 @@ def test_import_dialog_uses_user_supplied_translation_name(driver, wait, base_ur
 
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)
+    current_translation = page.current_translation_abbreviation()
     page.click('[data-testid="translation-import-button"]')
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-dialog]").is_displayed())
 
@@ -214,7 +218,7 @@ def test_import_dialog_uses_user_supplied_translation_name(driver, wait, base_ur
     file_input.send_keys(str(xml_path))
 
     assert driver.find_element(By.CSS_SELECTOR, "[data-translation-import-name]").get_attribute("value") == "Christian Standard Bible"
-    assert page.current_translation_abbreviation() == "ASV"
+    assert page.current_translation_abbreviation() == current_translation
 
 
 def test_import_dialog_opens_with_empty_translation_name(driver, wait, base_url):

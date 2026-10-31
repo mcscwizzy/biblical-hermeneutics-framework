@@ -213,6 +213,7 @@
     button.className = "secondary tyndale-workspace-action";
     button.textContent = "Open full Tyndale workspace";
     button.addEventListener("click", () => {
+      document.querySelector('[data-app-section="notes"]')?.click();
       window.BHFStudyActions?.openWorkspaceTab?.("commentary");
     });
     parent.appendChild(button);

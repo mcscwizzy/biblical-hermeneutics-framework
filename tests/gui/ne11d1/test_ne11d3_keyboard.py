@@ -83,5 +83,16 @@ def test_keyboard_discovery_route_focus_and_escape(driver, base_url, width, mobi
     assert accessibility["liveMode"] == "polite", accessibility
     assert accessibility["liveText"] == "Jonah 1:17", accessibility
     driver.switch_to.active_element.send_keys(Keys.ESCAPE)
-    wait.until(lambda b: b.execute_script("return window.BHFStudyCompanion.getState().resource === null"))
+    wait.until(lambda b: b.execute_script(
+        "const state = window.BHFStudyCompanion.getState(); "
+        "return state.resource === 'narrative_explorer' "
+        "&& window.history.state?.bhfStudyCompanion?.narrativeView?.kind === 'overview';"
+    ))
+    assert driver.execute_script(
+        "return document.activeElement?.dataset?.narrativePrimary === 'true';"
+    )
+    driver.switch_to.active_element.send_keys(Keys.ESCAPE)
+    wait.until(lambda b: b.execute_script(
+        "return window.BHFStudyCompanion.getState().resource === null;"
+    ))
     assert driver.execute_script("return document.activeElement?.dataset?.presentationAction === 'explore_connection'")

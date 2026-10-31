@@ -13,6 +13,7 @@ import requests
 
 from bhf_agent.study_db import initialize_database
 from bhf_web import settings as web_settings
+from tests.canonical_library.helpers import make_object, write_library
 
 
 DEFAULT_BASE_URL = "http://127.0.0.1:8080"
@@ -127,6 +128,82 @@ def base_url() -> str:
     web_settings.STUDY_DB_PATH = original_db_path
     web_settings.WEB_CONFIG_PATH = original_web_config
     web_settings.TEST_MODE = original_test_mode
+
+
+@pytest.fixture
+def canonical_editor_base_url() -> str:
+    """Run editor browser coverage against a private one-record CKL fixture."""
+
+    original_db_path = web_settings.STUDY_DB_PATH
+    original_web_config = web_settings.WEB_CONFIG_PATH
+    original_test_mode = web_settings.TEST_MODE
+    original_ckl_root = os.environ.get("BHF_CKL_ROOT")
+    temp_dir = tempfile.TemporaryDirectory()
+    temp_root = Path(temp_dir.name)
+    db_path = temp_root / "study.sqlite"
+    config_path = temp_root / "web-config.json"
+    canonical_root = temp_root / "canonical_library"
+    joel = make_object(
+        "joel",
+        "book",
+        "Joel",
+        ["Book of Joel"],
+        content_status="draft",
+        review_status="in_review",
+        summary="Draft record used to verify canonical editor navigation and saving.",
+    )
+    write_library(canonical_root, [joel])
+
+    try:
+        port = _free_port()
+    except PermissionError as exc:
+        temp_dir.cleanup()
+        pytest.skip(f"GUI tests require socket access: {exc}")
+
+    web_settings.STUDY_DB_PATH = db_path
+    web_settings.WEB_CONFIG_PATH = config_path
+    web_settings.TEST_MODE = True
+    os.environ["BHF_CKL_ROOT"] = str(canonical_root)
+    initialize_database(db_path)
+
+    import bhf_agent.ckl as ckl_module
+    from bhf_web.routes import canonical as canonical_routes
+    import bhf_web.app as app_module
+
+    ckl_module._load_default_canonical_library.cache_clear()
+    canonical_routes._canonical_library.cache_clear()
+    app = app_module.create_app()
+    from uvicorn import Config, Server
+
+    config = Config(
+        app,
+        host="127.0.0.1",
+        port=port,
+        log_level="warning",
+        access_log=False,
+    )
+    server = Server(config)
+    thread = threading.Thread(target=server.run, daemon=True)
+    thread.start()
+    local_base_url = f"{DEFAULT_BASE_URL.rsplit(':', 1)[0]}:{port}"
+    try:
+        _wait_for_health(local_base_url)
+        yield local_base_url
+    finally:
+        server.should_exit = True
+        thread.join(timeout=120)
+        if thread.is_alive():
+            raise RuntimeError("Canonical editor test server did not stop before fixture cleanup")
+        temp_dir.cleanup()
+        if original_ckl_root is None:
+            os.environ.pop("BHF_CKL_ROOT", None)
+        else:
+            os.environ["BHF_CKL_ROOT"] = original_ckl_root
+        web_settings.STUDY_DB_PATH = original_db_path
+        web_settings.WEB_CONFIG_PATH = original_web_config
+        web_settings.TEST_MODE = original_test_mode
+        ckl_module._load_default_canonical_library.cache_clear()
+        canonical_routes._canonical_library.cache_clear()
 
 
 @pytest.fixture(scope="session")
