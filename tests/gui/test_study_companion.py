@@ -804,7 +804,12 @@ def test_companion_context_cache_refreshes_after_explicit_invalidation(driver, w
         const originalFetch = window.fetch;
         let calls = 0;
         window.fetch = async function(url, options = {}) {
-          if (!String(url).includes('/api/study/companion-context')) return originalFetch(url, options);
+          const parsed = new URL(String(url), window.location.origin);
+          if (
+            parsed.pathname !== '/api/study/companion-context'
+            || parsed.searchParams.get('book') !== selection.book
+            || Number(parsed.searchParams.get('chapter')) !== selection.chapter
+          ) return originalFetch(url, options);
           calls += 1;
           return new Response(JSON.stringify({
             reference: 'Romans 16:1', scope: 'passage',
@@ -1490,8 +1495,10 @@ def _prepare_translation_comparison(driver, selection, translations):
 
 
 def test_translation_comparison_preserves_selected_range_and_reads_unique_installed_text(driver, wait, base_url):
-    HomePage(driver, wait, base_url).open().assert_shell_visible()
-    wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);"))
+    HomePage(driver, wait, base_url).open().assert_shell_visible().wait_loaded()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudySelection?.getState?.().reference === 'John 1';"
+    ))
     selection = {
         "book": "John", "chapter": 4, "startVerse": 4, "endVerse": 6,
         "selectedVerses": [4, 5, 6], "selectedText": "selected source text",
@@ -1504,6 +1511,9 @@ def test_translation_comparison_preserves_selected_range_and_reads_unique_instal
         {"id": "niv", "abbreviation": "NIV", "name": "Not installed", "installed": False},
     ]
     _prepare_translation_comparison(driver, selection, translations)
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudySelection.getState().reference === 'John 4:4-6';"
+    ))
     before = driver.execute_script("return window.BHFStudySelection.getState();")
     driver.execute_script(
         "window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});"

@@ -23,6 +23,15 @@
 - Mobile Ask, workspace Ask, and desktop navigation assertions now verify the current modal handoff and selected passage, while retaining the surrounding notes/highlights/saved/explore and reader-split assertions.
 - The archaeology source-inspection test now checks the current click dispatch with its focus target rather than requiring the older function signature without that optional argument. Endpoint, handler export, and detail-rendering assertions remain.
 
+## Additional full-suite isolation corrections
+
+The first socket-enabled full-suite run passed 139 cases and exposed two other GUI failures that UI-04 had also seen intermittently and that passed in isolated reruns:
+
+- `test_companion_context_cache_refreshes_after_explicit_invalidation` counted every `/api/study/companion-context` fetch after installing its stub. A startup request for the unrelated active John 1 chapter could be included in the Romans 16 cache count. The stub now counts only requests whose book and chapter match Romans 16, the selection under test.
+- `test_translation_comparison_preserves_selected_range_and_reads_unique_installed_text` replaced selection before asynchronous reader initialization had finished. The first rendered comparison could therefore use the reader's later chapter-only initialization state. The test now waits for the initial John 1 reader load, sets the requested range, and confirms `John 4:4-6` is in shared state before opening comparison.
+
+Both corrections are test-only. Each case passed alone after correction, and the eight neighboring context-cache and translation-comparison GUI tests passed together. The prior full-suite result remains a failed diagnostic run; the final complete acceptance rerun is recorded separately in [the full GUI report](03-full-gui-rerun.md).
+
 ## Isolated GUI reruns
 
 Each of the ten requested GUI node IDs passed in a separate pytest invocation with a fresh app fixture and browser: **10 passed / 10 cases**. These are diagnostic reruns and are not the full GUI acceptance result. The independent neighbor groups also passed: canonical detail/source plus editor (2); mobile Ask and verse selection (3); reader/import (2); map cases (6); workspace panel/navigation (2); Narrative Explorer reader, feature gate, responsive actions, and real CKL handoff (5). The Tyndale browser integration against the provisioned notes DB passed (1).
