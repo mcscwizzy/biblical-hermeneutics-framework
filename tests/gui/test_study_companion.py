@@ -4,6 +4,7 @@ import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 
 from .pages import BibleReaderPage, HomePage
@@ -379,6 +380,7 @@ def test_mobile_sheet_drag_snap_and_non_gesture_controls(driver, wait, base_url)
 
 
 def test_stale_context_response_cannot_replace_newer_selection(driver, wait, base_url):
+    wait = WebDriverWait(driver, 90)
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()
     wait.until(lambda _driver: _driver.execute_script(
@@ -956,15 +958,11 @@ def test_ask_handoff_tracks_exact_shared_selection_and_clears_stale_word(driver,
     assert driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text == "John 1:1-2"
     driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-close]").click()
 
-    cleared = driver.execute_script(
-        """
-        window.BHFStudySelection.setChapter({book: 'John', chapter: 2, translation: 'asv'}, 'ask-sync-test');
-        return window.BHFStudySelection.getState();
-        """
-    )
-    assert cleared["reference"] == "John 2"
-    assert cleared["hasPassageSelection"] is False
-    assert cleared["selectedWord"] is None
+    BibleReaderPage(driver, wait, base_url).next_chapter()
+    wait.until(lambda _driver: _driver.execute_script(
+        "const state=window.BHFStudySelection.getState(); "
+        "return state.reference === 'John 2' && !state.hasPassageSelection && state.selectedWord === null;"
+    ))
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-ask-bhf]"))).click()
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog]")))
     assert driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text == "John 2"

@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20261027a">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20261031u07a">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260906a" src="/static/htmx-lite.js?v=20260906a" -->
   {# static_asset('/style.css') }}?v=20260906a #}
@@ -48,17 +48,17 @@
   <script src="{{ static_asset('/companion-context.js') }}?v=20260901c" defer></script>
   <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/saved-passage-state.js') }}?v=20260811d" defer></script>
-  <script src="{{ static_asset('/companion-history.js') }}?v=20261015a" defer></script>
+  <script src="{{ static_asset('/companion-history.js') }}?v=20261031u07a" defer></script>
   <script src="{{ static_asset('/companion-viewport.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
   {% if runtime_config.narrativeExplorerEnabled %}
-    <script src="{{ static_asset('/narrative-explorer.js') }}?v=20261027a" defer></script>
+    <script src="{{ static_asset('/narrative-explorer.js') }}?v=20261031u07a" defer></script>
   {% endif %}
-  <script src="{{ static_asset('/resource-router.js') }}?v=20261027a" defer></script>
+  <script src="{{ static_asset('/resource-router.js') }}?v=20261031u07a" defer></script>
   <script src="{{ static_asset('/companion-discoveries.js') }}?v=20261027a" defer></script>
   <script src="{{ static_asset('/companion-locations.js') }}?v=20261026a" defer></script>
   <script src="{{ static_asset('/companion-places-locations.js') }}?v=20261031a" defer></script>
-  <script src="{{ static_asset('/study-companion.js') }}?v=20261027a" defer></script>
+  <script src="{{ static_asset('/study-companion.js') }}?v=20261031u07a" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20261030a" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -251,15 +251,24 @@
             <section class="companion-section companion-dig-deeper" data-companion-dig-deeper aria-labelledby="companion-deeper-title">
               <div class="companion-section-heading companion-dig-deeper-heading">
                 <div><span aria-hidden="true">⌄</span><h3 id="companion-deeper-title">Dig Deeper</h3></div>
-                <p>Explore contextual evidence and BHF research tools for this passage.</p>
+                <p>Explore this passage through BHF research.</p>
               </div>
 
+              <div class="companion-primary-research" data-companion-primary-research>
               {% if runtime_config.narrativeExplorerEnabled %}
                 <button type="button" class="companion-narrative-card narrative-explorer-entry" data-testid="companion-narrative-explorer" data-companion-resource="narrative_explorer" data-companion-resource-label="Explore the Narrative" aria-label="Explore the narrative for the selected passage">
                   <span class="companion-narrative-card-icon" aria-hidden="true">✦</span>
                   <span class="companion-narrative-card-copy"><strong>Explore the Narrative</strong><small>Follow connections across Scripture and reviewed research.</small></span>
                   <span class="companion-narrative-card-arrow" aria-hidden="true">→</span>
                 </button>
+              {% else %}
+                <div class="companion-research-fallback" data-companion-research-fallback role="group" aria-label="Contextual and advanced research">
+                  <p>Explore the Narrative is unavailable here. Contextual summaries and research sources remain available.</p>
+                  <div class="companion-research-fallback-actions">
+                    <button type="button" class="companion-text-button" data-companion-resource="understand_passage" data-companion-resource-label="Understand the Passage">Understand the Passage</button>
+                    <button type="button" class="companion-text-button" data-companion-resource="browse_research" data-companion-resource-label="Browse research sources">Browse research sources</button>
+                  </div>
+                </div>
               {% endif %}
 
               <button type="button" class="companion-narrative-card companion-places-locations-entry" data-companion-resource="places_locations" data-companion-resource-label="Places &amp; Locations" aria-label="Explore places and locations for the selected passage">
@@ -267,10 +276,12 @@
                 <span class="companion-narrative-card-copy"><strong>Places &amp; Locations</strong><small>Explore biblical places, geography, maps, and journeys connected to this passage.</small></span>
                 <span class="companion-narrative-card-arrow" aria-hidden="true">→</span>
               </button>
+              </div>
 
+              <section class="companion-explore-catalogue" data-companion-explore-catalogue aria-label="Explore BHF research collections" hidden>
               <section class="companion-section companion-research-tools" aria-labelledby="companion-research-tools-title">
                 <div class="companion-section-heading">
-                  <div><span aria-hidden="true">★</span><h4 id="companion-research-tools-title">Research tools</h4></div>
+                  <div><span aria-hidden="true">★</span><h4 id="companion-research-tools-title">Research collections</h4></div>
                   <p data-companion-recommendation-reason></p>
                 </div>
                 <div class="companion-resource-grid" data-companion-recommended aria-live="polite">
@@ -288,6 +299,7 @@
                   <button type="button" class="companion-text-button" data-companion-route="maps">Open Maps Explorer →</button>
                   <a class="companion-text-button" href="/archaeology">Open Archaeology Library →</a>
                 </div>
+              </section>
               </section>
             </section>
           </section>

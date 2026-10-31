@@ -7,8 +7,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from tests.gui.pages import HomePage
 from tests.gui.ne11d1.test_real_ckl_handoff import (
     _click_related_passage,
-    _connection_action,
     _context_identity,
+    _open_follow_connection,
     _return_to_origin,
     _route_article,
     _select_verses,
@@ -32,9 +32,7 @@ def test_fresh_matthew_session_follows_jonah_source_without_prior_jonah_visit(dr
     assert evidence["identity"] == identity
     assert {"jonah-masoretic", "jonah-new-testament"} <= set(evidence["sourceIds"])
 
-    _card, action = wait.until(lambda browser: _connection_action(browser, identity))
-    assert action.get_attribute("aria-label") == "Explore this connection"
-    action.click()
+    _open_follow_connection(driver, wait)
 
     article = _route_article(driver, wait, "jonah-1-17-matthew-12-40-sign-of-jonah")
     route_text = article.text.casefold()

@@ -8,7 +8,15 @@
     "narrative_explorer",
     "themes", "timeline", "cross_references", "historical_context",
     "cultural_context", "original_audience", "literary_context", "covenant_context",
+    "understand_passage", "browse_research",
   ]);
+  const CONTEXT_TOPICS = [
+    {id: "historical_context", title: "Historical Context"},
+    {id: "original_audience", title: "Original Audience"},
+    {id: "literary_context", title: "Literary Context"},
+    {id: "cultural_context", title: "Cultural Context"},
+    {id: "covenant_context", title: "Covenant Context"},
+  ];
   const CANONICAL_TYPES = {
     people: "person",
     places: "place",
@@ -33,6 +41,9 @@
     const subjectLoader = explorer?.createSubjectLoader?.();
     let narrativeTrail = null;
     let narrativeView = {kind: "overview"};
+    let narrativeReturnFocusId = "";
+    let narrativeFocusSuppressedPassageKey = "";
+    let activeContextTopicId = "historical_context";
     let narrativeProjection = null;
     let narrativeSelection = null;
     let pendingNarrativeFocusId = "";
@@ -45,7 +56,9 @@
       enabled: window.BHFRuntimeConfig?.narrativeExplorerEnabled === true,
       onLoading(selection) {
         if (activeResourceId === "narrative_explorer" && !routeHandoffPending) {
-          renderLoading(host, `Loading narrative evidence for ${selection.reference || "this passage"}…`);
+          if (narrativeView.kind === "understand_passage") renderUnderstandPassageView({suppressFocus: true});
+          else if (narrativeView.kind === "research_sources") renderResearchSourcesView({suppressFocus: true});
+          else renderLoading(host, `Loading narrative evidence for ${selection.reference || "this passage"}…`);
         }
       },
       onReady: renderNarrativeProjection,
@@ -66,6 +79,10 @@
     async function open(resourceId, routeOptions = {}) {
       if (!NATIVE_RESOURCES.has(resourceId)) return false;
       cancelPlacesLocationsView();
+      if (resourceId === "understand_passage") {
+        activeContextTopicId = normalizeContextTopicId(routeOptions.contextTopicId)
+          || (activeResourceId === resourceId ? activeContextTopicId : "historical_context");
+      }
       if (routeOptions.routeHandoff) {
         if (resourceId !== "narrative_explorer") return false;
         cancelManagedReaderSelection();
@@ -79,6 +96,13 @@
           ? narrativeView
           : {kind: "overview"};
       const viewChanged = isNarrativeExplorer && !sameNarrativeView(narrativeView, requestedView);
+      if (resourceId === "narrative_explorer"
+        && activeResourceId === resourceId
+        && viewChanged
+        && requestedView.kind === "overview") {
+        if (narrativeView.kind === "understand_passage") narrativeReturnFocusId = "understand-passage";
+        else if (narrativeView.kind === "research_sources") narrativeReturnFocusId = "browse-sources";
+      }
       if (resourceId === "narrative_explorer"
         && activeResourceId === "narrative_explorer"
         && isManagedReaderSelection(options.getSelection?.() || {})
@@ -183,8 +207,36 @@
       return narrativeView;
     }
 
+    function handleReaderSelectionChange(selection) {
+      if (activeResourceId !== "narrative_explorer" || !explorer || !narrativeSession) return false;
+      let nextKey = "";
+      try { nextKey = explorer.urlFor(selection || {}); } catch (_error) { return false; }
+      if (!nextKey || nextKey === activePassageKey) {
+        narrativeSelection = selection || narrativeSelection;
+        return false;
+      }
+
+      narrativeSelection = selection;
+      activePassageKey = nextKey;
+      narrativeFocusSuppressedPassageKey = nextKey;
+      narrativeTrail = explorer.createTrail(selection);
+      narrativeProjection = null;
+      pendingNarrativeFocusId = "";
+      selectedNarrativeRouteId = "";
+      options.onNarrativeTrailChange?.(narrativeTrail, {push: false});
+      if (narrativeView.kind === "understand_passage") renderUnderstandPassageView({suppressFocus: true});
+      else if (narrativeView.kind === "research_sources") renderResearchSourcesView({suppressFocus: true});
+      else renderLoading(host, `Loading narrative evidence for ${selection.reference || "this passage"}…`);
+      void narrativeSession.open(selection);
+      return true;
+    }
+
     function normalizeNarrativeView(value) {
       if (value?.kind === "overview") return {kind: "overview"};
+      if (value?.kind === "research_sources") return {kind: "research_sources"};
+      if (value?.kind === "understand_passage") {
+        return {kind: "understand_passage", topicId: normalizeContextTopicId(value.topicId) || "historical_context"};
+      }
       const categoryId = typeof value?.categoryId === "string" ? value.categoryId : "";
       if (value?.kind === "category" && explorer?.SECTIONS?.some((section) => section.id === categoryId)) {
         return {kind: "category", categoryId};
@@ -193,7 +245,9 @@
     }
 
     function sameNarrativeView(left, right) {
-      return left?.kind === right?.kind && left?.categoryId === right?.categoryId;
+      return left?.kind === right?.kind
+        && left?.categoryId === right?.categoryId
+        && left?.topicId === right?.topicId;
     }
 
     async function openVerifiedRouteHandoff(selection, handoff) {
@@ -351,6 +405,8 @@
         resolveEvidenceTarget: (targetId) => (Array.isArray(narrativeProjection?.items) ? narrativeProjection.items : [])
           .find((candidate) => candidate?.id === targetId && candidate?.record_kind === "evidence") || null,
         onOpenPassage: followNarrativePassage,
+        onOpenUnderstandPassage: openUnderstandPassage,
+        onOpenResearchSources: openResearchSources,
         onBack: () => options.backNarrativeTrail?.(),
         onReturnToOrigin: returnToNarrativeOrigin,
         onOpenCategory: openNarrativeCategory,
@@ -366,12 +422,160 @@
       renderActiveNarrativeTrail();
     }
 
+    function normalizeContextTopicId(value) {
+      const topicId = String(value || "");
+      return CONTEXT_TOPICS.some((topic) => topic.id === topicId) ? topicId : "";
+    }
+
+    function matchingContextRecord(selection = options.getSelection?.() || {}) {
+      const key = window.BHFCompanionContext?.requestKey?.(selection) || "";
+      const record = options.getContextRecord?.() || {};
+      return key && record.status === "ready" && record.key === key && record.context
+        ? record
+        : null;
+    }
+
+    function initialContextTopic(context) {
+      const byContext = context?.summaries?.narration?.by_context || {};
+      const topic = CONTEXT_TOPICS.find((item) => (
+        byContext[item.id]?.has_content === true
+        || context?.resources?.[item.id]?.state === "available"
+        || context?.resources?.[item.id]?.available === true
+      ));
+      return topic?.id || "historical_context";
+    }
+
+    function openUnderstandPassage(trigger) {
+      const context = matchingContextRecord()?.context;
+      const view = {
+        kind: "understand_passage",
+        topicId: initialContextTopic(context),
+      };
+      if (sameNarrativeView(view, narrativeView)) return;
+      narrativeFocusSuppressedPassageKey = "";
+      narrativeReturnFocusId = "understand-passage";
+      narrativeView = view;
+      options.onNarrativeViewChange?.(view, {push: true, trigger});
+      renderActiveNarrativeTrail();
+    }
+
+    function openResearchSources(trigger) {
+      const view = {kind: "research_sources"};
+      if (sameNarrativeView(view, narrativeView)) return;
+      narrativeFocusSuppressedPassageKey = "";
+      narrativeReturnFocusId = "browse-sources";
+      narrativeView = view;
+      options.onNarrativeViewChange?.(view, {push: true, trigger});
+      renderActiveNarrativeTrail();
+    }
+
+    function selectNarrativeContextTopic(topicId, trigger) {
+      if (narrativeView.kind !== "understand_passage") return;
+      const view = {
+        kind: "understand_passage",
+        topicId: normalizeContextTopicId(topicId) || "historical_context",
+      };
+      if (sameNarrativeView(view, narrativeView)) return;
+      narrativeView = view;
+      options.onNarrativeViewChange?.(view, {push: false, trigger});
+      renderUnderstandPassageView({focusTopicId: view.topicId});
+    }
+
+    function setDirectContextTopic(topicId, trigger) {
+      const nextTopic = normalizeContextTopicId(topicId) || "historical_context";
+      if (nextTopic === activeContextTopicId) return;
+      activeContextTopicId = nextTopic;
+      options.onContextTopicChange?.(nextTopic, {push: false, trigger});
+      const selection = options.getSelection?.() || {};
+      const record = matchingContextRecord(selection);
+      if (record?.context) {
+        renderUnderstandPassage(record.context, selection, activeContextTopicId, {
+          onTopicChange: setDirectContextTopic,
+          onBrowseResearch: () => options.openResource?.("browse_research", {
+            label: "Browse research sources",
+          }),
+          standalone: true,
+          focusTopicId: activeContextTopicId,
+        });
+      }
+    }
+
+    function renderUnderstandPassageView(behavior = {}) {
+      if (activeResourceId !== "narrative_explorer" || narrativeView.kind !== "understand_passage") return;
+      const selection = options.getSelection?.() || narrativeSelection || {};
+      const contextRecord = matchingContextRecord(selection);
+      if (!contextRecord) {
+        const record = options.getContextRecord?.() || {};
+        if (record.status === "error" && record.key === (window.BHFCompanionContext?.requestKey?.(selection) || "")) {
+          renderContextUnavailable(host, record.error, window.navigator?.onLine === false, selection);
+        } else {
+          renderLoading(host, `Loading contextual summaries for ${selection.reference || "this passage"}…`);
+        }
+      } else {
+        host.replaceChildren(renderUnderstandPassage(
+          contextRecord.context,
+          selection,
+          narrativeView.topicId,
+          {
+            onTopicChange: selectNarrativeContextTopic,
+            onBrowseResearch: openResearchSources,
+            onBackToTopics: backToNarrativeOverview,
+            onReturnToPassage: returnToContextPassage,
+            focusTopicId: behavior.focusTopicId || "",
+          },
+        ));
+        host.setAttribute("aria-busy", "false");
+      }
+      if (behavior.focusId) focusNarrativeView(behavior.focusId);
+      else if (behavior.focusTopicId) {
+        window.requestAnimationFrame?.(() => {
+          const target = host.querySelector?.(`[data-context-topic-id="${behavior.focusTopicId}"]`);
+          target?.focus?.({preventScroll: true});
+        });
+      } else if (!behavior.suppressFocus && narrativeFocusSuppressedPassageKey !== activePassageKey) {
+        focusNarrativeView();
+      }
+    }
+
+    function renderResearchSourcesView(behavior = {}) {
+      if (activeResourceId !== "narrative_explorer" || narrativeView.kind !== "research_sources") return;
+      host.replaceChildren(renderResearchSources(true, {
+        onBack: backToNarrativeOverview,
+        onReturnToPassage: returnToContextPassage,
+      }));
+      host.setAttribute("aria-busy", "false");
+      if (!behavior.suppressFocus && narrativeFocusSuppressedPassageKey !== activePassageKey) focusNarrativeView();
+    }
+
     function backToNarrativeOverview() {
-      if (narrativeView.kind !== "category") return;
+      if (!["category", "understand_passage", "research_sources"].includes(narrativeView.kind)) return;
+      if (narrativeView.kind === "understand_passage") narrativeReturnFocusId = "understand-passage";
+      else if (narrativeView.kind === "research_sources") narrativeReturnFocusId = "browse-sources";
       if (options.backNarrativeView?.()) return;
       narrativeView = {kind: "overview"};
       options.onNarrativeViewChange?.(narrativeView, {push: false});
       renderActiveNarrativeTrail();
+    }
+
+    async function returnToContextPassage() {
+      const selection = options.getSelection?.() || narrativeSelection || {};
+      let key = "";
+      try { key = explorer.urlFor(selection); } catch (_error) { return; }
+      narrativeTrail = explorer.createTrail(selection);
+      narrativeSelection = selection;
+      narrativeView = {kind: "overview"};
+      narrativeReturnFocusId = "understand-passage";
+      selectedNarrativeRouteId = "";
+      options.onNarrativeTrailChange?.(narrativeTrail, {push: false});
+      options.onNarrativeViewChange?.(narrativeView, {push: false});
+      if (activePassageKey === key && narrativeProjection
+        && normalizePassageReference(projectionPassageReference(narrativeProjection)) === normalizePassageReference(selection.reference)) {
+        renderActiveNarrativeTrail({focusId: narrativeReturnFocusId});
+        return;
+      }
+      activePassageKey = key;
+      pendingNarrativeFocusId = "";
+      await narrativeSession.open(selection);
     }
 
     function renderActiveNarrativeTrail(behavior = {}) {
@@ -379,6 +583,19 @@
       const step = explorer.activeTrailStep(narrativeTrail);
       if (step?.kind !== "subject") cancelNarrativeDetailRequest();
       if (!step || step.kind === "passage") {
+        if (narrativeView.kind === "understand_passage") {
+          renderUnderstandPassageView({
+            ...behavior,
+            suppressFocus: behavior.suppressFocus || narrativeFocusSuppressedPassageKey === activePassageKey,
+          });
+          return;
+        }
+        if (narrativeView.kind === "research_sources") {
+          renderResearchSourcesView({
+            suppressFocus: behavior.suppressFocus || narrativeFocusSuppressedPassageKey === activePassageKey,
+          });
+          return;
+        }
         const currentPassage = projectionPassageReference(narrativeProjection);
         if (!narrativeProjection || (step?.reference && normalizePassageReference(currentPassage) !== normalizePassageReference(step.reference))) {
           renderLoading(host, `Loading narrative evidence for ${step?.reference || "the selected passage"}…`);
@@ -391,7 +608,9 @@
         }));
         host.replaceChildren(view);
         host.setAttribute("aria-busy", "false");
-        focusNarrativeView(behavior.focusId, behavior.focusRouteId);
+        const focusId = behavior.focusId || narrativeReturnFocusId;
+        narrativeReturnFocusId = "";
+        focusNarrativeView(focusId, behavior.focusRouteId);
         return;
       }
       if (step.kind === "evidence") {
@@ -760,17 +979,39 @@
         await renderTranslationComparison(selection, requestSequence, signal);
         return;
       }
+      if (resourceId === "browse_research") {
+        host.replaceChildren(renderResearchSources(false));
+        host.setAttribute("aria-busy", "false");
+        return;
+      }
       if (contextRecord.status === "error" && contextRecord.key === selectionKey) {
-        renderError(host, contextRecord.error || "Passage resources could not be loaded.");
+        if (resourceId === "understand_passage") {
+          renderContextUnavailable(host, contextRecord.error, window.navigator?.onLine === false, selection);
+        } else {
+          renderError(host, contextRecord.error || "Passage resources could not be loaded.");
+        }
         return;
       }
       if (!contextRecord.context || contextRecord.status !== "ready" || contextRecord.key !== selectionKey) {
-        renderLoading(host, `Loading ${selection.reference || "passage"} resources…`);
+        renderLoading(host, resourceId === "understand_passage"
+          ? `Loading contextual summaries for ${selection.reference || "this passage"}…`
+          : `Loading ${selection.reference || "passage"} resources…`);
         return;
       }
       const context = contextRecord.context;
       if (resourceId === "places_locations") {
         renderPlacesLocations(context, selection, requestSequence);
+      } else if (resourceId === "understand_passage") {
+        host.replaceChildren(renderUnderstandPassage(context, selection, activeContextTopicId, {
+          onTopicChange: setDirectContextTopic,
+          onBrowseResearch: () => options.openResource?.("browse_research", {
+            label: "Browse research sources",
+            trigger: host,
+          }),
+          onReturnToPassage: () => options.returnToPassage?.(),
+          standalone: true,
+        }));
+        host.setAttribute("aria-busy", "false");
       } else if (["historical_context", "cultural_context", "original_audience", "literary_context", "covenant_context", "archaeology"].includes(resourceId)) {
         const narration = context.summaries?.narration?.by_context?.[resourceId];
         if (resourceId === "archaeology" && !narration) {
@@ -790,6 +1031,15 @@
     }
 
     async function renderExplore(resourceId, requestSequence, signal) {
+      if (resourceId === "browse_research") {
+        host.replaceChildren(renderResearchSources(false));
+        host.setAttribute("aria-busy", "false");
+        return;
+      }
+      if (resourceId === "understand_passage") {
+        renderError(host, "Open a Bible passage to view contextual research summaries.");
+        return;
+      }
       if (resourceId === "places_locations") {
         const selection = options.getSelection?.() || {};
         const key = window.BHFCompanionContext?.requestKey?.(selection) || "";
@@ -1045,15 +1295,19 @@
           ? `Evidence · ${narration.source_count} source${narration.source_count === 1 ? "" : "s"}`
           : "Deterministic context from the selected CKL evidence",
       );
+      appendNarrationContent(body, narration, resourceId, supplemental);
+      commit(body);
+    }
+
+    function appendNarrationContent(body, narration, resourceId, supplemental = [], supportLabel = "Evidence") {
       if (!narration || !narration.has_content) {
         body.append(summaryCard("No narrated evidence", "The selected CKL records do not support a compact narration for this context."));
-        commit(body);
         return;
       }
       if (narration.lead?.text) {
         const lead = summaryCard("In brief", narration.lead.text);
         lead.classList.add("companion-narration-lead");
-        appendEvidenceDisclosure(lead, narration.lead);
+        appendEvidenceDisclosure(lead, narration.lead, supportLabel);
         body.append(lead);
       }
       (narration.sections || []).forEach((section) => {
@@ -1073,7 +1327,7 @@
           paragraph.textContent = sentences.map((sentence) => sentence.text).join(" ");
           container.append(paragraph);
         }
-        appendSectionEvidenceDisclosure(container, sentences);
+        appendSectionEvidenceDisclosure(container, sentences, supportLabel);
         body.append(container);
       });
       if (resourceId === "archaeology" && supplemental.length) {
@@ -1092,10 +1346,210 @@
         additional.textContent = `${narration.additional_evidence_count} additional related record${narration.additional_evidence_count === 1 ? "" : "s"} available.`;
         body.append(additional);
       }
-      commit(body);
     }
 
-    function appendEvidenceDisclosure(host, sentence) {
+    function renderUnderstandPassage(context, selection, topicId, callbacks = {}) {
+      const selectedTopicId = normalizeContextTopicId(topicId) || "historical_context";
+      const topic = CONTEXT_TOPICS.find((item) => item.id === selectedTopicId) || CONTEXT_TOPICS[0];
+      const root = document.createElement("section");
+      root.className = "companion-understand-passage";
+      root.dataset.understandPassage = "";
+
+      const heading = document.createElement("h3");
+      heading.textContent = "Understand the Passage";
+      heading.tabIndex = -1;
+      heading.dataset.narrativePrimary = "true";
+      const reference = document.createElement("p");
+      reference.className = "companion-detail-intro";
+      reference.textContent = selection?.reference ? `Current passage: ${selection.reference}` : "Contextual summaries for the selected passage.";
+      const provenance = document.createElement("p");
+      provenance.className = "companion-context-provenance";
+      provenance.textContent = "These are Study Companion contextual research summaries with their recorded support and qualifications, separate from Narrative Explorer evidence records.";
+      root.append(heading, reference, provenance);
+
+      const topicNav = document.createElement("nav");
+      topicNav.className = "companion-context-topics";
+      topicNav.setAttribute("aria-label", "Context topics");
+      CONTEXT_TOPICS.forEach((entry) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "companion-context-topic";
+        button.dataset.contextTopicId = entry.id;
+        button.setAttribute("aria-pressed", String(entry.id === selectedTopicId));
+        button.textContent = entry.title;
+        button.addEventListener("click", (event) => callbacks.onTopicChange?.(entry.id, event.currentTarget || button));
+        topicNav.append(button);
+      });
+      root.append(topicNav);
+
+      const topicPanel = document.createElement("section");
+      topicPanel.className = "companion-context-topic-panel";
+      topicPanel.dataset.contextTopicPanel = selectedTopicId;
+      topicPanel.setAttribute("aria-labelledby", `companion-context-topic-heading-${selectedTopicId}`);
+      const topicHeading = document.createElement("h4");
+      topicHeading.id = `companion-context-topic-heading-${selectedTopicId}`;
+      topicHeading.textContent = topic.title;
+      topicPanel.append(topicHeading);
+
+      const narration = context?.summaries?.narration?.by_context?.[selectedTopicId];
+      const resource = context?.resources?.[selectedTopicId] || {};
+      const state = ["available", "unavailable", "unknown"].includes(resource.state)
+        ? resource.state
+        : resource.available === true
+          ? "available"
+          : resource.available === false
+            ? "unavailable"
+            : "unknown";
+      const isOffline = context?.offline === true || window.navigator?.onLine === false;
+      const status = document.createElement("p");
+      status.className = "companion-context-topic-status";
+      status.setAttribute("role", "status");
+      if (narration?.has_content === true) {
+        if (isOffline) status.textContent = "Showing the loaded contextual summary; it could not be refreshed while offline.";
+        else if (state === "unknown") status.textContent = "Summary text is available, but retrieval status for this topic is unknown.";
+        appendNarrationContent(topicPanel, narration, selectedTopicId, [], "Recorded support");
+      } else if (state === "unavailable") {
+        status.textContent = "Completed lookup: no linked contextual evidence was returned for this topic.";
+      } else if (isOffline) {
+        status.textContent = "This topic could not be checked while offline.";
+      } else if (state === "available") {
+        status.textContent = "Contextual evidence is available, but no summary text is recorded for this topic.";
+      } else {
+        status.textContent = "Availability is unknown because the source lookup did not complete.";
+      }
+      if (status.textContent) topicPanel.append(status);
+      root.append(topicPanel);
+
+      const actions = document.createElement("nav");
+      actions.className = "companion-context-actions";
+      actions.setAttribute("aria-label", "Context research navigation");
+      if (callbacks.onBackToTopics) {
+        const back = document.createElement("button");
+        back.type = "button";
+        back.className = "secondary companion-context-back";
+        back.textContent = "Back to topics";
+        back.addEventListener("click", callbacks.onBackToTopics);
+        actions.append(back);
+      }
+      if (callbacks.onReturnToPassage) {
+        const returnButton = document.createElement("button");
+        returnButton.type = "button";
+        returnButton.className = "secondary companion-context-return";
+        returnButton.textContent = `Return to ${String(selection?.reference || "").trim() || "passage"}`;
+        returnButton.addEventListener("click", callbacks.onReturnToPassage);
+        actions.append(returnButton);
+      }
+      const sources = document.createElement("button");
+      sources.type = "button";
+      sources.className = "companion-text-button companion-browse-research";
+      sources.textContent = "Browse research sources";
+      sources.addEventListener("click", (event) => callbacks.onBrowseResearch?.(event.currentTarget || sources));
+      actions.append(sources);
+      root.append(actions);
+
+      if (callbacks.focusTopicId) {
+        window.requestAnimationFrame?.(() => {
+          const active = root.querySelector?.(`[data-context-topic-id="${callbacks.focusTopicId}"]`);
+          active?.focus?.({preventScroll: true});
+        });
+      }
+      return root;
+    }
+
+    function renderContextUnavailable(target, message, offline = false, selection = {}) {
+      const body = resourceBody("Understand the Passage", "Contextual summaries for the selected passage.");
+      if (selection.reference) {
+        const reference = document.createElement("p");
+        reference.className = "companion-detail-intro";
+        reference.textContent = `Current passage: ${selection.reference}`;
+        body.append(reference);
+      }
+      const status = document.createElement("p");
+      status.className = "companion-context-topic-status";
+      status.setAttribute("role", "status");
+      status.textContent = offline
+        ? "Contextual summaries are unavailable offline. No current response could be loaded."
+        : `Contextual summaries could not be loaded${message ? `: ${message}` : "."}`;
+      const sources = document.createElement("button");
+      sources.type = "button";
+      sources.className = "companion-text-button companion-browse-research";
+      sources.textContent = "Browse research sources";
+      sources.addEventListener("click", () => options.openResource?.("browse_research", {
+        label: "Browse research sources",
+      }));
+      body.append(status, sources);
+      target.replaceChildren(body);
+      target.setAttribute("aria-busy", "false");
+    }
+
+    function renderResearchSources(inExplorer, callbacks = {}) {
+      const body = document.createElement("div");
+      body.className = "companion-research-sources-view";
+      const heading = document.createElement("h3");
+      heading.textContent = "Browse research sources";
+      heading.tabIndex = -1;
+      if (inExplorer) heading.dataset.narrativePrimary = "true";
+      const intro = document.createElement("p");
+      intro.className = "companion-detail-intro";
+      intro.textContent = "Open existing research libraries and passage tools. Word Study remains in the reader Lexicon workflow; Compare Translations remains in the passage action row.";
+      body.append(heading, intro);
+
+      if (inExplorer) {
+        const controls = document.createElement("nav");
+        controls.className = "narrative-explorer-category-controls";
+        controls.setAttribute("aria-label", "Research source navigation");
+        const back = document.createElement("button");
+        back.type = "button";
+        back.className = "secondary";
+        back.textContent = "Back to topics";
+        back.addEventListener("click", callbacks.onBack);
+        const returnButton = document.createElement("button");
+        returnButton.type = "button";
+        returnButton.className = "secondary";
+        returnButton.textContent = "Return to Passage";
+        returnButton.addEventListener("click", callbacks.onReturnToPassage);
+        controls.append(back, returnButton);
+        body.append(controls);
+      }
+
+      const libraries = document.createElement("section");
+      libraries.className = "companion-research-source-group";
+      const librariesHeading = document.createElement("h4");
+      librariesHeading.textContent = "Libraries and workspaces";
+      libraries.append(librariesHeading);
+      libraries.append(researchResourceButton("Open Canonical Knowledge", "canonical"));
+      libraries.append(researchResourceButton("Open Maps Explorer", "maps"));
+      const archaeology = document.createElement("a");
+      archaeology.className = "companion-text-button companion-research-source-link";
+      archaeology.href = "/archaeology";
+      archaeology.textContent = "Open Archaeology Library";
+      libraries.append(archaeology);
+      body.append(libraries);
+
+      const passage = document.createElement("section");
+      passage.className = "companion-research-source-group";
+      const passageHeading = document.createElement("h4");
+      passageHeading.textContent = "Passage research";
+      passage.append(passageHeading);
+      passage.append(researchResourceButton("Open Cross References", "cross_references"));
+      passage.append(researchResourceButton("Open Timeline", "timeline"));
+      passage.append(researchResourceButton("Open passage Archaeology", "archaeology"));
+      passage.append(researchResourceButton("Open Places & Locations", "places_locations"));
+      body.append(passage);
+      return body;
+    }
+
+    function researchResourceButton(label, resourceId) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "companion-text-button companion-research-source-link";
+      button.dataset.companionResource = resourceId;
+      button.dataset.companionResourceLabel = label.replace(/^Open /, "");
+      button.textContent = label;
+      return button;
+    }
+
+    function appendEvidenceDisclosure(host, sentence, disclosureLabel = "Evidence") {
       const lines = evidenceLines(sentence);
       const claimIds = Array.isArray(sentence?.claim_ids) ? sentence.claim_ids : [];
       const sourceIds = Array.isArray(sentence?.source_ids) ? sentence.source_ids : [];
@@ -1104,7 +1558,7 @@
       const details = document.createElement("details");
       details.className = "companion-evidence-disclosure";
       const summary = document.createElement("summary");
-      summary.textContent = `Evidence · ${sourceIds.length || 0} source${sourceIds.length === 1 ? "" : "s"}`;
+      summary.textContent = `${disclosureLabel} · ${sourceIds.length || 0} source${sourceIds.length === 1 ? "" : "s"}`;
       details.append(summary);
       const list = document.createElement("ul");
       lines.forEach((value) => {
@@ -1116,13 +1570,13 @@
       host.append(details);
     }
 
-    function appendSectionEvidenceDisclosure(host, sentences) {
+    function appendSectionEvidenceDisclosure(host, sentences, disclosureLabel = "Evidence") {
       if (!sentences.length || !sentences.some((sentence) => evidenceLines(sentence).length)) return;
       const sourceIds = new Set(sentences.flatMap((sentence) => sentence.source_ids || []));
       const details = document.createElement("details");
       details.className = "companion-evidence-disclosure companion-section-evidence";
       const summary = document.createElement("summary");
-      summary.textContent = `Evidence · ${sourceIds.size} source${sourceIds.size === 1 ? "" : "s"}`;
+      summary.textContent = `${disclosureLabel} · ${sourceIds.size} source${sourceIds.size === 1 ? "" : "s"}`;
       details.append(summary);
       const sentenceList = document.createElement("ol");
       sentences.forEach((sentence, index) => {
@@ -1153,6 +1607,10 @@
         : sentence?.parent_object_id ? [{id: sentence.parent_object_id, title: sentence.parent_title}] : [];
       const metadata = [
         sentence?.certainty ? `Certainty: ${humanizeMetadata(sentence.certainty)}` : "",
+        sentence?.uncertainty ? `Uncertainty: ${humanizeMetadata(sentence.uncertainty)}` : "",
+        sentence?.interpretation_status || sentence?.interpretation_state
+          ? `Interpretation status: ${humanizeMetadata(sentence.interpretation_status || sentence.interpretation_state)}`
+          : "",
         sentence?.dispute_status ? `Dispute: ${humanizeMetadata(sentence.dispute_status)}` : "",
         sentence?.content_status ? `Status: ${humanizeMetadata(sentence.content_status)}` : "",
         sentence?.review_status ? `Review: ${humanizeMetadata(sentence.review_status)}` : "",
@@ -1734,11 +2192,40 @@
       showLegacy,
       getNarrativeTrail,
       getNarrativeView,
+      getContextTopicId: () => activeContextTopicId,
+      refreshContextView: (behavior = {}) => {
+        if (activeResourceId === "narrative_explorer" && narrativeView.kind === "understand_passage") {
+          renderUnderstandPassageView(behavior);
+          return true;
+        }
+        if (activeResourceId === "understand_passage") {
+          const selection = options.getSelection?.() || {};
+          const record = matchingContextRecord(selection);
+          if (record?.context) {
+            renderUnderstandPassage(record.context, selection, activeContextTopicId, {
+              onTopicChange: setDirectContextTopic,
+              onBrowseResearch: () => options.openResource?.("browse_research", {
+                label: "Browse research sources",
+              }),
+              onReturnToPassage: () => options.returnToPassage?.(),
+              standalone: true,
+            });
+            return true;
+          }
+          const current = options.getContextRecord?.() || {};
+          if (current.status === "error") {
+            renderContextUnavailable(host, current.error, window.navigator?.onLine === false, selection);
+          }
+          return true;
+        }
+        return false;
+      },
       restoreNarrativeTrail,
       openCanonicalDetail,
       openArchaeologyDetail,
       cancelPendingRouteHandoff,
       isManagedReaderSelection,
+      handleReaderSelectionChange,
     });
   }
 

@@ -11,6 +11,13 @@
     "themes_biblical_connections",
     "people_events_relationships",
   ]);
+  const CONTEXT_TOPIC_IDS = new Set([
+    "historical_context",
+    "original_audience",
+    "literary_context",
+    "cultural_context",
+    "covenant_context",
+  ]);
 
   function create(options = {}) {
     let applying = false;
@@ -70,17 +77,31 @@
 
   function normalize(value) {
     if (!value || typeof value !== "object") return null;
-    return {
+    const resource = value.resource ? String(value.resource) : null;
+    const snapshot = {
       state: ["closed", "peek", "study", "full"].includes(value.state) ? value.state : "study",
       mode: value.mode === "explore" ? "explore" : "passage",
-      resource: value.resource ? String(value.resource) : null,
+      resource,
       trail: normalizeTrail(value.trail),
       narrativeView: normalizeNarrativeView(value.narrativeView),
     };
+    if (resource === "understand_passage") {
+      snapshot.contextTopicId = CONTEXT_TOPIC_IDS.has(value.contextTopicId)
+        ? value.contextTopicId
+        : "historical_context";
+    }
+    return snapshot;
   }
 
   function normalizeNarrativeView(value) {
     if (value?.kind === "overview") return {kind: "overview"};
+    if (value?.kind === "research_sources") return {kind: "research_sources"};
+    if (value?.kind === "understand_passage") {
+      return {
+        kind: "understand_passage",
+        topicId: CONTEXT_TOPIC_IDS.has(value.topicId) ? value.topicId : "historical_context",
+      };
+    }
     const categoryId = typeof value?.categoryId === "string" ? value.categoryId : "";
     if (value?.kind === "category" && NARRATIVE_VIEW_CATEGORY_IDS.has(categoryId)) {
       return {kind: "category", categoryId};

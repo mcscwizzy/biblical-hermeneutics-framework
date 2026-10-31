@@ -35,3 +35,16 @@ The intended sequence is UI-02, UI-03, then UI-04. Each implementation should
 preserve BHF source attribution, the Ask BHF handoff contract, existing
 Narrative Explorer routes and feature gates, and the retired commentary
 endpoints' HTTP 410 behavior.
+
+## UI-07: Reader-First Research Consolidation
+
+Keep Scripture, personal study, Ask BHF, and contextual Tyndale notes ahead of
+research discovery. Reduce the selected-passage overview to Explore the
+Narrative and Places & Locations. Add a focused Understand the Passage view
+inside Narrative Explorer for the five existing Companion context summaries,
+and provide secondary access to the existing research libraries and passage
+tools. Preserve direct routes, research services, Narrative Explorer evidence
+and relationship semantics, source disclosures, and feature-disabled access.
+See the [UI-07 design](superpowers/specs/2026-10-31-bhf-study-companion-ui07-design.md),
+[implementation plan](superpowers/plans/2026-10-31-bhf-study-companion-ui07.md),
+and [UX report with browser captures](ui-modernization/ui07/ux-change-report.md).

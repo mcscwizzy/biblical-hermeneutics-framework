@@ -1,4 +1,5 @@
 import asyncio
+import re
 
 from bhf_web.app import create_app
 from bhf_web.runtime import load_runtime_config
@@ -43,6 +44,9 @@ def test_disabled_flag_keeps_the_ordinary_reader_without_retired_commentary(monk
     assert 'data-workspace-tab="context"' in response.text
     assert 'aria-label="Tyndale Study Notes"' in response.text
     assert 'data-companion-resource="translation_comparison"' in response.text
+    assert 'data-companion-research-fallback' in response.text
+    assert 'data-companion-resource="understand_passage"' in response.text
+    assert 'data-companion-resource="browse_research"' in response.text
     assert "BHF Context" not in response.text
     assert "data-bhf-commentary-card" not in response.text
     assert "bhf-commentary-card.js" not in response.text
@@ -61,7 +65,8 @@ def test_enabled_flag_exposes_only_the_passage_companion_entry(monkeypatch):
     assert response.status_code == 200
     assert 'data-companion-resource="narrative_explorer"' in response.text
     assert 'data-companion-resource-label="Explore the Narrative"' in response.text
-    assert "/narrative-explorer.js?v=20261027a" in response.text
+    assert re.search(r'data-companion-explore-catalogue[^>]*\bhidden\b', response.text)
+    assert "/narrative-explorer.js?v=20261031u07a" in response.text
     assert "BHF Context" not in response.text
     assert 'aria-label="Tyndale Study Notes"' in response.text
     assert '"narrativeExplorerEnabled": true' in response.text

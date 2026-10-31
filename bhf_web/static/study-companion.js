@@ -13,6 +13,7 @@
   let panel;
   let shell;
   let overview;
+  let exploreCatalogue;
   let actionStrip;
   let currentState = "closed";
   let currentMode = "passage";
@@ -46,6 +47,7 @@
     panel = document.querySelector("[data-study-companion]");
     shell = panel?.querySelector(".study-companion");
     overview = panel?.querySelector("[data-companion-overview]");
+    exploreCatalogue = panel?.querySelector("[data-companion-explore-catalogue]");
     actionStrip = document.querySelector("[data-passage-action-strip]");
     if (!panel || !shell || !overview) return;
 
@@ -94,6 +96,11 @@
         if (behavior.push) historyController?.push(snapshot);
         else historyController?.replace(snapshot);
       },
+      onContextTopicChange: (topicId, behavior = {}) => {
+        const snapshot = {...historySnapshot(), contextTopicId: topicId};
+        if (behavior.push) historyController?.push(snapshot);
+        else historyController?.replace(snapshot);
+      },
       onVerifiedRouteHandoff: () => {
         if (historyController?.current()?.resource !== "narrative_explorer") {
           historyController?.push(historySnapshot());
@@ -112,32 +119,36 @@
       openTranslationManager: (trigger) =>
         window.BHFStudyActions?.openTranslationManager?.(trigger),
       openResource: (resourceId, options) => openResource(resourceId, options),
+      returnToPassage: () => historyController?.backFromResource(() => {
+        showOverview({history: false, mode: "passage"});
+      }),
       openLegacy: openLegacyResource,
     });
 
     contextController = window.BHFCompanionContextController?.create?.({
       onLoading: () => {
         if (currentMode !== "passage") return;
-        renderLoadingState();
-        renderEntities([]);
+        if (currentResource === "narrative_explorer"
+          && resourceRouter?.getNarrativeView?.().kind === "understand_passage") {
+          resourceRouter.refreshContextView?.({suppressFocus: true});
+        }
       },
       onReady: (context) => {
         if (currentMode !== "passage") return;
-        renderRecommendations(context);
-        renderEntities([
-          ...(context.entities?.people || []),
-          ...(context.entities?.places || []),
-          ...(context.entities?.themes || []),
-        ]);
         if (isPassageContextResourceActive()) {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
+        } else if (currentResource === "narrative_explorer"
+          && resourceRouter?.getNarrativeView?.().kind === "understand_passage") {
+          resourceRouter.refreshContextView?.({suppressFocus: true});
         }
       },
       onError: (message) => {
         if (currentMode !== "passage") return;
-        renderAvailabilityError(message);
         if (isPassageContextResourceActive()) {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
+        } else if (currentResource === "narrative_explorer"
+          && resourceRouter?.getNarrativeView?.().kind === "understand_passage") {
+          resourceRouter.refreshContextView?.({suppressFocus: true, message});
         }
       },
     });
@@ -280,9 +291,11 @@
     selection = nextSelection;
     saveStateController?.setSelection(selection);
     const contextChange = contextController?.setSelection?.(selection, {load: currentMode !== "explore"}) || {changed: false};
+    if (!managedNarrativeSelection) resourceRouter?.handleReaderSelectionChange?.(selection);
     renderPassageActionContext();
     if (currentMode === "explore") return;
     currentMode = "passage";
+    if (exploreCatalogue) exploreCatalogue.hidden = true;
     if (currentResource) renderResourceHeader(currentResource);
     else renderSelectionContext();
     if (selection?.hasPassageSelection && compactViewport() && currentState === "closed") {
@@ -301,6 +314,7 @@
 
   function renderSelectionContext() {
     if (!selection) return;
+    if (exploreCatalogue && currentMode !== "explore") exploreCatalogue.hidden = true;
     const reference = selection.reference || "Chapter Companion";
     setText("[data-companion-reference]", reference);
     setText("[data-companion-peek-reference]", reference);
@@ -366,6 +380,7 @@
   }
 
   function renderExploreOverview() {
+    if (exploreCatalogue) exploreCatalogue.hidden = false;
     const engine = window.BHFStudyRecommendations;
     const ids = ["archaeology", "people", "themes", "timeline", "commentary", "canonical"];
     const resources = ids.map((id) => ({id, ...engine.resources[id]})).filter((item) => item.label);
@@ -609,6 +624,7 @@
     currentResource = null;
     delete shell.dataset.companionResource;
     currentMode = options.mode || currentMode || "passage";
+    if (exploreCatalogue) exploreCatalogue.hidden = currentMode !== "explore";
     shell.classList.remove("is-resource-detail");
     overview.hidden = false;
     panel.querySelector("[data-companion-back]").hidden = true;
@@ -693,6 +709,7 @@
       ...(options.narrativeView || options.view
         ? {view: options.narrativeView || options.view}
         : {}),
+      ...(options.contextTopicId ? {contextTopicId: options.contextTopicId} : {}),
       trigger: options.trigger,
     })) return true;
     openLegacyResource(resourceId, options);
@@ -990,6 +1007,7 @@
         state: snapshot.state,
         trail: snapshot.trail,
         narrativeView: snapshot.narrativeView,
+        contextTopicId: snapshot.contextTopicId,
       });
       return;
     }
@@ -1010,6 +1028,9 @@
       ...(currentResource === "narrative_explorer"
         ? {narrativeView: resourceRouter?.getNarrativeView?.() || {kind: "overview"}}
         : {}),
+      ...(currentResource === "understand_passage"
+        ? {contextTopicId: resourceRouter?.getContextTopicId?.() || "historical_context"}
+        : {}),
     };
   }
 
@@ -1017,6 +1038,9 @@
     const invalidated = contextController?.invalidate?.(event.detail?.key, {load: currentMode === "passage"});
     if (invalidated && isPassageContextResourceActive()) {
       void resourceRouter?.open?.(currentResource, {mode: currentMode});
+    } else if (invalidated && currentResource === "narrative_explorer"
+      && resourceRouter?.getNarrativeView?.().kind === "understand_passage") {
+      resourceRouter.refreshContextView?.({suppressFocus: true});
     }
   }
 

@@ -10,6 +10,8 @@ the authoritative reviewed research source.
   offline behavior.
 - [Study Companion UI modernization roadmap](study-companion-ui-modernization-roadmap.md) —
   follow-on Tyndale integration, Narrative Explorer redesign, and verification.
+- [UI-07 reader-first research UX report](ui-modernization/ui07/ux-change-report.md) —
+  design summary and before/after browser captures.
 - [Docker](docker.md) — local install, configuration, persistent data, and
   operations.
 - [Local development](local-development.md) — setup, databases, tests, and
