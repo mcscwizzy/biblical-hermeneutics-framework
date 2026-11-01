@@ -22,6 +22,7 @@ import os
 import re
 import sys
 import zipfile
+import struct
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -46,6 +47,7 @@ CONFIG_REL = PLUGIN_REL / "config/module-selection.yml"
 VERSION_REL = PLUGIN_REL / "VERSION"
 SOURCE_MANIFEST = "source-module-manifest.json"
 SKILL_REL = Path("skills/explore-scripture/SKILL.md")
+ASSETS = {"logo": "assets/logo.png", "composerIcon": "assets/composer-icon.png"}
 REFERENCE_DIR = Path("skills/explore-scripture/references")
 REQUIRED_CORE = (
     "core.core-framework",
@@ -371,6 +373,7 @@ def _runtime_files(plugin_root: Path) -> list[tuple[str, Path]]:
         "VERSION",
         SOURCE_MANIFEST,
         SKILL_REL.as_posix(),
+        *sorted(ASSETS.values()),
     ]
     candidates: list[tuple[str, Path]] = []
     for name in exact:
@@ -400,6 +403,18 @@ def _runtime_files(plugin_root: Path) -> list[tuple[str, Path]]:
     if len({name for name, _ in candidates}) != len(candidates):
         raise BuildError("plugin runtime file list contains duplicate paths")
     return sorted(candidates, key=lambda item: item[0])
+
+
+def _png_asset_errors(name: str, data: bytes) -> list[str]:
+    """Check image signatures, square pixel dimensions, and submission size limits."""
+    if len(data) > 5 * 1024 * 1024:
+        return [f"{name}: PNG icon is larger than 5 MiB"]
+    if len(data) < 24 or not data.startswith(b"\x89PNG\r\n\x1a\n") or data[12:16] != b"IHDR":
+        return [f"{name}: invalid PNG header"]
+    width, height = struct.unpack(">II", data[16:24])
+    if width != height or width < 48 or width > 4096:
+        return [f"{name}: PNG must be square and between 48 and 4096 pixels"]
+    return []
 
 
 def _plugin_manifest_errors(plugin_manifest: Any, version: str) -> list[str]:
@@ -484,6 +499,9 @@ def _plugin_manifest_errors(plugin_manifest: Any, version: str) -> list[str]:
                 or not all(isinstance(value, str) and len(value) <= 128 for value in prompt_values)
             ):
                 errors.append("plugin.json interface defaultPrompt must contain at most three strings of 128 characters")
+        for field, asset in ASSETS.items():
+            if interface.get(field) != "./" + asset:
+                errors.append(f"plugin.json interface {field} must be './{asset}'")
     if "mcpServers" in plugin_manifest or "dependencies" in plugin_manifest:
         errors.append("skills-only plugin manifest must not require MCP tools or dependencies")
     return errors
@@ -595,6 +613,8 @@ def validate_workspace(repo_root: Path = REPO_ROOT) -> list[str]:
         return errors + [str(exc)]
     runtime_names = {name for name, _ in runtime_files}
     for name, path in runtime_files:
+        if name in ASSETS.values():
+            errors.extend(_png_asset_errors(name, path.read_bytes()))
         if path.is_symlink():
             errors.append(f"plugin runtime files must not be symlinks: {name}")
         if path.suffix.lower() in {".sqlite", ".sqlite3", ".db", ".zip"}:
@@ -968,6 +988,7 @@ def validate_archive(archive_path: Path, plugin_root: Path | None = None) -> lis
                 "VERSION",
                 SOURCE_MANIFEST,
                 SKILL_REL.as_posix(),
+                *ASSETS.values(),
             }
             missing_files = sorted(required_files - set(names))
             if missing_files:
@@ -1011,6 +1032,10 @@ def validate_archive(archive_path: Path, plugin_root: Path | None = None) -> lis
                     errors.append("VERSION must contain SemVer MAJOR.MINOR.PATCH")
             if "plugin.json" in names:
                 errors.extend(_plugin_manifest_errors(plugin_manifest, version))
+
+            for asset in ASSETS.values():
+                if asset in names:
+                    errors.extend(_png_asset_errors(asset, archive.read(asset)))
 
             if SKILL_REL.as_posix() in names:
                 try:

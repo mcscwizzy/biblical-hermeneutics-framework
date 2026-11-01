@@ -28,10 +28,17 @@ python3 tools/build_scripture_trails.py --validate-zip
 `--package` builds and validates resources before producing:
 
 ```text
-dist/plugins/scripture-trails-0.1.0.zip
-dist/plugins/scripture-trails-0.1.0.zip.sha256
+dist/plugins/scripture-trails-0.1.1.zip
+dist/plugins/scripture-trails-0.1.1.zip.sha256
 dist/plugins/scripture-trails-build-manifest.json
 ```
+
+The ZIP also contains two square, self-contained PNG branding assets:
+`assets/logo.png` for the listing and `assets/composer-icon.png` for the composer.
+The manifest uses the required `./assets/` relative paths. The builder explicitly
+allowlists the files and validates their dimensions, size, and PNG signatures
+in both the workspace and release ZIP. The icon images are source-controlled,
+not generated during each build.
 
 The ZIP has `plugin.json` at its archive root. Generated reference files and
 `source-module-manifest.json` are committed so `--check` can detect drift. If a
@@ -96,6 +103,14 @@ See the current [plugin packaging guide](https://developers.openai.com/plugins/b
 [submission guide](https://developers.openai.com/plugins/deploy/submission).
 
 ## Prepare a publication release
+
+The plugin has release-ready artwork and draft listing text, but publication
+requires **live conversational tests**, publisher verification, and review.
+Confirm `developerName` against the actual verified developer identity before
+submitting. Do not invent website/support/privacy URLs or screenshots, or
+claim that the plugin includes an online CKL research database. Skills-only
+packages do not require all four hosted listing URLs under current rules.
+
 
 1. Review the module manifest, generated references, attribution, license, and
    all manual acceptance cases.
