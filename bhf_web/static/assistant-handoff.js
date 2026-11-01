@@ -127,13 +127,22 @@
         return;
       }
 
-      const popup = openWindow(assistantUrl, "_blank", "noopener,noreferrer");
-      if (!popup) showOpenFallback();
-      const copied = await copy(text);
+      const copyPromise = copy(text);
+      showOpenFallback();
+      let popupAttemptFailed = false;
+      try {
+        openWindow(assistantUrl, "_blank", "noopener,noreferrer");
+      } catch (_error) {
+        popupAttemptFailed = true;
+      }
+
+      const copied = await copyPromise;
       if (copied) {
-        setStatus(popup
-          ? "Question copied. BHF is open in a new tab."
-          : "Question copied. Use Open BHF to continue.");
+        setStatus(popupAttemptFailed
+          ? "Question copied. BHF could not open in a new tab; use Open BHF to continue."
+          : "Question copied. If BHF did not open, use Open BHF.");
+      } else if (popupAttemptFailed) {
+        setStatus("BHF could not open in a new tab. Copy the prepared question manually, then use Open BHF.");
       }
     }
 
