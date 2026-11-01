@@ -254,9 +254,13 @@ test("chapter and verse selections map to the NE-3 route contract", () => {
 
 test("overview shows six concise category cards and no evidence inventory", () => {
   const opened = [];
+  const openedContext = [];
+  const openedSources = [];
   const root = explorer.renderOverview(projection(), {
     document: fakeDocument(),
     onOpenCategory: (categoryId, trigger) => opened.push({categoryId, trigger}),
+    onOpenUnderstandPassage: (trigger) => openedContext.push(trigger),
+    onOpenResearchSources: (trigger) => openedSources.push(trigger),
   });
   const categoryIds = [
     "biblical_narrative",
@@ -268,6 +272,8 @@ test("overview shows six concise category cards and no evidence inventory", () =
   ];
   const cards = descendants(root).filter((element) => element.className === "narrative-explorer-category-card");
   const connectionEntry = descendants(root).find((element) => element.className === "narrative-explorer-follow-connection");
+  const contextEntry = descendants(root).find((element) => element.className === "narrative-explorer-understand-passage");
+  const sourcesEntry = descendants(root).find((element) => element.className === "narrative-explorer-browse-sources");
 
   assert.match(root.textContent, /Explore this passage/);
   assert.match(root.textContent, /Current passage: Genesis 1/);
@@ -275,13 +281,20 @@ test("overview shows six concise category cards and no evidence inventory", () =
   assert.equal(cards.filter((card) => descendants(card).some((element) => element.tagName === "SVG"
     && element.attributes["aria-hidden"] === "true")).length, 6);
   assert.match(connectionEntry.textContent, /Follow a Connection/);
+  assert.match(contextEntry.textContent, /Understand the Passage/);
+  assert.match(contextEntry.textContent, /Explore the historical setting, original audience, literary structure, and cultural background\./);
+  assert.match(sourcesEntry.textContent, /Browse research sources/);
   assert.equal(descendants(root).filter((element) => element.className === "narrative-explorer-item").length, 0);
 
   connectionEntry.click();
+  contextEntry.click();
+  sourcesEntry.click();
 
   assert.equal(opened.length, 1);
   assert.equal(opened[0].categoryId, "themes_biblical_connections");
   assert.equal(opened[0].trigger, connectionEntry);
+  assert.deepEqual(openedContext, [contextEntry]);
+  assert.deepEqual(openedSources, [sourcesEntry]);
 });
 
 test("overview defers the empty origin-only trail until a connection is followed", () => {

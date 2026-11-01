@@ -78,9 +78,13 @@ function fixture(options = {}) {
         attributes: {},
         dataset: {},
         children: [],
+        listeners: {},
         textContent: "",
+        classList: {add(...values) { this.values = [...new Set([...(this.values || []), ...values])]; }},
         setAttribute(name, value) { this.attributes[name] = String(value); },
+        addEventListener(name, callback) { this.listeners[name] = callback; },
         append(...children) { this.children.push(...children); },
+        click() { this.listeners.click?.({currentTarget: this, target: this}); },
       };
     },
     createDocumentFragment() {
@@ -227,6 +231,193 @@ test("verified route handoff retains verse scope, records its overview and focus
   assert.equal(value.heading.focused, true);
   assert.equal(value.heading.scrolled, true);
   assert.equal(value.router.getNarrativeTrail().originSelection.reference, "Jonah 1:17");
+});
+
+
+test("Understand the Passage shows one Companion summary at a time without reopening the projection", async () => {
+  const context = {
+    reference: "Jonah 1:17",
+    resources: {
+      historical_context: {state: "available", available: true, count: 1},
+      original_audience: {state: "available", available: true, count: 1},
+      literary_context: {state: "available", available: true, count: 1},
+      cultural_context: {state: "available", available: true, count: 1},
+      covenant_context: {state: "available", available: true, count: 1},
+    },
+    summaries: {narration: {by_context: {
+      historical_context: {
+        has_content: true,
+        source_count: 1,
+        lead: {
+          text: "The historical summary keeps its original wording.",
+          certainty: "probable",
+          uncertainty: "the chronology remains open",
+          interpretation_status: "historical_interpretation",
+          dispute_status: "under_discussion",
+          content_status: "draft",
+          review_status: "in_review",
+          human_review_required: true,
+          claim_ids: ["claim-historical"],
+          source_ids: ["source-historical"],
+          source_details: [{id: "source-historical", title: "Recorded historical source", locator: "p. 12"}],
+        },
+        sections: [],
+      },
+      original_audience: {
+        has_content: true,
+        source_count: 1,
+        lead: {text: "The original audience summary remains distinct."},
+        sections: [],
+      },
+      literary_context: {has_content: true, lead: {text: "Literary summary."}, sections: []},
+      cultural_context: {has_content: true, lead: {text: "Cultural summary."}, sections: []},
+      covenant_context: {has_content: true, lead: {text: "Covenant summary."}, sections: []},
+    }}},
+  };
+  const value = fixture({contextRecord: {key: "Jonah|1|17|17", status: "ready", context}});
+
+  await value.router.open("narrative_explorer");
+  const sessionCount = value.records.sessions.length;
+  value.records.rendered[0].onOpenUnderstandPassage();
+
+  assert.equal(value.router.getNarrativeView().kind, "understand_passage");
+  assert.equal(value.router.getNarrativeView().topicId, "historical_context");
+  assert.equal(value.records.viewChanges.at(-1)[1].push, true);
+  assert.equal(value.records.sessions.length, sessionCount);
+  assert.match(renderedText(value.host.content), /These are Study Companion contextual research summaries/);
+  assert.match(renderedText(value.host.content), /separate from Narrative Explorer evidence records/);
+  assert.match(renderedText(value.host.content), /The historical summary keeps its original wording\./);
+  assert.match(renderedText(value.host.content), /Certainty: probable/);
+  assert.match(renderedText(value.host.content), /Uncertainty: the chronology remains open/);
+  assert.match(renderedText(value.host.content), /Interpretation status: historical interpretation/);
+  assert.match(renderedText(value.host.content), /Dispute: under discussion/);
+  assert.match(renderedText(value.host.content), /Status: draft/);
+  assert.match(renderedText(value.host.content), /Review: in review/);
+  assert.match(renderedText(value.host.content), /Human review required/);
+  assert.match(renderedText(value.host.content), /Source: Recorded historical source · p\. 12/);
+  assert.doesNotMatch(renderedText(value.host.content), /The original audience summary remains distinct\./);
+
+  const topics = nodesWithin(value.host.content).filter((node) => node.dataset?.contextTopicId);
+  assert.deepEqual(topics.map((node) => node.dataset.contextTopicId), [
+    "historical_context", "original_audience", "literary_context", "cultural_context", "covenant_context",
+  ]);
+  topics[1].click();
+  assert.equal(value.router.getNarrativeView().topicId, "original_audience");
+  assert.equal(value.records.viewChanges.at(-1)[1].push, false);
+  assert.match(renderedText(value.host.content), /The original audience summary remains distinct\./);
+  assert.doesNotMatch(renderedText(value.host.content), /The historical summary keeps its original wording\./);
+  assert.equal(value.records.sessions.length, sessionCount);
+});
+
+
+test("an external passage change refreshes context and projection without retaining the prior trail", async () => {
+  const initialContext = {
+    reference: "Jonah 1:17",
+    resources: {historical_context: {state: "available", available: true, count: 1}},
+    summaries: {narration: {by_context: {historical_context: {
+      has_content: true,
+      lead: {text: "Context belonging to Jonah 1:17."},
+      sections: [],
+    }}}},
+  };
+  const value = fixture({
+    contextRecord: {key: "Jonah|1|17|17", status: "ready", context: initialContext},
+    loadProjection: (selection) => Promise.resolve(projection({
+      passage: {reference: selection.reference, book: selection.book, chapter: selection.chapter,
+        verse_start: selection.startVerse, verse_end: selection.endVerse},
+    })),
+  });
+
+  await value.router.open("narrative_explorer");
+  value.records.rendered[0].onOpenUnderstandPassage();
+  const sessionCount = value.records.sessions.length;
+
+  const nextSelection = {
+    book: "Jonah", chapter: 1, startVerse: 16, endVerse: 16,
+    selectedVerses: [16], reference: "Jonah 1:16",
+  };
+  value.setSelection(nextSelection);
+  value.setContextRecord({key: "Jonah|1|16|16", status: "loading", context: null});
+  assert.equal(value.router.handleReaderSelectionChange(nextSelection), true);
+  assert.equal(value.records.sessions.length, sessionCount + 1);
+  assert.equal(value.router.getNarrativeTrail().originSelection.reference, "Jonah 1:16");
+  assert.match(renderedText(value.host.content), /Loading contextual summaries for Jonah 1:16/);
+  assert.doesNotMatch(renderedText(value.host.content), /Context belonging to Jonah 1:17/);
+
+  value.setContextRecord({key: "Jonah|1|16|16", status: "ready", context: {
+    reference: "Jonah 1:16",
+    resources: {historical_context: {state: "available", available: true, count: 1}},
+    summaries: {narration: {by_context: {historical_context: {
+      has_content: true, lead: {text: "Context belonging to Jonah 1:16."}, sections: [],
+    }}}},
+  }});
+  value.router.refreshContextView();
+  assert.match(renderedText(value.host.content), /Current passage: Jonah 1:16/);
+  assert.match(renderedText(value.host.content), /Context belonging to Jonah 1:16/);
+  assert.doesNotMatch(renderedText(value.host.content), /Context belonging to Jonah 1:17/);
+});
+
+
+test("context availability distinguishes completed empty, missing summary, unknown, and offline", async () => {
+  const cases = [
+    {
+      resource: {state: "unavailable", available: false, count: 0},
+      context: {},
+      expected: /Completed lookup: no linked contextual evidence was returned for this topic\./,
+    },
+    {
+      resource: {state: "available", available: true, count: 1},
+      context: {summaries: {narration: {by_context: {}}}},
+      expected: /Contextual evidence is available, but no summary text is recorded for this topic\./,
+    },
+    {
+      resource: {state: "unknown", available: false, count: 0},
+      context: {},
+      expected: /Availability is unknown because the source lookup did not complete\./,
+    },
+    {
+      resource: {state: "unknown", available: false, count: 0},
+      context: {offline: true},
+      expected: /This topic could not be checked while offline\./,
+    },
+  ];
+
+  for (const {resource, context, expected} of cases) {
+    const value = fixture({contextRecord: {
+      key: "Jonah|1|17|17",
+      status: "ready",
+      context: {reference: "Jonah 1:17", resources: {historical_context: resource}, ...context},
+    }});
+    assert.equal(await value.router.open("understand_passage", {contextTopicId: "historical_context"}), true);
+    assert.match(renderedText(value.host.content), expected, JSON.stringify({resource, context}));
+    assert.match(renderedText(value.host.content), /Current passage: Jonah 1:17/);
+  }
+});
+
+test("secondary research browsing keeps CKL, Maps, archaeology, and passage research routes available", async () => {
+  const value = fixture();
+  assert.equal(await value.router.open("narrative_explorer"), true);
+  const sessionCount = value.records.sessions.length;
+  value.records.rendered[0].onOpenResearchSources();
+
+  assert.equal(value.router.getNarrativeView().kind, "research_sources");
+  assert.equal(value.records.viewChanges.at(-1)[1].push, true);
+  const text = renderedText(value.host.content);
+  [
+    "Open Canonical Knowledge",
+    "Open Maps Explorer",
+    "Open Archaeology Library",
+    "Open Cross References",
+    "Open Timeline",
+    "Open passage Archaeology",
+    "Open Places & Locations",
+  ].forEach((label) => assert.match(text, new RegExp(label.replaceAll("&", "&"))));
+  assert.equal(value.records.sessions.length, sessionCount);
+
+  const back = nodesWithin(value.host.content).find((node) => node.textContent === "Back to topics");
+  back.click();
+  assert.equal(value.router.getNarrativeView().kind, "overview");
+  assert.equal(value.records.sessions.length, sessionCount);
 });
 
 test("canonical Companion cards disclose pending editorial review without inventing approval", async () => {

@@ -129,6 +129,45 @@ test("Companion Back and Forward restore the exact bounded Narrative Explorer tr
   }
 });
 
+
+test("Narrative Explorer history allowlists contextual topics and the research sources view", () => {
+  const {controller, restore} = loadHistoryController();
+  const history = controller.create();
+  try {
+    history.initialize({
+      state: "study",
+      mode: "passage",
+      resource: "narrative_explorer",
+      narrativeView: {kind: "understand_passage", topicId: "original_audience"},
+    });
+    assert.deepEqual(history.current().narrativeView, {
+      kind: "understand_passage",
+      topicId: "original_audience",
+    });
+
+    history.replace({
+      state: "study",
+      mode: "passage",
+      resource: "narrative_explorer",
+      narrativeView: {kind: "research_sources"},
+    });
+    assert.deepEqual(history.current().narrativeView, {kind: "research_sources"});
+
+    history.replace({
+      state: "study",
+      mode: "passage",
+      resource: "narrative_explorer",
+      narrativeView: {kind: "understand_passage", topicId: "made_up_topic"},
+    });
+    assert.deepEqual(history.current().narrativeView, {
+      kind: "understand_passage",
+      topicId: "historical_context",
+    });
+  } finally {
+    restore();
+  }
+});
+
 test("Companion history preserves the basis of an authored evidence relationship hop", () => {
   const {controller, restore} = loadHistoryController();
   const history = controller.create();

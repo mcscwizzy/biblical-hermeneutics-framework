@@ -907,6 +907,20 @@
       intro.append(follow);
       rootElement.append(intro);
 
+      const contextEntry = element(document, "button", "narrative-explorer-understand-passage");
+      contextEntry.type = "button";
+      contextEntry.dataset.narrativeUnderstandPassage = "true";
+      contextEntry.dataset.narrativeFocusId = "understand-passage";
+      const contextIcon = element(document, "span", "narrative-explorer-context-icon");
+      contextIcon.setAttribute("aria-hidden", "true");
+      contextIcon.textContent = "◷";
+      const contextCopy = element(document, "span", "narrative-explorer-context-copy");
+      appendTextElement(document, contextCopy, "strong", "Understand the Passage");
+      appendTextElement(document, contextCopy, "span", "Explore the historical setting, original audience, literary structure, and cultural background.");
+      contextEntry.append(contextIcon, contextCopy);
+      contextEntry.addEventListener("click", (event) => options.onOpenUnderstandPassage?.(event.currentTarget || contextEntry));
+      rootElement.append(contextEntry);
+
       const choices = element(document, "section", "narrative-explorer-topic-choices");
       choices.setAttribute("aria-labelledby", "narrative-explorer-topics-title");
       const choicesHeading = appendTextElement(document, choices, "h4", "Explore by Topic");
@@ -935,6 +949,15 @@
       });
       choices.append(cards);
       rootElement.append(choices);
+      const sourceNavigation = element(document, "nav", "narrative-explorer-secondary-navigation");
+      sourceNavigation.setAttribute("aria-label", "Additional research navigation");
+      const sourceEntry = element(document, "button", "narrative-explorer-browse-sources");
+      sourceEntry.type = "button";
+      sourceEntry.dataset.narrativeFocusId = "browse-sources";
+      sourceEntry.textContent = "Browse research sources";
+      sourceEntry.addEventListener("click", (event) => options.onOpenResearchSources?.(event.currentTarget || sourceEntry));
+      sourceNavigation.append(sourceEntry);
+      rootElement.append(sourceNavigation);
       return rootElement;
     }
 

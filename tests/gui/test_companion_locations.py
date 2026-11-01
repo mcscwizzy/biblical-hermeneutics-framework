@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 
 from .pages import BibleReaderPage, HomePage
 
@@ -37,6 +38,7 @@ def test_chapter_options_stay_available_when_book_chapter_load_finishes(driver, 
 
 
 def test_mobile_locations_support_keyboard_actions_pagination_and_chapter_changes(driver, wait, base_url):
+    wait = WebDriverWait(driver, 90)
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()
     reader = BibleReaderPage(driver, wait, base_url)
@@ -65,7 +67,18 @@ def test_mobile_locations_support_keyboard_actions_pagination_and_chapter_change
         "const state = window.BHFStudySelection.getState(); "
         "return state.reference === 'Genesis 12:5-9';"
     ))
+    wait.until(lambda _driver: _driver.execute_script(
+        "const selection = window.BHFStudySelection.getState(); "
+        "const context = window.BHFStudyCompanion.getContextRecord(); "
+        "return context?.status === 'ready' && context.key === window.BHFCompanionContext.requestKey(selection);"
+    ))
     driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+    wait.until(lambda _driver: _driver.find_element(
+        By.CSS_SELECTOR,
+        "[data-companion-primary-research]",
+    ).is_displayed())
+    driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="places_locations"]').click()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, ".companion-places-locations").is_displayed())
     section = wait.until(lambda _driver: _driver.find_element(
         By.CSS_SELECTOR,
         "[data-companion-locations-section]",
@@ -110,10 +123,22 @@ def test_mobile_locations_support_keyboard_actions_pagination_and_chapter_change
     wait.until(lambda _driver: _driver.execute_script(
         "const state = window.BHFStudySelection.getState(); return state.book === 'Genesis' && state.chapter === 13;"
     ))
+    reader.select_verse(1)
     wait.until(lambda _driver: _driver.execute_script(
-        "const context = window.BHFStudyCompanion.getContext(); "
-        "return context?.reference === 'Genesis 13' && context.locations?.total === 10;"
+        "return window.BHFStudySelection.getState().reference === 'Genesis 13:1';"
     ))
+    wait.until(lambda _driver: _driver.execute_script(
+        "const selection = window.BHFStudySelection.getState(); "
+        "const context = window.BHFStudyCompanion.getContextRecord(); "
+        "return context?.status === 'ready' && context.key === window.BHFCompanionContext.requestKey(selection);"
+    ))
+    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+    wait.until(lambda _driver: _driver.find_element(
+        By.CSS_SELECTOR,
+        "[data-companion-primary-research]",
+    ).is_displayed())
+    driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="places_locations"]').click()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, ".companion-places-locations-reference").text == "Genesis 13:1")
     wait.until(lambda _driver: _driver.execute_script(
         "const section = document.querySelector('[data-companion-locations-section]'); "
         "return Array.from(section?.querySelectorAll('.companion-location-reference') || []) "

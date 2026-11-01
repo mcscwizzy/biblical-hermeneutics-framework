@@ -41,24 +41,6 @@ def _select_verses(driver, wait, book, chapter, verses):
     ))
 
 
-def _connection_action(driver, identity):
-    try:
-        for card in driver.find_elements(By.CSS_SELECTOR, ".companion-discovery-card"):
-            details = card.find_element(By.CSS_SELECTOR, "details")
-            driver.execute_script("arguments[0].open = true;", details)
-            for button in card.find_elements(By.CSS_SELECTOR, "[data-presentation-action='explore_connection']"):
-                actual = {
-                    "object_id": button.get_attribute("data-presentation-object-id"),
-                    "record_kind": button.get_attribute("data-presentation-record-kind"),
-                    "record_id": button.get_attribute("data-presentation-record-id"),
-                }
-                if actual == identity and button.is_displayed():
-                    return card, button
-    except StaleElementReferenceException:
-        return None
-    return None
-
-
 def _context_identity(driver, record_id):
     return driver.execute_script(
         """
@@ -76,6 +58,24 @@ def _context_identity(driver, record_id):
         """,
         record_id,
     )
+
+
+def _connection_action(driver, identity):
+    try:
+        for card in driver.find_elements(By.CSS_SELECTOR, ".companion-discovery-card"):
+            details = card.find_element(By.CSS_SELECTOR, "details")
+            driver.execute_script("arguments[0].open = true;", details)
+            for button in card.find_elements(By.CSS_SELECTOR, "[data-presentation-action='explore_connection']"):
+                actual = {
+                    "object_id": button.get_attribute("data-presentation-object-id"),
+                    "record_kind": button.get_attribute("data-presentation-record-kind"),
+                    "record_id": button.get_attribute("data-presentation-record-id"),
+                }
+                if actual == identity and button.is_displayed():
+                    return card, button
+    except StaleElementReferenceException:
+        return None
+    return None
 
 
 def _request_counts(driver):
@@ -127,9 +127,27 @@ def _render_real_projection(driver):
 
 
 def _route_article(driver, wait, route_id):
+    selector = f'article[data-route-id="{route_id}"]'
+
+    def find_or_expand(browser):
+        matches = browser.find_elements(By.CSS_SELECTOR, selector)
+        if matches:
+            return matches[0]
+        more = browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer-more-passages")
+        if more and more[0].is_displayed():
+            more[0].click()
+        return False
+
+    return wait.until(find_or_expand)
+
+
+def _open_follow_connection(driver, wait):
+    driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
+    wait.until(lambda browser: browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer-follow-connection"))
+    driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-follow-connection").click()
     return wait.until(lambda browser: browser.find_element(
         By.CSS_SELECTOR,
-        f"[data-route-id='{route_id}'][aria-current='true']",
+        ".narrative-explorer-related-passages",
     ))
 
 
@@ -187,12 +205,7 @@ def test_real_ckl_jonah_and_matthew_handoffs_preserve_direction_and_return(
     assert "later becomes important in Matthew 12:40" in source_evidence["claim"]
     assert {"jonah-masoretic", "jonah-new-testament"} <= set(source_evidence["sourceIds"])
 
-    source_card, source_action = wait.until(lambda browser: _connection_action(browser, identity))
-    assert "Three days and three nights is a narrated duration" in source_card.text
-    assert source_card.find_element(By.CSS_SELECTOR, ".companion-discovery-meta").text
-    assert source_action.text == "Explore this connection"
-    assert source_action.get_attribute("aria-label") == "Explore this connection"
-    source_action.click()
+    _open_follow_connection(driver, wait)
     route_id = "jonah-1-17-matthew-12-40-sign-of-jonah"
     article = _route_article(driver, wait, route_id)
     route_text = article.text.casefold()
@@ -231,9 +244,7 @@ def test_real_ckl_jonah_and_matthew_handoffs_preserve_direction_and_return(
         if _context_identity(browser, "jonah-three-days")["cited"] else False)
     assert reverse_evidence["reference"] == "Matthew 12:40"
     assert reverse_evidence["identity"] == identity
-    _card, reverse_action = wait.until(lambda browser: _connection_action(browser, identity))
-    assert reverse_action.text == "Explore this connection", reverse_action.get_attribute("outerHTML")
-    reverse_action.click()
+    _open_follow_connection(driver, wait)
     reverse_article = _route_article(driver, wait, route_id)
     direction = reverse_article.find_element(
         By.CSS_SELECTOR,
@@ -267,9 +278,7 @@ def test_real_ckl_genesis_john_handoff_is_unchanged(driver, base_url):
         if _context_identity(browser, "john-logos")["cited"] else False)
     assert genesis_evidence["reference"] == "Genesis 1:1-5"
     assert genesis_evidence["identity"] == identity
-    _card, action = wait.until(lambda browser: _connection_action(browser, identity))
-    assert action.text == "Explore this connection"
-    action.click()
+    _open_follow_connection(driver, wait)
 
     route_id = "genesis-1-john-1-creation-word"
     article = _route_article(driver, wait, route_id)

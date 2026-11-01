@@ -71,20 +71,26 @@ test("Tyndale card styles wrap note text and keep native disclosures free of nes
 });
 
 
-test("Dig Deeper keeps one prominent Narrative Explorer and Places & Locations entry", () => {
+test("passage overview keeps only the two primary research entries and hides the Explore BHF catalog", () => {
+  const overview = sectionWithAttribute(template, "data-companion-overview");
   const deeper = sectionWithAttribute(template, "data-companion-dig-deeper");
+  const primaryStart = deeper.indexOf('data-companion-primary-research');
+  const catalogueStart = deeper.indexOf('data-companion-explore-catalogue');
+  const primary = deeper.slice(primaryStart, catalogueStart);
   const narrative = deeper.indexOf('data-testid="companion-narrative-explorer"');
   const places = deeper.indexOf('data-companion-resource="places_locations"');
-  const resources = deeper.indexOf("data-companion-recommended");
-  const remainingResources = deeper.indexOf("data-companion-deeper");
-  const advanced = deeper.indexOf("companion-advanced-links");
 
   assert.ok(narrative >= 0 && narrative < places);
-  assert.ok(places < resources);
-  assert.ok(resources < remainingResources && remainingResources < advanced);
+  assert.equal([...primary.matchAll(/class="companion-narrative-card(?:\s|")/g)].length, 2);
   assert.equal([...deeper.matchAll(/data-companion-resource="places_locations"/g)].length, 1);
   assert.match(deeper, /<strong>Places &amp; Locations<\/strong>/);
   assert.match(deeper, /Explore biblical places, geography, maps, and journeys connected to this passage\./);
   assert.doesNotMatch(deeper, /Did You Know\?|data-companion-locations-section|data-companion-discoveries-section|data-companion-land-section|data-companion-entities-section|People &amp; Places/);
   assert.match(deeper, /\{% if runtime_config\.narrativeExplorerEnabled %\}[\s\S]*?data-testid="companion-narrative-explorer"[\s\S]*?\{% endif %\}/);
+  assert.doesNotMatch(primary, /data-companion-recommended|data-companion-deeper|Research tools|Advanced research workspaces/i);
+  assert.match(overview, /data-companion-explore-catalogue[^>]*hidden/);
+  assert.match(overview, /data-companion-recommended/);
+  assert.match(overview, /data-companion-deeper/);
+  assert.match(overview, /data-companion-research-fallback/);
+  assert.doesNotMatch(overview, /data-companion-resource="word_study"/);
 });
