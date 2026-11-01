@@ -1,0 +1,556 @@
+{
+  "plugin": "scripture-trails",
+  "plugin_version": "0.1.0",
+  "references": [
+    {
+      "kind": "generated",
+      "path": "skills/explore-scripture/references/evidence-and-boundaries.md",
+      "sha256": "856ddf6463a8a6984e5ba069e5f0bcca0cbc58c9cf6b25f66d69b2d296a2d2ca",
+      "source_modules": [
+        "core.epistemic-humility",
+        "core.anti-hallucination"
+      ]
+    },
+    {
+      "kind": "generated",
+      "path": "skills/explore-scripture/references/genre-and-language.md",
+      "sha256": "0a2a04b77cdbed4b2775a571af15a18fabdd6b9d2ed17e5124887f4cf37a7cec",
+      "source_modules": [
+        "genre.apocalyptic",
+        "genre.epistle",
+        "genre.gospel",
+        "genre.law",
+        "genre.narrative",
+        "genre.poetry",
+        "genre.prophecy",
+        "genre.wisdom",
+        "language.greek",
+        "language.hebrew"
+      ]
+    },
+    {
+      "kind": "generated",
+      "path": "skills/explore-scripture/references/historical-context.md",
+      "sha256": "755b525ea70d5cb4bf137e5fc547a50d25003fdceb599d4b667ffd597fedacf5",
+      "source_modules": [
+        "context.ancient-near-east",
+        "context.covenant",
+        "context.exile-and-restoration",
+        "context.greco-roman-world",
+        "context.israelite-monarchy",
+        "context.roman-empire",
+        "context.second-temple-judaism",
+        "context.temple",
+        "context.wisdom-tradition"
+      ]
+    },
+    {
+      "kind": "authored",
+      "path": "skills/explore-scripture/references/interaction-patterns.md",
+      "sha256": "818c95c9a7c630de62bfa646a739d472e88ca55394a73fe02201b8a7e5de9431",
+      "source_modules": [
+        "core.core-framework",
+        "core.observe-interpret-apply",
+        "core.original-audience"
+      ]
+    },
+    {
+      "kind": "generated",
+      "path": "skills/explore-scripture/references/interpretive-method.md",
+      "sha256": "d764d88cad54991da7366d028d5ece93eea222a193a6256f11170d47eec2b330",
+      "source_modules": [
+        "core.core-framework",
+        "core.genre-awareness",
+        "core.original-audience",
+        "core.observe-interpret-apply"
+      ]
+    },
+    {
+      "kind": "generated",
+      "path": "skills/explore-scripture/references/intertextuality.md",
+      "sha256": "895b662b083fbbd3bd621fe563c4cdf0b5a6f457a996ba0b096293c486b45cfb",
+      "source_modules": [
+        "core.intertextuality"
+      ]
+    },
+    {
+      "kind": "generated",
+      "path": "skills/explore-scripture/references/passage-guides.md",
+      "sha256": "ee65f4f88bfefce5284774b2e5fad8d8a17c28ab2bd8aaaf04e86a92f00f18b1",
+      "source_modules": [
+        "book.1-kings",
+        "book.2-kings",
+        "book.deuteronomy",
+        "book.genesis",
+        "book.isaiah",
+        "book.job",
+        "book.john",
+        "book.jonah",
+        "book.matthew",
+        "book.micah",
+        "book.psalms"
+      ]
+    },
+    {
+      "kind": "authored",
+      "path": "skills/explore-scripture/references/trail-selection.md",
+      "sha256": "8879d4e5ee50f97b440442e0d08bf3ee6a480e6debd649462c88c8814d99e9aa",
+      "source_modules": [
+        "core.intertextuality",
+        "core.epistemic-humility"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "core.core-framework",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/interaction-patterns.md",
+        "skills/explore-scripture/references/interpretive-method.md"
+      ],
+      "sha256": "637e5e11a7906da7a13faf8e502a9893853c128db87a4cb36295e16e4ecbb62b",
+      "source_path": "framework/core/00-core-framework.md",
+      "status": "stable",
+      "title": "Core Hermeneutic Framework",
+      "version": "0.1.0"
+    },
+    {
+      "id": "core.genre-awareness",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/interpretive-method.md"
+      ],
+      "sha256": "072f884941a30193589e6befb5bab9c10aa95533e642139018125259ee66e5fc",
+      "source_path": "framework/core/01-genre-awareness.md",
+      "status": "stable",
+      "title": "Genre Awareness",
+      "version": "0.1.0"
+    },
+    {
+      "id": "core.original-audience",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/interaction-patterns.md",
+        "skills/explore-scripture/references/interpretive-method.md"
+      ],
+      "sha256": "a14ce700c58944f21981fbf6634a9c64c1c5e42dce5fc907a7042663fabd47f6",
+      "source_path": "framework/core/02-original-audience.md",
+      "status": "stable",
+      "title": "Begin with the Original Audience",
+      "version": "0.1.0"
+    },
+    {
+      "id": "core.observe-interpret-apply",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/interaction-patterns.md",
+        "skills/explore-scripture/references/interpretive-method.md"
+      ],
+      "sha256": "89203ccecfd9b4a869b0a44f930412c9afc1982a10990b53fd94b97a2423b18d",
+      "source_path": "framework/core/03-observe-interpret-apply.md",
+      "status": "stable",
+      "title": "Observation, Interpretation, Application",
+      "version": "0.1.0"
+    },
+    {
+      "id": "core.intertextuality",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/intertextuality.md",
+        "skills/explore-scripture/references/trail-selection.md"
+      ],
+      "sha256": "e33c26ae55d5744d5fbca742218bd13df837518970127492c6b6189a72f03d22",
+      "source_path": "framework/core/04-intertextuality.md",
+      "status": "stable",
+      "title": "Intertextuality and Scriptural Connections",
+      "version": "0.2.0"
+    },
+    {
+      "id": "core.epistemic-humility",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/evidence-and-boundaries.md",
+        "skills/explore-scripture/references/trail-selection.md"
+      ],
+      "sha256": "d4da29dc598707a1a4ccafc5c56a2f4e5100b2e7cd2230db85f1923ca9ab26ff",
+      "source_path": "framework/core/05-epistemic-humility.md",
+      "status": "stable",
+      "title": "Epistemic Humility and Confidence Labels",
+      "version": "0.1.0"
+    },
+    {
+      "id": "core.anti-hallucination",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/evidence-and-boundaries.md"
+      ],
+      "sha256": "df57ffaa39805b00f042fb987bd0feddc4fabe720cc670b3f2a52fec6c0cbc98",
+      "source_path": "framework/core/06-anti-hallucination.md",
+      "status": "stable",
+      "title": "Anti-Hallucination and Sourcing Discipline",
+      "version": "0.1.0"
+    },
+    {
+      "id": "language.greek",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "066650e1be93f4f39879c544c3576a030bfd8df5e47e6b7ecfab3c47375ec478",
+      "source_path": "framework/language/greek.md",
+      "status": "stable",
+      "title": "Koine Greek for Interpretation",
+      "version": "0.1.0"
+    },
+    {
+      "id": "language.hebrew",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "a35321294e7b74acd99ae7fcfeebe1c79f67b334a631175e5fe7462ed4a6d368",
+      "source_path": "framework/language/hebrew.md",
+      "status": "stable",
+      "title": "Biblical Hebrew (and Aramaic) for Interpretation",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.ancient-near-east",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "4edc1f7b2b4d4bc14761e72e21d10695de2a562ed2b6ad9dcc714af51b51bab7",
+      "source_path": "framework/context/ancient-near-east.md",
+      "status": "stable",
+      "title": "The Ancient Near East",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.covenant",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "8163173398bf738cb06c72954356fcca56541941a19e85d3c194fa1cf2cc8c03",
+      "source_path": "framework/context/covenant.md",
+      "status": "stable",
+      "title": "Covenant and Treaty Forms",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.exile-and-restoration",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "c5c98466565c9ebc4e8f4f932de883fbf99f7338c9b08b3ea7462e06508c62ee",
+      "source_path": "framework/context/exile-and-restoration.md",
+      "status": "stable",
+      "title": "Exile and Restoration",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.greco-roman-world",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "a331907e91963135efe92dc0d731be5097549a659041e7328f061e4bd54c379f",
+      "source_path": "framework/context/greco-roman-world.md",
+      "status": "stable",
+      "title": "The Greco-Roman World (Hellenistic Culture)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.israelite-monarchy",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "d307c689014c1ff07cc66c5b2a9c5376189678847eb47955fc8564e520d6987b",
+      "source_path": "framework/context/israelite-monarchy.md",
+      "status": "stable",
+      "title": "The Israelite Monarchy",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.roman-empire",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "e49cb1293d4cfc60e118c9b52a679ad2b7dca31e7be615c3bcc91a4429b7a181",
+      "source_path": "framework/context/roman-empire.md",
+      "status": "stable",
+      "title": "The Roman Empire (First-Century Setting)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.second-temple-judaism",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "c938eaaaecdc3d4f315fe35800a19cb754e0d2372568f65f74532ab5a4346c57",
+      "source_path": "framework/context/second-temple-judaism.md",
+      "status": "stable",
+      "title": "Second Temple Judaism",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.temple",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "ee06a29fe98a205efff7e3f97bd16e8c05f735b7401422a1b3d9bddcbebe40cd",
+      "source_path": "framework/context/temple.md",
+      "status": "stable",
+      "title": "Temple, Sacred Space, and Presence",
+      "version": "0.1.0"
+    },
+    {
+      "id": "context.wisdom-tradition",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/historical-context.md"
+      ],
+      "sha256": "c65690ce89916223f5921b4bba3fab0b18dcb51fea8e05624dce7406cf738a0d",
+      "source_path": "framework/context/wisdom-tradition.md",
+      "status": "stable",
+      "title": "The Wisdom Tradition",
+      "version": "0.1.0"
+    },
+    {
+      "id": "genre.apocalyptic",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "5f70a0911cfdd31eac5b9c4d23530436abe04cf36b64d7a944c8bd1f7873144e",
+      "source_path": "framework/genres/apocalyptic.md",
+      "status": "stable",
+      "title": "Apocalyptic Genre Module",
+      "version": "0.1.0"
+    },
+    {
+      "id": "genre.epistle",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "5c8cf4bd548cc4d8dfb11d026a7430982a6d1d92f4f15196128e833e7b07ac8b",
+      "source_path": "framework/genres/epistle.md",
+      "status": "stable",
+      "title": "Epistle (Letter) Genre Module",
+      "version": "0.1.0"
+    },
+    {
+      "id": "genre.gospel",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "7e2582cb6f2ed4ef55b63b1f92ef2e0ad7af232fa6a3b28e4d6f25a3acf6a112",
+      "source_path": "framework/genres/gospel.md",
+      "status": "stable",
+      "title": "Gospel Genre Module",
+      "version": "0.1.0"
+    },
+    {
+      "id": "genre.law",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "ae24dd9b82a4485d31cba9caef6a2974318cb0e47a71eb395c28fd39af425c92",
+      "source_path": "framework/genres/law.md",
+      "status": "stable",
+      "title": "Law (Legal and Covenant) Genre Module",
+      "version": "0.1.0"
+    },
+    {
+      "id": "genre.narrative",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "fca31a1f31218c3dd04e30940054d302f3f4dbca44e0c7ddb49fe9d7b38646c7",
+      "source_path": "framework/genres/narrative.md",
+      "status": "stable",
+      "title": "Narrative Genre Module",
+      "version": "0.1.0"
+    },
+    {
+      "id": "genre.poetry",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "0f4e4495f0bd430489c43a78b1df6577b96768d0e3dc989caf825e6db95232e6",
+      "source_path": "framework/genres/poetry.md",
+      "status": "stable",
+      "title": "Poetry Genre Module",
+      "version": "0.1.0"
+    },
+    {
+      "id": "genre.prophecy",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "ed9b71cfb400f5f6a06cda9da1cc869c5b519bc7417b90e4f98342b0a1a8252a",
+      "source_path": "framework/genres/prophecy.md",
+      "status": "stable",
+      "title": "Prophecy Genre Module",
+      "version": "0.1.0"
+    },
+    {
+      "id": "genre.wisdom",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/genre-and-language.md"
+      ],
+      "sha256": "cd6d60bb84ffea747652d10fe2eba4d3f642deaebbbabac55c72b454b7628932",
+      "source_path": "framework/genres/wisdom.md",
+      "status": "stable",
+      "title": "Wisdom Genre Module",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.1-kings",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "c4bd194d3ca5d7a56e59fb58f1f62cbcc7f1eb753c9da5ca47d01489f8c28ac4",
+      "source_path": "framework/books/1-kings.md",
+      "status": "stable",
+      "title": "1 Kings (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.2-kings",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "e8b5db8f69959efb086498d5f4b8b7f5d4f7483eabfef253beea8690ddefc501",
+      "source_path": "framework/books/2-kings.md",
+      "status": "stable",
+      "title": "2 Kings (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.deuteronomy",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "eed70351f8d120eedbba2cf481c06f8ada2cb7db00e9c8f64266ba5efa3f25cf",
+      "source_path": "framework/books/deuteronomy.md",
+      "status": "stable",
+      "title": "Deuteronomy (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.genesis",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "d2b2a9379ff5e26774f31d9ee3e0315edb9e361440e498cdc113b4fa0db36d90",
+      "source_path": "framework/books/genesis.md",
+      "status": "stable",
+      "title": "Genesis (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.isaiah",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "a910af81c22a4ea92247b276ede7f1d6dacfd7498b9a6b3aadf3408f177f1412",
+      "source_path": "framework/books/isaiah.md",
+      "status": "stable",
+      "title": "Isaiah (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.job",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "a84b0408581c464aef5d1e0ef0a1799ee919d1c050090ba0599857601988cc7f",
+      "source_path": "framework/books/job.md",
+      "status": "stable",
+      "title": "Job (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.john",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "534d89d676fcf452093534a76e9faceccdf73190b788eaf93b52c238f3ad72e0",
+      "source_path": "framework/books/john.md",
+      "status": "stable",
+      "title": "John (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.jonah",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "d5ac71f329a963dd2d8dc5cd9e7d2ff67c360405c6cf2a2a42dde1c9a9004a00",
+      "source_path": "framework/books/jonah.md",
+      "status": "stable",
+      "title": "Jonah (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.matthew",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "cce17afad52b64911343b088f3c209a6606bc966f587b723b3256da098874f7a",
+      "source_path": "framework/books/matthew.md",
+      "status": "stable",
+      "title": "Matthew (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.micah",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "02c9ed662e90a8090e443928d53718db6391b946b3975529ce756602aa6985ad",
+      "source_path": "framework/books/micah.md",
+      "status": "stable",
+      "title": "Micah (Book Module)",
+      "version": "0.1.0"
+    },
+    {
+      "id": "book.psalms",
+      "license": "CC-BY-4.0",
+      "outputs": [
+        "skills/explore-scripture/references/passage-guides.md"
+      ],
+      "sha256": "23c464c5db10ff867015e54685c9445cef7307253fc0be770452f64823aa39e4",
+      "source_path": "framework/books/psalms.md",
+      "status": "stable",
+      "title": "Psalms (Book Module)",
+      "version": "0.1.0"
+    }
+  ]
+}
