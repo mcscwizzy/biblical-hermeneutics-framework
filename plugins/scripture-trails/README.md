@@ -11,16 +11,46 @@ manifest. BHF modules are read only by the repository build tool. The plugin has
 no BHF runtime dependency, Bible text database, account, backend, API key,
 external API, or MCP server.
 
+## Conversational discovery in v0.1.2
+
+Scripture Trails answers first, then offers a connection only when it adds
+something useful. It considers explicit quotations, strong allusions and
+literary patterns, passages directly relevant to the question, and historical,
+geographical, language, or cultural details. It ranks candidates by textual
+support, relevance, novelty, and explanatory value; a shared word or broad
+similarity alone is not enough.
+
+The relationship is expressed at the strength the text supports: an explicit
+quotation is distinct from a strong allusion, a thematic comparison, or a
+speculative echo. For example, the Gospels quote Psalm 22:1 in the crucifixion
+scene, while Hebrews 2:12 quotes Psalm 22:22; Hebrews 2:13 then draws on Isaiah
+8:17–18. A Babel and Pentecost comparison can be explored as a possible theme,
+but Acts 2 does not explicitly cite Genesis 11 or restore one universal
+language.
+
+Simple factual questions need no trail. When a meaningful connection is
+available, the plugin normally offers one or two specific, optional directions.
+It may offer three when the reader asks for alternatives or several strong
+connections merit attention. A deep investigation stays focused on the
+requested subject. Invitations explain why a connection matters and leave the
+conclusion open; there is no required “Rabbit Trails” section or generic closing
+question.
+
+Within a conversation, the plugin follows the selected trail, keeps the active
+passage and reasoning in view, avoids repeating material, and returns to the
+original passage when asked. This conversational context does not persist across
+unrelated sessions.
+
 ## Build and validate
 
 From the BHF repository root, Python 3.9+ and the existing PyYAML dependency are
 enough to build it:
 
 ```bash
+python3 tools/build_scripture_trails.py --build
 python3 tools/build_scripture_trails.py --validate
 python3 tools/build_scripture_trails.py --check
-python3 tools/build_scripture_trails.py --build
-python3 tools/build_scripture_trails.py --check
+python3 -m pytest -q tests/test_scripture_trails_build.py
 python3 tools/build_scripture_trails.py --package
 python3 tools/build_scripture_trails.py --validate-zip
 ```
@@ -28,8 +58,8 @@ python3 tools/build_scripture_trails.py --validate-zip
 `--package` builds and validates resources before producing:
 
 ```text
-dist/plugins/scripture-trails-0.1.1.zip
-dist/plugins/scripture-trails-0.1.1.zip.sha256
+dist/plugins/scripture-trails-0.1.2.zip
+dist/plugins/scripture-trails-0.1.2.zip.sha256
 dist/plugins/scripture-trails-build-manifest.json
 ```
 
@@ -89,6 +119,14 @@ and avoids each listed failure. Automated tests validate package structure and
 instruction resources only; they do not run a language model or establish that
 its answers pass these behavioral cases.
 
+For a multi-turn check, ask for two worthwhile connections, select “the second
+one,” ask how it connects to Genesis, and then return to the original passage.
+Check that the plugin follows the option it actually offered, carries forward
+its earlier reasoning, and does not repeat the first answer. End by asking to
+stop or by changing subjects; it should respect that direction without another
+forced suggestion. The focused Psalm 22/Hebrews, Babel/Acts, simple-fact, and
+contested-interpretation cases cover discovery quality and restraint.
+
 ## Local ChatGPT testing
 
 The current ChatGPT desktop plugin workflow installs a plugin from a local
@@ -102,7 +140,7 @@ See the current [plugin packaging guide](https://developers.openai.com/plugins/b
 [skills guide](https://developers.openai.com/plugins/build/skills), and
 [submission guide](https://developers.openai.com/plugins/deploy/submission).
 
-## Prepare a publication release
+## Prepare the v0.1.2 publication release
 
 The plugin has release-ready artwork and draft listing text, but publication
 requires **live conversational tests**, publisher verification, and review.
@@ -113,12 +151,27 @@ packages do not require all four hosted listing URLs under current rules.
 
 
 1. Review the module manifest, generated references, attribution, license, and
-   all manual acceptance cases.
-2. Increment `VERSION` and the matching `plugin.json` version together.
-3. Run source validation, the full Python test suite, `--check`, and `--package`.
-4. Inspect the ZIP and SHA-256 checksum; keep the build manifest with the
-   release record.
-5. Upload the ZIP as a draft using a verified publisher identity. Complete any
+   all manual acceptance cases. For v0.1.2, `VERSION` and `plugin.json` must
+   both contain `0.1.2`.
+2. Refresh generated resources, then validate and package from the repository
+   root:
+
+   ```bash
+   python3 tools/build_scripture_trails.py --build
+   python3 tools/validate.py framework/
+   python3 tools/build_scripture_trails.py --validate
+   python3 tools/build_scripture_trails.py --check
+   python3 -m pytest -q tests/test_scripture_trails_build.py
+   python3 tools/build_scripture_trails.py --package
+   python3 tools/build_scripture_trails.py --validate-zip
+   git diff --check
+   ```
+
+3. Inspect `dist/plugins/scripture-trails-0.1.2.zip`, its `.sha256` checksum,
+   and `dist/plugins/scripture-trails-build-manifest.json`. Automated checks
+   cover deterministic resources and packaging; run the manual model cases
+   before publication.
+4. Upload the ZIP as a draft using a verified publisher identity. Complete any
    listing fields or primary icon assets required by the current portal, pass
    the automated skill checks, and submit the draft for review. Publish only
    after approval and a separate release decision.

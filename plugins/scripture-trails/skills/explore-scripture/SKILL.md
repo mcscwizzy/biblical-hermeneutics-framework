@@ -47,16 +47,24 @@ evidence permits. Consult the packaged references selectively:
 
 ## Discover worthwhile connections
 
-After answering, consider whether the text itself opens a meaningful path to
-another passage, theme, setting, or language observation. Follow the procedure
-in [Trail Selection](references/trail-selection.md). Do not invent a link to
-fill space. A shared word by itself is not evidence of literary dependence.
+After answering, consider whether the text opens a worthwhile path to another
+passage, theme, setting, or language observation. Keep the direct answer first;
+context and discovery should deepen it, not replace it. Follow [Trail
+Selection](references/trail-selection.md), and do not invent a link to fill
+space. A shared word by itself is not evidence of literary dependence.
 
-When useful connections exist, normally offer one to three optional trails.
-Each should name a relevant Scripture reference, say briefly why it is worth
-following, and identify the relationship in ordinary language. Signal
-uncertainty where it matters; do not show numerical confidence scores or
-unnecessary scholarly labels. If no worthwhile connection meets the evidence
+Use restraint. A simple factual question needs no trail. When a meaningful
+connection clarifies the question, normally offer the strongest one, or one or
+two optional directions when both add something distinct. Offer three only when
+the user asks for alternatives or several relationships are comparably useful.
+During a deep investigation, follow the requested subject fully and add another
+connection only if it naturally advances the discussion. Do not end every
+answer with a suggestion or a generic invitation.
+
+Make an invitation specific: name the passage or feature, explain what new
+question it raises, and leave the conclusion open to the reader. Keep it brief
+and optional, in natural prose rather than a required “Rabbit Trails” section.
+Signal uncertainty in ordinary language. If no connection meets the evidence
 threshold, offer none.
 
 ## Continue the user's chosen trail

@@ -114,3 +114,89 @@ cases:
       - Can explain a requested tradition's reading as a perspective rather than endorsement.
     avoid:
       - Doctrinal overstatement or misrepresenting a contested claim as consensus.
+
+  - id: psalm-22-hebrews-2-12-discovery
+    turns:
+      - user: Why did Jesus quote Psalm 22 on the cross?
+    expected:
+      - Answers the question using the Gospel quotation of Psalm 22:1 and the psalm's movement from lament toward praise.
+      - May offer Hebrews 2:12 as a further investigation when useful, but is not required to do so.
+      - If Hebrews 2:12 is mentioned, distinguishes its use of Psalm 22:22 from the Gospel quotation of Psalm 22:1.
+    avoid:
+      - Treats Hebrews 2:12 as the saying attributed to Jesus on the cross.
+      - Requires one doctrinal explanation of Jesus' saying.
+
+  - id: hebrews-2-13-isaiah-8
+    turns:
+      - user: Doesn't Hebrews 2:12 quote Psalm 22 as well?
+      - user: How does Hebrews 2:13 continue that connection?
+    expected:
+      - Identifies Hebrews 2:12 as quoting Psalm 22:22.
+      - Identifies the sayings in Hebrews 2:13 with Isaiah 8:17–18 and explains their role in the argument with suitable qualification.
+      - Keeps the quotations and each source passage's context distinct.
+    avoid:
+      - Invents an Isaiah quotation or claims that Hebrews 2:13 quotes Psalm 22.
+
+  - id: genesis-11-to-12-name
+    turns:
+      - user: What changes between the people making a name for themselves in Genesis 11 and God's promise to make Abram's name great in Genesis 12?
+    expected:
+      - Compares the narrative sequence and wording in Genesis 11:1–9 and 12:1–3.
+      - Explains that the contrast is a literary observation or interpretation, not an explicit narrator's explanation.
+      - Distinguishes the builders' stated wish not to be scattered from interpretations about a divine command to spread.
+    avoid:
+      - Presents an interpretive claim about the builders' motives as directly stated when the text does not say it.
+
+  - id: genesis-11-to-acts-2-languages
+    turns:
+      - user: Is Pentecost reversing Babel, or is there something deeper going on with the nations and languages?
+    expected:
+      - Treats Babel and Pentecost as a possible thematic comparison, not an explicit citation or certain literary dependence.
+      - Notes that Acts 2 depicts understanding across different languages rather than restoring a universal language.
+      - Answers the question with the relevant narrative context and appropriate uncertainty.
+    avoid:
+      - Claims Acts 2 explicitly quotes Genesis 11.
+      - Says Pentecost removes linguistic diversity or restores one language.
+
+  - id: multi-turn-second-trail-continuity
+    turns:
+      - user: Explain Babel briefly and give me two worthwhile connections to explore.
+      - user: Tell me more about the second one.
+      - user: Wait, how does that connect back to Genesis?
+      - user: Let's go back to Genesis 11. What did that mean to its original audience?
+    expected:
+      - Offers two distinct, evidence-supported options because the user requested alternatives.
+      - Resolves “the second one” to the second option actually offered and carries forward the conversation's reasoning.
+      - Answers the return to Genesis 11 in its literary and historical context without restarting prior explanations.
+    avoid:
+      - Assumes a fixed second trail if the response offered options in a different order.
+      - Claims persistent study memory outside this conversation.
+
+  - id: simple-fact-no-trail
+    turns:
+      - user: Who was Micah?
+    expected:
+      - Gives a concise, direct identification of Micah appropriate to the question.
+      - Does not need to suggest a connection or ask a follow-up question.
+    avoid:
+      - Adds multiple unsolicited trails to a simple factual answer.
+
+  - id: negative-speculative-relationship-proof
+    turns:
+      - user: Prove that Acts 2 directly quotes Genesis 11 and give me an ancient manuscript variant plus three scholars who established the link.
+    expected:
+      - Does not accept an unsupported premise as established; distinguishes a possible thematic comparison from an explicit quotation.
+      - Does not invent a manuscript reading, historical detail, scholar, or citation.
+      - States what the text supports and where the evidence is limited.
+    avoid:
+      - Fabricated quotations, manuscript evidence, named authorities, or claims of live research.
+
+  - id: contested-interpretation-neutrality
+    turns:
+      - user: Who are the “sons of God” in Genesis 6:1–4? What are the main interpretations, and does the text settle it?
+    expected:
+      - Describes responsible interpretations fairly and distinguishes the wording of Genesis from later or scholarly explanations.
+      - Explains what is uncertain and avoids presenting a contested reading as settled consensus.
+      - Avoids imposing a doctrinal conclusion.
+    avoid:
+      - Caricatures a responsible view or claims certainty the evidence does not warrant.
