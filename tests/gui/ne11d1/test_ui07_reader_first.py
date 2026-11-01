@@ -114,10 +114,10 @@ def _minimum_text_contrast(driver, selector):
     )
 
 
-def test_enabled_narrative_hub_keeps_context_summaries_and_reader_state(driver, wait, base_url):
+def test_enabled_narrative_hub_keeps_context_summaries_and_reader_state(driver, wait, ne11d1_base_url):
     wait = WebDriverWait(driver, 90)
     driver.set_window_size(1440, 1200)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
     _select_jonah_1_17(driver, wait)
 
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
