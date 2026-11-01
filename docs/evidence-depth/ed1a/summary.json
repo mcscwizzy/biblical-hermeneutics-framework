@@ -1,0 +1,3877 @@
+{
+  "audit_version": "ed1a-1",
+  "baseline_commit": "d4071380f18c5891307fcc3b5a4b99610646e567",
+  "ckl": {
+    "object_count": 687,
+    "manifest_object_count": 687,
+    "inventory_fingerprint": "90fa7547ea4146328ab1fc4f9e4ca1b262f810e0e503c589b64a5f9b8c4a08c6",
+    "claim_count": 2329,
+    "claim_types": {
+      "archaeology": 62,
+      "biblical_text": 656,
+      "biblical_theology": 348,
+      "denominational_interpretation": 1,
+      "historical_cultural": 535,
+      "lexical": 107,
+      "literary": 429,
+      "pastoral_application": 113,
+      "reception_history": 73,
+      "systematic_theology": 5
+    },
+    "typed_evidence_item_count": 1297,
+    "evidence_types": {
+      "ancient-text": 31,
+      "archaeological-site": 18,
+      "artifact": 6,
+      "cultural-practice": 208,
+      "geography-environment": 109,
+      "historical-event": 80,
+      "historical-period": 22,
+      "inscription": 17,
+      "institution": 122,
+      "literary-convention": 292,
+      "manuscript": 11,
+      "material-culture": 32,
+      "other": 2,
+      "people-group": 24,
+      "person": 32,
+      "primary-source": 6,
+      "worldview-concept": 285
+    },
+    "interpretive_note_count": 3691,
+    "interpretive_note_types": {
+      "ancient-near-east-context": 29,
+      "canonical-connection": 114,
+      "hebraic-worldview": 17,
+      "historical-context": 329,
+      "interpretive-caution": 1347,
+      "later-reception": 91,
+      "literary-observation": 239,
+      "second-temple-context": 29,
+      "textual-observation": 1320,
+      "theological-interpretation": 176
+    },
+    "textual_observation_note_count_unclassified_for_language_domain": 1320,
+    "source_backed_child_record_count": 6215,
+    "authored_relationships": {
+      "related_objects_edge_count": 4061,
+      "related_evidence_edge_count": 305
+    },
+    "object_type_counts": {
+      "archaeology": 50,
+      "biblical_theology": 1,
+      "book": 66,
+      "covenant": 1,
+      "cultural_background": 52,
+      "doctrine": 1,
+      "event": 76,
+      "faq": 51,
+      "institution": 34,
+      "literary_device": 1,
+      "person": 102,
+      "place": 90,
+      "prophecy": 10,
+      "symbol": 1,
+      "theme": 50,
+      "theology": 50,
+      "timeline": 1,
+      "word_study": 50
+    }
+  },
+  "sources": {
+    "source_record_occurrence_count": 5232,
+    "source_identity_count": 2783,
+    "source_id_missing_count": 0,
+    "source_ids_with_title_and_bibliographic_detail_count": 2225,
+    "source_ids_missing_title_or_bibliographic_detail_count": 558,
+    "source_ids_missing_locator_when_expected_count": 1,
+    "source_ids_missing_locator_when_expected": [
+      "patristic-minor-prophets"
+    ],
+    "source_ids_missing_title_or_bibliographic_detail_by_type": {
+      "reference-work": 86,
+      "scripture": 472
+    },
+    "child_source_reference_count": 17483,
+    "resolved_child_source_reference_count": 17481,
+    "unresolved_child_source_reference_count": 2,
+    "distinct_source_ids_by_type": {
+      "academic-book": 711,
+      "ancient-primary-source": 128,
+      "excavation-report": 34,
+      "journal-article": 183,
+      "lexicon": 4,
+      "museum-collection": 117,
+      "other": 5,
+      "reference-work": 785,
+      "scripture": 816
+    },
+    "source_ids_with_nonempty_identity_metadata_variation_count": 81,
+    "source_identity_metadata_variation": {
+      "alexandrinus": {
+        "title": [
+          "Codex Alexandrinus",
+          "Codex Alexandrinus, Royal MS 1 D V-VIII",
+          "Codex Alexandrinus, Royal MS 1 D VIII"
+        ],
+        "publisher": [
+          "British Library",
+          "British Library Archives and Manuscripts Catalogue"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ],
+        "url": [
+          "https://searcharchives.bl.uk/catalog/040-001614686",
+          "https://searcharchives.bl.uk/catalog/040-002353500",
+          "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_D_VIII"
+        ]
+      },
+      "ascsa-corinth": {
+        "title": [
+          "Ancient Corinth Excavations",
+          "Ancient Corinth Excavations and Digital Resources"
+        ],
+        "url": [
+          "https://www.ascsa.edu.gr/excavations/ancient-corinth",
+          "https://www.ascsa.edu.gr/excavations/ancient-corinth/digital-corinth"
+        ]
+      },
+      "aune": {
+        "title": [
+          "Revelation",
+          "The New Testament in Its Literary Environment"
+        ],
+        "publisher": [
+          "Westminster Press",
+          "Zondervan Academic"
+        ],
+        "year": [
+          "1987",
+          "1997"
+        ],
+        "url": [
+          "https://www.worldcat.org/title/13424745",
+          "https://zondervanacademic.com/products/revelation-1-5-volume-52a"
+        ]
+      },
+      "aune-literary": {
+        "publisher": [
+          "Westminster John Knox Press",
+          "Westminster Press"
+        ]
+      },
+      "bauckham": {
+        "title": [
+          "Jude, 2 Peter",
+          "The Theology of the Book of Revelation"
+        ],
+        "author": [
+          "Richard Bauckham",
+          "Richard J. Bauckham"
+        ],
+        "publisher": [
+          "Cambridge University Press",
+          "Word Books"
+        ],
+        "year": [
+          "1983",
+          "1993"
+        ],
+        "url": [
+          "https://www.cambridge.org/core/books/theology-of-the-book-of-revelation/8EA06CE90DE826B1F50EC27A3185D9D7",
+          "https://www.worldcat.org/title/8114821"
+        ]
+      },
+      "bdag": {
+        "title": [
+          "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+          "A Greek-English Lexicon of the New Testament and Other Early Christian Literature, Third Edition"
+        ],
+        "author": [
+          "Frederick W. Danker, ed.",
+          "Frederick W. Danker, editor",
+          "Frederick W. Danker, rev. and ed.",
+          "Frederick William Danker, ed.",
+          "Walter Bauer et al.",
+          "Walter Bauer, Frederick W. Danker, William F. Arndt, and F. Wilbur Gingrich",
+          "Walter Bauer; Frederick W. Danker, editor",
+          "Walter Bauer; Frederick W. Danker, rev. and ed."
+        ],
+        "source_type": [
+          "lexicon",
+          "reference-work"
+        ],
+        "url": [
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3620484.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3621110.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3621756.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3622249.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3622275.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3624521.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3624576.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3627098.html",
+          "https://press.uchicago.edu/ucp/books/book/chicago/G/bo5958415.html"
+        ]
+      },
+      "brelaz-philippi": {
+        "title": [
+          "Philippes, colonie romaine d'Orient",
+          "Philippes, colonie romaine d'Orient: Recherches d'histoire institutionnelle et sociale"
+        ]
+      },
+      "burnett-imperial-honors": {
+        "title": [
+          "Imperial Divine Honors in Julio-Claudian Thessalonica and the Thessalonian Correspondence",
+          "Paul and Imperial Divine Honors: Christ, Caesar, and the Gospel"
+        ],
+        "author": [
+          "D. Clint Burnett",
+          "John H. Burnett"
+        ],
+        "publisher": [
+          "Eerdmans",
+          "Journal of Biblical Literature"
+        ],
+        "year": [
+          "2020",
+          "2024"
+        ],
+        "source_type": [
+          "academic-book",
+          "journal-article"
+        ],
+        "url": [
+          "https://doi.org/10.15699/jbl.1393.2020.7",
+          "https://www.eerdmans.com/9781467463539/paul-and-imperial-divine-honors/"
+        ]
+      },
+      "cambridge-qumran": {
+        "year": [
+          "1987",
+          "1995"
+        ]
+      },
+      "claromontanus": {
+        "title": [
+          "Codex Claromontanus",
+          "Codex Claromontanus, GA 06",
+          "Codex Claromontanus, Grec 107"
+        ],
+        "publisher": [
+          "Biblioth\u00e8que nationale de France",
+          "Center for the Study of New Testament Manuscripts"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ],
+        "url": [
+          "https://gallica.bnf.fr/ark:/12148/btv1b84683111",
+          "https://manuscripts.csntm.org/manuscript/View/GA_06"
+        ]
+      },
+      "corinth-ascsa": {
+        "title": [
+          "Ancient Corinth Digital Resources",
+          "Ancient Corinth Excavations and Digital Resources"
+        ],
+        "source_type": [
+          "excavation-report",
+          "museum-collection"
+        ],
+        "url": [
+          "https://corinth.ascsa.net/",
+          "https://www.ascsa.edu.gr/excavations/ancient-corinth/digital-corinth"
+        ]
+      },
+      "cyrus-cylinder": {
+        "title": [
+          "Cyrus Cylinder",
+          "The Cyrus Cylinder"
+        ]
+      },
+      "danylak-singleness": {
+        "author": [
+          "Barry Danylak",
+          "Barry N. Danylak"
+        ],
+        "url": [
+          "https://doi.org/10.1017/9781009373838.007",
+          "https://www.cambridge.org/core/books/paul-and-secular-singleness-in-1-corinthians-7/"
+        ]
+      },
+      "davids": {
+        "title": [
+          "The Epistle of James",
+          "The First Epistle of Peter",
+          "The Letters of 2 Peter and Jude"
+        ],
+        "year": [
+          "1982",
+          "1990",
+          "2006"
+        ],
+        "url": [
+          "https://www.eerdmans.com/9780802823885/the-epistle-of-james/",
+          "https://www.eerdmans.com/9780802825162/the-first-epistle-of-peter/",
+          "https://www.eerdmans.com/9780802837264/the-letters-of-2-peter-and-jude/"
+        ]
+      },
+      "desilva": {
+        "title": [
+          "Honor, Patronage, Kinship & Purity",
+          "Perseverance in Gratitude"
+        ],
+        "publisher": [
+          "Eerdmans",
+          "IVP Academic"
+        ],
+        "year": [
+          "2000",
+          "2022"
+        ],
+        "url": [
+          "https://www.eerdmans.com/9780802841888/perseverance-in-gratitude/",
+          "https://www.ivpress.com/honor-patronage-kinship-purity"
+        ]
+      },
+      "disabled-body": {
+        "publisher": [
+          "SBL Press",
+          "Society of Biblical Literature"
+        ]
+      },
+      "ecm-catholic": {
+        "url": [
+          "https://www.die-bibel.de/en/bible-society-and-biblical-studies/current-projects/editio-critica-maior-ecm",
+          "https://www.uni-muenster.de/INTF/en/forschung/ecm/index.html"
+        ]
+      },
+      "ephesus-unesco": {
+        "title": [
+          "Ephesus",
+          "Ephesus World Heritage Site"
+        ],
+        "publisher": [
+          "UNESCO",
+          "UNESCO World Heritage Centre"
+        ],
+        "source_type": [
+          "excavation-report",
+          "museum-collection",
+          "reference-work"
+        ]
+      },
+      "ephraemi": {
+        "title": [
+          "Codex Ephraemi Rescriptus",
+          "Codex Ephraemi Rescriptus, Grec 9"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ]
+      },
+      "flexsenhar-provenance": {
+        "title": [
+          "The Provenance of Philippians and Why It Matters: Old Questions, New Approaches",
+          "The Provenance of Philippians and Why it Matters: Old Questions, New Approaches"
+        ]
+      },
+      "foster-theology": {
+        "url": [
+          "https://www.cambridge.org/core/books/the-theology-of-the-books-of-haggai-and-zechariah/AD32181E6ADA835BF900CF0354E0A16F",
+          "https://www.cambridge.org/core/books/theology-of-the-books-of-haggai-and-zechariah/AD32181E6ADA835BF900CF0354E0A16F"
+        ]
+      },
+      "fotopoulos-idol-food": {
+        "url": [
+          "https://www.mohrsiebeck.com/en/book/food-offered-to-idols-in-roman-corinth-9783161570100/",
+          "https://www.mohrsiebeck.com/en/book/food-offered-to-idols-in-roman-corinth-9783161574801/"
+        ]
+      },
+      "furnish-second-corinthians": {
+        "year": [
+          "1984",
+          "2005"
+        ]
+      },
+      "galatians-table-text": {
+        "title": [
+          "Galatians 2:11-14",
+          "The Greek New Testament: Galatians"
+        ],
+        "author": [
+          "Michael W. Holmes, ed.",
+          "Paul"
+        ]
+      },
+      "gender-minor-prophets": {
+        "author": [
+          "Scholz, Susanne",
+          "Susanne Scholz"
+        ],
+        "source_type": [
+          "academic-book",
+          "reference-work"
+        ]
+      },
+      "glancy-slavery": {
+        "title": [
+          "Slavery as Moral Problem",
+          "Slavery in Early Christianity"
+        ],
+        "publisher": [
+          "Fortress Press",
+          "Oxford University Press"
+        ],
+        "year": [
+          "2002",
+          "2011"
+        ],
+        "url": [
+          "https://academic.oup.com/book/7076",
+          "https://doi.org/10.1093/0195136098.001.0001",
+          "https://global.oup.com/academic/product/slavery-in-early-christianity-9780195136098",
+          "https://www.fortresspress.com/store/product/9781451410921/Slavery-as-Moral-Problem"
+        ]
+      },
+      "green": {
+        "title": [
+          "1 Peter",
+          "Jude and 2 Peter",
+          "Paul's Letter to Philemon: Manumission \u2026 or What?",
+          "The Letters to the Thessalonians"
+        ],
+        "author": [
+          "Gene L. Green",
+          "Joel B. Green"
+        ],
+        "publisher": [
+          "Baker Academic",
+          "Eerdmans",
+          "Journal of Greco-Roman Christianity and Judaism"
+        ],
+        "year": [
+          "2002",
+          "2007",
+          "2008",
+          "2022"
+        ],
+        "source_type": [
+          "academic-book",
+          "journal-article"
+        ],
+        "url": [
+          "https://bakeracademic.com/p/jude-and-2-peter-gene-l-green/229780",
+          "https://jgrchj.net/volume18/JGRChJ-18_Green.pdf",
+          "https://www.eerdmans.com/9780802825537/1-peter/",
+          "https://www.eerdmans.com/9780802837387/the-letters-to-the-thessalonians/"
+        ]
+      },
+      "harrill-slaves": {
+        "title": [
+          "Slaves in the New Testament",
+          "Slaves in the New Testament: Literary, Social, and Moral Dimensions"
+        ],
+        "url": [
+          "https://www.fortresspress.com/store/product/9780800637811/Slaves-in-the-New-Testament",
+          "https://www.jstor.org/stable/j.ctv1hqdhgf"
+        ]
+      },
+      "iaa-4q78": {
+        "title": [
+          "4Q Minor Prophets (4Q78)",
+          "4Q Minor Prophets, 4Q78"
+        ],
+        "publisher": [
+          "Israel Antiquities Authority",
+          "Leon Levy Dead Sea Scrolls Digital Library"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ]
+      },
+      "iaa-4q82": {
+        "title": [
+          "4Q Minor Prophets (4Q82)",
+          "4Q Minor Prophets, 4Q82",
+          "4Q82 (4QXIIg), Minor Prophets Scroll"
+        ],
+        "publisher": [
+          "Israel Antiquities Authority",
+          "Leon Levy Dead Sea Scrolls Digital Library"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ]
+      },
+      "jewett-romans": {
+        "source_type": [
+          "academic-book",
+          "reference-work"
+        ]
+      },
+      "jewish-annotated-nt": {
+        "author": [
+          "Amy-Jill Levine and Marc Zvi Brettler, editors",
+          "Levine, Amy-Jill, and Marc Zvi Brettler, editors"
+        ],
+        "source_type": [
+          "academic-book",
+          "reference-work"
+        ]
+      },
+      "johnson": {
+        "title": [
+          "Hebrews: A Commentary",
+          "The First and Second Letters to Timothy",
+          "The Letter of James"
+        ],
+        "publisher": [
+          "Westminster John Knox",
+          "Yale University Press"
+        ],
+        "year": [
+          "2001",
+          "2005",
+          "2006"
+        ],
+        "url": [
+          "https://www.wjkbooks.com/Products/0664221181/hebrews.aspx",
+          "https://yalebooks.yale.edu/book/9780300139884/the-first-and-second-letters-to-timothy/",
+          "https://yalebooks.yale.edu/book/9780300139907/the-letter-of-james/"
+        ]
+      },
+      "josephus-antiquities": {
+        "author": [
+          "Flavius Josephus",
+          "Josephus"
+        ]
+      },
+      "keddie-class-power": {
+        "author": [
+          "Anthony Keddie",
+          "G. Anthony Keddie",
+          "Keddie, Anthony"
+        ],
+        "url": [
+          "https://doi.org/10.1017/9781108656757",
+          "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01"
+        ]
+      },
+      "keener-acts": {
+        "source_type": [
+          "academic-book",
+          "reference-work"
+        ],
+        "url": [
+          "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+          "https://bakeracademic.com/pages/keener-acts-esources"
+        ]
+      },
+      "koester": {
+        "title": [
+          "Hebrews",
+          "Revelation: A New Translation with Introduction and Commentary"
+        ],
+        "year": [
+          "2001",
+          "2014"
+        ],
+        "url": [
+          "https://yalebooks.yale.edu/book/9780300139891/hebrews/",
+          "https://yalebooks.yale.edu/book/9780300216912/revelation/"
+        ]
+      },
+      "levine-jant": {
+        "author": [
+          "Amy-Jill Levine and Marc Zvi Brettler, editors",
+          "Amy-Jill Levine and Marc Zvi Brettler, eds."
+        ],
+        "source_type": [
+          "academic-book",
+          "reference-work"
+        ]
+      },
+      "levine-women-acts": {
+        "url": [
+          "https://www.bloomsbury.com/uk/feminist-companion-to-the-acts-of-the-apostles-9780826462527/",
+          "https://www.bloomsbury.com/us/feminist-companion-to-the-acts-of-the-apostles-9780826462534/"
+        ]
+      },
+      "longenecker-poor": {
+        "title": [
+          "Remember the Poor",
+          "Remember the Poor: Paul, Poverty, and the Greco-Roman World"
+        ],
+        "url": [
+          "https://www.eerdmans.com/9780802863737/remember-the-poor/",
+          "https://www.eerdmans.com/Products/6715/remember-the-poor.aspx"
+        ]
+      },
+      "lsj": {
+        "author": [
+          "Henry George Liddell et al.",
+          "Henry George Liddell, Robert Scott, Henry Stuart Jones, and Roderick McKenzie",
+          "Henry George Liddell, Robert Scott, and Henry Stuart Jones"
+        ],
+        "publisher": [
+          "Perseus Digital Library",
+          "Tufts University"
+        ]
+      },
+      "malherbe-thessalonians": {
+        "year": [
+          "2000",
+          "2004"
+        ]
+      },
+      "marshall": {
+        "url": [
+          "https://www.bloomsbury.com/us/pastoral-epistles-9780567084552/",
+          "https://www.logos.com/product/4191/the-pastoral-epistles"
+        ]
+      },
+      "martyn-galatians": {
+        "title": [
+          "Galatians",
+          "Galatians: A New Translation with Introduction and Commentary"
+        ],
+        "url": [
+          "https://yalebooks.yale.edu/9780300139853/galatians/",
+          "https://yalebooks.yale.edu/book/9780300139853/galatians/"
+        ]
+      },
+      "mcknight": {
+        "title": [
+          "The Letter of James",
+          "The Letter to Philemon"
+        ],
+        "year": [
+          "2011",
+          "2017"
+        ],
+        "url": [
+          "https://www.eerdmans.com/9780802826275/the-letter-of-james/",
+          "https://www.eerdmans.com/9780802873828/the-letter-to-philemon/"
+        ]
+      },
+      "meyers-exodus-2005": {
+        "url": [
+          "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906",
+          "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906/listing"
+        ]
+      },
+      "moo": {
+        "title": [
+          "The Letter of James",
+          "The Letters to the Colossians and to Philemon"
+        ],
+        "year": [
+          "2008",
+          "2021"
+        ],
+        "url": [
+          "https://www.eerdmans.com/9780802837271/the-letters-to-the-colossians-and-to-philemon/",
+          "https://www.eerdmans.com/9780802876669/the-letter-of-james/"
+        ]
+      },
+      "nanos-mystery": {
+        "title": [
+          "The Mystery of Romans",
+          "The Mystery of Romans: The Jewish Context of Paul's Letter"
+        ]
+      },
+      "nets-lxx": {
+        "author": [
+          "Albert Pietersma and Benjamin G. Wright, editors",
+          "Albert Pietersma and Benjamin G. Wright, eds."
+        ],
+        "publisher": [
+          "IOSCS",
+          "International Organization for Septuagint and Cognate Studies",
+          "Oxford University Press"
+        ],
+        "year": [
+          "2007",
+          "2009"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "reference-work",
+          "scripture"
+        ],
+        "url": [
+          "https://ccat.sas.upenn.edu/nets/edition/",
+          "https://septuaginta.uni-goettingen.de/ioscs/nets/"
+        ]
+      },
+      "nets-twelve": {
+        "author": [
+          "Albert Pietersma; Benjamin G. Wright, general editors",
+          "George E. Howard",
+          "George E. Howard, translator",
+          "Pietersma and Wright, general editors; Twelve Prophets translators"
+        ],
+        "publisher": [
+          "International Organization for Septuagint and Cognate Studies",
+          "NETS / University of Pennsylvania",
+          "Oxford University Press",
+          "Oxford University Press / University of Pennsylvania CCAT"
+        ],
+        "year": [
+          "2007",
+          "2009"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "reference-work"
+        ]
+      },
+      "ntvmr": {
+        "author": [
+          "Institut f\u00fcr Neutestamentliche Textforschung",
+          "Institute for New Testament Textual Research"
+        ],
+        "publisher": [
+          "Institut f\u00fcr Neutestamentliche Textforschung",
+          "Institute for New Testament Textual Research",
+          "University of M\u00fcnster"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection",
+          "reference-work"
+        ],
+        "url": [
+          "https://ntvmr.uni-muenster.de/",
+          "https://ntvmr.uni-muenster.de/manuscript-workspace"
+        ]
+      },
+      "oakes-philippi": {
+        "url": [
+          "https://assets.cambridge.org/97805217/90468/sample/9780521790468ws.pdf",
+          "https://www.cambridge.org/core/books/philippians/30CA6D8A35D3CA3DA562658E468D1024"
+        ]
+      },
+      "oxford-early-judaism": {
+        "source_type": [
+          "academic-book",
+          "reference-work"
+        ]
+      },
+      "oxford-postcolonial": {
+        "source_type": [
+          "academic-book",
+          "reference-work"
+        ]
+      },
+      "p46-csntm": {
+        "title": [
+          "GA P46 Digital Images and Metadata",
+          "GA P46, Ann Arbor portion",
+          "Gregory-Aland P46",
+          "Papyrus 46"
+        ],
+        "author": [
+          "CSNTM",
+          "Center for the Study of New Testament Manuscripts"
+        ],
+        "publisher": [
+          "CSNTM",
+          "Center for the Study of New Testament Manuscripts"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ],
+        "url": [
+          "https://collections.csntm.org/manuscripts/MNTGRCP46_2",
+          "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+        ]
+      },
+      "p72": {
+        "url": [
+          "https://manuscripts.csntm.org/Manuscript/Group/GA_P72",
+          "https://manuscripts.csntm.org/manuscript/Group/GA_P72?sequence=0"
+        ]
+      },
+      "persepolis-archive": {
+        "author": [
+          "Oriental Institute project team",
+          "Stolper, Matthew W., and project contributors"
+        ],
+        "publisher": [
+          "Oriental Institute, University of Chicago",
+          "University of Chicago"
+        ]
+      },
+      "phi-inscriptions": {
+        "publisher": [
+          "Cornell University and Ohio State University",
+          "Packard Humanities Institute"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ]
+      },
+      "psalm-104": {
+        "source_type": [
+          "reference-work",
+          "scripture"
+        ]
+      },
+      "psalm-110": {
+        "source_type": [
+          "reference-work",
+          "scripture"
+        ]
+      },
+      "psalm-2": {
+        "source_type": [
+          "reference-work",
+          "scripture"
+        ]
+      },
+      "psalm-8": {
+        "source_type": [
+          "reference-work",
+          "scripture"
+        ]
+      },
+      "psalm-84": {
+        "source_type": [
+          "reference-work",
+          "scripture"
+        ]
+      },
+      "reasoner-strong-weak": {
+        "title": [
+          "The Strong and the Weak",
+          "The Strong and the Weak: Romans 14.1-15.13 in Context"
+        ],
+        "url": [
+          "https://doi.org/10.1017/CBO9780511487996",
+          "https://doi.org/10.1017/CBO9780511488061"
+        ]
+      },
+      "reinhartz-anti-judaism": {
+        "author": [
+          "Adele Reinhartz",
+          "Reinhartz, Adele"
+        ]
+      },
+      "reumann-philippians": {
+        "title": [
+          "Philippians",
+          "Philippians: A New Translation with Introduction and Commentary"
+        ]
+      },
+      "romans-greek": {
+        "title": [
+          "Romans",
+          "The Greek New Testament: Romans"
+        ],
+        "author": [
+          "Michael W. Holmes, ed.",
+          "Paul, with Tertius named as scribe"
+        ]
+      },
+      "sblgnt": {
+        "title": [
+          "SBL Greek New Testament",
+          "The Greek New Testament: SBL Edition"
+        ],
+        "author": [
+          "Holmes, Michael W., editor",
+          "Michael W. Holmes",
+          "Michael W. Holmes, editor"
+        ],
+        "url": [
+          "https://sblgnt.com/",
+          "https://www.sbl-site.org/resources/digital-texts/",
+          "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/"
+        ]
+      },
+      "sherwin-white-roman-law": {
+        "url": [
+          "https://doi.org/10.2307/297460",
+          "https://global.oup.com/academic/product/roman-society-and-roman-law-in-the-new-testament-9780198266109"
+        ]
+      },
+      "sinaiticus": {
+        "title": [
+          "Codex Sinaiticus",
+          "Codex Sinaiticus: 1 John",
+          "Codex Sinaiticus: 1 Peter",
+          "Codex Sinaiticus: 1 Timothy",
+          "Codex Sinaiticus: 2 John",
+          "Codex Sinaiticus: 2 Peter",
+          "Codex Sinaiticus: 2 Timothy",
+          "Codex Sinaiticus: 3 John",
+          "Codex Sinaiticus: Hebrews",
+          "Codex Sinaiticus: James",
+          "Codex Sinaiticus: Jude",
+          "Codex Sinaiticus: Philemon",
+          "Codex Sinaiticus: Titus"
+        ],
+        "author": [
+          "British Library and partners",
+          "Codex Sinaiticus Project"
+        ],
+        "publisher": [
+          "British Library and partners",
+          "Codex Sinaiticus Project"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ],
+        "url": [
+          "https://codexsinaiticus.org/",
+          "https://codexsinaiticus.org/en/",
+          "https://codexsinaiticus.org/en/manuscript.aspx",
+          "https://codexsinaiticus.org/en/manuscript.aspx?book=47&lid=en&side=r&zoomslider=0",
+          "https://codexsinaiticus.org/en/manuscript.aspx?book=48&lid=en&side=r&zoomslider=0",
+          "https://www.codexsinaiticus.org/en/",
+          "https://www.codexsinaiticus.org/en/manuscript.aspx",
+          "https://www.codexsinaiticus.org/en/manuscript.aspx?book=50&chapter=1&verse=19"
+        ]
+      },
+      "soon-disabled-apostle": {
+        "title": [
+          "A Disabled Apostle: Impairment and Disability in the Letters of Paul",
+          "A Disabling Gospel"
+        ],
+        "url": [
+          "https://academic.oup.com/book/46798/chapter/413428553",
+          "https://doi.org/10.1093/oso/9780192885241.001.0001"
+        ]
+      },
+      "suetonius-claudius": {
+        "title": [
+          "Divus Claudius",
+          "Life of Claudius"
+        ]
+      },
+      "sybrandi-women": {
+        "author": [
+          "M. Sybrandi",
+          "Marieke Sybrandi"
+        ],
+        "publisher": [
+          "The Expository Times",
+          "University of Oxford"
+        ],
+        "url": [
+          "https://doi.org/10.1177/00145246241287148",
+          "https://ora.ox.ac.uk/objects/uuid:9e7a3c57-7bad-459c-95ec-f89152135e9d"
+        ]
+      },
+      "taylor-prism": {
+        "source_type": [
+          "museum-collection",
+          "reference-work"
+        ]
+      },
+      "vaticanus": {
+        "title": [
+          "Codex Vaticanus",
+          "Codex Vaticanus Graecus 1209",
+          "Codex Vaticanus, Vat. gr. 1209",
+          "Codex Vaticanus, Vat.gr.1209"
+        ],
+        "publisher": [
+          "Biblioteca Apostolica Vaticana",
+          "DigiVatLib",
+          "Vatican Library"
+        ],
+        "source_type": [
+          "ancient-primary-source",
+          "museum-collection"
+        ]
+      },
+      "weima": {
+        "url": [
+          "https://bakeracademic.com/collections/bible/products/9780801026850_1-2-thessalonians",
+          "https://bakeracademic.com/p/1-2-thessalonians-jeffrey-a-d-weima/230711"
+        ]
+      },
+      "white-peace-security": {
+        "title": [
+          "Peace and Security (1 Thess 5.3): Roman Ideology and Greek Aspiration",
+          "Peace and Security (1 Thessalonians 5.3): Is It Really a Roman Slogan?"
+        ],
+        "year": [
+          "2013",
+          "2014"
+        ],
+        "url": [
+          "https://doi.org/10.1017/S0028688513000088",
+          "https://doi.org/10.1017/S0028688514000162"
+        ]
+      },
+      "zondervan-illustrated-historical-books-backgrounds": {
+        "author": [
+          "John H. Walton, general editor; Dale W. Manor, Richard Hess, and other contributors",
+          "John H. Walton, general editor; Dale W. Manor, V. Philips Long, Richard Hess, and other contributors"
+        ]
+      },
+      "zondervan-illustrated-pentateuch-backgrounds": {
+        "author": [
+          "John H. Walton, general editor; Bruce Wells and other contributors",
+          "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors"
+        ]
+      },
+      "zondervan-kings-chronicles-backgrounds": {
+        "author": [
+          "John H. Walton, general editor; Frederick Mabie and other contributors",
+          "John H. Walton, general editor; John M. Monson, Iain Provan, and other contributors"
+        ]
+      },
+      "zondervan-wisdom-backgrounds": {
+        "author": [
+          "John H. Walton, general editor; Izak Cornelius and other contributors",
+          "John H. Walton, general editor; Richard E. Averbeck and other contributors"
+        ]
+      }
+    },
+    "source_ids_with_locator_variation_count": 148,
+    "source_locator_variation": {
+      "2pet-scripture": [
+        "2 Peter 1:1-3:18",
+        "2 Peter 2:1-3:3"
+      ],
+      "3jn-scripture": [
+        "3 John 1:1-14",
+        "3 John 1:1-15"
+      ],
+      "alexandrinus": [
+        "1 Corinthians",
+        "2 Corinthians",
+        "Galatians",
+        "New Testament volume including Hebrews",
+        "Philippians",
+        "Romans",
+        "Royal MS 1 D VIII, 1 Thessalonians",
+        "Royal MS 1 D VIII, 2 Thessalonians",
+        "Royal MS 1 D VIII, Catholic Epistles",
+        "Royal MS 1 D VIII, Colossians",
+        "Royal MS 1 D VIII; 1 Timothy",
+        "Royal MS 1 D VIII; 2 Timothy",
+        "Royal MS 1 D VIII; Philemon",
+        "Royal MS 1 D VIII; Titus"
+      ],
+      "alstola-judeans-babylonia": [
+        "Culture and History of the Ancient Near East 109, chapters 2-5",
+        "Culture and History of the Ancient Near East 109, especially chapters 2-5"
+      ],
+      "ascsa-corinth": [
+        "Corinth",
+        "Corinth excavation archive and publications",
+        "Roman Corinth excavation archive, publications, site history, and GIS"
+      ],
+      "aune": [
+        "Homily, rhetoric, and letter forms",
+        "Word Biblical Commentary 52A-C"
+      ],
+      "aune-literary": [
+        "Letters, apocalyptic literature, and pseudepigraphy",
+        "Letters, paraenesis, lists, and early Christian literary forms",
+        "Letters, paraenesis, testament and literary forms",
+        "Letters, rhetoric, paraenesis, and early Christian literary forms"
+      ],
+      "barclay-gift": [
+        "Ancient gift, grace, reciprocity, and Pauline theology",
+        "Galatians; grace, gift, and community"
+      ],
+      "barclay-rich-poverty": [
+        "69.3, pages 243-257",
+        "69.3, pp. 243-257"
+      ],
+      "bauckham": [
+        "New Testament Theology",
+        "Word Biblical Commentary 50",
+        "Word Biblical Commentary 50, Jude"
+      ],
+      "bdag": [
+        "3rd edition",
+        "Ephesians vocabulary",
+        "Galatians lexical entries",
+        "Relevant Greek lemmas",
+        "Relevant Revelation lemmas",
+        "Romans lexical entries",
+        "Third edition; selected 1 Timothy lexemes",
+        "Third edition; selected 2 Timothy lexemes",
+        "Third edition; selected Philemon lexemes",
+        "Third edition; selected Titus lexemes",
+        "apostasia, katecho, ataktos, olethros, related entries",
+        "eik\u014dn, pr\u014dtotokos, pl\u0113r\u014dma, stoicheion, cheirographon, apekdyomai, thr\u0113skeia",
+        "koinonia, politeuomai, harpagmos, kenoo, apostolos, dikaiosyne, pistis, autarkes",
+        "parousia, skeuos, apantesis, eidos, related entries",
+        "relevant lemmas"
+      ],
+      "brelaz-philippi": [
+        "Institutions, magistracies, elites, colony, and Acts reception",
+        "Parts I-III; institutions, magistracies, elites, imperial family, and Acts reception"
+      ],
+      "british-museum-cyrus-cylinder": [
+        "Collection object 1880,0617.1941; museum number 90920",
+        "Museum number 90920"
+      ],
+      "brown": [
+        "Anchor Bible 30",
+        "Anchor Bible 30, 2 John",
+        "Anchor Bible 30, 3 John"
+      ],
+      "burnett-imperial-honors": [
+        "Chapter 2 and appendices: Philippi's Julio-Claudian divine honors and Pauline comparison",
+        "JBL 139.3, 567-593"
+      ],
+      "cambridge-qumran": [
+        "The Qumran Community, including Pesher Nahum",
+        "The Qumran Community, pages 207-256",
+        "The Qumran Community, pages 207-256, including 1QpHab"
+      ],
+      "claromontanus": [
+        "1 Corinthians",
+        "2 Corinthians",
+        "BnF Grec 107; 2 Timothy",
+        "Galatians",
+        "Grec 107, 1 Thessalonians",
+        "Grec 107, 2 Thessalonians",
+        "Grec 107, Colossians",
+        "Philippians",
+        "Romans in Greek-Latin Pauline codex"
+      ],
+      "cohick-philippians": [
+        "Introduction and commentary",
+        "Philippians 4:2-3"
+      ],
+      "cohick-women": [
+        "Households, work, patronage, travel, and women",
+        "Patronage, households, work and women in Roman society"
+      ],
+      "collins": [
+        "New Testament Library",
+        "New Testament Library; 2 Timothy",
+        "New Testament Library; Titus"
+      ],
+      "corinth-ascsa": [
+        "Roman Corinth and Cenchreae archaeology",
+        "Roman Corinth archaeology and inscriptions",
+        "Roman Corinth excavation archive, publications, site history, and GIS"
+      ],
+      "culture-egnatia-philippi": [
+        "History, Via Egnatia, Roman Forum, sanctuaries, and Christian monuments",
+        "History; Via Egnatia; Roman Forum; rock sanctuaries; early Christian monuments",
+        "Roman and Early Christian site history"
+      ],
+      "cyrus-cylinder": [
+        "Museum number 90920",
+        "Museum number 90920; Babylon, after the conquest in 539 BCE"
+      ],
+      "danylak-singleness": [
+        "1 Corinthians 7",
+        "1 Corinthians 7; especially chapter 7, pages 270-284"
+      ],
+      "davids": [
+        "New International Commentary on the New Testament",
+        "New International Greek Testament Commentary",
+        "Pillar New Testament Commentary",
+        "Pillar New Testament Commentary, Jude"
+      ],
+      "desilva": [
+        "2nd edition",
+        "2nd edition, honor, shame, kinship, purity, and patronage",
+        "2nd edition, patronage, kinship, and hospitality",
+        "2nd edition, patronage, kinship, travel, and hospitality",
+        "Socio-rhetorical commentary"
+      ],
+      "devries-first-second-chronicles": [
+        "Introduction and form-critical commentary on 1 Chronicles",
+        "Introduction and form-critical commentary on 2 Chronicles"
+      ],
+      "disabled-body": [
+        "Disability hermeneutics and biblical texts",
+        "Disability studies essays including Mark 5",
+        "Disability-critical methods"
+      ],
+      "dss": [
+        "Angel, judgment, community, mercy, and eschatology comparanda",
+        "Election, truth, community boundary, and walking comparanda",
+        "Light-darkness, community, spirit, and eschatological comparanda",
+        "Second Temple Jewish manuscript comparanda",
+        "Second Temple election, community, priesthood, spirit, and Noah comparanda",
+        "Second Temple prophecy, judgment, angel, and renewed-creation comparanda",
+        "Truth, name, community, travel, and hospitality comparanda"
+      ],
+      "ecm-catholic": [
+        "1 John",
+        "2 John",
+        "2 Peter",
+        "3 John",
+        "James",
+        "Jude",
+        "The Letters of Peter"
+      ],
+      "ehrensperger": [
+        "Diaspora, ethnicity, power, and cross-cultural interpretation",
+        "Diaspora, ethnicity, power, and reception",
+        "Paul, Jewish identity, and intercultural interpretation"
+      ],
+      "ehrman": [
+        "Early Christian authorship discourse and Pastoral Epistles",
+        "Early Christian authorship discourse and Pauline letters",
+        "Pastoral Epistles and authorship discourse"
+      ],
+      "enoch": [
+        "1 Enoch 1:9 and Watcher traditions",
+        "Watcher judgment and cosmic traditions"
+      ],
+      "ephesus-unesco": [
+        "Ephesus archaeology",
+        "Theater, civic center, harbor, and cult landscape",
+        "World Heritage List 1018rev"
+      ],
+      "ephraemi": [
+        "BnF Grec 9; portions of 2 Timothy",
+        "Grec 9",
+        "Pauline Epistles",
+        "Philippians extant portions"
+      ],
+      "epp-junia": [
+        "Romans 16:7 name, text, translation, and reception",
+        "Romans 16:7 text, name and reception"
+      ],
+      "eusebius": [
+        "Books 2-3, Jude and disputed writings",
+        "Books 3 and 6, Johannine writings and disputed books"
+      ],
+      "fee-1cor": [
+        "1 Corinthians 2 and 12-14",
+        "passim"
+      ],
+      "fee-philippians": [
+        "Introduction and commentary",
+        "Philippians 1:12-30; 2:25-30; 3:1-21"
+      ],
+      "flexsenhar-provenance": [
+        "42.1",
+        "Volume 42, issue 1, pages 18-45"
+      ],
+      "fotopoulos-idol-food": [
+        "1 Corinthians 8:1-11:1 and Corinthian archaeological settings",
+        "First Corinthians 8-10 and Corinthian archaeological settings"
+      ],
+      "frey": [
+        "Theologischer Handkommentar 15/2, Jude",
+        "Theologischer Handkommentar zum Neuen Testament 15/2"
+      ],
+      "furnish-2cor": [
+        "2 Corinthians 2:5-11 and 7:2-16",
+        "passim"
+      ],
+      "furnish-second-corinthians": [
+        "2 Corinthians 1-7 and 10-13",
+        "2 Corinthians 8-9"
+      ],
+      "gaventa": [
+        "1 Thessalonians",
+        "2 Thessalonians"
+      ],
+      "gender-minor-prophets": [
+        "The Oxford Handbook of the Minor Prophets, chapter 22",
+        "The Oxford Handbook of the Minor Prophets, chapter 22, pages 298-312"
+      ],
+      "glancy": [
+        "Roman enslavement, bodies, households, and early Christian texts",
+        "Roman enslavement, households, bodies, and labor",
+        "Slavery, bodies, households, and reception"
+      ],
+      "glancy-slavery": [
+        "Bodies and Pauline churches",
+        "Enslaved bodies, households, sexuality, and Pauline assemblies",
+        "Enslaved bodies, metaphors, and early Christian practice",
+        "Enslaved bodies, ownership, labor, sexuality, and early Christian texts",
+        "New Testament slavery and embodied ethics",
+        "Pauline bodies, sexual availability, households, and slavery",
+        "Slavery and bodies",
+        "chapters 1-3; enslaved bodies, Pauline communities, and metaphor"
+      ],
+      "green": [
+        "1 Thessalonians",
+        "2 Thessalonians",
+        "Baker Exegetical Commentary on the New Testament",
+        "Baker Exegetical Commentary, Jude",
+        "Two Horizons New Testament Commentary",
+        "Volume 18, pp. 92-112"
+      ],
+      "harrill-slaves": [
+        "Pauline letters",
+        "Pauline slavery language and social history",
+        "Pauline slavery language, social history, and moral reception",
+        "Pauline slavery language, status, and Roman social history"
+      ],
+      "hill-reception": [
+        "Johannine letters",
+        "The shorter Johannine letters"
+      ],
+      "hoffmeier-ancient-israel-sinai-2005": [
+        "Chapters 4-5: route from Rameses and location of the Sea",
+        "Chapters 4-7: route to the Sea, Sea identification, mountain, and wilderness travel",
+        "Chapters 4-7: route, Sea, mountain, and wilderness travel"
+      ],
+      "horrell-ecology": [
+        "Romans 8 and critical ecological interpretation",
+        "Romans 8 and ecological hermeneutics"
+      ],
+      "hubbard-ruth": [
+        "Commentary on Ruth 4",
+        "Introduction and commentary on Ruth 1-4"
+      ],
+      "huizenga": [
+        "Wisdom Commentary 53",
+        "Wisdom Commentary 53; 2 Timothy",
+        "Wisdom Commentary 53; Titus"
+      ],
+      "iaa-4q78": [
+        "4Q78 / 4QXII-c, preserving Zephaniah portions",
+        "4QXIIc manuscript images"
+      ],
+      "iaa-4q82": [
+        "4Q82",
+        "4Q82 / 4QXII-g",
+        "4Q82 / 4QXII-g, Herodian Hebrew Twelve manuscript",
+        "4QXIIg manuscript images",
+        "Digital Dead Sea Scrolls manuscript record"
+      ],
+      "iranica-judeo-persian": [
+        "Achaemenid-period Judean communities and Haggai",
+        "Achaemenid-period Judean communities and Zechariah"
+      ],
+      "jewett-romans": [
+        "Hermeneia; Romans 14:1-15:13",
+        "Introduction; Romans 13-16"
+      ],
+      "jewish-annotated-nt": [
+        "John introduction, annotations, and Jewish-context essays",
+        "Luke and thematic essays",
+        "Second edition, Mark and essays",
+        "Second edition, Matthew annotations and contextual essays"
+      ],
+      "johnson": [
+        "Anchor Yale Bible 35A",
+        "Anchor Yale Bible 35A; 2 Timothy",
+        "Anchor Yale Bible 37A",
+        "New Testament Library"
+      ],
+      "josephus": [
+        "First-century Judean and diaspora comparanda",
+        "First-century Judean, Roman, provincial, and diaspora comparanda",
+        "Roman-period Judean and diaspora comparanda",
+        "Roman-period Judean and diaspora social comparanda",
+        "Roman-period Judean and diaspora travel and patronage comparanda"
+      ],
+      "josephus-antiquities": [
+        "Antiquities 17-18 on Herod, Quirinius, and Judas",
+        "Books 18-20",
+        "Second Temple Judea, Samaria, priesthood, Pilate, and Roman rule"
+      ],
+      "judges-1-21": [
+        "Judges 1:1-21:25",
+        "Judges 2:6-23; 3:7-16:31"
+      ],
+      "keddie-class-power": [
+        "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+        "The Socioeconomic Setting of Judaism and Christian Origins",
+        "Whole volume"
+      ],
+      "keddie-power": [
+        "Economy, class, labor, taxation, and elite power",
+        "Roman Palestine, class, elite power, households, and labor"
+      ],
+      "keener-acts": [
+        "Acts 16 and 18, volumes 3-4",
+        "Volumes 1-4",
+        "volumes 2-3, Acts 13-20"
+      ],
+      "kent-erastus": [
+        "Corinth VIII.2, no. 111, Erastus pavement inscription; supplemented by Corinth VIII.3, no. 232",
+        "Corinth VIII.2, no. 111; supplemented by Corinth VIII.3, no. 232"
+      ],
+      "koester": [
+        "Anchor Yale Bible 36",
+        "Anchor Yale Bible 38A"
+      ],
+      "kruse": [
+        "Pillar New Testament Commentary",
+        "Pillar New Testament Commentary, 2 John",
+        "Pillar New Testament Commentary, 3 John"
+      ],
+      "lange-4q82": [
+        "Analysis of 4Q82, including Obadiah readings",
+        "Inventory and analysis of preserved 4Q82 material"
+      ],
+      "lau-ruth": [
+        "Commentary on Ruth 4",
+        "Introduction and commentary on Ruth 1-4"
+      ],
+      "levine-jant": [
+        "1 Thessalonians and Jewish contexts",
+        "2 Thessalonians and Jewish contexts",
+        "2nd edition, 1 John and essays",
+        "2nd edition, 1 Peter and essays",
+        "2nd edition, 2 John and essays",
+        "2nd edition, 2 Peter and essays",
+        "2nd edition, 3 John and essays",
+        "2nd edition, James",
+        "2nd edition, Jude and essays",
+        "Colossians and Jewish contexts",
+        "Hebrews notes and essays",
+        "Second edition; 1 Timothy and Jewish contexts",
+        "Second edition; 2 Timothy and Jewish contexts",
+        "Second edition; Philemon and Jewish contexts",
+        "Second edition; Titus and Jewish contexts"
+      ],
+      "levine-leviticus": [
+        "Commentary on Leviticus 11-20",
+        "Introduction and commentary on Leviticus 1-27"
+      ],
+      "levine-women-acts": [
+        "Women, gender, bodies, and power in Acts",
+        "Women, gender, bodies, status, speech, and power in Acts"
+      ],
+      "lieu": [
+        "New Testament Library",
+        "New Testament Library, 2 John",
+        "New Testament Library, 3 John"
+      ],
+      "loader-sexuality": [
+        "1 Corinthians 5-7",
+        "Romans 1; 1 Corinthians 5-7; marriage, celibacy, slavery, and same-sex intercourse"
+      ],
+      "longenecker-poor": [
+        "Greco-Roman poverty, Pauline communities, and care for poor people",
+        "Jerusalem collection and economic practice",
+        "Pauline collection and economics"
+      ],
+      "lsj": [
+        "Classical and Hellenistic comparanda",
+        "Greek household and civic vocabulary",
+        "Greek lexical comparanda",
+        "Wider Greek lexical comparanda",
+        "harpagmos, politeuomai, politeuma, autarkes",
+        "paidagogos, stoicheion, stigmata, and related entries"
+      ],
+      "magness-archaeology": [
+        "Early Roman and Herodian period",
+        "Early Roman period"
+      ],
+      "malherbe": [
+        "Introduction and commentary on 1 Thessalonians",
+        "Introduction and commentary on 2 Thessalonians"
+      ],
+      "malherbe-thessalonians": [
+        "1 Thessalonians 2-5",
+        "1 Thessalonians 4:13-5:11"
+      ],
+      "marshall": [
+        "International Critical Commentary",
+        "International Critical Commentary; 2 Timothy",
+        "International Critical Commentary; Titus"
+      ],
+      "martyn-galatians": [
+        "Anchor Yale Bible 33A",
+        "Galatians 1-6",
+        "Galatians 3:23-4:11"
+      ],
+      "metzger-canon": [
+        "Catholic Epistles and 2 Peter reception",
+        "Catholic Epistles and Jude reception",
+        "Johannine writings and Catholic Epistles"
+      ],
+      "meyers-exodus-2005": [
+        "New Cambridge Bible Commentary, Exodus 13-19",
+        "New Cambridge Bible Commentary, Exodus 15-19",
+        "New Cambridge Bible Commentary, Exodus 5-12",
+        "Part III, pp. 209-284: Exodus 25:1-40:38"
+      ],
+      "moo": [
+        "Pillar New Testament Commentary, 2nd edition",
+        "Pillar New Testament Commentary; Philemon"
+      ],
+      "murphy-corinth": [
+        "Roman city, ports, inscriptions, cults, and Pauline passages",
+        "passim"
+      ],
+      "nanos-mystery": [
+        "Roman Jewish setting; weak and strong; chapters 9-16",
+        "Roman assemblies, Jews and gentiles, Romans 9-16"
+      ],
+      "negotiating-disabled-body": [
+        "Early Christian disability representation",
+        "Whole volume"
+      ],
+      "nets": [
+        "Deuteronomy, Leviticus, Ruth, and lexical comparanda",
+        "Genesis, Deuteronomy, Psalms, Proverbs, and lexical comparanda",
+        "Genesis, Deuteronomy, Psalms, and scriptural comparanda"
+      ],
+      "nets-lxx": [
+        "Exodus, Numbers, Psalms, Isaiah, and related comparanda",
+        "Exodus, Psalms, Isaiah, Jeremiah",
+        "Genesis, Deuteronomy, Leviticus, and wisdom comparanda",
+        "Genesis, Deuteronomy, Psalms, Proverbs, Isaiah, Habakkuk and the Twelve",
+        "Genesis, Exodus, Deuteronomy, Psalms, Isaiah, Hosea",
+        "Genesis, Exodus, Leviticus, Psalms, Proverbs, Isaiah, and Hosea comparanda",
+        "Genesis, Exodus, Numbers, Deuteronomy, and Zechariah",
+        "Genesis, Leviticus, Deuteronomy, Habakkuk, Isaiah",
+        "Genesis, Numbers, Psalms, Proverbs, and Isaiah comparanda",
+        "Genesis, Proverbs, Job, Sirach, Wisdom, and prophetic comparanda",
+        "Genesis, Psalms, Proverbs, Hosea, Chronicles, Ezekiel",
+        "Isaiah, Daniel, Amos, Joel, Zephaniah",
+        "Isaiah, Daniel, Ezekiel, and related texts",
+        "Isaiah, Deuteronomy, and Daniel",
+        "Joel, Psalms, Isaiah, Amos",
+        "Pentateuch, Psalms, Isaiah, and wisdom comparanda",
+        "Pentateuch, Psalms, and wisdom comparanda",
+        "Psalms, Genesis, Exodus, Jeremiah and Habakkuk comparanda",
+        "Psalms, Isaiah, Genesis, Deuteronomy"
+      ],
+      "nets-twelve": [
+        "Abdias, pp. 803-804",
+        "Aggaios",
+        "Ambakoum",
+        "Hosee",
+        "Ionas",
+        "Michaias",
+        "Naoum",
+        "Sophonias",
+        "Zacharias"
+      ],
+      "neyrey": [
+        "Anchor Yale Bible 37C",
+        "Anchor Yale Bible 37C, Jude"
+      ],
+      "ntvmr": [
+        "1 Corinthians witnesses including P15, P46, P123 and majuscules",
+        "1 John manuscript witnesses",
+        "1 Peter manuscript witnesses",
+        "1 Thessalonians witnesses and variants",
+        "1 Timothy manuscript witnesses",
+        "2 Corinthians witnesses including P99",
+        "2 John manuscript witnesses",
+        "2 Peter manuscript witnesses",
+        "2 Thessalonians witnesses and variants",
+        "2 Timothy manuscript witnesses",
+        "3 John manuscript witnesses",
+        "Colossians witnesses and variants",
+        "Ephesians witnesses and apparatus",
+        "Galatians manuscript witnesses and apparatus data",
+        "Hebrews manuscript witnesses",
+        "James manuscript witnesses",
+        "Jude manuscript witnesses",
+        "Mark manuscript workspace",
+        "Philemon manuscript witnesses and versions",
+        "Philippians witnesses and apparatus",
+        "Romans witnesses P10, P26, P27, P31, P40, P46, P61 and codices",
+        "Titus manuscript witnesses and versions"
+      ],
+      "oakes-philippi": [
+        "Chapters 1-2: Philippi's population and plausible assembly composition",
+        "Chapters 1-3: colony, population, assembly social composition, suffering, and unity",
+        "Philippi, social composition, citizenship, and letter setting"
+      ],
+      "oxford-early-judaism": [
+        "The Oxford Handbook of the Minor Prophets, chapter 17",
+        "The Oxford Handbook of the Minor Prophets, pp. 228-242"
+      ],
+      "oxford-johannine": [
+        "Chapters on community, history, and Jewish characterization",
+        "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon"
+      ],
+      "oxford-postcolonial": [
+        "The Oxford Handbook of the Minor Prophets, chapter 25, pages 341-355",
+        "The Oxford Handbook of the Minor Prophets, pp. 341-355"
+      ],
+      "p30-csntm": [
+        "P30, portions of 1 Thessalonians 4-5",
+        "P30, portions of 1 and 2 Thessalonians"
+      ],
+      "p46-csntm": [
+        "2 Corinthians",
+        "Colossians",
+        "Ephesians portions",
+        "Galatians portions",
+        "Pauline codex including Philippians",
+        "Pauline codex including most of 1 Corinthians",
+        "Pauline papyrus codex including most of Romans"
+      ],
+      "p72": [
+        "GA P72; 1 Peter, 2 Peter, and Jude with other works",
+        "GA P72; 2 Peter with 1 Peter, Jude, and other works",
+        "GA P72; Jude with 1 and 2 Peter and other works"
+      ],
+      "packard-inscriptions": [
+        "Macedonia and Philippi",
+        "Phrygia and Roman Asia"
+      ],
+      "payne-women": [
+        "1 Corinthians 11 and 14",
+        "1 Corinthians 11 and 14, especially pages 217-267"
+      ],
+      "perkins": [
+        "Interpretation commentary",
+        "Interpretation commentary, Jude"
+      ],
+      "persepolis-archive": [
+        "2016-2017 Annual Report",
+        "Project report and archive overview"
+      ],
+      "phi-inscriptions": [
+        "Achaia and Macedonia",
+        "Corinthia",
+        "Galatia and Anatolia",
+        "Roman Corinth inscriptions"
+      ],
+      "phi-thessalonica-politarchs-32": [
+        "IG X,2 1 32; before the end of the first century CE",
+        "IG X,2 1 32; dated before the end of the first century CE"
+      ],
+      "philippi-unesco": [
+        "Brief synthesis and criteria iii-iv",
+        "Brief synthesis; criteria iii-iv; integrity and authenticity"
+      ],
+      "philo": [
+        "Diaspora Jewish ethical and scriptural comparanda",
+        "Diaspora Jewish scriptural and ethical comparanda",
+        "Greek-speaking Jewish ethical and household comparanda",
+        "Greek-speaking Jewish ethical, travel, and household comparanda",
+        "Greek-speaking Jewish philosophical and scriptural comparanda"
+      ],
+      "propp-exodus-1-18-1999": [
+        "Anchor Yale Bible commentary on Exodus 13-15",
+        "Anchor Yale Bible commentary on Exodus 13-18"
+      ],
+      "reasoner-strong-weak": [
+        "Romans 14:1-15:13",
+        "Romans 14:1-23"
+      ],
+      "reumann-philippians": [
+        "Introduction and commentary",
+        "Philippians 1-4",
+        "Philippians 4:10-20",
+        "Philippians 4:2-3"
+      ],
+      "richards": [
+        "Materials, production, and delivery comparanda",
+        "Materials, production, delivery, and travel support comparanda"
+      ],
+      "saller": [
+        "Patronage, hierarchy, reciprocity, and wealth",
+        "Patronage, hierarchy, reciprocity, obligation, and provision",
+        "Patronage, hierarchy, reciprocity, travel, and provision"
+      ],
+      "sarna-exodus-1991": [
+        "Commentary on Exodus 1:8-14 and 5:6-19",
+        "Commentary on Exodus 5 and 7-12",
+        "Commentary on Exodus 5:1-5, 7:1-5, and 12:12"
+      ],
+      "sawyer-art-music": [
+        "The Oxford Handbook of the Minor Prophets, chapter 21",
+        "The Oxford Handbook of the Minor Prophets, chapter 21, pages 279-295"
+      ],
+      "sbl-new-form-twelve": [
+        "Open-access volume",
+        "Open-access volume, including form-critical treatment of Jonah"
+      ],
+      "sblgnt": [
+        "Luke",
+        "Mark",
+        "Matthew 11; Matthew 17; Mark 1; Luke 1 and 7; Romans 9",
+        "Matthew, Mark, John, Hebrews, and Revelation",
+        "Revelation"
+      ],
+      "shepherd-early-christianity": [
+        "The Oxford Handbook of the Minor Prophets, chapter 18",
+        "The Oxford Handbook of the Minor Prophets, chapter 18, pages 243-251"
+      ],
+      "sherwin-white-roman-law": [
+        "Acts, Roman citizenship, colonies, magistrates, punishment, and procedure",
+        "Roman citizenship, magistrates, hearings, provincial procedure, and appeal in Acts"
+      ],
+      "sherwin-white-society": [
+        "Acts, appeal, custody, citizenship, and Roman procedure",
+        "Acts, citizenship, provincial administration, and trials"
+      ],
+      "sieges-one-or-twelve": [
+        "The Oxford Handbook of the Minor Prophets, chapter 3",
+        "The Oxford Handbook of the Minor Prophets, chapter 3, pages 29-38"
+      ],
+      "sinaiticus": [
+        "1 Corinthians",
+        "1 Thessalonians",
+        "1 Timothy",
+        "2 Corinthians",
+        "2 Thessalonians",
+        "2 Timothy",
+        "Acts",
+        "Add MS 43725, ff. 288v-293v",
+        "Catholic Epistles, 1 John",
+        "Catholic Epistles, 1 Peter",
+        "Catholic Epistles, 2 John",
+        "Catholic Epistles, 2 Peter",
+        "Catholic Epistles, 3 John",
+        "Catholic Epistles, James",
+        "Catholic Epistles, Jude",
+        "Colossians",
+        "Ephesians",
+        "Galatians",
+        "Philemon",
+        "Philippians",
+        "Revelation",
+        "Romans",
+        "Titus"
+      ],
+      "smalley": [
+        "Word Biblical Commentary 51",
+        "Word Biblical Commentary 51, 2 John",
+        "Word Biblical Commentary 51, 3 John"
+      ],
+      "smith-banquet": [
+        "Early Christian meals",
+        "Early Christian meals and association banquets"
+      ],
+      "soon-disabled-apostle": [
+        "A Disabled Apostle, chapter 7, pp. 129-151",
+        "chapters 1-4 and epilogue; Pauline impairment and disability method"
+      ],
+      "stowers": [
+        "Letter forms, commendation, travel, greeting, and paraenesis",
+        "Letter forms, travel, greeting, and paraenesis"
+      ],
+      "sybrandi-women": [
+        "136.3, pages 92-101",
+        "Phoebe, Prisca, Junia and women coworkers"
+      ],
+      "thiessen-gentile": [
+        "Paul, gentiles, Torah, circumcision and Israel",
+        "Paul, gentiles, Torah, circumcision, and Israel"
+      ],
+      "thiessen-gentile-problem": [
+        "Galatians; circumcision, Torah, and gentile identity",
+        "Galatians; gentile circumcision, Torah, Abraham, and identity"
+      ],
+      "thiselton-1cor": [
+        "1 Corinthians 11:2-16 and 14:1-40",
+        "passim"
+      ],
+      "thompson": [
+        "IVP New Testament Commentary",
+        "IVP New Testament Commentary, 2 John",
+        "IVP New Testament Commentary, 3 John"
+      ],
+      "timmer-theology": [
+        "Chapter 2, pages 24-103",
+        "Chapter 3, pages 104-172",
+        "Chapter 4, pages 173-238"
+      ],
+      "towner": [
+        "2 Timothy",
+        "New International Commentary on the New Testament",
+        "New International Commentary on the New Testament; Titus"
+      ],
+      "vaticanus": [
+        "1 Corinthians",
+        "2 Corinthians",
+        "Acts",
+        "Galatians",
+        "Greek Gospel manuscript",
+        "Philippians",
+        "Romans",
+        "Vat.gr.1209, 1 Thessalonians",
+        "Vat.gr.1209, 2 Thessalonians",
+        "Vat.gr.1209, Catholic Epistles",
+        "Vat.gr.1209, Colossians",
+        "Vat.gr.1209; Pauline ending is lacunose before 1 Timothy",
+        "Vat.gr.1209; Pauline ending is lacunose before Titus",
+        "Vat.gr.1209; surviving Pauline corpus ends before Philemon",
+        "Vat.gr.1209; surviving Pauline corpus ends before the Pastorals"
+      ],
+      "wanamaker": [
+        "1 Thessalonians",
+        "2 Thessalonians"
+      ],
+      "weima": [
+        "1 Thessalonians",
+        "2 Thessalonians"
+      ],
+      "westfall": [
+        "Gender, households, learning, and Pauline comparison",
+        "Gendered instruction and Pauline comparison"
+      ],
+      "white-peace-security": [
+        "60.4, pages 499-510",
+        "NTS 59.3, 382-395"
+      ],
+      "wire-women": [
+        "1 Corinthians 7, 11, 14",
+        "1 Corinthians 7, 11, and 14"
+      ],
+      "wolter-romans": [
+        "Romans 1-16",
+        "Romans 8:12-25"
+      ],
+      "yarbrough": [
+        "Baker Exegetical Commentary on the New Testament",
+        "Baker Exegetical Commentary, 2 John",
+        "Baker Exegetical Commentary, 3 John"
+      ],
+      "zondervan-illustrated-historical-books-backgrounds": [
+        "1 Samuel commentary and background notes",
+        "2 Samuel commentary and background notes",
+        "Joshua commentary and background notes",
+        "Judges commentary and background notes",
+        "Ruth commentary and background notes"
+      ],
+      "zondervan-illustrated-pentateuch-backgrounds": [
+        "Deuteronomy commentary and background notes",
+        "Exodus",
+        "Genesis",
+        "Leviticus commentary and background notes",
+        "Numbers commentary and background notes"
+      ],
+      "zondervan-kings-chronicles-backgrounds": [
+        "1 Chronicles commentary and background notes",
+        "1 Kings commentary and background notes",
+        "2 Chronicles commentary and background notes",
+        "2 Kings commentary and background notes"
+      ],
+      "zondervan-kings-chronicles-ezra-backgrounds": [
+        "Esther commentary and background notes",
+        "Ezra commentary and background notes",
+        "Nehemiah commentary and background notes"
+      ],
+      "zondervan-wisdom-backgrounds": [
+        "Zondervan Illustrated Bible Backgrounds Commentary, Job sections",
+        "Zondervan Illustrated Bible Backgrounds Commentary, Proverbs sections",
+        "Zondervan Illustrated Bible Backgrounds Commentary, Psalms sections"
+      ]
+    }
+  },
+  "lexicon": {
+    "asset": "framework/lexical/database/lexicon.sqlite.gz",
+    "compressed_sha256": "76c393b666aa292f245b728cd04f5d0cde668556b21046405e6ccff6250ea0ff",
+    "sqlite_integrity_check": "ok",
+    "entry_count_by_language": {
+      "greek": 5523,
+      "hebrew": 8674
+    },
+    "verse_word_count_by_language": {
+      "greek": 137554,
+      "hebrew": 306785
+    },
+    "verse_word_row_count": 444339,
+    "chapters_with_verse_word_rows": 1189,
+    "source_count": 4,
+    "sources": [
+      {
+        "source": "MorphGNT SBLGNT",
+        "license": "Morphology CC BY-SA 3.0; SBLGNT text subject to SBLGNT EULA",
+        "revision": "aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d"
+      },
+      {
+        "source": "OSHB",
+        "license": "CC BY 4.0",
+        "revision": "3d15126fb1ef74867fc1434be1942e837932691f"
+      },
+      {
+        "source": "Open Scriptures Greek Lexicon",
+        "license": "CC BY-SA",
+        "revision": "unspecified"
+      },
+      {
+        "source": "Open Scriptures Hebrew Lexicon",
+        "license": "CC BY-SA",
+        "revision": "unspecified"
+      }
+    ],
+    "interpretation_boundary": "Packaged entries and verse tokens provide general lexical lookup, not passage-specific curated lexical analysis."
+  },
+  "chapter_inventory": {
+    "book_count": 66,
+    "chapter_count": 1189,
+    "unique_chapter_count": 1189,
+    "coverage_categories": {
+      "contextual_coverage": 68,
+      "entity_only_coverage": 3,
+      "incomplete_or_unknown": 1,
+      "no_eligible_ckl_material": 132,
+      "passage_specific_evidence": 985
+    },
+    "unmapped_projected_record_identity_count": 0,
+    "unclassified_projected_record_placements": 1023,
+    "chapters_with_unclassified_projected_records": 394,
+    "passage_specific_source_backed_child_placements": 6098,
+    "projected_child_record_scope_placements": {
+      "typed_child_record_count": 8484,
+      "verse_scoped_record_count": 6276,
+      "chapter_scoped_record_count": 8,
+      "broad_context_record_count": 2200,
+      "inherited_parent_scope_record_count": 0,
+      "unanchored_record_count": 0,
+      "invalid_anchor_record_count": 0
+    },
+    "by_book": [
+      {
+        "book": "Genesis",
+        "chapter_count": 50,
+        "coverage_categories": {
+          "passage_specific_evidence": 50
+        },
+        "chapters_with_any_traceable_typed_child": 50,
+        "chapters_with_unclassified_projected_items": 14,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 50,
+        "chapters_with_historical_cultural_traceable_records": 50,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 50,
+        "chapters_with_literary_textual_traceable_records": 50,
+        "chapters_with_ancient_primary_sources_records": 19,
+        "chapters_with_ancient_primary_sources_traceable_records": 19,
+        "chapters_with_archaeology_geography_records": 40,
+        "chapters_with_archaeology_geography_traceable_records": 40,
+        "chapters_with_narrative_connections_records": 5,
+        "chapters_with_narrative_connections_traceable_records": 5,
+        "chapters_with_scholarly_discussion_records": 50,
+        "chapters_with_scholarly_discussion_traceable_records": 50
+      },
+      {
+        "book": "Exodus",
+        "chapter_count": 40,
+        "coverage_categories": {
+          "passage_specific_evidence": 40
+        },
+        "chapters_with_any_traceable_typed_child": 40,
+        "chapters_with_unclassified_projected_items": 16,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 40,
+        "chapters_with_historical_cultural_traceable_records": 40,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 40,
+        "chapters_with_literary_textual_traceable_records": 40,
+        "chapters_with_ancient_primary_sources_records": 6,
+        "chapters_with_ancient_primary_sources_traceable_records": 6,
+        "chapters_with_archaeology_geography_records": 8,
+        "chapters_with_archaeology_geography_traceable_records": 8,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 40,
+        "chapters_with_scholarly_discussion_traceable_records": 40
+      },
+      {
+        "book": "Leviticus",
+        "chapter_count": 27,
+        "coverage_categories": {
+          "passage_specific_evidence": 27
+        },
+        "chapters_with_any_traceable_typed_child": 27,
+        "chapters_with_unclassified_projected_items": 6,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 10,
+        "chapters_with_historical_cultural_traceable_records": 10,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 27,
+        "chapters_with_literary_textual_traceable_records": 27,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 18,
+        "chapters_with_scholarly_discussion_traceable_records": 18
+      },
+      {
+        "book": "Numbers",
+        "chapter_count": 36,
+        "coverage_categories": {
+          "contextual_coverage": 7,
+          "no_eligible_ckl_material": 4,
+          "passage_specific_evidence": 25
+        },
+        "chapters_with_any_traceable_typed_child": 30,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 4,
+        "chapters_with_historical_cultural_records": 18,
+        "chapters_with_historical_cultural_traceable_records": 18,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 15,
+        "chapters_with_literary_textual_traceable_records": 15,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 8,
+        "chapters_with_archaeology_geography_traceable_records": 8,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 20,
+        "chapters_with_scholarly_discussion_traceable_records": 20
+      },
+      {
+        "book": "Deuteronomy",
+        "chapter_count": 34,
+        "coverage_categories": {
+          "passage_specific_evidence": 34
+        },
+        "chapters_with_any_traceable_typed_child": 34,
+        "chapters_with_unclassified_projected_items": 10,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 8,
+        "chapters_with_historical_cultural_traceable_records": 8,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 34,
+        "chapters_with_literary_textual_traceable_records": 34,
+        "chapters_with_ancient_primary_sources_records": 4,
+        "chapters_with_ancient_primary_sources_traceable_records": 4,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 4,
+        "chapters_with_narrative_connections_traceable_records": 4,
+        "chapters_with_scholarly_discussion_records": 27,
+        "chapters_with_scholarly_discussion_traceable_records": 27
+      },
+      {
+        "book": "Joshua",
+        "chapter_count": 24,
+        "coverage_categories": {
+          "passage_specific_evidence": 24
+        },
+        "chapters_with_any_traceable_typed_child": 24,
+        "chapters_with_unclassified_projected_items": 0,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 7,
+        "chapters_with_historical_cultural_traceable_records": 7,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 24,
+        "chapters_with_literary_textual_traceable_records": 24,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 13,
+        "chapters_with_scholarly_discussion_traceable_records": 13
+      },
+      {
+        "book": "Judges",
+        "chapter_count": 21,
+        "coverage_categories": {
+          "passage_specific_evidence": 21
+        },
+        "chapters_with_any_traceable_typed_child": 21,
+        "chapters_with_unclassified_projected_items": 0,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 19,
+        "chapters_with_historical_cultural_traceable_records": 19,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 21,
+        "chapters_with_literary_textual_traceable_records": 21,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 5,
+        "chapters_with_archaeology_geography_traceable_records": 5,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 21,
+        "chapters_with_scholarly_discussion_traceable_records": 21
+      },
+      {
+        "book": "Ruth",
+        "chapter_count": 4,
+        "coverage_categories": {
+          "passage_specific_evidence": 4
+        },
+        "chapters_with_any_traceable_typed_child": 4,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 4,
+        "chapters_with_narrative_connections_traceable_records": 4,
+        "chapters_with_scholarly_discussion_records": 4,
+        "chapters_with_scholarly_discussion_traceable_records": 4
+      },
+      {
+        "book": "1 Samuel",
+        "chapter_count": 31,
+        "coverage_categories": {
+          "passage_specific_evidence": 31
+        },
+        "chapters_with_any_traceable_typed_child": 31,
+        "chapters_with_unclassified_projected_items": 3,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 1,
+        "chapters_with_historical_cultural_traceable_records": 1,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 31,
+        "chapters_with_literary_textual_traceable_records": 31,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 13,
+        "chapters_with_scholarly_discussion_traceable_records": 13
+      },
+      {
+        "book": "2 Samuel",
+        "chapter_count": 24,
+        "coverage_categories": {
+          "passage_specific_evidence": 24
+        },
+        "chapters_with_any_traceable_typed_child": 24,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 4,
+        "chapters_with_historical_cultural_traceable_records": 4,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 24,
+        "chapters_with_literary_textual_traceable_records": 24,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 7,
+        "chapters_with_scholarly_discussion_traceable_records": 7
+      },
+      {
+        "book": "1 Kings",
+        "chapter_count": 22,
+        "coverage_categories": {
+          "contextual_coverage": 4,
+          "entity_only_coverage": 1,
+          "no_eligible_ckl_material": 6,
+          "passage_specific_evidence": 11
+        },
+        "chapters_with_any_traceable_typed_child": 15,
+        "chapters_with_unclassified_projected_items": 3,
+        "no_eligible_ckl_chapters": 6,
+        "chapters_with_historical_cultural_records": 11,
+        "chapters_with_historical_cultural_traceable_records": 11,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 7,
+        "chapters_with_scholarly_discussion_traceable_records": 7
+      },
+      {
+        "book": "2 Kings",
+        "chapter_count": 25,
+        "coverage_categories": {
+          "contextual_coverage": 4,
+          "no_eligible_ckl_material": 6,
+          "passage_specific_evidence": 15
+        },
+        "chapters_with_any_traceable_typed_child": 16,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 6,
+        "chapters_with_historical_cultural_records": 8,
+        "chapters_with_historical_cultural_traceable_records": 8,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 8,
+        "chapters_with_ancient_primary_sources_traceable_records": 8,
+        "chapters_with_archaeology_geography_records": 8,
+        "chapters_with_archaeology_geography_traceable_records": 8,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 13,
+        "chapters_with_scholarly_discussion_traceable_records": 13
+      },
+      {
+        "book": "1 Chronicles",
+        "chapter_count": 29,
+        "coverage_categories": {
+          "contextual_coverage": 10,
+          "no_eligible_ckl_material": 3,
+          "passage_specific_evidence": 16
+        },
+        "chapters_with_any_traceable_typed_child": 26,
+        "chapters_with_unclassified_projected_items": 1,
+        "no_eligible_ckl_chapters": 3,
+        "chapters_with_historical_cultural_records": 5,
+        "chapters_with_historical_cultural_traceable_records": 5,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 10,
+        "chapters_with_literary_textual_traceable_records": 10,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 5,
+        "chapters_with_narrative_connections_traceable_records": 5,
+        "chapters_with_scholarly_discussion_records": 21,
+        "chapters_with_scholarly_discussion_traceable_records": 21
+      },
+      {
+        "book": "2 Chronicles",
+        "chapter_count": 36,
+        "coverage_categories": {
+          "contextual_coverage": 1,
+          "entity_only_coverage": 1,
+          "no_eligible_ckl_material": 14,
+          "passage_specific_evidence": 20
+        },
+        "chapters_with_any_traceable_typed_child": 20,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 14,
+        "chapters_with_historical_cultural_records": 1,
+        "chapters_with_historical_cultural_traceable_records": 1,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 10,
+        "chapters_with_literary_textual_traceable_records": 10,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 16,
+        "chapters_with_scholarly_discussion_traceable_records": 16
+      },
+      {
+        "book": "Ezra",
+        "chapter_count": 10,
+        "coverage_categories": {
+          "passage_specific_evidence": 10
+        },
+        "chapters_with_any_traceable_typed_child": 10,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 7,
+        "chapters_with_historical_cultural_traceable_records": 7,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 1,
+        "chapters_with_literary_textual_traceable_records": 1,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 3,
+        "chapters_with_archaeology_geography_traceable_records": 3,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 9,
+        "chapters_with_scholarly_discussion_traceable_records": 9
+      },
+      {
+        "book": "Nehemiah",
+        "chapter_count": 13,
+        "coverage_categories": {
+          "contextual_coverage": 1,
+          "passage_specific_evidence": 12
+        },
+        "chapters_with_any_traceable_typed_child": 13,
+        "chapters_with_unclassified_projected_items": 0,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 8,
+        "chapters_with_historical_cultural_traceable_records": 8,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 13,
+        "chapters_with_literary_textual_traceable_records": 13,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 13,
+        "chapters_with_scholarly_discussion_traceable_records": 13
+      },
+      {
+        "book": "Esther",
+        "chapter_count": 10,
+        "coverage_categories": {
+          "contextual_coverage": 1,
+          "passage_specific_evidence": 9
+        },
+        "chapters_with_any_traceable_typed_child": 10,
+        "chapters_with_unclassified_projected_items": 0,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 4,
+        "chapters_with_historical_cultural_traceable_records": 4,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 10,
+        "chapters_with_literary_textual_traceable_records": 10,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 10,
+        "chapters_with_scholarly_discussion_traceable_records": 10
+      },
+      {
+        "book": "Job",
+        "chapter_count": 42,
+        "coverage_categories": {
+          "passage_specific_evidence": 42
+        },
+        "chapters_with_any_traceable_typed_child": 42,
+        "chapters_with_unclassified_projected_items": 1,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 4,
+        "chapters_with_historical_cultural_traceable_records": 4,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 37,
+        "chapters_with_literary_textual_traceable_records": 37,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 42,
+        "chapters_with_scholarly_discussion_traceable_records": 42
+      },
+      {
+        "book": "Psalms",
+        "chapter_count": 150,
+        "coverage_categories": {
+          "contextual_coverage": 22,
+          "entity_only_coverage": 1,
+          "no_eligible_ckl_material": 74,
+          "passage_specific_evidence": 53
+        },
+        "chapters_with_any_traceable_typed_child": 54,
+        "chapters_with_unclassified_projected_items": 22,
+        "no_eligible_ckl_chapters": 74,
+        "chapters_with_historical_cultural_records": 6,
+        "chapters_with_historical_cultural_traceable_records": 6,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 40,
+        "chapters_with_literary_textual_traceable_records": 40,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 54,
+        "chapters_with_scholarly_discussion_traceable_records": 54
+      },
+      {
+        "book": "Proverbs",
+        "chapter_count": 31,
+        "coverage_categories": {
+          "contextual_coverage": 1,
+          "no_eligible_ckl_material": 12,
+          "passage_specific_evidence": 18
+        },
+        "chapters_with_any_traceable_typed_child": 18,
+        "chapters_with_unclassified_projected_items": 7,
+        "no_eligible_ckl_chapters": 12,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 10,
+        "chapters_with_literary_textual_traceable_records": 10,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 18,
+        "chapters_with_scholarly_discussion_traceable_records": 18
+      },
+      {
+        "book": "Ecclesiastes",
+        "chapter_count": 12,
+        "coverage_categories": {
+          "no_eligible_ckl_material": 1,
+          "passage_specific_evidence": 11
+        },
+        "chapters_with_any_traceable_typed_child": 11,
+        "chapters_with_unclassified_projected_items": 8,
+        "no_eligible_ckl_chapters": 1,
+        "chapters_with_historical_cultural_records": 2,
+        "chapters_with_historical_cultural_traceable_records": 2,
+        "chapters_with_lexical_language_records": 7,
+        "chapters_with_lexical_language_traceable_records": 7,
+        "chapters_with_literary_textual_records": 3,
+        "chapters_with_literary_textual_traceable_records": 3,
+        "chapters_with_ancient_primary_sources_records": 5,
+        "chapters_with_ancient_primary_sources_traceable_records": 5,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 4,
+        "chapters_with_narrative_connections_traceable_records": 4,
+        "chapters_with_scholarly_discussion_records": 11,
+        "chapters_with_scholarly_discussion_traceable_records": 11
+      },
+      {
+        "book": "Song of Songs",
+        "chapter_count": 8,
+        "coverage_categories": {
+          "passage_specific_evidence": 8
+        },
+        "chapters_with_any_traceable_typed_child": 8,
+        "chapters_with_unclassified_projected_items": 8,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 8,
+        "chapters_with_historical_cultural_traceable_records": 8,
+        "chapters_with_lexical_language_records": 3,
+        "chapters_with_lexical_language_traceable_records": 3,
+        "chapters_with_literary_textual_records": 8,
+        "chapters_with_literary_textual_traceable_records": 8,
+        "chapters_with_ancient_primary_sources_records": 8,
+        "chapters_with_ancient_primary_sources_traceable_records": 8,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 8,
+        "chapters_with_narrative_connections_traceable_records": 8,
+        "chapters_with_scholarly_discussion_records": 8,
+        "chapters_with_scholarly_discussion_traceable_records": 8
+      },
+      {
+        "book": "Isaiah",
+        "chapter_count": 66,
+        "coverage_categories": {
+          "passage_specific_evidence": 66
+        },
+        "chapters_with_any_traceable_typed_child": 66,
+        "chapters_with_unclassified_projected_items": 20,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 14,
+        "chapters_with_historical_cultural_traceable_records": 14,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 22,
+        "chapters_with_literary_textual_traceable_records": 22,
+        "chapters_with_ancient_primary_sources_records": 8,
+        "chapters_with_ancient_primary_sources_traceable_records": 8,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 14,
+        "chapters_with_narrative_connections_traceable_records": 14,
+        "chapters_with_scholarly_discussion_records": 66,
+        "chapters_with_scholarly_discussion_traceable_records": 66
+      },
+      {
+        "book": "Jeremiah",
+        "chapter_count": 52,
+        "coverage_categories": {
+          "passage_specific_evidence": 52
+        },
+        "chapters_with_any_traceable_typed_child": 52,
+        "chapters_with_unclassified_projected_items": 10,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 11,
+        "chapters_with_historical_cultural_traceable_records": 11,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 52,
+        "chapters_with_literary_textual_traceable_records": 52,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 52,
+        "chapters_with_scholarly_discussion_traceable_records": 52
+      },
+      {
+        "book": "Lamentations",
+        "chapter_count": 5,
+        "coverage_categories": {
+          "passage_specific_evidence": 5
+        },
+        "chapters_with_any_traceable_typed_child": 5,
+        "chapters_with_unclassified_projected_items": 1,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 5,
+        "chapters_with_literary_textual_traceable_records": 5,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 5,
+        "chapters_with_scholarly_discussion_traceable_records": 5
+      },
+      {
+        "book": "Ezekiel",
+        "chapter_count": 48,
+        "coverage_categories": {
+          "contextual_coverage": 12,
+          "no_eligible_ckl_material": 9,
+          "passage_specific_evidence": 27
+        },
+        "chapters_with_any_traceable_typed_child": 28,
+        "chapters_with_unclassified_projected_items": 8,
+        "no_eligible_ckl_chapters": 9,
+        "chapters_with_historical_cultural_records": 4,
+        "chapters_with_historical_cultural_traceable_records": 4,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 11,
+        "chapters_with_literary_textual_traceable_records": 11,
+        "chapters_with_ancient_primary_sources_records": 5,
+        "chapters_with_ancient_primary_sources_traceable_records": 5,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 28,
+        "chapters_with_scholarly_discussion_traceable_records": 28
+      },
+      {
+        "book": "Daniel",
+        "chapter_count": 12,
+        "coverage_categories": {
+          "passage_specific_evidence": 12
+        },
+        "chapters_with_any_traceable_typed_child": 12,
+        "chapters_with_unclassified_projected_items": 5,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 7,
+        "chapters_with_historical_cultural_traceable_records": 7,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 6,
+        "chapters_with_literary_textual_traceable_records": 6,
+        "chapters_with_ancient_primary_sources_records": 4,
+        "chapters_with_ancient_primary_sources_traceable_records": 4,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 4,
+        "chapters_with_narrative_connections_traceable_records": 4,
+        "chapters_with_scholarly_discussion_records": 12,
+        "chapters_with_scholarly_discussion_traceable_records": 12
+      },
+      {
+        "book": "Hosea",
+        "chapter_count": 14,
+        "coverage_categories": {
+          "passage_specific_evidence": 14
+        },
+        "chapters_with_any_traceable_typed_child": 14,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 14,
+        "chapters_with_historical_cultural_traceable_records": 14,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 10,
+        "chapters_with_literary_textual_traceable_records": 10,
+        "chapters_with_ancient_primary_sources_records": 10,
+        "chapters_with_ancient_primary_sources_traceable_records": 10,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 5,
+        "chapters_with_narrative_connections_traceable_records": 5,
+        "chapters_with_scholarly_discussion_records": 14,
+        "chapters_with_scholarly_discussion_traceable_records": 14
+      },
+      {
+        "book": "Joel",
+        "chapter_count": 3,
+        "coverage_categories": {
+          "passage_specific_evidence": 3
+        },
+        "chapters_with_any_traceable_typed_child": 3,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 3,
+        "chapters_with_literary_textual_traceable_records": 3,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 3,
+        "chapters_with_scholarly_discussion_traceable_records": 3
+      },
+      {
+        "book": "Amos",
+        "chapter_count": 9,
+        "coverage_categories": {
+          "contextual_coverage": 2,
+          "passage_specific_evidence": 7
+        },
+        "chapters_with_any_traceable_typed_child": 9,
+        "chapters_with_unclassified_projected_items": 5,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 6,
+        "chapters_with_historical_cultural_traceable_records": 6,
+        "chapters_with_lexical_language_records": 3,
+        "chapters_with_lexical_language_traceable_records": 3,
+        "chapters_with_literary_textual_records": 7,
+        "chapters_with_literary_textual_traceable_records": 7,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 4,
+        "chapters_with_narrative_connections_traceable_records": 4,
+        "chapters_with_scholarly_discussion_records": 9,
+        "chapters_with_scholarly_discussion_traceable_records": 9
+      },
+      {
+        "book": "Obadiah",
+        "chapter_count": 1,
+        "coverage_categories": {
+          "incomplete_or_unknown": 1
+        },
+        "chapters_with_any_traceable_typed_child": 1,
+        "chapters_with_unclassified_projected_items": 1,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 1,
+        "chapters_with_historical_cultural_traceable_records": 1,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 1,
+        "chapters_with_literary_textual_traceable_records": 1,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 1,
+        "chapters_with_scholarly_discussion_traceable_records": 1
+      },
+      {
+        "book": "Jonah",
+        "chapter_count": 4,
+        "coverage_categories": {
+          "passage_specific_evidence": 4
+        },
+        "chapters_with_any_traceable_typed_child": 4,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 4,
+        "chapters_with_historical_cultural_traceable_records": 4,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 4,
+        "chapters_with_narrative_connections_traceable_records": 4,
+        "chapters_with_scholarly_discussion_records": 4,
+        "chapters_with_scholarly_discussion_traceable_records": 4
+      },
+      {
+        "book": "Micah",
+        "chapter_count": 7,
+        "coverage_categories": {
+          "passage_specific_evidence": 7
+        },
+        "chapters_with_any_traceable_typed_child": 7,
+        "chapters_with_unclassified_projected_items": 6,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 7,
+        "chapters_with_historical_cultural_traceable_records": 7,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 7,
+        "chapters_with_literary_textual_traceable_records": 7,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 6,
+        "chapters_with_narrative_connections_traceable_records": 6,
+        "chapters_with_scholarly_discussion_records": 7,
+        "chapters_with_scholarly_discussion_traceable_records": 7
+      },
+      {
+        "book": "Nahum",
+        "chapter_count": 3,
+        "coverage_categories": {
+          "passage_specific_evidence": 3
+        },
+        "chapters_with_any_traceable_typed_child": 3,
+        "chapters_with_unclassified_projected_items": 3,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 3,
+        "chapters_with_literary_textual_traceable_records": 3,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 3,
+        "chapters_with_scholarly_discussion_traceable_records": 3
+      },
+      {
+        "book": "Habakkuk",
+        "chapter_count": 3,
+        "coverage_categories": {
+          "passage_specific_evidence": 3
+        },
+        "chapters_with_any_traceable_typed_child": 3,
+        "chapters_with_unclassified_projected_items": 3,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 3,
+        "chapters_with_literary_textual_traceable_records": 3,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 3,
+        "chapters_with_scholarly_discussion_traceable_records": 3
+      },
+      {
+        "book": "Zephaniah",
+        "chapter_count": 3,
+        "coverage_categories": {
+          "passage_specific_evidence": 3
+        },
+        "chapters_with_any_traceable_typed_child": 3,
+        "chapters_with_unclassified_projected_items": 3,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 2,
+        "chapters_with_historical_cultural_traceable_records": 2,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 3,
+        "chapters_with_literary_textual_traceable_records": 3,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 3,
+        "chapters_with_scholarly_discussion_traceable_records": 3
+      },
+      {
+        "book": "Haggai",
+        "chapter_count": 2,
+        "coverage_categories": {
+          "passage_specific_evidence": 2
+        },
+        "chapters_with_any_traceable_typed_child": 2,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 2,
+        "chapters_with_historical_cultural_traceable_records": 2,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 2,
+        "chapters_with_literary_textual_traceable_records": 2,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 2,
+        "chapters_with_scholarly_discussion_traceable_records": 2
+      },
+      {
+        "book": "Zechariah",
+        "chapter_count": 14,
+        "coverage_categories": {
+          "contextual_coverage": 1,
+          "passage_specific_evidence": 13
+        },
+        "chapters_with_any_traceable_typed_child": 13,
+        "chapters_with_unclassified_projected_items": 8,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 4,
+        "chapters_with_historical_cultural_traceable_records": 4,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 6,
+        "chapters_with_literary_textual_traceable_records": 6,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 13,
+        "chapters_with_scholarly_discussion_traceable_records": 13
+      },
+      {
+        "book": "Malachi",
+        "chapter_count": 4,
+        "coverage_categories": {
+          "passage_specific_evidence": 4
+        },
+        "chapters_with_any_traceable_typed_child": 4,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 2,
+        "chapters_with_historical_cultural_traceable_records": 2,
+        "chapters_with_lexical_language_records": 3,
+        "chapters_with_lexical_language_traceable_records": 3,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 4,
+        "chapters_with_scholarly_discussion_traceable_records": 4
+      },
+      {
+        "book": "Matthew",
+        "chapter_count": 28,
+        "coverage_categories": {
+          "passage_specific_evidence": 28
+        },
+        "chapters_with_any_traceable_typed_child": 28,
+        "chapters_with_unclassified_projected_items": 21,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 18,
+        "chapters_with_historical_cultural_traceable_records": 18,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 12,
+        "chapters_with_literary_textual_traceable_records": 12,
+        "chapters_with_ancient_primary_sources_records": 8,
+        "chapters_with_ancient_primary_sources_traceable_records": 8,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 14,
+        "chapters_with_narrative_connections_traceable_records": 14,
+        "chapters_with_scholarly_discussion_records": 28,
+        "chapters_with_scholarly_discussion_traceable_records": 28
+      },
+      {
+        "book": "Mark",
+        "chapter_count": 16,
+        "coverage_categories": {
+          "passage_specific_evidence": 16
+        },
+        "chapters_with_any_traceable_typed_child": 16,
+        "chapters_with_unclassified_projected_items": 14,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 11,
+        "chapters_with_historical_cultural_traceable_records": 11,
+        "chapters_with_lexical_language_records": 4,
+        "chapters_with_lexical_language_traceable_records": 4,
+        "chapters_with_literary_textual_records": 11,
+        "chapters_with_literary_textual_traceable_records": 11,
+        "chapters_with_ancient_primary_sources_records": 5,
+        "chapters_with_ancient_primary_sources_traceable_records": 5,
+        "chapters_with_archaeology_geography_records": 7,
+        "chapters_with_archaeology_geography_traceable_records": 7,
+        "chapters_with_narrative_connections_records": 5,
+        "chapters_with_narrative_connections_traceable_records": 5,
+        "chapters_with_scholarly_discussion_records": 16,
+        "chapters_with_scholarly_discussion_traceable_records": 16
+      },
+      {
+        "book": "Luke",
+        "chapter_count": 24,
+        "coverage_categories": {
+          "contextual_coverage": 2,
+          "no_eligible_ckl_material": 3,
+          "passage_specific_evidence": 19
+        },
+        "chapters_with_any_traceable_typed_child": 19,
+        "chapters_with_unclassified_projected_items": 17,
+        "no_eligible_ckl_chapters": 3,
+        "chapters_with_historical_cultural_records": 5,
+        "chapters_with_historical_cultural_traceable_records": 5,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 10,
+        "chapters_with_literary_textual_traceable_records": 10,
+        "chapters_with_ancient_primary_sources_records": 7,
+        "chapters_with_ancient_primary_sources_traceable_records": 7,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 4,
+        "chapters_with_narrative_connections_traceable_records": 4,
+        "chapters_with_scholarly_discussion_records": 16,
+        "chapters_with_scholarly_discussion_traceable_records": 16
+      },
+      {
+        "book": "John",
+        "chapter_count": 21,
+        "coverage_categories": {
+          "passage_specific_evidence": 21
+        },
+        "chapters_with_any_traceable_typed_child": 21,
+        "chapters_with_unclassified_projected_items": 16,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 7,
+        "chapters_with_historical_cultural_traceable_records": 7,
+        "chapters_with_lexical_language_records": 6,
+        "chapters_with_lexical_language_traceable_records": 6,
+        "chapters_with_literary_textual_records": 10,
+        "chapters_with_literary_textual_traceable_records": 10,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 7,
+        "chapters_with_archaeology_geography_traceable_records": 7,
+        "chapters_with_narrative_connections_records": 5,
+        "chapters_with_narrative_connections_traceable_records": 5,
+        "chapters_with_scholarly_discussion_records": 21,
+        "chapters_with_scholarly_discussion_traceable_records": 21
+      },
+      {
+        "book": "Acts",
+        "chapter_count": 28,
+        "coverage_categories": {
+          "passage_specific_evidence": 28
+        },
+        "chapters_with_any_traceable_typed_child": 28,
+        "chapters_with_unclassified_projected_items": 15,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 28,
+        "chapters_with_historical_cultural_traceable_records": 28,
+        "chapters_with_lexical_language_records": 3,
+        "chapters_with_lexical_language_traceable_records": 3,
+        "chapters_with_literary_textual_records": 22,
+        "chapters_with_literary_textual_traceable_records": 22,
+        "chapters_with_ancient_primary_sources_records": 16,
+        "chapters_with_ancient_primary_sources_traceable_records": 16,
+        "chapters_with_archaeology_geography_records": 12,
+        "chapters_with_archaeology_geography_traceable_records": 12,
+        "chapters_with_narrative_connections_records": 11,
+        "chapters_with_narrative_connections_traceable_records": 11,
+        "chapters_with_scholarly_discussion_records": 28,
+        "chapters_with_scholarly_discussion_traceable_records": 28
+      },
+      {
+        "book": "Romans",
+        "chapter_count": 16,
+        "coverage_categories": {
+          "passage_specific_evidence": 16
+        },
+        "chapters_with_any_traceable_typed_child": 16,
+        "chapters_with_unclassified_projected_items": 16,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 16,
+        "chapters_with_historical_cultural_traceable_records": 16,
+        "chapters_with_lexical_language_records": 8,
+        "chapters_with_lexical_language_traceable_records": 8,
+        "chapters_with_literary_textual_records": 14,
+        "chapters_with_literary_textual_traceable_records": 14,
+        "chapters_with_ancient_primary_sources_records": 9,
+        "chapters_with_ancient_primary_sources_traceable_records": 9,
+        "chapters_with_archaeology_geography_records": 16,
+        "chapters_with_archaeology_geography_traceable_records": 16,
+        "chapters_with_narrative_connections_records": 10,
+        "chapters_with_narrative_connections_traceable_records": 10,
+        "chapters_with_scholarly_discussion_records": 16,
+        "chapters_with_scholarly_discussion_traceable_records": 16
+      },
+      {
+        "book": "1 Corinthians",
+        "chapter_count": 16,
+        "coverage_categories": {
+          "passage_specific_evidence": 16
+        },
+        "chapters_with_any_traceable_typed_child": 16,
+        "chapters_with_unclassified_projected_items": 9,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 16,
+        "chapters_with_historical_cultural_traceable_records": 16,
+        "chapters_with_lexical_language_records": 9,
+        "chapters_with_lexical_language_traceable_records": 9,
+        "chapters_with_literary_textual_records": 16,
+        "chapters_with_literary_textual_traceable_records": 16,
+        "chapters_with_ancient_primary_sources_records": 9,
+        "chapters_with_ancient_primary_sources_traceable_records": 9,
+        "chapters_with_archaeology_geography_records": 16,
+        "chapters_with_archaeology_geography_traceable_records": 16,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 16,
+        "chapters_with_scholarly_discussion_traceable_records": 16
+      },
+      {
+        "book": "2 Corinthians",
+        "chapter_count": 13,
+        "coverage_categories": {
+          "passage_specific_evidence": 13
+        },
+        "chapters_with_any_traceable_typed_child": 13,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 12,
+        "chapters_with_historical_cultural_traceable_records": 12,
+        "chapters_with_lexical_language_records": 3,
+        "chapters_with_lexical_language_traceable_records": 3,
+        "chapters_with_literary_textual_records": 13,
+        "chapters_with_literary_textual_traceable_records": 13,
+        "chapters_with_ancient_primary_sources_records": 5,
+        "chapters_with_ancient_primary_sources_traceable_records": 5,
+        "chapters_with_archaeology_geography_records": 13,
+        "chapters_with_archaeology_geography_traceable_records": 13,
+        "chapters_with_narrative_connections_records": 7,
+        "chapters_with_narrative_connections_traceable_records": 7,
+        "chapters_with_scholarly_discussion_records": 13,
+        "chapters_with_scholarly_discussion_traceable_records": 13
+      },
+      {
+        "book": "Galatians",
+        "chapter_count": 6,
+        "coverage_categories": {
+          "passage_specific_evidence": 6
+        },
+        "chapters_with_any_traceable_typed_child": 6,
+        "chapters_with_unclassified_projected_items": 6,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 6,
+        "chapters_with_historical_cultural_traceable_records": 6,
+        "chapters_with_lexical_language_records": 5,
+        "chapters_with_lexical_language_traceable_records": 5,
+        "chapters_with_literary_textual_records": 6,
+        "chapters_with_literary_textual_traceable_records": 6,
+        "chapters_with_ancient_primary_sources_records": 4,
+        "chapters_with_ancient_primary_sources_traceable_records": 4,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 5,
+        "chapters_with_narrative_connections_traceable_records": 5,
+        "chapters_with_scholarly_discussion_records": 6,
+        "chapters_with_scholarly_discussion_traceable_records": 6
+      },
+      {
+        "book": "Ephesians",
+        "chapter_count": 6,
+        "coverage_categories": {
+          "passage_specific_evidence": 6
+        },
+        "chapters_with_any_traceable_typed_child": 6,
+        "chapters_with_unclassified_projected_items": 5,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 5,
+        "chapters_with_historical_cultural_traceable_records": 5,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 6,
+        "chapters_with_literary_textual_traceable_records": 6,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 6,
+        "chapters_with_scholarly_discussion_traceable_records": 6
+      },
+      {
+        "book": "Philippians",
+        "chapter_count": 4,
+        "coverage_categories": {
+          "passage_specific_evidence": 4
+        },
+        "chapters_with_any_traceable_typed_child": 4,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 4,
+        "chapters_with_historical_cultural_traceable_records": 4,
+        "chapters_with_lexical_language_records": 3,
+        "chapters_with_lexical_language_traceable_records": 3,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 4,
+        "chapters_with_ancient_primary_sources_traceable_records": 4,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 4,
+        "chapters_with_scholarly_discussion_traceable_records": 4
+      },
+      {
+        "book": "Colossians",
+        "chapter_count": 4,
+        "coverage_categories": {
+          "passage_specific_evidence": 4
+        },
+        "chapters_with_any_traceable_typed_child": 4,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 4,
+        "chapters_with_ancient_primary_sources_traceable_records": 4,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 4,
+        "chapters_with_scholarly_discussion_traceable_records": 4
+      },
+      {
+        "book": "1 Thessalonians",
+        "chapter_count": 5,
+        "coverage_categories": {
+          "passage_specific_evidence": 5
+        },
+        "chapters_with_any_traceable_typed_child": 5,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 5,
+        "chapters_with_historical_cultural_traceable_records": 5,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 5,
+        "chapters_with_literary_textual_traceable_records": 5,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 3,
+        "chapters_with_archaeology_geography_traceable_records": 3,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 5,
+        "chapters_with_scholarly_discussion_traceable_records": 5
+      },
+      {
+        "book": "2 Thessalonians",
+        "chapter_count": 3,
+        "coverage_categories": {
+          "passage_specific_evidence": 3
+        },
+        "chapters_with_any_traceable_typed_child": 3,
+        "chapters_with_unclassified_projected_items": 3,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 2,
+        "chapters_with_historical_cultural_traceable_records": 2,
+        "chapters_with_lexical_language_records": 3,
+        "chapters_with_lexical_language_traceable_records": 3,
+        "chapters_with_literary_textual_records": 3,
+        "chapters_with_literary_textual_traceable_records": 3,
+        "chapters_with_ancient_primary_sources_records": 2,
+        "chapters_with_ancient_primary_sources_traceable_records": 2,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 3,
+        "chapters_with_scholarly_discussion_traceable_records": 3
+      },
+      {
+        "book": "1 Timothy",
+        "chapter_count": 6,
+        "coverage_categories": {
+          "passage_specific_evidence": 6
+        },
+        "chapters_with_any_traceable_typed_child": 6,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 5,
+        "chapters_with_historical_cultural_traceable_records": 5,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 5,
+        "chapters_with_ancient_primary_sources_traceable_records": 5,
+        "chapters_with_archaeology_geography_records": 2,
+        "chapters_with_archaeology_geography_traceable_records": 2,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 6,
+        "chapters_with_scholarly_discussion_traceable_records": 6
+      },
+      {
+        "book": "2 Timothy",
+        "chapter_count": 4,
+        "coverage_categories": {
+          "passage_specific_evidence": 4
+        },
+        "chapters_with_any_traceable_typed_child": 4,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 3,
+        "chapters_with_lexical_language_traceable_records": 3,
+        "chapters_with_literary_textual_records": 4,
+        "chapters_with_literary_textual_traceable_records": 4,
+        "chapters_with_ancient_primary_sources_records": 4,
+        "chapters_with_ancient_primary_sources_traceable_records": 4,
+        "chapters_with_archaeology_geography_records": 4,
+        "chapters_with_archaeology_geography_traceable_records": 4,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 4,
+        "chapters_with_scholarly_discussion_traceable_records": 4
+      },
+      {
+        "book": "Titus",
+        "chapter_count": 3,
+        "coverage_categories": {
+          "passage_specific_evidence": 3
+        },
+        "chapters_with_any_traceable_typed_child": 3,
+        "chapters_with_unclassified_projected_items": 3,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 3,
+        "chapters_with_literary_textual_traceable_records": 3,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 3,
+        "chapters_with_archaeology_geography_traceable_records": 3,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 3,
+        "chapters_with_scholarly_discussion_traceable_records": 3
+      },
+      {
+        "book": "Philemon",
+        "chapter_count": 1,
+        "coverage_categories": {
+          "passage_specific_evidence": 1
+        },
+        "chapters_with_any_traceable_typed_child": 1,
+        "chapters_with_unclassified_projected_items": 1,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 1,
+        "chapters_with_historical_cultural_traceable_records": 1,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 1,
+        "chapters_with_literary_textual_traceable_records": 1,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 1,
+        "chapters_with_scholarly_discussion_traceable_records": 1
+      },
+      {
+        "book": "Hebrews",
+        "chapter_count": 13,
+        "coverage_categories": {
+          "passage_specific_evidence": 13
+        },
+        "chapters_with_any_traceable_typed_child": 13,
+        "chapters_with_unclassified_projected_items": 11,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 6,
+        "chapters_with_historical_cultural_traceable_records": 6,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 7,
+        "chapters_with_literary_textual_traceable_records": 7,
+        "chapters_with_ancient_primary_sources_records": 13,
+        "chapters_with_ancient_primary_sources_traceable_records": 13,
+        "chapters_with_archaeology_geography_records": 13,
+        "chapters_with_archaeology_geography_traceable_records": 13,
+        "chapters_with_narrative_connections_records": 13,
+        "chapters_with_narrative_connections_traceable_records": 13,
+        "chapters_with_scholarly_discussion_records": 13,
+        "chapters_with_scholarly_discussion_traceable_records": 13
+      },
+      {
+        "book": "James",
+        "chapter_count": 5,
+        "coverage_categories": {
+          "passage_specific_evidence": 5
+        },
+        "chapters_with_any_traceable_typed_child": 5,
+        "chapters_with_unclassified_projected_items": 5,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 5,
+        "chapters_with_historical_cultural_traceable_records": 5,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 5,
+        "chapters_with_literary_textual_traceable_records": 5,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 5,
+        "chapters_with_narrative_connections_traceable_records": 5,
+        "chapters_with_scholarly_discussion_records": 5,
+        "chapters_with_scholarly_discussion_traceable_records": 5
+      },
+      {
+        "book": "1 Peter",
+        "chapter_count": 5,
+        "coverage_categories": {
+          "passage_specific_evidence": 5
+        },
+        "chapters_with_any_traceable_typed_child": 5,
+        "chapters_with_unclassified_projected_items": 4,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 5,
+        "chapters_with_historical_cultural_traceable_records": 5,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 5,
+        "chapters_with_literary_textual_traceable_records": 5,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 5,
+        "chapters_with_scholarly_discussion_traceable_records": 5
+      },
+      {
+        "book": "2 Peter",
+        "chapter_count": 3,
+        "coverage_categories": {
+          "passage_specific_evidence": 3
+        },
+        "chapters_with_any_traceable_typed_child": 3,
+        "chapters_with_unclassified_projected_items": 2,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 3,
+        "chapters_with_historical_cultural_traceable_records": 3,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 3,
+        "chapters_with_literary_textual_traceable_records": 3,
+        "chapters_with_ancient_primary_sources_records": 3,
+        "chapters_with_ancient_primary_sources_traceable_records": 3,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 2,
+        "chapters_with_narrative_connections_traceable_records": 2,
+        "chapters_with_scholarly_discussion_records": 3,
+        "chapters_with_scholarly_discussion_traceable_records": 3
+      },
+      {
+        "book": "1 John",
+        "chapter_count": 5,
+        "coverage_categories": {
+          "passage_specific_evidence": 5
+        },
+        "chapters_with_any_traceable_typed_child": 5,
+        "chapters_with_unclassified_projected_items": 5,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 4,
+        "chapters_with_historical_cultural_traceable_records": 4,
+        "chapters_with_lexical_language_records": 2,
+        "chapters_with_lexical_language_traceable_records": 2,
+        "chapters_with_literary_textual_records": 5,
+        "chapters_with_literary_textual_traceable_records": 5,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 3,
+        "chapters_with_narrative_connections_traceable_records": 3,
+        "chapters_with_scholarly_discussion_records": 5,
+        "chapters_with_scholarly_discussion_traceable_records": 5
+      },
+      {
+        "book": "2 John",
+        "chapter_count": 1,
+        "coverage_categories": {
+          "passage_specific_evidence": 1
+        },
+        "chapters_with_any_traceable_typed_child": 1,
+        "chapters_with_unclassified_projected_items": 1,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 1,
+        "chapters_with_historical_cultural_traceable_records": 1,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 1,
+        "chapters_with_literary_textual_traceable_records": 1,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 1,
+        "chapters_with_scholarly_discussion_traceable_records": 1
+      },
+      {
+        "book": "3 John",
+        "chapter_count": 1,
+        "coverage_categories": {
+          "passage_specific_evidence": 1
+        },
+        "chapters_with_any_traceable_typed_child": 1,
+        "chapters_with_unclassified_projected_items": 1,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 1,
+        "chapters_with_historical_cultural_traceable_records": 1,
+        "chapters_with_lexical_language_records": 0,
+        "chapters_with_lexical_language_traceable_records": 0,
+        "chapters_with_literary_textual_records": 1,
+        "chapters_with_literary_textual_traceable_records": 1,
+        "chapters_with_ancient_primary_sources_records": 0,
+        "chapters_with_ancient_primary_sources_traceable_records": 0,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 0,
+        "chapters_with_narrative_connections_traceable_records": 0,
+        "chapters_with_scholarly_discussion_records": 1,
+        "chapters_with_scholarly_discussion_traceable_records": 1
+      },
+      {
+        "book": "Jude",
+        "chapter_count": 1,
+        "coverage_categories": {
+          "passage_specific_evidence": 1
+        },
+        "chapters_with_any_traceable_typed_child": 1,
+        "chapters_with_unclassified_projected_items": 1,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 1,
+        "chapters_with_historical_cultural_traceable_records": 1,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 1,
+        "chapters_with_literary_textual_traceable_records": 1,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 0,
+        "chapters_with_archaeology_geography_traceable_records": 0,
+        "chapters_with_narrative_connections_records": 1,
+        "chapters_with_narrative_connections_traceable_records": 1,
+        "chapters_with_scholarly_discussion_records": 1,
+        "chapters_with_scholarly_discussion_traceable_records": 1
+      },
+      {
+        "book": "Revelation",
+        "chapter_count": 22,
+        "coverage_categories": {
+          "passage_specific_evidence": 22
+        },
+        "chapters_with_any_traceable_typed_child": 22,
+        "chapters_with_unclassified_projected_items": 16,
+        "no_eligible_ckl_chapters": 0,
+        "chapters_with_historical_cultural_records": 6,
+        "chapters_with_historical_cultural_traceable_records": 6,
+        "chapters_with_lexical_language_records": 1,
+        "chapters_with_lexical_language_traceable_records": 1,
+        "chapters_with_literary_textual_records": 13,
+        "chapters_with_literary_textual_traceable_records": 13,
+        "chapters_with_ancient_primary_sources_records": 1,
+        "chapters_with_ancient_primary_sources_traceable_records": 1,
+        "chapters_with_archaeology_geography_records": 1,
+        "chapters_with_archaeology_geography_traceable_records": 1,
+        "chapters_with_narrative_connections_records": 14,
+        "chapters_with_narrative_connections_traceable_records": 14,
+        "chapters_with_scholarly_discussion_records": 22,
+        "chapters_with_scholarly_discussion_traceable_records": 22
+      }
+    ]
+  },
+  "evidence_domains": {
+    "historical_cultural": {
+      "traceable_record_placements": 2305,
+      "chapters_with_any_typed_record": 499,
+      "chapters_with_a_traceable_record": 499
+    },
+    "lexical_language": {
+      "traceable_record_placements": 140,
+      "chapters_with_any_typed_record": 100,
+      "chapters_with_a_traceable_record": 100
+    },
+    "literary_textual": {
+      "traceable_record_placements": 1889,
+      "chapters_with_any_typed_record": 758,
+      "chapters_with_a_traceable_record": 758
+    },
+    "ancient_primary_sources": {
+      "traceable_record_placements": 594,
+      "chapters_with_any_typed_record": 228,
+      "chapters_with_a_traceable_record": 228
+    },
+    "archaeology_geography": {
+      "traceable_record_placements": 429,
+      "chapters_with_any_typed_record": 198,
+      "chapters_with_a_traceable_record": 198
+    },
+    "narrative_connections": {
+      "traceable_record_placements": 351,
+      "chapters_with_any_typed_record": 225,
+      "chapters_with_a_traceable_record": 225
+    },
+    "scholarly_discussion": {
+      "traceable_record_placements": 7137,
+      "chapters_with_any_typed_record": 916,
+      "chapters_with_a_traceable_record": 916
+    }
+  },
+  "narrative_explorer": {
+    "validation_status": "pass",
+    "sample_check_count": 19,
+    "live_api_sample_count": 16,
+    "section_item_chapter_placements": {
+      "archaeology_ancient_history": 3051,
+      "biblical_geography": 607,
+      "biblical_narrative": 5003,
+      "divine_council_cosmic_geography": 17,
+      "people_events_relationships": 1720,
+      "themes_biblical_connections": 6155
+    },
+    "authored_object_relationship_count": 4061,
+    "accepted_curation_registry_record_count": 433,
+    "accepted_curation_registry_by_kind": {
+      "evidence": 2,
+      "object": 431
+    },
+    "verified_ne10": {
+      "verified_bridge_record_count": 44,
+      "held_candidate_count": 7,
+      "bridge_categories": {
+        "direct_quotation": 15,
+        "interpretive_association": 6,
+        "later_canonical_reception": 11,
+        "proposed_intertextual_echo": 1,
+        "shared_literary_motif": 4,
+        "thematic_relationship": 7
+      },
+      "endpoint_projection_count": 88
+    },
+    "explicit_external_links": {
+      "broken_target_rows": {
+        "archaeology_service": 0,
+        "manuscript_service": 0,
+        "map_places": 0,
+        "map_routes": 0,
+        "map_territories": 0
+      },
+      "distinct_linked_target_counts": {
+        "archaeology_service": 94,
+        "manuscript_service": 11,
+        "map_places": 4898,
+        "map_routes": 2,
+        "map_territories": 13
+      },
+      "integrity_check": "ok",
+      "invalid_reference_rows": {
+        "archaeology_service": 0,
+        "manuscript_service": 0,
+        "map_places": 0,
+        "map_routes": 0,
+        "map_territories": 0
+      },
+      "inventory_item_counts": {
+        "archaeology_service": 75,
+        "manuscript_service": 6,
+        "map_places": 1338,
+        "map_routes": 1,
+        "map_territories": 11
+      },
+      "items_without_valid_passage_link_counts": {
+        "archaeology_service": 4,
+        "manuscript_service": 0,
+        "map_places": 57,
+        "map_routes": 0,
+        "map_territories": 0
+      },
+      "map_place_catalog_confidence_counts": {
+        "likely": 3503,
+        "possible": 754,
+        "strong": 3207,
+        "uncertain": 275,
+        "unknown": 2
+      },
+      "map_place_low_or_unknown_catalog_confidence_counts": {
+        "uncertain": 275,
+        "unknown": 2
+      },
+      "reference_rows": {
+        "archaeology_service": 94,
+        "manuscript_service": 11,
+        "map_places": 7741,
+        "map_routes": 2,
+        "map_territories": 13
+      },
+      "schema_version": 37,
+      "static_map_feature_files": 6,
+      "static_map_feature_passage_link_total": 222,
+      "static_map_invalid_reference_count": 0,
+      "targets_with_valid_passage_link_counts": {
+        "archaeology_service": 71,
+        "manuscript_service": 6,
+        "map_places": 1281,
+        "map_routes": 1,
+        "map_territories": 11
+      },
+      "valid_reference_rows": {
+        "archaeology_service": 94,
+        "manuscript_service": 11,
+        "map_places": 7741,
+        "map_routes": 2,
+        "map_territories": 13
+      }
+    }
+  },
+  "source_identity_audit": {
+    "anchor_inventory_by_record_kind": {
+      "claim": {
+        "explicit_anchor_reference_count": 3415,
+        "no_explicit_anchor": 39,
+        "record_count": 2329,
+        "valid_anchor": 2290,
+        "valid_anchor_reference_count": 3415
+      },
+      "evidence": {
+        "explicit_anchor_reference_count": 1648,
+        "record_count": 1297,
+        "valid_anchor": 1297,
+        "valid_anchor_reference_count": 1648
+      },
+      "interpretive_note": {
+        "explicit_anchor_reference_count": 1739,
+        "invalid_anchor_only": 1,
+        "no_explicit_anchor": 2473,
+        "record_count": 3691,
+        "valid_anchor": 1217,
+        "valid_anchor_reference_count": 1738
+      },
+      "object": {
+        "explicit_anchor_reference_count": 4631,
+        "record_count": 687,
+        "valid_anchor": 687,
+        "valid_anchor_reference_count": 4631
+      }
+    },
+    "ancient_text_or_manuscript_evidence_items_without_valid_passage_anchor_count": 0,
+    "ancient_text_or_manuscript_evidence_items_without_valid_passage_anchor_ids": [],
+    "archaeological_evidence_items_without_valid_passage_anchor_count": 0,
+    "archaeological_evidence_items_without_valid_passage_anchor_ids": [],
+    "child_source_reference_count": 17483,
+    "duplicate_object_relationships": [],
+    "historical_cultural_claims_without_valid_passage_anchor_count": 15,
+    "historical_cultural_claims_without_valid_passage_anchor_ids": [
+      "1-peter#claim:1pet-date",
+      "daniel#claim:daniel-qumran-witnesses",
+      "james#claim:jas-date",
+      "john#claim:john-date",
+      "john#claim:john-manuscripts",
+      "john#claim:john-provenance-audience",
+      "lamentations#claim:lam-city-lament-comparison",
+      "lamentations#claim:lam-qumran-witnesses",
+      "lamentations#claim:lam-versional-witnesses",
+      "matthew#claim:matthew-authorship",
+      "matthew#claim:matthew-manuscripts",
+      "psalms#claim:psalms-qumran-plurality",
+      "revelation#claim:rev-date",
+      "revelation#claim:rev-jewish-apocalypse",
+      "revelation#claim:rev-textual-witnesses"
+    ],
+    "missing_source_id_references": [
+      {
+        "item_id": "roman-ephesus-civic-cultic-and-household-life#interpretive_note:sha256-a69db357b2e4ae0efd94846f597f048835c3ab81143ddc5371ad3c14b0702fff",
+        "object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "record_id": "sha256-a69db357b2e4ae0efd94846f597f048835c3ab81143ddc5371ad3c14b0702fff",
+        "record_kind": "interpretive_note",
+        "scripture_references": [],
+        "source_id": "harland-associations"
+      },
+      {
+        "item_id": "roman-ephesus-civic-cultic-and-household-life#interpretive_note:sha256-a69db357b2e4ae0efd94846f597f048835c3ab81143ddc5371ad3c14b0702fff",
+        "object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "record_id": "sha256-a69db357b2e4ae0efd94846f597f048835c3ab81143ddc5371ad3c14b0702fff",
+        "record_kind": "interpretive_note",
+        "scripture_references": [],
+        "source_id": "glancy-slavery"
+      }
+    ],
+    "poor_bibliography_references": [
+      {
+        "object_id": "psalms",
+        "record_id": "psalm-103-exodus-mercy-formula",
+        "record_kind": "claim",
+        "source_id": "exodus-34"
+      },
+      {
+        "object_id": "genesis-flood-postflood-context",
+        "record_id": "g6-noah-favor-righteousness-and-toledot",
+        "record_kind": "evidence",
+        "source_id": "g2r2-local-genesis-1-11"
+      },
+      {
+        "object_id": "genesis-flood-postflood-context",
+        "record_id": "g8-noah-altar-and-pleasing-aroma",
+        "record_kind": "evidence",
+        "source_id": "g2r2-local-genesis-8"
+      },
+      {
+        "object_id": "genesis-flood-postflood-context",
+        "record_id": "g9-renewed-vocation-and-blood-life-accountability",
+        "record_kind": "evidence",
+        "source_id": "g2r2-local-genesis-9-1-7"
+      },
+      {
+        "object_id": "genesis-flood-postflood-context",
+        "record_id": "g9-covenant-with-noah-and-all-flesh",
+        "record_kind": "evidence",
+        "source_id": "g2r2-local-genesis-9-12-15-17"
+      },
+      {
+        "object_id": "genesis-flood-postflood-context",
+        "record_id": "g9-bow-sign-and-interpretive-proposals",
+        "record_kind": "evidence",
+        "source_id": "g2r2-local-genesis-9"
+      },
+      {
+        "object_id": "genesis-flood-postflood-context",
+        "record_id": "g9-noah-vineyard-and-canaan-oracle",
+        "record_kind": "evidence",
+        "source_id": "g2r2-local-genesis-1-11"
+      },
+      {
+        "object_id": "genesis-flood-postflood-context",
+        "record_id": "g9-noah-sons-and-population-notice",
+        "record_kind": "evidence",
+        "source_id": "g2r2-local-genesis-1-11"
+      },
+      {
+        "object_id": "image-of-god-theme",
+        "record_id": "",
+        "record_kind": "interpretive_note",
+        "source_id": "genesis-1-26-28"
+      },
+      {
+        "object_id": "image-of-god-theme",
+        "record_id": "",
+        "record_kind": "interpretive_note",
+        "source_id": "psalm-8-1-9"
+      },
+      {
+        "object_id": "image-of-god-theme",
+        "record_id": "",
+        "record_kind": "interpretive_note",
+        "source_id": "colossians-1-15-20"
+      },
+      {
+        "object_id": "image-of-god-theme",
+        "record_id": "",
+        "record_kind": "interpretive_note",
+        "source_id": "colossians-3-9-10"
+      },
+      {
+        "object_id": "sabbath-theme",
+        "record_id": "",
+        "record_kind": "interpretive_note",
+        "source_id": "genesis-2-1-3"
+      },
+      {
+        "object_id": "sabbath-theme",
+        "record_id": "",
+        "record_kind": "interpretive_note",
+        "source_id": "exodus-20-8-11"
+      },
+      {
+        "object_id": "sabbath-theme",
+        "record_id": "",
+        "record_kind": "interpretive_note",
+        "source_id": "deuteronomy-5-12-15"
+      },
+      {
+        "object_id": "sabbath-theme",
+        "record_id": "",
+        "record_kind": "interpretive_note",
+        "source_id": "hebrews-3-7-4-11"
+      }
+    ],
+    "resolved_child_source_reference_count": 17481,
+    "source_record_count": 5232,
+    "unique_source_ids": 2784,
+    "unresolved_child_source_reference_count": 2
+  },
+  "reproduction": {
+    "chapter_source": "Committed ASV chapter inventory checked against bhf_agent.references.BOOKS.",
+    "projector_source": "scripts/audit_narrative_explorer_coverage.py (NE-A1) current eligibility, section, and source projection logic.",
+    "typed_domain_method": "Only claim_type, evidence_type, interpretive-note type, certainty, dispute_status, and resolved attached source_type fields; prose keywords do not classify records.",
+    "language_domain_boundary": "Lexical language counts only claim_type=lexical. Literary counts use literary claims, literary-convention evidence, and literary-observation notes. Generic biblical_text claims and textual-observation notes remain in the inventory but are not presumed to be lexical research or textual criticism.",
+    "record_scope_method": "Use each projected child record's own Scripture references. If the child has none, parent references are labeled inherited context and do not count as a child-scoped citation.",
+    "bibliography_method": "A traceable source has a title and at least one author, publisher, year, locator, or URL; parent bibliography membership alone does not prove a child record cites the source.",
+    "limitations": [
+      "Domain counts indicate represented typed records, not scholarly adequacy or a completeness score.",
+      "No typed tag means unknown or unclassified until human review; it does not establish irrelevance or absence of evidence.",
+      "Dynamic map and archaeology resolver coverage is sampled by NE-A1; full-corpus figures here are explicit stored passage links only."
+    ]
+  }
+}

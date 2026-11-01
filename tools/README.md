@@ -82,6 +82,12 @@ The Canonical Knowledge Library has its own small command set in `tools/`:
   expansion or review attention.
 - `ckl_graph_audit.py` reports relationship graph coverage, including orphaned
   objects, unknown targets, and missing reverse-edge suggestions.
+- `../scripts/audit_ed1a_evidence_depth.py` reuses the current NE-A1 passage
+  census and adds deterministic typed-domain, anchor-scope, source-provenance,
+  and packaged-lexicon inventories. It writes one row for each canonical
+  chapter plus a compact summary; its counts are coverage signals, not quality
+  scores. See the [ED-1A report](../docs/evidence-depth/ed1a/01-current-inventory.md)
+  for definitions and the full reproduction command.
 - `ckl_migrate.py` normalizes legacy object JSON into the current schema shape.
 - `benchmark_ckl_retrieval.py` runs the fixed broad-query corpus and reports
   median/p95 latency, anchor failures, and a deterministic result fingerprint.

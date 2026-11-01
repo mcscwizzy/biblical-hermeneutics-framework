@@ -33,6 +33,9 @@ the authoritative reviewed research source.
   evidence navigation, and curation inputs.
 - [Canonical Knowledge Library](canonical_knowledge_library.md) — CKL source,
   authoring, retrieval, and governance.
+- [ED-1A Evidence Depth audit](evidence-depth/ed1a/01-current-inventory.md) —
+  current CKL baseline, evidence-depth methodology, chapter coverage, research
+  backlog, ten pilots, and the proposed ED-1B transaction.
 - [Maps and archaeology](archaeology.md) — catalog, evidence, media rights,
   provenance, and offline behavior.
 - [Lexicon architecture](lexicon-architecture.md), [word study](word-study.md),
