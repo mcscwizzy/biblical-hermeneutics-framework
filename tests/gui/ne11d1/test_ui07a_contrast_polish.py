@@ -240,10 +240,10 @@ def _active_focus_state(driver):
     )
 
 
-def test_ui07a_dark_and_light_cards_meet_rendered_text_contrast(driver, base_url):
+def test_ui07a_dark_and_light_cards_meet_rendered_text_contrast(driver, ne11d1_base_url):
     wait = WebDriverWait(driver, 90)
     driver.set_window_size(1440, 1400)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
     _select_jonah_1_17(driver, wait)
 
     contrast_results = {}
@@ -478,10 +478,10 @@ def test_ui07a_dark_and_light_cards_meet_rendered_text_contrast(driver, base_url
         assert all(item["countWeight"] in (None, "500") for item in statuses), statuses
 
 
-def test_ui07a_cards_fit_desktop_tablet_and_chrome_mobile(driver, base_url):
+def test_ui07a_cards_fit_desktop_tablet_and_chrome_mobile(driver, ne11d1_base_url):
     wait = WebDriverWait(driver, 90)
     driver.set_window_size(1440, 1400)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
     _select_jonah_1_17(driver, wait)
 
     measurements = {}

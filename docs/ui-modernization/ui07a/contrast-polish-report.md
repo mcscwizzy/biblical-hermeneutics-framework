@@ -93,17 +93,25 @@ At 390 px, Dig Deeper cards fit within 360 px content columns. All six topic car
 ## Regression results
 
 - `npm test`: **17 passed, 0 failed**.
-- Focused UI-07A rendered contrast, hover/focus, status-border, and responsive Chrome tests: **2 passed**.
-- Targeted UI-07, Companion locations, and Narrative Explorer regression run, excluding the three route/config fixture failures below: **8 passed, 3 deselected**.
-- `git diff --check` and staged `git diff --cached --check`: passed.
+- Final affected browser selection, including all three previously unresolved cases: **11 passed, 0 failed**. This covers rendered contrast in both themes, status and focus states, desktop/tablet/390 px Chrome mobile layout, Companion locations, reader-first behavior, and Narrative Explorer feature-gate behavior.
+- Final isolated branch reruns: each previously unresolved case **1 passed** (`19.12s`, `18.40s`, and `30.55s`, respectively).
+- `git diff --check`: passed.
 
-The first unfiltered browser regression run also exposed a matcher error in the newly added contrast summary for the singular text “1 linked record.” That matcher was corrected, and both UI-07A browser tests then passed. Three existing route/config tests were still failing in the unfiltered run and remain deselected from the final targeted rerun:
+### Baseline comparison and test corrections
 
-1. `test_feature_disabled_overview_keeps_compact_context_and_source_fallback` expected `window.BHFRuntimeConfig.narrativeExplorerEnabled` to be false; the app reported true.
-2. `test_feature_disabled_context_fallback_explains_offline_lookup` could not find `[data-companion-resource="understand_passage"]` after its offline fixture setup.
-3. `test_controlled_empty_projection_has_no_actions_and_recovers` timed out waiting for its intercepted empty-projection request.
+The three original cases were run separately on a clean detached checkout of base commit `b63f717d896cc8cc727d60dca2e90f66081a4778` and on the UI-07A branch, using the same headless Chrome configuration (`156.0.8078.80`) and repository browser fixtures. The offline-cache and projection-order failures reproduced individually on the base; the feature-flag failure was order-dependent and reproduced when the enabled NE fixture ran before the disabled overview test. None was a UI-07A CSS regression.
 
-These failures concern existing runtime configuration and route fixtures, not CSS assertions. Their behavior was not changed here, and they were not independently reverified against the untouched base branch; they are reported as unresolved rather than passing.
+| Case | Clean base and pre-correction branch result | Root cause | Final branch result |
+| --- | --- | --- | --- |
+| `test_feature_disabled_overview_keeps_compact_context_and_source_fallback` | Isolated: pass on base (**41.52s**) and branch (**19.10s**). In the ordered combined run, the disabled case failed after the enabled NE fixture ran first. | Both session fixtures were named `base_url`. The nested NE fixture also left `BHF_NARRATIVE_EXPLORER_ENABLED=1` in the process environment; the parent fixture then created or reused the wrong runtime configuration. This was test-fixture isolation, not app behavior. The parent fixture now explicitly snapshots its disabled app, and the enabled tests use a separate `ne11d1_base_url`. | Isolated: pass (**19.12s**); combined selection: pass. |
+| `test_feature_disabled_context_fallback_explains_offline_lookup` | Failed on base and branch while waiting for the context record to become `error`. | A prior Companion context response could be returned from the browser's IndexedDB or service-worker cache, so the offline fixture did not guarantee an uncached network failure. The test now clears only the matching IndexedDB response, bypasses service-worker replay for the offline request, and verifies `navigator.onLine === false`. Its error-state assertion remains intact. | Isolated: pass (**18.40s**); combined selection: pass. |
+| `test_controlled_empty_projection_has_no_actions_and_recovers` | Failed on base and branch waiting for the intercepted projection before the UI action that starts that request. | The request wait preceded the Narrative Explorer click. After correcting that order, a second stale assumption expected a `.companion-discovery-card` action for Jonah 1:17, which has no source-grounded journey card. The test now verifies the activated empty projection and its disabled/no-route state, then verifies recovery through the current “Follow a Connection” route and the Matthew 12:40 handoff. Application behavior and research data were not changed. | Isolated: pass (**30.55s**); combined selection: pass. |
+
+Baseline timings vary with the temporary test server and startup, but each test's pass/failure classification was reproduced. The ordered combined failure for the disabled overview also reproduced on the clean base when the enabled Narrative Explorer fixture ran first.
+
+### Release recommendation
+
+Recommend UI-07A for release readiness: the final affected browser gate and frontend suite pass, and all three prior failures were traced to test fixture isolation, browser cache setup, or stale test assumptions. The changes in this gate are limited to tests and fixtures; CSS contrast improvements and UI-07 behavior remain unchanged.
 
 ## UI-07 and research boundaries
 

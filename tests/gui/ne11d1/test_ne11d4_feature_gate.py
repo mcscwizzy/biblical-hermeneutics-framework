@@ -10,8 +10,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from tests.gui.pages import HomePage
 from tests.gui.ne11d1.test_real_ckl_handoff import (
-    _connection_action,
+    _click_related_passage,
     _context_identity,
+    _open_follow_connection,
     _route_article,
     _select_verses,
 )
@@ -20,10 +21,13 @@ from tests.gui.ne11d1.test_real_ckl_handoff import (
 pytestmark = [pytest.mark.gui]
 
 
-def test_controlled_empty_projection_has_no_actions_and_recovers(driver, base_url):
+def test_controlled_empty_projection_has_no_actions_and_recovers(driver, ne11d1_base_url):
     driver.set_window_size(1440, 1200)
     wait = WebDriverWait(driver, 90)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
+    assert driver.execute_script(
+        "return window.BHFRuntimeConfig?.narrativeExplorerEnabled === true;"
+    ), "NE-11D1 GUI fixture must serve a feature-enabled app"
     driver.execute_script(
         """
         window.__ne11d4EmptyFixtureCalls = 0;
@@ -62,11 +66,8 @@ def test_controlled_empty_projection_has_no_actions_and_recovers(driver, base_ur
 
     _select_verses(driver, wait, "Jonah", 1, [17])
     wait.until(lambda browser: _context_identity(browser, "jonah-three-days")["reference"] == "Jonah 1:17")
-    wait.until(lambda browser: browser.execute_script("return window.__ne11d4EmptyFixtureCalls > 0"))
-    assert driver.find_elements(By.CSS_SELECTOR, ".companion-discovery-card")
-    assert not driver.find_elements(By.CSS_SELECTOR, "button[data-presentation-action='explore_connection']")
-
     driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
+    wait.until(lambda browser: browser.execute_script("return window.__ne11d4EmptyFixtureCalls > 0"))
     wait.until(lambda browser: browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer"))
     explorer = driver.find_element(By.CSS_SELECTOR, ".narrative-explorer")
     assert "Jonah 1:17" in explorer.text
@@ -90,18 +91,18 @@ def test_controlled_empty_projection_has_no_actions_and_recovers(driver, base_ur
 
     # A fresh page removes only the test interception; the next normal projection and route handoff recover.
     driver.refresh()
-    HomePage(driver, wait, base_url).wait_loaded()
-    identity = {"object_id": "jonah", "record_kind": "claim", "record_id": "jonah-three-days"}
+    HomePage(driver, wait, ne11d1_base_url).wait_loaded()
     wait.until(lambda browser: _context_identity(browser, "jonah-three-days")["cited"])
     assert driver.execute_script("return window.BHFStudySelection.getState().reference") == "Jonah 1:17"
-    _card, action = wait.until(lambda browser: _connection_action(browser, identity))
-    action.click()
+    _open_follow_connection(driver, wait)
     article = _route_article(driver, wait, "jonah-1-17-matthew-12-40-sign-of-jonah")
     assert "Jonah 1:17 → Matthew 12:40" in article.text
+    _click_related_passage(driver, wait, article, "Matthew 12:40")
+    assert driver.execute_script("return window.BHFStudySelection.getState().reference") == "Matthew 12:40"
 
 
-def test_controlled_cold_and_warm_genesis_endpoint_samples(base_url):
-    url = f"{base_url}/api/narrative-explorer/v1/passages/Genesis/1"
+def test_controlled_cold_and_warm_genesis_endpoint_samples(ne11d1_base_url):
+    url = f"{ne11d1_base_url}/api/narrative-explorer/v1/passages/Genesis/1"
     samples = []
     for label in ("cold", "warm"):
         started = time.monotonic()
@@ -131,11 +132,11 @@ def test_controlled_cold_and_warm_genesis_endpoint_samples(base_url):
     ],
 )
 def test_negative_passage_projection_request_counts(
-    driver, base_url, book, chapter, verse, reference, verse_start, expected_items
+    driver, ne11d1_base_url, book, chapter, verse, reference, verse_start, expected_items
 ):
     driver.set_window_size(1440, 1200)
     wait = WebDriverWait(driver, 90)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
     driver.execute_script(
         """
         window.__ne11d4ProjectionEvents = [];

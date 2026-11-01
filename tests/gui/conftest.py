@@ -64,6 +64,7 @@ def base_url() -> str:
     original_web_config = web_settings.WEB_CONFIG_PATH
     original_test_mode = web_settings.TEST_MODE
     original_ckl_root = os.environ.get("BHF_CKL_ROOT")
+    original_explorer_flag = os.environ.get("BHF_NARRATIVE_EXPLORER_ENABLED")
 
     temp_dir = tempfile.TemporaryDirectory()
     temp_root = Path(temp_dir.name)
@@ -97,7 +98,17 @@ def base_url() -> str:
 
     import bhf_web.app as app_module
 
-    app = app_module.create_app()
+    # Root GUI cases exercise the feature-disabled overview. A different
+    # session fixture may have enabled Narrative Explorer for its own server;
+    # each app must snapshot its intended feature flag during construction.
+    os.environ["BHF_NARRATIVE_EXPLORER_ENABLED"] = "0"
+    try:
+        app = app_module.create_app()
+    finally:
+        if original_explorer_flag is None:
+            os.environ.pop("BHF_NARRATIVE_EXPLORER_ENABLED", None)
+        else:
+            os.environ["BHF_NARRATIVE_EXPLORER_ENABLED"] = original_explorer_flag
     from uvicorn import Config, Server
 
     config = Config(
@@ -125,9 +136,52 @@ def base_url() -> str:
         os.environ.pop("BHF_CKL_ROOT", None)
     else:
         os.environ["BHF_CKL_ROOT"] = original_ckl_root
+    if original_explorer_flag is None:
+        os.environ.pop("BHF_NARRATIVE_EXPLORER_ENABLED", None)
+    else:
+        os.environ["BHF_NARRATIVE_EXPLORER_ENABLED"] = original_explorer_flag
     web_settings.STUDY_DB_PATH = original_db_path
     web_settings.WEB_CONFIG_PATH = original_web_config
     web_settings.TEST_MODE = original_test_mode
+
+
+@pytest.fixture(scope="session")
+def ne11d1_base_url(base_url: str) -> str:
+    """Serve an enabled Narrative Explorer app on its own stable URL."""
+
+    original_explorer_flag = os.environ.get("BHF_NARRATIVE_EXPLORER_ENABLED")
+    os.environ["BHF_NARRATIVE_EXPLORER_ENABLED"] = "1"
+    try:
+        import bhf_web.app as app_module
+
+        app = app_module.create_app()
+    finally:
+        if original_explorer_flag is None:
+            os.environ.pop("BHF_NARRATIVE_EXPLORER_ENABLED", None)
+        else:
+            os.environ["BHF_NARRATIVE_EXPLORER_ENABLED"] = original_explorer_flag
+
+    port = _free_port()
+    enabled_base_url = f"{DEFAULT_BASE_URL.rsplit(':', 1)[0]}:{port}"
+    from uvicorn import Config, Server
+
+    server = Server(Config(
+        app,
+        host="127.0.0.1",
+        port=port,
+        log_level="warning",
+        access_log=False,
+    ))
+    thread = threading.Thread(target=server.run, daemon=True)
+    thread.start()
+    _wait_for_health(enabled_base_url)
+
+    yield enabled_base_url
+
+    server.should_exit = True
+    thread.join(timeout=120)
+    if thread.is_alive():
+        raise RuntimeError("Enabled Narrative Explorer GUI server did not stop before fixture cleanup")
 
 
 @pytest.fixture

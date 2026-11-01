@@ -81,8 +81,29 @@ def test_feature_disabled_overview_keeps_compact_context_and_source_fallback(dri
 def test_feature_disabled_context_fallback_explains_offline_lookup(driver, wait, base_url):
     driver.set_window_size(1440, 1000)
     HomePage(driver, wait, base_url).open().wait_loaded()
+    cache_state = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        (async () => {
+          const path = "/api/study/companion-context";
+          const apiEntries = await window.BHFOfflineDB.list("apiResponses");
+          const staleApiEntries = apiEntries.filter(entry => {
+            const key = String(entry.url || entry.id || "");
+            return new URL(key, location.href).pathname === path;
+          });
+          await Promise.all(staleApiEntries.map(entry => window.BHFOfflineDB.remove("apiResponses", entry.id)));
+          window.BHFCompanionContext.clear();
+          return {apiEntries: staleApiEntries.length};
+        })().then(done, error => done({error: String(error)}));
+        """
+    )
+    assert "error" not in cache_state, cache_state
     try:
         driver.execute_cdp_cmd("Network.enable", {})
+        # The service worker can legitimately replay a prior context response
+        # from Cache Storage. This case verifies the uncached offline error
+        # state, so bypass it after clearing the matching IndexedDB entry.
+        driver.execute_cdp_cmd("Network.setBypassServiceWorker", {"bypass": True})
         driver.execute_cdp_cmd("Network.emulateNetworkConditions", {
             "offline": True,
             "latency": 0,
@@ -93,7 +114,7 @@ def test_feature_disabled_context_fallback_explains_offline_lookup(driver, wait,
         pytest.skip(f"Browser does not support offline network emulation: {exc}")
 
     try:
-        driver.execute_script("window.BHFCompanionContext.clear();")
+        assert driver.execute_script("return navigator.onLine === false")
         driver.find_element(
             By.CSS_SELECTOR,
             '#chapter-reader .reader-pane.is-active [data-verse="2"] [data-verse-select]',
@@ -115,3 +136,4 @@ def test_feature_disabled_context_fallback_explains_offline_lookup(driver, wait,
             "downloadThroughput": -1,
             "uploadThroughput": -1,
         })
+        driver.execute_cdp_cmd("Network.setBypassServiceWorker", {"bypass": False})
