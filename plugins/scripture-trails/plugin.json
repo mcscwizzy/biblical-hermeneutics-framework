@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "scripture-trails",
+  "version": "0.1.0",
+  "description": "A conversational Bible exploration skill that answers directly and offers evidence-based connections for further study.",
+  "author": {
+    "name": "Biblical Hermeneutics Framework contributors",
+    "url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework"
+  },
+  "repository": "https://github.com/mcscwizzy/biblical-hermeneutics-framework",
+  "license": "CC-BY-4.0",
+  "keywords": ["Bible", "Scripture", "hermeneutics", "study", "intertextuality"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Scripture Trails",
+        "shortDescription": "Explore Scripture with context",
+        "longDescription": "A skills-only Bible exploration companion. It answers a passage question directly, uses literary and historical context, separates observation from interpretation and application, and offers a few evidence-supported Scripture connections when useful. It does not provide a Bible text database, external research service, or prescribed doctrinal conclusions.",
+        "developerName": "BHF contributors",
+        "category": "Education",
+        "capabilities": [
+          "Explore biblical passages with literary and historical context",
+          "Trace evidence-supported connections across Scripture",
+          "Compare responsible interpretations with appropriate uncertainty"
+        ],
+        "defaultPrompt": [
+          "Why does Psalm 22 matter in the crucifixion accounts?",
+          "Is John 1 intentionally echoing Genesis 1?",
+          "Show me a worthwhile connection from this passage and explain why it fits."
+        ],
+        "brandColor": "#315B4A"
+      }
+    }
+  }
+}

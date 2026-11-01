@@ -47,6 +47,24 @@ python tools/compose.py --profile standard --write
 
 Shared loading/parsing/dependency-resolution helpers imported by both scripts.
 
+## Scripture Trails plugin
+
+`build_scripture_trails.py` composes selected BHF modules into a portable,
+skills-only ChatGPT plugin. It generates tracked references and source
+provenance, checks generated-file freshness, and creates a deterministic ZIP
+with a SHA-256 checksum. The plugin package has no BHF runtime dependency.
+See the [Scripture Trails developer guide](../plugins/scripture-trails/README.md)
+for source selection, local ChatGPT testing, and release steps.
+
+```bash
+python tools/build_scripture_trails.py --validate
+python tools/build_scripture_trails.py --check
+python tools/build_scripture_trails.py --build
+python tools/build_scripture_trails.py --check
+python tools/build_scripture_trails.py --package
+python tools/build_scripture_trails.py --validate-zip
+```
+
 ## CKL authoring tools
 
 The Canonical Knowledge Library has its own small command set in `tools/`:

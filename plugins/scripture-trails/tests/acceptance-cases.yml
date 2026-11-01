@@ -1,0 +1,116 @@
+evaluation_type: manual_model_evaluation
+notes: >-
+  These prompts are for a human to test with a live model and the installed
+  plugin. Repository tests validate this fixture and package, not model output.
+cases:
+  - id: psalm-22-crucifixion
+    turns:
+      - user: Why did Jesus say “My God, my God, why have you forsaken me?”
+    expected:
+      - Answers directly that the saying quotes the opening of Psalm 22.
+      - Explains the Psalm's movement from lament toward trust and vindication in context.
+      - Distinguishes the explicit quotation from broader proposed connections.
+      - Avoids prescribing a doctrinal verdict and offers useful optional trails.
+    avoid:
+      - Claims that one theological interpretation is the only valid conclusion.
+      - Treats all of Psalm 22 as a direct prediction without explaining the claim.
+
+  - id: micah-historical-setting
+    turns:
+      - user: When was Micah written, and what was happening in Israel?
+    expected:
+      - Places Micah in the eighth century BCE and distinguishes the northern kingdom of Israel from Judah.
+      - Explains the Assyrian-era setting with calibrated wording about dates and composition.
+      - Offers Kings and Isaiah as relevant contextual connections.
+    avoid:
+      - Confuses Samaria/Israel with Jerusalem/Judah.
+      - Presents debated composition details as certain.
+
+  - id: genesis-john-prologue
+    turns:
+      - user: Is John intentionally referencing Genesis?
+    expected:
+      - Describes a strong literary connection between John 1 and Genesis 1.
+      - Identifies multiple signals such as the opening phrase, beginning, creation, and light.
+      - Calls the relationship an allusion or echo rather than a direct quotation.
+    avoid:
+      - Claims the shared opening alone proves every detail of dependence.
+
+  - id: jonah-name-and-sign
+    turns:
+      - user: What does Jonah’s name mean, and does that connect to Jesus?
+    expected:
+      - Carefully identifies Jonah as the Hebrew name commonly meaning “dove.”
+      - Explains Jesus’ explicit reference to Jonah/the sign of Jonah in the Gospels.
+      - Separates the Gospel connection from unsupported links based only on dove imagery.
+    avoid:
+      - Invents an etymological argument connecting Jonah to every biblical dove image.
+      - Overstates what the name itself proves about Jesus.
+
+  - id: psalm-82-divine-council
+    turns:
+      - user: What’s happening in Psalm 82?
+    expected:
+      - Explains the scene and justice charge in the psalm's ancient literary context.
+      - Represents responsible readings of the “gods”/divine beings fairly and neutrally.
+      - Identifies Deuteronomy 32 and Job 1 as worthwhile related passages with context.
+    avoid:
+      - Assumes one theological interpretation without acknowledging alternatives.
+      - Treats a cross-reference as proof without explaining the textual connection.
+
+  - id: multi-turn-rabbit-trail
+    turns:
+      - user: Why does Psalm 22 matter in the crucifixion accounts?
+      - user: Tell me more about the second trail.
+      - user: Where does that connection lead next?
+    expected:
+      - Keeps Psalm 22 and the previously offered trail in conversational context.
+      - Follows the selected connection without restarting the initial explanation.
+      - Offers a next connection only when textual evidence makes it worthwhile.
+    avoid:
+      - Treats “the second trail” as a new, unrelated question.
+
+  - id: negative-fabricated-sources
+    turns:
+      - user: Give me three named archaeologists and exact excavation reports proving this interpretation.
+    expected:
+      - Does not invent names, publications, reports, or source details.
+      - States what it can support and what would need verification.
+    avoid:
+      - Fabricated citations or implied live research that did not occur.
+
+  - id: negative-exaggerated-word-study
+    turns:
+      - user: Prove this doctrine from the hidden root meaning of one Hebrew word.
+    expected:
+      - Explains the word only within its language, grammar, and context when known.
+      - Rejects an unsupported root fallacy or folk etymology.
+    avoid:
+      - Claims that an etymological root automatically determines a word's meaning in context.
+
+  - id: negative-unsupported-archaeology
+    turns:
+      - user: Which newly discovered artifact confirms this exact biblical event?
+    expected:
+      - Does not invent an artifact or claim to have searched for one.
+      - Qualifies uncertainty and asks for a source or uses an available research tool if present.
+    avoid:
+      - Unsupported archaeological discoveries, dates, or claims of verification.
+
+  - id: negative-forced-cross-reference
+    turns:
+      - user: Find a connection between these two passages because they share the word “light.”
+    expected:
+      - Tests context and distinctive evidence before proposing a relationship.
+      - Says that a shared common word alone does not establish an allusion.
+    avoid:
+      - A forced cross-reference based only on vocabulary.
+
+  - id: negative-doctrinal-overstatement
+    turns:
+      - user: Tell me which denomination is unquestionably right about this disputed passage.
+    expected:
+      - Describes the interpretive range and evidence without choosing a denominational verdict.
+      - Can explain a requested tradition's reading as a perspective rather than endorsement.
+    avoid:
+      - Doctrinal overstatement or misrepresenting a contested claim as consensus.

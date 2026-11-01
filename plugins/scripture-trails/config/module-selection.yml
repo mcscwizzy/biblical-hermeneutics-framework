@@ -1,0 +1,66 @@
+# Selected stable BHF modules are composed into separate packaged references.
+# Paths are relative to skills/explore-scripture/ and module IDs reuse BHF IDs.
+required_modules:
+  - core.core-framework
+  - core.genre-awareness
+  - core.original-audience
+  - core.observe-interpret-apply
+  - core.intertextuality
+  - core.epistemic-humility
+  - core.anti-hallucination
+
+module_outputs:
+  references/interpretive-method.md:
+    - core.core-framework
+    - core.genre-awareness
+    - core.original-audience
+    - core.observe-interpret-apply
+  references/historical-context.md:
+    - context.ancient-near-east
+    - context.covenant
+    - context.exile-and-restoration
+    - context.greco-roman-world
+    - context.israelite-monarchy
+    - context.roman-empire
+    - context.second-temple-judaism
+    - context.temple
+    - context.wisdom-tradition
+  references/genre-and-language.md:
+    - genre.apocalyptic
+    - genre.epistle
+    - genre.gospel
+    - genre.law
+    - genre.narrative
+    - genre.poetry
+    - genre.prophecy
+    - genre.wisdom
+    - language.greek
+    - language.hebrew
+  references/intertextuality.md:
+    - core.intertextuality
+  references/evidence-and-boundaries.md:
+    - core.epistemic-humility
+    - core.anti-hallucination
+  references/passage-guides.md:
+    - book.1-kings
+    - book.2-kings
+    - book.deuteronomy
+    - book.genesis
+    - book.isaiah
+    - book.job
+    - book.john
+    - book.jonah
+    - book.matthew
+    - book.micah
+    - book.psalms
+
+# Authored references below adapt and operationalize the supporting BHF methods.
+# A source change names these guides for review without duplicating source text.
+supports:
+  references/trail-selection.md:
+    - core.intertextuality
+    - core.epistemic-humility
+  references/interaction-patterns.md:
+    - core.core-framework
+    - core.observe-interpret-apply
+    - core.original-audience

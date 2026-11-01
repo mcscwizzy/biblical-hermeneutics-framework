@@ -13,6 +13,11 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Added
 
+- **Scripture Trails standalone plugin pipeline**: added a deterministic,
+  source-tracked build for a skills-only conversational Bible exploration
+  plugin, with modular BHF references, ZIP validation, checksum generation,
+  manual behavior evaluations, and a focused CI workflow. The plugin has no
+  BHF service runtime dependency.
 - **Unified documentation set**: added a task-oriented documentation index,
   current answer-flow and component diagrams, a complete Docker lifecycle
   guide, a source-build guide, and hosted website/PWA usage and offline-boundary

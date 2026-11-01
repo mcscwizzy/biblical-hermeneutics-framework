@@ -1,0 +1,77 @@
+name: Scripture Trails
+
+on:
+  push:
+    paths:
+      - "framework/**"
+      - "plugins/scripture-trails/**"
+      - "tools/build_scripture_trails.py"
+      - "tools/bhf_lib.py"
+      - "tools/validate.py"
+      - "tools/requirements.txt"
+      - "tests/test_scripture_trails_build.py"
+      - "LICENSE-CONTENT"
+      - ".github/workflows/scripture-trails.yml"
+  pull_request:
+    paths:
+      - "framework/**"
+      - "plugins/scripture-trails/**"
+      - "tools/build_scripture_trails.py"
+      - "tools/bhf_lib.py"
+      - "tools/validate.py"
+      - "tools/requirements.txt"
+      - "tests/test_scripture_trails_build.py"
+      - "LICENSE-CONTENT"
+      - ".github/workflows/scripture-trails.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-build-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install build validation tools
+        run: python -m pip install PyYAML pytest
+
+      - name: Validate BHF source modules
+        run: python tools/validate.py framework/
+
+      - name: Validate Scripture Trails inputs
+        run: python tools/build_scripture_trails.py --validate
+
+      - name: Check committed generated resources
+        run: python tools/build_scripture_trails.py --check
+
+      - name: Build packaged references
+        run: python tools/build_scripture_trails.py --build
+
+      - name: Run deterministic plugin tests
+        run: python -m pytest -q tests/test_scripture_trails_build.py
+
+      - name: Confirm built resources are fresh
+        run: python tools/build_scripture_trails.py --check
+
+      - name: Package standalone plugin
+        run: python tools/build_scripture_trails.py --package
+
+      - name: Validate plugin ZIP and checksum
+        run: python tools/build_scripture_trails.py --validate-zip
+
+      - name: Upload plugin ZIP and build records
+        uses: actions/upload-artifact@v4
+        with:
+          name: scripture-trails-plugin
+          path: |
+            dist/plugins/scripture-trails-*.zip
+            dist/plugins/scripture-trails-*.sha256
+            dist/plugins/scripture-trails-build-manifest.json
+          if-no-files-found: error
+          retention-days: 30
