@@ -74,5 +74,5 @@
 
 - [x] **Step 1: Document** source selection changes, build/check/package commands, local ChatGPT desktop installation, manual model evaluation, publication preparation, and skills-only limitations.
 - [x] **Step 2: Add focused workflow path filters** for framework sources, builder, plugin, and tests; validate, build, test, check, package, and upload artifacts without secrets or publication.
-- [x] **Step 3: Run framework validation, targeted plugin tests, the existing Python suite, build/check/package, ZIP validation, and `git diff --check`.** The full repository suite was attempted but collection stopped on missing `fastapi` and `httpx`; all 22 focused plugin tests passed.
-- [ ] **Step 4: Inspect final diff and generated-file status, commit the completed feature, and push the branch if authentication permits.**
+- [x] **Step 3: Run framework validation, targeted plugin tests, the existing Python suite, build/check/package, ZIP validation, and `git diff --check`.** The full repository suite was attempted but collection stopped on 12 import errors because `fastapi` and `httpx` are absent; all 28 focused plugin tests passed.
+- [x] **Step 4: Inspect final diff and generated-file status, commit the completed feature, and push the branch if authentication permits.** Final review included a whole-branch code review; its two important findings were fixed and regression-tested.

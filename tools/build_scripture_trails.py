@@ -380,68 +380,36 @@ def _runtime_files(plugin_root: Path) -> list[tuple[str, Path]]:
         if not path.is_file():
             raise BuildError(f"required runtime file is missing: {name}")
         candidates.append((name, path))
-    references = plugin_root / REFERENCE_DIR
-    if references.exists():
-        for path in sorted(references.rglob("*.md")):
-            if path.is_symlink():
-                raise BuildError(f"plugin runtime references must not be symlinks: {path}")
-            relative = path.relative_to(plugin_root).as_posix()
-            _inside(plugin_root, relative, label="runtime reference")
-            candidates.append((relative, path))
+    config = _load_config(plugin_root.parent.parent)
+    reference_paths: set[str] = set()
+    for output in config["module_outputs"]:
+        reference_paths.add((SKILL_REL.parent / _safe_relative(
+            output, label="generated reference path"
+        )).as_posix())
+    for reference in config.get("supports", {}):
+        reference_paths.add((SKILL_REL.parent / _safe_relative(
+            reference, label="supporting reference path"
+        )).as_posix())
+    for relative in sorted(reference_paths):
+        path = _inside(plugin_root, relative, label="runtime reference")
+        if path.is_symlink():
+            raise BuildError(f"plugin runtime references must not be symlinks: {relative}")
+        if not path.is_file():
+            raise BuildError(f"configured runtime reference is missing: {relative}")
+        candidates.append((relative, path))
     if len({name for name, _ in candidates}) != len(candidates):
         raise BuildError("plugin runtime file list contains duplicate paths")
     return sorted(candidates, key=lambda item: item[0])
 
 
-def _markdown_text_errors(text: str, relative: str, available_files: set[str]) -> list[str]:
+def _plugin_manifest_errors(plugin_manifest: Any, version: str) -> list[str]:
     errors: list[str] = []
-    for match in MARKDOWN_LINK_RE.finditer(text):
-        target = match.group(1)
-        if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("#"):
-            continue
-        target_path, _, _fragment = target.partition("#")
-        if not target_path:
-            continue
-        if target_path.startswith("/") or "\\" in target_path:
-            errors.append(f"{relative}: unsafe Markdown link {target!r}")
-            continue
-        resolved = PurePosixPath(relative).parent.joinpath(target_path)
-        normalized = PurePosixPath(os.path.normpath(str(resolved)))
-        if normalized.is_absolute() or ".." in normalized.parts:
-            errors.append(f"{relative}: Markdown link escapes the plugin: {target!r}")
-        elif normalized.as_posix() not in available_files:
-            errors.append(f"{relative}: Markdown link does not resolve in the package: {target!r}")
-    return errors
-
-
-def _markdown_errors(path: Path, relative: str, available_files: set[str]) -> list[str]:
-    return _markdown_text_errors(path.read_text(encoding="utf-8"), relative, available_files)
-
-
-def validate_workspace(repo_root: Path = REPO_ROOT) -> list[str]:
-    """Validate module selection and plugin files without writing resources."""
-    repo_root = repo_root.resolve()
-    errors: list[str] = []
-    plugin_root = repo_root / PLUGIN_REL
-    try:
-        _selected_modules(repo_root)
-        version = _plugin_version(plugin_root)
-    except (BuildError, OSError, TypeError, ValueError) as exc:
-        return [str(exc)]
-
-    plugin_manifest_path = plugin_root / "plugin.json"
-    try:
-        plugin_manifest = json.loads(plugin_manifest_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        return [f"plugin.json: {exc}"]
     if not isinstance(plugin_manifest, dict):
         errors.append("plugin.json must contain a JSON object")
         plugin_manifest = {}
     unknown_properties = sorted(set(plugin_manifest) - PLUGIN_MANIFEST_PROPERTIES)
     if unknown_properties:
-        errors.append(
-            "unknown plugin.json property: " + ", ".join(unknown_properties)
-        )
+        errors.append("unknown plugin.json property: " + ", ".join(unknown_properties))
     if plugin_manifest.get("$schema") != "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json":
         errors.append("plugin.json must use the portable Agent Plugins schema")
     if plugin_manifest.get("name") != "scripture-trails":
@@ -453,6 +421,8 @@ def validate_workspace(repo_root: Path = REPO_ROOT) -> list[str]:
         errors.append("plugin.json version must match VERSION")
     if not isinstance(plugin_manifest.get("version"), str):
         errors.append("plugin.json version must be a string")
+    if plugin_manifest.get("license") != "CC-BY-4.0":
+        errors.append("plugin.json license must be CC-BY-4.0 for the included BHF content")
     if not isinstance(plugin_manifest.get("description"), str) or not plugin_manifest["description"].strip():
         errors.append("plugin.json requires a non-empty description")
     for field in ("homepage", "repository", "license"):
@@ -470,10 +440,7 @@ def validate_workspace(repo_root: Path = REPO_ROOT) -> list[str]:
         else:
             unknown_author_properties = sorted(set(author) - {"name", "email", "url"})
             if unknown_author_properties:
-                errors.append(
-                    "unknown plugin.json author property: "
-                    + ", ".join(unknown_author_properties)
-                )
+                errors.append("unknown plugin.json author property: " + ", ".join(unknown_author_properties))
             if not all(isinstance(value, str) for value in author.values()):
                 errors.append("plugin.json author properties must be strings")
     extensions = plugin_manifest.get("extensions")
@@ -519,28 +486,99 @@ def validate_workspace(repo_root: Path = REPO_ROOT) -> list[str]:
                 errors.append("plugin.json interface defaultPrompt must contain at most three strings of 128 characters")
     if "mcpServers" in plugin_manifest or "dependencies" in plugin_manifest:
         errors.append("skills-only plugin manifest must not require MCP tools or dependencies")
+    return errors
+
+
+def _skill_frontmatter_errors(skill_text: str) -> list[str]:
+    errors: list[str] = []
+    frontmatter = SKILL_FRONTMATTER_RE.match(skill_text)
+    if not frontmatter:
+        return [f"{SKILL_REL.as_posix()}: missing YAML frontmatter"]
+    try:
+        metadata = yaml.safe_load(frontmatter.group(1))
+    except yaml.YAMLError as exc:
+        return [f"{SKILL_REL.as_posix()}: invalid YAML frontmatter: {exc}"]
+    if not isinstance(metadata, dict):
+        errors.append(f"{SKILL_REL.as_posix()}: frontmatter must be a YAML mapping")
+    else:
+        if metadata.get("name") != "explore-scripture":
+            errors.append("skill name must be 'explore-scripture'")
+        if not isinstance(metadata.get("description"), str) or not metadata["description"].strip():
+            errors.append("skill frontmatter requires a description")
+    return errors
+
+
+def _attribution_errors(text: str) -> list[str]:
+    normalized = text.lower()
+    if (
+        "biblical hermeneutics framework" not in normalized
+        or "cc by 4.0" not in normalized
+        or "creativecommons.org/licenses/by/4.0" not in normalized
+    ):
+        return ["ATTRIBUTION.md must identify BHF and its CC BY 4.0 license"]
+    return []
+
+
+def _content_license_errors(text: str) -> list[str]:
+    normalized = text.lower()
+    if (
+        "creative commons attribution 4.0" not in normalized
+        or "creativecommons.org/licenses/by/4.0" not in normalized
+        or "public license" not in normalized
+    ):
+        return ["LICENSE-CONTENT does not contain the CC BY 4.0 license text"]
+    return []
+
+
+def _markdown_text_errors(text: str, relative: str, available_files: set[str]) -> list[str]:
+    errors: list[str] = []
+    for match in MARKDOWN_LINK_RE.finditer(text):
+        target = match.group(1)
+        if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("#"):
+            continue
+        target_path, _, _fragment = target.partition("#")
+        if not target_path:
+            continue
+        if target_path.startswith("/") or "\\" in target_path:
+            errors.append(f"{relative}: unsafe Markdown link {target!r}")
+            continue
+        resolved = PurePosixPath(relative).parent.joinpath(target_path)
+        normalized = PurePosixPath(os.path.normpath(str(resolved)))
+        if normalized.is_absolute() or ".." in normalized.parts:
+            errors.append(f"{relative}: Markdown link escapes the plugin: {target!r}")
+        elif normalized.as_posix() not in available_files:
+            errors.append(f"{relative}: Markdown link does not resolve in the package: {target!r}")
+    return errors
+
+
+def _markdown_errors(path: Path, relative: str, available_files: set[str]) -> list[str]:
+    return _markdown_text_errors(path.read_text(encoding="utf-8"), relative, available_files)
+
+
+def validate_workspace(repo_root: Path = REPO_ROOT) -> list[str]:
+    """Validate module selection and plugin files without writing resources."""
+    repo_root = repo_root.resolve()
+    errors: list[str] = []
+    plugin_root = repo_root / PLUGIN_REL
+    try:
+        _selected_modules(repo_root)
+        version = _plugin_version(plugin_root)
+    except (BuildError, OSError, TypeError, ValueError) as exc:
+        return [str(exc)]
+
+    plugin_manifest_path = plugin_root / "plugin.json"
+    try:
+        plugin_manifest = json.loads(plugin_manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return [f"plugin.json: {exc}"]
+    errors.extend(_plugin_manifest_errors(plugin_manifest, version))
 
     skill_path = plugin_root / SKILL_REL
     try:
         skill_text = skill_path.read_text(encoding="utf-8")
     except OSError as exc:
         return errors + [f"skill file is missing or unreadable: {exc}"]
-    frontmatter = SKILL_FRONTMATTER_RE.match(skill_text)
-    if not frontmatter:
-        errors.append(f"{SKILL_REL.as_posix()}: missing YAML frontmatter")
-    else:
-        try:
-            metadata = yaml.safe_load(frontmatter.group(1))
-        except yaml.YAMLError as exc:
-            errors.append(f"{SKILL_REL.as_posix()}: invalid YAML frontmatter: {exc}")
-            metadata = None
-        if not isinstance(metadata, dict):
-            errors.append(f"{SKILL_REL.as_posix()}: frontmatter must be a YAML mapping")
-        else:
-            if metadata.get("name") != "explore-scripture":
-                errors.append("skill name must be 'explore-scripture'")
-            if not isinstance(metadata.get("description"), str) or not metadata["description"].strip():
-                errors.append("skill frontmatter requires a description")
+    errors.extend(_skill_frontmatter_errors(skill_text))
 
     try:
         cases = _read_yaml(plugin_root / "tests/acceptance-cases.yml", "acceptance cases")
@@ -575,6 +613,18 @@ def validate_workspace(repo_root: Path = REPO_ROOT) -> list[str]:
     try:
         expected = build_resources(repo_root)
         source_manifest = json.loads(expected[SOURCE_MANIFEST])
+        actual_manifest_path = plugin_root / SOURCE_MANIFEST
+        try:
+            actual_manifest_bytes = actual_manifest_path.read_bytes()
+        except OSError as exc:
+            errors.append(f"{SOURCE_MANIFEST} is missing or unreadable: {exc}")
+        else:
+            try:
+                json.loads(actual_manifest_bytes)
+            except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+                errors.append(f"{SOURCE_MANIFEST} is invalid JSON: {exc}")
+            if actual_manifest_bytes != expected[SOURCE_MANIFEST].encode("utf-8"):
+                errors.append(f"{SOURCE_MANIFEST} is stale; run --build")
         configured_outputs = {
             (SKILL_REL.parent / output).as_posix()
             for output in _load_config(repo_root)["module_outputs"]
@@ -588,6 +638,18 @@ def validate_workspace(repo_root: Path = REPO_ROOT) -> list[str]:
                 errors.append(f"packaged reference is missing: {relative}; run --build")
         if not isinstance(source_manifest, dict) or not isinstance(source_manifest.get("sources"), list):
             errors.append(f"{SOURCE_MANIFEST} must contain a sources list")
+        try:
+            attribution = (plugin_root / "ATTRIBUTION.md").read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            errors.append(f"ATTRIBUTION.md is missing or invalid: {exc}")
+        else:
+            errors.extend(_attribution_errors(attribution))
+        try:
+            content_license = (plugin_root / "LICENSE-CONTENT").read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            errors.append(f"LICENSE-CONTENT is missing or invalid: {exc}")
+        else:
+            errors.extend(_content_license_errors(content_license))
     except (BuildError, OSError, ValueError, TypeError) as exc:
         errors.append(str(exc))
     return errors
@@ -597,6 +659,31 @@ def write_generated_resources(repo_root: Path = REPO_ROOT) -> list[str]:
     repo_root = repo_root.resolve()
     plugin_root = repo_root / PLUGIN_REL
     resources = build_resources(repo_root)
+    current_manifest = json.loads(resources[SOURCE_MANIFEST])
+    current_references = {
+        entry["path"] for entry in current_manifest.get("references", [])
+    }
+    old_manifest_path = plugin_root / SOURCE_MANIFEST
+    if old_manifest_path.is_file():
+        try:
+            old_manifest = json.loads(old_manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            old_manifest = {}
+        old_references = old_manifest.get("references", []) if isinstance(old_manifest, dict) else []
+        if isinstance(old_references, list):
+            for reference in old_references:
+                if not isinstance(reference, dict) or reference.get("kind") != "generated":
+                    continue
+                relative = reference.get("path")
+                if not isinstance(relative, str) or relative in current_references:
+                    continue
+                if not relative.startswith(REFERENCE_DIR.as_posix() + "/"):
+                    continue
+                stale_path = _inside(plugin_root, relative, label="obsolete generated reference")
+                if stale_path.is_symlink():
+                    raise BuildError(f"obsolete generated reference must not be a symlink: {relative}")
+                if stale_path.is_file():
+                    stale_path.unlink()
     for relative, text in resources.items():
         path = _inside(plugin_root, relative, label="generated resource")
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -614,10 +701,18 @@ def _manifest_output_sources(repo_root: Path) -> dict[str, set[str]]:
         manifest = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return {}
+    if not isinstance(manifest, dict):
+        return {}
     result: dict[str, set[str]] = {}
-    for source in manifest.get("sources", []):
+    sources = manifest.get("sources", [])
+    if not isinstance(sources, list):
+        return result
+    for source in sources:
+        if not isinstance(source, dict):
+            continue
         for output in source.get("outputs", []):
-            result.setdefault(output, set()).add(source.get("id", ""))
+            if isinstance(output, str):
+                result.setdefault(output, set()).add(str(source.get("id", "")))
     return result
 
 
@@ -635,6 +730,9 @@ def check_generated_resources(repo_root: Path = REPO_ROOT) -> list[str]:
     for source in current_manifest["sources"]:
         for output in source.get("outputs", []):
             output_sources.setdefault(output, set()).add(source["id"])
+    configured_references = {
+        entry["path"] for entry in current_manifest.get("references", [])
+    }
 
     errors: list[str] = []
     for relative, text in expected.items():
@@ -647,7 +745,14 @@ def check_generated_resources(repo_root: Path = REPO_ROOT) -> list[str]:
                     old_manifest = json.loads(old_manifest_path.read_text(encoding="utf-8"))
                 except (OSError, json.JSONDecodeError):
                     old_manifest = {}
-                old_sources = {source.get("id"): source for source in old_manifest.get("sources", [])}
+                old_sources_data = old_manifest.get("sources", []) if isinstance(old_manifest, dict) else []
+                if not isinstance(old_sources_data, list):
+                    old_sources_data = []
+                old_sources = {
+                    source.get("id"): source
+                    for source in old_sources_data
+                    if isinstance(source, dict)
+                }
                 changed_modules = sorted(
                     module_id
                     for module_id, source in current_sources.items()
@@ -668,6 +773,19 @@ def check_generated_resources(repo_root: Path = REPO_ROOT) -> list[str]:
                 modules = sorted(output_sources.get(relative, set()) | previous_sources.get(relative, set()))
                 detail = f"source modules: {', '.join(modules) or 'selection or builder changed'}"
             errors.append(f"stale generated resource {relative} ({detail})")
+    reference_root = plugin_root / REFERENCE_DIR
+    if reference_root.is_dir():
+        for path in sorted(reference_root.rglob("*.md")):
+            relative = path.relative_to(plugin_root).as_posix()
+            if relative in configured_references:
+                continue
+            modules = sorted(previous_sources.get(relative, set()))
+            detail = (
+                f"; previously generated from source modules: {', '.join(modules)}"
+                if modules
+                else ""
+            )
+            errors.append(f"stale unconfigured reference {relative}{detail}")
     return errors
 
 
@@ -677,6 +795,158 @@ def _package_entries(plugin_root: Path) -> list[tuple[str, Path]]:
     if missing:
         raise BuildError("required runtime files are missing: " + ", ".join(missing))
     return entries
+
+
+def _source_manifest_errors(manifest: Any, archive: zipfile.ZipFile) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(manifest, dict):
+        return [f"{SOURCE_MANIFEST} must contain a JSON object"]
+    if type(manifest.get("schema_version")) is not int or manifest.get("schema_version") != 1:
+        errors.append(f"{SOURCE_MANIFEST} schema_version must be 1")
+    if manifest.get("plugin") != "scripture-trails":
+        errors.append(f"{SOURCE_MANIFEST} plugin must be 'scripture-trails'")
+    version = manifest.get("plugin_version")
+    if not isinstance(version, str) or not SEMVER_RE.fullmatch(version):
+        errors.append(f"{SOURCE_MANIFEST} plugin_version must be SemVer MAJOR.MINOR.PATCH")
+
+    sources = manifest.get("sources")
+    if not isinstance(sources, list) or not sources:
+        errors.append(f"{SOURCE_MANIFEST} must contain a non-empty sources list")
+        sources = []
+    source_by_id: dict[str, dict[str, Any]] = {}
+    for index, source in enumerate(sources):
+        label = f"{SOURCE_MANIFEST} sources[{index}]"
+        if not isinstance(source, dict):
+            errors.append(f"{label} must be an object")
+            continue
+        module_id = source.get("id")
+        if not isinstance(module_id, str) or not module_id.strip():
+            errors.append(f"{label} requires a module id")
+            continue
+        if module_id in source_by_id:
+            errors.append(f"{SOURCE_MANIFEST} contains duplicate source module {module_id}")
+        source_by_id[module_id] = source
+        for field in ("title", "version", "status", "license"):
+            if not isinstance(source.get(field), str) or not source[field].strip():
+                errors.append(f"{label} requires a non-empty {field}")
+        if isinstance(source.get("version"), str) and not SEMVER_RE.fullmatch(source["version"]):
+            errors.append(f"{label} version must be SemVer MAJOR.MINOR.PATCH")
+        if source.get("status") != "stable":
+            errors.append(f"{label} status must be 'stable'")
+        source_path = source.get("source_path")
+        if not isinstance(source_path, str):
+            errors.append(f"{label} requires a repository-relative source_path")
+        else:
+            try:
+                safe_source = _safe_relative(source_path, label=f"{label} source_path")
+                if not source_path.startswith("framework/") or safe_source.suffix != ".md":
+                    errors.append(f"{label} source_path must identify a framework Markdown module")
+            except BuildError as exc:
+                errors.append(str(exc))
+        if not isinstance(source.get("sha256"), str) or not re.fullmatch(r"[0-9a-f]{64}", source["sha256"]):
+            errors.append(f"{label} sha256 must be a lowercase SHA-256 digest")
+        outputs = source.get("outputs")
+        if not isinstance(outputs, list) or not all(isinstance(item, str) for item in outputs):
+            errors.append(f"{label} outputs must be a list of reference paths")
+        else:
+            if len(outputs) != len(set(outputs)):
+                errors.append(f"{label} outputs must not contain duplicates")
+            for output in outputs:
+                try:
+                    safe_output = _safe_relative(output, label=f"{label} output")
+                    if not output.startswith(REFERENCE_DIR.as_posix() + "/") or safe_output.suffix != ".md":
+                        errors.append(f"{label} output must be a packaged Markdown reference")
+                except BuildError as exc:
+                    errors.append(str(exc))
+
+    missing_core = sorted(set(REQUIRED_CORE) - set(source_by_id))
+    if missing_core:
+        errors.append(
+            f"{SOURCE_MANIFEST} omits required source modules: " + ", ".join(missing_core)
+        )
+
+    references = manifest.get("references")
+    if not isinstance(references, list) or not references:
+        errors.append(f"{SOURCE_MANIFEST} must contain a non-empty references list")
+        references = []
+    reference_by_path: dict[str, dict[str, Any]] = {}
+    for index, reference in enumerate(references):
+        label = f"{SOURCE_MANIFEST} references[{index}]"
+        if not isinstance(reference, dict):
+            errors.append(f"{label} must be an object")
+            continue
+        path = reference.get("path")
+        if not isinstance(path, str):
+            errors.append(f"{label} requires a reference path")
+            continue
+        if path in reference_by_path:
+            errors.append(f"{SOURCE_MANIFEST} contains duplicate reference {path}")
+        reference_by_path[path] = reference
+        try:
+            safe_path = _safe_relative(path, label=f"{label} path")
+            if not path.startswith(REFERENCE_DIR.as_posix() + "/") or safe_path.suffix != ".md":
+                errors.append(f"{label} path must be a packaged Markdown reference")
+        except BuildError as exc:
+            errors.append(str(exc))
+        if reference.get("kind") not in ("generated", "authored"):
+            errors.append(f"{label} kind must be 'generated' or 'authored'")
+        digest = reference.get("sha256")
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            errors.append(f"{label} sha256 must be a lowercase SHA-256 digest")
+        elif path in archive.namelist():
+            if _sha256(archive.read(path)) != digest:
+                errors.append(f"{label} sha256 does not match packaged file {path}")
+        else:
+            errors.append(f"{label} file is missing from the ZIP: {path}")
+        module_ids = reference.get("source_modules")
+        if not isinstance(module_ids, list) or not module_ids or not all(isinstance(item, str) for item in module_ids):
+            errors.append(f"{label} source_modules must be a non-empty list of module ids")
+        else:
+            if len(module_ids) != len(set(module_ids)):
+                errors.append(f"{label} source_modules must not contain duplicates")
+            unknown = sorted(set(module_ids) - set(source_by_id))
+            if unknown:
+                errors.append(f"{label} contains unknown source modules: " + ", ".join(unknown))
+
+    packaged_references = {
+        name for name in archive.namelist()
+        if name.startswith(REFERENCE_DIR.as_posix() + "/") and name.endswith(".md")
+    }
+    if packaged_references != set(reference_by_path):
+        missing = sorted(packaged_references - set(reference_by_path))
+        extra = sorted(set(reference_by_path) - packaged_references)
+        if missing:
+            errors.append(f"{SOURCE_MANIFEST} does not track packaged references: " + ", ".join(missing))
+        if extra:
+            errors.append(f"{SOURCE_MANIFEST} tracks absent references: " + ", ".join(extra))
+
+    for module_id, source in source_by_id.items():
+        outputs = source.get("outputs")
+        if not isinstance(outputs, list):
+            continue
+        for output in outputs:
+            if not isinstance(output, str):
+                continue
+            reference = reference_by_path.get(output)
+            if reference is None:
+                errors.append(f"{SOURCE_MANIFEST} source {module_id} names untracked output {output}")
+            elif (
+                not isinstance(reference.get("source_modules"), list)
+                or module_id not in reference["source_modules"]
+            ):
+                errors.append(f"{SOURCE_MANIFEST} output mapping disagrees for source {module_id}: {output}")
+    for path, reference in reference_by_path.items():
+        module_ids = reference.get("source_modules")
+        if not isinstance(module_ids, list):
+            continue
+        for module_id in module_ids:
+            if not isinstance(module_id, str):
+                continue
+            source = source_by_id.get(module_id)
+            outputs = source.get("outputs") if source is not None else []
+            if source is not None and (not isinstance(outputs, list) or path not in outputs):
+                errors.append(f"{SOURCE_MANIFEST} output mapping disagrees for reference {path}: {module_id}")
+    return errors
 
 
 def validate_archive(archive_path: Path, plugin_root: Path | None = None) -> list[str]:
@@ -690,10 +960,18 @@ def validate_archive(archive_path: Path, plugin_root: Path | None = None) -> lis
                 safe = PurePosixPath(name)
                 if safe.is_absolute() or ".." in safe.parts or "\\" in name:
                     errors.append(f"unsafe ZIP path: {name}")
-            if "plugin.json" not in names:
-                errors.append("ZIP root is missing plugin.json")
-            if not any(name == SKILL_REL.as_posix() for name in names):
-                errors.append(f"ZIP is missing {SKILL_REL.as_posix()}")
+            required_files = {
+                "plugin.json",
+                "README.md",
+                "ATTRIBUTION.md",
+                "LICENSE-CONTENT",
+                "VERSION",
+                SOURCE_MANIFEST,
+                SKILL_REL.as_posix(),
+            }
+            missing_files = sorted(required_files - set(names))
+            if missing_files:
+                errors.append("ZIP is missing required files: " + ", ".join(missing_files))
             if any(name.endswith((".sqlite", ".sqlite3", ".db", ".zip")) for name in names):
                 errors.append("ZIP contains unrelated or restricted data files")
             if any("acceptance-cases" in name or "/tests/" in name for name in names):
@@ -704,10 +982,13 @@ def validate_archive(archive_path: Path, plugin_root: Path | None = None) -> lis
                 expected_names = {name for name, _ in _package_entries(plugin_root)}
                 if set(names) != expected_names:
                     errors.append("ZIP members differ from the explicit plugin runtime allowlist")
+            plugin_manifest: Any = None
             for name in names:
                 if name.endswith(".json"):
                     try:
-                        json.loads(archive.read(name))
+                        parsed = json.loads(archive.read(name))
+                        if name == "plugin.json":
+                            plugin_manifest = parsed
                     except (json.JSONDecodeError, KeyError) as exc:
                         errors.append(f"invalid JSON resource {name}: {exc}")
                 if name.endswith(".md"):
@@ -719,6 +1000,53 @@ def validate_archive(archive_path: Path, plugin_root: Path | None = None) -> lis
                     if "[[" in text and "]]" in text:
                         errors.append(f"unresolved BHF module-reference syntax in ZIP resource: {name}")
                     errors.extend(_markdown_text_errors(text, name, set(names)))
+
+            version = ""
+            if "VERSION" in names:
+                try:
+                    version = archive.read("VERSION").decode("utf-8").strip()
+                except UnicodeDecodeError:
+                    errors.append("VERSION must be UTF-8 text")
+                if not SEMVER_RE.fullmatch(version):
+                    errors.append("VERSION must contain SemVer MAJOR.MINOR.PATCH")
+            if "plugin.json" in names:
+                errors.extend(_plugin_manifest_errors(plugin_manifest, version))
+
+            if SKILL_REL.as_posix() in names:
+                try:
+                    skill_text = archive.read(SKILL_REL.as_posix()).decode("utf-8")
+                except UnicodeDecodeError:
+                    errors.append(f"{SKILL_REL.as_posix()} must be UTF-8 text")
+                else:
+                    errors.extend(_skill_frontmatter_errors(skill_text))
+
+            if "ATTRIBUTION.md" in names:
+                try:
+                    attribution = archive.read("ATTRIBUTION.md").decode("utf-8").lower()
+                except UnicodeDecodeError:
+                    errors.append("ATTRIBUTION.md must be UTF-8 text")
+                else:
+                    errors.extend(_attribution_errors(attribution))
+            if "LICENSE-CONTENT" in names:
+                try:
+                    content_license = archive.read("LICENSE-CONTENT").decode("utf-8").lower()
+                except UnicodeDecodeError:
+                    errors.append("LICENSE-CONTENT must be UTF-8 text")
+                else:
+                    errors.extend(_content_license_errors(content_license))
+
+            if SOURCE_MANIFEST in names:
+                try:
+                    source_manifest = json.loads(archive.read(SOURCE_MANIFEST))
+                except (json.JSONDecodeError, KeyError) as exc:
+                    errors.append(f"invalid {SOURCE_MANIFEST}: {exc}")
+                else:
+                    errors.extend(_source_manifest_errors(source_manifest, archive))
+                    if (
+                        isinstance(source_manifest, dict)
+                        and source_manifest.get("plugin_version") != version
+                    ):
+                        errors.append(f"{SOURCE_MANIFEST} plugin_version must match VERSION")
     except (OSError, zipfile.BadZipFile) as exc:
         errors.append(f"invalid ZIP archive: {exc}")
     return errors
@@ -833,7 +1161,10 @@ def main(argv: list[str] | None = None) -> int:
                 expected_checksum = f"{_sha256(archive_path.read_bytes())}  {archive_path.name}\n"
                 if checksum_path.read_text(encoding="utf-8") != expected_checksum:
                     errors.append(f"ZIP checksum does not match: {checksum_path}")
-            return _print_errors(errors)
+            if errors:
+                return _print_errors(errors)
+            print("OK — Scripture Trails ZIP and checksum are valid.")
+            return 0
         errors = validate_workspace(repo_root)
         if args.check:
             errors.extend(check_generated_resources(repo_root))

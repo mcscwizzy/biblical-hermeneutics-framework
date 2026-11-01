@@ -238,6 +238,42 @@ def test_validation_rejects_invalid_skill_frontmatter(tmp_path: Path) -> None:
     assert "missing YAML frontmatter" in result.stdout + result.stderr
 
 
+def test_validation_rejects_stale_or_malformed_source_manifest(tmp_path: Path) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    manifest_path = workspace / PLUGIN_REL / "source-module-manifest.json"
+    manifest_path.write_text("{}\n", encoding="utf-8")
+
+    result = run_builder(workspace, "validate")
+    assert result.returncode != 0
+    assert "source-module-manifest.json" in result.stdout + result.stderr
+
+
+def test_check_reports_corrupt_manifest_without_traceback(tmp_path: Path) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    manifest_path = workspace / PLUGIN_REL / "source-module-manifest.json"
+    manifest_path.write_text('{"sources": null}\n', encoding="utf-8")
+
+    result = run_builder(workspace, "check")
+    output = result.stdout + result.stderr
+    assert result.returncode != 0
+    assert "source-module-manifest.json" in output
+    assert "Traceback" not in output
+
+
+def test_validation_requires_cc_by_attribution_and_license_text(tmp_path: Path) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    attribution_path = workspace / PLUGIN_REL / "ATTRIBUTION.md"
+    license_path = workspace / PLUGIN_REL / "LICENSE-CONTENT"
+    attribution_path.write_text("No source attribution.\n", encoding="utf-8")
+    license_path.write_text("No license text.\n", encoding="utf-8")
+
+    result = run_builder(workspace, "validate")
+    assert result.returncode != 0
+    output = result.stdout + result.stderr
+    assert "ATTRIBUTION.md" in output
+    assert "LICENSE-CONTENT" in output
+
+
 def test_validation_requires_attribution_in_the_runtime_package(tmp_path: Path) -> None:
     workspace = copy_workspace(tmp_path / "workspace")
     (workspace / PLUGIN_REL / "ATTRIBUTION.md").unlink()
@@ -318,6 +354,36 @@ def test_zip_validation_rejects_a_broken_packaged_markdown_reference(
     assert "Markdown link does not resolve" in result.stdout + result.stderr
 
 
+def test_zip_validation_checks_manifest_and_skill_frontmatter_content(
+    tmp_path: Path,
+) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    packaged = run_builder(workspace, "package")
+    assert packaged.returncode == 0, packaged.stdout + packaged.stderr
+    archive = next((workspace / "dist/plugins").glob("scripture-trails-*.zip"))
+    invalid_cases = [
+        ("plugin.json", b"{}\n", "plugin.json"),
+        ("source-module-manifest.json", b"{}\n", "source-module-manifest.json"),
+        ("skills/explore-scripture/SKILL.md", b"# No frontmatter\n", "frontmatter"),
+        ("ATTRIBUTION.md", b"\n", "attribution"),
+        ("LICENSE-CONTENT", b"\n", "license"),
+    ]
+    for index, (member, replacement, expected_error) in enumerate(invalid_cases):
+        invalid_archive = tmp_path / f"invalid-plugin-{index}.zip"
+        with zipfile.ZipFile(archive, "r") as source, zipfile.ZipFile(
+            invalid_archive, "w", compression=zipfile.ZIP_DEFLATED
+        ) as invalid:
+            for name in source.namelist():
+                invalid.writestr(name, replacement if name == member else source.read(name))
+        digest = hashlib.sha256(invalid_archive.read_bytes()).hexdigest()
+        invalid_archive.with_suffix(".zip.sha256").write_text(
+            f"{digest}  {invalid_archive.name}\n", encoding="utf-8"
+        )
+        result = run_builder(workspace, "validate-zip", ["--zip", str(invalid_archive)])
+        assert result.returncode != 0, f"archive with invalid {member} was accepted"
+        assert expected_error.lower() in (result.stdout + result.stderr).lower()
+
+
 def test_package_bytes_and_checksum_are_reproducible(tmp_path: Path) -> None:
     workspace = copy_workspace(tmp_path / "workspace")
     first = run_builder(workspace, "package")
@@ -344,6 +410,51 @@ def test_package_allowlist_excludes_unrelated_local_files(tmp_path: Path) -> Non
     archive = next((workspace / "dist/plugins").glob("scripture-trails-*.zip"))
     with zipfile.ZipFile(archive) as package:
         assert "accidental-study.sqlite" not in package.namelist()
+
+
+def test_package_excludes_unconfigured_reference_markdown(tmp_path: Path) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    references = workspace / PLUGIN_REL / "skills/explore-scripture/references"
+    (references / "unconfigured-note.md").write_text("developer scratch\n", encoding="utf-8")
+    result = run_builder(workspace, "package")
+    assert result.returncode == 0, result.stdout + result.stderr
+    archive = next((workspace / "dist/plugins").glob("scripture-trails-*.zip"))
+    with zipfile.ZipFile(archive) as package:
+        assert "skills/explore-scripture/references/unconfigured-note.md" not in package.namelist()
+
+
+def test_removed_generated_reference_is_reported_cleaned_and_not_packaged(
+    tmp_path: Path,
+) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    plugin = workspace / PLUGIN_REL
+    config_path = plugin / "config/module-selection.yml"
+    config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    config["module_outputs"].pop("references/passage-guides.md")
+    config_path.write_text(yaml.safe_dump(config, sort_keys=False), encoding="utf-8")
+    skill_path = plugin / "skills/explore-scripture/SKILL.md"
+    skill = skill_path.read_text(encoding="utf-8")
+    skill = skill.replace(
+        "- Consult [Selected Book Guides](references/passage-guides.md) when the passage\n  belongs to a book covered there.\n",
+        "",
+    )
+    skill_path.write_text(skill, encoding="utf-8")
+
+    stale = run_builder(workspace, "check")
+    assert stale.returncode != 0
+    assert "passage-guides.md" in stale.stdout + stale.stderr
+
+    built = run_builder(workspace, "build")
+    assert built.returncode == 0, built.stdout + built.stderr
+    assert not (plugin / "skills/explore-scripture/references/passage-guides.md").exists()
+    manifest = json.loads((plugin / "source-module-manifest.json").read_text(encoding="utf-8"))
+    assert not any(source["id"].startswith("book.") for source in manifest["sources"])
+
+    packaged = run_builder(workspace, "package")
+    assert packaged.returncode == 0, packaged.stdout + packaged.stderr
+    archive = next((workspace / "dist/plugins").glob("scripture-trails-*.zip"))
+    with zipfile.ZipFile(archive) as package:
+        assert "skills/explore-scripture/references/passage-guides.md" not in package.namelist()
 
 
 def test_zip_contains_no_runtime_bhf_or_service_dependency(tmp_path: Path) -> None:
