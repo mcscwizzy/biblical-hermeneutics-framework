@@ -514,3 +514,62 @@ def test_source_manifest_and_tests_are_not_packaged_as_runtime_instructions(
     assert "references/interpretive-method.md" in skill
     assert "references/evidence-and-boundaries.md" in skill
     assert "references/trail-selection.md" in skill
+
+
+def test_release_icons_are_present_and_manifest_paths_resolve(tmp_path: Path) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    result = run_builder(workspace, "package")
+    assert result.returncode == 0, result.stdout + result.stderr
+    archive = next((workspace / "dist/plugins").glob("scripture-trails-*.zip"))
+    with zipfile.ZipFile(archive) as package:
+        manifest = json.loads(package.read("plugin.json"))
+        interface = manifest["extensions"]["com.openai"]["interface"]
+        for key in ("logo", "composerIcon"):
+            assert interface[key].startswith("./assets/")
+            asset = interface[key][2:]
+            assert asset in package.namelist()
+            assert package.read(asset).startswith(b"\x89PNG\r\n\x1a\n")
+
+
+def test_release_icons_reject_missing_and_corrupt_assets(tmp_path: Path) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    icon = workspace / PLUGIN_REL / "assets/composer-icon.png"
+    icon.write_bytes(b"not an image")
+    invalid = run_builder(workspace, "validate")
+    assert invalid.returncode != 0
+    assert "invalid PNG header" in invalid.stdout + invalid.stderr
+
+    icon.unlink()
+    missing = run_builder(workspace, "validate")
+    assert missing.returncode != 0
+    assert "assets/composer-icon.png" in missing.stdout + missing.stderr
+
+
+def test_release_manifest_requires_both_icon_paths(tmp_path: Path) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    manifest_file = workspace / PLUGIN_REL / "plugin.json"
+    manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
+    manifest["extensions"]["com.openai"]["interface"].pop("composerIcon")
+    manifest_file.write_text(json.dumps(manifest), encoding="utf-8")
+    result = run_builder(workspace, "validate")
+    assert result.returncode != 0
+    assert "composerIcon" in result.stdout + result.stderr
+
+
+def test_release_zip_validation_rejects_tampered_icon(tmp_path: Path) -> None:
+    workspace = copy_workspace(tmp_path / "workspace")
+    result = run_builder(workspace, "package")
+    assert result.returncode == 0, result.stdout + result.stderr
+    original = next((workspace / "dist/plugins").glob("scripture-trails-*.zip"))
+    broken = tmp_path / "tampered-icon.zip"
+    with zipfile.ZipFile(original) as source, zipfile.ZipFile(broken, "w") as target:
+        for name in source.namelist():
+            data = b"tampered" if name == "assets/logo.png" else source.read(name)
+            target.writestr(name, data)
+    digest = hashlib.sha256(broken.read_bytes()).hexdigest()
+    broken.with_suffix(".zip.sha256").write_text(
+        f"{digest}  {broken.name}\n", encoding="utf-8"
+    )
+    checked = run_builder(workspace, "validate-zip", ["--zip", str(broken)])
+    assert checked.returncode != 0
+    assert "invalid PNG header" in checked.stdout + checked.stderr

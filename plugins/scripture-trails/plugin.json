@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "scripture-trails",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A conversational Bible exploration skill that answers directly and offers evidence-based connections for further study.",
   "author": {
     "name": "Biblical Hermeneutics Framework contributors",
@@ -9,13 +9,19 @@
   },
   "repository": "https://github.com/mcscwizzy/biblical-hermeneutics-framework",
   "license": "CC-BY-4.0",
-  "keywords": ["Bible", "Scripture", "hermeneutics", "study", "intertextuality"],
+  "keywords": [
+    "Bible",
+    "Scripture",
+    "hermeneutics",
+    "study",
+    "intertextuality"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Scripture Trails",
-        "shortDescription": "Explore Scripture with context",
-        "longDescription": "A skills-only Bible exploration companion. It answers a passage question directly, uses literary and historical context, separates observation from interpretation and application, and offers a few evidence-supported Scripture connections when useful. It does not provide a Bible text database, external research service, or prescribed doctrinal conclusions.",
+        "shortDescription": "Explore Scripture in context",
+        "longDescription": "Explore Scripture through clear, conversational answers grounded in literary, historical, and cultural context. Follow meaningful connections between passages, examine original-language insights with care, and discover rabbit trails worth pursuing. Scripture Trails distinguishes textual evidence from interpretation, acknowledges uncertainty, and does not require a separate Bible study service.",
         "developerName": "BHF contributors",
         "category": "Education",
         "capabilities": [
@@ -24,11 +30,13 @@
           "Compare responsible interpretations with appropriate uncertainty"
         ],
         "defaultPrompt": [
-          "Why does Psalm 22 matter in the crucifixion accounts?",
-          "Is John 1 intentionally echoing Genesis 1?",
-          "Show me a worthwhile connection from this passage and explain why it fits."
+          "Why did Jesus quote Psalm 22 on the cross?",
+          "How does John 1 connect to Genesis 1?",
+          "Take me down a meaningful rabbit trail from Jonah."
         ],
-        "brandColor": "#315B4A"
+        "brandColor": "#315B4A",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/composer-icon.png"
       }
     }
   }
