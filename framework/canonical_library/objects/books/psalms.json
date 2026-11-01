@@ -640,7 +640,8 @@
         "key_events",
         "scripture_references",
         "interpretive_notes",
-        "claims"
+        "claims",
+        "psalm-72-royal-justice-setting"
       ],
       "notes": "Primary Hebrew canonical text and base for common modern Protestant numbering.",
       "id": "psalms-masoretic"
@@ -864,6 +865,18 @@
       "supports": ["psalm-103-exodus-mercy-formula"],
       "notes": "Primary biblical text used for the Psalm 103 intertextual observation.",
       "id": "exodus-34"
+    },
+    {
+      "id": "human-psalm72-leadership",
+      "source_type": "journal-article",
+      "title": "An ideal for leadership - Psalm 72: The (wise) king - Royal mediation of God’s universal reign",
+      "author": "D. J. Human",
+      "publisher": "Verbum et Ecclesia 23, no. 3",
+      "year": 2002,
+      "locator": "§2.1–2.2, pp. 659–661 (royal psalm and Ancient Near Eastern kingship); discussion of historical Sitz im Leben, p. 659; article pp. 658–677",
+      "url": "https://doi.org/10.4102/ve.v23i3.1230",
+      "supports": ["psalm-72-royal-justice-setting"],
+      "notes": "DOI 10.4102/ve.v23i3.1230. Full text verified in the University of Pretoria repository copy; the article treats the court-event setting as probable and says the historical/cultic setting and date are debated."
     }
   ],
   "claims": [
@@ -1515,10 +1528,52 @@
     }
   ],
   "edited_by": [
-    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14"
+    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14",
+    "codex:ed1b-scholarly-evidence-enrichment-pilot:2026-11-01"
   ],
   "reviewed_by": [],
   "last_reviewed": null,
   "confidence": "medium",
-  "human_review_required": true
+  "human_review_required": true,
+  "evidence_items": [
+    {
+      "id": "psalm-72-royal-justice-setting",
+      "title": "Royal justice and kingship in Psalm 72",
+      "evidence_type": "worldview-concept",
+      "description": "Psalm 72 frames the king’s rule as a prayer for justice for the poor and oppressed, peace, and reach among the nations (vv. 1–14).",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The prayer’s language about the afflicted, needy, oppressor, and nations is directly stated in the psalm. Human’s placement of the poem in Ancient Near Eastern royal ideology is a scholarly interpretation; he presents a court-event setting as probable and identifies the precise setting, historical king, and date as debated.",
+      "passage_relevance": "This context helps readers distinguish the psalm’s idealized royal prayer from a report about an identified king or historical event. Its portrayal of justice for vulnerable people belongs to the poem’s stated royal ideal.",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "primary_observation": "The speaker asks God to give the king justice and righteousness, expects him to judge the afflicted and needy and oppose the oppressor, and describes rule extending to the ends of the earth and encompassing other kings and nations (Ps 72:1–4, 8–14).",
+      "scholarly_interpretation": "Human classifies Psalm 72 among the royal psalms and reads its kingly role against Ancient Near Eastern political and religious expectations, while noting distinctive Israelite features. He proposes a court poet or cultic prophet at an official royal event only as a probability; the historical and cultic setting and whether the king is historical or ideal remain debated.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": ["Ancient Israelite royal ideology; precise setting and composition date disputed"],
+        "narrative_setting": "Prayer for a king; the superscription associates the psalm with Solomon, but the text does not identify a historical occasion or settle the king’s identity.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The poem’s royal language does not establish a date of composition or prove that any historical king fulfilled its universal ideal."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [{
+        "reference": "Psalm 72:1-14",
+        "relationship": "direct",
+        "temporal_relation": "unknown",
+        "relevance_rationale": "These verses contain the direct prayer for the king’s justice and the description of the scope and social effects of his rule.",
+        "weight": 10
+      }],
+      "source_ids": ["psalms-masoretic", "human-psalm72-leadership"],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "ED-1B research provenance and full source verification are documented in docs/evidence-depth/ed1b/psalm-72.md."
+    }
+  ]
 }
