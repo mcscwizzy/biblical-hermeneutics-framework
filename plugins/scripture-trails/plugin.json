@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "scripture-trails",
-  "version": "0.1.1",
-  "description": "A conversational Bible exploration skill that answers directly and offers evidence-based connections for further study.",
+  "version": "0.1.2",
+  "description": "Clear, context-aware Bible answers with meaningful Scripture connections and responsible conversational discovery.",
   "author": {
     "name": "Biblical Hermeneutics Framework contributors",
     "url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework"
@@ -21,7 +21,7 @@
       "interface": {
         "displayName": "Scripture Trails",
         "shortDescription": "Explore Scripture in context",
-        "longDescription": "Explore Scripture through clear, conversational answers grounded in literary, historical, and cultural context. Follow meaningful connections between passages, examine original-language insights with care, and discover rabbit trails worth pursuing. Scripture Trails distinguishes textual evidence from interpretation, acknowledges uncertainty, and does not require a separate Bible study service.",
+        "longDescription": "Get clear, conversational answers grounded in each passage's original literary and historical context. Explore historical and cultural background, follow meaningful Scripture connections, and consider language details with care. Scripture Trails distinguishes explicit textual evidence from interpretation, acknowledges uncertainty, and avoids prescribing doctrinal conclusions.",
         "developerName": "BHF contributors",
         "category": "Education",
         "capabilities": [

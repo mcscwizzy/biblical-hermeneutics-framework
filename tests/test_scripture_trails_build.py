@@ -495,8 +495,42 @@ def test_acceptance_cases_cover_required_topics_and_negative_evaluations() -> No
         "negative-unsupported-archaeology",
         "negative-forced-cross-reference",
         "negative-doctrinal-overstatement",
+        "psalm-22-hebrews-2-12-discovery",
+        "hebrews-2-13-isaiah-8",
+        "genesis-11-to-12-name",
+        "genesis-11-to-acts-2-languages",
+        "multi-turn-second-trail-continuity",
+        "simple-fact-no-trail",
+        "negative-speculative-relationship-proof",
+        "contested-interpretation-neutrality",
     } <= names
-    assert all(case.get("expected") for case in cases["cases"])
+    assert cases["evaluation_type"] == "manual_model_evaluation"
+    assert all(
+        case.get("turns") and case.get("expected") and case.get("avoid")
+        for case in cases["cases"]
+    )
+
+
+def test_authored_guidance_covers_discovery_restraint_and_continuity() -> None:
+    skill_root = ROOT / PLUGIN_REL / "skills/explore-scripture"
+    skill = (skill_root / "SKILL.md").read_text(encoding="utf-8").lower()
+    trails = (skill_root / "references/trail-selection.md").read_text(encoding="utf-8").lower()
+    interactions = (
+        skill_root / "references/interaction-patterns.md"
+    ).read_text(encoding="utf-8").lower()
+
+    assert "answer the user's actual question first" in skill
+    assert "simple factual question" in skill
+    assert "one or two" in re.sub(r"\s+", " ", skill)
+    assert "textual support" in trails
+    assert "novelty" in trails
+    assert "explanatory value" in trails
+    assert all(level in trails for level in ("very high", "high", "moderate", "low"))
+    assert "active passage" in interactions
+    assert "selected trail" in interactions
+    assert "return to the original passage" in interactions
+    assert "stop exploring" in interactions
+    assert "unrelated conversations" in interactions
 
 
 def test_source_manifest_and_tests_are_not_packaged_as_runtime_instructions(
