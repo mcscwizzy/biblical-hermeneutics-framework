@@ -117,11 +117,12 @@ test("primary handoff copies prepared text and opens the configured destination"
   const nodes = handoffNodes();
   const copied = [];
   const opened = [];
+  const order = [];
   const controller = handoff.create({
     ...nodes,
     getSelection: () => ({book: "James", chapter: 1}),
-    openWindow: (...args) => { opened.push(args); return {}; },
-    writeClipboard: async (text) => copied.push(text),
+    openWindow: (...args) => { order.push("open"); opened.push(args); return {}; },
+    writeClipboard: async (text) => { order.push("clipboard"); copied.push(text); },
   });
   nodes.question.value = " Why wisdom? ";
   controller.open();
@@ -132,6 +133,8 @@ test("primary handoff copies prepared text and opens the configured destination"
   assert.equal(nodes.prepared.value, expected);
   assert.deepEqual(copied, [expected]);
   assert.deepEqual(opened, [["https://assistant.example/bhf", "_blank", "noopener,noreferrer"]]);
+  assert.deepEqual(order, ["clipboard", "open"]);
+  assert.equal(nodes.openFallback.hidden, false);
   assert.match(nodes.status.textContent, /copied/i);
 });
 
@@ -173,7 +176,39 @@ test("clipboard failure leaves the prepared question visible and selectable", as
 
   assert.match(nodes.prepared.value, /Why wisdom\?/);
   assert.equal(nodes.manualCopy.hidden, false);
+  assert.equal(nodes.openFallback.hidden, false);
+  assert.doesNotMatch(nodes.status.textContent, /question copied/i);
   assert.match(nodes.status.textContent, /Copy the prepared question manually/i);
+});
+
+
+test("manual copy recovers after the first clipboard attempt fails", async () => {
+  const handoff = loadHandoff({runtimeConfig: {assistantUrl: "https://assistant.example/bhf"}});
+  const nodes = handoffNodes();
+  const copied = [];
+  let attempts = 0;
+  const controller = handoff.create({
+    ...nodes,
+    getSelection: () => ({book: "James", chapter: 1}),
+    openWindow: () => ({}),
+    writeClipboard: async (text) => {
+      attempts += 1;
+      if (attempts === 1) throw new Error("focus lost");
+      copied.push(text);
+    },
+  });
+  nodes.question.value = "Why wisdom?";
+  controller.open();
+
+  await nodes.primary.dispatch("click");
+  assert.equal(nodes.manualCopy.hidden, false);
+  assert.equal(nodes.openFallback.hidden, false);
+  await nodes.manualCopy.dispatch("click");
+
+  assert.deepEqual(copied, [
+    "I'm studying James 1 in the Biblical Hermeneutics Framework (BHF).\n\nMy question:\nWhy wisdom?",
+  ]);
+  assert.match(nodes.status.textContent, /Question copied/i);
 });
 
 
@@ -233,7 +268,7 @@ test("unsafe configured URLs never populate the fallback or open a popup", async
 });
 
 
-test("a blocked popup exposes an explicit Open BHF fallback", async () => {
+test("a null noopener popup result keeps a neutral Open BHF fallback", async () => {
   const handoff = loadHandoff({runtimeConfig: {assistantUrl: "https://assistant.example/bhf"}});
   const nodes = handoffNodes();
   const controller = handoff.create({
@@ -249,5 +284,6 @@ test("a blocked popup exposes an explicit Open BHF fallback", async () => {
 
   assert.equal(nodes.openFallback.hidden, false);
   assert.equal(nodes.openFallback.href, "https://assistant.example/bhf");
-  assert.match(nodes.status.textContent, /Open BHF/i);
+  assert.match(nodes.status.textContent, /if BHF did not open, use Open BHF/i);
+  assert.doesNotMatch(nodes.status.textContent, /popup blocked|could not open/i);
 });
