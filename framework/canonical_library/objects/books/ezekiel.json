@@ -1051,7 +1051,7 @@
       "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
       "url": "",
       "source_type": "scripture",
-      "supports": ["summary", "historical_context", "literary_context", "structure", "major_themes", "scripture_references", "hebrew_words", "interpretive_notes", "claims"],
+      "supports": ["summary", "historical_context", "literary_context", "structure", "major_themes", "scripture_references", "hebrew_words", "interpretive_notes", "claims", "ezekiel-40-vision-measuring-sequence"],
       "notes": "Primary received Hebrew canonical text.",
       "id": "ezekiel-masoretic"
     },
@@ -1390,6 +1390,18 @@
       "supports": ["new_testament_connections", "later_christian_reception", "ezekiel-revelation-reuse"],
       "notes": "Primary New Testament texts, especially Revelation, read as later reception rather than direct historical commentary.",
       "id": "new-testament-ezekiel"
+    },
+    {
+      "id": "lyons-envisioning-restoration",
+      "source_type": "academic-book",
+      "title": "Envisioning Restoration: Innovations in Ezekiel 40–48",
+      "author": "Michael A. Lyons",
+      "publisher": "Bloomsbury T&T Clark, The Library of Hebrew Bible/Old Testament Studies 584",
+      "year": 2014,
+      "locator": "§2.0 ‘Content and Composition’ and §3.0 ‘Ezekiel 40–48 as a Vision Report’; published chapter pp. 71–83",
+      "url": "https://research-repository.st-andrews.ac.uk/bitstream/handle/10023/15994/Lyons_2018_LiftedMyEyes_Envisioning_AAM.pdf?sequence=1",
+      "supports": ["ezekiel-40-vision-measuring-sequence"],
+      "notes": "In E. R. Hayes and L.-S. Tiemeyer (eds.), ‘I Lifted My Eyes and Saw’: Reading Dream and Vision Reports in the Hebrew Bible (Library of Hebrew Bible/Old Testament Studies 584; London/New York: Bloomsbury T&T Clark, 2014), 71–83. The linked St Andrews file is the author-created accepted-version manuscript; its repository record says it may differ slightly from the final published version. Publisher edition verified at https://www.bloomsbury.com/uk/i-lifted-my-eyes-and-saw-9780567605665/."
     }
   ],
   "canonical_story": {
@@ -1594,7 +1606,7 @@
       "date": "2026-07-25"
     }
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ed1b-scholarly-evidence-enrichment-pilot:2026-11-01"],
   "reviewed_by": [],
   "last_reviewed": null,
   "confidence": "medium",
@@ -1628,5 +1640,46 @@
       "reception_history",
       "pastoral_application"
     ]
-  }
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-40-vision-measuring-sequence",
+      "title": "Ezekiel 40 presents the temple tour as a vision",
+      "evidence_type": "literary-convention",
+      "description": "The chapter dates a vision in the exile and narrates a guide leading Ezekiel through a measured tour of the outer wall and east gateway (Ezek 40:1–16).",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The relative date, explicit vision language, guide, and measurements are stated in the chapter. Lyons classifies the larger 40–48 report as a literary vision and offers a qualified composition history; possible later additions and more specific dating remain uncertain.",
+      "passage_relevance": "The evidence helps readers follow the measured sequence as part of a guided prophetic vision. The literary measurements are not independent archaeological evidence that a temple was built or surveyed as described.",
+      "certainty": "probable",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "Ezekiel dates the vision to the twenty-fifth year of exile, fourteen years after Jerusalem’s fall (40:1). He is brought to the land in a vision, told to look, listen, and report to Israel, and shown a bronze-like man who measures the wall and east gateway (40:2–16).",
+      "scholarly_interpretation": "Lyons identifies explicit vision language in Ezekiel 40:2, seeing/showing terminology, and a continuing guide as formal features of the literary vision report in Ezekiel 40–48. He considers the bulk of the material exilic and Ezekiel 40–42 best situated before a temple existed (before 515 BCE), while allowing Persian-period additions and stating that more precise dating is uncertain.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": ["Babylonian exile as the vision’s narrated horizon; an exilic core is proposed, with possible Persian-period additions"],
+        "narrative_setting": "The twenty-fifth year of exile and fourteenth year after Jerusalem’s fall, as stated in Ezekiel 40:1; the chapter gives a relative date rather than an absolute year.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The vision’s narrated date is not the date of the final literary form. Lyons’s pre-515 BCE placement for Ezekiel 40–42 and his exilic-core proposal are interpretations; he allows possible Persian-period additions and says more specific dating is uncertain."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [{
+        "reference": "Ezekiel 40:1-16",
+        "relationship": "direct",
+        "temporal_relation": "unknown",
+        "relevance_rationale": "These verses give the relative vision date, vision framing, guide, and first measured wall and gate sequence.",
+        "weight": 10
+      }],
+      "source_ids": ["ezekiel-masoretic", "lyons-envisioning-restoration"],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "ED-1B research provenance and accepted-version qualifications are documented in docs/evidence-depth/ed1b/ezekiel-40.md."
+    }
+  ]
 }

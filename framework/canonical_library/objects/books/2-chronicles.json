@@ -789,7 +789,8 @@
         "second-chronicles-hezekiah-passover",
         "second-chronicles-manasseh-humbles",
         "second-chronicles-josiah-reform",
-        "second-chronicles-exile-cyrus"
+        "second-chronicles-exile-cyrus",
+        "second-chronicles-30-northern-invitation"
       ],
       "notes": "Primary biblical text.",
       "id": "2-chronicles-1-36"
@@ -886,6 +887,18 @@
       ],
       "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
       "id": "zondervan-kings-chronicles-backgrounds"
+    },
+    {
+      "id": "knoppers-mt-gerizim-zion",
+      "source_type": "journal-article",
+      "title": "Mt. Gerizim and Mt. Zion: A study in the early history of the Samaritans and Jews",
+      "author": "Gary N. Knoppers",
+      "publisher": "Studies in Religion/Sciences Religieuses 34, nos. 3–4 (2005), 309–337",
+      "year": 2005,
+      "locator": "Article pp. 309–337; publisher abstract identifies 2 Chr 30:6–9; publisher-hosted article text, notes 37–38 discuss Hezekiah’s message and northern Israelites",
+      "url": "https://doi.org/10.1177/000842980503400301",
+      "supports": ["second-chronicles-30-northern-invitation"],
+      "notes": "DOI 10.1177/000842980503400301. The publisher record verifies the article, author, journal, volume/issue, 2005 publication, and pages 309–337. Its abstract identifies the Hezekiah invitation at 2 Chr 30:6–9; the publisher-hosted text’s notes 37–38 discuss the message and northern Israelites."
     }
   ],
   "canonical_story": {
@@ -1080,9 +1093,50 @@
       "date": "2026-07-24"
     }
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ed1b-scholarly-evidence-enrichment-pilot:2026-11-01"],
   "reviewed_by": [],
   "last_reviewed": null,
   "confidence": "medium",
-  "human_review_required": true
+  "human_review_required": true,
+  "evidence_items": [
+    {
+      "id": "second-chronicles-30-northern-invitation",
+      "title": "The Passover invitation to northern Israelites in 2 Chronicles 30",
+      "evidence_type": "literary-convention",
+      "description": "The chapter depicts couriers inviting Israelites from Beer-sheba to Dan to the Jerusalem Passover; some northern recipients mock the invitation while some from Asher, Manasseh, and Zebulun come (2 Chr 30:6–12).",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The invitation, responses, and participation are explicit in the chapter. Knoppers interprets the scene as part of a postmonarchic Judean literary account of relations with northern Israel; his composition horizon is broad and is not independent contemporary attestation of the Passover narrative.",
+      "passage_relevance": "The context lets readers examine the invitation as a literary vision of Israelite unity and Jerusalem’s cultic centrality in a later Judean community, while keeping that composition-era interpretation separate from the narrated Hezekian setting.",
+      "certainty": "plausible",
+      "dispute_status": "chronological_uncertainty",
+      "primary_observation": "Couriers carry Hezekiah’s invitation throughout Israel and Judah. The text reports that some recipients mock them, while people from Asher, Manasseh, and Zebulun humble themselves and come; Judah is described as united in response (2 Chr 30:6–12).",
+      "scholarly_interpretation": "Knoppers treats Hezekiah’s invitation as a case study in how postmonarchic Judean writers represented relations with northern Israel. He reads the message as affirming the continuing claims of the Davidic line and Jerusalem sanctuary for a broad Israel, and places the studied texts in a late Achaemenid or early Hellenistic composition context.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": ["Late eighth-century BCE narrative horizon under Hezekiah; late Achaemenid or early Hellenistic composition context proposed"],
+        "narrative_setting": "Hezekiah’s Passover invitation, with the chapter’s second-month timing; no absolute year is supplied here.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The narrative setting and the proposed postmonarchic composition context are distinct. Knoppers’s article interprets the text’s representation; it does not independently establish that the described event occurred exactly as narrated."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [{
+        "reference": "2 Chronicles 30:6-12",
+        "relationship": "direct",
+        "temporal_relation": "unknown",
+        "relevance_rationale": "This passage contains the invitation, its regional reach, and the reported mixed responses and participation.",
+        "weight": 10
+      }],
+      "source_ids": ["2-chronicles-1-36", "knoppers-mt-gerizim-zion"],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "ED-1B research provenance and source locator details are documented in docs/evidence-depth/ed1b/2-chronicles-30.md."
+    }
+  ]
 }
