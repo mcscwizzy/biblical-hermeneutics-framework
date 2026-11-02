@@ -8,7 +8,7 @@ The counts below come from the Narrative Explorer projection adapter using the C
 
 | Passage | Before: directly scoped evidence | Existing reader-visible claims before | After: directly scoped evidence | New evidence ID, exact anchor, and projection section |
 | --- | ---: | --- | ---: | --- |
-| [Psalm 72](psalm-72.md) | 0 | `psalms-five-book-anthology` (72:18–20); `psalms-superscription-collections` (72:1) | 1 | `ckl:psalms#evidence:psalm-72-royal-justice-setting` — Psalm 72:1–14 — `themes_biblical_connections` |
+| [Psalm 72](psalm-72.md) | 0 | `psalms-five-book-anthology` (72:18–20); `psalms-superscription-collections` (72:1) | 1 | `ckl:psalms#evidence:psalm-72-royal-justice-setting` — Psalm 72:1–14 — `biblical_narrative`, `themes_biblical_connections` |
 | [2 Chronicles 30](2-chronicles-30.md) | 0 | `second-chronicles-hezekiah-passover` (30:1–27); `second-chronicles-judah-focus` (30:1–27) | 1 | `ckl:2-chronicles#evidence:second-chronicles-30-northern-invitation` — 2 Chronicles 30:6–12 — `biblical_narrative`, `themes_biblical_connections` |
 | [Ezekiel 40](ezekiel-40.md) | 0 | `ezekiel-historical-horizon` (40:1–4); `ezekiel-practical-outline` (40:1–49); `ezekiel-temple-vision` (40:1–49) | 1 | `ckl:ezekiel#evidence:ezekiel-40-vision-measuring-sequence` — Ezekiel 40:1–16 — `biblical_narrative`, `themes_biblical_connections` |
 
@@ -31,7 +31,7 @@ Results are recorded after the final validation run:
 - CKL schema and integrity validation: 687 objects valid, 0 errors, 14 warnings. The same 14 warning records were present on the ED-1A base.
 - CKL manifest: a generated manifest was compared with the committed manifest; all values match. The committed file remains unchanged because ED-1B changes no manifest count or category.
 - Source locks: the checked-in source-lock queue and its source records were validated; the queue was not changed.
-- NE-9C: validation passed against the ED-1A snapshot with 3,925 reviewed records; the curation input was not changed. Against the enriched CKL, the validator rejects the unchanged checkpoint because it pins the CKL object-tree fingerprint; the checkpoint was not refreshed or edited.
+- NE-9C: the 3,925 reviewed records, original relationship identities, classifications, and dispositions were verified against the ED-1A baseline. The historical validator passes against the unmodified ED-1A snapshot and returns the expected full-object-tree fingerprint rejection against a temporary copy of the checkpoint paired with ED-1B. No authoritative checkpoint was refreshed or edited. This checkpoint is not used by current CI, release validation, or Narrative Explorer runtime. See [the compatibility review](compatibility-review.md).
 - NE-10: verified and held registry hashes match the recorded baseline; neither registry was changed. The held `ezekiel-40-48-revelation-21-22-temple` bridge remains held.
 - Narrative Explorer regressions and targeted passage projections: passed; details are in the final verification log below.
 
@@ -51,6 +51,7 @@ Final verification results:
 - Source-lock and manifest regression tests — PASS within the test run below. The source-lock queue hash is unchanged (`ebed284f492a60f438c2503eefbc591fd2a56795c4bba1e2021c34c9bc335fc8`).
 - NE-9C baseline validation against the ED-1A snapshot — PASS: 3,925 decisions validated. A current-tree check returns the protected CKL fingerprint error expected when the CKL changes; the reviewed checkpoint was not refreshed or altered.
 - NE-10 registry checks — PASS: verified bridge registry hash `8460edaafcadfbabb807e3bde8b1979f8bbcadf81b5d42cae755ddc4bdec999b` and held candidate registry hash `15e577dae912904409cedd39015507f3aec92d6c3f389c65ff58a8396acd64f3` match the baseline.
-- `.venv/bin/pytest -q tests/test_narrative_explorer_*.py tests/canonical_library/test_source_locks.py tests/canonical_library/test_manifest.py` — PASS: 638 passed, 13 subtests passed.
+- `.venv/bin/pytest -q tests/test_ne9c_bulk_curation.py tests/test_narrative_explorer_*.py tests/canonical_library/test_source_locks.py tests/canonical_library/test_manifest.py tests/canonical_library/test_release.py` — PASS: 647 passed, 13 subtests passed.
 - Targeted passage projections — PASS for all three exact evidence IDs. Each v1 projection contains its precise passage anchor, qualification fields, and resolved bibliography with source locator.
-- Local Markdown-link check — PASS: all 3 relative links resolve across the 4 ED-1B Markdown files. `git diff --check` — PASS.
+- Psalm 72 projection correction — PASS: the evidence item now uses the existing `literary-convention` type and appears in `biblical_narrative` as well as `themes_biblical_connections`; stable ID, anchor, sources, and qualification fields are unchanged.
+- Local Markdown-link check — PASS: all ED-1B relative links resolve. `git diff --check` — PASS.

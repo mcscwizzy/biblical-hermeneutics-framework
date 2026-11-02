@@ -6,6 +6,8 @@ ED-1A found no `evidence_items[]` directly scoped to Psalm 72. The existing read
 
 **Decision:** accepted for one new item, `psalm-72-royal-justice-setting`, anchored exactly to Psalm 72:1–14.
 
+The item uses the existing `literary-convention` evidence type because its central research classifies the poem as a royal psalm and situates that literary form in kingship discourse. Narrative Explorer exposes this type in `biblical_narrative` and `themes_biblical_connections`.
+
 ## Primary observation
 
 The poem asks God to give the king justice and righteousness, expects him to defend the afflicted and needy and oppose the oppressor, and depicts rule reaching other peoples and kings (Ps 72:1–4, 8–14). The source is the existing CKL primary-text record `psalms-masoretic`, whose locator is Psalms 1–150 in the Masoretic textual tradition.
