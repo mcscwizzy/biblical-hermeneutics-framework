@@ -958,6 +958,19 @@
       sourceEntry.addEventListener("click", (event) => options.onOpenResearchSources?.(event.currentTarget || sourceEntry));
       sourceNavigation.append(sourceEntry);
       rootElement.append(sourceNavigation);
+      const additionalItems = additionalSourcedRecords(
+        [...itemsById.values()],
+        connectionsByItem,
+        sectionsById,
+      );
+      const additionalRecords = renderAdditionalSourcedRecords(
+        document,
+        additionalItems,
+        coverageBySource,
+        connectionsByItem,
+        options,
+      );
+      if (additionalRecords) rootElement.append(additionalRecords);
       return rootElement;
     }
 
@@ -1293,9 +1306,7 @@
     const geographyItemIds = new Set(sectionsById.get("biblical_geography")?.item_ids || []);
     return items.flatMap((item) => {
       if (readerText(item?.record_kind) !== "evidence") return [];
-      const hasSourceIdentity = (Array.isArray(item.source_ids) && item.source_ids.some((sourceId) => readerText(sourceId)))
-        || (Array.isArray(item.sources) && item.sources.some((source) => readerText(source?.id)));
-      if (!hasSourceIdentity) return [];
+      if (!hasRecordedSourceIdentity(item)) return [];
       const anchors = Array.isArray(item.applicable_passage_anchors) && item.applicable_passage_anchors.length
         ? item.applicable_passage_anchors
         : (Array.isArray(item.passage_anchors) ? item.passage_anchors : []);
@@ -1324,6 +1335,81 @@
       || String(left.item.id || "").localeCompare(String(right.item.id || ""))
     ));
     return ranked.slice(0, 2);
+  }
+
+  function additionalSourcedRecords(items, connectionsByItem, sectionsById) {
+    const assignedIds = new Set([...sectionsById.values()]
+      .flatMap((section) => Array.isArray(section.item_ids) ? section.item_ids : []));
+    const previewedIds = new Set(selectConnectionPreviews(
+      connectionPreviewCandidates(items, connectionsByItem, sectionsById),
+    ).map((candidate) => candidate.item.id));
+    return items.filter((item) => {
+      if (readerText(item?.domain) !== "ckl") return false;
+      if (!["claim", "evidence", "interpretive_note"].includes(readerText(item?.record_kind))) return false;
+      if (Array.isArray(item?.section_ids) && item.section_ids.length) return false;
+      if (assignedIds.has(readerText(item?.id))) return false;
+      if (!Array.isArray(item?.applicable_passage_anchors) || item.applicable_passage_anchors.length === 0) return false;
+      if (!hasRecordedSourceIdentity(item)) return false;
+      if (previewedIds.has(readerText(item?.id))) return false;
+      return true;
+    });
+  }
+
+  function hasRecordedSourceIdentity(item) {
+    return (Array.isArray(item?.source_ids) && item.source_ids.some((sourceId) => readerText(sourceId)))
+      || (Array.isArray(item?.sources) && item.sources.some((source) => readerText(source?.id)));
+  }
+
+  function renderAdditionalSourcedRecords(document, items, coverageBySource, connectionsByItem, options) {
+    if (!items.length) return null;
+    const section = element(document, "section", "narrative-explorer-additional-records");
+    section.setAttribute("aria-label", "Additional source-backed passage records");
+    const toggle = element(document, "button", "secondary narrative-explorer-additional-records-toggle");
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = `Browse ${items.length} additional sourced ${items.length === 1 ? "record" : "records"}`;
+    const records = element(document, "div", "narrative-explorer-additional-records-list");
+    records.id = "narrative-explorer-additional-records-list";
+    records.hidden = true;
+    toggle.setAttribute("aria-controls", records.id);
+
+    let expanded = false;
+    let rendered = false;
+    toggle.addEventListener("click", () => {
+      expanded = !expanded;
+      toggle.setAttribute("aria-expanded", String(expanded));
+      toggle.textContent = expanded
+        ? "Hide additional sourced records"
+        : `Browse ${items.length} additional sourced ${items.length === 1 ? "record" : "records"}`;
+      records.hidden = !expanded;
+      if (expanded && !rendered) {
+        const coverage = coverageBySource.get("canonical_knowledge_library");
+        const state = ["available", "partial"].includes(coverage?.state) ? coverage.state : "unknown";
+        const definition = {
+          id: "additional_sourced_records",
+          title: "Additional sourced records",
+          description: "These CKL child records have a cited source and an applicable Scripture anchor for this passage, but no assigned topic. Open a record to see its recorded scope, provenance, and review details.",
+        };
+        const projectedSection = {
+          id: definition.id,
+          state,
+          item_ids: items.map((item) => item.id),
+          source_domains: ["canonical_knowledge_library"],
+        };
+        records.append(renderSection(
+          document,
+          definition,
+          projectedSection,
+          items,
+          coverageBySource,
+          connectionsByItem,
+          options,
+        ));
+        rendered = true;
+      }
+    });
+    section.append(toggle, records);
+    return section;
   }
 
   function connectionPreviewRank(item) {
@@ -2153,6 +2239,7 @@
     if (category.includes("manuscript") || category.includes("textual-witness") || item?.dispute_status === "textual_variant") return "Manuscript/textual witness";
     if (temporal.some((value) => value.includes("later")) || category.includes("reception") || claimType.includes("reception") || explicitlyDescribesLaterReception(item)) return "Later reception";
     if (["biblical-text", "biblical-textual", "textual-observation"].includes(category) || ["biblical-text", "textual-observation"].includes(claimType)) return "Original biblical text";
+    if (claimType === "lexical") return "Lexical research";
     if (category === "worldview-concept") {
       if (item?.assertion_type === "primary-evidence" && anchors.some((anchor) => readerText(anchor?.relationship).toLowerCase() === "direct")) return "Original biblical text · worldview language";
       return isDisputed(item) ? "Scholarly interpretation · disputed position" : "Scholarly interpretation · worldview context";

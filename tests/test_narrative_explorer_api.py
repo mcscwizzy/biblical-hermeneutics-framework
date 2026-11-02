@@ -1115,3 +1115,49 @@ def test_concurrent_explorer_requests_share_one_verified_provider_initialization
     assert provider.snapshot()["single_flight_waits"] == 7
     assert all(response.status_code == 200 for response in responses)
     assert all(response.content == responses[0].content for response in responses)
+
+
+def test_ed1c_additional_record_inputs_keep_exact_scope_and_held_ezekiel_bridge_out(ckl_library):
+    client = _client(_service(ckl_library))
+
+    proverbs = client.get("/api/narrative-explorer/v1/passages/Proverbs/31")
+    assert proverbs.status_code == 200
+    proverbs_payload = proverbs.json()
+    greek_order = _item(proverbs_payload, "ckl:proverbs#claim:proverbs-greek-order")
+    assert greek_order["section_ids"] == []
+    assert [anchor["reference"] for anchor in greek_order["applicable_passage_anchors"]] == [
+        "Proverbs 31:1-31"
+    ]
+    assert [anchor["reference"] for anchor in greek_order["passage_anchors"]] == [
+        "Proverbs 24:23-34",
+        "Proverbs 30:1-33",
+        "Proverbs 31:1-31",
+    ]
+
+    mark_range = client.get(
+        "/api/narrative-explorer/v1/passages/Mark/2",
+        params={"verse_start": 23, "verse_end": 28},
+    )
+    assert mark_range.status_code == 200
+    mark_payload = mark_range.json()
+    mark_ids = {item["id"] for item in mark_payload["items"]}
+    jewish_debate = _item(mark_payload, "ckl:mark#claim:mark-jewish-debate")
+    assert [anchor["reference"] for anchor in jewish_debate["applicable_passage_anchors"]] == [
+        "Mark 2:23-28"
+    ]
+    assert "ckl:mark#claim:mark-disability" not in mark_ids
+
+    ezekiel = client.get("/api/narrative-explorer/v1/passages/Ezekiel/40")
+    assert ezekiel.status_code == 200
+    ezekiel_payload = ezekiel.json()
+    new_jerusalem = _item(ezekiel_payload, "ckl:new-jerusalem-prophecy")
+    assert new_jerusalem["record_kind"] == "object"
+    assert new_jerusalem["section_ids"] == []
+    route_ids = {
+        route["id"]
+        for route in (
+            ezekiel_payload["related_passages"]["authored_relationships"]
+            + ezekiel_payload["related_passages"]["evidence_backed_bridges"]
+        )
+    }
+    assert "ezekiel-40-48-revelation-21-22-temple" not in route_ids

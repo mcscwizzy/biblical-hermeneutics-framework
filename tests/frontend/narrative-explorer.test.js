@@ -297,6 +297,107 @@ test("overview shows six concise category cards and no evidence inventory", () =
   assert.deepEqual(openedSources, [sourcesEntry]);
 });
 
+test("overview discloses only applicable-anchor sourced child records without duplicating section or connection previews", () => {
+  const kephale = {
+    ...projection().items[0],
+    id: "ckl:1-corinthians#claim:1cor-kephale",
+    object_id: "1-corinthians",
+    parent_object_id: "1-corinthians",
+    claim_id: "1cor-kephale",
+    evidence_id: null,
+    title: "Kephale in 1 Corinthians 11:3",
+    claim_text: "Kephale means head, but its relational force remains disputed.",
+    claim_type: "lexical",
+    certainty: "disputed",
+    dispute_status: "lexical_uncertainty",
+    source_ids: ["bdag"],
+    sources: [{id: "bdag", details_available: true, bibliographic_details: {title: "BDAG"}}],
+    passage_anchors: [{reference: "1 Corinthians 11:3", relationship: "direct"}],
+    applicable_passage_anchors: [{reference: "1 Corinthians 11:3", relationship: "direct"}],
+    section_ids: [],
+  };
+  const assignedDuplicate = {
+    ...kephale,
+    id: "ckl:1-corinthians#claim:already-assigned",
+    claim_id: "already-assigned",
+    section_ids: ["themes_biblical_connections"],
+  };
+  const broadObject = {
+    ...kephale,
+    id: "ckl:new-jerusalem-prophecy",
+    object_id: "new-jerusalem-prophecy",
+    parent_object_id: "new-jerusalem-prophecy",
+    claim_id: null,
+    record_kind: "object",
+  };
+  const sourceLess = {
+    ...kephale,
+    id: "ckl:1-corinthians#claim:no-sources",
+    claim_id: "no-sources",
+    source_ids: [],
+    sources: [],
+  };
+  const noApplicableAnchor = {
+    ...kephale,
+    id: "ckl:1-corinthians#claim:wrong-passage",
+    claim_id: "wrong-passage",
+    passage_anchors: [{reference: "1 Corinthians 5:1-3", relationship: "direct"}],
+    applicable_passage_anchors: [],
+  };
+  const connectionPreview = {
+    ...kephale,
+    id: "ckl:1-corinthians#evidence:already-previewed",
+    record_kind: "evidence",
+    claim_id: null,
+    evidence_id: "already-previewed",
+    claim_text: null,
+    evidence_category: "ancient-text",
+    title: "Already previewed evidence",
+  };
+  const base = projection();
+  const data = projection({
+    passage: {reference: "1 Corinthians 11", book: "1 Corinthians", chapter: 11, verse_start: null, verse_end: null, scope: "chapter"},
+    sections: base.sections.map((entry) => entry.id === "themes_biblical_connections"
+      ? {...entry, item_ids: [...entry.item_ids, assignedDuplicate.id]}
+      : entry),
+    items: [kephale, assignedDuplicate, broadObject, sourceLess, noApplicableAnchor, connectionPreview],
+    connections: [{
+      id: "connection:already-previewed",
+      source_id: connectionPreview.id,
+      target_id: "ckl:1-corinthians#evidence:target",
+      connection_type: "related",
+      basis: {kind: "ckl_related_evidence", notes: "Recorded evidence relationship."},
+    }],
+  });
+
+  const root = explorer.renderOverview(data, {document: fakeDocument(), onInspect: () => {}});
+  const disclosure = descendants(root).find((element) => element.className.split(" ").includes("narrative-explorer-additional-records-toggle"));
+  assert.ok(disclosure);
+  assert.equal(disclosure.attributes["aria-expanded"], "false");
+  assert.equal(descendants(root).filter((element) => element.className === "narrative-explorer-item").length, 0);
+  assert.match(disclosure.textContent, /1 additional sourced record/);
+
+  disclosure.click();
+
+  assert.equal(disclosure.attributes["aria-expanded"], "true");
+  assert.match(root.textContent, /Additional sourced records/);
+  assert.match(root.textContent, /no assigned topic/);
+  const cards = descendants(root).filter((element) => element.className === "narrative-explorer-item");
+  assert.equal(cards.length, 1);
+  assert.match(cards[0].textContent, /Kephale means head/);
+  assert.match(cards[0].textContent, /Lexical research/);
+  assert.doesNotMatch(cards[0].textContent, /Evidence type not recorded/);
+  assert.match(cards[0].textContent, /Passage relationship: 1 Corinthians 11:3/);
+  assert.match(cards[0].textContent, /BDAG.*bdag/);
+  assert.match(cards[0].textContent, /Certainty: disputed/);
+  assert.match(cards[0].textContent, /Dispute status: lexical_uncertainty/);
+  assert.equal(kephale.section_ids.length, 0);
+  assert.doesNotMatch(root.textContent, /Already previewed evidence|wrong-passage|new-jerusalem-prophecy|no-sources/);
+
+  const empty = explorer.renderOverview(projection(), {document: fakeDocument()});
+  assert.equal(descendants(empty).some((element) => element.className.split(" ").includes("narrative-explorer-additional-records-toggle")), false);
+});
+
 test("overview defers the empty origin-only trail until a connection is followed", () => {
   const origin = explorer.createTrail({book: "Genesis", chapter: 1, reference: "Genesis 1"});
   const overview = explorer.renderOverview(projection(), {document: fakeDocument(), trail: origin});
