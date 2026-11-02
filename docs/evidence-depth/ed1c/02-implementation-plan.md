@@ -95,5 +95,5 @@
 - [x] Record the unchanged API projection and section counts, plus the new path’s included and excluded cases.
 - [x] Record accepted and intentionally excluded cases and backlog priorities.
 - [x] Run applicable CKL, source integrity, Narrative Explorer, frontend, and reader regression gates; record exact commands and results.
-- [ ] Check Markdown links and commands, review `git diff --check`, the full diff, generated-file status, and final commit state.
-- [ ] Commit the focused change and reports; push `fix/ed1c-evidence-discoverability`; provide a PR comparison URL without merging or deploying.
+- [x] Check Markdown links and commands, review `git diff --check`, the full diff, generated-file status, and final commit state.
+- [x] Commit the focused change and reports; push `fix/ed1c-evidence-discoverability`; provide a PR comparison URL without merging or deploying.

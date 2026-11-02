@@ -49,3 +49,11 @@ An initial command that included every module under `tests/canonical_library`
 was intentionally interrupted at 1% because it was broader than the affected
 surface. The focused integrity set above and the CKL validator were completed;
 the interrupted broad run emitted no test failure before it was stopped.
+
+## Branch delivery
+
+- Base: `origin/master` at `5597ecb733d7d4148a76e3f83f0ed58233989fb6`.
+- Branch: `fix/ed1c-evidence-discoverability`.
+- Implementation commit: `e5ec4551` (`fix: improve evidence discoverability in Narrative Explorer`).
+- Pushed to `origin`; no merge or deployment was performed.
+- [Open the GitHub comparison against master](https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...fix/ed1c-evidence-discoverability).
