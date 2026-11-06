@@ -36,6 +36,9 @@ the authoritative reviewed research source.
 - [ED-1A Evidence Depth audit](evidence-depth/ed1a/01-current-inventory.md) —
   current CKL baseline, evidence-depth methodology, chapter coverage, research
   backlog, ten pilots, and the proposed ED-1B transaction.
+- [ED-1C Evidence Discoverability](evidence-depth/ed1c/README.md) — reproduced
+  inventory, reader-path findings, desktop/mobile acceptance, and remaining
+  discoverability backlog.
 - [Maps and archaeology](archaeology.md) — catalog, evidence, media rights,
   provenance, and offline behavior.
 - [Lexicon architecture](lexicon-architecture.md), [word study](word-study.md),
