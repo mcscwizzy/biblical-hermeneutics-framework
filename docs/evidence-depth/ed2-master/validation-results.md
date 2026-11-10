@@ -63,3 +63,20 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Narrative Explorer regression: 7 CKL unit tests and 68 targeted projection/regression tests passed. The full ED-1A audit also completed its 19 deterministic passage samples and 16 live service samples. Exact verse anchors, reader section assignment, source/locator disclosure, observation and interpretation, confidence/dispute/review state, no duplicate display, and no authored cross-passage links were checked.
 - Deep heuristic review: 63 error-severity findings and 1,022 warnings, compared with 63/1,018 after A4. The four new warnings are `unknown-passage-chronology`; no new heuristic errors were introduced. These findings are separate from strict CKL errors and are not scholarly-quality adjudications.
 - Protected state: A5 changed only the Psalms CKL object, ED-2 tests, and ED-2 documentation. No NE-9C/NE-10 decision, hold, relationship identity, API contract, or historical checkpoint was edited or regenerated.
+
+
+## Wave A, batch A6 — Psalms 12, 28, 35, 38, and 45
+
+- **Strict CKL validation:** 687 valid objects, 0 errors, and 14 inherited `incomplete_section_status` warnings. No validation rule was changed.
+- **Manifest and references:** generated manifest semantically matches the checked manifest. All five exact Scripture anchors and all source-support references resolve.
+- **ED-1A chapter census:** pass, 1,189/1,189 chapters and 0 unmapped identities. Coverage is 1,031 passage-specific, 68 contextual-only, 3 entity-only, 86 no-eligible, and 1 incomplete/unknown. Psalms is 99 passage-specific and 28 no-eligible.
+- **CKL totals:** 687 objects, 2,329 claims, 1,347 typed evidence items, 5,286 source-record occurrences, and 2,837 source identities. A6 adds five evidence items and five source identities; no claims or CKL objects were added. Each evidence item reuses the existing Masoretic Psalms text source and has one new scholarly source.
+- **Source verification:** all five additions use full open-access articles and exact section or page locators. The Persian-period and literary-context proposal for Psalm 12, the Psalm 28 ending classification, Psalm 35's genre/setting, Psalm 38's body-image interpretation, and Psalm 45's performance setting remain qualified as documented in the packet.
+- **Source integrity limits:** the same two unresolved child source references, one expected missing locator (`patristic-minor-prophets`), and 558 source IDs without rich bibliography remain. The inventory also reports 81 IDs with metadata variation and 148 with locator variation; these are inherited baseline-wide findings, not A6 sources.
+- **Reader projection:** 8 CKL unit tests and 69 targeted Narrative Explorer tests passed. They check exact chapter/verse eligibility, one-item display, section assignment, source and locator disclosure, observation/interpretation, confidence/dispute/review metadata, and absence of authored cross-passage or entity links.
+- **Package checks:** 24 manifest/schema package tests passed; the generated manifest matches the committed manifest.
+- **ED-1A reader audit:** 19 deterministic passage samples and 16 live service samples passed.
+- **Heuristic quality review:** the deep report counts 63 error-severity findings and 1,027 warnings, compared with 63/1,022 after A5. Its five additional findings are `unknown-passage-chronology` warnings for these five records. No heuristic error was introduced. These warnings are separate from strict validation and do not assign a scholarly-quality score.
+- **Protected decisions:** the batch changed only the Psalms CKL object, ED-2 regression tests, and ED-2 documentation. No NE-9C/NE-10 curation or bridge file, held/verified decision, historical checkpoint, API contract, or relationship registry was changed. The audit reports 433 accepted curation records, 44 verified NE-10 bridges, and 7 held candidates.
+- **Review state:** all new work remains draft/in-review, requires human scholarly review, and has no named human reviewer.
+- **Evidence commit:** `ec244726f95604ff93eb6034f1f480270831976c` (`research: add ED-2 Psalms batch A6`).

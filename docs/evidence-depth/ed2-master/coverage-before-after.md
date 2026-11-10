@@ -101,3 +101,20 @@ The full ED-1A census passed for all 1,189 chapters with no unmapped record iden
 | Every other biblical book | unchanged | unchanged | unchanged | unchanged |
 
 Psalms 39, 48, 62, and 71 each moved from no eligible item to passage-specific evidence. Across the program since the ED-2A baseline, 33 chapters have moved from no eligible material to passage-specific eligibility (993→1,026); 91 chapters still have none. A5 adds four source-backed literary evidence items and four source identities; all remain draft/in-review. Eligibility is not a measure of scholarly depth. See the [A5 research packets](wave-a-psalms/psalms-research-packets-a5.md). The census artifacts are in `/tmp/ed2-master-wave-a5/`.
+
+
+## Wave A, batch A6 — Psalms 12, 28, 35, 38, and 45
+
+The current full ED-1A census still covers all 1,189 chapters with no unmapped record identities. Relative to the post-A5 checkpoint, A6 changes eligibility in these five target chapters:
+
+| Coverage category | After A5 | After A6 | Change |
+|---|---:|---:|---:|
+| Passage-specific evidence | 1,026 | 1,031 | +5 |
+| Contextual coverage | 68 | 68 | 0 |
+| Entity-only coverage | 3 | 3 | 0 |
+| No eligible CKL material | 91 | 86 | −5 |
+| Incomplete or unknown | 1 | 1 | 0 |
+
+Within Psalms, passage-specific chapters increase from 94 to 99, and chapters with no eligible material decrease from 33 to 28. Psalms remains at 22 contextually covered chapters and one entity-only chapter. At the book level, Psalms is the only book changed by A6; the other 65 books' eligibility categories are unchanged from the A5 checkpoint.
+
+CKL totals after A6 are 687 objects, 2,329 claims, and 1,347 typed evidence items. The batch adds five literary-convention evidence items, five source identities, and no claims or objects. The source inventory contains 5,286 source-record occurrences and 2,837 source identities. These counts measure inventory and eligibility, not scholarly completeness.

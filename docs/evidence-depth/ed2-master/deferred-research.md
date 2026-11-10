@@ -50,3 +50,12 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 71: Liess's full open-access chapter was consulted, but its reading of old age as continuing intergenerational testimony is literary interpretation, not evidence for a particular speaker's biography or a universal social role.
 - After A5, 33 Psalm chapters still have no eligible passage-specific material; chapters with existing items also remain candidates for qualitative depth review. Continue Wave A using the backlog as a prioritization aid, then advance through Waves B–E.
 - The inherited 2 unresolved child-source references, one expected missing locator (`patristic-minor-prophets`), and 558 source IDs without detailed bibliography remain unchanged.
+
+## Wave A, batch A6 limitations and remaining triage
+
+- Psalm 12: Botha's relationship between Psalms 9–14 and Proverbs 30:1–14, proposed Persian-period horizon, and “piety of the poor” context are attributed reconstructions. The article says a precise date cannot be established; no ruler or specific social event is identified.
+- Psalm 28: the ending's classification as prayer, praise, or a combination remains debated. The selected article's broader universal-justice conclusion is not treated as consensus or as independent historical evidence.
+- Psalm 35: military and courtroom language are textually present, but genre, life-setting, and Davidic authorship remain unsettled; no event from the David narrative is identified as the poem's occasion.
+- Psalm 38: body imagery may be literal, figurative, or symbolic. The poem and Human's interpretation do not identify a specific medical condition or cause.
+- Psalm 45: Wendland's sound and translation analysis is a scholarly stylistic reading. The proposed public royal declamation is not independently established, and Chewa examples do not determine a universal translation choice.
+- The five selected Psalms now have eligible records; 28 baseline P1 Psalms remain without eligible passage-specific evidence after this batch. Continue researching uncovered and substantively thin Psalms before advancing through Wisdom, Historical, Prophetic, and New Testament priorities. Eligibility alone does not establish sufficient depth.
