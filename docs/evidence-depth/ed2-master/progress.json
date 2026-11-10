@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a11-research",
-  "last_completed_batch": "A10-psalms-53-102-109-135",
-  "next_work": "Research the eight remaining Psalms without eligible CKL material (58, 76, 138, and 140–144), continuing to defer claims without adequate source access; then proceed to Wisdom literature and Waves C–E.",
+  "current_phase": "wave-a-batch-a12-research",
+  "last_completed_batch": "A11-psalms-58-76-138-144",
+  "next_work": "Continue Wave A qualitative triage for the 22 Psalms with contextual-only coverage and Psalm 73 with entity-only coverage. A12 begins with Psalms 4, 16, 18, 23, 27, 29, 31, and 32; keep eligibility separate from depth and do not add filler. Then continue the remaining contextual-only Psalms before Wave B.",
   "waves": [
     {
       "id": "A",
@@ -73,10 +73,16 @@
         "Psalm 53",
         "Psalm 102",
         "Psalm 109",
-        "Psalm 135"
+        "Psalm 135",
+        "Psalm 138",
+        "Psalm 140",
+        "Psalm 141",
+        "Psalm 142",
+        "Psalm 143",
+        "Psalm 144"
       ],
-      "evidence_records_added": 58,
-      "source_ids_created": 56,
+      "evidence_records_added": 66,
+      "source_ids_created": 65,
       "source_ids_reused": 3,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
@@ -107,21 +113,26 @@
         "Psalm 70: Auffret’s full French article was inaccessible; only the publisher’s English and French abstracts support the narrowly reported structural proposal.",
         "Psalm 98: Blunda Grubert’s full article was inaccessible; only the Spanish publisher abstract supports the limited group-level framing.",
         "Psalm 87: Zion’s relation to the named nations and Rautenbach’s status reading remain disputed; her article identifies its origin as an MA seminar paper.",
-        "Psalm 58: the relevant Sklarz study is in Hebrew; only its English abstract was accessible, so its structural proposal was not authored as CKL evidence.",
-        "Psalm 76: no passage-specific scholarly argument was directly inspected that would support a responsible source-backed addition; event and date claims remain deferred.",
-        "Psalm 109: only the publisher abstract and bibliographic record for Egwim 2004 were accessible; the narrow legal-case/reported-speech proposal is recorded at low confidence and requires full-text and human review."
+        "Psalm 58: the earlier Sklarz structural study remains deferred because it is in Hebrew and its English abstract lacked enough detail. A11 adds Begg’s narrow abstract-level account of versional readings; it does not inspect witnesses or settle the opening word.",
+        "Psalm 76: the earlier source search found no directly inspected passage-specific argument. A11 adds Smith’s dissertation discussion of Psalm 76 as a generalized Zion hymn; a specific battle, date, and composition setting remain unestablished.",
+        "Psalm 109: only the publisher abstract and bibliographic record for Egwim 2004 were accessible; the narrow legal-case/reported-speech proposal is recorded at low confidence and requires full-text and human review.",
+        "Psalm 58: Begg’s publisher abstract and bibliographic record were accessible, but the full article and ancient witnesses were not; the record is low-confidence and does not select an original reading.",
+        "Psalm 141: only Booij’s publisher abstract was accessible; the proposed pronoun and lexical readings are low-confidence, and the article’s national-distress setting is not adopted.",
+        "Psalm 143: Moore’s full article was inaccessible and is represented only by its publisher abstract; Bachmann’s accessible response is in German. Their disagreement about Galatians 3:10 is recorded as reception history without creating a cross-passage bridge.",
+        "Psalm 144: the publisher exposes Zenger’s relevant footnote and surrounding text while marking the article access-restricted; only that visible argument supports the item.",
+        "All eight A11 records remain draft/in-review with human review required; no human reviewer is named."
       ],
       "validation": {
         "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
-        "manifest": "Generated manifest semantically matches checked manifest; all four exact Scripture anchors and source-support links resolve",
-        "chapter_audit": "Pass; 1,189/1,189 chapters; 0 unmapped identities; 1,051 passage-specific, 68 contextual-only, 3 entity-only, 66 no-eligible, 1 incomplete/unknown; Psalms 119 specific, 22 contextual, 1 entity-only, 8 no-eligible. No invalid anchors; audit passed 19 deterministic and 16 live service samples.",
-        "source_integrity": "Three new scholarly source identities and one reused scholarly source; source summary 5,303 occurrences / 2,854 identities; separate identity audit counts 2,855 unique IDs; 2 inherited unresolved child-source references; no new unresolved references.",
-        "projection_and_disclosure": "Four exact anchors, source disclosure, passage relevance, primary observations, attributed interpretations, uncertainty/dispute/review metadata, and no new authored relationship routes verified.",
-        "regression_tests": "12 ED-2 CKL tests; 73 Narrative Explorer projection/regression tests; 81 manifest/schema package tests; 464 NE-9C/NE-10 curation tests; ED-1A audit passed 19 deterministic and 16 live service samples.",
-        "deep_heuristic": "63 error-severity findings and 1,047 warnings; four additional unknown-passage-chronology warnings; no new heuristic errors.",
-        "authored_relationships": "No authored relationship entries added; only exact Scripture-anchor projection edges; protected NE-9C/NE-10 records and decisions unchanged; historical checkpoints not regenerated."
+        "manifest": "Generated manifest semantically matches checked manifest; 687 objects; new source-support links and exact Scripture anchors resolve",
+        "chapter_audit": "Pass; 1,189/1,189 chapters; 0 unmapped identities and 0 invalid anchors; 1,059 passage-specific, 68 contextual, 3 entity-only, 58 no-eligible, 1 incomplete/unknown. Psalms: 127 specific, 22 contextual, 1 entity-only, 0 no-eligible. Audit passed 19 deterministic and 16 live service samples.",
+        "source_integrity": "Nine new scholarly source identities; all A11 source links and locators resolve. ED-1A source inventory: 5,312 occurrences / 2,863 source identities; 2 unresolved child-source references are inherited.",
+        "projection_and_disclosure": "All eight exact anchors project once with source disclosure, primary observation, attributed interpretation, confidence/dispute/review metadata, and no new authored relationship routes.",
+        "regression_tests": "25 focused ED-2 tests and 66 subtests; 74 Narrative Explorer projection tests; 81 manifest/schema/package tests; 464 NE-9C/NE-10 curation tests; all passed.",
+        "deep_heuristic": "63 error-severity findings and 1,058 warnings, compared with 1,047 warnings after A10. A11 adds 8 unknown-passage-chronology warnings and 3 weak-source-type warnings for thesis records classified as other; no new heuristic errors.",
+        "authored_relationships": "No authored related_objects or related_evidence entries added; only direct Scripture-anchor projection connections. Protected NE-9C/NE-10 decisions and historical checkpoints were not changed."
       },
-      "commit_sha": "5f0996ccdc692f82a558e6cae975a48b17ad3340",
+      "commit_sha": "1747080aabac2202bc8e4c9ed0e32bac7de2d081",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -531,6 +542,53 @@
             "authored_relationships": "No relationship entries changed; protected NE-9C/NE-10 decisions and historical checkpoints unchanged"
           },
           "commit_sha": "5f0996ccdc692f82a558e6cae975a48b17ad3340"
+        },
+        {
+          "id": "A11-psalms-58-76-138-144",
+          "status": "committed",
+          "passages": [
+            "Psalm 58",
+            "Psalm 76",
+            "Psalm 138",
+            "Psalm 140",
+            "Psalm 141",
+            "Psalm 142",
+            "Psalm 143",
+            "Psalm 144"
+          ],
+          "evidence_records_added": 8,
+          "source_ids_created": [
+            "begg-psalm58-opening-word-1988",
+            "smith-psalms73-83-editorial-2019",
+            "botha-final-davidic-psalter-2021",
+            "lyon-selah-antiquity-psalms-2018",
+            "booij-psalm141-discipline-2005",
+            "skinner-davidic-superscriptions-2016",
+            "moore-psalm143-galatians-2022",
+            "bachmann-galatians-logic-2024",
+            "zenger-fifth-book-psalms-1998"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "chapter_eligibility_improvements": 8,
+          "deferred_research": [
+            "Psalm 58: Begg’s publisher abstract and bibliographic record were accessible, but the full article and ancient witnesses were not; the record is low-confidence and does not select an original reading.",
+            "Psalm 141: only Booij’s publisher abstract was accessible; the proposed pronoun and lexical readings are low-confidence, and the article’s national-distress setting is not adopted.",
+            "Psalm 143: Moore’s full article was inaccessible and is represented only by its publisher abstract; Bachmann’s accessible response is in German. Their disagreement about Galatians 3:10 is recorded as reception history without creating a cross-passage bridge.",
+            "Psalm 144: the publisher exposes Zenger’s relevant footnote and surrounding text while marking the article access-restricted; only that visible argument supports the item.",
+            "All eight A11 records remain draft/in-review with human review required; no human reviewer is named."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
+            "manifest": "Generated manifest semantically matches checked manifest; 687 objects; new source-support links and exact Scripture anchors resolve",
+            "chapter_audit": "Pass; 1,189/1,189 chapters; 0 unmapped identities and 0 invalid anchors; 1,059 passage-specific, 68 contextual, 3 entity-only, 58 no-eligible, 1 incomplete/unknown. Psalms: 127 specific, 22 contextual, 1 entity-only, 0 no-eligible. Audit passed 19 deterministic and 16 live service samples.",
+            "source_integrity": "Nine new scholarly source identities; all A11 source links and locators resolve. ED-1A source inventory: 5,312 occurrences / 2,863 source identities; 2 unresolved child-source references are inherited.",
+            "projection_and_disclosure": "All eight exact anchors project once with source disclosure, primary observation, attributed interpretation, confidence/dispute/review metadata, and no new authored relationship routes.",
+            "regression_tests": "25 focused ED-2 tests and 66 subtests; 74 Narrative Explorer projection tests; 81 manifest/schema/package tests; 464 NE-9C/NE-10 curation tests; all passed.",
+            "deep_heuristic": "63 error-severity findings and 1,058 warnings, compared with 1,047 warnings after A10. A11 adds 8 unknown-passage-chronology warnings and 3 weak-source-type warnings for thesis records classified as other; no new heuristic errors.",
+            "authored_relationships": "No authored related_objects or related_evidence entries added; only direct Scripture-anchor projection connections. Protected NE-9C/NE-10 decisions and historical checkpoints were not changed."
+          },
+          "commit_sha": "1747080aabac2202bc8e4c9ed0e32bac7de2d081"
         }
       ]
     },

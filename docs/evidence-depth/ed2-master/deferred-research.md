@@ -84,9 +84,19 @@ This list is updated after source review. A chapter stays deferred where the exa
 
 ## Wave A, batch A9 limitations and remaining triage
 
-- Psalm 58: Miriam Sklarz’s structural study is in Hebrew. Its English abstract identifies a proposal but did not expose the passage-specific argument or locators needed for a responsible CKL record. Full-text translation/review is deferred.
-- Psalm 76: no directly inspected passage-specific scholarly argument was found to support a historically informative addition in this batch. The psalm’s superscription and potential events are not used to infer a date or battle.
+- Psalm 58: Miriam Sklarz’s structural study remains deferred because it is in Hebrew and its English abstract did not expose enough of the passage-specific argument. A11 used Begg’s accessible abstract only for the narrow existence of competing opening-word/versional readings; the article and underlying witnesses remain unreviewed.
+- Psalm 76: A9 did not locate a directly inspected passage-specific source. A11 later inspected Smith’s dissertation discussion and added a generalized Zion-hymn reading; a specific battle, date, or composition setting remains unestablished.
 - Psalm 69: Lyons uses verse numbering that counts the superscription. His 69:35–37 closing unit maps to BHF 69:34–36; this was corrected after the all-chapter anchor audit flagged the initial out-of-range form.
 - After A9, 12 Psalms still have no eligible passage-specific CKL material. Psalm chapters with existing evidence may also remain substantively thin; the chapter count is an eligibility signal, not a depth score. Continue Wave A before advancing to Wisdom literature.
 
 - **Psalm 109 (A10):** Egwim’s publisher abstract was accessible, but the full article was not. The narrow reported-speech/legal-case proposal is recorded at low confidence; full-text and human review remain outstanding.
+
+
+## Wave A, batch A11 limitations and remaining qualitative triage
+
+- Psalm 58: Begg’s publisher abstract and bibliographic record were accessible; the full article and the ancient textual witnesses were not. The entry is low-confidence, reports the competing renderings narrowly, and does not choose an original reading.
+- Psalm 141: only Booij’s publisher abstract and publication metadata were accessible. The proposed suffix referents and translations are recorded at low confidence; the broader national-distress setting is not adopted without the full argument.
+- Psalm 143: Moore’s publisher abstract is the only accessible portion of his article. Bachmann’s full response is open access but in German. The record distinguishes their positions and does not add a cross-passage bridge.
+- Psalm 144: the publisher’s HTML exposes footnote 50 and nearby discussion, while marking the full article access-restricted. Only the directly visible argument supports the CKL item.
+- The current Psalm census has no zero-eligible chapters, but 22 are contextual-only and Psalm 73 is entity-only. The ED-1A census shows no passage-anchored claims or typed evidence items for those 23 chapters. They remain Wave A priorities; clearing the zero count does not complete Psalm depth review.
+- All A11 records require human scholarly review and remain draft/in-review. No human approval is recorded.

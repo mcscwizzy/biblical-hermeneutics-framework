@@ -131,3 +131,17 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Heuristic quality report: 63 error-severity findings and 1,047 warnings, four more chronology warnings than A9, and no new heuristic errors. Strict errors and heuristic warnings remain separate measures.
 - Protected decisions: no NE-9C/NE-10 curation or bridge file, held or verified decision, historical checkpoint, API contract, or relationship registry changed. No human reviewer is named; all four records remain draft/in-review.
 - Evidence commit: `5f0996cc` (`research: add ED-2 Psalms batch A10`).
+
+
+## Wave A, batch A11 — Psalms 58, 76, 138, and 140–144
+
+- Strict CKL validation: 687 valid objects, 0 errors, and 14 inherited `incomplete_section_status` warnings. No validation rule was weakened.
+- Manifest and references: the regenerated manifest is semantically equal to the checked manifest. All eight exact Scripture scopes, nine new source identities, and source-support links resolve.
+- ED-1A census: pass for 1,189/1,189 chapters, zero unmapped identities, and zero invalid anchors. Coverage is 1,059 passage-specific, 68 contextual-only, 3 entity-only, 58 no-eligible, and 1 incomplete/unknown. Psalms is 127 specific, 22 contextual, 1 entity-only, and zero no-eligible. All 19 deterministic retrieval/projection samples and 16 live service samples passed.
+- CKL/source inventory: 687 objects, 2,329 claims, 1,375 typed evidence items; 5,312 source occurrences and 2,863 source IDs. Two unresolved child-source references remain inherited.
+- Reader regressions: 25 focused ED-2 tests and 66 subtests passed; the full ED-2/Narrative Explorer projection suite passed 74 tests; manifest/schema/package tests passed 81; protected NE-9C/NE-10 curation tests passed 464.
+- Source access: full dissertations/articles were inspected for Psalms 76, 138, 140, and 142, and Bachmann’s full open-access article was read in German. Begg, Booij, and Moore were available only as publisher abstracts and bibliographic records. Zenger’s article is access-restricted; only the publisher-exposed footnote 50 and accompanying discussion support the narrowly framed item.
+- Heuristic quality report: 63 error-severity findings and 1,058 warnings, 11 more warnings than after A10. These are 8 `unknown-passage-chronology` and 3 `weak-source-type` warnings for dissertations catalogued as `other`; no new heuristic errors were introduced. These are separate from strict validation.
+- Protected decisions: no NE-9C/NE-10 records, held or verified decisions, historical checkpoints, API contracts, or relationship registries changed. The eight items author no `related_objects` or `related_evidence` links; the Psalm 143 item remains reception-history evidence, not a reviewed bridge.
+- Review status: all eight additions remain draft/in-review, require human scholarly review, and have no human reviewer recorded.
+- Evidence commit: `1747080aabac2202bc8e4c9ed0e32bac7de2d081` (`research: add ED-2 Psalms batch A11`).
