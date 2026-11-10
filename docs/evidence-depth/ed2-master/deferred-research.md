@@ -30,3 +30,14 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 83: Mitchell’s thesis was consulted in full. Its archetypal/eschatological reading is attributed, while a post-Assyrian date and a specific coalition remain unestablished.
 - Psalm 11, 14, and 26: full open-access articles were consulted. Proposed spatial, literary-direction, and wisdom readings remain attributed interpretations; none identifies a recoverable ritual or composition date.
 - Ten chapters now have eligible evidence, but 45 Psalm chapters still lack eligible passage-specific material. Eligibility does not establish adequate depth. Continue Wave A systematically before prioritizing the wisdom, historical, prophetic, and New Testament gaps.
+
+
+## Wave A, batch A4 limitations
+
+- Psalm 105: the full Gillingham article was inaccessible; the publisher abstract alone supports the narrow proposal that historical recital in Psalms 105–106 participated in Second Temple liturgical teaching. The record remains low-confidence/speculative and needs full-text and human review before expansion.
+- Psalm 46: the journal index and the University of Pretoria repository/PDF disagree on the article's page range. The in-text locator uses the PDF's printed pagination; source notes preserve the discrepancy.
+- Psalms 56 and 92: the sources count the superscription as a verse while BHF's Psalm text follows body-verse numbering; this difference is recorded in the source metadata and packet.
+- Psalm 77: Kamuwanga's full article was consulted, but the CKL item uses formal observations only. Its proposed exile setting and broad mythological reconstruction are not adopted; the author's article was part of doctoral research and presented at a scholarly congress.
+- Psalm 139: Firth's unified prayer-of-the-accused interpretation is one proposal in a live vv. 19–22 integrity debate; the record leaves that dispute unresolved.
+- After A4, 37 Psalm chapters still have no eligible passage-specific material, and thinness across Psalms with existing records remains open to qualitative review. Continue the Psalms census before progressing through Wisdom, Historical, Prophetic, and New Testament priorities.
+- The two unresolved child-source references, one expected missing locator (`patristic-minor-prophets`), and 558 source IDs without detailed bibliography remain inherited baseline findings.

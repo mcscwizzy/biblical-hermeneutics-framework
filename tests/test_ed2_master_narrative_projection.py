@@ -76,6 +76,18 @@ def test_ed2_master_psalms_project_once_with_exact_scope_and_sources():
         assert edges[0]["target_id"] == f"passage:{anchor}"
         assert edges[0]["basis"]["kind"] == "ckl_scripture_anchor"
 
+EXPECTED_A4 = {
+    "psalm-46-chaos-waters-and-stream-imagery": ("Psalm 46", "Psalm 46:2-5", "schader-psalms46-48-spatiality-2010"),
+    "psalm-56-superscription-and-editorial-frame": ("Psalm 56", "Psalm 56:1-13", "potgieter-psalm56-editorial-context-2015"),
+    "psalm-77-lament-memory-and-exodus-reframing": ("Psalm 77", "Psalm 77:1-20", "kamuwanga-psalm77-exile-suffering-2007"),
+    "psalm-91-wisdom-language-and-protection-instruction": ("Psalm 91", "Psalm 91:1-16", "botha-psalm91-wisdom-2012"),
+    "psalm-92-creation-order-and-sabbath-song": ("Psalm 92", "Psalm 92:1-15", "tucker-psalm92-ordered-world-2019"),
+    "psalm-105-history-recounted-as-liturgy": ("Psalm 105", "Psalm 105:1-45", "gillingham-psalms105-106-liturgy-2015"),
+    "psalm-111-acrostic-praise-and-scribal-learning": ("Psalm 111", "Psalm 111:1-10", "prinsloo-psalm111-112-acrostics-2019"),
+    "psalm-139-imprecation-and-ambiguity-in-prayer": ("Psalm 139", "Psalm 139:19-24", "firth-psalm139-ambiguity-2019"),
+}
+
+
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
     psalms = _load_ckl("books/psalms.json")
@@ -131,6 +143,36 @@ def test_ed2_master_psalms_a3_project_with_exact_anchors_and_source_disclosure()
         assert [x["reference"] for x in projected["passage_anchors"]] == [anchor]
         assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
         assert {"psalms-masoretic", source_id}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+        assert len(edges) == 1
+        assert edges[0]["target_id"] == f"passage:{anchor}"
+        assert edges[0]["basis"]["kind"] == "ckl_scripture_anchor"
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+
+def test_ed2_master_psalms_a4_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchor, scholarly_source) in EXPECTED_A4.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+        assert len(matches) == 1
+        projected = _item(result, projected_id)
+        assert projected["record_kind"] == "evidence"
+        assert projected["evidence_category"] == "literary-convention"
+        assert [x["reference"] for x in projected["passage_anchors"]] == [anchor]
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
+        assert set(projected["section_ids"]) == {"biblical_narrative", "themes_biblical_connections"}
+        assert {"psalms-masoretic", scholarly_source}.issubset(projected["source_ids"])
         assert all(source["details_available"] for source in projected["sources"])
         assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
         assert projected["rationale"]["primary_observation"]
