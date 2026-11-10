@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a8-research",
-  "last_completed_batch": "A7-psalms-52-59-61-63-64-65",
-  "next_work": "Continue Wave A through remaining baseline no-eligible and substantively thin Psalms; then complete prioritized Wave B Wisdom, Wave C Historical books, Wave D Prophets, and Wave E New Testament.",
+  "current_phase": "wave-a-batch-a9-research",
+  "last_completed_batch": "A8-psalms-70-86-87-98-101-108",
+  "next_work": "Complete Wave A prioritization on remaining baseline Psalm gaps, then advance through Wave B Proverbs/Ecclesiastes/Job/Song of Songs, Wave C historical books, Wave D prophets, and Wave E New Testament; all chapter rows remain available for qualitative triage.",
   "waves": [
     {
       "id": "A",
@@ -57,10 +57,16 @@
         "Psalm 61",
         "Psalm 63",
         "Psalm 64",
-        "Psalm 65"
+        "Psalm 65",
+        "Psalm 70",
+        "Psalm 86",
+        "Psalm 87",
+        "Psalm 98",
+        "Psalm 101",
+        "Psalm 108"
       ],
-      "evidence_records_added": 44,
-      "source_ids_created": 44,
+      "evidence_records_added": 50,
+      "source_ids_created": 50,
       "source_ids_reused": 1,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
@@ -87,19 +93,22 @@
         "Psalms 61 and 63: LeMon’s publisher abstract alone was accessible. Entries report only the abstract’s proposal that the bulla analysis strengthens a royal-voice reading; no bulla details, provenance, independent archaeological conclusion, or full-article argument is claimed.",
         "Psalm 64: Eder’s narratological sequence describes the poem’s literary movement; it does not establish a prose historical event, performance setting, or composition date.",
         "Psalm 65: Botha’s proposed Psalms 65–68 editorial cluster and Zion-to-earth sequence are interpretations, not proof of a specific cultic rite, historical event, or date.",
-        "Hebrew/English superscription-based verse numbering differs from BHF verse anchors for these psalm studies; correspondences are recorded in source metadata and the packet."
+        "Hebrew/English superscription-based verse numbering differs from BHF verse anchors for these psalm studies; correspondences are recorded in source metadata and the packet.",
+        "Psalm 70: Auffret’s full French article was inaccessible; only the publisher’s English and French abstracts support the narrowly reported structural proposal.",
+        "Psalm 98: Blunda Grubert’s full article was inaccessible; only the Spanish publisher abstract supports the limited group-level framing.",
+        "Psalm 87: Zion’s relation to the named nations and Rautenbach’s status reading remain disputed; her article identifies its origin as an MA seminar paper."
       ],
       "validation": {
         "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
-        "manifest": "Generated manifest semantically matches checked manifest; all exact Scripture anchors and source-support references resolve",
-        "chapter_audit": "Pass; 1,189 rows, 0 unmapped identities; 1,037 passage-specific, 68 contextual-only, 3 entity-only, 80 no-eligible, 1 incomplete/unknown; Psalms 105 specific, 22 contextual, 1 entity-only, 22 no-eligible",
-        "source_integrity": "5 new scholarly source identities and five source records with exact locators; inherited 2 unresolved child-source references, 1 expected missing locator, and 558 IDs without rich bibliography remain",
-        "projection_and_disclosure": "Exact chapter/verse anchors, reader sections, source/locator disclosure, observation, interpretation, confidence/dispute/review metadata, one-item projection, and no authored cross-passage/entity routes checked for all 6 additions",
-        "regression_tests": "9 CKL ED-2 unit tests; 70 targeted Narrative Explorer projection tests; 24 manifest/schema package tests; 464 NE-9C/NE-10 curation regressions; ED-1A audit passed 19 deterministic and 16 live service samples",
-        "deep_heuristic": "63 error-severity findings and 1,033 warnings; six new unknown-passage-chronology warnings; no new heuristic errors",
-        "authored_relationships": "No new authored relationship entries; exact Scripture-anchor projection only. NE-9C/NE-10 directories and reviewed decisions unchanged; historical checkpoints not regenerated."
+        "manifest": "Generated with tools/ckl_manifest.py; semantic match with checked manifest; all exact Scripture anchors and source-support references resolve",
+        "chapter_audit": "Pass; 1,189/1,189 chapters; 0 unmapped identities; 1,043 passage-specific, 68 contextual-only, 3 entity-only, 74 no-eligible, 1 incomplete/unknown; Psalms 111 specific, 22 contextual, 1 entity-only, 16 no-eligible",
+        "source_integrity": "Six new scholarly source identities have specific locators and resolved support links; audit totals 5,297 source occurrences and 2,848 source identities; inherited 2 unresolved child-source references, 1 expected missing locator, and 558 IDs without rich bibliography remain",
+        "projection_and_disclosure": "All six exact anchors, reader projection, source locator disclosure, observation, interpretation, confidence/dispute/review metadata, and absence of authored cross-passage routes verified",
+        "regression_tests": "10 CKL ED-2 tests; 71 Narrative Explorer projection/regression tests; 24 manifest/schema package tests; 464 NE-9C/NE-10 curation tests; ED-1A audit passed 19 deterministic and 16 live service samples",
+        "deep_heuristic": "63 error-severity findings and 1,039 warnings; six new unknown-passage-chronology warnings; no new heuristic errors",
+        "authored_relationships": "No authored relationship entries added; only exact Scripture-anchor projection edges; protected NE-9C/NE-10 records and decisions unchanged; historical checkpoints not regenerated."
       },
-      "commit_sha": "55265d1d675f0315550997fe5eaf54f6b5d4f374",
+      "commit_sha": "ec33a4f2974e306734a6ebccbd8ecc3889104694",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -390,6 +399,49 @@
             "authored_relationships": "No new authored relationship entries; exact Scripture-anchor projection only. NE-9C/NE-10 directories and reviewed decisions unchanged; historical checkpoints not regenerated."
           },
           "commit_sha": "55265d1d675f0315550997fe5eaf54f6b5d4f374"
+        },
+        {
+          "id": "A8-psalms-70-86-87-98-101-108",
+          "status": "committed",
+          "passages": [
+            "Psalm 70",
+            "Psalm 86",
+            "Psalm 87",
+            "Psalm 98",
+            "Psalm 101",
+            "Psalm 108"
+          ],
+          "evidence_records_added": 6,
+          "source_ids_created": [
+            "loader-psalm86-korah-contextual-synergy-2010",
+            "rautenbach-psalm87-social-values-2008",
+            "auffret-psalm70-structure-2011",
+            "botha-psalm101-restoration-society-2016",
+            "sutton-human-psalms108-110-head-imagery-2017",
+            "blunda-psalms93-100-kingship-liturgy-2020"
+          ],
+          "source_ids_reused": [
+            "psalms-masoretic"
+          ],
+          "source_ids_reused_count": 1,
+          "chapter_eligibility_improvements": 6,
+          "deferred_research": [
+            "Psalm 70: publisher abstracts only; full French article not consulted. Report only the abstract’s outline proposal at low confidence.",
+            "Psalm 98: Spanish publisher abstract only; no full argument, specific liturgical event, or composition date verified.",
+            "Psalm 87: inclusion versus Zion-special-status readings remain disputed; Rautenbach identifies the published study as originating in an MA seminar paper.",
+            "Psalm 108 superscription-based source numbering is mapped to BHF body-verse anchors in its source metadata and packet."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid; 0 errors; 14 inherited warnings",
+            "manifest": "Generated manifest semantically matches checked manifest",
+            "chapter_audit": "Pass; 1,189 chapters, 0 unmapped; 1,043 specific, 68 contextual, 3 entity-only, 74 no-eligible, 1 incomplete/unknown; Psalms 111 specific, 16 no-eligible",
+            "source_integrity": "All 6 new scholarly source identities and all source-support references resolve; source inventory 5,297 occurrences / 2,848 identities",
+            "projection_and_disclosure": "Exact passage anchors, reader sections, source locators, review and dispute disclosure, and no authored cross-passage routes checked for all six items",
+            "regression_tests": "10 CKL ED-2 tests; 71 Narrative Explorer tests; 24 manifest/schema package tests; 464 NE-9C/NE-10 curation tests",
+            "deep_heuristic": "63 error-severity findings and 1,039 warnings; six added chronology warnings; no new heuristic errors",
+            "authored_relationships": "No authored relationship changes; protected NE-9C/NE-10 decisions and historical checkpoints unchanged."
+          },
+          "commit_sha": "ec33a4f2974e306734a6ebccbd8ecc3889104694"
         }
       ]
     },

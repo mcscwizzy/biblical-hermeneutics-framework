@@ -28,3 +28,5 @@ This is the working ledger for the comprehensive evidence-enrichment branch. It 
 - [Final review](final-review.md)
 
 Every addition remains draft/in-review and requires human review. No reviewed NE-9C/NE-10 decision may be changed by this program. Archaeological catalog metadata remains owned by the archaeology service.
+
+Latest validated batch: A8 (Psalms 70, 86, 87, 98, 101, 108), commit `ec33a4f2974e306734a6ebccbd8ecc3889104694`. Since the ED-2A baseline, 50 evidence items have been added across 50 newly source-backed Psalm-focused research questions, and the all-chapter census now reports 1,043 chapters with passage-specific material and 74 with none. These are eligibility counts, not a completeness score.

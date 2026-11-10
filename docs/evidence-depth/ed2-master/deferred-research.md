@@ -70,3 +70,13 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 65: the proposed relation to Psalms 66–68 and Zion-to-earth praise sequence remain an editorial/literary interpretation, not a dated cultic practice.
 - Superscription-based verse numbering varies across the consulted Psalms publications; the packet records the correspondence to BHF anchors.
 - Following A7, 22 Psalm chapters remain without eligible passage-specific material. Other Psalm chapters remain candidates for qualitative review even where eligible evidence exists. Continue Wave A systematically, then advance through Waves B–E. Eligibility does not establish sufficient depth.
+
+
+## Wave A, batch A8 limitations and remaining triage
+
+- Psalm 70: only the publisher’s English and French abstracts of Auffret’s article were accessible. The record reports the concentric outline described there, marks confidence low, and makes no claim to assess its argument against alternatives.
+- Psalm 98: only the Spanish publisher abstract of Blunda Grubert’s article was accessible. Its group-level framing is reported narrowly at low confidence; the full proposal about Psalm 93–100, liturgy, and compositional structure remains unverified.
+- Psalm 87: the relation between the named nations and Zion’s status remains a scholarly dispute. Rautenbach’s full article was inspected and its position is attributed; the article notes its origin as an MA seminar paper.
+- Psalm 108: consulted scholarship counts the superscription as a verse; the source metadata and packet map its locators to BHF’s body-verse numbering.
+- After A8, 16 baseline Psalm chapters still have no eligible passage-specific material. Chapters already carrying evidence still require qualitative depth review. Continue Wave A before advancing to Wisdom, Historical, Prophetic, and New Testament priorities.
+- The baseline’s two unresolved child-source references, one expected missing locator (`patristic-minor-prophets`), and 558 source IDs without rich bibliography remain inherited.

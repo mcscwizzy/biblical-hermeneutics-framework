@@ -126,3 +126,23 @@ CKL totals after A6 are 687 objects, 2,329 claims, and 1,347 typed evidence item
 - Psalms coverage rose from 99 to 105 passage-specific chapters. Its 22 contextual, 1 entity-only, and 22 remaining no-eligible chapters are unchanged by classification; all other 65 books have unchanged coverage categories.
 - These are eligibility counts, not a scholarly-completeness score. The six evidence items address wisdom-poetic context (Psalm 52), lament structure and temporal movement (Psalm 59), an abstract-level royal-voice proposal (Psalms 61 and 63), narrative movement (Psalm 64), and a proposed editorial cluster and praise sequence (Psalm 65).
 - CKL now contains 687 objects, 2,329 claims, and 1,353 typed evidence items. The audit reports 5,291 source-record occurrences and 2,842 source identities under its source inventory metric; a separate source-identity audit counts 2,843 unique IDs due to its counting scope.
+
+
+## Wave A, batch A8 — Psalms 70, 86, 87, 98, 101, and 108
+
+The full ED-1A census passes for all 1,189 chapters with zero unmapped identities. Relative to the ED-2A starting baseline, 1,043 chapters now have passage-specific material; 68 remain contextual-only, 3 entity-only, 74 have no eligible passage-specific item, and 1 remains incomplete/unknown.
+
+| Coverage category | ED-2A baseline | After A8 | Change |
+|---|---:|---:|---:|
+| Passage-specific evidence | 993 | 1,043 | +50 |
+| Contextual-only coverage | 68 | 68 | 0 |
+| Entity-only coverage | 3 | 3 | 0 |
+| No eligible passage-specific material | 124 | 74 | −50 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+| Book | Passage-specific baseline | After A8 | No-eligible baseline | After A8 |
+|---|---:|---:|---:|---:|
+| Psalms | 61 | 111 | 66 | 16 |
+| Every other biblical book | unchanged | unchanged | unchanged | unchanged |
+
+A8 moved six Psalm chapters from no eligible item to passage-specific eligibility. The CKL contains 1,359 typed evidence items, 2,329 claims, and 687 objects; the source audit reports 5,297 source occurrences and 2,848 source identities. Those totals include the ED-2A baseline and earlier A1–A7 additions.

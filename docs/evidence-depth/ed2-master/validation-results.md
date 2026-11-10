@@ -93,3 +93,16 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Heuristic quality report: 63 error-severity findings and 1,033 warnings versus 63/1,027 after A6. The six new warnings are `unknown-passage-chronology` notices; no new heuristic errors were added. These are heuristic signals, not strict validation failures or scholarly adjudication.
 - Protected state: no NE-9C/NE-10 inputs, held/verified decisions, historical checkpoints, API contracts, or relationship registries were changed or regenerated. All A7 records remain draft/in-review and require human scholarly review.
 - Evidence commit: `55265d1d` (`research: add ED-2 Psalms batch A7`).
+
+
+## Wave A, batch A8 — Psalms 70, 86, 87, 98, 101, and 108
+
+- Strict CKL validation: 687 valid objects, 0 errors, and the same 14 inherited `incomplete_section_status` warnings.
+- Manifest: generated with `tools/ckl_manifest.py`; semantic comparison with the checked manifest passed.
+- ED-1A census: all 1,189 chapter identities mapped, no unmapped identities; 1,043 passage-specific, 68 contextual-only, 3 entity-only, 74 no-eligible, 1 incomplete/unknown. Psalms rose 105→111 passage-specific chapters and fell 22→16 no-eligible chapters. The 16 remaining zero-eligible Psalms are still queued for qualitative research.
+- CKL/source integrity: six typed evidence records and six new scholarly source IDs; all exact anchors, source identities, locators, and support links resolve. Totals: 687 objects, 2,329 claims, 1,359 typed evidence items, 5,297 source occurrences, 2,848 source identities.
+- Narrative Explorer: 10 ED-2 CKL tests passed; 71 full projection/regression tests passed; 24 manifest/schema package tests passed. Exact anchors, reader projection, bibliography/locator disclosure, confidence, dispute, human-review status, and absence of new relationship routes were verified. The protected curation suite passed 464 tests. The ED-1A audit passed 19 deterministic and 16 live service samples.
+- Heuristic report: 63 error-severity findings and 1,039 warnings versus 1,033 after A7. The six additional chronology warnings are heuristic-only; no new heuristic errors.
+- Protected decisions: no NE-9C/NE-10 inputs, verified/held decisions, relationship registries, or historical checkpoints were changed or regenerated.
+- Human review: all six additions remain draft/in-review and require scholarly review.
+- Evidence commit: `ec33a4f2974e306734a6ebccbd8ecc3889104694`.
