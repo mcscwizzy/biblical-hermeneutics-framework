@@ -145,6 +145,17 @@ EXPECTED_A11 = {
     "psalm-144-reworked-royal-victory-song": ("Psalm 144", ["Psalm 144:1-3", "Psalm 144:9-10"], ["zenger-fifth-book-psalms-1998"]),
 }
 
+EXPECTED_A12 = {
+    "psalm-4-dialogue-and-stanza-delimitation": ("Psalm 4", ["Psalm 4:1-8"], ["leite-psalm4-poetic-dialogue-2022"]),
+    "psalm-16-wisdom-contentment-and-psalter-context": ("Psalm 16", ["Psalm 16:5-11"], ["botha-psalm16-torah-wisdom-2016"]),
+    "psalm-18-distinctive-opening-and-samuel-parallel": ("Psalm 18", ["Psalm 18:1"], ["lee-psalm18-rhm-parallel-2022"]),
+    "psalm-23-host-hospitality-and-return-reading": ("Psalm 23", ["Psalm 23:5-6"], ["arterbury-bellinger-psalm23-hospitality-2005"]),
+    "psalm-27-bqr-temple-reflection-reading": ("Psalm 27", ["Psalm 27:4"], ["botha-psalm27-temple-presence-2021"]),
+    "psalm-29-ugaritic-comparison-method": ("Psalm 29", ["Psalm 29:1-11"], ["toyranvuori-psalm29-methodological-triangulation-2020"]),
+    "psalm-31-hand-imagery-and-cluster-exhortation": ("Psalm 31", ["Psalm 31:5", "Psalm 31:15"], ["botha-psalm31-cluster-faithful-trust-2023"]),
+    "psalm-32-two-stanza-wisdom-structure": ("Psalm 32", ["Psalm 32:1-11"], ["potgieter-psalm32-structure-homogeneity-2014"]),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
@@ -441,5 +452,28 @@ def test_ed2_master_psalms_a11_project_with_exact_anchors_and_source_disclosure(
             "psalm-58-opening-word-and-versional-readings",
             "psalm-141-suffixes-and-fabrications",
         } else "medium")
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a12_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchors, scholarly_sources) in EXPECTED_A12.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+        assert len(matches) == 1
+        projected = _item(result, projected_id)
+        assert projected["record_kind"] == "evidence"
+        assert [x["reference"] for x in projected["passage_anchors"]] == anchors
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == anchors
+        assert {"psalms-masoretic", *scholarly_sources}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []

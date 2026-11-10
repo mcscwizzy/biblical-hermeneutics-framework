@@ -121,6 +121,17 @@ EXPECTED_A11 = {
     "psalm-144-reworked-royal-victory-song": (["Psalm 144:1-3", "Psalm 144:9-10"], ["zenger-fifth-book-psalms-1998"]),
 }
 
+EXPECTED_A12 = {
+    "psalm-4-dialogue-and-stanza-delimitation": (["Psalm 4:1-8"], ["leite-psalm4-poetic-dialogue-2022"]),
+    "psalm-16-wisdom-contentment-and-psalter-context": (["Psalm 16:5-11"], ["botha-psalm16-torah-wisdom-2016"]),
+    "psalm-18-distinctive-opening-and-samuel-parallel": (["Psalm 18:1"], ["lee-psalm18-rhm-parallel-2022"]),
+    "psalm-23-host-hospitality-and-return-reading": (["Psalm 23:5-6"], ["arterbury-bellinger-psalm23-hospitality-2005"]),
+    "psalm-27-bqr-temple-reflection-reading": (["Psalm 27:4"], ["botha-psalm27-temple-presence-2021"]),
+    "psalm-29-ugaritic-comparison-method": (["Psalm 29:1-11"], ["toyranvuori-psalm29-methodological-triangulation-2020"]),
+    "psalm-31-hand-imagery-and-cluster-exhortation": (["Psalm 31:5", "Psalm 31:15"], ["botha-psalm31-cluster-faithful-trust-2023"]),
+    "psalm-32-two-stanza-wisdom-structure": (["Psalm 32:1-11"], ["potgieter-psalm32-structure-homogeneity-2014"]),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -509,6 +520,41 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
         self.assertIn("numbering includes the superscription", self.sources["booij-psalm141-discipline-2005"]["notes"])
         self.assertIn("publisher marks the full article as access-restricted", self.evidence["psalm-144-reworked-royal-victory-song"]["temporal_scope"]["notes"])
         self.assertIn("related_objects and related_evidence remain empty", self.evidence["psalm-143-in-galatians-argument-debate"]["notes"])
+        self.assertEqual("draft", self.book["content_status"])
+        self.assertEqual("in_review", self.book["review_status"])
+        self.assertEqual([], self.book["reviewed_by"])
+        self.assertTrue(self.book["human_review_required"])
+
+    def test_a12_additions_have_exact_scope_and_resolved_sources(self) -> None:
+        self.assertTrue(set(EXPECTED_A12).issubset(self.evidence))
+        for evidence_id, (references, scholarly_sources) in EXPECTED_A12.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual(references, [x["reference"] for x in item["scripture_references"]])
+                self.assertTrue(all(x["temporal_relation"] == "unknown" for x in item["scripture_references"]))
+                self.assertEqual({"psalms-masoretic", *scholarly_sources}, set(item["source_ids"]))
+                self.assertTrue(set(item["source_ids"]).issubset(self.sources))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertNotEqual(item["primary_observation"], item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                self.assertIn("psalms-research-packets-a12.md", item["notes"])
+                source = self.sources[scholarly_sources[0]]
+                self.assertIn(evidence_id, source["supports"])
+                self.assertTrue(source["locator"])
+                self.assertTrue(source["url"])
+        self.assertEqual("low", self.evidence["psalm-4-dialogue-and-stanza-delimitation"]["confidence"])
+        self.assertEqual("low", self.evidence["psalm-18-distinctive-opening-and-samuel-parallel"]["confidence"])
+        self.assertEqual("low", self.evidence["psalm-23-host-hospitality-and-return-reading"]["confidence"])
+        self.assertEqual("low", self.evidence["psalm-29-ugaritic-comparison-method"]["confidence"])
+        self.assertIn("Portuguese body", self.sources["leite-psalm4-poetic-dialogue-2022"]["notes"])
+        self.assertIn("Korean", self.sources["lee-psalm18-rhm-parallel-2022"]["notes"])
+        self.assertIn("full article access was restricted", self.sources["arterbury-bellinger-psalm23-hospitality-2005"]["notes"])
+        self.assertIn("full article restricted", self.sources["toyranvuori-psalm29-methodological-triangulation-2020"]["notes"])
         self.assertEqual("draft", self.book["content_status"])
         self.assertEqual("in_review", self.book["review_status"])
         self.assertEqual([], self.book["reviewed_by"])
