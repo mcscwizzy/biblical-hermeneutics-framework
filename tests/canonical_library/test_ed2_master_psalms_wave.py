@@ -87,6 +87,15 @@ EXPECTED_A7 = {
     "psalm-65-zion-to-earth-praise-sequence": ("Psalm 65:1-13", "botha-psalms65-68-cluster-2023"),
 }
 
+EXPECTED_A8 = {
+    "psalm-86-korah-collection-lament-frame": ("Psalm 86:1-17", "loader-psalm86-korah-contextual-synergy-2010"),
+    "psalm-87-zion-status-reading-dispute": ("Psalm 87:1-7", "rautenbach-psalm87-social-values-2008"),
+    "psalm-70-concentric-structure-proposal": ("Psalm 70:1-5", "auffret-psalm70-structure-2011"),
+    "psalm-101-royal-voice-and-community-justice": ("Psalm 101:1-8", "botha-psalm101-restoration-society-2016"),
+    "psalm-108-head-imagery-and-royal-victory-metaphor": ("Psalm 108:1-13", "sutton-human-psalms108-110-head-imagery-2017"),
+    "psalm-98-yhwh-kingship-in-book-four-cluster": ("Psalm 98:1-9", "blunda-psalms93-100-kingship-liturgy-2020"),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -335,6 +344,46 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
         self.assertEqual("in_review", self.book["review_status"])
         self.assertEqual([], self.book["reviewed_by"])
         self.assertIsNone(self.book["last_reviewed"])
+        self.assertTrue(self.book["human_review_required"])
+
+    def test_a8_additions_have_exact_scope_and_resolved_sources(self) -> None:
+        self.assertTrue(set(EXPECTED_A8).issubset(self.evidence))
+        for evidence_id, (reference, source_id) in EXPECTED_A8.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual("literary-convention", item["evidence_type"])
+                self.assertEqual("scholarly-reconstruction", item["assertion_type"])
+                self.assertEqual([reference], [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual("unknown", item["scripture_references"][0]["temporal_relation"])
+                self.assertEqual({"psalms-masoretic", source_id}, set(item["source_ids"]))
+                self.assertTrue(set(item["source_ids"]).issubset(self.sources))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertNotEqual(item["primary_observation"], item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                expected_certainty = "disputed" if evidence_id == "psalm-87-zion-status-reading-dispute" else "plausible"
+                expected_dispute = "major_scholarly_disagreement" if evidence_id == "psalm-87-zion-status-reading-dispute" else "interpretive_uncertainty"
+                self.assertEqual(expected_certainty, item["certainty"])
+                self.assertEqual(expected_dispute, item["dispute_status"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                source = self.sources[source_id]
+                self.assertIn(evidence_id, source["supports"])
+                self.assertTrue(source["locator"])
+                self.assertTrue(source["url"])
+        for evidence_id in {
+            "psalm-70-concentric-structure-proposal",
+            "psalm-98-yhwh-kingship-in-book-four-cluster",
+        }:
+            self.assertEqual("low", self.evidence[evidence_id]["confidence"])
+            self.assertIn("abstract", self.evidence[evidence_id]["scholarly_interpretation"].lower())
+            self.assertIn("abstract", self.evidence[evidence_id]["temporal_scope"]["notes"].lower())
+            self.assertIn("abstract", self.sources[EXPECTED_A8[evidence_id][1]]["notes"].lower())
+        self.assertEqual("draft", self.book["content_status"])
+        self.assertEqual("in_review", self.book["review_status"])
+        self.assertEqual([], self.book["reviewed_by"])
         self.assertTrue(self.book["human_review_required"])
 
 

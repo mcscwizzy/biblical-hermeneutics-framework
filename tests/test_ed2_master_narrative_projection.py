@@ -111,6 +111,15 @@ EXPECTED_A7 = {
     "psalm-65-zion-to-earth-praise-sequence": ("Psalm 65", "Psalm 65:1-13", "botha-psalms65-68-cluster-2023"),
 }
 
+EXPECTED_A8 = {
+    "psalm-86-korah-collection-lament-frame": ("Psalm 86", "Psalm 86:1-17", "loader-psalm86-korah-contextual-synergy-2010"),
+    "psalm-87-zion-status-reading-dispute": ("Psalm 87", "Psalm 87:1-7", "rautenbach-psalm87-social-values-2008"),
+    "psalm-70-concentric-structure-proposal": ("Psalm 70", "Psalm 70:1-5", "auffret-psalm70-structure-2011"),
+    "psalm-101-royal-voice-and-community-justice": ("Psalm 101", "Psalm 101:1-8", "botha-psalm101-restoration-society-2016"),
+    "psalm-108-head-imagery-and-royal-victory-metaphor": ("Psalm 108", "Psalm 108:1-13", "sutton-human-psalms108-110-head-imagery-2017"),
+    "psalm-98-yhwh-kingship-in-book-four-cluster": ("Psalm 98", "Psalm 98:1-9", "blunda-psalms93-100-kingship-liturgy-2020"),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
@@ -308,5 +317,34 @@ def test_ed2_master_psalms_a7_project_with_exact_anchors_and_source_disclosure()
         assert len(edges) == 1
         assert edges[0]["target_id"] == f"passage:{anchor}"
         assert edges[0]["basis"]["kind"] == "ckl_scripture_anchor"
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a8_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchor, scholarly_source) in EXPECTED_A8.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        projected = _item(result, projected_id)
+        assert [x["reference"] for x in projected["passage_anchors"]] == [anchor]
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
+        assert {"psalms-masoretic", scholarly_source}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        expected_confidence = "low" if local_id in {
+            "psalm-70-concentric-structure-proposal",
+            "psalm-98-yhwh-kingship-in-book-four-cluster",
+        } else "medium"
+        assert projected["confidence"] == expected_confidence
+        expected_certainty = "disputed" if local_id == "psalm-87-zion-status-reading-dispute" else "plausible"
+        expected_dispute = "major_scholarly_disagreement" if local_id == "psalm-87-zion-status-reading-dispute" else "interpretive_uncertainty"
+        assert projected["certainty"] == expected_certainty
+        assert projected["dispute_status"] == expected_dispute
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []
