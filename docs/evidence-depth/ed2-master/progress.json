@@ -56,7 +56,7 @@
         "deep_heuristic": "63 flagged errors and 1010 warnings; A3 adds 10 unknown-passage-chronology and 2 weak-source-type heuristic warnings; no new errors",
         "authored_relationships": "No authored relationship entries added; projection edges follow only exact Scripture anchors."
       },
-      "commit_sha": null,
+      "commit_sha": "2e8c5719d20198c89ab8d6b964a9a9ca4b6f285a",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -136,7 +136,7 @@
         },
         {
           "id": "A3-psalms-7-11-14-17-21-26-33-43-49-83",
-          "status": "validated_pending_commit",
+          "status": "committed",
           "passages": [
             "Psalm 7",
             "Psalm 11",
@@ -180,7 +180,7 @@
             "deep_heuristic": "63 errors, 1010 warnings; 10 chronology and 2 thesis-source-type warnings added; no new errors",
             "authored_relationships": "No new authored cross-passage or entity relationship entries."
           },
-          "commit_sha": null
+          "commit_sha": "2e8c5719d20198c89ab8d6b964a9a9ca4b6f285a"
         }
       ]
     },
