@@ -41,3 +41,12 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 139: Firth's unified prayer-of-the-accused interpretation is one proposal in a live vv. 19–22 integrity debate; the record leaves that dispute unresolved.
 - After A4, 37 Psalm chapters still have no eligible passage-specific material, and thinness across Psalms with existing records remains open to qualitative review. Continue the Psalms census before progressing through Wisdom, Historical, Prophetic, and New Testament priorities.
 - The two unresolved child-source references, one expected missing locator (`patristic-minor-prophets`), and 558 source IDs without detailed bibliography remain inherited baseline findings.
+
+## Wave A, batch A5 limitations and remaining triage
+
+- Psalm 39: Botha's wisdom/delayed-retribution reading is one interpretation; whether illness language reflects a direct sick-person setting, and how the psalm relates to its neighbors, remain disputed. No composition date or cultic use is established.
+- Psalm 48: Steiner's proposed pre-exilic/exilic layers and post-destruction reading are a literary-historical model. The poem does not identify one historical attack, and the addressees of the city-survey imperatives remain debated; the towers and walls are not used as archaeological proof.
+- Psalm 62: Botha's post-exilic exploitation and competition setting remains a scholarly reconstruction. The poem's form and social setting have competing interpretations; no named opponent or date is asserted.
+- Psalm 71: Liess's full open-access chapter was consulted, but its reading of old age as continuing intergenerational testimony is literary interpretation, not evidence for a particular speaker's biography or a universal social role.
+- After A5, 33 Psalm chapters still have no eligible passage-specific material; chapters with existing items also remain candidates for qualitative depth review. Continue Wave A using the backlog as a prioritization aid, then advance through Waves B–E.
+- The inherited 2 unresolved child-source references, one expected missing locator (`patristic-minor-prophets`), and 558 source IDs without detailed bibliography remain unchanged.

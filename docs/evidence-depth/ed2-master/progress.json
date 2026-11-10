@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a5-research",
-  "last_completed_batch": "A4-psalms-46-56-77-91-92-105-111-139",
-  "next_work": "Continue Wave A with remaining no-eligible and substantively thin Psalms selected from the 1,189-chapter backlog; then proceed through Wisdom, Historical, Prophetic, and New Testament waves.",
+  "current_phase": "wave-a-batch-a6-research",
+  "last_completed_batch": "A5-psalms-39-48-62-71",
+  "next_work": "Select the next source-verifiable Psalm batch from the 33 remaining baseline no-eligible Psalms and thin chapters; then continue into Wisdom, Historical, Prophetic, and New Testament research.",
   "waves": [
     {
       "id": "A",
@@ -42,10 +42,14 @@
         "Psalm 92",
         "Psalm 105",
         "Psalm 111",
-        "Psalm 139"
+        "Psalm 139",
+        "Psalm 39",
+        "Psalm 48",
+        "Psalm 62",
+        "Psalm 71"
       ],
-      "evidence_records_added": 29,
-      "source_ids_created": 30,
+      "evidence_records_added": 33,
+      "source_ids_created": 34,
       "source_ids_reused": 1,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
@@ -57,19 +61,23 @@
         "Psalm 46: article pagination conflicts between journal index and university repository/PDF; record follows printed PDF locator and discloses the discrepancy.",
         "Psalm 56 and Psalm 92 source verse numbering counts superscriptions differently from BHF chapter numbering; correspondences are documented.",
         "Psalm 77: exilic date and broad mythological reconstruction not adopted; formal observations only.",
-        "Psalm 139: vv. 19–22 integrity dispute remains open; Firth’s unified reading is attributed, not settled."
+        "Psalm 139: vv. 19–22 integrity dispute remains open; Firth’s unified reading is attributed, not settled.",
+        "Psalm 39: illness/cultic setting, redaction history, and literary relations remain debated; no date or use is established.",
+        "Psalm 48: proposed pre-exilic/exilic layers and historical occasion remain uncertain; no single attack or archaeological conclusion is asserted.",
+        "Psalm 62: Botha's post-exilic exploitation setting is a scholarly reconstruction, not independently established.",
+        "Psalm 71: Liess's reading is not biographical evidence or proof of a uniform social role for older people."
       ],
       "validation": {
         "strict_ckl": "687 valid; 0 errors; 14 inherited incomplete_section_status warnings",
-        "manifest": "Generated manifest semantically matches checked manifest; all A4 source/evidence IDs resolve",
-        "chapter_audit": "Pass; 1189 rows, 0 unmapped; 1022 passage-specific, 68 contextual, 3 entity-only, 95 no eligible, 1 incomplete/unknown; Psalms 90 specific, 37 no eligible",
-        "source_integrity": "8 new source identities; 16 new child-source references; all new sources have locators; inherited 2 unresolved child refs and 1 expected locator issue unchanged",
-        "projection_and_disclosure": "Exact anchors, appropriate sections, source/locator disclosure, observation/interpretation, confidence/dispute/review state, and no authored cross-passage links checked for all 8 additions",
-        "regression_tests": "6 CKL unit tests and 67 Narrative Explorer targeted tests passed",
-        "deep_heuristic": "63 error-severity findings and 1018 warnings; 8 new unknown-passage-chronology warnings; no new errors",
-        "authored_relationships": "No authored relationship entries added; exact passage-anchor projection edges only."
+        "manifest": "Generated manifest semantically matches checked manifest",
+        "chapter_audit": "Pass; 1189 rows, 0 unmapped; 1026 specific, 68 contextual, 3 entity-only, 91 no eligible, 1 incomplete/unknown; Psalms 94 specific, 33 no eligible",
+        "source_integrity": "4 new source identities; all 4 new evidence source pairs resolve and have exact locators; inherited 2 unresolved child references, 1 expected locator issue, and 558 IDs without rich bibliographic detail unchanged",
+        "projection_and_disclosure": "Exact anchors, reader section, source/locator disclosure, primary observation, scholarly interpretation, confidence/dispute/review metadata, and no duplicate or authored cross-passage display checked for all 4 additions",
+        "regression_tests": "7 CKL unit tests and 68 targeted Narrative Explorer tests passed; full ED-1A audit passed 19 deterministic passage samples and 16 live service samples",
+        "deep_heuristic": "63 error-severity findings and 1022 warnings; 4 new unknown-passage-chronology warnings; no new heuristic errors",
+        "authored_relationships": "No authored relationship entries; only exact Scripture-anchor projection edges."
       },
-      "commit_sha": "442ebe9542b881eb78d5964922d21fdf4573b021",
+      "commit_sha": "912c474149ef72e9a591ca10546ba7b25ca518f8",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -239,6 +247,43 @@
             "authored_relationships": "No authored relationship entries."
           },
           "commit_sha": "442ebe9542b881eb78d5964922d21fdf4573b021"
+        },
+        {
+          "id": "A5-psalms-39-48-62-71",
+          "status": "committed",
+          "passages": [
+            "Psalm 39",
+            "Psalm 48",
+            "Psalm 62",
+            "Psalm 71"
+          ],
+          "evidence_records_added": 4,
+          "source_ids_created": [
+            "botha-psalm39-retribution-2017",
+            "steiner-psalm48-narrated-space-2012",
+            "botha-psalm62-community-exhortation-2018",
+            "liess-psalm71-aging-and-generational-witness-2023"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "chapter_eligibility_improvements": 4,
+          "deferred_research": [
+            "Psalm 39: illness/cultic setting, redaction history, and literary relations remain debated; no date or use is established.",
+            "Psalm 48: proposed pre-exilic/exilic layers and historical occasion remain uncertain; no single attack or archaeological conclusion is asserted.",
+            "Psalm 62: Botha's post-exilic exploitation setting is a scholarly reconstruction, not independently established.",
+            "Psalm 71: Liess's reading is not biographical evidence or proof of a uniform social role for older people."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid; 0 errors; 14 inherited incomplete_section_status warnings",
+            "manifest": "Generated manifest semantically matches checked manifest",
+            "chapter_audit": "Pass; 1189 rows, 0 unmapped; 1026 specific, 68 contextual, 3 entity-only, 91 no eligible, 1 incomplete/unknown; Psalms 94 specific, 33 no eligible",
+            "source_integrity": "4 new source identities; all 4 new evidence source pairs resolve and have exact locators; inherited 2 unresolved child references, 1 expected locator issue, and 558 IDs without rich bibliographic detail unchanged",
+            "projection_and_disclosure": "Exact anchors, reader section, source/locator disclosure, primary observation, scholarly interpretation, confidence/dispute/review metadata, and no duplicate or authored cross-passage display checked for all 4 additions",
+            "regression_tests": "7 CKL unit tests and 68 targeted Narrative Explorer tests passed; full ED-1A audit passed 19 deterministic passage samples and 16 live service samples",
+            "deep_heuristic": "63 error-severity findings and 1022 warnings; 4 new unknown-passage-chronology warnings; no new heuristic errors",
+            "authored_relationships": "No authored relationship entries; only exact Scripture-anchor projection edges."
+          },
+          "commit_sha": "912c474149ef72e9a591ca10546ba7b25ca518f8"
         }
       ]
     },

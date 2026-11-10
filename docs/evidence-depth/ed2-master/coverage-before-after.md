@@ -82,3 +82,22 @@ The full ED-1A census passed for all 1,189 chapters with no unmapped record iden
 | Every other biblical book | unchanged | unchanged | unchanged | unchanged |
 
 Psalms 46, 56, 77, 91, 92, 105, 111, and 139 each moved from no eligible item to passage-specific evidence. A4 adds eight typed literary evidence records and eight source identities; all remain draft/in-review. These eligibility changes do not measure research depth. See the [A4 research packets](wave-a-psalms/psalms-research-packets-a4.md). The full audit artifacts were written outside Git to `/tmp/ed2-master-wave-a4/`.
+
+### Wave A, batch A5 — four additional Psalms
+
+The full ED-1A census passed for all 1,189 chapters with no unmapped record identities. After A5, 1,026 chapters have passage-specific evidence, 68 have contextual-only coverage, 3 have entity-only coverage, 91 have no eligible passage-specific item, and 1 is incomplete/unknown.
+
+| Census category | Before A5 | After A5 | Change |
+| --- | ---: | ---: | ---: |
+| Passage-specific evidence | 1,022 | 1,026 | +4 |
+| Contextual-only coverage | 68 | 68 | 0 |
+| Entity-only coverage | 3 | 3 | 0 |
+| No eligible passage-specific material | 95 | 91 | −4 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+| Book | Passage-specific before A5 | After A5 | No-eligible before A5 | After A5 |
+| --- | ---: | ---: | ---: | ---: |
+| Psalms | 90 | 94 | 37 | 33 |
+| Every other biblical book | unchanged | unchanged | unchanged | unchanged |
+
+Psalms 39, 48, 62, and 71 each moved from no eligible item to passage-specific evidence. Across the program since the ED-2A baseline, 33 chapters have moved from no eligible material to passage-specific eligibility (993→1,026); 91 chapters still have none. A5 adds four source-backed literary evidence items and four source identities; all remain draft/in-review. Eligibility is not a measure of scholarly depth. See the [A5 research packets](wave-a-psalms/psalms-research-packets-a5.md). The census artifacts are in `/tmp/ed2-master-wave-a5/`.
