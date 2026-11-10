@@ -820,6 +820,11 @@ body.companion-sheet-full {
   min-width: 0;
 }
 
+.narrative-explorer-previews[hidden],
+.narrative-explorer-record-list[hidden] {
+  display: none;
+}
+
 .narrative-explorer-item {
   display: grid;
   min-width: 0;
