@@ -141,3 +141,11 @@ This list is updated after source review. A chapter stays deferred where the exa
 - 2 Chronicles 14: the identity of Zerah, the episode’s historical referent, and the proposed composition horizon remain uncertain; no battle or troop count is asserted as independently verified.
 - 2 Chronicles 18: Dillard’s literary account is one interpretation; broader scholarly comparison of the parallel narrative remains open.
 - All three C1 additions remain draft/in-review. No human reviewer is named, and none is marked approved.
+
+
+## Wave D, batch D1
+
+- Ezekiel 22:25: the original reading remains unsettled. Ndoga’s full article was inspected, but no independent Hebrew-manuscript collation was undertaken.
+- Ezekiel 31: Lee’s possible Egyptian Osiris/afterlife resonance is an interpretive proposal. The text does not name Osiris; direct literary borrowing and any specific ritual setting remain unestablished.
+- Isaiah 10: Aster’s historical setting and chronology remain scholarly reconstruction; the entry focuses on the literary contrast in vv. 5–8.
+- All three records remain draft/in-review and require human scholarly review; no reviewer or approval is recorded.

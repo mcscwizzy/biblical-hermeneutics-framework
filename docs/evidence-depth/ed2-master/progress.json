@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-c-history",
-  "last_completed_batch": "C1-history-2chron14-18-25",
-  "next_work": "Continue Wave C with remaining high-value historical gaps, then make verified batches in Waves D and E. Wave B remains in progress: nine Proverbs chapters still lack eligible passage-specific evidence and Wisdom books need qualitative review. Wave A has 11 contextual-only Psalms pending qualitative review. Total new items remain below the 100-item ceiling; prioritize verified evidence and human-review readiness.",
+  "current_phase": "wave-e-new-testament",
+  "last_completed_batch": "D1-prophets-ezekiel22-31-isaiah10",
+  "next_work": "Begin Wave E with a source-verified batch on a high-value Gospel, Acts, or Revelation passage. Then continue remaining Wave C historical gaps and Wave D prophetic priorities, followed by Wave B’s nine Proverbs zero-eligible chapters and qualitative Wisdom review, and Wave A’s 11 contextual-only Psalms. Twelve evidence slots remain under the planning ceiling; source quality controls the final count.",
   "waves": [
     {
       "id": "A",
@@ -892,14 +892,81 @@
     {
       "id": "D",
       "name": "Prophetic literature",
-      "status": "queued",
-      "passages_researched": [],
-      "evidence_records_added": 0,
-      "source_ids_created": 0,
+      "status": "in_progress",
+      "passages_researched": [
+        "Ezekiel 22:25",
+        "Ezekiel 31:1-18",
+        "Isaiah 10:5-8"
+      ],
+      "evidence_records_added": 3,
+      "source_ids_created": 3,
       "source_ids_reused": 0,
-      "deferred_gaps": [],
-      "validation": null,
-      "commit_sha": null
+      "deferred_gaps": [
+        "Ezekiel 22:25: the full Ndoga article was inspected, but it is not a manuscript census; the original reading is not resolved.",
+        "Ezekiel 31: a possible Osiris/afterlife resonance is Lee’s proposal; direct borrowing and a particular ritual setting are unestablished.",
+        "Isaiah 10: Aster’s Sargon II-era chronology is attributed; literary dating and redaction remain debated."
+      ],
+      "validation": {
+        "strict_ckl": "687 valid objects; 0 errors; same 14 inherited incomplete_section_status warnings.",
+        "manifest": "Generated manifest semantically matches the checked manifest; source support, exact references, and anchors resolve.",
+        "framework_validation": "94 framework modules valid.",
+        "chapter_audit": "ED-1A passed all 1,189 chapters; 0 unmapped projected identities. After D1: 1,083 passage-specific, 57 contextual-only, 2 entity-only, 46 no-eligible, 1 incomplete/unknown. Nineteen deterministic and 16 targeted service samples passed. Ezekiel 22 and 31 transitioned from no eligible material to passage-specific evidence; Isaiah 10 remains passage-eligible and now has an additional focused record.",
+        "source_integrity": "3 new scholarly source IDs. The preexisting Masoretic Isaiah and Ezekiel text identities are reused as primary text bases and excluded from research bibliography reuse totals. Source inventory: 5,336 occurrences / 2,885 source IDs; separate identity audit: 2,886 unique IDs. Two unresolved child-source references and one expected missing locator remain inherited.",
+        "projection_and_disclosure": "All 3 exact anchors project once with scholarly source/locator disclosure, observation, attributed interpretation, and draft/in-review human-review metadata. Ezekiel 22:28 is context within the same chapter. No authored narrative routes were added.",
+        "regression_tests": "D1-focused tests: 3 passed, 3 subtests passed. Broader CKL/Isaiah/Ezekiel/reader projection suite: 81 passed, 129 subtests passed. Protected source-lock, NE-9C, passage, and coverage tests: 518 passed.",
+        "deep_heuristic": "63 error-severity findings and 1,080 warnings; D1 adds 3 unknown-passage-chronology warnings and no heuristic errors. The 102 inherited invalid source-support targets are unchanged review signals, not strict validation errors.",
+        "protected_relationships": "No NE-9C/NE-10 records, decisions, or historical checkpoints changed; 433 accepted records, 44 verified bridges, and 7 held candidates unchanged."
+      },
+      "commit_sha": "49ce42c5",
+      "batches": [
+        {
+          "id": "D1-prophets-ezekiel22-31-isaiah10",
+          "status": "committed",
+          "passages": [
+            "Ezekiel 22:25",
+            "Ezekiel 31:1-18",
+            "Isaiah 10:5-8"
+          ],
+          "evidence_records_added": 3,
+          "evidence_ids": [
+            "ezekiel-22-prophets-princes-textual-reading",
+            "ezekiel-31-pharaoh-cedar-and-sheol",
+            "isaiah10-5-8-assyrian-agency-and-polemical-contrast"
+          ],
+          "source_ids_created": [
+            "ndoga-ezekiel22-textual-reading-2014",
+            "lee-ezekiel31-cedar-sheol-2016",
+            "aster-isaiah10-assyrian-ideology-2017"
+          ],
+          "source_ids_reused": [],
+          "primary_text_source_ids_reused": [
+            "ezekiel-masoretic",
+            "isaiah-masoretic"
+          ],
+          "source_ids_reused_count": 0,
+          "chapter_eligibility_improvements": 2,
+          "coverage_change": {
+            "passage_specific": 2,
+            "no_eligible": -2
+          },
+          "deferred_research": [
+            "Ndoga’s article does not independently inventory Hebrew manuscripts; original wording remains unresolved.",
+            "Lee presents Egyptian afterlife influence as possible; direct literary borrowing remains unproven.",
+            "Aster’s historical date for Isaiah 10 remains an attributed reconstruction."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid; 0 errors; 14 inherited warnings.",
+            "manifest": "Semantic match; exact anchors and source support resolve.",
+            "chapter_audit": "Pass 1,189/1,189; 1,083 specific, 57 contextual-only, 2 entity-only, 46 no-eligible, 1 incomplete/unknown; two zero-eligibility transitions.",
+            "source_integrity": "3 scholarly source identities created; 2 preexisting canonical Hebrew text IDs reused as text bases and excluded from bibliography reuse totals.",
+            "projection_and_disclosure": "3 exact projected evidence entries with source locators and human-review status; no authored relationships.",
+            "regression_tests": "3 D1 tests + 3 subtests; broad reader suite 81 tests + 129 subtests; protected suite 518 tests.",
+            "deep_heuristic": "63 errors, 1,080 warnings; +3 unknown chronology warnings, no new errors.",
+            "protected_relationships": "NE-9C/NE-10 unchanged: 433 accepted, 44 verified, 7 held."
+          },
+          "commit_sha": "49ce42c5"
+        }
+      ]
     },
     {
       "id": "E",
@@ -938,8 +1005,8 @@
   "source_identity_changes": [],
   "protected_state": "NE-9C/NE-10 unchanged from origin/master; historical fingerprint check is expected to differ because the accepted base already includes ED-2A, so compare protected artifacts/decisions directly and do not regenerate checkpoints.",
   "source_id_counting_policy": "Source identity creation/reuse counts cover research bibliography identities; the standard Psalms text source is reused for verse comparison but excluded from these counts.",
-  "total_evidence_records_added": 85,
-  "total_source_ids_created": 84,
+  "total_evidence_records_added": 88,
+  "total_source_ids_created": 87,
   "total_source_ids_reused": 5,
-  "remaining_evidence_item_ceiling": 15
+  "remaining_evidence_item_ceiling": 12
 }

@@ -207,3 +207,13 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Projection and regression: 599 tests passed and 16 subtests passed across focused CKL/Narrative Explorer projection, NE-9C, source-lock, manifest/schema/package, and C1 coverage; focused C1 tests were 3 passed and 3 subtests. Exact display scope, source disclosure, observation/interpretation, and review metadata were checked.
 - Deep heuristic report: 63 error-severity findings, 1,077 warnings; three additional unknown chronology notices and no new heuristic errors. The inherited 102 unresolved source-support targets remain heuristic warnings, not strict CKL errors.
 - Protected state: no NE-9C or NE-10 decision or historical checkpoint changed; accepted=433, verified=44, held=7. No held relation was authored or promoted.
+
+
+## Wave D, batch D1 — Ezekiel 22 and 31; Isaiah 10
+
+- Strict CKL: 687 valid objects, 0 errors, and the same 14 inherited incomplete-section warnings. All 94 framework modules validated. The generated manifest matches the checked manifest.
+- ED-1A census: pass, 1,189/1,189 chapters, 0 unmapped identities; 1,083 specific, 57 contextual-only, 2 entity-only, 46 no-eligible, 1 incomplete/unknown. Nineteen deterministic samples and 16 targeted service samples passed.
+- CKL/source delta: three evidence items and three new scholarly source identities; two existing Masoretic text identities were reused as primary text bases and are excluded from research bibliography reuse totals. The source inventory reports 5,336 occurrences / 2,885 source IDs; the separate identity audit reports 2,886 unique IDs. Two unresolved child-source references and one expected missing locator remain inherited.
+- Reader and governance tests: the focused D1 suite passed 3 tests and 3 subtests. The broader CKL/Isaiah/Ezekiel/projection group passed 81 tests and 129 subtests. Source-lock, curation, passage, and coverage regressions passed 518 tests. All three items project with exact anchors, source locators, and review status.
+- Deep heuristic report: 63 error-severity findings and 1,080 warnings. The three new warnings concern unknown chronological relevance; no heuristic errors were added. The 102 invalid source-support target warnings are inherited. Strict errors and heuristic warnings are reported separately.
+- Protected state: NE-9C and NE-10 inputs and decisions are unchanged; the audit still reports 433 accepted records, 44 verified bridges, and 7 held candidates. No held relationship was promoted.

@@ -286,3 +286,24 @@ The ED-1A audit passed all 1,189 chapters with no unmapped identities. The censu
 | All other books | unchanged | unchanged | unchanged | unchanged |
 
 C1 adds three items on the Cushite battle narrative, the Chronicler’s placement of Micaiah’s account, and comparison of Amaziah in Kings and Chronicles. Its direct targets were zero-eligible; comparative and contextual scopes make 1 Kings 15 and 2 Chronicles 16 and 19 newly eligible as well. The audit counts eligibility only. Source access limits and interpretive uncertainty remain in the [C1 packet](wave-c-history/history-research-packets-c1.md), and human scholarly review is still required.
+
+
+### Wave D, batch D1 — Ezekiel 22 and 31; Isaiah 10
+
+The ED-1A census passed all 1,189 chapters with no unmapped identities. Relative to C1, passage-specific eligibility increased from 1,081 to 1,083 and no-eligible chapters decreased from 48 to 46. Contextual-only, entity-only, and incomplete/unknown categories were unchanged.
+
+| Census category | Before D1 | After D1 | Change |
+| --- | ---: | ---: | ---: |
+| Passage-specific evidence | 1,081 | 1,083 | +2 |
+| Contextual-only coverage | 57 | 57 | 0 |
+| Entity-only coverage | 2 | 2 | 0 |
+| No eligible passage-specific material | 48 | 46 | −2 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+| Book | Passage-specific before | After D1 | No-eligible before | After D1 |
+| --- | ---: | ---: | ---: | ---: |
+| Ezekiel | 27 | 29 | 9 | 7 |
+| Isaiah | 66 | 66 | 0 | 0 |
+| All other books | unchanged | unchanged | unchanged | unchanged |
+
+D1 makes Ezekiel 22 and 31 passage-eligible with one focused item each. Isaiah 10 was already eligible; its new item adds a localized discussion of the contrast between Assyria’s commission and the king’s stated ambition. Eligibility is not a depth score. See the [D1 source packets](wave-d-prophets/prophets-research-packets-d1.md) for the textual dispute, interpretive proposals, and access limits.
