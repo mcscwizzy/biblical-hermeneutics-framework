@@ -235,3 +235,18 @@ A13 added four passage-specific records to chapters previously classified as con
 | No eligible chapters | 0 | 0 | 0 |
 
 A13 created four scholarly source identities and reused none. Three items are limited to publisher excerpts/abstracts; the Psalm 78 article was inspected in full. All additions remain draft/in-review. Chapter eligibility is not a measure of research depth.
+
+
+### Wave B, batch B1 — Proverbs 2, Proverbs 28, and Ecclesiastes 10
+
+B1 added three passage-specific evidence items and three source identities. The three target chapters moved from no eligible material to passage-specific evidence; the full-canon census now reports 1,074 specific chapters, 57 contextual-only, 2 entity-only, 55 with no eligible passage-specific material, and 1 incomplete/unknown.
+
+| Coverage category | After A13 | After B1 | Change |
+|---|---:|---:|---:|
+| Passage-specific evidence | 1,071 | 1,074 | +3 |
+| Contextual-only coverage | 57 | 57 | 0 |
+| Entity-only coverage | 2 | 2 | 0 |
+| No eligible passage-specific material | 58 | 55 | −3 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+The new studies address the syntax and conditional organization proposed for Proverbs 2, a publisher-abstract-level literary frame and social-ethical reading of Proverbs 28–29, and the translation/textual uncertainty of Ecclesiastes 10:1’s “flies of death.” The Gilbert article’s full argument was inaccessible, so that item is low-confidence and limited to the abstract. All three records remain draft/in-review. Eligibility change is not a depth score; Proverbs still has ten zero-eligible chapters after B1, while Ecclesiastes has none. See the [B1 research packets](wave-b-wisdom/wisdom-research-packets-b1.md).

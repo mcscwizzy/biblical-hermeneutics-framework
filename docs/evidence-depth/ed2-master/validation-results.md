@@ -170,3 +170,16 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Protected decisions: no authored relationships were added and no NE-9C/NE-10 data, decisions, or historical checkpoints changed.
 - Human review: all four additions remain draft/in-review; no human reviewer is named.
 - Evidence commit: `d892a7d2` (`research: add ED-2 Psalms batch A13`).
+
+
+## Wave B, batch B1 — Proverbs 2, Proverbs 28, and Ecclesiastes 10
+
+- Strict CKL validation: 687 valid objects, 0 errors, and the same 14 inherited `incomplete_section_status` warnings. Individual Proverbs and Ecclesiastes files each validate without warnings.
+- Manifest and references: regenerated manifest semantically matches the checked manifest; all three exact Scripture anchors, source identities, and source-support references resolve. No manifest file change was needed.
+- Source inventory: three source identities added. The audit reports 5,327 source occurrences / 2,878 IDs; the separate identity audit reports 2,879 IDs. Two unresolved child-source references and one expected missing locator remain inherited.
+- ED-1A census: pass across all 1,189 chapters; 0 unmapped identities and 0 invalid anchors. Coverage is 1,074 specific, 57 contextual-only, 2 entity-only, 55 no-eligible, and 1 incomplete/unknown. The 19 deterministic and 16 targeted service samples passed.
+- Projection/disclosure: focused tests verify exact chapter/verse eligibility, one display per item, source and bibliography disclosure, primary observation, attributed interpretation, confidence/dispute/review information, and no newly authored cross-passage route. Focused B1 tests: 3 passed, 3 subtests passed.
+- Protected regressions: NE-9C curation, Narrative Explorer curation and passage, and CKL source-lock suites passed: 510 tests. No protected relationship records or checkpoints changed.
+- Deep heuristic report: 63 error-severity findings and 1,073 warnings. B1 adds three `unknown-passage-chronology` review signals and no new heuristic errors; these signals do not establish scholarly defects.
+- Human review: all three additions are draft/in-review and require scholarly review. No reviewer or approval is claimed.
+- Evidence commit: `50971273` (`research: add ED-2 wisdom batch B1`).

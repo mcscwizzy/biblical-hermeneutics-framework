@@ -119,3 +119,11 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 73: Wong’s full article was inaccessible. The publisher abstract does not expose detailed structural markers; the ring-composition proposal remains low-confidence.
 - Psalm 78: the full article was inspected, but the authors report unresolved disagreement over structure, genre, date, and *Sitz im Leben*. No composition date or performance context is adopted.
 - All four A13 records require human scholarly review. The chapter census still identifies 11 contextual-only Psalms; A13 does not claim Wave A qualitative triage is complete.
+
+
+## Wave B, batch B1
+
+- Proverbs 28: Gilbert’s 2007 full article was not accessible; only the publisher abstract and the article’s first page were inspected. The CKL record is explicitly abstract-limited and low-confidence pending full-text review.
+- Proverbs 2: Loader’s structural proposal is reported alongside an alternative reading; syntax does not establish a particular school, performance event, or date.
+- Ecclesiastes 10:1: Whybray’s note documents possible readings and likely textual corruption but does not resolve the Hebrew wording; manuscript comparison remains open.
+- All three records need human scholarly review and remain draft/in-review.

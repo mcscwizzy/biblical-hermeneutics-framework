@@ -6,8 +6,8 @@
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
   "current_phase": "wave-b-wisdom",
-  "last_completed_batch": "A13-psalms-34-40-73-78",
-  "next_work": "Wave B: prioritize Proverbs chapters 2 and 28, Ecclesiastes 10, and other underrepresented Wisdom passages from the 1,189-chapter inventory; add only passage-specific findings supported by inspected scholarly evidence. Return to the 11 contextual-only Psalms after Waves B–E if the remaining 100-item ceiling and execution environment allow.",
+  "last_completed_batch": "B1-wisdom-proverbs2-28-ecclesiastes10",
+  "next_work": "Continue Wave B with Proverbs 6:1-5 and remaining P1 wisdom gaps using passage-specific source verification, then begin Wave C history. Keep the total program at or below 100 new evidence items and return to Wave A contextual-only Psalms as evidence quality and remaining capacity allow.",
   "waves": [
     {
       "id": "A",
@@ -706,13 +706,64 @@
       "id": "B",
       "name": "Wisdom literature",
       "status": "in_progress",
-      "passages_researched": [],
-      "evidence_records_added": 0,
-      "source_ids_created": 0,
+      "passages_researched": [
+        "Proverbs 2:1-22",
+        "Proverbs 28:1-28",
+        "Ecclesiastes 10:1"
+      ],
+      "evidence_records_added": 3,
+      "source_ids_created": 3,
       "source_ids_reused": 0,
       "deferred_gaps": [],
       "validation": null,
-      "commit_sha": null
+      "commit_sha": null,
+      "batches": [
+        {
+          "id": "B1-wisdom-proverbs2-28-ecclesiastes10",
+          "status": "committed",
+          "passages": [
+            "Proverbs 2:1-22",
+            "Proverbs 28:1-28",
+            "Ecclesiastes 10:1"
+          ],
+          "evidence_records_added": 3,
+          "evidence_ids": [
+            "proverbs-2-conditional-argument-structure",
+            "proverbs-28-rulers-and-poor-structure",
+            "ecclesiastes-10-1-flies-of-death-translation"
+          ],
+          "source_ids_created": [
+            "loader-proverbs2-syntactic-structure-2013",
+            "gilbert-proverbs28-29-ruling-class-2007",
+            "whybray-ecclesiastes10-1-lexical-1989"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "chapter_eligibility_improvements": 3,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 3,
+            "contextual_only": 0,
+            "entity_only": 0,
+            "no_eligible": -3
+          },
+          "deferred_research": [
+            "Gilbert’s full Proverbs 28–29 article was not accessible; the item uses only its publisher abstract and opening-page confirmation, at low confidence.",
+            "These are literary/syntax and translation observations; they do not establish a historical date, classroom, or specific social crisis.",
+            "All three records remain draft/in_review and require human scholarly review; no human reviewer is named."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
+            "manifest": "Regenerated manifest semantically matches checked manifest; no generated change required; sources, supports, and exact anchors resolve",
+            "chapter_audit": "ED-1A passed 1,189/1,189 chapters; 0 unmapped identities and 0 invalid anchors; 1,074 specific, 57 contextual-only, 2 entity-only, 55 no-eligible, 1 incomplete/unknown; 19 deterministic and 16 targeted service samples passed",
+            "source_integrity": "3 new source identities and all source-support references resolve; source inventory 5,327 occurrences / 2,878 IDs; separate identity audit 2,879 IDs; inherited 2 unresolved child-source references and 1 expected missing locator remain",
+            "projection_and_disclosure": "All 3 exact anchors project once with source/bibliography disclosure, primary observation, attributed interpretation, uncertainty/dispute/review metadata; no new authored relationship routes",
+            "regression_tests": "Focused B1 authoring/projection tests: 3 passed, 3 subtests passed; protected curation, passage, and source-lock regressions: 510 passed",
+            "deep_heuristic": "63 error-severity findings, 1,073 warnings; B1 adds 3 unknown-passage-chronology review signals and no new heuristic errors",
+            "authored_relationships": "No related_objects or related_evidence entries added; NE-9C/NE-10 inputs, decisions, and historical checkpoints unchanged"
+          },
+          "commit_sha": "50971273"
+        }
+      ]
     },
     {
       "id": "C",
