@@ -1,0 +1,22 @@
+# ED-2 Master source register
+
+This register records source identities introduced or explicitly reused by ED-2 Master, with the source text actually inspected and its limitations. URLs link to the identified edition or the access point used; bibliographic metadata is not a claim that every cited source was read in full.
+
+## Wave A — Psalms
+
+| CKL source ID | Bibliographic identity and locator | Verification and limits |
+|---|---|---|
+| `declaissé-walford-psalter-violence-2023` | Nancy L. deClaissé-Walford, “Human on human violence in the Psalter,” *Review & Expositor* 120, no. 3 (2023), 213–220, Psalm 55 discussion, 213–215. [DOI](https://doi.org/10.1177/00346373241229788) | Full open-access article inspected. Journal issue is dated 2023; online-first date is 2024-03-05. |
+| `verde-psalms-trauma-2022` (reused) | Danilo Verde, “From Healing to Wounding: The Psalms of Communal Lament and the Shaping of Yehud’s Cultural Trauma,” *Open Theology* 8, no. 1 (2022), 345–361, §§1–2, 347–353. [DOI/full text](https://doi.org/10.1515/opth-2022-0208) | Full open-access article inspected. Existing source identity reused; Psalm 60 was added to its support list without changing prior supports. |
+| `sutton-psalm66-piety-2021` | Lodewyk Sutton, “Practising piety in a (post-) pandemic time: A spatial reading of piety in Psalm 66 from the perspectives of memory and bodily imagery,” *HTS Teologiese Studies / Theological Studies* 77, no. 4 (2021), article a6883, “Understanding piety in Psalm 66.” [DOI/full text](https://doi.org/10.4102/hts.v77i4.6883) | Full open-access article inspected. Its contemporary pandemic application is not used as ancient-context evidence. |
+| `jensen-psalm75-poetic-context-2001` | Joseph E. Jensen, “Psalm 75: Its Poetic Context and Structure,” *The Catholic Biblical Quarterly* 63, no. 3 (2001), 416–429. [EBSCO record/abstract](https://openurl.ebsco.com/contentitem/gcd:6295312); [JSTOR issue record](https://www.jstor.org/stable/i40150112) | Full article not accessible. Only abstract-level description and bibliographic/index records were inspected; the CKL claim is narrow and low-confidence. |
+| `streett-psalm80-historical-context-2014` | Andrew Streett, *The Vine and the Son of Man: Eschatological Interpretation of Psalm 80 in Early Judaism* (Fortress Press, 2014), ch. 1, 15–48, especially publisher sample 16–17. [Publisher sample](https://ms.augsburgfortress.org/downloads/9781451472066Chapt1sample.pdf); [JSTOR record](https://www.jstor.org/stable/j.ctt22nm6dd) | Publisher sample inspected for the cited discussion; the JSTOR bibliographic record confirms the work. The complete chapter was not consulted. |
+| `weber-psalm81-monocola-2024` | Beat Weber, “Monocola, Ambiguity and Propositional Density: Poetic Art, Technique and Rhetoric in Psalm 81,” *Journal of Northwest Semitic Languages* 50, nos. 1–2 (2024), 177–187, 180–181. [University repository full text](https://repository.up.ac.za/bitstreams/248a188b-b452-41d1-8d4f-203fd41d5675/download) | Full article inspected. The proposed colometry is attributed to Weber and is not a manuscript-variant claim. |
+| `hamilton-yhwh-kingship-psalms-2023` | Mark W. Hamilton, “Narrating YHWH’s Kingship in Psalms,” *Kairos: Evangelical Journal of Theology* 17, no. 2 (2023), 135–147, 139–144. [DOI/full text](https://doi.org/10.32862/k.17.2.2) | Full open-access article inspected. Current Psalter arrangement is distinguished from original date or setting. |
+| `firth-psalm100-worship-war-language-2021` | D. G. Firth, “Transformation of war language in the worship of all the earth in Psalm 100,” *Acta Theologica*, supplement 32 (2021), 380–391. [DOI/full text](https://doi.org/10.18820/23099089/actat.sup32.21) | Full open-access article inspected. The proposed literary transformation is not treated as evidence for a specific historical ceremony. |
+
+## Source issues inherited from the ED-2A base
+
+The baseline ED-1A audit at `04eed56ece941f9efce2f7f05b3908baf0197648` found 558 source IDs without a title or sufficient bibliographic detail, two unresolved child-source references, and one expected locator missing (`patristic-minor-prophets`). These are inherited audit findings, not source defects created by Wave A. The full inventory and fingerprints are in [baseline.md](baseline.md). No inherited source identity was silently repaired or deleted in Wave A.
+
+New source identities and source-support links for Waves B–E will be appended here after verification.

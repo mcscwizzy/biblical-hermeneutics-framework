@@ -1,0 +1,150 @@
+{
+  "program": "ED-2 Master Comprehensive Evidence Expansion",
+  "branch": "feat/ed2-comprehensive-evidence-expansion",
+  "base_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
+  "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
+  "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
+  "status": "in_progress",
+  "current_phase": "wave-a-batch-a1-validation",
+  "last_completed_batch": "baseline-audit",
+  "next_work": "Commit validated Psalms batch A1, then continue systematic Psalms triage in A2 and proceed through Waves B–E.",
+  "waves": [
+    {
+      "id": "A",
+      "name": "Psalms",
+      "status": "in_progress",
+      "passages_researched": [
+        "Psalm 55",
+        "Psalm 60",
+        "Psalm 66",
+        "Psalm 75",
+        "Psalm 80",
+        "Psalm 81",
+        "Psalm 97",
+        "Psalm 100"
+      ],
+      "evidence_records_added": 8,
+      "source_ids_created": 7,
+      "source_ids_reused": 1,
+      "deferred_gaps": [
+        "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence."
+      ],
+      "validation": {
+        "strict_ckl": "687 valid; 0 errors; 14 inherited incomplete_section_status warnings",
+        "manifest": "Generated manifest semantically matches checked manifest",
+        "chapter_audit": "Pass; 1189/1189 chapters; 0 unmapped identities; 1001 passage-specific, 68 contextual, 3 entity-only, 116 no eligible, 1 incomplete/unknown",
+        "source_integrity": "All new source references resolve; 7 new IDs; 1 existing ID reused",
+        "projection_and_disclosure": "Exact scope and source disclosure verified for all 8 items",
+        "regression_tests": "66 passed; 8 subtests passed",
+        "deep_heuristic": "63 flagged errors and 994 warnings; heuristic-only, versus baseline 63/986",
+        "authored_relationships": "No new authored relationship entries; only exact Scripture-anchor projection edges were generated."
+      },
+      "commit_sha": null,
+      "batches": [
+        {
+          "id": "A1-psalms-55-60-66-75-80-81-97-100",
+          "status": "validated_pending_commit",
+          "passages": [
+            "Psalm 55",
+            "Psalm 60",
+            "Psalm 66",
+            "Psalm 75",
+            "Psalm 80",
+            "Psalm 81",
+            "Psalm 97",
+            "Psalm 100"
+          ],
+          "evidence_records_added": 8,
+          "source_ids_created": 7,
+          "source_ids_reused": 1,
+          "chapter_eligibility_improvements": 8,
+          "deferred_research": [
+            "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid; 0 errors; 14 inherited incomplete_section_status warnings",
+            "manifest": "Generated manifest semantically matches checked manifest",
+            "chapter_audit": "Pass; 1189/1189 chapters; 0 unmapped identities; 1001 passage-specific, 68 contextual, 3 entity-only, 116 no eligible, 1 incomplete/unknown",
+            "source_integrity": "All new source references resolve; 7 new IDs; 1 existing ID reused",
+            "projection_and_disclosure": "Exact scope and source disclosure verified for all 8 items",
+            "regression_tests": "66 passed; 8 subtests passed",
+            "deep_heuristic": "63 flagged errors and 994 warnings; heuristic-only, versus baseline 63/986",
+            "authored_relationships": "No new authored relationship entries; only exact Scripture-anchor projection edges were generated."
+          },
+          "commit_sha": null
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Wisdom literature",
+      "status": "queued",
+      "passages_researched": [],
+      "evidence_records_added": 0,
+      "source_ids_created": 0,
+      "source_ids_reused": 0,
+      "deferred_gaps": [],
+      "validation": null,
+      "commit_sha": null
+    },
+    {
+      "id": "C",
+      "name": "Historical books",
+      "status": "queued",
+      "passages_researched": [],
+      "evidence_records_added": 0,
+      "source_ids_created": 0,
+      "source_ids_reused": 0,
+      "deferred_gaps": [],
+      "validation": null,
+      "commit_sha": null
+    },
+    {
+      "id": "D",
+      "name": "Prophetic literature",
+      "status": "queued",
+      "passages_researched": [],
+      "evidence_records_added": 0,
+      "source_ids_created": 0,
+      "source_ids_reused": 0,
+      "deferred_gaps": [],
+      "validation": null,
+      "commit_sha": null
+    },
+    {
+      "id": "E",
+      "name": "Gospels and New Testament",
+      "status": "queued",
+      "passages_researched": [],
+      "evidence_records_added": 0,
+      "source_ids_created": 0,
+      "source_ids_reused": 0,
+      "deferred_gaps": [],
+      "validation": null,
+      "commit_sha": null
+    }
+  ],
+  "baseline": {
+    "chapter_count": 1189,
+    "coverage_categories": {
+      "contextual_coverage": 68,
+      "entity_only_coverage": 3,
+      "incomplete_or_unknown": 1,
+      "no_eligible_ckl_material": 124,
+      "passage_specific_evidence": 993
+    },
+    "ckl_objects": 687,
+    "claims": 2329,
+    "typed_evidence_items": 1309,
+    "source_occurrences": 5247,
+    "unique_source_ids": 2798,
+    "source_ids_missing_title_or_bibliographic_detail": 558,
+    "unresolved_child_source_references": 2,
+    "strict_validation_errors": 0,
+    "strict_validation_warnings": 14,
+    "deep_heuristic_errors": 63,
+    "deep_heuristic_warnings": 986
+  },
+  "source_identity_changes": [],
+  "protected_state": "NE-9C/NE-10 unchanged from origin/master; historical fingerprint check is expected to differ because the accepted base already includes ED-2A, so compare protected artifacts/decisions directly and do not regenerate checkpoints."
+}
