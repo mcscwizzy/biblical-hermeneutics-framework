@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a4-research",
-  "last_completed_batch": "A3-psalms-7-11-14-17-21-26-33-43-49-83",
-  "next_work": "Continue Wave A with the remaining zero-eligible and thin Psalms selected from the 1,189-chapter backlog; then proceed through Wisdom, Historical, Prophetic, and New Testament waves without using eligibility as a completeness score.",
+  "current_phase": "wave-a-batch-a5-research",
+  "last_completed_batch": "A4-psalms-46-56-77-91-92-105-111-139",
+  "next_work": "Continue Wave A with remaining no-eligible and substantively thin Psalms selected from the 1,189-chapter backlog; then proceed through Wisdom, Historical, Prophetic, and New Testament waves.",
   "waves": [
     {
       "id": "A",
@@ -34,29 +34,42 @@
         "Psalm 33",
         "Psalm 43",
         "Psalm 49",
-        "Psalm 83"
+        "Psalm 83",
+        "Psalm 46",
+        "Psalm 56",
+        "Psalm 77",
+        "Psalm 91",
+        "Psalm 92",
+        "Psalm 105",
+        "Psalm 111",
+        "Psalm 139"
       ],
-      "evidence_records_added": 21,
-      "source_ids_created": 22,
+      "evidence_records_added": 29,
+      "source_ids_created": 30,
       "source_ids_reused": 1,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
         "Kister 2020 full text was inaccessible; the A2 record cites its bibliographic identity and abstract only to establish that a comparative study exists.",
         "Berger (Psalm 7), Bazyliński (Psalm 17), Sheveka (Psalm 21), and Pleins (Psalm 49) were available only through an abstract and/or bibliographic record; their items are limited to narrow claims stated there.",
         "The Psalm 43 article reports manuscript grouping secondhand through Wilson without identifying witnesses; the CKL item relies on the refrain and stanza structure, not direct witness verification.",
-        "The Psalm 33 and Psalm 83 full theses were consulted, but proposed literary/canonical settings are not treated as composition dates or proof of direct borrowing."
+        "The Psalm 33 and Psalm 83 full theses were consulted, but proposed literary/canonical settings are not treated as composition dates or proof of direct borrowing.",
+        "Psalm 105: full Gillingham article inaccessible; record is restricted to publisher-abstract proposal and requires full-text and human review.",
+        "Psalm 46: article pagination conflicts between journal index and university repository/PDF; record follows printed PDF locator and discloses the discrepancy.",
+        "Psalm 56 and Psalm 92 source verse numbering counts superscriptions differently from BHF chapter numbering; correspondences are documented.",
+        "Psalm 77: exilic date and broad mythological reconstruction not adopted; formal observations only.",
+        "Psalm 139: vv. 19–22 integrity dispute remains open; Firth’s unified reading is attributed, not settled."
       ],
       "validation": {
         "strict_ckl": "687 valid; 0 errors; 14 inherited incomplete_section_status warnings",
-        "manifest": "Generated manifest semantically matches checked manifest; all new source/evidence IDs resolve",
-        "chapter_audit": "Pass; 1189/1189 chapters; 0 unmapped identities; 1014 passage-specific, 68 contextual, 3 entity-only, 103 no eligible, 1 incomplete/unknown; Psalms 82 passage-specific and 45 no eligible",
-        "source_integrity": "A1+A2+A3 added 22 scholarly source identities; one existing research identity reused; 2 unresolved child-source references and 1 inherited missing expected locator remain unchanged",
-        "projection_and_disclosure": "Exact verse/chapter eligibility, projection, source locators, observation/interpretation, confidence/dispute/review, and no authored cross-passage links checked for all 10 additions",
-        "regression_tests": "71 passed; 21 subtests passed",
-        "deep_heuristic": "63 flagged errors and 1010 warnings; A3 adds 10 unknown-passage-chronology and 2 weak-source-type heuristic warnings; no new errors",
-        "authored_relationships": "No authored relationship entries added; projection edges follow only exact Scripture anchors."
+        "manifest": "Generated manifest semantically matches checked manifest; all A4 source/evidence IDs resolve",
+        "chapter_audit": "Pass; 1189 rows, 0 unmapped; 1022 passage-specific, 68 contextual, 3 entity-only, 95 no eligible, 1 incomplete/unknown; Psalms 90 specific, 37 no eligible",
+        "source_integrity": "8 new source identities; 16 new child-source references; all new sources have locators; inherited 2 unresolved child refs and 1 expected locator issue unchanged",
+        "projection_and_disclosure": "Exact anchors, appropriate sections, source/locator disclosure, observation/interpretation, confidence/dispute/review state, and no authored cross-passage links checked for all 8 additions",
+        "regression_tests": "6 CKL unit tests and 67 Narrative Explorer targeted tests passed",
+        "deep_heuristic": "63 error-severity findings and 1018 warnings; 8 new unknown-passage-chronology warnings; no new errors",
+        "authored_relationships": "No authored relationship entries added; exact passage-anchor projection edges only."
       },
-      "commit_sha": "2e8c5719d20198c89ab8d6b964a9a9ca4b6f285a",
+      "commit_sha": "442ebe9542b881eb78d5964922d21fdf4573b021",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -181,6 +194,51 @@
             "authored_relationships": "No new authored cross-passage or entity relationship entries."
           },
           "commit_sha": "2e8c5719d20198c89ab8d6b964a9a9ca4b6f285a"
+        },
+        {
+          "id": "A4-psalms-46-56-77-91-92-105-111-139",
+          "status": "committed",
+          "passages": [
+            "Psalm 46",
+            "Psalm 56",
+            "Psalm 77",
+            "Psalm 91",
+            "Psalm 92",
+            "Psalm 105",
+            "Psalm 111",
+            "Psalm 139"
+          ],
+          "evidence_records_added": 8,
+          "source_ids_created": [
+            "schader-psalms46-48-spatiality-2010",
+            "potgieter-psalm56-editorial-context-2015",
+            "kamuwanga-psalm77-exile-suffering-2007",
+            "botha-psalm91-wisdom-2012",
+            "tucker-psalm92-ordered-world-2019",
+            "gillingham-psalms105-106-liturgy-2015",
+            "prinsloo-psalm111-112-acrostics-2019",
+            "firth-psalm139-ambiguity-2019"
+          ],
+          "source_ids_reused": [],
+          "chapter_eligibility_improvements": 8,
+          "deferred_research": [
+            "Gillingham full article inaccessible; Psalm 105 item is abstract-only and low-confidence.",
+            "Schäder article page-range metadata is inconsistent; PDF locator and discrepancy are documented.",
+            "Psalm 56 and Psalm 92 source verse counts include superscriptions; CKL uses BHF body-verse numbering.",
+            "Psalm 77 exile setting and broader mythological reconstruction are not adopted.",
+            "Psalm 139 integrity dispute remains open; Firth proposal is attributed."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid; 0 errors; 14 inherited warnings",
+            "manifest": "Semantic match",
+            "chapter_audit": "Pass; 1189 rows, 0 unmapped; 1022 specific, 68 contextual, 3 entity-only, 95 no eligible, 1 incomplete/unknown; Psalms 90 specific, 37 no eligible",
+            "source_integrity": "8 new scholarly source IDs; 16 source references in evidence items; all new source refs resolve",
+            "projection_and_disclosure": "Exact anchors and source locators exposed for all 8 items; no cross-passage or entity links",
+            "regression_tests": "6 CKL unit tests; 67 targeted Narrative Explorer tests passed",
+            "deep_heuristic": "63 errors, 1018 warnings; 8 unknown-passage-chronology warnings added; no new errors",
+            "authored_relationships": "No authored relationship entries."
+          },
+          "commit_sha": "442ebe9542b881eb78d5964922d21fdf4573b021"
         }
       ]
     },
