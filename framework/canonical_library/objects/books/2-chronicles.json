@@ -790,7 +790,10 @@
         "second-chronicles-manasseh-humbles",
         "second-chronicles-josiah-reform",
         "second-chronicles-exile-cyrus",
-        "second-chronicles-30-northern-invitation"
+        "second-chronicles-30-northern-invitation",
+        "2chronicles-14-cushites-and-rhetorical-setting",
+        "2chronicles-18-jehoshaphat-and-micaiah",
+        "2chronicles-25-amaziah-and-kings-parallel"
       ],
       "notes": "Primary biblical text.",
       "id": "2-chronicles-1-36"
@@ -899,6 +902,69 @@
       "url": "https://doi.org/10.1177/000842980503400301",
       "supports": ["second-chronicles-30-northern-invitation"],
       "notes": "DOI 10.1177/000842980503400301. The publisher record verifies the article, author, journal, volume/issue, 2005 publication, and pages 309–337. Its abstract identifies the Hezekiah invitation at 2 Chr 30:6–9; the publisher-hosted text’s notes 37–38 discuss the message and northern Israelites."
+    },
+    {
+      "title": "1 Kings 1-22",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "1 Kings 1:1-22:53",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "2chronicles-14-cushites-and-rhetorical-setting",
+        "2chronicles-18-jehoshaphat-and-micaiah"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "1-kings-1-22"
+    },
+    {
+      "title": "2 Kings 1-25",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "2 Kings 1:1-25:30",
+      "url": "",
+      "source_type": "scripture",
+      "supports": ["2chronicles-25-amaziah-and-kings-parallel"],
+      "notes": "Primary biblical text.",
+      "id": "2-kings-1-25"
+    },
+    {
+      "id": "jonker-cushites-chronicles-2023",
+      "title": "The Cushites in Herodotus and Chronicles: Revisiting the Asa Narrative",
+      "author": "Louis C. Jonker",
+      "publisher": "Old Testament Essays 36, no. 1 (2023), 89-105",
+      "year": 2023,
+      "locator": "pp. 99-100, especially the discussion of 2 Chronicles 14:9-15, the missing Kings parallel, and the scale of the army",
+      "url": "https://ote-journal.otwsa-otssa.org.za/index.php/journal/article/view/552",
+      "source_type": "journal-article",
+      "notes": "The full open-access article was inspected in the journal-linked SciELO text. Jonker treats the army figures as metaphorical description of disparity and proposes a rhetorical function for the Cushite episode; the proposed composition horizon and historical implications remain his reconstruction.",
+      "supports": ["2chronicles-14-cushites-and-rhetorical-setting"]
+    },
+    {
+      "id": "dillard-chronicles-jehoshaphat-1986",
+      "title": "The Chronicler's Jehoshaphat",
+      "author": "Ray Dillard",
+      "publisher": "Trinity Journal 7, no. 1 (1986), 17-22",
+      "year": 1986,
+      "locator": "pp. 20-21, on the Micaiah narrative in 2 Chronicles 18:1-19:3 and its relation to Kings",
+      "url": "https://www.biblicalstudies.gospelstudies.org.uk/article_chronicles_dillard.html",
+      "source_type": "journal-article",
+      "notes": "The full article was inspected; the host identifies Trinity Journal 7.1 (1986), pp. 17-22, and notes reproduction by permission. Dillard contrasts the literary function of the parallel accounts and reads Jehoshaphat's story alongside Asa's.",
+      "supports": ["2chronicles-18-jehoshaphat-and-micaiah"]
+    },
+    {
+      "id": "hwang-amaziah-kings-chronicles-2025",
+      "title": "The Chronicler's Intention Revealed in the Comparison of the Amaziah Accounts between Kings and Chronicles",
+      "author": "Hwang Sunwoo",
+      "publisher": "Evangelical Old Testament Studies 32 (2025), 62-93",
+      "year": 2025,
+      "locator": "English abstract in the KCI record; article pp. 62-93",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003238080",
+      "source_type": "journal-article",
+      "notes": "KCI bibliographic metadata and English abstract were inspected; the full article text is in Korean and was not consulted. The evidence is limited to the abstract's stated comparison and interpretation; verse-level argument and alternatives remain unverified.",
+      "supports": ["2chronicles-25-amaziah-and-kings-parallel"]
     }
   ],
   "canonical_story": {
@@ -1137,6 +1203,182 @@
       "claim_ids": [],
       "external_references": [],
       "notes": "ED-1B research provenance and source locator details are documented in docs/evidence-depth/ed1b/2-chronicles-30.md."
+    },
+    {
+      "id": "2chronicles-14-cushites-and-rhetorical-setting",
+      "title": "Cushites and the rhetorical setting of Asa's battle account",
+      "evidence_type": "historical-event",
+      "description": "Jonker interprets the Cushite episode in Asa's reign as part of the Chronicler's rhetorical presentation and reads the reported army figures as a metaphorical description of disparity, not exact troop counts.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The full open-access article and its treatment of 2 Chronicles 14:9-15 on pp. 99-100 were inspected. This record attributes Jonker's reconstruction and does not treat the missing Kings parallel as proof that no battle occurred.",
+      "passage_relevance": "The reading helps distinguish the biblical account's portrayal of an overwhelming Cushite force from an independently verified military census or a settled identification of Zerah.",
+      "certainty": "disputed",
+      "dispute_status": "historical_uncertainty",
+      "primary_observation": "Second Chronicles 14:9-15 names Zerah the Cushite and describes a very large army with chariots; the episode is not narrated in the Kings account of Asa's reign, while 2 Chronicles 16:8 later recalls Cushites and Libyans.",
+      "scholarly_interpretation": "Jonker argues that the army figures are metaphorical rather than exact indications of troop strength. Because the Kings Vorlage has no account of this same battle, he proposes that the Chronicler included the Cushite enemy for rhetorical purposes and places this within his proposed Persian-period setting for Chronicles. The textual difference does not independently determine whether a conflict occurred, and the composition date remains a scholarly reconstruction.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Jonker proposes a middle-fourth-century BCE composition horizon for Chronicles; this remains a scholarly reconstruction."
+        ],
+        "narrative_setting": "Asa's narrated battle with Zerah the Cushite; the episode's historical referent and the identity of Zerah remain uncertain.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The narrated reign, the possible historical event, and Jonker's proposed composition horizon are distinct chronological questions."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "2 Chronicles 14:9-15",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This is the battle narrative whose Cushite designation and army description Jonker interprets.",
+          "weight": 10
+        },
+        {
+          "reference": "2 Chronicles 16:8",
+          "relationship": "contextual",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The Chronicler's later speech recalls Cushites and Libyans, providing a textual echo that Jonker considers in relation to Asa's narrative.",
+          "weight": 7
+        },
+        {
+          "reference": "1 Kings 15:9-24",
+          "relationship": "comparative",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "Jonker notes that the Kings account of Asa does not narrate the same Cushite battle; the difference informs his literary proposal but does not establish that the event did not occur.",
+          "weight": 8
+        }
+      ],
+      "source_ids": [
+        "2-chronicles-1-36",
+        "1-kings-1-22",
+        "jonker-cushites-chronicles-2023"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-c-history/history-research-packets-c1.md."
+    },
+    {
+      "id": "2chronicles-18-jehoshaphat-and-micaiah",
+      "title": "Micaiah's prophecy and the Chronicler's account of Jehoshaphat",
+      "evidence_type": "literary-convention",
+      "description": "Dillard argues that the Ramoth-gilead episode has a different literary function in Chronicles than in Kings: the Chronicler places it within Jehoshaphat's reign and follows it with a prophetic rebuke of his alliance with Ahab.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Dillard's full article and its comparison of 1 Kings 22 with 2 Chronicles 18:1-19:3 were inspected. His explanation is attributed as a literary reading, not as independent verification of the narrated events.",
+      "passage_relevance": "The comparison helps readers ask why Chronicles retains and reframes the Micaiah story while narrating Jehoshaphat's alliance with Ahab.",
+      "certainty": "plausible",
+      "dispute_status": "minor_scholarly_disagreement",
+      "primary_observation": "The Micaiah and Ramoth-gilead narrative occurs in both 1 Kings 22:1-40 and 2 Chronicles 18:1-34; Chronicles continues with Jehoshaphat's rebuke in 19:1-3.",
+      "scholarly_interpretation": "Dillard observes that the Kings context emphasizes the death of Ahab, while the Chronicler makes the incident a significant problem in Jehoshaphat's reign and interprets it through the rebuke that follows. He also argues that the Chronicler patterns portions of Jehoshaphat's story after Asa's. These are literary-theological readings of the parallel narratives, not separate external attestations.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "The literary comparison does not date the composition or redaction of the Jehoshaphat narrative."
+        ],
+        "narrative_setting": "The narrated alliance of Jehoshaphat of Judah with Ahab of Israel and the battle at Ramoth-gilead; the item addresses the Chronicler's presentation, not the event's independent historicity.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The narrated monarchic setting, literary source relationship, and composition history are kept separate."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "2 Chronicles 18:1-34",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This chapter contains the Micaiah narrative whose function in Chronicles Dillard compares with its parallel in Kings.",
+          "weight": 10
+        },
+        {
+          "reference": "2 Chronicles 19:1-3",
+          "relationship": "contextual",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The ensuing rebuke provides the narrative verdict Dillard considers important for interpreting why the Chronicler includes the episode.",
+          "weight": 8
+        },
+        {
+          "reference": "1 Kings 22:1-40",
+          "relationship": "comparative",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This is the parallel account Dillard compares to show the different narrative emphasis in Chronicles.",
+          "weight": 8
+        }
+      ],
+      "source_ids": [
+        "2-chronicles-1-36",
+        "1-kings-1-22",
+        "dillard-chronicles-jehoshaphat-1986"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-c-history/history-research-packets-c1.md."
+    },
+    {
+      "id": "2chronicles-25-amaziah-and-kings-parallel",
+      "title": "Amaziah's reign in Kings and Chronicles",
+      "evidence_type": "literary-convention",
+      "description": "Hwang's English abstract reports that Chronicles follows portions of the Kings account of Amaziah, alters or omits others, and adds material unique to Chronicles.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "low",
+      "confidence_rationale": "Only the KCI bibliographic record and English abstract were accessible; the full 32-page article is in Korean and was not consulted. This record reports the abstract's thesis and does not claim to evaluate its detailed textual comparisons.",
+      "passage_relevance": "The comparison directs readers to examine how differences between the parallel reign accounts affect the sequence, characterization, and theological framing of Amaziah's rule.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "The KCI abstract identifies 2 Kings 14:1-20 as the parallel source for the 2 Chronicles 25:1-28 account and reports that the Chronicler retained some material, altered or deleted portions, and added unique material.",
+      "scholarly_interpretation": "Hwang interprets these changes as emphasizing causality and retributive justice, connecting the immediate and wider Chronicles context, highlighting Amaziah's sin, and defending Judah's legitimacy in relation to the Davidic covenant. These are the abstract's reported conclusions; the article's detailed argument and alternatives remain to be reviewed.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "The narrated reign of Amaziah and the composition history of Chronicles are distinct; the abstract's literary comparison does not date the book."
+        ],
+        "narrative_setting": "Amaziah's narrated reign as presented in Kings and reworked in Chronicles; no specific historical event beyond the biblical accounts is independently established here.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The article's publication year (2025) is separate from the narrated monarchy and the uncertain composition history of Chronicles."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "2 Chronicles 25:1-28",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This is the Amaziah reign account whose literary framing Hwang compares with Kings.",
+          "weight": 10
+        },
+        {
+          "reference": "2 Kings 14:1-20",
+          "relationship": "comparative",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The KCI abstract identifies this as the parallel source account and the basis for the reported comparison.",
+          "weight": 8
+        }
+      ],
+      "source_ids": [
+        "2-chronicles-1-36",
+        "2-kings-1-25",
+        "hwang-amaziah-kings-chronicles-2025"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-c-history/history-research-packets-c1.md."
     }
   ]
 }
