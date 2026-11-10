@@ -43,3 +43,22 @@ The corrected ED-1A census passed for all 1,189 chapters with zero unmapped iden
 | Psalms | 61 | 72 | 66 | 55 |
 
 The eleven changed chapters are Psalms 5, 20, 25, 55, 60, 66, 75, 80, 81, 97, and 100. A2 added three source-backed literary/textual records; it did not make all 55 remaining zero-eligible Psalms adequately researched. All coverage labels describe eligibility only. The final A2 census and source/projection details are in [the A2 packet](wave-a-psalms/psalms-research-packets-a2.md) and [the chapter backlog](research-backlog.csv).
+
+### Wave A, batch A3 — ten additional Psalms
+
+The corrected ED-1A audit passed all 1,189 chapter rows with zero unmapped identities. After A3, the census reports 1,014 passage-specific chapters, 68 contextual-only, 3 entity-only, 103 with no eligible material, and 1 incomplete/unknown.
+
+| Census category | Before A3 | After A3 | Change |
+| --- | ---: | ---: | ---: |
+| Passage-specific evidence | 1,004 | 1,014 | +10 |
+| Contextual-only coverage | 68 | 68 | 0 |
+| Entity-only coverage | 3 | 3 | 0 |
+| No eligible passage-specific material | 113 | 103 | −10 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+| Book | Passage-specific before A3 | After A3 | No-eligible before A3 | After A3 |
+| --- | ---: | ---: | ---: | ---: |
+| Psalms | 72 | 82 | 55 | 45 |
+| Every other biblical book | unchanged | unchanged | unchanged | unchanged |
+
+The ten newly eligible chapters are Psalms 7, 11, 14, 17, 21, 26, 33, 43, 49, and 83. Counts are eligibility signals, not measures of scholarly depth. The [A3 packets](wave-a-psalms/psalms-research-packets-a3.md) preserve each research question, source locator, access limit, and uncertainty. The complete audit output was written outside Git to `/tmp/ed2-master-wave-a3/`.

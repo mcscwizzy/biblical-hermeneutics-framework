@@ -36,6 +36,19 @@ EXPECTED_A2 = {
     ),
 }
 
+EXPECTED_A3 = {
+    "psalm-7-cush-superscription-and-setting-limits": ("Psalm 7", "Psalm 7:1-17", "literary-convention", "berger-psalm7-benjaminite-conflict-2014"),
+    "psalm-11-refuge-and-spatial-argument": ("Psalm 11", "Psalm 11:1-7", "literary-convention", "prinsloo-psalm11-spatial-reading-2015"),
+    "psalm-14-psalm53-revision-debate": ("Psalm 14", "Psalm 14:1-7", "literary-convention", "botha-psalm53-canonical-2013"),
+    "psalm-17-textual-proposals-verses-11-and-14": ("Psalm 17", "Psalm 17:1-15", "manuscript", "bazylinski-psalm17-text-2021"),
+    "psalm-21-request-language-diplomatic-proposal": ("Psalm 21", "Psalm 21:2", "literary-convention", "sheveka-royal-psalms-diplomatic-2005"),
+    "psalm-26-walking-integrity-and-wisdom-structure": ("Psalm 26", "Psalm 26:1-12", "literary-convention", "potgieter-psalm26-wisdom-2013"),
+    "psalm-33-sea-and-deep-imagery": ("Psalm 33", "Psalm 33:6-9", "literary-convention", "stoltz-psalm33-contextual-2018"),
+    "psalm-43-refrain-and-stanza-structure": ("Psalm 43", "Psalm 43:1-5", "literary-convention", "simango-psalm42-43-structure-2025"),
+    "psalm-49-wisdom-poem-and-chiastic-focus": ("Psalm 49", "Psalm 49:1-20", "literary-convention", "pleins-psalm49-structure-1996"),
+    "psalm-83-coalition-imagery-and-setting-limits": ("Psalm 83", "Psalm 83:1-18", "literary-convention", "mitchell-psalter-psalm83-1995"),
+}
+
 
 def test_ed2_master_psalms_project_once_with_exact_scope_and_sources():
     psalms = _load_ckl("books/psalms.json")
@@ -94,6 +107,34 @@ def test_ed2_master_psalms_a2_project_with_exact_anchors_and_separate_rationale(
         assert projected["confidence"] == "medium"
         assert projected["certainty"] == "plausible"
         assert projected["dispute_status"] == "interpretive_uncertainty"
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+        assert len(edges) == 1
+        assert edges[0]["target_id"] == f"passage:{anchor}"
+        assert edges[0]["basis"]["kind"] == "ckl_scripture_anchor"
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a3_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchor, category, source_id) in EXPECTED_A3.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+        assert len(matches) == 1
+        projected = _item(result, projected_id)
+        assert projected["record_kind"] == "evidence"
+        assert projected["evidence_category"] == category
+        assert [x["reference"] for x in projected["passage_anchors"]] == [anchor]
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
+        assert {"psalms-masoretic", source_id}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
         assert projected["content_status"] == "draft"
         assert projected["review_status"] == "in_review"
         assert projected["human_review_required"] is True

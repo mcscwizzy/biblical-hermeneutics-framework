@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a3-research",
-  "last_completed_batch": "A2-psalms-5-20-25",
-  "next_work": "Continue Wave A with source verification and research packets for Psalms 7, 11, 14, 17, 21, 26, 33, 43, 49, and 83; then continue through Waves B–E without treating eligibility counts as completeness.",
+  "current_phase": "wave-a-batch-a4-research",
+  "last_completed_batch": "A3-psalms-7-11-14-17-21-26-33-43-49-83",
+  "next_work": "Continue Wave A with the remaining zero-eligible and thin Psalms selected from the 1,189-chapter backlog; then proceed through Wisdom, Historical, Prophetic, and New Testament waves without using eligibility as a completeness score.",
   "waves": [
     {
       "id": "A",
@@ -24,26 +24,39 @@
         "Psalm 100",
         "Psalm 5",
         "Psalm 20",
-        "Psalm 25"
+        "Psalm 25",
+        "Psalm 7",
+        "Psalm 11",
+        "Psalm 14",
+        "Psalm 17",
+        "Psalm 21",
+        "Psalm 26",
+        "Psalm 33",
+        "Psalm 43",
+        "Psalm 49",
+        "Psalm 83"
       ],
-      "evidence_records_added": 11,
-      "source_ids_created": 11,
+      "evidence_records_added": 21,
+      "source_ids_created": 22,
       "source_ids_reused": 1,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
-        "Kister 2020 full text was inaccessible; the A2 record cites its bibliographic identity and abstract only to establish that a comparative study exists."
+        "Kister 2020 full text was inaccessible; the A2 record cites its bibliographic identity and abstract only to establish that a comparative study exists.",
+        "Berger (Psalm 7), Bazyliński (Psalm 17), Sheveka (Psalm 21), and Pleins (Psalm 49) were available only through an abstract and/or bibliographic record; their items are limited to narrow claims stated there.",
+        "The Psalm 43 article reports manuscript grouping secondhand through Wilson without identifying witnesses; the CKL item relies on the refrain and stanza structure, not direct witness verification.",
+        "The Psalm 33 and Psalm 83 full theses were consulted, but proposed literary/canonical settings are not treated as composition dates or proof of direct borrowing."
       ],
       "validation": {
         "strict_ckl": "687 valid; 0 errors; 14 inherited incomplete_section_status warnings",
-        "manifest": "Generated manifest semantically matches checked manifest",
-        "chapter_audit": "Pass; 1189/1189 chapters; 0 unmapped identities; 1004 passage-specific, 68 contextual, 3 entity-only, 113 no eligible, 1 incomplete/unknown; Psalms 72 passage-specific and 55 no eligible",
-        "source_integrity": "A1+A2 added 11 source identities; 1 existing research source identity reused; 2 unresolved child-source references and 1 inherited missing expected locator remain unchanged",
-        "projection_and_disclosure": "Exact scope, source locators, observation/interpretation, confidence/dispute/review, and no authored cross-passage links checked for all 11 additions",
-        "regression_tests": "69 passed; 11 subtests passed",
-        "deep_heuristic": "63 flagged errors and 998 warnings; heuristic-only versus baseline 63/986",
-        "authored_relationships": "No authored relationship entries added; only exact Scripture-anchor projection edges were generated."
+        "manifest": "Generated manifest semantically matches checked manifest; all new source/evidence IDs resolve",
+        "chapter_audit": "Pass; 1189/1189 chapters; 0 unmapped identities; 1014 passage-specific, 68 contextual, 3 entity-only, 103 no eligible, 1 incomplete/unknown; Psalms 82 passage-specific and 45 no eligible",
+        "source_integrity": "A1+A2+A3 added 22 scholarly source identities; one existing research identity reused; 2 unresolved child-source references and 1 inherited missing expected locator remain unchanged",
+        "projection_and_disclosure": "Exact verse/chapter eligibility, projection, source locators, observation/interpretation, confidence/dispute/review, and no authored cross-passage links checked for all 10 additions",
+        "regression_tests": "71 passed; 21 subtests passed",
+        "deep_heuristic": "63 flagged errors and 1010 warnings; A3 adds 10 unknown-passage-chronology and 2 weak-source-type heuristic warnings; no new errors",
+        "authored_relationships": "No authored relationship entries added; projection edges follow only exact Scripture anchors."
       },
-      "commit_sha": "21089dc7a9a3c2c5a2a50e3c769db6c31e8277d1",
+      "commit_sha": null,
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -120,6 +133,54 @@
             "authored_relationships": "No new authored cross-passage or entity relationship entries."
           },
           "commit_sha": "21089dc7a9a3c2c5a2a50e3c769db6c31e8277d1"
+        },
+        {
+          "id": "A3-psalms-7-11-14-17-21-26-33-43-49-83",
+          "status": "validated_pending_commit",
+          "passages": [
+            "Psalm 7",
+            "Psalm 11",
+            "Psalm 14",
+            "Psalm 17",
+            "Psalm 21",
+            "Psalm 26",
+            "Psalm 33",
+            "Psalm 43",
+            "Psalm 49",
+            "Psalm 83"
+          ],
+          "evidence_records_added": 10,
+          "source_ids_created": [
+            "berger-psalm7-benjaminite-conflict-2014",
+            "obiorah-psalm7-insecurity-2021",
+            "prinsloo-psalm11-spatial-reading-2015",
+            "botha-psalm53-canonical-2013",
+            "bazylinski-psalm17-text-2021",
+            "sheveka-royal-psalms-diplomatic-2005",
+            "potgieter-psalm26-wisdom-2013",
+            "stoltz-psalm33-contextual-2018",
+            "simango-psalm42-43-structure-2025",
+            "pleins-psalm49-structure-1996",
+            "mitchell-psalter-psalm83-1995"
+          ],
+          "source_ids_reused": [],
+          "chapter_eligibility_improvements": 10,
+          "deferred_research": [
+            "Berger 2014, Bazyliński 2021, Sheveka 2005, and Pleins 1996: full arguments were inaccessible; records are limited to abstract-level claims and disclose this access boundary.",
+            "Simango 2025 reports Psalm 42–43 manuscript grouping through Wilson without identifying witnesses; no direct manuscript claim is authored.",
+            "No date, named event, original reading, literary direction, or direct borrowing is asserted where the source or text cannot establish it."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid; 0 errors; 14 inherited warnings",
+            "manifest": "Semantic match",
+            "chapter_audit": "Pass; 1189 rows, 0 unmapped; 1014 specific, 68 contextual, 3 entity-only, 103 no eligible, 1 incomplete/unknown; Psalms 82 specific, 45 no eligible",
+            "source_integrity": "11 new scholarly source IDs; 20 source occurrences; all A3 source refs resolve",
+            "projection_and_disclosure": "Exact passage anchors and source disclosure checked for all 10 additions",
+            "regression_tests": "71 passed; 21 subtests passed",
+            "deep_heuristic": "63 errors, 1010 warnings; 10 chronology and 2 thesis-source-type warnings added; no new errors",
+            "authored_relationships": "No new authored cross-passage or entity relationship entries."
+          },
+          "commit_sha": null
         }
       ]
     },

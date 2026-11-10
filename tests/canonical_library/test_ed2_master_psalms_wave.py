@@ -38,6 +38,19 @@ EXPECTED_A2 = {
     ),
 }
 
+EXPECTED_A3 = {
+    "psalm-7-cush-superscription-and-setting-limits": ("Psalm 7:1-17", "literary-convention", "berger-psalm7-benjaminite-conflict-2014"),
+    "psalm-11-refuge-and-spatial-argument": ("Psalm 11:1-7", "literary-convention", "prinsloo-psalm11-spatial-reading-2015"),
+    "psalm-14-psalm53-revision-debate": ("Psalm 14:1-7", "literary-convention", "botha-psalm53-canonical-2013"),
+    "psalm-17-textual-proposals-verses-11-and-14": ("Psalm 17:1-15", "manuscript", "bazylinski-psalm17-text-2021"),
+    "psalm-21-request-language-diplomatic-proposal": ("Psalm 21:2", "literary-convention", "sheveka-royal-psalms-diplomatic-2005"),
+    "psalm-26-walking-integrity-and-wisdom-structure": ("Psalm 26:1-12", "literary-convention", "potgieter-psalm26-wisdom-2013"),
+    "psalm-33-sea-and-deep-imagery": ("Psalm 33:6-9", "literary-convention", "stoltz-psalm33-contextual-2018"),
+    "psalm-43-refrain-and-stanza-structure": ("Psalm 43:1-5", "literary-convention", "simango-psalm42-43-structure-2025"),
+    "psalm-49-wisdom-poem-and-chiastic-focus": ("Psalm 49:1-20", "literary-convention", "pleins-psalm49-structure-1996"),
+    "psalm-83-coalition-imagery-and-setting-limits": ("Psalm 83:1-18", "literary-convention", "mitchell-psalter-psalm83-1995"),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -120,6 +133,31 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
         )
         psalm25 = self.evidence["psalm-25-individual-prayer-and-collective-epilogue"]
         self.assertIn("not a settled textual or redactional finding", psalm25["temporal_scope"]["notes"])
+
+    def test_a3_additions_have_exact_scope_and_resolved_sources(self) -> None:
+        self.assertTrue(set(EXPECTED_A3).issubset(self.evidence))
+        for evidence_id, (reference, evidence_type, source_id) in EXPECTED_A3.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual(evidence_type, item["evidence_type"])
+                self.assertEqual([reference], [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual("scholarly-reconstruction", item["assertion_type"])
+                self.assertIn("psalms-masoretic", item["source_ids"])
+                self.assertIn(source_id, item["source_ids"])
+                self.assertTrue(set(item["source_ids"]).issubset(self.sources))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertNotEqual(item["primary_observation"], item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertIn(item["certainty"], {"textually_explicit", "strong_consensus", "probable", "plausible", "disputed", "speculative", "insufficient_evidence"})
+                self.assertTrue(item["dispute_status"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                self.assertIn(evidence_id, self.sources[source_id]["supports"])
+                self.assertTrue(self.sources[source_id]["locator"])
+                self.assertTrue(self.sources[source_id]["url"])
 
 
 if __name__ == "__main__":
