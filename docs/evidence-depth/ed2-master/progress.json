@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a1-validation",
-  "last_completed_batch": "baseline-audit",
-  "next_work": "Commit validated Psalms batch A1, then continue systematic Psalms triage in A2 and proceed through Waves B–E.",
+  "current_phase": "wave-a-batch-a2-research",
+  "last_completed_batch": "A1-psalms-55-60-66-75-80-81-97-100",
+  "next_work": "Continue systematic Psalm research; prioritize Psalm 5, Psalm 20, and Psalm 25 after A1, then triage remaining P1 Psalm chapters before moving through Waves B–E.",
   "waves": [
     {
       "id": "A",
@@ -39,11 +39,11 @@
         "deep_heuristic": "63 flagged errors and 994 warnings; heuristic-only, versus baseline 63/986",
         "authored_relationships": "No new authored relationship entries; only exact Scripture-anchor projection edges were generated."
       },
-      "commit_sha": null,
+      "commit_sha": "3708cf5d683e48fc49ebe3b3e565e65e4da887c1",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
-          "status": "validated_pending_commit",
+          "status": "committed",
           "passages": [
             "Psalm 55",
             "Psalm 60",
@@ -71,7 +71,7 @@
             "deep_heuristic": "63 flagged errors and 994 warnings; heuristic-only, versus baseline 63/986",
             "authored_relationships": "No new authored relationship entries; only exact Scripture-anchor projection edges were generated."
           },
-          "commit_sha": null
+          "commit_sha": "3708cf5d683e48fc49ebe3b3e565e65e4da887c1"
         }
       ]
     },
