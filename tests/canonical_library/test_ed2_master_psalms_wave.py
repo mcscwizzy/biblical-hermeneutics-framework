@@ -20,6 +20,24 @@ EXPECTED = {
     "psalm-100-worship-and-the-psalter-sequence": ("Psalm 100:1-5", "firth-psalm100-worship-war-language-2021"),
 }
 
+EXPECTED_A2 = {
+    "psalm-5-morning-motif-and-setting-limits": (
+        "Psalm 5:1-12",
+        "literary-convention",
+        "botha-psalm5-polarity-2018",
+    ),
+    "psalm-20-amherst63-parallel-and-direction-debate": (
+        "Psalm 20:1-5",
+        "ancient-text",
+        "ward-amherst63-psalm20-2023",
+    ),
+    "psalm-25-individual-prayer-and-collective-epilogue": (
+        "Psalm 25:1-22",
+        "literary-convention",
+        "human-psalm25-tradition-setting-1996",
+    ),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -66,6 +84,42 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
             self.sources["jensen-psalm75-poetic-context-2001"]["notes"],
         )
         self.assertEqual([], self.evidence["psalm-80-vine-lament-and-son-ambiguity"]["related_objects"])
+
+    def test_a2_additions_have_exact_scope_and_resolved_sources(self) -> None:
+        self.assertTrue(set(EXPECTED_A2).issubset(self.evidence))
+        for evidence_id, (reference, evidence_type, source_id) in EXPECTED_A2.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual(evidence_type, item["evidence_type"])
+                self.assertEqual([reference], [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual("scholarly-reconstruction", item["assertion_type"])
+                self.assertIn("psalms-masoretic", item["source_ids"])
+                self.assertIn(source_id, item["source_ids"])
+                self.assertTrue(set(item["source_ids"]).issubset(self.sources))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertNotEqual(item["primary_observation"], item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertIn(item["certainty"], {"established", "probable", "plausible", "uncertain"})
+                self.assertTrue(item["dispute_status"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                self.assertIn(evidence_id, self.sources[source_id]["supports"])
+                self.assertTrue(self.sources[source_id]["locator"])
+                self.assertTrue(self.sources[source_id]["url"])
+
+    def test_a2_source_access_limits_and_textual_uncertainties_are_explicit(self) -> None:
+        psalm20 = self.evidence["psalm-20-amherst63-parallel-and-direction-debate"]
+        self.assertEqual("medium", psalm20["confidence"])
+        self.assertIn("not its direction", psalm20["scholarly_interpretation"])
+        self.assertIn("full article was not accessible", psalm20["notes"])
+        self.assertIn(
+            "publication record and abstract were inspected; full text was not accessible",
+            self.sources["kister-psalm20-amherst63-2020"]["notes"],
+        )
+        psalm25 = self.evidence["psalm-25-individual-prayer-and-collective-epilogue"]
+        self.assertIn("not a settled textual or redactional finding", psalm25["temporal_scope"]["notes"])
 
 
 if __name__ == "__main__":

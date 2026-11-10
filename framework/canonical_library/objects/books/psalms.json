@@ -1155,6 +1155,62 @@
         "psalm-100-worship-and-the-psalter-sequence"
       ],
       "notes": "Open-access full article consulted through SciELO; the interpretation is literary, not evidence of a specific ceremony."
+    },
+    {
+      "id": "botha-psalm5-polarity-2018",
+      "title": "Psalm 5 and the polarity between those who may stand before Yahweh and those who may not",
+      "author": "Philippus J. Botha",
+      "publisher": "HTS Teologiese Studies / Theological Studies 74, no. 1",
+      "year": 2018,
+      "locator": "article a5087; introductory discussion of Psalm 5:4 and ‘Textual and literary analysis of Psalm 5’",
+      "url": "https://doi.org/10.4102/hts.v74i1.5087",
+      "source_type": "journal-article",
+      "supports": [
+        "psalm-5-morning-motif-and-setting-limits"
+      ],
+      "notes": "Open-access full article consulted; published under CC BY. Botha presents the Absalom and post-exilic setting as a literary reading and cautions against deriving a precise ritual time or place from v. 4."
+    },
+    {
+      "id": "ward-amherst63-psalm20-2023",
+      "title": "Examining the Judean Scribal Tendencies in the Psalms of Papyrus Amherst 63, with Col. XII, 11–19 as a Test Case",
+      "author": "Stephen Elliott Ward",
+      "publisher": "University of California, Los Angeles",
+      "year": 2023,
+      "locator": "PhD dissertation in Near Eastern Languages and Cultures; ch. 3, transcription, translation, and commentary, pp. 81–109 (especially pp. 82–83); prior proposals, pp. 20–22",
+      "url": "https://escholarship.org/content/qt4mg6x6q4/qt4mg6x6q4_noSplash_2c33e63fa5ce42bc2069cca24a13f3da.pdf",
+      "source_type": "other",
+      "supports": [
+        "psalm-20-amherst63-parallel-and-direction-debate"
+      ],
+      "notes": "Open full dissertation consulted. It supplies a Demotic transcription, Aramaic normalization, and translation for the passage. Reading, divine-name identification, and translation remain difficult; its proposal that the text reflects Judean scribalism is not presented here as consensus."
+    },
+    {
+      "id": "kister-psalm20-amherst63-2020",
+      "title": "Psalm 20 and Papyrus Amherst 63: A window to the dynamic nature of poetic texts",
+      "author": "Menahem Kister",
+      "publisher": "Vetus Testamentum 70, no. 3",
+      "year": 2020,
+      "locator": "pp. 426–457; institutional bibliographic record and abstract only",
+      "url": "https://doi.org/10.1163/15685330-12341400",
+      "source_type": "journal-article",
+      "supports": [
+        "psalm-20-amherst63-parallel-and-direction-debate"
+      ],
+      "notes": "Peer-reviewed article. The University of Jerusalem publication record and abstract were inspected; full text was not accessible. Used only to verify the existence of a recent comparative study, not any detailed conclusion."
+    },
+    {
+      "id": "human-psalm25-tradition-setting-1996",
+      "title": "The tradition-historical setting of Psalm 25: How wisdom motives contribute to its understanding",
+      "author": "D. J. Human",
+      "publisher": "Verbum et Ecclesia 17, no. 1",
+      "year": 1996,
+      "locator": "pp. 76–88; structure and literary genre, pp. 78–79; conclusion, pp. 85–86",
+      "url": "https://doi.org/10.4102/ve.v17i1.1112",
+      "source_type": "journal-article",
+      "supports": [
+        "psalm-25-individual-prayer-and-collective-epilogue"
+      ],
+      "notes": "Full journal article consulted through the AOSIS repository. The possible later addition of v. 22 is Human’s proposal; competing structural boundaries are acknowledged."
     }
   ],
   "claims": [
@@ -2640,6 +2696,145 @@
       "claim_ids": [],
       "external_references": [],
       "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets.md."
+    },
+    {
+      "id": "psalm-5-morning-motif-and-setting-limits",
+      "title": "Morning prayer and the limits of a temple setting",
+      "evidence_type": "literary-convention",
+      "description": "Psalm 5 combines a morning prayer, language of temple access, and a contrast between evildoers and the righteous; the wording alone does not fix a ritual hour or location.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The morning wording and temple imagery are explicit, but proposals that locate the whole prayer in a specific morning temple ceremony go beyond the text. Botha’s reading of its present Psalter placement is an interpretive proposal.",
+      "passage_relevance": "Helps readers distinguish the poem’s actual morning and temple language from reconstructed time, venue, and original occasion.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "In Hebrew numbering, the speaker says that in the morning he lays his request before YHWH and waits (v. 4; English/ASV v. 3); the poem then speaks of entry to YHWH’s house (Hebrew v. 8; English v. 7) and contrasts evildoers with those who take refuge (Hebrew vv. 5–7, 10–13; English vv. 4–6, 9–12). No named sanctuary or date appears.",
+      "scholarly_interpretation": "Botha reviews readings of Psalm 5 as prayer for help in a legal dispute accompanied by a morning sacrifice, but cautions that the terse wording does not establish a precise time or temple location. He proposes that the psalm’s present placement among Psalms 3–7 frames it as David’s prayer during flight from Absalom and addresses later community conflict; that is a redactional interpretation, not a recoverable original event.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Ancient Israelite prayer; composition and ritual setting unresolved"
+        ],
+        "narrative_setting": "Morning and temple-access imagery in the poem; no named historical episode or sanctuary is supplied.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "Botha’s Absalom and post-exilic-community readings concern the psalm’s present literary function and are not independently verified historical settings."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Psalm 5:1-12",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The morning petition, temple-access language, and contrast between evildoers and the righteous work across the complete poem.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "botha-psalm5-polarity-2018"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a2.md."
+    },
+    {
+      "id": "psalm-20-amherst63-parallel-and-direction-debate",
+      "title": "An Aramaic parallel to Psalm 20 in Papyrus Amherst 63",
+      "evidence_type": "ancient-text",
+      "description": "Papyrus Amherst 63 column XII preserves an Aramaic prayer with a close literary parallel to several petitions in Psalm 20; the relationship’s direction and the difficult text’s precise readings remain debated.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "A detailed dissertation transcribes and translates the relevant papyrus lines and documents their correspondence with Psalm 20. The Demotic script/Aramaic combination complicates readings, and scholars have proposed different directions and histories for the relationship.",
+      "passage_relevance": "Shows readers a specific ancient literary parallel while preventing an extrabiblical Aramaic text from being mistaken for a manuscript witness to the Hebrew psalm or proof of its composition history.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "Papyrus Amherst 63, col. XII, lines 11–19, is an Aramaic prayer written in Demotic script. Its translated petitions to be answered, helped, and granted requests correspond in sequence and vocabulary to petitions in Psalm 20:1–5 (Hebrew numbering 20:2–6). In Ward’s proposed reading, the prayer invokes Aḥor, Bethel, and Ba’al Shamayin and places Aḥor at Zaphon.",
+      "scholarly_interpretation": "Ward’s full transcription and commentary documents the parallel but also emphasizes uncertainty in reading Demotic signs as Aramaic and in identifying a divine name. He surveys different models: Nims and Steiner treat the papyrus as a paganized adaptation of Psalm 20, while other scholarship proposes that the biblical psalm reoriented an earlier northern/Samarian prayer. Kister’s article abstract confirms recent comparative study but does not expose its detailed conclusions. The available evidence establishes a literary parallel, not its direction, a direct copying event, or Psalm 20’s date.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Ancient Demotic–Aramaic text in Papyrus Amherst 63; the text’s date and community provenance remain debated"
+        ],
+        "narrative_setting": "A prayer preserved in an Egyptian papyrus collection, compared with the royal petition in Psalm 20; no single composition setting for Psalm 20 is established.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The physical manuscript’s date, the Aramaic poem’s composition, and the formation of Psalm 20 are separate questions. Neither the proposed identity of the worshipping community nor the direction of literary dependence is settled here."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Psalm 20:1-5",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "These verses contain the sequence of petitions compared with Papyrus Amherst 63 col. XII, lines 11–19; Hebrew verse numbering is one greater because it counts the superscription.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "ward-amherst63-psalm20-2023",
+        "kister-psalm20-amherst63-2020"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a2.md. Kister’s full article was not accessible; only its institutional bibliographic record and abstract are used."
+    },
+    {
+      "id": "psalm-25-individual-prayer-and-collective-epilogue",
+      "title": "Individual lament and the collective epilogue in Psalm 25",
+      "evidence_type": "literary-convention",
+      "description": "Psalm 25 moves through an alphabetically organized individual prayer and ends with a separate petition for Israel; the relation of that final verse to the poem’s original composition is uncertain.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The acrostic frame, individual petitions, and explicit appeal for Israel can be observed in the Hebrew text. Human describes verse 22 as an epilogue and notes that its status as a later addition is possible, not established.",
+      "passage_relevance": "Helps readers follow how personal distress and instruction broaden into a communal plea without assuming the final verse’s date or redactional history.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "Psalm 25 is an alphabetic acrostic prayer with first-person petitions and reflections through vv. 1–21; v. 22 shifts to an explicit plea to redeem Israel. The final verse sits outside the preceding individual address and sequence.",
+      "scholarly_interpretation": "Human reads vv. 1–21 primarily as an individual lament and describes v. 22 as an epilogue that extends the worshipper’s experience to Israel. He allows that the verse may be a later addition, while other structural descriptions place the boundary differently. The text’s acrostic form does not by itself establish its date or original use.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Ancient Israelite acrostic prayer; composition date and compositional history unresolved"
+        ],
+        "narrative_setting": "An individual voice asks for guidance, forgiveness, and deliverance before a final communal appeal for Israel.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The possible secondary status of v. 22 is Human’s proposal, not a settled textual or redactional finding."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Psalm 25:1-22",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The contrast between the individual prayer through v. 21 and the explicit communal petition in v. 22 requires the full poem.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "human-psalm25-tradition-setting-1996"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a2.md."
     }
   ]
 }
