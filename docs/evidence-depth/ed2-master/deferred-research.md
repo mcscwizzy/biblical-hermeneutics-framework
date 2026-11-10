@@ -133,3 +133,11 @@ This list is updated after source review. A chapter stays deferred where the exa
 
 - Proverbs 6:1–5: the added record is grounded in Whybray’s full commentary pages 94–95. A second modern treatment of the lexical alternatives and independent evidence about ancient surety practice remain to be reviewed; no specific transaction, legal procedure, or composition date is asserted.
 - The Proverbs 6 record remains draft/in-review and requires human scholarly review.
+
+
+## Wave C, batch C1
+
+- 2 Chronicles 25: the full Hwang 2025 article is in Korean and was not consulted; detailed argument verification remains open.
+- 2 Chronicles 14: the identity of Zerah, the episode’s historical referent, and the proposed composition horizon remain uncertain; no battle or troop count is asserted as independently verified.
+- 2 Chronicles 18: Dillard’s literary account is one interpretation; broader scholarly comparison of the parallel narrative remains open.
+- All three C1 additions remain draft/in-review. No human reviewer is named, and none is marked approved.

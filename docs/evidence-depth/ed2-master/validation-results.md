@@ -196,3 +196,14 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Deep heuristic report: 63 error-severity findings and 1,074 warnings. B2 adds one `unknown-passage-chronology` review signal and no new heuristic errors. The audit reports 433 accepted curation records, 44 verified NE-10 bridges, and 7 held candidates.
 - Human review: the addition remains draft/in-review; no reviewer or approval is claimed.
 - Evidence commit: `c011ab71` (`research: add ED-2 wisdom batch B2`).
+
+
+## Wave C, batch C1 — 2 Chronicles 14, 18, and 25
+
+- Strict CKL validation: 687 valid objects, 0 errors, and the same 14 inherited `incomplete_section_status` warnings; the 2 Chronicles object has no warnings.
+- Manifest: generated manifest semantically matches the checked manifest; all exact Scripture references and source-support links resolve.
+- ED-1A audit: pass, all 1,189 chapters, 0 unmapped identities; 1,081 specific, 57 contextual-only, 2 entity-only, 48 no-eligible, 1 incomplete/unknown. Nineteen deterministic and 16 live service samples passed. Six chapters transitioned from no eligible material to specific eligibility through direct, contextual, or comparative evidence scopes.
+- CKL/source delta: three typed evidence items, three new scholarly source identities, two reused existing biblical-text source identities; no claim or object count change. Source inventory: 5,333 occurrences / 2,882 IDs; separate identity audit: 2,883 unique IDs. Two unresolved child-source references and one inherited missing locator remain.
+- Projection and regression: 599 tests passed and 16 subtests passed across focused CKL/Narrative Explorer projection, NE-9C, source-lock, manifest/schema/package, and C1 coverage; focused C1 tests were 3 passed and 3 subtests. Exact display scope, source disclosure, observation/interpretation, and review metadata were checked.
+- Deep heuristic report: 63 error-severity findings, 1,077 warnings; three additional unknown chronology notices and no new heuristic errors. The inherited 102 unresolved source-support targets remain heuristic warnings, not strict CKL errors.
+- Protected state: no NE-9C or NE-10 decision or historical checkpoint changed; accepted=433, verified=44, held=7. No held relation was authored or promoted.

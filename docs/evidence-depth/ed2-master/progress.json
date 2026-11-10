@@ -6,8 +6,8 @@
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
   "current_phase": "wave-c-history",
-  "last_completed_batch": "B2-wisdom-proverbs6-surety",
-  "next_work": "Begin Wave C with source-verified priority questions in 2 Chronicles 14, 18, and 25, then continue Waves D and E. Wave B remains in progress: nine Proverbs chapters still lack eligible passage-specific evidence and Wisdom books need qualitative review. Return to those Wisdom gaps and the 11 contextual-only Psalms as the 100-item ceiling and source quality allow.",
+  "last_completed_batch": "C1-history-2chron14-18-25",
+  "next_work": "Continue Wave C with remaining high-value historical gaps, then make verified batches in Waves D and E. Wave B remains in progress: nine Proverbs chapters still lack eligible passage-specific evidence and Wisdom books need qualitative review. Wave A has 11 contextual-only Psalms pending qualitative review. Total new items remain below the 100-item ceiling; prioritize verified evidence and human-review readiness.",
   "waves": [
     {
       "id": "A",
@@ -808,14 +808,86 @@
     {
       "id": "C",
       "name": "Historical books",
-      "status": "queued",
-      "passages_researched": [],
-      "evidence_records_added": 0,
-      "source_ids_created": 0,
-      "source_ids_reused": 0,
-      "deferred_gaps": [],
-      "validation": null,
-      "commit_sha": null
+      "status": "in_progress",
+      "passages_researched": [
+        "2 Chronicles 14:9-15",
+        "2 Chronicles 18:1-34",
+        "2 Chronicles 25:1-28"
+      ],
+      "evidence_records_added": 3,
+      "source_ids_created": 3,
+      "source_ids_reused": 2,
+      "deferred_gaps": [
+        "Hwang Sunwoo 2025 full Korean article was inaccessible; the Amaziah comparison is limited to its English abstract and requires full-text review.",
+        "Zerah’s identification, the Cushite conflict’s historical referent, and Jonker’s compositional horizon remain debated; no exact troop count or battle identification is established.",
+        "Dillard’s account of the Chronicler’s literary purpose is one scholarly interpretation, not independent event corroboration."
+      ],
+      "validation": {
+        "strict_ckl": "687 valid objects; 0 errors; same 14 inherited incomplete_section_status warnings; 2 Chronicles has 0 warnings.",
+        "manifest": "Generated manifest semantically matches checked manifest; exact Scripture anchors and new source-support links resolve.",
+        "chapter_audit": "ED-1A passed all 1,189 chapters; 0 unmapped identities. After C1: 1,081 passage-specific, 57 contextual-only, 2 entity-only, 48 no-eligible, 1 incomplete/unknown. Nineteen deterministic and 16 live service samples passed. Six formerly zero-eligible chapters project eligible evidence: 1 Kings 15, 2 Chronicles 14, 16, 18, 19, and 25.",
+        "source_integrity": "Three new scholarly source identities and two existing comparative Bible-text source identities reused. Source inventory: 5,333 occurrences / 2,882 source IDs; separate identity audit: 2,883 unique IDs. Two unresolved child-source references and one expected missing locator remain inherited.",
+        "projection_and_disclosure": "Three exact passage scopes project once with source/bibliography disclosure, primary observation, attributed interpretation, confidence/dispute/review metadata; no authored narrative relationship routes.",
+        "regression_tests": "Combined focused CKL/Narrative Explorer, NE-9C, source lock, package, schema, and projection suite: 599 passed, 16 subtests passed. C1 authoring and projection tests: 3 passed, 3 subtests passed.",
+        "deep_heuristic": "63 error-severity findings and 1,077 warnings. Three new unknown-chronology warnings; no new heuristic errors. The inherited 102 invalid source-support targets are unchanged and are heuristic review signals, not strict errors.",
+        "protected_relationships": "No NE-9C/NE-10 decisions or checkpoints changed; 433 accepted curation records, 44 verified bridges, and 7 held candidates unchanged."
+      },
+      "commit_sha": "76cb0055",
+      "batches": [
+        {
+          "id": "C1-history-2chron14-18-25",
+          "status": "committed",
+          "passages": [
+            "2 Chronicles 14:9-15",
+            "2 Chronicles 18:1-34",
+            "2 Chronicles 25:1-28"
+          ],
+          "comparative_contextual_references": [
+            "2 Chronicles 16:8",
+            "2 Chronicles 19:1-3",
+            "1 Kings 15:9-24",
+            "1 Kings 22:1-40",
+            "2 Kings 14:1-20"
+          ],
+          "evidence_records_added": 3,
+          "evidence_ids": [
+            "2chronicles-14-cushites-and-rhetorical-setting",
+            "2chronicles-18-jehoshaphat-and-micaiah",
+            "2chronicles-25-amaziah-and-kings-parallel"
+          ],
+          "source_ids_created": [
+            "jonker-cushites-herodotus-chronicles-2023",
+            "dillard-chroniclers-jehoshaphat-1986",
+            "hwang-chronicles-amaziah-2025"
+          ],
+          "source_ids_reused": [
+            "1-kings-1-22",
+            "2-kings-1-25"
+          ],
+          "source_ids_reused_count": 2,
+          "chapter_eligibility_improvements": 6,
+          "coverage_change": {
+            "passage_specific": 6,
+            "no_eligible": -6
+          },
+          "deferred_research": [
+            "Hwang full article in Korean not consulted; abstract-limited.",
+            "No independent historical identification of Zerah or the battle; no composition date asserted.",
+            "Chronicler’s intent remains an attributed literary interpretation."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid; 0 errors; 14 inherited warnings",
+            "manifest": "Semantic match; anchors and source support resolve",
+            "chapter_audit": "Pass 1,189/1,189; after C1: 1,081 specific, 57 contextual-only, 2 entity-only, 48 no-eligible, 1 incomplete/unknown; six chapter eligibility transitions",
+            "source_integrity": "3 new scholarly IDs and 2 reused biblical-text source IDs resolve; inherited 2 child-source references and 1 missing expected locator remain",
+            "projection_and_disclosure": "3 exact scoped projections with source disclosure and review metadata; no authored relationships",
+            "regression_tests": "599 passed, 16 subtests; focused C1 tests 3 passed, 3 subtests",
+            "deep_heuristic": "63 errors, 1,077 warnings; +3 unknown chronology warnings, no new errors",
+            "protected_relationships": "NE-9C/NE-10 unchanged: 433 accepted, 44 verified, 7 held"
+          },
+          "commit_sha": "76cb0055"
+        }
+      ]
     },
     {
       "id": "D",
@@ -866,8 +938,8 @@
   "source_identity_changes": [],
   "protected_state": "NE-9C/NE-10 unchanged from origin/master; historical fingerprint check is expected to differ because the accepted base already includes ED-2A, so compare protected artifacts/decisions directly and do not regenerate checkpoints.",
   "source_id_counting_policy": "Source identity creation/reuse counts cover research bibliography identities; the standard Psalms text source is reused for verse comparison but excluded from these counts.",
-  "total_evidence_records_added": 82,
-  "total_source_ids_created": 81,
-  "total_source_ids_reused": 3,
-  "remaining_evidence_item_ceiling": 18
+  "total_evidence_records_added": 85,
+  "total_source_ids_created": 84,
+  "total_source_ids_reused": 5,
+  "remaining_evidence_item_ceiling": 15
 }

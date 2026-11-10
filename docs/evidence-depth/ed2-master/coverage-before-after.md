@@ -265,3 +265,24 @@ B2 added one passage-specific item and one source identity. Proverbs 6 moved fro
 | Incomplete/unknown | 1 | 1 | 0 |
 
 Within Proverbs, specific chapter coverage rose from 20 to 21 and no-eligible chapters fell from 10 to 9; one contextual-only chapter is unchanged. The item explains Whybray’s reading of surety language and competing interpretations of “stranger,” without treating one commentary’s reconstruction as settled social history. It remains draft/in-review. See the [B2 research packet](wave-b-wisdom/wisdom-research-packets-b2.md).
+
+
+### Wave C, batch C1 — 2 Chronicles 14, 18, and 25
+
+The ED-1A audit passed all 1,189 chapters with no unmapped identities. The census moved from the post-B2 state to 1,081 passage-specific chapters, 57 contextual-only, 2 entity-only, 48 no-eligible, and 1 incomplete/unknown.
+
+| Census category | Before C1 | After C1 | Change |
+| --- | ---: | ---: | ---: |
+| Passage-specific evidence | 1,075 | 1,081 | +6 |
+| Contextual-only coverage | 57 | 57 | 0 |
+| Entity-only coverage | 2 | 2 | 0 |
+| No eligible passage-specific material | 54 | 48 | −6 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+| Book | Passage-specific before | After C1 | No-eligible before | After C1 |
+| --- | ---: | ---: | ---: | ---: |
+| 1 Kings | 21 | 22 | 4 | 3 |
+| 2 Chronicles | 18 | 23 | 10 | 5 |
+| All other books | unchanged | unchanged | unchanged | unchanged |
+
+C1 adds three items on the Cushite battle narrative, the Chronicler’s placement of Micaiah’s account, and comparison of Amaziah in Kings and Chronicles. Its direct targets were zero-eligible; comparative and contextual scopes make 1 Kings 15 and 2 Chronicles 16 and 19 newly eligible as well. The audit counts eligibility only. Source access limits and interpretive uncertainty remain in the [C1 packet](wave-c-history/history-research-packets-c1.md), and human scholarly review is still required.
