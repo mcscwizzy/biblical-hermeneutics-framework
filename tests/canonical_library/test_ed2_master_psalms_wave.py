@@ -103,6 +103,13 @@ EXPECTED_A9 = {
     "psalm-99-zion-and-kingship-sequence": ("Psalm 99:1-9", "hamilton-yhwh-kingship-psalms-2023"),
 }
 
+EXPECTED_A10 = {
+    "psalm-53-adaptation-and-cluster-context": ("Psalm 53:1-6", "botha-psalm53-canonical-2013"),
+    "psalm-102-created-or-set-apart-people": ("Psalm 102:18", "van-wolde-psalm102-qualifications-actions-2019"),
+    "psalm-109-speaker-and-reported-speech-debate": ("Psalm 109:1-31", "egwim-psalm109-case-presentation-2004"),
+    "psalm-135-exodus-motifs-and-servants": ("Psalm 135", "human-psalms135-136-exodus-motifs-2021"),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -420,6 +427,38 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
         self.assertEqual("disputed", self.evidence["psalm-99-zion-and-kingship-sequence"]["certainty"])
         self.assertEqual("major_scholarly_disagreement", self.evidence["psalm-99-zion-and-kingship-sequence"]["dispute_status"])
         self.assertIn("psalm-99-zion-and-kingship-sequence", self.sources["hamilton-yhwh-kingship-psalms-2023"]["supports"])
+        self.assertEqual("draft", self.book["content_status"])
+        self.assertEqual("in_review", self.book["review_status"])
+        self.assertEqual([], self.book["reviewed_by"])
+        self.assertTrue(self.book["human_review_required"])
+
+    def test_a10_additions_have_exact_scope_and_resolved_sources(self) -> None:
+        self.assertTrue(set(EXPECTED_A10).issubset(self.evidence))
+        for evidence_id, (reference, source_id) in EXPECTED_A10.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                references = [x["reference"] for x in item["scripture_references"]]
+                if evidence_id == "psalm-135-exodus-motifs-and-servants":
+                    self.assertEqual(["Psalm 135:1", "Psalm 135:8-9"], references)
+                else:
+                    self.assertEqual([reference], references)
+                self.assertEqual("unknown", item["scripture_references"][0]["temporal_relation"])
+                self.assertEqual({"psalms-masoretic", source_id}, set(item["source_ids"]))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                source = self.sources[source_id]
+                self.assertIn(evidence_id, source["supports"])
+                self.assertTrue(source["locator"])
+                self.assertTrue(source["url"])
+        self.assertEqual("low", self.evidence["psalm-109-speaker-and-reported-speech-debate"]["confidence"])
+        self.assertIn("abstract", self.sources["egwim-psalm109-case-presentation-2004"]["notes"].lower())
+        self.assertEqual("disputed", self.evidence["psalm-102-created-or-set-apart-people"]["certainty"])
+        self.assertEqual("major_scholarly_disagreement", self.evidence["psalm-102-created-or-set-apart-people"]["dispute_status"])
         self.assertEqual("draft", self.book["content_status"])
         self.assertEqual("in_review", self.book["review_status"])
         self.assertEqual([], self.book["reviewed_by"])

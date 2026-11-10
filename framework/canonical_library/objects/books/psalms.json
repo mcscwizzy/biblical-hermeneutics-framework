@@ -1266,7 +1266,8 @@
       "source_type": "journal-article",
       "notes": "Full open-access article consulted. Botha argues that Psalm 53 adapts Psalm 14 for its position among Psalms 52–55; the reverse-direction view is acknowledged and rejected by Botha, not erased from the scholarly question.",
       "supports": [
-        "psalm-14-psalm53-revision-debate"
+        "psalm-14-psalm53-revision-debate",
+        "psalm-53-adaptation-and-cluster-context"
       ]
     },
     {
@@ -1801,6 +1802,48 @@
       "supports": [
         "psalm-94-weekday-song-and-poetic-sequence"
       ]
+    },
+    {
+      "id": "van-wolde-psalm102-qualifications-actions-2019",
+      "title": "Psalm 102.13–23: Qualifications Rather Than Actions",
+      "author": "Ellen van Wolde",
+      "publisher": "The Bible Translator 70, no. 2 (2019), 207–222",
+      "year": 2019,
+      "locator": "Section “Syntactic analysis of the niphal forms in verses 17b, 19a, and 19b,” printed pp. 216–218; conclusion and proposed translation, pp. 218–219",
+      "url": "https://doi.org/10.1177/2051677019851843",
+      "source_type": "journal-article",
+      "supports": [
+        "psalm-102-created-or-set-apart-people"
+      ],
+      "notes": "Full open-access article inspected. Van Wolde explicitly uses Hebrew versification counting the superscription; her Psalm 102:19b is BHF 102:18b. She argues for a “set apart” reading of ברא in this clause against the standard “create” interpretation, while acknowledging the broader scholarly debate."
+    },
+    {
+      "id": "egwim-psalm109-case-presentation-2004",
+      "title": "Determining the Place of vv. 6–19 in Ps 109: A Case Presentation Analysis",
+      "author": "Stephen Egwim",
+      "publisher": "Ephemerides Theologicae Lovanienses 80, no. 1 (April 2004), 112–130",
+      "year": 2004,
+      "locator": "Publisher abstract and bibliographic record; full article text was not accessible",
+      "url": "https://doi.org/10.2143/ETL.80.1.504559",
+      "source_type": "journal-article",
+      "supports": [
+        "psalm-109-speaker-and-reported-speech-debate"
+      ],
+      "notes": "Only the publisher abstract and bibliographic metadata were accessible. The abstract reports disagreement over the speaker in the central imprecation and advances a legal-case/report-speech reading; the CKL record is limited to that abstract-level claim and requires full-text and human review."
+    },
+    {
+      "id": "human-psalms135-136-exodus-motifs-2021",
+      "title": "Psalms 135 and 136: Exodus Motifs Contributing to Israelite Praise",
+      "author": "Dirk Human",
+      "publisher": "Old Testament Essays 34, no. 2 (2021), 646–668",
+      "year": 2021,
+      "locator": "Psalm 135, section C.4.c, “Yahweh’s mighty deeds as redeemer in Egypt,” printed pp. 656–657; structural outline and Second Temple setting, pp. 650–653",
+      "url": "https://doi.org/10.17159/2312-3621/2021/v34n2a19",
+      "source_type": "journal-article",
+      "supports": [
+        "psalm-135-exodus-motifs-and-servants"
+      ],
+      "notes": "Full open-access article inspected. Human reads the firstborn language and repeated “servants” as part of Psalm 135’s Exodus-shaped praise rhetoric; possible Second Temple worship and festival settings are proposals, not a demonstrated performance event or date."
     }
   ],
   "claims": [
@@ -5404,6 +5447,197 @@
       "claim_ids": [],
       "external_references": [],
       "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a9.md. Hamilton reports another scholar’s dating proposal but is the source directly consulted for this record."
+    },
+    {
+      "id": "psalm-53-adaptation-and-cluster-context",
+      "title": "Psalm 53’s differences from Psalm 14",
+      "evidence_type": "literary-convention",
+      "description": "A canonical reading treats Psalm 53’s distinct wording and conclusion as deliberate adaptation for its position among Psalms 52–55 rather than simply as textual corruption.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Botha’s full open-access article and its comparison of Psalms 14 and 53 were inspected. The differences and poetic organization are observable; the direction of adaptation and its proposed cluster function remain attributed literary-redactional interpretations.",
+      "passage_relevance": "Helps readers ask why a near-parallel poem has a different judgment scene and closing petition, and how its placement affects its final-form reading without turning the superscription into biography.",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Psalm 53 follows a broad sequence shared with Psalm 14 but has distinct wording and a different closing depiction of the enemies’ fate. Botha analyzes it as a six-line poem in Hebrew verse numbering, with recurring words and inclusio-like framing.",
+      "scholarly_interpretation": "Botha argues that Psalm 53 is an intentionally adapted form of Psalm 14, revised to function in the Psalms 52–55 cluster. He connects the cluster’s superscriptions with the David–Saul narrative as a final-form reading, while acknowledging the reverse proposal that Psalm 14 developed from Psalm 53. Neither the cluster’s headings nor the proposed literary setting establishes Davidic authorship or the historical occasion of composition.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Psalter final-form and redactional proposal; composition and adaptation dates unresolved"
+        ],
+        "narrative_setting": "The superscription and neighboring psalms frame a David–Saul reading in the final Psalter sequence; this literary frame is not treated as a recovered event.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "Botha proposes a post-exilic canonical/redactional setting, but the article does not establish a precise date or the psalmist’s identity."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Psalm 53:1-6",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This is the complete Psalm 53 text in BHF numbering; the article’s Psalm 53:2–7 references count the superscription as verse 1.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "botha-psalm53-canonical-2013"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a10.md. Botha counts the superscription as verse 1; the source’s Psalm 53:2–7 maps to BHF Psalm 53:1–6. No Psalm 14 cross-passage route is authored."
+    },
+    {
+      "id": "psalm-102-created-or-set-apart-people",
+      "title": "A people created or set apart in Psalm 102",
+      "evidence_type": "literary-convention",
+      "description": "A syntactic analysis offers a disputed translation of Psalm 102’s Zion stanza: the people may be described as set apart in a present state rather than as a future-created people.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Van Wolde’s full article was inspected, including its syntax and translation argument. Its reading of ברא as “separate” is explicitly one side of an acknowledged scholarly debate; the item reports her argument rather than presenting the lexical proposal as settled.",
+      "passage_relevance": "The translation changes whether the verse predicts a future population or characterizes Zion’s people in relation to the surrounding nations, affecting how the following call to praise is heard.",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "In BHF numbering, Psalm 102:18b describes the people who praise Yah; many translations understand the participle from ברא as “created” and supply a future sense. Van Wolde parses the clause as a nominal description and reads the participle as a resulting state.",
+      "scholarly_interpretation": "Van Wolde argues that the syntax of the clause and its present descriptive force favor “a people set apart—it praises Yah,” referring back to Zion’s inhabitants, rather than “a newly created people will praise Yah.” She notes that “create” is the standard interpretation and that the meaning of ברא is debated; her proposal is a translation argument, not a settled lexical consensus.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Poetic description of Zion and its people; the verse’s verbal aspect and translation are disputed"
+        ],
+        "narrative_setting": "The Zion stanza contrasts the petitioner, the city, and other nations; the grammatical reading affects whether the people are newly anticipated or presently characterized.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The article proposes a translation from Hebrew syntax; it does not date the psalm or identify a specific restoration event."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Psalm 102:18",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This is the BHF verse containing the clause that van Wolde discusses as Hebrew Psalm 102:19b.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "van-wolde-psalm102-qualifications-actions-2019"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a10.md. Van Wolde uses Hebrew verse numbering with the superscription as v.1; her 102:19b maps to BHF 102:18b."
+    },
+    {
+      "id": "psalm-109-speaker-and-reported-speech-debate",
+      "title": "Who speaks the imprecation in Psalm 109?",
+      "evidence_type": "literary-convention",
+      "description": "The accessible publisher abstract presents a continuing dispute over whether Psalm 109’s central imprecation is the petitioner’s speech or a report of accusations spoken by opponents.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "low",
+      "confidence_rationale": "Only Egwim’s publisher abstract and bibliographic record were accessible. The record reports the abstract’s narrow legal-case proposal and explicitly requires full-text review; no detailed linguistic case or scholarly consensus is claimed.",
+      "passage_relevance": "The speaker assignment changes whether the severe language is read as the petitioner’s own curse or as speech reported within a defense, which affects the lament’s discourse structure.",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "The publisher abstract identifies two broad readings of the central imprecation: the psalmist speaks it, or the psalmist reports speech by enemies. It states that scholarship has not reached a generally accepted position.",
+      "scholarly_interpretation": "Egwim’s abstract argues that a legal case-presentation reading best explains the psalm’s cause, context, and content, and that hearing the disputed words as reported speech allows the poem to function coherently as lament and prayer. Because the full article was inaccessible, this entry records an abstract-level proposal only and does not evaluate its linguistic or legal argument.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Modern scholarly dispute about the poem’s discourse and proposed legal setting"
+        ],
+        "narrative_setting": "A court or case-presentation setting is Egwim’s proposal in the accessible abstract, not an independently established institution or event.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The accessible abstract cites vv. 6–19 but does not state its verse-numbering convention; the exact BHF chapter anchor avoids asserting a verse conversion."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Psalm 109:1-31",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The complete psalm contains the disputed shift in speaker and the surrounding lament frame; the abstract’s numbering convention is not available.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "egwim-psalm109-case-presentation-2004"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a10.md. Abstract-only source access; low confidence; full-text and human review remain required."
+    },
+    {
+      "id": "psalm-135-exodus-motifs-and-servants",
+      "title": "Exodus memory and the servants of Psalm 135",
+      "evidence_type": "literary-convention",
+      "description": "The hymn links its temple servants and the Exodus account of Pharaoh’s servants to explain why Israel praises YHWH as deliverer and ruler over life and death.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Human’s full open-access article was inspected at its Psalm 135 analysis. The repeated servant language, firstborn motif, and Exodus parallels are observable; their rhetorical function is an attributed interpretation, not independent confirmation of the Exodus account.",
+      "passage_relevance": "Explains how Psalm 135:8–9 fits the hymn’s praise summons: the repeated “servants” sets worshipers in YHWH’s house against Pharaoh’s servants, while the firstborn motif intensifies the remembered deliverance.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "Psalm 135:1 addresses YHWH’s servants in the temple; verses 8–9 recall the striking of Egypt’s firstborn and signs against Pharaoh and his servants. The poem places these historical deeds after a creation section and before the indictment of powerless idols.",
+      "scholarly_interpretation": "Human reads the human-and-animal firstborn in verse 8 as a merism emphasizing the scope of the plague tradition and notes its relation to Exodus 12:12, 29. He also reads “servants” in verses 1 and 9 contrastively: YHWH’s servants are summoned to praise, while Pharaoh’s servants experience the narrated judgment. This is the psalm’s theological use of Exodus memory, not independent evidence for the events or a specific festival performance.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Exodus tradition as remembered in Israelite hymn and worship; Human proposes a plausible Second Temple context but no exact date"
+        ],
+        "narrative_setting": "The poem addresses temple worshipers and recalls Egypt, the defeat of kings, and the land gift; a particular performance or festival remains unestablished.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "Human considers post-exilic composition and Second Temple liturgical use plausible; these are historical reconstructions, not established dates or ceremonies."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Psalm 135:1",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This summons YHWH’s servants in the temple and supplies the first term in the repeated-servants comparison.",
+          "weight": 10
+        },
+        {
+          "reference": "Psalm 135:8-9",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "These verses recount the firstborn plague and signs against Pharaoh and his servants, the focus of Human’s Exodus-motif analysis.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "human-psalms135-136-exodus-motifs-2021"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a10.md. The text’s use of Exodus tradition is distinguished from independent historical corroboration."
     }
   ]
 }
