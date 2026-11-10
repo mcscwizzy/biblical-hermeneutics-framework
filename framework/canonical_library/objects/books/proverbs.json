@@ -962,6 +962,20 @@
       "supports": [
         "proverbs-28-rulers-and-poor-structure"
       ]
+    },
+    {
+      "id": "whybray-proverbs-cambridge-1972",
+      "title": "The Book of Proverbs",
+      "author": "R. N. Whybray",
+      "publisher": "Cambridge University Press, The Cambridge Bible Commentary: New English Bible",
+      "year": 1972,
+      "locator": "Commentary on Proverbs 6:1-5, pp. 94-95",
+      "url": "https://biblicalstudies.org.uk/pdf/e-books/whybray_r-n/proverbs_new-century-bible_whybray_r-n.pdf",
+      "source_type": "academic-book",
+      "notes": "The full scanned commentary and the discussion of Proverbs 6:1-5 were inspected. On p. 95 Whybray reports competing interpretations of zār, rejects the foreign-trade scenario as unsupported by the text, and prefers a non-kin Israelite referent; the precise transaction remains uncertain.",
+      "supports": [
+        "proverbs-6-surety-and-stranger"
+      ]
     }
   ],
   "claims": [
@@ -1508,6 +1522,52 @@
       "claim_ids": [],
       "external_references": [],
       "notes": "Research packet: docs/evidence-depth/ed2-master/wave-b-wisdom/wisdom-research-packets-b1.md."
+    },
+    {
+      "id": "proverbs-6-surety-and-stranger",
+      "title": "Surety, pledge, and the “stranger” in Proverbs 6:1–5",
+      "evidence_type": "cultural-practice",
+      "description": "Whybray reads the instruction as warning about a financial guarantee made to a creditor on another person’s behalf and understands “striking hands” as a related pledge ceremony; the precise transaction and the referent of “stranger” remain uncertain.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The full scanned commentary’s discussion on pp. 94–95 was inspected. Whybray states his preferred reading while presenting alternative interpretations of the syntax and of zār; this record attributes his reconstruction rather than treating it as settled social history.",
+      "passage_relevance": "The distinctions help readers assess whether the instruction imagines foreign commerce, a family-adjacent obligation, or another surety arrangement without turning a wisdom scenario into a documented legal case.",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "primary_observation": "Proverbs 6:1–5 frames the warning with conditional clauses followed by urgent imperatives. Verse 1 uses the surety verb ʿārab, the phrase tāqaʿ kaph (“strike hands”), and the paired terms rēaʿ (“neighbor”) and zār (“stranger”).",
+      "scholarly_interpretation": "Whybray understands ʿārab as guaranteeing a debt to a creditor on another’s behalf and regards hand-striking as a ceremony associated with the pledge; he reads Proverbs 22:27 as showing that the pledged amount is financial. For zār, he reports Boström’s “foreigner” reading and Snijders’s “outsider” proposal, while preferring an Israelite outside one’s family. Whybray says the text does not support a foreign-trade scenario. The record does not establish a specific legal procedure or historical transaction.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "The composition date and concrete social setting of this instruction are not established by Whybray’s discussion."
+        ],
+        "narrative_setting": "A wisdom instruction about a hypothetical surety arrangement; the precise identity of the parties and the transaction remains uncertain.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The poem’s instructional scenario and its composition date are separate questions; the commentary does not date the passage or establish a particular legal custom."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Proverbs 6:1-5",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The distinctions help readers assess whether the instruction imagines foreign commerce, a family-adjacent obligation, or another surety arrangement without turning a wisdom scenario into a documented legal case.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "proverbs-masoretic",
+        "whybray-proverbs-cambridge-1972"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-b-wisdom/wisdom-research-packets-b2.md."
     }
   ]
 }

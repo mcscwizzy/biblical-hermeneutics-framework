@@ -75,6 +75,25 @@ class Ed2MasterWisdomWaveTests(unittest.TestCase):
         self.assertEqual("minor_scholarly_disagreement", proverbs["proverbs-28-rulers-and-poor-structure"]["dispute_status"])
         self.assertEqual("lexical_uncertainty", ecclesiastes["ecclesiastes-10-1-flies-of-death-translation"]["dispute_status"])
 
+    def test_b2_surety_record_preserves_the_lexical_alternatives(self) -> None:
+        obj = self.objects["proverbs"]
+        item = next(
+            (x for x in obj["evidence_items"] if x["id"] == "proverbs-6-surety-and-stranger"),
+            None,
+        )
+        self.assertIsNotNone(item)
+        self.assertEqual("cultural-practice", item["evidence_type"])
+        self.assertEqual(["Proverbs 6:1-5"], [x["reference"] for x in item["scripture_references"]])
+        self.assertIn("proverbs-masoretic", item["source_ids"])
+        self.assertIn("whybray-proverbs-cambridge-1972", item["source_ids"])
+        self.assertEqual("lexical_uncertainty", item["dispute_status"])
+        self.assertEqual("disputed", item["certainty"])
+        self.assertIn("foreigner", item["scholarly_interpretation"].lower())
+        self.assertIn("israelite", item["scholarly_interpretation"].lower())
+        self.assertEqual("draft", obj["content_status"])
+        self.assertEqual("in_review", obj["review_status"])
+        self.assertTrue(obj["human_review_required"])
+
 
 if __name__ == "__main__":
     unittest.main()

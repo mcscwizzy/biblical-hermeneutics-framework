@@ -55,3 +55,20 @@ def test_ed2_master_wisdom_b1_projects_exact_scopes_and_discloses_sources():
         assert edges[0]["basis"]["kind"] == "ckl_scripture_anchor"
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_wisdom_b2_projects_surety_evidence_with_source_disclosure():
+    records = _load_ckl("books/proverbs.json")
+    result = _project("Proverbs 6", canonical=_lookup("ckl", records=records))
+    projected_id = "ckl:proverbs#evidence:proverbs-6-surety-and-stranger"
+    matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+    assert len(matches) == 1
+    projected = _item(result, projected_id)
+    assert projected["evidence_category"] == "cultural-practice"
+    assert [x["reference"] for x in projected["applicable_passage_anchors"]] == ["Proverbs 6:1-5"]
+    assert "whybray-proverbs-cambridge-1972" in projected["source_ids"]
+    assert any(source["bibliographic_details"].get("locator") == "Commentary on Proverbs 6:1-5, pp. 94-95" for source in projected["sources"])
+    assert projected["rationale"]["primary_observation"]
+    assert projected["rationale"]["scholarly_interpretation"]
+    assert projected["review_status"] == "in_review"
+    assert projected["human_review_required"] is True
