@@ -146,3 +146,23 @@ The full ED-1A census passes for all 1,189 chapters with zero unmapped identitie
 | Every other biblical book | unchanged | unchanged | unchanged | unchanged |
 
 A8 moved six Psalm chapters from no eligible item to passage-specific eligibility. The CKL contains 1,359 typed evidence items, 2,329 claims, and 687 objects; the source audit reports 5,297 source occurrences and 2,848 source identities. Those totals include the ED-2A baseline and earlier A1–A7 additions.
+
+
+### Wave A, batch A9 — Psalms 57, 58, 69, 76, 94, and 99
+
+The corrected ED-1A census passes for all 1,189 chapters with zero unmapped identities. Four chapters moved from no eligible material to passage-specific evidence; Psalm 58 and Psalm 76 remain deferred after source-access and verification review.
+
+| Coverage category | After A8 | After A9 | Change |
+|---|---:|---:|---:|
+| Passage-specific evidence | 1,043 | 1,047 | +4 |
+| Contextual-only coverage | 68 | 68 | 0 |
+| Entity-only coverage | 3 | 3 | 0 |
+| No eligible passage-specific material | 74 | 70 | −4 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+| Book | After A8 specific | After A9 specific | After A8 no-eligible | After A9 no-eligible |
+|---|---:|---:|---:|---:|
+| Psalms | 111 | 115 | 16 | 12 |
+| Every other biblical book | unchanged | unchanged | unchanged | unchanged |
+
+A9 adds four records addressing Psalm 57’s reuse in Psalm 108, the debated restoration stanza of Psalm 69, later Jewish weekday reception and proposed poetic sequence for Psalm 94, and Zion’s function in Psalm 99’s kingship sequence. All remain draft/in-review. The corrected Psalm 69 anchor maps Lyons’s superscription-inclusive 69:35–37 to BHF 69:34–36. CKL totals are 687 objects, 2,329 claims, and 1,363 typed evidence items. The ED-1A source audit reports 5,300 bibliography occurrences and 2,852 distinct source IDs. These are inventory and eligibility measures, not scholarly completeness scores. See the [A9 packet](wave-a-psalms/psalms-research-packets-a9.md) and updated [chapter backlog](research-backlog.csv).

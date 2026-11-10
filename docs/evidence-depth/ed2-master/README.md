@@ -29,4 +29,4 @@ This is the working ledger for the comprehensive evidence-enrichment branch. It 
 
 Every addition remains draft/in-review and requires human review. No reviewed NE-9C/NE-10 decision may be changed by this program. Archaeological catalog metadata remains owned by the archaeology service.
 
-Latest validated batch: A8 (Psalms 70, 86, 87, 98, 101, 108), commit `ec33a4f2974e306734a6ebccbd8ecc3889104694`. Since the ED-2A baseline, 50 evidence items have been added across 50 newly source-backed Psalm-focused research questions, and the all-chapter census now reports 1,043 chapters with passage-specific material and 74 with none. These are eligibility counts, not a completeness score.
+Latest validated batch: A9 (Psalms 57, 69, 94, and 99), evidence commit `258cb7729e8f517a`. Since the ED-2A baseline, 54 evidence items have been added across Wave A research, and the all-chapter census now reports 1,047 chapters with passage-specific material and 70 with none. These are eligibility counts, not a completeness score. Psalm 69’s source superscription-inclusive numbering is mapped to BHF verses 34–36.

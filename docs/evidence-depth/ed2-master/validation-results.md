@@ -106,3 +106,15 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Protected decisions: no NE-9C/NE-10 inputs, verified/held decisions, relationship registries, or historical checkpoints were changed or regenerated.
 - Human review: all six additions remain draft/in-review and require scholarly review.
 - Evidence commit: `ec33a4f2974e306734a6ebccbd8ecc3889104694`.
+
+
+## Wave A, batch A9 — Psalms 57, 58, 69, 76, 94, and 99
+
+- Strict CKL validation: 687 valid objects, 0 errors, and 14 inherited `incomplete_section_status` warnings.
+- Manifest/reference checks: regenerated manifest semantically matches the checked manifest. All four exact BHF anchors and supporting source identities resolve. A first census surfaced the source’s superscription-inclusive numbering for Psalm 69; the record was corrected from an out-of-range 69:35–37 to BHF 69:34–36, with the mapping documented in the record and packet, then the full audit was rerun.
+- ED-1A census after correction: 1,189/1,189 chapters, zero unmapped identities; 1,047 passage-specific, 68 contextual-only, 3 entity-only, 70 no-eligible, and 1 incomplete/unknown. Psalms is 115 specific, 22 contextual, 1 entity-only, and 12 no-eligible. The remaining incomplete chapter is the inherited Obadiah anchor; no A9 anchor remains out of bounds. The audit passed 19 deterministic and 16 live service samples.
+- CKL and source inventory: 687 objects, 2,329 claims, 1,363 typed evidence items, 5,300 source-record occurrences, and 2,852 source IDs. Three new scholarly source identities and one reused scholarly source were added/used; two unresolved child-source references remain inherited.
+- Narrative Explorer regression: 11 ED-2 CKL tests, 72 projection/regression tests, and 81 manifest/schema package tests passed. The protected NE-9C/NE-10 suites passed 464 tests. Exact scope, source locator disclosure, primary observation, attributed interpretation, uncertainty and human-review fields, and the absence of new authored cross-passage routes were verified.
+- Heuristic quality report: 63 error-severity findings and 1,043 warnings versus 1,039 after A8. The four additional findings are `unknown-passage-chronology` warnings; no new heuristic errors. These remain heuristic review signals, separate from strict schema validation.
+- Protected decisions: no NE-9C/NE-10 records, held or verified decisions, historical checkpoints, API contracts, or relationship registries changed. All four records remain draft/in-review and require human scholarly review; no human reviewer is named.
+- Evidence commit: `258cb7729e8f517a` (`research: add ED-2 Psalms batch A9`).
