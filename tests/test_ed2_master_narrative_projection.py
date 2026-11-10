@@ -156,12 +156,45 @@ EXPECTED_A12 = {
     "psalm-32-two-stanza-wisdom-structure": ("Psalm 32", ["Psalm 32:1-11"], ["potgieter-psalm32-structure-homogeneity-2014"]),
 }
 
+EXPECTED_A13 = {
+    "psalm-34-instruction-and-wisdom-rhetoric": ("Psalm 34", ["Psalm 34:11-14"], "brown-psalm34-wisdom-rhetoric-2005"),
+    "psalm-40-reception-in-4q160": ("Psalm 40", ["Psalm 40:2-4"], "jassen-psalm40-4q160-reception-2006"),
+    "psalm-73-ring-composition-proposal": ("Psalm 73", ["Psalm 73:1-28"], "wong-psalm73-ring-composition-2016"),
+    "psalm-78-introduction-and-historical-didactic-recitations": ("Psalm 78", ["Psalm 78:1-8", "Psalm 78:9-72"], "kim-vanrooy-psalm78-textual-dimension-2000"),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
     psalms = _load_ckl("books/psalms.json")
     for passage, _, _ in EXPECTED.values():
         result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a13_project_exact_scopes_and_disclose_sources():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchors, scholarly_source) in EXPECTED_A13.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+        assert len(matches) == 1
+        projected = _item(result, projected_id)
+        assert projected["record_kind"] == "evidence"
+        assert [x["reference"] for x in projected["passage_anchors"]] == anchors
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == anchors
+        assert {"psalms-masoretic", scholarly_source}.issubset(projected["source_ids"])
+        assert len(projected["sources"]) == 2
+        assert all(x["details_available"] for x in projected["sources"])
+        assert all(x["bibliographic_details"].get("locator") for x in projected["sources"])
+        assert projected["claim_text"]
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["confidence"] in {"low", "medium"}
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []
 

@@ -132,6 +132,13 @@ EXPECTED_A12 = {
     "psalm-32-two-stanza-wisdom-structure": (["Psalm 32:1-11"], ["potgieter-psalm32-structure-homogeneity-2014"]),
 }
 
+EXPECTED_A13 = {
+    "psalm-34-instruction-and-wisdom-rhetoric": (["Psalm 34:11-14"], ["brown-psalm34-wisdom-rhetoric-2005"]),
+    "psalm-40-reception-in-4q160": (["Psalm 40:2-4"], ["jassen-psalm40-4q160-reception-2006"]),
+    "psalm-73-ring-composition-proposal": (["Psalm 73:1-28"], ["wong-psalm73-ring-composition-2016"]),
+    "psalm-78-introduction-and-historical-didactic-recitations": (["Psalm 78:1-8", "Psalm 78:9-72"], ["kim-vanrooy-psalm78-textual-dimension-2000"]),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -559,6 +566,37 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
         self.assertEqual("in_review", self.book["review_status"])
         self.assertEqual([], self.book["reviewed_by"])
         self.assertTrue(self.book["human_review_required"])
+
+    def test_a13_additions_have_exact_scope_resolved_sources_and_access_limits(self) -> None:
+        self.assertTrue(set(EXPECTED_A13).issubset(self.evidence))
+        for evidence_id, (references, scholarly_sources) in EXPECTED_A13.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual(references, [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual({"psalms-masoretic", *scholarly_sources}, set(item["source_ids"]))
+                self.assertTrue(set(item["source_ids"]).issubset(self.sources))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertNotEqual(item["primary_observation"], item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                self.assertIn("psalms-research-packets-a13.md", item["notes"])
+                for source_id in scholarly_sources:
+                    source = self.sources[source_id]
+                    self.assertIn(evidence_id, source["supports"])
+                    self.assertTrue(source["locator"])
+                    self.assertTrue(source["url"])
+        self.assertEqual("low", self.evidence["psalm-34-instruction-and-wisdom-rhetoric"]["confidence"])
+        self.assertEqual("low", self.evidence["psalm-40-reception-in-4q160"]["confidence"])
+        self.assertEqual("low", self.evidence["psalm-73-ring-composition-proposal"]["confidence"])
+        self.assertEqual("medium", self.evidence["psalm-78-introduction-and-historical-didactic-recitations"]["confidence"])
+        self.assertIn("full chapter was not accessible", self.sources["brown-psalm34-wisdom-rhetoric-2005"]["notes"])
+        self.assertIn("full article was not accessible", self.sources["jassen-psalm40-4q160-reception-2006"]["notes"])
+        self.assertIn("abstract and bibliographic record were accessible", self.sources["wong-psalm73-ring-composition-2016"]["notes"])
+        self.assertIn("Full open-access article PDF", self.sources["kim-vanrooy-psalm78-textual-dimension-2000"]["notes"])
 
 
 if __name__ == "__main__":
