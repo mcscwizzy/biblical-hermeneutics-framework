@@ -78,6 +78,15 @@ EXPECTED_A6 = {
     "psalm-45-sound-and-performance-of-royal-poem": ("Psalm 45:1-2", "wendland-psalm45-sound-and-rhetoric-2013"),
 }
 
+EXPECTED_A7 = {
+    "psalm-52-wealth-critique-and-wisdom-intertexts": ("Psalm 52:1-9", "botha-psalm52-wisdom-network-2013"),
+    "psalm-59-evening-threat-and-morning-confidence": ("Psalm 59:1-17", "janowski-psalm59-time-and-prayer-2013"),
+    "psalm-61-royal-voice-proposal": ("Psalm 61:4-7", "lemon-psalms61-63-hezekiah-bulla-2024"),
+    "psalm-63-royal-voice-proposal": ("Psalm 63:7-11", "lemon-psalms61-63-hezekiah-bulla-2024"),
+    "psalm-64-attack-to-vindication-narrative-movement": ("Psalm 64:1-10", "eder-psalm64-narrative-structure-2019"),
+    "psalm-65-zion-to-earth-praise-sequence": ("Psalm 65:1-13", "botha-psalms65-68-cluster-2023"),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -285,6 +294,47 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
         self.assertIn("public court performance", self.evidence["psalm-45-sound-and-performance-of-royal-poem"]["scholarly_interpretation"])
         self.assertEqual("draft", self.book["content_status"])
         self.assertEqual("in_review", self.book["review_status"])
+        self.assertTrue(self.book["human_review_required"])
+
+    def test_a7_additions_have_exact_scope_and_disclosed_source_access(self) -> None:
+        self.assertTrue(set(EXPECTED_A7).issubset(self.evidence))
+        for evidence_id, (reference, source_id) in EXPECTED_A7.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual("literary-convention", item["evidence_type"])
+                self.assertEqual("scholarly-reconstruction", item["assertion_type"])
+                self.assertEqual([reference], [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual("unknown", item["scripture_references"][0]["temporal_relation"])
+                self.assertEqual({"psalms-masoretic", source_id}, set(item["source_ids"]))
+                self.assertTrue(set(item["source_ids"]).issubset(self.sources))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertNotEqual(item["primary_observation"], item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual("plausible", item["certainty"])
+                self.assertEqual("interpretive_uncertainty", item["dispute_status"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                source = self.sources[source_id]
+                self.assertIn(evidence_id, source["supports"])
+                self.assertTrue(source["locator"])
+                self.assertTrue(source["url"])
+                expected_confidence = "low" if evidence_id in {
+                    "psalm-61-royal-voice-proposal",
+                    "psalm-63-royal-voice-proposal",
+                } else "medium"
+                self.assertEqual(expected_confidence, item["confidence"])
+        lemon = self.sources["lemon-psalms61-63-hezekiah-bulla-2024"]
+        self.assertIn("abstract inspected", lemon["notes"])
+        self.assertIn("full article PDF was not accessible", lemon["notes"])
+        self.assertIn("Only the 2024 publisher abstract was consulted", self.evidence["psalm-61-royal-voice-proposal"]["temporal_scope"]["notes"])
+        self.assertIn("limits", self.sources["eder-psalm64-narrative-structure-2019"]["locator"])
+        self.assertEqual("draft", self.book["content_status"])
+        self.assertEqual("in_review", self.book["review_status"])
+        self.assertEqual([], self.book["reviewed_by"])
+        self.assertIsNone(self.book["last_reviewed"])
         self.assertTrue(self.book["human_review_required"])
 
 

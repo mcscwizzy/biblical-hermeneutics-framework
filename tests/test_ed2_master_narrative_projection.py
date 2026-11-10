@@ -102,6 +102,15 @@ EXPECTED_A6 = {
     "psalm-45-sound-and-performance-of-royal-poem": ("Psalm 45", "Psalm 45:1-2", "wendland-psalm45-sound-and-rhetoric-2013"),
 }
 
+EXPECTED_A7 = {
+    "psalm-52-wealth-critique-and-wisdom-intertexts": ("Psalm 52", "Psalm 52:1-9", "botha-psalm52-wisdom-network-2013"),
+    "psalm-59-evening-threat-and-morning-confidence": ("Psalm 59", "Psalm 59:1-17", "janowski-psalm59-time-and-prayer-2013"),
+    "psalm-61-royal-voice-proposal": ("Psalm 61", "Psalm 61:4-7", "lemon-psalms61-63-hezekiah-bulla-2024"),
+    "psalm-63-royal-voice-proposal": ("Psalm 63", "Psalm 63:7-11", "lemon-psalms61-63-hezekiah-bulla-2024"),
+    "psalm-64-attack-to-vindication-narrative-movement": ("Psalm 64", "Psalm 64:1-10", "eder-psalm64-narrative-structure-2019"),
+    "psalm-65-zion-to-earth-praise-sequence": ("Psalm 65", "Psalm 65:1-13", "botha-psalms65-68-cluster-2023"),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
@@ -254,6 +263,42 @@ def test_ed2_master_psalms_a6_project_with_exact_anchors_and_source_disclosure()
         assert projected["rationale"]["primary_observation"]
         assert projected["rationale"]["scholarly_interpretation"]
         assert projected["confidence"] == "medium"
+        assert projected["certainty"] == "plausible"
+        assert projected["dispute_status"] == "interpretive_uncertainty"
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+        assert len(edges) == 1
+        assert edges[0]["target_id"] == f"passage:{anchor}"
+        assert edges[0]["basis"]["kind"] == "ckl_scripture_anchor"
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a7_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchor, scholarly_source) in EXPECTED_A7.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+        assert len(matches) == 1
+        projected = _item(result, projected_id)
+        assert projected["record_kind"] == "evidence"
+        assert projected["evidence_category"] == "literary-convention"
+        assert [x["reference"] for x in projected["passage_anchors"]] == [anchor]
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
+        assert set(projected["section_ids"]) == {"biblical_narrative", "themes_biblical_connections"}
+        assert {"psalms-masoretic", scholarly_source}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        expected_confidence = "low" if local_id in {
+            "psalm-61-royal-voice-proposal",
+            "psalm-63-royal-voice-proposal",
+        } else "medium"
+        assert projected["confidence"] == expected_confidence
         assert projected["certainty"] == "plausible"
         assert projected["dispute_status"] == "interpretive_uncertainty"
         assert projected["content_status"] == "draft"
