@@ -96,6 +96,13 @@ EXPECTED_A8 = {
     "psalm-98-yhwh-kingship-in-book-four-cluster": ("Psalm 98:1-9", "blunda-psalms93-100-kingship-liturgy-2020"),
 }
 
+EXPECTED_A9 = {
+    "psalm-57-reuse-in-psalm108-reframes-praise": ("Psalm 57:7-11", "botha-psalm108-quest-closure-2010"),
+    "psalm-69-restoration-stanza-and-servants": ("Psalm 69:34-36", "lyons-servants-psalms-22-69-102-2021"),
+    "psalm-94-weekday-song-and-poetic-sequence": ("Psalm 94:1-23", "jaffe-psalm94-wednesday-song-2026"),
+    "psalm-99-zion-and-kingship-sequence": ("Psalm 99:1-9", "hamilton-yhwh-kingship-psalms-2023"),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -381,6 +388,38 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
             self.assertIn("abstract", self.evidence[evidence_id]["scholarly_interpretation"].lower())
             self.assertIn("abstract", self.evidence[evidence_id]["temporal_scope"]["notes"].lower())
             self.assertIn("abstract", self.sources[EXPECTED_A8[evidence_id][1]]["notes"].lower())
+        self.assertEqual("draft", self.book["content_status"])
+        self.assertEqual("in_review", self.book["review_status"])
+        self.assertEqual([], self.book["reviewed_by"])
+        self.assertTrue(self.book["human_review_required"])
+
+    def test_a9_additions_have_exact_scope_and_resolved_sources(self) -> None:
+        self.assertTrue(set(EXPECTED_A9).issubset(self.evidence))
+        for evidence_id, (reference, source_id) in EXPECTED_A9.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                expected_type = "cultural-practice" if evidence_id == "psalm-94-weekday-song-and-poetic-sequence" else "literary-convention"
+                self.assertEqual(expected_type, item["evidence_type"])
+                self.assertEqual("scholarly-reconstruction", item["assertion_type"])
+                self.assertEqual([reference], [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual("unknown", item["scripture_references"][0]["temporal_relation"])
+                self.assertEqual({"psalms-masoretic", source_id}, set(item["source_ids"]))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                source = self.sources[source_id]
+                self.assertIn(evidence_id, source["supports"])
+                self.assertTrue(source["locator"])
+                self.assertTrue(source["url"])
+        self.assertEqual("disputed", self.evidence["psalm-69-restoration-stanza-and-servants"]["certainty"])
+        self.assertEqual("major_scholarly_disagreement", self.evidence["psalm-69-restoration-stanza-and-servants"]["dispute_status"])
+        self.assertEqual("disputed", self.evidence["psalm-99-zion-and-kingship-sequence"]["certainty"])
+        self.assertEqual("major_scholarly_disagreement", self.evidence["psalm-99-zion-and-kingship-sequence"]["dispute_status"])
+        self.assertIn("psalm-99-zion-and-kingship-sequence", self.sources["hamilton-yhwh-kingship-psalms-2023"]["supports"])
         self.assertEqual("draft", self.book["content_status"])
         self.assertEqual("in_review", self.book["review_status"])
         self.assertEqual([], self.book["reviewed_by"])

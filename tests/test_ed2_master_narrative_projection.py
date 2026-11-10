@@ -120,6 +120,13 @@ EXPECTED_A8 = {
     "psalm-98-yhwh-kingship-in-book-four-cluster": ("Psalm 98", "Psalm 98:1-9", "blunda-psalms93-100-kingship-liturgy-2020"),
 }
 
+EXPECTED_A9 = {
+    "psalm-57-reuse-in-psalm108-reframes-praise": ("Psalm 57", "Psalm 57:7-11", "botha-psalm108-quest-closure-2010"),
+    "psalm-69-restoration-stanza-and-servants": ("Psalm 69", "Psalm 69:34-36", "lyons-servants-psalms-22-69-102-2021"),
+    "psalm-94-weekday-song-and-poetic-sequence": ("Psalm 94", "Psalm 94:1-23", "jaffe-psalm94-wednesday-song-2026"),
+    "psalm-99-zion-and-kingship-sequence": ("Psalm 99", "Psalm 99:1-9", "hamilton-yhwh-kingship-psalms-2023"),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
@@ -343,6 +350,26 @@ def test_ed2_master_psalms_a8_project_with_exact_anchors_and_source_disclosure()
         expected_dispute = "major_scholarly_disagreement" if local_id == "psalm-87-zion-status-reading-dispute" else "interpretive_uncertainty"
         assert projected["certainty"] == expected_certainty
         assert projected["dispute_status"] == expected_dispute
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a9_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchor, scholarly_source) in EXPECTED_A9.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        projected = _item(result, projected_id)
+        assert [x["reference"] for x in projected["passage_anchors"]] == [anchor]
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
+        assert {"psalms-masoretic", scholarly_source}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
         assert projected["content_status"] == "draft"
         assert projected["review_status"] == "in_review"
         assert projected["human_review_required"] is True
