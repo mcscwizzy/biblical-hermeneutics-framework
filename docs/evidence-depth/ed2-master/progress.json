@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a12-research",
-  "last_completed_batch": "A11-psalms-58-76-138-144",
-  "next_work": "Continue Wave A qualitative triage for the 22 Psalms with contextual-only coverage and Psalm 73 with entity-only coverage. A12 begins with Psalms 4, 16, 18, 23, 27, 29, 31, and 32; keep eligibility separate from depth and do not add filler. Then continue the remaining contextual-only Psalms before Wave B.",
+  "current_phase": "wave-a-qualitative-triage",
+  "last_completed_batch": "A12-psalms-4-16-18-23-27-29-31-32",
+  "next_work": "Continue qualitative review of the 14 contextual-only Psalm chapters and Psalm 73; add evidence only where precise questions and verifiable sources justify it. Then advance through Waves B–E within the 100-item planning ceiling.",
   "waves": [
     {
       "id": "A",
@@ -79,10 +79,18 @@
         "Psalm 141",
         "Psalm 142",
         "Psalm 143",
-        "Psalm 144"
+        "Psalm 144",
+        "Psalm 4",
+        "Psalm 16",
+        "Psalm 18",
+        "Psalm 23",
+        "Psalm 27",
+        "Psalm 29",
+        "Psalm 31",
+        "Psalm 32"
       ],
-      "evidence_records_added": 66,
-      "source_ids_created": 65,
+      "evidence_records_added": 74,
+      "source_ids_created": 73,
       "source_ids_reused": 3,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
@@ -589,6 +597,52 @@
             "authored_relationships": "No authored related_objects or related_evidence entries added; only direct Scripture-anchor projection connections. Protected NE-9C/NE-10 decisions and historical checkpoints were not changed."
           },
           "commit_sha": "1747080aabac2202bc8e4c9ed0e32bac7de2d081"
+        },
+        {
+          "id": "A12-psalms-4-16-18-23-27-29-31-32",
+          "status": "committed",
+          "passages": [
+            "Psalm 4",
+            "Psalm 16",
+            "Psalm 18",
+            "Psalm 23",
+            "Psalm 27",
+            "Psalm 29",
+            "Psalm 31",
+            "Psalm 32"
+          ],
+          "evidence_records_added": 8,
+          "source_ids_created": [
+            "leite-psalm4-poetic-dialogue-2022",
+            "botha-psalm16-torah-wisdom-2016",
+            "lee-psalm18-rhm-parallel-2022",
+            "arterbury-bellinger-psalm23-hospitality-2005",
+            "botha-psalm27-temple-presence-2021",
+            "toyranvuori-psalm29-methodological-triangulation-2020",
+            "botha-psalm31-cluster-faithful-trust-2023",
+            "potgieter-psalm32-structure-homogeneity-2014"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "chapter_eligibility_improvements": 8,
+          "deferred_research": [
+            "Psalm 4: only the publisher-hosted English abstract was inspected; PDF retrieval failed. The item is limited to the abstract-level discourse/stanza proposal and low confidence.",
+            "Psalm 18: the article body is in Korean; the English abstract/summary and full publication metadata were inspected. No independent Hebrew argument is claimed.",
+            "Psalm 23: the publisher abstract was accessible, while the full article is restricted; the hospitality-based reading is attributed narrowly and low-confidence.",
+            "Psalm 29: only the publisher abstract was accessible. It supports a comparative method that triangulates two Ugaritic compositions and Syrian glyptic; no direct dependence is claimed.",
+            "All eight additions remain draft/in-review and require human scholarly review; no reviewer is named."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
+            "manifest": "Generated manifest semantically matches checked manifest; 687 objects",
+            "chapter_audit": "Pass; all 1,189 chapters mapped; 0 invalid anchors; 1,067 passage-specific, 60 contextual, 3 entity-only, 58 no-eligible, 1 incomplete/unknown. Psalms: 135 specific, 14 contextual, 1 entity-only. Passed 19 deterministic and 16 live service samples.",
+            "source_integrity": "Eight new scholarly source identities; all new source links, locators, and evidence support references resolve. Totals: 5,320 source occurrences / 2,871 source IDs (identity audit counts 2,872); 2 unresolved child-source references inherited.",
+            "projection_and_disclosure": "All eight exact anchors project once with source disclosure and review/certainty/dispute metadata; no new authored relationship routes.",
+            "regression_tests": "Focused authoring tests: 14 passed; ED-2 projection tests: 13 passed; complete ED-2A/current Narrative Explorer projection suites: 64 passed; package/schema/manifest/source-lock tests: 55 passed and 13 subtests; curation and passage regression suites: 483 passed. The API test module could not collect because FastAPI is not installed.",
+            "deep_heuristic": "63 error-severity findings and 1,066 heuristic warnings; eight more warnings than A11, with no new heuristic errors. Strict CKL warnings remain separately reported.",
+            "authored_relationships": "No authored related_objects or related_evidence entries added; protected NE-9C/NE-10 decisions and historical checkpoints unchanged."
+          },
+          "commit_sha": "44f74c1f"
         }
       ]
     },

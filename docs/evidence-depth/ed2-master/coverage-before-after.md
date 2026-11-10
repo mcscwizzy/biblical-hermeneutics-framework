@@ -208,3 +208,8 @@ The full ED-1A census passes all 1,189 chapters with zero unmapped identities or
 A11 adds eight evidence records and nine scholarly source identities. The records address versional readings at Psalm 58:1; the unspecified battle and Zion imagery of Psalm 76; Psalm 138’s place in the final Davidic Psalter; Selah and petition structure in Psalm 140; a disputed lexical/pronominal reading in Psalm 141; the cave superscription’s historical limits in Psalm 142; competing Pauline reception readings of Psalm 143:2; and Psalm 144’s dependent royal-victory imagery. All remain draft/in-review. The ED-1A source inventory reports 5,312 source occurrences and 2,863 identities; inherited source-reference issues remain unchanged.
 
 The current Psalm census also identifies 22 chapters with contextual-only coverage and Psalm 73 with entity-only coverage. Those categories are not passage-specific evidence: each of the 23 chapters has zero passage-anchored claims and typed evidence items in the census. They remain part of Wave A qualitative triage. Chapter coverage is an eligibility signal, not a scholarly completeness score. The A11 audit artifacts are in `/tmp/ed2-master-wave-a11/`.
+
+
+### Wave A, batch A12 — Psalms 4, 16, 18, 23, 27, 29, 31, and 32
+
+A12 was audited across all 1,189 chapters. Eight previously contextual-only Psalm chapters gained passage-anchored evidence. The census now reports 1,067 passage-specific chapters, 60 contextual-only, 3 entity-only, 58 with no eligible item, and 1 incomplete/unknown. Psalms has 135 passage-specific chapters, 14 contextual-only, and Psalm 73 remains entity-only. The eight eligibility changes do not establish scholarly completeness. See the [A12 research packet](wave-a-psalms/psalms-research-packets-a12.md).

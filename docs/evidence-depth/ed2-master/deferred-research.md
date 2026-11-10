@@ -100,3 +100,13 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 144: the publisher’s HTML exposes footnote 50 and nearby discussion, while marking the full article access-restricted. Only the directly visible argument supports the CKL item.
 - The current Psalm census has no zero-eligible chapters, but 22 are contextual-only and Psalm 73 is entity-only. The ED-1A census shows no passage-anchored claims or typed evidence items for those 23 chapters. They remain Wave A priorities; clearing the zero count does not complete Psalm depth review.
 - All A11 records require human scholarly review and remain draft/in-review. No human approval is recorded.
+
+
+## Wave A, batch A12 limitations and remaining triage
+
+- Psalm 4: the publisher-hosted English abstract was inspected, but PDF retrieval failed; the item reports only its narrow discourse/stanza proposal at low confidence.
+- Psalm 18: the article body is in Korean. The English abstract/summary and bibliographic metadata were inspected; no independent Hebrew argument is claimed.
+- Psalm 23: only the publisher abstract was accessible; the hospitality reading is narrowly attributed at low confidence.
+- Psalm 29: only the publisher abstract was accessible. It supports methodological triangulation of two Ugaritic compositions and Syrian glyptic; no direct literary dependence is asserted.
+- After A12, 14 Psalm chapters remain contextual-only and Psalm 73 remains entity-only. All have zero passage-anchored claims and typed evidence items in the census. Each remains for qualitative review; no filler is planned.
+- All eight A12 records remain draft/in-review and require scholarly review; no human reviewer is recorded.

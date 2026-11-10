@@ -145,3 +145,15 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Protected decisions: no NE-9C/NE-10 records, held or verified decisions, historical checkpoints, API contracts, or relationship registries changed. The eight items author no `related_objects` or `related_evidence` links; the Psalm 143 item remains reception-history evidence, not a reviewed bridge.
 - Review status: all eight additions remain draft/in-review, require human scholarly review, and have no human reviewer recorded.
 - Evidence commit: `1747080aabac2202bc8e4c9ed0e32bac7de2d081` (`research: add ED-2 Psalms batch A11`).
+
+
+## Wave A, batch A12 — Psalms 4, 16, 18, 23, 27, 29, 31, and 32
+
+- Strict CKL validation passed: 687 valid objects, 0 errors, and the same 14 inherited `incomplete_section_status` warnings. Framework validation passed for 94 modules. The generated manifest semantically matches the checked manifest.
+- ED-1A census passed for all 1,189 chapters with no unmapped record identities or invalid anchors. Coverage is 1,067 passage-specific, 60 contextual-only, 3 entity-only, 58 no-eligible, and 1 incomplete/unknown; Psalms is 135 specific, 14 contextual, and 1 entity-only. Nineteen deterministic and 16 live service samples passed.
+- Source inventory: 687 objects, 2,329 claims, 1,383 typed evidence items, 5,320 source occurrences and 2,871 source IDs (the separate identity audit counts 2,872). The two unresolved child-source references are inherited.
+- Focused authoring tests passed (14); ED-2 projection tests passed (13); package/schema/manifest/source-lock tests passed (55 tests and 13 subtests). The curation and passage regression suites passed (483); the complete current Narrative Explorer projection suites passed (64). `tests/test_narrative_explorer_api.py` could not collect because FastAPI is not installed.
+- Deep heuristic report: 63 error-severity findings and 1,066 warnings, eight more warnings than A11 and no new heuristic errors. These heuristic findings are separate from strict CKL validation.
+- No NE-9C/NE-10 files, relationship decisions, or historical checkpoints changed. No authored relationships were added. All A12 items remain draft/in-review and require human scholarly review.
+
+- Evidence commit: `44f74c1f` (`research: add ED-2 Psalms batch A12`).
