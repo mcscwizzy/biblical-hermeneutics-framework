@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-b-wisdom",
-  "last_completed_batch": "B1-wisdom-proverbs2-28-ecclesiastes10",
-  "next_work": "Continue Wave B with Proverbs 6:1-5 and remaining P1 wisdom gaps using passage-specific source verification, then begin Wave C history. Keep the total program at or below 100 new evidence items and return to Wave A contextual-only Psalms as evidence quality and remaining capacity allow.",
+  "current_phase": "wave-c-history",
+  "last_completed_batch": "B2-wisdom-proverbs6-surety",
+  "next_work": "Begin Wave C with source-verified priority questions in 2 Chronicles 14, 18, and 25, then continue Waves D and E. Wave B remains in progress: nine Proverbs chapters still lack eligible passage-specific evidence and Wisdom books need qualitative review. Return to those Wisdom gaps and the 11 contextual-only Psalms as the 100-item ceiling and source quality allow.",
   "waves": [
     {
       "id": "A",
@@ -709,10 +709,11 @@
       "passages_researched": [
         "Proverbs 2:1-22",
         "Proverbs 28:1-28",
-        "Ecclesiastes 10:1"
+        "Ecclesiastes 10:1",
+        "Proverbs 6:1-5"
       ],
-      "evidence_records_added": 3,
-      "source_ids_created": 3,
+      "evidence_records_added": 4,
+      "source_ids_created": 4,
       "source_ids_reused": 0,
       "deferred_gaps": [],
       "validation": null,
@@ -762,6 +763,45 @@
             "authored_relationships": "No related_objects or related_evidence entries added; NE-9C/NE-10 inputs, decisions, and historical checkpoints unchanged"
           },
           "commit_sha": "50971273"
+        },
+        {
+          "id": "B2-wisdom-proverbs6-surety",
+          "status": "committed",
+          "passages": [
+            "Proverbs 6:1-5"
+          ],
+          "evidence_records_added": 1,
+          "evidence_ids": [
+            "proverbs-6-surety-and-stranger"
+          ],
+          "source_ids_created": [
+            "whybray-proverbs-cambridge-1972"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "chapter_eligibility_improvements": 1,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 1,
+            "contextual_only": 0,
+            "entity_only": 0,
+            "no_eligible": -1
+          },
+          "deferred_research": [
+            "The record is based on one inspected commentary and reports its alternatives; comparison with other modern analyses of zār and ancient credit practice remains open.",
+            "The commentary does not establish a concrete transaction, general Israelite legal procedure, or composition date.",
+            "The record remains draft/in_review and requires human scholarly review; no human reviewer is named."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings; Proverbs file has 0 warnings",
+            "manifest": "Regenerated manifest semantically matches checked manifest; new source, support link, and exact anchor resolve",
+            "chapter_audit": "ED-1A passed 1,189/1,189 chapters; 0 unmapped identities and 0 invalid anchors; 1,075 specific, 57 contextual-only, 2 entity-only, 54 no-eligible, 1 incomplete/unknown; 19 deterministic and 16 live service samples passed",
+            "source_integrity": "1 new source identity; source inventory 5,328 occurrences / 2,879 IDs; separate identity audit 2,880 unique IDs; inherited 2 unresolved child-source references and 1 expected missing locator remain",
+            "projection_and_disclosure": "Exact Proverbs 6:1-5 anchor projects once in cultural-practice with source/bibliography locator, primary observation, attributed interpretation, dispute/review metadata; no authored relationship routes",
+            "regression_tests": "Focused B1/B2 authoring and projection suites: 86 passed, 3 subtests passed; manifest/schema/source-lock package tests: 51 passed, 13 subtests passed",
+            "deep_heuristic": "63 error-severity findings, 1,074 warnings; B2 adds 1 unknown-passage-chronology review signal and no new heuristic errors",
+            "protected_relationships": "No NE-9C/NE-10 files or decisions changed; current audit reports 433 accepted curation records, 44 verified NE-10 bridges, and 7 held candidates"
+          },
+          "commit_sha": "c011ab71"
         }
       ]
     },
@@ -825,5 +865,9 @@
   },
   "source_identity_changes": [],
   "protected_state": "NE-9C/NE-10 unchanged from origin/master; historical fingerprint check is expected to differ because the accepted base already includes ED-2A, so compare protected artifacts/decisions directly and do not regenerate checkpoints.",
-  "source_id_counting_policy": "Source identity creation/reuse counts cover research bibliography identities; the standard Psalms text source is reused for verse comparison but excluded from these counts."
+  "source_id_counting_policy": "Source identity creation/reuse counts cover research bibliography identities; the standard Psalms text source is reused for verse comparison but excluded from these counts.",
+  "total_evidence_records_added": 82,
+  "total_source_ids_created": 81,
+  "total_source_ids_reused": 3,
+  "remaining_evidence_item_ceiling": 18
 }

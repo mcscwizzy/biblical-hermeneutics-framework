@@ -250,3 +250,18 @@ B1 added three passage-specific evidence items and three source identities. The 
 | Incomplete/unknown | 1 | 1 | 0 |
 
 The new studies address the syntax and conditional organization proposed for Proverbs 2, a publisher-abstract-level literary frame and social-ethical reading of Proverbs 28–29, and the translation/textual uncertainty of Ecclesiastes 10:1’s “flies of death.” The Gilbert article’s full argument was inaccessible, so that item is low-confidence and limited to the abstract. All three records remain draft/in-review. Eligibility change is not a depth score; Proverbs still has ten zero-eligible chapters after B1, while Ecclesiastes has none. See the [B1 research packets](wave-b-wisdom/wisdom-research-packets-b1.md).
+
+
+### Wave B, batch B2 — Proverbs 6:1–5
+
+B2 added one passage-specific item and one source identity. Proverbs 6 moved from no eligible material to passage-specific evidence. The full-canon census now reports 1,075 specific chapters, 57 contextual-only, 2 entity-only, 54 with no eligible passage-specific material, and 1 incomplete/unknown.
+
+| Coverage category | After B1 | After B2 | Change |
+|---|---:|---:|---:|
+| Passage-specific evidence | 1,074 | 1,075 | +1 |
+| Contextual-only coverage | 57 | 57 | 0 |
+| Entity-only coverage | 2 | 2 | 0 |
+| No eligible passage-specific material | 55 | 54 | −1 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+Within Proverbs, specific chapter coverage rose from 20 to 21 and no-eligible chapters fell from 10 to 9; one contextual-only chapter is unchanged. The item explains Whybray’s reading of surety language and competing interpretations of “stranger,” without treating one commentary’s reconstruction as settled social history. It remains draft/in-review. See the [B2 research packet](wave-b-wisdom/wisdom-research-packets-b2.md).

@@ -127,3 +127,9 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Proverbs 2: Loader’s structural proposal is reported alongside an alternative reading; syntax does not establish a particular school, performance event, or date.
 - Ecclesiastes 10:1: Whybray’s note documents possible readings and likely textual corruption but does not resolve the Hebrew wording; manuscript comparison remains open.
 - All three records need human scholarly review and remain draft/in-review.
+
+
+## Wave B, batch B2
+
+- Proverbs 6:1–5: the added record is grounded in Whybray’s full commentary pages 94–95. A second modern treatment of the lexical alternatives and independent evidence about ancient surety practice remain to be reviewed; no specific transaction, legal procedure, or composition date is asserted.
+- The Proverbs 6 record remains draft/in-review and requires human scholarly review.

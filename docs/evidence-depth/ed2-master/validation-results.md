@@ -183,3 +183,16 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Deep heuristic report: 63 error-severity findings and 1,073 warnings. B1 adds three `unknown-passage-chronology` review signals and no new heuristic errors; these signals do not establish scholarly defects.
 - Human review: all three additions are draft/in-review and require scholarly review. No reviewer or approval is claimed.
 - Evidence commit: `50971273` (`research: add ED-2 wisdom batch B1`).
+
+
+## Wave B, batch B2 — Proverbs 6:1–5
+
+- Strict CKL validation: 687 valid objects, 0 errors, and the same 14 inherited `incomplete_section_status` warnings. The Proverbs object validates with 0 warnings.
+- Manifest/reference integrity: regenerated manifest is byte-equivalent to the checked manifest; exact anchor and new source-support reference resolve.
+- Source integrity: one new source ID; full census reports 5,328 source occurrences and 2,879 IDs, while the separate identity audit reports 2,880 unique IDs. The one-count scope difference is inherited. Two unresolved child-source references and one expected missing locator remain inherited.
+- ED-1A: pass across 1,189/1,189 chapters, 0 unmapped record identities, and 0 invalid anchors. Coverage: 1,075 specific, 57 contextual-only, 2 entity-only, 54 no-eligible, and 1 incomplete/unknown. All 19 deterministic and 16 targeted service samples passed.
+- Narrative Explorer projection and source disclosure: the B2 exact scope appears once under cultural-practice with the p. 94–95 source locator, primary observation, attributed interpretation, dispute state, and human-review status. No authored cross-passage route was added.
+- Regression tests: B1/B2 Wisdom authoring and projection tests passed (86 tests, 3 subtests); manifest/schema/source-lock package tests passed (51 tests, 13 subtests). The full protected curation, passage, and source-lock suites previously passed 510 tests in B1; B2 changed no NE-9C/NE-10 files or decisions.
+- Deep heuristic report: 63 error-severity findings and 1,074 warnings. B2 adds one `unknown-passage-chronology` review signal and no new heuristic errors. The audit reports 433 accepted curation records, 44 verified NE-10 bridges, and 7 held candidates.
+- Human review: the addition remains draft/in-review; no reviewer or approval is claimed.
+- Evidence commit: `c011ab71` (`research: add ED-2 wisdom batch B2`).
