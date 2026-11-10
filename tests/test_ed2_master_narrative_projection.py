@@ -87,6 +87,13 @@ EXPECTED_A4 = {
     "psalm-139-imprecation-and-ambiguity-in-prayer": ("Psalm 139", "Psalm 139:19-24", "firth-psalm139-ambiguity-2019"),
 }
 
+EXPECTED_A5 = {
+    "psalm-39-wisdom-reflection-and-delayed-retribution": ("Psalm 39", "Psalm 39:1-13", "botha-psalm39-retribution-2017"),
+    "psalm-48-zion-security-and-remembered-space": ("Psalm 48", "Psalm 48:8-14", "steiner-psalm48-narrated-space-2012"),
+    "psalm-62-community-address-and-wealth-warning": ("Psalm 62", "Psalm 62:8-12", "botha-psalm62-community-exhortation-2018"),
+    "psalm-71-old-age-and-generational-witness": ("Psalm 71", "Psalm 71:17-21", "liess-psalm71-aging-and-generational-witness-2023"),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
@@ -177,6 +184,38 @@ def test_ed2_master_psalms_a4_project_with_exact_anchors_and_source_disclosure()
         assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
         assert projected["rationale"]["primary_observation"]
         assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+        assert len(edges) == 1
+        assert edges[0]["target_id"] == f"passage:{anchor}"
+        assert edges[0]["basis"]["kind"] == "ckl_scripture_anchor"
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a5_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchor, scholarly_source) in EXPECTED_A5.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+        assert len(matches) == 1
+        projected = _item(result, projected_id)
+        assert projected["record_kind"] == "evidence"
+        assert projected["evidence_category"] == "literary-convention"
+        assert [x["reference"] for x in projected["passage_anchors"]] == [anchor]
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
+        assert set(projected["section_ids"]) == {"biblical_narrative", "themes_biblical_connections"}
+        assert {"psalms-masoretic", scholarly_source}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["confidence"] == "medium"
+        assert projected["certainty"] == "plausible"
+        assert projected["dispute_status"] == "interpretive_uncertainty"
         assert projected["content_status"] == "draft"
         assert projected["review_status"] == "in_review"
         assert projected["human_review_required"] is True
