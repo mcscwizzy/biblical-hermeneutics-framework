@@ -59,3 +59,14 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 38: body imagery may be literal, figurative, or symbolic. The poem and Human's interpretation do not identify a specific medical condition or cause.
 - Psalm 45: Wendland's sound and translation analysis is a scholarly stylistic reading. The proposed public royal declamation is not independently established, and Chewa examples do not determine a universal translation choice.
 - The five selected Psalms now have eligible records; 28 baseline P1 Psalms remain without eligible passage-specific evidence after this batch. Continue researching uncovered and substantively thin Psalms before advancing through Wisdom, Historical, Prophetic, and New Testament priorities. Eligibility alone does not establish sufficient depth.
+
+
+## Wave A, batch A7 limitations and remaining triage
+
+- Psalm 52: Botha's wisdom network and late Persian-period setting are attributed arguments, not independently established literary dependence or a precise date.
+- Psalm 59: the evening-to-morning movement is a reading of the poem's structure. The refrain relationship, historical occasion, and superscription's historical force remain unresolved.
+- Psalms 61 and 63: only the publisher abstract of LeMon's 2024 article was accessible. The CKL entries report its narrow royal-voice proposal and do not claim independent access to the bulla, its provenance, or its archaeological details; full-text review is needed.
+- Psalm 64: the attack-to-vindication sequence is a narratological observation and does not establish a recoverable historical event or performance context.
+- Psalm 65: the proposed relation to Psalms 66–68 and Zion-to-earth praise sequence remain an editorial/literary interpretation, not a dated cultic practice.
+- Superscription-based verse numbering varies across the consulted Psalms publications; the packet records the correspondence to BHF anchors.
+- Following A7, 22 Psalm chapters remain without eligible passage-specific material. Other Psalm chapters remain candidates for qualitative review even where eligible evidence exists. Continue Wave A systematically, then advance through Waves B–E. Eligibility does not establish sufficient depth.

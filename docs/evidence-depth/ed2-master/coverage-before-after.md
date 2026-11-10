@@ -118,3 +118,11 @@ The current full ED-1A census still covers all 1,189 chapters with no unmapped r
 Within Psalms, passage-specific chapters increase from 94 to 99, and chapters with no eligible material decrease from 33 to 28. Psalms remains at 22 contextually covered chapters and one entity-only chapter. At the book level, Psalms is the only book changed by A6; the other 65 books' eligibility categories are unchanged from the A5 checkpoint.
 
 CKL totals after A6 are 687 objects, 2,329 claims, and 1,347 typed evidence items. The batch adds five literary-convention evidence items, five source identities, and no claims or objects. The source inventory contains 5,286 source-record occurrences and 2,837 source identities. These counts measure inventory and eligibility, not scholarly completeness.
+
+
+## Wave A, batch A7 — Psalms 52, 59, 61, 63, 64, and 65
+
+- The six target Psalms moved from no eligible passage-specific material to eligible evidence. Across the canon, passage-specific chapter coverage rose from 1,031 to 1,037; contextual-only remained 68, entity-only 3, no-eligible fell from 86 to 80, and incomplete/unknown remained 1.
+- Psalms coverage rose from 99 to 105 passage-specific chapters. Its 22 contextual, 1 entity-only, and 22 remaining no-eligible chapters are unchanged by classification; all other 65 books have unchanged coverage categories.
+- These are eligibility counts, not a scholarly-completeness score. The six evidence items address wisdom-poetic context (Psalm 52), lament structure and temporal movement (Psalm 59), an abstract-level royal-voice proposal (Psalms 61 and 63), narrative movement (Psalm 64), and a proposed editorial cluster and praise sequence (Psalm 65).
+- CKL now contains 687 objects, 2,329 claims, and 1,353 typed evidence items. The audit reports 5,291 source-record occurrences and 2,842 source identities under its source inventory metric; a separate source-identity audit counts 2,843 unique IDs due to its counting scope.

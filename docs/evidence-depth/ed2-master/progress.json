@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a7-research",
-  "last_completed_batch": "A6-psalms-12-28-35-38-45",
-  "next_work": "Continue the systematic Psalms pass across the 28 remaining baseline no-eligible chapters and substantively thin Psalms; then work Wave B Wisdom literature, Wave C Historical books, Wave D Prophets, and Wave E New Testament.",
+  "current_phase": "wave-a-batch-a8-research",
+  "last_completed_batch": "A7-psalms-52-59-61-63-64-65",
+  "next_work": "Continue Wave A through remaining baseline no-eligible and substantively thin Psalms; then complete prioritized Wave B Wisdom, Wave C Historical books, Wave D Prophets, and Wave E New Testament.",
   "waves": [
     {
       "id": "A",
@@ -51,10 +51,16 @@
         "Psalm 28",
         "Psalm 35",
         "Psalm 38",
-        "Psalm 45"
+        "Psalm 45",
+        "Psalm 52",
+        "Psalm 59",
+        "Psalm 61",
+        "Psalm 63",
+        "Psalm 64",
+        "Psalm 65"
       ],
-      "evidence_records_added": 38,
-      "source_ids_created": 39,
+      "evidence_records_added": 44,
+      "source_ids_created": 44,
       "source_ids_reused": 1,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
@@ -75,19 +81,25 @@
         "Psalm 28: the final verse’s function and the poem’s social setting remain disputed.",
         "Psalm 35: genre, historical occasion, and Davidic authorship remain unresolved; military and legal imagery are interpreted as a literary pattern.",
         "Psalm 38: body imagery may be literal, figurative, or symbolic; no medical diagnosis is inferred.",
-        "Psalm 45: Wendland’s proposal of public royal declamation is not independent evidence of a specific performance event."
+        "Psalm 45: Wendland’s proposal of public royal declamation is not independent evidence of a specific performance event.",
+        "Psalm 52: Botha’s late Persian-period setting and wisdom-network reconstruction are attributed proposals; the article does not establish a precise composition date or direct literary dependence.",
+        "Psalm 59: Janowski’s evening-to-morning reading is a literary interpretation. The relation of the repeated prayer/refrain and any historical occasion remain unresolved; the superscription is not used to date composition.",
+        "Psalms 61 and 63: LeMon’s publisher abstract alone was accessible. Entries report only the abstract’s proposal that the bulla analysis strengthens a royal-voice reading; no bulla details, provenance, independent archaeological conclusion, or full-article argument is claimed.",
+        "Psalm 64: Eder’s narratological sequence describes the poem’s literary movement; it does not establish a prose historical event, performance setting, or composition date.",
+        "Psalm 65: Botha’s proposed Psalms 65–68 editorial cluster and Zion-to-earth sequence are interpretations, not proof of a specific cultic rite, historical event, or date.",
+        "Hebrew/English superscription-based verse numbering differs from BHF verse anchors for these psalm studies; correspondences are recorded in source metadata and the packet."
       ],
       "validation": {
-        "strict_ckl": "687 valid; 0 errors; 14 inherited incomplete_section_status warnings",
-        "manifest": "Generated manifest semantically matches checked manifest",
-        "chapter_audit": "Pass; 1189 rows, 0 unmapped; 1031 passage-specific, 68 contextual, 3 entity-only, 86 no eligible, 1 incomplete/unknown; Psalms 99 specific, 28 no eligible",
-        "source_integrity": "5 new source identities and 5 new bibliography entries resolve with exact locators; 5286 source-record occurrences and 2837 source identities; inherited 2 unresolved child references, 1 expected missing locator, and 558 IDs without rich bibliography unchanged",
-        "projection_and_disclosure": "Exact anchors, sections, source/locator disclosure, primary observation, interpretation, confidence/dispute/review metadata, one-item projection, and no authored cross-passage or entity routes checked for all 5 additions",
-        "regression_tests": "8 CKL unit tests, 69 targeted Narrative Explorer projection tests, and 24 manifest/schema package tests passed; ED-1A audit passed 19 deterministic samples and 16 live service samples",
-        "deep_heuristic": "63 error-severity findings and 1027 warnings; 5 new unknown-passage-chronology warnings; no new heuristic errors",
-        "authored_relationships": "No authored relationship entries; only exact Scripture-anchor projection edges. NE-9C/NE-10 directories unchanged; audit reports 433 accepted curation records, 44 verified bridges, and 7 held candidates."
+        "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
+        "manifest": "Generated manifest semantically matches checked manifest; all exact Scripture anchors and source-support references resolve",
+        "chapter_audit": "Pass; 1,189 rows, 0 unmapped identities; 1,037 passage-specific, 68 contextual-only, 3 entity-only, 80 no-eligible, 1 incomplete/unknown; Psalms 105 specific, 22 contextual, 1 entity-only, 22 no-eligible",
+        "source_integrity": "5 new scholarly source identities and five source records with exact locators; inherited 2 unresolved child-source references, 1 expected missing locator, and 558 IDs without rich bibliography remain",
+        "projection_and_disclosure": "Exact chapter/verse anchors, reader sections, source/locator disclosure, observation, interpretation, confidence/dispute/review metadata, one-item projection, and no authored cross-passage/entity routes checked for all 6 additions",
+        "regression_tests": "9 CKL ED-2 unit tests; 70 targeted Narrative Explorer projection tests; 24 manifest/schema package tests; 464 NE-9C/NE-10 curation regressions; ED-1A audit passed 19 deterministic and 16 live service samples",
+        "deep_heuristic": "63 error-severity findings and 1,033 warnings; six new unknown-passage-chronology warnings; no new heuristic errors",
+        "authored_relationships": "No new authored relationship entries; exact Scripture-anchor projection only. NE-9C/NE-10 directories and reviewed decisions unchanged; historical checkpoints not regenerated."
       },
-      "commit_sha": "ec244726f95604ff93eb6034f1f480270831976c",
+      "commit_sha": "55265d1d675f0315550997fe5eaf54f6b5d4f374",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -334,6 +346,50 @@
             "authored_relationships": "No new authored relationship entries; protected NE-9C/NE-10 directories unchanged."
           },
           "commit_sha": "ec244726f95604ff93eb6034f1f480270831976c"
+        },
+        {
+          "id": "A7-psalms-52-59-61-63-64-65",
+          "status": "committed",
+          "passages": [
+            "Psalm 52",
+            "Psalm 59",
+            "Psalm 61",
+            "Psalm 63",
+            "Psalm 64",
+            "Psalm 65"
+          ],
+          "evidence_records_added": 6,
+          "source_ids_created": [
+            "botha-psalm52-wisdom-network-2013",
+            "janowski-psalm59-time-and-prayer-2013",
+            "lemon-psalms61-63-hezekiah-bulla-2024",
+            "eder-psalm64-narrative-structure-2019",
+            "botha-psalms65-68-cluster-2023"
+          ],
+          "source_ids_reused": [
+            "psalms-masoretic"
+          ],
+          "source_ids_reused_count": 1,
+          "chapter_eligibility_improvements": 6,
+          "deferred_research": [
+            "Psalm 52: Botha’s late Persian-period setting and wisdom-network reconstruction are attributed proposals; the article does not establish a precise composition date or direct literary dependence.",
+            "Psalm 59: Janowski’s evening-to-morning reading is a literary interpretation. The relation of the repeated prayer/refrain and any historical occasion remain unresolved; the superscription is not used to date composition.",
+            "Psalms 61 and 63: LeMon’s publisher abstract alone was accessible. Entries report only the abstract’s proposal that the bulla analysis strengthens a royal-voice reading; no bulla details, provenance, independent archaeological conclusion, or full-article argument is claimed.",
+            "Psalm 64: Eder’s narratological sequence describes the poem’s literary movement; it does not establish a prose historical event, performance setting, or composition date.",
+            "Psalm 65: Botha’s proposed Psalms 65–68 editorial cluster and Zion-to-earth sequence are interpretations, not proof of a specific cultic rite, historical event, or date.",
+            "Hebrew/English superscription-based verse numbering differs from BHF verse anchors for these psalm studies; correspondences are recorded in source metadata and the packet."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
+            "manifest": "Generated manifest semantically matches checked manifest; all exact Scripture anchors and source-support references resolve",
+            "chapter_audit": "Pass; 1,189 rows, 0 unmapped identities; 1,037 passage-specific, 68 contextual-only, 3 entity-only, 80 no-eligible, 1 incomplete/unknown; Psalms 105 specific, 22 contextual, 1 entity-only, 22 no-eligible",
+            "source_integrity": "5 new scholarly source identities and five source records with exact locators; inherited 2 unresolved child-source references, 1 expected missing locator, and 558 IDs without rich bibliography remain",
+            "projection_and_disclosure": "Exact chapter/verse anchors, reader sections, source/locator disclosure, observation, interpretation, confidence/dispute/review metadata, one-item projection, and no authored cross-passage/entity routes checked for all 6 additions",
+            "regression_tests": "9 CKL ED-2 unit tests; 70 targeted Narrative Explorer projection tests; 24 manifest/schema package tests; 464 NE-9C/NE-10 curation regressions; ED-1A audit passed 19 deterministic and 16 live service samples",
+            "deep_heuristic": "63 error-severity findings and 1,033 warnings; six new unknown-passage-chronology warnings; no new heuristic errors",
+            "authored_relationships": "No new authored relationship entries; exact Scripture-anchor projection only. NE-9C/NE-10 directories and reviewed decisions unchanged; historical checkpoints not regenerated."
+          },
+          "commit_sha": "55265d1d675f0315550997fe5eaf54f6b5d4f374"
         }
       ]
     },

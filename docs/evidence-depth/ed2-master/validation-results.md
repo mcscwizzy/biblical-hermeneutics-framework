@@ -80,3 +80,16 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - **Protected decisions:** the batch changed only the Psalms CKL object, ED-2 regression tests, and ED-2 documentation. No NE-9C/NE-10 curation or bridge file, held/verified decision, historical checkpoint, API contract, or relationship registry was changed. The audit reports 433 accepted curation records, 44 verified NE-10 bridges, and 7 held candidates.
 - **Review state:** all new work remains draft/in-review, requires human scholarly review, and has no named human reviewer.
 - **Evidence commit:** `ec244726f95604ff93eb6034f1f480270831976c` (`research: add ED-2 Psalms batch A6`).
+
+
+## Wave A, batch A7 — Psalms 52, 59, 61, 63, 64, and 65
+
+- Strict CKL validation: 687 valid objects, 0 errors, and the same 14 inherited `incomplete_section_status` warnings.
+- Manifest/reference checks: regenerated manifest is semantically equal to the checked manifest; all six exact BHF Scripture anchors and new source-support identities resolve.
+- ED-1A census: all 1,189 chapter rows pass with 0 unmapped identities. Totals are 1,037 passage-specific, 68 contextual-only, 3 entity-only, 80 no-eligible, and 1 incomplete/unknown; Psalms is 105 specific, 22 contextual, 1 entity-only, and 22 no-eligible.
+- CKL totals: 687 objects, 2,329 claims, 1,353 typed evidence items. A7 added six evidence items and five scholarly source identities, with no claims or objects. Audit source inventory reports 5,291 source-record occurrences and 2,842 source identities; the separate identity audit reports 2,843 IDs because its scope differs. Two unresolved child-source references, one expected missing locator (`patristic-minor-prophets`), and 558 source IDs without rich bibliography are inherited findings.
+- Source verification: Botha (Psalm 52), Janowski (Psalm 59), Eder (Psalm 64), and Botha (Psalms 65–68) were consulted in full at the locators recorded in the packet. Only LeMon’s publisher abstract was accessible for Psalms 61 and 63; these two entries are narrowly framed and marked low-confidence with the access limit stated.
+- Narrative Explorer: 9 ED-2 CKL tests, 70 targeted projection/regression tests, and 24 manifest/schema package tests passed. The protected NE-9C/NE-10 curation suite passed 464 tests. Tests cover exact eligibility, source disclosure, primary observation and interpretation, uncertainty/review fields, single display, and no new relationship routes. The ED-1A audit passed 19 deterministic and 16 live service samples.
+- Heuristic quality report: 63 error-severity findings and 1,033 warnings versus 63/1,027 after A6. The six new warnings are `unknown-passage-chronology` notices; no new heuristic errors were added. These are heuristic signals, not strict validation failures or scholarly adjudication.
+- Protected state: no NE-9C/NE-10 inputs, held/verified decisions, historical checkpoints, API contracts, or relationship registries were changed or regenerated. All A7 records remain draft/in-review and require human scholarly review.
+- Evidence commit: `55265d1d` (`research: add ED-2 Psalms batch A7`).
