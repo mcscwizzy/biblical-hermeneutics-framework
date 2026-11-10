@@ -118,3 +118,16 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Heuristic quality report: 63 error-severity findings and 1,043 warnings versus 1,039 after A8. The four additional findings are `unknown-passage-chronology` warnings; no new heuristic errors. These remain heuristic review signals, separate from strict schema validation.
 - Protected decisions: no NE-9C/NE-10 records, held or verified decisions, historical checkpoints, API contracts, or relationship registries changed. All four records remain draft/in-review and require human scholarly review; no human reviewer is named.
 - Evidence commit: `258cb7729e8f517a` (`research: add ED-2 Psalms batch A9`).
+
+
+## Wave A, batch A10 — Psalms 53, 102, 109, and 135
+
+- Strict CKL validation: 687 valid objects, 0 errors, and 14 inherited `incomplete_section_status` warnings.
+- Manifest and references: regenerated manifest semantically matches the checked manifest; all four exact Scripture anchors and source-support links resolve.
+- ED-1A census: pass, 1,189/1,189 chapters, 0 unmapped identities and 0 invalid anchors. Coverage is 1,051 passage-specific, 68 contextual-only, 3 entity-only, 66 no-eligible, and 1 incomplete/unknown; Psalms is 119 specific, 22 contextual, 1 entity-only, and 8 no-eligible. The audit passed 19 deterministic and 16 live service samples.
+- CKL/source inventory: 687 objects, 2,329 claims, 1,367 typed evidence items. Three new scholarly identities and one existing scholarly identity were used; source summary reports 5,303 source occurrences and 2,854 identities, while the separate identity audit counts 2,855 unique IDs. Two unresolved child-source references remain inherited.
+- Narrative Explorer: 12 ED-2 CKL tests, 73 projection/regression tests, and 81 manifest/schema package tests passed. Protected NE-9C/NE-10 curation suites passed 464 tests. Exact chapter/verse eligibility, disclosure, observation/interpretation, uncertainty/review metadata, and no new authored routes were checked.
+- Source access: full open-access articles were inspected for Psalms 53, 102, and 135 at the recorded locators. For Psalm 109, only the publisher abstract and bibliographic record for Egwim were accessible; its entry reports only the abstract-level proposal, uses low confidence, and requires full-text and human review.
+- Heuristic quality report: 63 error-severity findings and 1,047 warnings, four more chronology warnings than A9, and no new heuristic errors. Strict errors and heuristic warnings remain separate measures.
+- Protected decisions: no NE-9C/NE-10 curation or bridge file, held or verified decision, historical checkpoint, API contract, or relationship registry changed. No human reviewer is named; all four records remain draft/in-review.
+- Evidence commit: `5f0996cc` (`research: add ED-2 Psalms batch A10`).

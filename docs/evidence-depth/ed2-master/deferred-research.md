@@ -88,3 +88,5 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 76: no directly inspected passage-specific scholarly argument was found to support a historically informative addition in this batch. The psalm’s superscription and potential events are not used to infer a date or battle.
 - Psalm 69: Lyons uses verse numbering that counts the superscription. His 69:35–37 closing unit maps to BHF 69:34–36; this was corrected after the all-chapter anchor audit flagged the initial out-of-range form.
 - After A9, 12 Psalms still have no eligible passage-specific CKL material. Psalm chapters with existing evidence may also remain substantively thin; the chapter count is an eligibility signal, not a depth score. Continue Wave A before advancing to Wisdom literature.
+
+- **Psalm 109 (A10):** Egwim’s publisher abstract was accessible, but the full article was not. The narrow reported-speech/legal-case proposal is recorded at low confidence; full-text and human review remain outstanding.

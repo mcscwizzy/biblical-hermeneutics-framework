@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-batch-a10-research",
-  "last_completed_batch": "A9-psalms-57-58-69-76-94-99",
-  "next_work": "Continue qualitative research on the remaining no-eligible Psalms (58, 76, 102, 109, 135, 138, 140–144), using only verified passage-specific scholarship, then proceed through Waves B–E.",
+  "current_phase": "wave-a-batch-a11-research",
+  "last_completed_batch": "A10-psalms-53-102-109-135",
+  "next_work": "Research the eight remaining Psalms without eligible CKL material (58, 76, 138, and 140–144), continuing to defer claims without adequate source access; then proceed to Wisdom literature and Waves C–E.",
   "waves": [
     {
       "id": "A",
@@ -69,11 +69,15 @@
         "Psalm 69",
         "Psalm 76",
         "Psalm 94",
-        "Psalm 99"
+        "Psalm 99",
+        "Psalm 53",
+        "Psalm 102",
+        "Psalm 109",
+        "Psalm 135"
       ],
-      "evidence_records_added": 54,
-      "source_ids_created": 53,
-      "source_ids_reused": 2,
+      "evidence_records_added": 58,
+      "source_ids_created": 56,
+      "source_ids_reused": 3,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
         "Kister 2020 full text was inaccessible; the A2 record cites its bibliographic identity and abstract only to establish that a comparative study exists.",
@@ -104,19 +108,20 @@
         "Psalm 98: Blunda Grubert’s full article was inaccessible; only the Spanish publisher abstract supports the limited group-level framing.",
         "Psalm 87: Zion’s relation to the named nations and Rautenbach’s status reading remain disputed; her article identifies its origin as an MA seminar paper.",
         "Psalm 58: the relevant Sklarz study is in Hebrew; only its English abstract was accessible, so its structural proposal was not authored as CKL evidence.",
-        "Psalm 76: no passage-specific scholarly argument was directly inspected that would support a responsible source-backed addition; event and date claims remain deferred."
+        "Psalm 76: no passage-specific scholarly argument was directly inspected that would support a responsible source-backed addition; event and date claims remain deferred.",
+        "Psalm 109: only the publisher abstract and bibliographic record for Egwim 2004 were accessible; the narrow legal-case/reported-speech proposal is recorded at low confidence and requires full-text and human review."
       ],
       "validation": {
         "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
-        "manifest": "Generated with tools/ckl_manifest.py; semantic match with checked manifest; all four exact Scripture anchors and source-support links resolve",
-        "chapter_audit": "Pass; 1,189/1,189 chapters; 0 unmapped identities; 1,047 passage-specific, 68 contextual-only, 3 entity-only, 70 no-eligible, 1 incomplete/unknown; Psalms 115 specific, 22 contextual, 1 entity-only, 12 no-eligible. Corrected Lyons source verse numbering at Psalm 69:34–36 BHF anchor.",
-        "source_integrity": "Three new scholarly source identities and one reused Hamilton source; source audit 5,300 bibliography occurrences / 2,852 distinct IDs; 2 inherited unresolved child-source references; no new unresolved references.",
+        "manifest": "Generated manifest semantically matches checked manifest; all four exact Scripture anchors and source-support links resolve",
+        "chapter_audit": "Pass; 1,189/1,189 chapters; 0 unmapped identities; 1,051 passage-specific, 68 contextual-only, 3 entity-only, 66 no-eligible, 1 incomplete/unknown; Psalms 119 specific, 22 contextual, 1 entity-only, 8 no-eligible. No invalid anchors; audit passed 19 deterministic and 16 live service samples.",
+        "source_integrity": "Three new scholarly source identities and one reused scholarly source; source summary 5,303 occurrences / 2,854 identities; separate identity audit counts 2,855 unique IDs; 2 inherited unresolved child-source references; no new unresolved references.",
         "projection_and_disclosure": "Four exact anchors, source disclosure, passage relevance, primary observations, attributed interpretations, uncertainty/dispute/review metadata, and no new authored relationship routes verified.",
-        "regression_tests": "11 ED-2 CKL tests; 72 Narrative Explorer projection/regression tests; 81 manifest/schema package tests; 464 NE-9C/NE-10 curation tests; ED-1A audit passed 19 deterministic and 16 live service samples.",
-        "deep_heuristic": "63 error-severity findings and 1,043 warnings; four new unknown-passage-chronology warnings; no new heuristic errors.",
+        "regression_tests": "12 ED-2 CKL tests; 73 Narrative Explorer projection/regression tests; 81 manifest/schema package tests; 464 NE-9C/NE-10 curation tests; ED-1A audit passed 19 deterministic and 16 live service samples.",
+        "deep_heuristic": "63 error-severity findings and 1,047 warnings; four additional unknown-passage-chronology warnings; no new heuristic errors.",
         "authored_relationships": "No authored relationship entries added; only exact Scripture-anchor projection edges; protected NE-9C/NE-10 records and decisions unchanged; historical checkpoints not regenerated."
       },
-      "commit_sha": "258cb772fb7cc003f3837f62ebb94157cdda9c47",
+      "commit_sha": "5f0996ccdc692f82a558e6cae975a48b17ad3340",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -490,6 +495,42 @@
             "authored_relationships": "No new authored relationship entries; protected NE-9C/NE-10 decisions and historical checkpoints unchanged."
           },
           "commit_sha": "258cb772fb7cc003f3837f62ebb94157cdda9c47"
+        },
+        {
+          "id": "A10-psalms-53-102-109-135",
+          "status": "committed",
+          "passages": [
+            "Psalm 53",
+            "Psalm 102",
+            "Psalm 109",
+            "Psalm 135"
+          ],
+          "evidence_records_added": 4,
+          "source_ids_created": [
+            "van-wolde-psalm102-qualifications-actions-2019",
+            "egwim-psalm109-case-presentation-2004",
+            "human-psalms135-136-exodus-motifs-2021"
+          ],
+          "source_ids_reused": [
+            "psalms-masoretic",
+            "botha-psalm53-canonical-2013"
+          ],
+          "source_ids_reused_count": 2,
+          "chapter_eligibility_improvements": 4,
+          "deferred_research": [
+            "Psalm 109: the full Egwim article was inaccessible; the record is limited to the publisher abstract, low confidence, and needs full-text/human review."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
+            "manifest": "Generated manifest semantically matches checked manifest; exact anchors and source-support links resolve",
+            "chapter_audit": "Pass; 1,189 chapters, 0 unmapped, 0 invalid anchors; 1,051 specific, 68 contextual, 3 entity-only, 66 no-eligible, 1 incomplete/unknown; Psalms 119 specific and 8 no-eligible; 19 deterministic and 16 live service samples passed",
+            "source_integrity": "3 new scholarly identities, 1 scholarly identity reused; 5,303 source occurrences / 2,854 source identities in the primary summary, 2,855 unique IDs in the separate identity audit; 2 unresolved child-source references inherited",
+            "projection_and_disclosure": "Exact anchors, disclosure, reader fields and no authored cross-passage routes checked for all four records",
+            "regression_tests": "12 ED-2 CKL; 73 Narrative Explorer; 81 manifest/schema package; 464 NE-9C/NE-10 curation tests passed",
+            "deep_heuristic": "63 error-severity findings and 1,047 warnings; four new chronology warnings; no new heuristic errors",
+            "authored_relationships": "No relationship entries changed; protected NE-9C/NE-10 decisions and historical checkpoints unchanged"
+          },
+          "commit_sha": "5f0996ccdc692f82a558e6cae975a48b17ad3340"
         }
       ]
     },

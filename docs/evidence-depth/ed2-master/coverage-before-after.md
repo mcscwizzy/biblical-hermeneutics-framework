@@ -166,3 +166,23 @@ The corrected ED-1A census passes for all 1,189 chapters with zero unmapped iden
 | Every other biblical book | unchanged | unchanged | unchanged | unchanged |
 
 A9 adds four records addressing Psalm 57’s reuse in Psalm 108, the debated restoration stanza of Psalm 69, later Jewish weekday reception and proposed poetic sequence for Psalm 94, and Zion’s function in Psalm 99’s kingship sequence. All remain draft/in-review. The corrected Psalm 69 anchor maps Lyons’s superscription-inclusive 69:35–37 to BHF 69:34–36. CKL totals are 687 objects, 2,329 claims, and 1,363 typed evidence items. The ED-1A source audit reports 5,300 bibliography occurrences and 2,852 distinct source IDs. These are inventory and eligibility measures, not scholarly completeness scores. See the [A9 packet](wave-a-psalms/psalms-research-packets-a9.md) and updated [chapter backlog](research-backlog.csv).
+
+
+### Wave A, batch A10 — Psalms 53, 102, 109, and 135
+
+The corrected ED-1A census passed all 1,189 chapters with zero unmapped identities and no invalid anchors. Relative to A9, each of the four researched Psalms moved from no eligible passage-specific material to eligible evidence.
+
+| Coverage category | After A9 | After A10 | Change |
+|---|---:|---:|---:|
+| Passage-specific evidence | 1,047 | 1,051 | +4 |
+| Contextual-only coverage | 68 | 68 | 0 |
+| Entity-only coverage | 3 | 3 | 0 |
+| No eligible passage-specific material | 70 | 66 | −4 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+| Book | After A9 specific | After A10 specific | After A9 no-eligible | After A10 no-eligible |
+|---|---:|---:|---:|---:|
+| Psalms | 115 | 119 | 12 | 8 |
+| Every other biblical book | unchanged | unchanged | unchanged | unchanged |
+
+A10 adds four source-backed literary records about Psalm 53’s relation to Psalm 14, a disputed syntax/translation in Psalm 102, the reported-speech debate in Psalm 109, and the Exodus motifs in Psalm 135. Three scholarly source identities are new; Botha’s existing Psalm 53 article identity is reused. The Egwim entry is constrained to the publisher abstract. All additions remain draft/in-review. The final census contains 1,051 specific, 68 contextual, 3 entity-only, 66 no-eligible, and 1 inherited incomplete/unknown chapter. The full audit output is in `/tmp/ed2-master-wave-a10/`.
