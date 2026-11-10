@@ -110,6 +110,17 @@ EXPECTED_A10 = {
     "psalm-135-exodus-motifs-and-servants": ("Psalm 135", "human-psalms135-136-exodus-motifs-2021"),
 }
 
+EXPECTED_A11 = {
+    "psalm-58-opening-word-and-versional-readings": (["Psalm 58:1"], ["begg-psalm58-opening-word-1988"]),
+    "psalm-76-zion-hymn-and-unspecified-battle": (["Psalm 76:1-12"], ["smith-psalms73-83-editorial-2019"]),
+    "psalm-138-praise-in-final-davidic-psalter": (["Psalm 138:1-8"], ["botha-final-davidic-psalter-2021"]),
+    "psalm-140-selah-and-petition-structure": (["Psalm 140:3", "Psalm 140:5", "Psalm 140:8"], ["lyon-selah-antiquity-psalms-2018"]),
+    "psalm-141-suffixes-and-fabrications": (["Psalm 141:3-5"], ["booij-psalm141-discipline-2005"]),
+    "psalm-142-cave-superscription-and-historical-limits": (["Psalm 142:1-7"], ["skinner-davidic-superscriptions-2016"]),
+    "psalm-143-in-galatians-argument-debate": (["Psalm 143:2"], ["moore-psalm143-galatians-2022", "bachmann-galatians-logic-2024"]),
+    "psalm-144-reworked-royal-victory-song": (["Psalm 144:1-3", "Psalm 144:9-10"], ["zenger-fifth-book-psalms-1998"]),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -459,6 +470,45 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
         self.assertIn("abstract", self.sources["egwim-psalm109-case-presentation-2004"]["notes"].lower())
         self.assertEqual("disputed", self.evidence["psalm-102-created-or-set-apart-people"]["certainty"])
         self.assertEqual("major_scholarly_disagreement", self.evidence["psalm-102-created-or-set-apart-people"]["dispute_status"])
+        self.assertEqual("draft", self.book["content_status"])
+        self.assertEqual("in_review", self.book["review_status"])
+        self.assertEqual([], self.book["reviewed_by"])
+        self.assertTrue(self.book["human_review_required"])
+
+    def test_a11_additions_have_exact_scope_and_resolved_sources(self) -> None:
+        self.assertTrue(set(EXPECTED_A11).issubset(self.evidence))
+        for evidence_id, (references, scholarly_sources) in EXPECTED_A11.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual("literary-convention", item["evidence_type"])
+                self.assertEqual("scholarly-reconstruction", item["assertion_type"])
+                self.assertEqual(references, [x["reference"] for x in item["scripture_references"]])
+                self.assertTrue(all(x["temporal_relation"] == "unknown" for x in item["scripture_references"]))
+                self.assertEqual({"psalms-masoretic", *scholarly_sources}, set(item["source_ids"]))
+                self.assertTrue(set(item["source_ids"]).issubset(self.sources))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertNotEqual(item["primary_observation"], item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                self.assertIn("psalms-research-packets-a11.md", item["notes"])
+                for source_id in scholarly_sources:
+                    source = self.sources[source_id]
+                    self.assertIn(evidence_id, source["supports"])
+                    self.assertTrue(source["locator"])
+                    self.assertTrue(source["url"])
+        for evidence_id in {
+            "psalm-58-opening-word-and-versional-readings",
+            "psalm-141-suffixes-and-fabrications",
+        }:
+            self.assertEqual("low", self.evidence[evidence_id]["confidence"])
+        self.assertIn("only the publisher abstract", self.sources["begg-psalm58-opening-word-1988"]["notes"].lower())
+        self.assertIn("numbering includes the superscription", self.sources["booij-psalm141-discipline-2005"]["notes"])
+        self.assertIn("publisher marks the full article as access-restricted", self.evidence["psalm-144-reworked-royal-victory-song"]["temporal_scope"]["notes"])
+        self.assertIn("related_objects and related_evidence remain empty", self.evidence["psalm-143-in-galatians-argument-debate"]["notes"])
         self.assertEqual("draft", self.book["content_status"])
         self.assertEqual("in_review", self.book["review_status"])
         self.assertEqual([], self.book["reviewed_by"])

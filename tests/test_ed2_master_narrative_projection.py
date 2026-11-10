@@ -134,6 +134,17 @@ EXPECTED_A10 = {
     "psalm-135-exodus-motifs-and-servants": ("Psalm 135", ["Psalm 135:1", "Psalm 135:8-9"], "human-psalms135-136-exodus-motifs-2021"),
 }
 
+EXPECTED_A11 = {
+    "psalm-58-opening-word-and-versional-readings": ("Psalm 58", ["Psalm 58:1"], ["begg-psalm58-opening-word-1988"]),
+    "psalm-76-zion-hymn-and-unspecified-battle": ("Psalm 76", ["Psalm 76:1-12"], ["smith-psalms73-83-editorial-2019"]),
+    "psalm-138-praise-in-final-davidic-psalter": ("Psalm 138", ["Psalm 138:1-8"], ["botha-final-davidic-psalter-2021"]),
+    "psalm-140-selah-and-petition-structure": ("Psalm 140", ["Psalm 140:3", "Psalm 140:5", "Psalm 140:8"], ["lyon-selah-antiquity-psalms-2018"]),
+    "psalm-141-suffixes-and-fabrications": ("Psalm 141", ["Psalm 141:3-5"], ["booij-psalm141-discipline-2005"]),
+    "psalm-142-cave-superscription-and-historical-limits": ("Psalm 142", ["Psalm 142:1-7"], ["skinner-davidic-superscriptions-2016"]),
+    "psalm-143-in-galatians-argument-debate": ("Psalm 143", ["Psalm 143:2"], ["moore-psalm143-galatians-2022", "bachmann-galatians-logic-2024"]),
+    "psalm-144-reworked-royal-victory-song": ("Psalm 144", ["Psalm 144:1-3", "Psalm 144:9-10"], ["zenger-fifth-book-psalms-1998"]),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
@@ -401,5 +412,34 @@ def test_ed2_master_psalms_a10_project_with_exact_anchors_and_source_disclosure(
         assert projected["content_status"] == "draft"
         assert projected["review_status"] == "in_review"
         assert projected["human_review_required"] is True
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a11_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchors, scholarly_sources) in EXPECTED_A11.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+        assert len(matches) == 1
+        projected = _item(result, projected_id)
+        assert projected["record_kind"] == "evidence"
+        assert projected["evidence_category"] == "literary-convention"
+        assert [x["reference"] for x in projected["passage_anchors"]] == anchors
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == anchors
+        assert {"psalms-masoretic", *scholarly_sources}.issubset(projected["source_ids"])
+        assert projected["sources"]
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        assert projected["confidence"] == ("low" if local_id in {
+            "psalm-58-opening-word-and-versional-readings",
+            "psalm-141-suffixes-and-fabrications",
+        } else "medium")
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []
