@@ -94,6 +94,14 @@ EXPECTED_A5 = {
     "psalm-71-old-age-and-generational-witness": ("Psalm 71", "Psalm 71:17-21", "liess-psalm71-aging-and-generational-witness-2023"),
 }
 
+EXPECTED_A6 = {
+    "psalm-12-speech-poor-and-wisdom-polarity": ("Psalm 12", "Psalm 12:2-7", "botha-psalm12-poor-and-speech-2012"),
+    "psalm-28-lament-praise-and-final-petition": ("Psalm 28", "Psalm 28:1-9", "barus-psalm28-mood-shift-2023"),
+    "psalm-35-battlefield-and-courtroom-movement": ("Psalm 35", "Psalm 35:1-28", "simango-psalm35-structure-and-genre-2022"),
+    "psalm-38-embodied-distress-and-prayer-for-wholeness": ("Psalm 38", "Psalm 38:1-22", "human-psalm38-body-imagery-2022"),
+    "psalm-45-sound-and-performance-of-royal-poem": ("Psalm 45", "Psalm 45:1-2", "wendland-psalm45-sound-and-rhetoric-2013"),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
@@ -198,6 +206,38 @@ def test_ed2_master_psalms_a4_project_with_exact_anchors_and_source_disclosure()
 def test_ed2_master_psalms_a5_project_with_exact_anchors_and_source_disclosure():
     psalms = _load_ckl("books/psalms.json")
     for local_id, (passage, anchor, scholarly_source) in EXPECTED_A5.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        matches = [entry for entry in result["items"] if entry["id"] == projected_id]
+        assert len(matches) == 1
+        projected = _item(result, projected_id)
+        assert projected["record_kind"] == "evidence"
+        assert projected["evidence_category"] == "literary-convention"
+        assert [x["reference"] for x in projected["passage_anchors"]] == [anchor]
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
+        assert set(projected["section_ids"]) == {"biblical_narrative", "themes_biblical_connections"}
+        assert {"psalms-masoretic", scholarly_source}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["confidence"] == "medium"
+        assert projected["certainty"] == "plausible"
+        assert projected["dispute_status"] == "interpretive_uncertainty"
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+        assert len(edges) == 1
+        assert edges[0]["target_id"] == f"passage:{anchor}"
+        assert edges[0]["basis"]["kind"] == "ckl_scripture_anchor"
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a6_project_with_exact_anchors_and_source_disclosure():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchor, scholarly_source) in EXPECTED_A6.items():
         result = _project(passage, canonical=_lookup("ckl", records=psalms))
         projected_id = f"ckl:psalms#evidence:{local_id}"
         matches = [entry for entry in result["items"] if entry["id"] == projected_id]

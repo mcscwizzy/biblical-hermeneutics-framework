@@ -70,6 +70,14 @@ EXPECTED_A5 = {
     "psalm-71-old-age-and-generational-witness": ("Psalm 71:17-21", "liess-psalm71-aging-and-generational-witness-2023"),
 }
 
+EXPECTED_A6 = {
+    "psalm-12-speech-poor-and-wisdom-polarity": ("Psalm 12:2-7", "botha-psalm12-poor-and-speech-2012"),
+    "psalm-28-lament-praise-and-final-petition": ("Psalm 28:1-9", "barus-psalm28-mood-shift-2023"),
+    "psalm-35-battlefield-and-courtroom-movement": ("Psalm 35:1-28", "simango-psalm35-structure-and-genre-2022"),
+    "psalm-38-embodied-distress-and-prayer-for-wholeness": ("Psalm 38:1-22", "human-psalm38-body-imagery-2022"),
+    "psalm-45-sound-and-performance-of-royal-poem": ("Psalm 45:1-2", "wendland-psalm45-sound-and-rhetoric-2013"),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -239,6 +247,42 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
                 self.assertTrue(source["locator"])
                 self.assertTrue(source["url"])
                 self.assertIn("Full open-access", source["notes"])
+        self.assertEqual("draft", self.book["content_status"])
+        self.assertEqual("in_review", self.book["review_status"])
+        self.assertTrue(self.book["human_review_required"])
+
+    def test_a6_additions_have_exact_scope_and_verified_sources(self) -> None:
+        self.assertTrue(set(EXPECTED_A6).issubset(self.evidence))
+        for evidence_id, (reference, source_id) in EXPECTED_A6.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual("literary-convention", item["evidence_type"])
+                self.assertEqual("scholarly-reconstruction", item["assertion_type"])
+                self.assertEqual([reference], [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual("unknown", item["scripture_references"][0]["temporal_relation"])
+                self.assertIn("psalms-masoretic", item["source_ids"])
+                self.assertIn(source_id, item["source_ids"])
+                self.assertTrue(set(item["source_ids"]).issubset(self.sources))
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertNotEqual(item["primary_observation"], item["scholarly_interpretation"])
+                self.assertTrue(item["passage_relevance"])
+                self.assertTrue(item["confidence_rationale"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual("medium", item["confidence"])
+                self.assertEqual("plausible", item["certainty"])
+                self.assertEqual("interpretive_uncertainty", item["dispute_status"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+                source = self.sources[source_id]
+                self.assertIn(evidence_id, source["supports"])
+                self.assertTrue(source["locator"])
+                self.assertTrue(source["url"])
+                self.assertIn("Full open-access article", source["notes"])
+        self.assertIn("counts the superscription", self.evidence["psalm-12-speech-poor-and-wisdom-polarity"]["scripture_references"][0]["relevance_rationale"])
+        self.assertIn("literary relationship", self.evidence["psalm-12-speech-poor-and-wisdom-polarity"]["scholarly_interpretation"])
+        self.assertIn("specific disease or medical cause", self.evidence["psalm-38-embodied-distress-and-prayer-for-wholeness"]["scholarly_interpretation"])
+        self.assertIn("public court performance", self.evidence["psalm-45-sound-and-performance-of-royal-poem"]["scholarly_interpretation"])
         self.assertEqual("draft", self.book["content_status"])
         self.assertEqual("in_review", self.book["review_status"])
         self.assertTrue(self.book["human_review_required"])
