@@ -213,3 +213,25 @@ The current Psalm census also identifies 22 chapters with contextual-only covera
 ### Wave A, batch A12 — Psalms 4, 16, 18, 23, 27, 29, 31, and 32
 
 A12 was audited across all 1,189 chapters. Eight previously contextual-only Psalm chapters gained passage-anchored evidence. The census now reports 1,067 passage-specific chapters, 60 contextual-only, 3 entity-only, 58 with no eligible item, and 1 incomplete/unknown. Psalms has 135 passage-specific chapters, 14 contextual-only, and Psalm 73 remains entity-only. The eight eligibility changes do not establish scholarly completeness. See the [A12 research packet](wave-a-psalms/psalms-research-packets-a12.md).
+
+
+### Wave A, batch A13 — Psalms 34, 40, 73, and 78
+
+A13 added four passage-specific records to chapters previously classified as contextual-only or entity-only. It did not reduce the 58 no-eligible chapters.
+
+| Coverage category | After A12 | After A13 | Change |
+|---|---:|---:|---:|
+| Passage-specific evidence | 1,067 | 1,071 | +4 |
+| Contextual-only coverage | 60 | 57 | −3 |
+| Entity-only coverage | 3 | 2 | −1 |
+| No eligible passage-specific material | 58 | 58 | 0 |
+| Incomplete/unknown | 1 | 1 | 0 |
+
+| Psalm coverage | After A12 | After A13 | Change |
+|---|---:|---:|---:|
+| Passage-specific chapters | 135 | 139 | +4 |
+| Contextual-only chapters | 14 | 11 | −3 |
+| Entity-only chapters | 1 | 0 | −1 |
+| No eligible chapters | 0 | 0 | 0 |
+
+A13 created four scholarly source identities and reused none. Three items are limited to publisher excerpts/abstracts; the Psalm 78 article was inspected in full. All additions remain draft/in-review. Chapter eligibility is not a measure of research depth.

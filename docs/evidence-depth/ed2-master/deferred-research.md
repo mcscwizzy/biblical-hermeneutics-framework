@@ -110,3 +110,12 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Psalm 29: only the publisher abstract was accessible. It supports methodological triangulation of two Ugaritic compositions and Syrian glyptic; no direct literary dependence is asserted.
 - After A12, 14 Psalm chapters remain contextual-only and Psalm 73 remains entity-only. All have zero passage-anchored claims and typed evidence items in the census. Each remains for qualitative review; no filler is planned.
 - All eight A12 records remain draft/in-review and require scholarly review; no human reviewer is recorded.
+
+
+## Wave A, batch A13 source limits
+
+- Psalm 34: Brown’s full chapter was inaccessible; only the publisher record and excerpt support the limited claim about shared instructional rhetoric and the unsettled “wisdom psalm” label.
+- Psalm 40: Jassen’s article was inaccessible beyond its publisher abstract. The abstract-level literary-reuse proposal remains unverified against the full argument and must not be mistaken for a biblical manuscript witness.
+- Psalm 73: Wong’s full article was inaccessible. The publisher abstract does not expose detailed structural markers; the ring-composition proposal remains low-confidence.
+- Psalm 78: the full article was inspected, but the authors report unresolved disagreement over structure, genre, date, and *Sitz im Leben*. No composition date or performance context is adopted.
+- All four A13 records require human scholarly review. The chapter census still identifies 11 contextual-only Psalms; A13 does not claim Wave A qualitative triage is complete.

@@ -157,3 +157,16 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - No NE-9C/NE-10 files, relationship decisions, or historical checkpoints changed. No authored relationships were added. All A12 items remain draft/in-review and require human scholarly review.
 
 - Evidence commit: `44f74c1f` (`research: add ED-2 Psalms batch A12`).
+
+
+## Wave A, batch A13 — Psalms 34, 40, 73, and 78
+
+- Strict CKL validation: 687 valid objects, 0 errors, and the same 14 inherited `incomplete_section_status` warnings.
+- Manifest: generated output matches the checked manifest; all four new source identities and evidence support references resolve.
+- ED-1A census: pass across 1,189 chapters, zero unmapped projected identities and invalid anchors; 1,071 passage-specific, 57 contextual-only, 2 entity-only, 58 no-eligible, and 1 incomplete/unknown. Psalms has 139 specific, 11 contextual-only, and no entity-only chapters. The audit passed 19 deterministic and 16 live service samples.
+- Source integrity: four source identities created, no identities reused. Inventory totals are 5,324 source occurrences and 2,875 source IDs; the separate identity audit counts 2,876. The two unresolved child-source references and one expected missing locator are inherited.
+- Narrative Explorer: 29 focused tests and 78 subtests passed; the earlier A13 authoring unit suite passed 15 tests. Each item projects once at its exact anchor with source disclosure and confidence/dispute/review metadata.
+- Deep heuristic report: 63 error-severity findings and 1,070 warnings, up four chronology warnings from A12. No new heuristic errors. These warnings are review signals, separate from strict validation.
+- Protected decisions: no authored relationships were added and no NE-9C/NE-10 data, decisions, or historical checkpoints changed.
+- Human review: all four additions remain draft/in-review; no human reviewer is named.
+- Evidence commit: `d892a7d2` (`research: add ED-2 Psalms batch A13`).

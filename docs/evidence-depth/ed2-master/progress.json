@@ -5,9 +5,9 @@
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
-  "current_phase": "wave-a-qualitative-triage",
-  "last_completed_batch": "A12-psalms-4-16-18-23-27-29-31-32",
-  "next_work": "Continue qualitative review of the 14 contextual-only Psalm chapters and Psalm 73; add evidence only where precise questions and verifiable sources justify it. Then advance through Waves B–E within the 100-item planning ceiling.",
+  "current_phase": "wave-b-wisdom",
+  "last_completed_batch": "A13-psalms-34-40-73-78",
+  "next_work": "Wave B: prioritize Proverbs chapters 2 and 28, Ecclesiastes 10, and other underrepresented Wisdom passages from the 1,189-chapter inventory; add only passage-specific findings supported by inspected scholarly evidence. Return to the 11 contextual-only Psalms after Waves B–E if the remaining 100-item ceiling and execution environment allow.",
   "waves": [
     {
       "id": "A",
@@ -87,10 +87,14 @@
         "Psalm 27",
         "Psalm 29",
         "Psalm 31",
-        "Psalm 32"
+        "Psalm 32",
+        "Psalm 34",
+        "Psalm 40",
+        "Psalm 73",
+        "Psalm 78"
       ],
-      "evidence_records_added": 74,
-      "source_ids_created": 73,
+      "evidence_records_added": 78,
+      "source_ids_created": 77,
       "source_ids_reused": 3,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
@@ -128,19 +132,23 @@
         "Psalm 141: only Booij’s publisher abstract was accessible; the proposed pronoun and lexical readings are low-confidence, and the article’s national-distress setting is not adopted.",
         "Psalm 143: Moore’s full article was inaccessible and is represented only by its publisher abstract; Bachmann’s accessible response is in German. Their disagreement about Galatians 3:10 is recorded as reception history without creating a cross-passage bridge.",
         "Psalm 144: the publisher exposes Zenger’s relevant footnote and surrounding text while marking the article access-restricted; only that visible argument supports the item.",
-        "All eight A11 records remain draft/in-review with human review required; no human reviewer is named."
+        "All eight A11 records remain draft/in-review with human review required; no human reviewer is named.",
+        "Psalm 34: Brown’s 2005 chapter was accessible only through publisher metadata and an excerpt; the narrow rhetoric/genre framing requires full-text and human review.",
+        "Psalm 40: Jassen’s 2006 publisher abstract was accessible, but not the full article; the 4Q160 reuse proposal remains abstract-limited and does not identify 4Q160 as a biblical manuscript witness.",
+        "Psalm 73: Wong’s 2016 publisher abstract was accessible, but not the full article; the ring-composition proposal remains low-confidence pending inspection of its structural argument.",
+        "Psalm 78: Kim and van Rooy’s full 2000 article was inspected, but proposed structure, genre, date, and Sitz im Leben remain disputed; no date or performance setting is asserted."
       ],
       "validation": {
-        "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings",
-        "manifest": "Generated manifest semantically matches checked manifest; 687 objects; new source-support links and exact Scripture anchors resolve",
-        "chapter_audit": "Pass; 1,189/1,189 chapters; 0 unmapped identities and 0 invalid anchors; 1,059 passage-specific, 68 contextual, 3 entity-only, 58 no-eligible, 1 incomplete/unknown. Psalms: 127 specific, 22 contextual, 1 entity-only, 0 no-eligible. Audit passed 19 deterministic and 16 live service samples.",
-        "source_integrity": "Nine new scholarly source identities; all A11 source links and locators resolve. ED-1A source inventory: 5,312 occurrences / 2,863 source identities; 2 unresolved child-source references are inherited.",
-        "projection_and_disclosure": "All eight exact anchors project once with source disclosure, primary observation, attributed interpretation, confidence/dispute/review metadata, and no new authored relationship routes.",
-        "regression_tests": "25 focused ED-2 tests and 66 subtests; 74 Narrative Explorer projection tests; 81 manifest/schema/package tests; 464 NE-9C/NE-10 curation tests; all passed.",
-        "deep_heuristic": "63 error-severity findings and 1,058 warnings, compared with 1,047 warnings after A10. A11 adds 8 unknown-passage-chronology warnings and 3 weak-source-type warnings for thesis records classified as other; no new heuristic errors.",
-        "authored_relationships": "No authored related_objects or related_evidence entries added; only direct Scripture-anchor projection connections. Protected NE-9C/NE-10 decisions and historical checkpoints were not changed."
+        "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings.",
+        "manifest": "Generated manifest semantically matches checked manifest; 687 objects; all four new source-support links and Scripture anchors resolve.",
+        "chapter_audit": "ED-1A pass; all 1,189 chapters, 0 unmapped projected identities, 0 invalid anchors; 1,071 passage-specific, 57 contextual-only, 2 entity-only, 58 no-eligible, 1 incomplete/unknown. Psalms: 139 specific, 11 contextual-only, 0 entity-only. Audit passed 19 deterministic and 16 live service samples.",
+        "source_integrity": "4 new scholarly source identities; all 4 source identities, locators, support links, and evidence references resolve. Source inventory: 5,324 source occurrences / 2,875 source IDs; separate identity audit: 2,876 IDs. The 2 unresolved child-source references and 1 inherited expected missing locator remain.",
+        "projection_and_disclosure": "All 4 exact anchors project exactly once with source/bibliography disclosure, primary observation, attributed interpretation, confidence/dispute/review metadata; no new authored relationship routes.",
+        "regression_tests": "Focused Psalms and Narrative Explorer tests: 29 passed, 78 subtests passed. Earlier authoring unittest: 15 passed. Full 19 deterministic and 16 live ED-1A samples passed.",
+        "deep_heuristic": "63 error-severity findings and 1,070 warnings. A13 contributes 4 unknown-passage-chronology warnings; no new heuristic errors. These are review signals, not scholarly-quality scores.",
+        "authored_relationships": "No authored related_objects or related_evidence entries added; only direct Scripture-anchor projection. No NE-9C/NE-10 inputs, decisions, or historical checkpoints changed."
       },
-      "commit_sha": "1747080aabac2202bc8e4c9ed0e32bac7de2d081",
+      "commit_sha": "d892a7d2",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -643,13 +651,61 @@
             "authored_relationships": "No authored related_objects or related_evidence entries added; protected NE-9C/NE-10 decisions and historical checkpoints unchanged."
           },
           "commit_sha": "44f74c1f"
+        },
+        {
+          "id": "A13-psalms-34-40-73-78",
+          "status": "committed",
+          "passages": [
+            "Psalm 34",
+            "Psalm 40",
+            "Psalm 73",
+            "Psalm 78"
+          ],
+          "evidence_records_added": 4,
+          "evidence_ids": [
+            "psalm-34-instruction-and-wisdom-rhetoric",
+            "psalm-40-reception-in-4q160",
+            "psalm-73-ring-composition-proposal",
+            "psalm-78-introduction-and-historical-didactic-recitations"
+          ],
+          "source_ids_created": [
+            "brown-psalm34-wisdom-rhetoric-2005",
+            "jassen-psalm40-4q160-reception-2006",
+            "wong-psalm73-ring-composition-2016",
+            "kim-vanrooy-psalm78-textual-dimension-2000"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "chapter_eligibility_improvements": 0,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 4,
+            "contextual_only": -3,
+            "entity_only": -1,
+            "no_eligible": 0
+          },
+          "deferred_research": [
+            "Brown, Jassen, and Wong were accessible only through publisher abstracts/excerpts and bibliographic records; their claims are narrowly limited and require full-text/human review.",
+            "The Psalm 78 article was read in full, but competing structural, genre, date, and Sitz im Leben proposals remain unresolved.",
+            "All four records are draft/in_review and require human scholarly review; no human reviewer is named."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid; 0 errors; 14 inherited warnings",
+            "manifest": "Generated manifest semantically matches checked manifest; new sources and exact anchors resolve",
+            "chapter_audit": "Pass; 1,189/1,189 mapped; zero invalid anchors; coverage 1,071 specific, 57 contextual, 2 entity-only, 58 no-eligible, 1 incomplete/unknown; 19 deterministic and 16 live samples passed",
+            "source_integrity": "4 new source IDs; all support references and locators resolve; 2 unresolved source references and 1 expected missing locator are inherited",
+            "projection_and_disclosure": "All 4 anchors project once with source disclosure and required interpretation/review metadata; no routes added",
+            "regression_tests": "29 passed; 78 subtests passed; prior focused authoring suite 15 passed",
+            "deep_heuristic": "63 errors, 1,070 warnings; 4 additional unknown-passage-chronology warnings; no new errors",
+            "authored_relationships": "No authored relationship entries; protected NE-9C/NE-10 decisions unchanged"
+          },
+          "commit_sha": "d892a7d2"
         }
       ]
     },
     {
       "id": "B",
       "name": "Wisdom literature",
-      "status": "queued",
+      "status": "in_progress",
       "passages_researched": [],
       "evidence_records_added": 0,
       "source_ids_created": 0,
