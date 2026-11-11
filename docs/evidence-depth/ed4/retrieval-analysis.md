@@ -52,6 +52,24 @@ asymmetric grammar only, the first parsed reference is the primary book;
 reversing the question reverses the primary result. `Compare A and B` remains
 symmetrical and keeps both passages in the leading results.
 
+## Preserve a relevant ordinary-language result
+
+The added trailing boundary also stops the substring `Judges` from being
+parsed inside “judging” in the question “What does Paul mean by judging
+nothing before the time?” That removed an accidental book-category bonus that
+had placed `1-corinthians` first, exposing a real relevance weakness: the
+topical Pauline object ranked above the book record even though its
+passage-anchored note uses the query wording and cites 1 Corinthians 4:5.
+
+The shared coherent-match index now also considers the text of an individually
+Scripture-anchored interpretive note as one bounded unit. It does not add
+rationales, caveats, unanchored notes, or references to that unit. The query
+has no detected Scripture reference, and `1-corinthians` ranks first from its
+four-of-five term match in the verse-specific note. Existing negative tests
+confirm that dispersed notes and rationales do not create false coherent
+matches. This applies across passage-anchored notes without a book-specific
+rule.
+
 ## Other reference handling
 
 - Explicit verse/range references still take the Scripture-scope path.
@@ -73,6 +91,9 @@ symmetrical and keeps both passages in the leading results.
   boundaries, punctuation trimming, and containment-aware title matching.
 - `framework/canonical_library/retrieval/service.py`: relationship-focus
   ordering for explicit `How does A relate/connect to B?` forms.
+- `framework/canonical_library/retrieval/indexer.py`: coherent matches from
+  individually passage-anchored interpretive-note text.
 - `tests/canonical_library/test_query_analysis.py` and
-  `test_ed4_retrieval_regressions.py`: parser, reference, ordering, comparison,
-  and bounded relevance coverage.
+  `test_ed4_retrieval_regressions.py` and `test_ckl_retrieval_service.py`:
+  parser, reference, ordering, comparison, anchored-note relevance, and
+  bounded negative-control coverage.

@@ -612,15 +612,15 @@ def _expand_field_search_terms(field_terms: Mapping[str, set[str]]) -> dict[str,
 def _coherent_evidence_term_groups(
     obj: CanonicalObject,
 ) -> list[tuple[str, str, set[str]]]:
-    """Index vocabulary within individual authored claims and evidence items.
+    """Index vocabulary within claims, anchored notes, and evidence items.
 
     Legacy field-term indexes union values across whole fields. These groups
-    retain claim and evidence-item boundaries so ranking
-    can distinguish one passage-level statement from terms scattered across
-    unrelated parts of a record. Only claim text and the descriptive text for
-    an evidence item count; interpretive notes, rationales, scholarly caveats,
-    references, and general record context cannot make an otherwise unrelated
-    item look like a coherent match.
+    retain child-record boundaries so ranking can distinguish one
+    passage-level statement from terms scattered across unrelated parts of a
+    record. Claims, passage-anchored note text, and the descriptive text for
+    evidence items count. Note rationales, scholarly caveats, references, and
+    general record context cannot make an otherwise unrelated item look like
+    a coherent match.
     """
 
     groups: list[tuple[str, str, set[str]]] = []
@@ -644,6 +644,13 @@ def _coherent_evidence_term_groups(
         data = record_data(claim)
         source_id = str(data.get("id") or f"claim-{index}")
         add("claims", source_id, [data.get("claim")])
+
+    for index, note in enumerate(getattr(obj, "interpretive_notes", []) or []):
+        data = record_data(note)
+        if not data.get("scripture_references"):
+            continue
+        source_id = str(data.get("id") or f"interpretive-note-{index}")
+        add("interpretive_notes", source_id, [data.get("note")])
 
     for index, item in enumerate(getattr(obj, "evidence_items", []) or []):
         data = record_data(item)

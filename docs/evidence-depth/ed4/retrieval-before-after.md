@@ -27,6 +27,7 @@ same fetched ED-3 branch baseline and ED-4 worktree.
 | Literary convention | `What literary device shapes Psalm 23?` | `what-is-a-psalm` #1; `psalms` #2 | Same | Passage-book coverage remains available. |
 | Later reception | `How was Daniel received in later Jewish tradition?` | `daniel` #1 | Same | Book remains primary. |
 | Ordinary-language event | `What happened at the crucifixion?` | `crucifixion` #1 | Same | Relevant event record ranks first without a reference. |
+| Passage-scoped wording without a reference | `What does Paul mean by judging nothing before the time?` | `1-corinthians` #1 (0.7465), with an erroneous `Judges` reference parsed inside “judging” | `1-corinthians` #1 (0.7565), with no Scripture reference and a coherent four-term match in its anchored 1 Corinthians 4:5 note | Removes the false book parse while preserving the correct passage result through shared, note-scoped relevance scoring. |
 | Ambiguous entity | `Who was John?` | Existing Narrative Explorer test returns no primary result and an ambiguity object | Same | No confident passage is selected for the unresolved title/person ambiguity. |
 
 The raw unprefixed `What if our heart condemns us?` remains a weak lexical query
@@ -41,3 +42,6 @@ hidden as a success.
 - Existing precision and inherited 1 John / 1 Thessalonians suites: 26 passed,
   226 subtests passed in 452.96 seconds. Both formerly failing assertions now
   pass.
+- Full existing retrieval service/precision/index suite after anchored-note
+  scoring: 50 passed, 18 subtests passed in 228.88 seconds. The new note-based
+  coherent match and existing dispersed-rationale negative controls passed.
