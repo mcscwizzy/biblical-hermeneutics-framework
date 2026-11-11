@@ -18,15 +18,20 @@ commit SHAs are in [progress.json](progress.json).
 - [Baseline and repository inventory](baseline.md)
 - [Retrieval cause analysis](retrieval-analysis.md)
 - [Retrieval before/after evaluation](retrieval-before-after.md)
+- [Human review workbench](review-workflow.md)
 - [Progress ledger](progress.json)
 
-Phase reports will be linked here as their investigations and validation
-complete.
+Phase reports are linked here as their investigations and validation complete.
 
 Phase 1 is complete. The inherited explicit-reference ranking failures are
 fixed and covered by retrieval regressions. The evaluation also records a
 remaining limitation for the same heart-condemnation question when no book is
 included in the query.
+
+Phase 2 is complete. The local maintainer CLI reads the original queue and
+packets, records attributed human actions in an ignored hash-chained ledger,
+and exports actual decisions. It has recorded no human decisions; all 99
+records remain pending.
 
 ## Authority and review status
 

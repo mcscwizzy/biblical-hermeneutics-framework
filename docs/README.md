@@ -39,6 +39,9 @@ the authoritative reviewed research source.
 - [ED-1C Evidence Discoverability](evidence-depth/ed1c/README.md) — reproduced
   inventory, reader-path findings, desktop/mobile acceptance, and remaining
   discoverability backlog.
+- [ED-4 Research Quality](evidence-depth/ed4/README.md) — retrieval quality,
+  human scholarly review workflow, provenance, compatibility, and reader
+  acceptance.
 - [Maps and archaeology](archaeology.md) — catalog, evidence, media rights,
   provenance, and offline behavior.
 - [Lexicon architecture](lexicon-architecture.md), [word study](word-study.md),
