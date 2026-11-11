@@ -19,6 +19,7 @@ commit SHAs are in [progress.json](progress.json).
 - [Retrieval cause analysis](retrieval-analysis.md)
 - [Retrieval before/after evaluation](retrieval-before-after.md)
 - [Human review workbench](review-workflow.md)
+- [Source integrity findings and corrections](source-integrity-results.md)
 - [Progress ledger](progress.json)
 
 Phase reports are linked here as their investigations and validation complete.
@@ -32,6 +33,12 @@ Phase 2 is complete. The local maintainer CLI reads the original queue and
 packets, records attributed human actions in an ignored hash-chained ledger,
 and exports actual decisions. It has recorded no human decisions; all 99
 records remain pending.
+
+Phase 3 is complete. Nineteen source-support target signals remain unresolved
+because no exact target identity is verifiable. One malformed Malachi source
+author field was corrected and a limited, preview-verified locator was added;
+all original source IDs and claims remain intact. The deep checker still
+reports all 102 support-target signals.
 
 ## Authority and review status
 
