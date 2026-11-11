@@ -28,11 +28,25 @@ EXPECTED = {
         "rev-greek",
         "friesen-beast-land-2003",
     ),
+    "luke-8-1-3-women-scope": (
+        "books/luke.json",
+        "literary-convention",
+        [("Luke 8:1-3", "direct")],
+        "luke-greek",
+        "blajer-luke8-women-2026",
+    ),
+    "luke-13-10-17-sabbath-healing-necessity": (
+        "books/luke.json",
+        "literary-convention",
+        [("Luke 13:10-17", "direct")],
+        "luke-greek",
+        "kilgallen-luke13-obligation-heal-2001",
+    ),
 }
 
 
 class Ed2MasterNewTestamentWaveTests(unittest.TestCase):
-    def test_e1_records_have_exact_scopes_and_source_disclosures(self) -> None:
+    def test_e1_and_e2_records_have_exact_scopes_and_source_disclosures(self) -> None:
         paths = {value[0] for value in EXPECTED.values()}
         books = {
             path: json.loads((REPO_ROOT / "framework/canonical_library/objects" / path).read_text())
@@ -63,7 +77,7 @@ class Ed2MasterNewTestamentWaveTests(unittest.TestCase):
                 self.assertEqual([], item["related_evidence"])
                 self.assertIn("ed2-master/wave-e-new-testament/", item["notes"])
 
-    def test_e1_items_remain_unreviewed_and_uncertainty_is_explicit(self) -> None:
+    def test_e1_and_e2_items_remain_unreviewed_and_uncertainty_is_explicit(self) -> None:
         books = [
             json.loads((REPO_ROOT / "framework/canonical_library/objects" / path).read_text())
             for path in {value[0] for value in EXPECTED.values()}
@@ -72,6 +86,8 @@ class Ed2MasterNewTestamentWaveTests(unittest.TestCase):
         self.assertEqual("interpretive_uncertainty", items["luke-5-30-grumbling-and-wilderness-language"]["dispute_status"])
         self.assertEqual("lexical_uncertainty", items["acts-15-29-eu-prassete-range"]["dispute_status"])
         self.assertEqual("major_scholarly_disagreement", items["revelation-13-land-beast-as-asian-elite-network"]["dispute_status"])
+        self.assertEqual("interpretive_uncertainty", items["luke-8-1-3-women-scope"]["dispute_status"])
+        self.assertEqual("interpretive_uncertainty", items["luke-13-10-17-sabbath-healing-necessity"]["dispute_status"])
         for book in books:
             self.assertEqual("draft", book["content_status"])
             self.assertEqual("in_review", book["review_status"])

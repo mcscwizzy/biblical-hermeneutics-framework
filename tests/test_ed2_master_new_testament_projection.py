@@ -20,10 +20,22 @@ EXPECTED = {
         "Revelation 13:11-18",
         "friesen-beast-land-2003",
     ),
+    "luke-8-1-3-women-scope": (
+        "Luke 8",
+        "books/luke.json",
+        "Luke 8:1-3",
+        "blajer-luke8-women-2026",
+    ),
+    "luke-13-10-17-sabbath-healing-necessity": (
+        "Luke 13",
+        "books/luke.json",
+        "Luke 13:10-17",
+        "kilgallen-luke13-obligation-heal-2001",
+    ),
 }
 
 
-def test_ed2_master_new_testament_e1_projects_exact_passages_and_discloses_sources():
+def test_ed2_master_new_testament_e1_e2_project_exact_passages_and_disclose_sources():
     records = {path: _load_ckl(path) for path in {value[1] for value in EXPECTED.values()}}
     for local_id, (passage, path, anchor, scholarly_source) in EXPECTED.items():
         canonical = _lookup("ckl", records=records[path])
