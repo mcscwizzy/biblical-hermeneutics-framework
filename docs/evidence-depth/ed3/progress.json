@@ -1,0 +1,381 @@
+{
+  "program": "ED-3 Scholarly Integrity, Source Verification & Research Quality",
+  "branch": "audit/ed3-scholarly-integrity",
+  "base_commit": "8a0bda764328f9399552e46c224c949b35c064fc",
+  "status": "in_progress",
+  "completed_evidence_ids": [],
+  "phases": {
+    "0": {
+      "status": "complete",
+      "summary": "Fetched origin/master at the ED-2 merge, reproduced the CKL/deep/census baseline, read governance and review contracts, and captured protected-state hashes.",
+      "validation": {
+        "strict_ckl": "687 valid objects; 0 errors; 14 inherited warnings",
+        "deep_ckl": "63 error-severity heuristic findings; 1093 warnings",
+        "chapter_census": "1189/1189 chapters; 19 sample checks; 16 targeted service builds; 0 unmapped identities",
+        "ed2_inventory": "99 additions reconciled from parent-tree diff; expected inventory and coverage counts reproduced",
+        "protected_state": "NE-9C/NE-10 files unchanged at baseline; 433 accepted, 44 verified, 7 held"
+      },
+      "commit_sha": "1294d0cf",
+      "blockers": [
+        "Legacy NE-9C bulk-curation validation rejects the frozen ED-2-era CKL fingerprint. The frozen checkpoint was preserved; compatibility remains for the protected-governance review."
+      ]
+    },
+    "1": {
+      "status": "completed_with_documented_limits",
+      "completed_evidence_ids": [
+        "first-chronicles-16-36-five-book-psalter",
+        "2chronicles-14-cushites-and-rhetorical-setting",
+        "2chronicles-18-jehoshaphat-and-micaiah",
+        "2chronicles-25-amaziah-and-kings-parallel",
+        "acts-15-29-eu-prassete-range",
+        "ecclesiastes-10-1-flies-of-death-translation",
+        "ezekiel-22-prophets-princes-textual-reading",
+        "ezekiel-31-pharaoh-cedar-and-sheol",
+        "isaiah10-5-8-assyrian-agency-and-polemical-contrast",
+        "john-10-22-dedication-term-and-winter",
+        "luke-13-10-17-sabbath-healing-necessity",
+        "luke-5-30-grumbling-and-wilderness-language",
+        "luke-8-1-3-women-scope",
+        "mark-7-3-pugme-pukna-variant",
+        "nahum-3-8-9-one-city-text-critical-proposal",
+        "proverbs-15-25-to-16-9-mt-lxx-redaction-debate",
+        "proverbs-28-rulers-and-poor-structure",
+        "proverbs-2-conditional-argument-structure",
+        "proverbs-6-surety-and-stranger",
+        "psalm-100-worship-and-the-psalter-sequence",
+        "psalm-101-royal-voice-and-community-justice",
+        "psalm-102-created-or-set-apart-people",
+        "psalm-105-history-recounted-as-liturgy",
+        "psalm-108-head-imagery-and-royal-victory-metaphor",
+        "psalm-109-speaker-and-reported-speech-debate",
+        "psalm-110-order-of-melchizedek-debate",
+        "psalm-111-acrostic-praise-and-scribal-learning",
+        "psalm-11-refuge-and-spatial-argument",
+        "psalm-12-speech-poor-and-wisdom-polarity",
+        "psalm-135-exodus-motifs-and-servants",
+        "psalm-138-praise-in-final-davidic-psalter",
+        "psalm-139-imprecation-and-ambiguity-in-prayer",
+        "psalm-140-selah-and-petition-structure",
+        "psalm-141-suffixes-and-fabrications",
+        "psalm-142-cave-superscription-and-historical-limits",
+        "psalm-143-in-galatians-argument-debate",
+        "psalm-144-reworked-royal-victory-song",
+        "psalm-14-psalm53-revision-debate",
+        "psalm-16-wisdom-contentment-and-psalter-context",
+        "psalm-17-textual-proposals-verses-11-and-14",
+        "psalm-18-distinctive-opening-and-samuel-parallel",
+        "psalm-20-amherst63-parallel-and-direction-debate",
+        "psalm-21-request-language-diplomatic-proposal",
+        "psalm-23-host-hospitality-and-return-reading",
+        "psalm-25-individual-prayer-and-collective-epilogue",
+        "psalm-26-walking-integrity-and-wisdom-structure",
+        "psalm-27-bqr-temple-reflection-reading",
+        "psalm-28-lament-praise-and-final-petition",
+        "psalm-29-ugaritic-comparison-method",
+        "psalm-31-hand-imagery-and-cluster-exhortation",
+        "psalm-32-two-stanza-wisdom-structure",
+        "psalm-33-sea-and-deep-imagery",
+        "psalm-34-instruction-and-wisdom-rhetoric",
+        "psalm-35-battlefield-and-courtroom-movement",
+        "psalm-38-embodied-distress-and-prayer-for-wholeness",
+        "psalm-39-wisdom-reflection-and-delayed-retribution",
+        "psalm-40-reception-in-4q160",
+        "psalm-43-refrain-and-stanza-structure",
+        "psalm-45-sound-and-performance-of-royal-poem",
+        "psalm-46-chaos-waters-and-stream-imagery",
+        "psalm-48-zion-security-and-remembered-space",
+        "psalm-49-wisdom-poem-and-chiastic-focus",
+        "psalm-4-dialogue-and-stanza-delimitation",
+        "psalm-52-wealth-critique-and-wisdom-intertexts",
+        "psalm-53-adaptation-and-cluster-context",
+        "psalm-55-betrayal-and-historical-setting-limits",
+        "psalm-56-superscription-and-editorial-frame",
+        "psalm-57-reuse-in-psalm108-reframes-praise",
+        "psalm-58-opening-word-and-versional-readings",
+        "psalm-59-evening-threat-and-morning-confidence",
+        "psalm-5-morning-motif-and-setting-limits",
+        "psalm-60-communal-defeat-and-book-context",
+        "psalm-61-royal-voice-proposal",
+        "psalm-62-community-address-and-wealth-warning",
+        "psalm-63-royal-voice-proposal",
+        "psalm-64-attack-to-vindication-narrative-movement",
+        "psalm-65-zion-to-earth-praise-sequence",
+        "psalm-66-collective-and-individual-praise",
+        "psalm-69-restoration-stanza-and-servants",
+        "psalm-70-concentric-structure-proposal",
+        "psalm-71-old-age-and-generational-witness",
+        "psalm-73-ring-composition-proposal",
+        "psalm-75-proposed-wordplay-in-judgment-poem",
+        "psalm-76-zion-hymn-and-unspecified-battle",
+        "psalm-77-lament-memory-and-exodus-reframing",
+        "psalm-78-introduction-and-historical-didactic-recitations",
+        "psalm-7-cush-superscription-and-setting-limits",
+        "psalm-80-vine-lament-and-son-ambiguity",
+        "psalm-81-hinge-lines-and-colometry-proposal",
+        "psalm-83-coalition-imagery-and-setting-limits",
+        "psalm-86-korah-collection-lament-frame",
+        "psalm-87-zion-status-reading-dispute",
+        "psalm-91-wisdom-language-and-protection-instruction",
+        "psalm-92-creation-order-and-sabbath-song",
+        "psalm-94-weekday-song-and-poetic-sequence",
+        "psalm-97-kingship-and-book-four-narrative",
+        "psalm-98-yhwh-kingship-in-book-four-cluster",
+        "psalm-99-zion-and-kingship-sequence",
+        "revelation-13-land-beast-as-asian-elite-network"
+      ],
+      "commit_sha": "5b534780",
+      "blockers": [
+        "Human review remains required for all 99. Full semantic re-reading of every Scripture anchor and primary witness verification are incomplete; no machine outcome is approval."
+      ],
+      "summary": "Reconciled all 99 ED-2 additions to stable IDs, anchors, evidence, source IDs, locators, packets, access history, review state, human-review requirement, and reader projection. Fresh source inspection was possible for 29 records; outcomes and limits are row-level.",
+      "validation": {
+        "inventory": "99 unique evidence IDs reconcile to ED-2 parent-tree additions; no missing or duplicate IDs",
+        "anchor_resolution": "99 anchors parse to 111 spans and 1,112 verses in bundled ASV; 0 missing verses",
+        "projection": "all 99 stable CKL evidence IDs resolve; 98 verse scope, 1 multi-chapter scope",
+        "fresh_source_review": "30 records inspected: 8 full scholarly texts, 4 excerpt-level sources, 18 abstract/metadata-level checks; 69 no new source text",
+        "outcomes": "27 supported with limitations; 1 correction required (stale Psalm 17 access note, repaired); 71 unable to independently verify; 0 insufficiently substantiated; 0 accepted or human approved",
+        "scripture_scope": "anchor/data resolution reproduced; semantic rereading and original-language witness verification remain incomplete and are explicitly flagged"
+      }
+    },
+    "2": {
+      "status": "completed_with_documented_limits",
+      "completed_evidence_ids": [
+        "2chronicles-25-amaziah-and-kings-parallel",
+        "john-10-22-dedication-term-and-winter",
+        "mark-7-3-pugme-pukna-variant",
+        "nahum-3-8-9-one-city-text-critical-proposal",
+        "proverbs-15-25-to-16-9-mt-lxx-redaction-debate",
+        "proverbs-28-rulers-and-poor-structure",
+        "psalm-105-history-recounted-as-liturgy",
+        "psalm-109-speaker-and-reported-speech-debate",
+        "psalm-110-order-of-melchizedek-debate",
+        "psalm-141-suffixes-and-fabrications",
+        "psalm-143-in-galatians-argument-debate",
+        "psalm-144-reworked-royal-victory-song",
+        "psalm-17-textual-proposals-verses-11-and-14",
+        "psalm-18-distinctive-opening-and-samuel-parallel",
+        "psalm-20-amherst63-parallel-and-direction-debate",
+        "psalm-21-request-language-diplomatic-proposal",
+        "psalm-23-host-hospitality-and-return-reading",
+        "psalm-34-instruction-and-wisdom-rhetoric",
+        "psalm-40-reception-in-4q160",
+        "psalm-49-wisdom-poem-and-chiastic-focus",
+        "psalm-4-dialogue-and-stanza-delimitation",
+        "psalm-58-opening-word-and-versional-readings",
+        "psalm-61-royal-voice-proposal",
+        "psalm-63-royal-voice-proposal",
+        "psalm-70-concentric-structure-proposal",
+        "psalm-73-ring-composition-proposal",
+        "psalm-75-proposed-wordplay-in-judgment-poem",
+        "psalm-7-cush-superscription-and-setting-limits",
+        "psalm-80-vine-lament-and-son-ambiguity",
+        "psalm-98-yhwh-kingship-in-book-four-cluster"
+      ],
+      "commit_sha": "77468c69",
+      "blockers": [
+        "Primary editions, manuscript/artifact images, full Ecclesiastes source, Psalm 34 full chapter, and 69 other reported full texts remain unavailable or were not freshly accessed; preserve as reviewer tasks."
+      ],
+      "summary": "Rechecked all 21 ED-2 abstract-only records, all three mixed-access records, and all three excerpt-only records through legitimate publisher/institutional sources. Independently read the highest-risk accessible full texts and reviewed textual, artifact, and historical reconstruction claims without claiming primary-witness verification.",
+      "validation": {
+        "access_limited": "21/21 abstract-only; 3/3 mixed; 3/3 excerpt-only re-opened. Psalm 34 publisher excerpt is fresh; full chapter still inaccessible.",
+        "high_risk_textual": "Mark 7:3, Psalms 17/58/141, Nahum 3, Proverbs 15–16, Ecclesiastes 10:1, Psalm 20, Psalm 110, Ezekiel 22 reviewed at their accessible source levels; no manuscript image or critical-edition apparatus inspected.",
+        "material_evidence": "No ancient artifact, papyrus, scroll image, inscription, or manuscript facsimile directly examined; institutional and publication pathways recorded.",
+        "outcomes": "No unsupported textual or historical claim demonstrated. Psalm 17 stale source-access note corrected separately; all disputed readings/reconstructions remain attributed."
+      }
+    },
+    "3": {
+      "status": "completed_with_documented_limits",
+      "completed_evidence_ids": [],
+      "commit_sha": "37bcf3d2",
+      "blockers": [
+        "19 unresolved semantic source-support targets and 20 ambiguous reference-work identities require context/human research; patristic-minor-prophets locator unresolved; broad source metadata variations remain."
+      ],
+      "summary": "Reconciled the two unresolved child-source references to exact local source records, retained the missing Malachi locator where publisher metadata did not justify a page/section, classified 102 source-support-target signals without weakening the checker, and screened the inherited 558 sparse IDs without fabricating bibliography. Corrected the demonstrated stale Psalm 17 access statement.",
+      "validation": {
+        "strict_ckl": "94 modules valid; 687 valid objects; 0 strict errors; 14 inherited warnings",
+        "source_references": "0 unresolved child-source references after the two exact local repairs",
+        "source_support_targets": "102 inherited deep-heuristic findings unchanged; no checker rules weakened",
+        "expected_locator": "patristic-minor-prophets remains without a defensible passage locator",
+        "sparse_bibliography": "558 reproduced from current source registry: 472 Scripture/text-source IDs and 86 reference-work IDs; the 86 are triaged 26 passage labels, 30 institution/catalog/artifact identities, 7 topic/collection labels, 3 identity/type variations, and 20 ambiguous identities; 0 bibliographic records invented or safely repaired.",
+        "targeted_tests": "17 Psalm/Ephesian tests passed; 51 manifest/schema-package/source-lock tests passed",
+        "source_lock_and_governance": "no matched source-lock references changed; source-lock tests pass; protected NE-9C/NE-10 validation deferred to phase 9",
+        "source_target_inventory": "102 row-level findings: 45 global claim IDs, 14 existing top-level fields, 24 generic field/category labels, 19 unresolved semantic targets; all retained for context or human review."
+      },
+      "completed_source_ids": [
+        "harland-associations-ephesus",
+        "glancy-slavery-ephesus",
+        "patristic-minor-prophets",
+        "psalm-17-textual-proposals-verses-11-and-14"
+      ]
+    },
+    "4": {
+      "status": "completed_with_documented_limits",
+      "completed_evidence_ids": [
+        "psalm-17-textual-proposals-verses-11-and-14",
+        "acts-15-29-eu-prassete-range",
+        "john-10-22-dedication-term-and-winter",
+        "luke-5-30-grumbling-and-wilderness-language",
+        "luke-8-1-3-women-scope",
+        "mark-7-3-pugme-pukna-variant"
+      ],
+      "commit_sha": "626f7cc7",
+      "blockers": [
+        "Independent source verification remains incomplete for 71 records; primary manuscript/artifact images and critical-edition apparatus were not examined. All 99 records still require human review."
+      ],
+      "summary": "Reviewed all 99 records at the source scopes recorded in the inventory. Corrected the demonstrated Psalm 17 source-access/provenance defect, independently checked five SBLGNT edition texts, and made no unsupported interpretive changes.",
+      "validation": {
+        "outcomes": "27 supported with limitations; 1 correction required and repaired; 71 unable to independently verify; 0 insufficiently substantiated; no record human-approved.",
+        "direct_edition_checks": "SBLGNT edition text independently checked for Mark 7:3, John 10:22, Luke 5:30, Luke 8:1–3, Acts 15:28–29; no apparatus or manuscript images checked.",
+        "correction": "Psalm 17 source-access statement corrected to reflect article inspection at pp. 398–402 and 406–407; confidence and disputed status unchanged.",
+        "human_review": "All 99 remain draft/in_review and human-review required."
+      }
+    },
+    "5": {
+      "status": "complete",
+      "completed_evidence_ids": [],
+      "commit_sha": "502b899d",
+      "blockers": [
+        "All 99 packets are prepared, but qualified human decisions have not been made; this is an intentional publication-review requirement."
+      ],
+      "summary": "Created a reusable review process, a searchable queue, and 99 concise reviewer packets grouped by all five ED-2 research waves. Human identity, date, decision, rationale, and correction fields are blank.",
+      "validation": {
+        "queue": "99 unique queue rows; every row links to an existing packet; all six human reviewer fields are blank.",
+        "wave_counts": "Wave A Psalms 79; Wave B Wisdom 5; Wave C Historical Books 4; Wave D Prophets 4; Wave E New Testament 7.",
+        "decision_vocabulary": "Five allowed human decisions documented; no decision prefilled.",
+        "governance": "No record was marked human-reviewed, accepted, or publication-approved."
+      }
+    },
+    "6": {
+      "status": "complete",
+      "completed_evidence_ids": [
+        "psalm-20-amherst63-parallel-and-direction-debate",
+        "proverbs-15-25-to-16-9-mt-lxx-redaction-debate",
+        "2chronicles-25-amaziah-and-kings-parallel",
+        "nahum-3-8-9-one-city-text-critical-proposal",
+        "mark-7-3-pugme-pukna-variant"
+      ],
+      "commit_sha": "79fd5b57",
+      "blockers": [
+        "Human scholarly review remains required for every ED-2 record; technical reader checks do not confer scholarly approval."
+      ],
+      "summary": "Verified Narrative Explorer draft and provenance disclosures with existing tests and six live 390px Chromium reader samples across ED-2 Waves A–E and an ED-1C sourced control. No UI correction was indicated.",
+      "validation": {
+        "frontend": "npm test: 17 frontend test files passed; 17 passed, 0 failed.",
+        "firefox": "Existing Narrative Explorer Firefox journey passed; measured effective viewport 500 CSS px after a 390px request, so it is not counted as a 390px pass.",
+        "chromium": "Chrome for Testing 151.0.7922.77 / matching driver; CDP device metrics report innerWidth=390, screen.width=390, DPR=1, visualViewport.width=390.",
+        "live_reader": "6/6 passages rendered one exact matching ED-2 or ED-1C record, showed draft notice before disclosure, exposed source IDs through keyboard-open disclosure, and reported no horizontal overflow at 390px.",
+        "disputed_long_text": "Mark 7:3 textual-variant notice visible; source locators displayed after expansion; keyboard focus remained on summary; expanded document width 390 and text 16px.",
+        "publication_label": "Frontend test verifies published records do not receive draft-preview notice; ED-2 status remains draft/in_review/human review required."
+      }
+    },
+    "7": {
+      "status": "completed_with_documented_limits",
+      "completed_evidence_ids": [],
+      "commit_sha": "b8cba249",
+      "blockers": [
+        "The census is an eligibility and retrieval measure, not a scholarly-completeness audit. The backlog recommends bounded source-led research; no new evidence wave was authorized or started."
+      ],
+      "summary": "Reproduced the detailed ED-2 chapter taxonomy and independently reran strict chapter retrieval, reconciled the exact 41 zero-eligible chapter set, examined all contextual/entity-only chapters, screened thin-count candidates, and prepared source-led priorities for all 66 books.",
+      "validation": {
+        "detailed_census": "1189 unique chapter rows: 1089 passage-specific, 56 contextual-only, 2 entity-only, 41 no eligible material, 1 incomplete/unknown; all zero chapters match the strict retrieval zero set.",
+        "strict_retrieval": "tools/ckl_coverage_report.py v2.0; 1189 chapters, 669 with 2+ items, 479 with 1, 41 with 0; 96.55% have at least one item; average 4.12, median 2.",
+        "reproducible_report": "/tmp/ed3-current-coverage.json SHA-256 d2b33bfe6c63c15c44113f26935661052cd8307813d5c8ea4a5211154e2b416c; generated with .venv/bin/python tools/ckl_coverage_report.py --json /tmp/ed3-current-coverage.json.",
+        "thin_candidates": "494 unique passages in union of 479 strict one-item chapters and 268 detailed specific chapters with <=2 eligible CKL items; overlap 253. Candidate list includes source-traceability and topic-depth fields.",
+        "book_backlog": "66 book-by-book rows, ordered P0–P3 across historical/cultural opportunity, primary-source availability, linguistic/literary significance, current depth, reader relevance, uncertainty, and verification difficulty; 7 P0 planning books.",
+        "governance": "No research records, curated decisions, or passage bridges were added or promoted."
+      }
+    },
+    "8": {
+      "status": "complete",
+      "completed_evidence_ids": [],
+      "commit_sha": "e44b54d5",
+      "blockers": [],
+      "summary": "All required ED-3 deliverables are grouped and navigable: machine-readable inventory, per-record human review packets, source and correction trails, reader acceptance, and a 66-book source-led depth backlog. No reviewer decisions are filled and no evidence-generation wave was opened.",
+      "validation": {
+        "deliverables": "All 12 required report/data files exist; 99 evidence IDs reconcile across the inventory and blank-decision queue; 99 linked reviewer packets are grouped by five ED-2 waves.",
+        "navigation": "README links cover baseline, evidence/source findings, corrections, queue/process, reader acceptance, book backlog, passage candidates, validation, and final report.",
+        "ledger": "Phases 0-7 retain per-phase status, evidence IDs where applicable, validation outcomes, limitations, and commit references; final gate results are reserved for phase 9."
+      }
+    },
+    "9": {
+      "status": "completed_with_documented_limits",
+      "completed_evidence_ids": [],
+      "commit_sha": "521eae2e",
+      "blockers": [
+        "The unfiltered full repository test suite was not completed; two confirmed inherited retrieval-order failures remain.",
+        "Frozen NE-9C bulk-curation validation cannot pass with its pre-ED-2 fingerprint; protected checkpoint was preserved and compatibility counts/hashes verified.",
+        "All 99 ED-2 additions still require independent human scholarly review; no approval is recorded."
+      ],
+      "summary": "Completed strict and deep CKL checks, focused Python/API/projection/curation/source-lock tests, release workflow tests, frontend tests, genuine mobile browser acceptance, profile cleanliness, wheel/sdist packaging and wheel smoke, and the full 1,189-chapter ED-1A census. Confirmed unchanged NE-9C/NE-10 identities and protected artifacts. The unfiltered full repository pytest run was interrupted after 23 minutes with two retrieval-order failures that were independently reproduced against the exact ED-2 origin/master archive.",
+      "validation": {
+        "module_and_ckl": "94 framework modules valid; strict CKL 687 valid objects, 0 errors, 14 inherited warnings; deep report 1,408 evidence items, 63 heuristic error-severity flags, 1,093 warnings, 102 support-target signals, 0 unresolved child-source references after phase 3 repairs.",
+        "focused_python": "584 passed in selected NE/API/projection/curation/release/source-lock tests; the exact Validate-workflow release set passed 50 tests in 97.42 seconds.",
+        "frontend_and_reader": "npm test passed 17/17. Phase 6 Chromium checks verified 390 CSS-pixel width for six samples across five ED-2 waves and an ED-1C record; no overflow, duplicate card, or exact-passage mismatch observed.",
+        "chapter_census": "ED-1A census passed 1189/1189 chapters, 687 CKL objects, 0 unmapped identities, 19 sample chapters, and 16 targeted service builds; taxonomy 1089 passage-specific, 56 contextual-only, 2 entity-only, 41 zero-eligible, 1 incomplete/unknown.",
+        "packaging": "python -m build --no-isolation built wheel and sdist; content gate passed (1052 wheel, 1242 sdist entries; required files present; no retired generated payload). Temporary installed-wheel CLI/app/default-CKL smoke passed with 687 packaged objects. Existing setuptools license notices and optional commentary SQLite glob warning only.",
+        "profiles_and_worktree": "minimal-7b and standard profile generation produced no diff; git diff --check passed; no generated package, census, or profile artifact was committed.",
+        "protected_governance": "433 current accepted NE-9C identities (431 object, 2 evidence), 44 verified NE-10 bridges, 7 held. Checkpoint and NE-10 file hashes match baseline; no protected files/source-lock module changed. Legacy ne9c validate still stops at protected CKL source fingerprint mismatch already documented at baseline after ED-2.",
+        "broad_suite": "Full pytest run stopped after 23:10: 54 tests passed, 892 subtests passed, 2 retrieval-order assertions failed before interruption. Both failures reproduced on origin/master: 1 John query expected 1-john but returned john; 1 Thessalonians query expected 1-thessalonians but returned acts. No ED-3 fix applied."
+      }
+    },
+    "10": {
+      "status": "in_progress",
+      "completed_evidence_ids": [],
+      "commit_sha": "81e7cb94",
+      "blockers": [
+        "Open the PR from the pushed branch using a GitHub session with repository write permission."
+      ],
+      "summary": "Final report and audit branch are complete and pushed. PR opening remains blocked because the GitHub integration returned 403 Resource not accessible by integration, gh has no authenticated host, and no browser session is available.",
+      "validation": {
+        "final_report": "Reconciles all 99 records and provides separate technical and scholarly readiness judgments; no human approval recorded.",
+        "branch_push": "Branch audit/ed3-scholarly-integrity pushed and tracking origin/audit/ed3-scholarly-integrity.",
+        "pull_request": "Not created. GitHub API returned 403 Resource not accessible by integration; gh auth status reports no authenticated host; CUA reports no browser sessions. Comparison page: https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...audit/ed3-scholarly-integrity?expand=1."
+      }
+    }
+  },
+  "source_review": {
+    "ed2_reported_access_categories": {
+      "full_text_only": 72,
+      "mixed_full_text_and_abstract": 3,
+      "excerpt_only": 3,
+      "abstract_only": 21,
+      "inaccessible_only": 0
+    },
+    "independently_inspected_records": [
+      "2chronicles-25-amaziah-and-kings-parallel",
+      "john-10-22-dedication-term-and-winter",
+      "mark-7-3-pugme-pukna-variant",
+      "nahum-3-8-9-one-city-text-critical-proposal",
+      "proverbs-15-25-to-16-9-mt-lxx-redaction-debate",
+      "proverbs-28-rulers-and-poor-structure",
+      "psalm-105-history-recounted-as-liturgy",
+      "psalm-109-speaker-and-reported-speech-debate",
+      "psalm-110-order-of-melchizedek-debate",
+      "psalm-141-suffixes-and-fabrications",
+      "psalm-143-in-galatians-argument-debate",
+      "psalm-144-reworked-royal-victory-song",
+      "psalm-17-textual-proposals-verses-11-and-14",
+      "psalm-18-distinctive-opening-and-samuel-parallel",
+      "psalm-20-amherst63-parallel-and-direction-debate",
+      "psalm-21-request-language-diplomatic-proposal",
+      "psalm-23-host-hospitality-and-return-reading",
+      "psalm-34-instruction-and-wisdom-rhetoric",
+      "psalm-40-reception-in-4q160",
+      "psalm-49-wisdom-poem-and-chiastic-focus",
+      "psalm-4-dialogue-and-stanza-delimitation",
+      "psalm-58-opening-word-and-versional-readings",
+      "psalm-61-royal-voice-proposal",
+      "psalm-63-royal-voice-proposal",
+      "psalm-70-concentric-structure-proposal",
+      "psalm-73-ring-composition-proposal",
+      "psalm-75-proposed-wordplay-in-judgment-poem",
+      "psalm-7-cush-superscription-and-setting-limits",
+      "psalm-80-vine-lament-and-son-ambiguity",
+      "psalm-98-yhwh-kingship-in-book-four-cluster"
+    ],
+    "independently_inspected_scope": "30 records have fresh source material (8 full scholarly texts, 4 excerpt-level, 18 abstract/metadata-level). 69 have no fresh source text. No primary artifact/image or critical-edition apparatus was examined.",
+    "human_approval_recorded": false,
+    "source_check_batch_status": "All access-limited batches rechecked (21 abstract-only, 3 mixed, 3 excerpt-only); full text remains inaccessible for many records."
+  },
+  "outstanding_blockers": []
+}
