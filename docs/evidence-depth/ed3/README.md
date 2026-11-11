@@ -6,18 +6,19 @@ research priorities. It does not confer human scholarly approval.
 
 ## Status
 
-Phases 0–2 are committed on the fetched ED-2 merge. Phase 1 reconciles all 99
+Phases 0–8 are documented on the fetched ED-2 merge. Phase 1 reconciles all 99
 additions to stable CKL evidence IDs, anchors, source records, locators,
 research packets, reported access categories, review state, and reader
 projection. Fresh source material was independently inspected for 30 records;
-69 reported full-text records were not freshly reproduced. Phase 2
-rechecked every access-limited group and documents the remaining article and
+69 reported full-text records were not freshly reproduced. Phase 2 rechecked
+every access-limited group and documents the remaining article and
 primary-witness gaps. Phase 3 repaired two exact local source references and
 the stale Psalm 17 access note; the 102 inherited target heuristics remain
 open. All outcomes are machine-assisted, 71 records remain unable to be
 independently verified, and all additions remain draft, in review, and
 human-review required. Semantic re-reading of every passage and primary-witness
-verification remain open.
+verification remain open. Phase 7 records book-by-book, source-led research
+priorities rather than proposing a new mass evidence wave.
 
 ## Navigation
 
@@ -34,6 +35,7 @@ verification remain open.
 - [Reusable human review process](human-review-process.md)
 - [Reader and mobile acceptance](reader-acceptance.md)
 - [Research depth priorities](research-depth-priorities.md)
+- [Passage-level thinness candidates (not a generation quota)](thin-passage-candidates.csv)
 - [Validation results](validation-results.md)
 - [Final report](final-report.md)
 - Reviewer packets are grouped by ED-2 wave under `review-packets/`.
@@ -62,3 +64,5 @@ registries and are not changed by this audit.
 ## Reader and depth review
 
 - [Narrative Explorer reader acceptance](reader-acceptance.md) — draft disclosure, provenance, live Chromium 390px samples, and browser limits.
+- [Book-by-book backlog and prioritization method](research-depth-priorities.md)
+- [Passage-level candidate inventory](thin-passage-candidates.csv)

@@ -271,7 +271,7 @@
     "7": {
       "status": "completed_with_documented_limits",
       "completed_evidence_ids": [],
-      "commit_sha": null,
+      "commit_sha": "b8cba249",
       "blockers": [
         "The census is an eligibility and retrieval measure, not a scholarly-completeness audit. The backlog recommends bounded source-led research; no new evidence wave was authorized or started."
       ],
@@ -286,10 +286,18 @@
       }
     },
     "8": {
-      "status": "pending",
+      "status": "complete",
       "completed_evidence_ids": [],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "Release regression gates and final protected-state verification remain for phase 9."
+      ],
+      "summary": "All required ED-3 deliverables are grouped and navigable: machine-readable inventory, per-record human review packets, source and correction trails, reader acceptance, and a 66-book source-led depth backlog. No reviewer decisions are filled and no evidence-generation wave was opened.",
+      "validation": {
+        "deliverables": "All 12 required report/data files exist; 99 evidence IDs reconcile across the inventory and blank-decision queue; 99 linked reviewer packets are grouped by five ED-2 waves.",
+        "navigation": "README links cover baseline, evidence/source findings, corrections, queue/process, reader acceptance, book backlog, passage candidates, validation, and final report.",
+        "ledger": "Phases 0-7 retain per-phase status, evidence IDs where applicable, validation outcomes, limitations, and commit references; final gate results are reserved for phase 9."
+      }
     },
     "9": {
       "status": "pending",
