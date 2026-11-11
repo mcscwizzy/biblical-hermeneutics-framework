@@ -228,7 +228,18 @@ class CKLRetrievalServiceTests(unittest.TestCase):
             debug=True,
         )
 
+        self.assertEqual(response.analysis.scripture_references, [])
         self.assertEqual(response.results[0].id, "1-corinthians")
+        coherent_match = next(
+            signal
+            for signal in response.results[0].score_details
+            if signal.name == "coherent_evidence_match"
+        )
+        self.assertEqual(
+            coherent_match.matched_terms,
+            ["judging", "nothing", "before", "time"],
+        )
+        self.assertIn("one interpretive_notes unit", coherent_match.note or "")
 
     def test_scattered_baptism_and_creation_terms_do_not_form_a_coherent_signal(self) -> None:
         response = self.service.search(

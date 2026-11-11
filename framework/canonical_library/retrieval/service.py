@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
@@ -12,6 +13,13 @@ from .indexer import CKLIndex, IndexedCKLEntry, load_index
 from .models import CKLIndexStats, CKLSearchResponse, CKLSearchResult, QueryAnalysis
 from .ranker import score_indexed_entry
 from .tokenizer import analyze_query, normalize_query
+
+
+_PRIMARY_RELATIONSHIP_QUERY = re.compile(
+    r"\bhow\s+(?:does|do|did|is|are|was|were)\b.*?"
+    r"\b(?:relate|connect)(?:s|d|ed)?\s+to\b",
+    re.IGNORECASE,
+)
 
 
 class CKLRetrievalService:
@@ -115,6 +123,10 @@ class CKLRetrievalService:
                     set(normalize_alias(normalized_query).split())
                 )
             ],
+            primary_relationship_book=_primary_relationship_book(
+                query,
+                analysis.scripture_references,
+            ),
             result_sources=result_sources,
         )
 
@@ -186,6 +198,7 @@ class CKLRetrievalService:
         analysis: QueryAnalysis,
         has_scripture_reference: bool = False,
         named_books: Sequence[str] = (),
+        primary_relationship_book: str | None = None,
         result_sources: Mapping[str, int] | None = None,
     ) -> list[CKLSearchResult]:
         deduped: dict[str, CKLSearchResult] = {}
@@ -212,6 +225,7 @@ class CKLRetrievalService:
                     result,
                     named_books,
                     has_scripture_reference=has_scripture_reference,
+                    primary_relationship_book=primary_relationship_book,
                 ),
                 -(
                     result.score
@@ -343,9 +357,18 @@ def _named_book_rank(
     named_books: Sequence[str],
     *,
     has_scripture_reference: bool = False,
+    primary_relationship_book: str | None = None,
 ) -> int:
     """Prefer an explicitly named book after honoring an object-type request."""
 
+    if primary_relationship_book:
+        if (
+            result.category == "book"
+            and normalize_query(result.title).lower()
+            == normalize_query(primary_relationship_book).lower()
+        ):
+            return 0
+        return 1
     if has_scripture_reference or not named_books:
         return 0
     normalized_named_books = {
@@ -359,6 +382,17 @@ def _named_book_rank(
     ):
         return 0
     return 1
+
+
+def _primary_relationship_book(
+    query: str,
+    scripture_references: Sequence[Any],
+) -> str | None:
+    """Return the grammatical subject book for an asymmetric relation question."""
+
+    if len(scripture_references) < 2 or not _PRIMARY_RELATIONSHIP_QUERY.search(query):
+        return None
+    return str(scripture_references[0].book)
 
 
 def _named_book_reference_match_count(

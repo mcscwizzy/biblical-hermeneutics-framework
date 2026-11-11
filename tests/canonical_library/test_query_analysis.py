@@ -110,6 +110,17 @@ class QueryAnalysisTests(unittest.TestCase):
             ],
         )
 
+    def test_detect_scripture_references_requires_a_word_boundary_after_book_alias(self) -> None:
+        spans = detect_scripture_references(
+            "How does 1 Thessalonians relate to Acts 17, and what does the Hebrew word mean?",
+            book_alias_lookup=self.book_alias_lookup,
+        )
+
+        self.assertEqual(
+            [(span.book, span.start_chapter) for span in spans],
+            [("1 Thessalonians", None), ("Acts", 17)],
+        )
+
     def test_analyze_query_detects_people_places_themes_and_events(self) -> None:
         analysis = analyze_query(
             "Why did Joshua renew the covenant at Shechem?",

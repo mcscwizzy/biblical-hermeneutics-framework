@@ -1,0 +1,104 @@
+{
+  "program": "ED-4 Research Retrieval, Scholarly Review Operations & Reader Quality",
+  "base_branch": "master",
+  "base_sha": "31832793a155b16b6d694b1e84202bac1ee47c38",
+  "branch": "feat/ed4-research-quality-and-review",
+  "status": "completed",
+  "human_review_decisions_recorded": 0,
+  "phases": {
+    "0": {
+      "name": "Baseline and execution",
+      "status": "completed",
+      "commit_sha": "801e7ebe",
+      "blockers": []
+    },
+    "1": {
+      "name": "Research retrieval",
+      "status": "completed",
+      "commit_sha": "c9f5192e",
+      "blockers": []
+    },
+    "2": {
+      "name": "Human scholarly review workflow",
+      "status": "completed",
+      "commit_sha": "0ae5fb4da624",
+      "blockers": [
+        "All 99 records still require qualified human review; ED-4 recorded no human decision."
+      ]
+    },
+    "3": {
+      "name": "Source integrity",
+      "status": "completed",
+      "commit_sha": "4cf1b8d691c11c20831ced36bf70128240b5678e",
+      "blockers": [
+        "19 support-target relationships remain unresolved without author/human identity decisions; reference-work identity triage is documented with no unsupported bulk normalization."
+      ]
+    },
+    "4": {
+      "name": "Current-state curation compatibility",
+      "status": "completed",
+      "commit_sha": "df958285e51097830bdcd82af33ff3c51353f790",
+      "blockers": []
+    },
+    "5": {
+      "name": "Reader usefulness and transparency",
+      "status": "completed",
+      "commit_sha": "ab79b8ad",
+      "blockers": []
+    },
+    "6": {
+      "name": "Obadiah census anomaly",
+      "status": "completed",
+      "commit_sha": "3b802976",
+      "blockers": []
+    },
+    "7": {
+      "name": "Regression and release testing",
+      "status": "completed",
+      "commit_sha": "9abf745b",
+      "blockers": [
+        "The repository-wide pytest run was bounded at 25 minutes: 55 tests and 934 subtests passed before interruption entering the SQLite setup for the next test; no failure was reported before timeout. Focused gates completed."
+      ]
+    },
+    "8": {
+      "name": "Final delivery",
+      "status": "completed",
+      "commit_sha": "12152690",
+      "blockers": []
+    }
+  },
+  "remaining_issues": [
+    "Qualified reviewers must independently decide the 99 queued records; no human decisions or approvals were recorded by ED-4.",
+    "The 71 unable-to-independently-verify outcomes remain source-access limitations requiring qualified follow-up, not evidence that claims are false.",
+    "The 19 unresolved semantic support targets and reference-work identity questions documented in source-integrity-results.md need source-owner or qualified-human follow-up.",
+    "The full repository pytest suite did not finish within the 25-minute bound; see validation-results.md for the exact interrupted test and completed count."
+  ],
+  "commit_shas": [
+    "801e7ebe",
+    "9636a2ed",
+    "29e722fd1277",
+    "bf55e161e963",
+    "0ae5fb4da624",
+    "b20c2390599e",
+    "4cf1b8d691c11c20831ced36bf70128240b5678e",
+    "021574ee8c19eea642f6c6ee36129f7381bae942",
+    "df958285e51097830bdcd82af33ff3c51353f790",
+    "e353abf75c4a53582b3e88bd628ae96d9a7c2370",
+    "ab79b8ad",
+    "e335c6f7",
+    "3b802976",
+    "3a367bcf",
+    "24b1a95b",
+    "c9f5192e",
+    "9abf745b",
+    "12152690"
+  ],
+  "push": {
+    "remote": "origin",
+    "branch": "feat/ed4-research-quality-and-review",
+    "pushed_work_commit_sha": "12152690",
+    "pr_comparison_url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...feat/ed4-research-quality-and-review?expand=1",
+    "merged": false,
+    "deployed": false
+  }
+}

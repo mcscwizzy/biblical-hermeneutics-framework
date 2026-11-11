@@ -241,6 +241,59 @@ def test_genesis_6_exposes_scoped_cultural_evidence_without_book_level_cross_ref
     assert "g6-evil-intention-and-violence" not in evidence_ids
 
 
+def test_literary_and_cultural_evidence_keep_observation_interpretation_and_source_limits(ckl_library):
+    client = _client(_service(ckl_library))
+    cases = (
+        (
+            "1 Chronicles", 16,
+            "ckl:1-chronicles#evidence:first-chronicles-16-36-five-book-psalter",
+            "literary-convention", "1 Chronicles 16:36",
+            "longacre-psalter-compiled-2025", "Longacre argues",
+        ),
+        (
+            "John", 10,
+            "ckl:john#evidence:john-10-22-dedication-term-and-winter",
+            "cultural-practice", "John 10:22",
+            "foerster-john10-enkainia-2016", "This proposal is reported from the abstract only",
+        ),
+    )
+
+    for book, chapter, item_id, evidence_type, anchor, source_id, interpretation_marker in cases:
+        response = client.get(f"/api/narrative-explorer/v1/passages/{book}/{chapter}")
+        assert response.status_code == 200
+        payload = response.json()
+        validate_projection(payload)
+        item = _item(payload, item_id)
+
+        assert item["record_kind"] == "evidence"
+        assert item["evidence_category"] == evidence_type
+        assert item["certainty"] in {"disputed", "plausible"}
+        assert item["dispute_status"] in {"major_scholarly_disagreement", "interpretive_uncertainty"}
+        assert anchor in {entry["reference"] for entry in item["applicable_passage_anchors"]}
+        assert source_id in item["source_ids"]
+        assert item["rationale"]["primary_observation"]
+        assert interpretation_marker in item["rationale"]["scholarly_interpretation"]
+
+
+def test_obadiah_verse_seven_note_projects_to_its_canonical_chapter(ckl_library):
+    payload = _client(_service(ckl_library)).get(
+        "/api/narrative-explorer/v1/passages/Obadiah/1"
+    ).json()
+    validate_projection(payload)
+
+    note = next(
+        item for item in payload["items"]
+        if item["record_kind"] == "interpretive_note"
+        and item["rationale"].get("rationale") == "No ally is named."
+    )
+
+    assert note["applicable_passage_anchors"]
+    assert {anchor["reference"] for anchor in note["applicable_passage_anchors"]} == {
+        "Obadiah 1:7"
+    }
+    assert note["source_ids"] == ["obadiah-masoretic", "nogalski-obadiah"]
+
+
 def test_related_passage_routes_cover_real_research_examples_without_shared_scope_inference(ckl_library):
     client = _client(_service(ckl_library))
     references = [

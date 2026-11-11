@@ -55,6 +55,7 @@ STOP_WORDS = frozenset(
         "has",
         "had",
         "how",
+        "if",
         "in",
         "is",
         "it",
@@ -384,14 +385,14 @@ def detect_scripture_references(
         return []
     pattern = _build_book_pattern(book_alias_lookup)
     reference_re = re.compile(
-        rf"\b(?P<book>{pattern})"
+        rf"\b(?P<book>{pattern})\b"
         r"(?:[\s\.,;:\-\u2013\u2014]+[\d:.,;()\-\u2013\u2014]+(?:\s*[\d:.,;()\-\u2013\u2014]+)*)?",
         re.IGNORECASE,
     )
     spans: list[ScriptureReferenceSpan] = []
     seen: set[tuple[str, int | None, int | None, int | None, int | None]] = set()
     for match in reference_re.finditer(query):
-        candidate = match.group(0).strip()
+        candidate = match.group(0).strip().rstrip(".,;:")
         parsed = parse_scripture_reference(candidate, book_alias_lookup=book_alias_lookup)
         if parsed is None:
             continue
@@ -636,10 +637,25 @@ def _collect_index_matches(
     entries_by_id: Mapping[str, Any],
 ) -> list[tuple[str, list[Any]]]:
     matches: list[tuple[str, list[Any]]] = []
+    matched_spans: list[tuple[int, int]] = []
     title_keys = tuple(sorted(str(label) for label in title_index.keys()))
     alias_keys = tuple(sorted(str(label) for label in alias_index.keys()))
     for label in _sorted_index_labels(title_keys, alias_keys):
-        if not _contains_label(search_text, label):
+        occurrences = [
+            (match.start(), match.end())
+            for match in re.finditer(rf"\b{re.escape(label)}\b", search_text)
+        ]
+        unshadowed_occurrences = [
+            (start, end)
+            for start, end in occurrences
+            if not any(
+                parent_start <= start
+                and end <= parent_end
+                and (parent_end - parent_start) > (end - start)
+                for parent_start, parent_end in matched_spans
+            )
+        ]
+        if not unshadowed_occurrences:
             continue
         entry_ids = _coerce_ids(title_index.get(label)) | _coerce_ids(alias_index.get(label))
         if not entry_ids:
@@ -647,6 +663,7 @@ def _collect_index_matches(
         entries = [entries_by_id[entry_id] for entry_id in sorted(entry_ids) if entry_id in entries_by_id]
         if entries:
             matches.append((label, entries))
+            matched_spans.extend(unshadowed_occurrences)
     return matches
 
 
@@ -657,12 +674,6 @@ def _sorted_index_labels(
 ) -> tuple[str, ...]:
     labels = {label for label in title_index_keys if label} | {label for label in alias_index_keys if label}
     return tuple(sorted(labels, key=lambda label: (-len(label.split()), -len(label), label)))
-
-
-def _contains_label(search_text: str, label: str) -> bool:
-    if not search_text or not label:
-        return False
-    return bool(re.search(rf"\b{re.escape(label)}\b", search_text))
 
 
 def _coerce_ids(value: Any) -> set[str]:
