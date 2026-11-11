@@ -123,7 +123,7 @@
         "psalm-99-zion-and-kingship-sequence",
         "revelation-13-land-beast-as-asian-elite-network"
       ],
-      "commit_sha": null,
+      "commit_sha": "5b534780",
       "blockers": [
         "Human review remains required for all 99. Full semantic re-reading of every Scripture anchor and primary witness verification are incomplete; no machine outcome is approval."
       ],
@@ -132,16 +132,56 @@
         "inventory": "99 unique evidence IDs reconcile to ED-2 parent-tree additions; no missing or duplicate IDs",
         "anchor_resolution": "99 anchors parse to 111 spans and 1,112 verses in bundled ASV; 0 missing verses",
         "projection": "all 99 stable CKL evidence IDs resolve; 98 verse scope, 1 multi-chapter scope",
-        "fresh_source_review": "29 records inspected; 8 full scholarly texts, 4 excerpt-level pages, 17 abstract/metadata-level records; 70 no new source text",
-        "outcomes": "27 supported with limitations; 72 unable to independently verify; 0 correction required; 0 insufficiently substantiated; 0 accepted or human approved",
+        "fresh_source_review": "30 records inspected: 8 full scholarly texts, 4 excerpt-level sources, 18 abstract/metadata-level checks; 69 no new source text",
+        "outcomes": "27 supported with limitations; 1 correction required (stale Psalm 17 access note, repaired); 71 unable to independently verify; 0 insufficiently substantiated; 0 accepted or human approved",
         "scripture_scope": "anchor/data resolution reproduced; semantic rereading and original-language witness verification remain incomplete and are explicitly flagged"
       }
     },
     "2": {
-      "status": "pending",
-      "completed_evidence_ids": [],
+      "status": "completed_with_documented_limits",
+      "completed_evidence_ids": [
+        "2chronicles-25-amaziah-and-kings-parallel",
+        "john-10-22-dedication-term-and-winter",
+        "mark-7-3-pugme-pukna-variant",
+        "nahum-3-8-9-one-city-text-critical-proposal",
+        "proverbs-15-25-to-16-9-mt-lxx-redaction-debate",
+        "proverbs-28-rulers-and-poor-structure",
+        "psalm-105-history-recounted-as-liturgy",
+        "psalm-109-speaker-and-reported-speech-debate",
+        "psalm-110-order-of-melchizedek-debate",
+        "psalm-141-suffixes-and-fabrications",
+        "psalm-143-in-galatians-argument-debate",
+        "psalm-144-reworked-royal-victory-song",
+        "psalm-17-textual-proposals-verses-11-and-14",
+        "psalm-18-distinctive-opening-and-samuel-parallel",
+        "psalm-20-amherst63-parallel-and-direction-debate",
+        "psalm-21-request-language-diplomatic-proposal",
+        "psalm-23-host-hospitality-and-return-reading",
+        "psalm-34-instruction-and-wisdom-rhetoric",
+        "psalm-40-reception-in-4q160",
+        "psalm-49-wisdom-poem-and-chiastic-focus",
+        "psalm-4-dialogue-and-stanza-delimitation",
+        "psalm-58-opening-word-and-versional-readings",
+        "psalm-61-royal-voice-proposal",
+        "psalm-63-royal-voice-proposal",
+        "psalm-70-concentric-structure-proposal",
+        "psalm-73-ring-composition-proposal",
+        "psalm-75-proposed-wordplay-in-judgment-poem",
+        "psalm-7-cush-superscription-and-setting-limits",
+        "psalm-80-vine-lament-and-son-ambiguity",
+        "psalm-98-yhwh-kingship-in-book-four-cluster"
+      ],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "Primary editions, manuscript/artifact images, full Ecclesiastes source, Psalm 34 full chapter, and 69 other reported full texts remain unavailable or were not freshly accessed; preserve as reviewer tasks."
+      ],
+      "summary": "Rechecked all 21 ED-2 abstract-only records, all three mixed-access records, and all three excerpt-only records through legitimate publisher/institutional sources. Independently read the highest-risk accessible full texts and reviewed textual, artifact, and historical reconstruction claims without claiming primary-witness verification.",
+      "validation": {
+        "access_limited": "21/21 abstract-only; 3/3 mixed; 3/3 excerpt-only re-opened. Psalm 34 publisher excerpt is fresh; full chapter still inaccessible.",
+        "high_risk_textual": "Mark 7:3, Psalms 17/58/141, Nahum 3, Proverbs 15–16, Ecclesiastes 10:1, Psalm 20, Psalm 110, Ezekiel 22 reviewed at their accessible source levels; no manuscript image or critical-edition apparatus inspected.",
+        "material_evidence": "No ancient artifact, papyrus, scroll image, inscription, or manuscript facsimile directly examined; institutional and publication pathways recorded.",
+        "outcomes": "No unsupported textual or historical claim demonstrated. Psalm 17 stale source-access note corrected separately; all disputed readings/reconstructions remain attributed."
+      }
     },
     "3": {
       "status": "pending",
@@ -218,6 +258,7 @@
       "psalm-20-amherst63-parallel-and-direction-debate",
       "psalm-21-request-language-diplomatic-proposal",
       "psalm-23-host-hospitality-and-return-reading",
+      "psalm-34-instruction-and-wisdom-rhetoric",
       "psalm-40-reception-in-4q160",
       "psalm-49-wisdom-poem-and-chiastic-focus",
       "psalm-4-dialogue-and-stanza-delimitation",
@@ -231,9 +272,9 @@
       "psalm-80-vine-lament-and-son-ambiguity",
       "psalm-98-yhwh-kingship-in-book-four-cluster"
     ],
-    "independently_inspected_scope": "Fresh access metadata and exact inspected scope are stored row-by-row in the ED-3 inventory. No manuscript images, ancient artifacts, or primary critical-edition apparatus were independently examined.",
+    "independently_inspected_scope": "30 records have fresh source material (8 full scholarly texts, 4 excerpt-level, 18 abstract/metadata-level). 69 have no fresh source text. No primary artifact/image or critical-edition apparatus was examined.",
     "human_approval_recorded": false,
-    "source_check_batch_status": "29 record-level fresh source inspections logged; 70 ED-2 claims of full-text access not freshly reproduced; all 99 assessments remain machine-assisted."
+    "source_check_batch_status": "All access-limited batches rechecked (21 abstract-only, 3 mixed, 3 excerpt-only); full text remains inaccessible for many records."
   },
   "outstanding_blockers": []
 }

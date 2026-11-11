@@ -11,10 +11,10 @@ actually opened during ED-3.
 The 99 stable evidence IDs were reconciled against the ED-2 merge-parent diff,
 book object, research packet, local bibliography entry, source IDs, and exact
 locator recorded in the CKL. A fresh review found relevant source material for
-29 records. Eight have a full scholarly text available in a legitimate
-publisher or institutional repository; three have a useful excerpt; the
+30 records. Eight have a full scholarly text available in a legitimate
+publisher or institutional repository; four have a useful excerpt; the
 remaining inspected records have an abstract, metadata, or a mixture of those
-levels. The other 70 records have not had their source text freshly inspected.
+levels. The other 69 records have not had their source text freshly inspected.
 Two further records expose only publisher metadata or a partial HTML excerpt,
 which does not support the claim at the cited scope. All 99 outcomes are
 therefore either **Supported with limitations** or **Unable to independently
@@ -23,8 +23,9 @@ verify**; none is human-approved.
 The ED-2 source-access categories were 72 full-text-only, 21 abstract-only,
 three excerpt-only, and three mixed full-text/abstract-only. ED-3 upgraded
 Psalm 17 from abstract to full article, and independently re-opened sources
-for all 21 abstract-only records, all three mixed records, and two of the
-three excerpt-only records. The Psalm 34 excerpt was not freshly reproduced.
+for all 21 abstract-only records, all three mixed records, and all three
+excerpt-only records. The Psalm 34 JSTOR record and its displayed excerpt were
+freshly reproduced; the full chapter remains inaccessible.
 For the 72 reported full-text records, only three additional sources were
 freshly re-opened as full text in this batch (Nahum 3, Proverbs 15:25–16:9,
 and Psalm 110); the other 69 remain unverified at source-text level.
@@ -61,7 +62,10 @@ Psalm 75, Psalm 105, and Psalm 23. Abstracts are treated as support only for
 the conclusion they actually state. For Psalm 23, the current publisher page
 exposed bibliographic metadata but no abstract or article argument; its
 hospitality proposal remains unable to be independently verified in this
-batch. For Psalm 144, the publisher page exposed metadata and partial HTML, but
+batch. For Psalm 34, the JSTOR record's displayed excerpt supports Brown's
+limited shared-rhetoric/genre qualification but not the chapter's full argument
+([publisher record and excerpt](https://www.jstor.org/stable/10.5325/j.ctv1w36pmb.11)).
+For Psalm 144, the publisher page exposed metadata and partial HTML, but
 not enough of the cited argument to independently verify the interpretation.
 
 The authorized Augsburg Fortress sample for Psalm 80 exposes pp. 16–17 of
@@ -113,15 +117,36 @@ institutional records. They confirm bibliographic/object pathways, not the
 inscription readings or historical interpretations. Archaeology-service
 catalog ownership remains unchanged.
 
+## High-risk review matrix
+
+| Case | What was independently examined | What remains open |
+|---|---|---|
+| Mark 7:3, `pugmē` / proposed `pykna` | Cambridge publisher abstract and its displayed footnote, including its reported witnesses | Burkett's complete argument, critical-edition apparatus, and images of א / W; original reading remains unresolved. |
+| Psalm 17:11, 14 | Full Italian article, especially pp. 398–402 and 406–407 | BHK/BHS apparatus and the manuscript allegedly supporting the conjecture; the article itself questions that report. |
+| Psalm 58:1 and Psalm 141:3–5 | Peeters publisher abstracts and the cited secondary descriptions | Hebrew editions, ancient versions, article arguments, and suffix/pronoun analysis against the source text. |
+| Nahum 3:8–9 | Full Grütter article and its discussion of MT/Greek/Qumran evidence | 4Q385a manuscript image, critical-edition transcription, and direct Old Greek edition comparison. |
+| Proverbs 15:25–16:9 | Full Macchi article (French), including its account of 4QProvb | Qumran fragment image and DJD edition; the article's reconstruction remains attributed, not independently established. |
+| Ecclesiastes 10:1 | CKL wording and accessible bibliographic metadata; no legitimate full Whybray text was available | Full source discussion, Hebrew morphology, and any proposed glosses. The unauthorized mirror was not used. |
+| Psalm 20 and Papyrus Amherst 63 | Ward's dissertation, ch. 3, pp. 81–109; Morgan Library and BnF catalog pathways | Papyrus/facsimile, authoritative published transcription, exact reading of col. XII, and direction of dependence. |
+| Psalm 110:4 | Full Corley article, especially pp. 53–54 | Direct Hebrew textual apparatus and witness inspection; competing translations are retained. |
+| Psalms 61 and 63 / Hezekiah bulla | LeMon publisher abstract, discovery report, and National Library of Israel catalog record for the excavation report | Bulla itself, full excavation context/publication, and evidence linking this royal symbol to the psalms. No independent confirmation of royal voice. |
+| Revelation 13 / Roman Asian institutions | ED-2 source entries and packet claims were reconciled; source access for this item was not freshly reproduced | Primary inscriptions/catalog entries and local institutional variation needed to test the network reconstruction. No one-to-one beast referent is established. |
+| Psalm 145 missing Nun (inherited) | IAA catalog record for 11Q5/11QPsa and published contents references | Exact manuscript image/column and edition review. This evidence is not one of the 99 additions and was not changed. |
+
+The records above remain machine-assisted research assessments. A reported
+variant may be textually attested while its originality remains disputed; an
+article's reconstruction remains the author's proposal unless primary witnesses
+and competing explanations are independently assessed.
+
 ## Outcome counts and human-review status
 
 | ED-3 outcome | Records | Meaning |
 |---|---:|---|
 | Supported at inspected scope | 0 | No item was marked as fully supported because each record still has an unverified passage-text or primary-witness component. |
 | Supported with limitations | 27 | The consulted article, abstract, or excerpt supports the already-qualified claim at the inspected scope; stated gaps remain. |
-| Correction required | 0 | No demonstrated defect in the scholarly interpretation itself was established in this batch. A stale Psalm 17 source-access note is a provenance correction, not a human review decision. |
+| Correction required | 1 | Psalm 17's CKL source-access note incorrectly said the Italian article was unread. The note and related wording were corrected; the article's text-critical proposal remains disputed and needs human review. |
 | Insufficiently substantiated | 0 | No claim was found to contradict its source; lack of access is recorded separately as unable to verify. |
-| Unable to independently verify | 72 | No sufficiently relevant source text was freshly inspected, or the accessible material did not expose enough of the cited argument. |
+| Unable to independently verify | 71 | No sufficiently relevant source text was freshly inspected, or the accessible material did not expose enough of the cited argument. |
 
 All 99 records remain draft, in review, and human-review required. The machine
 assessment does not confer approval, and all human decisions remain blank in
