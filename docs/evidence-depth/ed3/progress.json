@@ -302,7 +302,7 @@
     "9": {
       "status": "completed_with_documented_limits",
       "completed_evidence_ids": [],
-      "commit_sha": null,
+      "commit_sha": "521eae2e",
       "blockers": [
         "The unfiltered full repository test suite was not completed; two confirmed inherited retrieval-order failures remain.",
         "Frozen NE-9C bulk-curation validation cannot pass with its pre-ED-2 fingerprint; protected checkpoint was preserved and compatibility counts/hashes verified.",
@@ -321,10 +321,19 @@
       }
     },
     "10": {
-      "status": "pending",
+      "status": "in_progress",
       "completed_evidence_ids": [],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "Push and open the final PR comparison after the final report commit.",
+        "Human review remains required for all 99 ED-2 additions; the audit must not record approval."
+      ],
+      "summary": "Final report reconciles the 99 evidence outcomes, source access levels, corrections, unresolved provenance, human review obligations, reader/mobile QA, census, regression gates, and separate technical/scholarly readiness judgments. Final branch push and PR creation remain.",
+      "validation": {
+        "final_report": "Contains all user-requested report fields; no human scholarly approval recorded.",
+        "branch_base": "Final fetch confirms origin/master remains 8a0bda764328f9399552e46c224c949b35c064fc; branch is based directly on that current tip.",
+        "publication": "Pending final Phase 10 documentation commit, push, PR creation, and post-PR ledger closure."
+      }
     }
   },
   "source_review": {
