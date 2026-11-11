@@ -58,8 +58,8 @@ NE-10 bridge and held-registry hashes remain the baseline values
 `8460edaafcadfbabb807e3bde8b1979f8bbcadf81b5d42cae755ddc4bdec999b` and
 `15e577dae912904409cedd39015507f3aec92d6c3f389c65ff58a8396acd64f3`.
 
-On the ED-4 branch the current object-tree hash is
-`bb6ac4967629c764d3058ed599f709ed6b0f76f38bbb5d22b764b444e3880cab`, while
+At the end of the CKL changes, the current object-tree hash is
+`da9af6550b144dd8df50c99e7448e72aa154396370bb83a827eadf27e96075ff`, while
 the frozen checkpoint records
 `e186df409fb6231c0e93f13d14677826e31684a355b4681aa3ca98bf299a6766`. The
 new current-state check passes with `historical_ckl_fingerprint_matches=false`;

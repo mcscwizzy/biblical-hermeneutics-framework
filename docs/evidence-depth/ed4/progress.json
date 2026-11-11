@@ -6,21 +6,91 @@
   "status": "in_progress",
   "human_review_decisions_recorded": 0,
   "phases": {
-    "0": {"name": "Baseline and execution", "status": "completed", "commit_sha": "801e7ebe", "blockers": []},
-    "1": {"name": "Research retrieval", "status": "completed", "commit_sha": "29e722fd1277", "blockers": ["Unprefixed ordinary-language retrieval for the heart-condemnation question remains weak; see retrieval-analysis.md."]},
-    "2": {"name": "Human scholarly review workflow", "status": "completed", "commit_sha": "0ae5fb4da624", "blockers": ["All 99 records still require qualified human review; ED-4 recorded no human decision."]},
-    "3": {"name": "Source integrity", "status": "completed", "commit_sha": "4cf1b8d691c11c20831ced36bf70128240b5678e", "blockers": ["19 support-target relationships remain unresolved without author/human identity decisions; reference-work identity triage is documented with no unsupported bulk normalization."]},
-    "4": {"name": "Current-state curation compatibility", "status": "completed", "commit_sha": "df958285e51097830bdcd82af33ff3c51353f790", "blockers": []},
-    "5": {"name": "Reader usefulness and transparency", "status": "completed", "commit_sha": "ab79b8ad", "blockers": ["No presentation defect reproduced; browser acceptance was completed with headless Chromium/Selenium because CUA exposed no browser surfaces."]},
-    "6": {"name": "Obadiah census anomaly", "status": "completed", "commit_sha": "3b802976", "blockers": []},
-    "7": {"name": "Regression and release testing", "status": "in_progress", "commit_sha": null, "blockers": []},
-    "8": {"name": "Final delivery", "status": "pending", "commit_sha": null, "blockers": ["Push and PR comparison remain for final delivery."]}
+    "0": {
+      "name": "Baseline and execution",
+      "status": "completed",
+      "commit_sha": "801e7ebe",
+      "blockers": []
+    },
+    "1": {
+      "name": "Research retrieval",
+      "status": "completed",
+      "commit_sha": "c9f5192e",
+      "blockers": []
+    },
+    "2": {
+      "name": "Human scholarly review workflow",
+      "status": "completed",
+      "commit_sha": "0ae5fb4da624",
+      "blockers": [
+        "All 99 records still require qualified human review; ED-4 recorded no human decision."
+      ]
+    },
+    "3": {
+      "name": "Source integrity",
+      "status": "completed",
+      "commit_sha": "4cf1b8d691c11c20831ced36bf70128240b5678e",
+      "blockers": [
+        "19 support-target relationships remain unresolved without author/human identity decisions; reference-work identity triage is documented with no unsupported bulk normalization."
+      ]
+    },
+    "4": {
+      "name": "Current-state curation compatibility",
+      "status": "completed",
+      "commit_sha": "df958285e51097830bdcd82af33ff3c51353f790",
+      "blockers": []
+    },
+    "5": {
+      "name": "Reader usefulness and transparency",
+      "status": "completed",
+      "commit_sha": "ab79b8ad",
+      "blockers": []
+    },
+    "6": {
+      "name": "Obadiah census anomaly",
+      "status": "completed",
+      "commit_sha": "3b802976",
+      "blockers": []
+    },
+    "7": {
+      "name": "Regression and release testing",
+      "status": "completed",
+      "commit_sha": "c9f5192e",
+      "blockers": [
+        "The repository-wide pytest run was bounded at 25 minutes: 55 tests and 934 subtests passed before interruption entering the SQLite setup for the next test; no failure was reported before timeout. Focused gates completed."
+      ]
+    },
+    "8": {
+      "name": "Final delivery",
+      "status": "in_progress",
+      "commit_sha": null,
+      "blockers": [
+        "Push the branch and record the final delivery state."
+      ]
+    }
   },
   "remaining_issues": [
-    "Improve unprefixed ordinary-language retrieval for the heart-condemnation question without adding a book-specific exception.",
-    "Qualified reviewers must independently decide the 99 queued records; all ED-3 unable-to-verify outcomes remain research/access limitations.",
-    "The 19 unresolved semantic support targets and unverified reference-work identities documented in source-integrity-results.md need author or qualified human follow-up.",
-    "Run full regression, package, reader, and release validation; report inherited limits separately."
+    "Qualified reviewers must independently decide the 99 queued records; no human decisions or approvals were recorded by ED-4.",
+    "The 71 unable-to-independently-verify outcomes remain source-access limitations requiring qualified follow-up, not evidence that claims are false.",
+    "The 19 unresolved semantic support targets and reference-work identity questions documented in source-integrity-results.md need source-owner or qualified-human follow-up.",
+    "The full repository pytest suite did not finish within the 25-minute bound; see validation-results.md for the exact interrupted test and completed count."
   ],
-  "commit_shas": ["801e7ebe", "9636a2ed", "29e722fd1277", "bf55e161e963", "0ae5fb4da624", "b20c2390599e", "4cf1b8d691c11c20831ced36bf70128240b5678e", "021574ee8c19eea642f6c6ee36129f7381bae942", "df958285e51097830bdcd82af33ff3c51353f790", "e353abf75c4a53582b3e88bd628ae96d9a7c2370", "ab79b8ad", "e335c6f7", "3b802976", "3a367bcf", "24b1a95b"]
+  "commit_shas": [
+    "801e7ebe",
+    "9636a2ed",
+    "29e722fd1277",
+    "bf55e161e963",
+    "0ae5fb4da624",
+    "b20c2390599e",
+    "4cf1b8d691c11c20831ced36bf70128240b5678e",
+    "021574ee8c19eea642f6c6ee36129f7381bae942",
+    "df958285e51097830bdcd82af33ff3c51353f790",
+    "e353abf75c4a53582b3e88bd628ae96d9a7c2370",
+    "ab79b8ad",
+    "e335c6f7",
+    "3b802976",
+    "3a367bcf",
+    "24b1a95b",
+    "c9f5192e"
+  ]
 }

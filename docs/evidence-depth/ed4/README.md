@@ -23,14 +23,16 @@ commit SHAs are in [progress.json](progress.json).
 - [Current-state curation compatibility](compatibility-checks.md)
 - [Reader acceptance](reader-acceptance.md)
 - [Obadiah census investigation](obadiah-investigation.md)
+- [Validation results](validation-results.md)
+- [Final report](final-report.md)
 - [Progress ledger](progress.json)
 
 Phase reports are linked here as their investigations and validation complete.
 
-Phase 1 is complete. The inherited explicit-reference ranking failures are
-fixed and covered by retrieval regressions. The evaluation also records a
-remaining limitation for the same heart-condemnation question when no book is
-included in the query.
+Phase 1 is complete. The inherited explicit-reference ranking failures and
+the unprefixed heart-condemnation query are fixed through general alias,
+coherent-evidence, and scoped morphology corrections. Representative
+before/after scores are recorded in the retrieval evaluation.
 
 Phase 2 is complete. The local maintainer CLI reads the original queue and
 packets, records attributed human actions in an ignored hash-chained ledger,
