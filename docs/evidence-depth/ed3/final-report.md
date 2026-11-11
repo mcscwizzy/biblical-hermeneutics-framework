@@ -1,13 +1,17 @@
 # ED-3 Final Report
 
-**Audit outcome:** completed with documented source-access, test-suite, and
-historical-checkpoint limits. **No human scholarly approvals were recorded.**
+**Audit outcome:** research and validation work completed with documented
+source-access, test-suite, and historical-checkpoint limits. Final PR creation
+is blocked by the available GitHub authorization. **No human scholarly
+approvals were recorded.**
 
 ## Branch and scope
 
 - Branch: `audit/ed3-scholarly-integrity`
 - Base: `origin/master` at `8a0bda764328f9399552e46c224c949b35c064fc`; a final fetch confirmed the upstream tip was unchanged.
-- Final branch commit and PR comparison: recorded in the repository delivery after publication.
+- Final branch SHA: provided in the final delivery after the closure commit.
+- Branch pushed: yes.
+- PR opened: no; GitHub write access was unavailable in this session.
 - No merge or deployment was performed.
 
 ED-3 reconciled and assessed every one of the 99 evidence records introduced by
@@ -148,4 +152,9 @@ review.
 
 ## Pull request
 
-The final branch push and PR comparison are pending publication in Phase 10.
+The branch is pushed. The GitHub PR creation endpoint returned HTTP 403,
+`Resource not accessible by integration`; the local GitHub CLI reports no
+authenticated host, and no browser session is available in this environment.
+No PR was opened. The branch is ready for review at the
+[GitHub comparison page](https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...audit/ed3-scholarly-integrity?expand=1).
+Opening the PR still requires a GitHub session with repository write access.

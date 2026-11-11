@@ -23,6 +23,9 @@ Phase 9 passes the supported focused release gates, full chapter census, and
 genuine 390 CSS-pixel reader samples. It also records two retrieval failures
 reproduced on the ED-2 base and the frozen NE-9C checkpoint's inherited
 fingerprint limitation; neither is represented as a new ED-3 failure.
+The audit branch is pushed. Phase 10's PR creation remains pending because
+this session has no GitHub write-authorized connection; the comparison page is
+linked in [the final report](final-report.md).
 
 ## Navigation
 
