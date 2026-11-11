@@ -149,3 +149,9 @@ This list is updated after source review. A chapter stays deferred where the exa
 - Ezekiel 31: Lee’s possible Egyptian Osiris/afterlife resonance is an interpretive proposal. The text does not name Osiris; direct literary borrowing and any specific ritual setting remain unestablished.
 - Isaiah 10: Aster’s historical setting and chronology remain scholarly reconstruction; the entry focuses on the literary contrast in vv. 5–8.
 - All three records remain draft/in-review and require human scholarly review; no reviewer or approval is recorded.
+
+## Wave E, batch E1
+
+- **Luke 5:30:** Tuohy’s full MPhil thesis was inspected, but the proposed wilderness-grumbling resonance remains low-confidence because shared Greek vocabulary does not establish deliberate allusion. The source type is `other` because the CKL type vocabulary has no thesis-specific category.
+- **Acts 15:29:** Moxon’s full article and usage survey were inspected. The local force of εὖ πράξετε remains unresolved, and the lexical question does not establish why the council issued the decree.
+- **Revelation 13:11–18:** Friesen’s civic/imperial-cult network reading is one debated interpretation. The epigraphic sample contextualizes Roman Asian institutions but does not prove a one-to-one symbolic decoding or uniform enforcement.

@@ -6,8 +6,8 @@
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
   "current_phase": "wave-e-new-testament",
-  "last_completed_batch": "D1-prophets-ezekiel22-31-isaiah10",
-  "next_work": "Begin Wave E with a source-verified batch on a high-value Gospel, Acts, or Revelation passage. Then continue remaining Wave C historical gaps and Wave D prophetic priorities, followed by Wave B’s nine Proverbs zero-eligible chapters and qualitative Wisdom review, and Wave A’s 11 contextual-only Psalms. Twelve evidence slots remain under the planning ceiling; source quality controls the final count.",
+  "last_completed_batch": "E1-New Testament Luke 5, Acts 15, Revelation 13",
+  "next_work": "Research E2 on Luke 8:1–3 and 13:10–17 using the inspected full scholarly articles; then continue triage for high-value Gospel, Acts, Pauline, General Epistle, and Revelation questions within the 100-item ceiling. Revisit any still-open higher-priority gaps after Wave E.",
   "waves": [
     {
       "id": "A",
@@ -971,14 +971,58 @@
     {
       "id": "E",
       "name": "Gospels and New Testament",
-      "status": "queued",
-      "passages_researched": [],
-      "evidence_records_added": 0,
-      "source_ids_created": 0,
+      "status": "in_progress",
+      "passages_researched": [
+        "Luke 5:30",
+        "Acts 15:29",
+        "Revelation 13:11–18"
+      ],
+      "evidence_records_added": 3,
+      "source_ids_created": 3,
       "source_ids_reused": 0,
-      "deferred_gaps": [],
-      "validation": null,
-      "commit_sha": null
+      "deferred_gaps": [
+        "Luke 5:30: Tuohy’s full MPhil thesis was inspected, but the proposed LXX wilderness-grumbling resonance remains a low-confidence literary possibility, not a demonstrated allusion.",
+        "Acts 15:29: Moxon’s complete usage survey was inspected; εὖ πράξετε remains contextually ambiguous, and the article does not settle the decree’s rationale.",
+        "Revelation 13:11–18: Friesen’s Roman Asian elite-network reading is debated; inscriptions contextualize the proposal but do not identify every visionary symbol or prove uniform coercion.",
+        "The three existing Greek-text source identities were reused as primary-text bases and are not counted as scholarly bibliography reuses."
+      ],
+      "validation": {
+        "strict_ckl": "687 valid objects; 0 errors; same 14 inherited incomplete_section_status warnings; each changed book object validates with 0 warnings.",
+        "manifest": "Generated manifest semantically matches checked manifest; all three exact anchors and source-support links resolve.",
+        "chapter_audit": "ED-1A pass: 1,189/1,189 chapter rows; 1,084 passage-specific, 57 contextual, 2 entity-only, 45 no-eligible, 1 incomplete/unknown; 19 deterministic samples and 16 targeted service builds passed.",
+        "source_integrity": "3 new scholarly source identities; 3 existing Greek primary-text identities reused (excluded from scholarly reuse totals). CKL source report: 5,339 occurrences, 2,332 external occurrences, 2 unresolved child-source references, 102 inherited invalid support-target heuristic findings.",
+        "reader_regression": "E1 authoring/projection tests: 3 passed, 3 subtests; Narrative Explorer projection suite: 62 passed; protected source-lock/schema-package/curation/passage/coverage suite: 600 passed, 13 subtests.",
+        "deep_heuristic": "63 error-severity findings, 1,084 warnings; E1 adds 3 unknown-passage-chronology and 1 weak-source-type warning; no new heuristic errors.",
+        "protected_decisions": "NE-9C/NE-10 unchanged; accepted=433, verified=44, held=7; no held relationship promoted.",
+        "human_review": "All 3 additions remain draft/in-review and require scholarly review; no reviewer or approval is claimed."
+      },
+      "commit_sha": "0f821df0",
+      "batches": [
+        {
+          "id": "E1",
+          "status": "validated-and-committed",
+          "passages": [
+            "Luke 5:30",
+            "Acts 15:29",
+            "Revelation 13:11–18"
+          ],
+          "evidence_records_added": 3,
+          "source_ids_created": 3,
+          "scholarly_source_ids_reused": 0,
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; same 14 inherited incomplete_section_status warnings; each changed book object validates with 0 warnings.",
+            "manifest": "Generated manifest semantically matches checked manifest; all three exact anchors and source-support links resolve.",
+            "chapter_audit": "ED-1A pass: 1,189/1,189 chapter rows; 1,084 passage-specific, 57 contextual, 2 entity-only, 45 no-eligible, 1 incomplete/unknown; 19 deterministic samples and 16 targeted service builds passed.",
+            "source_integrity": "3 new scholarly source identities; 3 existing Greek primary-text identities reused (excluded from scholarly reuse totals). CKL source report: 5,339 occurrences, 2,332 external occurrences, 2 unresolved child-source references, 102 inherited invalid support-target heuristic findings.",
+            "reader_regression": "E1 authoring/projection tests: 3 passed, 3 subtests; Narrative Explorer projection suite: 62 passed; protected source-lock/schema-package/curation/passage/coverage suite: 600 passed, 13 subtests.",
+            "deep_heuristic": "63 error-severity findings, 1,084 warnings; E1 adds 3 unknown-passage-chronology and 1 weak-source-type warning; no new heuristic errors.",
+            "protected_decisions": "NE-9C/NE-10 unchanged; accepted=433, verified=44, held=7; no held relationship promoted.",
+            "human_review": "All 3 additions remain draft/in-review and require scholarly review; no reviewer or approval is claimed."
+          },
+          "commit_sha": "0f821df0",
+          "next_work": "E2: Luke 8:1–3 and Luke 13:10–17"
+        }
+      ]
     }
   ],
   "baseline": {
@@ -1005,8 +1049,8 @@
   "source_identity_changes": [],
   "protected_state": "NE-9C/NE-10 unchanged from origin/master; historical fingerprint check is expected to differ because the accepted base already includes ED-2A, so compare protected artifacts/decisions directly and do not regenerate checkpoints.",
   "source_id_counting_policy": "Source identity creation/reuse counts cover research bibliography identities; the standard Psalms text source is reused for verse comparison but excluded from these counts.",
-  "total_evidence_records_added": 88,
-  "total_source_ids_created": 87,
+  "total_evidence_records_added": 91,
+  "total_source_ids_created": 90,
   "total_source_ids_reused": 5,
   "remaining_evidence_item_ceiling": 12
 }

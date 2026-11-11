@@ -307,3 +307,9 @@ The ED-1A census passed all 1,189 chapters with no unmapped identities. Relative
 | All other books | unchanged | unchanged | unchanged | unchanged |
 
 D1 makes Ezekiel 22 and 31 passage-eligible with one focused item each. Isaiah 10 was already eligible; its new item adds a localized discussion of the contrast between Assyria’s commission and the king’s stated ambition. Eligibility is not a depth score. See the [D1 source packets](wave-d-prophets/prophets-research-packets-d1.md) for the textual dispute, interpretive proposals, and access limits.
+
+### Wave E, batch E1 — Luke 5, Acts 15, and Revelation 13
+
+The ED-1A census passed for all 1,189 canonical chapters, with 19 deterministic samples and 16 targeted service builds. Compared with the post-D1 census, passage-specific coverage rose from 1,083 to 1,084 chapters, no-eligible coverage fell from 46 to 45, and the contextual-only (57), entity-only (2), and incomplete/unknown (1) counts were unchanged. Luke 5 moved from no eligible material to passage-specific evidence. Acts 15 and Revelation 13 already had passage-specific material; E1 adds focused typed evidence without changing their eligibility categories.
+
+The batch added three source-backed literary and historical-context evidence items. It did not add claims, objects, relationship routes, or NE-9C/NE-10 bridges. The chapter-eligibility transition does not measure scholarly completeness. See the [E1 research packet](wave-e-new-testament/new-testament-research-packets-e1.md) and [chapter backlog](research-backlog.csv).
