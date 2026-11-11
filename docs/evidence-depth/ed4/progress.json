@@ -11,7 +11,7 @@
     "2": {"name": "Human scholarly review workflow", "status": "completed", "commit_sha": "0ae5fb4da624", "blockers": ["All 99 records still require qualified human review; ED-4 recorded no human decision."]},
     "3": {"name": "Source integrity", "status": "completed", "commit_sha": "4cf1b8d691c11c20831ced36bf70128240b5678e", "blockers": ["19 support-target relationships remain unresolved without author/human identity decisions; reference-work identity triage is documented with no unsupported bulk normalization."]},
     "4": {"name": "Current-state curation compatibility", "status": "completed", "commit_sha": "df958285e51097830bdcd82af33ff3c51353f790", "blockers": []},
-    "5": {"name": "Reader usefulness and transparency", "status": "pending", "commit_sha": null, "blockers": []},
+    "5": {"name": "Reader usefulness and transparency", "status": "completed", "commit_sha": "ab79b8ad", "blockers": ["No presentation defect reproduced; browser acceptance was completed with headless Chromium/Selenium because CUA exposed no browser surfaces."]},
     "6": {"name": "Obadiah census anomaly", "status": "pending", "commit_sha": null, "blockers": ["Detailed census says incomplete/unknown; strict retrieval scan says available."]},
     "7": {"name": "Regression and release testing", "status": "pending", "commit_sha": null, "blockers": []},
     "8": {"name": "Final delivery", "status": "pending", "commit_sha": null, "blockers": ["Push and PR comparison remain for final delivery."]}
@@ -23,5 +23,5 @@
     "Resolve the Obadiah census classifier difference or document its exact cause.",
     "Run full regression, package, reader, and release validation; report inherited limits separately."
   ],
-  "commit_shas": ["801e7ebe", "9636a2ed", "29e722fd1277", "bf55e161e963", "0ae5fb4da624", "b20c2390599e", "4cf1b8d691c11c20831ced36bf70128240b5678e", "021574ee8c19eea642f6c6ee36129f7381bae942", "df958285e51097830bdcd82af33ff3c51353f790"]
+  "commit_shas": ["801e7ebe", "9636a2ed", "29e722fd1277", "bf55e161e963", "0ae5fb4da624", "b20c2390599e", "4cf1b8d691c11c20831ced36bf70128240b5678e", "021574ee8c19eea642f6c6ee36129f7381bae942", "df958285e51097830bdcd82af33ff3c51353f790", "ab79b8ad"]
 }
