@@ -6,7 +6,7 @@
   "status": "in_progress",
   "human_review_decisions_recorded": 0,
   "phases": {
-    "0": {"name": "Baseline and execution", "status": "completed", "commit_sha": null, "blockers": []},
+    "0": {"name": "Baseline and execution", "status": "completed", "commit_sha": "801e7ebe", "blockers": []},
     "1": {"name": "Research retrieval", "status": "pending", "commit_sha": null, "blockers": ["Inherited first-John and first-Thessalonians ranking failures reproduced on baseline."]},
     "2": {"name": "Human scholarly review workflow", "status": "pending", "commit_sha": null, "blockers": ["No human scholarly decisions are authorized or recorded by this assignment."]},
     "3": {"name": "Source integrity", "status": "pending", "commit_sha": null, "blockers": []},
@@ -22,5 +22,5 @@
     "Resolve the Obadiah census classifier difference or document its exact cause.",
     "Run full regression, package, reader, and release validation; report inherited limits separately."
   ],
-  "commit_shas": []
+  "commit_shas": ["801e7ebe"]
 }
