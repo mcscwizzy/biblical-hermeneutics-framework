@@ -1,12 +1,18 @@
 from __future__ import annotations
 
 import csv
+import json
 import tempfile
 import unittest
 from datetime import date
 from pathlib import Path
 
-from tools.ed4_review_workbench import DECISIONS, ReviewWorkflowError, ReviewWorkbench
+from tools.ed4_review_workbench import (
+    DECISIONS,
+    ReviewWorkflowError,
+    ReviewWorkbench,
+    _event_hash,
+)
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
@@ -156,6 +162,171 @@ class ED4ReviewWorkbenchTests(unittest.TestCase):
         csv_export = self.workbench.export_decisions_csv()
         self.assertIn(record["evidence_id"], csv_export)
         self.assertIn("Qualified Reviewer", csv_export)
+
+    def test_snapshot_export_is_versioned_and_never_overwrites(self) -> None:
+        record = self.workbench.list_records()[0]
+        self.workbench.record_decision(
+            evidence_id=record["evidence_id"],
+            reviewer_name="Synthetic Fixture Reviewer",
+            reviewer_expertise="Test fixture only",
+            review_date=date.today().isoformat(),
+            decision="request_more_research",
+            rationale="Synthetic portability fixture.",
+            inspections=[{"source_id": "fixture", "locator": "section 1", "scope": "fixture"}],
+            confirmed_human_action=True,
+        )
+        snapshot_path = Path(self.temp_directory.name) / "reviews-v1.json"
+
+        report = self.workbench.create_snapshot(snapshot_path)
+        snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(snapshot["format"], "bhf-ed4-review-snapshot")
+        self.assertEqual(snapshot["format_version"], 1)
+        self.assertEqual(snapshot["event_count"], 1)
+        self.assertEqual(snapshot["tail_hash"], self.workbench.history()[-1]["event_hash"])
+        self.assertEqual(snapshot_path.stat().st_mode & 0o777, 0o600)
+        self.assertEqual(report["snapshot_sha256"], self.workbench.verify_snapshot(snapshot_path)["snapshot_sha256"])
+        with self.assertRaises(ReviewWorkflowError):
+            self.workbench.create_snapshot(snapshot_path)
+
+    def test_snapshot_restore_appends_only_a_valid_missing_suffix(self) -> None:
+        record = self.workbench.list_records()[0]
+        first = self.workbench.record_decision(
+            evidence_id=record["evidence_id"],
+            reviewer_name="Synthetic Fixture Reviewer",
+            reviewer_expertise="Test fixture only",
+            review_date=date.today().isoformat(),
+            decision="request_more_research",
+            rationale="First synthetic event.",
+            inspections=[{"source_id": "fixture", "locator": "section 1", "scope": "fixture"}],
+            confirmed_human_action=True,
+        )
+        prefix_path = Path(self.temp_directory.name) / "prefix.json"
+        self.workbench.create_snapshot(prefix_path)
+        self.workbench.record_decision(
+            evidence_id=record["evidence_id"],
+            reviewer_name="Synthetic Fixture Reviewer",
+            reviewer_expertise="Test fixture only",
+            review_date=date.today().isoformat(),
+            decision="hold_insufficient_evidence",
+            rationale="Second synthetic event.",
+            inspections=[{"source_id": "fixture", "locator": "section 2", "scope": "fixture"}],
+            confirmed_human_action=True,
+        )
+        full_snapshot = Path(self.temp_directory.name) / "full.json"
+        self.workbench.create_snapshot(full_snapshot)
+
+        restored_path = Path(self.temp_directory.name) / "restored.jsonl"
+        restored_path.write_text(
+            json.dumps(first, ensure_ascii=False, sort_keys=True, separators=(",", ":")),
+            encoding="utf-8",
+        )
+        restored = ReviewWorkbench(
+            queue_path=ED3_ROOT / "human-review-queue.csv",
+            packet_root=ED3_ROOT,
+            ledger_path=restored_path,
+        )
+
+        report = restored.restore_snapshot(full_snapshot, confirmed=True)
+
+        self.assertEqual(report["appended_events"], 1)
+        self.assertEqual(report["existing_prefix_events"], 1)
+        self.assertEqual(restored.history(), self.workbench.history())
+        repeated = restored.restore_snapshot(full_snapshot, confirmed=True)
+        self.assertEqual(repeated["appended_events"], 0)
+        self.assertEqual(repeated["duplicate_events"], 2)
+
+    def test_snapshot_restore_rejects_truncation_before_creating_ledger(self) -> None:
+        snapshot_path = Path(self.temp_directory.name) / "truncated.json"
+        snapshot_path.write_text('{"format":"bhf-ed4-review-snapshot"', encoding="utf-8")
+        target_path = Path(self.temp_directory.name) / "restored.jsonl"
+        restored = ReviewWorkbench(
+            queue_path=ED3_ROOT / "human-review-queue.csv",
+            packet_root=ED3_ROOT,
+            ledger_path=target_path,
+        )
+
+        with self.assertRaises(ReviewWorkflowError):
+            restored.restore_snapshot(snapshot_path, confirmed=True)
+
+        self.assertFalse(target_path.exists())
+
+    def test_snapshot_restore_requires_confirmation_and_preserves_conflicting_history(self) -> None:
+        record = self.workbench.list_records()[0]
+        self.workbench.record_decision(
+            evidence_id=record["evidence_id"],
+            reviewer_name="Synthetic Fixture Reviewer",
+            reviewer_expertise="Test fixture only",
+            review_date=date.today().isoformat(),
+            decision="request_more_research",
+            rationale="Source event.",
+            inspections=[{"source_id": "fixture", "locator": "section 1", "scope": "fixture"}],
+            confirmed_human_action=True,
+        )
+        snapshot_path = Path(self.temp_directory.name) / "source.json"
+        self.workbench.create_snapshot(snapshot_path)
+        target_path = Path(self.temp_directory.name) / "target.jsonl"
+        target = ReviewWorkbench(
+            queue_path=ED3_ROOT / "human-review-queue.csv",
+            packet_root=ED3_ROOT,
+            ledger_path=target_path,
+        )
+        target.record_decision(
+            evidence_id=record["evidence_id"],
+            reviewer_name="Different Synthetic Reviewer",
+            reviewer_expertise="Test fixture only",
+            review_date=date.today().isoformat(),
+            decision="hold_insufficient_evidence",
+            rationale="Conflicting local history.",
+            inspections=[{"source_id": "fixture", "locator": "section 2", "scope": "fixture"}],
+            confirmed_human_action=True,
+        )
+        local_bytes = target_path.read_bytes()
+
+        with self.assertRaisesRegex(ReviewWorkflowError, "explicit confirmation"):
+            target.restore_snapshot(snapshot_path)
+        with self.assertRaisesRegex(ReviewWorkflowError, "conflicts with local"):
+            target.restore_snapshot(snapshot_path, confirmed=True)
+
+        self.assertEqual(target_path.read_bytes(), local_bytes)
+
+    def test_history_rejects_duplicate_event_ids_even_with_a_valid_chain(self) -> None:
+        record = self.workbench.list_records()[0]
+        first = self.workbench.record_decision(
+            evidence_id=record["evidence_id"],
+            reviewer_name="Synthetic Fixture Reviewer",
+            reviewer_expertise="Test fixture only",
+            review_date=date.today().isoformat(),
+            decision="request_more_research",
+            rationale="First synthetic event.",
+            inspections=[{"source_id": "fixture", "locator": "section 1", "scope": "fixture"}],
+            confirmed_human_action=True,
+        )
+        duplicate = dict(first)
+        duplicate["previous_hash"] = first["event_hash"]
+        duplicate["rationale"] = "A second event reuses the first event ID."
+        duplicate["event_hash"] = _event_hash(duplicate)
+        with self.ledger_path.open("a", encoding="utf-8") as stream:
+            stream.write(json.dumps(duplicate, sort_keys=True, separators=(",", ":")) + "\n")
+
+        with self.assertRaisesRegex(ReviewWorkflowError, "duplicate review event ID"):
+            self.workbench.history()
+
+    def test_status_report_reconciles_queue_and_separates_integrity_from_authenticity(self) -> None:
+        report = self.workbench.status_report()
+
+        self.assertEqual(report["queue_reconciliation"]["queue_records"], 99)
+        self.assertEqual(report["queue_reconciliation"]["pending_queue_records"], 99)
+        self.assertEqual(report["event_chain_integrity"], "valid")
+        self.assertEqual(report["authenticity"], "not_independently_authenticated")
+        self.assertEqual(report["external_checkpoint"], "not_supplied")
+
+    def test_snapshot_verification_detects_external_digest_mismatch(self) -> None:
+        snapshot_path = Path(self.temp_directory.name) / "empty-snapshot.json"
+        self.workbench.create_snapshot(snapshot_path)
+
+        with self.assertRaisesRegex(ReviewWorkflowError, "externally retained SHA-256"):
+            self.workbench.verify_snapshot(snapshot_path, trusted_sha256="0" * 64)
 
     def test_correction_request_and_verification_are_separate_attributed_events(self) -> None:
         record = self.workbench.list_records()[0]
