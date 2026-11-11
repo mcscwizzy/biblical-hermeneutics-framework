@@ -6,8 +6,8 @@
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
   "status": "in_progress",
   "current_phase": "wave-e-new-testament",
-  "last_completed_batch": "E1-New Testament Luke 5, Acts 15, Revelation 13",
-  "next_work": "Research E2 on Luke 8:1–3 and 13:10–17 using the inspected full scholarly articles; then continue triage for high-value Gospel, Acts, Pauline, General Epistle, and Revelation questions within the 100-item ceiling. Revisit any still-open higher-priority gaps after Wave E.",
+  "last_completed_batch": "E2-New Testament Luke 8 and 13",
+  "next_work": "Research E3 on a precise New Testament passage with a source that can be inspected adequately; then revisit the remaining high-priority Wave A–D research gaps within the five remaining evidence slots. Run the full ED-1A census after the final batch.",
   "waves": [
     {
       "id": "A",
@@ -975,28 +975,32 @@
       "passages_researched": [
         "Luke 5:30",
         "Acts 15:29",
-        "Revelation 13:11–18"
+        "Revelation 13:11–18",
+        "Luke 8:1–3",
+        "Luke 13:10–17"
       ],
-      "evidence_records_added": 3,
-      "source_ids_created": 3,
+      "evidence_records_added": 5,
+      "source_ids_created": 5,
       "source_ids_reused": 0,
       "deferred_gaps": [
         "Luke 5:30: Tuohy’s full MPhil thesis was inspected, but the proposed LXX wilderness-grumbling resonance remains a low-confidence literary possibility, not a demonstrated allusion.",
         "Acts 15:29: Moxon’s complete usage survey was inspected; εὖ πράξετε remains contextually ambiguous, and the article does not settle the decree’s rationale.",
         "Revelation 13:11–18: Friesen’s Roman Asian elite-network reading is debated; inscriptions contextualize the proposal but do not identify every visionary symbol or prove uniform coercion.",
-        "The three existing Greek-text source identities were reused as primary-text bases and are not counted as scholarly bibliography reuses."
+        "The three existing Greek-text source identities were reused as primary-text bases and are not counted as scholarly bibliography reuses.",
+        "Luke 8:1–3: Blajer’s full 2026 article was inspected. It proposes that “many others” are a distinct group but explicitly leaves the antecedent of the service clause unresolved. The article also mentions a textual variant in v. 3; witness-level verification was deferred.",
+        "Luke 13:10–17: Kilgallen’s full 2001 article was inspected. His necessity-focused reading is reported as one interpretation; it is not used to state a general rule about Jewish Sabbath practice."
       ],
       "validation": {
-        "strict_ckl": "687 valid objects; 0 errors; same 14 inherited incomplete_section_status warnings; each changed book object validates with 0 warnings.",
-        "manifest": "Generated manifest semantically matches checked manifest; all three exact anchors and source-support links resolve.",
-        "chapter_audit": "ED-1A pass: 1,189/1,189 chapter rows; 1,084 passage-specific, 57 contextual, 2 entity-only, 45 no-eligible, 1 incomplete/unknown; 19 deterministic samples and 16 targeted service builds passed.",
-        "source_integrity": "3 new scholarly source identities; 3 existing Greek primary-text identities reused (excluded from scholarly reuse totals). CKL source report: 5,339 occurrences, 2,332 external occurrences, 2 unresolved child-source references, 102 inherited invalid support-target heuristic findings.",
-        "reader_regression": "E1 authoring/projection tests: 3 passed, 3 subtests; Narrative Explorer projection suite: 62 passed; protected source-lock/schema-package/curation/passage/coverage suite: 600 passed, 13 subtests.",
-        "deep_heuristic": "63 error-severity findings, 1,084 warnings; E1 adds 3 unknown-passage-chronology and 1 weak-source-type warning; no new heuristic errors.",
+        "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings; Luke object validates with 0 warnings.",
+        "manifest": "Generated manifest semantically matches checked manifest; all five exact anchors and source-support links resolve.",
+        "chapter_audit": "E1 full ED-1A census passed 1,189 chapters. E2 targeted exact-anchor tests confirm Luke 8 and 13 each project only at their full passage spans; projected post-E2 categories are 1,086 specific, 57 contextual, 2 entity-only, 43 no-eligible, and 1 incomplete. Rerun full census after Wave E final batch.",
+        "source_integrity": "E2 added 2 scholarly source identities and reused the existing Luke Greek source identity. Current CKL source report: 5,341 source occurrences, 2,334 external occurrences, 2 unresolved child-source refs and 102 inherited invalid support-target heuristic findings; no new source warning.",
+        "reader_regression": "Authoring/projection tests: 3 passed, 5 subtests; full Narrative Explorer projection suite plus E2 projection test: 63 passed. Full strict CKL validation: 687 valid, 0 errors, 14 inherited warnings; manifest semantics match.",
+        "deep_heuristic": "63 error-severity findings, 1,086 warnings; E2 adds 2 unknown-passage-chronology warnings; no new heuristic errors.",
         "protected_decisions": "NE-9C/NE-10 unchanged; accepted=433, verified=44, held=7; no held relationship promoted.",
-        "human_review": "All 3 additions remain draft/in-review and require scholarly review; no reviewer or approval is claimed."
+        "human_review": "Both new items remain draft/in_review and require scholarly review; no reviewer or approval is claimed."
       },
-      "commit_sha": "0f821df0",
+      "commit_sha": "372a642e",
       "batches": [
         {
           "id": "E1",
@@ -1021,6 +1025,30 @@
           },
           "commit_sha": "0f821df0",
           "next_work": "E2: Luke 8:1–3 and Luke 13:10–17"
+        },
+        {
+          "id": "E2",
+          "status": "validated-and-committed",
+          "passages": [
+            "Luke 8:1–3",
+            "Luke 13:10–17"
+          ],
+          "evidence_records_added": 2,
+          "source_ids_created": 2,
+          "scholarly_source_ids_reused": 0,
+          "primary_text_source_ids_reused": 1,
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings; Luke object validates with 0 warnings.",
+            "manifest": "Generated manifest semantically matches checked manifest; all five exact anchors and source-support links resolve.",
+            "chapter_audit": "E1 full ED-1A census passed 1,189 chapters. E2 targeted exact-anchor tests confirm Luke 8 and 13 each project only at their full passage spans; projected post-E2 categories are 1,086 specific, 57 contextual, 2 entity-only, 43 no-eligible, and 1 incomplete. Rerun full census after Wave E final batch.",
+            "source_integrity": "E2 added 2 scholarly source identities and reused the existing Luke Greek source identity. Current CKL source report: 5,341 source occurrences, 2,334 external occurrences, 2 unresolved child-source refs and 102 inherited invalid support-target heuristic findings; no new source warning.",
+            "reader_regression": "Authoring/projection tests: 3 passed, 5 subtests; full Narrative Explorer projection suite plus E2 projection test: 63 passed. Full strict CKL validation: 687 valid, 0 errors, 14 inherited warnings; manifest semantics match.",
+            "deep_heuristic": "63 error-severity findings, 1,086 warnings; E2 adds 2 unknown-passage-chronology warnings; no new heuristic errors.",
+            "protected_decisions": "NE-9C/NE-10 unchanged; accepted=433, verified=44, held=7; no held relationship promoted.",
+            "human_review": "Both new items remain draft/in_review and require scholarly review; no reviewer or approval is claimed."
+          },
+          "commit_sha": "372a642e",
+          "next_work": "E3: assess a passage-specific textual or social-context question elsewhere in the New Testament; then revisit remaining Wave A–D gaps."
         }
       ]
     }
@@ -1049,8 +1077,8 @@
   "source_identity_changes": [],
   "protected_state": "NE-9C/NE-10 unchanged from origin/master; historical fingerprint check is expected to differ because the accepted base already includes ED-2A, so compare protected artifacts/decisions directly and do not regenerate checkpoints.",
   "source_id_counting_policy": "Source identity creation/reuse counts cover research bibliography identities; the standard Psalms text source is reused for verse comparison but excluded from these counts.",
-  "total_evidence_records_added": 91,
-  "total_source_ids_created": 90,
+  "total_evidence_records_added": 93,
+  "total_source_ids_created": 92,
   "total_source_ids_reused": 5,
   "remaining_evidence_item_ceiling": 12
 }

@@ -228,3 +228,14 @@ Wave-level CKL/schema, manifest, Scripture-anchor, source, projection, source di
 - Protected state: NE-9C/NE-10 curation inputs, relationship identities, historical checkpoints, and decisions were not changed or regenerated. Current counts remain 433 accepted curation records, 44 verified bridges, and 7 held candidates; no held relationship was promoted.
 - Human review: all three records remain draft/in-review and require scholarly review. No human reviewer or approval is claimed.
 - Evidence commit: `0f821df0` (`research: add ED-2 New Testament batch E1`).
+
+## Wave E, batch E2 — Luke 8 and Luke 13
+
+- Strict CKL validation: 687 valid objects, 0 errors, and the same 14 inherited incomplete-section warnings. The Luke object validates with 0 warnings.
+- Manifest and source integrity: regenerated manifest is semantically equal to the checked manifest; exact anchors and both new source-support links resolve. CKL now has 1,402 typed evidence items, 2,329 claims, 5,341 source occurrences, and 2,334 externally classified source occurrences. Two new scholarly identities were created; the existing Luke Greek source was reused. Two unresolved child-source references and 102 invalid source-support-target heuristic findings remain inherited.
+- Reader checks: authoring/projection suite passed 3 tests and 5 subtests; full projection suite passed 63 tests. Exact chapter/verse anchors, source locators, primary observations, attributed interpretation, dispute status, and human-review fields were checked.
+- Heuristic report: 63 error-severity findings and 1,086 warnings. E2 adds two `unknown-passage-chronology` warnings and no heuristic errors. The source-support findings are inherited and are distinct from strict CKL validation.
+- Coverage: the E1 full census remains the latest completed 1,189-chapter census. E2’s exact-anchor projection tests show that Luke 8 and 13 now resolve passage-specifically; rerun the full census after E3 before publishing corpus-wide totals.
+- Protected state: no NE-9C/NE-10 data or historical checkpoints were changed. Accepted=433, verified=44, held=7; no held relation was promoted.
+- Human review: both additions remain draft/in-review and require scholarly review. No reviewer or approval is claimed.
+- Evidence commit: `372a642e` (`research: add ED-2 New Testament batch E2`).
