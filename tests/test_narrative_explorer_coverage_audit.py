@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 from types import SimpleNamespace
 
 from scripts.audit_narrative_explorer_coverage import (
@@ -91,6 +92,23 @@ def test_scripture_anchor_bounds_use_canonical_chapter_and_verse_counts():
     assert scripture_reference_is_canonical("Gen 2", counts)
     assert not scripture_reference_is_canonical("Genesis 1:32", counts)
     assert not scripture_reference_is_canonical("Genesis 3:1", counts)
+
+
+def test_obadiah_seventh_verse_note_uses_the_single_chapter_canonical_anchor():
+    object_path = (
+        Path(__file__).resolve().parents[1]
+        / "framework/canonical_library/objects/books/obadiah.json"
+    )
+    obadiah = json.loads(object_path.read_text(encoding="utf-8"))
+    note = next(
+        item for item in obadiah["interpretive_notes"]
+        if item["rationale"] == "No ally is named."
+    )
+
+    assert note["scripture_references"] == ["Obadiah 1:7"]
+    assert scripture_reference_is_canonical(
+        note["scripture_references"][0], {"Obadiah": {1: 21}}
+    )
 
 
 def test_broad_anchor_exclusion_compares_each_anchor_not_only_parent_presence():

@@ -275,6 +275,25 @@ def test_literary_and_cultural_evidence_keep_observation_interpretation_and_sour
         assert interpretation_marker in item["rationale"]["scholarly_interpretation"]
 
 
+def test_obadiah_verse_seven_note_projects_to_its_canonical_chapter(ckl_library):
+    payload = _client(_service(ckl_library)).get(
+        "/api/narrative-explorer/v1/passages/Obadiah/1"
+    ).json()
+    validate_projection(payload)
+
+    note = next(
+        item for item in payload["items"]
+        if item["record_kind"] == "interpretive_note"
+        and item["rationale"].get("rationale") == "No ally is named."
+    )
+
+    assert note["applicable_passage_anchors"]
+    assert {anchor["reference"] for anchor in note["applicable_passage_anchors"]} == {
+        "Obadiah 1:7"
+    }
+    assert note["source_ids"] == ["obadiah-masoretic", "nogalski-obadiah"]
+
+
 def test_related_passage_routes_cover_real_research_examples_without_shared_scope_inference(ckl_library):
     client = _client(_service(ckl_library))
     references = [

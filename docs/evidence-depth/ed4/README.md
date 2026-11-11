@@ -22,6 +22,7 @@ commit SHAs are in [progress.json](progress.json).
 - [Source integrity findings and corrections](source-integrity-results.md)
 - [Current-state curation compatibility](compatibility-checks.md)
 - [Reader acceptance](reader-acceptance.md)
+- [Obadiah census investigation](obadiah-investigation.md)
 - [Progress ledger](progress.json)
 
 Phase reports are linked here as their investigations and validation complete.
@@ -52,6 +53,11 @@ Phase 5 is complete. Representative API projections and desktop/mobile
 Chromium journeys verified passage scope, source access, uncertainty, draft
 labels, additional-record disclosure, and navigation. No reader presentation
 defect was reproduced, so no UI change was necessary.
+
+Phase 6 is complete. A single verse reference used single-chapter shorthand
+that the canonical parser correctly rejected. The anchor now names
+`Obadiah 1:7`; the full census passes with zero unresolved anchors and
+Obadiah 1 classified as passage-specific evidence.
 
 ## Authority and review status
 
