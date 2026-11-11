@@ -49,3 +49,28 @@ def test_ed2_master_prophets_d1_projects_exact_passages_and_discloses_sources():
         assert len(edges) == len(expected_targets)
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_prophets_d2_projects_nahum_textual_proposal_without_new_route():
+    records = _load_ckl("books/nahum.json")
+    result = _project("Nahum 3", canonical=_lookup("ckl", records=records))
+    projected_id = "ckl:nahum#evidence:nahum-3-8-9-one-city-text-critical-proposal"
+    assert len([entry for entry in result["items"] if entry["id"] == projected_id]) == 1
+    projected = _item(result, projected_id)
+    assert projected["evidence_category"] == "ancient-text"
+    assert [x["reference"] for x in projected["applicable_passage_anchors"]] == ["Nahum 3:8-9"]
+    assert {"nahum-masoretic", "catss-nahum", "nets-twelve", "gruetter-nahum3-one-city-2017"}.issubset(projected["source_ids"])
+    assert all(source["details_available"] for source in projected["sources"])
+    assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+    assert projected["rationale"]["primary_observation"]
+    assert projected["rationale"]["scholarly_interpretation"]
+    assert projected["confidence"] == "low"
+    assert projected["dispute_status"] == "textual_variant"
+    assert projected["content_status"] == "draft"
+    assert projected["review_status"] == "in_review"
+    assert projected["human_review_required"] is True
+    edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+    assert len(edges) == 1
+    assert edges[0]["target_id"] == "passage:Nahum 3:8-9"
+    assert result["related_passages"]["authored_relationships"] == []
+    assert result["related_passages"]["evidence_backed_bridges"] == []

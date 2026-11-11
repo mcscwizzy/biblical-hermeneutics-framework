@@ -72,6 +72,28 @@ class Ed2MasterProphetsWaveTests(unittest.TestCase):
             self.assertEqual("in_review", book["review_status"])
             self.assertTrue(book["human_review_required"])
 
+    def test_d2_nahum_one_city_reading_remains_a_low_confidence_proposal(self) -> None:
+        book = json.loads((REPO_ROOT / "framework/canonical_library/objects/books/nahum.json").read_text())
+        item = next(x for x in book["evidence_items"] if x["id"] == "nahum-3-8-9-one-city-text-critical-proposal")
+        sources = {source["id"]: source for source in book["sources"]}
+        self.assertEqual("ancient-text", item["evidence_type"])
+        self.assertEqual(["Nahum 3:8-9"], [x["reference"] for x in item["scripture_references"]])
+        self.assertEqual("low", item["confidence"])
+        self.assertEqual("textual_variant", item["dispute_status"])
+        self.assertEqual("disputed", item["certainty"])
+        self.assertTrue({"nahum-masoretic", "catss-nahum", "nets-twelve", "gruetter-nahum3-one-city-2017"}.issubset(item["source_ids"]))
+        self.assertIn(item["id"], sources["gruetter-nahum3-one-city-2017"]["supports"])
+        self.assertIn("pp. 160–175", sources["gruetter-nahum3-one-city-2017"]["locator"])
+        self.assertIn("complete article was inspected", sources["gruetter-nahum3-one-city-2017"]["notes"])
+        self.assertIn("not as archaeological evidence", item["scholarly_interpretation"])
+        self.assertTrue(item["primary_observation"])
+        self.assertTrue(item["temporal_scope"]["notes"])
+        self.assertEqual([], item["related_objects"])
+        self.assertEqual([], item["related_evidence"])
+        self.assertEqual("draft", book["content_status"])
+        self.assertEqual("in_review", book["review_status"])
+        self.assertTrue(book["human_review_required"])
+
 
 if __name__ == "__main__":
     unittest.main()
