@@ -2138,6 +2138,20 @@
       "supports": [
         "psalm-78-introduction-and-historical-didactic-recitations"
       ]
+    },
+    {
+      "id": "corley-psalm110-royal-ritual-2017",
+      "title": "Psalm 110 (109) and Israelite Royal Ritual",
+      "author": "Jeremy Corley",
+      "publisher": "Salmanticensis 64, no. 1",
+      "year": 2017,
+      "locator": "pp. 53–54; Hebrew wording of Psalm 110:4 and royal-priestly interpretation",
+      "url": "https://doi.org/10.36576/summa.45851",
+      "source_type": "journal-article",
+      "notes": "Full article PDF inspected. Corley surveys competing renderings of the Hebrew phrase and distinguishes the poem's royal-priestly imagery from later reception; the phrase and historical setting remain disputed.",
+      "supports": [
+        "psalm-110-order-of-melchizedek-debate"
+      ]
     }],
   "claims": [
     {
@@ -6889,5 +6903,51 @@
       "claim_ids": [],
       "external_references": [],
       "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a13.md."
+    },
+    {
+      "id": "psalm-110-order-of-melchizedek-debate",
+      "title": "What does “according to the order of Melchizedek” mean?",
+      "evidence_type": "literary-convention",
+      "description": "Psalm 110:4’s Hebrew phrase עַל־דִּבְרָתִי מַלְכִּי־צֶדֶק admits more than one syntactic and lexical interpretation; translations differ over whether it denotes an order, manner, word, or basis for the oath.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Corley’s full article was inspected. It documents competing translations and royal-priestly readings, but does not resolve the Hebrew phrase or establish one historical institution as the psalm’s setting.",
+      "passage_relevance": "The wording affects how readers understand the relationship between the royal addressee and priestly language in the psalm. It also helps keep the Hebrew poem’s uncertain sense distinct from its later use in Hebrews 7.",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "primary_observation": "The Masoretic wording in Psalm 110:4 uses עַל־דִּבְרָתִי מַלְכִּי־צֶדֶק. Ancient translations and modern interpreters construe the phrase differently; the Hebrew text alone does not make the familiar English phrase “order of Melchizedek” unambiguous.",
+      "scholarly_interpretation": "Corley reviews readings that understand the phrase as “according to the order of Melchizedek” as well as alternatives involving “my word,” “manner,” or “because of.” The disputed wording shapes proposals about how royal and priestly authority are joined in the poem. The evidence does not establish a precise composition date or a single cultic office.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Israelite royal and priestly imagery; the poem’s composition date and historical setting remain disputed"
+        ],
+        "narrative_setting": "A poetic address to a royal figure that associates the addressee with priestly language; the exact historical institution or occasion is not established.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "Later Jewish and Christian readings, including Hebrews 7, are reception history and are not used to settle the poem’s earlier Hebrew syntax."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Psalm 110:4",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This verse contains the Hebrew phrase and royal-priestly statement under discussion.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "corley-psalm110-royal-ritual-2017"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-a-psalms/psalms-research-packets-a14.md."
     }]
 }

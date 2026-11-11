@@ -163,6 +163,10 @@ EXPECTED_A13 = {
     "psalm-78-introduction-and-historical-didactic-recitations": ("Psalm 78", ["Psalm 78:1-8", "Psalm 78:9-72"], "kim-vanrooy-psalm78-textual-dimension-2000"),
 }
 
+EXPECTED_A14 = {
+    "psalm-110-order-of-melchizedek-debate": ("Psalm 110", "Psalm 110:4", "corley-psalm110-royal-ritual-2017"),
+}
+
 
 
 def test_psalm_items_do_not_create_cross_passage_or_entity_links():
@@ -195,6 +199,32 @@ def test_ed2_master_psalms_a13_project_exact_scopes_and_disclose_sources():
         assert projected["content_status"] == "draft"
         assert projected["review_status"] == "in_review"
         assert projected["human_review_required"] is True
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_psalms_a14_projects_exact_passage_and_discloses_uncertainty():
+    psalms = _load_ckl("books/psalms.json")
+    for local_id, (passage, anchor, scholarly_source) in EXPECTED_A14.items():
+        result = _project(passage, canonical=_lookup("ckl", records=psalms))
+        projected_id = f"ckl:psalms#evidence:{local_id}"
+        assert len([entry for entry in result["items"] if entry["id"] == projected_id]) == 1
+        projected = _item(result, projected_id)
+        assert projected["evidence_category"] == "literary-convention"
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == [anchor]
+        assert {"psalms-masoretic", scholarly_source}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["certainty"] == "disputed"
+        assert projected["dispute_status"] == "lexical_uncertainty"
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+        assert len(edges) == 1
+        assert edges[0]["target_id"] == f"passage:{anchor}"
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []
 

@@ -139,6 +139,10 @@ EXPECTED_A13 = {
     "psalm-78-introduction-and-historical-didactic-recitations": (["Psalm 78:1-8", "Psalm 78:9-72"], ["kim-vanrooy-psalm78-textual-dimension-2000"]),
 }
 
+EXPECTED_A14 = {
+    "psalm-110-order-of-melchizedek-debate": (["Psalm 110:4"], "corley-psalm110-royal-ritual-2017"),
+}
+
 
 class Ed2MasterPsalmsWaveTests(unittest.TestCase):
     @classmethod
@@ -597,6 +601,28 @@ class Ed2MasterPsalmsWaveTests(unittest.TestCase):
         self.assertIn("full article was not accessible", self.sources["jassen-psalm40-4q160-reception-2006"]["notes"])
         self.assertIn("abstract and bibliographic record were accessible", self.sources["wong-psalm73-ring-composition-2016"]["notes"])
         self.assertIn("Full open-access article PDF", self.sources["kim-vanrooy-psalm78-textual-dimension-2000"]["notes"])
+
+    def test_a14_melchizedek_wording_preserves_lexical_uncertainty(self) -> None:
+        for evidence_id, (references, scholarly_source) in EXPECTED_A14.items():
+            with self.subTest(evidence=evidence_id):
+                item = self.evidence[evidence_id]
+                self.assertEqual("literary-convention", item["evidence_type"])
+                self.assertEqual(references, [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual("lexical_uncertainty", item["dispute_status"])
+                self.assertEqual("disputed", item["certainty"])
+                self.assertIn("psalms-masoretic", item["source_ids"])
+                self.assertIn(scholarly_source, item["source_ids"])
+                self.assertIn(evidence_id, self.sources[scholarly_source]["supports"])
+                self.assertIn("pp. 53–54", self.sources[scholarly_source]["locator"])
+                self.assertIn("Full article PDF inspected", self.sources[scholarly_source]["notes"])
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["scholarly_interpretation"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
+        self.assertEqual("draft", self.book["content_status"])
+        self.assertEqual("in_review", self.book["review_status"])
+        self.assertTrue(self.book["human_review_required"])
 
 
 if __name__ == "__main__":
