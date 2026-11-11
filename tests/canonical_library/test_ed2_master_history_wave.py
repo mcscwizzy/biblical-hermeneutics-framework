@@ -42,6 +42,9 @@ class Ed2MasterHistoryWaveTests(unittest.TestCase):
         cls.book = json.loads(
             (REPO_ROOT / "framework/canonical_library/objects/books/2-chronicles.json").read_text()
         )
+        cls.first_chronicles = json.loads(
+            (REPO_ROOT / "framework/canonical_library/objects/books/1-chronicles.json").read_text()
+        )
 
     def test_c1_records_have_exact_supported_scopes_and_source_disclosures(self) -> None:
         items = {x["id"]: x for x in self.book.get("evidence_items", [])}
@@ -81,6 +84,29 @@ class Ed2MasterHistoryWaveTests(unittest.TestCase):
         self.assertEqual("draft", self.book["content_status"])
         self.assertEqual("in_review", self.book["review_status"])
         self.assertTrue(self.book["human_review_required"])
+
+    def test_c2_psalm_doxology_argument_is_attributed_and_uncertain(self) -> None:
+        item = next(
+            x for x in self.first_chronicles["evidence_items"]
+            if x["id"] == "first-chronicles-16-36-five-book-psalter"
+        )
+        sources = {source["id"]: source for source in self.first_chronicles["sources"]}
+        self.assertEqual("literary-convention", item["evidence_type"])
+        self.assertEqual(["1 Chronicles 16:36"], [x["reference"] for x in item["scripture_references"]])
+        self.assertEqual("major_scholarly_disagreement", item["dispute_status"])
+        self.assertEqual("disputed", item["certainty"])
+        self.assertTrue({"1-chronicles-1-29", "psalm106-masoretic", "longacre-psalter-compiled-2025"}.issubset(item["source_ids"]))
+        self.assertIn(item["id"], sources["psalm106-masoretic"]["supports"])
+        self.assertIn(item["id"], sources["longacre-psalter-compiled-2025"]["supports"])
+        self.assertIn("not a peer-reviewed journal article", sources["longacre-psalter-compiled-2025"]["notes"])
+        self.assertTrue(item["primary_observation"])
+        self.assertTrue(item["scholarly_interpretation"])
+        self.assertTrue(item["temporal_scope"]["notes"])
+        self.assertEqual([], item["related_objects"])
+        self.assertEqual([], item["related_evidence"])
+        self.assertEqual("draft", self.first_chronicles["content_status"])
+        self.assertEqual("in_review", self.first_chronicles["review_status"])
+        self.assertTrue(self.first_chronicles["human_review_required"])
 
 
 if __name__ == "__main__":

@@ -919,8 +919,35 @@
       ],
       "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
       "id": "zondervan-kings-chronicles-backgrounds"
-    }
-  ],
+    },
+    {
+      "id": "psalm106-masoretic",
+      "title": "Masoretic Psalm 106",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Psalm 106:1, 47–48",
+      "url": "",
+      "source_type": "scripture",
+      "notes": "Canonical Hebrew text used for direct comparison with 1 Chronicles 16:34–36.",
+      "supports": [
+        "first-chronicles-16-36-five-book-psalter"
+      ]
+    },
+    {
+      "id": "longacre-psalter-compiled-2025",
+      "title": "When Was the Psalter Compiled?",
+      "author": "Drew Longacre",
+      "publisher": "The Bible and Interpretation",
+      "year": 2025,
+      "locator": "“Chronicles” section; discussion of 1 Chronicles 16:8–36, especially 16:36",
+      "url": "https://bibleinterp.arizona.edu/articles/when-was-psalter-compiled",
+      "source_type": "other",
+      "notes": "Full scholarly essay inspected. Longacre argues that reuse of the Psalm 106 doxology in Chronicles supports a five-book Psalter known to the Chronicler and a Persian-period compilation horizon; the doxology’s origin, Chronicles’ date, and the conclusion remain debated. This is a scholarly web essay, not a peer-reviewed journal article.",
+      "supports": [
+        "first-chronicles-16-36-five-book-psalter"
+      ]
+    }],
   "content_status": "draft",
   "review_status": "in_review",
   "reviewed_by": [],
@@ -959,4 +986,54 @@
   "later_christian_reception": "Christian reception has used its genealogies, worship orders, temple preparation, giving, and Davidic promise in ecclesial and christological interpretation, sometimes too directly mapping ancient offices onto churches.",
   "literary_context": "Genealogies frame the entire David narrative; repeated source notices, speeches, prayers, lists, and carefully selected parallels reshape earlier history toward all Israel, Jerusalem, temple, and Solomon.",
   "covenantal_significance": "Ancestral continuity, the Davidic house, Levitical service, ark worship, and the charge to seek the LORD present covenant identity as viable after exile."
+,
+  "evidence_items": [
+    {
+      "id": "first-chronicles-16-36-five-book-psalter",
+      "title": "Does 1 Chronicles 16:36 witness a five-book Psalter?",
+      "evidence_type": "literary-convention",
+      "description": "The closing response in 1 Chronicles 16:36 closely reuses Psalm 106:48, including the call to say “Amen” and “Hallelujah.” Longacre argues that the Chronicler’s use of this book-four doxology is evidence for a Psalter already arranged in five books.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Longacre’s complete 2025 essay was inspected. The verbal reuse is observable, but whether Psalm 106:48 was originally part of that psalm or added as a book division, and how it dates the Psalter or Chronicles, remain debated.",
+      "passage_relevance": "The verse links the Chronicler’s presentation of communal worship to the Psalter’s collection history. It helps readers distinguish a direct textual parallel from a proposed date for when a five-book Psalter took shape.",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "First Chronicles 16:36 ends with the gathered people saying “Amen” and praising YHWH; its wording closely matches Psalm 106:48. The surrounding hymn also draws on material found in Psalms 105, 96, and 106.",
+      "scholarly_interpretation": "Longacre argues that 1 Chronicles 16:36 preserves Psalm 106:48 in its role as the doxology closing book four of the Psalter. He reads this reuse, together with other Psalm material in the hymn, as evidence that the Chronicler knew a five-book collection. He acknowledges proposals that the doxology originally belonged to Psalm 106 itself and leaves open the possibility that individual psalms entered the collection later; the exact date of Chronicles is also uncertain.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Psalter and Chronicles composition and collection history; chronology is debated"
+        ],
+        "narrative_setting": "The Chronicler depicts David’s liturgical organization around the ark; the passage is not treated as a verbatim transcript of a securely dated historical performance.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "Longacre argues for a Psalter substantially compiled by the end of the Persian period, but the chronology depends on his interpretation of the reuse and the debated dating of Chronicles."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "1 Chronicles 16:36",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The verse contains the closing response whose wording and collection-historical role are discussed.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "1-chronicles-1-29",
+        "psalm106-masoretic",
+        "longacre-psalter-compiled-2025"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-c-history/history-research-packets-c2.md."
+    }
+  ]
 }

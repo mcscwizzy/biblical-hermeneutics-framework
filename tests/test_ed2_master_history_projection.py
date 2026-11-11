@@ -43,3 +43,28 @@ def test_ed2_master_history_c1_projects_exact_passages_and_comparative_sources()
         assert projected["human_review_required"] is True
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_history_c2_psalm_doxology_projects_with_disclosed_sources():
+    records = _load_ckl("books/1-chronicles.json")
+    result = _project("1 Chronicles 16", canonical=_lookup("ckl", records=records))
+    projected_id = "ckl:1-chronicles#evidence:first-chronicles-16-36-five-book-psalter"
+    assert len([entry for entry in result["items"] if entry["id"] == projected_id]) == 1
+    projected = _item(result, projected_id)
+    assert projected["evidence_category"] == "literary-convention"
+    assert [x["reference"] for x in projected["applicable_passage_anchors"]] == ["1 Chronicles 16:36"]
+    assert {"1-chronicles-1-29", "psalm106-masoretic", "longacre-psalter-compiled-2025"}.issubset(projected["source_ids"])
+    assert all(source["details_available"] for source in projected["sources"])
+    assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+    assert projected["rationale"]["primary_observation"]
+    assert projected["rationale"]["scholarly_interpretation"]
+    assert projected["certainty"] == "disputed"
+    assert projected["dispute_status"] == "major_scholarly_disagreement"
+    assert projected["content_status"] == "draft"
+    assert projected["review_status"] == "in_review"
+    assert projected["human_review_required"] is True
+    edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+    assert len(edges) == 1
+    assert edges[0]["target_id"] == "passage:1 Chronicles 16:36"
+    assert result["related_passages"]["authored_relationships"] == []
+    assert result["related_passages"]["evidence_backed_bridges"] == []
