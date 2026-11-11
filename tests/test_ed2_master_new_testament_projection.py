@@ -38,6 +38,12 @@ EXPECTED = {
         "Mark 7:3",
         "burkett-mark7-textual-variant-2019",
     ),
+    "john-10-22-dedication-term-and-winter": (
+        "John 10",
+        "books/john.json",
+        "John 10:22",
+        "foerster-john10-enkainia-2016",
+    ),
 }
 
 
@@ -68,3 +74,32 @@ def test_ed2_master_new_testament_e1_e2_project_exact_passages_and_disclose_sour
         assert len(edges) == len(expected_targets)
         assert result["related_passages"]["authored_relationships"] == []
         assert result["related_passages"]["evidence_backed_bridges"] == []
+
+
+def test_ed2_master_new_testament_e4_discloses_abstract_limit_and_exact_section():
+    records = _load_ckl("books/john.json")
+    result = _project("John 10", canonical=_lookup("ckl", records=records))
+    projected_id = "ckl:john#evidence:john-10-22-dedication-term-and-winter"
+    assert len([entry for entry in result["items"] if entry["id"] == projected_id]) == 1
+    projected = _item(result, projected_id)
+    assert projected["evidence_category"] == "cultural-practice"
+    assert "archaeology_ancient_history" in projected["section_ids"]
+    assert [x["reference"] for x in projected["applicable_passage_anchors"]] == ["John 10:22"]
+    assert {"john-greek", "foerster-john10-enkainia-2016"}.issubset(projected["source_ids"])
+    source = next(source for source in projected["sources"] if source["id"] == "foerster-john10-enkainia-2016")
+    assert source["details_available"]
+    assert source["bibliographic_details"]["locator"]
+    assert "full article was inaccessible" in source["bibliographic_details"]["notes"]
+    assert projected["rationale"]["primary_observation"]
+    assert projected["rationale"]["scholarly_interpretation"]
+    assert projected["confidence"] == "low"
+    assert projected["certainty"] == "plausible"
+    assert projected["dispute_status"] == "interpretive_uncertainty"
+    assert projected["content_status"] == "draft"
+    assert projected["review_status"] == "in_review"
+    assert projected["human_review_required"] is True
+    edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+    assert len(edges) == 1
+    assert edges[0]["target_id"] == "passage:John 10:22"
+    assert result["related_passages"]["authored_relationships"] == []
+    assert result["related_passages"]["evidence_backed_bridges"] == []

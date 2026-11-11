@@ -49,6 +49,13 @@ EXPECTED = {
         "mark-greek",
         "burkett-mark7-textual-variant-2019",
     ),
+    "john-10-22-dedication-term-and-winter": (
+        "books/john.json",
+        "cultural-practice",
+        [("John 10:22", "direct")],
+        "john-greek",
+        "foerster-john10-enkainia-2016",
+    ),
 }
 
 
@@ -97,6 +104,10 @@ class Ed2MasterNewTestamentWaveTests(unittest.TestCase):
         self.assertEqual("interpretive_uncertainty", items["luke-13-10-17-sabbath-healing-necessity"]["dispute_status"])
         self.assertEqual("textual_variant", items["mark-7-3-pugme-pukna-variant"]["dispute_status"])
         self.assertEqual("low", items["mark-7-3-pugme-pukna-variant"]["confidence"])
+        self.assertEqual("interpretive_uncertainty", items["john-10-22-dedication-term-and-winter"]["dispute_status"])
+        self.assertEqual("low", items["john-10-22-dedication-term-and-winter"]["confidence"])
+        self.assertIn("publisher’s bibliographic page and abstract", items["john-10-22-dedication-term-and-winter"]["confidence_rationale"])
+        self.assertIn("full article was inaccessible", next(book for book in books if book["id"] == "john")["sources"][-1]["notes"])
         for book in books:
             self.assertEqual("draft", book["content_status"])
             self.assertEqual("in_review", book["review_status"])

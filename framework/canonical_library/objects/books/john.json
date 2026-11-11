@@ -2333,8 +2333,21 @@
       ],
       "notes": "Aggregated Greek lexical reference.",
       "id": "logeion"
-    }
-  ],
+    },
+    {
+      "id": "foerster-john10-enkainia-2016",
+      "title": "Zur Bedeutung von ἐγκαίνια in Joh 10,22",
+      "author": "Hans Förster",
+      "publisher": "Revue Biblique 123, no. 3",
+      "year": 2016,
+      "locator": "pp. 400–417; publisher metadata and abstract inspected, full article inaccessible",
+      "url": "https://doi.org/10.2143/RBI.123.3.3159683",
+      "source_type": "journal-article",
+      "notes": "The publisher page supplies bibliographic metadata and the abstract, but the full article was inaccessible. The item reports only the abstract’s narrow argument about the generic Greek term and the winter notice; it does not assess the complete argument or infer audience composition.",
+      "supports": [
+        "john-10-22-dedication-term-and-winter"
+      ]
+    }],
   "claims": [
     {
       "id": "john-anonymous",
@@ -3348,8 +3361,53 @@
       ],
       "metadata": {},
       "notes": "Source-lock identity: john-4-judea-samaria-galilee-journey; status: LOCKED. Subject: Jesus' movement in John 4 [passage-event]. Relationship: narrated-travel-stages. Target: Judea, Samaria, and Galilee [region-sequence]. Source locks: ckl-john-primary @ John 4:3-4, 43 (direct-textual); openbible-geocoding-data @ records openbible-a149f13, openbible-a282dce, and openbible-a9cf1e8; Judea 1, Samaria 2, Galilee 1 atlas records (entity-identification-and-occurrence)"
-    }
-  ],
+    },
+    {
+      "id": "john-10-22-dedication-term-and-winter",
+      "title": "Does John 10:22 itself identify Hanukkah by name?",
+      "evidence_type": "cultural-practice",
+      "description": "John 10:22 uses the Greek expression τὰ ἐγκαίνια and says that it was winter. Förster argues that the expression is a generic description of a dedication celebration rather than a proper name, making the seasonal notice important for identifying the festival as Hanukkah.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "low",
+      "confidence_rationale": "Only the publisher’s bibliographic page and abstract were accessible. The record reports Förster’s stated argument but does not assess the full article, establish that all first-century readers used the term the same way, or infer the Gospel’s audience composition.",
+      "passage_relevance": "The seasonal note carries interpretive weight if the Greek term is generic. This helps readers distinguish the wording in John from a later conventional translation and avoids using the note alone to make broad claims about who read the Gospel.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "John 10:22 calls the occasion τὰ ἐγκαίνια and explicitly adds that it was winter. The Greek verse does not use the later English label “Hanukkah” as a transliterated festival name.",
+      "scholarly_interpretation": "Förster argues that τὰ ἐγκαίνια means a dedication celebration rather than functioning as a unique proper name. On this reading, the winter notice helps distinguish the festival from other temple-dedication celebrations and identifies Hanukkah. This proposal is reported from the abstract only; no alternate dedication or audience conclusion is adopted here.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Second Temple festival setting as narrated in John; the exact historical terminology and audience knowledge remain interpretive questions"
+        ],
+        "narrative_setting": "John presents Jesus in Jerusalem during winter at a dedication celebration; the narrative does not independently provide a precise day or year.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The Gospel’s narrative chronology, the festival’s historical observance, and Förster’s modern proposal are distinct evidence layers. The full article was not accessible."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "John 10:22",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This verse contains both the Greek festival expression and the explicit winter notice.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "john-greek",
+        "foerster-john10-enkainia-2016"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-e-new-testament/new-testament-research-packets-e4.md."
+    }],
   "section_status": {
     "core_summary": "draft",
     "scripture_anchors": "needs_review",
