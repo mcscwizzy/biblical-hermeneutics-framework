@@ -348,7 +348,63 @@
     {"id": "wessinger", "title": "Apocalypse and Violence", "author": "Catherine Wessinger", "publisher": "Oxford University Press", "year": 2014, "locator": "Oxford Handbook of Apocalyptic Literature", "url": "https://academic.oup.com/edited-volume/34434/chapter-abstract/292225328", "source_type": "academic-book", "supports": ["later_christian_reception", "interpretive_notes"], "notes": "Modern reception and violence study."},
     {"id": "metzger", "title": "A Textual Commentary on the Greek New Testament", "author": "Bruce M. Metzger", "publisher": "German Bible Society", "year": 1994, "locator": "Revelation variants", "url": "https://www.die-bibel.de/en/shop/a-textual-commentary-on-the-greek-new-testament-6008", "source_type": "reference-work", "supports": ["claims", "interpretive_notes"], "notes": "Text-critical commentary; later ECM evidence should also be consulted."},
     {"id": "bdag", "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature", "author": "Walter Bauer, Frederick W. Danker, William F. Arndt, and F. Wilbur Gingrich", "publisher": "University of Chicago Press", "year": 2000, "locator": "Relevant Revelation lemmas", "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3621110.html", "source_type": "reference-work", "supports": ["greek_words", "claims"], "notes": "Lexical control; meaning remains contextual."},
-    {"id": "irenaeus", "title": "Against Heresies, Book 5", "author": "Irenaeus of Lyons", "publisher": "New Advent", "year": null, "locator": "5.30", "url": "https://www.newadvent.org/fathers/0103530.htm", "source_type": "ancient-primary-source", "supports": ["authorship_positions", "date_ranges", "later_christian_reception"], "notes": "Ancient reception evidence whose wording and referent require careful evaluation."}
+    {"id": "irenaeus", "title": "Against Heresies, Book 5", "author": "Irenaeus of Lyons", "publisher": "New Advent", "year": null, "locator": "5.30", "url": "https://www.newadvent.org/fathers/0103530.htm", "source_type": "ancient-primary-source", "supports": ["authorship_positions", "date_ranges", "later_christian_reception"], "notes": "Ancient reception evidence whose wording and referent require careful evaluation."},
+    {
+      "id": "friesen-beast-land-2003",
+      "title": "The Beast from the Land: Revelation 13:11–18 and Social Setting",
+      "author": "Steven J. Friesen",
+      "publisher": "Society of Biblical Literature",
+      "year": 2003,
+      "locator": "In David L. Barr (ed.), Reading the Book of Revelation: A Resource for Students, pp. 49–64, especially pp. 60–64",
+      "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Barr_Revelation.pdf",
+      "source_type": "academic-book",
+      "supports": ["revelation-13-land-beast-as-asian-elite-network", "historical_context", "claims"],
+      "notes": "Full SBL Press chapter and cited section inspected. It is a distinct edited-volume chapter, not Friesen’s separate 2001 monograph already listed in this object. The chapter warns that inscriptions inform interpretation without mechanically determining a symbol’s referent."
+    }
+  ],
+  "evidence_items": [
+    {
+      "id": "revelation-13-land-beast-as-asian-elite-network",
+      "title": "The land beast and civic-cult networks in Roman Asia",
+      "evidence_type": "institution",
+      "description": "Friesen argues that Revelation 13’s land-beast imagery evokes Roman imperial worship through wealthy families and intersecting civic and cult institutions in Asia, rather than encoding a single office or person.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The full SBL Press chapter and its discussion on pp. 60–64 were inspected. Friesen grounds his proposal in the text and epigraphic evidence but presents a debated interpretation of a symbolic vision, not a direct identification supplied by an inscription.",
+      "passage_relevance": "This proposal gives readers a historically specific way to consider the land beast’s role in worship and civic life, while preserving disagreement over its referent and avoiding the claim that a single official or uniform empire-wide policy explains every image.",
+      "certainty": "plausible",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Revelation 13:11–18 describes a second beast that exercises delegated authority, promotes worship of the first beast, makes an image, and links allegiance to buying and selling. The vision does not name a Roman office, priesthood, city, or social class.",
+      "scholarly_interpretation": "Friesen accepts a general relationship between the land beast and Roman imperial cults, then argues from inscriptions and the social setting of Roman Asia that the image evokes elite families operating through a network of provincial and local cult offices, municipal representatives, priesthoods, and public events. He reviews narrower proposals such as a single priesthood or provincial council but argues that the symbol is not a one-to-one cipher. The inscriptions document institutions and elite participation; they do not by themselves prove that every element of the vision maps directly to a specific historical actor or that worship was uniformly enforced across the empire.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": ["Roman province of Asia; Friesen’s inscription sample is drawn from approximately 80–130 CE."],
+        "narrative_setting": "John’s vision to assemblies in Roman Asia, interpreted against the civic and imperial-cult institutions documented for the province.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The 80–130 CE inscription window is Friesen’s contextual sample, not a date for Revelation. The vision’s composition date and symbolic referent remain debated."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Revelation 13:11-18",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This passage introduces the second beast and supplies the worship, image, authority, and economic details interpreted by Friesen.",
+          "weight": 10
+        }
+      ],
+      "source_ids": ["rev-greek", "friesen-beast-land-2003"],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-e-new-testament/new-testament-research-packets-e1.md."
+    }
   ],
   "canonical_story": {
     "phase": "Early Christian witness under empire and canonical cosmic-renewal hope",

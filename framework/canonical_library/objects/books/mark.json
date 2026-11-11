@@ -505,7 +505,63 @@
     {"id":"postcolonial-mark","title":"Postcolonial Perspectives in African Biblical Interpretations","author":"Musa W. Dube, Andrew M. Mbuvi, and Dora R. Mbuwayesango, editors","publisher":"Society of Biblical Literature","year":2012,"locator":"Postcolonial feminist reading of Mark 14-16 and related essays","url":"https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf","source_type":"academic-book","supports":["later_christian_reception","claims","interpretive_notes"],"notes":"Postcolonial, gender-aware, and embodied reception."},
     {"id":"ending-16-8","title":"The Unending Revelation: Mark 16:8 as a Theological Choice","author":"","publisher":"Oxford University Press","year":2002,"locator":"Reopening the Word","url":"https://academic.oup.com/book/12863/chapter-abstract/163152730","source_type":"academic-book","supports":["literary_context","claims","interpretive_notes"],"notes":"Study of Mark 16:8 as a distinctive theological ending."},
     {"id":"peter-in-mark","title":"Peter as Peter in the Gospel of Mark","author":"","publisher":"Cambridge University Press","year":1998,"locator":"New Testament Studies","url":"https://www.cambridge.org/core/journals/new-testament-studies/article/peter-as-peter-in-the-gospel-of-mark/7747541468A76864F36B5A9C8C4F5D26","source_type":"journal-article","supports":["literary_context","interpretive_notes"],"notes":"Study of Peter's characterization in Mark."},
-    {"id":"mark-theology","title":"The Theology of the Gospel of Mark","author":"W. R. Telford","publisher":"Cambridge University Press","year":1999,"locator":"Cambridge excerpt","url":"https://assets.cambridge.org/97805214/33662/excerpt/9780521433662_excerpt.pdf","source_type":"academic-book","supports":["major_themes","later_christian_reception","interpretive_notes"],"notes":"Theological study of Mark and its reception."}
+    {"id":"mark-theology","title":"The Theology of the Gospel of Mark","author":"W. R. Telford","publisher":"Cambridge University Press","year":1999,"locator":"Cambridge excerpt","url":"https://assets.cambridge.org/97805214/33662/excerpt/9780521433662_excerpt.pdf","source_type":"academic-book","supports":["major_themes","later_christian_reception","interpretive_notes"],"notes":"Theological study of Mark and its reception."},
+    {
+      "id": "burkett-mark7-textual-variant-2019",
+      "title": "Did Jews Rinse their Hands ‘with a Fist’ (Mark 7.3)?",
+      "author": "Delbert Burkett",
+      "publisher": "New Testament Studies",
+      "year": 2019,
+      "locator": "65, no. 2, pp. 139–147; abstract and displayed footnote 1 inspected",
+      "url": "https://doi.org/10.1017/S0028688518000358",
+      "source_type": "journal-article",
+      "supports": ["mark-7-3-pugme-pukna-variant", "primary_sources", "claims"],
+      "notes": "Cambridge’s bibliographic record, abstract, and displayed footnote 1 were inspected; the complete article was not accessible. Burkett proposes πυκνά (‘repeatedly’) in place of the reading πυγμῇ (‘with a fist’) printed in NA28/UBS5. His footnote lists א and W among witnesses for πυκνά; no manuscript images were consulted, and the record does not decide which reading is original."
+    }
+  ],
+  "evidence_items": [
+    {
+      "id": "mark-7-3-pugme-pukna-variant",
+      "title": "Should Mark 7:3 read ‘with a fist’ or ‘repeatedly’?",
+      "evidence_type": "manuscript",
+      "description": "The Greek editions cited by Burkett read πυγμῇ, commonly rendered ‘with a fist’; Burkett proposes the alternative πυκνά, ‘repeatedly.’ This records a text-critical proposal, not a conclusion about the original reading.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "low",
+      "confidence_rationale": "The Cambridge article page supplies bibliographic details, the abstract, and a displayed apparatus note, but the full article argument and manuscript images were not accessible. The entry is limited to reporting Burkett’s proposal and leaves the variant unresolved.",
+      "passage_relevance": "The reading affects how the difficult adverb in Mark 7:3 is translated. It prompts readers to distinguish the printed critical-text reading from a proposed alternative and to avoid treating either as settled by this abstract-level review.",
+      "certainty": "disputed",
+      "dispute_status": "textual_variant",
+      "primary_observation": "Mark 7:3 contains the difficult Greek expression πυγμῇ in the critical editions named in Burkett’s abstract. His 2019 article proposes the variant πυκνά, meaning ‘repeatedly’; the footnote displayed by the publisher lists א and W among its witnesses. No manuscript images were consulted, and the original reading remains unresolved.",
+      "scholarly_interpretation": "Burkett argues that πυκνά is preferable and says this sense fits descriptions of repeated hand-rinsing in later rabbinic sources. Because only the abstract and a displayed apparatus note were accessible, this item does not assess his full argument or infer a uniform handwashing practice in the first-century setting of Mark.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": ["A textual question about Mark 7:3; later rabbinic descriptions cited in the article are chronologically distinct."],
+        "narrative_setting": "A dispute about eating with unwashed hands in Mark’s narrative; no broad claim about all Jewish practice is inferred.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The Markan text, later rabbinic sources, and Burkett’s 2019 proposal are distinct evidence layers. The original reading remains unresolved."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Mark 7:3",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This verse contains the Greek reading and translation problem addressed by Burkett.",
+          "weight": 10
+        }
+      ],
+      "source_ids": ["mark-greek", "sblgnt", "burkett-mark7-textual-variant-2019"],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-e-new-testament/new-testament-research-packets-e3.md."
+    }
   ],
   "canonical_story": {
     "phase": "",

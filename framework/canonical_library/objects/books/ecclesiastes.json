@@ -1014,6 +1014,20 @@
       ],
       "notes": "Philosophical analysis of meaning, death, well-being, enjoyment, and value in Qohelet.",
       "id": "peterson-qoheleth-value"
+    },
+    {
+      "id": "whybray-ecclesiastes10-1-lexical-1989",
+      "title": "Ecclesiastes: The New Century Bible Commentary",
+      "author": "R. N. Whybray",
+      "publisher": "William B. Eerdmans Publishing Company; Marshall, Morgan & Scott, New Century Bible Commentary",
+      "year": 1989,
+      "locator": "Ecclesiastes 10:1 commentary, p. 150",
+      "url": "https://biblicalstudies.org.uk/pdf/e-books/whybray_r-n/ecclesiastes_new-century-bible_whybray.pdf",
+      "source_type": "academic-book",
+      "notes": "The full scanned commentary and the note on Ecclesiastes 10:1 were inspected. Whybray lists alternative senses for “flies of death,” notes singular/plural irregularities, and judges textual corruption likely without claiming the verse’s general sense is unrecoverable.",
+      "supports": [
+        "ecclesiastes-10-1-flies-of-death-translation"
+      ]
     }
   ],
   "claims": [
@@ -1539,5 +1553,53 @@
       "reception_history",
       "pastoral_application"
     ]
-  }
+  },
+  "evidence_items": [
+    {
+      "id": "ecclesiastes-10-1-flies-of-death-translation",
+      "title": "The “flies of death” and Ecclesiastes 10:1’s wording",
+      "evidence_type": "literary-convention",
+      "description": "Whybray discusses the literal phrase “flies of death,” the singular verb following its plural subject, and competing interpretations of the insects and the verse’s wording.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The complete commentary note on p. 150 was inspected. It sets out several lexical options and grammatical problems, but this item does not compare textual witnesses or select an original reading.",
+      "passage_relevance": "The note helps readers understand why translations and textual notes differ at Ecclesiastes 10:1, and why the proverb’s image should not be made to depend on one reconstructed Hebrew reading.",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "primary_observation": "The Hebrew expression is literally rendered “flies of death”; the following odor verb is singular although “flies” is plural, and Whybray notes another singular verb and a phrase that may be glosses.",
+      "scholarly_interpretation": "Whybray lists “dead,” “poisonous/lethal,” and “dying” flies as possible senses. He regards the verse as probably textually corrupt but says its general point is fairly clear; the record reports his alternatives and does not resolve the Hebrew text.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "The composition date and first audience of Ecclesiastes remain outside the scope of this verse-level lexical note."
+        ],
+        "narrative_setting": "A wisdom aphorism attributed to Qoheleth in the literary discourse; no specific historical speech event or audience is established.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "Whybray’s publication date (1989) is separate from the unresolved date and social setting of Ecclesiastes’ composition."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Ecclesiastes 10:1",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The note helps readers understand why translations and textual notes differ at Ecclesiastes 10:1, and why the proverb’s image should not be made to depend on one reconstructed Hebrew reading.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "ecclesiastes-masoretic",
+        "whybray-ecclesiastes10-1-lexical-1989"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-b-wisdom/wisdom-research-packets-b1.md."
+    }
+  ]
 }

@@ -372,8 +372,21 @@
     {"title":"The Minor Prophets in Early Judaism","author":"Malka Z. Simkovich","publisher":"Oxford University Press","year":2021,"locator":"The Oxford Handbook of the Minor Prophets, chapter 17","url":"https://academic.oup.com/edited-volume/38566/chapter-abstract/334372283","source_type":"reference-work","supports":["second_temple_context","later_christian_reception"],"notes":"Overview of Jewish transmission and reception; does not replace study of 4Q169.","id":"oxford-early-judaism"},
     {"title":"The Minor Prophets in Early Christianity","author":"Michael B. Shepherd","publisher":"Oxford University Press","year":2021,"locator":"The Oxford Handbook of the Minor Prophets, chapter 18","url":"https://academic.oup.com/edited-volume/38566/chapter/334372365","source_type":"reference-work","supports":["later_christian_reception","new_testament_connections"],"notes":"Overview of early Christian transmission and interpretation of the Twelve.","id":"oxford-early-christianity"},
     {"title":"Metaphor in the Minor Prophets","author":"Carol J. Dempsey","publisher":"Oxford University Press","year":2021,"locator":"The Oxford Handbook of the Minor Prophets, chapter 7, pages 85-100","url":"https://academic.oup.com/edited-volume/38566/chapter/334371542","source_type":"reference-work","supports":["literary_context","interpretive_disputes"],"notes":"Methodological resource for reading prophetic metaphor, including embodied and gendered effects.","id":"oxford-metaphor"},
-    {"title":"Postcolonial Approaches to the Minor Prophets","author":"Jeremiah W. Cataldo","publisher":"Oxford University Press","year":2021,"locator":"The Oxford Handbook of the Minor Prophets, chapter 25, pages 341-355","url":"https://academic.oup.com/edited-volume/38566/chapter-abstract/334372842","source_type":"reference-work","supports":["later_christian_reception","interpretive_disputes","nahum-ethical-reception"],"notes":"Postcolonial methodological resource for empire, power, and resistant reception.","id":"oxford-postcolonial"}
-  ],
+    {"title":"Postcolonial Approaches to the Minor Prophets","author":"Jeremiah W. Cataldo","publisher":"Oxford University Press","year":2021,"locator":"The Oxford Handbook of the Minor Prophets, chapter 25, pages 341-355","url":"https://academic.oup.com/edited-volume/38566/chapter-abstract/334372842","source_type":"reference-work","supports":["later_christian_reception","interpretive_disputes","nahum-ethical-reception"],"notes":"Postcolonial methodological resource for empire, power, and resistant reception.","id":"oxford-postcolonial"},
+    {
+      "id": "gruetter-nahum3-one-city-2017",
+      "title": "A Tale of One City (Nah 3:8–9): A Text-critical Solution for an Often Discussed Problem Provided by a Reading Preserved in the Septuagint",
+      "author": "Nesina Grütter",
+      "publisher": "Journal of Septuagint and Cognate Studies 50",
+      "year": 2017,
+      "locator": "pp. 160–175, especially the opening textual comparison and concluding synthesis",
+      "url": "https://septuaginta.uni-goettingen.de/static/ioscs/pdf/volumes/jscs50.pdf",
+      "source_type": "journal-article",
+      "notes": "The complete article was inspected. Grütter compares the Masoretic Text, Septuagint, pre-Hexaplaric revisions, and Qumran evidence. Her one-city reconstruction remains a disputed text-critical proposal and does not establish an archaeological identification.",
+      "supports": [
+        "nahum-3-8-9-one-city-text-critical-proposal"
+      ]
+    }],
   "canonical_story": {
     "phase": "",
     "role": "",
@@ -538,4 +551,55 @@
   "last_reviewed": null,
   "confidence": "medium",
   "human_review_required": true
+,
+  "evidence_items": [
+    {
+      "id": "nahum-3-8-9-one-city-text-critical-proposal",
+      "title": "Does Nahum 3:8–9 compare Nineveh with No-Amon?",
+      "evidence_type": "ancient-text",
+      "description": "The Masoretic wording of Nahum 3:8 names No-Amon in a comparison with Nineveh. Grütter argues from Septuagint and Qumran evidence that an earlier form may have described Nineveh alone, making this a textual and compositional question rather than a secure identification of an Egyptian city.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "low",
+      "confidence_rationale": "The full article and its textual comparisons were inspected, but Grütter’s one-city reconstruction is an alternative to the dominant Masoretic reading and requires a debated reconstruction of the earlier text.",
+      "passage_relevance": "The textual proposal changes whether the passage contrasts Nineveh with a second city and affects how readers interpret the geographical references in verses 8–9. It does not identify an archaeological site or settle the final-form reading.",
+      "certainty": "disputed",
+      "dispute_status": "textual_variant",
+      "primary_observation": "The Masoretic Text begins verse 8 with a question about No-Amon and then names Cush, Egypt, Put, and Libya in verse 9. Grütter compares this wording with the Old Greek, pre-Hexaplaric evidence, and Qumran 4Q385a, whose text and pronouns differ in ways relevant to the city reference.",
+      "scholarly_interpretation": "Grütter argues that the Septuagint and 4Q385a support an earlier one-city reading about Nineveh, while the Masoretic form presents the familiar comparison with No-Amon/Thebes. She treats this as a text-critical explanation for the passage’s wording and topographical difficulty, not as archaeological evidence about Thebes or a settled consensus.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Textual transmission of Nahum; the direction and date of the proposed change are uncertain"
+        ],
+        "narrative_setting": "An oracle directed against Nineveh whose received Masoretic form compares the city with No-Amon; this record presents an alternative textual reconstruction.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The dates of the oracle, textual forms, and surviving witnesses are separate questions. No composition date or archaeological conclusion follows from this reconstruction."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Nahum 3:8-9",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "These verses contain the No-Amon comparison and the textual witnesses evaluated by Grütter.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "nahum-masoretic",
+        "catss-nahum",
+        "nets-twelve",
+        "gruetter-nahum3-one-city-2017"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-d-prophets/prophets-research-packets-d2.md."
+    }
+  ]
 }

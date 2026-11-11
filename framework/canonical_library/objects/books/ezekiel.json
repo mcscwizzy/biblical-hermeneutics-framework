@@ -1402,6 +1402,34 @@
       "url": "https://research-repository.st-andrews.ac.uk/bitstream/handle/10023/15994/Lyons_2018_LiftedMyEyes_Envisioning_AAM.pdf?sequence=1",
       "supports": ["ezekiel-40-vision-measuring-sequence"],
       "notes": "In E. R. Hayes and L.-S. Tiemeyer (eds.), ‘I Lifted My Eyes and Saw’: Reading Dream and Vision Reports in the Hebrew Bible (Library of Hebrew Bible/Old Testament Studies 584; London/New York: Bloomsbury T&T Clark, 2014), 71–83. The linked St Andrews file is the author-created accepted-version manuscript; its repository record says it may differ slightly from the final published version. Publisher edition verified at https://www.bloomsbury.com/uk/i-lifted-my-eyes-and-saw-9780567605665/."
+    },
+    {
+      "id": "ndoga-ezekiel22-textual-reading-2014",
+      "title": "Contemporary Reflections on Ezekiel 22:23–31 as a Depiction of Collective Responsibility of Leaders for National Demise",
+      "author": "Sampson S. Ndoga",
+      "publisher": "Old Testament Essays",
+      "year": 2014,
+      "locator": "Ezekiel 22:25, pp. 250–251 (journal pagination: 247–262)",
+      "url": "https://www.scielo.org.za/scielo.php?pid=S1010-99192014000100014&script=sci_arttext",
+      "source_type": "journal-article",
+      "supports": [
+        "ezekiel-22-prophets-princes-textual-reading"
+      ],
+      "notes": "Full open-access article inspected. Ndoga describes “princes” as an emendation and discusses the Hebrew “prophets” reading, the Greek rendering, and contextual arguments; the article is not a manuscript census."
+    },
+    {
+      "id": "lee-ezekiel31-cedar-sheol-2016",
+      "title": "Mapping Judah’s Fate in Ezekiel’s Oracles against the Nations",
+      "author": "Lydia Lee",
+      "publisher": "SBL Press and Centro de Estudios de Historia del Antiguo Oriente (UCA)",
+      "year": 2016,
+      "locator": "Ezekiel 31:1–18, “The Chthonic Cedar,” pp. 139–144",
+      "url": "https://repositorio.uca.edu.ar/bitstream/123456789/8006/1/mapping-judah-fate-ezekiel-lee.pdf",
+      "source_type": "academic-book",
+      "supports": [
+        "ezekiel-31-pharaoh-cedar-and-sheol"
+      ],
+      "notes": "The full open-access monograph and cited passage-specific pages were inspected. The repository record lists a CC BY-NC-SA 4.0 license; Lee presents the Egyptian afterlife resonance as a possibility, not demonstrated direct borrowing."
     }
   ],
   "canonical_story": {
@@ -1680,6 +1708,107 @@
       "claim_ids": [],
       "external_references": [],
       "notes": "ED-1B research provenance and accepted-version qualifications are documented in docs/evidence-depth/ed1b/ezekiel-40.md."
+    },
+    {
+      "id": "ezekiel-22-prophets-princes-textual-reading",
+      "title": "“Prophets” or “princes” in Ezekiel 22:25?",
+      "evidence_type": "ancient-text",
+      "description": "The Hebrew wording in Ezekiel 22:25 names a conspiracy of prophets, while a number of translations render “princes.” Ndoga discusses the competing readings and the proposed emendation.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "The full open-access article’s discussion of Ezekiel 22:25 on pp. 250–251 was inspected. The textual wording and competing translation are clear, but the article does not independently survey the Hebrew manuscript tradition, so the record does not settle the reading.",
+      "passage_relevance": "The verse sits in a list of social groups accused of violence and corruption. Seeing the “prophets”/“princes” issue helps explain why translations differ and why an English rendering may reflect emendation rather than a different Hebrew manuscript.",
+      "certainty": "disputed",
+      "dispute_status": "textual_variant",
+      "primary_observation": "Ndoga reports that the Masoretic wording in Ezekiel 22:25 uses the Hebrew word for “prophet,” though several English translations render “princes.” He notes the distinct mention of prophets in verse 28 and discusses the Septuagint rendering and a proposed emendation to “princes.”",
+      "scholarly_interpretation": "Ndoga finds “princes” contextually plausible because the predatory conduct in verse 25 fits political leaders, while also recognizing that the Hebrew “prophets” reading avoids an unexplained repetition in verse 28 only if the surrounding literary pattern is read differently. The item preserves this as a textual and interpretive question; it does not claim that an extant Hebrew witness reads “princes.”",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "The Babylonian-exilic horizon represented by Ezekiel’s Jerusalem judgment oracle; no precise composition date is asserted."
+        ],
+        "narrative_setting": "Ezekiel 22 presents an oracle against Jerusalem’s social and religious leadership; the record addresses the wording of verse 25 rather than dating the oracle.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The oracle’s narrated horizon, the textual history of Ezekiel 22:25, and the article’s modern interpretation are distinct questions."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Ezekiel 22:25",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This verse contains the disputed Hebrew noun and the translation “princes” versus “prophets.”",
+          "weight": 10
+        },
+        {
+          "reference": "Ezekiel 22:28",
+          "relationship": "contextual",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The verse separately condemns prophets, a literary detail discussed in Ndoga’s comparison of the readings.",
+          "weight": 7
+        }
+      ],
+      "source_ids": [
+        "ezekiel-masoretic",
+        "ndoga-ezekiel22-textual-reading-2014"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-d-prophets/prophets-research-packets-d1.md."
+    },
+    {
+      "id": "ezekiel-31-pharaoh-cedar-and-sheol",
+      "title": "Pharaoh as a cedar descending to Sheol",
+      "evidence_type": "worldview-concept",
+      "description": "Ezekiel 31 depicts Pharaoh as a towering cedar nourished by deep waters, cut down after its pride, and brought to Sheol with the other trees and nations.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Lee’s full open-access monograph and the discussion on pp. 139–144 were inspected. The literary sequence is explicit, while the proposed Egyptian Osirian resonance is presented as a possible cultural influence rather than a demonstrated source.",
+      "passage_relevance": "The cedar’s movement from imperial height to the underworld links political arrogance and mortality in the oracle. Lee’s comparison offers an ancient Egyptian context for the image while preserving the difference between a plausible resonance and proof of direct borrowing.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "Ezekiel dates the oracle to the eleventh year, third month, first day (31:1). Verses 2–9 compare Pharaoh and his company to a great cedar sustained by deep waters; verses 10–14 announce its fall, and verses 15–18 portray its descent to Sheol among the trees and nations.",
+      "scholarly_interpretation": "Lee calls the image a “chthonic cedar” and argues that Egyptian associations between trees, Osiris, and the afterlife may help explain the cedar’s connection to Pharaoh’s death and netherworld fate. She also places the image within biblical and ancient Near Eastern royal and cosmic-tree traditions. The Egyptian comparison remains a proposed resonance; the passage does not name Osiris, and the evidence does not establish direct borrowing or a specific ritual setting.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "The exile horizon represented by the date in Ezekiel 31:1; no modern calendar conversion is asserted."
+        ],
+        "narrative_setting": "An oracle against Pharaoh dated by the text to the eleventh year, third month, first day; its cedar imagery and Sheol scene are literary descriptions.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The oracle’s relative narrated date, the history of Egyptian afterlife traditions, and the possible cultural resonance proposed by Lee are distinct chronological and interpretive matters."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Ezekiel 31:1-18",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The full oracle develops the cedar image, its judgment, and its descent to Sheol.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "ezekiel-masoretic",
+        "lee-ezekiel31-cedar-sheol-2016"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-d-prophets/prophets-research-packets-d1.md."
     }
   ]
 }

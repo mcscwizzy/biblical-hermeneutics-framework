@@ -1463,6 +1463,20 @@
       ],
       "notes": "Internal relationship to the separately sourced CKL object; used only as comparative context.",
       "id": "cyrus-cylinder-object"
+    },
+    {
+      "id": "aster-isaiah10-assyrian-ideology-2017",
+      "title": "Reflections of Empire in Isaiah 1–39: Responses to Assyrian Ideology",
+      "author": "Shawn Zelig Aster",
+      "publisher": "SBL Press and Centro de Estudios de Historia del Antiguo Oriente (UCA)",
+      "year": 2017,
+      "locator": "Isaiah 10:5–8, in “Isaiah 10:5–15 as a Literary Unit,” pp. 184–190, especially p. 184",
+      "url": "https://repositorio.uca.edu.ar/bitstream/123456789/8002/1/reflections-empire-isaiah-1-39-aster.pdf",
+      "source_type": "academic-book",
+      "supports": [
+        "isaiah10-5-8-assyrian-agency-and-polemical-contrast"
+      ],
+      "notes": "Full open repository edition inspected, including the passage-specific discussion and its Assyrian political context. Aster’s compositional chronology is attributed as a scholarly reconstruction."
     }
   ],
   "claims": [
@@ -2084,6 +2098,53 @@
       "external_references": [],
       "metadata": {},
       "notes": "Source-lock identity: isaiah-36-upper-pool-conduit-field-setting; status: LOCKED. Subject: Assyrian field commander's arrival at Jerusalem [passage-event]. Relationship: physical-setting. Target: conduit of the upper pool by the highway to the Fuller's Field [water-and-field-setting]. Source locks: ckl-isaiah-primary @ Isaiah 36:2 (direct-textual)"
+    },
+    {
+      "id": "isaiah10-5-8-assyrian-agency-and-polemical-contrast",
+      "title": "Assyria’s commission and its own imperial aims in Isaiah 10:5–8",
+      "evidence_type": "literary-convention",
+      "description": "Isaiah 10:5–8 first calls Assyria the rod of YHWH’s anger, then contrasts that commission with the Assyrian king’s own intention to destroy many nations.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Aster’s full open-access chapter and its section on Isaiah 10:5–15 were inspected. The verbal contrast is explicit in the passage; its relationship to Assyrian royal ideology and the passage’s historical composition are scholarly interpretations.",
+      "passage_relevance": "The contrast helps readers distinguish the oracle’s account of divine use of Assyrian power from the king’s independent imperial ambition and claim to act without limit.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "Isaiah 10:5–6 calls Assyria a rod and staff in YHWH’s hand and commissions it to plunder; verses 7–8 say Assyria intends to destroy many nations and boasts that its commanders are like kings.",
+      "scholarly_interpretation": "Aster reads the contrast as a polemical limit on Assyria’s power: the empire may despoil subject peoples, but its own claim to destroy nations exceeds the commission represented in the text. He relates the language to Assyrian imperial claims and distinguishes tribute extracted from vassal states from provincial taxation. This is Aster’s literary-historical reading, not an independent Assyrian confirmation of the oracle’s theology or a settled composition date.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Assyrian imperial expansion in the southern Levant; Aster discusses a Sargon II-era setting, while the passage’s composition history remains disputed."
+        ],
+        "narrative_setting": "The oracle addresses Assyrian conquest and the king’s ambitions; Isaiah 10:5–8 itself does not specify a composition date.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "Aster’s proposed historical horizon is not treated as a securely established date; the text’s scene, Assyrian policies, and literary formation are kept distinct."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Isaiah 10:5-8",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "These verses frame Assyria as YHWH’s instrument and then distinguish the king’s destructive intention from that commission.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "isaiah-masoretic",
+        "aster-isaiah10-assyrian-ideology-2017"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-d-prophets/prophets-research-packets-d1.md."
     }
   ],
   "section_status": {
