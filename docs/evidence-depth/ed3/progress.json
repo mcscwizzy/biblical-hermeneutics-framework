@@ -171,7 +171,7 @@
         "psalm-80-vine-lament-and-son-ambiguity",
         "psalm-98-yhwh-kingship-in-book-four-cluster"
       ],
-      "commit_sha": null,
+      "commit_sha": "77468c69",
       "blockers": [
         "Primary editions, manuscript/artifact images, full Ecclesiastes source, Psalm 34 full chapter, and 69 other reported full texts remain unavailable or were not freshly accessed; preserve as reviewer tasks."
       ],
@@ -184,10 +184,29 @@
       }
     },
     "3": {
-      "status": "pending",
+      "status": "completed_with_documented_limits",
       "completed_evidence_ids": [],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "19 unresolved semantic source-support targets and 20 ambiguous reference-work identities require context/human research; patristic-minor-prophets locator unresolved; broad source metadata variations remain."
+      ],
+      "summary": "Reconciled the two unresolved child-source references to exact local source records, retained the missing Malachi locator where publisher metadata did not justify a page/section, classified 102 source-support-target signals without weakening the checker, and screened the inherited 558 sparse IDs without fabricating bibliography. Corrected the demonstrated stale Psalm 17 access statement.",
+      "validation": {
+        "strict_ckl": "94 modules valid; 687 valid objects; 0 strict errors; 14 inherited warnings",
+        "source_references": "0 unresolved child-source references after the two exact local repairs",
+        "source_support_targets": "102 inherited deep-heuristic findings unchanged; no checker rules weakened",
+        "expected_locator": "patristic-minor-prophets remains without a defensible passage locator",
+        "sparse_bibliography": "558 reproduced from current source registry: 472 Scripture/text-source IDs and 86 reference-work IDs; the 86 are triaged 26 passage labels, 30 institution/catalog/artifact identities, 7 topic/collection labels, 3 identity/type variations, and 20 ambiguous identities; 0 bibliographic records invented or safely repaired.",
+        "targeted_tests": "17 Psalm/Ephesian tests passed; 51 manifest/schema-package/source-lock tests passed",
+        "source_lock_and_governance": "no matched source-lock references changed; source-lock tests pass; protected NE-9C/NE-10 validation deferred to phase 9",
+        "source_target_inventory": "102 row-level findings: 45 global claim IDs, 14 existing top-level fields, 24 generic field/category labels, 19 unresolved semantic targets; all retained for context or human review."
+      },
+      "completed_source_ids": [
+        "harland-associations-ephesus",
+        "glancy-slavery-ephesus",
+        "patristic-minor-prophets",
+        "psalm-17-textual-proposals-verses-11-and-14"
+      ]
     },
     "4": {
       "status": "pending",

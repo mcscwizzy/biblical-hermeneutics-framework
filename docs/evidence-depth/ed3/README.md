@@ -6,14 +6,18 @@ research priorities. It does not confer human scholarly approval.
 
 ## Status
 
-Phase 0 is baselined on the fetched ED-2 merge. Phase 1 reconciles all 99
+Phases 0–2 are committed on the fetched ED-2 merge. Phase 1 reconciles all 99
 additions to stable CKL evidence IDs, anchors, source records, locators,
 research packets, reported access categories, review state, and reader
-projection. Fresh source material was independently inspected for 29 records;
-70 reported full-text records were not freshly reproduced. All outcomes are
-machine-assisted, 72 records remain unable to be independently verified, and
-all additions remain draft, in review, and human-review required. Semantic
-re-reading of every passage and primary-witness verification remain open.
+projection. Fresh source material was independently inspected for 30 records;
+69 reported full-text records were not freshly reproduced. Phase 2
+rechecked every access-limited group and documents the remaining article and
+primary-witness gaps. Phase 3 repaired two exact local source references and
+the stale Psalm 17 access note; the 102 inherited target heuristics remain
+open. All outcomes are machine-assisted, 71 records remain unable to be
+independently verified, and all additions remain draft, in review, and
+human-review required. Semantic re-reading of every passage and primary-witness
+verification remain open.
 
 ## Navigation
 
@@ -23,6 +27,8 @@ re-reading of every passage and primary-witness verification remain open.
 - [Source verification](source-verification.md)
 - [Inherited source integrity findings](source-integrity-findings.md)
 - [Source integrity fixes](source-integrity-fixes.md)
+- [Row-level source-target findings](supporting/source-support-targets.csv)
+- [Sparse bibliography triage](supporting/sparse-bibliography-triage.csv)
 - [Scholarly corrections](scholarly-corrections.md)
 - [Human review queue](human-review-queue.csv)
 - [Reusable human review process](human-review-process.md)
