@@ -2285,6 +2285,18 @@
       ],
       "notes": "Focused study of first-person plural narration.",
       "id": "campbell-we-passages"
+    },
+    {
+      "id": "moxon-acts15-eu-prassete-2024",
+      "title": "“You Will Do Well”: But How, Exactly? A Curious Ending to the Apostolic Letter of Acts 15",
+      "author": "John R. L. Moxon",
+      "publisher": "Religions (MDPI)",
+      "year": 2024,
+      "locator": "15(8), article 947, §§ 1.1, 2.2–2.4, 3, and 4",
+      "url": "https://doi.org/10.3390/rel15080947",
+      "source_type": "journal-article",
+      "supports": ["acts-15-29-eu-prassete-range", "literary_context", "claims"],
+      "notes": "Full open-access article inspected. Moxon reports that the well-being sense is more frequent in his selected Greek corpus, while the commendable-action sense is attested; he leaves the intended force unresolved."
     }
   ],
   "claims": [
@@ -3301,6 +3313,48 @@
           "sequence": 8
         }
       ]
+    },
+    {
+      "id": "acts-15-29-eu-prassete-range",
+      "title": "Does Acts 15:29 promise well-being or commend right conduct?",
+      "evidence_type": "literary-convention",
+      "description": "The letter closes with εὖ πράξετε, a phrase that can describe faring well or acting commendably. Moxon’s selected Greek usage survey finds the well-being sense more frequent, while the action sense is also attested.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Moxon’s full 2024 article was inspected, including its translation survey, selected Greek usage analysis, rhetorical discussion, and conclusion. His data make the meanings non-equal in frequency but do not resolve what Acts intends in this letter.",
+      "passage_relevance": "The closing phrase affects how readers hear the council’s letter: as assurance of benefit, commendation of compliance, or a rhetorically layered sign-off. Moxon argues that its wording interacts with disputed accounts of the decree without settling the decree’s rationale.",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "primary_observation": "Acts 15:28–29 presents the council’s decision and four abstentions; the letter ends by saying that recipients who keep from these matters will εὖ πράξετε. The phrase has both a well-being/prosperity sense and an acting-well sense in Greek usage.",
+      "scholarly_interpretation": "Moxon’s selected corpus finds the well-being sense more commonly attested, while commendable or correct action remains a genuine, less frequent sense. Epistolary and rhetorical context can affect the choice, but the phrase does not by itself decide the decree’s meaning or purpose; Moxon leaves the intended force open.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": ["The council and its letter as narrated in Acts 15; no independent event date is inferred from this lexical question."],
+        "narrative_setting": "The closing line of a letter addressed to gentile believers in Antioch, Syria, and Cilicia in the narrative of Acts 15.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The narrated council, the composition of Acts, Greek usage across the corpora Moxon surveys, and the modern article are chronologically distinct."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Acts 15:29",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The verse contains the closing phrase whose lexical force is debated.",
+          "weight": 10
+        }
+      ],
+      "source_ids": ["acts-greek", "moxon-acts15-eu-prassete-2024"],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-e-new-testament/new-testament-research-packets-e1.md."
     }
   ],
   "section_status": {

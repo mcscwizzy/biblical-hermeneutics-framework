@@ -477,7 +477,63 @@
     {"id":"hyperbole-discipleship","title":"Hyperbole and the Cost of Discipleship: A Case Study of Luke 14:26","author":"Stephen Robert Llewelyn and Will Robinson","publisher":"Cambridge University Press","year":2023,"locator":"Harvard Theological Review 116.1, 44-65","url":"https://www.cambridge.org/core/journals/harvard-theological-review/article/hyperbole-and-the-cost-of-discipleship-a-case-study-of-luke-1426/2EE5C01E16DAF1A395D1F0D9E471EFCA","source_type":"journal-article","supports":["claims","interpretive_notes"],"notes":"Rhetorical force and interpretation of kinship hatred."},
     {"id":"roth-marcion","title":"The Testimony for Marcion's Gospel in NA28","author":"Dieter T. Roth","publisher":"Cambridge University Press","year":2021,"locator":"New Testament Studies 68.1, 52-60","url":"https://www.cambridge.org/core/journals/new-testament-studies/article/testimony-for-marcions-gospel-in-na28-revisiting-the-apparatus-to-luke-in-the-light-of-recent-research/BA1609CD1FAEE4E429E6BDB8ED0B001B","source_type":"journal-article","supports":["later_christian_reception","claims","interpretive_notes"],"notes":"Reconstruction and apparatus problems."},
     {"id":"beduhn-marcion","title":"Marcion's Gospel and the New Testament: Catalyst or Consequence?","author":"Jason BeDuhn","publisher":"Cambridge University Press","year":2017,"locator":"New Testament Studies 63.2, 324-329","url":"https://www.cambridge.org/core/journals/new-testament-studies/article/marcions-gospel-and-the-new-testament-catalyst-or-consequence/30ECC3BB5B1977431DA3C60E81F49CD6","source_type":"journal-article","supports":["later_christian_reception","claims","interpretive_notes"],"notes":"Questions simplistic textual mutilation models."},
-    {"id":"lieu-marcion","title":"Marcion and the Making of a Heretic","author":"Judith M. Lieu","publisher":"Cambridge University Press","year":2015,"locator":"The principles of Marcion's thought and their context II: the Gospel","url":"https://www.cambridge.org/core/books/abs/marcion-and-the-making-of-a-heretic/principles-of-marcions-thought-and-their-context-ii-the-gospel/32C8CC892EED4FE38199ED71555EE1E0","source_type":"academic-book","supports":["later_christian_reception","claims","interpretive_notes"],"notes":"Second-century context, Gospel evidence, and polemical reconstruction."}
+    {"id":"lieu-marcion","title":"Marcion and the Making of a Heretic","author":"Judith M. Lieu","publisher":"Cambridge University Press","year":2015,"locator":"The principles of Marcion's thought and their context II: the Gospel","url":"https://www.cambridge.org/core/books/abs/marcion-and-the-making-of-a-heretic/principles-of-marcions-thought-and-their-context-ii-the-gospel/32C8CC892EED4FE38199ED71555EE1E0","source_type":"academic-book","supports":["later_christian_reception","claims","interpretive_notes"],"notes":"Second-century context, Gospel evidence, and polemical reconstruction."},
+    {
+      "id": "tuohy-luke5-meal-scene-2012",
+      "title": "While They Were Eating: Lukan Mission through Domestic Hospitality and Ministry as Table-Service, and Implications for the Contemporary Church",
+      "author": "Nicholas James Tuohy",
+      "publisher": "Australian Catholic University",
+      "year": 2012,
+      "locator": "MPhil thesis, Luke 5:27–32, pp. 93–94",
+      "url": "https://acuresearchbank.acu.edu.au/download/bc260a1bf331b12a364c37ec110f76c34d48c76d80a6fbd94ec242a934ad7f1f/1336163/Tuohy_2012_While_they_were_eating_Lukan_mission.pdf",
+      "source_type": "other",
+      "supports": ["luke-5-30-grumbling-and-wilderness-language", "literary_context", "claims"],
+      "notes": "Open institutional-repository thesis; pp. 93–94 were inspected. The wilderness-grumbling comparison is a proposed resonance, not a marked quotation or established allusion."
+    }
+  ],
+  "evidence_items": [
+    {
+      "id": "luke-5-30-grumbling-and-wilderness-language",
+      "title": "Does Luke’s “grumbling” language echo Israel’s wilderness complaints?",
+      "evidence_type": "literary-convention",
+      "description": "Luke describes the objection to Jesus’ meal with the verb ἐγόγγυζον, vocabulary also used in Greek accounts of Israel’s wilderness complaints. Tuohy proposes a possible scriptural resonance.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "low",
+      "confidence_rationale": "The full thesis discussion on pp. 93–94 was inspected. It identifies the lexical pattern and proposes an Exodus comparison, but Luke gives no quotation formula and shared vocabulary alone cannot establish an intentional allusion.",
+      "passage_relevance": "The proposed echo helps readers notice how the narrator frames the meal critics’ reaction, while keeping a possible literary resonance distinct from explicit citation or historical reconstruction of Pharisaic practice.",
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "At Luke 5:30 the Greek narrator uses ἐγόγγυζον for the Pharisees’ response to Jesus eating with tax collectors and sinners. Tuohy notes that the related verb appears in Septuagint accounts of Israel’s wilderness complaints, including Exodus 15–16 and Numbers 14.",
+      "scholarly_interpretation": "Tuohy suggests that the vocabulary may make the criticism resemble Israel’s wilderness grumbling, now directed at Jesus’ meal. This is a possible scriptural resonance rather than a demonstrated quotation or certain authorial allusion; the narrative’s immediate focus remains the dispute over Jesus’ meal companions.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": ["Luke’s narrated Galilean ministry; no date for this lexical or literary observation is established."],
+        "narrative_setting": "The meal at Levi’s house and the criticism of Jesus’ association with tax collectors and sinners.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The possible LXX resonance does not establish Luke’s composition date or the historical circumstances of the meal."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Luke 5:30",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This verse contains the Greek verb at issue and locates it in the meal dispute.",
+          "weight": 10
+        }
+      ],
+      "source_ids": ["luke-greek", "tuohy-luke5-meal-scene-2012"],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-e-new-testament/new-testament-research-packets-e1.md."
+    }
   ],
   "canonical_story": {
     "phase": "Jesus' ministry, passion, resurrection, and movement toward worldwide witness",
