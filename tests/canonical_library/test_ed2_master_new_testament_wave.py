@@ -42,6 +42,13 @@ EXPECTED = {
         "luke-greek",
         "kilgallen-luke13-obligation-heal-2001",
     ),
+    "mark-7-3-pugme-pukna-variant": (
+        "books/mark.json",
+        "manuscript",
+        [("Mark 7:3", "direct")],
+        "mark-greek",
+        "burkett-mark7-textual-variant-2019",
+    ),
 }
 
 
@@ -88,6 +95,8 @@ class Ed2MasterNewTestamentWaveTests(unittest.TestCase):
         self.assertEqual("major_scholarly_disagreement", items["revelation-13-land-beast-as-asian-elite-network"]["dispute_status"])
         self.assertEqual("interpretive_uncertainty", items["luke-8-1-3-women-scope"]["dispute_status"])
         self.assertEqual("interpretive_uncertainty", items["luke-13-10-17-sabbath-healing-necessity"]["dispute_status"])
+        self.assertEqual("textual_variant", items["mark-7-3-pugme-pukna-variant"]["dispute_status"])
+        self.assertEqual("low", items["mark-7-3-pugme-pukna-variant"]["confidence"])
         for book in books:
             self.assertEqual("draft", book["content_status"])
             self.assertEqual("in_review", book["review_status"])

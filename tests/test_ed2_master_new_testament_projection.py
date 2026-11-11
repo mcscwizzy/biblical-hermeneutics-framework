@@ -32,6 +32,12 @@ EXPECTED = {
         "Luke 13:10-17",
         "kilgallen-luke13-obligation-heal-2001",
     ),
+    "mark-7-3-pugme-pukna-variant": (
+        "Mark 7",
+        "books/mark.json",
+        "Mark 7:3",
+        "burkett-mark7-textual-variant-2019",
+    ),
 }
 
 
