@@ -1,0 +1,117 @@
+{
+  "program": "ED-3 Scholarly Integrity, Source Verification & Research Quality",
+  "branch": "audit/ed3-scholarly-integrity",
+  "base_commit": "8a0bda764328f9399552e46c224c949b35c064fc",
+  "status": "in_progress",
+  "completed_evidence_ids": [],
+  "phases": {
+    "0": {
+      "status": "validated_commit_pending",
+      "summary": "Fetched origin/master at the ED-2 merge, reproduced the CKL/deep/census baseline, read governance and review contracts, and captured protected-state hashes.",
+      "validation": {
+        "strict_ckl": "687 valid objects; 0 errors; 14 inherited warnings",
+        "deep_ckl": "63 error-severity heuristic findings; 1093 warnings",
+        "chapter_census": "1189/1189 chapters; 19 sample checks; 16 targeted service builds; 0 unmapped identities",
+        "ed2_inventory": "99 additions reconciled from parent-tree diff; expected inventory and coverage counts reproduced",
+        "protected_state": "NE-9C/NE-10 files unchanged at baseline; 433 accepted, 44 verified, 7 held"
+      },
+      "commit_sha": null,
+      "blockers": [
+        "Legacy NE-9C bulk-curation validate command rejects the ED-2-era CKL fingerprint; preserve the frozen checkpoint and verify compatibility directly."
+      ]
+    },
+    "1": {
+      "status": "in_progress",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "2": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "3": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "4": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "5": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "6": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "7": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "8": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "9": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    },
+    "10": {
+      "status": "pending",
+      "completed_evidence_ids": [],
+      "commit_sha": null,
+      "blockers": []
+    }
+  },
+  "source_review": {
+    "ed2_reported_access_categories": {
+      "full_text_only": 72,
+      "mixed_full_text_and_abstract": 3,
+      "excerpt_only": 3,
+      "abstract_only": 21,
+      "inaccessible_only": 0
+    },
+    "independently_inspected_records": [
+      "2chronicles-25-amaziah-and-kings-parallel",
+      "mark-7-3-pugme-pukna-variant",
+      "proverbs-28-rulers-and-poor-structure",
+      "psalm-105-history-recounted-as-liturgy",
+      "psalm-141-suffixes-and-fabrications",
+      "psalm-17-textual-proposals-verses-11-and-14",
+      "psalm-18-distinctive-opening-and-samuel-parallel",
+      "psalm-21-request-language-diplomatic-proposal",
+      "psalm-40-reception-in-4q160",
+      "psalm-49-wisdom-poem-and-chiastic-focus",
+      "psalm-4-dialogue-and-stanza-delimitation",
+      "psalm-61-royal-voice-proposal",
+      "psalm-63-royal-voice-proposal",
+      "psalm-75-proposed-wordplay-in-judgment-poem",
+      "psalm-98-yhwh-kingship-in-book-four-cluster",
+      "proverbs-15-25-to-16-9-mt-lxx-redaction-debate",
+      "nahum-3-8-9-one-city-text-critical-proposal",
+      "psalm-110-order-of-melchizedek-debate"
+    ],
+    "independently_inspected_scope": "Initial source checks: full publisher/repository articles for Psalm 17 (Italian), Proverbs 15:25–16:9 (French), Nahum 3:8–9 (English), Psalm 110:4 (English), and Psalms 93–100 including Psalm 98 (Spanish); the accessible first-page excerpt and abstract for Proverbs 28–29; publisher/KCI/EBSCO abstracts or displayed metadata for the remaining listed records. No manuscript images, ancient artifacts, or primary critical-edition apparatus were independently examined in this batch. Full record-by-record findings are being written in source-verification.md.",
+    "human_approval_recorded": false,
+    "source_check_batch_status": "first batch logged; record-level verification outcomes pending report reconciliation"
+  },
+  "outstanding_blockers": []
+}
