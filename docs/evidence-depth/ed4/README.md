@@ -21,6 +21,7 @@ commit SHAs are in [progress.json](progress.json).
 - [Human review workbench](review-workflow.md)
 - [Source integrity findings and corrections](source-integrity-results.md)
 - [Current-state curation compatibility](compatibility-checks.md)
+- [Reader acceptance](reader-acceptance.md)
 - [Progress ledger](progress.json)
 
 Phase reports are linked here as their investigations and validation complete.
@@ -46,6 +47,11 @@ the current CKL while reporting that its fingerprint differs from the frozen
 NE-9C checkpoint. It checks protected curation hashes, current relationship
 identities, dispositions, runtime registries, verified bridges, and held
 candidates without refreshing historical data.
+
+Phase 5 is complete. Representative API projections and desktop/mobile
+Chromium journeys verified passage scope, source access, uncertainty, draft
+labels, additional-record disclosure, and navigation. No reader presentation
+defect was reproduced, so no UI change was necessary.
 
 ## Authority and review status
 
