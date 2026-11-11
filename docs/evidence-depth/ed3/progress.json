@@ -233,7 +233,7 @@
     "5": {
       "status": "complete",
       "completed_evidence_ids": [],
-      "commit_sha": null,
+      "commit_sha": "502b899d",
       "blockers": [
         "All 99 packets are prepared, but qualified human decisions have not been made; this is an intentional publication-review requirement."
       ],
@@ -246,10 +246,27 @@
       }
     },
     "6": {
-      "status": "pending",
-      "completed_evidence_ids": [],
+      "status": "complete",
+      "completed_evidence_ids": [
+        "psalm-20-amherst63-parallel-and-direction-debate",
+        "proverbs-15-25-to-16-9-mt-lxx-redaction-debate",
+        "2chronicles-25-amaziah-and-kings-parallel",
+        "nahum-3-8-9-one-city-text-critical-proposal",
+        "mark-7-3-pugme-pukna-variant"
+      ],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "Human scholarly review remains required for every ED-2 record; technical reader checks do not confer scholarly approval."
+      ],
+      "summary": "Verified Narrative Explorer draft and provenance disclosures with existing tests and six live 390px Chromium reader samples across ED-2 Waves A–E and an ED-1C sourced control. No UI correction was indicated.",
+      "validation": {
+        "frontend": "npm test: 17 frontend test files passed; 17 passed, 0 failed.",
+        "firefox": "Existing Narrative Explorer Firefox journey passed; measured effective viewport 500 CSS px after a 390px request, so it is not counted as a 390px pass.",
+        "chromium": "Chrome for Testing 151.0.7922.77 / matching driver; CDP device metrics report innerWidth=390, screen.width=390, DPR=1, visualViewport.width=390.",
+        "live_reader": "6/6 passages rendered one exact matching ED-2 or ED-1C record, showed draft notice before disclosure, exposed source IDs through keyboard-open disclosure, and reported no horizontal overflow at 390px.",
+        "disputed_long_text": "Mark 7:3 textual-variant notice visible; source locators displayed after expansion; keyboard focus remained on summary; expanded document width 390 and text 16px.",
+        "publication_label": "Frontend test verifies published records do not receive draft-preview notice; ED-2 status remains draft/in_review/human review required."
+      }
     },
     "7": {
       "status": "pending",

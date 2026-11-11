@@ -58,3 +58,7 @@ registries and are not changed by this audit.
 - [Prioritized review queue](human-review-queue.csv) — all 99 ED-2 records; human decisions remain blank.
 - [Reusable review process](human-review-process.md).
 - [Review packet indexes](human-review-packets/) — grouped by ED-2 research wave.
+
+## Reader and depth review
+
+- [Narrative Explorer reader acceptance](reader-acceptance.md) — draft disclosure, provenance, live Chromium 390px samples, and browser limits.
