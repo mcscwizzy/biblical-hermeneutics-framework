@@ -4,15 +4,15 @@
   "base_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_audit_commit": "04eed56ece941f9efce2f7f05b3908baf0197648",
   "baseline_inventory_fingerprint": "45bc240f39f258fc9ef46c62d083eef87d8d60a346d40052ed0b1895c8156095",
-  "status": "in_progress",
-  "current_phase": "wave-e-new-testament",
-  "last_completed_batch": "E2-New Testament Luke 8 and 13",
-  "next_work": "Research E3 on a precise New Testament passage with a source that can be inspected adequately; then revisit the remaining high-priority Wave A–D research gaps within the five remaining evidence slots. Run the full ED-1A census after the final batch.",
+  "status": "complete_with_open_research",
+  "current_phase": "final-review-and-delivery",
+  "last_completed_batch": "E4-John 10:22",
+  "next_work": "The ED-2 run is delivered. All 99 new items require human scholarly review. Preserve the final 1,189-chapter backlog for future source verification and qualitative depth research; do not treat eligibility counts as completeness.",
   "waves": [
     {
       "id": "A",
       "name": "Psalms",
-      "status": "in_progress",
+      "status": "completed_for_this_run_with_deferred_research",
       "passages_researched": [
         "Psalm 55",
         "Psalm 60",
@@ -91,10 +91,11 @@
         "Psalm 34",
         "Psalm 40",
         "Psalm 73",
-        "Psalm 78"
+        "Psalm 78",
+        "Psalm 110:4"
       ],
-      "evidence_records_added": 78,
-      "source_ids_created": 77,
+      "evidence_records_added": 79,
+      "source_ids_created": 78,
       "source_ids_reused": 3,
       "deferred_gaps": [
         "Full text of Jensen 2001 was inaccessible; the Psalm 75 item is restricted to the accessible abstract-level proposal at low confidence.",
@@ -136,19 +137,21 @@
         "Psalm 34: Brown’s 2005 chapter was accessible only through publisher metadata and an excerpt; the narrow rhetoric/genre framing requires full-text and human review.",
         "Psalm 40: Jassen’s 2006 publisher abstract was accessible, but not the full article; the 4Q160 reuse proposal remains abstract-limited and does not identify 4Q160 as a biblical manuscript witness.",
         "Psalm 73: Wong’s 2016 publisher abstract was accessible, but not the full article; the ring-composition proposal remains low-confidence pending inspection of its structural argument.",
-        "Psalm 78: Kim and van Rooy’s full 2000 article was inspected, but proposed structure, genre, date, and Sitz im Leben remain disputed; no date or performance setting is asserted."
+        "Psalm 78: Kim and van Rooy’s full 2000 article was inspected, but proposed structure, genre, date, and Sitz im Leben remain disputed; no date or performance setting is asserted.",
+        "Corley’s full article was inspected, but Hebrew syntax, composition date, historical setting, and the poem’s relation to a specific royal institution remain disputed. Later reception in Hebrews 7 is kept separate."
       ],
       "validation": {
-        "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings.",
-        "manifest": "Generated manifest semantically matches checked manifest; 687 objects; all four new source-support links and Scripture anchors resolve.",
-        "chapter_audit": "ED-1A pass; all 1,189 chapters, 0 unmapped projected identities, 0 invalid anchors; 1,071 passage-specific, 57 contextual-only, 2 entity-only, 58 no-eligible, 1 incomplete/unknown. Psalms: 139 specific, 11 contextual-only, 0 entity-only. Audit passed 19 deterministic and 16 live service samples.",
-        "source_integrity": "4 new scholarly source identities; all 4 source identities, locators, support links, and evidence references resolve. Source inventory: 5,324 source occurrences / 2,875 source IDs; separate identity audit: 2,876 IDs. The 2 unresolved child-source references and 1 inherited expected missing locator remain.",
-        "projection_and_disclosure": "All 4 exact anchors project exactly once with source/bibliography disclosure, primary observation, attributed interpretation, confidence/dispute/review metadata; no new authored relationship routes.",
-        "regression_tests": "Focused Psalms and Narrative Explorer tests: 29 passed, 78 subtests passed. Earlier authoring unittest: 15 passed. Full 19 deterministic and 16 live ED-1A samples passed.",
-        "deep_heuristic": "63 error-severity findings and 1,070 warnings. A13 contributes 4 unknown-passage-chronology warnings; no new heuristic errors. These are review signals, not scholarly-quality scores.",
-        "authored_relationships": "No authored related_objects or related_evidence entries added; only direct Scripture-anchor projection. No NE-9C/NE-10 inputs, decisions, or historical checkpoints changed."
+        "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+        "manifest": "Generated manifest semantically equals the checked manifest.",
+        "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+        "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+        "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+        "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+        "projection_and_disclosure": "Exact Psalm 110:4 anchor projects once in the existing reader section; source locator and attributed interpretation display; no authored relationship or bridge.",
+        "regression_tests": "Psalm batch suite: 31 tests and 79 subtests passed; included in final all-wave focused run (52 tests, 96 subtests).",
+        "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and no new heuristic error."
       },
-      "commit_sha": "d892a7d2",
+      "commit_sha": "fd10b3452c2f86ebd4fefd3b6e1ef3b77eaafc11",
       "batches": [
         {
           "id": "A1-psalms-55-60-66-75-80-81-97-100",
@@ -699,25 +702,79 @@
             "authored_relationships": "No authored relationship entries; protected NE-9C/NE-10 decisions unchanged"
           },
           "commit_sha": "d892a7d2"
+        },
+        {
+          "id": "A14-psalm110",
+          "status": "validated-and-committed",
+          "passages": [
+            "Psalm 110:4"
+          ],
+          "evidence_records_added": 1,
+          "evidence_ids": [
+            "psalm-110-order-of-melchizedek-debate"
+          ],
+          "source_ids_created": [
+            "corley-psalm110-royal-ritual-2017"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "primary_text_source_ids_reused": [
+            "psalms-masoretic"
+          ],
+          "chapter_eligibility_improvements": 1,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 1,
+            "contextual_only": -1,
+            "entity_only": 0,
+            "no_eligible": 0
+          },
+          "deferred_research": [
+            "Corley’s full article was inspected, but Hebrew syntax, composition date, historical setting, and the poem’s relation to a specific royal institution remain disputed. Later reception in Hebrews 7 is kept separate."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+            "manifest": "Generated manifest semantically equals the checked manifest.",
+            "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+            "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+            "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+            "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+            "projection_and_disclosure": "Exact Psalm 110:4 anchor projects once in the existing reader section; source locator and attributed interpretation display; no authored relationship or bridge.",
+            "regression_tests": "Psalm batch suite: 31 tests and 79 subtests passed; included in final all-wave focused run (52 tests, 96 subtests).",
+            "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and no new heuristic error."
+          },
+          "commit_sha": "fd10b3452c2f86ebd4fefd3b6e1ef3b77eaafc11"
         }
       ]
     },
     {
       "id": "B",
       "name": "Wisdom literature",
-      "status": "in_progress",
+      "status": "completed_for_this_run_with_deferred_research",
       "passages_researched": [
         "Proverbs 2:1-22",
         "Proverbs 28:1-28",
         "Ecclesiastes 10:1",
-        "Proverbs 6:1-5"
+        "Proverbs 6:1-5",
+        "Proverbs 15:25–16:9"
       ],
-      "evidence_records_added": 4,
-      "source_ids_created": 4,
+      "evidence_records_added": 5,
+      "source_ids_created": 5,
       "source_ids_reused": 0,
-      "deferred_gaps": [],
-      "validation": null,
-      "commit_sha": null,
+      "deferred_gaps": [
+        "Macchi’s full French article was inspected; the proto-Masoretic redaction model remains attributed and undated. The fragmentary 4QProvb overlap does not settle the history of the whole section."
+      ],
+      "validation": {
+        "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+        "manifest": "Generated manifest semantically equals the checked manifest.",
+        "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+        "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+        "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+        "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+        "projection_and_disclosure": "One multi-chapter evidence record projects at Proverbs 15 and 16 only, with source disclosure and no cross-passage route.",
+        "regression_tests": "Wisdom batch suite: 7 tests and 4 subtests passed; included in final all-wave focused run (52 tests, 96 subtests).",
+        "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and no new heuristic error."
+      },
+      "commit_sha": "2c07b35696a711572a360193dc085fa7bc931cd",
       "batches": [
         {
           "id": "B1-wisdom-proverbs2-28-ecclesiastes10",
@@ -802,37 +859,82 @@
             "protected_relationships": "No NE-9C/NE-10 files or decisions changed; current audit reports 433 accepted curation records, 44 verified NE-10 bridges, and 7 held candidates"
           },
           "commit_sha": "c011ab71"
+        },
+        {
+          "id": "B3-proverbs15-16",
+          "status": "validated-and-committed",
+          "passages": [
+            "Proverbs 15:25–16:9"
+          ],
+          "evidence_records_added": 1,
+          "evidence_ids": [
+            "proverbs-15-25-to-16-9-mt-lxx-redaction-debate"
+          ],
+          "source_ids_created": [
+            "macchi-proverbs15-16-lxx-mt-2024"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "primary_text_source_ids_reused": [
+            "proverbs-masoretic",
+            "proverbs-old-greek"
+          ],
+          "chapter_eligibility_improvements": 2,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 2,
+            "contextual_only": 0,
+            "entity_only": 0,
+            "no_eligible": -2
+          },
+          "deferred_research": [
+            "Macchi’s full French article was inspected; the proto-Masoretic redaction model remains attributed and undated. The fragmentary 4QProvb overlap does not settle the history of the whole section."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+            "manifest": "Generated manifest semantically equals the checked manifest.",
+            "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+            "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+            "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+            "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+            "projection_and_disclosure": "One multi-chapter evidence record projects at Proverbs 15 and 16 only, with source disclosure and no cross-passage route.",
+            "regression_tests": "Wisdom batch suite: 7 tests and 4 subtests passed; included in final all-wave focused run (52 tests, 96 subtests).",
+            "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and no new heuristic error."
+          },
+          "commit_sha": "2c07b35696a711572a360193dc085fa7bc931cd"
         }
       ]
     },
     {
       "id": "C",
       "name": "Historical books",
-      "status": "in_progress",
+      "status": "completed_for_this_run_with_deferred_research",
       "passages_researched": [
         "2 Chronicles 14:9-15",
         "2 Chronicles 18:1-34",
-        "2 Chronicles 25:1-28"
+        "2 Chronicles 25:1-28",
+        "1 Chronicles 16:36"
       ],
-      "evidence_records_added": 3,
-      "source_ids_created": 3,
+      "evidence_records_added": 4,
+      "source_ids_created": 4,
       "source_ids_reused": 2,
       "deferred_gaps": [
         "Hwang Sunwoo 2025 full Korean article was inaccessible; the Amaziah comparison is limited to its English abstract and requires full-text review.",
         "Zerah’s identification, the Cushite conflict’s historical referent, and Jonker’s compositional horizon remain debated; no exact troop count or battle identification is established.",
-        "Dillard’s account of the Chronicler’s literary purpose is one scholarly interpretation, not independent event corroboration."
+        "Dillard’s account of the Chronicler’s literary purpose is one scholarly interpretation, not independent event corroboration.",
+        "Longacre’s full research essay was inspected; it is not a peer-reviewed journal article. The five-book Psalter conclusion, doxology history, and chronology of Chronicles remain disputed. The source remains classified as other in the current CKL vocabulary."
       ],
       "validation": {
-        "strict_ckl": "687 valid objects; 0 errors; same 14 inherited incomplete_section_status warnings; 2 Chronicles has 0 warnings.",
-        "manifest": "Generated manifest semantically matches checked manifest; exact Scripture anchors and new source-support links resolve.",
-        "chapter_audit": "ED-1A passed all 1,189 chapters; 0 unmapped identities. After C1: 1,081 passage-specific, 57 contextual-only, 2 entity-only, 48 no-eligible, 1 incomplete/unknown. Nineteen deterministic and 16 live service samples passed. Six formerly zero-eligible chapters project eligible evidence: 1 Kings 15, 2 Chronicles 14, 16, 18, 19, and 25.",
-        "source_integrity": "Three new scholarly source identities and two existing comparative Bible-text source identities reused. Source inventory: 5,333 occurrences / 2,882 source IDs; separate identity audit: 2,883 unique IDs. Two unresolved child-source references and one expected missing locator remain inherited.",
-        "projection_and_disclosure": "Three exact passage scopes project once with source/bibliography disclosure, primary observation, attributed interpretation, confidence/dispute/review metadata; no authored narrative relationship routes.",
-        "regression_tests": "Combined focused CKL/Narrative Explorer, NE-9C, source lock, package, schema, and projection suite: 599 passed, 16 subtests passed. C1 authoring and projection tests: 3 passed, 3 subtests passed.",
-        "deep_heuristic": "63 error-severity findings and 1,077 warnings. Three new unknown-chronology warnings; no new heuristic errors. The inherited 102 invalid source-support targets are unchanged and are heuristic review signals, not strict errors.",
-        "protected_relationships": "No NE-9C/NE-10 decisions or checkpoints changed; 433 accepted curation records, 44 verified bridges, and 7 held candidates unchanged."
+        "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+        "manifest": "Generated manifest semantically equals the checked manifest.",
+        "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+        "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+        "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+        "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+        "projection_and_disclosure": "Exact 1 Chronicles 16:36 anchor projects once with the Psalm 106 textual comparison disclosed; no authored relationship or bridge.",
+        "regression_tests": "History batch suite: 5 tests and 3 subtests passed; included in final all-wave focused run (52 tests, 96 subtests).",
+        "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and one weak-source-type warning, with no new heuristic error."
       },
-      "commit_sha": "76cb0055",
+      "commit_sha": "ea9ca12ca04ef2b39535f37b8b55936ad0d4af5b",
       "batches": [
         {
           "id": "C1-history-2chron14-18-25",
@@ -886,38 +988,84 @@
             "protected_relationships": "NE-9C/NE-10 unchanged: 433 accepted, 44 verified, 7 held"
           },
           "commit_sha": "76cb0055"
+        },
+        {
+          "id": "C2-1chronicles16",
+          "status": "validated-and-committed",
+          "passages": [
+            "1 Chronicles 16:36"
+          ],
+          "evidence_records_added": 1,
+          "evidence_ids": [
+            "first-chronicles-16-36-five-book-psalter"
+          ],
+          "source_ids_created": [
+            "longacre-psalter-compiled-2025"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "primary_text_source_ids_created": [
+            "psalm106-masoretic"
+          ],
+          "primary_text_source_ids_reused": [
+            "1-chronicles-1-29"
+          ],
+          "chapter_eligibility_improvements": 0,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 0,
+            "contextual_only": 0,
+            "entity_only": 0,
+            "no_eligible": 0
+          },
+          "deferred_research": [
+            "Longacre’s full research essay was inspected; it is not a peer-reviewed journal article. The five-book Psalter conclusion, doxology history, and chronology of Chronicles remain disputed. The source remains classified as other in the current CKL vocabulary."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+            "manifest": "Generated manifest semantically equals the checked manifest.",
+            "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+            "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+            "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+            "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+            "projection_and_disclosure": "Exact 1 Chronicles 16:36 anchor projects once with the Psalm 106 textual comparison disclosed; no authored relationship or bridge.",
+            "regression_tests": "History batch suite: 5 tests and 3 subtests passed; included in final all-wave focused run (52 tests, 96 subtests).",
+            "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and one weak-source-type warning, with no new heuristic error."
+          },
+          "commit_sha": "ea9ca12ca04ef2b39535f37b8b55936ad0d4af5b"
         }
       ]
     },
     {
       "id": "D",
       "name": "Prophetic literature",
-      "status": "in_progress",
+      "status": "completed_for_this_run_with_deferred_research",
       "passages_researched": [
         "Ezekiel 22:25",
         "Ezekiel 31:1-18",
-        "Isaiah 10:5-8"
+        "Isaiah 10:5-8",
+        "Nahum 3:8–9"
       ],
-      "evidence_records_added": 3,
-      "source_ids_created": 3,
+      "evidence_records_added": 4,
+      "source_ids_created": 4,
       "source_ids_reused": 0,
       "deferred_gaps": [
         "Ezekiel 22:25: the full Ndoga article was inspected, but it is not a manuscript census; the original reading is not resolved.",
         "Ezekiel 31: a possible Osiris/afterlife resonance is Lee’s proposal; direct borrowing and a particular ritual setting are unestablished.",
-        "Isaiah 10: Aster’s Sargon II-era chronology is attributed; literary dating and redaction remain debated."
+        "Isaiah 10: Aster’s Sargon II-era chronology is attributed; literary dating and redaction remain debated.",
+        "Grütter’s full article was inspected; the one-city reconstruction is a low-confidence textual proposal. It does not establish a site identification, archaeological claim, or composition date."
       ],
       "validation": {
-        "strict_ckl": "687 valid objects; 0 errors; same 14 inherited incomplete_section_status warnings.",
-        "manifest": "Generated manifest semantically matches the checked manifest; source support, exact references, and anchors resolve.",
-        "framework_validation": "94 framework modules valid.",
-        "chapter_audit": "ED-1A passed all 1,189 chapters; 0 unmapped projected identities. After D1: 1,083 passage-specific, 57 contextual-only, 2 entity-only, 46 no-eligible, 1 incomplete/unknown. Nineteen deterministic and 16 targeted service samples passed. Ezekiel 22 and 31 transitioned from no eligible material to passage-specific evidence; Isaiah 10 remains passage-eligible and now has an additional focused record.",
-        "source_integrity": "3 new scholarly source IDs. The preexisting Masoretic Isaiah and Ezekiel text identities are reused as primary text bases and excluded from research bibliography reuse totals. Source inventory: 5,336 occurrences / 2,885 source IDs; separate identity audit: 2,886 unique IDs. Two unresolved child-source references and one expected missing locator remain inherited.",
-        "projection_and_disclosure": "All 3 exact anchors project once with scholarly source/locator disclosure, observation, attributed interpretation, and draft/in-review human-review metadata. Ezekiel 22:28 is context within the same chapter. No authored narrative routes were added.",
-        "regression_tests": "D1-focused tests: 3 passed, 3 subtests passed. Broader CKL/Isaiah/Ezekiel/reader projection suite: 81 passed, 129 subtests passed. Protected source-lock, NE-9C, passage, and coverage tests: 518 passed.",
-        "deep_heuristic": "63 error-severity findings and 1,080 warnings; D1 adds 3 unknown-passage-chronology warnings and no heuristic errors. The 102 inherited invalid source-support targets are unchanged review signals, not strict validation errors.",
-        "protected_relationships": "No NE-9C/NE-10 records, decisions, or historical checkpoints changed; 433 accepted records, 44 verified bridges, and 7 held candidates unchanged."
+        "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+        "manifest": "Generated manifest semantically equals the checked manifest.",
+        "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+        "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+        "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+        "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+        "projection_and_disclosure": "Exact Nahum 3:8–9 anchor projects once with its versional sources and attributed proposal; existing Thebes interpretation and place decisions are unchanged; no authored route.",
+        "regression_tests": "Prophets batch suite: 5 tests and 3 subtests passed; included in final all-wave focused run (52 tests, 96 subtests).",
+        "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and no new heuristic error."
       },
-      "commit_sha": "49ce42c5",
+      "commit_sha": "a2fb9733c09d8b5f92462974f8c0ef5006b2cc62",
       "batches": [
         {
           "id": "D1-prophets-ezekiel22-31-isaiah10",
@@ -965,22 +1113,67 @@
             "protected_relationships": "NE-9C/NE-10 unchanged: 433 accepted, 44 verified, 7 held."
           },
           "commit_sha": "49ce42c5"
+        },
+        {
+          "id": "D2-nahum3",
+          "status": "validated-and-committed",
+          "passages": [
+            "Nahum 3:8–9"
+          ],
+          "evidence_records_added": 1,
+          "evidence_ids": [
+            "nahum-3-8-9-one-city-text-critical-proposal"
+          ],
+          "source_ids_created": [
+            "gruetter-nahum3-one-city-2017"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "primary_text_source_ids_reused": [
+            "nahum-masoretic",
+            "catss-nahum",
+            "nets-twelve"
+          ],
+          "chapter_eligibility_improvements": 0,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 0,
+            "contextual_only": 0,
+            "entity_only": 0,
+            "no_eligible": 0
+          },
+          "deferred_research": [
+            "Grütter’s full article was inspected; the one-city reconstruction is a low-confidence textual proposal. It does not establish a site identification, archaeological claim, or composition date."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+            "manifest": "Generated manifest semantically equals the checked manifest.",
+            "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+            "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+            "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+            "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+            "projection_and_disclosure": "Exact Nahum 3:8–9 anchor projects once with its versional sources and attributed proposal; existing Thebes interpretation and place decisions are unchanged; no authored route.",
+            "regression_tests": "Prophets batch suite: 5 tests and 3 subtests passed; included in final all-wave focused run (52 tests, 96 subtests).",
+            "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and no new heuristic error."
+          },
+          "commit_sha": "a2fb9733c09d8b5f92462974f8c0ef5006b2cc62"
         }
       ]
     },
     {
       "id": "E",
       "name": "Gospels and New Testament",
-      "status": "in_progress",
+      "status": "completed_for_this_run_with_deferred_research",
       "passages_researched": [
         "Luke 5:30",
         "Acts 15:29",
         "Revelation 13:11–18",
         "Luke 8:1–3",
-        "Luke 13:10–17"
+        "Luke 13:10–17",
+        "Mark 7:3",
+        "John 10:22"
       ],
-      "evidence_records_added": 5,
-      "source_ids_created": 5,
+      "evidence_records_added": 7,
+      "source_ids_created": 7,
       "source_ids_reused": 0,
       "deferred_gaps": [
         "Luke 5:30: Tuohy’s full MPhil thesis was inspected, but the proposed LXX wilderness-grumbling resonance remains a low-confidence literary possibility, not a demonstrated allusion.",
@@ -988,19 +1181,22 @@
         "Revelation 13:11–18: Friesen’s Roman Asian elite-network reading is debated; inscriptions contextualize the proposal but do not identify every visionary symbol or prove uniform coercion.",
         "The three existing Greek-text source identities were reused as primary-text bases and are not counted as scholarly bibliography reuses.",
         "Luke 8:1–3: Blajer’s full 2026 article was inspected. It proposes that “many others” are a distinct group but explicitly leaves the antecedent of the service clause unresolved. The article also mentions a textual variant in v. 3; witness-level verification was deferred.",
-        "Luke 13:10–17: Kilgallen’s full 2001 article was inspected. His necessity-focused reading is reported as one interpretation; it is not used to state a general rule about Jewish Sabbath practice."
+        "Luke 13:10–17: Kilgallen’s full 2001 article was inspected. His necessity-focused reading is reported as one interpretation; it is not used to state a general rule about Jewish Sabbath practice.",
+        "Burkett’s publisher abstract and displayed footnote were accessible, but the complete article and manuscript images were not. The variant is reported at low confidence; no original reading is selected, and later rabbinic evidence is not treated as direct proof of uniform first-century practice.",
+        "Only Förster’s publisher metadata and abstract were accessible. The item narrowly attributes the generic-festival-term and winter-notice argument at low confidence; the complete argument remains to be checked."
       ],
       "validation": {
-        "strict_ckl": "687 valid objects; 0 errors; 14 inherited incomplete_section_status warnings; Luke object validates with 0 warnings.",
-        "manifest": "Generated manifest semantically matches checked manifest; all five exact anchors and source-support links resolve.",
-        "chapter_audit": "E1 full ED-1A census passed 1,189 chapters. E2 targeted exact-anchor tests confirm Luke 8 and 13 each project only at their full passage spans; projected post-E2 categories are 1,086 specific, 57 contextual, 2 entity-only, 43 no-eligible, and 1 incomplete. Rerun full census after Wave E final batch.",
-        "source_integrity": "E2 added 2 scholarly source identities and reused the existing Luke Greek source identity. Current CKL source report: 5,341 source occurrences, 2,334 external occurrences, 2 unresolved child-source refs and 102 inherited invalid support-target heuristic findings; no new source warning.",
-        "reader_regression": "Authoring/projection tests: 3 passed, 5 subtests; full Narrative Explorer projection suite plus E2 projection test: 63 passed. Full strict CKL validation: 687 valid, 0 errors, 14 inherited warnings; manifest semantics match.",
-        "deep_heuristic": "63 error-severity findings, 1,086 warnings; E2 adds 2 unknown-passage-chronology warnings; no new heuristic errors.",
-        "protected_decisions": "NE-9C/NE-10 unchanged; accepted=433, verified=44, held=7; no held relationship promoted.",
-        "human_review": "Both new items remain draft/in_review and require scholarly review; no reviewer or approval is claimed."
+        "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+        "manifest": "Generated manifest semantically equals the checked manifest.",
+        "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+        "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+        "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+        "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+        "projection_and_disclosure": "Exact John 10:22 anchor projects once with source locator, evidence description, and attributed interpretation; no route added.",
+        "regression_tests": "New Testament authoring/projection tests: 4 tests and 7 subtests passed across E3 and E4.",
+        "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and no new heuristic error."
       },
-      "commit_sha": "372a642e",
+      "commit_sha": "8a8cca2395109f64712ad41c389db6657e830dca",
       "batches": [
         {
           "id": "E1",
@@ -1049,6 +1245,89 @@
           },
           "commit_sha": "372a642e",
           "next_work": "E3: assess a passage-specific textual or social-context question elsewhere in the New Testament; then revisit remaining Wave A–D gaps."
+        },
+        {
+          "id": "E3-mark7",
+          "status": "validated-and-committed",
+          "passages": [
+            "Mark 7:3"
+          ],
+          "evidence_records_added": 1,
+          "evidence_ids": [
+            "mark-7-3-pugme-pukna-variant"
+          ],
+          "source_ids_created": [
+            "burkett-mark7-textual-variant-2019"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "primary_text_source_ids_reused": [
+            "mark-greek",
+            "sblgnt"
+          ],
+          "chapter_eligibility_improvements": 0,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 0,
+            "contextual_only": 0,
+            "entity_only": 0,
+            "no_eligible": 0
+          },
+          "deferred_research": [
+            "Burkett’s publisher abstract and displayed footnote were accessible, but the complete article and manuscript images were not. The variant is reported at low confidence; no original reading is selected, and later rabbinic evidence is not treated as direct proof of uniform first-century practice."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+            "manifest": "Generated manifest semantically equals the checked manifest.",
+            "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+            "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+            "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+            "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+            "projection_and_disclosure": "Exact Mark 7:3 anchor and cited source are present; no cross-passage route.",
+            "regression_tests": "New Testament authoring/projection tests are included in the final combined run: 4 tests and 7 subtests passed across E3 and E4.",
+            "deep_heuristic": "The overall deep report has 63 error-severity findings and 1,093 warnings; this item has one unknown-passage-chronology warning and no new heuristic error."
+          },
+          "commit_sha": "222275e530fc5fb8e3b8c796eb4e59dad0bb1f82"
+        },
+        {
+          "id": "E4-john10",
+          "status": "validated-and-committed",
+          "passages": [
+            "John 10:22"
+          ],
+          "evidence_records_added": 1,
+          "evidence_ids": [
+            "john-10-22-dedication-term-and-winter"
+          ],
+          "source_ids_created": [
+            "foerster-john10-enkainia-2016"
+          ],
+          "source_ids_reused": [],
+          "source_ids_reused_count": 0,
+          "primary_text_source_ids_reused": [
+            "john-greek"
+          ],
+          "chapter_eligibility_improvements": 0,
+          "coverage_category_changes": {
+            "passage_specific_evidence": 0,
+            "contextual_only": 0,
+            "entity_only": 0,
+            "no_eligible": 0
+          },
+          "deferred_research": [
+            "Only Förster’s publisher metadata and abstract were accessible. The item narrowly attributes the generic-festival-term and winter-notice argument at low confidence; the complete argument remains to be checked."
+          ],
+          "validation": {
+            "strict_ckl": "687 valid objects; 0 errors; the 14 incomplete_section_status warnings are inherited.",
+            "manifest": "Generated manifest semantically equals the checked manifest.",
+            "chapter_audit": "Final ED-1A audit passes 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds; final counts 1,089 specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown.",
+            "source_integrity": "No new missing locators or confidence rationales. Final source audit: 5,348 occurrences, 2,898 unique source IDs, 2,340 external occurrences; two unresolved child references remain inherited.",
+            "protected_decisions": "NE-9C/NE-10 unchanged; 433 accepted, 44 verified, 7 held; no held relationship promoted.",
+            "human_review": "The addition remains draft/in_review and requires human scholarly review; no reviewer or approval is claimed.",
+            "projection_and_disclosure": "Exact John 10:22 anchor projects once with source locator, evidence description, and attributed interpretation; no route added.",
+            "regression_tests": "New Testament authoring/projection tests: 4 tests and 7 subtests passed across E3 and E4.",
+            "deep_heuristic": "63 error-severity findings, 1,093 warnings; this addition has one unknown-passage-chronology warning and no new heuristic error."
+          },
+          "commit_sha": "8a8cca2395109f64712ad41c389db6657e830dca"
         }
       ]
     }
@@ -1075,10 +1354,61 @@
     "deep_heuristic_warnings": 986
   },
   "source_identity_changes": [],
-  "protected_state": "NE-9C/NE-10 unchanged from origin/master; historical fingerprint check is expected to differ because the accepted base already includes ED-2A, so compare protected artifacts/decisions directly and do not regenerate checkpoints.",
-  "source_id_counting_policy": "Source identity creation/reuse counts cover research bibliography identities; the standard Psalms text source is reused for verse comparison but excluded from these counts.",
-  "total_evidence_records_added": 93,
-  "total_source_ids_created": 92,
+  "protected_state": "NE-9C and NE-10 files, checkpoints, accepted decisions, verified bridges, and held candidates unchanged from origin/master; compare protected artifacts/decisions directly, not regenerated historical fingerprints.",
+  "source_id_counting_policy": "Creation/reuse totals count scholarly bibliography identities. Primary-text identity additions and reuse are recorded separately; standard canonical text identities are not counted as scholarly source reuse.",
+  "total_evidence_records_added": 99,
+  "total_source_ids_created": 98,
   "total_source_ids_reused": 5,
-  "remaining_evidence_item_ceiling": 12
+  "remaining_evidence_item_ceiling": 1,
+  "final_results": {
+    "chapter_count": 1189,
+    "coverage_categories": {
+      "passage_specific_evidence": 1089,
+      "contextual_coverage": 56,
+      "entity_only_coverage": 2,
+      "no_eligible_ckl_material": 41,
+      "incomplete_or_unknown": 1
+    },
+    "ckl_objects": 687,
+    "claims": 2329,
+    "typed_evidence_items": 1408,
+    "source_occurrences": 5348,
+    "unique_source_ids": 2898,
+    "external_source_occurrences": 2340,
+    "new_evidence_items_by_type": {
+      "literary-convention": 84,
+      "ancient-text": 5,
+      "cultural-practice": 4,
+      "manuscript": 3,
+      "worldview-concept": 1,
+      "historical-event": 1,
+      "institution": 1
+    },
+    "books_with_new_evidence": 13,
+    "new_scholarly_source_ids": 98,
+    "new_primary_text_source_ids": 1,
+    "scholarly_source_ids_reused": 5,
+    "strict_validation_errors": 0,
+    "strict_validation_warnings": 14,
+    "deep_heuristic_error_severity_findings": 63,
+    "deep_heuristic_warnings": 1093,
+    "unresolved_child_source_references": [
+      "harland-associations",
+      "glancy-slavery"
+    ],
+    "inherited_invalid_source_support_target_findings": 102,
+    "new_records_require_human_review": 99,
+    "protected_relationship_decisions": {
+      "accepted": 433,
+      "verified": 44,
+      "held": 7,
+      "changed": 0
+    }
+  },
+  "run_constraints": {
+    "planning_ceiling": 100,
+    "items_added": 99,
+    "remaining_slots": 1,
+    "coverage_note": "No record was added to fill the numerical ceiling. Open qualitative and no-eligible gaps remain and are listed in the final backlog."
+  }
 }

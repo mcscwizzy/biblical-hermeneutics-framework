@@ -317,3 +317,79 @@ The batch added three source-backed literary and historical-context evidence ite
 ### Wave E, batch E2 — Luke 8 and Luke 13
 
 E2 adds two typed literary-evidence records to chapters that had no eligible passage-specific item in the baseline inventory. Each exact anchor is verified by the focused Narrative Explorer projection test, and both chapters now resolve to their own evidence item. The post-E2 full-corpus category totals remain provisional until the Wave E census is rerun; the exact anchors imply passage-specific eligibility in Luke 8 and Luke 13. No claims, objects, authored relationships, or reviewed bridges were added. See the [E2 research packet](wave-e-new-testament/new-testament-research-packets-e2.md).
+
+
+## Final ED-2 census and book-by-book change
+
+The final ED-1A audit passed on the completed research branch: 1,189 of 1,189 chapters, 687 CKL objects, no unmapped identities, 19 deterministic sample comparisons, and 16 targeted service builds. Relative to the ED-2A merged baseline, passage-specific eligibility rose by 96 chapters, contextual-only fell by 12, entity-only fell by 1, and no-eligible fell by 83. The one incomplete/unknown chapter is unchanged. These are eligibility states, not quality or completeness scores.
+
+| Book | Specific | Contextual | Entity-only | No eligible | Unknown |
+|---|---:|---:|---:|---:|---:|
+| Genesis | 50 | 0 | 0 | 0 | 0 |
+| Exodus | 40 | 0 | 0 | 0 | 0 |
+| Leviticus | 27 | 0 | 0 | 0 | 0 |
+| Numbers | 25 | 7 | 0 | 4 | 0 |
+| Deuteronomy | 34 | 0 | 0 | 0 | 0 |
+| Joshua | 24 | 0 | 0 | 0 | 0 |
+| Judges | 21 | 0 | 0 | 0 | 0 |
+| Ruth | 4 | 0 | 0 | 0 | 0 |
+| 1 Samuel | 31 | 0 | 0 | 0 | 0 |
+| 2 Samuel | 24 | 0 | 0 | 0 | 0 |
+| 1 Kings | 11 → 12 | 4 | 1 | 6 → 5 | 0 |
+| 2 Kings | 15 | 4 | 0 | 6 | 0 |
+| 1 Chronicles | 16 | 10 | 0 | 3 | 0 |
+| 2 Chronicles | 20 → 25 | 1 | 1 | 14 → 9 | 0 |
+| Ezra | 10 | 0 | 0 | 0 | 0 |
+| Nehemiah | 12 | 1 | 0 | 0 | 0 |
+| Esther | 9 | 1 | 0 | 0 | 0 |
+| Job | 42 | 0 | 0 | 0 | 0 |
+| Psalms | 61 → 140 | 22 → 10 | 1 → 0 | 66 → 0 | 0 |
+| Proverbs | 18 → 23 | 1 | 0 | 12 → 7 | 0 |
+| Ecclesiastes | 11 → 12 | 0 | 0 | 1 → 0 | 0 |
+| Song of Songs | 8 | 0 | 0 | 0 | 0 |
+| Isaiah | 66 | 0 | 0 | 0 | 0 |
+| Jeremiah | 52 | 0 | 0 | 0 | 0 |
+| Lamentations | 5 | 0 | 0 | 0 | 0 |
+| Ezekiel | 27 → 29 | 12 | 0 | 9 → 7 | 0 |
+| Daniel | 12 | 0 | 0 | 0 | 0 |
+| Hosea | 14 | 0 | 0 | 0 | 0 |
+| Joel | 3 | 0 | 0 | 0 | 0 |
+| Amos | 7 | 2 | 0 | 0 | 0 |
+| Obadiah | 0 | 0 | 0 | 0 | 1 |
+| Jonah | 4 | 0 | 0 | 0 | 0 |
+| Micah | 7 | 0 | 0 | 0 | 0 |
+| Nahum | 3 | 0 | 0 | 0 | 0 |
+| Habakkuk | 3 | 0 | 0 | 0 | 0 |
+| Zephaniah | 3 | 0 | 0 | 0 | 0 |
+| Haggai | 2 | 0 | 0 | 0 | 0 |
+| Zechariah | 13 | 1 | 0 | 0 | 0 |
+| Malachi | 4 | 0 | 0 | 0 | 0 |
+| Matthew | 28 | 0 | 0 | 0 | 0 |
+| Mark | 16 | 0 | 0 | 0 | 0 |
+| Luke | 19 → 22 | 2 | 0 | 3 → 0 | 0 |
+| John | 21 | 0 | 0 | 0 | 0 |
+| Acts | 28 | 0 | 0 | 0 | 0 |
+| Romans | 16 | 0 | 0 | 0 | 0 |
+| 1 Corinthians | 16 | 0 | 0 | 0 | 0 |
+| 2 Corinthians | 13 | 0 | 0 | 0 | 0 |
+| Galatians | 6 | 0 | 0 | 0 | 0 |
+| Ephesians | 6 | 0 | 0 | 0 | 0 |
+| Philippians | 4 | 0 | 0 | 0 | 0 |
+| Colossians | 4 | 0 | 0 | 0 | 0 |
+| 1 Thessalonians | 5 | 0 | 0 | 0 | 0 |
+| 2 Thessalonians | 3 | 0 | 0 | 0 | 0 |
+| 1 Timothy | 6 | 0 | 0 | 0 | 0 |
+| 2 Timothy | 4 | 0 | 0 | 0 | 0 |
+| Titus | 3 | 0 | 0 | 0 | 0 |
+| Philemon | 1 | 0 | 0 | 0 | 0 |
+| Hebrews | 13 | 0 | 0 | 0 | 0 |
+| James | 5 | 0 | 0 | 0 | 0 |
+| 1 Peter | 5 | 0 | 0 | 0 | 0 |
+| 2 Peter | 3 | 0 | 0 | 0 | 0 |
+| 1 John | 5 | 0 | 0 | 0 | 0 |
+| 2 John | 1 | 0 | 0 | 0 | 0 |
+| 3 John | 1 | 0 | 0 | 0 | 0 |
+| Jude | 1 | 0 | 0 | 0 | 0 |
+| Revelation | 22 | 0 | 0 | 0 | 0 |
+
+The chapter-level final snapshot is preserved alongside the original baseline fields in [research-backlog.csv](research-backlog.csv): final category, eligible item count, passage-anchored typed evidence count, exact ED-2 evidence IDs, and next-triage status. The 41 remaining no-eligible chapters are concentrated in Numbers (4), 1 Kings (5), 2 Kings (6), 1 Chronicles (3), 2 Chronicles (9), Proverbs (7), and Ezekiel (7). The 58 contextual/entity-only chapters also remain available for qualitative review. No filler was added to eliminate these gaps.

@@ -160,3 +160,11 @@ This list is updated after source review. A chapter stays deferred where the exa
 
 - **Luke 8:1–3:** Blajer prefers a reading in which “many others” are distinct from the named women, but the relative clause remains syntactically open. The variant he mentions in v. 3 was not added because apparatus and manuscript evidence were not independently reviewed.
 - **Luke 13:10–17:** Kilgallen’s reading is one scholarly interpretation and does not establish a uniform first-century Jewish Sabbath rule or the historical setting of the healing episode.
+
+
+## Final cross-wave backlog and access limits
+
+- The final 1,189-chapter census leaves 41 chapters without eligible passage-specific CKL material: Numbers (4), 1 Kings (5), 2 Kings (6), 1 Chronicles (3), 2 Chronicles (9), Proverbs (7), and Ezekiel (7). Their references and current signals are retained row by row in [research-backlog.csv](research-backlog.csv). The 56 contextual-only and 2 entity-only chapters also need qualitative review; eligibility alone does not show that their research is adequate.
+- Existing specific material may still be thin. The backlog retains the original source, evidence, chapter-scope, and retrieval signals to prioritize that work across all 66 books. The current run adds research in 13 books; it does not claim every original-context research opportunity has been exhausted.
+- Mark 7:3 (Burkett) and John 10:22 (Förster) were supported only by publisher abstracts/displayed metadata; their full arguments were not consulted. Longacre’s essay is a scholarly research essay rather than a peer-reviewed journal article. These access/source-type limits are reflected in the evidence confidence and the source register. The other final additions had full scholarly texts inspected, with disputes retained in the packets.
+- All 99 additions remain draft/in-review and require human scholarly review. No reviewer, approval, or acceptance is claimed. The ED-2A Psalm 145 witness comparison and its documented textual uncertainty remain unchanged. The held Ezekiel 40–48 / Revelation 21–22 temple candidate and all other NE-9C/NE-10 decisions remain unchanged.
