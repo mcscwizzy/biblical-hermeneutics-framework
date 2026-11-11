@@ -218,7 +218,7 @@
         "luke-8-1-3-women-scope",
         "mark-7-3-pugme-pukna-variant"
       ],
-      "commit_sha": null,
+      "commit_sha": "626f7cc7",
       "blockers": [
         "Independent source verification remains incomplete for 71 records; primary manuscript/artifact images and critical-edition apparatus were not examined. All 99 records still require human review."
       ],
@@ -231,10 +231,19 @@
       }
     },
     "5": {
-      "status": "pending",
+      "status": "complete",
       "completed_evidence_ids": [],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "All 99 packets are prepared, but qualified human decisions have not been made; this is an intentional publication-review requirement."
+      ],
+      "summary": "Created a reusable review process, a searchable queue, and 99 concise reviewer packets grouped by all five ED-2 research waves. Human identity, date, decision, rationale, and correction fields are blank.",
+      "validation": {
+        "queue": "99 unique queue rows; every row links to an existing packet; all six human reviewer fields are blank.",
+        "wave_counts": "Wave A Psalms 79; Wave B Wisdom 5; Wave C Historical Books 4; Wave D Prophets 4; Wave E New Testament 7.",
+        "decision_vocabulary": "Five allowed human decisions documented; no decision prefilled.",
+        "governance": "No record was marked human-reviewed, accepted, or publication-approved."
+      }
     },
     "6": {
       "status": "pending",

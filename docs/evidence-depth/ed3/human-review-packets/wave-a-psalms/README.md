@@ -1,0 +1,83 @@
+# Wave A — Psalms review packets
+
+79 records. Packets are grouped by ED-2 wave and sorted by stable evidence ID. Reviewer fields are intentionally blank.
+
+- [psalm-100-worship-and-the-psalter-sequence — Psalm 100:1-5](psalm-100-worship-and-the-psalter-sequence.md) — P1
+- [psalm-101-royal-voice-and-community-justice — Psalm 101:1-8](psalm-101-royal-voice-and-community-justice.md) — P1
+- [psalm-102-created-or-set-apart-people — Psalm 102:18](psalm-102-created-or-set-apart-people.md) — P1
+- [psalm-105-history-recounted-as-liturgy — Psalm 105:1-45](psalm-105-history-recounted-as-liturgy.md) — P1
+- [psalm-108-head-imagery-and-royal-victory-metaphor — Psalm 108:1-13](psalm-108-head-imagery-and-royal-victory-metaphor.md) — P1
+- [psalm-109-speaker-and-reported-speech-debate — Psalm 109:1-31](psalm-109-speaker-and-reported-speech-debate.md) — P1
+- [psalm-11-refuge-and-spatial-argument — Psalm 11:1-7](psalm-11-refuge-and-spatial-argument.md) — P1
+- [psalm-110-order-of-melchizedek-debate — Psalm 110:4](psalm-110-order-of-melchizedek-debate.md) — P1
+- [psalm-111-acrostic-praise-and-scribal-learning — Psalm 111:1-10](psalm-111-acrostic-praise-and-scribal-learning.md) — P1
+- [psalm-12-speech-poor-and-wisdom-polarity — Psalm 12:2-7](psalm-12-speech-poor-and-wisdom-polarity.md) — P1
+- [psalm-135-exodus-motifs-and-servants — Psalm 135:1; Psalm 135:8-9](psalm-135-exodus-motifs-and-servants.md) — P1
+- [psalm-138-praise-in-final-davidic-psalter — Psalm 138:1-8](psalm-138-praise-in-final-davidic-psalter.md) — P1
+- [psalm-139-imprecation-and-ambiguity-in-prayer — Psalm 139:19-24](psalm-139-imprecation-and-ambiguity-in-prayer.md) — P1
+- [psalm-14-psalm53-revision-debate — Psalm 14:1-7](psalm-14-psalm53-revision-debate.md) — P1
+- [psalm-140-selah-and-petition-structure — Psalm 140:3; Psalm 140:5; Psalm 140:8](psalm-140-selah-and-petition-structure.md) — P1
+- [psalm-141-suffixes-and-fabrications — Psalm 141:3-5](psalm-141-suffixes-and-fabrications.md) — P1
+- [psalm-142-cave-superscription-and-historical-limits — Psalm 142:1-7](psalm-142-cave-superscription-and-historical-limits.md) — P0
+- [psalm-143-in-galatians-argument-debate — Psalm 143:2](psalm-143-in-galatians-argument-debate.md) — P1
+- [psalm-144-reworked-royal-victory-song — Psalm 144:1-3; Psalm 144:9-10](psalm-144-reworked-royal-victory-song.md) — P1
+- [psalm-16-wisdom-contentment-and-psalter-context — Psalm 16:5-11](psalm-16-wisdom-contentment-and-psalter-context.md) — P1
+- [psalm-17-textual-proposals-verses-11-and-14 — Psalm 17:1-15](psalm-17-textual-proposals-verses-11-and-14.md) — P0
+- [psalm-18-distinctive-opening-and-samuel-parallel — Psalm 18:1](psalm-18-distinctive-opening-and-samuel-parallel.md) — P0
+- [psalm-20-amherst63-parallel-and-direction-debate — Psalm 20:1-5](psalm-20-amherst63-parallel-and-direction-debate.md) — P0
+- [psalm-21-request-language-diplomatic-proposal — Psalm 21:2](psalm-21-request-language-diplomatic-proposal.md) — P1
+- [psalm-23-host-hospitality-and-return-reading — Psalm 23:5-6](psalm-23-host-hospitality-and-return-reading.md) — P1
+- [psalm-25-individual-prayer-and-collective-epilogue — Psalm 25:1-22](psalm-25-individual-prayer-and-collective-epilogue.md) — P1
+- [psalm-26-walking-integrity-and-wisdom-structure — Psalm 26:1-12](psalm-26-walking-integrity-and-wisdom-structure.md) — P1
+- [psalm-27-bqr-temple-reflection-reading — Psalm 27:4](psalm-27-bqr-temple-reflection-reading.md) — P1
+- [psalm-28-lament-praise-and-final-petition — Psalm 28:1-9](psalm-28-lament-praise-and-final-petition.md) — P1
+- [psalm-29-ugaritic-comparison-method — Psalm 29:1-11](psalm-29-ugaritic-comparison-method.md) — P1
+- [psalm-31-hand-imagery-and-cluster-exhortation — Psalm 31:5; Psalm 31:15](psalm-31-hand-imagery-and-cluster-exhortation.md) — P1
+- [psalm-32-two-stanza-wisdom-structure — Psalm 32:1-11](psalm-32-two-stanza-wisdom-structure.md) — P1
+- [psalm-33-sea-and-deep-imagery — Psalm 33:6-9](psalm-33-sea-and-deep-imagery.md) — P1
+- [psalm-34-instruction-and-wisdom-rhetoric — Psalm 34:11-14](psalm-34-instruction-and-wisdom-rhetoric.md) — P1
+- [psalm-35-battlefield-and-courtroom-movement — Psalm 35:1-28](psalm-35-battlefield-and-courtroom-movement.md) — P1
+- [psalm-38-embodied-distress-and-prayer-for-wholeness — Psalm 38:1-22](psalm-38-embodied-distress-and-prayer-for-wholeness.md) — P1
+- [psalm-39-wisdom-reflection-and-delayed-retribution — Psalm 39:1-13](psalm-39-wisdom-reflection-and-delayed-retribution.md) — P1
+- [psalm-4-dialogue-and-stanza-delimitation — Psalm 4:1-8](psalm-4-dialogue-and-stanza-delimitation.md) — P1
+- [psalm-40-reception-in-4q160 — Psalm 40:2-4](psalm-40-reception-in-4q160.md) — P0
+- [psalm-43-refrain-and-stanza-structure — Psalm 43:1-5](psalm-43-refrain-and-stanza-structure.md) — P0
+- [psalm-45-sound-and-performance-of-royal-poem — Psalm 45:1-2](psalm-45-sound-and-performance-of-royal-poem.md) — P1
+- [psalm-46-chaos-waters-and-stream-imagery — Psalm 46:2-5](psalm-46-chaos-waters-and-stream-imagery.md) — P1
+- [psalm-48-zion-security-and-remembered-space — Psalm 48:8-14](psalm-48-zion-security-and-remembered-space.md) — P1
+- [psalm-49-wisdom-poem-and-chiastic-focus — Psalm 49:1-20](psalm-49-wisdom-poem-and-chiastic-focus.md) — P1
+- [psalm-5-morning-motif-and-setting-limits — Psalm 5:1-12](psalm-5-morning-motif-and-setting-limits.md) — P1
+- [psalm-52-wealth-critique-and-wisdom-intertexts — Psalm 52:1-9](psalm-52-wealth-critique-and-wisdom-intertexts.md) — P1
+- [psalm-53-adaptation-and-cluster-context — Psalm 53:1-6](psalm-53-adaptation-and-cluster-context.md) — P1
+- [psalm-55-betrayal-and-historical-setting-limits — Psalm 55:9-14](psalm-55-betrayal-and-historical-setting-limits.md) — P1
+- [psalm-56-superscription-and-editorial-frame — Psalm 56:1-13](psalm-56-superscription-and-editorial-frame.md) — P0
+- [psalm-57-reuse-in-psalm108-reframes-praise — Psalm 57:7-11](psalm-57-reuse-in-psalm108-reframes-praise.md) — P0
+- [psalm-58-opening-word-and-versional-readings — Psalm 58:1](psalm-58-opening-word-and-versional-readings.md) — P1
+- [psalm-59-evening-threat-and-morning-confidence — Psalm 59:1-17](psalm-59-evening-threat-and-morning-confidence.md) — P0
+- [psalm-60-communal-defeat-and-book-context — Psalm 60:1-12](psalm-60-communal-defeat-and-book-context.md) — P0
+- [psalm-61-royal-voice-proposal — Psalm 61:4-7](psalm-61-royal-voice-proposal.md) — P1
+- [psalm-62-community-address-and-wealth-warning — Psalm 62:8-12](psalm-62-community-address-and-wealth-warning.md) — P1
+- [psalm-63-royal-voice-proposal — Psalm 63:7-11](psalm-63-royal-voice-proposal.md) — P1
+- [psalm-64-attack-to-vindication-narrative-movement — Psalm 64:1-10](psalm-64-attack-to-vindication-narrative-movement.md) — P1
+- [psalm-65-zion-to-earth-praise-sequence — Psalm 65:1-13](psalm-65-zion-to-earth-praise-sequence.md) — P1
+- [psalm-66-collective-and-individual-praise — Psalm 66:1-20](psalm-66-collective-and-individual-praise.md) — P1
+- [psalm-69-restoration-stanza-and-servants — Psalm 69:34-36](psalm-69-restoration-stanza-and-servants.md) — P1
+- [psalm-7-cush-superscription-and-setting-limits — Psalm 7:1-17](psalm-7-cush-superscription-and-setting-limits.md) — P1
+- [psalm-70-concentric-structure-proposal — Psalm 70:1-5](psalm-70-concentric-structure-proposal.md) — P1
+- [psalm-71-old-age-and-generational-witness — Psalm 71:17-21](psalm-71-old-age-and-generational-witness.md) — P1
+- [psalm-73-ring-composition-proposal — Psalm 73:1-28](psalm-73-ring-composition-proposal.md) — P1
+- [psalm-75-proposed-wordplay-in-judgment-poem — Psalm 75:5-8](psalm-75-proposed-wordplay-in-judgment-poem.md) — P1
+- [psalm-76-zion-hymn-and-unspecified-battle — Psalm 76:1-12](psalm-76-zion-hymn-and-unspecified-battle.md) — P1
+- [psalm-77-lament-memory-and-exodus-reframing — Psalm 77:1-20](psalm-77-lament-memory-and-exodus-reframing.md) — P1
+- [psalm-78-introduction-and-historical-didactic-recitations — Psalm 78:1-8; Psalm 78:9-72](psalm-78-introduction-and-historical-didactic-recitations.md) — P1
+- [psalm-80-vine-lament-and-son-ambiguity — Psalm 80:8-19](psalm-80-vine-lament-and-son-ambiguity.md) — P1
+- [psalm-81-hinge-lines-and-colometry-proposal — Psalm 81:5-12](psalm-81-hinge-lines-and-colometry-proposal.md) — P0
+- [psalm-83-coalition-imagery-and-setting-limits — Psalm 83:1-18](psalm-83-coalition-imagery-and-setting-limits.md) — P1
+- [psalm-86-korah-collection-lament-frame — Psalm 86:1-17](psalm-86-korah-collection-lament-frame.md) — P0
+- [psalm-87-zion-status-reading-dispute — Psalm 87:1-7](psalm-87-zion-status-reading-dispute.md) — P1
+- [psalm-91-wisdom-language-and-protection-instruction — Psalm 91:1-16](psalm-91-wisdom-language-and-protection-instruction.md) — P1
+- [psalm-92-creation-order-and-sabbath-song — Psalm 92:1-15](psalm-92-creation-order-and-sabbath-song.md) — P1
+- [psalm-94-weekday-song-and-poetic-sequence — Psalm 94:1-23](psalm-94-weekday-song-and-poetic-sequence.md) — P0
+- [psalm-97-kingship-and-book-four-narrative — Psalm 97:1-12](psalm-97-kingship-and-book-four-narrative.md) — P1
+- [psalm-98-yhwh-kingship-in-book-four-cluster — Psalm 98:1-9](psalm-98-yhwh-kingship-in-book-four-cluster.md) — P1
+- [psalm-99-zion-and-kingship-sequence — Psalm 99:1-9](psalm-99-zion-and-kingship-sequence.md) — P1

@@ -53,3 +53,8 @@ parent object unless child-level state is explicitly present. `reviewed` or
 `approved` requires actual review metadata; ED-3 does not write that state.
 NE-9C relationship decisions and NE-10 passage bridges are separate reviewed
 registries and are not changed by this audit.
+## Human scholarly review
+
+- [Prioritized review queue](human-review-queue.csv) — all 99 ED-2 records; human decisions remain blank.
+- [Reusable review process](human-review-process.md).
+- [Review packet indexes](human-review-packets/) — grouped by ED-2 research wave.
