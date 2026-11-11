@@ -55,7 +55,7 @@
     "7": {
       "name": "Regression and release testing",
       "status": "completed",
-      "commit_sha": "c9f5192e",
+      "commit_sha": "9abf745b",
       "blockers": [
         "The repository-wide pytest run was bounded at 25 minutes: 55 tests and 934 subtests passed before interruption entering the SQLite setup for the next test; no failure was reported before timeout. Focused gates completed."
       ]
@@ -91,6 +91,7 @@
     "3b802976",
     "3a367bcf",
     "24b1a95b",
-    "c9f5192e"
+    "c9f5192e",
+    "9abf745b"
   ]
 }
