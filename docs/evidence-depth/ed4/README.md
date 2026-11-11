@@ -23,6 +23,11 @@ commit SHAs are in [progress.json](progress.json).
 Phase reports will be linked here as their investigations and validation
 complete.
 
+Phase 1 is complete. The inherited explicit-reference ranking failures are
+fixed and covered by retrieval regressions. The evaluation also records a
+remaining limitation for the same heart-condemnation question when no book is
+included in the query.
+
 ## Authority and review status
 
 The ED-3 queue remains the immutable input for the 99 pending ED-2 records.

@@ -7,7 +7,7 @@
   "human_review_decisions_recorded": 0,
   "phases": {
     "0": {"name": "Baseline and execution", "status": "completed", "commit_sha": "801e7ebe", "blockers": []},
-    "1": {"name": "Research retrieval", "status": "pending", "commit_sha": null, "blockers": ["Inherited first-John and first-Thessalonians ranking failures reproduced on baseline."]},
+    "1": {"name": "Research retrieval", "status": "completed", "commit_sha": "29e722fd1277", "blockers": ["Unprefixed ordinary-language retrieval for the heart-condemnation question remains weak; see retrieval-analysis.md."]},
     "2": {"name": "Human scholarly review workflow", "status": "pending", "commit_sha": null, "blockers": ["No human scholarly decisions are authorized or recorded by this assignment."]},
     "3": {"name": "Source integrity", "status": "pending", "commit_sha": null, "blockers": []},
     "4": {"name": "Current-state curation compatibility", "status": "pending", "commit_sha": null, "blockers": []},
@@ -17,10 +17,10 @@
     "8": {"name": "Final delivery", "status": "pending", "commit_sha": null, "blockers": ["Push and PR comparison remain for final delivery."]}
   },
   "remaining_issues": [
-    "Repair both inherited retrieval ranking failures without material unrelated regressions.",
+    "Improve unprefixed ordinary-language retrieval for the heart-condemnation question without adding a book-specific exception.",
     "Investigate 19 unresolved semantic support targets and reference-work bibliography identities.",
     "Resolve the Obadiah census classifier difference or document its exact cause.",
     "Run full regression, package, reader, and release validation; report inherited limits separately."
   ],
-  "commit_shas": ["801e7ebe"]
+  "commit_shas": ["801e7ebe", "9636a2ed", "29e722fd1277"]
 }
