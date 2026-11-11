@@ -21,6 +21,9 @@ jobs:
       - name: Validate modules
         run: python tools/validate.py framework/
 
+      - name: Verify current NE-9C and NE-10 compatibility
+        run: python tools/validate_ne9c_current_compatibility.py
+
       - name: Run NE7R3 retirement acceptance tests
         run: >-
           pytest -q

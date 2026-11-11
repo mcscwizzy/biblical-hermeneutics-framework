@@ -20,6 +20,7 @@ commit SHAs are in [progress.json](progress.json).
 - [Retrieval before/after evaluation](retrieval-before-after.md)
 - [Human review workbench](review-workflow.md)
 - [Source integrity findings and corrections](source-integrity-results.md)
+- [Current-state curation compatibility](compatibility-checks.md)
 - [Progress ledger](progress.json)
 
 Phase reports are linked here as their investigations and validation complete.
@@ -39,6 +40,12 @@ because no exact target identity is verifiable. One malformed Malachi source
 author field was corrected and a limited, preview-verified locator was added;
 all original source IDs and claims remain intact. The deep checker still
 reports all 102 support-target signals.
+
+Phase 4 is complete. The new read-only compatibility validator passes against
+the current CKL while reporting that its fingerprint differs from the frozen
+NE-9C checkpoint. It checks protected curation hashes, current relationship
+identities, dispositions, runtime registries, verified bridges, and held
+candidates without refreshing historical data.
 
 ## Authority and review status
 
