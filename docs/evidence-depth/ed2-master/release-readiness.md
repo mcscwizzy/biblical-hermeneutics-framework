@@ -25,7 +25,7 @@ The documented setup is a project virtual environment with `python -m pip instal
 - Focused API, Narrative Explorer, CKL integration, and release batch: **697 passed; 109 subtests passed** (430.64 seconds).
 - Validate-workflow release-focused Python set: **50 passed** (106.24 seconds).
 - `python tools/validate.py framework/`: **94 modules valid**.
-- Full frontend Node suite: **17 files passed, 0 failed**; the new draft-preview regression is included.
+- Full frontend Node suite: **17 tests passed, 0 failed**; the new draft-preview regression is included.
 - `python -m build --no-isolation`: wheel and sdist built; installed-wheel smoke check loaded the default CKL (**687 objects**) and passed CLI/application imports. Existing setuptools license deprecation and absent optional commentary SQLite glob warnings were emitted; packaging gates passed (1,052 wheel entries; 1,242 sdist entries).
 - Artifact-content gate passed; the retired generated-commentary payload was absent.
 - The full ED-1A census passed: 1,189/1,189 chapters, 0 unmapped identities, 19 deterministic samples, and 16 targeted service builds.
