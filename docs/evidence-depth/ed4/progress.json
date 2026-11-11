@@ -3,7 +3,7 @@
   "base_branch": "master",
   "base_sha": "31832793a155b16b6d694b1e84202bac1ee47c38",
   "branch": "feat/ed4-research-quality-and-review",
-  "status": "in_progress",
+  "status": "completed",
   "human_review_decisions_recorded": 0,
   "phases": {
     "0": {
@@ -62,11 +62,9 @@
     },
     "8": {
       "name": "Final delivery",
-      "status": "in_progress",
-      "commit_sha": null,
-      "blockers": [
-        "Push the branch and record the final delivery state."
-      ]
+      "status": "completed",
+      "commit_sha": "12152690",
+      "blockers": []
     }
   },
   "remaining_issues": [
@@ -92,6 +90,15 @@
     "3a367bcf",
     "24b1a95b",
     "c9f5192e",
-    "9abf745b"
-  ]
+    "9abf745b",
+    "12152690"
+  ],
+  "push": {
+    "remote": "origin",
+    "branch": "feat/ed4-research-quality-and-review",
+    "pushed_work_commit_sha": "12152690",
+    "pr_comparison_url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...feat/ed4-research-quality-and-review?expand=1",
+    "merged": false,
+    "deployed": false
+  }
 }

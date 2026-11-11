@@ -5,7 +5,7 @@
 - Branch: `feat/ed4-research-quality-and-review`
 - Base: verified ED-3 merge on `origin/master`, `31832793a155b16b6d694b1e84202bac1ee47c38`
 - PR comparison against `master`: [Open the ED-4 comparison](https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...feat/ed4-research-quality-and-review?expand=1). The branch head SHA is reported in the delivery note.
-- No merge or deployment was performed.
+- The branch was pushed to `origin`. No merge or deployment was performed.
 
 ## Retrieval
 
