@@ -186,7 +186,7 @@
     "3": {
       "status": "completed_with_documented_limits",
       "completed_evidence_ids": [],
-      "commit_sha": null,
+      "commit_sha": "37bcf3d2",
       "blockers": [
         "19 unresolved semantic source-support targets and 20 ambiguous reference-work identities require context/human research; patristic-minor-prophets locator unresolved; broad source metadata variations remain."
       ],
@@ -209,10 +209,26 @@
       ]
     },
     "4": {
-      "status": "pending",
-      "completed_evidence_ids": [],
+      "status": "completed_with_documented_limits",
+      "completed_evidence_ids": [
+        "psalm-17-textual-proposals-verses-11-and-14",
+        "acts-15-29-eu-prassete-range",
+        "john-10-22-dedication-term-and-winter",
+        "luke-5-30-grumbling-and-wilderness-language",
+        "luke-8-1-3-women-scope",
+        "mark-7-3-pugme-pukna-variant"
+      ],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "Independent source verification remains incomplete for 71 records; primary manuscript/artifact images and critical-edition apparatus were not examined. All 99 records still require human review."
+      ],
+      "summary": "Reviewed all 99 records at the source scopes recorded in the inventory. Corrected the demonstrated Psalm 17 source-access/provenance defect, independently checked five SBLGNT edition texts, and made no unsupported interpretive changes.",
+      "validation": {
+        "outcomes": "27 supported with limitations; 1 correction required and repaired; 71 unable to independently verify; 0 insufficiently substantiated; no record human-approved.",
+        "direct_edition_checks": "SBLGNT edition text independently checked for Mark 7:3, John 10:22, Luke 5:30, Luke 8:1–3, Acts 15:28–29; no apparatus or manuscript images checked.",
+        "correction": "Psalm 17 source-access statement corrected to reflect article inspection at pp. 398–402 and 406–407; confidence and disputed status unchanged.",
+        "human_review": "All 99 remain draft/in_review and human-review required."
+      }
     },
     "5": {
       "status": "pending",

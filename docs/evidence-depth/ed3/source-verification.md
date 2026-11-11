@@ -151,3 +151,21 @@ and competing explanations are independently assessed.
 All 99 records remain draft, in review, and human-review required. The machine
 assessment does not confer approval, and all human decisions remain blank in
 the review queue.
+
+### Direct critical-edition text checks
+
+For five Greek observations, the SBL Greek New Testament text was directly
+inspected through its displayed edition text: [Mark 7:3](https://www.biblegateway.com/passage/?search=Mark+7%3A3&version=SBLGNT),
+[John 10:22](https://www.biblegateway.com/passage/?search=John+10%3A22&version=SBLGNT),
+[Luke 5:30](https://www.biblegateway.com/passage/?search=Luke+5%3A30&version=SBLGNT),
+[Luke 8:1–3](https://www.biblegateway.com/passage/?search=Luke+8%3A1-3&version=SBLGNT),
+and [Acts 15:28–29](https://www.biblegateway.com/passage/?search=Acts+15%3A28-29&version=SBLGNT).
+These checks confirm the cited wording in that edition and the immediate textual
+observations recorded in the inventory. They do not verify manuscript images,
+variant apparatus, originality, or the full arguments of the secondary sources.
+For Luke 8, the page's displayed note identifies a variant at v. 3; no witness
+image or critical apparatus was examined. For John 10:22, the SBLGNT verse
+includes the winter clause; the difference in verse division in the bundled
+English ASV does not invalidate the Greek anchor. These are edition-text checks,
+not primary manuscript checks, and do not change the records' source-access
+outcome counts.
