@@ -976,8 +976,21 @@
       "supports": [
         "proverbs-6-surety-and-stranger"
       ]
-    }
-  ],
+    },
+    {
+      "id": "macchi-proverbs15-16-lxx-mt-2024",
+      "title": "« De Yhwh la réponse de la langue ». Étude sur Proverbes 15,25–16,9",
+      "author": "Jean-Daniel Macchi",
+      "publisher": "Études Théologiques et Religieuses 99, no. 2",
+      "year": 2024,
+      "locator": "pp. 381–394; textual differences and Qumran witness pp. 382–383; proposed editorial relationship in the remainder of the article",
+      "url": "https://doi.org/10.3917/etr.992.0381",
+      "source_type": "journal-article",
+      "notes": "The full published French article was inspected in the University of Geneva repository. Macchi compares the Masoretic and Old Greek forms, notes that 4QProvb supports the MT order for the portion it preserves, and argues for a proto-Masoretic editorial reshaping; other explanations are reviewed.",
+      "supports": [
+        "proverbs-15-25-to-16-9-mt-lxx-redaction-debate"
+      ]
+    }],
   "claims": [
     {
       "id": "proverbs-multiple-collections",
@@ -1568,6 +1581,52 @@
       "claim_ids": [],
       "external_references": [],
       "notes": "Research packet: docs/evidence-depth/ed2-master/wave-b-wisdom/wisdom-research-packets-b2.md."
-    }
-  ]
+    },
+    {
+      "id": "proverbs-15-25-to-16-9-mt-lxx-redaction-debate",
+      "title": "Why do Hebrew and Greek Proverbs arrange 15:25–16:9 differently?",
+      "evidence_type": "ancient-text",
+      "description": "The Masoretic and Old Greek forms of Proverbs 15:25–16:9 differ in content and order. Macchi notes that several Greek lines corresponding to MT Proverbs 16:6–9 appear earlier in the Greek sequence, while MT 16:1–3 and 15:31 lack equivalents in the Old Greek.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "medium",
+      "confidence_rationale": "Macchi’s complete published article was inspected. It documents the versional differences and reviews translation, multiple-edition, and editorial explanations; its preferred redaction model remains an attributed scholarly proposal.",
+      "passage_relevance": "The comparison helps readers see that this wisdom section circulated in more than one textual arrangement and that the familiar Hebrew chapter sequence has a history. It also keeps a proposed editorial process distinct from the directly observable difference between witnesses.",
+      "certainty": "disputed",
+      "dispute_status": "textual_variant",
+      "primary_observation": "The Masoretic text includes Proverbs 16:1–3, which are absent from the Old Greek, and places material corresponding to Old Greek Proverbs 15:27a, 28a, 29a–b at 16:6–9. Macchi notes that 4QProvb preserves only part of this section and supports the MT order where it overlaps.",
+      "scholarly_interpretation": "Macchi argues that a proto-Masoretic editor reshaped a Hebrew form underlying the Old Greek by relocating several lines and composing MT Proverbs 16:1–3. In his reading, this yields a section on divine sovereignty and gathers the material that leads into the royal sayings of 16:10–15. Translation freedom and other text-history models remain alternatives; the article does not establish a precise date for the proposed editing.",
+      "temporal_scope": {
+        "start_year": null,
+        "end_year": null,
+        "approximate": true,
+        "periods": [
+          "Ancient Hebrew and Greek textual transmission; the date and sequence of the editorial processes remain uncertain"
+        ],
+        "narrative_setting": "A wisdom collection whose Hebrew and Greek textual forms differ in the arrangement and content of this section.",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": true,
+        "notes": "The proposed proto-Masoretic editing is Macchi’s text-historical reconstruction, not a directly dated event. 4QProvb preserves only part of the passage and does not settle the full history."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Proverbs 15:25-16:9",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This contiguous section contains the differences in sequence, pluses, and minuses compared by Macchi.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "proverbs-masoretic",
+        "proverbs-old-greek",
+        "macchi-proverbs15-16-lxx-mt-2024"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "notes": "Research packet: docs/evidence-depth/ed2-master/wave-b-wisdom/wisdom-research-packets-b3.md."
+    }]
 }

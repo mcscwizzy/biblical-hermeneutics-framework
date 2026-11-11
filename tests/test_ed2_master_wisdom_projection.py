@@ -72,3 +72,30 @@ def test_ed2_master_wisdom_b2_projects_surety_evidence_with_source_disclosure():
     assert projected["rationale"]["scholarly_interpretation"]
     assert projected["review_status"] == "in_review"
     assert projected["human_review_required"] is True
+
+
+def test_ed2_master_wisdom_b3_proverbs_textual_item_projects_in_both_exact_chapters():
+    records = _load_ckl("books/proverbs.json")
+    projected_id = "ckl:proverbs#evidence:proverbs-15-25-to-16-9-mt-lxx-redaction-debate"
+    for chapter in ("Proverbs 15", "Proverbs 16"):
+        result = _project(chapter, canonical=_lookup("ckl", records=records))
+        assert len([entry for entry in result["items"] if entry["id"] == projected_id]) == 1
+        projected = _item(result, projected_id)
+        assert projected["evidence_category"] == "ancient-text"
+        assert [x["reference"] for x in projected["applicable_passage_anchors"]] == ["Proverbs 15:25-16:9"]
+        assert {"proverbs-masoretic", "proverbs-old-greek", "macchi-proverbs15-16-lxx-mt-2024"}.issubset(projected["source_ids"])
+        assert all(source["details_available"] for source in projected["sources"])
+        assert all(source["bibliographic_details"].get("locator") for source in projected["sources"])
+        assert projected["rationale"]["primary_observation"]
+        assert projected["rationale"]["scholarly_interpretation"]
+        assert projected["dispute_status"] == "textual_variant"
+        assert projected["content_status"] == "draft"
+        assert projected["review_status"] == "in_review"
+        assert projected["human_review_required"] is True
+        edges = [entry for entry in result["connections"] if entry.get("source_id") == projected_id]
+        assert len(edges) == 1
+        assert edges[0]["target_id"] == "passage:Proverbs 15:25-16:9"
+        assert result["related_passages"]["authored_relationships"] == []
+        assert result["related_passages"]["evidence_backed_bridges"] == []
+    outside = _project("Proverbs 14", canonical=_lookup("ckl", records=records))
+    assert not any(entry["id"] == projected_id for entry in outside["items"])

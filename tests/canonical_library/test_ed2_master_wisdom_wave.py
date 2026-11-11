@@ -24,6 +24,13 @@ EXPECTED_B1 = {
     ),
 }
 
+EXPECTED_B3 = {
+    "proverbs-15-25-to-16-9-mt-lxx-redaction-debate": (
+        ["Proverbs 15:25-16:9"],
+        "macchi-proverbs15-16-lxx-mt-2024",
+    ),
+}
+
 
 class Ed2MasterWisdomWaveTests(unittest.TestCase):
     @classmethod
@@ -90,6 +97,29 @@ class Ed2MasterWisdomWaveTests(unittest.TestCase):
         self.assertEqual("disputed", item["certainty"])
         self.assertIn("foreigner", item["scholarly_interpretation"].lower())
         self.assertIn("israelite", item["scholarly_interpretation"].lower())
+        self.assertEqual("draft", obj["content_status"])
+        self.assertEqual("in_review", obj["review_status"])
+        self.assertTrue(obj["human_review_required"])
+
+    def test_b3_proverbs_text_history_attributes_the_redaction_model(self) -> None:
+        obj = self.objects["proverbs"]
+        sources = {source["id"]: source for source in obj["sources"]}
+        for evidence_id, (references, scholarly_source) in EXPECTED_B3.items():
+            with self.subTest(evidence=evidence_id):
+                item = next(x for x in obj["evidence_items"] if x["id"] == evidence_id)
+                self.assertEqual("ancient-text", item["evidence_type"])
+                self.assertEqual(references, [x["reference"] for x in item["scripture_references"]])
+                self.assertEqual("textual_variant", item["dispute_status"])
+                self.assertEqual("disputed", item["certainty"])
+                self.assertTrue({"proverbs-masoretic", "proverbs-old-greek", scholarly_source}.issubset(item["source_ids"]))
+                self.assertIn(evidence_id, sources[scholarly_source]["supports"])
+                self.assertIn("pp. 381–394", sources[scholarly_source]["locator"])
+                self.assertIn("full published French article was inspected", sources[scholarly_source]["notes"])
+                self.assertIn("4QProvb", item["primary_observation"])
+                self.assertTrue(item["primary_observation"])
+                self.assertTrue(item["temporal_scope"]["notes"])
+                self.assertEqual([], item["related_objects"])
+                self.assertEqual([], item["related_evidence"])
         self.assertEqual("draft", obj["content_status"])
         self.assertEqual("in_review", obj["review_status"])
         self.assertTrue(obj["human_review_required"])
