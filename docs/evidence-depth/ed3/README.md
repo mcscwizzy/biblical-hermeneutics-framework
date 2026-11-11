@@ -6,12 +6,14 @@ research priorities. It does not confer human scholarly approval.
 
 ## Status
 
-Phase 0 is baselined on the fetched ED-2 merge. The machine-assisted review
-inventory reconciles all 99 additions to stable CKL evidence IDs and preserves
-ED-2's reported source-access categories as historical claims awaiting fresh
-verification. Detailed source review, provenance triage, and reader acceptance
-are in progress. All ED-2 additions remain draft, in review, and human-review
-required.
+Phase 0 is baselined on the fetched ED-2 merge. Phase 1 reconciles all 99
+additions to stable CKL evidence IDs, anchors, source records, locators,
+research packets, reported access categories, review state, and reader
+projection. Fresh source material was independently inspected for 29 records;
+70 reported full-text records were not freshly reproduced. All outcomes are
+machine-assisted, 72 records remain unable to be independently verified, and
+all additions remain draft, in review, and human-review required. Semantic
+re-reading of every passage and primary-witness verification remain open.
 
 ## Navigation
 
