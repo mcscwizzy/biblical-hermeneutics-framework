@@ -2072,6 +2072,27 @@ test("focused draft evidence keeps review and missing-source disclosures expanda
   assert.doesNotMatch(textWithoutReviewDisclosure(view), /Review state: in_review|Content state: draft|Human review required: Yes/);
 });
 
+test("draft evidence previews identify pending human review before provenance is expanded", () => {
+  const data = projection();
+  const draftEvidenceId = "ckl:creation#evidence:comparison";
+  data.items = data.items.map((item) => item.id === draftEvidenceId
+    ? {...item, review_status: "in_review", content_status: "draft", human_review_required: true}
+    : item);
+
+  const preview = renderCategory(data, "archaeology_ancient_history", {document: fakeDocument()});
+  const card = descendants(preview).find((element) =>
+    element.className === "narrative-explorer-item" && element.textContent.includes("Ancient textual comparison"));
+  assert.ok(card);
+  const notice = descendants(card).find((element) => element.className.includes("narrative-explorer-preview-governance"));
+
+  assert.ok(notice);
+  assert.equal(notice.attributes.role, "status");
+  assert.match(notice.textContent, /Draft evidence — awaiting human review\./);
+
+  const published = renderCategory(projection(), "biblical_narrative", {document: fakeDocument()});
+  assert.equal(descendants(published).some((element) => element.className.includes("narrative-explorer-preview-governance")), false);
+});
+
 test("projected CKL connections follow the recorded target object and retain their relationship metadata", () => {
   const item = {
     id: "ckl:tabernacle#evidence:tabernacle-textual-evidence",

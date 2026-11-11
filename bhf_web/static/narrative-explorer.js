@@ -1560,6 +1560,23 @@
       : evidenceLabel;
     if (visibleKind) appendTextElement(document, card, "p", visibleKind, "narrative-explorer-item-kind");
 
+    const contentStatus = readerText(item?.content_status).toLowerCase();
+    if (contentStatus === "draft" || item?.human_review_required === true) {
+      const notice = contentStatus === "draft" && item?.human_review_required === true
+        ? "Draft evidence — awaiting human review."
+        : contentStatus === "draft"
+          ? "Draft evidence — review information is available below."
+          : "Human review is required; see the review details below.";
+      const governance = appendTextElement(
+        document,
+        card,
+        "p",
+        notice,
+        "narrative-explorer-governance narrative-explorer-preview-governance",
+      );
+      governance.setAttribute("role", "status");
+    }
+
     const authoredSentence = previewDescription(item, title);
     if (authoredSentence) appendTextElement(document, card, "p", authoredSentence, "narrative-explorer-item-copy");
 

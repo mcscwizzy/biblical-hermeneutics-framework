@@ -7,7 +7,7 @@ The ED-2 master run completed validated research batches in all five waves and l
 - Branch: feat/ed2-comprehensive-evidence-expansion
 - Base: origin/master at 04eed56ece941f9efce2f7f05b3908baf0197648; ED-2A was merged before branch creation.
 - Evidence additions: 99 typed items across 13 books; 98 new scholarly source identities and one new primary-text identity; five scholarly identities reused.
-- Final corpus: 687 CKL objects, 2,329 claims, 1,408 typed evidence items, 5,348 source occurrences, 2,898 unique source IDs.
+- Final corpus: 687 CKL objects, 2,329 claims, 1,408 typed evidence items, 5,348 source occurrences, 2,897 unique source IDs.
 - Coverage: 1,089 passage-specific, 56 contextual-only, 2 entity-only, 41 no-eligible, 1 incomplete/unknown out of 1,189 chapters.
 - New evidence by domain: 84 literary-convention, 5 ancient-text, 4 cultural-practice, 3 manuscript, 1 worldview-concept, 1 historical-event, and 1 institution item.
 - Books receiving additions: Psalms (79), Proverbs (4), Ecclesiastes (1), 1 Chronicles (1), 2 Chronicles (3), Isaiah (1), Ezekiel (2), Nahum (1), Mark (1), Luke (3), Acts (1), John (1), Revelation (1).

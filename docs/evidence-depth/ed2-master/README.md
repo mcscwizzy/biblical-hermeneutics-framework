@@ -24,6 +24,7 @@ This is the working ledger for the comprehensive evidence-enrichment branch. It 
 - [Source register and access limits](sources.md)
 - [Before/after coverage](coverage-before-after.md)
 - [Validation history](validation-results.md)
+- [Final release-readiness review](release-readiness.md)
 - [Deferred research](deferred-research.md)
 - [Final review](final-review.md)
 
