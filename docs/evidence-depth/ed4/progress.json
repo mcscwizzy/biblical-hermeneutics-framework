@@ -9,7 +9,7 @@
     "0": {"name": "Baseline and execution", "status": "completed", "commit_sha": "801e7ebe", "blockers": []},
     "1": {"name": "Research retrieval", "status": "completed", "commit_sha": "29e722fd1277", "blockers": ["Unprefixed ordinary-language retrieval for the heart-condemnation question remains weak; see retrieval-analysis.md."]},
     "2": {"name": "Human scholarly review workflow", "status": "completed", "commit_sha": "0ae5fb4da624", "blockers": ["All 99 records still require qualified human review; ED-4 recorded no human decision."]},
-    "3": {"name": "Source integrity", "status": "pending", "commit_sha": null, "blockers": []},
+    "3": {"name": "Source integrity", "status": "completed", "commit_sha": "4cf1b8d691c11c20831ced36bf70128240b5678e", "blockers": ["19 support-target relationships remain unresolved without author/human identity decisions; reference-work identity triage is documented with no unsupported bulk normalization."]},
     "4": {"name": "Current-state curation compatibility", "status": "pending", "commit_sha": null, "blockers": []},
     "5": {"name": "Reader usefulness and transparency", "status": "pending", "commit_sha": null, "blockers": []},
     "6": {"name": "Obadiah census anomaly", "status": "pending", "commit_sha": null, "blockers": ["Detailed census says incomplete/unknown; strict retrieval scan says available."]},
@@ -19,9 +19,9 @@
   "remaining_issues": [
     "Improve unprefixed ordinary-language retrieval for the heart-condemnation question without adding a book-specific exception.",
     "Qualified reviewers must independently decide the 99 queued records; all ED-3 unable-to-verify outcomes remain research/access limitations.",
-    "Investigate 19 unresolved semantic support targets and reference-work bibliography identities.",
+    "The 19 unresolved semantic support targets and unverified reference-work identities documented in source-integrity-results.md need author or qualified human follow-up.",
     "Resolve the Obadiah census classifier difference or document its exact cause.",
     "Run full regression, package, reader, and release validation; report inherited limits separately."
   ],
-  "commit_shas": ["801e7ebe", "9636a2ed", "29e722fd1277", "bf55e161e963", "0ae5fb4da624"]
+  "commit_shas": ["801e7ebe", "9636a2ed", "29e722fd1277", "bf55e161e963", "0ae5fb4da624", "b20c2390599e", "4cf1b8d691c11c20831ced36bf70128240b5678e"]
 }
