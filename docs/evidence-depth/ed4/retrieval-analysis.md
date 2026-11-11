@@ -70,6 +70,26 @@ confirm that dispersed notes and rationales do not create false coherent
 matches. This applies across passage-anchored notes without a book-specific
 rule.
 
+## Unprefixed heart-condemnation question
+
+The exact ordinary-language query `What if our heart condemns us?` had no
+parsed Scripture reference. On the ED-3 baseline, `ezekiel` ranked first at
+0.7163, while `john` ranked second at 0.6395; `1-john` was absent from the
+first five results. Two general retrieval details caused this: `if` remained
+as a high-weight query token, and the query form `condemns` did not match the
+passage-anchored wording `condemning` in 1 John 3:19–24.
+
+The tokenizer now treats the common question word `if` as a stop word. The
+existing coherent-match signal also recognizes a bounded progressive form on
+the evidence side for long terms, including doubled-final-consonant forms.
+Query tokens remain intact, and the match is available only inside the same
+claim, descriptive evidence unit, or individually passage-anchored note. This
+avoids globally stemming short or unrelated terms. With this correction the
+query has substantive terms `heart` and `condemn`; the `1-john` claim
+`1jn-heart`, anchored to 1 John 3:19–24, covers both and ranks first at 0.8694.
+The fix is covered by the exact unprefixed-query regression and the complete
+retrieval suite.
+
 ## Other reference handling
 
 - Explicit verse/range references still take the Scripture-scope path.
@@ -80,15 +100,17 @@ rule.
 - High-level ambiguous-entity handling for `Who was John?` is unchanged and
   continues to return ambiguity instead of a confident passage.
 - Ordinary-language queries without a book reference remain lexical searches.
-  The unprefixed `What if our heart condemns us?` still does not rank `1-john`
-  first in the raw CKL retrieval service. The inherited acceptance case
-  explicitly prefixes `1 John`; broader morphology/semantic retrieval is
-  outside this bounded correction and remains an evaluation limitation.
+  The exact heart-condemnation query now ranks its anchored 1 John claim first;
+  query tokens are otherwise unchanged and no global stemmer or semantic model
+  was introduced.
 
 ## Files changed
 
 - `framework/canonical_library/retrieval/tokenizer.py`: complete book-alias
-  boundaries, punctuation trimming, and containment-aware title matching.
+  boundaries, punctuation trimming, containment-aware title matching, and
+  common question stop words.
+- `framework/canonical_library/retrieval/ranker.py`: scoped progressive-form
+  comparison for coherent anchored evidence.
 - `framework/canonical_library/retrieval/service.py`: relationship-focus
   ordering for explicit `How does A relate/connect to B?` forms.
 - `framework/canonical_library/retrieval/indexer.py`: coherent matches from

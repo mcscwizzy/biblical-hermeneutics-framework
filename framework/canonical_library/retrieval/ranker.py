@@ -327,6 +327,15 @@ def coherent_evidence_match(
     best_terms: set[str] = set()
     for source_field, source_id, group_terms in groups:
         matched = query_terms.intersection(group_terms)
+        progressive_matches = {
+            term
+            for term in query_terms - matched
+            if any(
+                _query_matches_progressive_form(term, evidence_term)
+                for evidence_term in group_terms
+            )
+        }
+        matched.update(progressive_matches)
         if len(matched) > len(best_terms):
             best_source = (source_field, source_id, group_terms)
             best_terms = matched
@@ -340,6 +349,17 @@ def coherent_evidence_match(
         ordered_terms,
         f"{best_source[0]}:{best_source[1]}",
     )
+
+
+def _query_matches_progressive_form(query_term: str, evidence_term: str) -> bool:
+    """Match a simple ``-ing`` form to its base within one coherent unit."""
+
+    if not evidence_term.endswith("ing") or len(evidence_term) <= 7:
+        return False
+    base = evidence_term[:-3]
+    if len(base) > 4 and base[-1] == base[-2]:
+        base = base[:-1]
+    return query_term == base
 
 
 def _field_quality_multiplier(fields: Sequence[str]) -> float:

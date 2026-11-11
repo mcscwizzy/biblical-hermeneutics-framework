@@ -18,6 +18,20 @@ class ED4RetrievalRegressionTests(unittest.TestCase):
 
         self.assertEqual(ids[0], "1-john")
 
+    def test_unprefixed_heart_condemnation_query_finds_anchored_1_john_note(self) -> None:
+        response = self.service.search("What if our heart condemns us?", debug=True)
+
+        self.assertEqual(response.analysis.terms, ["heart", "condemn"])
+        self.assertEqual(response.analysis.scripture_references, [])
+        self.assertEqual(response.results[0].id, "1-john")
+        coherent_match = next(
+            signal
+            for signal in response.results[0].score_details
+            if signal.name == "coherent_evidence_match"
+        )
+        self.assertEqual(coherent_match.matched_terms, ["heart", "condemn"])
+        self.assertIn("one claims unit 1jn-heart", coherent_match.note or "")
+
     def test_relation_query_ranks_grammatical_focus_before_supporting_passage(self) -> None:
         ids = self.result_ids("How does 1 Thessalonians relate to Acts 17?")
 

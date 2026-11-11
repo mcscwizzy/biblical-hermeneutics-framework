@@ -10,6 +10,7 @@ same fetched ED-3 branch baseline and ED-4 worktree.
 |---|---|---|---|---|
 | `1 John What if our heart condemns us?` | `1-john` | `john` #1 (0.947); `1-john` #2 (0.931) | `1-john` #1 (0.931); `john` #2 (0.947) | Expected book moved from rank 2 to rank 1; overlapping title no longer masks explicit numbered book. |
 | `1 Thessalonians How does 1 Thessalonians relate to Acts 17?` | `1-thessalonians` | `acts` #1 (1.000); `1-thessalonians` #2 (1.000); false `Revelation` reference | `1-thessalonians` #1 (1.000); `acts` #2 (1.000); no false Revelation reference | Primary passage moved from rank 2 to rank 1; supporting Acts passage remains rank 2. |
+| `What if our heart condemns us?` (unprefixed ordinary language) | `1-john` | `ezekiel` #1 (0.7163); `john` #2 (0.6395); `1-john` outside top five | `1-john` #1 (0.8694), anchored claim `1jn-heart`; `joel` #2 (0.8176) | Correct passage moves to rank 1 without a reference prefix or book-specific exception. |
 
 ## Bounded relevance sample
 
@@ -30,10 +31,10 @@ same fetched ED-3 branch baseline and ED-4 worktree.
 | Passage-scoped wording without a reference | `What does Paul mean by judging nothing before the time?` | `1-corinthians` #1 (0.7465), with an erroneous `Judges` reference parsed inside “judging” | `1-corinthians` #1 (0.7565), with no Scripture reference and a coherent four-term match in its anchored 1 Corinthians 4:5 note | Removes the false book parse while preserving the correct passage result through shared, note-scoped relevance scoring. |
 | Ambiguous entity | `Who was John?` | Existing Narrative Explorer test returns no primary result and an ambiguity object | Same | No confident passage is selected for the unresolved title/person ambiguity. |
 
-The raw unprefixed `What if our heart condemns us?` remains a weak lexical query
-and does not put `1-john` first. This was not the inherited test input (which
-prepends `1 John`) and is documented as follow-up retrieval work rather than
-hidden as a success.
+For the unprefixed heart query, `if` is ignored as a common question word and
+`condemns` matches the `condemning` wording only within a coherent evidence
+unit. Query terms are otherwise unchanged. The first result is the 1 John
+claim anchored at 1 John 3:19–24.
 
 ## Regression evidence
 
@@ -42,6 +43,7 @@ hidden as a success.
 - Existing precision and inherited 1 John / 1 Thessalonians suites: 26 passed,
   226 subtests passed in 452.96 seconds. Both formerly failing assertions now
   pass.
-- Full existing retrieval service/precision/index suite after anchored-note
-  scoring: 50 passed, 18 subtests passed in 228.88 seconds. The new note-based
-  coherent match and existing dispersed-rationale negative controls passed.
+- Full retrieval service/precision/index suite after the final retrieval
+  corrections: 51 passed, 18 subtests passed in 239.77 seconds. This includes
+  both inherited failures, the exact unprefixed heart query, the note-based
+  coherent match, and existing dispersed-rationale negative controls.

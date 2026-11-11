@@ -55,6 +55,7 @@ STOP_WORDS = frozenset(
         "has",
         "had",
         "how",
+        "if",
         "in",
         "is",
         "it",
