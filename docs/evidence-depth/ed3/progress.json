@@ -288,7 +288,7 @@
     "8": {
       "status": "complete",
       "completed_evidence_ids": [],
-      "commit_sha": null,
+      "commit_sha": "e44b54d5",
       "blockers": [
         "Release regression gates and final protected-state verification remain for phase 9."
       ],
@@ -300,10 +300,25 @@
       }
     },
     "9": {
-      "status": "pending",
+      "status": "completed_with_documented_limits",
       "completed_evidence_ids": [],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "The unfiltered full repository test suite was not completed; two confirmed inherited retrieval-order failures remain.",
+        "Frozen NE-9C bulk-curation validation cannot pass with its pre-ED-2 fingerprint; protected checkpoint was preserved and compatibility counts/hashes verified.",
+        "All 99 ED-2 additions still require independent human scholarly review; no approval is recorded."
+      ],
+      "summary": "Completed strict and deep CKL checks, focused Python/API/projection/curation/source-lock tests, release workflow tests, frontend tests, genuine mobile browser acceptance, profile cleanliness, wheel/sdist packaging and wheel smoke, and the full 1,189-chapter ED-1A census. Confirmed unchanged NE-9C/NE-10 identities and protected artifacts. The unfiltered full repository pytest run was interrupted after 23 minutes with two retrieval-order failures that were independently reproduced against the exact ED-2 origin/master archive.",
+      "validation": {
+        "module_and_ckl": "94 framework modules valid; strict CKL 687 valid objects, 0 errors, 14 inherited warnings; deep report 1,408 evidence items, 63 heuristic error-severity flags, 1,093 warnings, 102 support-target signals, 0 unresolved child-source references after phase 3 repairs.",
+        "focused_python": "584 passed in selected NE/API/projection/curation/release/source-lock tests; the exact Validate-workflow release set passed 50 tests in 97.42 seconds.",
+        "frontend_and_reader": "npm test passed 17/17. Phase 6 Chromium checks verified 390 CSS-pixel width for six samples across five ED-2 waves and an ED-1C record; no overflow, duplicate card, or exact-passage mismatch observed.",
+        "chapter_census": "ED-1A census passed 1189/1189 chapters, 687 CKL objects, 0 unmapped identities, 19 sample chapters, and 16 targeted service builds; taxonomy 1089 passage-specific, 56 contextual-only, 2 entity-only, 41 zero-eligible, 1 incomplete/unknown.",
+        "packaging": "python -m build --no-isolation built wheel and sdist; content gate passed (1052 wheel, 1242 sdist entries; required files present; no retired generated payload). Temporary installed-wheel CLI/app/default-CKL smoke passed with 687 packaged objects. Existing setuptools license notices and optional commentary SQLite glob warning only.",
+        "profiles_and_worktree": "minimal-7b and standard profile generation produced no diff; git diff --check passed; no generated package, census, or profile artifact was committed.",
+        "protected_governance": "433 current accepted NE-9C identities (431 object, 2 evidence), 44 verified NE-10 bridges, 7 held. Checkpoint and NE-10 file hashes match baseline; no protected files/source-lock module changed. Legacy ne9c validate still stops at protected CKL source fingerprint mismatch already documented at baseline after ED-2.",
+        "broad_suite": "Full pytest run stopped after 23:10: 54 tests passed, 892 subtests passed, 2 retrieval-order assertions failed before interruption. Both failures reproduced on origin/master: 1 John query expected 1-john but returned john; 1 Thessalonians query expected 1-thessalonians but returned acts. No ED-3 fix applied."
+      }
     },
     "10": {
       "status": "pending",

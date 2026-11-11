@@ -6,7 +6,7 @@ research priorities. It does not confer human scholarly approval.
 
 ## Status
 
-Phases 0–8 are documented on the fetched ED-2 merge. Phase 1 reconciles all 99
+Phases 0–9 are documented on the fetched ED-2 merge. Phase 1 reconciles all 99
 additions to stable CKL evidence IDs, anchors, source records, locators,
 research packets, reported access categories, review state, and reader
 projection. Fresh source material was independently inspected for 30 records;
@@ -19,6 +19,10 @@ independently verified, and all additions remain draft, in review, and
 human-review required. Semantic re-reading of every passage and primary-witness
 verification remain open. Phase 7 records book-by-book, source-led research
 priorities rather than proposing a new mass evidence wave.
+Phase 9 passes the supported focused release gates, full chapter census, and
+genuine 390 CSS-pixel reader samples. It also records two retrieval failures
+reproduced on the ED-2 base and the frozen NE-9C checkpoint's inherited
+fingerprint limitation; neither is represented as a new ED-3 failure.
 
 ## Navigation
 
