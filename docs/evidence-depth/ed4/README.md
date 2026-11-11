@@ -16,6 +16,8 @@ commit SHAs are in [progress.json](progress.json).
 
 - [Design](design.md) and [execution plan](execution-plan.md)
 - [Baseline and repository inventory](baseline.md)
+- [Retrieval cause analysis](retrieval-analysis.md)
+- [Retrieval before/after evaluation](retrieval-before-after.md)
 - [Progress ledger](progress.json)
 
 Phase reports will be linked here as their investigations and validation
