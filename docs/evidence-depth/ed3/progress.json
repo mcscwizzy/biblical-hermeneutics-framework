@@ -254,7 +254,7 @@
         "nahum-3-8-9-one-city-text-critical-proposal",
         "mark-7-3-pugme-pukna-variant"
       ],
-      "commit_sha": null,
+      "commit_sha": "79fd5b57",
       "blockers": [
         "Human scholarly review remains required for every ED-2 record; technical reader checks do not confer scholarly approval."
       ],
@@ -269,10 +269,21 @@
       }
     },
     "7": {
-      "status": "pending",
+      "status": "completed_with_documented_limits",
       "completed_evidence_ids": [],
       "commit_sha": null,
-      "blockers": []
+      "blockers": [
+        "The census is an eligibility and retrieval measure, not a scholarly-completeness audit. The backlog recommends bounded source-led research; no new evidence wave was authorized or started."
+      ],
+      "summary": "Reproduced the detailed ED-2 chapter taxonomy and independently reran strict chapter retrieval, reconciled the exact 41 zero-eligible chapter set, examined all contextual/entity-only chapters, screened thin-count candidates, and prepared source-led priorities for all 66 books.",
+      "validation": {
+        "detailed_census": "1189 unique chapter rows: 1089 passage-specific, 56 contextual-only, 2 entity-only, 41 no eligible material, 1 incomplete/unknown; all zero chapters match the strict retrieval zero set.",
+        "strict_retrieval": "tools/ckl_coverage_report.py v2.0; 1189 chapters, 669 with 2+ items, 479 with 1, 41 with 0; 96.55% have at least one item; average 4.12, median 2.",
+        "reproducible_report": "/tmp/ed3-current-coverage.json SHA-256 d2b33bfe6c63c15c44113f26935661052cd8307813d5c8ea4a5211154e2b416c; generated with .venv/bin/python tools/ckl_coverage_report.py --json /tmp/ed3-current-coverage.json.",
+        "thin_candidates": "494 unique passages in union of 479 strict one-item chapters and 268 detailed specific chapters with <=2 eligible CKL items; overlap 253. Candidate list includes source-traceability and topic-depth fields.",
+        "book_backlog": "66 book-by-book rows, ordered P0–P3 across historical/cultural opportunity, primary-source availability, linguistic/literary significance, current depth, reader relevance, uncertainty, and verification difficulty; 7 P0 planning books.",
+        "governance": "No research records, curated decisions, or passage bridges were added or promoted."
+      }
     },
     "8": {
       "status": "pending",
