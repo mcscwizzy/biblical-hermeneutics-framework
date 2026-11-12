@@ -23,6 +23,30 @@ reproduce source access. Reviewers must inspect the evidence themselves.
 | [`psalm-73-ring-composition-proposal`](../ed3/human-review-packets/wave-a-psalms/psalm-73-ring-composition-proposal.md) | Ps 73:1–28. The poem moves from opening affirmation through crisis and sanctuary turn to closing affirmation; Wong proposes a ring structure. | `wong-psalm73-ring-composition-2016`, pp. 16–40; publisher abstract/metadata only; Masoretic Psalter. | P1; low / disputed / major disagreement; full structural case unavailable. Expertise: Hebrew poetry, literary structure. Inspect full article and its marker-by-marker analysis. Before approval: distinguish visible repetition from the more specific proposed architecture. |
 | [`isaiah10-5-8-assyrian-agency-and-polemical-contrast`](../ed3/human-review-packets/wave-d-prophets/isaiah10-5-8-assyrian-agency-and-polemical-contrast.md) | Isa 10:5–8. Assyria is called a rod in YHWH's hand, then voices its own destructive aim; Aster reads a polemical limit on imperial agency. | `aster-isaiah10-assyrian-ideology-2017`, pp. 184–190, especially p. 184; MT Isaiah. | P1; medium / plausible / interpretive uncertainty; no new source inspection. Expertise: Isaiah, Neo-Assyrian history/ideology, Hebrew literature. Inspect the full cited section and relevant Assyrian primary evidence. Before approval: keep Aster's reading distinct from independent confirmation of the oracle's theology or a settled date. |
 
+## Primary witness inspection checklist
+
+“Yes” identifies a primary textual witness or material artifact whose direct
+inspection is needed for the claim under review. Reviewers still need to read
+the cited Scripture in an appropriate edition for every item. It does not mean
+that ED-5 inspected the item.
+
+- **Yes — Ecclesiastes 10:1:** Hebrew text and relevant critical apparatus;
+  no manuscript image is named by this record.
+- **Yes — Mark 7:3:** inspect a critical apparatus and, if accessible, the
+  cited readings/images for Sinaiticus (א) and Washingtonianus (W).
+- **Yes — Nahum 3:8–9:** inspect 4Q385a image or authoritative transcription
+  and the relevant Greek witnesses.
+- **Yes — Psalm 40 / 4Q160:** inspect a reliable 4Q160 transcription or image
+  against Psalm 40:2–4.
+- **Yes — Ezekiel 22:25, 28:** compare the Hebrew reading and Septuagint
+  witness; do not infer a Hebrew “princes” witness from English translations.
+- **Yes — Psalm 61:4–7:** inspect the Hezekiah bulla and its archaeological
+  context; this is material evidence, not a textual manuscript.
+- **No separate variant witness required — 2 Chronicles 14; John 10:22; Acts
+  15:29; Psalm 111; Psalm 73; Isaiah 10:5–8.** Review the relevant biblical
+  text/edition and cited scholarship; inspect the direct historical artifact
+  only where specified for Psalm 61, not by analogy for these cases.
+
 ## Shared reviewer questions
 
 For every item, the qualified reviewer should verify that the source locator
