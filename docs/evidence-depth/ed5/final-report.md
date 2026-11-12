@@ -53,3 +53,11 @@ touch targets, screen-reader semantics, contrast, and reduced-motion behavior
 remain unverified for ED-5 changes. The full-suite limitation and any final
 delivery identifiers are recorded separately. No merge or deployment is part
 of this work.
+
+## Delivery status
+
+The feature branch is pushed. Pull-request creation was attempted, but the
+GitHub integration returned HTTP 403 (`Resource not accessible by
+integration`); the local `gh` CLI is unauthenticated and no browser session is
+available. No pull request was created. The comparison page is recorded in
+`progress.json` so an authorized GitHub session can open the proposed change.

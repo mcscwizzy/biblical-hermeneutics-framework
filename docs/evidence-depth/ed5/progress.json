@@ -2,7 +2,7 @@
   "program": "ED-5 Discovery Experience",
   "branch": "feat/ed5-discovery-experience",
   "base_commit": "528b1593021f24fe98ff60d1533c7720f5755cd0",
-  "status": "implementation_committed; reports_and_delivery_in_progress",
+  "status": "branch_pushed; pull_request_creation_blocked_by_permissions",
   "phase_status": {
     "0_repository_baseline": "complete",
     "1_reader_journey_evaluation": "complete_with_browser_environment_limit",
@@ -13,7 +13,7 @@
     "6_source_transparency": "complete_static_and_existing_contract_review",
     "7_pilot_evaluation": "scripted_suite_passed; browser_acceptance_unavailable",
     "8_technical_governance_regression": "targeted_gates_passed; full_pytest_incomplete_at_25m",
-    "9_delivery": "pending"
+    "9_delivery": "branch_pushed; PR_not_created"
   },
   "baseline": {
     "commit": "528b1593021f24fe98ff60d1533c7720f5755cd0",
@@ -49,7 +49,8 @@
   "unresolved": [
     "Current desktop/mobile browser acceptance could not run because BHF_WEBDRIVER_URL and BHF_GUI_BASE_URL are unset and no local Chrome/ChromeDriver is available.",
     "All 99 queue items still require independent human scholarly review.",
-    "Full repository pytest was interrupted at the 25-minute bound: 54 tests and 907 subtests passed, but the suite did not complete."
+    "Full repository pytest was interrupted at the 25-minute bound: 54 tests and 907 subtests passed, but the suite did not complete.",
+    "The GitHub connector rejected PR creation with HTTP 403 Resource not accessible by integration; gh is unauthenticated and no browser session is available."
   ],
   "review_integrity": {
     "real_ledger_created_or_modified": false,
@@ -57,8 +58,10 @@
     "human_approval_recorded": false
   },
   "delivery": {
-    "pushed": false,
+    "pushed": true,
     "pull_request_url": null,
+    "comparison_url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...feat/ed5-discovery-experience?expand=1",
+    "pull_request_creation_blocker": "GitHub integration returned 403 Resource not accessible by integration; gh is unauthenticated; no browser session is available.",
     "merged_or_deployed": false
   }
 }
