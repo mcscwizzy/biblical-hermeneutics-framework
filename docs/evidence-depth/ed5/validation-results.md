@@ -26,13 +26,46 @@ scholarly review gaps, and checks that were unavailable or not completed.
 
 ## Browser and packaging gates
 
-Current ED-5 live browser execution was unavailable: browser URL variables are
-unset and local Chrome/ChromeDriver are absent. Inherited ED-4 browser checks
-are reported separately in [usability baseline](usability-baseline.md). The
-new DOM has frontend contract tests but does not have a fresh browser run at
-1440px, effective 390px, or 320px; keyboard focus, touch targets, screen-reader
-semantics, contrast, and reduced-motion therefore remain unverified for this
-change.
+The ED-5 browser gate is **BLOCKED / UNVERIFIED at narrow widths**. The
+repository's existing Selenium Firefox harness was used with Mozilla Firefox
+159.0 and geckodriver 0.37.1 against branch
+`feat/ed5-discovery-experience` at `5a954bda`. The browser's effective CSS
+viewport was measured directly:
+
+| Requested browser size | Effective CSS viewport width | Result |
+|---|---:|---|
+| 1440 x 1200 | 1440 px | Browser acceptance completed at desktop width. |
+| 390 x 844 | 500 px | Firefox clamps the requested window to 500 px; responsive acceptance at 390 px was not run. |
+| 320 x 740 | 500 px | Firefox clamps the requested window to 500 px; responsive acceptance at 320 px was not run. |
+
+At 1440 px, the completed-empty notice appeared for 1 Kings 2, and the native
+collapsed research-term disclosure contained exactly 14 definitions. Keyboard
+Tab focus was visible; Enter and Space toggled the disclosure. The summary
+touch target measured 44 px high and the notice CTA measured 67.9 px high. The
+long notice and all guide terms wrapped without horizontal overflow. Light
+theme contrast measured 6.13:1 for notice text, 9.93:1 for the guide summary,
+and 6.37:1 for a term definition. Dark theme contrast measured 7.56:1, 7.45:1,
+and 7.45:1 for those same elements.
+
+Browser checks also passed for the completed-empty notice being absent when a
+synthetic intercepted CKL lookup reported `failed` and `partial`; Genesis 12
+source disclosure with both expected source identities; 1 Corinthians 11:3
+additional lexical evidence with its disputed status and both expected
+sources; and verified Jonah/Matthew navigation from both endpoints with
+return-to-origin. The synthetic snapshot export/no-overwrite and valid
+append-only restore checks passed (2 tests); no real review decisions were
+written. No release-blocking UI defect was reproduced.
+
+The GitHub Actions GUI run for this commit (run 43218071067) failed before
+browser tests started because the `bhf-web` Compose dependency exited with
+status 1; no browser artifacts were produced. An authorized job rerun was
+rejected by the GitHub connector with HTTP 403 (`Resource not accessible by
+integration`). A READY Vercel preview existed for the same commit, but no
+browser session was available to inspect it. Inherited ED-4 browser checks
+are reported separately in [usability baseline](usability-baseline.md).
+Keyboard disclosure behavior, desktop contrast, and desktop touch-size checks
+are verified here; narrow responsive behavior at 390 px and 320 px remains
+unverified.
 
 The bounded full repository command
 `timeout --signal=INT --kill-after=20s 1500s .venv/bin/python -m pytest -q`
