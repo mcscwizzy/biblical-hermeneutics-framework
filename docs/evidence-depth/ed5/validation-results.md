@@ -56,12 +56,13 @@ return-to-origin. The synthetic snapshot export/no-overwrite and valid
 append-only restore checks passed (2 tests); no real review decisions were
 written. No release-blocking UI defect was reproduced.
 
-The GitHub Actions GUI run for this commit (run 43218071067) failed before
-browser tests started because the `bhf-web` Compose dependency exited with
-status 1; no browser artifacts were produced. An authorized job rerun was
-rejected by the GitHub connector with HTTP 403 (`Resource not accessible by
-integration`). A READY Vercel preview existed for the same commit, but no
-browser session was available to inspect it. Inherited ED-4 browser checks
+The GitHub Actions GUI run for the tested UI commit `5a954bda` (run
+43218071067) failed before browser tests started because the `bhf-web` Compose
+dependency exited with status 1; no browser artifacts were produced. An
+authorized job rerun was rejected by the GitHub connector with HTTP 403
+(`Resource not accessible by integration`). A READY Vercel preview existed
+for the same commit, but no browser session was available to inspect it.
+Inherited ED-4 browser checks
 are reported separately in [usability baseline](usability-baseline.md).
 Keyboard disclosure behavior, desktop contrast, and desktop touch-size checks
 are verified here; narrow responsive behavior at 390 px and 320 px remains
