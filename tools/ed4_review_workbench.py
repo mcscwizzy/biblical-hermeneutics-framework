@@ -24,6 +24,8 @@ DEFAULT_QUEUE = ED3_ROOT / "human-review-queue.csv"
 DEFAULT_PACKET_ROOT = ED3_ROOT
 DEFAULT_LEDGER = REPOSITORY_ROOT / ".bhf-data/ed4-human-reviews.jsonl"
 GENESIS_HASH = "0" * 64
+SNAPSHOT_FORMAT = "bhf-ed4-review-snapshot"
+SNAPSHOT_FORMAT_VERSION = 1
 
 DECISIONS = {
     "approve_as_written": "Approve as written",
@@ -161,10 +163,24 @@ class ReviewWorkbench:
             "events": len(history),
         }
 
+    def status_report(self) -> dict[str, Any]:
+        """Report local chain integrity, trust limits, and queue reconciliation."""
+
+        events = self.history()
+        return {
+            "event_chain_integrity": "valid",
+            "authenticity": "not_independently_authenticated",
+            "external_checkpoint": "not_supplied",
+            "events": len(events),
+            "tail_hash": events[-1]["event_hash"] if events else GENESIS_HASH,
+            "queue_reconciliation": _reconcile_queue_events(self._read_queue(), events),
+        }
+
     def history(self) -> list[dict[str, Any]]:
         if not self.ledger_path.exists():
             return []
         events: list[dict[str, Any]] = []
+        seen_event_ids: set[str] = set()
         expected_previous_hash = GENESIS_HASH
         try:
             lines = self.ledger_path.read_text(encoding="utf-8").splitlines()
@@ -184,14 +200,198 @@ class ReviewWorkbench:
             if not isinstance(event, dict):
                 raise ReviewWorkflowError(f"review history line {line_number} is not an object")
             recorded_hash = event.get("event_hash")
+            event_id = event.get("event_id")
+            if not isinstance(event_id, str) or not event_id.strip():
+                raise ReviewWorkflowError(
+                    f"review history line {line_number} has no event ID"
+                )
+            if event_id in seen_event_ids:
+                raise ReviewWorkflowError(
+                    f"duplicate review event ID at line {line_number}: {event_id}"
+                )
             if (
                 event.get("previous_hash") != expected_previous_hash
                 or recorded_hash != _event_hash(event)
             ):
                 raise ReviewWorkflowError(f"review history hash chain failed at line {line_number}")
             expected_previous_hash = str(recorded_hash)
+            seen_event_ids.add(event_id)
             events.append(event)
         return events
+
+    def create_snapshot(self, output_path: Path) -> dict[str, Any]:
+        """Write a versioned snapshot without replacing an existing file."""
+
+        events = self.history()
+        snapshot = {
+            "format": SNAPSHOT_FORMAT,
+            "format_version": SNAPSHOT_FORMAT_VERSION,
+            "created_at_utc": (
+                datetime.now(timezone.utc)
+                .isoformat(timespec="seconds")
+                .replace("+00:00", "Z")
+            ),
+            "event_count": len(events),
+            "first_event_id": events[0]["event_id"] if events else None,
+            "last_event_id": events[-1]["event_id"] if events else None,
+            "tail_hash": events[-1]["event_hash"] if events else GENESIS_HASH,
+            "events": events,
+        }
+        serialized = (json.dumps(snapshot, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8")
+        path = Path(output_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        descriptor: int | None = None
+        created = False
+        try:
+            descriptor = os.open(
+                path,
+                os.O_WRONLY | os.O_CREAT | os.O_EXCL,
+                0o600,
+            )
+            created = True
+            os.fchmod(descriptor, 0o600)
+            with os.fdopen(descriptor, "wb") as stream:
+                descriptor = None
+                stream.write(serialized)
+                stream.flush()
+                os.fsync(stream.fileno())
+        except FileExistsError as exc:
+            raise ReviewWorkflowError(
+                f"snapshot already exists; choose a new versioned path: {path}"
+            ) from exc
+        except OSError as exc:
+            if descriptor is not None:
+                os.close(descriptor)
+            if created:
+                path.unlink(missing_ok=True)
+            raise ReviewWorkflowError(f"cannot create review snapshot: {exc}") from exc
+        return self.verify_snapshot(path)
+
+    def verify_snapshot(
+        self,
+        snapshot_path: Path,
+        *,
+        trusted_sha256: str | None = None,
+    ) -> dict[str, Any]:
+        """Verify snapshot structure and hash chain; an external digest is optional."""
+
+        path = Path(snapshot_path)
+        try:
+            raw = path.read_bytes()
+            snapshot = json.loads(raw.decode("utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise ReviewWorkflowError(f"cannot read valid review snapshot: {exc}") from exc
+        if not isinstance(snapshot, dict):
+            raise ReviewWorkflowError("review snapshot must be a JSON object")
+        if snapshot.get("format") != SNAPSHOT_FORMAT:
+            raise ReviewWorkflowError("unrecognized review snapshot format")
+        if snapshot.get("format_version") != SNAPSHOT_FORMAT_VERSION:
+            raise ReviewWorkflowError("unsupported review snapshot version")
+        events = snapshot.get("events")
+        if not isinstance(events, list):
+            raise ReviewWorkflowError("review snapshot events must be a list")
+        expected_previous_hash = GENESIS_HASH
+        seen_event_ids: set[str] = set()
+        for sequence, event in enumerate(events, start=1):
+            if not isinstance(event, dict):
+                raise ReviewWorkflowError(f"snapshot event {sequence} is not an object")
+            event_id = event.get("event_id")
+            if not isinstance(event_id, str) or not event_id.strip():
+                raise ReviewWorkflowError(f"snapshot event {sequence} has no event ID")
+            if event_id in seen_event_ids:
+                raise ReviewWorkflowError(f"duplicate review event ID in snapshot: {event_id}")
+            if (
+                event.get("previous_hash") != expected_previous_hash
+                or event.get("event_hash") != _event_hash(event)
+            ):
+                raise ReviewWorkflowError(f"review snapshot hash chain failed at event {sequence}")
+            expected_previous_hash = str(event["event_hash"])
+            seen_event_ids.add(event_id)
+        if snapshot.get("event_count") != len(events):
+            raise ReviewWorkflowError("review snapshot event count does not match its contents")
+        expected_first = events[0]["event_id"] if events else None
+        expected_last = events[-1]["event_id"] if events else None
+        if (
+            snapshot.get("first_event_id") != expected_first
+            or snapshot.get("last_event_id") != expected_last
+            or snapshot.get("tail_hash") != expected_previous_hash
+        ):
+            raise ReviewWorkflowError("review snapshot sequence summary does not match its contents")
+        digest = hashlib.sha256(raw).hexdigest()
+        if trusted_sha256 is not None and digest.casefold() != trusted_sha256.strip().casefold():
+            raise ReviewWorkflowError("review snapshot does not match the externally retained SHA-256")
+        return {
+            "integrity": "valid",
+            "authenticity": "externally_anchored" if trusted_sha256 else "not_independently_authenticated",
+            "event_count": len(events),
+            "first_event_id": expected_first,
+            "last_event_id": expected_last,
+            "tail_hash": expected_previous_hash,
+            "snapshot_sha256": digest,
+        }
+
+    def restore_snapshot(
+        self,
+        snapshot_path: Path,
+        *,
+        confirmed: bool = False,
+        trusted_sha256: str | None = None,
+    ) -> dict[str, Any]:
+        """Explicitly append a valid snapshot suffix; never replace local history."""
+
+        if not confirmed:
+            raise ReviewWorkflowError("restore requires explicit confirmation")
+        self.verify_snapshot(snapshot_path, trusted_sha256=trusted_sha256)
+        snapshot = json.loads(Path(snapshot_path).read_text(encoding="utf-8"))
+        imported = snapshot["events"]
+        existing = self.history()
+        if len(existing) > len(imported):
+            raise ReviewWorkflowError(
+                "snapshot is older than the local review history; restore would discard events"
+            )
+        for sequence, event in enumerate(existing, start=1):
+            imported_event = imported[sequence - 1]
+            if (
+                event["event_id"] != imported_event["event_id"]
+                or event["event_hash"] != imported_event["event_hash"]
+            ):
+                raise ReviewWorkflowError(
+                    f"snapshot conflicts with local review history at event {sequence}"
+                )
+        local_ids = {event["event_id"] for event in existing}
+        duplicate_ids = local_ids.intersection(event["event_id"] for event in imported)
+        suffix = imported[len(existing):]
+        serialized_suffix = "".join(
+            json.dumps(event, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
+            for event in suffix
+        )
+        if serialized_suffix:
+            self.ledger_path.parent.mkdir(parents=True, exist_ok=True)
+            try:
+                with self.ledger_path.open("a+b") as stream:
+                    stream.seek(0, os.SEEK_END)
+                    if stream.tell():
+                        stream.seek(-1, os.SEEK_END)
+                        has_line_ending = stream.read(1) == b"\n"
+                        stream.seek(0, os.SEEK_END)
+                        if not has_line_ending:
+                            stream.write(b"\n")
+                    stream.write(serialized_suffix.encode("utf-8"))
+                    stream.flush()
+                    os.fsync(stream.fileno())
+            except OSError as exc:
+                raise ReviewWorkflowError(f"cannot restore review snapshot: {exc}") from exc
+        restored_history = self.history()
+        return {
+            "integrity": "valid",
+            "appended_events": len(suffix),
+            "existing_prefix_events": len(existing),
+            "duplicate_events": len(duplicate_ids),
+            "events_after_restore": len(restored_history),
+            "tail_hash": restored_history[-1]["event_hash"] if restored_history else GENESIS_HASH,
+            "snapshot_sha256": hashlib.sha256(Path(snapshot_path).read_bytes()).hexdigest(),
+            "queue_reconciliation": _reconcile_queue_events(self._read_queue(), restored_history),
+        }
 
     def record_decision(
         self,
@@ -487,6 +687,26 @@ def _event_hash(event: Mapping[str, Any]) -> str:
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
+def _reconcile_queue_events(
+    records: Sequence[Mapping[str, str]],
+    events: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    queue_ids = {str(record.get("evidence_id", "")) for record in records}
+    event_ids = {str(event.get("evidence_id", "")) for event in events}
+    decided_ids = {
+        str(event["evidence_id"])
+        for event in events
+        if event.get("event_type") == "decision" and event.get("evidence_id")
+    }
+    return {
+        "queue_records": len(queue_ids),
+        "events": len(events),
+        "decided_queue_records": len(queue_ids.intersection(decided_ids)),
+        "pending_queue_records": len(queue_ids - decided_ids),
+        "event_evidence_ids_not_in_queue": sorted(event_ids - queue_ids),
+    }
+
+
 def _parse_inspections(values: Sequence[str]) -> list[dict[str, str]]:
     parsed: list[dict[str, str]] = []
     for value in values:
@@ -552,6 +772,29 @@ def build_parser() -> argparse.ArgumentParser:
         help="Export actual decisions and their event history",
     )
     exporting.add_argument("--format", choices=("json", "csv"), default="json")
+
+    snapshot = subparsers.add_parser(
+        "snapshot",
+        help="Create a versioned, no-overwrite review-history snapshot",
+    )
+    snapshot.add_argument("--output", required=True, type=Path)
+
+    snapshot_check = subparsers.add_parser(
+        "verify-snapshot",
+        help="Verify snapshot structure and chain, optionally against an external SHA-256",
+    )
+    snapshot_check.add_argument("snapshot", type=Path)
+    snapshot_check.add_argument("--trusted-sha256")
+
+    restore = subparsers.add_parser(
+        "restore-snapshot",
+        help="Append a valid snapshot suffix after explicit confirmation",
+    )
+    restore.add_argument("snapshot", type=Path)
+    restore.add_argument("--confirm-restore", action="store_true")
+    restore.add_argument("--trusted-sha256")
+
+    subparsers.add_parser("status", help="Report chain integrity and queue reconciliation")
 
     decision = subparsers.add_parser("decision", help="Record one explicit human decision")
     decision.add_argument("evidence_id")
@@ -657,6 +900,24 @@ def main(argv: Sequence[str] | None = None) -> int:
                 else workbench.export_decisions_csv()
             )
             print(exported, end="")
+        elif args.command == "snapshot":
+            report = workbench.create_snapshot(args.output)
+            print(json.dumps(report, indent=2, sort_keys=True))
+        elif args.command == "verify-snapshot":
+            report = workbench.verify_snapshot(
+                args.snapshot,
+                trusted_sha256=args.trusted_sha256,
+            )
+            print(json.dumps(report, indent=2, sort_keys=True))
+        elif args.command == "restore-snapshot":
+            report = workbench.restore_snapshot(
+                args.snapshot,
+                confirmed=args.confirm_restore,
+                trusted_sha256=args.trusted_sha256,
+            )
+            print(json.dumps(report, indent=2, sort_keys=True))
+        elif args.command == "status":
+            print(json.dumps(workbench.status_report(), indent=2, sort_keys=True))
         elif args.command == "decision":
             event = workbench.record_decision(
                 evidence_id=args.evidence_id,

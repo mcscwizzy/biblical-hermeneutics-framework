@@ -297,6 +297,53 @@ test("overview shows six concise category cards and no evidence inventory", () =
   assert.deepEqual(openedSources, [sourcesEntry]);
 });
 
+test("overview explains a completed empty CKL result without judging passage significance", () => {
+  const data = projection({
+    passage: {reference: "1 Kings 2", book: "1 Kings", chapter: 2, verse_start: null, verse_end: null, scope: "chapter"},
+    coverage: [
+      {domain: "ckl", source_domain: "canonical_knowledge_library", state: "not_represented", query_status: "complete", query_returned_count: 0, projected_item_count: 0, reason_code: "no_eligible_records", missing_subdomains: [], description: "The completed lookup found no passage-eligible CKL records."},
+      {domain: "maps", source_domain: "passage_maps", state: "not_represented", query_status: "complete", query_returned_count: 0, projected_item_count: 0, reason_code: "no_eligible_records", missing_subdomains: [], description: "The completed map lookup returned no eligible records."},
+      {domain: "archaeology", source_domain: "archaeology_passage_resolver", state: "not_represented", query_status: "complete", query_returned_count: 0, projected_item_count: 0, reason_code: "no_eligible_records", missing_subdomains: [], description: "The completed archaeology lookup returned no eligible records."},
+    ],
+    sections: [
+      section("biblical_narrative"),
+      section("archaeology_ancient_history"),
+      section("biblical_geography"),
+      section("divine_council_cosmic_geography"),
+      section("themes_biblical_connections"),
+      section("people_events_relationships"),
+    ],
+    items: [],
+    connections: [],
+    related_passages: {state: "not_represented", query_status: "complete", authored_relationships: [], evidence_backed_bridges: []},
+  });
+  const root = explorer.renderOverview(data, {document: fakeDocument()});
+  const notice = descendants(root).find((element) => element.className === "narrative-explorer-empty-research");
+
+  assert.ok(notice);
+  assert.match(notice.textContent, /No eligible Evidence library research is currently available for 1 Kings 2/);
+  assert.match(notice.textContent, /limit in BHF's current coverage/i);
+  assert.match(notice.textContent, /does not imply that the passage lacks historical significance/i);
+  assert.match(notice.textContent, /Understand the Passage/);
+  assert.ok(descendants(root).some((element) => element.className === "narrative-explorer-understand-passage"));
+  assert.equal(descendants(root).filter((element) => element.className === "narrative-explorer-category-card").length, 6);
+});
+
+test("overview provides a collapsed, plain-language guide to recurring research terms", () => {
+  const root = explorer.renderOverview(projection(), {document: fakeDocument()});
+  const guide = descendants(root).find((element) => element.className === "narrative-explorer-terms-guide");
+
+  assert.ok(guide);
+  assert.equal(guide.tagName, "DETAILS");
+  assert.equal(guide.attributes.open, undefined);
+  assert.match(guide.textContent, /Textual witness/);
+  assert.match(guide.textContent, /Masoretic Text/);
+  assert.match(guide.textContent, /Septuagint/);
+  assert.match(guide.textContent, /redaction/i);
+  assert.match(guide.textContent, /lexical range/i);
+  assert.match(guide.textContent, /definitions explain terminology; they do not settle how a term applies/i);
+});
+
 test("overview discloses only applicable-anchor sourced child records without duplicating section or connection previews", () => {
   const kephale = {
     ...projection().items[0],

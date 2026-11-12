@@ -1,0 +1,67 @@
+{
+  "program": "ED-5 Discovery Experience",
+  "branch": "feat/ed5-discovery-experience",
+  "base_commit": "528b1593021f24fe98ff60d1533c7720f5755cd0",
+  "status": "branch_pushed; pull_request_creation_blocked_by_permissions",
+  "phase_status": {
+    "0_repository_baseline": "complete",
+    "1_reader_journey_evaluation": "complete_with_browser_environment_limit",
+    "2_evidence_discovery": "complete",
+    "3_scholarly_clarity": "complete",
+    "4_connection_continuity": "complete_scripted_and_static; browser_not_available",
+    "5_review_durability": "implementation_complete; isolated_regression_passed",
+    "6_source_transparency": "complete_static_and_existing_contract_review",
+    "7_pilot_evaluation": "scripted_suite_passed; browser_acceptance_unavailable",
+    "8_technical_governance_regression": "targeted_gates_passed; full_pytest_incomplete_at_25m",
+    "9_delivery": "branch_pushed; PR_not_created"
+  },
+  "baseline": {
+    "commit": "528b1593021f24fe98ff60d1533c7720f5755cd0",
+    "ckl_inventory_fingerprint": "f5a1dfffe97634dd1014e531a5a1cf1e1b2d15c65b1d96d656dde8aca4ec0b29",
+    "ckl_objects": 687,
+    "claims": 2329,
+    "typed_evidence_items": 1408,
+    "unique_source_ids": 2897,
+    "chapter_counts": {
+      "passage_specific": 1090,
+      "contextual_only": 56,
+      "entity_only": 2,
+      "no_eligible_material": 41,
+      "incomplete_or_unknown": 0
+    },
+    "human_review_queue": 99,
+    "human_review_events": 0,
+    "verified_bridges": 44,
+    "held_candidates": 7
+  },
+  "implementation_batches": [
+    {
+      "name": "Review snapshot, verification, append-only restore, and status reconciliation",
+      "commit": "8f2f4d0e",
+      "tests": ["tests/canonical_library/test_ed4_review_workbench.py: 15 passed, 6 subtests passed", "Combined ED-5 review and journey run: 16 passed, 6 subtests passed"]
+    },
+    {
+      "name": "Reader empty-coverage notice, collapsed terminology guide, and 12-case journey suite",
+      "commit": "deb06ac5",
+      "tests": ["npm test: 17 files passed", "tests/test_ed5_reader_evaluation.py: 1 passed; 12/12 cases; 10 unique pinned projected IDs", "ED-4 retrieval regressions: 8 passed; 14 subtests passed"]
+    }
+  ],
+  "unresolved": [
+    "Current desktop/mobile browser acceptance could not run because BHF_WEBDRIVER_URL and BHF_GUI_BASE_URL are unset and no local Chrome/ChromeDriver is available.",
+    "All 99 queue items still require independent human scholarly review.",
+    "Full repository pytest was interrupted at the 25-minute bound: 54 tests and 907 subtests passed, but the suite did not complete.",
+    "The GitHub connector rejected PR creation with HTTP 403 Resource not accessible by integration; gh is unauthenticated and no browser session is available."
+  ],
+  "review_integrity": {
+    "real_ledger_created_or_modified": false,
+    "synthetic_events_confined_to_temporary_test_fixtures": true,
+    "human_approval_recorded": false
+  },
+  "delivery": {
+    "pushed": true,
+    "pull_request_url": null,
+    "comparison_url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...feat/ed5-discovery-experience?expand=1",
+    "pull_request_creation_blocker": "GitHub integration returned 403 Resource not accessible by integration; gh is unauthenticated; no browser session is available.",
+    "merged_or_deployed": false
+  }
+}
