@@ -51,6 +51,22 @@
   const PHYSICAL_GEOGRAPHY = new Set([
     "physical_place", "physical_region", "political_territory", "route", "archaeological_site",
   ]);
+  const READER_TERM_DEFINITIONS = [
+    ["Textual witness", "A surviving manuscript or ancient translation that preserves a form of a passage."],
+    ["Masoretic Text", "A received Hebrew textual tradition transmitted with vocalization and reading notes by Masoretic scribes."],
+    ["Septuagint", "Ancient Greek translations of Jewish Scriptures; wording and textual history vary by book."],
+    ["Critical apparatus", "An edition's notes comparing readings found in surviving manuscripts and versions."],
+    ["Redaction", "A scholarly proposal about how material was arranged or shaped during a text's history."],
+    ["Reception history", "How later readers or writers interpreted, quoted, adapted, or reused an earlier text."],
+    ["Literary convention", "A recurring form or writing practice; identifying one does not prove a particular author's intent."],
+    ["Parallelism", "Related lines that repeat, develop, or contrast ideas; the exact structure can still be debated."],
+    ["Lexical range", "The meanings a word can carry across its uses; the verse's context helps identify which sense fits."],
+    ["Historical reconstruction", "A modern proposal about a past event or setting, built from surviving evidence and limited where that evidence is incomplete."],
+    ["Ancient Near East", "A broad label for ancient societies around the eastern Mediterranean and neighboring regions; comparison gives context but similarity alone does not show borrowing."],
+    ["Divine Council", "A scholarly label for a heavenly assembly described in some ancient texts; interpretations of those scenes can differ."],
+    ["Intertextual relationship", "A proposed relationship between passages, from an explicit quotation to a possible echo; each case depends on its evidence."],
+    ["Disputed reading", "A wording or meaning with competing proposals; the linked record shows its sources, uncertainty, and review status."],
+  ];
 
   function urlFor(selection) {
     const book = String(selection?.book || "").trim();
@@ -893,6 +909,10 @@
     const coverageBySource = new Map((Array.isArray(projection?.coverage) ? projection.coverage : []).map((entry) => [entry.source_domain, entry]));
 
     if (view.kind === "overview" || !definition) {
+      const cklCoverage = coverageBySource.get("canonical_knowledge_library");
+      if (cklCoverage?.state === "not_represented" && cklCoverage.query_status === "complete") {
+        rootElement.append(renderEmptyResearchNotice(document, passage));
+      }
       const intro = element(document, "section", "narrative-explorer-discovery");
       appendTextElement(document, intro, "h4", "Follow a Connection");
       appendTextElement(document, intro, "p", "Explore passage relationships recorded in CKL or documented through CKL evidence. Similarity alone is not a verified connection.");
@@ -958,6 +978,7 @@
       sourceEntry.addEventListener("click", (event) => options.onOpenResearchSources?.(event.currentTarget || sourceEntry));
       sourceNavigation.append(sourceEntry);
       rootElement.append(sourceNavigation);
+      rootElement.append(renderTermGuide(document));
       const additionalItems = additionalSourcedRecords(
         [...itemsById.values()],
         connectionsByItem,
@@ -1005,6 +1026,37 @@
       hidePreviews: definition.id === "themes_biblical_connections" && hasConnectionPreview,
     }));
     return rootElement;
+  }
+
+  function renderEmptyResearchNotice(document, passage) {
+    const notice = element(document, "section", "narrative-explorer-empty-research");
+    notice.setAttribute("aria-label", "Evidence library coverage");
+    appendTextElement(document, notice, "h4", "Research coverage in BHF");
+    appendTextElement(
+      document,
+      notice,
+      "p",
+      `No eligible Evidence library research is currently available for ${passage || "this passage"}. This is a limit in BHF's current coverage; it does not imply that the passage lacks historical significance. You can still read the passage and open Understand the Passage for broader context.`,
+    );
+    return notice;
+  }
+
+  function renderTermGuide(document) {
+    const details = element(document, "details", "narrative-explorer-terms-guide");
+    appendTextElement(document, details, "summary", "Plain-language guide to research terms");
+    appendTextElement(
+      document,
+      details,
+      "p",
+      "These definitions explain terminology; they do not settle how a term applies to a passage.",
+    );
+    const terms = element(document, "dl", "narrative-explorer-term-list");
+    READER_TERM_DEFINITIONS.forEach(([term, explanation]) => {
+      appendTextElement(document, terms, "dt", term);
+      appendTextElement(document, terms, "dd", explanation);
+    });
+    details.append(terms);
+    return details;
   }
 
   function normalizeNarrativeView(value) {
