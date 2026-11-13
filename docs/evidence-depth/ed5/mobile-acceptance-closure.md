@@ -2,10 +2,10 @@
 
 ## Status
 
-**BLOCKED — ED-5 passes in real remote Chrome, but the broader GUI regression
-stops on three existing journey tests.** The shared browser-connectivity failure
-is isolated and fixed. Do not mark the GUI gate ready until the remaining tests
-work with the current Narrative Explorer UI and the bounded regression completes.
+**BLOCKED — the shared browser-connectivity failure is fixed, and all ED-5 cases
+pass locally after a viewport correction. The latest Actions runs still need to
+verify that correction in Chrome 157, and the bounded broader GUI regression
+stops on three journey tests.**
 
 ## Scope and protections
 
@@ -73,8 +73,19 @@ reported Chrome **155.0.8059.79** and ChromeDriver **155.0.8059.79**, navigated 
 the app, and quit cleanly. The dynamic fixture smoke passed against
 `http://gui-tests:<ephemeral-port>`.
 
-The ED-5 acceptance file ran by itself after the connectivity gates and passed:
-**5 passed in 158.37 seconds**. Each case checked the effective
+Actions runs `43501993153` and `43502606551` both passed service startup, the
+Selenium-container route probe, the fail-first browser smoke, and the dynamic
+fixture smoke. Each used Chrome/ChromeDriver **157.0.8103.38**. The desktop
+1440px acceptance case passed, but both runs failed while clicking the Narrative
+Explorer entry in the 390px case. Chrome reported intercepted clicks at
+`(195, 888)` and `(195, 1221)` while the test had changed CDP metrics to 390×844
+but left the headless window at 1440×1400. Those runs used code before the
+viewport correction below.
+
+`_set_viewport()` now sets the actual headless window to the requested width and
+height before applying CDP device metrics. After that change, the ED-5 file ran
+by itself locally and passed: **5 passed in 141.53 seconds** using remote
+Chrome/ChromeDriver **155.0.8059.79**. Each case checked the effective
 `window.innerWidth` and `document.documentElement.clientWidth` against the
 requested width, so browser chrome or device emulation did not silently change
 the CSS viewport.
@@ -101,9 +112,10 @@ uploads its screenshots and separate ED-5/regression JUnit reports.
 
 ## Bounded broader regression
 
-After the connectivity and ED-5 gates passed, the non-slow GUI suite ran with a
+After the corrected ED-5 cases passed locally, the non-slow GUI suite ran with a
 60-minute command timeout and `--maxfail=3`. It stopped at the configured limit:
-**3 failed, 16 passed in 680.92 seconds**. No network refusal occurred.
+**3 failed, 16 passed in 678.82 seconds**. No network refusal or viewport failure
+occurred.
 
 The failures are in three journey tests whose current entry selectors are not
 present in the reader-first screen captured by Chrome:
@@ -130,8 +142,10 @@ The Actions job has a 110-minute ceiling; the broad run stops after three
 failures and has its own JUnit report. This keeps a broken browser connection
 from generating a large collection of setup errors.
 
-**Closure remains BLOCKED** on the three broader GUI journey failures listed
-above. The real-browser connectivity and ED-5 mobile checks themselves pass.
+**Closure remains BLOCKED** pending the Chrome 157 Actions rerun with the
+viewport correction and resolution of the three broader GUI journey failures
+listed above. The connectivity and ED-5 checks pass locally in real remote
+Chrome.
 
 ## Other validation carried forward
 

@@ -40,6 +40,9 @@ EXPECTED_TERMS = [
 
 
 def _set_viewport(driver, width: int, height: int, mobile: bool) -> dict:
+    # Keep Chrome's physical headless window aligned with the emulated CSS
+    # viewport so native clicks cannot target the old desktop-sized surface.
+    driver.set_window_size(width, height)
     driver.execute_cdp_cmd(
         "Emulation.setDeviceMetricsOverride",
         {"width": width, "height": height, "deviceScaleFactor": 1, "mobile": mobile},
@@ -165,10 +168,7 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
     driver, base_url, artifacts_dir, width, height, mobile, label
 ):
     browser = _assert_chromium(driver)
-    driver.execute_cdp_cmd(
-        "Emulation.setDeviceMetricsOverride",
-        {"width": width, "height": height, "deviceScaleFactor": 1, "mobile": mobile},
-    )
+    _set_viewport(driver, width, height, mobile)
     wait = WebDriverWait(driver, 90)
     HomePage(driver, wait, base_url).open().wait_loaded()
     viewport = _set_viewport(driver, width, height, mobile)
