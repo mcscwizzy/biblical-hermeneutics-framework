@@ -82,6 +82,7 @@ def test_kephale_additional_record_is_passage_scoped_and_readable(
         const toggle = document.querySelector('.narrative-explorer-additional-records-toggle');
         const bounds = toggle.getBoundingClientRect();
         return {
+          innerWidth: window.innerWidth,
           viewportWidth: document.documentElement.clientWidth,
           documentWidth: document.documentElement.scrollWidth,
           toggleLeft: bounds.left,
@@ -91,6 +92,8 @@ def test_kephale_additional_record_is_passage_scoped_and_readable(
         };
         """
     )
+    assert layout["innerWidth"] == width, layout
+    assert layout["viewportWidth"] == width, layout
     assert layout["documentWidth"] <= layout["viewportWidth"], layout
     assert layout["toggleLeft"] >= 0 and layout["toggleRight"] <= layout["viewportWidth"], layout
     assert layout["toggleHeight"] >= 44, layout

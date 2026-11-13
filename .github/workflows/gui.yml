@@ -3,7 +3,7 @@ name: GUI tests
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, fix/ed5-mobile-acceptance]
 
 jobs:
   gui:
@@ -14,6 +14,14 @@ jobs:
       - name: Prepare artifacts directory
         run: mkdir -p tests/gui/artifacts
 
+      - name: Inspect GUI runtime data mount
+        run: |
+          if [ -e .bhf ]; then
+            stat -c 'GUI data mount owner=%u:%g mode=%a' .bhf
+          else
+            echo 'GUI data mount is absent before Compose creates it'
+          fi
+
       - name: Start GUI stack and run browser tests
         run: docker compose -f docker-compose.yml -f docker-compose.selenium.yml up --build --abort-on-container-exit --exit-code-from gui-tests gui-tests
 
@@ -23,8 +31,8 @@ jobs:
           BHF_GUI_ARTIFACTS_DIR: tests/gui/artifacts
         run: python scripts/capture_gui_diagnostics.py
 
-      - name: Upload screenshots and browser logs
-        if: failure()
+      - name: Upload browser evidence and failure diagnostics
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: gui-test-artifacts

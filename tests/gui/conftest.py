@@ -325,7 +325,7 @@ def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_u
         try:
             browser = webdriver.Remote(command_executor=browser_remote_url, options=options)
         except WebDriverException as exc:  # pragma: no cover - depends on external selenium grid
-            pytest.skip(f"Remote Chrome WebDriver is unavailable: {exc}")
+            pytest.fail(f"Configured remote Chrome WebDriver is unavailable: {exc}")
     else:
         try:
             browser = webdriver.Chrome(options=options)

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 import re
+import stat
 import subprocess
 from pathlib import Path
 from typing import Sequence
@@ -70,6 +71,30 @@ def _record(artifact_dir: Path, name: str, command: Sequence[str]) -> None:
     print(console_output, end="" if console_output.endswith("\n") else "\n", flush=True)
 
 
+def _runtime_filesystem_summary() -> str:
+    """Record only presence and metadata for known runtime data paths."""
+
+    candidates = (
+        REPOSITORY_ROOT / ".bhf",
+        REPOSITORY_ROOT / ".bhf/lexicon.sqlite",
+        REPOSITORY_ROOT / ".bhf/study.sqlite",
+        REPOSITORY_ROOT / ".bhf/commentary.sqlite",
+    )
+    lines = []
+    for path in candidates:
+        try:
+            metadata = path.stat()
+        except FileNotFoundError:
+            lines.append(f"{path.name}: missing")
+            continue
+        kind = "directory" if stat.S_ISDIR(metadata.st_mode) else "file"
+        lines.append(
+            f"{path.name}: {kind} uid={metadata.st_uid} gid={metadata.st_gid} "
+            f"mode={stat.S_IMODE(metadata.st_mode):04o} bytes={metadata.st_size}"
+        )
+    return "\n".join(lines) + "\n"
+
+
 def capture(artifact_dir: Path | None = None) -> None:
     """Capture compose state, application logs, and health-check output."""
 
@@ -79,6 +104,12 @@ def capture(artifact_dir: Path | None = None) -> None:
     if not output_dir.is_absolute():
         output_dir = REPOSITORY_ROOT / output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    filesystem_path = output_dir / "host-runtime-filesystem.txt"
+    filesystem_path.write_text(_runtime_filesystem_summary(), encoding="utf-8")
+    filesystem_path.chmod(0o600)
+    print("--- host-runtime-filesystem.txt ---", flush=True)
+    print(filesystem_path.read_text(encoding="utf-8"), end="", flush=True)
 
     _record(output_dir, "docker-compose-ps.txt", [*COMPOSE, "ps", "-a"])
     _record(output_dir, "bhf-web.log", [*COMPOSE, "logs", "--no-color", "bhf-web"])
@@ -90,7 +121,8 @@ def capture(artifact_dir: Path | None = None) -> None:
             "docker",
             "inspect",
             "--format",
-            "{{.Name}} status={{.State.Status}} exit_code={{.State.ExitCode}} oom_killed={{.State.OOMKilled}} error={{.State.Error}} health={{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}} {{if .State.Health}}{{range .State.Health.Log}}{{printf \"health_start=%s health_exit=%d health_output=%s\\n\" .Start .ExitCode .Output}}{{end}}{{end}}",
+            "{{.Name}} status={{.State.Status}} exit_code={{.State.ExitCode}} oom_killed={{.State.OOMKilled}} error={{.State.Error}} health={{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}} {{if .State.Health}}{{range .State.Health.Log}}{{printf \"health_start=%s health_exit=%d health_output=%s\\n\" .Start .ExitCode .Output}}{{end}}{{end}} "
+            "{{if .Mounts}}{{range .Mounts}}{{printf \"mount_source=%s mount_destination=%s rw=%t\\n\" .Source .Destination .RW}}{{end}}{{end}}",
             *filter(None, _run([*COMPOSE, "ps", "-aq"])[1].splitlines()),
         ],
     )

@@ -19,6 +19,7 @@ def test_jonah_handoff_other_viewports(driver, base_url, width, mobile, artifact
 
 
 def _journey(driver, base_url, width, mobile, artifacts_dir):
+    assert driver.capabilities.get("browserName", "").lower() == "chrome", driver.capabilities
     driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
         "width": width, "height": 844, "deviceScaleFactor": 1, "mobile": mobile,
     })
@@ -71,6 +72,7 @@ def _journey(driver, base_url, width, mobile, artifacts_dir):
     assert route_readability["clipped"] == [], route_readability
     metrics = driver.execute_script("return {width: innerWidth, client: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth}")
     assert metrics["width"] == width
+    assert metrics["client"] == width
     assert metrics["scroll"] <= metrics["client"]
     print(f"NE11H_PASSAGE_LAYOUT_{width}=" + str({
         "document": metrics,
