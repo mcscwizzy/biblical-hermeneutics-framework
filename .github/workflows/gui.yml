@@ -17,6 +17,12 @@ jobs:
       - name: Start GUI stack and run browser tests
         run: docker compose -f docker-compose.yml -f docker-compose.selenium.yml up --build --abort-on-container-exit --exit-code-from gui-tests gui-tests
 
+      - name: Capture stack diagnostics before cleanup
+        if: failure()
+        env:
+          BHF_GUI_ARTIFACTS_DIR: tests/gui/artifacts
+        run: python scripts/capture_gui_diagnostics.py
+
       - name: Upload screenshots and browser logs
         if: failure()
         uses: actions/upload-artifact@v4
