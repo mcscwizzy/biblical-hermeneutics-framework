@@ -2,107 +2,152 @@
 
 ## Status
 
-**BLOCKED — browser acceptance remains unverified.** The corrected GitHub Actions
-GUI job is still running its Compose/browser step. No completed-run logs or browser
-evidence artifacts are available yet. Do not treat this gate as passed until the
-1440px, 390px, and 320px Chromium cases complete and report their effective CSS
-viewport widths.
+**BLOCKED — ED-5 passes in real remote Chrome, but the broader GUI regression
+stops on three existing journey tests.** The shared browser-connectivity failure
+is isolated and fixed. Do not mark the GUI gate ready until the remaining tests
+work with the current Narrative Explorer UI and the bounded regression completes.
 
-## Baseline and scope
+## Scope and protections
 
-- ED-5 PR #80 was merged into `master` at `6e33d16e891614f6527fd9ede943cb1a7c5c1913`.
-- Work is on `fix/ed5-mobile-acceptance`, based on that merge commit.
-- No CKL records, source identities, held relationships, or human-review states
-  were changed. No real review decisions were written.
-- No Vercel deployment was triggered. The existing `master` production setting
-  is preserved; Vercel reported zero deployments for this branch's commits.
+- Work remains on `fix/ed5-mobile-acceptance`, based on ED-5 PR #80's merge into
+  `master` at `6e33d16e891614f6527fd9ede943cb1a7c5c1913`.
+- No CKL records, source identities, held relationships, review states, or
+  review decisions were changed.
+- `vercel.json` is unchanged. Its `master` production deployment setting remains
+  enabled and the `fix/ed5-mobile-acceptance` deployment guard remains disabled.
+  No deployment was requested or triggered.
 
-## GUI startup investigation
+## Actions investigation and root cause
 
-The original failed GUI run was `43218071067`. It built the `bhf-web` image but
-did not preserve container diagnostics before teardown. The failure was
-reproduced in GUI run `43350244152` (job `131639279871`), whose diagnostic artifact
-was uploaded before cleanup:
+The earlier startup failure was separate and remains fixed: run `43218071067`
+did not retain diagnostics, and `43350244152` showed Compose creating the absent
+`.bhf` mount as `root:root` mode `0755`. The UID/GID 1000 web process could not
+seed `.lexicon.sqlite`. The Actions workflow now prepares `.bhf` as UID/GID 1000
+before Compose; the two runs below reached healthy app and Selenium services.
 
-- Compose created the absent `.bhf` bind-mount directory as `root:root` with
-  mode `0755`.
-- The web container runs as UID/GID 1000. Its entrypoint could not seed the
-  lexical database and exited with status 1:
-  `cp: cannot create regular file '/app/.bhf-data/.lexicon.sqlite.tmp.1': Permission denied`.
-- The lexical database was missing, `bhf-web` was exited/unhealthy, and Selenium
-  tests did not begin. This was a filesystem ownership failure, not a missing
-  runtime setting or failed health-check dependency.
+Completed GUI runs `43350876711` and `43359040540` both reached healthy
+`bhf-web` and Selenium Chrome containers, then failed with **2 passed and 156
+setup errors**. The first browser setup error was `net::ERR_CONNECTION_REFUSED`
+while `_seed_browser_offline_fixture()` navigated to `/offline`; later Selenium
+session-creation timeouts followed.
 
-The minimal fix prepares `.bhf` in the Actions runner as UID/GID 1000 with mode
-`0755` before Compose starts. Health checks and healthy-service dependencies stay
-enabled. The workflow now captures `docker compose ps -a`, no-color web logs,
-health state/logs, mount metadata, and host directory ownership before cleanup
-on failure. Diagnostic filtering redacts configuration values and credentials.
+The setup error was caused by `tests/gui/ne11d1/conftest.py::base_url` (and the
+shared GUI app fixture) binding an ephemeral Uvicorn test server to
+`127.0.0.1` inside `gui-tests`. Remote Chrome is in a separate container, where
+`127.0.0.1` is its own loopback interface. It could not reach the server. The
+pytest driver fixture also only called `quit()` after `yield`, so an exception
+while seeding `/offline` skipped cleanup and left failed setup sessions behind.
+That session leak explains the subsequent slot/session timeouts; it was not the
+initial connectivity failure.
 
-Corrected run `43350876711` (job `131641351956`, tested code SHA
-`ea6c0ed94bbbaaafb984b53f6713984a1fc5d9ed`) passed checkout, artifact-directory,
-and writable-mount preparation. At `2026-11-13 03:22 UTC`, its combined Compose
-and browser-test step remained in progress; the browser version, effective
-viewport widths, test outcomes, and screenshots were not yet available.
-At `2026-11-13 03:25 UTC`, that step was still in progress and had no published
-logs or artifacts.
+The app-service probes established that the shared Compose network works:
 
-## Browser matrix
+| Probe | `gui-tests` | `selenium-chrome` |
+| --- | --- | --- |
+| `bhf-web` DNS | `172.20.0.2` | `172.20.0.2` |
+| TCP `bhf-web:8080` | Connected | Connected |
+| `/api/health` | HTTP 200, `status=ok` | HTTP 200, `status=ok` |
+| `/offline` | HTTP 200 | HTTP 200 |
+| HTTP(S)/ALL proxy variables | Unset | Unset |
 
-The repeatable Selenium suite uses the existing `selenium/standalone-chrome`
-service. Each ED-5 case asserts `browserName == Chrome`, records the Chrome and
-ChromeDriver versions, and checks both `window.innerWidth` and
-`document.documentElement.clientWidth` before counting the viewport as valid.
+The application log reports Uvicorn listening on `0.0.0.0:8080`. One remote
+Chrome session was created and navigated to `/api/health` and `/offline`; both
+completed with HTTP 200 and `/offline` reached `document.readyState=complete`.
+The browser capabilities contained no proxy endpoint. This separates the
+working service network/browser from the incorrectly scoped fixture URL.
 
-| Requested CSS width | `window.innerWidth` | `documentElement.clientWidth` | Result / evidence |
+The test server endpoint helper now keeps `127.0.0.1` for local Chrome and binds
+remote-browser fixture servers to `0.0.0.0`, addressing them as
+`http://gui-tests:<ephemeral-port>`. A fail-first utility and a Selenium fixture
+smoke run before ED-5 or the broad suite. Driver setup now quits a partially
+initialized browser on any setup exception. The Actions job starts the app and
+Chrome as healthy services, records DNS/TCP/proxy/HTTP probes from the Chrome
+container, and captures Selenium logs with failure diagnostics.
+
+## Remote browser and ED-5 results
+
+The connectivity utility was executed inside `gui-tests`; the explicit route
+probe was also executed inside `selenium-chrome`. A single remote Chrome session
+reported Chrome **155.0.8059.79** and ChromeDriver **155.0.8059.79**, navigated to
+the app, and quit cleanly. The dynamic fixture smoke passed against
+`http://gui-tests:<ephemeral-port>`.
+
+The ED-5 acceptance file ran by itself after the connectivity gates and passed:
+**5 passed in 158.37 seconds**. Each case checked the effective
+`window.innerWidth` and `document.documentElement.clientWidth` against the
+requested width, so browser chrome or device emulation did not silently change
+the CSS viewport.
+
+| Requested width | `window.innerWidth` | `clientWidth` | Result |
 | ---: | ---: | ---: | --- |
-| 1440px | Pending | Pending | Unverified; corrected Actions run still active |
-| 390px | Pending | Pending | Unverified; corrected Actions run still active |
-| 320px | Pending | Pending | Unverified; corrected Actions run still active |
+| 1440px | 1440px | 1440px | Pass |
+| 390px | 390px | 390px | Pass |
+| 320px | 320px | 320px | Pass |
 
-Browser/driver versions: **pending completed-run output**.
+The five cases cover the empty research notice and terminology guide at all
+three widths, plus the Genesis 12 exact-record source disclosure at 1440px and
+390px. Assertions passed for native disclosure behavior, Enter/Space keyboard
+operation, visible focus, reduced motion, 44px minimum targets, 4.5:1 text
+contrast, long-definition readability, and horizontal-overflow bounds. Browser
+and driver versions were recorded by the tests.
 
-The GUI test writes light/dark collapsed and expanded screenshots for each width
-to `tests/gui/artifacts/` for the Actions artifact. No acceptance screenshots
-are available from the active run yet.
+I inspected the generated desktop 1440px and mobile 390px/320px expanded-guide
+screenshots, plus the Genesis 12 mobile source disclosure. The layouts fit their
+CSS widths, keep the mobile navigation visible, and show the expanded evidence
+in the passage panel without horizontal clipping. The local screenshots and
+JUnit output are generated evidence and are not committed; the Actions job
+uploads its screenshots and separate ED-5/regression JUnit reports.
 
-## Repeatable coverage added
+## Bounded broader regression
 
-`tests/gui/ne11d1/test_ed5_mobile_acceptance.py` adds these browser cases:
+After the connectivity and ED-5 gates passed, the non-slow GUI suite ran with a
+60-minute command timeout and `--maxfail=3`. It stopped at the configured limit:
+**3 failed, 16 passed in 680.92 seconds**. No network refusal occurred.
 
-- `test_ed5_empty_notice_and_terminology_guide_acceptance` at 1440px, 390px,
-  and 320px.
-- `test_genesis_12_source_disclosure_stays_attached_to_exact_record` at 1440px
-  and 390px.
+The failures are in three journey tests whose current entry selectors are not
+present in the reader-first screen captured by Chrome:
 
-The ED-5 cases verify the completed-empty 1 Kings 2 notice, absence of that
-notice for failed and partial CKL states, the collapsed guide and all 14 terms,
-native disclosure semantics, Tab/Enter/Space behavior, visible focus, reduced
-motion, light/dark contrast, 44px minimum targets, long-definition readability,
-and document/element horizontal overflow. They log browser versions and actual
-viewport metrics. The collected GUI suite also includes regression journeys for
-1 Corinthians 11:3, Jonah 1:17 / Matthew 12:40, and return-to-origin navigation.
-The Genesis 12 source disclosures are checked at 1440px and 390px.
+1. `test_fresh_matthew_handoff` waits for `_connection_action()` to find the old
+   `.companion-discovery-card` / `data-presentation-action` controls.
+2. `test_psalm_22_generic_cross_references_do_not_promote_held_bridge` waits for
+   the old `[data-companion-resource="cross_references"]` control.
+3. `test_real_jonah_verification_interrupted_by_chapter_change` also waits for
+   `_connection_action()` and its old companion discovery controls.
 
-The GUI workflow runs the non-slow suite for both pull requests and pushes to
-`fix/ed5-mobile-acceptance`. Configured remote Chrome failures now fail the test
-instead of being skipped. Firefox cannot satisfy these viewport cases.
+The current reader-first UI exposes the passage relationships through Narrative
+Explorer. These test failures need review against that current flow while
+retaining their CKL identity, held-bridge, cancellation, and destination
+assertions. They were not hidden or weakened as part of the connectivity fix.
+The broad suite is incomplete; its JUnit summary and failure screenshots were
+inspected locally.
 
-## Completed checks
+## CI gate and next step
 
-- Frontend: `npm test` — 17 test files passed.
-- Reader/API/projection/curation regressions and diagnostics — 572 passed.
-- Release/source-integrity/NE-9C/NE-10 compatibility set — 73 passed,
-  13 subtests passed.
-- Framework validation — 94 modules valid.
-- CKL strict validation — 687 valid objects, zero errors, 14 existing warnings.
-- Current NE-9C compatibility validation — passed; 3,925 reviewed relationships,
+The GUI Compose command now orders the standalone route/browser smoke, fixture
+connectivity test, ED-5 acceptance file, and then the bounded non-slow regression.
+The Actions job has a 110-minute ceiling; the broad run stops after three
+failures and has its own JUnit report. This keeps a broken browser connection
+from generating a large collection of setup errors.
+
+**Closure remains BLOCKED** on the three broader GUI journey failures listed
+above. The real-browser connectivity and ED-5 mobile checks themselves pass.
+
+## Other validation carried forward
+
+The following checks were recorded for the ED-5 branch before this connectivity
+work and were not rerun because no framework, CKL, or frontend implementation
+code changed:
+
+- `npm test`: 17 test files passed.
+- Reader/API/projection/curation and diagnostics: 572 passed.
+- Release/source-integrity/NE-9C/NE-10 compatibility set: 73 passed, with 13
+  subtests passed.
+- Framework validation: 94 modules valid.
+- CKL strict validation: 687 valid objects, zero errors, and 14 existing
+  warnings.
+- NE-9C compatibility validation: passed; 3,925 reviewed relationships,
   4,061 inventory rows, 433 curated runtime identities, 44 bridges, and 7 held
   candidates; protected hashes remained stable.
-- GUI test collection — 158 cases collected, including the ED-5 cases above.
-- `git diff --check` — passed.
-
-Local Chromium and Docker execution were unavailable, so the browser run depends
-on GitHub Actions. The corrected Actions run is the only outstanding acceptance
-evidence; until it completes successfully and its artifacts are inspected, the
-release recommendation remains **BLOCKED**.
+- Current GUI collection: 158 cases, including ED-5 acceptance.
+- Connectivity-gate, driver-cleanup, endpoint-selection, and Docker context
+  tests for this change: 10 passed in 0.87 seconds.

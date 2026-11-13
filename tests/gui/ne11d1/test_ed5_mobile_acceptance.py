@@ -52,6 +52,30 @@ def _set_viewport(driver, width: int, height: int, mobile: bool) -> dict:
     return metrics
 
 
+def _open_narrative_explorer(driver, wait):
+    if driver.execute_script("return window.innerWidth <= 900"):
+        panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+        state = panel.get_attribute("data-companion-state")
+        if state == "peek":
+            driver.find_element(
+                By.CSS_SELECTOR,
+                '.companion-peek[data-companion-state-control="study"]',
+            ).click()
+            wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+        elif state == "closed":
+            driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+            wait.until(lambda page: page.execute_script(
+                "return document.body.dataset.appSection === 'explore';"
+            ))
+
+    entry = wait.until(lambda page: next((button for button in page.find_elements(
+        By.CSS_SELECTOR,
+        '[data-testid="companion-narrative-explorer"]',
+    ) if button.is_displayed() and button.is_enabled()), False))
+    entry.click()
+    return wait.until(lambda page: page.find_element(By.CSS_SELECTOR, ".narrative-explorer"))
+
+
 def _assert_chromium(driver) -> dict:
     capabilities = driver.capabilities
     assert capabilities.get("browserName", "").lower() == "chrome", capabilities
@@ -154,8 +178,7 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
     wait.until(lambda page: page.execute_script(
         "return window.BHFStudySelection?.getState?.().reference === '1 Kings 2';"
     ))
-    driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
-    explorer = wait.until(lambda page: page.find_element(By.CSS_SELECTOR, ".narrative-explorer"))
+    explorer = _open_narrative_explorer(driver, wait)
     notice = wait.until(lambda page: page.find_element(
         By.CSS_SELECTOR,
         ".narrative-explorer-empty-research",
@@ -183,8 +206,13 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
     assert summary.tag_name.lower() == "summary"
     assert guide.get_attribute("open") is None
     assert summary.text == "Plain-language guide to research terms"
-    assert "These definitions explain terminology; they do not settle how a term applies to a passage." in guide.text
-    assert [term.text for term in guide.find_elements(By.CSS_SELECTOR, "dt")] == EXPECTED_TERMS
+    guide_text = driver.execute_script("return arguments[0].textContent", guide)
+    assert "These definitions explain terminology; they do not settle how a term applies to a passage." in guide_text
+    guide_terms = driver.execute_script(
+        "return Array.from(arguments[0].querySelectorAll('dt'), term => term.textContent.trim())",
+        guide,
+    )
+    assert guide_terms == EXPECTED_TERMS
     assert len(guide.find_elements(By.CSS_SELECTOR, "dd")) == 14
     assert viewport["innerWidth"] == width
 
@@ -342,8 +370,7 @@ def test_genesis_12_source_disclosure_stays_attached_to_exact_record(
     HomePage(driver, wait, base_url).open().wait_loaded()
     _select_verses(driver, wait, "Genesis", 12, [1, 2, 3])
     assert _set_viewport(driver, width, height, mobile)["clientWidth"] == width
-    driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
-    explorer = wait.until(lambda page: page.find_element(By.CSS_SELECTOR, ".narrative-explorer"))
+    explorer = _open_narrative_explorer(driver, wait)
     explorer.find_element(By.CSS_SELECTOR, '[data-section-id="biblical_narrative"]').click()
     section = wait.until(lambda page: page.find_element(
         By.CSS_SELECTOR,

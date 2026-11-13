@@ -34,6 +34,11 @@ class DockerComposeTests(unittest.TestCase):
         self.assertFalse(Path("docker/nginx/local-https.conf").exists())
         self.assertFalse(Path("scripts/generate-local-cert.sh").exists())
 
+    def test_docker_build_context_excludes_local_agent_artifacts(self):
+        ignored = Path(".dockerignore").read_text(encoding="utf-8").splitlines()
+
+        self.assertIn(".superpowers/", ignored)
+
 
 if __name__ == "__main__":
     unittest.main()

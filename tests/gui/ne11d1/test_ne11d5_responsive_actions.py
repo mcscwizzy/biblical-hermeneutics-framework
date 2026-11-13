@@ -13,6 +13,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.network import gui_test_server_endpoint
 
 
 VIEWPORTS = [(320, True), (390, True), (768, False), (1440, False)]
@@ -38,10 +39,11 @@ def explorer_disabled_base_url(base_url):
     with socket.socket() as listener:
         listener.bind(("127.0.0.1", 0))
         port = listener.getsockname()[1]
-    base = f"http://127.0.0.1:{port}"
+    bind_host, base = gui_test_server_endpoint(port)
+    print(f"GUI_TEST_SERVER_BIND={bind_host} URL={base}", flush=True)
     server = Server(Config(
         app,
-        host="127.0.0.1",
+        host=bind_host,
         port=port,
         log_level="warning",
         access_log=False,

@@ -113,6 +113,7 @@ def capture(artifact_dir: Path | None = None) -> None:
 
     _record(output_dir, "docker-compose-ps.txt", [*COMPOSE, "ps", "-a"])
     _record(output_dir, "bhf-web.log", [*COMPOSE, "logs", "--no-color", "bhf-web"])
+    _record(output_dir, "selenium-chrome.log", [*COMPOSE, "logs", "--no-color", "selenium-chrome"])
 
     _record(
         output_dir,
