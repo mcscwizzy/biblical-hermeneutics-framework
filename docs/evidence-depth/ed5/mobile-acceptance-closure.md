@@ -13,9 +13,10 @@ work with the current Narrative Explorer UI and the bounded regression completes
   `master` at `6e33d16e891614f6527fd9ede943cb1a7c5c1913`.
 - No CKL records, source identities, held relationships, review states, or
   review decisions were changed.
-- `vercel.json` is unchanged. Its `master` production deployment setting remains
-  enabled and the `fix/ed5-mobile-acceptance` deployment guard remains disabled.
-  No deployment was requested or triggered.
+- The connectivity commit did not edit `vercel.json`. The branch comparison
+  includes its existing `fix/ed5-mobile-acceptance: false` deployment guard;
+  keep that guard in the PR because removing it could enable branch deployments.
+  The base file has `master: false`. No deployment was requested or triggered.
 
 ## Actions investigation and root cause
 
