@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/bhf/ed6/session-record.schema.json",
+  "title": "BHF ED-6 de-identified reader session record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_origin",
+    "participant_code",
+    "session_status",
+    "device_class",
+    "study_experience_band",
+    "quote_consent",
+    "assigned_task_ids",
+    "tasks",
+    "post_session"
+  ],
+  "properties": {
+    "schema_version": {"const": "ed6-reader-pilot-v1"},
+    "record_origin": {"enum": ["participant_session", "synthetic_test_fixture"]},
+    "participant_code": {"type": "string", "pattern": "^P[0-9]{2,3}$"},
+    "session_status": {"enum": ["complete", "incomplete", "stopped"]},
+    "device_class": {"enum": ["desktop", "mobile", "tablet", "unknown"]},
+    "study_experience_band": {"enum": ["regular", "some", "limited_or_none", "prefer_not_to_say", null]},
+    "quote_consent": {"type": "boolean"},
+    "assigned_task_ids": {"type": "array", "minItems": 1, "maxItems": 4, "uniqueItems": true, "items": {"$ref": "#/$defs/taskId"}},
+    "tasks": {"type": "array", "items": {"$ref": "#/$defs/task"}},
+    "post_session": {"$ref": "#/$defs/postSession"}
+  },
+  "$defs": {
+    "taskId": {"enum": ["discover-genesis6", "understand-genesis12", "interpret-psalm82", "verify-deuteronomy32", "verify-psalm145", "continue-jonah-matthew", "verify-1corinthians11", "retrieve-1john3", "empty-1kings2"]},
+    "observationStatus": {"enum": ["yes", "partial", "no", "not_applicable", "not_observed"]},
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_id", "task_type", "completion", "assistance", "duration_minutes", "verification", "follow_up_question_emerged", "observed_problems", "confusing_language", "direct_observations", "facilitator_interpretations"],
+      "properties": {
+        "task_id": {"$ref": "#/$defs/taskId"},
+        "task_type": {"enum": ["discover", "understand", "interpret", "verify", "continue", "retrieve", "negative"]},
+        "completion": {"enum": ["completed", "partially_completed", "not_completed", "not_attempted"]},
+        "assistance": {"enum": ["none", "minor_prompt", "substantial_assistance", "not_observed"]},
+        "duration_minutes": {"type": ["number", "null"], "minimum": 0, "maximum": 180},
+        "verification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source_found", "claim_linked_to_source", "source_locator_found", "uncertainty_recognized", "review_status_recognized"],
+          "properties": {
+            "source_found": {"$ref": "#/$defs/observationStatus"},
+            "claim_linked_to_source": {"$ref": "#/$defs/observationStatus"},
+            "source_locator_found": {"$ref": "#/$defs/observationStatus"},
+            "uncertainty_recognized": {"$ref": "#/$defs/observationStatus"},
+            "review_status_recognized": {"$ref": "#/$defs/observationStatus"}
+          }
+        },
+        "follow_up_question_emerged": {"enum": ["yes", "no", "unclear", "not_observed"]},
+        "observed_problems": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["category", "note"], "properties": {"category": {"enum": ["critical_integrity", "accessibility_barrier", "navigation", "terminology", "evidence_density", "subjective_preference", "out_of_mission", "other"]}, "note": {"type": "string"}}}},
+        "confusing_language": {"type": "array", "items": {"type": "string"}},
+        "direct_observations": {"type": "array", "items": {"type": "string"}},
+        "facilitator_interpretations": {"type": "array", "items": {"type": "string"}},
+        "participant_quote": {"type": "string"}
+      }
+    },
+    "postSession": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exploration_interest_response", "most_confusing", "suggested_change"],
+      "properties": {
+        "exploration_interest_response": {"type": "string"},
+        "most_confusing": {"type": "string"},
+        "suggested_change": {"type": "string"}
+      }
+    }
+  }
+}
