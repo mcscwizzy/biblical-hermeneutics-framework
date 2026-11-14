@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from tests.gui.pages import HomePage
 from tests.gui.ne11d1.test_real_ckl_handoff import (
-    _click_related_passage, _connection_action, _context_identity,
+    _click_related_passage, _context_identity, _open_follow_connection,
     _return_to_origin, _route_article, _select_verses,
 )
 
@@ -27,7 +27,6 @@ def test_jonah_repeated_journey_timings(driver, base_url):
 def _sample_journey(driver, base_url, book, chapter, verses, object_id, record_id, route_id, destination, reset_book):
     driver.set_window_size(1440, 1200)
     wait = WebDriverWait(driver, 90)
-    identity = {"object_id": object_id, "record_kind": "claim", "record_id": record_id}
     samples = []
     for index in range(3):
         HomePage(driver, wait, base_url).open().wait_loaded()
@@ -35,11 +34,9 @@ def _sample_journey(driver, base_url, book, chapter, verses, object_id, record_i
         wait.until(lambda b: b.execute_script("return window.BHFStudySelection?.getState?.().book === arguments[0]", reset_book))
         _select_verses(driver, wait, book, chapter, verses)
         wait.until(lambda b: _context_identity(b, record_id)["cited"])
-        _, action = wait.until(lambda b: _connection_action(b, identity))
         started = time.monotonic()
-        action.click()
+        _open_follow_connection(driver, wait)
         article = _route_article(driver, wait, route_id)
-        wait.until(lambda b: b.execute_script("return document.activeElement?.dataset?.narrativeRouteFocusId === arguments[0]", route_id))
         focus_ms = (time.monotonic() - started) * 1000
         started = time.monotonic()
         _click_related_passage(driver, wait, article, destination)

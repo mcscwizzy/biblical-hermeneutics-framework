@@ -25,11 +25,9 @@ def _select_verses(driver, wait, book, chapter, verses):
         chapter,
     ))
     driver.execute_script("performance.clearResourceTimings();")
+    page = HomePage(driver, wait, "")
     for verse in verses:
-        driver.find_element(
-            By.CSS_SELECTOR,
-            f'#chapter-reader .reader-pane.is-active [data-verse="{verse}"] [data-verse-select]',
-        ).click()
+        page.click(f'#chapter-reader .reader-pane.is-active [data-verse="{verse}"] [data-verse-select]')
     expected = ",".join(str(verse) for verse in verses)
     wait.until(lambda browser: browser.execute_script(
         "const s=window.BHFStudySelection?.getState?.(); "
@@ -171,7 +169,7 @@ def _return_to_origin(driver, wait, expected_reference, expected_verses):
         if browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer-return-origin")
         else False
     ))
-    return_button.click()
+    HomePage(driver, wait, "").click(".narrative-explorer-return-origin")
     wait.until(lambda browser: browser.execute_script(
         "const s=window.BHFStudySelection?.getState?.(); "
         "return s?.reference === arguments[0] "

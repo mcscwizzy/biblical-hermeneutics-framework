@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pytest
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 from .pages import HomePage, MapsPage
 
@@ -27,20 +28,18 @@ def test_maps_tab_loads(driver, wait, base_url):
     assert page.find("#map-panel").is_displayed()
 
 
-def test_explore_maps_card_opens_visible_browse_workspace(driver, wait, base_url):
+def test_browse_research_opens_visible_maps_workspace(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
-    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
-    maps_card = wait.until(
-        lambda _driver: next(
-            (
-                item
-                for item in _driver.find_elements(By.CSS_SELECTOR, '[data-companion-resource="maps"]')
-                if item.is_displayed()
-            ),
-            None,
-        )
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
+    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+    research_sources = wait.until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="browse_research"]'))
     )
-    maps_card.click()
+    research_sources.click()
+    maps_link = wait.until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource-host] [data-companion-resource="maps"]'))
+    )
+    maps_link.click()
 
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-search-results").is_displayed())

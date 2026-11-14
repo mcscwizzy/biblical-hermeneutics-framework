@@ -274,7 +274,7 @@ def test_enabled_narrative_hub_keeps_context_summaries_and_reader_state(driver, 
 
     driver.set_window_size(390, 844)
     wait.until(lambda browser: browser.execute_script("return window.innerWidth === 390;"))
-    driver.find_element(By.CSS_SELECTOR, ".companion-research-sources-view nav button").click()
+    HomePage(driver, wait, ne11d1_base_url).click(".companion-research-sources-view nav button")
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".narrative-explorer-follow-connection")))
     _save_screenshot(driver, "after-overview-mobile-390.png")
     overview_contrast = _minimum_text_contrast(

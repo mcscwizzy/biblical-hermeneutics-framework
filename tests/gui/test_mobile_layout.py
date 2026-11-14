@@ -315,7 +315,7 @@ def test_app_dock_uses_labeled_groups(driver, wait, base_url, width, height):
 
 def test_mobile_ask_submit_still_works(driver, wait, base_url):
     _set_mobile_viewport(driver)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
 
     driver.find_element(
         By.CSS_SELECTOR,
@@ -326,10 +326,10 @@ def test_mobile_ask_submit_still_works(driver, wait, base_url):
     ))
     companion = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     if companion.get_attribute("data-companion-state") == "peek":
-        driver.find_element(By.CSS_SELECTOR, ".companion-peek").click()
+        page.click(".companion-peek")
     wait.until(lambda _driver: companion.get_attribute("data-companion-state") in {"study", "full"})
 
-    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf]").click()
+    page.click("[data-ask-bhf]")
     dialog = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog][open]")))
     assert "John 1:1" in dialog.find_element(By.CSS_SELECTOR, "[data-ask-bhf-reference]").text
 

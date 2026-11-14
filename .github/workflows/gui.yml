@@ -3,22 +3,92 @@ name: GUI tests
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, fix/ed5-mobile-acceptance]
 
 jobs:
   gui:
     runs-on: ubuntu-latest
+    timeout-minutes: 110
     steps:
       - uses: actions/checkout@v4
 
       - name: Prepare artifacts directory
         run: mkdir -p tests/gui/artifacts
 
-      - name: Start GUI stack and run browser tests
-        run: docker compose -f docker-compose.yml -f docker-compose.selenium.yml up --build --abort-on-container-exit --exit-code-from gui-tests gui-tests
+      - name: Inspect GUI runtime data mount
+        run: |
+          if [ -e .bhf ]; then
+            stat -c 'GUI data mount owner=%u:%g mode=%a' .bhf
+          else
+            echo 'GUI data mount is absent before Compose creates it'
+          fi
 
-      - name: Upload screenshots and browser logs
+      - name: Prepare writable GUI runtime data mount
+        run: |
+          sudo install -d --owner=1000 --group=1000 --mode=0755 .bhf
+          stat -c 'GUI data mount owner=%u:%g mode=%a' .bhf
+
+      - name: Start app and Selenium services
+        run: docker compose -f docker-compose.yml -f docker-compose.selenium.yml up --build --detach --wait --wait-timeout 180 bhf-web selenium-chrome
+
+      - name: Probe application from Selenium container
+        run: |
+          docker compose -f docker-compose.yml -f docker-compose.selenium.yml exec -T selenium-chrome sh -s <<'SH'
+          set -eu
+          python3 - <<'PY'
+          import json
+          import os
+          import socket
+          from urllib.parse import urlsplit
+          from urllib.request import ProxyHandler, build_opener
+
+          host, port = "bhf-web", 8080
+          addresses = sorted({item[4][0] for item in socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)})
+          print(f"SELENIUM_DNS={host}:{port} -> {addresses}", flush=True)
+          with socket.create_connection((host, port), timeout=3):
+              print(f"SELENIUM_TCP={host}:{port} connected", flush=True)
+
+          configured = False
+          for name in ("HTTP_PROXY", "http_proxy", "HTTPS_PROXY", "https_proxy", "ALL_PROXY", "all_proxy"):
+              value = os.environ.get(name)
+              if not value:
+                  print(f"PROXY {name}=unset", flush=True)
+                  continue
+              configured = True
+              parsed = urlsplit(value if "://" in value else f"http://{value}")
+              endpoint = parsed.hostname or "unknown"
+              if parsed.port:
+                  endpoint = f"{endpoint}:{parsed.port}"
+              print(f"PROXY {name}=set endpoint={endpoint} auth={'yes' if parsed.username or parsed.password else 'no'}", flush=True)
+          tokens = {item.strip().lower() for item in os.environ.get("NO_PROXY", os.environ.get("no_proxy", "")).split(",")}
+          bypasses_host = "*" in tokens or host in tokens or any(item.startswith(".") and host.endswith(item) for item in tokens)
+          print(f"PROXY_CONFIGURED={configured} NO_PROXY_BHF_WEB={bypasses_host}", flush=True)
+
+          for route in ("/api/health", "/offline"):
+              for label, opener in (("environment", build_opener()), ("direct", build_opener(ProxyHandler({})))):
+                  with opener.open(f"http://{host}:{port}{route}", timeout=5) as response:
+                      body = response.read()
+                      print(f"SELENIUM_HTTP_{label.upper()} {route} status={response.status}", flush=True)
+                      if route == "/api/health":
+                          health = json.loads(body)
+                          print(f"SELENIUM_HEALTH={health.get('status')}", flush=True)
+                          if health.get("status") != "ok":
+                              raise SystemExit("bhf-web health did not report ok")
+          PY
+          SH
+          docker compose -f docker-compose.yml -f docker-compose.selenium.yml logs --no-color bhf-web | grep -E 'Uvicorn running on' | tail -1
+
+      - name: Run ordered GUI gates
+        run: docker compose -f docker-compose.yml -f docker-compose.selenium.yml up --abort-on-container-exit --exit-code-from gui-tests gui-tests
+
+      - name: Capture stack diagnostics before cleanup
         if: failure()
+        env:
+          BHF_GUI_ARTIFACTS_DIR: tests/gui/artifacts
+        run: python scripts/capture_gui_diagnostics.py
+
+      - name: Upload browser evidence and failure diagnostics
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: gui-test-artifacts

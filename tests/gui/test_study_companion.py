@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 
 from .pages import BibleReaderPage, HomePage
+from .viewport import set_viewport
 
 
 pytestmark = [pytest.mark.gui]
@@ -42,7 +43,7 @@ def _drag_sheet(driver, handle, delta_y):
 
 def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
 
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     assert panel.get_attribute("data-companion-state") == "closed"
@@ -88,14 +89,14 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     assert sheet_metrics["top"] > 48
     assert sheet_metrics["bottom"] < sheet_metrics["viewport"]
 
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="full"]').click()
+    page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
     assert all(
         control.get_attribute("aria-pressed") is None
         for control in panel.find_elements(By.CSS_SELECTOR, "[data-companion-state-control]")
     )
     assert driver.find_element(By.CSS_SELECTOR, ".reader-column").get_attribute("aria-hidden") == "true"
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+    page.click('[data-companion-state-control="closed"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
     closed_spacing = driver.execute_script(
         """
@@ -107,9 +108,46 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     assert 0 <= closed_spacing["gap"] <= 10
 
 
+def test_mobile_companion_sheet_stays_above_fixed_app_dock(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
+
+    panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+    driver.find_element(
+        By.CSS_SELECTOR,
+        '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text',
+    ).click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
+    page.click('.companion-peek[data-companion-state-control="study"]')
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+    page.click('[data-companion-state-control="full"]')
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
+    wait.until(lambda _driver: driver.execute_script(
+        "return document.querySelector('[data-study-companion]').getAnimations()"
+        ".every((animation) => animation.playState !== 'running');"
+    ))
+
+    full_metrics = driver.execute_script(
+        """
+        const panel = document.querySelector('[data-study-companion]').getBoundingClientRect();
+        const dock = document.querySelector('[data-app-dock]').getBoundingClientRect();
+        return {
+          viewport: {width: innerWidth, height: innerHeight},
+          panel: {top: panel.top, bottom: panel.bottom},
+          dock: {top: dock.top, bottom: dock.bottom},
+        };
+        """
+    )
+    print(f"MOBILE_COMPANION_FULL_DOCK_GEOMETRY={full_metrics}", flush=True)
+    assert full_metrics["panel"]["top"] >= 0, full_metrics
+    assert full_metrics["panel"]["bottom"] <= full_metrics["dock"]["top"], full_metrics
+    page.click('[data-companion-state-control="closed"]')
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
+
+
 def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
 
     driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
@@ -117,12 +155,13 @@ def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url
     driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
 
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-route="maps"]').click()
+    page.click('[data-companion-resource="browse_research"]')
+    page.click('[data-companion-resource-host] [data-companion-resource="maps"]')
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="maps"]').get_attribute("aria-selected") == "true")
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
     assert panel.get_attribute("data-companion-state") == "full"
 
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+    page.click('[data-companion-state-control="closed"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
@@ -151,7 +190,7 @@ def test_explore_opens_general_research_overview(driver, wait, base_url):
 
 def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, base_url):
     driver.set_window_size(1440, 1000)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
 
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
@@ -170,7 +209,7 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
     assert metrics["companion"] > metrics["reader"]
 
     expand = driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="full"]')
-    expand.click()
+    page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
     expanded_metrics = driver.execute_script(
         """
@@ -193,21 +232,27 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
     assert expanded_metrics["bodyOverflow"] == "hidden"
     assert expand.get_attribute("aria-label") == "Collapse Study Companion"
 
-    expand.click()
+    page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
     assert driver.execute_script(
         "return getComputedStyle(document.querySelector('[data-study-companion]')).position;"
     ) == "sticky"
     assert expand.get_attribute("aria-label") == "Expand Study Companion"
 
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".companion-advanced-links [data-companion-route='canonical']"))).click()
-    wait.until(lambda _driver: "is-resource-detail" in _driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class"))
+    driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="browse_research"]').click()
+    canonical_link = wait.until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource-host] [data-companion-resource="canonical"]'))
+    )
+    canonical_link.click()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host] h3").text == "Canonical Knowledge")
     back = driver.find_element(By.CSS_SELECTOR, "[data-companion-back]")
     assert back.is_displayed()
     assert back.get_attribute("tabindex") != "-1"
     assert driver.find_element(By.CSS_SELECTOR, "#chapter-reader").is_displayed()
 
     back.click()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-companion-resource-host] h3').text == "Browse research sources")
+    driver.find_element(By.CSS_SELECTOR, "[data-companion-back]").click()
     wait.until(lambda _driver: "is-resource-detail" not in _driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class"))
     assert driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]").is_displayed()
 
@@ -342,7 +387,7 @@ def test_mobile_sheet_drag_snap_and_non_gesture_controls(driver, wait, base_url)
     from selenium.webdriver.common.keys import Keys
 
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
@@ -351,16 +396,16 @@ def test_mobile_sheet_drag_snap_and_non_gesture_controls(driver, wait, base_url)
     _drag_sheet(driver, peek, -430)
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
 
-    driver.find_element(By.CSS_SELECTOR, ".companion-collapse-button").click()
+    page.click(".companion-collapse-button")
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
 
     peek = driver.find_element(By.CSS_SELECTOR, ".companion-peek")
     _drag_sheet(driver, peek, -10)
     assert panel.get_attribute("data-companion-state") == "peek"
 
-    peek.click()
+    page.click(".companion-peek")
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="full"]').click()
+    page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
 
     handle = driver.find_element(By.CSS_SELECTOR, ".companion-sheet-handle")
@@ -541,6 +586,7 @@ def test_native_resource_never_renders_previous_selection_context(driver, wait, 
 def test_save_passage_state_follows_exact_current_selection(driver, wait, base_url):
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()
+    panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     button = driver.find_element(By.CSS_SELECTOR, '[data-companion-action="save"]')
 
     def select(verse, text):
@@ -556,9 +602,18 @@ def test_save_passage_state_follows_exact_current_selection(driver, wait, base_u
             verse,
             text,
         )
+        wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+        wait.until(lambda _driver: _driver.execute_script(
+            "return document.querySelector('[data-study-companion]').getAnimations().every(animation => animation.playState !== 'running');"
+        ))
 
     select(33, "Selection A")
     wait.until(lambda _driver: button.is_enabled())
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", button)
+    wait.until(lambda _driver: _driver.execute_script(
+        "const button=arguments[0], rect=button.getBoundingClientRect(); const hit=document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2); return hit===button || button.contains(hit);",
+        button,
+    ))
     button.click()
     wait.until(lambda _driver: button.get_attribute("data-saved") == "true")
     assert "Passage Saved" in button.text
@@ -674,7 +729,7 @@ def test_saved_passage_empty_and_unavailable_states_are_distinct(driver, wait, b
 
 def test_successful_save_reloads_saved_studies_once(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     button = driver.find_element(By.CSS_SELECTOR, '[data-companion-action="save"]')
 
     driver.execute_script(
@@ -712,7 +767,7 @@ def test_successful_save_reloads_saved_studies_once(driver, wait, base_url):
         """
     )
     try:
-        button.click()
+        page.click('[data-companion-action="save"]')
         wait.until(lambda _driver: button.get_attribute("data-save-state") == "saved")
         assert "Passage Saved" in button.text
         counts = driver.execute_script(
@@ -837,17 +892,17 @@ def test_companion_context_cache_refreshes_after_explicit_invalidation(driver, w
 
 
 def test_mobile_ask_handoff_focus_stays_within_viewport(driver, wait, base_url):
-    driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open()
+    set_viewport(driver, 390, 844, True)
+    page = HomePage(driver, wait, base_url).open()
     wait.until(lambda _driver: _driver.execute_script(
         "return typeof window.BHFStudyCompanion?.getState === 'function';"
     ))
-    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+    page.click('[data-testid="app-dock-explore"]')
     wait.until(lambda _driver: driver.find_element(By.CSS_SELECTOR, "#companion-ask-title").text == "Explore BHF")
     companion = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     companion_state = companion.get_attribute("data-companion-state")
     trigger = driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf]")
-    trigger.click()
+    page.click("[data-ask-bhf]")
     question = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-question]")))
     wait.until(lambda _driver: _driver.execute_script(
         "return document.activeElement === arguments[0];", question
@@ -876,9 +931,23 @@ def test_mobile_ask_handoff_focus_stays_within_viewport(driver, wait, base_url):
 
 def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="places"]'))).click()
+    canonical_selector = '[data-companion-deeper] [data-companion-resource="canonical"]'
+    canonical = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, canonical_selector)))
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", canonical)
+    wait.until(lambda page: page.execute_script(
+        """
+        const button = document.querySelector(arguments[0]);
+        if (!button || button.getAnimations().some(animation => animation.playState === 'running')) return false;
+        const rect = button.getBoundingClientRect();
+        const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        return hit === button || button.contains(hit);
+        """,
+        canonical_selector,
+    ))
+    canonical = driver.find_element(By.CSS_SELECTOR, canonical_selector)
+    canonical.click()
     card = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-companion-resource-host] [data-canonical-id]")))
     expected = card.find_element(By.CSS_SELECTOR, "h4").text
     card.click()
@@ -888,7 +957,7 @@ def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
     assert not driver.find_element(By.CSS_SELECTOR, "#workspace-pane-context").is_displayed()
 
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+    page.click('[data-companion-state-control="closed"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
@@ -1309,7 +1378,7 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
     wait.until(lambda _driver: "not installed" in _driver.execute_script("return arguments[0].textContent;", slot).lower())
 
     for width in (390, 768, 1440):
-        driver.set_window_size(width, 1000)
+        set_viewport(driver, width, 1000, width <= 600)
         driver.execute_script("window.BHFStudyCompanion.setState('full', {focus: false, history: false});")
         wait.until(lambda _driver: driver.execute_script("return document.querySelector('[data-study-companion]').getAttribute('data-companion-state') === 'full';"))
         dimensions = driver.execute_script(
@@ -1454,14 +1523,16 @@ def test_compare_translations_opens_translation_comparison_resource(driver, wait
     ).get_attribute("data-workspace-tab") == selected_tab
 
 
-def _prepare_translation_comparison(driver, selection, translations):
+def _prepare_translation_comparison(driver, selection, translations, *, defer_context=False):
     driver.execute_script(
         """
         const selection = arguments[0];
         const translations = arguments[1];
+        const deferContext = arguments[2];
         const requests = [];
+        const originalRequestJson = window.BHFApi.requestJson.bind(window.BHFApi);
         window.__translationComparisonRequests = requests;
-        window.BHFApi.requestJson = async (url) => {
+        window.BHFApi.requestJson = async (url, options = {}, fallbackMessage) => {
           requests.push(String(url));
           if (String(url).startsWith('/api/translations/installed')) {
             return {translations, sections: {installed: translations}, default_translation: selection.translation};
@@ -1483,12 +1554,28 @@ def _prepare_translation_comparison(driver, selection, translations):
               })),
             };
           }
-          throw new Error(`Unexpected request: ${url}`);
+          if (deferContext && String(url).startsWith('/api/study/companion-context')) {
+            window.__translationComparisonContextState = 'pending';
+            return new Promise((resolve, reject) => {
+              window.__releaseTranslationComparisonContext = async () => {
+                try {
+                  const value = await originalRequestJson(url, options, fallbackMessage);
+                  window.__translationComparisonContextState = 'ready';
+                  resolve(value);
+                } catch (error) {
+                  window.__translationComparisonContextState = 'error';
+                  reject(error);
+                }
+              };
+            });
+          }
+          return originalRequestJson(url, options, fallbackMessage);
         };
         window.BHFStudySelection.setSelection(selection, 'translation-comparison-test');
         """,
         selection,
         translations,
+        defer_context,
     )
 
 
@@ -1549,7 +1636,7 @@ def test_translation_comparison_preserves_selected_range_and_reads_unique_instal
 
 
 def test_translation_comparison_shows_chapter_and_single_translation_management_action(driver, wait, base_url):
-    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    HomePage(driver, wait, base_url).open().assert_shell_visible().wait_loaded()
     wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);"))
     selection = {
         "book": "John", "chapter": 4, "translation": "kjv", "selectedVerses": [],
@@ -1558,17 +1645,44 @@ def test_translation_comparison_shows_chapter_and_single_translation_management_
     translations = [
         {"id": "kjv", "abbreviation": "KJV", "name": "King James Version", "installed": True},
     ]
-    _prepare_translation_comparison(driver, selection, translations)
+    _prepare_translation_comparison(driver, selection, translations, defer_context=True)
     before = driver.execute_script("return window.BHFStudySelection.getState();")
     driver.execute_script("window.BHFStudyActions.perform('compare_translations');")
-    wait.until(
-        EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-companion-resource-host] .translation-comparison"))
+    rendered = wait.until(lambda _driver: _driver.execute_script(
+        """
+        const root = document.querySelector('[data-companion-resource-host] .translation-comparison');
+        if (!root) return false;
+        return {
+          reference: root.querySelector('[data-comparison-reference]')?.textContent.trim(),
+          verseCount: root.querySelectorAll('[data-comparison-verse]').length,
+          text: root.innerText,
+        };
+        """
+    ))
+    assert rendered["reference"] == "John 4", rendered
+    assert rendered["verseCount"] == 7, rendered
+    assert "Install or import another translation" in rendered["text"]
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.__translationComparisonContextState === 'pending';"
+    ))
+    driver.execute_script(
+        "window.__translationComparisonRootBeforeContext = document.querySelector('.translation-comparison');"
     )
-
-    root = driver.find_element(By.CSS_SELECTOR, ".translation-comparison")
-    assert root.find_element(By.CSS_SELECTOR, "[data-comparison-reference]").text == "John 4"
-    assert len(root.find_elements(By.CSS_SELECTOR, "[data-comparison-verse]")) == 7
-    assert "Install or import another translation" in root.text
+    context_release = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        Promise.resolve(window.__releaseTranslationComparisonContext())
+          .then(() => done({state: window.__translationComparisonContextState}))
+          .catch(error => done({error: String(error)}));
+        """
+    )
+    assert context_release == {"state": "ready"}, context_release
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getContextRecord()?.status === 'ready';"
+    ))
+    assert driver.execute_script(
+        "return document.querySelector('.translation-comparison') === window.__translationComparisonRootBeforeContext;"
+    )
     driver.find_element(By.CSS_SELECTOR, "[data-open-translation-management]").click()
     assert driver.find_element(By.CSS_SELECTOR, "[data-translation-selector]").is_displayed()
     assert driver.execute_script("return window.BHFStudySelection.getState();") == before

@@ -13,6 +13,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
+from tests.gui.network import gui_test_server_endpoint
 
 
 VIEWPORTS = [(320, True), (390, True), (768, False), (1440, False)]
@@ -38,10 +40,11 @@ def explorer_disabled_base_url(base_url):
     with socket.socket() as listener:
         listener.bind(("127.0.0.1", 0))
         port = listener.getsockname()[1]
-    base = f"http://127.0.0.1:{port}"
+    bind_host, base = gui_test_server_endpoint(port)
+    print(f"GUI_TEST_SERVER_BIND={bind_host} URL={base}", flush=True)
     server = Server(Config(
         app,
-        host="127.0.0.1",
+        host=bind_host,
         port=port,
         log_level="warning",
         access_log=False,
@@ -72,15 +75,13 @@ def test_overview_actions_and_narrative_entry_fit_at_supported_widths_with_explo
     driver, base_url, artifacts_dir
 ):
     wait = WebDriverWait(driver, 90)
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": 320, "height": 844, "deviceScaleFactor": 1, "mobile": True,
-    })
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    set_viewport(driver, 320, 844, mobile=True)
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     assert driver.execute_script(
         "return window.BHFRuntimeConfig.narrativeExplorerEnabled;"
     ) is True
     _assert_unselected_save_is_disabled(driver)
-    _select_jonah_17_and_open_companion(driver, wait)
+    _select_jonah_17_and_open_companion(driver, wait, page)
 
     saved = False
     for width, mobile in VIEWPORTS:
@@ -123,15 +124,13 @@ def test_overview_actions_fit_at_supported_widths_with_explorer_disabled(
     driver, explorer_disabled_base_url, artifacts_dir
 ):
     wait = WebDriverWait(driver, 90)
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": 320, "height": 844, "deviceScaleFactor": 1, "mobile": True,
-    })
-    HomePage(driver, wait, explorer_disabled_base_url).open().wait_loaded()
+    set_viewport(driver, 320, 844, mobile=True)
+    page = HomePage(driver, wait, explorer_disabled_base_url).open().wait_loaded()
     assert driver.execute_script(
         "return window.BHFRuntimeConfig.narrativeExplorerEnabled;"
     ) is False
     _assert_unselected_save_is_disabled(driver)
-    _select_jonah_17_and_open_companion(driver, wait)
+    _select_jonah_17_and_open_companion(driver, wait, page)
 
     for width, mobile in VIEWPORTS:
         _set_viewport(driver, width, mobile)
@@ -150,9 +149,7 @@ def test_overview_actions_fit_at_supported_widths_with_explorer_disabled(
 
 
 def _set_viewport(driver, width, mobile):
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": width, "height": 844, "deviceScaleFactor": 1, "mobile": mobile,
-    })
+    set_viewport(driver, width, 844, mobile)
     WebDriverWait(driver, 10).until(
         lambda browser: browser.execute_script("return window.innerWidth") == width
     )
@@ -165,7 +162,7 @@ def _assert_unselected_save_is_disabled(driver):
     assert button.get_attribute("aria-label") == "Save Passage unavailable; select a verse or passage"
 
 
-def _select_jonah_17_and_open_companion(driver, wait):
+def _select_jonah_17_and_open_companion(driver, wait, page):
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="book-select"]')).select_by_value("Jonah")
     wait.until(lambda browser: browser.execute_script(
         "return window.BHFStudySelection?.getState?.().book === 'Jonah';"
@@ -179,7 +176,11 @@ def _select_jonah_17_and_open_companion(driver, wait):
     verse.click()
     peek = driver.find_element(By.CSS_SELECTOR, '.companion-peek[data-companion-state-control="study"]')
     if peek.is_displayed():
-        peek.click()
+        page.click('.companion-peek[data-companion-state-control="study"]')
+        wait.until(lambda browser: browser.execute_script(
+            "const panel=document.querySelector('[data-study-companion]'); "
+            "return panel && panel.getAnimations().every(animation => animation.playState !== 'running');"
+        ))
     wait.until(lambda browser: browser.execute_script(
         "return window.BHFStudyCompanion?.getContext?.()?.reference === 'Jonah 1:17';"
     ))
@@ -352,17 +353,15 @@ def _exercise_note_and_save_actions(driver, wait):
 
 def _open_and_return_to_overview(driver, wait, resource, selector):
     if selector == "translation_comparison":
-        trigger = driver.find_element(
-            By.CSS_SELECTOR, "[data-companion-resource='translation_comparison']"
-        )
+        trigger_selector = "[data-companion-resource='translation_comparison']"
     else:
-        trigger = driver.find_element(By.CSS_SELECTOR, f"[data-testid='{selector}']")
-    trigger.click()
+        trigger_selector = f"[data-testid='{selector}']"
+    trigger = driver.find_element(By.CSS_SELECTOR, trigger_selector)
+    HomePage(driver, wait, "").click(trigger_selector)
     wait.until(lambda browser: browser.execute_script(
         "return window.BHFStudyCompanion.getState().resource === arguments[0];", resource
     ))
-    back = driver.find_element(By.CSS_SELECTOR, "[data-companion-back]")
-    back.click()
+    HomePage(driver, wait, "").click("[data-companion-back]")
     wait.until(lambda browser: browser.execute_script(
         "return window.BHFStudyCompanion.getState().resource === null"
         " && !document.querySelector('[data-companion-overview]').hidden"

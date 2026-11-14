@@ -27,10 +27,17 @@ services:
     working_dir: /workspace
     command: >
       sh -lc "pip install --no-cache-dir -r /workspace/requirements-gui.txt
-      && pytest /workspace/tests/gui -m 'not slow'"
+      && python /workspace/scripts/gui_connectivity_smoke.py
+      && pytest -q -s --maxfail=1 --junitxml=/artifacts/gui-connectivity-smoke.xml
+      /workspace/tests/gui/ne11d1/test_connectivity_smoke.py
+      && pytest -q -s --maxfail=1 --junitxml=/artifacts/ed5-mobile-acceptance.xml
+      /workspace/tests/gui/ne11d1/test_ed5_mobile_acceptance.py
+      && timeout --signal=INT --kill-after=30s 60m pytest -q --maxfail=3
+      --junitxml=/artifacts/gui-regression.xml /workspace/tests/gui -m 'not slow'"
     environment:
       BHF_GUI_BASE_URL: http://bhf-web:8080
       BHF_WEBDRIVER_URL: http://selenium-chrome:4444/wd/hub
+      BHF_GUI_BROWSER_HOST: gui-tests
       BHF_GUI_ARTIFACTS_DIR: /artifacts
       PYTHONUNBUFFERED: "1"
     volumes:

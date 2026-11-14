@@ -791,6 +791,7 @@ body.companion-sheet-full {
 .narrative-explorer-related-passage-details > p,
 .narrative-explorer-related-passage-details > h6 {
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .narrative-explorer-section h4 {

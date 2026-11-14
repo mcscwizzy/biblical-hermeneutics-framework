@@ -13,6 +13,7 @@ import requests
 
 from bhf_agent.study_db import initialize_database
 from bhf_web import settings as web_settings
+from tests.gui.network import gui_test_server_endpoint
 
 
 def _free_port() -> int:
@@ -71,10 +72,11 @@ def base_url():
     from uvicorn import Config, Server
 
     port = _free_port()
-    base = f"http://127.0.0.1:{port}"
+    bind_host, base = gui_test_server_endpoint(port)
+    print(f"GUI_TEST_SERVER_BIND={bind_host} URL={base}", flush=True)
     server = Server(Config(
         app_module.create_app(),
-        host="127.0.0.1",
+        host=bind_host,
         port=port,
         log_level="warning",
         access_log=False,

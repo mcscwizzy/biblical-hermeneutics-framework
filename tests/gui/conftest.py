@@ -14,6 +14,7 @@ import requests
 from bhf_agent.study_db import initialize_database
 from bhf_web import settings as web_settings
 from tests.canonical_library.helpers import make_object, write_library
+from tests.gui.network import gui_test_server_endpoint
 
 
 DEFAULT_BASE_URL = "http://127.0.0.1:8080"
@@ -58,7 +59,8 @@ def base_url() -> str:
     if configured:
         base = configured.rstrip("/")
         _wait_for_health(base)
-        return base
+        yield base
+        return
 
     original_db_path = web_settings.STUDY_DB_PATH
     original_web_config = web_settings.WEB_CONFIG_PATH
@@ -75,7 +77,7 @@ def base_url() -> str:
     except PermissionError as exc:
         temp_dir.cleanup()
         pytest.skip(f"GUI tests require socket access: {exc}")
-    local_base_url = f"{DEFAULT_BASE_URL.rsplit(':', 1)[0]}:{port}"
+    bind_host, local_base_url = gui_test_server_endpoint(port)
 
     canonical_root = temp_root / "canonical_library"
     shutil.copytree(
@@ -113,7 +115,7 @@ def base_url() -> str:
 
     config = Config(
         app,
-        host="127.0.0.1",
+        host=bind_host,
         port=port,
         log_level="warning",
         access_log=False,
@@ -162,12 +164,13 @@ def ne11d1_base_url(base_url: str) -> str:
             os.environ["BHF_NARRATIVE_EXPLORER_ENABLED"] = original_explorer_flag
 
     port = _free_port()
-    enabled_base_url = f"{DEFAULT_BASE_URL.rsplit(':', 1)[0]}:{port}"
+    bind_host, enabled_base_url = gui_test_server_endpoint(port)
+    print(f"GUI_TEST_SERVER_BIND={bind_host} URL={enabled_base_url}", flush=True)
     from uvicorn import Config, Server
 
     server = Server(Config(
         app,
-        host="127.0.0.1",
+        host=bind_host,
         port=port,
         log_level="warning",
         access_log=False,
@@ -229,9 +232,11 @@ def canonical_editor_base_url() -> str:
     app = app_module.create_app()
     from uvicorn import Config, Server
 
+    bind_host, local_base_url = gui_test_server_endpoint(port)
+    print(f"GUI_TEST_SERVER_BIND={bind_host} URL={local_base_url}", flush=True)
     config = Config(
         app,
-        host="127.0.0.1",
+        host=bind_host,
         port=port,
         log_level="warning",
         access_log=False,
@@ -239,7 +244,6 @@ def canonical_editor_base_url() -> str:
     server = Server(config)
     thread = threading.Thread(target=server.run, daemon=True)
     thread.start()
-    local_base_url = f"{DEFAULT_BASE_URL.rsplit(':', 1)[0]}:{port}"
     try:
         _wait_for_health(local_base_url)
         yield local_base_url
@@ -318,6 +322,7 @@ def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_u
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-gpu")
+    options.add_argument("--hide-scrollbars")
     options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
 
     browser = None
@@ -325,7 +330,7 @@ def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_u
         try:
             browser = webdriver.Remote(command_executor=browser_remote_url, options=options)
         except WebDriverException as exc:  # pragma: no cover - depends on external selenium grid
-            pytest.skip(f"Remote Chrome WebDriver is unavailable: {exc}")
+            pytest.fail(f"Configured remote Chrome WebDriver is unavailable: {exc}")
     else:
         try:
             browser = webdriver.Chrome(options=options)
@@ -340,16 +345,42 @@ def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_u
             except Exception as exc:  # pragma: no cover - webdriver-manager may need network
                 pytest.skip(f"Chrome WebDriver is unavailable: {exc}")
 
-    browser.set_page_load_timeout(DEFAULT_WAIT_SECONDS)
-    browser.set_script_timeout(DEFAULT_WAIT_SECONDS)
-    base_url = request.getfixturevalue("base_url")
-    if request.node.path.name == "test_ask.py":
-        browser.execute_cdp_cmd("Network.enable", {})
+    native_set_window_size = browser.set_window_size
+
+    def set_effective_window_size(width: int, height: int, windowHandle: str = "current"):
+        native_set_window_size(width, height, windowHandle)
         browser.execute_cdp_cmd(
-            "Network.setBlockedURLs",
-            {"urls": ["*/static/pwa.js*"]},
+            "Emulation.setDeviceMetricsOverride",
+            {
+                "width": int(width),
+                "height": int(height),
+                "deviceScaleFactor": 1,
+                "mobile": False,
+            },
         )
-    _seed_browser_offline_fixture(browser, base_url)
+
+    # In headless Chrome, WebDriver's outer window size includes browser
+    # chrome/toolbar space even though the screenshot contains only the page.
+    # Keep the CSS viewport equal to the dimensions each GUI case requested.
+    browser.set_window_size = set_effective_window_size
+
+    try:
+        browser.set_page_load_timeout(DEFAULT_WAIT_SECONDS)
+        browser.set_script_timeout(DEFAULT_WAIT_SECONDS)
+        base_url = request.getfixturevalue("base_url")
+        if request.node.path.name == "test_ask.py":
+            browser.execute_cdp_cmd("Network.enable", {})
+            browser.execute_cdp_cmd(
+                "Network.setBlockedURLs",
+                {"urls": ["*/static/pwa.js*"]},
+            )
+        _seed_browser_offline_fixture(browser, base_url)
+    except BaseException:
+        try:
+            browser.quit()
+        except WebDriverException:
+            pass
+        raise
 
     yield browser
 
@@ -373,9 +404,14 @@ def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_u
 
 @pytest.fixture(scope="function")
 def wait(driver):
+    from selenium.common.exceptions import StaleElementReferenceException
     from selenium.webdriver.support.ui import WebDriverWait
 
-    return WebDriverWait(driver, DEFAULT_WAIT_SECONDS)
+    return WebDriverWait(
+        driver,
+        DEFAULT_WAIT_SECONDS,
+        ignored_exceptions=(StaleElementReferenceException,),
+    )
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item: pytest.Item, call: pytest.CallInfo):

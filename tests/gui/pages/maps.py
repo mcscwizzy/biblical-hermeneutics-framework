@@ -14,14 +14,24 @@ class MapsPage(BasePage):
             window.BHFStudyActions.perform('open_map_panel');
             """
         )
-        browse_buttons = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="map-browse-button"]')
-        if browse_buttons and browse_buttons[0].is_displayed():
-            browse_buttons[0].click()
+        self.wait.until(
+            lambda driver: driver.execute_script(
+                "return typeof window.BHFMaps?.openMapPanel === 'function';"
+            )
+        )
+        self.driver.execute_async_script(
+            """
+            const done = arguments[0];
+            window.BHFMaps.openMapPanel({mode: 'browse'})
+              .then(() => done(null))
+              .catch((error) => done(String(error)));
+            """
+        )
         search_inputs = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="map-search-input"]')
         if not search_inputs or not search_inputs[0].is_displayed():
             navigator_buttons = self.driver.find_elements(By.CSS_SELECTOR, '[data-map-navigator-open]')
             if navigator_buttons and navigator_buttons[0].is_displayed():
-                navigator_buttons[0].click()
+                self.click('[data-map-navigator-open]')
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="map-search-input"]')))
         navigator_buttons = self.driver.find_elements(By.CSS_SELECTOR, '[data-map-navigator-open]')
         if navigator_buttons and navigator_buttons[0].get_attribute("aria-expanded") == "true":

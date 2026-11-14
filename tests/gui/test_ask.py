@@ -139,7 +139,7 @@ def test_escape_closes_handoff_without_collapsing_companion(driver, wait, base_u
         lambda _driver: any(
             resource.is_displayed()
             for resource in _driver.find_elements(
-                By.CSS_SELECTOR, '[data-companion-resource="maps"]'
+                By.CSS_SELECTOR, '[data-companion-resource="places_locations"]'
             )
         )
     )

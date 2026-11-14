@@ -3,8 +3,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 from tests.gui.ne11d1.test_real_ckl_handoff import (
-    _click_related_passage, _connection_action, _context_identity,
+    _click_related_passage, _context_identity,
     _return_to_origin, _route_article,
 )
 
@@ -19,11 +20,10 @@ def test_jonah_handoff_other_viewports(driver, base_url, width, mobile, artifact
 
 
 def _journey(driver, base_url, width, mobile, artifacts_dir):
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": width, "height": 844, "deviceScaleFactor": 1, "mobile": mobile,
-    })
+    assert driver.capabilities.get("browserName", "").lower() == "chrome", driver.capabilities
+    set_viewport(driver, width, 844, mobile)
     wait = WebDriverWait(driver, 90)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="book-select"]')).select_by_value("Jonah")
     wait.until(lambda b: b.execute_script("return window.BHFStudySelection?.getState?.().book === 'Jonah'"))
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="chapter-input"]')).select_by_value("1")
@@ -32,7 +32,12 @@ def _journey(driver, base_url, width, mobile, artifacts_dir):
     verse.click()
     peek = driver.find_element(By.CSS_SELECTOR, '.companion-peek[data-companion-state-control="study"]')
     if peek.is_displayed():
-        peek.click()
+        page.click('.companion-peek[data-companion-state-control="study"]')
+        wait.until(lambda browser: peek.get_attribute("aria-expanded") == "true")
+        wait.until(lambda browser: browser.execute_script(
+            "const panel=document.querySelector('[data-study-companion]'); "
+            "return panel && panel.getAnimations().every(animation => animation.playState !== 'running');"
+        ))
     wait.until(lambda b: _context_identity(b, "jonah-three-days")["cited"])
     action_layout = driver.execute_script(
         """
@@ -52,14 +57,41 @@ def _journey(driver, base_url, width, mobile, artifacts_dir):
     )
     print(f"NE11D4_COMPANION_ACTION_LAYOUT_{width}={action_layout}", flush=True)
     identity = {"object_id": "jonah", "record_kind": "claim", "record_id": "jonah-three-days"}
-    card, action = wait.until(lambda b: _connection_action(b, identity))
-    assert card.is_displayed()
-    discovery_readability = _clipping_report(driver, card)
+    evidence = _context_identity(driver, "jonah-three-days")
+    assert evidence["identity"] == identity
+    assert "later becomes important in Matthew 12:40" in evidence["claim"]
+    assert {"jonah-masoretic", "jonah-new-testament"} <= set(evidence["sourceIds"])
+
+    entry = wait.until(lambda browser: browser.find_element(
+        By.CSS_SELECTOR,
+        '[data-testid="companion-narrative-explorer"]',
+    ))
+    if width <= 900:
+        driver.execute_script("arguments[0].scrollIntoView({block:'center'});", entry)
+        wait.until(lambda browser: browser.execute_script(
+            "const entry=arguments[0], rect=entry.getBoundingClientRect(); "
+            "const hit=document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2); "
+            "return hit===entry || entry.contains(hit);",
+            entry,
+        ))
+    entry.click()
+    follow = wait.until(lambda browser: browser.find_element(
+        By.CSS_SELECTOR,
+        ".narrative-explorer-follow-connection",
+    ))
+    wait.until(lambda _browser: follow.is_displayed() and follow.is_enabled())
+    if width <= 900:
+        driver.execute_script("arguments[0].scrollIntoView({block:'center'});", follow)
+    follow.click()
+    related = wait.until(lambda browser: browser.find_element(
+        By.CSS_SELECTOR,
+        ".narrative-explorer-related-passages",
+    ))
+    discovery_readability = _clipping_report(driver, related)
+    print(f"NE11D4_DISCOVERY_READABILITY_{width}={discovery_readability}", flush=True)
     assert discovery_readability["widths"][0] > 0, discovery_readability
     assert discovery_readability["clipped"] == [], discovery_readability
     assert driver.save_screenshot(str(artifacts_dir / f"ne11d4-discovery-{width}.png"))
-    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", action)
-    action.click()
     article = _route_article(driver, wait, "jonah-1-17-matthew-12-40-sign-of-jonah")
     assert "Jonah 1:17 → Matthew 12:40" in article.text
     details = article.find_element(By.CSS_SELECTOR, ".narrative-explorer-related-passage-details")
@@ -71,6 +103,7 @@ def _journey(driver, base_url, width, mobile, artifacts_dir):
     assert route_readability["clipped"] == [], route_readability
     metrics = driver.execute_script("return {width: innerWidth, client: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth}")
     assert metrics["width"] == width
+    assert metrics["client"] == width
     assert metrics["scroll"] <= metrics["client"]
     print(f"NE11H_PASSAGE_LAYOUT_{width}=" + str({
         "document": metrics,
