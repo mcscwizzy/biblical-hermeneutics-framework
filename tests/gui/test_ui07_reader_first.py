@@ -8,14 +8,15 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 
 from .pages import HomePage
+from .viewport import set_viewport
 
 
 pytestmark = [pytest.mark.gui]
 
 
 def test_feature_disabled_overview_keeps_compact_context_and_source_fallback(driver, wait, base_url):
-    driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    set_viewport(driver, 390, 844, True)
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     driver.execute_script(
         """
         window.__ui07OriginalFetch = window.fetch.bind(window);
@@ -28,17 +29,13 @@ def test_feature_disabled_overview_keeps_compact_context_and_source_fallback(dri
         };
         """
     )
-    verse = driver.find_element(
-        By.CSS_SELECTOR,
-        '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text',
-    )
-    verse.click()
+    page.click('#chapter-reader .reader-pane.is-active [data-verse="1"] [data-verse-select]')
     wait.until(lambda _driver: _driver.execute_script(
         "return window.BHFStudyCompanion.getContextRecord()?.status === 'ready';"
     ))
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
-    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+    page.click('[data-passage-action="explore"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
 
     assert not driver.execute_script("return window.BHFRuntimeConfig.narrativeExplorerEnabled")
@@ -51,7 +48,7 @@ def test_feature_disabled_overview_keeps_compact_context_and_source_fallback(dri
     assert fallback.find_element(By.CSS_SELECTOR, '[data-companion-resource="browse_research"]')
     assert driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="places_locations"]').is_displayed()
     assert not driver.find_element(By.CSS_SELECTOR, "[data-companion-explore-catalogue]").is_displayed()
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="understand_passage"]').click()
+    page.click('[data-companion-resource="understand_passage"]')
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-understand-passage], .companion-context-topic-status")))
     assert "Understand the Passage" in driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]").text
     driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
@@ -64,7 +61,7 @@ def test_feature_disabled_overview_keeps_compact_context_and_source_fallback(dri
     assert metrics["body"] <= metrics["width"]
     assert metrics["overview"] <= metrics["width"]
 
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="browse_research"]').click()
+    page.click('[data-companion-resource="browse_research"]')
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".companion-research-sources-view")))
     sources = driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]")
     assert "Open Canonical Knowledge" in sources.text
