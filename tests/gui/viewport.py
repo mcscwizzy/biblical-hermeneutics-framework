@@ -24,6 +24,17 @@ def set_viewport(
         metrics["screenHeight"] = screen_height
     driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", metrics)
 
+    # Let resize handlers run before callers change UI state. The companion
+    # listens for viewport changes and applies its breakpoint transition on an
+    # animation frame; without these frames, a caller can set a state that the
+    # pending breakpoint transition immediately overwrites.
+    driver.execute_async_script(
+        """
+        const done = arguments[0];
+        requestAnimationFrame(() => requestAnimationFrame(() => done(true)));
+        """
+    )
+
     viewport = driver.execute_script(
         "return {innerWidth: window.innerWidth, innerHeight: window.innerHeight, "
         "clientWidth: document.documentElement.clientWidth};"

@@ -169,7 +169,7 @@ def _return_to_origin(driver, wait, expected_reference, expected_verses):
         if browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer-return-origin")
         else False
     ))
-    return_button.click()
+    HomePage(driver, wait, "").click(".narrative-explorer-return-origin")
     wait.until(lambda browser: browser.execute_script(
         "const s=window.BHFStudySelection?.getState?.(); "
         "return s?.reference === arguments[0] "

@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 
 from .pages import BibleReaderPage, HomePage
+from .viewport import set_viewport
 
 
 pytestmark = [pytest.mark.gui]
@@ -891,17 +892,17 @@ def test_companion_context_cache_refreshes_after_explicit_invalidation(driver, w
 
 
 def test_mobile_ask_handoff_focus_stays_within_viewport(driver, wait, base_url):
-    driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open()
+    set_viewport(driver, 390, 844, True)
+    page = HomePage(driver, wait, base_url).open()
     wait.until(lambda _driver: _driver.execute_script(
         "return typeof window.BHFStudyCompanion?.getState === 'function';"
     ))
-    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+    page.click('[data-testid="app-dock-explore"]')
     wait.until(lambda _driver: driver.find_element(By.CSS_SELECTOR, "#companion-ask-title").text == "Explore BHF")
     companion = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     companion_state = companion.get_attribute("data-companion-state")
     trigger = driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf]")
-    trigger.click()
+    page.click("[data-ask-bhf]")
     question = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-question]")))
     wait.until(lambda _driver: _driver.execute_script(
         "return document.activeElement === arguments[0];", question
@@ -1377,7 +1378,7 @@ def test_tyndale_context_card_tracks_selection_accessibility_and_restored_tabs(d
     wait.until(lambda _driver: "not installed" in _driver.execute_script("return arguments[0].textContent;", slot).lower())
 
     for width in (390, 768, 1440):
-        driver.set_window_size(width, 1000)
+        set_viewport(driver, width, 1000, width <= 600)
         driver.execute_script("window.BHFStudyCompanion.setState('full', {focus: false, history: false});")
         wait.until(lambda _driver: driver.execute_script("return document.querySelector('[data-study-companion]').getAttribute('data-companion-state') === 'full';"))
         dimensions = driver.execute_script(
