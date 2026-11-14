@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 from tests.gui.ne11d1.test_real_ckl_handoff import (
     _select_verses, _context_identity, _open_follow_connection, _route_article,
     _click_related_passage, _return_to_origin,
@@ -36,9 +37,7 @@ def test_fresh_matthew_handoff(driver, base_url):
 
 
 def test_mobile_viewport_measurement(driver, base_url):
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": 390, "height": 844, "deviceScaleFactor": 1, "mobile": True,
-    })
+    set_viewport(driver, 390, 844, mobile=True)
     wait = WebDriverWait(driver, 90)
     HomePage(driver, wait, base_url).open().wait_loaded()
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="book-select"]')).select_by_value("Jonah")

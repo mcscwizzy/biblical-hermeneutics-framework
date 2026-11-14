@@ -13,6 +13,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 from tests.gui.network import gui_test_server_endpoint
 
 
@@ -74,9 +75,7 @@ def test_overview_actions_and_narrative_entry_fit_at_supported_widths_with_explo
     driver, base_url, artifacts_dir
 ):
     wait = WebDriverWait(driver, 90)
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": 320, "height": 844, "deviceScaleFactor": 1, "mobile": True,
-    })
+    set_viewport(driver, 320, 844, mobile=True)
     HomePage(driver, wait, base_url).open().wait_loaded()
     assert driver.execute_script(
         "return window.BHFRuntimeConfig.narrativeExplorerEnabled;"
@@ -125,9 +124,7 @@ def test_overview_actions_fit_at_supported_widths_with_explorer_disabled(
     driver, explorer_disabled_base_url, artifacts_dir
 ):
     wait = WebDriverWait(driver, 90)
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": 320, "height": 844, "deviceScaleFactor": 1, "mobile": True,
-    })
+    set_viewport(driver, 320, 844, mobile=True)
     HomePage(driver, wait, explorer_disabled_base_url).open().wait_loaded()
     assert driver.execute_script(
         "return window.BHFRuntimeConfig.narrativeExplorerEnabled;"
@@ -152,9 +149,7 @@ def test_overview_actions_fit_at_supported_widths_with_explorer_disabled(
 
 
 def _set_viewport(driver, width, mobile):
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": width, "height": 844, "deviceScaleFactor": 1, "mobile": mobile,
-    })
+    set_viewport(driver, width, 844, mobile)
     WebDriverWait(driver, 10).until(
         lambda browser: browser.execute_script("return window.innerWidth") == width
     )

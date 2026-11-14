@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 from tests.gui.ne11d1.test_real_ckl_handoff import _select_verses
 
 
@@ -18,12 +19,7 @@ pytestmark = [pytest.mark.gui]
 def test_kephale_additional_record_is_passage_scoped_and_readable(
     driver, base_url, artifacts_dir, width, height, mobile, label
 ):
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": width,
-        "height": height,
-        "deviceScaleFactor": 1,
-        "mobile": mobile,
-    })
+    set_viewport(driver, width, height, mobile)
     wait = WebDriverWait(driver, 90)
     HomePage(driver, wait, base_url).open().wait_loaded()
     _select_verses(driver, wait, "1 Corinthians", 11, [3])

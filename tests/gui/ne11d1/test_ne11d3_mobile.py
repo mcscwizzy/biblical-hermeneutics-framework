@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 from tests.gui.ne11d1.test_real_ckl_handoff import (
     _click_related_passage, _context_identity,
     _return_to_origin, _route_article,
@@ -20,10 +21,7 @@ def test_jonah_handoff_other_viewports(driver, base_url, width, mobile, artifact
 
 def _journey(driver, base_url, width, mobile, artifacts_dir):
     assert driver.capabilities.get("browserName", "").lower() == "chrome", driver.capabilities
-    driver.set_window_size(width, 844)
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": width, "height": 844, "deviceScaleFactor": 1, "mobile": mobile,
-    })
+    set_viewport(driver, width, 844, mobile)
     wait = WebDriverWait(driver, 90)
     HomePage(driver, wait, base_url).open().wait_loaded()
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="book-select"]')).select_by_value("Jonah")

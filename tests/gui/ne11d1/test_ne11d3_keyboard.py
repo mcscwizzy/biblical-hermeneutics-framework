@@ -5,6 +5,7 @@ import pytest
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 from tests.gui.ne11d1.test_real_ckl_handoff import _context_identity, _route_article
 
 
@@ -28,10 +29,7 @@ def _wait_for_sheet_transition(driver, wait):
 
 @pytest.mark.parametrize(("width", "mobile"), [(320, True), (390, True), (768, False), (1440, False)])
 def test_keyboard_discovery_route_focus_and_escape(driver, base_url, width, mobile):
-    driver.set_window_size(width, 844)
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": width, "height": 844, "deviceScaleFactor": 1, "mobile": mobile,
-    })
+    set_viewport(driver, width, 844, mobile)
     wait = WebDriverWait(driver, 90)
     HomePage(driver, wait, base_url).open().wait_loaded()
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="book-select"]')).select_by_value("Jonah")
@@ -144,6 +142,6 @@ def test_keyboard_discovery_route_focus_and_escape(driver, base_url, width, mobi
     wait.until(lambda b: b.execute_script(
         "return window.BHFStudyCompanion.getState().resource === null;"
     ))
-    assert driver.execute_script(
+    wait.until(lambda browser: browser.execute_script(
         "return document.activeElement?.getAttribute('data-testid') === 'companion-narrative-explorer';"
-    )
+    ))

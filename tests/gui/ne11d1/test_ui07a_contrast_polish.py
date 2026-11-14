@@ -10,6 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 
 
 pytestmark = [pytest.mark.gui]
@@ -489,14 +490,14 @@ def test_ui07a_cards_fit_desktop_tablet_and_chrome_mobile(driver, ne11d1_base_ur
         _set_theme(driver, theme)
         for width in (1440, 768, 390):
             if width == 390:
-                driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-                    "width": 390,
-                    "height": 844,
-                    "deviceScaleFactor": 1,
-                    "mobile": True,
-                    "screenWidth": 390,
-                    "screenHeight": 844,
-                })
+                set_viewport(
+                    driver,
+                    390,
+                    844,
+                    mobile=True,
+                    screen_width=390,
+                    screen_height=844,
+                )
             else:
                 driver.execute_cdp_cmd("Emulation.clearDeviceMetricsOverride", {})
                 driver.set_window_size(width, 1400)

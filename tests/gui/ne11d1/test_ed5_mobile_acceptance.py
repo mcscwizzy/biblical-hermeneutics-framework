@@ -9,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport as _set_viewport
 from tests.gui.ne11d1.test_real_ckl_handoff import _select_verses
 
 
@@ -37,22 +38,6 @@ EXPECTED_TERMS = [
     "Intertextual relationship",
     "Disputed reading",
 ]
-
-
-def _set_viewport(driver, width: int, height: int, mobile: bool) -> dict:
-    # Keep Chrome's physical headless window aligned with the emulated CSS
-    # viewport so native clicks cannot target the old desktop-sized surface.
-    driver.set_window_size(width, height)
-    driver.execute_cdp_cmd(
-        "Emulation.setDeviceMetricsOverride",
-        {"width": width, "height": height, "deviceScaleFactor": 1, "mobile": mobile},
-    )
-    metrics = driver.execute_script(
-        "return {innerWidth: window.innerWidth, clientWidth: document.documentElement.clientWidth};"
-    )
-    assert metrics["innerWidth"] == width, metrics
-    assert metrics["clientWidth"] == width, metrics
-    return metrics
 
 
 def _open_narrative_explorer(driver, wait):

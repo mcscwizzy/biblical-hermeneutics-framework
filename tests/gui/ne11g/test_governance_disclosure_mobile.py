@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 
 
 @pytest.mark.parametrize("width", [320, 390])
@@ -12,12 +13,7 @@ def test_draft_canonical_card_disclosure_is_visible_and_usable_on_phone_widths(
     base_url,
     width,
 ):
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": width,
-        "height": 844,
-        "deviceScaleFactor": 1,
-        "mobile": True,
-    })
+    set_viewport(driver, width, 844, mobile=True)
     HomePage(driver, wait, base_url).open().wait_loaded()
     driver.execute_script(
         """

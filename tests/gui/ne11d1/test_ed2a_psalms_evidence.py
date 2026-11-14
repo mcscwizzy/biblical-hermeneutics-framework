@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 
 from tests.gui.pages import HomePage
+from tests.gui.viewport import set_viewport
 
 
 pytestmark = [pytest.mark.gui]
@@ -95,12 +96,7 @@ def test_psalms_evidence_is_contextual_scoped_traceable_and_readable(
     source_id,
     label,
 ):
-    driver.execute_cdp_cmd("Emulation.setDeviceMetricsOverride", {
-        "width": width,
-        "height": height,
-        "deviceScaleFactor": 1,
-        "mobile": mobile,
-    })
+    set_viewport(driver, width, height, mobile)
     wait = WebDriverWait(driver, 90)
     HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
     _select_passage_verses(driver, wait, "Psalms", chapter, verses)

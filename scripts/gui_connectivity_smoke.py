@@ -6,6 +6,7 @@ import json
 import os
 import re
 import socket
+import time
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -84,7 +85,81 @@ def _proxy_capability_summary(capabilities: dict) -> dict:
     }
 
 
+def _active_session_ids(payload: dict) -> set[str]:
+    value = payload.get("value", {})
+    return {
+        session["sessionId"]
+        for node in value.get("nodes", [])
+        for slot in node.get("slots", [])
+        if (session := slot.get("session")) and session.get("sessionId")
+    }
+
+
+def _grid_status(remote_url: str) -> tuple[bool, set[str]]:
+    session = requests.Session()
+    session.trust_env = False
+    try:
+        response = session.get(f"{remote_url.rstrip('/')}/status", timeout=3)
+        response.raise_for_status()
+        payload = response.json()
+    finally:
+        session.close()
+    value = payload.get("value", {})
+    return value.get("ready") is True, _active_session_ids(payload)
+
+
+def _delete_grid_session(remote_url: str, session_id: str) -> None:
+    session = requests.Session()
+    session.trust_env = False
+    try:
+        response = session.delete(
+            f"{remote_url.rstrip('/')}/session/{session_id}",
+            timeout=5,
+        )
+        response.raise_for_status()
+    finally:
+        session.close()
+
+
+def _release_new_sessions(remote_url: str, previous_session_ids: set[str]) -> set[str]:
+    """Release any Grid sessions created after a timed out session request."""
+    for _ in range(20):
+        try:
+            ready, session_ids = _grid_status(remote_url)
+        except requests.RequestException:
+            time.sleep(0.25)
+            continue
+
+        created = session_ids - previous_session_ids
+        if created:
+            for session_id in created:
+                try:
+                    _delete_grid_session(remote_url, session_id)
+                    print(f"REMOTE_SESSION_RECOVERY_QUIT={session_id}", flush=True)
+                except requests.RequestException as exc:
+                    print(
+                        "REMOTE_SESSION_RECOVERY_ERROR=" + _safe_exception(exc),
+                        flush=True,
+                    )
+            return created
+        if ready:
+            return set()
+        time.sleep(0.25)
+    return set()
+
+
 def _probe_remote_browser(base_url: str, remote_url: str, artifacts_dir: Path | None) -> None:
+    grid_ready, previous_session_ids = _grid_status(remote_url)
+    print(
+        f"SELENIUM_GRID_READY={grid_ready} ACTIVE_SESSIONS={len(previous_session_ids)}",
+        flush=True,
+    )
+    if not grid_ready or previous_session_ids:
+        raise RuntimeError(
+            "Selenium Grid is not idle before the connectivity probe: "
+            f"ready={grid_ready}, active_sessions={len(previous_session_ids)}"
+        )
+
     options = ChromeOptions()
     options.add_argument("--headless=new")
     options.add_argument("--window-size=1440,1400")
@@ -142,6 +217,8 @@ def _probe_remote_browser(base_url: str, remote_url: str, artifacts_dir: Path | 
             browser.save_screenshot(str(screenshot))
             print(f"CHROME_SCREENSHOT={screenshot}", flush=True)
     except Exception as exc:
+        if browser is None:
+            _release_new_sessions(remote_url, previous_session_ids)
         print(f"GUI_CONNECTIVITY_BROWSER_FAILURE={_safe_exception(exc)}", flush=True)
         if browser is not None:
             try:

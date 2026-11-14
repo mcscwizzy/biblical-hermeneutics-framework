@@ -2,11 +2,12 @@
 
 ## Validation status
 
-The remote-browser connectivity failure is isolated and fixed. The current
-ordered browser gates pass locally, and the bounded non-slow GUI regression
-passes. Validation used a real Selenium Chrome session in a separate container.
-The branch Actions run for the pushed revision remains the final hosted check;
-no merge or deployment has been performed.
+The remote-browser connectivity and mobile viewport failures are isolated and
+fixed locally. The fail-first browser gate, ED-5 acceptance, and bounded
+non-slow GUI regression all pass using real remote Chrome in a separate
+container. Actions run `43561414091` passed connectivity and ED-5 but exposed
+three broader GUI failures; the follow-up fixes documented below pass locally.
+No merge or deployment has been performed.
 
 ## Scope and protections
 
@@ -38,8 +39,8 @@ The current fixture binds ephemeral servers to `0.0.0.0` for remote Chrome and
 uses `http://gui-tests:<ephemeral-port>`; local Chrome still uses loopback.
 Driver setup now quits a partially initialized session on any setup exception.
 The Actions workflow probes the application from Selenium, and the Compose test
-command runs the fail-first connectivity utility and one browser smoke before
-ED-5 or the broader regression.
+command runs the fail-first connectivity utility and browser smoke before ED-5
+or the broader regression.
 
 | Probe | `gui-tests` | `selenium-chrome` |
 | --- | --- | --- |
@@ -56,16 +57,22 @@ port. An explicit remote Chrome session had no proxy endpoint. It navigated to
 returned HTTP 200 with `document.readyState=complete`. The fixture smoke also
 created a temporary server on `0.0.0.0` and reached both routes from Chrome.
 These checks demonstrate that Chrome can reach the healthy app over the shared
-network after the test fixture uses a container-reachable address.
+network after the test fixture uses a container-reachable address. A local
+smoke attempt also showed that a timed-out `webdriver.Remote` constructor can
+leave a server-side session without returning a Python driver object. The smoke
+now checks that Grid is idle before requesting Chrome and removes only sessions
+created by that probe if the session response times out. A unit test verifies
+that cleanup leaves any preexisting session untouched.
 
 ## Browser gate and ED-5 acceptance
 
-The latest ordered local run first passed `scripts/gui_connectivity_smoke.py`
-and `tests/gui/ne11d1/test_connectivity_smoke.py` (**1 passed**). The smoke
-recorded Chrome and ChromeDriver **155.0.8059.79**, created one remote session,
-loaded `/api/health` and `/offline`, captured a screenshot, and quit the session.
+The latest ordered local run passed `scripts/gui_connectivity_smoke.py` and
+`tests/gui/ne11d1/test_connectivity_smoke.py` (**3 passed**, including the live
+browser smoke and two Grid lifecycle checks). The smoke recorded Chrome and
+ChromeDriver **155.0.8059.79**, created one remote session, loaded `/api/health`
+and `/offline`, captured a screenshot, and quit the session.
 
-The ED-5 acceptance file then passed: **5 passed in 153.72 seconds**. Chrome
+The ED-5 acceptance file then passed: **5 passed in 143.25 seconds**. Chrome
 and ChromeDriver were both **155.0.8059.79**. `_set_viewport()` sets the actual
 headless window dimensions before CDP device metrics; every case verified that
 both `window.innerWidth` and `document.documentElement.clientWidth` exactly
@@ -91,18 +98,17 @@ and the Genesis 12 mobile source disclosure. The guide wraps at 320px, keeps the
 mobile navigation visible, and shows definitions without horizontal clipping.
 The source disclosure shows the expected Genesis 12:1-3 claim and CKL identity;
 review metadata remains displayed as draft and requiring human review. The
-connectivity and ED-5 JUnit reports contain 1 and 5 passing cases respectively.
-Screenshot and JUnit files are generated evidence in `tests/gui/artifacts/` and
-are not source inputs to commit.
+ED-5 JUnit report contains 5 passing cases. Screenshot and JUnit files are
+generated evidence in `tests/gui/artifacts/` and are not source inputs to commit.
 
 ## Bounded GUI regression
 
-After the connectivity and ED-5 gates passed, the same ordered run executed the
-non-slow GUI regression with `--maxfail=3` and a 60-minute timeout. Result:
-**156 passed, 3 skipped in 2201.89 seconds**. The JUnit report contains 159
-tests, zero failures, and zero errors. The previously isolated canonical detail
-and canonical-to-note link cases passed in the full run. No setup errors,
-connection refusals, or WebDriver session timeouts recurred.
+After the connectivity and ED-5 gates passed, the bounded non-slow GUI
+regression ran with `--maxfail=3` and a 60-minute timeout. Result: **158 passed,
+3 skipped in 2215.05 seconds**. The JUnit report contains 161 tests, zero
+failures, and zero errors. The previously isolated canonical detail,
+canonical-to-note link, 390px companion click, and keyboard focus cases passed.
+No setup errors, connection refusals, or WebDriver session timeouts recurred.
 
 The broader regression exposed and verified a few related UI lifecycle and
 interaction fixes. Passage-context refreshes are now limited to context-backed
@@ -113,22 +119,38 @@ native Selenium clicks wait out transient stale elements and mobile overlays.
 The tests preserve their content, identity, navigation, and hit-target
 assertions.
 
-The browser viewport correction was required by earlier Actions runs
-`43501993153` and `43502606551`: Chrome 157 accepted desktop 1440px, but mobile
-clicks were intercepted because CDP metrics were 390px while the headless
-window remained 1440px wide. Those runs passed the network and fail-first smoke
-gates. The local acceptance now verifies the effective 1440px, 390px, and
-320px viewports in Chrome 155. The GUI Actions run triggered by the final push
-will verify the same gates on the hosted runner.
+Actions run `43561414091` passed service health, the Selenium network probe, the
+fail-first smoke, and all 5 ED-5 cases on Chrome/ChromeDriver
+**157.0.8103.38**. Its broader run stopped at `--maxfail=3` with 19 passes and
+these failures:
+
+- `test_kephale_additional_record_is_passage_scoped_and_readable[390-844-True-mobile]`
+- `test_psalms_evidence_is_contextual_scoped_traceable_and_readable[psalm145-mobile]`
+- `test_keyboard_discovery_route_focus_and_escape[768-False]`
+
+The first two clicks were intercepted by the fixed app dock because CDP
+reported a 390px CSS viewport while headless Chrome's outer window stayed at
+1440px. `tests/gui/viewport.py` now resizes the real Chrome window before CDP
+metrics and asserts the effective dimensions; all GUI viewport tests use that
+helper. The keyboard test now waits for the app's animation-frame focus restore
+after the resource closes. The local targeted rerun passed all three failures,
+and the full regression passed them as well. Earlier Actions runs
+`43501993153` and `43502606551` also passed network and smoke but exposed the
+same mobile hit-target mismatch. The hosted outcome for the follow-up commit is
+reported from its branch Actions run.
 
 ## Generated reports and other validation
 
-The latest local ordered run wrote:
+The latest local ordered and regression runs wrote:
 
-- `tests/gui/artifacts/gui-connectivity-smoke-final.xml` — 1 passed.
+- `tests/gui/artifacts/gui-connectivity-smoke-final.xml` — 3 passed, including
+  the remote Chrome route check.
 - `tests/gui/artifacts/ed5-mobile-acceptance-final.xml` — 5 passed.
-- `tests/gui/artifacts/gui-regression-final2.xml` — 156 passed, 3 skipped,
-  zero failures or errors.
+- `tests/gui/artifacts/gui-connectivity-smoke-regression.xml` — 3 passed.
+- `tests/gui/artifacts/gui-regression-final.xml` — 158 passed, 3 skipped, zero
+  failures or errors (161 tests total).
+- The three skips are PWA tests that require a service worker, unavailable in
+  the headless Selenium environment.
 - ED-5 PNGs under `tests/gui/artifacts/`, including light/dark collapsed and
   expanded guide views at all three widths and Genesis 12 source disclosures.
 
