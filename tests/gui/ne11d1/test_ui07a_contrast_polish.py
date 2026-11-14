@@ -534,7 +534,7 @@ def test_ui07a_cards_fit_desktop_tablet_and_chrome_mobile(driver, ne11d1_base_ur
                 assert overview["twoColumns"], overview
                 assert overview["cardWidths"][0] > 0, overview
 
-            driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
+            page.click('[data-testid="companion-narrative-explorer"]')
             wait.until(lambda browser: browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card"))
             if width == 390:
                 driver.execute_script("document.querySelector('[data-companion-resource-host]').scrollTop=0;")

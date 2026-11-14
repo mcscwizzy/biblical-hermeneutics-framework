@@ -353,17 +353,15 @@ def _exercise_note_and_save_actions(driver, wait):
 
 def _open_and_return_to_overview(driver, wait, resource, selector):
     if selector == "translation_comparison":
-        trigger = driver.find_element(
-            By.CSS_SELECTOR, "[data-companion-resource='translation_comparison']"
-        )
+        trigger_selector = "[data-companion-resource='translation_comparison']"
     else:
-        trigger = driver.find_element(By.CSS_SELECTOR, f"[data-testid='{selector}']")
-    trigger.click()
+        trigger_selector = f"[data-testid='{selector}']"
+    trigger = driver.find_element(By.CSS_SELECTOR, trigger_selector)
+    HomePage(driver, wait, "").click(trigger_selector)
     wait.until(lambda browser: browser.execute_script(
         "return window.BHFStudyCompanion.getState().resource === arguments[0];", resource
     ))
-    back = driver.find_element(By.CSS_SELECTOR, "[data-companion-back]")
-    back.click()
+    HomePage(driver, wait, "").click("[data-companion-back]")
     wait.until(lambda browser: browser.execute_script(
         "return window.BHFStudyCompanion.getState().resource === null"
         " && !document.querySelector('[data-companion-overview]').hidden"

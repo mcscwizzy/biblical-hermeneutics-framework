@@ -40,8 +40,9 @@ def test_feature_disabled_overview_keeps_compact_context_and_source_fallback(dri
 
     assert not driver.execute_script("return window.BHFRuntimeConfig.narrativeExplorerEnabled")
     assert driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]").is_displayed()
-    fallback = driver.find_element(By.CSS_SELECTOR, "[data-companion-research-fallback]")
-    assert fallback.is_displayed()
+    fallback = wait.until(EC.visibility_of_element_located(
+        (By.CSS_SELECTOR, "[data-companion-research-fallback]")
+    ))
     assert "Explore the Narrative is unavailable" in fallback.text
     assert len(driver.find_elements(By.CSS_SELECTOR, "[data-companion-primary-research] .companion-narrative-card")) == 1
     assert fallback.find_element(By.CSS_SELECTOR, '[data-companion-resource="understand_passage"]')
