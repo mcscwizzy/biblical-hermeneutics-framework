@@ -1,0 +1,80 @@
+{
+  "phase": "ED-6",
+  "title": "Real Reader Discovery Pilot & Scholarly Review Launch",
+  "status": "preparation_complete_awaiting_real_participants",
+  "branch": "feat/ed6-reader-discovery-pilot",
+  "base_commit": "f7851bf5da777924b5dd48bc547e0a73685c708c",
+  "participant_findings": {
+    "status": "not_collected",
+    "authentic_sessions": 0,
+    "synthetic_data_is_not_participant_data": true
+  },
+  "phases": {
+    "baseline_and_branch": "complete",
+    "reader_protocol_and_tasks": "complete",
+    "local_collection_toolkit": "complete",
+    "scholarly_review_kickoff": "prepared_no_reviews_recorded",
+    "bounded_reader_readiness": "complete",
+    "technical_validation": "complete",
+    "authentic_reader_sessions": "awaiting_participants"
+  },
+  "scholarly_review": {
+    "status": "human_review_required",
+    "packets_available": 12,
+    "decisions_recorded_by_ed6": 0
+  },
+  "deliverables": [
+    "README.md",
+    "baseline.md",
+    "participant-protocol.md",
+    "consent-and-privacy.md",
+    "facilitator-guide.md",
+    "study-task-bank.md",
+    "participant-notes-template.md",
+    "post-session-questions.md",
+    "measurement-rubric.md",
+    "data-management.md",
+    "scholarly-review-kickoff.md",
+    "reader-pilot-readiness.md",
+    "feedback-analysis-method.md",
+    "validation-results.md",
+    "final-report.md",
+    "progress.json"
+  ],
+  "readiness": {
+    "pilot_preparation": "READY WITH CONDITIONS",
+    "actual_reader_study": "AWAITING PARTICIPANTS",
+    "scholarly_review": "HUMAN REVIEW REQUIRED"
+  },
+  "implementation": {
+    "pilot_data_tool": "tools/ed6_reader_pilot.py",
+    "schema": "docs/evidence-depth/ed6/session-record.schema.json",
+    "synthetic_fixture": "tests/fixtures/ed6_reader_pilot/synthetic_sessions.jsonl"
+  },
+  "validation": {
+    "pilot_api_retrieval_and_integrity_tests": "123 passed; 13 subtests passed",
+    "frontend_tests": "17 passed; 0 failed",
+    "chromium_connectivity_smoke": "3 passed",
+    "ed6_browser_task_checks": "3 passed",
+    "targeted_existing_chromium_acceptance": {
+      "ed5_mobile_jonah_and_psalm145": "8 passed; 2 deselected",
+      "genesis6_review_disclosure": "2 passed; 5 deselected",
+      "1_corinthians_11_3_mobile": "1 passed; 1 deselected"
+    },
+    "strict_ckl": {
+      "objects": 687,
+      "errors": 0,
+      "warnings": 14,
+      "warnings_inherited": true
+    },
+    "ne9c_ne10_compatibility": {
+      "status": "passed",
+      "reviewed_relationships": 3925,
+      "runtime_curation_records": 433,
+      "verified_bridges": 44,
+      "held_candidates": 7,
+      "protected_hashes_unchanged": true,
+      "historical_ckl_fingerprint_matches": false
+    }
+  }
+}
