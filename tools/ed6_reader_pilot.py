@@ -25,7 +25,8 @@ DEFAULT_DATA_FILE = REPOSITORY_ROOT / ".bhf-data/ed6-reader-pilot/sessions.jsonl
 SCHEMA_VERSION = "ed6-reader-pilot-v1"
 
 TASK_IDS = (
-    "discover-genesis6",
+    "discover-familiar-passage",
+    "interpret-genesis6",
     "understand-genesis12",
     "interpret-psalm82",
     "verify-deuteronomy32",
@@ -35,6 +36,18 @@ TASK_IDS = (
     "retrieve-1john3",
     "empty-1kings2",
 )
+TASK_TYPES = {
+    "discover-familiar-passage": "discover",
+    "interpret-genesis6": "interpret",
+    "understand-genesis12": "understand",
+    "interpret-psalm82": "interpret",
+    "verify-deuteronomy32": "verify",
+    "verify-psalm145": "verify",
+    "continue-jonah-matthew": "continue",
+    "verify-1corinthians11": "verify",
+    "retrieve-1john3": "retrieve",
+    "empty-1kings2": "negative",
+}
 VERIFICATION_FIELDS = (
     "source_found",
     "claim_linked_to_source",
@@ -174,16 +187,24 @@ def validate_session(record: dict[str, Any], allow_synthetic: bool = False) -> l
             "task_id", "task_type", "completion", "assistance", "duration_minutes",
             "verification", "follow_up_question_emerged", "observed_problems",
             "confusing_language", "direct_observations", "facilitator_interpretations",
-            "participant_quote",
+            "participant_quote", "starting_passage",
         }
         for key in task:
             if key not in allowed_task and key.lower() not in FORBIDDEN_FIELDS:
                 issues.append(_issue("unknown_field", f"{path}.{key}", "Field is not part of the task schema."))
-        for key in sorted(allowed_task - {"participant_quote"} - set(task)):
+        for key in sorted(allowed_task - {"participant_quote", "starting_passage"} - set(task)):
             issues.append(_issue("required_field_missing", f"{path}.{key}", "Required task field is missing."))
         for field in ("task_type", "completion", "assistance", "follow_up_question_emerged"):
             if not _is_enum(task.get(field), ENUMS[field]):
                 issues.append(_issue("invalid_value", f"{path}.{field}", "Value is outside the allowed choices."))
+        if isinstance(task_id, str) and task_id in TASK_TYPES and task.get("task_type") != TASK_TYPES[task_id]:
+            issues.append(_issue("task_type_mismatch", f"{path}.task_type", "Task type does not match the task-bank entry."))
+        if task_id == "discover-familiar-passage":
+            passage = task.get("starting_passage")
+            if not isinstance(passage, str) or not passage.strip() or len(passage) > 80:
+                issues.append(_issue("selected_passage_required", f"{path}.starting_passage", "Record the participant-selected familiar passage reference."))
+        elif "starting_passage" in task and (not isinstance(task["starting_passage"], str) or len(task["starting_passage"]) > 80):
+            issues.append(_issue("invalid_value", f"{path}.starting_passage", "Passage reference must be text of at most 80 characters."))
         duration = task.get("duration_minutes")
         if duration is not None and (
             isinstance(duration, bool) or not isinstance(duration, (int, float)) or not 0 <= duration <= 180

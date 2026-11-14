@@ -29,11 +29,11 @@ def session(
         "device_class": "desktop",
         "study_experience_band": "prefer_not_to_say",
         "quote_consent": False,
-        "assigned_task_ids": ["discover-genesis6"],
+        "assigned_task_ids": ["interpret-genesis6"],
         "tasks": [
             {
-                "task_id": "discover-genesis6",
-                "task_type": "discover",
+                "task_id": "interpret-genesis6",
+                "task_type": "interpret",
                 "completion": task_completion,
                 "assistance": "none",
                 "duration_minutes": 4,
@@ -93,8 +93,8 @@ def test_incomplete_session_is_retained_and_counted(tmp_path):
 
     assert result["summary"]["incomplete_records"] == 1
     assert report["participant_sessions"]["denominator"] == 1
-    assert report["task_results"]["discover-genesis6"]["completion"]["counts"]["partially_completed"] == 1
-    assert report["task_results"]["discover-genesis6"]["completion"]["denominator"] == 1
+    assert report["task_results"]["interpret-genesis6"]["completion"]["counts"]["partially_completed"] == 1
+    assert report["task_results"]["interpret-genesis6"]["completion"]["denominator"] == 1
 
 
 def test_malformed_jsonl_line_is_reported_without_echoing_source(tmp_path):
@@ -151,6 +151,27 @@ def test_quotes_require_separate_explicit_consent():
     assert any(issue["code"] == "quote_consent_required" for issue in issues)
 
 
+def test_familiar_discovery_requires_the_participant_selected_passage():
+    record = session()
+    record["assigned_task_ids"] = ["discover-familiar-passage"]
+    task = record["tasks"][0]
+    task["task_id"] = "discover-familiar-passage"
+    task["task_type"] = "discover"
+    task["starting_passage"] = "Psalm 23:1-6"
+
+    assert validate_session(record) == []
+
+    del task["starting_passage"]
+    assert any(issue["code"] == "selected_passage_required" for issue in validate_session(record))
+
+
+def test_task_type_must_match_the_assigned_task():
+    record = session()
+    record["tasks"][0]["task_type"] = "discover"
+
+    assert any(issue["code"] == "task_type_mismatch" for issue in validate_session(record))
+
+
 def test_synthetic_fixture_is_separated_from_authentic_input():
     result = read_jsonl(FIXTURE)
 
@@ -171,7 +192,7 @@ def test_aggregate_metrics_show_observed_denominators_and_no_raw_notes():
     )
     second = session("P02", status="incomplete", task_completion="partially_completed", source_found="not_observed")
     result = analyze_records([first, second], {"input_lines": 2, "invalid_records": 0})
-    task = result["task_results"]["discover-genesis6"]
+    task = result["task_results"]["interpret-genesis6"]
 
     assert task["completion"]["denominator"] == 2
     assert task["completion"]["counts"] == {"completed": 1, "partially_completed": 1}

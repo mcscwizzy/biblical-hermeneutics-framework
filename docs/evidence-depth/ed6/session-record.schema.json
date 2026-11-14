@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/bhf/ed6/session-record.schema.json",
+  "$id": "urn:bhf:ed6:reader-pilot-session-record:v1",
   "title": "BHF ED-6 de-identified reader session record",
   "type": "object",
   "additionalProperties": false,
@@ -29,7 +29,7 @@
     "post_session": {"$ref": "#/$defs/postSession"}
   },
   "$defs": {
-    "taskId": {"enum": ["discover-genesis6", "understand-genesis12", "interpret-psalm82", "verify-deuteronomy32", "verify-psalm145", "continue-jonah-matthew", "verify-1corinthians11", "retrieve-1john3", "empty-1kings2"]},
+    "taskId": {"enum": ["discover-familiar-passage", "interpret-genesis6", "understand-genesis12", "interpret-psalm82", "verify-deuteronomy32", "verify-psalm145", "continue-jonah-matthew", "verify-1corinthians11", "retrieve-1john3", "empty-1kings2"]},
     "observationStatus": {"enum": ["yes", "partial", "no", "not_applicable", "not_observed"]},
     "task": {
       "type": "object",
@@ -58,8 +58,10 @@
         "confusing_language": {"type": "array", "items": {"type": "string"}},
         "direct_observations": {"type": "array", "items": {"type": "string"}},
         "facilitator_interpretations": {"type": "array", "items": {"type": "string"}},
-        "participant_quote": {"type": "string"}
-      }
+        "participant_quote": {"type": "string"},
+        "starting_passage": {"type": "string", "minLength": 1, "maxLength": 80}
+      },
+      "allOf": [{"if": {"properties": {"task_id": {"const": "discover-familiar-passage"}}, "required": ["task_id"]}, "then": {"required": ["starting_passage"]}}]
     },
     "postSession": {
       "type": "object",
