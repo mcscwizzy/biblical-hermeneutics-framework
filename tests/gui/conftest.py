@@ -59,7 +59,8 @@ def base_url() -> str:
     if configured:
         base = configured.rstrip("/")
         _wait_for_health(base)
-        return base
+        yield base
+        return
 
     original_db_path = web_settings.STUDY_DB_PATH
     original_web_config = web_settings.WEB_CONFIG_PATH

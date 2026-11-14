@@ -8,6 +8,12 @@
     "covenant_context", "word_study", "cross_references", "people", "places",
     "themes", "archaeology", "timeline",
   ]);
+  const PASSAGE_CONTEXT_RESOURCES = new Set([
+    "archaeology", "canonical", "cross_references", "cultural_context",
+    "historical_context", "literary_context", "original_audience", "people",
+    "places", "places_locations", "themes", "timeline", "understand_passage",
+    "covenant_context",
+  ]);
   const runtime = window.BHFRuntimeConfig || {};
   const breakpoint = Number(runtime.breakpoints?.tablet || 900);
   let panel;
@@ -140,6 +146,8 @@
         } else if (currentResource === "narrative_explorer"
           && resourceRouter?.getNarrativeView?.().kind === "understand_passage") {
           resourceRouter.refreshContextView?.({suppressFocus: true});
+        } else if (!currentResource) {
+          renderRecommendations({resources: context?.resources || {}});
         }
       },
       onError: (message) => {
@@ -149,6 +157,8 @@
         } else if (currentResource === "narrative_explorer"
           && resourceRouter?.getNarrativeView?.().kind === "understand_passage") {
           resourceRouter.refreshContextView?.({suppressFocus: true, message});
+        } else if (!currentResource) {
+          renderAvailabilityError(message);
         }
       },
     });
@@ -343,6 +353,7 @@
   }
 
   function renderRecommendations(availability = {}) {
+    panel?.querySelectorAll("[data-companion-availability-error]").forEach((item) => item.remove());
     const engine = window.BHFStudyRecommendations;
     const ranking = engine.rank(selection, availability);
     const geographyResources = new Set(["maps", "places"]);
@@ -362,13 +373,15 @@
   }
 
   function renderAvailabilityError(message) {
-    const recommended = panel.querySelector("[data-companion-recommended]");
-    const deeper = panel.querySelector("[data-companion-deeper]");
-    recommended?.replaceChildren(emptyAvailability(message, true));
-    deeper?.replaceChildren();
+    const overview = panel.querySelector("[data-companion-overview]");
+    if (!overview) return;
+    const existing = overview.querySelector("[data-companion-availability-error]");
+    existing?.remove();
+    const alert = emptyAvailability(message, true);
+    alert.dataset.companionAvailabilityError = "";
+    overview.prepend(alert);
     setText("[data-companion-recommendation-reason]", "Local resources remain usable even when availability cannot be refreshed.");
     setText("[data-companion-resource-count]", "Resource availability unknown");
-    renderEntities([]);
   }
 
   function emptyAvailability(message, error = false) {
@@ -1045,9 +1058,10 @@
   }
 
   function isPassageContextResourceActive() {
-    // Narrative Explorer owns passage changes inside its evidence trail. A
-    // Companion context refresh must not reopen it without the active trail.
-    return Boolean(currentResource && currentResource !== "narrative_explorer" && currentMode === "passage");
+    // Only passage resources backed by the context response need a refresh.
+    // Reopening an independent resource (for example translation comparison)
+    // can replace its live DOM when the initial context request finishes.
+    return Boolean(PASSAGE_CONTEXT_RESOURCES.has(currentResource) && currentMode === "passage");
   }
 
   function renderResourceHeader(resourceId, resource = null) {

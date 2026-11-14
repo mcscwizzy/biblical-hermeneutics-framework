@@ -117,7 +117,11 @@ def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url
     driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
 
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-route="maps"]').click()
+    driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="browse_research"]').click()
+    maps_link = wait.until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource-host] [data-companion-resource="maps"]'))
+    )
+    maps_link.click()
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="maps"]').get_attribute("aria-selected") == "true")
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
     assert panel.get_attribute("data-companion-state") == "full"
@@ -200,14 +204,20 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
     ) == "sticky"
     assert expand.get_attribute("aria-label") == "Expand Study Companion"
 
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".companion-advanced-links [data-companion-route='canonical']"))).click()
-    wait.until(lambda _driver: "is-resource-detail" in _driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class"))
+    driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="browse_research"]').click()
+    canonical_link = wait.until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource-host] [data-companion-resource="canonical"]'))
+    )
+    canonical_link.click()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host] h3").text == "Canonical Knowledge")
     back = driver.find_element(By.CSS_SELECTOR, "[data-companion-back]")
     assert back.is_displayed()
     assert back.get_attribute("tabindex") != "-1"
     assert driver.find_element(By.CSS_SELECTOR, "#chapter-reader").is_displayed()
 
     back.click()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-companion-resource-host] h3').text == "Browse research sources")
+    driver.find_element(By.CSS_SELECTOR, "[data-companion-back]").click()
     wait.until(lambda _driver: "is-resource-detail" not in _driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class"))
     assert driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]").is_displayed()
 
@@ -541,6 +551,7 @@ def test_native_resource_never_renders_previous_selection_context(driver, wait, 
 def test_save_passage_state_follows_exact_current_selection(driver, wait, base_url):
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()
+    panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     button = driver.find_element(By.CSS_SELECTOR, '[data-companion-action="save"]')
 
     def select(verse, text):
@@ -556,9 +567,18 @@ def test_save_passage_state_follows_exact_current_selection(driver, wait, base_u
             verse,
             text,
         )
+        wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+        wait.until(lambda _driver: _driver.execute_script(
+            "return document.querySelector('[data-study-companion]').getAnimations().every(animation => animation.playState !== 'running');"
+        ))
 
     select(33, "Selection A")
     wait.until(lambda _driver: button.is_enabled())
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", button)
+    wait.until(lambda _driver: _driver.execute_script(
+        "const button=arguments[0], rect=button.getBoundingClientRect(); const hit=document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2); return hit===button || button.contains(hit);",
+        button,
+    ))
     button.click()
     wait.until(lambda _driver: button.get_attribute("data-saved") == "true")
     assert "Passage Saved" in button.text
@@ -878,7 +898,21 @@ def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()
     driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="places"]'))).click()
+    canonical_selector = '[data-companion-deeper] [data-companion-resource="canonical"]'
+    canonical = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, canonical_selector)))
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", canonical)
+    wait.until(lambda page: page.execute_script(
+        """
+        const button = document.querySelector(arguments[0]);
+        if (!button || button.getAnimations().some(animation => animation.playState === 'running')) return false;
+        const rect = button.getBoundingClientRect();
+        const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        return hit === button || button.contains(hit);
+        """,
+        canonical_selector,
+    ))
+    canonical = driver.find_element(By.CSS_SELECTOR, canonical_selector)
+    canonical.click()
     card = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-companion-resource-host] [data-canonical-id]")))
     expected = card.find_element(By.CSS_SELECTOR, "h4").text
     card.click()
@@ -1454,14 +1488,16 @@ def test_compare_translations_opens_translation_comparison_resource(driver, wait
     ).get_attribute("data-workspace-tab") == selected_tab
 
 
-def _prepare_translation_comparison(driver, selection, translations):
+def _prepare_translation_comparison(driver, selection, translations, *, defer_context=False):
     driver.execute_script(
         """
         const selection = arguments[0];
         const translations = arguments[1];
+        const deferContext = arguments[2];
         const requests = [];
+        const originalRequestJson = window.BHFApi.requestJson.bind(window.BHFApi);
         window.__translationComparisonRequests = requests;
-        window.BHFApi.requestJson = async (url) => {
+        window.BHFApi.requestJson = async (url, options = {}, fallbackMessage) => {
           requests.push(String(url));
           if (String(url).startsWith('/api/translations/installed')) {
             return {translations, sections: {installed: translations}, default_translation: selection.translation};
@@ -1483,12 +1519,28 @@ def _prepare_translation_comparison(driver, selection, translations):
               })),
             };
           }
-          throw new Error(`Unexpected request: ${url}`);
+          if (deferContext && String(url).startsWith('/api/study/companion-context')) {
+            window.__translationComparisonContextState = 'pending';
+            return new Promise((resolve, reject) => {
+              window.__releaseTranslationComparisonContext = async () => {
+                try {
+                  const value = await originalRequestJson(url, options, fallbackMessage);
+                  window.__translationComparisonContextState = 'ready';
+                  resolve(value);
+                } catch (error) {
+                  window.__translationComparisonContextState = 'error';
+                  reject(error);
+                }
+              };
+            });
+          }
+          return originalRequestJson(url, options, fallbackMessage);
         };
         window.BHFStudySelection.setSelection(selection, 'translation-comparison-test');
         """,
         selection,
         translations,
+        defer_context,
     )
 
 
@@ -1549,7 +1601,7 @@ def test_translation_comparison_preserves_selected_range_and_reads_unique_instal
 
 
 def test_translation_comparison_shows_chapter_and_single_translation_management_action(driver, wait, base_url):
-    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    HomePage(driver, wait, base_url).open().assert_shell_visible().wait_loaded()
     wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);"))
     selection = {
         "book": "John", "chapter": 4, "translation": "kjv", "selectedVerses": [],
@@ -1558,17 +1610,44 @@ def test_translation_comparison_shows_chapter_and_single_translation_management_
     translations = [
         {"id": "kjv", "abbreviation": "KJV", "name": "King James Version", "installed": True},
     ]
-    _prepare_translation_comparison(driver, selection, translations)
+    _prepare_translation_comparison(driver, selection, translations, defer_context=True)
     before = driver.execute_script("return window.BHFStudySelection.getState();")
     driver.execute_script("window.BHFStudyActions.perform('compare_translations');")
-    wait.until(
-        EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-companion-resource-host] .translation-comparison"))
+    rendered = wait.until(lambda _driver: _driver.execute_script(
+        """
+        const root = document.querySelector('[data-companion-resource-host] .translation-comparison');
+        if (!root) return false;
+        return {
+          reference: root.querySelector('[data-comparison-reference]')?.textContent.trim(),
+          verseCount: root.querySelectorAll('[data-comparison-verse]').length,
+          text: root.innerText,
+        };
+        """
+    ))
+    assert rendered["reference"] == "John 4", rendered
+    assert rendered["verseCount"] == 7, rendered
+    assert "Install or import another translation" in rendered["text"]
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.__translationComparisonContextState === 'pending';"
+    ))
+    driver.execute_script(
+        "window.__translationComparisonRootBeforeContext = document.querySelector('.translation-comparison');"
     )
-
-    root = driver.find_element(By.CSS_SELECTOR, ".translation-comparison")
-    assert root.find_element(By.CSS_SELECTOR, "[data-comparison-reference]").text == "John 4"
-    assert len(root.find_elements(By.CSS_SELECTOR, "[data-comparison-verse]")) == 7
-    assert "Install or import another translation" in root.text
+    context_release = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        Promise.resolve(window.__releaseTranslationComparisonContext())
+          .then(() => done({state: window.__translationComparisonContextState}))
+          .catch(error => done({error: String(error)}));
+        """
+    )
+    assert context_release == {"state": "ready"}, context_release
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getContextRecord()?.status === 'ready';"
+    ))
+    assert driver.execute_script(
+        "return document.querySelector('.translation-comparison') === window.__translationComparisonRootBeforeContext;"
+    )
     driver.find_element(By.CSS_SELECTOR, "[data-open-translation-management]").click()
     assert driver.find_element(By.CSS_SELECTOR, "[data-translation-selector]").is_displayed()
     assert driver.execute_script("return window.BHFStudySelection.getState();") == before

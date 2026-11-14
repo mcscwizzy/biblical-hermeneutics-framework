@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import Select, WebDriverWait
 
 from tests.gui.pages import HomePage
 from tests.gui.ne11d1.test_real_ckl_handoff import (
-    _select_verses, _context_identity, _connection_action, _route_article,
+    _select_verses, _context_identity, _open_follow_connection, _route_article,
     _click_related_passage, _return_to_origin,
 )
 
@@ -13,13 +13,26 @@ def test_fresh_matthew_handoff(driver, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     _select_verses(driver, wait, "Matthew", 12, [40])
     identity = {"object_id": "jonah", "record_kind": "claim", "record_id": "jonah-three-days"}
-    wait.until(lambda browser: _context_identity(browser, "jonah-three-days")["cited"])
-    _, action = wait.until(lambda browser: _connection_action(browser, identity))
-    action.click()
+    evidence = wait.until(lambda browser: _context_identity(browser, "jonah-three-days")
+        if _context_identity(browser, "jonah-three-days")["cited"] else False)
+    assert evidence["reference"] == "Matthew 12:40"
+    assert evidence["identity"] == identity
+    assert "later becomes important in Matthew 12:40" in evidence["claim"]
+    assert {"jonah-masoretic", "jonah-new-testament"} <= set(evidence["sourceIds"])
+
+    _open_follow_connection(driver, wait)
     article = _route_article(driver, wait, "jonah-1-17-matthew-12-40-sign-of-jonah")
     assert "Jonah 1:17 → Matthew 12:40" in article.text
     _click_related_passage(driver, wait, article, "Jonah 1:17")
-    _return_to_origin(driver, wait, "Matthew 12:40", [40])
+    trail = driver.execute_script("return window.history.state?.bhfStudyCompanion?.trail || null;")
+    assert trail is not None and trail["activeIndex"] > 0
+    assert {"Jonah 1:17", "Matthew 12:40"} <= {
+        node.get("reference") for node in trail.get("nodes", [])
+    }
+    returned = _return_to_origin(driver, wait, "Matthew 12:40", [40])
+    assert {"Jonah 1:17", "Matthew 12:40"} <= {
+        node.get("reference") for node in returned.get("nodes", [])
+    }
 
 
 def test_mobile_viewport_measurement(driver, base_url):

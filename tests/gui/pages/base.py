@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
@@ -23,13 +24,22 @@ class BasePage:
 
     def click(self, selector: str):
         locator = (By.CSS_SELECTOR, selector)
-        self.wait.until(EC.presence_of_element_located(locator))
         self.driver.execute_script(
             "document.querySelector(arguments[0])?.scrollIntoView({block: 'center', inline: 'nearest'});",
             selector,
         )
-        element = self.wait.until(EC.element_to_be_clickable(locator))
-        element.click()
+
+        def click_when_ready(driver):
+            try:
+                element = driver.find_element(*locator)
+                if not element.is_displayed() or not element.is_enabled():
+                    return False
+                element.click()
+                return True
+            except StaleElementReferenceException:
+                return False
+
+        self.wait.until(click_when_ready)
 
     def type_into(self, selector: str, text: str, clear: bool = True):
         element = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, selector)))

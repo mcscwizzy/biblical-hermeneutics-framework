@@ -71,10 +71,37 @@ def _open_narrative_explorer(driver, wait):
                 "return document.body.dataset.appSection === 'explore';"
             ))
 
+        # Wait for the mobile companion's 180ms sheet transition to finish
+        # before clicking an entry. During the transition Chrome can report
+        # the button as visible while its click point is still beneath the
+        # fixed app dock.
+        wait.until(lambda page: page.execute_script(
+            """
+            const panel = document.querySelector('[data-study-companion]');
+            return panel && panel.getAnimations().every(animation => animation.playState !== 'running');
+            """
+        ))
+
     entry = wait.until(lambda page: next((button for button in page.find_elements(
         By.CSS_SELECTOR,
         '[data-testid="companion-narrative-explorer"]',
     ) if button.is_displayed() and button.is_enabled()), False))
+    if driver.execute_script("return window.innerWidth <= 900"):
+        # A native scroll places the entry within the visible sheet before its
+        # native click, avoiding the bottom dock's fixed overlay.
+        driver.execute_script(
+            "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
+            entry,
+        )
+        wait.until(lambda page: page.execute_script(
+            """
+            const entry = arguments[0];
+            const rect = entry.getBoundingClientRect();
+            const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+            return hit === entry || entry.contains(hit);
+            """,
+            entry,
+        ))
     entry.click()
     return wait.until(lambda page: page.find_element(By.CSS_SELECTOR, ".narrative-explorer"))
 
@@ -306,6 +333,10 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
         driver.execute_script("document.documentElement.dataset.theme = arguments[0]", theme)
         guide = driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-terms-guide")
         summary = guide.find_element(By.CSS_SELECTOR, "summary")
+        driver.execute_script(
+            "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
+            summary,
+        )
         driver.save_screenshot(str(artifacts_dir / f"ed5-empty-terms-{width}-{theme}-collapsed.png"))
         summary.click()
         metrics = _measure_overview(driver)
@@ -330,6 +361,10 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
         longest_definition = max(metrics["definitions"], key=lambda definition: len(definition["text"]))
         assert len(longest_definition["text"]) > 120, longest_definition
         assert longest_definition["scrollHeight"] <= longest_definition["clientHeight"] + 1, longest_definition
+        driver.execute_script(
+            "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
+            summary,
+        )
         driver.save_screenshot(str(artifacts_dir / f"ed5-empty-terms-{width}-{theme}-expanded.png"))
         theme_reports[theme] = {
             "contrast_ratios": contrast,

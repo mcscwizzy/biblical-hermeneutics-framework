@@ -757,12 +757,23 @@
       }
       narrativeTrail = result.state;
       const nextSelection = explorer.trailCurrentSelection(narrativeTrail);
+      const routeId = String(relationship?.id || "").trim();
       try {
         cancelNarrativeDetailRequest();
         activePassageKey = explorer.urlFor(nextSelection);
+        selectedNarrativeRouteId = routeId;
         if (!(await navigateReaderToSelection(nextSelection)) || activeResourceId !== "narrative_explorer") return;
         notifyNarrativeTrailChanged();
-        await narrativeSession.open(nextSelection);
+        const projectionResult = await narrativeSession.open(nextSelection);
+        let currentSelectionKey = "";
+        try { currentSelectionKey = explorer.urlFor(options.getSelection?.() || {}); } catch (_error) { currentSelectionKey = ""; }
+        if (routeId
+          && projectionResult?.status === "ready"
+          && activeResourceId === "narrative_explorer"
+          && activePassageKey === explorer.urlFor(nextSelection)
+          && currentSelectionKey === activePassageKey) {
+          renderActiveNarrativeTrail({focusRouteId: routeId});
+        }
       } catch (error) {
         showTrailNotice(error?.message || "The linked passage could not be opened in the reader.");
       }

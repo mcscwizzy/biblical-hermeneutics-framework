@@ -63,9 +63,13 @@ def test_draft_canonical_card_disclosure_is_visible_and_usable_on_phone_widths(
     driver.execute_script("window.BHFStudyCompanion.openResource('canonical');")
 
     host = driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]")
-    notice = wait.until(lambda _driver: host.find_element(
-        By.CSS_SELECTOR,
-        ".companion-summary-governance",
+    notice = wait.until(lambda _driver: (
+        element
+        if (element := host.find_element(
+            By.CSS_SELECTOR,
+            ".companion-summary-governance",
+        )).text == "Draft evidence — awaiting human review"
+        else False
     ))
     card = notice.find_element(By.XPATH, "ancestor::article[contains(@class, 'companion-summary-card')]")
     assert notice.text == "Draft evidence — awaiting human review"
