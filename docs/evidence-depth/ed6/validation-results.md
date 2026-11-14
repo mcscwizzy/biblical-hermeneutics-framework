@@ -36,6 +36,11 @@ search. The live task was grounded to 1 John 3:19–24 and retested successfully
 All new checks are deterministic UI/projection checks, not participant data.
 The census and protected hashes are in [baseline](baseline.md).
 
+Documentation links in the ED-6 package and the `docs/README.md` index were
+checked; all relative links resolved and both ED-6 JSON files parsed. The
+final working diff passed `git diff --check`, and the working tree contained no
+participant data, generated CKL changes, or unrelated files.
+
 ## Interpretation limits
 
 Automated tests establish that code and page states behave as exercised by the

@@ -52,3 +52,14 @@ details, recordings, or raw notes in Git or a public report.
 The study is exploratory and convenience-sampled. Reader usability findings
 remain separate from scholarly review and do not alter CKL claims or protected
 relationship decisions.
+
+## Repository delivery
+
+The validated branch `feat/ed6-reader-discovery-pilot` is pushed to `origin`
+from current `master`. A PR could not be opened in this session: the GitHub
+connector returned HTTP 403 (`Resource not accessible by integration`), the
+local `gh` CLI has no authenticated session, and no browser session was
+available. The pushed branch is ready to compare at
+[Create ED-6 pull request](https://github.com/mcscwizzy/biblical-hermeneutics-framework/pull/new/feat/ed6-reader-discovery-pilot).
+Use the title “ED-6: Prepare reader discovery pilot and scholarly review
+launch” and the validation summary in this report when opening it.

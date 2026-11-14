@@ -100,5 +100,6 @@
 - Modify: `docs/evidence-depth/ed6/progress.json`
 
 - [x] Run pilot-tool tests, relevant frontend tests, targeted API/projection tests, strict CKL validation, source-lock/provenance checks, current NE-9C/NE-10 compatibility, and bounded GUI checks.
-- [ ] Review all required files, `git diff --check`, complete diff, generated files, ignored local data, and final branch status.
-- [ ] Commit changes in coherent groups; push `feat/ed6-reader-discovery-pilot`; open one PR against `master`; do not merge or deploy.
+- [x] Review all required files, `git diff --check`, complete diff, generated files, ignored local data, and final branch status.
+- [x] Commit changes in coherent groups and push `feat/ed6-reader-discovery-pilot`.
+- [ ] Open one PR against `master`; do not merge or deploy. GitHub write authorization was unavailable in this session; the pushed branch has a PR creation link in the final report.
