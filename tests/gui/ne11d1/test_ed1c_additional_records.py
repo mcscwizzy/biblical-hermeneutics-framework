@@ -21,11 +21,12 @@ def test_kephale_additional_record_is_passage_scoped_and_readable(
 ):
     set_viewport(driver, width, height, mobile)
     wait = WebDriverWait(driver, 90)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     _select_verses(driver, wait, "1 Corinthians", 11, [3])
-    peek = driver.find_element(By.CSS_SELECTOR, '.companion-peek[data-companion-state-control="study"]')
+    peek_selector = '.companion-peek[data-companion-state-control="study"]'
+    peek = driver.find_element(By.CSS_SELECTOR, peek_selector)
     if peek.is_displayed():
-        peek.click()
+        page.click(peek_selector)
     wait.until(lambda browser: browser.find_element(
         By.CSS_SELECTOR,
         ".companion-overview-actions",

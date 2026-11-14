@@ -352,7 +352,7 @@ def test_mobile_sheet_drag_snap_and_non_gesture_controls(driver, wait, base_url)
     from selenium.webdriver.common.keys import Keys
 
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
@@ -370,7 +370,7 @@ def test_mobile_sheet_drag_snap_and_non_gesture_controls(driver, wait, base_url)
 
     peek.click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="full"]').click()
+    page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
 
     handle = driver.find_element(By.CSS_SELECTOR, ".companion-sheet-handle")
@@ -694,7 +694,7 @@ def test_saved_passage_empty_and_unavailable_states_are_distinct(driver, wait, b
 
 def test_successful_save_reloads_saved_studies_once(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     button = driver.find_element(By.CSS_SELECTOR, '[data-companion-action="save"]')
 
     driver.execute_script(
@@ -732,7 +732,7 @@ def test_successful_save_reloads_saved_studies_once(driver, wait, base_url):
         """
     )
     try:
-        button.click()
+        page.click('[data-companion-action="save"]')
         wait.until(lambda _driver: button.get_attribute("data-save-state") == "saved")
         assert "Passage Saved" in button.text
         counts = driver.execute_script(

@@ -345,6 +345,25 @@ def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_u
             except Exception as exc:  # pragma: no cover - webdriver-manager may need network
                 pytest.skip(f"Chrome WebDriver is unavailable: {exc}")
 
+    native_set_window_size = browser.set_window_size
+
+    def set_effective_window_size(width: int, height: int, windowHandle: str = "current"):
+        native_set_window_size(width, height, windowHandle)
+        browser.execute_cdp_cmd(
+            "Emulation.setDeviceMetricsOverride",
+            {
+                "width": int(width),
+                "height": int(height),
+                "deviceScaleFactor": 1,
+                "mobile": False,
+            },
+        )
+
+    # In headless Chrome, WebDriver's outer window size includes browser
+    # chrome/toolbar space even though the screenshot contains only the page.
+    # Keep the CSS viewport equal to the dimensions each GUI case requested.
+    browser.set_window_size = set_effective_window_size
+
     try:
         browser.set_page_load_timeout(DEFAULT_WAIT_SECONDS)
         browser.set_script_timeout(DEFAULT_WAIT_SECONDS)
@@ -385,9 +404,14 @@ def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_u
 
 @pytest.fixture(scope="function")
 def wait(driver):
+    from selenium.common.exceptions import StaleElementReferenceException
     from selenium.webdriver.support.ui import WebDriverWait
 
-    return WebDriverWait(driver, DEFAULT_WAIT_SECONDS)
+    return WebDriverWait(
+        driver,
+        DEFAULT_WAIT_SECONDS,
+        ignored_exceptions=(StaleElementReferenceException,),
+    )
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item: pytest.Item, call: pytest.CallInfo):
