@@ -31,7 +31,7 @@ def _wait_for_sheet_transition(driver, wait):
 def test_keyboard_discovery_route_focus_and_escape(driver, base_url, width, mobile):
     set_viewport(driver, width, 844, mobile)
     wait = WebDriverWait(driver, 90)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="book-select"]')).select_by_value("Jonah")
     wait.until(lambda browser: browser.execute_script("return window.BHFStudySelection?.getState?.().book === 'Jonah'"))
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="chapter-input"]')).select_by_value("1")
@@ -45,7 +45,7 @@ def test_keyboard_discovery_route_focus_and_escape(driver, base_url, width, mobi
     ))
     peek = driver.find_element(By.CSS_SELECTOR, '.companion-peek[data-companion-state-control="study"]')
     if peek.is_displayed():
-        peek.click()
+        page.click('.companion-peek[data-companion-state-control="study"]')
         wait.until(lambda browser: peek.get_attribute("aria-expanded") == "true")
         _wait_for_sheet_transition(driver, wait)
     wait.until(lambda b: _context_identity(b, "jonah-three-days")["cited"])

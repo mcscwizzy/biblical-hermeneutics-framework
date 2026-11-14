@@ -125,10 +125,10 @@ def _capture(driver, name):
     assert driver.save_screenshot(str(path))
 
 
-def _open_responsive_companion(driver, wait):
+def _open_responsive_companion(driver, wait, page):
     peek = driver.find_element(By.CSS_SELECTOR, '.companion-peek[data-companion-state-control="study"]')
     if peek.is_displayed():
-        driver.execute_script("arguments[0].scrollIntoView({block:'center'}); arguments[0].click();", peek)
+        page.click('.companion-peek[data-companion-state-control="study"]')
         wait.until(lambda browser: browser.find_element(
             By.CSS_SELECTOR, "[data-study-companion]"
         ).get_attribute("data-companion-state") == "study")
@@ -482,7 +482,7 @@ def test_ui07a_dark_and_light_cards_meet_rendered_text_contrast(driver, ne11d1_b
 def test_ui07a_cards_fit_desktop_tablet_and_chrome_mobile(driver, ne11d1_base_url):
     wait = WebDriverWait(driver, 90)
     driver.set_window_size(1440, 1400)
-    HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
+    page = HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
     _select_jonah_1_17(driver, wait)
 
     measurements = {}
@@ -503,7 +503,7 @@ def test_ui07a_cards_fit_desktop_tablet_and_chrome_mobile(driver, ne11d1_base_ur
                 driver.set_window_size(width, 1400)
             wait.until(lambda browser: browser.execute_script("return window.innerWidth") == width)
             if width <= 900:
-                _open_responsive_companion(driver, wait)
+                _open_responsive_companion(driver, wait, page)
             overview = driver.execute_script(
                 """
                 const grid=document.querySelector('[data-companion-primary-research]');

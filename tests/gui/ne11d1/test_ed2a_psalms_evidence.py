@@ -98,11 +98,11 @@ def test_psalms_evidence_is_contextual_scoped_traceable_and_readable(
 ):
     set_viewport(driver, width, height, mobile)
     wait = WebDriverWait(driver, 90)
-    HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
+    page = HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
     _select_passage_verses(driver, wait, "Psalms", chapter, verses)
     peek = driver.find_element(By.CSS_SELECTOR, '.companion-peek[data-companion-state-control="study"]')
     if peek.is_displayed():
-        peek.click()
+        page.click('.companion-peek[data-companion-state-control="study"]')
     wait.until(lambda browser: browser.find_element(
         By.CSS_SELECTOR,
         ".companion-overview-actions",
@@ -114,18 +114,17 @@ def test_psalms_evidence_is_contextual_scoped_traceable_and_readable(
         ) if button.is_displayed()),
         False,
     ))
-    explorer_button.click()
+    page.click('[data-testid="companion-narrative-explorer"]')
     explorer = wait.until(lambda browser: browser.find_element(By.CSS_SELECTOR, ".narrative-explorer"))
     section_card = explorer.find_element(By.CSS_SELECTOR, f'[data-section-id="{section_id}"]')
     assert section_card.is_displayed(), case
-    section_card.click()
+    page.click(f'.narrative-explorer [data-section-id="{section_id}"]')
 
     section = wait.until(lambda browser: browser.find_element(
         By.CSS_SELECTOR,
         f'.narrative-explorer-section[data-section-id="{section_id}"]',
     ))
-    browse = section.find_element(By.CSS_SELECTOR, ".narrative-explorer-inspect")
-    browse.click()
+    page.click(f'.narrative-explorer-section[data-section-id="{section_id}"] .narrative-explorer-inspect')
     projected_id = f"ckl:psalms#evidence:{evidence_id}"
     selector = f'button[data-narrative-item-id="{projected_id}"]'
 
@@ -138,7 +137,7 @@ def test_psalms_evidence_is_contextual_scoped_traceable_and_readable(
             return matches[0]
         more = browser.find_elements(By.CSS_SELECTOR, ".narrative-explorer-more")
         if more and more[0].is_displayed():
-            more[0].click()
+            page.click(".narrative-explorer-more")
         return False
 
     evidence_button = wait.until(locate_item)

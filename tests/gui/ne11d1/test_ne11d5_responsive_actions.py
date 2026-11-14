@@ -76,12 +76,12 @@ def test_overview_actions_and_narrative_entry_fit_at_supported_widths_with_explo
 ):
     wait = WebDriverWait(driver, 90)
     set_viewport(driver, 320, 844, mobile=True)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     assert driver.execute_script(
         "return window.BHFRuntimeConfig.narrativeExplorerEnabled;"
     ) is True
     _assert_unselected_save_is_disabled(driver)
-    _select_jonah_17_and_open_companion(driver, wait)
+    _select_jonah_17_and_open_companion(driver, wait, page)
 
     saved = False
     for width, mobile in VIEWPORTS:
@@ -125,12 +125,12 @@ def test_overview_actions_fit_at_supported_widths_with_explorer_disabled(
 ):
     wait = WebDriverWait(driver, 90)
     set_viewport(driver, 320, 844, mobile=True)
-    HomePage(driver, wait, explorer_disabled_base_url).open().wait_loaded()
+    page = HomePage(driver, wait, explorer_disabled_base_url).open().wait_loaded()
     assert driver.execute_script(
         "return window.BHFRuntimeConfig.narrativeExplorerEnabled;"
     ) is False
     _assert_unselected_save_is_disabled(driver)
-    _select_jonah_17_and_open_companion(driver, wait)
+    _select_jonah_17_and_open_companion(driver, wait, page)
 
     for width, mobile in VIEWPORTS:
         _set_viewport(driver, width, mobile)
@@ -162,7 +162,7 @@ def _assert_unselected_save_is_disabled(driver):
     assert button.get_attribute("aria-label") == "Save Passage unavailable; select a verse or passage"
 
 
-def _select_jonah_17_and_open_companion(driver, wait):
+def _select_jonah_17_and_open_companion(driver, wait, page):
     Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="book-select"]')).select_by_value("Jonah")
     wait.until(lambda browser: browser.execute_script(
         "return window.BHFStudySelection?.getState?.().book === 'Jonah';"
@@ -176,7 +176,11 @@ def _select_jonah_17_and_open_companion(driver, wait):
     verse.click()
     peek = driver.find_element(By.CSS_SELECTOR, '.companion-peek[data-companion-state-control="study"]')
     if peek.is_displayed():
-        peek.click()
+        page.click('.companion-peek[data-companion-state-control="study"]')
+        wait.until(lambda browser: browser.execute_script(
+            "const panel=document.querySelector('[data-study-companion]'); "
+            "return panel && panel.getAnimations().every(animation => animation.playState !== 'running');"
+        ))
     wait.until(lambda browser: browser.execute_script(
         "return window.BHFStudyCompanion?.getContext?.()?.reference === 'Jonah 1:17';"
     ))

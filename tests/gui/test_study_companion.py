@@ -42,7 +42,7 @@ def _drag_sheet(driver, handle, delta_y):
 
 def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
 
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     assert panel.get_attribute("data-companion-state") == "closed"
@@ -88,14 +88,14 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     assert sheet_metrics["top"] > 48
     assert sheet_metrics["bottom"] < sheet_metrics["viewport"]
 
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="full"]').click()
+    page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
     assert all(
         control.get_attribute("aria-pressed") is None
         for control in panel.find_elements(By.CSS_SELECTOR, "[data-companion-state-control]")
     )
     assert driver.find_element(By.CSS_SELECTOR, ".reader-column").get_attribute("aria-hidden") == "true"
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+    page.click('[data-companion-state-control="closed"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
     closed_spacing = driver.execute_script(
         """
@@ -107,9 +107,46 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     assert 0 <= closed_spacing["gap"] <= 10
 
 
+def test_mobile_companion_sheet_stays_above_fixed_app_dock(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
+
+    panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+    driver.find_element(
+        By.CSS_SELECTOR,
+        '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text',
+    ).click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
+    page.click('.companion-peek[data-companion-state-control="study"]')
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+    page.click('[data-companion-state-control="full"]')
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
+    wait.until(lambda _driver: driver.execute_script(
+        "return document.querySelector('[data-study-companion]').getAnimations()"
+        ".every((animation) => animation.playState !== 'running');"
+    ))
+
+    full_metrics = driver.execute_script(
+        """
+        const panel = document.querySelector('[data-study-companion]').getBoundingClientRect();
+        const dock = document.querySelector('[data-app-dock]').getBoundingClientRect();
+        return {
+          viewport: {width: innerWidth, height: innerHeight},
+          panel: {top: panel.top, bottom: panel.bottom},
+          dock: {top: dock.top, bottom: dock.bottom},
+        };
+        """
+    )
+    print(f"MOBILE_COMPANION_FULL_DOCK_GEOMETRY={full_metrics}", flush=True)
+    assert full_metrics["panel"]["top"] >= 0, full_metrics
+    assert full_metrics["panel"]["bottom"] <= full_metrics["dock"]["top"], full_metrics
+    page.click('[data-companion-state-control="closed"]')
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
+
+
 def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
 
     driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
@@ -117,16 +154,13 @@ def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url
     driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
 
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-resource="browse_research"]').click()
-    maps_link = wait.until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource-host] [data-companion-resource="maps"]'))
-    )
-    maps_link.click()
+    page.click('[data-companion-resource="browse_research"]')
+    page.click('[data-companion-resource-host] [data-companion-resource="maps"]')
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="maps"]').get_attribute("aria-selected") == "true")
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
     assert panel.get_attribute("data-companion-state") == "full"
 
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+    page.click('[data-companion-state-control="closed"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
@@ -155,7 +189,7 @@ def test_explore_opens_general_research_overview(driver, wait, base_url):
 
 def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, base_url):
     driver.set_window_size(1440, 1000)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
 
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
@@ -174,7 +208,7 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
     assert metrics["companion"] > metrics["reader"]
 
     expand = driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="full"]')
-    expand.click()
+    page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
     expanded_metrics = driver.execute_script(
         """
@@ -197,7 +231,7 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
     assert expanded_metrics["bodyOverflow"] == "hidden"
     assert expand.get_attribute("aria-label") == "Collapse Study Companion"
 
-    expand.click()
+    page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
     assert driver.execute_script(
         "return getComputedStyle(document.querySelector('[data-study-companion]')).position;"
@@ -361,14 +395,14 @@ def test_mobile_sheet_drag_snap_and_non_gesture_controls(driver, wait, base_url)
     _drag_sheet(driver, peek, -430)
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
 
-    driver.find_element(By.CSS_SELECTOR, ".companion-collapse-button").click()
+    page.click(".companion-collapse-button")
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
 
     peek = driver.find_element(By.CSS_SELECTOR, ".companion-peek")
     _drag_sheet(driver, peek, -10)
     assert panel.get_attribute("data-companion-state") == "peek"
 
-    peek.click()
+    page.click(".companion-peek")
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
     page.click('[data-companion-state-control="full"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
@@ -896,7 +930,7 @@ def test_mobile_ask_handoff_focus_stays_within_viewport(driver, wait, base_url):
 
 def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
     driver.set_window_size(390, 844)
-    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = HomePage(driver, wait, base_url).open().wait_loaded()
     driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
     canonical_selector = '[data-companion-deeper] [data-companion-resource="canonical"]'
     canonical = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, canonical_selector)))
@@ -922,7 +956,7 @@ def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
     assert not driver.find_element(By.CSS_SELECTOR, "#workspace-pane-context").is_displayed()
 
     panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
-    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+    page.click('[data-companion-state-control="closed"]')
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
