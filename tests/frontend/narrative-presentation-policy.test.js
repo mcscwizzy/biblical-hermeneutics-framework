@@ -15,13 +15,31 @@ test("reader policy keeps the 99 source-audit decisions separate from CKL govern
   assert.equal(policy.tierFor({id: qualified.stable_ckl_id, content_status: "draft", human_review_required: true}), "available_on_demand");
 });
 
-test("unassessed CKL records require an exact passage anchor and useful source details for on-demand access", () => {
+test("unassessed CKL records require substantive passage-specific content as well as source details", () => {
   assert.equal(policy.tierFor({
     id: "ckl:example#claim:one",
     domain: "ckl",
+    record_kind: "evidence",
+    claim_text: "The passage describes a field purchase during the siege as a sign of future restoration.",
     applicable_passage_anchors: [{reference: "Genesis 1:1", relationship: "direct"}],
     sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
   }), "available_on_demand");
+  assert.equal(policy.tierFor({
+    id: "ckl:jeremiah",
+    domain: "ckl",
+    record_kind: "object",
+    title: "Jeremiah",
+    applicable_passage_anchors: [{reference: "Jeremiah 32:1-44", relationship: "primary"}],
+    sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
+  }), "withheld_from_reader_promotion");
+  assert.equal(policy.tierFor({
+    id: "ckl:example#claim:title-only",
+    domain: "ckl",
+    record_kind: "evidence",
+    title: "A title",
+    applicable_passage_anchors: [{reference: "Genesis 1:1", relationship: "direct"}],
+    sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
+  }), "withheld_from_reader_promotion");
   assert.equal(policy.tierFor({
     id: "ckl:example#claim:two",
     domain: "ckl",

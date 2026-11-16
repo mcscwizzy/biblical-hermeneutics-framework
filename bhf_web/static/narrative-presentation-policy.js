@@ -50,12 +50,22 @@
     });
   }
 
+  function hasSubstantivePassageClaim(item) {
+    if (item?.record_kind !== "evidence" && item?.record_kind !== "claim") return false;
+    const title = String(item?.title || "").trim().toLowerCase();
+    return [item?.claim_text, item?.description, item?.rationale?.primary_observation, item?.rationale?.passage_relevance]
+      .some((value) => {
+        const text = String(value || "").trim();
+        return text.length > 0 && text.toLowerCase() !== title;
+      });
+  }
+
   function tierFor(item) {
     const id = recordId(item);
     if (AUDITED_RECORDS[id]) return AUDITED_RECORDS[id].tier;
     if (String(item?.domain || "").toLowerCase() === "maps"
       || String(item?.domain || "").toLowerCase() === "archaeology") return "available_on_demand";
-    if (hasDirectPassageAnchor(item) && hasUsefulBibliography(item)) return "available_on_demand";
+    if (hasSubstantivePassageClaim(item) && hasDirectPassageAnchor(item) && hasUsefulBibliography(item)) return "available_on_demand";
     return "withheld_from_reader_promotion";
   }
 
