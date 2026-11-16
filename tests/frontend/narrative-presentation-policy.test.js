@@ -15,10 +15,27 @@ test("reader policy keeps the 99 source-audit decisions separate from CKL govern
   assert.equal(policy.tierFor({id: qualified.stable_ckl_id, content_status: "draft", human_review_required: true}), "available_on_demand");
 });
 
-test("unassessed CKL records require an exact passage anchor and useful source details for on-demand access", () => {
+test("unassessed CKL records require a passage anchor and useful source details", () => {
   assert.equal(policy.tierFor({
     id: "ckl:example#claim:one",
     domain: "ckl",
+    record_kind: "claim",
+    applicable_passage_anchors: [{reference: "Genesis 1:1", relationship: "direct"}],
+    sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
+  }), "available_on_demand");
+  assert.equal(policy.tierFor({
+    id: "ckl:jeremiah",
+    domain: "ckl",
+    record_kind: "object",
+    title: "Jeremiah",
+    applicable_passage_anchors: [{reference: "Jeremiah 32:1-44", relationship: "primary"}],
+    sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
+  }), "withheld_from_reader_promotion");
+  assert.equal(policy.tierFor({
+    id: "ckl:example#evidence:title-only",
+    domain: "ckl",
+    record_kind: "evidence",
+    title: "A title",
     applicable_passage_anchors: [{reference: "Genesis 1:1", relationship: "direct"}],
     sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
   }), "available_on_demand");
@@ -42,6 +59,15 @@ test("featured discovery wording separates textual observations from disputed ex
   assert.match(details.notice, /Greek and Qumran/i);
   assert.match(details.uncertainty, /proposed historical explanation/i);
   assert.match(details.uncertainty, /manuscript image/i);
+});
+
+test("a sourced, passage-linked interpretive note remains available", () => {
+  assert.equal(policy.tierFor({
+    id: "ckl:example#interpretive_note:one",
+    record_kind: "interpretive_note",
+    applicable_passage_anchors: [{reference: "Isaiah 43:16-21", relationship: "primary"}],
+    sources: [{details_available: true, bibliographic_details: {title: "A study", author: "A scholar", year: 2020}}],
+  }), "available_on_demand");
 });
 
 test("reader source notes describe citation access without treating checks as scholarly approval", () => {

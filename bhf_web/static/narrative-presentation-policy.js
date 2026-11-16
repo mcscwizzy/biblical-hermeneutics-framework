@@ -52,6 +52,7 @@
 
   function tierFor(item) {
     const id = recordId(item);
+    if (String(item?.domain || "").toLowerCase() === "ckl" && item?.record_kind === "object") return "withheld_from_reader_promotion";
     if (AUDITED_RECORDS[id]) return AUDITED_RECORDS[id].tier;
     if (String(item?.domain || "").toLowerCase() === "maps"
       || String(item?.domain || "").toLowerCase() === "archaeology") return "available_on_demand";
