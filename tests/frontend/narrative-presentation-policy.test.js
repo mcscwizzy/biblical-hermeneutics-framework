@@ -15,12 +15,11 @@ test("reader policy keeps the 99 source-audit decisions separate from CKL govern
   assert.equal(policy.tierFor({id: qualified.stable_ckl_id, content_status: "draft", human_review_required: true}), "available_on_demand");
 });
 
-test("unassessed CKL records require substantive passage-specific content as well as source details", () => {
+test("unassessed CKL records require a passage anchor and useful source details", () => {
   assert.equal(policy.tierFor({
     id: "ckl:example#claim:one",
     domain: "ckl",
-    record_kind: "evidence",
-    claim_text: "The passage describes a field purchase during the siege as a sign of future restoration.",
+    record_kind: "claim",
     applicable_passage_anchors: [{reference: "Genesis 1:1", relationship: "direct"}],
     sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
   }), "available_on_demand");
@@ -33,13 +32,13 @@ test("unassessed CKL records require substantive passage-specific content as wel
     sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
   }), "withheld_from_reader_promotion");
   assert.equal(policy.tierFor({
-    id: "ckl:example#claim:title-only",
+    id: "ckl:example#evidence:title-only",
     domain: "ckl",
     record_kind: "evidence",
     title: "A title",
     applicable_passage_anchors: [{reference: "Genesis 1:1", relationship: "direct"}],
     sources: [{details_available: true, bibliographic_details: {title: "A source", author: "An author", locator: "p. 12"}}],
-  }), "withheld_from_reader_promotion");
+  }), "available_on_demand");
   assert.equal(policy.tierFor({
     id: "ckl:example#claim:two",
     domain: "ckl",
@@ -66,7 +65,6 @@ test("a sourced, passage-linked interpretive note remains available", () => {
   assert.equal(policy.tierFor({
     id: "ckl:example#interpretive_note:one",
     record_kind: "interpretive_note",
-    description: "The poem uses the sea crossing to recall an earlier deliverance.",
     applicable_passage_anchors: [{reference: "Isaiah 43:16-21", relationship: "primary"}],
     sources: [{details_available: true, bibliographic_details: {title: "A study", author: "A scholar", year: 2020}}],
   }), "available_on_demand");
