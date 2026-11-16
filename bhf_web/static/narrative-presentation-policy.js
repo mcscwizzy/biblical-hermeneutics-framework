@@ -51,7 +51,7 @@
   }
 
   function hasSubstantivePassageClaim(item) {
-    if (item?.record_kind !== "evidence" && item?.record_kind !== "claim") return false;
+    if (!["evidence", "claim", "interpretive_note"].includes(item?.record_kind)) return false;
     const title = String(item?.title || "").trim().toLowerCase();
     return [item?.claim_text, item?.description, item?.rationale?.primary_observation, item?.rationale?.passage_relevance]
       .some((value) => {

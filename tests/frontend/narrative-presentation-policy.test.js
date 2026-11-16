@@ -62,6 +62,16 @@ test("featured discovery wording separates textual observations from disputed ex
   assert.match(details.uncertainty, /manuscript image/i);
 });
 
+test("a sourced, passage-linked interpretive note remains available", () => {
+  assert.equal(policy.tierFor({
+    id: "ckl:example#interpretive_note:one",
+    record_kind: "interpretive_note",
+    description: "The poem uses the sea crossing to recall an earlier deliverance.",
+    applicable_passage_anchors: [{reference: "Isaiah 43:16-21", relationship: "primary"}],
+    sources: [{details_available: true, bibliographic_details: {title: "A study", author: "A scholar", year: 2020}}],
+  }), "available_on_demand");
+});
+
 test("reader source notes describe citation access without treating checks as scholarly approval", () => {
   const nahum = {
     id: "ckl:nahum#evidence:nahum-3-8-9-one-city-text-critical-proposal",
