@@ -308,20 +308,19 @@ test("overview shows six concise category cards and no evidence inventory", () =
   assert.match(connectionEntry.textContent, /Follow a Connection/);
   assert.match(contextEntry.textContent, /Understand the Passage/);
   assert.match(contextEntry.textContent, /Explore the historical setting, original audience, literary structure, and cultural background\./);
-  assert.match(sourcesEntry.textContent, /Find a source/);
+  assert.equal(sourcesEntry, undefined);
   assert.equal(descendants(root).filter((element) => element.className === "narrative-explorer-item").length, 0);
   assert.equal(descendants(root).filter((element) => element.className === "narrative-explorer-category-count").length, 0);
   assert.ok(descendants(root).some((element) => element.className === "narrative-explorer-featured-discoveries"));
 
   connectionEntry.click();
   contextEntry.click();
-  sourcesEntry.click();
 
   assert.equal(opened.length, 1);
   assert.equal(opened[0].categoryId, "themes_biblical_connections");
   assert.equal(opened[0].trigger, connectionEntry);
   assert.deepEqual(openedContext, [contextEntry]);
-  assert.deepEqual(openedSources, [sourcesEntry]);
+  assert.deepEqual(openedSources, []);
 });
 
 test("reader overview features only eligible discoveries and keeps inaccessible evidence out of reader cards", () => {
@@ -362,7 +361,7 @@ test("reader overview features only eligible discoveries and keeps inaccessible 
   assert.match(discovery.textContent, /What to notice/);
   assert.match(discovery.textContent, /Nineveh/);
   assert.match(discovery.textContent, /proposed historical explanation/i);
-  assert.match(discovery.textContent, /How we know/);
+  assert.match(discovery.textContent, /Supporting sources/);
   assert.match(discovery.textContent, /A Tale of One City/);
   assert.doesNotMatch(discovery.textContent, /human_review_required|in_review|draft|ckl:nahum|gruetter-nahum3/);
   assert.doesNotMatch(root.textContent, /Draft evidence|awaiting human review|Additional sourced records|psalm-100-worship/);
@@ -1303,19 +1302,16 @@ test("overview renders bounded source records, coverage and provenance without H
   initialMapAction.click();
   assert.equal(navigations[0].action.mapFocusAllowed, true);
   navigations.length = 0;
-  const inspect = geographyCard.children.find((element) => element.className.includes("narrative-explorer-inspect"));
-  inspect.click();
-  const fullList = geographyCard.children.find((element) => element.className === "narrative-explorer-record-list");
-  const mapActions = descendants(fullList).filter((element) => element.className.includes("narrative-explorer-item-action"));
-  mapActions.forEach((action) => action.click());
+  const focusedMaps = mapItems.map((item) => renderCategory(data, "biblical_geography", {
+    document: fakeDocument(), focusItemId: item.id, onNavigate: (selected, action) => navigations.push({item: selected, action}),
+  }));
+  focusedMaps.forEach((view) => descendants(view).find((element) => element.className.includes("narrative-explorer-item-action"))?.click());
   const navigationByTarget = new Map(navigations.map((entry) => [entry.item.navigation.target_id, entry.action]));
   assert.equal(navigationByTarget.get("maps:00-eden-safe").mapFocusAllowed, true);
   assert.equal(navigationByTarget.get("maps:01-eden-uncertain").mapFocusAllowed, false);
   assert.equal(navigationByTarget.has("maps:02-no-selection"), false);
-  assert.ok(mapActions.some((action) => /try to focus this item/.test(action.textContent)));
-  assert.ok(mapActions.some((action) => /general Maps Explorer/.test(action.textContent)));
-  const unsupportedCard = descendants(geographyCard).find((element) => element.tagName === "ARTICLE" && element.textContent.includes("Collection-only place"));
-  assert.equal(descendants(unsupportedCard).filter((element) => element.className.includes("narrative-explorer-item-action")).length, 0);
+  assert.ok(focusedMaps.some((view) => /try to focus this item/.test(view.textContent)));
+  assert.ok(focusedMaps.some((view) => /general Maps Explorer/.test(view.textContent)));
   assert.doesNotMatch(allText, /shared motifs prove direct quotation/i);
 });
 
@@ -1390,9 +1386,7 @@ test("physical and conceptual geography details keep their evidence domains dist
   const cosmicView = renderCategory(data, "divine_council_cosmic_geography", {document: fakeDocument()});
   const physicalCard = descendants(physicalView).find((element) => element.dataset.sectionId === "biblical_geography");
   const cosmicCard = descendants(cosmicView).find((element) => element.dataset.sectionId === "divine_council_cosmic_geography");
-  physicalCard.children.find((element) => element.className.includes("narrative-explorer-inspect")).click();
-  cosmicCard.children.find((element) => element.className.includes("narrative-explorer-inspect")).click();
-  const lines = `${physicalView.textContent} ${cosmicView.textContent}`;
+  const lines = [physicalView, cosmicView, ...concepts.map((item) => renderCategory(data, "divine_council_cosmic_geography", {document: fakeDocument(), focusItemId: item.id}))].map((view) => view.textContent).join(" ");
   assert.doesNotMatch(lines, /pilot-place|Physical identification status|Place identification confidence|Dispute status|Passage relationship|Original relationship types/);
   assert.match(lines, /Source: Test map catalog/);
   assert.match(lines, /License: CC BY 4\.0/);
@@ -1419,19 +1413,10 @@ test("unavailable states are announced without turning a network failure into an
   assert.match(failure.textContent, /Reconnect and try again/);
 });
 
-test("overview exposes a reader-facing evidence action with the exact projected item identity", () => {
+test("reader observations do not open raw evidence records", () => {
   const data = projection({items: projection().items.map((item) => readerEligible(item))});
-  const inspected = [];
-  const root = renderCategory(data, "biblical_narrative", {
-    document: fakeDocument(),
-    onInspect: (item, button) => inspected.push({id: item.id, control: button.dataset.narrativeItemId}),
-  });
-  const button = descendants(root).find((element) => element.dataset.narrativeItemId === data.items[0].id);
-
-  assert.ok(button, "each visible projected item should be openable by its stable ID");
-  button.click();
-
-  assert.deepEqual(inspected, [{id: data.items[0].id, control: data.items[0].id}]);
+  const root = renderCategory(data, "biblical_narrative", {document: fakeDocument(), onInspect: () => { throw new Error("unexpected record navigation"); }});
+  assert.equal(descendants(root).some((element) => element.dataset.narrativeItemId), false);
 });
 
 test("trail state preserves the original passage and limits relationship hops", () => {
@@ -2177,7 +2162,7 @@ test("reader cards hide editorial review labels while preserving research eligib
     element.className === "narrative-explorer-item" && element.textContent.includes("Ancient textual comparison"));
   assert.ok(card);
   assert.doesNotMatch(card.textContent, /Draft|awaiting human review|in_review|human_review_required|Content state/);
-  assert.match(card.textContent, /How we know/);
+  assert.match(card.textContent, /Supporting sources/);
   assert.match(card.textContent, /source is cited, but its support for this claim was not independently checked/i);
 
   const published = renderCategory(projection(), "biblical_narrative", {document: fakeDocument()});
@@ -2636,17 +2621,15 @@ test("passage research cards use plain evidence labels and withhold internal ide
   for (const testCase of cases) {
     const data = JSON.parse(fs.readFileSync(fixturePath(testCase.file), "utf8"));
     const sectionId = data.sections.find((entry) => entry.item_ids.includes(testCase.id))?.id;
-    const root = renderCategory(data, sectionId, {document: fakeDocument(), onInspect: () => {}});
+    const root = renderCategory(data, sectionId, {document: fakeDocument(), focusItemId: testCase.id});
     const sectionCard = descendants(root).find((element) => element.dataset.sectionId === sectionId);
-    const inspect = descendants(sectionCard).find((element) => element.className.includes("narrative-explorer-inspect"));
-    inspect.click();
-    const itemCard = descendants(sectionCard).find((element) => element.tagName === "ARTICLE"
-      && descendants(element).some((child) => child.dataset.narrativeItemId === testCase.id));
+    const targetTitle = data.items.find((item) => item.id === testCase.id)?.title;
+    const itemCard = descendants(sectionCard).find((element) => element.tagName === "ARTICLE" && element.textContent.includes(targetTitle));
     const label = descendants(itemCard).find((element) => element.className === "narrative-explorer-item-kind");
     const provenance = descendants(itemCard).find((element) => element.className === "narrative-explorer-provenance");
 
     assert.equal(label.textContent, testCase.label, `${testCase.id} should use its reader-facing evidence layer`);
-    assert.match(provenance.textContent, /How we know/);
+    assert.match(provenance.textContent, /Supporting sources/);
     const sourceTitles = (data.items.find((item) => item.id === testCase.id)?.sources || [])
       .map((source) => source.bibliographic_details?.title)
       .filter(Boolean);
@@ -2721,12 +2704,10 @@ test("overview keeps passage evidence concise and separates anchors from recorde
       assert.doesNotMatch(provenance.textContent, /Original relationship types:|Passage relationship:|Source ID:|source_id|ckl:/);
       const sourceItem = data.items.find((item) => item.title === title);
       assert.doesNotMatch(provenance.textContent, /CKL parent object|Source ID:|Curation confidence/);
-      const explore = descendants(card).find((element) => element.className.includes("narrative-explorer-item-inspect"));
-      assert.equal(explore?.textContent, "Explore this evidence", `${title} should use reader-facing detail navigation`);
-      explore.click();
+      assert.equal(descendants(card).some((element) => element.className.includes("narrative-explorer-item-inspect")), false);
     }
 
-    assert.equal(inspected.length, testCase.titles.length, "the preview action should reuse the existing inspect callback");
+    assert.equal(inspected.length, 0);
     if (testCase.file === "genesis_6_1_4.json") {
       const sons = cards.find((element) => element.textContent.includes("Sons of God: documented interpretive positions"));
       assert.match(sons.textContent, /Who the [“\"]?sons of God[”\"]? are and what the episode means remain disputed/i);
@@ -2882,4 +2863,26 @@ test("direct Scripture anchors are not rendered as unclassified CKL associations
   assert.match(comparisonDetail.textContent, /Passages where this research applies/);
   assert.match(comparisonDetail.textContent, /does not by itself establish a relationship between passages/);
   assert.doesNotMatch(comparisonDetail.textContent, /Evidence scope:|This authored label is a descriptive association|ckl:/);
+});
+
+
+test("topic observations do not expose a source-record inventory", () => {
+  const root = renderCategory(projection(), "biblical_narrative", {document: fakeDocument(), onInspect: () => {}});
+  assert.doesNotMatch(root.textContent, /Browse more research|Show more research|Find a source/);
+  assert.equal(descendants(root).some((element) => element.className === "narrative-explorer-record-list"), false);
+});
+
+
+test("topic cards need an observation and keep their sources collapsed", () => {
+  const observation = readerEligible({...projection().items[0], id: "ckl:example#claim:observed", title: "A passage observation", description: "The passage describes a concrete observation."});
+  const empty = readerEligible({...observation, id: "ckl:example#claim:empty", title: "Only a title", description: "", claim_text: "", rationale: {}});
+  const data = projection({sections: [section("biblical_narrative", [observation.id, empty.id], "available")], items: [observation, empty]});
+  const view = renderCategory(data, "biblical_narrative", {document: fakeDocument()});
+  assert.match(view.textContent, /The passage describes a concrete observation/);
+  assert.doesNotMatch(view.textContent, /Only a title/);
+  const source = descendants(view).find((element) => element.className === "narrative-explorer-provenance");
+  assert.equal(source.tagName, "DETAILS");
+  assert.equal(source.children[0].textContent, "Supporting sources");
+  assert.match(source.textContent, /Genesis 1/);
+  assert.equal(source.attributes.open, undefined);
 });

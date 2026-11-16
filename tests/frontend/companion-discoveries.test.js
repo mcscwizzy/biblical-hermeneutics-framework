@@ -116,7 +116,8 @@ test("Walk the Land keeps grounded evidence while Did You Know cards are not ren
   assert.equal(details.children[0].textContent, "Dig In");
   assert.equal(explanation.className, "companion-discovery-explanation");
   assert.equal(explanation.textContent, "The linked place locates the passage's travel detail in the lakeside setting.");
-  assert.equal(evidenceList.children[0].textContent, "Evidence");
+  assert.equal(evidenceList.tagName, "DETAILS");
+  assert.equal(evidenceList.children[0].textContent, "Supporting sources");
   assert.equal(evidence.children[0].textContent, "The supplied evidence claim.");
   assert.match(evidence.children[1].textContent, /Sources: Curated map source/);
   assert.equal(actions.children[0].textContent, "Actions");
@@ -158,7 +159,7 @@ test("Walk the Land Dig In omits duplicate explanations while keeping evidence a
   });
   const duplicateDetails = selectors["[data-companion-land]"].children[0].children[3];
   assert.equal(duplicateDetails.children.length, 3);
-  assert.equal(duplicateDetails.children[1].children[0].textContent, "Evidence");
+  assert.equal(duplicateDetails.children[1].children[0].textContent, "Supporting sources");
   assert.equal(duplicateDetails.children[1].children[1].children[0].textContent, "Visible raw evidence remains available.");
   assert.equal(duplicateDetails.children[2].children[1].dataset.presentationAction, "explore_history");
   assert.equal(duplicateDetails.children.some((child) => child.className === "companion-discovery-explanation"), false);

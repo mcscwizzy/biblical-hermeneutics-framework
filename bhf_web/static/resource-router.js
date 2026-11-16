@@ -1351,12 +1351,6 @@
         });
         body.append(related);
       }
-      if (Number(narration.additional_evidence_count || 0) > 0) {
-        const additional = document.createElement("p");
-        additional.className = "companion-summary-meta";
-        additional.textContent = `${narration.additional_evidence_count} additional related record${narration.additional_evidence_count === 1 ? "" : "s"} available.`;
-        body.append(additional);
-      }
     }
 
     function renderUnderstandPassage(context, selection, topicId, callbacks = {}) {
@@ -1375,7 +1369,7 @@
       reference.textContent = selection?.reference ? `Current passage: ${selection.reference}` : "Contextual summaries for the selected passage.";
       const provenance = document.createElement("p");
       provenance.className = "companion-context-provenance";
-      provenance.textContent = "These are Study Companion contextual research summaries with their recorded support and qualifications, separate from Narrative Explorer evidence records.";
+      provenance.textContent = "Explore context for the selected passage.";
       root.append(heading, reference, provenance);
 
       const topicNav = document.createElement("nav");
@@ -1450,12 +1444,6 @@
         returnButton.addEventListener("click", callbacks.onReturnToPassage);
         actions.append(returnButton);
       }
-      const sources = document.createElement("button");
-      sources.type = "button";
-      sources.className = "companion-text-button companion-browse-research";
-      sources.textContent = "Browse research sources";
-      sources.addEventListener("click", (event) => callbacks.onBrowseResearch?.(event.currentTarget || sources));
-      actions.append(sources);
       root.append(actions);
 
       if (callbacks.focusTopicId) {
@@ -1481,14 +1469,7 @@
       status.textContent = offline
         ? "Contextual summaries are unavailable offline. No current response could be loaded."
         : `Contextual summaries could not be loaded${message ? `: ${message}` : "."}`;
-      const sources = document.createElement("button");
-      sources.type = "button";
-      sources.className = "companion-text-button companion-browse-research";
-      sources.textContent = "Browse research sources";
-      sources.addEventListener("click", () => options.openResource?.("browse_research", {
-        label: "Browse research sources",
-      }));
-      body.append(status, sources);
+      body.append(status);
       target.replaceChildren(body);
       target.setAttribute("aria-busy", "false");
     }
@@ -1562,14 +1543,11 @@
 
     function appendEvidenceDisclosure(host, sentence, disclosureLabel = "Evidence") {
       const lines = evidenceLines(sentence);
-      const claimIds = Array.isArray(sentence?.claim_ids) ? sentence.claim_ids : [];
-      const sourceIds = Array.isArray(sentence?.source_ids) ? sentence.source_ids : [];
-      const references = Array.isArray(sentence?.scripture_references) ? sentence.scripture_references : [];
-      if (!claimIds.length && !sourceIds.length && !references.length && !lines.length) return;
+      if (!lines.length) return;
       const details = document.createElement("details");
       details.className = "companion-evidence-disclosure";
       const summary = document.createElement("summary");
-      summary.textContent = `${disclosureLabel} · ${sourceIds.length || 0} source${sourceIds.length === 1 ? "" : "s"}`;
+      summary.textContent = "Supporting sources";
       details.append(summary);
       const list = document.createElement("ul");
       lines.forEach((value) => {
@@ -1583,11 +1561,10 @@
 
     function appendSectionEvidenceDisclosure(host, sentences, disclosureLabel = "Evidence") {
       if (!sentences.length || !sentences.some((sentence) => evidenceLines(sentence).length)) return;
-      const sourceIds = new Set(sentences.flatMap((sentence) => sentence.source_ids || []));
       const details = document.createElement("details");
       details.className = "companion-evidence-disclosure companion-section-evidence";
       const summary = document.createElement("summary");
-      summary.textContent = `${disclosureLabel} · ${sourceIds.size} source${sourceIds.size === 1 ? "" : "s"}`;
+      summary.textContent = "Supporting sources";
       details.append(summary);
       const sentenceList = document.createElement("ol");
       sentences.forEach((sentence, index) => {
@@ -1609,29 +1586,12 @@
     }
 
     function evidenceLines(sentence) {
-      const claimIds = Array.isArray(sentence?.claim_ids) ? sentence.claim_ids : [];
-      const sourceIds = Array.isArray(sentence?.source_ids) ? sentence.source_ids : [];
-      const sourceDetails = Array.isArray(sentence?.source_details) ? sentence.source_details : [];
-      const references = Array.isArray(sentence?.scripture_references) ? sentence.scripture_references : [];
-      const parentRecords = Array.isArray(sentence?.parent_records) && sentence.parent_records.length
-        ? sentence.parent_records
-        : sentence?.parent_object_id ? [{id: sentence.parent_object_id, title: sentence.parent_title}] : [];
-      const metadata = [
+      const sources = Array.isArray(sentence?.source_details) ? sentence.source_details : [];
+      return [
         sentence?.certainty ? `Certainty: ${humanizeMetadata(sentence.certainty)}` : "",
-        sentence?.uncertainty ? `Uncertainty: ${humanizeMetadata(sentence.uncertainty)}` : "",
-        sentence?.interpretation_status || sentence?.interpretation_state
-          ? `Interpretation status: ${humanizeMetadata(sentence.interpretation_status || sentence.interpretation_state)}`
-          : "",
-        sentence?.dispute_status ? `Dispute: ${humanizeMetadata(sentence.dispute_status)}` : "",
-        sentence?.content_status ? `Status: ${humanizeMetadata(sentence.content_status)}` : "",
-        sentence?.review_status ? `Review: ${humanizeMetadata(sentence.review_status)}` : "",
-        sentence?.human_review_required ? "Human review required" : "",
-        ...parentRecords.map((record) => `CKL record: ${record.title || record.id || "record"}${record.id && record.title ? ` · ${record.id}` : ""}`),
+        sentence?.uncertainty ? `Uncertainty: ${sentence.uncertainty}` : "",
+        ...sources.filter((source) => source?.title).map((source) => `Source: ${source.title}${source.locator ? ` · ${source.locator}` : ""}`),
       ].filter(Boolean);
-      const sourceLines = sourceDetails.length
-        ? sourceDetails.map((source) => `Source: ${source.title || source.id || "record"}${source.locator ? ` · ${source.locator}` : ""}`)
-        : sourceIds.map((value) => `Source: ${value}`);
-      return [...metadata, ...claimIds.map((value) => `Claim: ${value}`), ...sourceLines, ...references.map((value) => `Scripture: ${value}`)];
     }
 
     function humanizeMetadata(value) {

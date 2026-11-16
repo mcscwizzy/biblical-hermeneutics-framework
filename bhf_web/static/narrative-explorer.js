@@ -966,15 +966,6 @@
       });
       choices.append(cards);
       rootElement.append(choices);
-      const sourceNavigation = element(document, "nav", "narrative-explorer-secondary-navigation");
-      sourceNavigation.setAttribute("aria-label", "Research sources");
-      const sourceEntry = element(document, "button", "narrative-explorer-browse-sources");
-      sourceEntry.type = "button";
-      sourceEntry.dataset.narrativeFocusId = "browse-sources";
-      sourceEntry.textContent = "Find a source";
-      sourceEntry.addEventListener("click", (event) => options.onOpenResearchSources?.(event.currentTarget || sourceEntry));
-      sourceNavigation.append(sourceEntry);
-      rootElement.append(sourceNavigation);
       rootElement.append(renderTermGuide(document));
       return rootElement;
     }
@@ -995,7 +986,7 @@
     const section = sectionsById.get(definition.id) || {id: definition.id, state: "unknown", item_ids: [], source_domains: []};
     const items = (Array.isArray(section.item_ids) ? section.item_ids : [])
       .map((id) => itemsById.get(id))
-      .filter((item) => item && presentationTier(item) !== "withheld_from_reader_promotion");
+      .filter((item) => item && presentationTier(item) !== "withheld_from_reader_promotion" && hasReaderObservation(item));
     let hasConnectionPreview = false;
     if (definition.id === "themes_biblical_connections") {
       rootElement.append(renderRelatedPassages(document, passage, projection?.related_passages, options));
@@ -1052,7 +1043,7 @@
       appendTextElement(document, card, "p", wording.relevance, "narrative-explorer-featured-relevance");
       appendTextElement(document, card, "p", wording.uncertainty, "narrative-explorer-featured-uncertainty");
       const disclosure = element(document, "details", "narrative-explorer-provenance");
-      appendTextElement(document, disclosure, "summary", "How we know");
+      appendTextElement(document, disclosure, "summary", "Supporting sources");
       appendTextElement(document, disclosure, "p", PRESENTATION_POLICY.sourceNoteFor(item));
       const limit = PRESENTATION_POLICY.sourceLimitFor(item);
       if (limit) appendTextElement(document, disclosure, "p", `Source limit: ${limit}`, "narrative-explorer-source-limit");
@@ -1273,6 +1264,7 @@
           );
         }
         appendTextElement(document, article, "p", readerText(route.explanation), "narrative-explorer-related-passage-explanation");
+        if (readerText(route.uncertainty)) appendTextElement(document, article, "p", readerText(route.uncertainty), "narrative-explorer-caution");
         appendPassageRouteDetails(document, article, route, routeKind);
         list.append(article);
       });
@@ -1299,7 +1291,7 @@
 
   function appendPassageRouteDetails(document, parent, route, routeKind) {
     const details = element(document, "details", "narrative-explorer-related-passage-details");
-    appendTextElement(document, details, "summary", "How this connection is supported");
+    appendTextElement(document, details, "summary", "Supporting sources");
     appendTextElement(document, details, "p", readerText(route.explanation) || "The record does not include an explanation for this connection.");
     (Array.isArray(route.supporting_records) ? route.supporting_records : []).forEach((record) => {
       if (readerText(record.statement)) appendTextElement(document, details, "p", readerText(record.statement), "narrative-explorer-original-claim");
@@ -1309,8 +1301,7 @@
       : (Array.isArray(route.supporting_sources) ? route.supporting_sources : []);
     const nestedSources = (Array.isArray(route.supporting_records) ? route.supporting_records : [])
       .flatMap((record) => Array.isArray(record.sources) ? record.sources : []);
-    appendBibliography(document, details, [...sources, ...nestedSources], [], {disclosure: true, heading: "Cited sources", hideIdentifiers: true});
-    if (readerText(route.uncertainty)) appendTextElement(document, details, "p", readerText(route.uncertainty), "narrative-explorer-caution");
+    appendBibliography(document, details, [...sources, ...nestedSources], [], {disclosure: false, heading: "Cited sources", hideIdentifiers: true});
     parent.append(details);
   }
 
@@ -1383,7 +1374,7 @@
     const geographyItemIds = new Set(sectionsById.get("biblical_geography")?.item_ids || []);
     return items.flatMap((item) => {
       if (readerText(item?.record_kind) !== "evidence") return [];
-      if (presentationTier(item) === "withheld_from_reader_promotion") return [];
+      if (presentationTier(item) === "withheld_from_reader_promotion" || !hasReaderObservation(item)) return [];
       if (!hasRecordedSourceIdentity(item)) return [];
       const anchors = Array.isArray(item.applicable_passage_anchors) && item.applicable_passage_anchors.length
         ? item.applicable_passage_anchors
@@ -1520,7 +1511,7 @@
     const card = element(document, "section", `narrative-explorer-section${renderOptions.focused ? " is-focused" : ""}`);
     card.dataset.sectionId = definition.id;
     const heading = element(document, "div", "narrative-explorer-section-heading");
-    appendTextElement(document, heading, "h4", renderOptions.focused ? "Evidence linked to this passage" : definition.title);
+    appendTextElement(document, heading, "h4", renderOptions.focused ? "Observations about this passage" : definition.title);
     if (!renderOptions.focused) appendTextElement(document, heading, "p", definition.description);
     card.append(heading);
     if (definition.id === "divine_council_cosmic_geography") {
@@ -1551,8 +1542,6 @@
     }
 
     const previewList = element(document, "div", "narrative-explorer-previews");
-    const fullList = element(document, "div", "narrative-explorer-record-list");
-    fullList.hidden = true;
     const ordered = orderForPreview(items);
     const focusItem = ordered.find((item) => item.id === options.focusItemId);
     const distinct = distinctPreviewItems(ordered);
@@ -1561,40 +1550,6 @@
       : distinct.slice(0, 2);
     previewItems.forEach((item) => previewList.append(renderItem(document, item, connectionsByItem.get(item.id) || [], options)));
     if (!renderOptions.hidePreviews) card.append(previewList);
-    card.append(fullList);
-
-    if (items.length) {
-      const inspect = element(document, "button", "secondary narrative-explorer-inspect");
-      inspect.type = "button";
-      inspect.textContent = "Browse more research";
-      inspect.setAttribute("aria-expanded", "false");
-      let next = 0;
-      let expanded = false;
-      let moreButton = null;
-      const addNextPage = () => {
-        const page = ordered.slice(next, next + PAGE_SIZE);
-        page.forEach((item) => fullList.append(renderItem(document, item, connectionsByItem.get(item.id) || [], options)));
-        next += page.length;
-        if (moreButton) {
-          moreButton.hidden = next >= ordered.length;
-          moreButton.textContent = "Show more research";
-        }
-      };
-      inspect.addEventListener("click", () => {
-        expanded = !expanded;
-        inspect.setAttribute("aria-expanded", String(expanded));
-        previewList.hidden = expanded;
-        fullList.hidden = !expanded;
-        inspect.textContent = expanded ? "Hide research" : "Browse more research";
-        if (expanded && next === 0) addNextPage();
-      });
-      moreButton = element(document, "button", "secondary narrative-explorer-more");
-      moreButton.type = "button";
-      moreButton.textContent = "Show more research";
-      moreButton.hidden = ordered.length <= PAGE_SIZE;
-      moreButton.addEventListener("click", addNextPage);
-      card.append(inspect, moreButton);
-    }
     return card;
   }
 
@@ -1663,8 +1618,6 @@
     const basis = previewBasis(item, connectionPreview);
     if (basis.text) {
       appendTextElement(document, card, "p", `${basis.label}: ${basis.text}`, "narrative-explorer-preview-basis");
-    } else {
-      appendTextElement(document, card, "p", "No explanation is available for why this research appears here.", "narrative-explorer-preview-basis");
     }
     if (connectionPreview?.edge?.curation?.uncertainty) {
       appendTextElement(
@@ -1698,12 +1651,13 @@
         .filter(Boolean);
       if (materials.length) appendTextElement(document, card, "p", `Ancient comparative material (not Scripture): ${materials.join(" · ")}.`, "narrative-explorer-curation-comparative");
     }
+    const interpretation = readerText(item?.rationale?.scholarly_interpretation || item?.rationale?.interpretation);
+    if (interpretation && isDisputed(item)) appendTextElement(document, card, "p", interpretation, "narrative-explorer-item-interpretation");
     const qualification = previewQualification(item, evidenceLabel);
     if (qualification) appendTextElement(document, card, "p", qualification, "narrative-explorer-item-qualification");
 
     const provenance = element(document, "details", "narrative-explorer-provenance");
-    appendTextElement(document, provenance, "summary", "How we know");
-    appendFullEvidenceDetails(document, provenance, item);
+    appendTextElement(document, provenance, "summary", "Supporting sources");
     appendTextElement(document, provenance, "p", PRESENTATION_POLICY.sourceNoteFor(item));
     const sourceLimit = PRESENTATION_POLICY.sourceLimitFor(item);
     if (sourceLimit) appendTextElement(document, provenance, "p", `Source limit: ${sourceLimit}`, "narrative-explorer-source-limit");
@@ -1717,15 +1671,6 @@
     appendExternalAttribution(document, provenance, item);
     card.append(provenance);
 
-    if (typeof options.onInspect === "function") {
-      const inspect = element(document, "button", "secondary narrative-explorer-item-inspect");
-      inspect.type = "button";
-      inspect.textContent = "Explore this evidence";
-      inspect.dataset.narrativeItemId = readerText(item.id);
-      inspect.dataset.narrativeFocusId = `item:${readerText(item.id)}`;
-      inspect.addEventListener("click", () => options.onInspect(item, inspect));
-      card.append(inspect);
-    }
     const action = supportedAction(item);
     if (action && item?.navigation?.kind !== "canonical_object" && typeof options.onNavigate === "function") {
       const button = element(document, "button", "secondary narrative-explorer-item-action");
@@ -1736,6 +1681,12 @@
       card.append(button);
     }
     return card;
+  }
+
+  function hasReaderObservation(item) {
+    const title = readerText(item?.title);
+    return Boolean(previewDescription(item, title))
+      || (["maps", "archaeology"].includes(readerText(item?.domain).toLowerCase()) && Boolean(readerText(item?.description)));
   }
 
   function previewDescription(item, title) {
@@ -2153,7 +2104,7 @@
     const originalAnchors = Array.isArray(item?.passage_anchors) ? item.passage_anchors : [];
     const applicable = Array.isArray(item?.applicable_passage_anchors) ? item.applicable_passage_anchors : [];
     const sourceDetails = element(document, "details", "narrative-explorer-detail-sources");
-    appendTextElement(document, sourceDetails, "summary", "How we know");
+    appendTextElement(document, sourceDetails, "summary", "Supporting sources");
     appendAnchorGroup(document, sourceDetails, "Scripture passages in this research", originalAnchors, trail, options, {navigable: true});
     if (applicable.length) {
       appendAnchorGroup(document, sourceDetails, "This passage", applicable, trail, options, {navigable: false});

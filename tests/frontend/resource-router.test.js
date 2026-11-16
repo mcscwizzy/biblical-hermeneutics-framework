@@ -284,16 +284,12 @@ test("Understand the Passage shows one Companion summary at a time without reope
   assert.equal(value.router.getNarrativeView().topicId, "historical_context");
   assert.equal(value.records.viewChanges.at(-1)[1].push, true);
   assert.equal(value.records.sessions.length, sessionCount);
-  assert.match(renderedText(value.host.content), /These are Study Companion contextual research summaries/);
-  assert.match(renderedText(value.host.content), /separate from Narrative Explorer evidence records/);
+  assert.doesNotMatch(renderedText(value.host.content), /Browse research sources|additional related records|claim-historical|source-historical/);
+  assert.match(renderedText(value.host.content), /Supporting sources/);
   assert.match(renderedText(value.host.content), /The historical summary keeps its original wording\./);
   assert.match(renderedText(value.host.content), /Certainty: probable/);
   assert.match(renderedText(value.host.content), /Uncertainty: the chronology remains open/);
-  assert.match(renderedText(value.host.content), /Interpretation status: historical interpretation/);
-  assert.match(renderedText(value.host.content), /Dispute: under discussion/);
-  assert.match(renderedText(value.host.content), /Status: draft/);
-  assert.match(renderedText(value.host.content), /Review: in review/);
-  assert.match(renderedText(value.host.content), /Human review required/);
+  assert.doesNotMatch(renderedText(value.host.content), /Interpretation status:|Dispute:|Status: draft|Review:|Human review required/);
   assert.match(renderedText(value.host.content), /Source: Recorded historical source · p\. 12/);
   assert.doesNotMatch(renderedText(value.host.content), /The original audience summary remains distinct\./);
 

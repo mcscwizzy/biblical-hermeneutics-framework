@@ -202,7 +202,7 @@ def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
     support = article.find_element(By.CSS_SELECTOR, "details")
     support.find_element(By.CSS_SELECTOR, "summary").click()
     support_text = driver.execute_script("return arguments[0].innerText", support)
-    assert "How this connection is supported" in support_text
+    assert "Supporting sources" in support_text
     assert "Jonah 1:17" in support_text and "Matthew 12:40" in support_text
     before = artifacts_dir / f"jonah-matthew-{label}-route.png"
     assert driver.save_screenshot(str(before))
