@@ -312,7 +312,9 @@
     ];
     routeGroups.forEach(([routes, expectedProvenance]) => {
       (Array.isArray(routes) ? routes : []).forEach((route) => {
-        if (!isConfirmedRoute(route, expectedProvenance)) return;
+        if (!isConfirmedRoute(route, expectedProvenance)
+          || (!passageRangesOverlap(contextReference, route.source_passage)
+            && !passageRangesOverlap(contextReference, route.destination_passage))) return;
         const provenance = expectedProvenance || String(route.provenance || "");
         const routeIdentities = provenance === "authored_ckl_relationship"
           ? (Array.isArray(route.supporting_record_ids) ? route.supporting_record_ids : [])
@@ -380,6 +382,27 @@
     return String(value || "").trim().toLowerCase()
       .replace(/[\u2010-\u2015\u2212]/g, "-")
       .replace(/\s+/g, " ");
+  }
+
+  function passageRangesOverlap(leftReference, rightReference) {
+    const left = parsePassageRange(leftReference);
+    const right = parsePassageRange(rightReference);
+    if (!left || !right) return normalizeReference(leftReference) === normalizeReference(rightReference);
+    return left.book === right.book
+      && left.chapter === right.chapter
+      && left.startVerse <= right.endVerse
+      && right.startVerse <= left.endVerse;
+  }
+
+  function parsePassageRange(value) {
+    const match = normalizeReference(value).match(/^(.+?)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/);
+    if (!match) return null;
+    const book = match[1].replace(/[^\p{L}\p{N}]/gu, "").replace(/^psalms$/, "psalm");
+    const chapter = Number(match[2]);
+    const startVerse = match[3] ? Number(match[3]) : 1;
+    const endVerse = match[4] ? Number(match[4]) : match[3] ? startVerse : Number.MAX_SAFE_INTEGER;
+    if (!book || !chapter || !startVerse || !endVerse || endVerse < startVerse) return null;
+    return {book, chapter, startVerse, endVerse};
   }
 
   return Object.freeze({dispatchAction, findVerifiedConnections, render});

@@ -328,6 +328,43 @@ test("verified handoff matches the complete CKL parent, record kind, and local I
 });
 
 
+test("verified handoff omits routes whose source and destination exclude the selected passage", () => {
+  const fixture = verifiedHandoffFixture({
+    object_id: "john",
+    record_kind: "claim",
+    record_id: "john-logos",
+  });
+  fixture.context.reference = "Exodus 3:1-5";
+  fixture.projection.passage.reference = "Exodus 3:1-5";
+
+  assert.deepEqual(discoveries.findVerifiedConnections(
+    fixture.discovery,
+    fixture.context,
+    fixture.projection,
+    {narrativeExplorerEnabled: true},
+  ), []);
+});
+
+
+test("verified handoff accepts a selected subrange within a route endpoint", () => {
+  const fixture = verifiedHandoffFixture({
+    object_id: "john",
+    record_kind: "claim",
+    record_id: "john-logos",
+  });
+  fixture.context.reference = "Genesis 1:1-5";
+  fixture.projection.passage.reference = "Genesis 1:1-5";
+  fixture.projection.related_passages.evidence_backed_bridges[0].source_passage = "Genesis 1:1-31";
+
+  assert.deepEqual(discoveries.findVerifiedConnections(
+    fixture.discovery,
+    fixture.context,
+    fixture.projection,
+    {narrativeExplorerEnabled: true},
+  ).map((route) => route.id), ["genesis-1-john-1-creation-word"]);
+});
+
+
 test("duplicate verified route IDs are treated as ambiguous and withheld", () => {
   const fixture = verifiedHandoffFixture({
     object_id: "john",
