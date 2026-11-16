@@ -125,14 +125,14 @@ def _measure_overview(driver) -> dict:
     return driver.execute_script(
         """
         const explorer = document.querySelector('.narrative-explorer');
-        const notice = explorer.querySelector('.narrative-explorer-empty-research');
+        const notice = explorer.querySelector('.narrative-explorer-featured-empty');
         const guide = explorer.querySelector('.narrative-explorer-terms-guide');
         const summary = guide.querySelector('summary');
         const terms = [...guide.querySelectorAll('dt')];
         const definitions = [...guide.querySelectorAll('dd')];
         const rootStyle = getComputedStyle(document.documentElement);
         const summaryStyle = getComputedStyle(summary);
-        const noticeStyle = getComputedStyle(notice.querySelector('p'));
+        const noticeStyle = getComputedStyle(notice);
         const definitionStyle = getComputedStyle(definitions[0]);
         const bounds = element => {
           const rect = element.getBoundingClientRect();
@@ -193,11 +193,12 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
     explorer = _open_narrative_explorer(driver, wait)
     notice = wait.until(lambda page: page.find_element(
         By.CSS_SELECTOR,
-        ".narrative-explorer-empty-research",
+        ".narrative-explorer-featured-empty",
     ))
     assert notice.is_displayed()
     assert "No eligible Evidence library research is currently available for 1 Kings 2" in notice.text
-    assert "does not imply that the passage lacks historical significance" in notice.text
+    assert "not the passage's importance" in notice.text
+    assert driver.save_screenshot(str(artifacts_dir / f"ed7-1kings2-{label}.png"))
 
     ckl_coverage = driver.execute_async_script(
         """
@@ -245,13 +246,16 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
             ckl.state = state;
             ckl.query_status = queryStatus;
             const rendered = window.BHFNarrativeExplorer.renderOverview(variant, {document});
-            result[name] = Boolean(rendered.querySelector('.narrative-explorer-empty-research'));
+            const notice = rendered.querySelector('.narrative-explorer-featured-empty');
+            result[name] = notice?.textContent || '';
           }
           return {baseline: {state: coverage.state, query_status: coverage.query_status}, notices: result};
         })().then(done).catch(error => done({error: String(error)}));
         """
     )
-    assert noncomplete_notice_cases["notices"] == {"failed": False, "partial": False}, noncomplete_notice_cases
+    assert all("No source-checked discovery is ready to feature" in message
+               and "No eligible Evidence library research" not in message
+               for message in noncomplete_notice_cases["notices"].values()), noncomplete_notice_cases
     print(
         "ED5_EMPTY_NOTICE=" + json.dumps({
             "viewport": viewport,

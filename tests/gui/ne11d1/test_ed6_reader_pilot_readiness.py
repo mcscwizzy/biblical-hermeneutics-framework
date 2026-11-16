@@ -18,25 +18,24 @@ CASES = [
     {
         "name": "psalm82", "book": "Psalms", "chapter": 82, "verses": [1, 2],
         "reference": "Psalms 82:1-2", "anchor": "Psalm 82:1-8",
-        "dispute_status": "interpretive_uncertainty",
+        "uncertainty": "The identity of the figures addressed in Psalm 82 remains disputed.",
         "section_id": "divine_council_cosmic_geography",
         "record_id": "ckl:ancient-divine-assembly-imagery#evidence:psalm-82-assembly-language",
-        "source_id": "psalm-82-hebrew-text", "witness": "Psalm 82",
+        "witness": "Psalm 82",
     },
     {
         "name": "deuteronomy32", "book": "Deuteronomy", "chapter": 32, "verses": [8, 9],
         "reference": "Deuteronomy 32:8-9", "anchor": "Deuteronomy 32:8-9",
-        "dispute_status": "textual_variant",
+        "uncertainty": "The manuscripts preserve different wording at Deuteronomy 32:8; which reading is earliest remains debated.",
         "section_id": "archaeology_ancient_history",
         "record_id": "ckl:ancient-divine-assembly-imagery#evidence:deuteronomy-32-8-manuscript-variant",
-        "source_id": "deuteronomy-32-text", "secondary_source_id": "ulrich-biblical-qumran-scrolls-2010",
         "witness": "4QDeuteronomy-j",
     },
 ]
 
 
 @pytest.mark.parametrize("case", CASES, ids=[case["name"] for case in CASES])
-def test_ed6_passage_tasks_show_exact_record_source_and_review_limits(
+def test_ed6_passage_tasks_show_exact_source_and_natural_uncertainty(
     driver, ne11d1_base_url, case
 ):
     """Verify two pilot records in current remote Chromium using live reader UI."""
@@ -57,48 +56,53 @@ def test_ed6_passage_tasks_show_exact_record_source_and_review_limits(
         By.CSS_SELECTOR,
         f'button[data-narrative-item-id="{case["record_id"]}"]',
     ) if item.is_displayed()), False))
+    assert button.get_attribute("data-narrative-item-id") == case["record_id"]
     record = button.find_element(
         By.XPATH,
         "./ancestor::article[contains(@class, 'narrative-explorer-item')]",
     )
     assert record.find_element(By.CSS_SELECTOR, ".narrative-explorer-item-kind").text
+    assert case["uncertainty"] in record.text
     provenance = record.find_element(By.CSS_SELECTOR, ".narrative-explorer-provenance")
     provenance.find_element(By.CSS_SELECTOR, "summary").click()
-    provenance_text = provenance.text
-    assert f"Projected source identity: {case['record_id']}" in provenance_text
-    assert f"Evidence ID: {case['record_id'].split('#evidence:', 1)[1]}" in provenance_text
-    assert case["anchor"] in provenance_text
-    assert case["source_id"] in provenance_text
-    assert f"Dispute status: {case['dispute_status']}" in provenance_text
-    assert "Content status: draft" in provenance_text
-    assert "Review status: in_review" in provenance_text
-    assert "Human review required: Yes" in provenance_text
-    assert case["witness"] in provenance_text
+    provenance_text = driver.execute_script("return arguments[0].innerText", provenance)
+    source_titles = driver.execute_async_script(
+        """
+        const recordId = arguments[0];
+        const done = arguments[arguments.length - 1];
+        window.BHFNarrativeExplorer.load(window.BHFStudySelection.getState())
+          .then(projection => {
+            const item = projection.items.find(candidate => candidate.id === recordId);
+            done((item?.sources || []).map(source => source.bibliographic_details?.title || source.title || '')
+              .filter(Boolean));
+          }).catch(error => done({error: String(error)}));
+        """,
+        case["record_id"],
+    )
+    assert source_titles and any(title in provenance_text for title in source_titles), (source_titles, provenance_text)
+    assert case["witness"] in provenance_text or case["witness"] in record.text
+    assert "source is cited, but its support for this claim was not independently checked" in provenance_text
+    assert not any(token in provenance_text for token in (
+        "human_review_required", "in_review", "Content status", "Review status",
+        "Evidence ID:", "Projected source identity:", "CKL subject:",
+    ))
 
     button.click()
     detail = wait.until(lambda page: page.find_element(By.CSS_SELECTOR, '[aria-label="Evidence detail"]'))
-    review = detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-detail-review")
-    review.find_element(By.CSS_SELECTOR, "summary").click()
-    assert "primary observation" in review.text.lower()
-    assert "scholarly interpretation" in review.text.lower()
-    assert "Content state: draft" in review.text
-    assert "Review state: in_review" in review.text
-    assert "human review required: yes" in review.text.lower()
+    assert case["uncertainty"] in detail.text
+    assert not detail.find_elements(By.CSS_SELECTOR, ".narrative-explorer-detail-review")
 
     sources = detail.find_element(By.CSS_SELECTOR, ".narrative-explorer-detail-sources")
     sources.find_element(By.CSS_SELECTOR, "summary").click()
-    assert case["source_id"] in sources.text
-    if case.get("secondary_source_id"):
-        assert case["secondary_source_id"] in sources.text
-        assert "The Biblical Qumran Scrolls" in sources.text
-        assert "4QDeuteronomy-j (4Q37), Deuteronomy 32:8-9" in sources.text
-    else:
-        assert case["anchor"] in sources.text
+    source_text = driver.execute_script("return arguments[0].innerText", sources)
+    assert case["anchor"] in source_text
+    assert any(title in source_text for title in source_titles), (source_titles, source_text)
+    assert "source is cited, but its support for this claim was not independently checked" in source_text
 
     print("ED6_CHROMIUM_TASK=" + json.dumps({
         "task": case["name"], "browser": browser,
         "reference": case["reference"], "record_id": case["record_id"],
-        "source_id": case["source_id"], "draft_review": True,
+        "source_titles": source_titles, "uncertainty": True,
     }, sort_keys=True), flush=True)
 
 
@@ -121,11 +125,22 @@ def test_ed6_natural_language_task_finds_1_john_in_canonical_workspace(
     )))
     search.send_keys(query)
     page.click('[data-testid="canonical-search-button"]')
-    result = wait.until(lambda browser: browser.find_element(
+    wait.until(lambda browser: browser.find_element(
         By.CSS_SELECTOR,
         '[data-canonical-browser-results] [data-canonical-object-id="1-john"]',
     ))
-    result.find_element(By.CSS_SELECTOR, '[data-testid="canonical-result-view-button"]').click()
+    clicked = driver.execute_script(
+        """
+        const result = document.querySelector(
+          '[data-canonical-browser-results] [data-canonical-object-id="1-john"]'
+        );
+        const button = result?.querySelector('[data-testid="canonical-result-view-button"]');
+        if (!button || !button.getClientRects().length || button.disabled) return false;
+        button.click();
+        return true;
+        """
+    )
+    assert clicked, "The 1 John result view button was not available after the search rendered."
     wait.until(lambda browser: browser.find_element(
         By.CSS_SELECTOR, "[data-canonical-detail-title]"
     ).text == "1 John")

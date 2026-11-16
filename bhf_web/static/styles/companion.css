@@ -414,6 +414,52 @@ body.companion-sheet-full {
   background: color-mix(in srgb, var(--accent) 6%, var(--surface));
 }
 
+.narrative-explorer-featured-discoveries {
+  display: grid;
+  min-width: 0;
+  gap: 12px;
+  padding: 17px;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--border));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface));
+}
+
+.narrative-explorer-featured-discoveries > h4,
+.narrative-explorer-featured-card > h5 {
+  margin: 0;
+  color: var(--page-text);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.narrative-explorer-featured-card {
+  display: grid;
+  min-width: 0;
+  gap: 9px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.narrative-explorer-featured-card > p,
+.narrative-explorer-featured-empty {
+  margin: 0;
+  color: var(--page-text);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.narrative-explorer-featured-uncertainty,
+.narrative-explorer-featured-empty {
+  color: var(--page-muted) !important;
+}
+
+.narrative-explorer-featured-card .narrative-explorer-provenance > summary {
+  min-height: 40px;
+}
+
 .narrative-explorer-discovery h4,
 .narrative-explorer-topic-choices > h4 {
   margin: 0;
@@ -600,24 +646,10 @@ body.companion-sheet-full {
   gap: 5px;
 }
 
-.narrative-explorer-empty-research {
-  display: grid;
-  gap: 6px;
-  margin: 12px 0;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--accent-strong);
-  border-radius: 10px;
-  background: var(--surface-muted);
-}
-
-.narrative-explorer-empty-research h4,
-.narrative-explorer-empty-research p,
 .narrative-explorer-terms-guide p {
   margin: 0;
 }
 
-.narrative-explorer-empty-research p,
 .narrative-explorer-terms-guide p,
 .narrative-explorer-term-list dd {
   color: var(--page-muted);

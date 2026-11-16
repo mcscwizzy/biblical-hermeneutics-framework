@@ -14,7 +14,10 @@ import requests
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.remote.client_config import ClientConfig
+try:
+    from selenium.webdriver.remote.client_config import ClientConfig
+except ImportError:  # Selenium 4.18 is still present in some local runners.
+    ClientConfig = None
 
 
 def _safe_exception(exc: Exception) -> str:
@@ -171,11 +174,14 @@ def _probe_remote_browser(base_url: str, remote_url: str, artifacts_dir: Path | 
 
     browser = None
     try:
+        remote_options = {"client_config": ClientConfig(remote_url, timeout=20)} if ClientConfig else {}
         browser = webdriver.Remote(
             command_executor=remote_url,
             options=options,
-            client_config=ClientConfig(remote_url, timeout=20),
+            **remote_options,
         )
+        if ClientConfig is None:
+            browser.command_executor.set_timeout(20)
         print("REMOTE_SESSION_CREATED=1", flush=True)
         browser.set_page_load_timeout(15)
         browser.set_script_timeout(10)

@@ -116,6 +116,7 @@ def test_vercel_ignore_keeps_active_reader_resources_and_excludes_dev_inputs():
         "framework/commentary/service.py",
         "bhf_web/routes/commentary.py",
         "bhf_web/static/commentary.js",
+        "bhf_web/static/narrative-presentation-policy.js",
         "bhf_web/static/narrative-explorer.js",
     }
     assert all(not _is_explicitly_excluded(path) for path in required)
