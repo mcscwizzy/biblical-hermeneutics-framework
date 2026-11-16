@@ -1027,16 +1027,22 @@
     if (!discoveries.length) {
       const cklCoverage = coverageBySource.get("canonical_knowledge_library");
       const completedEmpty = cklCoverage?.state === "not_represented" && cklCoverage.query_status === "complete";
-      const message = completedEmpty
-        ? `No eligible Evidence library research is currently available for ${passage || "this passage"}. This reflects BHF's current coverage, not the passage's importance. Open Understand the Passage for broader context.`
-        : `No source-checked discovery is ready to feature for ${passage || "this passage"}. This reflects BHF's current evidence coverage, not the passage's importance. You can still explore cited research by topic.`;
       appendTextElement(
         document,
         section,
         "p",
-        message,
-        "narrative-explorer-featured-empty",
+        `Start with a study topic or explore the original context for ${passage || "this passage"}. Where evidence supports a relationship, follow a verified biblical connection.`,
+        "narrative-explorer-featured-guidance",
       );
+      if (completedEmpty) {
+        appendTextElement(
+          document,
+          section,
+          "p",
+          `No eligible Evidence library research is currently available for ${passage || "this passage"}. This reflects BHF's current coverage, not the passage's importance.`,
+          "narrative-explorer-featured-empty",
+        );
+      }
       return section;
     }
     discoveries.slice(0, 3).forEach(({item, wording}) => {
@@ -2387,7 +2393,7 @@
     }
     details.append(list);
     if (hasIncompleteBibliography) {
-      appendTextElement(document, details, "p", "Some cited sources do not include full publication details here.", "narrative-explorer-missing-provenance");
+      appendTextElement(document, details, "p", "Some citation details are unavailable.", "narrative-explorer-missing-provenance");
     }
     parent.append(details);
   }

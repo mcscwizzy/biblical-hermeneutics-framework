@@ -43,3 +43,20 @@ test("featured discovery wording separates textual observations from disputed ex
   assert.match(details.uncertainty, /proposed historical explanation/i);
   assert.match(details.uncertainty, /manuscript image/i);
 });
+
+test("reader source notes describe citation access without treating checks as scholarly approval", () => {
+  const nahum = {
+    id: "ckl:nahum#evidence:nahum-3-8-9-one-city-text-critical-proposal",
+  };
+  const unsupported = {
+    id: "ckl:sample#claim:not-audited",
+  };
+  const insufficient = audit.records.find((record) => record.presentation.tier === "withheld_from_reader_promotion");
+
+  assert.match(policy.sourceNoteFor(nahum), /cited work.*listed below/i);
+  assert.match(policy.sourceLimitFor(nahum), /Masoretic, Greek, and Qumran readings/i);
+  assert.match(policy.sourceLimitFor(nahum), /not compared with an image of 4Q385a or another manuscript/i);
+  assert.match(policy.sourceNoteFor(unsupported), /source is cited, but its support.*not independently checked/i);
+  assert.match(policy.sourceNoteFor({id: insufficient.stable_ckl_id}), /could not be checked well enough to confirm/i);
+  assert.doesNotMatch(policy.sourceNoteFor(nahum), /automated check|human scholarly review/i);
+});

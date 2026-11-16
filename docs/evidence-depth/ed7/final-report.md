@@ -6,8 +6,10 @@ ED-7 changes the Narrative Explorer's initial view from query and workflow
 metadata to a reader-first passage experience. It preserves six topic areas,
 chapter Location quick glance, exact-source disclosure, uncertainty, and
 directional navigation through existing verified connections. Two source
-rechecked discoveries are eligible for featured presentation; ordinary
-passages with no eligible finding get a plain and truthful empty state.
+rechecked discoveries are eligible for featured presentation. When none
+qualifies, the opening leads into study topics and original context, with
+verified connections offered where evidence supports them. A completed-empty
+CKL lookup retains its truthful coverage note after that guidance.
 
 The audit covers all 99 existing ED-3 queue records. It found 28 claims
 supported with qualifications and 71 whose support could not be sufficiently

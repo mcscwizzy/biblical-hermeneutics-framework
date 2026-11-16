@@ -4,7 +4,7 @@ import json
 
 import pytest
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select, WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
 
 from tests.gui.pages import HomePage
 from tests.gui.viewport import set_viewport
@@ -15,6 +15,7 @@ from tests.gui.ne11d1.test_ed5_mobile_acceptance import (
 from tests.gui.ne11d1.test_real_ckl_handoff import (
     _click_related_passage,
     _route_article,
+    _select_verses,
 )
 
 
@@ -31,7 +32,7 @@ FEATURED = [
         "title": "Does Nahum 3:8–9 compare Nineveh with No-Amon?",
         "source_title": "A Tale of One City",
         "source_author": "Nesina Grütter",
-        "source_limit": "No 4Q385a or other manuscript image inspected.",
+        "source_limit": "That discussion was not compared with an image of 4Q385a or another manuscript.",
     },
     {
         "name": "proverbs15",
@@ -42,30 +43,25 @@ FEATURED = [
         "title": "Hebrew and Greek versions arrange part of Proverbs 15:25–16:9 differently.",
         "source_title": "De Yhwh la réponse de la langue",
         "source_author": "Jean-Daniel Macchi",
-        "source_limit": "no fragment image or critical edition independently inspected.",
+        "source_limit": "That discussion was not checked against a fragment image or critical edition.",
     },
+]
+
+VIEWPORTS = [
+    (1440, 1200, False, "desktop"),
+    (390, 844, True, "390px"),
+    (320, 844, True, "320px"),
+]
+
+OPENING_CASES = [
+    {"name": "genesis6", "book": "Genesis", "chapter": 6, "verses": [1, 2, 3, 4], "reference": "Genesis 6:1-4"},
+    {"name": "genesis12", "book": "Genesis", "chapter": 12, "verses": [1, 2, 3], "reference": "Genesis 12:1-3"},
+    {"name": "psalm82", "book": "Psalms", "chapter": 82, "verses": [1, 2, 3, 4, 5, 6, 7, 8], "reference": "Psalms 82:1-8"},
 ]
 
 
 def _select_passage(driver, wait, case: dict) -> None:
-    Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="book-select"]')).select_by_value(case["book"])
-    wait.until(lambda page: page.execute_script(
-        "return window.BHFStudySelection?.getState?.().book === arguments[0];",
-        case["book"],
-    ))
-    Select(driver.find_element(By.CSS_SELECTOR, '[data-testid="chapter-input"]')).select_by_value(str(case["chapter"]))
-    wait.until(lambda page: page.execute_script(
-        "return window.BHFStudySelection?.getState?.().chapter === Number(arguments[0]);",
-        str(case["chapter"]),
-    ))
-    driver.execute_script(
-        "window.BHFStudySelection.setSelection({book: arguments[0], chapter: Number(arguments[1]), "
-        "selectedVerses: arguments[2], translation: 'kjv', reference: arguments[3]}, 'ed7-reader-journey');",
-        case["book"],
-        case["chapter"],
-        case["verses"],
-        case["reference"],
-    )
+    _select_verses(driver, wait, case["book"], case["chapter"], case["verses"])
     wait.until(lambda page: page.execute_script(
         "return window.BHFStudySelection?.getState?.().reference === arguments[0];",
         case["reference"],
@@ -73,21 +69,23 @@ def _select_passage(driver, wait, case: dict) -> None:
 
 
 def _open_explorer(driver, wait):
-    if driver.execute_script("return document.body.dataset.appSection !== 'explore'"):
+    if driver.execute_script("return window.innerWidth > 900 && document.body.dataset.appSection !== 'explore'"):
         driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
         wait.until(lambda page: page.execute_script("return document.body.dataset.appSection === 'explore'"))
     return _open_narrative_explorer(driver, wait)
 
 
 @pytest.mark.parametrize("case", FEATURED, ids=[case["name"] for case in FEATURED])
+@pytest.mark.parametrize("viewport", VIEWPORTS, ids=[entry[3] for entry in VIEWPORTS])
 def test_ed7_featured_discoveries_disclose_sources_without_editorial_diagnostics(
-    driver, ne11d1_base_url, artifacts_dir, case
+    driver, ne11d1_base_url, artifacts_dir, case, viewport
 ):
     browser = _assert_chromium(driver)
     wait = WebDriverWait(driver, 90)
-    set_viewport(driver, 1440, 1200, mobile=False)
+    width, height, mobile, label = viewport
+    set_viewport(driver, width, height, mobile=mobile)
     HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
-    set_viewport(driver, 1440, 1200, mobile=False)
+    set_viewport(driver, width, height, mobile=mobile)
     _select_passage(driver, wait, case)
 
     explorer = _open_explorer(driver, wait)
@@ -105,17 +103,21 @@ def test_ed7_featured_discoveries_disclose_sources_without_editorial_diagnostics
     assert case["source_title"] in source_text
     assert case["source_author"] in source_text
     assert case["source_limit"].lower() in source_text.lower()
-    assert "This automated check is not a human scholarly review." in source_text
-    assert "Some cited sources do not include full publication details here." in source_text
+    assert "The cited work and its relevant pages are listed below." in source_text
+    assert "Some citation details are unavailable." in source_text
+    assert "automated check" not in source_text.lower()
+    assert "human scholarly review" not in source_text.lower()
     assert "The citation is missing" not in source_text
     assert not any(token in source_text for token in ("ckl:", "source_id", "human_review_required"))
+    assert driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth"), width
 
-    screenshot = artifacts_dir / f"ed7-{case['name']}-how-we-know.png"
+    screenshot = artifacts_dir / f"{case['name']}-{label}-how-we-know.png"
     assert driver.save_screenshot(str(screenshot))
     print("ED7_CHROMIUM_SOURCE=" + json.dumps({
         "case": case["name"],
         "browser": browser,
         "reference": case["reference"],
+        "viewport": width,
         "source_title": case["source_title"],
         "source_limit": case["source_limit"],
         "internal_labels_visible": False,
@@ -123,14 +125,58 @@ def test_ed7_featured_discoveries_disclose_sources_without_editorial_diagnostics
     }, sort_keys=True), flush=True)
 
 
-def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
-    driver, ne11d1_base_url, artifacts_dir
+@pytest.mark.parametrize("case", OPENING_CASES, ids=[case["name"] for case in OPENING_CASES])
+@pytest.mark.parametrize("viewport", VIEWPORTS, ids=[entry[3] for entry in VIEWPORTS])
+def test_ed7_zero_feature_opening_leads_to_reader_pathways(
+    driver, ne11d1_base_url, artifacts_dir, case, viewport
 ):
     browser = _assert_chromium(driver)
     wait = WebDriverWait(driver, 90)
-    set_viewport(driver, 1440, 1200, mobile=False)
+    width, height, mobile, label = viewport
+    set_viewport(driver, width, height, mobile=mobile)
     HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
-    set_viewport(driver, 1440, 1200, mobile=False)
+    set_viewport(driver, width, height, mobile=mobile)
+    _select_passage(driver, wait, case)
+
+    explorer = _open_explorer(driver, wait)
+    guidance = wait.until(lambda page: page.find_element(
+        By.CSS_SELECTOR,
+        ".narrative-explorer-featured-guidance",
+    ))
+    assert guidance.is_displayed()
+    assert f"Current passage: {case['reference']}" in explorer.text
+    assert "Start with a study topic or explore the original context" in guidance.text
+    assert "Where evidence supports a relationship, follow a verified biblical connection." in guidance.text
+    assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-card")
+    assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-empty")
+    assert not any(phrase in explorer.text for phrase in (
+        "No source-checked discovery is ready to feature",
+        "not the passage's importance",
+    ))
+    assert len(explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")) == 6
+    assert explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-understand-passage").is_displayed()
+    assert driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth"), width
+
+    screenshot = artifacts_dir / f"{case['name']}-{label}.png"
+    assert driver.save_screenshot(str(screenshot))
+    print("ED7_CHROMIUM_OPENING=" + json.dumps({
+        "case": case["name"], "browser": browser, "reference": case["reference"],
+        "viewport": width, "featured_cards": 0, "study_topics": 6,
+        "positive_guidance": True, "horizontal_overflow": False,
+        "screenshot": screenshot.name,
+    }, sort_keys=True), flush=True)
+
+
+@pytest.mark.parametrize("viewport", VIEWPORTS, ids=[entry[3] for entry in VIEWPORTS])
+def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
+    driver, ne11d1_base_url, artifacts_dir, viewport
+):
+    browser = _assert_chromium(driver)
+    wait = WebDriverWait(driver, 90)
+    width, height, mobile, label = viewport
+    set_viewport(driver, width, height, mobile=mobile)
+    HomePage(driver, wait, ne11d1_base_url).open().wait_loaded()
+    set_viewport(driver, width, height, mobile=mobile)
     _select_passage(driver, wait, {
         "book": "Jonah",
         "chapter": 1,
@@ -138,6 +184,10 @@ def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
         "reference": "Jonah 1:17",
     })
     explorer = _open_explorer(driver, wait)
+    guidance = explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-featured-guidance")
+    assert "verified biblical connection" in guidance.text
+    assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-empty")
+    assert driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth"), width
     explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-follow-connection").click()
     wait.until(lambda page: page.find_element(By.CSS_SELECTOR, ".narrative-explorer-related-passages"))
     article = _route_article(driver, wait, "jonah-1-17-matthew-12-40-sign-of-jonah")
@@ -147,13 +197,14 @@ def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
     assert not any(token in article.text for token in (
         "ckl:", "source_id", "human_review_required", "Connection type:",
     ))
+    assert driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth"), width
 
     support = article.find_element(By.CSS_SELECTOR, "details")
     support.find_element(By.CSS_SELECTOR, "summary").click()
     support_text = driver.execute_script("return arguments[0].innerText", support)
     assert "How this connection is supported" in support_text
     assert "Jonah 1:17" in support_text and "Matthew 12:40" in support_text
-    before = artifacts_dir / "ed7-jonah-matthew-route.png"
+    before = artifacts_dir / f"jonah-matthew-{label}-route.png"
     assert driver.save_screenshot(str(before))
 
     _click_related_passage(driver, wait, article, "Matthew 12:40")
@@ -162,12 +213,14 @@ def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
         By.CSS_SELECTOR,
         ".narrative-explorer",
     ).text)
-    after = artifacts_dir / "ed7-jonah-matthew-destination.png"
+    assert driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth"), width
+    after = artifacts_dir / f"jonah-matthew-{label}-destination.png"
     assert driver.save_screenshot(str(after))
     print("ED7_CHROMIUM_CONNECTION=" + json.dumps({
         "browser": browser,
         "source": "Jonah 1:17",
         "destination": "Matthew 12:40",
+        "viewport": width,
         "navigation_verified": True,
         "screenshots": [before.name, after.name],
     }, sort_keys=True), flush=True)

@@ -20,6 +20,11 @@
     },
   };
 
+  const READER_SOURCE_LIMITS = {
+    "ckl:nahum#evidence:nahum-3-8-9-one-city-text-critical-proposal": "Grütter's pp. 160–175 discuss the Masoretic, Greek, and Qumran readings and the proposed reconstruction. That discussion was not compared with an image of 4Q385a or another manuscript.",
+    "ckl:proverbs#evidence:proverbs-15-25-to-16-9-mt-lxx-redaction-debate": "Macchi's pp. 381–394 compare the Hebrew and Greek arrangements; pp. 382–383 discuss 4QProvb. That discussion was not checked against a fragment image or critical edition.",
+  };
+
   function recordId(item) {
     return typeof item?.id === "string" ? item.id : "";
   }
@@ -66,16 +71,17 @@
   }
 
   function sourceLimitFor(item) {
-    return AUDITED_RECORDS[recordId(item)]?.source_limit || "";
+    const id = recordId(item);
+    return READER_SOURCE_LIMITS[id] || AUDITED_RECORDS[id]?.source_limit || "";
   }
 
   function sourceNoteFor(item) {
-    if (String(item?.domain || "").toLowerCase() === "maps") return "Location identification and map-source limits are shown below.";
+    if (String(item?.domain || "").toLowerCase() === "maps") return "The location and its map source are described below.";
     if (String(item?.domain || "").toLowerCase() === "archaeology") return "This identifies a linked archaeology source; the source alone does not establish how it relates to the passage.";
     const audit = AUDITED_RECORDS[recordId(item)];
     if (!audit) return "The source is cited, but its support for this claim was not independently checked.";
-    if (!audit.source_checked) return "The cited source could not be independently checked for this claim.";
-    return "The cited source was checked at the scope recorded below. This automated check is not a human scholarly review.";
+    if (!audit.source_checked) return "The cited source could not be checked well enough to confirm this claim.";
+    return "The cited work and its relevant pages are listed below.";
   }
 
   function auditedTiers() {

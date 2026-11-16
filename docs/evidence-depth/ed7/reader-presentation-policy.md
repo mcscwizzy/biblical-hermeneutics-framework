@@ -45,18 +45,20 @@ the existing verified relationship/bridge pathways, not textual similarity
 alone. Location detail and its geographic uncertainty are handled by the
 existing location experience.
 
-If no featured record qualifies, the page explains that no source-checked
-discovery is ready to feature and that this reflects current BHF coverage, not
-the passage's importance. Where the backend reports a completed empty lookup,
-the message instead accurately says no eligible evidence-library research is
-currently available. It does not imply that all Scripture or scholarship has
-been searched.
+If no featured record qualifies, the page leads into study topics, original
+context, and verified biblical connections when evidence supports them. It
+does not describe the absence of a featured item as a research-audit result.
+When the CKL reports a completed empty lookup, a separate note preserves the
+accurate coverage explanation and clarifies that it reflects current BHF
+coverage, not the passage's importance. It does not imply that all Scripture
+or scholarship has been searched.
 
 ## Source language
 
-Source disclosure names available works and locators, describes inspected
-scope, and states meaningful limitations. If citation fields are incomplete,
-one plain note says so. Automated source checking is not described as human
-review. For unaudited source items, the UI says the cited source was not
-independently checked; it does not assert support. The language and citations
-are checked by focused frontend tests and live Chromium acceptance tests.
+Source disclosure names available works and locators, describes relevant
+material, and states meaningful access limits. If citation fields are
+incomplete, one plain note says so. Reader copy does not describe automated
+source checks as human review. For unaudited source items, the UI says the
+cited source was not independently checked; it does not assert support. The
+language and citations are checked by focused frontend tests and live Chromium
+acceptance tests.

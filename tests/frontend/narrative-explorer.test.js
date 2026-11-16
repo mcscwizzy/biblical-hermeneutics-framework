@@ -371,7 +371,20 @@ test("reader overview features only eligible discoveries and keeps inaccessible 
   assert.equal(presentationPolicy.tierFor(withheld), "withheld_from_reader_promotion");
 });
 
-test("overview explains a completed empty CKL result without judging passage significance", () => {
+test("overview leads with study paths when no featured discovery qualifies", () => {
+  const root = explorer.renderOverview(projection(), {document: fakeDocument()});
+  const section = descendants(root).find((element) => element.className === "narrative-explorer-featured-discoveries");
+  const guidance = descendants(section).find((element) => element.className === "narrative-explorer-featured-guidance");
+
+  assert.ok(guidance);
+  assert.match(guidance.textContent, /Start with a study topic or explore the original context/i);
+  assert.match(guidance.textContent, /verified biblical connection/i);
+  assert.equal(descendants(section).filter((element) => element.className === "narrative-explorer-featured-card").length, 0);
+  assert.equal(descendants(section).some((element) => element.className === "narrative-explorer-featured-empty"), false);
+  assert.equal(descendants(root).filter((element) => element.className === "narrative-explorer-category-card").length, 6);
+});
+
+test("overview explains a completed empty CKL result after reader-first guidance", () => {
   const data = projection({
     passage: {reference: "1 Kings 2", book: "1 Kings", chapter: 2, verse_start: null, verse_end: null, scope: "chapter"},
     coverage: [
@@ -392,12 +405,15 @@ test("overview explains a completed empty CKL result without judging passage sig
     related_passages: {state: "not_represented", query_status: "complete", authored_relationships: [], evidence_backed_bridges: []},
   });
   const root = explorer.renderOverview(data, {document: fakeDocument()});
+  const guidance = descendants(root).find((element) => element.className === "narrative-explorer-featured-guidance");
   const notice = descendants(root).find((element) => element.className === "narrative-explorer-featured-empty");
 
+  assert.ok(guidance);
   assert.ok(notice);
   assert.match(notice.textContent, /No eligible Evidence library research is currently available for 1 Kings 2/);
   assert.match(notice.textContent, /BHF's current coverage/i);
   assert.match(notice.textContent, /not the passage's importance/i);
+  assert.ok(root.textContent.indexOf(guidance.textContent) < root.textContent.indexOf(notice.textContent));
   assert.ok(descendants(root).some((element) => element.className === "narrative-explorer-understand-passage"));
   assert.equal(descendants(root).filter((element) => element.className === "narrative-explorer-category-card").length, 6);
 });
@@ -2190,7 +2206,7 @@ test("reader source disclosure replaces bibliographic diagnostics with a plain l
   const sourceDisclosure = descendants(card).find((element) => element.className === "narrative-explorer-provenance");
 
   assert.match(sourceDisclosure.textContent, /A Study · A\. Author/);
-  assert.match(sourceDisclosure.textContent, /Some cited sources do not include full publication details here/);
+  assert.match(sourceDisclosure.textContent, /Some citation details are unavailable/);
   assert.doesNotMatch(sourceDisclosure.textContent, /The citation is missing|sample-source|source_id/);
 });
 

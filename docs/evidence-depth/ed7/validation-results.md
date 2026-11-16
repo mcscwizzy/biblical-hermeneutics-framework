@@ -6,7 +6,7 @@
 |---|---|
 | ED-3 review queue coverage and audit integrity | 99/99 stable CKL IDs reconciled; two distinct recorded analytical passes per item; existing packet SHA-256 values verified by `tests/test_ed7_source_audit.py`. |
 | Frontend presentation policy | Deterministic eligibility, featured wording, plain source disclosures, uncertainty, withheld handling, deduplication, and exact passage display covered by focused Node tests. Final rerun result is recorded below. |
-| Genuine Chromium acceptance | Real Chromium on desktop and 390px/320px for Genesis 6, Psalm 82, and 1 Kings 2; featured source disclosures; Jonah 1:17→Matthew 12:40 direction and navigation. See recorded final result below. |
+| Genuine Chromium acceptance | Real Chromium at desktop and 390px/320px for Genesis 6, Genesis 12, Psalm 82, Nahum 3, Proverbs 15, Jonah 1:17→Matthew 12:40, and 1 Kings 2. See the final reader-experience correction results below. |
 | Connectivity smoke gate | The existing gate passed for current and baseline app containers using Selenium Chrome; local Selenium compatibility fallback is retained. |
 | CKL strict validation and protected relationships | Final commands/results are recorded below. No CKL or protected relationship files were changed. |
 | Documentation/artifacts | JSON parse, report links, screenshot presence, whitespace, full diff, and final worktree/commit state checked before PR. |
@@ -30,6 +30,27 @@ keeps a shared Scripture reference from implying a relationship by itself.
   scope fix. It did not run tests; the results above are the test evidence.
 
 ## Commands and actual results
+
+### Final reader-experience correction
+
+- `node tests/frontend/narrative-explorer.test.js` — **61 passed, 0 failed**.
+- `node tests/frontend/narrative-presentation-policy.test.js` — **4 passed,
+  0 failed**. This includes parity with all 99 recorded source-audit decisions.
+- `npm test -- --test-reporter=dot` — **18 frontend test files passed,
+  0 failed**; `.venv/bin/pytest -q tests/test_ed7_source_audit.py` — **3 passed**.
+- Genuine Chromium acceptance covered 21 requested viewport journeys. The
+  first full run passed 17 and exposed four mobile dock click interceptions in
+  the test helper; the existing mobile companion helper was then used and all
+  four affected cases passed on rerun. The 1 Kings 2 desktop/390px/320px case
+  passed again after final screenshot naming. Chrome and ChromeDriver were
+  both version 155.0.8059.79. Fresh captures are in `screenshots/after/`.
+- Genesis 6, Genesis 12, Psalm 82, both featured disclosures, and Jonah→Matthew
+  were checked at desktop, 390px, and 320px with no horizontal overflow. The
+  1 Kings 2 completed-empty explanation remains visible after the positive
+  reader guidance at all three widths.
+- The source-verification JSON and CKL files are unchanged. The two featured
+  IDs remain the only featured discoveries; the 71 insufficiently verified
+  ED-3 records remain withheld.
 
 - `.venv/bin/python -m pytest -q tests/test_ed7_source_audit.py
   tests/test_narrative_explorer_api.py tests/test_narrative_explorer_ui_config.py
