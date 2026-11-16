@@ -42,6 +42,9 @@ the authoritative reviewed research source.
 - [ED-4 Research Quality](evidence-depth/ed4/README.md) — retrieval quality,
   human scholarly review workflow, provenance, compatibility, and reader
   acceptance.
+- [ED-6 Reader Discovery Pilot](evidence-depth/ed6/README.md) — participant
+  protocol, local data toolkit, live reader readiness, and independent review
+  kickoff.
 - [Maps and archaeology](archaeology.md) — catalog, evidence, media rights,
   provenance, and offline behavior.
 - [Lexicon architecture](lexicon-architecture.md), [word study](word-study.md),
