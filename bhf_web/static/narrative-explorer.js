@@ -115,6 +115,8 @@
       || !readerText(route?.relationship_category)
       || !readerText(route?.explanation)
       || !readerText(route?.uncertainty)) return null;
+    if (!passageRangesOverlap(passageReference, route.source_passage)
+      && !passageRangesOverlap(passageReference, route.destination_passage)) return null;
 
     const supports = kind === "bridge"
       ? (Array.isArray(route.supporting_records) ? route.supporting_records : [])
@@ -150,6 +152,27 @@
 
   function normalizePassageRouteReference(value) {
     return readerText(value).toLocaleLowerCase().replace(/[‐‑‒–—−]/g, "-").replace(/\s+/g, " ");
+  }
+
+  function passageRangesOverlap(leftReference, rightReference) {
+    const left = parsePassageRange(leftReference);
+    const right = parsePassageRange(rightReference);
+    if (!left || !right) return normalizePassageRouteReference(leftReference) === normalizePassageRouteReference(rightReference);
+    return left.book === right.book
+      && left.chapter === right.chapter
+      && left.startVerse <= right.endVerse
+      && right.startVerse <= left.endVerse;
+  }
+
+  function parsePassageRange(value) {
+    const match = normalizePassageRouteReference(value).match(/^(.+?)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/);
+    if (!match) return null;
+    const book = match[1].replace(/[^\p{L}\p{N}]/gu, "").replace(/^psalms$/, "psalm");
+    const chapter = Number(match[2]);
+    const startVerse = match[3] ? Number(match[3]) : 1;
+    const endVerse = match[4] ? Number(match[4]) : match[3] ? startVerse : Number.MAX_SAFE_INTEGER;
+    if (!book || !chapter || !startVerse || !endVerse || endVerse < startVerse) return null;
+    return {book, chapter, startVerse, endVerse};
   }
 
   function selectionSnapshot(value) {
@@ -1143,8 +1166,14 @@
     appendTextElement(document, section, "p", "A passage reference alone does not prove that two passages are related. These links require a recorded relationship or passage-specific evidence.",
       state === "partial" || state === "unknown" ? "narrative-explorer-missing-provenance" : "narrative-explorer-section-heading");
 
-    const authored = Array.isArray(routes.authored_relationships) ? routes.authored_relationships : [];
-    const bridges = Array.isArray(routes.evidence_backed_bridges) ? routes.evidence_backed_bridges : [];
+    const selectedRouteApplies = (route) => (
+      passageRangesOverlap(passage, route?.source_passage)
+      || passageRangesOverlap(passage, route?.destination_passage)
+    );
+    const authored = (Array.isArray(routes.authored_relationships) ? routes.authored_relationships : [])
+      .filter(selectedRouteApplies);
+    const bridges = (Array.isArray(routes.evidence_backed_bridges) ? routes.evidence_backed_bridges : [])
+      .filter(selectedRouteApplies);
     if (authored.length) {
       appendTextElement(document, section, "h5", "Connections recorded in BHF");
       appendTextElement(document, section, "p", "These relationships are shown with their recorded wording and supporting references.", "narrative-explorer-section-heading");

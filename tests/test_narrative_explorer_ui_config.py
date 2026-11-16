@@ -66,8 +66,9 @@ def test_enabled_flag_exposes_only_the_passage_companion_entry(monkeypatch):
     assert 'data-companion-resource="narrative_explorer"' in response.text
     assert 'data-companion-resource-label="Explore the Narrative"' in response.text
     assert re.search(r'data-companion-explore-catalogue[^>]*\bhidden\b', response.text)
-    assert "/narrative-presentation-policy.js?v=20261116ed7a" in response.text
-    assert "/narrative-explorer.js?v=20261116ed7a" in response.text
+    assert "/narrative-presentation-policy.js?v=20261116ed7b" in response.text
+    assert "/narrative-explorer.js?v=20261116ed7b" in response.text
+    assert "/companion-discoveries.js?v=20261116ed7b" in response.text
     assert "BHF Context" not in response.text
     assert 'aria-label="Tyndale Study Notes"' in response.text
     assert '"narrativeExplorerEnabled": true' in response.text

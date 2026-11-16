@@ -11,6 +11,24 @@
 | CKL strict validation and protected relationships | Final commands/results are recorded below. No CKL or protected relationship files were changed. |
 | Documentation/artifacts | JSON parse, report links, screenshot presence, whitespace, full diff, and final worktree/commit state checked before PR. |
 
+### Route-scope review follow-up
+
+Code review identified that an otherwise verified route could be attached to a
+passage outside both recorded endpoints if a mixed projection supplied it. The
+reader now offers and reopens a route only when the selected passage overlaps
+its source or destination endpoint. Verse-range overlap is supported. This
+keeps a shared Scripture reference from implying a relationship by itself.
+
+- `node tests/frontend/companion-discoveries.test.js` — **17 passed**.
+- `node tests/frontend/narrative-explorer.test.js` — **60 passed**.
+- `npm test` after the scope and cache changes — **18 frontend test files
+  passed, 0 failed**.
+- UI configuration and packaging tests after cache changes — **10 passed**.
+- Targeted genuine Chromium Jonah→Matthew route check after the scope fix —
+  **1 passed** in 56.80 seconds.
+- The independent code-review follow-up found no actionable issue in the
+  scope fix. It did not run tests; the results above are the test evidence.
+
 ## Commands and actual results
 
 - `.venv/bin/python -m pytest -q tests/test_ed7_source_audit.py
@@ -57,7 +75,7 @@ Canonical Browser click. Both were traced to test code (not application
 behavior), corrected, and the final full ED-6 check passed 3/3. The final ED-7
 Chromium run used the working connectivity smoke gate above.
 
-Before commit, JSON parsing, 75 local Markdown links, `git diff --check`, and
+Before commit, JSON parsing, local Markdown links, `git diff --check`, and
 protected-path status are checked once more; the results and final commit/PR
 state are added before completion.
 

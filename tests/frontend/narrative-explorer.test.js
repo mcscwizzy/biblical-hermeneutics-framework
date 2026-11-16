@@ -907,6 +907,11 @@ test("route handoff resolves only a complete exact CKL record identity in the se
   assert.equal(explorer.findVerifiedPassageRoute(data, "unknown-route", identity, "Jonah 1:17"), null);
   assert.equal(explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 2:1"), null);
 
+  data.passage.reference = "Jonah 1:18";
+  assert.equal(explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 1:18"), null);
+  data.passage.reference = "Jonah 1:16-18";
+  assert.equal(explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 1:16-18")?.id, route.id);
+
   data.related_passages.query_status = "partial";
   assert.equal(explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 1:17"), null);
   data.related_passages.query_status = "complete";
@@ -918,6 +923,31 @@ test("route handoff resolves only a complete exact CKL record identity in the se
     supporting_record_ids: ["ckl:jonah#claim:jonah-three-days"],
   }];
   assert.equal(explorer.findVerifiedPassageRoute(data, route.id, identity, "Jonah 1:17"), null);
+});
+
+test("related passage lists omit routes whose endpoints exclude the selected passage", () => {
+  const unrelatedRoute = {
+    id: "jonah-1-17-matthew-12-40-sign-of-jonah",
+    provenance: "ckl_documented_claim",
+    source_passage: "Jonah 1:17",
+    destination_passage: "Matthew 12:40",
+    relationship_category: "later_canonical_reception",
+    explanation: "Matthew compares Jonah's narrated duration with the Son of Man's time in the earth.",
+    uncertainty: "The idiom and chronology remain uncertain.",
+    supporting_records: [{object_id: "jonah", record_kind: "claim", record_id: "jonah-three-days"}],
+  };
+  const view = explorer.renderOverview(projection({
+    passage: {reference: "Exodus 3:1-5", book: "Exodus", chapter: 3, verse_start: 1, verse_end: 5, scope: "verse_range"},
+    related_passages: {
+      state: "available",
+      query_status: "complete",
+      authored_relationships: [],
+      evidence_backed_bridges: [unrelatedRoute],
+    },
+  }), {document: fakeDocument(), view: {kind: "category", categoryId: "themes_biblical_connections"}});
+
+  assert.doesNotMatch(view.textContent, /jonah-1-17-matthew-12-40-sign-of-jonah|Connection to Matthew 12:40/);
+  assert.match(view.textContent, /No source-linked connection is available here/);
 });
 
 test("related passage routes disclose long lists in keyboard-operable pages", () => {
