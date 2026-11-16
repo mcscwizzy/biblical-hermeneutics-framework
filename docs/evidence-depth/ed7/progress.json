@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "program": "ED-7",
+  "branch": "feat/ed7-reader-first-evidence-triage",
+  "base_commit": "c0b6cb25c7a78447459cafd0619b333b7c749e9e",
+  "updated_on": "2026-11-16",
+  "status": "validated_ready_for_pr",
+  "phases": {
+    "baseline": "complete",
+    "reader_clutter_audit": "complete",
+    "ai_source_audit": "complete_machine_audit_no_human_approval",
+    "reader_presentation_policy": "complete",
+    "reader_first_interface": "complete",
+    "journey_acceptance": "complete",
+    "release_governance": "pending_commit_push_and_pr"
+  },
+  "source_audit": {
+    "records": 99,
+    "supported_with_qualifications": 28,
+    "correction_required": 0,
+    "inaccessible_or_insufficient": 71,
+    "unsupported": 0,
+    "independent_model_pass": false,
+    "human_review_events_added": 0
+  },
+  "presentation_tiers": {
+    "featured_discovery": 2,
+    "available_on_demand": 26,
+    "withheld_from_reader_promotion": 71
+  },
+  "governance": {
+    "ckl_objects_before": 687,
+    "ckl_objects_after": 687,
+    "verified_bridges": 44,
+    "held_bridge_candidates": 7,
+    "human_review_queue": 99,
+    "approval_statuses_changed": false
+  },
+  "merge_or_deployment": false
+}

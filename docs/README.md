@@ -45,6 +45,8 @@ the authoritative reviewed research source.
 - [ED-6 Reader Discovery Pilot](evidence-depth/ed6/README.md) — participant
   protocol, local data toolkit, live reader readiness, and independent review
   kickoff.
+- [ED-7 Reader-First Research Cleanup](evidence-depth/ed7/README.md) — source
+  audit, presentation policy, browser evidence, and validation record.
 - [Maps and archaeology](archaeology.md) — catalog, evidence, media rights,
   provenance, and offline behavior.
 - [Lexicon architecture](lexicon-architecture.md), [word study](word-study.md),
