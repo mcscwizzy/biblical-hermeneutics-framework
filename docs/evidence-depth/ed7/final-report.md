@@ -36,5 +36,8 @@ See the [reader clutter audit](reader-clutter-audit.md),
 tested rendering and navigation only. No actual human comprehension or
 usability outcome is claimed.
 
-The work is ready for a single reviewable PR. It has not been merged or
-deployed.
+The branch is pushed and ready for one reviewable PR. PR creation was blocked:
+the connected GitHub integration returned `403 Resource not accessible by
+integration`, the local GitHub CLI has no authenticated session, and no
+signed-in browser session was available. The [GitHub comparison page](https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...feat/ed7-reader-first-evidence-triage?expand=1)
+is ready to open as a PR. No PR was created, merged, or deployed.

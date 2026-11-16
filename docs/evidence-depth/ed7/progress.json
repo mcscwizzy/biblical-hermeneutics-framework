@@ -4,7 +4,7 @@
   "branch": "feat/ed7-reader-first-evidence-triage",
   "base_commit": "c0b6cb25c7a78447459cafd0619b333b7c749e9e",
   "updated_on": "2026-11-16",
-  "status": "validated_ready_for_pr",
+  "status": "branch_pushed_pr_creation_pending_access",
   "phases": {
     "baseline": "complete",
     "reader_clutter_audit": "complete",
@@ -12,7 +12,7 @@
     "reader_presentation_policy": "complete",
     "reader_first_interface": "complete",
     "journey_acceptance": "complete",
-    "release_governance": "pending_commit_push_and_pr"
+    "release_governance": "branch_pushed_pr_creation_pending_access"
   },
   "source_audit": {
     "records": 99,
@@ -35,6 +35,12 @@
     "held_bridge_candidates": 7,
     "human_review_queue": 99,
     "approval_statuses_changed": false
+  },
+  "release": {
+    "branch_pushed": true,
+    "pull_request_created": false,
+    "comparison_url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/master...feat/ed7-reader-first-evidence-triage?expand=1",
+    "creation_blocker": "GitHub integration returned 403 Resource not accessible by integration; gh CLI is unauthenticated; no signed-in browser session was available."
   },
   "merge_or_deployment": false
 }
