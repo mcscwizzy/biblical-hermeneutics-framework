@@ -12000,6 +12000,37 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-538-themes-of-kingdom-hope-mission",
+      "scope": [
+        "kingdom-theology",
+        "law-and-gospel",
+        "messianic-hope",
+        "mission",
+        "new-covenant"
+      ],
+      "completed_unit": "Expanded four textually anchored theme records and held Law and Gospel because its content and anchors are unrelated generic covenant material.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/kingdom-theology.json",
+        "framework/canonical_library/objects/theology/messianic-hope.json",
+        "framework/canonical_library/objects/theology/mission.json",
+        "framework/canonical_library/objects/theology/new-covenant.json"
+      ],
+      "protected_checks": [
+        "No claim IDs, evidence IDs, source identities, Scripture references, relationships, certainty/dispute fields, review statuses, source locks, or curated edges were changed.",
+        "No new comparative ancient Near Eastern, lexical, or external historical assertions were introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "No schema, protected-field, source-identity, or retrieval failures."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -35851,14 +35882,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c9f96c9ebd4f7c9a7d8157a3cee15fa42c26c0d209ce42c2c2bdb6fccbf7aa7b",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified how royal poetry, Daniel’s visions, Jesus’ proclamation and parables, and Revelation depict God’s reign in distinct forms.",
+      "limitation": "The source records are Scripture references only; no external royal-ideology comparison or detailed historical reconstruction was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -35869,14 +35925,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0e1528392e7feedec0b35ca7d4dc3674526d1b3f85cfd5b540dd8b5ec9a61b15",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its title names a relationship between law and gospel, while its prose and anchors repeat generic covenant-promise material.",
+      "limitation": "Genesis 9/12, Sinai, Jeremiah 31, Luke 22, and Hebrews 8 do not provide a focused treatment of the law-and-gospel distinction as named here. The sole historical source is an internal orientation placeholder pending human review; doctrine-specific exposition needs reconciled anchors and reviewed sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Object validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -35887,14 +35958,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7f759dcdbf30d816fdeb5b8d0f1d635a1957189947ef9a6b3ae7131ac4a27a94",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained how the selected texts portray return, comfort, inner renewal, the Spirit, and new creation, while clarifying that not all anchors identify a messianic figure.",
+      "limitation": "The listed sources support close reading of the biblical passages but not a broader historical reconstruction or an assertion that every restoration text is explicitly messianic.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -35905,14 +36001,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "bd379efe51c89ac0b437d917485664b9cbbc993d6db31299548328f6920fb27a",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected Abraham’s promised blessing to the nations with distinct New Testament forms of sending, Spirit-empowered witness, Gentile ministry, and public community testimony.",
+      "limitation": "The source records are Scripture references only; no wider social-historical reconstruction or lexical explanation was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -35923,14 +36044,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7f6f172b1d1c318688a31e2561d9d92ec49d3d281dd218bd6f48c8a12d3ea306",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified the contributions of Jeremiah and Ezekiel’s promises and how Luke, Paul, and Hebrews relate the new covenant to Jesus’ death, ministry, mediation, and forgiveness.",
+      "limitation": "The listed sources support textual and canonical connections, including Hebrews’ quotation of Jeremiah, but not a specific ancient Near Eastern covenant comparison.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -37195,7 +37341,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/kingdom-theology.json",
+  "next_batch": "framework/canonical_library/objects/theology/perseverance.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

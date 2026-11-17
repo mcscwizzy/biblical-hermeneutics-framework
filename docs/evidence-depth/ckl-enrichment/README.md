@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **307 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **189 are skipped pending source or identity
-research**, and **75 remain pending review**.
+At this checkpoint, **311 objects are enriched**, **116 are unchanged because they
+are already sufficient**, **190 are skipped pending source or identity
+research**, and **70 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1913,3 +1913,6 @@ Hamartiology was reviewed and held. Its title names the doctrine of sin, but its
 
 
 Inspiration was clarified from the cited texts: Deuteronomy’s covenant instruction, the Psalms’ praise of divine teaching, Luke’s scene of scriptural interpretation, and 2 Timothy’s description of sacred writings. The explanation distinguishes these textual observations from later doctrinal debates and leaves external historical context blank where the object’s sources do not establish it. Imago Dei, Incarnation, Inerrancy, Judgment, and Justification were held because their source anchors do not directly support their named doctrines or because the records are misaligned.
+
+
+Four theology records now explain their cited passages more specifically: Kingdom distinguishes royal poetry, visions, parables, and apocalyptic proclamation; Messianic Hope separates return and renewal texts from claims about a messianic figure; Mission connects blessing with several distinct forms of witness; and New Covenant follows Jeremiah’s promise through its use in Luke, Paul, and Hebrews. Unsupported ancient Near Eastern comparison language was removed. Law and Gospel was held because its anchors and generic prose do not support the named distinction.
