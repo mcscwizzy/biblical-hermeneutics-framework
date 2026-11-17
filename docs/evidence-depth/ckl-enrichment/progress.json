@@ -764,6 +764,21 @@
         "ckl_objects": "PASS: Lamentations valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-051-leviticus-explanation-enrichment",
+      "scope": [
+        "leviticus"
+      ],
+      "completed_unit": "Clarified summary and five claim rationales through existing canonical and textual context",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/leviticus.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: Leviticus valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "No retrieval test run because claim rationales are not indexed or rendered; summary retains its reader-facing schema and passes validation."
+      }
     }
   ],
   "inventory_count": 687,
@@ -4047,14 +4062,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "36b5b0db3a7fffb5ce587056af5fa9581f45a3ee7c66f8eec8b0669002975d69",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "claims[leviticus-literary-movement].rationale",
+        "claims[leviticus-called-from-tent].rationale",
+        "claims[leviticus-day-of-atonement].rationale",
+        "claims[leviticus-holy-community].rationale",
+        "claims[leviticus-purity-distinctions].rationale"
+      ],
+      "outcome": "Reframed the summary around the question of how Israel lives and worships in divine presence, and expanded five claim rationales to connect sacrifice, purity, atonement, holiness, and communal ethics to that literary movement.",
+      "limitation": "No new historical or cultural claims were introduced; the original treatment of Second Temple reception and uncertainty was retained.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Protected-field review: only the summary and five claim rationale fields changed; all claims, sources, anchors, classifications, notes, evidence, and relationships remain unchanged."
+        ]
       }
     },
     {
@@ -14679,6 +14716,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/leviticus.json",
+  "next_batch": "framework/canonical_library/objects/books/luke.json",
   "protected_fingerprint_base": "origin/master"
 }
