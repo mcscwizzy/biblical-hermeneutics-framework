@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **295 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **296 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **178 are skipped pending source or identity
-research**, and **98 remain pending review**.
+research**, and **97 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1811,3 +1811,10 @@ formative role in 2 Timothy, and Hebrews’ account of divine speech. The prose
 does not infer canon or inerrancy doctrines from these anchors. The object and
 full library validate without new errors or warnings; focused regressions
 passed.
+
+
+Christology now distinguishes the Davidic promise, royal psalm, Isaiah’s ruler
+and suffering servant, and the New Testament readings of Jesus in Luke 24 and
+Acts 2. It notes that Isaiah 53 does not name the servant in the cited verses
+and does not impose one original identification. The object and full library
+validate without new errors or warnings; focused regressions passed.
