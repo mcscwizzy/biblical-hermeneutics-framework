@@ -398,7 +398,7 @@
     const ids = ["archaeology", "people", "themes", "timeline", "commentary", "canonical"];
     const resources = ids.map((id) => ({id, ...engine.resources[id]})).filter((item) => item.label);
     panel.querySelector("[data-companion-recommended]")?.replaceChildren(...resources.slice(0, 4).map(resourceCard));
-    panel.querySelector("[data-companion-deeper]")?.replaceChildren(...resources.slice(4).map(resourceRow));
+    panel.querySelector("[data-companion-deeper]")?.replaceChildren(...resources.slice(4).map(resourceCard));
     setText("[data-companion-recommendation-reason]", "Browse BHF’s local research collections independently of a selected passage.");
     setText("[data-companion-resource-count]", `${resources.length} research collections`);
     panel.querySelector("[data-companion-entities-section]")?.setAttribute("hidden", "");
