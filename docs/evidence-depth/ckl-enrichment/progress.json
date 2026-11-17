@@ -723,6 +723,19 @@
         "ckl_objects": "PASS: Joshua valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
         "regression": "No retrieval test run because claim rationales are not retrieved or rendered; the summary retains the existing reader-facing field and passes schema validation."
       }
+    },
+    {
+      "batch_id": "batch-048-jude-review",
+      "scope": [
+        "jude"
+      ],
+      "completed_unit": "Jude reviewed and found already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Jude valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3903,14 +3916,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f6e8adb134573a28432e7722d5a076d9973961a75af8a887f1b22f3621af227c",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and contexts explain the letter’s polemical form and Second Temple Jewish traditions; 29 claims and 39 notes distinguish Jude’s rhetoric from recoverable opponent history, identify textual variants, and qualify later use of Enoch and Moses traditions.",
+      "limitation": "Existing explanations are already accessible and explicit about source and interpretive uncertainty.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14589,6 +14615,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/jude.json",
+  "next_batch": "framework/canonical_library/objects/books/judges.json",
   "protected_fingerprint_base": "origin/master"
 }
