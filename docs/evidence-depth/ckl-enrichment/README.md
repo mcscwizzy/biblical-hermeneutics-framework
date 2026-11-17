@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **274 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **275 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **170 are skipped pending source or identity
-research**, and **128 remain pending review**.
+research**, and **127 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1683,3 +1683,5 @@ Batch 487 enriched New Creation Theme across Genesis, John, Romans 8, and Revela
 Batch 488 enriched New Exodus Theme by explaining the canonical restoration pattern and qualifying the link to the earlier Exodus. Isaiah 40’s wilderness-road image is distinguished from the distinct contributions of Deuteronomy 30, Ezekiel 36, Joel 2, and Revelation 21. The next pending object is recorded in the manifest.
 
 Batch 489 enriched New Jerusalem Theme from Revelation 21:1–5, distinguishing the vision of the city from broader restoration themes in the other listed passages. The next pending object is recorded in the manifest.
+
+Batch 490 enriched New Temple Theme by tracing dwelling-presence language from Exodus and 1 Kings to John, Ephesians, and Revelation. The explanation preserves the different temple images in their respective texts. The next pending object is recorded in the manifest.
