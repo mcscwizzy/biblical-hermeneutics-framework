@@ -545,6 +545,24 @@
         "regression": "No retrieval test run: only claim rationale fields changed, and the standard modal and retrieval index do not consume those fields."
       },
       "checkpoint_commit": "a11e3f459d8db1623f1a269140f55875f9908e6b"
+    },
+    {
+      "batch_id": "batch-035-exodus-through-galatians-review",
+      "scope": [
+        "exodus",
+        "ezekiel",
+        "ezra",
+        "galatians"
+      ],
+      "completed_unit": "Four book objects reviewed; Exodus claim rationales enriched and three objects already sufficient",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/exodus.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: four objects valid with 0 errors and 0 warnings each; full library 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "No retrieval tests run because only claim rationale fields changed; these are not used by the retrieval index or standard reader modal."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3099,14 +3117,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ecbca3fc4931dee0a7db483b7adc6a7f8c75272add8b3940f043df534ad96ad9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "claims[exodus-literary-movement].rationale",
+        "claims[exodus-priestly-kingdom].rationale",
+        "claims[exodus-tabernacle-presence].rationale",
+        "claims[exodus-ane-context].rationale",
+        "claims[exodus-merneptah-limits].rationale"
+      ],
+      "outcome": "Expanded five claim rationales to explain the literary movement toward divine presence, the relationship between deliverance and covenant vocation, the tabernacle’s role in the book’s ending, the limits of ancient Near Eastern comparison, and what the Merneptah reference can and cannot establish.",
+      "limitation": "No new historical or archaeological claims were added. Only claim rationale fields changed; reader-facing summary and context fields were already specific and appropriately qualified.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Protected-field and semantic review: only five claim rationale fields changed; claim wording, IDs, sources, Scripture anchors, statuses, notes, and relationships remain unchanged."
+        ]
       }
     },
     {
@@ -3117,14 +3159,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "60b1dae47eb659df47b7f8b8048f80a399727723a07870364ebc78aa95b6f6ce",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The book summary and historical/literary context orient readers to exile, dated visions, literary forms, and debated composition; 19 claims and 30 interpretive notes give specific explanations and preserve uncertainty.",
+      "limitation": "No new research needed for the reviewed explanatory content.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -3135,14 +3193,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "cde00853af2dd8e7622cbd5f847da5712d1a84f3231a2f1425c2d5d27a6224f3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and contextual sections explain the Persian-period restoration narrative, Aramaic documents, non-linear presentation in Ezra 4, and the difficult ending; nine interpretive notes clarify historical evidence and disputed policy without flattening uncertainty.",
+      "limitation": "No new research needed for the reviewed explanatory content.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -3153,14 +3227,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a743aa6fcfcc1d64906d0e5803b28beb8c0d240c1cc1888a3ac0fbf9b3fcc80d",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and context make the gentile-inclusion crisis, Second Temple Jewish setting, and letter structure accessible; claims and interpretive notes already explain key terms, scriptural reasoning, and disputed readings in reader-oriented language.",
+      "limitation": "No new research needed for the reviewed explanatory content.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14139,6 +14229,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/exodus.json",
+  "next_batch": "framework/canonical_library/objects/books/genesis-1.json",
   "protected_fingerprint_base": "origin/master"
 }

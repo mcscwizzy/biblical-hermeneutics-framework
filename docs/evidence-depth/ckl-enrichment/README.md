@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **5 objects are enriched**, **30 are unchanged because they
+At this checkpoint, **6 objects are enriched**, **33 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **610 remain pending review**.
+research**, and **606 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -172,6 +172,8 @@ then distinguishes that evidence from Kings and Isaiah. Lachish Ostraca,
 Masada, Megiddo, and the Mesha Stele were held because the current CKL entries
 lack specific artifact or stratigraphic references tied to their biblical
 anchors. Their source details need repair or review before expansion.
+
+Batch 035 reviewed Exodus, Ezekiel, Ezra, and Galatians. Five Exodus claim rationales now explain how the book moves beyond departure from Egypt toward covenant and divine presence, how the Merneptah reference is useful but limited, and how ancient Near Eastern parallels provide comparison without proving dependence. Ezekiel, Ezra, and Galatians already have accessible book summaries and context, detailed claim explanations, and specific interpretive notes that preserve uncertainty; their prose was left unchanged. All four objects validate with zero errors or warnings, and the full CKL remains at 687 valid objects, zero errors, and the same 14 baseline warnings. No retrieval test was run because the only edits were claim rationales, which are not used by the retrieval index or standard reader modal. The next pending object is `genesis-1.json`.
 
 ## Reader reachability
 
