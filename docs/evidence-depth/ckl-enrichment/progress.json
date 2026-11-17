@@ -11398,6 +11398,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-514-witness-theme",
+      "scope": [
+        "witness-theme"
+      ],
+      "completed_unit": "Clarified the distinct forms of promise, sending, Spirit-enabled witness, missionary announcement, and public communal conduct in the listed passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/witness-theme.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "The scope remains limited to the recorded biblical passages."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -34147,14 +34173,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f88eb3d8c273725846533a390f34b28e4148a28974d4f60fd2f2bedc55cf10fb",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Distinguished the promise of blessing in Genesis, Jesus’ commission, Spirit-enabled witness in Acts, Paul’s missionary work, and the public proclamation and conduct urged in 1 Peter.",
+      "limitation": "No comparative ancient Near Eastern evidence is recorded. Generic interpretive notes were reviewed and left unchanged; the explanations stay within the cited biblical passages.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, Scripture anchors, source identities, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -36013,7 +36062,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/witness-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/word-of-god-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

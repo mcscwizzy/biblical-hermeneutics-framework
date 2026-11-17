@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **289 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **290 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **178 are skipped pending source or identity
-research**, and **104 remain pending review**.
+research**, and **103 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1765,3 +1765,10 @@ concern covenant promises and renewal, and the linked records are covenant
 entries. The record needs reviewed identity/anchor reconciliation or a
 wisdom-focused evidence set before explanation can be expanded. No CKL content
 was changed.
+
+
+Witness Theme now separates Genesis’ promise of blessing, Jesus’ commission,
+Spirit-enabled witness in Acts, Paul’s missionary explanation, and 1 Peter’s
+public communal testimony. Unsupported ancient Near Eastern boilerplate was
+removed. The object and full library validate without new errors or warnings;
+focused content-quality and retrieval regressions passed.
