@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **231 objects are enriched**, **108 are unchanged because they
-are already sufficient**, **150 are skipped pending source or identity
-research**, and **198 remain pending review**.
+are already sufficient**, **151 are skipped pending source or identity
+research**, and **197 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1484,3 +1484,6 @@ Batch 418 reviewed Judea. The revised explanation follows the recorded Gospel an
 
 
 Batch 419 reviewed Kadesh-barnea and made no content changes. Its Genesis, Deuteronomy, Isaiah, and Acts anchors do not establish the place identity or context asserted by the object. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 420 reviewed Lachish and made no content changes. Its anchors point to Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than establishing Lachish. The generic ancient Near Eastern section lacks support, and the internal historical-orientation record remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
