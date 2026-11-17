@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **237 objects are enriched**, **109 are unchanged because they
+At this checkpoint, **237 objects are enriched**, **110 are unchanged because they
 are already sufficient**, **159 are skipped pending source or identity
-research**, and **182 remain pending review**.
+research**, and **181 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1532,3 +1532,6 @@ Batch 434 reviewed Nile and made no content changes. The anchors concern the sea
 
 
 Batch 435 reviewed Nineveh and made no content changes. The anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Nineveh. The generic ancient Near Eastern text lacks support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 436 reviewed Persia and left it unchanged. The record already distinguishes Achaemenid reigns and administrative phases, explains why provincial conditions were not uniform, separates the literary forms of the biblical texts, and limits what the Cyrus Cylinder can establish about Judah. Its source-based qualifications were retained. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.

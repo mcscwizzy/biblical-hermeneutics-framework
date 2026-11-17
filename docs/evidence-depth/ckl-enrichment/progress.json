@@ -9538,6 +9538,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-436-persia-review",
+      "scope": [
+        "persia"
+      ],
+      "completed_unit": "Reviewed explanatory fields; retained the already sufficient, source-rich account and its chronological qualifications.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object, source identities, Scripture references, dispute and uncertainty classifications, review metadata, and curated relationships remained unchanged.",
+        "The Cyrus Cylinder’s evidentiary limits were retained."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this no-change review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -29217,14 +29238,26 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7f14ab05b1ff89d03f510d5e0e2ff726f05cb230fa2495064022639fb86cd0a5",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "interpretive_notes[*].rationale"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The object already explains Achaemenid chronology, Yehud, regional variation in administration, the distinct literary forms of its biblical sources, and the limits of using the Cyrus Cylinder as evidence.",
+      "limitation": "No further expansion was needed; existing chronology qualifications and source-critical distinctions were retained.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this no-change review."
+        ]
       }
     },
     {
@@ -32487,7 +32520,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/persia.json",
+  "next_batch": "framework/canonical_library/objects/places/pharpar.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
