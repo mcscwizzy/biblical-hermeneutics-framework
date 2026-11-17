@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **108 objects are enriched**, **87 are unchanged because they
+At this checkpoint, **109 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **428 remain pending review**.
+research**, and **427 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -607,3 +607,5 @@ Batch 189 enriched What is biblical wisdom? The FAQ now follows examples from Pr
 The next work unit is `framework/canonical_library/objects/faq/what-is-canonical-theology.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
+
+Batch 190 enriched What is canonical theology? with examples from Luke 24, Matthew 5, Romans 15, 2 Timothy 3, and Hebrews 1. The explanation now distinguishes the texts’ specific uses of earlier Scripture and cautions against treating connected reading as proof of dependence. Unsupported ANE and canon-formation generalizations were removed. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-covenant.json`.
