@@ -4521,6 +4521,31 @@
         ]
       },
       "checkpoint_commit": "5312efbf"
+    },
+    {
+      "batch_id": "batch-221-abraham-faq",
+      "scope": [
+        "who-was-abraham"
+      ],
+      "completed_unit": "Reviewed the narrative, canonical connections, notes, sources, and relationships; clarified the Genesis promise sequence and later biblical uses while removing unsupported historical/comparative claims.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/who-was-abraham.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchor identities, sources, related links, confidence, and review metadata preserved.",
+        "No unsupported claim that Genesis 12 calls Abraham from Ur or that unrecorded cultural comparisons establish his setting."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "259ba7c2"
     }
   ],
   "inventory_count": 687,
@@ -16136,14 +16161,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2797aaa24fd210ff9d6ff1b65758776e3532e6e98950988964ab03a590fd23f4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "new_testament_connections"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Explained the promise sequence in Genesis 12, 15, 17, and 22 and distinguished how Romans, Galatians, Hebrews, and James draw on it. Removed the unsupported Ur-at-the-call and broad ANE migration/kinship/treaty assertions.",
+      "limitation": "The recorded sources are biblical passages and an internal CKL orientation record, not independent historical or archaeological research. Dates and material evidence for Abraham’s life are not established by this FAQ.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23276,7 +23331,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/who-was-abraham.json",
+  "next_batch": "framework/canonical_library/objects/faq/who-was-david.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

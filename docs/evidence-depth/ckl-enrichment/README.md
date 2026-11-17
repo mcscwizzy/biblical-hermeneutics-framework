@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **137 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **138 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **397 remain pending review**.
+research**, and **396 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -669,3 +669,5 @@ Batch 218 enriched What is the Temple? with passage-specific explanations from 1
 Batch 219 enriched What is Typology? with explicit examples from Romans 5, 1 Corinthians 10, Colossians 2, Hebrews 8–9, and 1 Peter 3. It distinguishes textual signals from later proposed parallels and removes an unsupported generalization about ancient reading practice. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-verses-show-identity-in-christ.json`.
 
 Batch 220 enriched What Verses Show Identity in Christ? by tying adoption, inheritance, new creation, communal vocation, and conduct to their specific passages and letter arguments. It removes unsupported generalizations about ancient identity customs. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/who-was-abraham.json`.
+
+Batch 221 enriched Who Was Abraham? with the sequence of promises in Genesis 12, 15, 17, and 22, then distinguished how Romans, Galatians, Hebrews, and James use those episodes. It removed the unsupported claim that Genesis 12 calls Abraham from Ur and unreferenced cultural comparisons. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/who-was-david.json`.
