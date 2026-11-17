@@ -9,7 +9,7 @@
     "Jewish institutions under Persia and Rome"
   ],
   "summary": "The changing network of temple personnel, high priests, scribes, elders, local assemblies, councils, and imperial authorities that ordered Jewish public life from Persian restoration to 70 CE.",
-  "historical_context": "Second Temple administration changed substantially across Persian, Hellenistic, Hasmonean, Herodian, and Roman rule. Temple and Torah remained central, but no single arrangement should be projected across the entire 515 BCE-70 CE period.",
+  "historical_context": "Second Temple administration was not one bureaucracy that remained unchanged from the temple's rebuilding to its destruction. Ezra 7 depicts a Persian king commissioning Ezra to teach Torah and appoint officials; Nehemiah 8 shows Torah read and explained in a public assembly, while Malachi 2 criticizes priests for failing in their teaching role. Together, these restoration-era texts show temple service, Torah instruction, and local leadership intersecting in Judah. Later passages present different settings: Luke 2 places worshipers in the Jerusalem temple, John 11 portrays chief priests and Pharisees deliberating over Jesus, and Acts 4 and 23 depicts apostles before a council, including a dispute among its members. These passages illuminate changing institutions across the period; they do not establish one continuous structure or show how representative each scene was.",
   "ancient_near_east_context": "Persian provincial administration is relevant to the early period; Hellenistic civic and Roman provincial structures are more relevant later. Comparative institutional claims must be tied to a particular century and source.",
   "hebraic_worldview": "Temple holiness, Torah, priestly teaching, sacrifice, purity, communal responsibility, and hope for divine rule shaped institutional life even when offices were entangled with imperial power.",
   "second_temple_context": "Ezra-Nehemiah presents early priestly, Levitical, scribal, and gubernatorial arrangements. Josephus, inscriptions, the Gospels, and Acts attest later high priests, temple officers, synagogues, named groups, and councils under Herodian and Roman power.",
@@ -152,8 +152,28 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    {"note": "Second Temple administration is a periodized family of institutions rather than one bureaucracy unchanged from Ezra to Caiaphas.", "note_type": "historical-context", "certainty": "strong_consensus", "dispute_status": "historical_uncertainty", "sources": ["vanderkam-second-temple-institutions", "grabbe-second-temple-administration"], "rationale": "Sources from different centuries attest changing rulers, offices, and jurisdictions."},
-    {"note": "Pharisees, Sadducees, scribes, chief priests, and councils overlap in some sources but are not interchangeable labels.", "note_type": "interpretive-caution", "certainty": "strong_consensus", "dispute_status": "historical_uncertainty", "sources": ["vanderkam-second-temple-institutions", "collins-harlow-second-temple-institutions"], "rationale": "Each term has its own source history and social range."}
+    {
+      "note": "Second Temple administration is a periodized family of institutions rather than one bureaucracy unchanged from Ezra to Caiaphas.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration"
+      ],
+      "rationale": "Sources from different centuries attest changing rulers, offices, and jurisdictions."
+    },
+    {
+      "note": "Pharisees, Sadducees, scribes, chief priests, and councils overlap in some sources but are not interchangeable labels.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "vanderkam-second-temple-institutions",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "rationale": "Each term has its own source history and social range."
+    }
   ],
   "common_questions": [
     "What governed the second temple period?",
@@ -266,7 +286,10 @@
       "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
       "source_type": "academic-book",
       "supports": [
-        "historical_context", "second_temple_context", "canonical_role", "interpretive_notes"
+        "historical_context",
+        "second_temple_context",
+        "canonical_role",
+        "interpretive_notes"
       ],
       "notes": "Current scholarly synthesis of Second Temple institutions.",
       "id": "vanderkam-second-temple-institutions"
@@ -279,7 +302,12 @@
       "locator": "Chapters on sources, history, and currents within Judaism",
       "url": "https://www.bloomsbury.com/us/introduction-to-second-temple-judaism-9780567455017/",
       "source_type": "academic-book",
-      "supports": ["historical_context", "ancient_near_east_context", "second_temple_context", "interpretive_notes"],
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context",
+        "second_temple_context",
+        "interpretive_notes"
+      ],
       "notes": "Source-critical period overview.",
       "id": "grabbe-second-temple-administration"
     },
@@ -291,7 +319,11 @@
       "locator": "Essays on history, literature, archaeology, groups, and institutions",
       "url": "https://www.eerdmans.com/9780802869227/early-judaism/",
       "source_type": "academic-book",
-      "supports": ["second_temple_context", "canonical_role", "interpretive_notes"],
+      "supports": [
+        "second_temple_context",
+        "canonical_role",
+        "interpretive_notes"
+      ],
       "notes": "Multi-author academic overview.",
       "id": "collins-harlow-second-temple-institutions"
     }

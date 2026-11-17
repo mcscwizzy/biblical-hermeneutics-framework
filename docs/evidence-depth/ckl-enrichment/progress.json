@@ -5383,6 +5383,32 @@
         ]
       },
       "checkpoint_commit": "e38ac7e8"
+    },
+    {
+      "batch_id": "batch-256-second-temple-administration-institution",
+      "scope": [
+        "second-temple-administration"
+      ],
+      "completed_unit": "Reviewed the diachronic institutional overview and expanded its historical context with distinct restoration-era and late Second Temple scenes already anchored in Scripture, while preserving the qualification that the passages do not establish a continuous or representative administrative structure.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/second-temple-administration.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -18599,14 +18625,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "bc737ec3b5f199881277cf56402da511f412e5f297c57eaf56b15a804107daa0",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "historical_context"
+      ],
+      "outcome": "Expanded the historical context with passage-specific examples from Ezra 7, Nehemiah 8, Malachi 2, Luke 2, John 11, and Acts 4/23. The explanation connects visible scenes to changing institutional settings and explicitly avoids implying one continuous bureaucracy or treating narrative scenes as representative evidence.",
+      "limitation": "The enrichment relies on the object’s existing Scripture anchors. No independent secondary-source content was inspected, so broader institutional history, comparative claims, and disputes remain as previously recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -25109,7 +25154,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/second-temple-administration.json",
+  "next_batch": "framework/canonical_library/objects/institutions/synagogue-leadership.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

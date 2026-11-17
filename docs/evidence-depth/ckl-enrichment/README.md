@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **166 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **167 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **67 are skipped pending source or identity
-research**, and **367 remain pending review**.
+research**, and **361 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -758,3 +758,6 @@ Batch 254 reviewed Sanhedrin. The existing historical and interpretive explanati
 
 
 Batch 255 reviewed Scribes. Its existing explanation already distinguishes administrative, priestly, learned, and legal roles; I changed only the canonical-role field to replace internal cluster wording with passage-specific examples from Kings, Ezra, Nehemiah, and the Gospels. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/second-temple-administration.json`.
+
+
+Batch 256 reviewed Second Temple Administration. Its historical context was expanded with distinct scenes already anchored in Ezra 7, Nehemiah 8, Malachi 2, Luke 2, John 11, and Acts 4/23. The prose explains what those texts show about Torah instruction, temple life, priestly teaching, and council deliberation while cautioning that the scenes do not establish one continuous or representative bureaucracy. No external scholarly arguments were added because the listed academic works were not independently consulted. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Synagogue Leadership.
