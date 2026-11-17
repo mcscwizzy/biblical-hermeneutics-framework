@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **180 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **85 are skipped pending source or identity
-research**, and **327 remain pending review**.
+are already sufficient**, **86 are skipped pending source or identity
+research**, and **326 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -863,3 +863,6 @@ Batch 289 reviewed Eunice and left it unchanged. The cited references—Acts 9, 
 
 
 Batch 290 reviewed Eve and left the entry unchanged. Its primary anchor is Genesis 11:1-9, the Babel narrative, while Eve’s direct story is in Genesis 2-4. Romans 5 and 1 Corinthians 15 focus on Adam and the new humanity, and Hebrews 11 does not name Eve. The primary passage and reception scope need reconciliation before enrichment. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Ezekiel the Prophet.
+
+
+Batch 291 reviewed Ezekiel the Prophet and left it unchanged. The references are 2 Kings 4 (Elisha), Isaiah 40, Jeremiah 31, and Luke 4; none provides Ezekiel’s own prophetic narrative. The source list points to Kings and generic prophetic texts rather than Ezekiel. Person-specific anchors and sources need reconciliation before biography or exile-era context can be expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Ezra the Scribe.
