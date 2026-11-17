@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **65 objects are enriched**, **79 are unchanged because they
+At this checkpoint, **66 objects are enriched**, **79 are unchanged because they
 are already sufficient**, **45 are skipped pending source or identity
 research**, and **511 remain pending review**.
 
@@ -462,6 +462,8 @@ Batch 129 corrected generic context in the Conversion of Paul record. The revise
 
 Batch 130 reviewed the Cornelius household record’s contexts, anchors, sources, and interpretive note. The summary now follows the sequence from the paired visions through the Spirit’s arrival before baptism, then the retelling in Acts 11 and later discussion in Acts 15. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/council-of-jerusalem.json`.
+Batch 131 corrected generic church-event prose in the Council of Jerusalem record. The revised account follows Acts 15’s dispute, testimonies, scriptural argument, and decision for Gentile believers. Its existing Acts 9 anchor is unrelated to the council and remains unchanged for review. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/covenant-renewal-at-shechem.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

@@ -2283,6 +2283,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "8166b3ee"
+    },
+    {
+      "batch_id": "batch-131-council-of-jerusalem-context-correction",
+      "scope": [
+        "council-of-jerusalem"
+      ],
+      "completed_unit": "Reviewed all explanatory fields, Scripture references, source identities, related-object edges, interpretive notes, and the absence of atomic claims or typed evidence; corrected six generic event fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/council-of-jerusalem.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, related-object edges, statuses, and review metadata preserved.",
+        "The Acts 15 deliberation is described from its primary passage; the unrelated Acts 9 anchor remains flagged for review."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "10d280ee"
     }
   ],
   "inventory_count": 687,
@@ -9621,14 +9642,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a9811f32003f47a8b0aea06a18657b5a5ab2ca9761a38afdc26f364100c9f79d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note/rationale",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Corrected generic church-event language with an account of the Acts 15 dispute, the testimonies and scriptural argument, and the decision letter for Gentile believers. The explanation distinguishes the Acts 15 meeting from the Cornelius episode that precedes it.",
+      "limitation": "The preserved Scripture anchors include Acts 9, which concerns Paul’s encounter, and the object has no Galatians reference; those source and anchor relations were not changed. Acts 15 directly supports the revised explanation. Ephesians 2 remains a later thematic connection.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture references, related-object edges, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.64s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18579,7 +18627,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/council-of-jerusalem.json",
+  "next_batch": "framework/canonical_library/objects/events/covenant-renewal-at-shechem.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
