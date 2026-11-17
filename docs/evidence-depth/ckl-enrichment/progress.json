@@ -2241,6 +2241,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "ff8d44b1"
+    },
+    {
+      "batch_id": "batch-129-paul-conversion-context",
+      "scope": [
+        "conversion-of-paul"
+      ],
+      "completed_unit": "Reviewed all explanatory fields, Scripture references, source identities, related-object edges, two interpretive notes, and the absence of atomic claims or typed evidence; corrected six generic narrative fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/conversion-of-paul.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture references, related-object edges, statuses, and review metadata preserved.",
+        "Acts’ narrative retellings and the debated terms conversion, call, and commissioning remain differentiated."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "0111ad92"
     }
   ],
   "inventory_count": 687,
@@ -9498,14 +9519,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "765c1df61519af49e058250940237aaf4affc94dcc338b9b974b4692d1704017",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note/rationale",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Replaced generic event language with a passage-specific account of Saul’s encounter, Ananias’s role, and the relationship between Acts 9 and later retellings. The prose preserves the distinction between conversion, call, and commissioning and keeps Acts 15 and Ephesians 2 as later discussions of gentile inclusion.",
+      "limitation": "The object has no atomic claims or typed evidence; the prose relies on its Acts and Ephesians references and a corroborating local Acts record. No new external historical claim was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture references, related-object edges, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.21s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18492,7 +18540,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/conversion-of-paul.json",
+  "next_batch": "framework/canonical_library/objects/events/cornelius-household-receives-spirit.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
