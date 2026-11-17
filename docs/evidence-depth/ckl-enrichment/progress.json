@@ -10526,6 +10526,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-478-image-of-god-theme",
+      "scope": [
+        "image-of-god-theme"
+      ],
+      "completed_unit": "Connected image language to its distinct creation, genealogy, life-protection, worship, speech, and renewal settings; removed unsupported comparative-context claims.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/image-of-god-theme.json"
+      ],
+      "protected_checks": [
+        "Object and evidence identifiers, source identities, Scripture anchors, review metadata, claims, and curated relationships were preserved.",
+        "Removed unsupported ancient Near Eastern and Second Temple generalizations; added no new source-dependent historical assertions."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -31757,14 +31782,43 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4e2efb0d34d12b6069c4963d090735c514da38f4a58737c9344732060442a215",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "second_temple_context",
+        "context_applicability.ancient_near_east",
+        "context_applicability.second_temple",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained how the image language functions in Genesis, Psalm 8, 1 Corinthians, James, and New Testament renewal texts, distinguishing each passage’s purpose and connecting dignity with vocation, protection of life, speech, worship, and renewal.",
+      "limitation": "No comparative ancient Near Eastern or Second Temple explanation was retained because this object’s recorded sources do not substantiate those claims; no new historical or lexical claims were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -34271,7 +34325,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/image-of-god-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/justice-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
