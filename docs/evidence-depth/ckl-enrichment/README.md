@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **217 objects are enriched**, **105 are unchanged because they
+At this checkpoint, **218 objects are enriched**, **105 are unchanged because they
 are already sufficient**, **134 are skipped pending source or identity
-research**, and **231 remain pending review**.
+research**, and **230 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1253,3 +1253,11 @@ stereotype. Its linked evidence cluster also qualifies venue, Erastus, and socia
 reconstructions. Single-object validation passed with 1 valid object, 0 errors,
 and 8 pre-existing section-status warnings. The next pending object is recorded
 in the manifest.
+
+
+Batch 387 clarified the Acts 27:7-8 sequence from Cnidus along Crete to Fair
+Havens near Lasea, distinguishing the route setting from the harbor the narrative
+says the ship reached. No modern route reconstruction or distance was added.
+CKL validation reported 687 valid objects, zero errors, and the same 14 baseline
+warnings; focused content-quality and retrieval regressions passed (17 tests, 4
+subtests). The next pending object is recorded in the manifest.

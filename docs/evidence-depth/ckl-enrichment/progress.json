@@ -8424,6 +8424,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-387-crete",
+      "scope": [
+        "crete"
+      ],
+      "completed_unit": "Clarified the narrated route along Crete to Fair Havens near Lasea and distinguished route setting from arrival point.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/crete.json"
+      ],
+      "protected_checks": [
+        "Object and evidence IDs, source lock, Scripture anchor, and review metadata were preserved.",
+        "No reconstructed sailing lane, distance, or external geographic claim was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26387,14 +26412,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "ece963ac6350432aaf95a69acc9e0d293bfb3a71df39d62c1b0d23dbd0d191f7",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "primary_observation",
+        "scripture_references",
+        "sources",
+        "source_lock"
+      ],
+      "fields_changed": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance"
+      ],
+      "outcome": "Clarified the Acts 27:7-8 route sequence from Cnidus along Crete to Fair Havens near Lasea, distinguishing the island used as a route setting from the harbor the narrative says the ship reached.",
+      "limitation": "The source-locked passage establishes the narrated sequence only; no modern route reconstruction, distance, or other external geography was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object/evidence/source IDs, source lock, Scripture anchor, and review metadata remain unchanged."
+        ]
       }
     },
     {
@@ -30539,7 +30581,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/crete.json",
+  "next_batch": "framework/canonical_library/objects/places/cyprus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
