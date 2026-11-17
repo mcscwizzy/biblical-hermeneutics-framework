@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **194 objects are enriched**, **96 are unchanged because they
-are already sufficient**, **94 are skipped pending source or identity
-research**, and **303 remain pending review**.
+are already sufficient**, **95 are skipped pending source or identity
+research**, and **302 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -935,3 +935,6 @@ Batch 313 reviewed Joshua son of Nun. The explanation now follows the commission
 
 
 Batch 314 reviewed Judas Iscariot. The explanation now follows Matthew 27:3–10, where Judas returns the silver and confesses that he betrayed innocent blood, while the priests refuse responsibility. The other listed figures—Cain, Balaam, and Herod—are kept separate from Judas’s biography, with no claim of literary dependence. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is jude-of-jerusalem.
+
+
+Batch 315 reviewed Jude of Jerusalem and left the profile unchanged. Its references concern Saul, general church ministry, and Paul; none identifies Jude or establishes which Jude the record intends. Person and source reconciliation is required before the generic early-church description can be made specific. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is korah.
