@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **1 object is enriched**, **8 are unchanged because they
+At this checkpoint, **2 objects are enriched**, **8 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **636 remain pending review**.
+research**, and **635 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -117,6 +117,20 @@ source record describe Nineveh. Its other contextual fields and biblical
 anchors are generic or unrelated, so the intended artifact must be established
 before any explanation can be responsibly written.
 
+The Exile and Return Storyline summary and contexts now connect the named
+passages more concretely: Deuteronomy 30's promised gathering, Jerusalem's fall
+in 2 Kings 25, Jeremiah's address to people living in exile, and Ezra's account
+of return are set beside later restoration language. The updated wording also
+clarifies that biblical return language can describe both historical return
+and a wider canonical hope. Scripture anchors, source identities, claims, and
+relationships were unchanged.
+The updated object and full library both validate with zero errors; the full
+validator reports the same 14 pre-existing warnings, including this object's
+section-status warning. The targeted content-quality and retrieval test command
+was interrupted after 20 passing test markers because it continued at roughly
+30 seconds per test and had not produced a summary. No failure appeared before
+interruption; the final test result remains unavailable.
+
 Shiloh Excavations was held because its sources and Scripture links point to
 Jerusalem and general creation texts rather than site-specific Shiloh evidence.
 The record needs excavation phases and relevant biblical anchors reviewed.
@@ -185,6 +199,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/biblical_theology/exile-and-return-storyline.json`.
+The next work unit is `objects/books/1-chronicles.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
