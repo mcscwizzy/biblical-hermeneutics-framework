@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **21 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **22 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **548 remain pending review**.
+research**, and **547 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -354,6 +354,9 @@ Batch 079 reviewed the Judges household religion and regional cult sites record.
 
 Batch 080 reviewed the kinship, inheritance, and redemption record and left it unchanged. Its two claims and interpretive caution already make clear that Ruth 4 joins property, marriage, and family continuity in its own narrated transaction without equating it with one uniform law from Leviticus or Deuteronomy. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. Regression tests were not run because no content changed.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/late-bronze-iron-transition-and-highland-settlement.json`.
+
+Batch 081 reviewed the Judges 1–2 and Iron I transition record. Its evidence already distinguished Judges’ varied local outcomes from archaeological settlement patterns and limited what the Merneptah Stele can show. The summary now explains these connections in reader-facing prose without assigning an ethnic identity to each village or using archaeology to verify the campaigns. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/mesopotamian-creation-and-flood-comparisons.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

@@ -1243,6 +1243,27 @@
         "regression": "NOT RUN: no content changed."
       },
       "checkpoint_commit": "444685c3"
+    },
+    {
+      "batch_id": "batch-081-judges-iron-i-transition-summary",
+      "scope": [
+        "late-bronze-iron-transition-and-highland-settlement"
+      ],
+      "completed_unit": "Reviewed the settlement evidence and cautions; clarified the reader-facing summary of Judges 1 and its archaeological context.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/late-bronze-iron-transition-and-highland-settlement.json"
+      ],
+      "protected_checks": [
+        "Evidence explanations, source identities, Scripture anchors, relationships, confidence, disputes, and review metadata preserved.",
+        "No excavated site or ethnic identity was newly assigned."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6426,14 +6447,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f528018a9fabdd4e3a168336a8a3017438f58d4313ff4d425d531f06c379fbb8",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "interpretive_notes",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "sources",
+        "scripture_references",
+        "review and source-lock metadata"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the technical evidence-cluster summary with a reader-oriented explanation of Judges 1’s varied local outcomes, Iron I settlement patterns, and the limited role of the Merneptah reference.",
+      "limitation": "Archaeological settlement patterns do not identify every village as Israelite or verify individual campaigns in Judges. The Merneptah inscription is used only as an external reference to a people called Israel.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression: 17 cultural-context evidence-quality/retrieval tests passed with 4 subtests.",
+          "Protected-field fingerprint matches baseline; evidence, sources, anchors, and relationships unchanged."
+        ]
       }
     },
     {
@@ -16284,7 +16325,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/late-bronze-iron-transition-and-highland-settlement.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/mesopotamian-creation-and-flood-comparisons.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
