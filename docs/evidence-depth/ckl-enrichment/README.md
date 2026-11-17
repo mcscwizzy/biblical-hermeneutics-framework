@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **233 objects are enriched**, **109 are unchanged because they
+At this checkpoint, **234 objects are enriched**, **109 are unchanged because they
 are already sufficient**, **156 are skipped pending source or identity
-research**, and **189 remain pending review**.
+research**, and **188 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1511,3 +1511,6 @@ Batch 427 reviewed Most Holy Place 2. The explanation now follows 1 Kings 8:6–
 
 
 Batch 428 reviewed Mount Seir 1 and made no content changes. Its anchors refer to other water crossings and do not name Mount Seir or establish the Edomite highland context in the object. The internal geographic orientation remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 429 reviewed Mount Sinai. The revised explanation follows Exodus 19–24 from arrival and preparation through the commandments and covenant ratification, then distinguishes Deuteronomy's remembrance and Hebrews' later use of Sinai imagery. The unsupported generic mountain comparison was removed; no archaeological location was asserted. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.

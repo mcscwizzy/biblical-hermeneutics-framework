@@ -9375,6 +9375,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-429-mount-sinai",
+      "scope": [
+        "mount-sinai"
+      ],
+      "completed_unit": "Expanded the Sinai explanation around the Exodus covenant sequence and its reuse in Deuteronomy and Hebrews.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/mount-sinai.json"
+      ],
+      "protected_checks": [
+        "Object, source identities, Scripture references, review metadata, and curated relationships were preserved.",
+        "No archaeological identification or ancient Near Eastern comparison was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -28805,14 +28830,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4db00d725a5a887c8865df962c3165d7a87252b3feaef3c1914c85902492f499",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Clarified the sequence in Exodus 19–24 from arrival and preparation to commandments and covenant ratification, then explained how Deuteronomy and Hebrews reuse the Sinai memory.",
+      "limitation": "Only scriptural sources are recorded; the generic ancient Near Eastern comparison was removed. The record does not establish an archaeological location for the mountain.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -32201,7 +32249,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/mount-sinai.json",
+  "next_batch": "framework/canonical_library/objects/places/mount-zion.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
