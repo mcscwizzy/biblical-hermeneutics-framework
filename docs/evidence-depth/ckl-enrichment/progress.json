@@ -1726,6 +1726,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "791a8188"
+    },
+    {
+      "batch_id": "batch-104-roman-macedonia-summary",
+      "scope": [
+        "roman-macedonia-road-network-and-city-diversity"
+      ],
+      "completed_unit": "Reviewed all 11 claims, 11 typed evidence items, two interpretive notes, and contextual fields; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/roman-macedonia-road-network-and-city-diversity.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "City statuses, road route, Beroea branch, regional poverty, and itinerary reconstruction remain qualified."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -8039,14 +8060,46 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "87d69d930f39b5cb174a88495185d5680ff422904d683a82582ef66f456ea0b1",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "interpretive_disputes",
+        "greek_words",
+        "intertextuality",
+        "common_questions",
+        "claims[*].claim",
+        "claims[*].rationale",
+        "evidence_items[*].description",
+        "evidence_items[*].passage_relevance",
+        "interpretive_notes[*].note",
+        "sources[*].identity_and_support_links",
+        "scripture_references",
+        "related_objects",
+        "reader compatibility"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "The summary now explains Acts’ route through the Via Egnatia and Beroea’s branch-road connection, distinguishes civic differences among the cities, and notes that Acts and the letters do not form a complete itinerary. All 11 claims, 11 typed evidence items, and two interpretive notes were reviewed and retained.",
+      "limitation": "No source-dependent historical or interpretive claim was added. Source identities and support links were inspected, but cited scholarship was not independently re-read; existing claims and evidence were retained without treating bibliography entries as newly verified arguments.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Focused content-quality and retrieval regression: 17 passed, 4 subtests passed.",
+          "Protected source, anchor, claim/evidence identity, relationship, uncertainty, and review metadata unchanged."
+        ]
       }
     },
     {
@@ -17483,7 +17536,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/roman-macedonia-road-network-and-city-diversity.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/roman-philippi-colonial-civic-and-household-life.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **43 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **44 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **525 remain pending review**.
+research**, and **524 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -407,6 +407,8 @@ Batch 102 reviewed the Roman Ephesus civic, cultic, and household record: all 12
 
 Batch 103 reviewed the Roman Galatia regions, roads, cities, and audience record: all 19 claims, 19 typed evidence items, and five interpretive notes. The explanations already distinguish Roman provincial Galatia from older regional identities, document the southern city sequence and road network, and preserve uncertainty about which assemblies received Galatians. The summary now makes those distinctions easier to follow. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/roman-macedonia-road-network-and-city-diversity.json`.
+Batch 104 reviewed the Roman Macedonia road network and city diversity record: all 11 claims, 11 typed evidence items, and two interpretive notes. Their explanations already distinguish the Via Egnatia trunk route from Beroea’s branches, the cities’ civic statuses, and Acts’ itinerary from the letters’ accounts. The summary now puts those points in a clear sequence. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/roman-philippi-colonial-civic-and-household-life.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
