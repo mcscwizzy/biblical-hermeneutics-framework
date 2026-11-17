@@ -7983,6 +7983,31 @@
         ]
       },
       "checkpoint_commit": "71f0bacd"
+    },
+    {
+      "batch_id": "batch-367-ai-place",
+      "scope": [
+        "ai-1"
+      ],
+      "completed_unit": "Explained the Joshua 8 ambush and capture account and bounded the location to the text’s reference near Bethel.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/ai-1.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, and review metadata preserved.",
+        "No curated relationships were changed or promoted.",
+        "Ancient Near Eastern applicability was disabled because no comparative source is recorded."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -25244,14 +25269,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0b568eff440631daff711040a1f921306ea2f42a5e39b3ce0dd8a24652e06f9b",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability"
+      ],
+      "outcome": "Completed review of the populated explanatory fields, geographic applicability, source ranges, and Scripture anchors. The profile now focuses on Joshua 8 and reports the unrelated anchors as a remaining curation gap.",
+      "limitation": "No archaeological site identification or external geographical reconstruction is supported by the recorded sources. The non-Joshua anchors remain unchanged despite their apparent mismatch.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -29756,7 +29808,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/ai-1.json",
+  "next_batch": "framework/canonical_library/objects/places/amalek.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
