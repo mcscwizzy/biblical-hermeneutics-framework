@@ -7869,6 +7869,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "80b4f571"
+    },
+    {
+      "batch_id": "batch-362-tychicus-person",
+      "scope": [
+        "tychicus"
+      ],
+      "completed_unit": "Reviewed Tychicus and held the record because its Gospel sources do not identify him.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24955,14 +24977,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ebd8eace46d73f0ae06365dc9649664f2455e627f49242f82721ece7708b22cb",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Tychicus’s profile, sources, Scripture anchors, and thematic links. The profile describes a Pauline messenger, but its anchors and sources contain only Gospel resurrection and ascension narratives, where Tychicus does not appear. Left the record unchanged pending source and anchor review.",
+      "limitation": "The recorded sources omit Acts and the Pauline letters that identify Tychicus and describe his missions. No likely references were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29557,7 +29597,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/tychicus.json",
+  "next_batch": "framework/canonical_library/objects/people/zechariah-father-of-john.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
