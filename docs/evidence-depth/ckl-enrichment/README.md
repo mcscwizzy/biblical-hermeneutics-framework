@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **77 objects are enriched**, **82 are unchanged because they
+At this checkpoint, **78 objects are enriched**, **82 are unchanged because they
 are already sufficient**, **46 are skipped pending source or identity
-research**, and **482 remain pending review**.
+research**, and **481 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -494,6 +494,8 @@ Batch 145 corrected the Feeding of the Five Thousand record, explaining the shar
 
 Batch 146 corrected the First Missionary Journey event record, grounding the explanation in Acts 13–14 and distinguishing that journey from the later Acts 15 discussion. Its current Scripture anchors point elsewhere and remain flagged for review; the generic ANE placeholder was cleared. Structural validation kept zero errors and the same 14 baseline warnings; regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/giving-of-the-law.json`.
+Batch 147 enriched Giving of the Law. The prose now connects the commandments to the exodus narrative and communal life, compares Exodus and Deuteronomy’s Sabbath rationales, and situates Matthew 5 as later interpretation. The uncited generic comparison with ancient law collections and treaties was removed. Structural validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/golden-calf.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

@@ -2659,6 +2659,33 @@
         ]
       },
       "checkpoint_commit": "f759eb9d"
+    },
+    {
+      "batch_id": "batch-147-giving-of-law-context",
+      "scope": [
+        "giving-of-the-law"
+      ],
+      "completed_unit": "Reviewed narrative/context fields, anchors, sources, relationships, notes, and absence of atomic claims or typed evidence; enriched seven explanatory fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/giving-of-the-law.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "Unsourced general comparison with ancient law collections and treaties removed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.68s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "336dbf4b"
     }
   ],
   "inventory_count": 687,
@@ -10664,15 +10691,46 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "65ba0bdc0c3c75582506868d7d3206589d5f9e7f2c326a10c66de472970a86d9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the Sinai setting and literary sequence, showing how the commandments follow the exodus and shape communal life. Connected Exodus and Deuteronomy’s different Sabbath rationales and Matthew 5’s later engagement, while removing the uncited generalization about ancient law collections and treaties.",
+      "limitation": "No comparative ancient Near Eastern law or treaty source is recorded for this object, so that contextual field is left blank. Existing Scripture anchors and relationships remain unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.68s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "336dbf4b"
     },
     {
       "id": "golden-calf",
@@ -19334,7 +19392,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/giving-of-the-law.json",
+  "next_batch": "framework/canonical_library/objects/events/golden-calf.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
