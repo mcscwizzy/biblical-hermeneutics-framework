@@ -11758,6 +11758,28 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-528-divine-wrath-review",
+      "scope": [
+        "divine-wrath"
+      ],
+      "completed_unit": "Reviewed and held Divine Wrath because its recorded anchors and source identities concern covenant rather than divine wrath.",
+      "status": "reviewed_skipped",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL anchors, sources, relationships, or metadata were altered.",
+        "The subject/anchor mismatch is recorded for future reviewed reconciliation."
+      ],
+      "validation": {
+        "status": "reviewed_no_content_change",
+        "results": [
+          "No CKL object was modified; object and protected-field data remain unchanged.",
+          "Object validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Focused regression tests were not rerun because no CKL content or retrieval input changed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -35074,14 +35096,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6213030d42bbfe2777007ff9629e43f8103f8f6f21f3a5d274c5812324d6c9b3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held unchanged because the listed passages and sources concern covenant promises and renewal, not divine wrath.",
+      "limitation": "Genesis 9:8–17, Genesis 12:1–3, Exodus 19:1–6, Jeremiah 31:31–34, Luke 22:20, and Hebrews 8:6–13 do not provide direct wrath evidence. The source and related-object IDs align with Covenant Theme and Covenant Theology. A reviewed identity/anchor correction or a wrath-focused evidence set is needed before explanatory prose can be safely written.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "No CKL object was modified; source, Scripture, relationship, and protected metadata remain unchanged.",
+          "Object validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "No regression tests were rerun because no CKL content or retrieval input changed."
+        ]
       }
     },
     {
@@ -36688,7 +36724,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/divine-wrath.json",
+  "next_batch": "framework/canonical_library/objects/theology/ecclesiology.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
