@@ -3104,6 +3104,29 @@
         ]
       },
       "checkpoint_commit": "3987ca3d"
+    },
+    {
+      "batch_id": "batch-164-plagues-of-egypt-review",
+      "scope": [
+        "plagues-of-egypt"
+      ],
+      "completed_unit": "Reviewed the event explanation, its qualified historical and Egyptian comparisons, interpretive cautions, sources, references, and related-object links; left the object unchanged because its explanation is already sufficiently specific and careful.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "Historical uncertainty and interpretive cautions remain qualified."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Manifest protected fingerprint check: PASS.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "f9361f6d"
     }
   ],
   "inventory_count": 687,
@@ -11936,14 +11959,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6a8545d1f57318f5581ba36c3334c0444a443d50ab94778f8b9d0fdf3773d085",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Existing explanation already gives a specific narrative sequence, explains the boundary of Egyptian comparison, and qualifies historical reconstruction and the popular plague-to-deity chart. No prose changes were needed.",
+      "limitation": "The listed sources provide scholarly commentary, but this review did not independently inspect their full arguments; the existing claims were not expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -20264,7 +20304,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/plagues-of-egypt.json",
+  "next_batch": "framework/canonical_library/objects/events/raising-of-lazarus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
