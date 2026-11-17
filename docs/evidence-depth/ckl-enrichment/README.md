@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **123 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **124 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **412 remain pending review**.
+research**, and **411 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -639,3 +639,5 @@ Batch 203 enriched What is the Kingdom of Judah? with the sequence from division
 Batch 204 enriched What is the Messiah? with connections among the Davidic promise, royal and priestly psalms, Isaiah’s ruler and servant passages, and New Testament claims about Jesus. It distinguishes the Christian canonical reading from the earlier passages’ own genres and settings and removes an unsupported royal-anointing comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-new-covenant.json`.
 
 Batch 205 enriched What is the New Covenant? by distinguishing Jeremiah’s promise to Israel and Judah, Ezekiel’s renewal imagery, Jesus’ covenant words, and the different treatments in 2 Corinthians and Hebrews. It removes an unsupported treaty comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-role-of-priests.json`.
+
+Batch 206 enriched What is the role of priests? with examples of sanctuary service, teaching, blessing, prophetic critique, and Hebrews’ account of Jesus as high priest. It removes unsupported comparative and later-history claims. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-roman-empire-in-the-bible.json`.
