@@ -7183,6 +7183,28 @@
         ]
       },
       "checkpoint_commit": "e5015ebf"
+    },
+    {
+      "batch_id": "batch-332-nicodemus-person",
+      "scope": [
+        "nicodemus"
+      ],
+      "completed_unit": "Reviewed the Nicodemus profile and held it unchanged because its Scripture anchors point only to resurrection or ascension scenes that do not include him.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -23104,14 +23126,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "37fbb18dd38078c49a86d235906b6a8cbbcb8d38af0096f9224c27102703feaa",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the Nicodemus profile, source entries, Scripture anchors, related themes, and interpretive notes. The profile concerns a figure in John, but every Scripture anchor points to a Gospel resurrection or ascension scene that does not include Nicodemus. Left the record unchanged pending source and anchor review.",
+      "limitation": "The recorded sources do not support replacing the current anchors with John 3, 7, or 19. Those likely episodes cannot be substituted without reviewing source relationships and Scripture anchors, which are protected.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -28246,7 +28286,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/nicodemus.json",
+  "next_batch": "framework/canonical_library/objects/people/noah.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
