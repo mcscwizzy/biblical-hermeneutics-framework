@@ -3702,6 +3702,31 @@
         ]
       },
       "checkpoint_commit": "0429e6e3"
+    },
+    {
+      "batch_id": "batch-188-psalm-faq",
+      "scope": [
+        "what-is-a-psalm"
+      ],
+      "completed_unit": "Reviewed the question, psalm examples, canonical quotations, source identities, anchors, notes, and related entries; expanded seven fields with examples from the cited poems and later readings.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-a-psalm.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsupported comparative ancient-poetry claim added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "3b53b68f"
     }
   ],
   "inventory_count": 687,
@@ -13822,14 +13847,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a634ceb717c72296120f3aa2708d939f76db4c6438d7b3ec78e3281642392f58",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note"
+      ],
+      "outcome": "Expanded the FAQ with the different forms represented by Psalms 1, 22, 23, 110, and 118, and clarified how Luke, Acts, and Hebrews interpret particular psalms. Replaced the unsupported generalization about other ancient prayer-poetry traditions with examples from the cited texts.",
+      "limitation": "No external history of Israelite worship or comparative ancient poetry was added. Psalm source records are typed as reference-work despite naming Scripture; those protected metadata entries remain for review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21556,7 +21607,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-a-psalm.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-biblical-wisdom.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

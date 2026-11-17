@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **106 objects are enriched**, **87 are unchanged because they
+At this checkpoint, **107 objects are enriched**, **87 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **430 remain pending review**.
+research**, and **429 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -431,7 +431,9 @@ Batch 186 enriched What is a parable? The answer now uses the sower, Good Samari
 
 Batch 187 enriched What is a prophet? The FAQ now explains prophetic work through the call stories of Samuel, Isaiah, Jeremiah, and Ezekiel, Amos’s challenge about justice, and later readings in Luke and Acts. It replaces an unsupported comparison to royal advisers and clarifies that prophecy includes more than prediction. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/what-is-a-psalm.json`.
+Batch 188 enriched What is a psalm? The FAQ now distinguishes wisdom teaching, lament, trust, royal language, and thanksgiving, and shows how particular psalms are quoted or interpreted in Luke, Acts, and Hebrews. It removes an unsupported comparison with other ancient prayer-poetry traditions. The Psalm source-type metadata also needs review. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-is-biblical-wisdom.json`.
 Batch 106 reviewed Roman Rome: all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes Romans’ greetings and Acts’ guarded lodging from the city evidence and later traditions, keeping Claudius’s action, the audience, and meeting sites qualified. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
 Batch 107 reviewed the Second Temple priesthood and temple authority record: all four claims, four typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. Its summary now explains how priestly authority, imperial appointment power, the temple boundary relevant to Acts 21, and a proposed Caiaphas identification relate, while preserving uncertainty. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
@@ -596,6 +598,8 @@ Batch 186 enriched What is a parable? The answer now uses the sower, Good Samari
 
 Batch 187 enriched What is a prophet? The FAQ now explains prophetic work through the call stories of Samuel, Isaiah, Jeremiah, and Ezekiel, Amos’s challenge about justice, and later readings in Luke and Acts. It replaces an unsupported comparison to royal advisers and clarifies that prophecy includes more than prediction. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/what-is-a-psalm.json`.
+Batch 188 enriched What is a psalm? The FAQ now distinguishes wisdom teaching, lament, trust, royal language, and thanksgiving, and shows how particular psalms are quoted or interpreted in Luke, Acts, and Hebrews. It removes an unsupported comparison with other ancient prayer-poetry traditions. The Psalm source-type metadata also needs review. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-is-biblical-wisdom.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
