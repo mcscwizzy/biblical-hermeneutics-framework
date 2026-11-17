@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **224 objects are enriched**, **108 are unchanged because they
-are already sufficient**, **142 are skipped pending source or identity
-research**, and **213 remain pending review**.
+are already sufficient**, **143 are skipped pending source or identity
+research**, and **212 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1401,3 +1401,10 @@ than Gilgal, and the internal historical-orientation source is pending human
 review. Single-object validation passed with 1 valid object, 0 errors, and 8
 pre-existing section-status warnings. The next pending object is recorded in the
 manifest.
+
+
+Batch 405 reviewed Gomorrah and held it for source and anchor review. Its
+current passages do not identify Gomorrah or support the generic regional prose,
+and the internal historical-orientation source is pending human review.
+Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
