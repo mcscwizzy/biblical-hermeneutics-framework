@@ -4224,6 +4224,31 @@
         ]
       },
       "checkpoint_commit": "9a847718"
+    },
+    {
+      "batch_id": "batch-209-jerusalem-faq",
+      "scope": [
+        "what-is-the-significance-of-jerusalem"
+      ],
+      "completed_unit": "Reviewed the historical and symbolic roles, textual sequence, sources, and anchors; enriched eight explanatory fields and kept each literary setting distinct.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-significance-of-jerusalem.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "Narrative location and visionary symbolism are explicitly distinguished."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "54497f15"
     }
   ],
   "inventory_count": 687,
@@ -15276,14 +15301,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "164e4c7b21029914830dde159671adc24bec6af706f303f2226a8f3596277682",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Connected Jerusalem’s royal and temple roles, pilgrimage and prophetic visions, Jesus’ lament, Pentecost, and Revelation’s renewed city. Distinguished narrative history from symbolic imagery and removed unsourced regional generalizations.",
+      "limitation": "The Psalm 122 source entry is typed as reference-work despite naming Scripture; source identity and metadata remain unchanged pending review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: 54497f15."
+        ]
       }
     },
     {
@@ -22632,7 +22684,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-jerusalem.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-passover.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
