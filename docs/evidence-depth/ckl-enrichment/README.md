@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **11 objects are enriched**, **52 are unchanged because they
+At this checkpoint, **11 objects are enriched**, **53 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **582 remain pending review**.
+research**, and **581 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -333,6 +333,8 @@ anchors were preserved. The four objects and full library validate with zero
 errors and the same 14 baseline warnings. Claim rationales are not currently
 rendered in the standard browser modal or indexed by retrieval.
 
-The next work unit is `objects/books/exodus.json`.
+Obadiah was reviewed and left intact. Its summary, historical and regional context, literary sequence, and interpretive notes already explain the movement from Edom’s humiliation through the Jerusalem accusations and day of YHWH to Zion’s survivors and contested territorial conclusion. The 23 claim rationales preserve clear limits, including the undated historical setting, uncertain Edomite actions, contested grammar, and debated overlap with Jeremiah 49. The object validated with zero errors and warnings; no retrieval test was needed because no content changed.
+
+The next work unit is `books/philemon.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

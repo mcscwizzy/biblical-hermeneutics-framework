@@ -885,6 +885,19 @@
         "ckl_objects": "PASS: Numbers valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
         "regression": "No retrieval test run because claim rationales are not indexed or rendered; the summary remains a schema-valid reader-facing field."
       }
+    },
+    {
+      "batch_id": "batch-060-obadiah-review",
+      "scope": [
+        "obadiah"
+      ],
+      "completed_unit": "Reviewed contextual and reader-facing fields, all 23 claim rationales, 37 interpretive notes, source references, and Scripture anchors; existing explanations were sufficient.",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Obadiah valid, 0 errors and 0 warnings. No content changes; full-library validation not rerun.",
+        "regression": "No retrieval regression run because no fields changed."
+      }
     }
   ],
   "inventory_count": 687,
@@ -4466,14 +4479,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5ebf78f7115028fd374d8388421b9f1f748f05f867f6b5c3e7ff28e9fefd1017",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "genre",
+        "structure",
+        "major_themes",
+        "canonical_placement",
+        "interpretive_disputes",
+        "intertextuality",
+        "claims[].rationale",
+        "interpretive_notes[]",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Existing explanations already guide readers through the oracle’s movement, Edom-Jacob kinship rhetoric, Jerusalem’s catastrophe, the day of YHWH, disputed territorial language, textual variants, and the book’s ethical and reception limits. Concise claim rationales function as evidence checks; longer discussion is already present in contextual and interpretive fields, so no expansion was needed.",
+      "limitation": "The contested date, degree of Edomite participation, relationship with Jeremiah 49, and syntax of verses 12–21 remain debated in the existing record; no new source research was needed or added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline."
+        ]
       }
     },
     {
@@ -14936,6 +14976,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/obadiah.json",
+  "next_batch": "framework/canonical_library/objects/books/philemon.json",
   "protected_fingerprint_base": "origin/master"
 }
