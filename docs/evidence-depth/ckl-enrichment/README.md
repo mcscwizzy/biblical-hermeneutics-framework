@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **203 objects are enriched**, **97 are unchanged because they
+At this checkpoint, **203 objects are enriched**, **98 are unchanged because they
 are already sufficient**, **104 are skipped pending source or identity
-research**, and **283 remain pending review**.
+research**, and **282 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -995,3 +995,6 @@ Batch 333 reviewed Noah. The explanation now follows Genesis from violence and t
 
 
 Batch 334 reviewed Onesimus and left the record unchanged. The profile’s anchors point to Saul’s conversion, Paul’s broader network, and general ministry passages, but do not identify Onesimus or include Philemon. Philemon was not added to the structured source relationships because those require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is paul.
+
+
+Batch 335 reviewed Paul and left the profile unchanged. Its existing context explains his first-century Jewish and Roman setting, distinguishes Acts from the letters, describes the pastoral purpose of his correspondence, and makes its covenant themes accessible. The selected anchors and sources support the profile’s scope. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is peter.
