@@ -7136,6 +7136,28 @@
         ]
       },
       "checkpoint_commit": "cc2a01c0"
+    },
+    {
+      "batch_id": "batch-330-nathan-the-prophet-person",
+      "scope": [
+        "nathan-the-prophet"
+      ],
+      "completed_unit": "Reviewed the Nathan the Prophet profile and held it unchanged because its Scripture anchors do not support the profile’s claims about Nathan.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -22944,14 +22966,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7bef1c4cfb9b6a122be63087271504c038deeb152c206742cb4636b292b9cb4a",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "passage_relevance"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the person profile, source entries, Scripture anchors, related themes, and interpretive notes. The prose concerns Nathan’s prophetic role, but the anchors point to 2 Kings 4:1–7, Isaiah 40:1–11, Jeremiah 31:31–34, and Luke 4:16–30; these do not establish the Nathan episodes in Samuel/Kings. Left the record unchanged pending anchor and source review.",
+      "limitation": "No recorded source supports identifying the present anchors as episodes from Nathan’s life. The likely Samuel/Kings passages cannot be substituted without reviewing source relationships and Scripture anchors, which are protected.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -28122,7 +28162,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/nathan-the-prophet.json",
+  "next_batch": "framework/canonical_library/objects/people/nehemiah-the-governor.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
