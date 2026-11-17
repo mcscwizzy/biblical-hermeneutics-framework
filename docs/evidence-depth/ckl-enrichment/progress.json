@@ -7624,6 +7624,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "d93a66bd"
+    },
+    {
+      "batch_id": "batch-351-saul-person",
+      "scope": [
+        "saul"
+      ],
+      "completed_unit": "Reviewed Saul and held the record because its anchors do not identify his kingship narrative.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24304,14 +24326,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4d5ba9478938ee7afcdd65b476fd8242db3f8864ba92e761f022b0dfbe680e0e",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Saul’s profile, Scripture anchors, sources, related themes, and interpretive notes. The prose describes Saul’s kingship, but its primary anchor is the Judges cycle, and the other anchors concern Samuel’s address after the monarchy begins and a Hebrews list that does not name Saul. The broad 1 Samuel 1–12 source does not specify which episodes support the claims. Left it unchanged pending passage-level source review.",
+      "limitation": "No direct Saul episodes such as his anointing or kingship are anchored in the record. No likely references were added or promoted.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29104,7 +29144,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/saul.json",
+  "next_batch": "framework/canonical_library/objects/people/silas.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
