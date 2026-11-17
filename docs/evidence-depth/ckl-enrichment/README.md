@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **67 objects are enriched**, **79 are unchanged because they
+At this checkpoint, **68 objects are enriched**, **79 are unchanged because they
 are already sufficient**, **45 are skipped pending source or identity
 research**, and **511 remain pending review**.
 
@@ -466,6 +466,8 @@ Batch 131 corrected generic church-event prose in the Council of Jerusalem recor
 
 Batch 132 reviewed the covenant-renewal-at-Shechem record’s contexts, anchors, sources, and interpretive note. Its summary now traces Joshua’s recital of God’s acts through Israel’s response, the warning about covenant responsibility, and the stone witness, linking Shechem to its wider narrative setting. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/creation.json`.
+Batch 133 reviewed the Creation event record’s summary, contexts, references, sources, and interpretive notes. The summary now explains Genesis 1’s sequence of separations, the goodness refrain, human vocation, and seventh-day rest, keeping the chapter’s literary design central. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/crossing-the-jordan.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

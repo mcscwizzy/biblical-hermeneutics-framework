@@ -2325,6 +2325,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "8e65505a"
+    },
+    {
+      "batch_id": "batch-133-creation-summary",
+      "scope": [
+        "creation"
+      ],
+      "completed_unit": "Reviewed summary, contexts, Scripture references, source identities, two interpretive notes, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/creation.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "The explanation focuses on Genesis 1’s literary pattern and does not turn into an unrequested modern science argument."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "84a60746"
     }
   ],
   "inventory_count": 687,
@@ -9744,14 +9765,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "64cea8a54a46f1316593711f62403bf2438027c1f3b2cf08fca46dc361c9cdb3",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Explained Genesis 1’s sequence of separations and assignments, the repeated goodness refrain, humanity’s vocation, and the seventh-day rest, connecting the chapter’s structure with its presentation of ordered creation.",
+      "limitation": "The object has no atomic claims or typed evidence; the wording stays within its biblical references and existing contexts and adds no new ancient Near Eastern comparison.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture anchors, relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.35s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18666,7 +18705,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/creation.json",
+  "next_batch": "framework/canonical_library/objects/events/crossing-the-jordan.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
