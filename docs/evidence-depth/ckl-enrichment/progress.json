@@ -3527,6 +3527,31 @@
         ]
       },
       "checkpoint_commit": "02f25714"
+    },
+    {
+      "batch_id": "batch-181-hesed-meaning-faq",
+      "scope": [
+        "what-does-hesed-mean"
+      ],
+      "completed_unit": "Reviewed the lexical question, usage contexts, sources, Scripture anchors, notes, and related links; expanded seven explanatory fields using the recorded biblical examples.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-does-hesed-mean.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsupported treaty comparison or full lexical conclusion added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "6bd5574c"
     }
   ],
   "inventory_count": 687,
@@ -13338,14 +13363,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f4b43577d63e634baf8538ef397a75090bfee1eca5760eeece5db72cea1b8176",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note"
+      ],
+      "outcome": "Expanded the answer with examples from Exodus, Ruth, Psalms, Hosea, and Micah to show how hesed functions across divine description, human care, praise, and restoration. Replaced a broad treaty comparison with the contexts present in the cited texts.",
+      "limitation": "The object has no lexicon or scholarly lexical source, so the explanation illustrates usage in the cited passages rather than supplying a full lexical-semantic analysis. Psalm 89 and Psalm 136 source records are typed as reference-work despite naming Scripture; those protected source records were preserved for review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21198,7 +21249,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-does-hesed-mean.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-does-ruach-mean.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
