@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **303 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **305 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **181 are skipped pending source or identity
-research**, and **87 remain pending review**.
+research**, and **85 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1884,3 +1884,11 @@ Election was held because its source cluster is primarily covenant-focused.
 Exodus 19 and Genesis 12 offer possible points of contact, but the remaining
 anchors concern covenant promise and renewal, and no sources establish the
 broader doctrine represented by the object. No CKL content was changed.
+
+
+Eschatology now distinguishes the apocalyptic, Gospel, epistolary, and
+resurrection settings in Daniel, Matthew, Paul, and Revelation rather than
+forcing them into one timetable. Faith now traces trust through promise in
+Genesis, waiting in Habakkuk, Paul’s argument in Romans, and Hebrews’
+exhortation. The objects and full library validate without new errors or
+warnings; focused regressions passed.

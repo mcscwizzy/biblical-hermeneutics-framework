@@ -11828,6 +11828,58 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-531-eschatology",
+      "scope": [
+        "eschatology"
+      ],
+      "completed_unit": "Explained the different roles of Daniel’s visions, Matthew’s discourse, Paul’s pastoral and resurrection arguments, and Revelation’s future vision.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/eschatology.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "Did not impose a harmonized timetable or create dispute positions not present in the record."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-532-faith",
+      "scope": [
+        "faith"
+      ],
+      "completed_unit": "Explained how the cited passages portray trust in God through promise, waiting, Paul’s argument, and Hebrews’ exhortation.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/faith.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "No Hebrew or Greek lexical resolution was introduced beyond recorded support."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -35249,14 +35301,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4497fb0221ae4ca35e9022e530637a3e845367b837b370e3b8f9a907c56ef7d4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Distinguished Daniel’s visions, Jesus’ discourse, Paul’s pastoral and resurrection arguments, and Revelation’s renewal vision without imposing a single timetable.",
+      "limitation": "No comparative ancient Near Eastern source is recorded. The passages do not provide a detailed end-time sequence; generic interpretive notes were reviewed and left unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression after both current theology edits: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture anchors, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -35267,14 +35342,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a55a3d1a39ed2293b49f5f65e090af4544022e267e1ccad1ef9adebb1f67559f",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified faith as trust in God’s promise across Genesis 15, Habakkuk 2, Romans 4, and Hebrews 11, with attention to waiting and lived response.",
+      "limitation": "No comparative ancient Near Eastern sources or lexical study are recorded; the explanation avoids resolving wording questions beyond the linked faithfulness context. Generic interpretive notes were reviewed and left unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture anchors, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -36809,7 +36907,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/eschatology.json",
+  "next_batch": "framework/canonical_library/objects/theology/final-judgment.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
