@@ -7825,6 +7825,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "6e8cb1f1"
+    },
+    {
+      "batch_id": "batch-360-timothy-person",
+      "scope": [
+        "timothy"
+      ],
+      "completed_unit": "Reviewed Timothy and held the record because its Gospel anchors and sources do not identify him.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24839,14 +24861,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "75311b1148544a0ef24e5e8438f74d52091bfee997481c8f057ca5ded9d496cb",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Timothy’s profile, Scripture anchors, sources, and related themes. The prose concerns a coworker of Paul, but every anchor and source is from the Gospels and none identifies Timothy. Left the record unchanged pending source and anchor review.",
+      "limitation": "Acts and the Pauline letters that name Timothy are absent from the structured sources and references. No likely passages or relationships were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29477,7 +29517,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/timothy.json",
+  "next_batch": "framework/canonical_library/objects/people/titus-the-companion.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
