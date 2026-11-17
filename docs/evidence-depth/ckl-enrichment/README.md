@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **182 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **183 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **88 are skipped pending source or identity
-research**, and **321 remain pending review**.
+research**, and **320 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -881,3 +881,6 @@ Batch 295 reviewed Herod the Great. The entry now focuses on Matthew 2’s narra
 
 
 Batch 296 reviewed Isaac. The summary and narrative fields now explain how Genesis moves from Abraham’s promised son through the interrupted offering, marriage, well disputes, and the repeated promise in Genesis 26 before the story turns to Jacob. Generic household boilerplate was replaced with a bounded description of the family world depicted in Genesis, not a claim about every ancient household. The existing Scripture reference list is unchanged; it emphasizes Abraham’s call and covenant, so Isaac-specific anchors remain a source-alignment follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is abraham.
+
+
+Batch 297 reviewed Abraham. The explanation now follows Genesis 12–22 through the call, connected promises, covenant scenes, and the interrupted offering. Household and land details are framed as Genesis depicts them rather than as universal ancient Near Eastern customs; listed New Testament appeals are distinguished from Genesis’s original narrative. The broad historical-context field remains unchanged because its sources do not establish an external chronology or reconstructed social setting. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is anna-the-prophetess.

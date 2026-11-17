@@ -6348,6 +6348,32 @@
         ]
       },
       "checkpoint_commit": "f69c6f7a"
+    },
+    {
+      "batch_id": "batch-297-abraham-person",
+      "scope": [
+        "abraham"
+      ],
+      "completed_unit": "Reviewed Abraham’s person record and enriched Scripture-grounded explanatory fields, preserving source and anchor metadata.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/abraham.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -19933,13 +19959,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3a6704b7e207af47b0ee27307fa9d4f70711c822c8fdf28323d679e2f5ad5614",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Expanded the Genesis narrative arc around call, land/descendants/blessing, covenant scenes, and the interrupted offering. Reframed household and land details as what Genesis depicts rather than universal ANE custom; distinguished New Testament reuse from Genesis’s narrative and avoided presenting Abraham as an unbroken moral exemplar.",
+      "limitation": "The historical-context field remains broad because the recorded sources do not establish a specific external chronology or independently reconstructed social setting.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -26780,7 +26827,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/abraham.json",
+  "next_batch": "framework/canonical_library/objects/people/anna-the-prophetess.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
