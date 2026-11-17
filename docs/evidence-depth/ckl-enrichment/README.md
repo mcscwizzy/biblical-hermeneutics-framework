@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **7 objects are enriched**, **37 are unchanged because they
+At this checkpoint, **7 objects are enriched**, **38 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **601 remain pending review**.
+research**, and **600 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -184,6 +184,8 @@ Batch 038 enriched Hebrews. Its 32 claim rationales previously repeated one gene
 Batch 039 reviewed Hosea. Its summary and contexts already explain the eighth-century northern setting, the book's layered literary form, and later Jewish and Christian reception. Its 20 claims and 32 notes distinguish the text from disputed reconstructions of marriage language, fertility practice, composition, and reuse. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 Batch 040 reviewed Isaiah. Its summary and context explain the book's Assyrian, Babylonian, Persian, and postexilic horizons, while its 19 claims and 26 notes distinguish historical referents, textual evidence, and later reception. Three typed evidence items are source-locked and were not altered; the remaining evidence explanation is already source-grounded and careful about inference. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 041 reviewed James. The summary, context, 32 claims, and 42 notes already explain its exhortative form, uncertain sender and audience, Jewish scriptural setting, economic critique, and debated faith-and-works language without flattening disagreement. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 ## Reader reachability
 
