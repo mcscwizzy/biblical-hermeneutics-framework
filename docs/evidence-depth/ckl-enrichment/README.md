@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **84 objects are enriched**, **82 are unchanged because they
+At this checkpoint, **84 objects are enriched**, **83 are unchanged because they
 are already sufficient**, **48 are skipped pending source or identity
-research**, and **473 remain pending review**.
+research**, and **472 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -512,6 +512,8 @@ Batch 154 enriched Joseph Interprets Pharaoh’s Dreams, explaining the paired d
 
 Batch 155 enriched Joseph Sold into Egypt with the brothers’ betrayal, Jacob’s deception, and the episode’s role in the later preservation story, without excusing the violence. Generic cultural claims were removed for lack of supporting sources. The broad Genesis source range covers the episode, though the structured anchors point elsewhere and remain flagged. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/judges-cycle.json`.
+Batch 156 reviewed Judges Cycle and left it unchanged. The record distinguishes the framework in Judges 2 from varied individual narratives, qualifies chronology and archaeology, and explains the pattern’s deterioration and limits with named sources. Structural validation reported zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/letters-to-the-seven-churches.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
