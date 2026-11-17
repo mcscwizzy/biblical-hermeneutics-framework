@@ -6296,6 +6296,32 @@
         ]
       },
       "checkpoint_commit": "2ec385dd"
+    },
+    {
+      "batch_id": "batch-295-herod-the-great-person",
+      "scope": [
+        "herod-the-great"
+      ],
+      "completed_unit": "Reviewed Herod the Great and rewrote the profile around Matthew 2’s narrated conflict, explicitly separating it from other similarly named figures.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/herod-the-great.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20917,14 +20943,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0e419f2dc301a62db8fc67ce21c2fcca19cc73bad4c6585077227042ed979c36",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Replaced generic warning-figure language with Matthew 2’s narrated conflict over the newborn king: Herod’s fear and deception, the threat to children, and Joseph’s flight. Explicitly distinguishes this narrative from Cain, Balaam, Judas, and the later Herod in Acts 12.",
+      "limitation": "No independent historical account of Herod’s reign or the historicity and scale of Matthew 2’s events was added. The unrelated references remain unchanged and are treated only as separate figures, not as biographical evidence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -26689,7 +26738,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/herod-the-great.json",
+  "next_batch": "framework/canonical_library/objects/people/isaac.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
