@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **253 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **254 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **168 are skipped pending source or identity
-research**, and **151 remain pending review**.
+research**, and **150 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1625,3 +1625,6 @@ Batch 465 reviewed Suffering Servant Prophecy. The revised explanation traces th
 
 
 Batch 466 reviewed Temple Symbol. The revised explanation connects the sanctuary’s stated purpose, Solomon’s dedication, Ezekiel’s departure scene, and distinct New Testament uses for Jesus, the church, and Revelation’s final vision. It adds no unsupported ancient Near Eastern or Second Temple comparisons. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 467 reviewed Adoption Theme. The revised explanation follows Galatians’ movement from custody to Abrahamic heirship, adoption, and the Spirit’s cry, and Romans’ distinct movement through adoption, co-heirship, suffering, and bodily hope. Ephesians and 1 John are described in their own terms. The linked CKL research bounds Roman legal comparison and preserves scriptural backgrounds. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
