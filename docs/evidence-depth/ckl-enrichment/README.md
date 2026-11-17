@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **3 objects are enriched**, **9 are unchanged because they
+At this checkpoint, **3 objects are enriched**, **10 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **633 remain pending review**.
+research**, and **632 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -217,6 +217,12 @@ The object and full library validate with zero errors and the same 14 existing
 warnings. Claim rationales are available in canonical detail but are not
 rendered in the standard browser modal or retrieval index.
 
-The next work unit is `objects/books/1-john.json`.
+First John was also left intact. Its summary, contexts, 33 claims, and 41
+interpretive notes already give readers specific explanations while carefully
+qualifying authorship and community reconstructions, lexical disputes, textual
+variants, and later reception. The book validated with zero errors and zero
+warnings.
+
+The next work unit is `objects/books/1-kings.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
