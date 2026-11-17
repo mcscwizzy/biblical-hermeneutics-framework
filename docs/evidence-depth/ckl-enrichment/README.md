@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **214 objects are enriched**, **102 are unchanged because they
-are already sufficient**, **130 are skipped pending source or identity
-research**, and **241 remain pending review**.
+are already sufficient**, **131 are skipped pending source or identity
+research**, and **240 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1167,3 +1167,11 @@ separates biblical covenant interpretation from documentary evidence. The source
 notes also limit what the Al-Yahudu records establish about the city itself.
 Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing
 section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 377 reviewed Bashan and held it for source and anchor review. Its current
+Scripture references do not identify Bashan or support the generic geographic
+and covenantal prose, and the internal historical-orientation source is pending
+human review. Single-object validation passed with 1 valid object, 0 errors, and
+8 pre-existing section-status warnings. The next pending object is recorded in
+the manifest.

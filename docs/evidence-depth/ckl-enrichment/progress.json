@@ -8201,6 +8201,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-377-bashan-review",
+      "scope": [
+        "bashan"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Bashan-specific source and Scripture-anchor review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No unsupported geography or curated relationships were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -25815,14 +25836,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ce84e8a00d0b66ea7b4ede73e75d440b747b80e3ba0b447593635687a9115906",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed explanatory fields, references, sources, and related-object links. The current passages do not establish Bashan or the generic geographical and covenantal statements, so no prose was changed.",
+      "limitation": "The listed passages (Genesis 10:1-32; Deuteronomy 10:6-9; Isaiah 63:1-6; Acts 13:16-22) do not substantiate a Bashan-specific profile. The internal historical-orientation source is pending human review. Relevant Bashan passages and verified geographic or historical sources are needed before enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -30147,7 +30183,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/bashan.json",
+  "next_batch": "framework/canonical_library/objects/places/beersheba-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
