@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **302 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **303 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **180 are skipped pending source or identity
-research**, and **89 remain pending review**.
+research**, and **88 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1872,3 +1872,9 @@ Divine Wrath was held for identity/anchor reconciliation. Its six listed
 passages and source IDs concern covenant promises and renewal rather than
 divine wrath. No CKL content was changed; the manifest records the required
 source and subject gap.
+
+
+Ecclesiology now distinguishes the confession and building image in Matthew,
+the shared life in Acts, household/temple imagery in Ephesians 2, body and
+growth in Ephesians 4, and living stones in First Peter. The object and full
+library validate without new errors or warnings; focused regressions passed.
