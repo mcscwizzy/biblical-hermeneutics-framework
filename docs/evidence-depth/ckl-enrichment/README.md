@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **100 objects are enriched**, **87 are unchanged because they
+At this checkpoint, **101 objects are enriched**, **87 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **436 remain pending review**.
+research**, and **435 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -419,7 +419,9 @@ Batch 180 enriched How should I read prophecy? The FAQ now grounds its reading a
 
 Batch 181 enriched What does hesed mean? The explanation now shows how the cited passages use hesed in describing God, human loyalty, worship, and restoration. It does not claim one English gloss fits every occurrence or make an unsourced treaty comparison. A future lexical review is still needed because the object has no lexicon source, and two Psalm source records are misclassified in metadata. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/what-does-ruach-mean.json`.
+Batch 182 enriched What does ruach mean? The explanation now distinguishes the Hebrew word’s context-dependent uses in Genesis, Ezekiel, and Joel from related breath imagery and the Greek wording in John and Acts. It avoids treating every breath passage as an occurrence of ruach. A full lexical review remains open because the record has no lexicon source. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-does-shalom-mean.json`.
 Batch 106 reviewed Roman Rome: all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes Romans’ greetings and Acts’ guarded lodging from the city evidence and later traditions, keeping Claudius’s action, the audience, and meeting sites qualified. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
 Batch 107 reviewed the Second Temple priesthood and temple authority record: all four claims, four typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. Its summary now explains how priestly authority, imperial appointment power, the temple boundary relevant to Acts 21, and a proposed Caiaphas identification relate, while preserving uncertainty. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
@@ -572,6 +574,8 @@ Batch 180 enriched How should I read prophecy? The FAQ now grounds its reading a
 
 Batch 181 enriched What does hesed mean? The explanation now shows how the cited passages use hesed in describing God, human loyalty, worship, and restoration. It does not claim one English gloss fits every occurrence or make an unsourced treaty comparison. A future lexical review is still needed because the object has no lexicon source, and two Psalm source records are misclassified in metadata. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/what-does-ruach-mean.json`.
+Batch 182 enriched What does ruach mean? The explanation now distinguishes the Hebrew word’s context-dependent uses in Genesis, Ezekiel, and Joel from related breath imagery and the Greek wording in John and Acts. It avoids treating every breath passage as an occurrence of ruach. A full lexical review remains open because the record has no lexicon source. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-does-shalom-mean.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

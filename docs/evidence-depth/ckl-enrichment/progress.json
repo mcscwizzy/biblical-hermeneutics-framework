@@ -3552,6 +3552,31 @@
         ]
       },
       "checkpoint_commit": "6bd5574c"
+    },
+    {
+      "batch_id": "batch-182-ruach-meaning-faq",
+      "scope": [
+        "what-does-ruach-mean"
+      ],
+      "completed_unit": "Reviewed the lexical question, usage examples, source list, notes, anchors, and related links; expanded seven explanatory fields with careful distinctions among Hebrew word use, related imagery, and Greek New Testament wording.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-does-ruach-mean.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unverified lexical claim equating every breath image with ruach."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "07021a08"
     }
   ],
   "inventory_count": 687,
@@ -13407,14 +13432,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "361ad45fd938f40395c7feecb319b3d2aa602deec217c1b8dbc70fc6d4a9cb51",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Clarified contextual uses of ruach in Genesis, Ezekiel, and Joel; distinguished related breath imagery from an occurrence of the Hebrew word and distinguished the Hebrew term from related Greek wind/Spirit language in the New Testament passages.",
+      "limitation": "The object has no lexicon or scholarly lexical source, so the explanation remains a passage-based guide rather than a full lexical-semantic study.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21249,7 +21300,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-does-ruach-mean.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-does-shalom-mean.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
