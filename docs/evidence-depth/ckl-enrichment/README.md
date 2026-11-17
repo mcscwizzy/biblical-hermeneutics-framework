@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **4 objects are enriched**, **20 are unchanged because they
+At this checkpoint, **4 objects are enriched**, **23 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **621 remain pending review**.
+research**, and **618 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -259,6 +259,13 @@ historical reconstruction, and theological interpretation. Locked Naaman
 geography evidence remains unchanged. All three objects validated with zero
 errors and zero warnings.
 
-The next work unit is `objects/books/2-thessalonians.json`.
+Second Thessalonians, 2 Timothy, and 3 John were left unchanged. Their
+summaries and contexts clearly distinguish letter-level observations from
+disputed authorship, chronology, community history, and interpretation. Their
+claims and notes already provide accessible explanations, source-aware
+uncertainty, and careful limits on modern application. All three validated
+with zero errors and zero warnings.
+
+The next work unit is `objects/books/acts.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

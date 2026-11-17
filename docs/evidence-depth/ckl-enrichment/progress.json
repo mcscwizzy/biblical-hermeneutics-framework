@@ -495,6 +495,21 @@
         "ckl_objects": "PASS: all three valid with 0 errors and 0 warnings each."
       },
       "checkpoint_commit": "b31440ed8431ec0e96f29885e4381689f355dc00"
+    },
+    {
+      "batch_id": "batch-032-2-thessalonians-through-3-john-review",
+      "scope": [
+        "2-thessalonians",
+        "2-timothy",
+        "3-john"
+      ],
+      "completed_unit": "Three book objects, claims, notes, sources, and Scripture anchors reviewed; all already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all three valid with 0 errors and 0 warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -2644,14 +2659,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4659a002316ec958709a26a7b80665e0c2be9f4627ef7eba549cce98fbd6f856",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary explains the letter’s pastoral and apocalyptic movement, and the contexts separate explicit language from disputed Pauline authorship, relation to 1 Thessalonians, and opponent identification. Twenty-seven claims and 42 notes carefully address textual variants, the restrainer, work instruction, and modern misuse.",
+      "limitation": "None for explanatory enrichment; existing explanations are already clear, contextual, and responsibly qualified.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -2662,14 +2693,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6d6bc4de2fde98e117026548046075c8ee40d71460022157b4b13add9c1d5671",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary and contexts explain the farewell-letter presentation while distinguishing its literary voice from disputed authorship and chronology. Its claims and interpretive notes give clear, sourced treatment of leadership, teaching, suffering, textual and lexical questions, and the letter’s personal details without turning reconstructions into facts.",
+      "limitation": "None for explanatory enrichment; existing explanations are already clear, contextual, and responsibly qualified.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -2680,14 +2727,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3898eacd5a5c7cb3a77ca37dc0ae5fa50500ee3052263809513b7ad1f790ab35",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary makes the letter’s praise of hospitality and critique of Diotrephes understandable while noting that its wider institutional setting is unknown. Twenty-six claims and 35 notes distinguish the elder’s one-sided report from historical reconstruction and qualify applications of hospitality and boundary language.",
+      "limitation": "None for explanatory enrichment; existing explanations are already clear, contextual, and responsibly qualified.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13882,6 +13945,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/2-thessalonians.json",
+  "next_batch": "framework/canonical_library/objects/books/acts.json",
   "protected_fingerprint_base": "origin/master"
 }
