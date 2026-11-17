@@ -9107,6 +9107,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-417-judah-territory",
+      "scope": [
+        "judah-territory"
+      ],
+      "completed_unit": "Clarified the regional label in Ruth 1:1 while preserving the source-locked evidence and its limits.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/judah-territory.json"
+      ],
+      "protected_checks": [
+        "Evidence ID, source identity and lock, Scripture anchor, confidence, review status, and relationships were preserved.",
+        "No claim about tribal ownership or political control was introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -28138,14 +28163,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "0899a33453436833e720f155870738a617176a49b0f6d8e614dccdaf962b6feb",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Expanded the summary to explain what Ruth 1:1’s “Bethlehem in Judah” location label contributes, while retaining its explicit limit on claims about tribal ownership or political control.",
+      "limitation": "The evidence item is source-locked, so its description, primary observation, source identity, and relationship metadata were left unchanged. No additional historical context is supported by this one-verse record.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Evidence ID, source lock and identity, Scripture anchor, confidence, review status, and relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -31750,7 +31792,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/judah-territory.json",
+  "next_batch": "framework/canonical_library/objects/places/judea-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
