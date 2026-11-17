@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **116 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **117 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **419 remain pending review**.
+research**, and **418 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -625,3 +625,5 @@ Batch 196 enriched What is Sacrifice in the Bible? with distinctions among Noah�
 Batch 197 reviewed What is the Ancient Near East? and held its prose pending academic source research. Its biblical references illustrate selected settings but do not define the region’s boundaries or substantiate broad comparisons with neighboring cultures. No CKL content changed; full validation retained zero errors and the same 14 baseline warnings. The next work unit is `framework/canonical_library/objects/faq/what-is-the-day-of-the-lord.json`.
 
 Batch 198 enriched What is the Day of the Lord? with passage-specific distinctions across Amos, Joel, Zephaniah, Isaiah, Malachi, 1 Thessalonians, 2 Peter, and Revelation. It explains how warning, judgment, rescue, and renewal vary by context and removes an unsupported royal-day comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-holy-spirit.json`.
+
+Batch 199 enriched What is the Holy Spirit? with passage-specific examples from Genesis, Ezekiel, Joel, John, Acts, Romans, and Galatians. It explains Acts 2’s explicit connection to Joel and avoids unsupported comparative or lexical claims. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-image-of-god.json`.
