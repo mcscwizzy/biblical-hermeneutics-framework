@@ -3378,6 +3378,34 @@
         ]
       },
       "checkpoint_commit": "c74ec9a2"
+    },
+    {
+      "batch_id": "batch-175-flood-and-following-event-records",
+      "scope": [
+        "the-flood",
+        "third-missionary-journey",
+        "transfiguration",
+        "triumphal-entry",
+        "twelve-spies-sent"
+      ],
+      "completed_unit": "Reviewed five event records; left The Flood and Twelve Spies unchanged because their explanations are already sufficiently specific, and held three records whose Scripture anchors do not cover their named events.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "Anchor mismatches were recorded without changing source identities or Scripture relationships.",
+        "Existing comparative claims were not expanded."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Manifest protected fingerprint check: PASS.",
+          "git diff --check: PASS.",
+          "Regression tests not run because no CKL content changed."
+        ]
+      },
+      "checkpoint_commit": "c74ec9a2"
     }
   ],
   "inventory_count": 687,
@@ -12817,14 +12845,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "887f2761c31dbec6f2f0ce33600c09d39f24202e77338661839cbbf5391d1186",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Existing explanation already follows the full movement from violence and judgment through preservation, renewed human vocation, and the Noahic covenant. It carefully separates Mesopotamian literary comparison from direct dependence or archaeological proof, and keeps chronology qualified.",
+      "limitation": "The scholarly commentary is listed but was not independently reread in this review; no comparative claim was expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -12835,14 +12879,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f45ce506a834200f4d719689c8a938276d1de4a781fc10632da991b6330ce2c2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending event identity and source reconciliation.",
+      "limitation": "The title names Paul’s third missionary journey, but the Scripture anchors point to Paul’s conversion, Pentecost, the Jerusalem Council, and Ephesians 2. They do not narrate the journey in Acts 18:23–21:17, and no journey-specific source is recorded. Rewriting would require unsupported anchor/source reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -12853,14 +12914,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1dc8ed1e4b15c1b33030e42a4c72f9a56d01b973d79950c72047365ce92b3879",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending event identity and source reconciliation.",
+      "limitation": "The title names the Transfiguration, but every Scripture anchor points to resurrection appearances or the ascension. No account of the Transfiguration or passage-specific source is recorded; correcting the prose would require unsupported anchor/source reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -12871,14 +12949,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c494c76cdad60b6fde7faa76ca5bd33e6b6bdf80daaadac30088a8f71e69d743",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending event identity and source reconciliation.",
+      "limitation": "The title names Jesus’ entry into Jerusalem, but every Scripture anchor points to resurrection or ascension scenes. No entry narrative or passage-specific source is recorded; rewriting would require unsupported anchor/source reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -12889,14 +12984,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "dfc62ada7906319456784e5a2181277723204077b5311b4d950b95eb5648ced0",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The record already distinguishes the act of gathering information from the fearful interpretation of the report, contrasts the majority with Caleb and Joshua, and explains the communal consequences through Numbers, Deuteronomy, and Hebrews.",
+      "limitation": "The broad claim about reconnaissance practices is not independently supported by a recorded comparative source and was not expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -20857,7 +20968,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/the-flood.json",
+  "next_batch": "framework/canonical_library/objects/events/wilderness-wandering.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
