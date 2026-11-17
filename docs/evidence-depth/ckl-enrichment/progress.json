@@ -7891,6 +7891,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "bf0bf4d2"
+    },
+    {
+      "batch_id": "batch-363-zechariah-father-of-john-person",
+      "scope": [
+        "zechariah-father-of-john"
+      ],
+      "completed_unit": "Reviewed Zechariah, Father of John and held the record because its sources and anchors instead describe Pauline figures and scenes.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -25013,14 +25035,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ea36c849d60d288e08e694dd899a660c57955155a2079f7e4e23c7c5304b1825",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Zechariah, Father of John’s profile, sources, and anchors. The title points to a figure in Luke 1, but the prose describes a Pauline coworker and the references concern Saul’s conversion and Pauline mission. No recorded passage identifies Zechariah, father of John, in this profile. Left it unchanged pending identity and source review.",
+      "limitation": "The source list omits Luke, and the anchors do not support the object’s title or the generic Pauline claims. No likely Gospel passages or identity links were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29597,7 +29637,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/zechariah-father-of-john.json",
+  "next_batch": "framework/canonical_library/objects/people/zechariah-the-priest.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
