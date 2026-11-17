@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **58 objects are enriched**, **78 are unchanged because they
+At this checkpoint, **59 objects are enriched**, **78 are unchanged because they
 are already sufficient**, **45 are skipped pending source or identity
 research**, and **511 remain pending review**.
 
@@ -446,6 +446,8 @@ Batch 121 reviewed the Binding of Isaac record’s contexts, anchors, sources, a
 
 Batch 122 reviewed the birth-of-Isaac record’s contexts, references, sources, and interpretive note. Its summary now connects Sarah’s laughter at the promise in Genesis 18 with Isaac’s birth in Genesis 21, while distinguishing the later readings in Romans and Hebrews. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/birth-of-jesus.json`.
+Batch 123 reviewed the birth-of-Jesus record’s contexts, references, sources, and interpretive notes. Its summary now distinguishes Matthew’s and Luke’s birth narratives, their shared relation to Davidic hope, and the different purposes of later Pauline references. Historical questions about census chronology remain unresolved rather than being harmonized. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/burial-of-jesus.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

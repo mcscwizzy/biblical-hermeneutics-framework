@@ -2117,6 +2117,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "6e6eafe8"
+    },
+    {
+      "batch_id": "batch-123-birth-of-jesus-summary",
+      "scope": [
+        "birth-of-jesus"
+      ],
+      "completed_unit": "Reviewed summary, contexts, Scripture references, source identities, two interpretive notes, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/birth-of-jesus.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "Matthew, Luke, Galatians, and Philippians retain their distinct narrative and argumentative roles."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "b15593a0"
     }
   ],
   "inventory_count": 687,
@@ -9142,14 +9163,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "07870d8062abc563c4d1e1340356a65617ea968b7d2940a9339da3a2edd3e324",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Clarified the distinct birth narratives in Matthew and Luke, their shared relation to Davidic hope, and how Galatians and Philippians refer to Jesus for different purposes beyond narrating the nativity.",
+      "limitation": "The object has no atomic claims or typed evidence; the summary stays within listed biblical passages and does not resolve historical questions about the census or chronology.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture anchors, relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (73.55s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18244,7 +18283,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/birth-of-jesus.json",
+  "next_batch": "framework/canonical_library/objects/events/burial-of-jesus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
