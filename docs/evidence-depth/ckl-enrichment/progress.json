@@ -708,6 +708,21 @@
         "ckl_objects": "PASS: Jonah valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-047-joshua-explanation-enrichment",
+      "scope": [
+        "joshua"
+      ],
+      "completed_unit": "Clarified the book summary and expanded five claim rationales using existing text and sources",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/joshua.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: Joshua valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "No retrieval test run because claim rationales are not retrieved or rendered; the summary retains the existing reader-facing field and passes schema validation."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3846,14 +3861,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7d301878d1b40f28d8ff85585966b037c446e71e9145a6d9887ddc0c905ccab5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "claims[joshua-literary-movement].rationale",
+        "claims[joshua-torah-shaped-leadership].rationale",
+        "claims[joshua-rahab-rescue].rationale",
+        "claims[joshua-fulfilled-and-remaining-land].rationale",
+        "claims[joshua-shechem-covenant].rationale"
+      ],
+      "outcome": "Reframed the reader-facing summary around the book’s movement from campaigns to allotment and covenant, and expanded five claim rationales to explain the significance of Torah-shaped leadership, Rahab’s preservation, the juxtaposition of victory and remaining land, and the Shechem ending.",
+      "limitation": "The historical and ancient Near Eastern contexts were retained; no new archaeological or conquest chronology claims were introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Protected-field review: only the summary and five claim rationale fields changed; claims, IDs, sources, anchors, certainty and dispute statuses, notes, evidence, and relationships remain unchanged."
+        ]
       }
     },
     {
@@ -14550,6 +14589,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/joshua.json",
+  "next_batch": "framework/canonical_library/objects/books/jude.json",
   "protected_fingerprint_base": "origin/master"
 }
