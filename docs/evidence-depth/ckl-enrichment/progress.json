@@ -1014,12 +1014,12 @@
         "genesis-abraham-call-covenant-context",
         "genesis-abraham-late-cycle-context"
       ],
-      "completed_unit": "Reopened two Abraham-cycle context objects after identifying repeated description and passage_relevance text; specific relevance review is pending.",
-      "status": "in_progress",
+      "completed_unit": "Rewrote passage relevance for all 46 Genesis 12–17 and 71 Genesis 18–25 evidence items; descriptions and protected relationships were preserved.",
+      "status": "validated",
       "changed_paths": [],
       "validation": {
-        "ckl_objects": "The previously validated objects remain structurally valid; the second-pass edits are not yet made or validated.",
-        "regression": "Pending passage-relevance revision."
+        "ckl_objects": "Both objects and the full library validate with 0 errors; full library retains 14 baseline warnings.",
+        "regression": "Genesis evidence-quality/retrieval batch checks passed 17 tests with 4 subtests."
       }
     },
     {
@@ -1038,6 +1038,21 @@
       "validation": {
         "ckl_objects": "PASS: Genesis 12–17 object and full library validate with 0 errors; full library retains 14 baseline warnings. Exodus-route and Galilee objects each validate with 0 errors and warnings.",
         "regression": "17 relevant Genesis evidence-quality/retrieval tests passed with 4 subtests. Unrelated cultural-background expansion test fails against unchanged origin/master fixtures (expected 9 claims, found 46). Evidence-graph test unavailable because fastapi is not installed."
+      }
+    },
+    {
+      "batch_id": "batch-070-genesis-18-25-relevance-review",
+      "scope": [
+        "genesis-abraham-late-cycle-context"
+      ],
+      "completed_unit": "Rewrote 71 duplicated description/relevance fields as distinct scene-specific relevance explanations.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/genesis-abraham-late-cycle-context.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: object valid, 0 errors and 0 warnings; full library 687 valid, 0 errors and 14 baseline warnings.",
+        "regression": "17 relevant evidence-quality and retrieval checks passed with 4 subtests."
       }
     }
   ],
@@ -5749,7 +5764,7 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ccda56db8f7386a21ead102ae3569379e8c2fdaccfd53fa45b22ba37ff3e8243",
-      "status": "in_progress",
+      "status": "enriched",
       "fields_examined": [
         "summary",
         "historical_context",
@@ -5773,13 +5788,18 @@
         "related_objects",
         "related_entries"
       ],
-      "fields_changed": [],
-      "outcome": "Reopened for a focused revision of duplicated reader-facing evidence relevance text.",
-      "limitation": "Every evidence item repeats its full description in passage_relevance; rewrite those reader-facing fields distinctly before classifying this object.",
+      "fields_changed": [
+        "evidence_items[].passage_relevance (71 items)"
+      ],
+      "outcome": "Rewrote 71 passage-relevance fields that had repeated each evidence description. The new concise explanations identify what each observation contributes to the Genesis 18–25 scene, including hospitality and justice, Hagar and Ishmael, the test and spared child, land and burial, and Rebekah’s agency; interpretive disputes and later reception remain distinct.",
+      "limitation": "Descriptions, Scripture anchors, and source identities were preserved. Relevance sentences remain within each existing evidence item and do not add archaeological identifications or historical reconstructions.",
       "validation": {
-        "status": "not_run",
+        "status": "passed",
         "results": [
-          "Content revision is pending; the relevant duplication has been identified."
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline.",
+          "Evidence-quality and retrieval regressions: 17 passed, 4 subtests passed."
         ]
       }
     },
@@ -15853,6 +15873,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-abraham-late-cycle-context.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-flood-postflood-context.json",
   "protected_fingerprint_base": "origin/master"
 }
