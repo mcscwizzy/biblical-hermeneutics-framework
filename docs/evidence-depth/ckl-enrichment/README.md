@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **96 objects are enriched**, **87 are unchanged because they
-are already sufficient**, **59 are skipped pending source or identity
-research**, and **441 remain pending review**.
+are already sufficient**, **60 are skipped pending source or identity
+research**, and **440 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -554,6 +554,8 @@ Batch 175 reviewed The Flood, Third Missionary Journey, Transfiguration, Triumph
 
 Batch 176 reviewed Wilderness Wandering and left it unchanged. Its explanation follows the route and resource episodes while clearly distinguishing the textual itinerary from disputed modern site identifications. Validation found zero errors and the same 14 baseline warnings.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/`.
+Batch 177 reviewed Writing of Revelation and skipped prose changes pending object-identity and source review. Its title does not identify a discrete event, and its references span Daniel, Ezekiel, Revelation, and Isaiah without establishing the historical setting of Revelation’s composition. Validation found zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/faq/how-do-the-old-and-new-testaments-connect.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
