@@ -1747,6 +1747,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "e5c3cebf"
+    },
+    {
+      "batch_id": "batch-105-roman-philippi-summary",
+      "scope": [
+        "roman-philippi-colonial-civic-and-household-life"
+      ],
+      "completed_unit": "Reviewed all 12 claims, 12 typed evidence items, nine interpretive notes, contextual fields, Scripture references, and recorded source identities; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/roman-philippi-colonial-civic-and-household-life.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "Citizenship, prison-site identification, and prison-letter provenance retain their stated evidentiary limits."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "7aefb465"
     }
   ],
   "inventory_count": 687,
@@ -8110,14 +8131,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0ba755e8d86af12d323b8181934d1c2a498fac96d66495f1c641f474cf2c9813",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "original_audience",
+        "historical_setting",
+        "interpretive_disputes",
+        "scripture_references",
+        "sources",
+        "claims[*].rationale/notes",
+        "evidence_items[*].description/passage_relevance/observation/interpretation",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the topic inventory with a plain-language account connecting Acts' Philippi scenes to the colony and Via Egnatia setting. It distinguishes material evidence for the city from independent verification of narrated events, identifies the citizenship detail as Acts' account, and preserves uncertainty about the later prison-site identification and Philippians' provenance.",
+      "limitation": "Reviewed recorded claims, evidence, interpretive notes, and source identities; no underlying scholarly publication was newly consulted, and no new historical assertion was added beyond the object’s existing evidence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: claims, typed evidence, sources, Scripture anchors, relationships, uncertainty classifications, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.74s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -17536,7 +17581,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/roman-philippi-colonial-civic-and-household-life.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/roman-rome-jewish-civic-household-and-imperial-life.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **44 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **45 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **524 remain pending review**.
+research**, and **523 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -409,6 +409,8 @@ Batch 103 reviewed the Roman Galatia regions, roads, cities, and audience record
 
 Batch 104 reviewed the Roman Macedonia road network and city diversity record: all 11 claims, 11 typed evidence items, and two interpretive notes. Their explanations already distinguish the Via Egnatia trunk route from Beroea’s branches, the cities’ civic statuses, and Acts’ itinerary from the letters’ accounts. The summary now puts those points in a clear sequence. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/roman-philippi-colonial-civic-and-household-life.json`.
+Batch 105 reviewed Roman Philippi: all 12 claims, 12 typed evidence items, nine interpretive notes, contextual fields, anchors, and source identities. The summary now connects Acts’ travel, household welcome, exploitation, and civic conflict to Philippi’s Roman-colony setting, while distinguishing the archaeological setting from verification of narrated events and preserving uncertainty about the traditional prison site and letter provenance. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/roman-rome-jewish-civic-household-and-imperial-life.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
