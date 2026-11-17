@@ -8352,6 +8352,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-384-city-of-david",
+      "scope": [
+        "city-of-david"
+      ],
+      "completed_unit": "Explained the capture, naming, and royal-residence sequence in 2 Samuel 5:7-9, with historical and archaeological limits stated.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/city-of-david.json"
+      ],
+      "protected_checks": [
+        "Object, source identities, Scripture references, related-object edges, and review metadata were preserved.",
+        "Ancient Near Eastern applicability was disabled because no comparative source is recorded.",
+        "No archaeological date, boundary, or external historical claim was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26204,14 +26230,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b9017be88d9ef38ffd2ac91eee47e94c4b9925d4f8569f290a59c446ab9ca442",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east"
+      ],
+      "outcome": "Explained the 2 Samuel 5:7-9 sequence from capturing Zion to naming it the City of David and describing David’s residence and building there. The text now connects the site with the establishment of his rule while limiting claims about archaeological dating and boundaries.",
+      "limitation": "No archaeological or external historical source is recorded. The other Scripture anchors remain unchanged and require curation review because they do not establish this specific place account.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master; Scripture anchors, source identities, and review metadata are unchanged."
+        ]
       }
     },
     {
@@ -30410,7 +30457,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/city-of-david.json",
+  "next_batch": "framework/canonical_library/objects/places/cnidus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
