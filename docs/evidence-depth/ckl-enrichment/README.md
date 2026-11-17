@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **239 objects are enriched**, **112 are unchanged because they
-are already sufficient**, **161 are skipped pending source or identity
-research**, and **175 remain pending review**.
+are already sufficient**, **162 are skipped pending source or identity
+research**, and **174 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1553,3 +1553,6 @@ Batch 441 reviewed Red Sea 1. The revised explanation follows Exodus 14's crossi
 
 
 Batch 442 reviewed Rome and left it unchanged. The record already explains its Roman and Jewish settings, distinguishes Romans from Acts, and treats the Claudian notice, Nero's later violence, early Christian archaeological identifications, and later memory with appropriate qualifications. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 443 reviewed Salt Sea and made no content changes. Its anchors concern the sea crossing, the Jordan, and unnamed waters; they do not establish the Salt Sea or Dead Sea basin. The internal geographic orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
