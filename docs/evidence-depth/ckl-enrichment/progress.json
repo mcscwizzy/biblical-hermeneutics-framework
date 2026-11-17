@@ -10328,6 +10328,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-470-creation-theme",
+      "scope": [
+        "creation-theme"
+      ],
+      "completed_unit": "Explained how the creation motif shifts across Genesis, the Psalms, New Testament teaching, and Revelation.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/creation-theme.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "Removed an unsupported claim about ancient origin stories because no specific comparative source was recorded."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -31233,14 +31258,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3336331bd499be0e2a3bffa182c33b04b51641b6b983ca6dc8f9ee9926dca671",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Connected Genesis’ ordered world and human vocation with the Psalms’ praise, the New Testament’s creation language about Christ, Romans’ groaning creation, and Revelation’s renewed world.",
+      "limitation": "The recorded sources are biblical texts and do not provide a specific ancient Near Eastern comparison. No comparative claim or chronology of creation was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33891,7 +33939,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/creation-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/exile-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
