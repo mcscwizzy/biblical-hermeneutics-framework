@@ -9475,6 +9475,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-433-negeb-review",
+      "scope": [
+        "negeb"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Negeb-specific Scripture-anchor and source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Negeb geography or history was inferred from mismatched anchors."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -29061,14 +29082,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c0b50cdf6224b7e98bf642970e31c565bacf88a7415838e6f4ccaf8af5fcc1db",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; the Scripture anchors do not identify or describe the Negeb, and the internal source is unreviewed.",
+      "limitation": "Genesis 10:1–32, Deuteronomy 10:6–9, Isaiah 63:1–6, and Acts 13:16–22 do not establish Negeb-specific geography or history; their notes point to other subjects. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source is pending human review. Corrected anchors and reviewed regional sources are required.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -32385,7 +32419,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/negeb.json",
+  "next_batch": "framework/canonical_library/objects/places/nile.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
