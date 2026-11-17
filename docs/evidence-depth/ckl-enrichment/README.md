@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **191 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **192 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **94 are skipped pending source or identity
-research**, and **306 remain pending review**.
+research**, and **305 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -926,3 +926,6 @@ Batch 310 reviewed Jonah the Prophet and left the record unchanged. Its referenc
 
 
 Batch 311 reviewed Joseph, Husband of Mary and left the profile unchanged. Its anchors are the four Gospel endings and omit Joseph’s infancy narratives. The related birth-of-Jesus edge does not replace person-specific passages, so the current generic description was not adapted to him. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is joseph.
+
+
+Batch 312 reviewed Joseph. The explanation follows the plot from family conflict and enslavement to Egyptian administration, famine, and reunion, using the recurring dreams, clothing, and delayed recognition to show how the story’s reversals work. It also distinguishes Joseph’s interpretation of preservation from an excuse for his brothers’ harm. The broad Genesis source supports the narrative, though structured references still emphasize Abraham. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is joshua-son-of-nun.

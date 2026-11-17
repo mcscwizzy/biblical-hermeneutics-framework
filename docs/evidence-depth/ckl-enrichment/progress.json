@@ -6708,6 +6708,32 @@
         ]
       },
       "checkpoint_commit": "f4b6061d"
+    },
+    {
+      "batch_id": "batch-312-joseph-person",
+      "scope": [
+        "joseph"
+      ],
+      "completed_unit": "Reviewed Joseph and enriched the Genesis narrative arc, literary reversals, and the text’s own interpretation of preservation and harm.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/joseph.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21887,13 +21913,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "78291bf8d5118c5850e1141f01891c60e591149091c39805630b72f5c45e7fbe",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Expanded Joseph’s Genesis narrative through family conflict, Egyptian administration, famine, reversal, and reconciliation. Joseph’s own interpretation of events is distinguished from an external historical claim or moral excuse for harm.",
+      "limitation": "The structured Scripture references emphasize Abraham, while the broad recorded Genesis 12–50 source includes Joseph’s narrative; Joseph-specific anchors remain a source-alignment follow-up. No external chronology or reconstruction of Egyptian practice was added.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -27389,7 +27433,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/joseph.json",
+  "next_batch": "framework/canonical_library/objects/people/joshua-son-of-nun.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
