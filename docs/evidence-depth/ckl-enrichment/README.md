@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **255 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **256 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **168 are skipped pending source or identity
-research**, and **149 remain pending review**.
+research**, and **148 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1631,3 +1631,6 @@ Batch 467 reviewed Adoption Theme. The revised explanation follows Galatians’ 
 
 
 Batch 468 reviewed Blessing and Curse Theme. The revised explanation distinguishes the promises to Noah and Abraham, Israel’s Sinai vocation, and later covenant-renewal texts. It avoids treating prosperity or hardship as a universal blessing-or-curse test. The current anchors include only a specific curse warning in Genesis 12:3, so the wider curse theme remains a documented research gap. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 469 reviewed Covenant Theme. The revised explanation walks through Noah, Abraham, Sinai, David, Deuteronomy, Jeremiah, Luke, and Hebrews while showing how the promises and recipients differ. The broad ancient Near Eastern treaty comparison has no specific source in this object, so no further comparison was added. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
