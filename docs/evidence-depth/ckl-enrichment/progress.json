@@ -11680,6 +11680,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-525-divine-justice",
+      "scope": [
+        "divine-justice"
+      ],
+      "completed_unit": "Clarified the distinct justice emphases in Deuteronomy 32, Micah 6, Romans 2, and Revelation 19.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/divine-justice.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "No interpretive theory beyond the listed texts was introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -34873,14 +34899,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f435d5be6416d0979fec8ea323b01e4f82785ecd488b23e9a4dae957e8d78a4c",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected justice with God’s character, human conduct, impartial accountability, and praise while distinguishing song, prophetic challenge, letter argument, and apocalyptic vision.",
+      "limitation": "No comparative ancient Near Eastern evidence is recorded. Generic interpretive notes were reviewed and left unchanged; discussion remains limited to the cited passages.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, Scripture anchors, source identities, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -36541,7 +36590,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/divine-justice.json",
+  "next_batch": "framework/canonical_library/objects/theology/divine-mercy.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
