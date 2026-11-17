@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **157 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **158 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **64 are skipped pending source or identity
-research**, and **374 remain pending review**.
+research**, and **373 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -722,3 +722,6 @@ Batch 242 reviewed Lord’s Supper and preserved its already substantial passage
 
 
 Batch 243 enriched Patronage by distinguishing Phoebe’s commendation, Gaius’s hosting, collection administration in 2 Corinthians 8, and Paul’s appeal to Philemon. The explanation keeps those cases distinct and avoids labeling every gift or unequal relationship as formal patronage. Detailed Greco-Roman comparisons remain outside this text-only enrichment because linked research clusters are still in review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/pharisees.json`.
+
+
+Batch 244 reviewed Pharisees. Its existing historical, Second Temple, canonical, and interpretive explanations were already substantial and careful. I changed only the canonical-role field, replacing internal evidence-cluster language with a reader-facing description of the varied Gospel and Acts portrayals and the limit against generalizing polemic to all Jews. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/priesthood.json`.
