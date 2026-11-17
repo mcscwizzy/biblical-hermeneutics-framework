@@ -9011,6 +9011,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-413-jericho",
+      "scope": [
+        "jericho-1"
+      ],
+      "completed_unit": "Clarified the closed-city description and seven-day circuit pattern in Joshua 6 using the record’s source-locked evidence.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/jericho-1.json"
+      ],
+      "protected_checks": [
+        "Object, claim, and evidence IDs; source identities and locks; Scripture anchors; confidence and review metadata; and curated relationships were preserved.",
+        "Mismatched broader anchors were retained and not used to make additional claims."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27889,14 +27914,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "13780c459684f519e2ab468e82eaddbf2d49fbfa73188208102fb6acb3546064",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained the closed-city description and seven-day circuit sequence in Joshua 6, and limited the object’s explanatory claims to those source-locked observations.",
+      "limitation": "The object’s broader Scripture anchors point to other events and places. They were preserved as required, but do not support additional Jericho history. The recorded source-locked evidence describes the biblical narrative and does not establish an archaeological phase, date, or siege route.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object IDs, claim/evidence IDs, source locks, Scripture anchors, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -31573,7 +31620,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/jericho-1.json",
+  "next_batch": "framework/canonical_library/objects/places/jerusalem.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
