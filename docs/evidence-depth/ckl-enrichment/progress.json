@@ -379,7 +379,7 @@
         "ckl_objects": "PASS: 1 object valid, 0 errors, 10 existing section-status warnings. Full library: 687 valid, 0 errors, the same 14 pre-existing warnings as baseline.",
         "tests": "Targeted content-quality and CKL retrieval suites started; 20 passing test markers emitted, then run interrupted because the two-file command continued at roughly 30 seconds per test without a summary. No test failure was observed; full suite result unavailable."
       },
-      "checkpoint_commit": "pending"
+      "checkpoint_commit": "6d1166dae244b262b09d79cd24968e860f2d81fa"
     }
   ],
   "inventory_count": 687,
@@ -2016,12 +2016,12 @@
       "outcome": "Added a concrete passage-to-passage bridge: Deuteronomy 30 and 2 Kings 25 frame dispersion and loss, Jeremiah 29 addresses life in exile, Ezra 1 marks return, and later prophetic, Gospel, and apocalyptic texts extend the restoration horizon. Scripture references, claims, source identities, statuses, and relationships were preserved.",
       "limitation": "The object is a broad canonical synthesis; no specialized historical reconstruction was added beyond the recorded biblical anchors.",
       "validation": {
-      "status": "pass_with_baseline_warnings_tests_partial",
+        "status": "pass_with_baseline_warnings_tests_partial",
         "results": [
           "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
           "Full CKL validation: 687 valid, 0 errors, 14 warnings; warning set includes one additional pre-existing section-status warning on this object.",
-        "Semantic review: changed wording is tied to unchanged Scripture references; no claims, source records, or relationships changed.",
-        "Targeted tests: 20 passing test markers before interruption; final test summary unavailable."
+          "Semantic review: changed wording is tied to unchanged Scripture references; no claims, source records, or relationships changed.",
+          "Targeted tests: 20 passing test markers before interruption; final test summary unavailable."
         ]
       }
     },
