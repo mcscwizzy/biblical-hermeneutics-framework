@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **334 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **340 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **198 are skipped pending source or identity
-research**, and **39 remain pending review**.
+research**, and **33 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1928,3 +1928,6 @@ The first lexical/context batch clarified Abba, Berit, Diatheke, Charis, and Hup
 
 
 The second word-study batch clarified Metanoia, Makarios, Sophia, Soteria, Phos, and Skotia from their passage settings. The summaries now distinguish wisdom instruction from personification, salvation images across genres, and light/darkness imagery across Hebrew and Greek passages without claiming lexical equivalence from a shared English rendering.
+
+
+The next word-context batch clarified Hesed, Ekklesia, Koinonia, Anastasis, Parousia, and Doxa. It follows each cited passage’s own use and genre, distinguishes Hebrew-scripture parallels from New Testament texts, and does not claim that related English images prove lexical identity.

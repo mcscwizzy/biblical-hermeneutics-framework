@@ -12173,6 +12173,40 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-543-word-contexts-community-and-glory",
+      "scope": [
+        "hesed",
+        "ekklesia",
+        "koinonia",
+        "anastasis",
+        "parousia",
+        "doxa"
+      ],
+      "completed_unit": "Enriched six entries from their specific canonical passage settings while distinguishing shared themes from lexical identity.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/word_studies/hesed.json",
+        "framework/canonical_library/objects/word_studies/ekklesia.json",
+        "framework/canonical_library/objects/word_studies/koinonia.json",
+        "framework/canonical_library/objects/word_studies/anastasis.json",
+        "framework/canonical_library/objects/word_studies/parousia.json",
+        "framework/canonical_library/objects/word_studies/doxa.json"
+      ],
+      "protected_checks": [
+        "No claims, evidence IDs, source identities, Scripture references, relationships, confidence, dispute, review, or source-lock data were changed.",
+        "No lexical semantic-range or comparative historical claims were introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fields and curated relationships unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -37108,14 +37142,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "165dab8c1aa3b3c4b82c495bb6ae141cf8b2661c7965dccda53cae69d152717a",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained how Daniel, Paul, 1 Thessalonians, and Revelation present awakening, Christ’s resurrection, comfort for mourners, and renewed life.",
+      "limitation": "The explanation uses the cited biblical passages and their canonical/literary relationships. No etymology, semantic range, language-equivalence, or external historical claim was added without reviewed lexical sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37348,14 +37408,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "845ef487233bd5d1483364113b0b0529c631a327ce7da42ef50e9d959dc73348",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified how Exodus, Isaiah, John, Paul, and Revelation portray glory through encounter, vision, transformation, and light.",
+      "limitation": "The explanation uses the cited biblical passages and their canonical/literary relationships. No etymology, semantic range, language-equivalence, or external historical claim was added without reviewed lexical sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37366,14 +37452,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4ebc0054f674e734f0a2191e9035a68a5cd2fd9461c5262c84c3836cf2e7e7f9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected Acts’ communal practices with Ephesians’ body metaphor, 1 Peter’s people/household imagery, and Hebrews’ call to gather and encourage.",
+      "limitation": "The explanation uses the cited biblical passages and their canonical/literary relationships. No etymology, semantic range, language-equivalence, or external historical claim was added without reviewed lexical sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37456,14 +37568,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "32ae55969220d2fc5ba5469a5f25118bba2269bbd9be746ad19a9b0b3b5dcb47",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Distinguished the Hebrew-scripture portrayals of steadfast love in Exodus, Psalm 103, and Micah from related New Testament accounts of grace and mercy.",
+      "limitation": "The explanation uses the cited biblical passages and their canonical/literary relationships. No etymology, semantic range, language-equivalence, or external historical claim was added without reviewed lexical sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37536,14 +37674,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "36b5e24c6c7269d9824a43ad6a5e4cce960e7972e8f24e889c4e9f76482c0aff",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified the communal practices and participation described in Acts, Ephesians, 1 Peter, and Hebrews, distinguishing narrative, metaphor, and exhortation.",
+      "limitation": "The explanation uses the cited biblical passages and their canonical/literary relationships. No etymology, semantic range, language-equivalence, or external historical claim was added without reviewed lexical sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37786,14 +37950,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "dca6dd19f0af70fe36c32bd542cb1dc61b9249e9172ed9131b1466881b78ace4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected the cited texts’ expectation, resurrection, and renewal while noting that the set does not provide a complete timetable.",
+      "limitation": "The explanation uses the cited biblical passages and their canonical/literary relationships. No etymology, semantic range, language-equivalence, or external historical claim was added without reviewed lexical sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
