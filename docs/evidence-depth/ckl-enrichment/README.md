@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **260 objects are enriched**, **115 are unchanged because they
-are already sufficient**, **168 are skipped pending source or identity
-research**, and **144 remain pending review**.
+are already sufficient**, **169 are skipped pending source or identity
+research**, and **143 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1646,3 +1646,6 @@ Batch 472 reviewed Exodus Pattern Theme. The revised explanation follows the nar
 
 
 Batch 473 reviewed Faithfulness Theme. The revised explanation distinguishes Abraham’s trust, Habakkuk’s waiting vision, Paul’s argument in Romans 4, and Hebrews’ exhortation. It records that the current sources do not support a lexical analysis of Habakkuk 2:4 and adds no unsupported ancient Near Eastern comparison. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 474 reviewed Fire Theme and left the CKL object unchanged. Its cited passages and sources concern covenant and do not support a fire-centered explanation; adding examples or references would require reviewed research. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. The object remained byte-for-byte unchanged; focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.

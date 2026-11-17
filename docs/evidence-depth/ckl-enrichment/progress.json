@@ -10428,6 +10428,29 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-474-fire-theme-skip",
+      "scope": [
+        "fire-theme"
+      ],
+      "completed_unit": "Reviewed Fire Theme and recorded the evidence gap; no CKL content was changed.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "The object is unchanged, including IDs, source identities, anchors, review metadata, and relationships.",
+        "No fire claims or Scripture references were invented or promoted."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings; object content was unchanged.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint and all object contents match the fetched base; no IDs, anchors, source identities, review metadata, or relationships were altered."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -31502,14 +31525,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "fbfc008807c8acecab5637b1a69eeebd6d8ff5252624aa06a832a698df1d8dd1",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged because the current passages and source list primarily concern covenant, not fire; expanding the fire motif would require different verified textual anchors.",
+      "limitation": "Genesis 9:8–17, Genesis 12:1–3, Exodus 19:1–6, Jeremiah 31:31–34, Luke 22:20, and Hebrews 8:6–13 do not substantiate a fire-centered explanation. The object needs reviewed fire-specific Scripture anchors and source support before enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings; object content was unchanged.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint and all object contents match the fetched base; no IDs, anchors, source identities, review metadata, or relationships were altered."
+        ]
       }
     },
     {
@@ -34088,7 +34127,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/fire-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/glory-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
