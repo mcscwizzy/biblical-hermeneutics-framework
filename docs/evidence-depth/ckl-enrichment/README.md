@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **78 objects are enriched**, **82 are unchanged because they
-are already sufficient**, **46 are skipped pending source or identity
-research**, and **481 remain pending review**.
+are already sufficient**, **47 are skipped pending source or identity
+research**, and **480 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -496,6 +496,8 @@ Batch 146 corrected the First Missionary Journey event record, grounding the exp
 
 Batch 147 enriched Giving of the Law. The prose now connects the commandments to the exodus narrative and communal life, compares Exodus and Deuteronomy’s Sabbath rationales, and situates Matthew 5 as later interpretation. The uncited generic comparison with ancient law collections and treaties was removed. Structural validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/golden-calf.json`.
+Batch 148 reviewed Golden Calf and skipped enrichment pending direct source verification. Its Scripture anchors and listed source ranges omit Exodus 32–34, where the event is narrated. The unchanged object validates with zero errors and its 8 pre-existing section-status warnings; full CKL validation retains the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/great-white-throne-judgment.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

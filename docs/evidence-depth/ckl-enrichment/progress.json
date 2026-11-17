@@ -2686,6 +2686,29 @@
         ]
       },
       "checkpoint_commit": "336dbf4b"
+    },
+    {
+      "batch_id": "batch-148-golden-calf-anchor-gap-review",
+      "scope": [
+        "golden-calf"
+      ],
+      "completed_unit": "Reviewed explanatory fields, Scripture anchors, source identities, relationships, notes, and evidence coverage; skipped enrichment because Exodus 32–34 is absent from recorded sources and anchors.",
+      "status": "skipped_insufficient_support",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL object data changed.",
+        "Existing anchors, source identities, relationships, and review status remain untouched pending source verification."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "ac021e66"
     }
   ],
   "inventory_count": 687,
@@ -10740,15 +10763,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "47bed19640ab1387869328f0954d75baf3984d1d5fa60f67dc61ac567688dbf5",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged pending source-anchor research. The explanation is generic and does not describe the golden-calf episode, but the event-specific narrative is not in the recorded Scripture anchors or source range.",
+      "limitation": "The anchors refer to Exodus 3, Exodus 19, Deuteronomy 5, and Hebrews 3; the listed Exodus source ranges end at chapters 15 and 24. None includes Exodus 32–34, where the calf, intercession, judgment, and covenant renewal are narrated. Add or verify a direct source for that passage before rewriting; preserve current anchors and relationships until reviewed.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "ac021e66"
     },
     {
       "id": "great-white-throne-judgment",
@@ -19392,7 +19434,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/golden-calf.json",
+  "next_batch": "framework/canonical_library/objects/events/great-white-throne-judgment.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
