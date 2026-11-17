@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **163 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **164 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **67 are skipped pending source or identity
 research**, and **367 remain pending review**.
 
@@ -749,3 +749,6 @@ Batch 251 enriched Roman Governorship using the Gospel and Acts scenes, the Caes
 
 
 Batch 252 enriched Sacrificial System by distinguishing the burnt offering, purification offerings, the Day of Atonement, Psalm 51’s account of repentance and sacrifice, and Hebrews’ argument about Jesus. The explanation avoids flattening these texts into one ritual or one claim and removes generic ancient Near Eastern comparison unsupported by the object’s sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sadducees.json`.
+
+
+Batch 253 reviewed Sadducees. The existing summary and context already handled source limitations and historical uncertainty carefully. I changed only the canonical-role field, replacing internal evidence-cluster language with a reader-facing summary of the Gospel and Acts portrayals and the caution against conflating Jewish groups. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sanhedrin.json`.

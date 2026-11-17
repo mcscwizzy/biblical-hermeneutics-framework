@@ -5308,6 +5308,31 @@
         ]
       },
       "checkpoint_commit": "3c2678b6"
+    },
+    {
+      "batch_id": "batch-253-sadducees-institution",
+      "scope": [
+        "sadducees"
+      ],
+      "completed_unit": "Reviewed the substantial Sadducees context and retained it. Replaced only the canonical-role field, removing internal cluster language and summarizing the varied Gospel/Acts portrayals while preserving source limits and anti-generalization cautions.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/sadducees.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -18398,14 +18423,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ed5f7ceaccd2ba40ca57c7af1c59ec39df8d3979890b7f2ad28dc55a9634f8a3",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "original_audience",
+        "historical_setting",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "canonical_role"
+      ],
+      "outcome": "The existing Sadducees explanation was already substantial and careful about outsider sources and historical uncertainty. Replaced only the canonical-role field, removing internal cluster language and giving readers a passage-grounded summary of the group’s portrayals and the limit against conflating groups.",
+      "limitation": "The source list includes unrelated Exodus, Deuteronomy, and Samuel headings that do not match the Sadducee passages, and the listed academic overview has not been independently consulted for this edit. Those metadata and all review/source relationships remain unchanged for follow-up.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24962,7 +25011,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/sadducees.json",
+  "next_batch": "framework/canonical_library/objects/institutions/sanhedrin.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
