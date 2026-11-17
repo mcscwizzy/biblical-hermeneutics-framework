@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **195 objects are enriched**, **96 are unchanged because they
-are already sufficient**, **95 are skipped pending source or identity
-research**, and **301 remain pending review**.
+are already sufficient**, **96 are skipped pending source or identity
+research**, and **300 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -941,3 +941,6 @@ Batch 315 reviewed Jude of Jerusalem and left the profile unchanged. Its referen
 
 
 Batch 316 reviewed Korah. The explanation now connects Numbers 16’s challenge to Moses and Aaron with the budding staff in Numbers 17, clarifying how the second chapter answers the continuing dispute. It distinguishes the community’s shared holiness from the specific priestly role as the narrative presents it. The structured anchors omit Numbers 16, though the recorded Numbers source covers it; that alignment remains a follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is lazarus.
+
+
+Batch 317 reviewed Lazarus and left the profile unchanged. The cited passages are the four Gospel endings and do not name Lazarus; his direct story in John 11–12 is absent. The current source and reference set therefore cannot support an explanation of his role. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is lois.
