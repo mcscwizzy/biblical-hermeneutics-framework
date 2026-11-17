@@ -9714,6 +9714,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-444-samaria-review",
+      "scope": [
+        "samaria-1"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Samaria-specific Scripture-anchor and source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Samaria history or mission setting was inferred from unrelated anchors."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -29652,14 +29673,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "beaf2596be8e2b7cb9fa9587787f515b9be504da86e1c716ac6469fc6716e059",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; the anchors refer to Galilee, Jerusalem, and Damascus rather than Samaria.",
+      "limitation": "Matthew 28:16–20 concerns the disciples in Galilee; Luke 24:50–53 and John 20:17–23 concern Jerusalem and its vicinity; Acts 9:1–19 concerns Damascus. Mark 16:19–20 summarizes proclamation without locating Samaria. These passages do not support the object’s Samaria-specific claims. The generic ancient Near Eastern context is unsupported, and the internal historical-orientation source is pending human review. Corrected anchors and reviewed Samaria sources are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -32778,7 +32812,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/samaria-1.json",
+  "next_batch": "framework/canonical_library/objects/places/shechem.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
