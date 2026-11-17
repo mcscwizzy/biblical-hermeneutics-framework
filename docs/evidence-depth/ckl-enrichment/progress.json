@@ -9308,6 +9308,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-426-moab-1-review",
+      "scope": [
+        "moab-1"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Moab-specific Scripture-anchor and source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Moab-specific history or imperial identity was inferred from mismatched anchors."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -28635,14 +28656,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "43dd029fd4ff7fdd55145916c699bb01f9252ccdce1f7aa77bd1ce20c5108dfe",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; its Scripture anchors do not establish Moab-specific geography or a role as an imperial power.",
+      "limitation": "Genesis 10:1–32, Exodus 3:1–15, 2 Kings 25:8–17, Daniel 11:40–45, and Acts 28:11–16 do not establish the object’s claims about Moab; the notes attach unrelated settings to these passages. The generic ancient Near Eastern section is unsupported, and the internal historical-orientation source is pending human review. Reviewed Moab-specific anchors and sources are required.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -32085,7 +32119,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/moab-1.json",
+  "next_batch": "framework/canonical_library/objects/places/most-holy-place-2.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

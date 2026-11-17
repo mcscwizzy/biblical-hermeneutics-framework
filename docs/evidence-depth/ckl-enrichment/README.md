@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **232 objects are enriched**, **109 are unchanged because they
-are already sufficient**, **154 are skipped pending source or identity
-research**, and **192 remain pending review**.
+are already sufficient**, **155 are skipped pending source or identity
+research**, and **191 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1502,3 +1502,6 @@ Batch 424 reviewed Midian and made no content changes. The anchors do not establ
 
 
 Batch 425 reviewed Mizpah 3 and made no content changes. Its anchors identify Shechem and Jerusalem rather than a Mizpah location, so they cannot support the object's place-specific statements. The generic ancient Near Eastern context lacks evidence, and the internal orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 426 reviewed Moab 1 and made no content changes. Its listed anchors do not establish Moab-specific geography or the object’s claim that Moab was an imperial power; the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
