@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **4 objects are enriched**, **27 are unchanged because they
+At this checkpoint, **5 objects are enriched**, **30 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **614 remain pending review**.
+research**, and **610 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -272,6 +272,17 @@ notes carefully separate text, source evidence, scholarly reconstruction,
 and later reception. Source-locked Acts geography and the four objects all
 validated with zero errors and zero warnings.
 
-The next work unit is `objects/books/deuteronomy.json`.
+Deuteronomy, Ecclesiastes, and Esther were left intact because their summaries,
+claims, and notes already explain their literary and historical contexts while
+carefully qualifying text, dating, and reception questions. Ephesians had 28
+claim rationales that all repeated a generic sentence. Those rationales now
+explain the specific textual basis or interpretive limit for each claim,
+including grace and good works, Jewish-gentile reconciliation, temple imagery,
+household instruction, and the armor metaphor. Claims, notes, sources, and
+anchors were preserved. The four objects and full library validate with zero
+errors and the same 14 baseline warnings. Claim rationales are not currently
+rendered in the standard browser modal or indexed by retrieval.
+
+The next work unit is `objects/books/exodus.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

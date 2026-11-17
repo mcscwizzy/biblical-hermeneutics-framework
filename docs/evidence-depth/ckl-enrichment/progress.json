@@ -526,6 +526,25 @@
         "ckl_objects": "PASS: all four valid with 0 errors and 0 warnings each."
       },
       "checkpoint_commit": "11ee5a883db70b6a15c164bd581269b959609e2e"
+    },
+    {
+      "batch_id": "batch-034-deuteronomy-through-ephesians-review",
+      "scope": [
+        "deuteronomy",
+        "ecclesiastes",
+        "ephesians",
+        "esther"
+      ],
+      "completed_unit": "Four book objects, claims, notes, typed evidence, sources, and anchors reviewed; three already sufficient, Ephesians claim rationales enriched",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/ephesians.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: all four valid with 0 errors and 0 warnings each; full library 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "No retrieval test run: only claim rationale fields changed, and the standard modal and retrieval index do not consume those fields."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -2913,14 +2932,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "831b60b2515e5b2a7b44a587b236d343ca7f6046f9a802b43c91f29ff342b178",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary and contexts explain the book’s Mosaic speech frame, covenant instruction, and leadership transition. Five claims and four notes clarify the Shema, Moab covenant, choice of life, and disputed treaty comparisons without adding a new historical reconstruction.",
+      "limitation": "None for explanatory enrichment; the record already provides clear, historically cautious explanation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -2931,14 +2966,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "cb06af4726e592a16a8af97d70de0e854c9e5561e1e29ed43cd71b4ccddf50c7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary and contexts make Qohelet’s inquiry into gain, mortality, injustice, and divine gifts clear while preserving the book’s tensions. Twelve claims, 19 notes, and a source-inspected lexical evidence item carefully qualify authorship, hebel, yitron, enjoyment, textual forms, and reception.",
+      "limitation": "None for explanatory enrichment; the record already provides clear, historically cautious explanation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -2949,14 +3000,61 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2472d284e603f53e90dc8cfa0b676726a1731fa09f8e5145dd17a6381a9f45e1",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "claims[eph-voice].rationale",
+        "claims[eph-authorship].rationale",
+        "claims[eph-destination].rationale",
+        "claims[eph-date].rationale",
+        "claims[eph-audience].rationale",
+        "claims[eph-colossians].rationale",
+        "claims[eph-blessing].rationale",
+        "claims[eph-grace].rationale",
+        "claims[eph-faith-grammar].rationale",
+        "claims[eph-peace].rationale",
+        "claims[eph-torah].rationale",
+        "claims[eph-temple].rationale",
+        "claims[eph-mystery].rationale",
+        "claims[eph-powers].rationale",
+        "claims[eph-unity].rationale",
+        "claims[eph-descent].rationale",
+        "claims[eph-gifts].rationale",
+        "claims[eph-new-humanity].rationale",
+        "claims[eph-five-fourteen].rationale",
+        "claims[eph-spirit].rationale",
+        "claims[eph-submission].rationale",
+        "claims[eph-marriage].rationale",
+        "claims[eph-children].rationale",
+        "claims[eph-slavery].rationale",
+        "claims[eph-armor].rationale",
+        "claims[eph-tychicus].rationale",
+        "claims[eph-artemis].rationale",
+        "claims[eph-reception].rationale"
+      ],
+      "outcome": "Replaced the 28 repeated generic claim-rationale lines with specific explanations tied to each claim’s existing Scripture anchors, clarifying literary evidence, interpretive stakes, and where the claim stops. Claim wording, identifiers, sources, Scripture references, status classifications, and all 46 interpretive notes were preserved.",
+      "limitation": "Claim rationales are serialized in canonical detail but are not rendered in the standard browser modal or indexed by retrieval; this enriches the CKL research layer and API representation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Protected-field and semantic review: only claim rationale text changed; claim text, IDs, source identities, Scripture anchors, certainty/dispute statuses, interpretive notes, and evidence relationships unchanged."
+        ]
       }
     },
     {
@@ -2967,14 +3065,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0a4139dec541fe875531a8357d3ce3cacebc2d522d9e5d73217f86ec3d7a7d14",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary and contexts explain the book’s diaspora setting, threat-and-reversal plot, and Purim conclusion while distinguishing the Hebrew form from Greek expansions and uncertain Persian history. Eight claims and 11 notes preserve ethical complexity and avoid treating every action as an endorsed example.",
+      "limitation": "None for explanatory enrichment; the record already provides clear, historically cautious explanation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -14025,6 +14139,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/deuteronomy.json",
+  "next_batch": "framework/canonical_library/objects/books/exodus.json",
   "protected_fingerprint_base": "origin/master"
 }
