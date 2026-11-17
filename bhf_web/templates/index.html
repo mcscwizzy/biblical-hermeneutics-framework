@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20261031u07a">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20261116archaeology1">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260906a" src="/static/htmx-lite.js?v=20260906a" -->
   {# static_asset('/style.css') }}?v=20260906a #}
@@ -55,7 +55,7 @@
     <script src="{{ static_asset('/narrative-presentation-policy.js') }}?v=20261116ed7b" defer></script>
     <script src="{{ static_asset('/narrative-explorer.js') }}?v=20261116ed7b" defer></script>
   {% endif %}
-  <script src="{{ static_asset('/resource-router.js') }}?v=20261031u07a" defer></script>
+  <script src="{{ static_asset('/resource-router.js') }}?v=20261116archaeology1" defer></script>
   <script src="{{ static_asset('/companion-discoveries.js') }}?v=20261116ed7b" defer></script>
   <script src="{{ static_asset('/companion-locations.js') }}?v=20261026a" defer></script>
   <script src="{{ static_asset('/companion-places-locations.js') }}?v=20261031a" defer></script>
@@ -298,7 +298,7 @@
                 <div class="companion-advanced-links-list">
                   <button type="button" class="companion-text-button" data-companion-route="canonical">Open Canonical Knowledge →</button>
                   <button type="button" class="companion-text-button" data-companion-route="maps">Open Maps Explorer →</button>
-                  <a class="companion-text-button" href="/archaeology">Open Archaeology Library →</a>
+                  <a class="companion-text-button" href="/archaeology">Browse All Archaeology →</a>
                 </div>
               </section>
               </section>

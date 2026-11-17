@@ -2157,6 +2157,58 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(empty_archaeology_data["empty_state"])
         self.assertEqual(empty_archaeology_data["markers"], [])
 
+    def test_archaeology_service_route_reports_recorded_passage_relationships(self):
+        john_response = asgi_request(
+            "GET",
+            "/api/archaeology/for-passage?book=John&chapter=9&verse_start=7&verse_end=11",
+        )
+        self.assertEqual(john_response["status"], 200)
+        john_data = json.loads(john_response["body"])
+        self.assertEqual(
+            [item["id"] for item in john_data["archaeological_items"]],
+            ["pool-of-siloam"],
+        )
+        self.assertEqual(
+            john_data["archaeological_items"][0]["matched_scripture_links"][0]["id"],
+            "asl-siloam-pool-1",
+        )
+        self.assertEqual(
+            john_data["archaeological_items"][0]["matched_scripture_links"][0]["relationship_type"],
+            "direct_context",
+        )
+
+        kings_response = asgi_request(
+            "GET",
+            "/api/archaeology/for-passage?book=2%20Kings&chapter=20&verse_start=20&verse_end=20",
+        )
+        self.assertEqual(kings_response["status"], 200)
+        kings_data = json.loads(kings_response["body"])
+        self.assertEqual(
+            {item["id"] for item in kings_data["archaeological_items"]},
+            {"siloam-inscription", "hezekiahs-tunnel-item"},
+        )
+        self.assertEqual(
+            {item["matched_scripture_links"][0]["id"] for item in kings_data["archaeological_items"]},
+            {"asl-siloam-1", "asl-tunnel-1"},
+        )
+
+        john_opening = asgi_request(
+            "GET",
+            "/api/archaeology/for-passage?book=John&chapter=1&verse_start=1&verse_end=5",
+        )
+        self.assertEqual(john_opening["status"], 200)
+        opening_data = json.loads(john_opening["body"])
+        self.assertEqual(opening_data["archaeological_items"], [])
+
+        jeremiah = asgi_request(
+            "GET",
+            "/api/archaeology/for-passage?book=Jeremiah&chapter=32",
+        )
+        self.assertEqual(jeremiah["status"], 200)
+        jeremiah_data = json.loads(jeremiah["body"])
+        self.assertTrue(jeremiah_data["archaeological_items"])
+        self.assertTrue(all(not item["matched_scripture_links"] for item in jeremiah_data["archaeological_items"]))
+
     def test_manuscripts_for_passage_route_filters_and_handles_empty_state(self):
         manuscript_response = asgi_request(
             "GET",

@@ -269,7 +269,8 @@ def test_enabled_narrative_hub_keeps_context_summaries_and_reader_state(driver, 
     sources = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".companion-research-sources-view")))
     assert "Open Canonical Knowledge" in sources.text
     assert "Open Maps Explorer" in sources.text
-    assert "Open Archaeology Library" in sources.text
+    assert "Browse All Archaeology" in sources.text
+    assert "Archaeology for this Passage" in sources.text
     assert "Open Cross References" in sources.text
 
     driver.set_window_size(390, 844)
