@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **4 objects are enriched**, **23 are unchanged because they
+At this checkpoint, **4 objects are enriched**, **27 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **618 remain pending review**.
+research**, and **614 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -266,6 +266,12 @@ claims and notes already provide accessible explanations, source-aware
 uncertainty, and careful limits on modern application. All three validated
 with zero errors and zero warnings.
 
-The next work unit is `objects/books/acts.json`.
+Acts, Amos, Colossians, and Daniel were left intact. Their summaries and
+contexts already provide detailed historical and literary framing; claims and
+notes carefully separate text, source evidence, scholarly reconstruction,
+and later reception. Source-locked Acts geography and the four objects all
+validated with zero errors and zero warnings.
+
+The next work unit is `objects/books/deuteronomy.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
