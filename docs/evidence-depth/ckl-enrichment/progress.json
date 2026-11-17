@@ -10228,6 +10228,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-466-temple-symbol",
+      "scope": [
+        "temple-symbol"
+      ],
+      "completed_unit": "Expanded the scriptural progression of temple presence and judgment and distinguished New Testament uses of temple imagery.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/symbols/temple-symbol.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "No unsourced ancient Near Eastern or Second Temple details were introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30970,14 +30995,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3a529e5c1ab26bd194d89bb38b1696bdcdbbdec9746df8fc0cf700a7ff70107d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context"
+      ],
+      "outcome": "Connected the sanctuary’s stated purpose, Solomon’s dedication, Ezekiel’s departing glory, and the New Testament’s distinct applications of temple imagery to Jesus, the church, and Revelation’s final vision.",
+      "limitation": "Only the recorded biblical texts were used for the new explanation. No additional ancient Near Eastern or Second Temple claims were added because the object has no specific supporting sources for those comparisons.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33700,7 +33746,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/symbols/temple-symbol.json",
+  "next_batch": "framework/canonical_library/objects/themes/adoption-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
