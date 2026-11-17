@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **50 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **51 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **518 remain pending review**.
+research**, and **517 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -422,6 +422,8 @@ Batch 109 reviewed the synagogue-life and exclusion record: both claims, its int
 
 Batch 110 reviewed the tabernacle presence, access, and mobility record: all four claims, four typed evidence items, two interpretive notes, contextual fields, anchors, and source identities. Its summary now connects the tabernacle’s stated purpose, ordered access, construction sequence, and the cloud’s guidance in Exodus and Numbers. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/thessalonian-civic-and-funerary-context.json`.
+Batch 111 reviewed the Thessalonian civic and funerary context record: all 15 claims, 16 typed evidence items, two interpretive notes, contextual fields, anchors, and source identities. The summary now connects the city’s route and free-city setting to the community described in Acts and the letters, while distinguishing later burial evidence and retaining disputed political readings as proposals. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/doctrine/creation-doctrine-framework.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
