@@ -9777,6 +9777,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-447-sidon-review",
+      "scope": [
+        "sidon"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Sidon-specific Scripture-anchor and source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Sidon history was inferred from anchors about other locations."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -29804,14 +29825,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6d967e613b992ad514d6cc8ad045a60e4b15524ba6a9770ec8af57aae198776d",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; its anchors concern Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Sidon.",
+      "limitation": "Joshua 8:1–29 concerns Ai, 1 Samuel 17:1–11 concerns the Valley of Elah and Gath, 2 Kings 25:8–17 concerns Jerusalem, and Jeremiah 49:1–6 concerns Ammon. These references do not establish Sidon-specific context. The generic ancient Near Eastern field is unsupported, and the internal historical-orientation source is pending human review. Corrected anchors and reviewed Sidon sources are required.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -32876,7 +32910,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/sidon.json",
+  "next_batch": "framework/canonical_library/objects/places/socoh-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

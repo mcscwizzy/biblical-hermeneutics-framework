@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **239 objects are enriched**, **114 are unchanged because they
-are already sufficient**, **163 are skipped pending source or identity
-research**, and **171 remain pending review**.
+are already sufficient**, **164 are skipped pending source or identity
+research**, and **170 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1565,3 +1565,6 @@ Batch 445 reviewed Shechem and left its explanatory prose unchanged. The object 
 
 
 Batch 446 reviewed Shiloh and left it unchanged. Its summary, contexts, and notes already trace the site's roles across Joshua, Judges, Samuel, and Jeremiah, and carefully distinguish occupation evidence from identification of biblical events. The archaeological and theological qualifications are already specific and readable. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 447 reviewed Sidon and made no content changes. Its anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Sidon. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
