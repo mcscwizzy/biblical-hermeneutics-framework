@@ -2138,6 +2138,25 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "b15593a0"
+    },
+    {
+      "batch_id": "batch-124-burial-explanation-review",
+      "scope": [
+        "burial-of-jesus"
+      ],
+      "completed_unit": "Reviewed the summary and contextual fields, four Gospel source identities, two interpretive notes, and the absence of atomic claims or typed evidence; left the already-sufficient explanation unchanged.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "Regional tomb context remains distinct from identification of Jesus’ tomb."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -9199,14 +9218,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d1eb3f6f5d4a52af6014c0cee760fc7c5ae8764b6047a3b45279dc552f782059",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note/rationale",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary clearly describes the burial sequence and its relation to the empty-tomb accounts. Contextual fields identify Sabbath timing and burial practices while distinguishing regional tomb evidence from identification of Jesus’ tomb and preserving Gospel differences. No rewrite was needed.",
+      "limitation": "The recorded sources are Gospel texts and no archaeology publication is listed. The existing regional comparison remains qualified; no additional archaeological claim was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings_no_content_change",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Claims/evidence are absent; all source identities, Scripture anchors, relationships, and metadata remain unchanged.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -18283,7 +18318,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/burial-of-jesus.json",
+  "next_batch": "framework/canonical_library/objects/events/burning-bush.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
