@@ -5976,6 +5976,32 @@
         ]
       },
       "checkpoint_commit": "1aa578f8"
+    },
+    {
+      "batch_id": "batch-281-david-person",
+      "scope": [
+        "david"
+      ],
+      "completed_unit": "Reviewed David and clarified the literary hinge in 2 Samuel 7 and its distinct later use in Acts 13.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/david.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20123,14 +20149,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6b0ad14e457671c798370f3120d35325b19f37eb7ca1ae71d6637d81c052fd2e",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "literary_context"
+      ],
+      "outcome": "Added a concrete explanation of 2 Samuel 7’s house/house reversal: David proposes a house for God, while Nathan’s oracle promises David a dynastic house. Connected this passage to Acts 13:22-23’s explicit statement that Jesus comes from David’s descendants, while distinguishing the passages’ settings and purposes.",
+      "limitation": "The existing broad statement about Second Temple Jewish reception was not expanded; this record has no specifically inspected source for that historical reception claim.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -26147,7 +26194,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/david.json",
+  "next_batch": "framework/canonical_library/objects/people/deborah.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

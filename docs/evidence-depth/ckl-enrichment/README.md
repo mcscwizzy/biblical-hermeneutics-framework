@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **177 objects are enriched**, **95 are unchanged because they
+At this checkpoint, **178 objects are enriched**, **95 are unchanged because they
 are already sufficient**, **78 are skipped pending source or identity
-research**, and **337 remain pending review**.
+research**, and **336 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -833,3 +833,6 @@ Batch 279 reviewed Cornelius. The explanation now follows the paired visions, Pe
 
 
 Batch 280 reviewed Daniel the Exile and left it unchanged. The entry’s references and sources concern Ezra’s return, Nehemiah’s wall-building, Esther, and Haggai; none identifies Daniel. The record appears to combine Daniel’s name with restoration-era themes and needs identity and passage reconciliation before explanation can be added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is David.
+
+
+Batch 281 reviewed David. The literary context now explains the house/house reversal in 2 Samuel 7: David proposes a house for God, while Nathan’s oracle promises a dynastic house for David. Acts 13:22-23 later names Jesus as coming from David’s descendants; the prose keeps those settings and purposes distinct. The separate Second Temple reception statement was not expanded without an inspected supporting source. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Deborah.
