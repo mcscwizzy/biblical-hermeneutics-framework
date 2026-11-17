@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **118 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **119 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **417 remain pending review**.
+research**, and **416 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -629,3 +629,5 @@ Batch 198 enriched What is the Day of the Lord? with passage-specific distinctio
 Batch 199 enriched What is the Holy Spirit? with passage-specific examples from Genesis, Ezekiel, Joel, John, Acts, Romans, and Galatians. It explains Acts 2’s explicit connection to Joel and avoids unsupported comparative or lexical claims. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-image-of-god.json`.
 
 Batch 200 enriched What is the Image of God? with connections among Genesis 1, 5, and 9, Psalm 8, James 3, Colossians 3, and Romans 8. It explains creation responsibility, human dignity, speech, and renewal and removes an unsupported royal-image comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-kingdom-of-god.json`.
+
+Batch 201 enriched What is the Kingdom of God? with connections among Psalm 2, Daniel 2, Mark 1, Matthew 6, Romans 14, 1 Corinthians 15, and Revelation 11. It distinguishes present response from future completion and removes an unsupported comparative kingship claim. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-kingdom-of-israel.json`.
