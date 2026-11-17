@@ -3175,6 +3175,29 @@
         ]
       },
       "checkpoint_commit": "544db912"
+    },
+    {
+      "batch_id": "batch-167-rebuilding-the-walls-review",
+      "scope": [
+        "rebuilding-the-walls"
+      ],
+      "completed_unit": "Reviewed the title, explanatory contexts, Scripture anchors, sources, interpretive notes, and related-object links; held the record because its event identity and evidence do not align.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "The title/anchor mismatch was documented without attempting to reassign sources or references."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Manifest protected fingerprint check: PASS.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "544db912"
     }
   ],
   "inventory_count": 687,
@@ -12120,14 +12143,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "aeede9ca67accdabda0c1f4649feb61e704b9981154aed592fd4f13092a99b61",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending event and source reconciliation.",
+      "limitation": "The title names rebuilding Jerusalem’s walls, but the anchors instead concern Samaria’s fall, Judah’s reform and decline, exile, and temple renewal. No Nehemiah passage or source for the wall rebuilding is recorded, and the sources do not establish one coherent event identity. Rewriting the prose would require unsupported anchor and source reconciliation; all metadata remains unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -20394,7 +20434,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/rebuilding-the-walls.json",
+  "next_batch": "framework/canonical_library/objects/events/red-sea-crossing.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
