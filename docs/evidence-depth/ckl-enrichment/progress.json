@@ -5645,6 +5645,32 @@
         ]
       },
       "checkpoint_commit": "d448a559"
+    },
+    {
+      "batch_id": "batch-267-andrew-person",
+      "scope": [
+        "andrew"
+      ],
+      "completed_unit": "Reviewed Andrew and enriched his brief, group-oriented biblical portrait while distinguishing Andrew-specific scenes from Peter’s response and from collective apostolic lists.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/andrew.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19280,14 +19306,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b810e84c690305afb8be11f4d9b0448edde072177700a3e3efca4b034f2481ce",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role"
+      ],
+      "outcome": "Made Andrew’s short biblical portrayal concrete: Matthew calls him alongside Peter, Luke lists him among the Twelve, and Acts includes him among the gathered disciples. Matthew 16’s individual confession is assigned to Peter, helping readers distinguish Andrew-specific evidence from group scenes.",
+      "limitation": "The cited passages provide only a brief portrait; no separate historical biography or later tradition was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -25574,7 +25622,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/andrew.json",
+  "next_batch": "framework/canonical_library/objects/people/apollos.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

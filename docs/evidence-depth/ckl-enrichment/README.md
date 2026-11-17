@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **171 objects are enriched**, **94 are unchanged because they
+At this checkpoint, **172 objects are enriched**, **94 are unchanged because they
 are already sufficient**, **71 are skipped pending source or identity
-research**, and **351 remain pending review**.
+research**, and **350 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -791,3 +791,6 @@ Batch 265 reviewed Abel and left it unchanged. Its primary anchor is Genesis 11:
 
 
 Batch 266 reviewed Adam and left it unchanged. Its primary anchor, Genesis 11:1-9, is the Babel narrative rather than Adam’s story in Genesis 2-3. Romans 5 and 1 Corinthians 15 relate Adam to later theological arguments, while Hebrews 11:1-7 does not identify Adam. The entry needs its primary passage and reception scope reconciled before explanation can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Andrew.
+
+
+Batch 267 reviewed Andrew. The entry now explains the evidence actually available: Matthew calls Andrew alongside Peter, Luke names him among the Twelve, and Acts lists him among the gathered disciples. It clarifies that Peter speaks individually in Matthew 16, so readers do not transfer his response to Andrew. The brief scriptural portrait was not extended into an unsupported biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Apollos.
