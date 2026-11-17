@@ -2346,6 +2346,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "84a60746"
+    },
+    {
+      "batch_id": "batch-134-crossing-jordan-summary",
+      "scope": [
+        "crossing-the-jordan"
+      ],
+      "completed_unit": "Reviewed summary, contexts, Scripture references, source identities, one interpretive note, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/crossing-the-jordan.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "The memorial stones’ role and Psalm 114’s later poetic echo remain distinct from the event narrative."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "79227016"
     }
   ],
   "inventory_count": 687,
@@ -9801,14 +9822,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "82a002aa815bf6eb90efd1552071bdc328ce4cc3cf21c34dd4f17a6fb847b4c2",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Connected Joshua 3–4’s ark-led crossing and memorial stones to the passage’s purpose of preserving communal memory. Psalm 114’s later poetic recollection is identified as an echo rather than a second narrative account.",
+      "limitation": "The object has no atomic claims or typed evidence; the wording stays within its listed biblical references and does not add an archaeological or chronological reconstruction.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture anchors, relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.16s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18705,7 +18744,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/crossing-the-jordan.json",
+  "next_batch": "framework/canonical_library/objects/events/crucifixion.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
