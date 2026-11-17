@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **9 objects are enriched**, **44 are unchanged because they
+At this checkpoint, **9 objects are enriched**, **45 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **592 remain pending review**.
+research**, and **591 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -202,6 +202,8 @@ Batch 047 enriched Joshua. The reader-facing summary now draws together the tran
 Batch 048 reviewed Jude. Its 29 claims and 39 notes already explain the letter's polemical form, Second Temple Jewish traditions, textual variants, and the difference between literary use of Enoch and claims about an entire work's status. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 Batch 049 enriched Judges. The summary now makes the book's decline visible: the repeated deliverance pattern gives way to internal idolatry, sexual violence, and civil war. Six claim rationales clarify that the episodes vary, show distinct roles in Deborah's story, leave Samson's deliverance incomplete, and raise but do not settle the kingship question. No archaeological or historical reconstruction was added, and the source-locked geography evidence remains untouched. Full-library validation passed with the same 14 baseline warnings.
+
+Batch 050 reviewed Lamentations. Its summary and contexts guide readers through the changing voices, alphabetic forms, destruction setting, and textual witnesses; 27 claims and 33 notes explain the relationship between complaint, fragile hope, trauma, and the unresolved final petition. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 ## Reader reachability
 
