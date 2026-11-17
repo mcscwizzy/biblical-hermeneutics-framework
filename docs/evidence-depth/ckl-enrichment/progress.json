@@ -604,6 +604,19 @@
         "ckl_objects": "PASS: Hebrews valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
         "regression": "No retrieval tests run because only claim rationale fields changed; rationale is not consumed by the retrieval index or standard reader modal."
       }
+    },
+    {
+      "batch_id": "batch-039-hosea-review",
+      "scope": [
+        "hosea"
+      ],
+      "completed_unit": "Hosea reviewed and found already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Hosea valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3494,14 +3507,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "324fcacbf67f4ce7fc6ef2e0eac1ca235da4173af8cb511b6ed8158d7bd1235a",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and contexts explain Hosea’s eighth-century northern setting and later transmission; 20 claims and 32 interpretive notes are specific about text, historical reconstruction, gendered metaphor, ecology, textual variants, and reception, with uncertainty stated where needed.",
+      "limitation": "The current explanatory content is already specific and carefully qualified.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14342,6 +14368,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/hosea.json",
+  "next_batch": "framework/canonical_library/objects/books/isaiah.json",
   "protected_fingerprint_base": "origin/master"
 }
