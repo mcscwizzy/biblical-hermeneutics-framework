@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **204 objects are enriched**, **98 are unchanged because they
-are already sufficient**, **104 are skipped pending source or identity
-research**, and **281 remain pending review**.
+are already sufficient**, **105 are skipped pending source or identity
+research**, and **280 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -997,7 +997,10 @@ Batch 333 reviewed Noah. The explanation now follows Genesis from violence and t
 Batch 334 reviewed Onesimus and left the record unchanged. The profile’s anchors point to Saul’s conversion, Paul’s broader network, and general ministry passages, but do not identify Onesimus or include Philemon. Philemon was not added to the structured source relationships because those require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is paul.
 
 
-Batch 335 reviewed Paul and left the profile unchanged. Its existing context explains his first-century Jewish and Roman setting, distinguishes Acts from the letters, describes the pastoral purpose of his correspondence, and makes its covenant themes accessible. The selected anchors and sources support the profile’s scope. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is philemon-of-colossae.
+Batch 335 reviewed Paul and left the profile unchanged. Its existing context explains his first-century Jewish and Roman setting, distinguishes Acts from the letters, describes the pastoral purpose of his correspondence, and makes its covenant themes accessible. The selected anchors and sources support the profile’s scope. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is philip-the-apostle.
 
 
-Batch 336 reviewed Peter. The profile now follows the selected scenes from his call as a fisherman through his confession of Jesus as Messiah and his speaking role in Acts 1. It keeps Matthew, Luke, and Acts in their own narrative settings and connects Peter’s role to public witness rather than private status. No broader economic reconstruction was added without supporting sources. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is philemon-of-colossae.
+Batch 336 reviewed Peter. The profile now follows the selected scenes from his call as a fisherman through his confession of Jesus as Messiah and his speaking role in Acts 1. It keeps Matthew, Luke, and Acts in their own narrative settings and connects Peter’s role to public witness rather than private status. No broader economic reconstruction was added without supporting sources. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is philip-the-apostle.
+
+
+Batch 337 reviewed Philemon of Colossae and left the record unchanged. Its anchors and sources concern Saul’s conversion, Paul’s wider networks, and general church activity; they do not identify Philemon or include the Letter to Philemon. The title’s identification with that letter’s recipient could not be established from the recorded evidence. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is philip-the-apostle.
