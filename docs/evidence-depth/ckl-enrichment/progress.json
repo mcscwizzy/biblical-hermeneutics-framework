@@ -4124,6 +4124,31 @@
         ]
       },
       "checkpoint_commit": "9c8a664b"
+    },
+    {
+      "batch_id": "batch-205-new-covenant-faq",
+      "scope": [
+        "what-is-the-new-covenant"
+      ],
+      "completed_unit": "Reviewed prophetic promises, New Testament interpretation, comparative treaty claims, notes, source entries, and anchors; enriched eight fields while distinguishing the passages’ contributions.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-new-covenant.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "Jeremiah’s stated recipients remain explicit; no unsupported treaty comparison retained."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "6dded306"
     }
   ],
   "inventory_count": 687,
@@ -14996,14 +15021,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0dc3269ff6acc2cbae7a4349a246c5408debf06bf042059ec53984a47f733157",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Connected Jeremiah 31 and Ezekiel 36 with Luke 22, 2 Corinthians 3, and Hebrews 8–10, distinguishing their respective descriptions of internalized instruction, cleansing, the Spirit, mediation, and forgiveness. Removed an unsupported treaty-system comparison.",
+      "limitation": "No comparative academic source on ancient treaty systems is recorded; no such generalization was retained.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: 6dded306."
+        ]
       }
     },
     {
@@ -22424,7 +22476,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-new-covenant.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-role-of-priests.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
