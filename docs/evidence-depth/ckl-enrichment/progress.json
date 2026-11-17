@@ -1021,6 +1021,24 @@
         "ckl_objects": "The previously validated objects remain structurally valid; the second-pass edits are not yet made or validated.",
         "regression": "Pending passage-relevance revision."
       }
+    },
+    {
+      "batch_id": "batch-069-genesis-relevance-and-context-review",
+      "scope": [
+        "genesis-abraham-call-covenant-context",
+        "exodus-wilderness-routes-and-water",
+        "galilean-villages-households-and-subsistence",
+        "genesis-flood-postflood-context"
+      ],
+      "completed_unit": "Rewrote Genesis 12–17 relevance text and completed two context reviews; flood-context boilerplate and the Genesis 18–25 duplicate fields remain open.",
+      "status": "in_progress",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/genesis-abraham-call-covenant-context.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: Genesis 12–17 object and full library validate with 0 errors; full library retains 14 baseline warnings. Exodus-route and Galilee objects each validate with 0 errors and warnings.",
+        "regression": "17 relevant Genesis evidence-quality/retrieval tests passed with 4 subtests. Unrelated cultural-background expansion test fails against unchanged origin/master fixtures (expected 9 claims, found 46). Evidence-graph test unavailable because fastapi is not installed."
+      }
     }
   ],
   "inventory_count": 687,
@@ -5609,13 +5627,10 @@
         "original_audience",
         "historical_setting",
         "canonical_role",
-        "claims[].claim",
-        "claims[].rationale",
+        "claims[]",
         "interpretive_notes[]",
         "evidence_items[].title",
         "evidence_items[].description",
-        "evidence_items[].primary_observation",
-        "evidence_items[].scholarly_interpretation",
         "evidence_items[].passage_relevance",
         "sources",
         "scripture_references",
@@ -5624,8 +5639,8 @@
         "related_entries"
       ],
       "fields_changed": [],
-      "outcome": "The records already connect passage details to explanatory significance. The Exodus itinerary cluster explains route and water constraints without presenting a settled map; the Galilee record relates household, farming, vessel, and harbor evidence to Gospel settings without identifying artifacts with narrated events; the two Abraham-cycle objects trace the narrative sequence and contextual comparisons while marking ethical ambiguity and limits on historical identification.",
-      "limitation": "No explanatory fields changed. Geographic identifications, ancient parallels, and historical reconstructions remain qualified as recorded.",
+      "outcome": "The summary and contextual fields already explain the setting and its limits; claims, source-backed evidence, and notes connect observations to the biblical scenes without treating modern locations or excavated objects as identifications.",
+      "limitation": "No explanatory fields changed. Route and site identifications remain qualified as recorded.",
       "validation": {
         "status": "passed",
         "results": [
@@ -5655,13 +5670,10 @@
         "original_audience",
         "historical_setting",
         "canonical_role",
-        "claims[].claim",
-        "claims[].rationale",
+        "claims[]",
         "interpretive_notes[]",
         "evidence_items[].title",
         "evidence_items[].description",
-        "evidence_items[].primary_observation",
-        "evidence_items[].scholarly_interpretation",
         "evidence_items[].passage_relevance",
         "sources",
         "scripture_references",
@@ -5670,8 +5682,8 @@
         "related_entries"
       ],
       "fields_changed": [],
-      "outcome": "The records already connect passage details to explanatory significance. The Exodus itinerary cluster explains route and water constraints without presenting a settled map; the Galilee record relates household, farming, vessel, and harbor evidence to Gospel settings without identifying artifacts with narrated events; the two Abraham-cycle objects trace the narrative sequence and contextual comparisons while marking ethical ambiguity and limits on historical identification.",
-      "limitation": "No explanatory fields changed. Geographic identifications, ancient parallels, and historical reconstructions remain qualified as recorded.",
+      "outcome": "The summary and contextual fields already explain the setting and its limits; claims, source-backed evidence, and notes connect observations to the biblical scenes without treating modern locations or excavated objects as identifications.",
+      "limitation": "No explanatory fields changed. Route and site identifications remain qualified as recorded.",
       "validation": {
         "status": "passed",
         "results": [
@@ -5688,7 +5700,7 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2d5c643dd1beb810fc790e0217edaaf1aea02bdf7cb7892629523ee8bdee4f1b",
-      "status": "in_progress",
+      "status": "enriched",
       "fields_examined": [
         "summary",
         "historical_context",
@@ -5701,13 +5713,10 @@
         "original_audience",
         "historical_setting",
         "canonical_role",
-        "claims[].claim",
-        "claims[].rationale",
+        "claims[]",
         "interpretive_notes[]",
         "evidence_items[].title",
         "evidence_items[].description",
-        "evidence_items[].primary_observation",
-        "evidence_items[].scholarly_interpretation",
         "evidence_items[].passage_relevance",
         "sources",
         "scripture_references",
@@ -5715,13 +5724,20 @@
         "related_objects",
         "related_entries"
       ],
-      "fields_changed": [],
-      "outcome": "Reopened after review found that evidence_items[].passage_relevance duplicates evidence_items[].description across this object. Replace the repeated text with a concise, passage-specific explanation of how the evidence helps readers interpret the cited scene.",
-      "limitation": "Earlier content review found the descriptive substance sufficient, but did not account for duplication between reader-facing evidence fields. A second pass is required before this object can be classified as unchanged or enriched.",
+      "fields_changed": [
+        "evidence_items[].passage_relevance (46 items)"
+      ],
+      "outcome": "Rewrote 46 duplicated passage-relevance fields as concise, distinct explanations of how each Genesis 12–17 observation helps readers follow the narrative, recognize literary contrasts, understand household and land stakes, or keep later reception and disputed identifications in view. Descriptions and all research anchors remain unchanged.",
+      "limitation": "The source-backed descriptive claims were retained. The new relevance wording stays within their existing passage scope and adds no historical reconstruction.",
       "validation": {
-        "status": "not_run",
+        "status": "passed",
         "results": [
-          "Reopened for an editorial review of duplicated passage-relevance fields; no CKL content has been changed in this follow-up yet."
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline.",
+          "Genesis evidence quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Unrelated test_cultural_background_expansion.py fails on unchanged origin/master fixtures: expected 9 claims, found 46.",
+          "A broader evidence-graph collection could not run because fastapi is not installed."
         ]
       }
     },
@@ -5746,13 +5762,10 @@
         "original_audience",
         "historical_setting",
         "canonical_role",
-        "claims[].claim",
-        "claims[].rationale",
+        "claims[]",
         "interpretive_notes[]",
         "evidence_items[].title",
         "evidence_items[].description",
-        "evidence_items[].primary_observation",
-        "evidence_items[].scholarly_interpretation",
         "evidence_items[].passage_relevance",
         "sources",
         "scripture_references",
@@ -5761,12 +5774,12 @@
         "related_entries"
       ],
       "fields_changed": [],
-      "outcome": "Reopened after review found that evidence_items[].passage_relevance duplicates evidence_items[].description across this object. Replace the repeated text with a concise, passage-specific explanation of how the evidence helps readers interpret the cited scene.",
-      "limitation": "Earlier content review found the descriptive substance sufficient, but did not account for duplication between reader-facing evidence fields. A second pass is required before this object can be classified as unchanged or enriched.",
+      "outcome": "Reopened for a focused revision of duplicated reader-facing evidence relevance text.",
+      "limitation": "Every evidence item repeats its full description in passage_relevance; rewrite those reader-facing fields distinctly before classifying this object.",
       "validation": {
         "status": "not_run",
         "results": [
-          "Reopened for an editorial review of duplicated passage-relevance fields; no CKL content has been changed in this follow-up yet."
+          "Content revision is pending; the relevant duplication has been identified."
         ]
       }
     },
@@ -5778,14 +5791,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1acdaf29a3731680b82068b85ed710f3c5d5e8bfc1e181a2a864a9468da180a3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "in_progress",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "claims[]",
+        "interpretive_notes[]",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects",
+        "related_entries"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reopened for a focused revision of duplicated reader-facing evidence relevance text.",
+      "limitation": "The 25 passage_relevance fields append the same generic passage-synthesis boilerplate to descriptions; replace it with concise item-specific interpretive connections.",
       "validation": {
         "status": "not_run",
-        "results": []
+        "results": [
+          "Content revision is pending; the relevant duplication has been identified."
+        ]
       }
     },
     {
@@ -15816,6 +15853,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-abraham-call-covenant-context.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-abraham-late-cycle-context.json",
   "protected_fingerprint_base": "origin/master"
 }
