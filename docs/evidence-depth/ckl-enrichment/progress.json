@@ -4771,6 +4771,31 @@
         ]
       },
       "checkpoint_commit": "4bdae75d"
+    },
+    {
+      "batch_id": "batch-231-covenant-assembly-institution",
+      "scope": [
+        "covenant-assembly"
+      ],
+      "completed_unit": "Reviewed the institutional summary, cited passages, literary settings, sources, and linked institutions; clarified the different forms of communal life represented.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/covenant-assembly.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchors, source identities, relationship edges, review/confidence metadata preserved.",
+        "No historical or governance claim added without supporting source."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "9d057631"
     }
   ],
   "inventory_count": 687,
@@ -16865,14 +16890,43 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1453315795cf363b289f42676128ed863f964aac6a9d16eb2e1f28cc65cb6433",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Distinguished Israel’s covenant gathering and household teaching from Acts’ Jerusalem community and Paul’s body metaphor, explaining each reference’s setting and purpose. Removed unsupported generic social-context claims.",
+      "limitation": "The directly recorded sources are biblical texts and an internal CKL orientation record; no external historical source documents the institutional structures or meeting arrangements. Related institution links were preserved without promoting a claim of identical practices or governance.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23825,7 +23879,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/covenant-assembly.json",
+  "next_batch": "framework/canonical_library/objects/institutions/diaconate.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
