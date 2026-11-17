@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **317 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **197 are skipped pending source or identity
-research**, and **57 remain pending review**.
+At this checkpoint, **323 objects are enriched**, **116 are unchanged because they
+are already sufficient**, **198 are skipped pending source or identity
+research**, and **50 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1919,3 +1919,6 @@ Four theology records now explain their cited passages more specifically: Kingdo
 
 
 Six doctrine records were clarified from their cited biblical texts: Perseverance, Pneumatology, Repentance, Sanctification, Prayer, and Worship. The explanations distinguish the passages’ genres and claims, and broad unsupported ancient-context statements were removed. Seven adjacent records were held for research or curation: priesthood of believers, providence, remnant, sacramental theology, spiritual gifts, theology of the cross, and a duplicate theology-of-the-kingdom entry.
+
+
+Six more theology objects were clarified: Resurrection, Second Coming, Suffering, Trinity, Typology, and Union with Christ. The explanations distinguish the cited texts’ arguments and literary forms, remove broad unsupported context claims, and avoid imposing disputed timelines. The duplicate Theology of the Cross and Theology of the Kingdom entries were held for curation in the previous batch. The Exodus-to-Sinai timeline’s sequence is already clear, but its ancient imperial and Second Temple context statements lack independently reviewed source support.

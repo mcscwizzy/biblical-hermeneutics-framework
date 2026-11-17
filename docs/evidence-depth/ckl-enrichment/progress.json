@@ -12072,6 +12072,41 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-540-resurrection-and-union-review",
+      "scope": [
+        "resurrection-doctrine",
+        "second-coming",
+        "theology-of-suffering",
+        "trinity",
+        "typology",
+        "union-with-christ",
+        "exodus-to-sinai-timeline"
+      ],
+      "completed_unit": "Enriched six textually grounded doctrine records and held the already-clear Exodus-to-Sinai sequence’s unsupported external context claims for source review. Duplicate Cross and Kingdom theology records were held in batch 539.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/resurrection-doctrine.json",
+        "framework/canonical_library/objects/theology/second-coming.json",
+        "framework/canonical_library/objects/theology/theology-of-suffering.json",
+        "framework/canonical_library/objects/theology/trinity.json",
+        "framework/canonical_library/objects/theology/typology.json",
+        "framework/canonical_library/objects/theology/union-with-christ.json"
+      ],
+      "protected_checks": [
+        "No claim IDs, evidence IDs, source identities, Scripture references, relationships, confidence, dispute, review, or source-lock metadata were changed.",
+        "No unsupported historical, ancient Near Eastern, or reception claims were introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "No schema or retrieval failures; protected research fields and curated relationships remained unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -36356,14 +36391,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a8a21e9c11d1988fb5c4fa36432e8fa14189d159065cdb2919524ddd78edca97",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Distinguished Daniel’s vision, the Gospel accounts of Jesus’ resurrection, apostolic proclamation, Paul’s teaching about believers’ resurrection, and Revelation’s new-creation hope.",
+      "limitation": "The explanations use the cited biblical texts; no external historical reconstruction, ancient Near Eastern comparison, lexical claim, later reception history, or disputed chronology was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36450,14 +36510,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "64109d6343d6461f230870dd4747cd4c294ff6800fa53e8ae5c2276f530ed11a",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained the distinct contributions of Daniel’s visions, Jesus’ teaching, Paul’s pastoral and argumentative letters, and Revelation, while avoiding an unsupported timetable.",
+      "limitation": "The explanations use the cited biblical texts; no external historical reconstruction, ancient Near Eastern comparison, lexical claim, later reception history, or disputed chronology was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36544,14 +36629,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "061a8343138b77d1eb2d1e58a781e11f769d3cf467bd868d14a279e82cc03795",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Separated Job’s unanswered losses, Psalm 22’s lament, Isaiah’s suffering servant, and apostolic counsel, without forcing one explanation for suffering.",
+      "limitation": "The explanations use the cited biblical texts; no external historical reconstruction, ancient Near Eastern comparison, lexical claim, later reception history, or disputed chronology was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36671,14 +36781,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "921badd0aed9affb53b57f764781a543a0482b2bbad4e4c10ed586bce2ff9995",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified how Matthew, John, 2 Corinthians, and Ephesians relate Father, Son, and Spirit and why the synthesis should not be assigned in full to one passage.",
+      "limitation": "The explanations use the cited biblical texts; no external historical reconstruction, ancient Near Eastern comparison, lexical claim, later reception history, or disputed chronology was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36689,14 +36824,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "cca8f83f3a8ae83896d97f07a70981ed9119d4717a95175835e4062e7b50a34d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained the explicit interpretive moves in 1 Corinthians 10 and Hebrews 8 and distinguished those from connections based only on resemblance.",
+      "limitation": "The explanations use the cited biblical texts; no external historical reconstruction, ancient Near Eastern comparison, lexical claim, later reception history, or disputed chronology was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36707,14 +36867,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "54c70c39143204a65ae5bb1eb4910cec62aff97a4881b38f10325b42708ef5ed",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Unpacked the vine, participation in Christ’s death and life, indwelling, and new-life images and connected them to the conduct the passages describe.",
+      "limitation": "The explanations use the cited biblical texts; no external historical reconstruction, ancient Near Eastern comparison, lexical claim, later reception history, or disputed chronology was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, source identities, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36725,14 +36910,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "04bbfbbb8749654f824dbfc71fc1ee6ed687ac3ef171f21532db6a24a522ea49",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "intertextuality",
+        "timeline",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the narrative sequence as already explanatory and held its broader historical/reception claims for source review.",
+      "limitation": "The Scripture anchors support the Exodus-to-Sinai sequence, but the source list lacks independently reviewed support for claims about ancient imperial context and Second Temple remembrance. Route identification remains explicitly unresolved in the existing note; no new historical claims were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content, anchors, relationships, or protected metadata were changed."
+        ]
       }
     },
     {
@@ -37637,7 +37838,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/resurrection-doctrine.json",
+  "next_batch": "framework/canonical_library/objects/word_studies/abba.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
