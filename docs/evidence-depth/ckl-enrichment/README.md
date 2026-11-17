@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **1 object is enriched**, **3 are unchanged because they
-are already sufficient**, **11 are skipped pending source research**, and
-**672 remain pending review**.
+are already sufficient**, **19 are skipped pending source research**, and
+**664 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -81,6 +81,14 @@ inscription setting, comparison with Ezra, and policy limits are already
 explained with source-linked qualifications. All eight objects validated with
 zero errors and the same ten pre-existing section-status warnings each.
 
+Eight additional archaeology objects were held: Gibeon wine jars, Hazor,
+Herodium, Hezekiah's tunnel inscription, the James Ossuary, the Ketef Hinnom
+silver scrolls, the Kurkh Monolith, and the Lachish city gate. Their records
+either use generic or mismatched sources, omit the relevant excavation or
+inscription evidence, or lack a verified link between the artifact and the
+passages. Each passed single-object validation with zero errors and the same
+ten pre-existing section-status warnings.
+
 ## Reader reachability
 
 Canonical object detail responses serialize summaries and evidence items.
@@ -107,6 +115,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/gibeon-wine-jars.json`.
+The next work unit is `objects/archaeology/lachish-ostraca.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

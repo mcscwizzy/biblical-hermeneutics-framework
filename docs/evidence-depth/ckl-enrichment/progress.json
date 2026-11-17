@@ -147,6 +147,26 @@
         "ckl_objects": "PASS: all eight valid with 0 errors and 10 pre-existing section-status warnings each."
       },
       "checkpoint_commit": "29ce710a"
+    },
+    {
+      "batch_id": "batch-008-archaeology-evidence-gaps",
+      "scope": [
+        "gibeon-wine-jars",
+        "hazor-excavations",
+        "herodium-excavations",
+        "hezekiahs-tunnel-inscription-context",
+        "james-ossuary",
+        "ketef-hinnom-silver-scrolls",
+        "kurkh-monolith",
+        "lachish-city-gate"
+      ],
+      "completed_unit": "Eight archaeology records reviewed; all held for source verification",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all eight valid with 0 errors and 10 pre-existing section-status warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -607,14 +627,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a895b18817748d994169996042228e68bab5e263054b1ccb0060852207b55c07",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing record does not supply enough source-verified material to extend its explanation.",
+      "limitation": "The title has a duplicated generic summary, no evidence or claim records, no identifiable archaeological report, and Scripture references that do not establish what the jars are or how they relate to the listed narratives.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -625,14 +659,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "cb533851dcabba6d88ba8e8bd5c6aabd6d060670f0d5a85c871cd18efa74fe52",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing record does not supply enough source-verified material to extend its explanation.",
+      "limitation": "The object has no claims/evidence or excavation details, and its source entries contain no author, locator, URL, notes, or support. Specific occupational phases and the biblical conquest/royal building connections require stratigraphic publication support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -643,14 +691,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "669d3cb184b16c49a80436acbafa09e77f27bd005974c7b256406362d5949e90",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing record does not supply enough source-verified material to extend its explanation.",
+      "limitation": "The generic summary is paired with source entries for the City of David and unrelated creation passages; its Psalm 19/Romans 1 anchors do not establish Herodium’s setting. The intended evidence and references need research before enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -661,14 +723,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f51ee2ffd2a9c1b2b6d06da795b3b6cd81d881a7c3e6e240646010015200ca51",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing record does not supply enough source-verified material to extend its explanation.",
+      "limitation": "The title points to the tunnel inscription, but the record has no identifiable epigraphic or excavation citation; its source entries are unlocated and its Scripture anchors refer broadly to Hezekiah’s illness and reign. Construction chronology and text-to-artifact links need source verification.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -679,14 +755,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b8fbb4354be49201fef840e9e57b66734c40ae478b040daefa5fba62dd3a8430",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing record does not supply enough source-verified material to extend its explanation.",
+      "limitation": "The summary presents the inscription as a proposal about James, but the source entries do not establish provenance, custody, inscription reading, or the scholarly dispute. No claims/evidence items or locators are recorded. New source review is needed before explaining what the ossuary can show.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -697,14 +787,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "38dfa0f2af71b0f552477d787c2759e64ed8d74a6497ad94dce49d13b7e5fbcc",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing record does not supply enough source-verified material to extend its explanation.",
+      "limitation": "The summary makes a specific claim about the silver amulets and priestly blessing, but all source entries lack locators and there are no claims/evidence records. Artifact identity, date, inscription reading, and relation to Numbers 6 require the primary publication or museum record.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -715,14 +819,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f946056fa73aeccd8a6554f13bc8535a62a26c870338b3c9fb111a6bddefb503",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing record does not supply enough source-verified material to extend its explanation.",
+      "limitation": "The record lacks an identified text edition, inscription passages, claim/evidence records, and source locators; its Psalm 19/Romans 1 anchors do not explain the monument’s historical relevance. The Assyrian account and any biblical comparison need source research.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -733,14 +851,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "143e0ebd516e2e87e826a1e524904560aac5cd5a67567b73e315e2c2a168e00c",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing record does not supply enough source-verified material to extend its explanation.",
+      "limitation": "The biblical anchors are relevant to Lachish’s siege, but the object has no excavation evidence or usable report citations; its sources provide no bibliographic locators or claim support. Stratigraphy, gate phase, and relation to the siege narratives cannot be expanded safely.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -12763,6 +12895,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "objects/archaeology/gibeon-wine-jars.json",
+  "next_batch": "objects/archaeology/lachish-ostraca.json",
   "protected_fingerprint_base": "origin/master"
 }
