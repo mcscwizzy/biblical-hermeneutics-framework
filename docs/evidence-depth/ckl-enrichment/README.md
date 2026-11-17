@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **239 objects are enriched**, **112 are unchanged because they
+At this checkpoint, **239 objects are enriched**, **113 are unchanged because they
 are already sufficient**, **163 are skipped pending source or identity
-research**, and **173 remain pending review**.
+research**, and **172 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1559,3 +1559,6 @@ Batch 443 reviewed Salt Sea and made no content changes. Its anchors concern the
 
 
 Batch 444 reviewed Samaria 1 and made no content changes. Its anchors concern Galilee, Jerusalem, and Damascus rather than Samaria. The generic ancient Near Eastern section is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 445 reviewed Shechem and left its explanatory prose unchanged. The object already traces promise, settlement, covenant renewal, and Joseph's burial through specific Genesis and Joshua passages. Its generic statement about regional trade and travel routes lacks a location-specific source and was not expanded; the manifest records this source gap for later review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
