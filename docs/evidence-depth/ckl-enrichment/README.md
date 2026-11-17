@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **297 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **298 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **179 are skipped pending source or identity
-research**, and **95 remain pending review**.
+research**, and **94 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1831,3 +1831,11 @@ Covenant Theology was held for source research. The entry’s scriptural anchors
 support its biblical examples, but no recorded source supports the historical
 claim about Reformed development or the comparison with Hittite and
 Neo-Assyrian treaty forms. No CKL content was changed.
+
+
+Creation Doctrine now connects Genesis’ distinct creation scenes, Psalm 8’s
+reflection on human vocation, John 1’s Word and life, Romans 8’s groaning
+creation, and Revelation 21’s renewal. The explanation keeps its claims within
+the listed texts and does not use them to resolve modern scientific chronology.
+The object and full library validate without new errors or warnings; focused
+regressions passed.

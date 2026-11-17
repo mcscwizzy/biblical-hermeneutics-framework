@@ -11628,6 +11628,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-523-creation-doctrine",
+      "scope": [
+        "creation-doctrine"
+      ],
+      "completed_unit": "Clarified the distinct creation, human vocation, and renewal emphases in Genesis, Psalm 8, John 1, Romans 8, and Revelation 21.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/creation-doctrine.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "Did not use these anchors to settle modern scientific chronology."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -34739,14 +34765,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "fd5a2e63c050a03331fe4a9ec78a7e68bdad9c30e107dccfcc57d09640bfda1f",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected Genesis’ distinct creation accounts, Psalm 8’s reflection on humanity, John 1’s creation language, Romans 8’s groaning creation, and Revelation 21’s renewal vision.",
+      "limitation": "No comparative ancient Near Eastern sources are recorded. The cited passages do not resolve modern scientific questions about origins or chronology; generic interpretive notes were reviewed and left unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture anchors, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -36443,7 +36492,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/creation-doctrine.json",
+  "next_batch": "framework/canonical_library/objects/theology/divine-holiness.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
