@@ -7957,6 +7957,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "1c6d738e"
+    },
+    {
+      "batch_id": "batch-366-abana-place",
+      "scope": [
+        "abana"
+      ],
+      "completed_unit": "Explained Naaman’s comparison of Abana and Pharpar with the Jordan without claiming a modern river identification.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/abana.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchor, source lock, and review metadata preserved.",
+        "No curated relationships were changed or promoted.",
+        "No modern geographical identification was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -25187,14 +25212,28 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "9675de180bd2e06860a717101f385797521d113d4f351287dfd5a2ddbd29055d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "scripture_references",
+        "sources",
+        "source_locks",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Completed review of the summary, locked identity, Scripture source, and available context fields. The summary is now readable and stays within the passage.",
+      "limitation": "The record has no inspected external geographic source, so the river’s precise modern identification remains unstated.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -29717,7 +29756,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/abana.json",
+  "next_batch": "framework/canonical_library/objects/places/ai-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
