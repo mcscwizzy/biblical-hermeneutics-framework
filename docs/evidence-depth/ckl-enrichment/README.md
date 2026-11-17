@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **112 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **113 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **424 remain pending review**.
+research**, and **423 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -615,3 +615,5 @@ Batch 191 enriched What is Covenant? with passage-specific distinctions from Gen
 Batch 192 enriched What is Holiness? with specific examples from Exodus 19, Leviticus 19, Isaiah 6, 1 Peter 1, Hebrews 12, and Revelation 4. The explanation connects holiness with communal conduct as well as worship and removes an unsupported claim about surrounding cultures. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-intertextuality.json`.
 
 Batch 193 enriched What is intertextuality? with examples from Matthew 1, 1 Corinthians 10, Romans 15, and Hebrews 1:1–4. The FAQ distinguishes marked quotation and stated reuse from less certain echoes, and removes an unsupported generalization about ancient textual practice. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-justification.json`.
+
+Batch 194 enriched What is Justification? with the distinct arguments in Romans 3–4, Galatians 2, and Philippians 3. It follows Paul’s use of Abraham and David, removes an unsupported ancient-court comparison, and flags the Psalm 32 source-type metadata for later review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-resurrection.json`.
