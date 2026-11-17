@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **91 objects are enriched**, **84 are unchanged because they
+At this checkpoint, **91 objects are enriched**, **85 are unchanged because they
 are already sufficient**, **51 are skipped pending source or identity
-research**, and **461 remain pending review**.
+research**, and **460 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -532,6 +532,8 @@ Batch 164 reviewed Plagues of Egypt and left it unchanged. Its explanation alrea
 
 Batch 165 enriched Raising of Lazarus using John 11–12. The explanation now follows Bethany’s setting, Martha’s resurrection hope, the grief and sign, the mixed response, and the event’s role in the move toward the passion. Burial details stay with what John narrates; no broader custom claims were added. The full CKL retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/rebuilding-the-temple.json`.
+Batch 166 reviewed Rebuilding the Temple and left it unchanged. Its existing account links Ezra’s rebuilding narrative with Haggai and Zechariah, explains Persian administration with appropriate limits, and distinguishes the literary sequence from chronology. It also keeps restoration and documentary uncertainties qualified. Validation found zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/rebuilding-the-walls.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
