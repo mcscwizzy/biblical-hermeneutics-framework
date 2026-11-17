@@ -59,10 +59,10 @@
     ])
       ? textParagraph(card.dig_in_summary, "companion-discovery-explanation", document)
       : null;
-    const evidenceList = document.createElement("div");
+    const evidenceList = document.createElement("details");
     evidenceList.className = "companion-discovery-evidence";
-    const evidenceHeading = document.createElement("h5");
-    evidenceHeading.textContent = "Evidence";
+    const evidenceHeading = document.createElement("summary");
+    evidenceHeading.textContent = "Supporting sources";
     evidenceList.append(evidenceHeading);
     evidenceList.append(
       ...evidence
@@ -95,7 +95,7 @@
     }
     details.append(summary);
     if (explanation) details.append(explanation);
-    details.append(evidenceList);
+    if (evidence.length) details.append(evidenceList);
     if (usefulActions.length) details.append(actions);
     article.append(headline, body, meta, details);
     return article;
@@ -142,7 +142,7 @@
         .filter((item) => wanted.has(item.id))
         .map((item) => ({
           ...item,
-          sourceLabels: (item.sources || []).map((source) => source?.title || source?.id),
+          sourceLabels: (item.sources || []).map((source) => source?.title),
         }));
     }
     const bundle = context?.evidence_bundle;
@@ -154,7 +154,7 @@
       .filter((item) => wanted.has(item.id))
       .map((item) => ({
         ...item,
-        sourceLabels: (item.source_ids || []).map((id) => sources.get(id)?.title || id),
+        sourceLabels: (item.source_ids || []).map((id) => sources.get(id)?.title),
       }));
   }
 
