@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **232 objects are enriched**, **109 are unchanged because they
-are already sufficient**, **152 are skipped pending source or identity
-research**, and **194 remain pending review**.
+are already sufficient**, **153 are skipped pending source or identity
+research**, and **193 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1496,3 +1496,6 @@ Batch 422 reviewed Lebanon and made no content changes. Its listed anchors do no
 
 
 Batch 423 reviewed Macedonia and left it unchanged. Its historical and literary context, six claims, source set, and interpretive notes already explain Roman administrative phases, route evidence, differences among cities, limits in combining Acts with Paul's letters, regional language, and collection activity. The record preserves major and minor scholarly uncertainties without flattening them. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 424 reviewed Midian and made no content changes. The anchors do not establish Midian as an imperial power or connect it with Jerusalem's fall, Daniel's conflict imagery, or Paul's voyage. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.

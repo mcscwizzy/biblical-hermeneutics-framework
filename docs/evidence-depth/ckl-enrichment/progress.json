@@ -9266,6 +9266,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-424-midian-review",
+      "scope": [
+        "midian"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Midian identity, anchor, and historical-source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No imperial identity or regional history was inferred from mismatched anchors."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -28531,14 +28552,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3d6b75145604fcccd75ee271ad66b63d7d1e632d462cc204369303eeca166eb2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; the object describes Midian as an imperial power, but its anchors and sources do not support that identity or the listed historical claims.",
+      "limitation": "The anchors concern the Table of Nations, Moses in Midian, Jerusalem’s fall, Daniel’s conflict imagery, and Paul’s voyage to Rome; they do not establish Midian as an imperial power or connect it to those later settings. The generic ancient Near Eastern section is unsupported, and the internal historical-orientation source is pending human review. A reviewed Midian-specific source and corrected anchors are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -32017,7 +32051,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/midian.json",
+  "next_batch": "framework/canonical_library/objects/places/mizpah-3.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
