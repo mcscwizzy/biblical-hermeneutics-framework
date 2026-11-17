@@ -4446,6 +4446,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-218-temple-faq",
+      "scope": [
+        "what-is-the-temple"
+      ],
+      "completed_unit": "Reviewed the biblical references, reader-facing context fields, source metadata, and linked objects; enriched the passage-specific account and removed unsupported historical/comparative assertions.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-temple.json"
+      ],
+      "protected_checks": [
+        "Object identity, Scripture anchors and relationships, source identities, linked objects, and confidence/review metadata preserved.",
+        "No new historical chronology or ancient comparative claim added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "2b05dcf3"
     }
   ],
   "inventory_count": 687,
@@ -15911,14 +15936,48 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "bbbf8a2a23b7fe38a40c00d4a52e3f7d8029b0ceab723783b62c38693ec102a9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "later_christian_reception",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "second_temple_context",
+        "hebraic_worldview"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "canonical_context",
+        "context_applicability.canonical",
+        "later_christian_reception",
+        "context_applicability.later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Expanded the explanation around the distinct textual work of 1 Kings 8, Psalm 84, John 2, Hebrews 9, and Revelation 21. Clarified divine presence without containment, separated narrative, song, Gospel dispute, epistolary argument, and apocalypse, and removed unsupported historical chronology and generic ANE claims.",
+      "limitation": "No scholarly history or archaeology source is recorded in this FAQ, so it does not give the chronology or material history of Jerusalem’s successive temples. Psalm 84 is also mislabeled as a reference-work source in existing metadata; preserved unchanged for separate source-metadata review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23105,7 +23164,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-temple.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-typology.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
