@@ -10798,6 +10798,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-489-new-jerusalem-theme",
+      "scope": [
+        "new-jerusalem-theme"
+      ],
+      "completed_unit": "Explained Revelation’s city vision and distinguished direct New Jerusalem imagery from the other restoration anchors.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/new-jerusalem-theme.json"
+      ],
+      "protected_checks": [
+        "Object and evidence identifiers, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "No unsupported comparative context was introduced; source relationships were described with appropriate limits."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -32520,14 +32545,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a9bbab4b66d79e105e9377d8e56e7f7922c613789eb1ad5a91ec84482b7447d0",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained the New Jerusalem image from Revelation 21:1–5 and distinguished it from broader restoration themes in the other listed passages.",
+      "limitation": "The object’s recorded sources support the city image directly only through Revelation 21:1–5. The other cited passages are treated as broader restoration context, not as direct descriptions of the city.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -34836,7 +34888,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/new-jerusalem-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/new-temple-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
