@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **174 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **74 are skipped pending source or identity
-research**, and **344 remain pending review**.
+are already sufficient**, **75 are skipped pending source or identity
+research**, and **343 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -812,3 +812,6 @@ Batch 272 reviewed Barnabas and left it unchanged. The cited ranges—Acts 9:1-1
 
 
 Batch 273 reviewed Bartholomew. The explanation now distinguishes Luke 6 and Acts 1, which name him in group lists, from Matthew 4’s call scene and Matthew 16’s individual response, which do not name him. This prevents group material from becoming an invented personal biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Bathsheba.
+
+
+Batch 274 reviewed Bathsheba and left it unchanged. The title identifies Bathsheba, but the summary and Scripture anchors concern Genesis, Abraham, and the ancestral promise. A backlink from David is not enough to support a biography, and no Bathsheba-specific passage is anchored. The entry needs identity and reference reconciliation before explanation can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Boaz.

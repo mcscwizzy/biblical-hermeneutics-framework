@@ -5810,6 +5810,28 @@
         ]
       },
       "checkpoint_commit": "b30f32e6"
+    },
+    {
+      "batch_id": "batch-274-bathsheba-person",
+      "scope": [
+        "bathsheba"
+      ],
+      "completed_unit": "Reviewed Bathsheba and held the entry because its title identifies a person from the David narratives while its summary, anchors, and sources describe Abraham and Genesis.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19707,14 +19729,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b4bc54f498d901c178a6a58673b8e38a06dffc17c118f3ac3cb4d5741c409175",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the title Bathsheba conflicts with a summary and references about Genesis, Abraham, and the ancestral promise. The only Bathsheba-specific relation is a backlink from David; no direct Bathsheba passage is anchored.",
+      "limitation": "The person identity and Scripture references need reconciliation before any biographical, historical, or covenantal explanation is safe. The internal historical-orientation record does not resolve the subject mismatch.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -25857,7 +25893,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/bathsheba.json",
+  "next_batch": "framework/canonical_library/objects/people/boaz.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
