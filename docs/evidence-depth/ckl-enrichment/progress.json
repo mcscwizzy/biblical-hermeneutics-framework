@@ -3247,6 +3247,29 @@
         ]
       },
       "checkpoint_commit": "9897673d"
+    },
+    {
+      "batch_id": "batch-170-return-from-exile-review",
+      "scope": [
+        "return-from-exile"
+      ],
+      "completed_unit": "Reviewed the distinct return movements, Persian-period context, Cyrus Cylinder comparison, interpretive cautions, sources, anchors, and related links; left the object unchanged because it is already sufficiently explanatory and qualified.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "Comparative evidence and historical uncertainty remain clearly bounded."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Manifest protected fingerprint check: PASS.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "9897673d"
     }
   ],
   "inventory_count": 687,
@@ -12304,14 +12327,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4aecc34d085723ca66d7205a1294730831fc5269d344128178f189d8b276e407",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The existing explanation distinguishes early and later return movements, separates the Cyrus Cylinder from Judah’s decree, and explains that return did not end diaspora or restore an independent monarchy. Historical and documentary questions are clearly qualified.",
+      "limitation": "Scholarly source records are present, but this review did not independently inspect their full arguments; no additional historical claims were introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -20524,7 +20564,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/return-from-exile.json",
+  "next_batch": "framework/canonical_library/objects/events/rise-of-saul.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
