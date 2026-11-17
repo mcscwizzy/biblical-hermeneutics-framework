@@ -3677,6 +3677,31 @@
         ]
       },
       "checkpoint_commit": "7a89473e"
+    },
+    {
+      "batch_id": "batch-187-prophet-faq",
+      "scope": [
+        "what-is-a-prophet"
+      ],
+      "completed_unit": "Reviewed the question, prophetic role and settings, source list, scriptural examples, interpretive notes, and related entries; expanded eight explanatory fields using the cited passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-a-prophet.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "Removed unsupported comparison to royal advisers and seers."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "0429e6e3"
     }
   ],
   "inventory_count": 687,
@@ -13752,14 +13777,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "38163dd8133251af6379640b15a3e60dd81584df87582bb7f788c049d9c9739d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Expanded the answer with the distinct settings and roles of Samuel, Isaiah, Jeremiah, Ezekiel, and Amos, plus later readings in Luke and Acts. Replaced the unsupported court-adviser comparison and clarified that prophetic work includes more than predicting future events.",
+      "limitation": "No comparative history of prophetic institutions was added because the object has no relevant scholarly source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21504,7 +21556,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-a-prophet.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-a-psalm.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
