@@ -4199,6 +4199,31 @@
         ]
       },
       "checkpoint_commit": "060bc4e2"
+    },
+    {
+      "batch_id": "batch-208-second-temple-faq",
+      "scope": [
+        "what-is-the-second-temple"
+      ],
+      "completed_unit": "Reviewed chronology and period claims, rebuilding texts, New Testament use, sources, and anchors; enriched eight explanatory fields while recording the need for external historical research.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-second-temple.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsupported full chronology or archaeological claim added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "9a847718"
     }
   ],
   "inventory_count": 687,
@@ -15206,14 +15231,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "925b59eaa4951ea350c2c18612ce2b771d191a064eee3653d8bc51ea19a3f9ba",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Connected Ezra 1, Haggai 2, Zechariah 4, Malachi 3, Luke 2, John 2, Acts 3, and Hebrews 9 to rebuilding, worship, temple scenes, and later sanctuary interpretation. Removed unsupported claims about the full Hellenistic-to-AD-70 chronology and broader imperial context.",
+      "limitation": "The recorded biblical sources do not establish a complete chronology of the later temple, its Hellenistic period, or its destruction. Academic historical and archaeological sources are needed for those details.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: 9a847718."
+        ]
       }
     },
     {
@@ -22580,7 +22632,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-second-temple.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-jerusalem.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
