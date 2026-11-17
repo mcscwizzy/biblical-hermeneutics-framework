@@ -6395,6 +6395,27 @@
         ]
       },
       "checkpoint_commit": "99602add"
+    },
+    {
+      "batch_id": "batch-299-isaiah-the-prophet-person",
+      "scope": [
+        "isaiah-the-prophet"
+      ],
+      "completed_unit": "Reviewed Isaiah the Prophet and held the profile because most anchors and source records concern other people or broad books.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object, source, Scripture-reference, relationship, review-status, and claim metadata preserved.",
+        "No CKL content or curated relationships were changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21125,14 +21146,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3d17000c7c00fb688333253adfced9f52411da915f664f122a56071ee73fc5d2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the record unchanged pending reconciliation of the person profile with its sources and references.",
+      "limitation": "Only Isaiah 40:1-11 directly belongs to Isaiah; 2 Kings 4 concerns Elisha, Jeremiah 31 concerns Jeremiah, and Luke 4 records Jesus reading Isaiah 61. The source list is mostly broad book references and includes 1 Kings 17–2 Kings 13 as a reference-work, which does not support this person profile. The generic biographical and covenant-prophet claims cannot safely be applied without person-specific anchors and source clarification.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content, source, reference, or relationship fields were changed."
+        ]
       }
     },
     {
@@ -26861,7 +26895,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/isaiah-the-prophet.json",
+  "next_batch": "framework/canonical_library/objects/people/jacob.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

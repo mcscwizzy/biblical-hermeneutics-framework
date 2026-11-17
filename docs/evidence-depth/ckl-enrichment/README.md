@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **183 objects are enriched**, **96 are unchanged because they
-are already sufficient**, **89 are skipped pending source or identity
-research**, and **319 remain pending review**.
+are already sufficient**, **90 are skipped pending source or identity
+research**, and **318 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -887,3 +887,6 @@ Batch 297 reviewed Abraham. The explanation now follows Genesis 12–22 through 
 
 
 Batch 298 reviewed Anna the Prophetess and left her record unchanged. Its cited passages concern Elisha, Isaiah, Jeremiah, and Jesus; Anna’s appearance in Luke 2 is missing. The source list likewise does not establish her identity or biography, so the generic judgment-and-restoration prose was not adapted to her. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is isaiah-the-prophet.
+
+
+Batch 299 reviewed Isaiah the Prophet and left the entry unchanged. Isaiah 40:1–11 is the only passage directly belonging to Isaiah; 2 Kings 4 concerns Elisha, Jeremiah 31 concerns Jeremiah, and Luke 4 records Jesus reading from Isaiah 61. The broad or misclassified source records do not support the profile’s generic biographical claims, so person-specific sources and anchors need reconciliation first. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is jacob.
