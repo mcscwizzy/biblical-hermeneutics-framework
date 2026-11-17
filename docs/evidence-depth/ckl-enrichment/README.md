@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **145 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **146 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **389 remain pending review**.
+research**, and **388 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -685,3 +685,5 @@ Batch 226 enriched Why Are Genealogies Included? by distinguishing descent lines
 Batch 227 enriched Why Does the Bible Repeat Themes? with passage-specific examples of teaching, retelling, song, quotation, and development across Deuteronomy, Psalms, Exodus, Isaiah, Matthew, Hebrews, and Revelation. It removes unsupported claims about ancient oral and mnemonic practices and flags Psalm 78 source-type metadata. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/why-is-exile-important.json`.
 
 Batch 228 enriched Why Is Exile Important? by distinguishing Jerusalem’s fall, prophetic warning, lament, exile settings, and Ezekiel’s promise of return and inner renewal. It treats Luke 21 as a thematic connection rather than an explicit quotation and removes unsupported imperial comparisons. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. Psalm 137 source-type metadata remains flagged. The next work unit is `framework/canonical_library/objects/institutions/apostleship.json`.
+
+Batch 229 enriched the Apostleship institution entry from Acts 2 and 1 Corinthians 12, distinguishing the apostolic role from the broader covenant-community passages in Exodus 19 and Deuteronomy 6. It removed unsupported generic social-context claims. Linked Pauline research clusters remain draft/in_review and were not promoted. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/baptism.json`.

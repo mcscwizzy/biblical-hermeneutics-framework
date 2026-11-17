@@ -4721,6 +4721,31 @@
         ]
       },
       "checkpoint_commit": "5fa0b327"
+    },
+    {
+      "batch_id": "batch-229-apostleship-institution",
+      "scope": [
+        "apostleship"
+      ],
+      "completed_unit": "Reviewed the institution narrative, its directly cited passages, linked objects, and source statuses; clarified what the direct evidence says and distinguished it from broader covenant-community context.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/apostleship.json"
+      ],
+      "protected_checks": [
+        "Object, source, Scripture references, related-object edges, review/confidence metadata preserved.",
+        "Did not promote any linked draft/in-review Pauline research or alter curated evidence relationships."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "4119afdc"
     }
   ],
   "inventory_count": 687,
@@ -16716,14 +16741,43 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d2cc3137c1f4dfc28491e5807da72bf365fca85691aa60cf7cee65c334099615",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Explained apostleship from Acts 2 and 1 Corinthians 12 and distinguished those direct references from Exodus 19 and Deuteronomy 6, which describe Israel’s broader covenant identity and instruction. Removed generic claims about household, patronage, synagogue, and Roman civic settings.",
+      "limitation": "The object directly cites only Exodus 19, Deuteronomy 6, Acts 2, and 1 Corinthians 12. Several linked Pauline research clusters are still draft/in_review, so their more detailed claims about authority, mission, coworking, gender, and economic support were not treated here as reviewed evidence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23712,7 +23766,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/apostleship.json",
+  "next_batch": "framework/canonical_library/objects/institutions/baptism.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
