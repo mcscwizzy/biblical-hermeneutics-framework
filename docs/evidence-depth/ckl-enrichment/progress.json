@@ -3999,6 +3999,31 @@
         ]
       },
       "checkpoint_commit": "81f37bc3"
+    },
+    {
+      "batch_id": "batch-200-image-of-god-faq",
+      "scope": [
+        "what-is-the-image-of-god"
+      ],
+      "completed_unit": "Reviewed the passage sequence, royal-image comparison, related interpretation, sources, and anchors; enriched eight explanatory fields and kept the explanation tied to recorded Scripture.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-image-of-god.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No royal-image comparison retained without an academic source."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "da70db86"
     }
   ],
   "inventory_count": 687,
@@ -14646,14 +14671,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "af4e88ede745843b188ff4863943e19806a4b2a13bb09d0c0079354723e15447",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Traced image language through Genesis 1, 5, and 9, Psalm 8, James 3, Colossians 3, and Romans 8. Connected it to creation responsibility, human dignity, speech, and renewal while removing the unsupported royal-image comparison.",
+      "limitation": "No academic source is recorded for the proposed ancient royal-image comparison. Psalm 8 is also typed as reference-work despite naming Scripture; that metadata remains unchanged pending review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: da70db86."
+        ]
       }
     },
     {
@@ -22164,7 +22216,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-image-of-god.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-kingdom-of-god.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
