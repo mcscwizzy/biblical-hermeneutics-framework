@@ -5453,6 +5453,28 @@
         ]
       },
       "checkpoint_commit": "99793166"
+    },
+    {
+      "batch_id": "batch-259-tabernacle-institution",
+      "scope": [
+        "tabernacle"
+      ],
+      "completed_unit": "Reviewed the tabernacle object and left its already explanatory, source-aware account of presence, access, mobility, literary structure, bounded comparisons, and later reception intact.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -18775,14 +18797,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5ab43dac387511ddf5b0b5b3dcbc1ef99175de7d6a159fc81c51dec90d393654",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "structure",
+        "interpretive_disputes",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged. The object explains the sanctuary’s purpose, spatial and literary design, mobility, relation to Leviticus and Numbers, and later reception in Hebrews. Ancient comparisons are bounded as analogies rather than identifications, and compositional and historical questions remain explicit.",
+      "limitation": "No additional source claims were needed; the current discussion already distinguishes the primary text, comparative evidence, reconstruction, and later interpretation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -25231,7 +25275,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/tabernacle.json",
+  "next_batch": "framework/canonical_library/objects/institutions/temple-tax.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

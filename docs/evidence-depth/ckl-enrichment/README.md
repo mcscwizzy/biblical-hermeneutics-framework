@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **167 objects are enriched**, **93 are unchanged because they
+At this checkpoint, **167 objects are enriched**, **94 are unchanged because they
 are already sufficient**, **68 are skipped pending source or identity
-research**, and **359 remain pending review**.
+research**, and **358 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -767,3 +767,6 @@ Batch 257 reviewed Synagogue Leadership and left it unchanged. Its title names s
 
 
 Batch 258 reviewed Synagogue and left it unchanged. It already distinguishes the varied local evidence for pre-70 synagogues from later standardized practice, relates narrated settings to Scripture reading, teaching, prayer, debate, and discipline, and marks the uncertain origin and Johannine exclusion questions. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Tabernacle.
+
+
+Batch 259 reviewed Tabernacle and left it unchanged. Its explanation connects Exodus 25-40 with Leviticus and Numbers, distinguishes the sanctuary’s narrative setting from historical reconstruction, and treats Mari, Egyptian, and Timna comparisons as evidence for cultural intelligibility rather than identity or direct dependence. It also explains Hebrews as later interpretation rather than the only meaning of Exodus. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Temple Tax.
