@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **183 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **184 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **90 are skipped pending source or identity
-research**, and **318 remain pending review**.
+research**, and **317 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -890,3 +890,6 @@ Batch 298 reviewed Anna the Prophetess and left her record unchanged. Its cited 
 
 
 Batch 299 reviewed Isaiah the Prophet and left the entry unchanged. Isaiah 40:1–11 is the only passage directly belonging to Isaiah; 2 Kings 4 concerns Elisha, Jeremiah 31 concerns Jeremiah, and Luke 4 records Jesus reading from Isaiah 61. The broad or misclassified source records do not support the profile’s generic biographical claims, so person-specific sources and anchors need reconciliation first. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is jacob.
+
+
+Batch 300 reviewed Jacob. The explanation now follows the family story through the blessing conflict, Jacob’s years with Laban, the return to Esau, the promise repeated at Bethel, and the naming of Israel. Household and property details are bounded to Genesis’ narrative rather than generalized to all ancient households. The Scripture reference list remains unchanged and emphasizes Abraham’s passages; Jacob-specific anchors remain a source-alignment follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is james-brother-of-jesus.

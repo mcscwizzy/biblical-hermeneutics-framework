@@ -6416,6 +6416,32 @@
         ]
       },
       "checkpoint_commit": "489b89cb"
+    },
+    {
+      "batch_id": "batch-300-jacob-person",
+      "scope": [
+        "jacob"
+      ],
+      "completed_unit": "Reviewed Jacob’s person record and enriched its narrative fields with Genesis-grounded context, leaving anchors and source metadata unchanged.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/jacob.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21177,13 +21203,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "cebc83fababc678f7ca54090295acd1e4f43e21e925d62a901810070f8bab781",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context"
+      ],
+      "outcome": "Replaced generic ancestral-figure prose with Jacob’s Genesis arc, the story’s reversals, the promise repeated at Bethel, the name Israel, and the family’s transition into Israel’s story. Household details are presented as the narrative’s social world rather than universal custom.",
+      "limitation": "The Scripture references emphasize Abraham’s call and covenant rather than Jacob’s direct episodes; the broad Genesis 12–50 source supports the narrative summary, but Jacob-specific anchors remain a source-alignment follow-up.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -26895,7 +26939,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/jacob.json",
+  "next_batch": "framework/canonical_library/objects/people/james-brother-of-jesus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
