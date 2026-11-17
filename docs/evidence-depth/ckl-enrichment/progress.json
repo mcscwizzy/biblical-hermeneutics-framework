@@ -6515,6 +6515,32 @@
         ]
       },
       "checkpoint_commit": "8c37dc58"
+    },
+    {
+      "batch_id": "batch-304-jeremiah-the-prophet-person",
+      "scope": [
+        "jeremiah-the-prophet"
+      ],
+      "completed_unit": "Reviewed Jeremiah the Prophet and enriched only the Jeremiah-specific oracle directly anchored in the record.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/jeremiah-the-prophet.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21417,13 +21443,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6ea8eca0b2db7d543aa0f3b6e885a22703c69da87948457e3d82fcc34e6495c7",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Focused the entry on its directly relevant Jeremiah 31:31–34 anchor, explaining the broken covenant, promised restoration, instruction written on the heart, and forgiveness. Other cited passages were not treated as Jeremiah biography or comparative ANE evidence.",
+      "limitation": "The reference list also contains passages about Elisha, Isaiah, and Jesus, and the source list includes a Kings passage; those source-alignment issues remain for separate reconciliation. No external historical reconstruction or universal treaty comparison was added.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -27063,7 +27106,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/jeremiah-the-prophet.json",
+  "next_batch": "framework/canonical_library/objects/people/jesus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

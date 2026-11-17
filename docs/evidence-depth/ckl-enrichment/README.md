@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **186 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **187 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **91 are skipped pending source or identity
-research**, and **314 remain pending review**.
+research**, and **313 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -902,3 +902,6 @@ Batch 302 reviewed James son of Alphaeus. The explanation now focuses on what Lu
 
 
 Batch 303 reviewed James son of Zebedee. The explanation now connects Matthew’s call scene—James working with his brother and father—to his naming among the Twelve in Luke 6 and Acts 1. The family and fishing details are kept within the narrative’s evidence, and no later ministry is inferred. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is jeremiah-the-prophet.
+
+
+Batch 304 reviewed Jeremiah the Prophet and focused the explanation on Jeremiah 31:31–34, the record’s direct Jeremiah-specific anchor. It now explains the oracle’s movement from a broken covenant to promised restoration, instruction written on the heart, and forgiveness. The other listed passages were not used as Jeremiah biography or as comparative ancient Near Eastern evidence; their source alignment remains an open follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is jesus.
