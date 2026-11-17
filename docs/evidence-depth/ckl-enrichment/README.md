@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **184 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **185 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **91 are skipped pending source or identity
-research**, and **316 remain pending review**.
+research**, and **315 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -896,3 +896,6 @@ Batch 300 reviewed Jacob. The explanation now follows the family story through t
 
 
 Batch 301 reviewed James, Brother of Jesus and left the profile unchanged. The anchors concern Saul’s conversion or general church life, and omit James’s direct notices in Galatians 1–2 and Acts 15/21. The generic ministry claims cannot be tied to this person without person-specific anchors. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is james-son-of-alphaeus.
+
+
+Batch 302 reviewed James son of Alphaeus. The explanation now focuses on what Luke 6 and Acts 1 show: he is named among the Twelve and the gathered disciples, while the cited passages provide no individual episode or later ministry. This preserves a useful group-level context without filling the biographical gaps with tradition or guesswork. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is james-son-of-zebedee.
