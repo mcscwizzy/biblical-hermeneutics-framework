@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **7 objects are enriched**, **42 are unchanged because they
+At this checkpoint, **7 objects are enriched**, **43 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **596 remain pending review**.
+research**, and **595 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -194,6 +194,8 @@ Batch 043 reviewed Job. Its summary and context already guide readers through th
 Batch 044 reviewed Joel. Its summary, contexts, 22 claims, and 33 notes already explain the agrarian crisis, uncertain date, locust and army imagery, broad participation in the spirit oracle, and the book's later reuse. The notes carefully separate ecological reflection from claims about modern disasters and distinguish quotation from allusion. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 Batch 045 reviewed John. Its 45 claims and 87 notes already explain the Gospel's structure, Jewish setting, Greek textual questions, and contested readings while keeping narrative, historical reconstruction, and reception distinct. The two typed evidence records include one source-locked item and one low-confidence proposal reported with explicit limits. No changes were made, and single-object validation passed with zero errors and warnings.
+
+Batch 046 reviewed Jonah. Its 24 claims and 44 notes already unpack the narrative's repeated structure and unresolved final question, and distinguish the eighth-century namesake from the later literary book. The notes also give careful treatment to Nineveh, the fish, plant, Hebrew idioms, Jewish liturgy, and later Gospel and Islamic reception. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 ## Reader reachability
 
