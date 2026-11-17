@@ -6687,6 +6687,27 @@
         ]
       },
       "checkpoint_commit": "6ad993e5"
+    },
+    {
+      "batch_id": "batch-311-joseph-husband-of-mary-person",
+      "scope": [
+        "joseph-husband-of-mary"
+      ],
+      "completed_unit": "Reviewed Joseph, Husband of Mary and held the record because its Scripture anchors cover Gospel endings, not Joseph.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object, source, Scripture-reference, relationship, review-status, and claim metadata preserved.",
+        "No CKL content or curated relationships were changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21835,14 +21856,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d789190ac3376adab9506a6a2a4e1b5aefcf8843cdb51560acc35273083ac4c4",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the profile unchanged pending reconciliation of the person-specific references.",
+      "limitation": "The title is Joseph, husband of Mary, but all listed passages are Gospel endings (Matthew 28, Mark 16, Luke 24, John 20) and do not name Joseph. The direct infancy narratives where Joseph appears are absent. A related-object edge to the birth-of-Jesus record does not substitute for person-specific passage evidence; the generic Gospel-role prose therefore cannot be expanded safely.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content, source, reference, or relationship fields were changed."
+        ]
       }
     },
     {
@@ -27355,7 +27389,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/joseph-husband-of-mary.json",
+  "next_batch": "framework/canonical_library/objects/people/joseph.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

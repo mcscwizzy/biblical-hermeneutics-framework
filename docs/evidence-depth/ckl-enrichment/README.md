@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **191 objects are enriched**, **96 are unchanged because they
-are already sufficient**, **93 are skipped pending source or identity
-research**, and **307 remain pending review**.
+are already sufficient**, **94 are skipped pending source or identity
+research**, and **306 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -923,3 +923,6 @@ Batch 309 reviewed John the Baptist and left the profile unchanged. Its referenc
 
 
 Batch 310 reviewed Jonah the Prophet and left the record unchanged. Its references concern Elisha, Isaiah, Jeremiah, and Jesus, while Jonah’s own book and person-specific source are missing. The generic prophetic profile therefore needs source and anchor reconciliation before it can be safely explained. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is joseph-husband-of-mary.
+
+
+Batch 311 reviewed Joseph, Husband of Mary and left the profile unchanged. Its anchors are the four Gospel endings and omit Joseph’s infancy narratives. The related birth-of-Jesus edge does not replace person-specific passages, so the current generic description was not adapted to him. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is joseph.
