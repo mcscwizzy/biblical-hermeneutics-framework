@@ -2220,6 +2220,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "84cb3b2a"
+    },
+    {
+      "batch_id": "batch-128-jericho-context-correction",
+      "scope": [
+        "conquest-of-jericho"
+      ],
+      "completed_unit": "Reviewed all explanatory fields, Scripture references, source identities, related-object edges, interpretive notes, and the absence of atomic claims or typed evidence; corrected six inaccurate or generic narrative fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/conquest-of-jericho.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated related-object edges, statuses, and review metadata preserved.",
+        "Rahab’s rescue and the archaeological distinction are explained without promoting a new passage anchor or site identification."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "ff8d44b1"
     }
   ],
   "inventory_count": 687,
@@ -9432,14 +9453,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "623a2391000c30ab2625ed166c2ef8e96ee6e505221b0d3373fa5975944c80aa",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note/rationale",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Corrected generic land-taking prose and explained Joshua’s Jericho sequence, including Rahab’s rescue, the procession and the narrative’s juxtaposition of judgment and incorporation. The explanation distinguishes the biblical story from archaeological questions.",
+      "limitation": "The object’s specific Scripture anchors omit Joshua 2 and 6, although its broad Joshua 1–24 source and a separate Joshua object provide the primary-text basis. Those missing passage anchors and unrelated supporting references remain unchanged and require review. No archaeological source was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture references, related-object edges, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.23s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18444,7 +18492,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/conquest-of-jericho.json",
+  "next_batch": "framework/canonical_library/objects/events/conversion-of-paul.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
