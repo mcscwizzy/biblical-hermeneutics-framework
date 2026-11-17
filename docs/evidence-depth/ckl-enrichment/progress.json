@@ -8923,6 +8923,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-409-heshbon-review",
+      "scope": [
+        "heshbon"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Heshbon-specific source and Scripture-anchor review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No unsupported city history or curated relationships were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27667,14 +27688,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e6fa5192c74e8f148d5f7910e7e7b66cf79c155cf1edaa0faf0cdf0c739daada",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed explanatory fields, Scripture anchors, sources, and related-object links. The current references concern other cities or regions and do not establish Heshbon; no prose was changed.",
+      "limitation": "Joshua 8:1-29 concerns Ai, 1 Samuel 17:1-11 concerns the Valley of Elah and Goliath from Gath, 2 Kings 25:8-17 concerns Jerusalem, and Jeremiah 49:1-6 concerns Ammon. These do not substantiate Heshbon. The internal historical-orientation source is pending human review. Heshbon-specific passages and geographic sources are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -31423,7 +31459,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/heshbon.json",
+  "next_batch": "framework/canonical_library/objects/places/holy-place-2.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
