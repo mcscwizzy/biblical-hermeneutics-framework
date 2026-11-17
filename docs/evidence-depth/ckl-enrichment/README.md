@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **224 objects are enriched**, **108 are unchanged because they
-are already sufficient**, **139 are skipped pending source or identity
-research**, and **216 remain pending review**.
+are already sufficient**, **140 are skipped pending source or identity
+research**, and **215 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1378,3 +1378,11 @@ Batch 401 reviewed Gibeah 1 and held it for anchor and source review. Genesis
 internal historical-orientation source is pending human review. Single-object
 validation passed with 1 valid object, 0 errors, and 8 pre-existing
 section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 402 reviewed Gibeon and held it for source and anchor review. The current
+references concern Shechem, Hebron, Jerusalem, and the Jerusalem temple rather
+than Gibeon, and the internal historical-orientation source is pending human
+review. Single-object validation passed with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is recorded in the
+manifest.

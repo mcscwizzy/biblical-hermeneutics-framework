@@ -8771,6 +8771,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-402-gibeon-review",
+      "scope": [
+        "gibeon"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Gibeon-specific source and Scripture-anchor review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No unsupported site history or curated relationships were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27277,14 +27298,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5e3eaf89cb2c5075239ef4afc7e569ee25b840343d57bba280bb339d4613e04e",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed explanatory fields, references, sources, and related-object links. The cited passages concern Shechem, Hebron, Jerusalem, and the Jerusalem temple rather than Gibeon; no prose was changed.",
+      "limitation": "Genesis 12:6-7 and Joshua 24 concern Shechem, 2 Samuel 5:1-10 concerns David at Hebron and Jerusalem, and 1 Kings 8 and John 2 concern the Jerusalem temple. These anchors do not establish Gibeon. The internal historical-orientation source is pending human review. Gibeon-specific source and passage review is needed before enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -31159,7 +31195,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/gibeon.json",
+  "next_batch": "framework/canonical_library/objects/places/gilead-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
