@@ -2971,6 +2971,33 @@
         ]
       },
       "checkpoint_commit": "8fcef09a"
+    },
+    {
+      "batch_id": "batch-159-moses-birth-context-repair",
+      "scope": [
+        "moses-birth"
+      ],
+      "completed_unit": "Reviewed narrative and context fields, sources, Scripture anchors, relationships, interpretive notes, and evidence coverage; enriched six explanatory fields from the recorded Exodus source range.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/moses-birth.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "No unsupported Egyptian or ANE comparison introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.54s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "a712ebf3"
     }
   ],
   "inventory_count": 687,
@@ -11515,15 +11542,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4a2112d0b4eabf82aec28fc3166d9e544c4923f5cec2aec5023d52b6225ad9c6",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Replaced generic redemption template language with the child’s rescue through the actions of his mother, sister, and Pharaoh’s daughter, and the story’s placement within Pharaoh’s violence and Israel’s oppression.",
+      "limitation": "No external source supports an ancient Near Eastern comparison, so the ANE field is blank. The Scripture anchors concern Moses’ call and later covenant texts rather than Exodus 2; the listed Exodus 1–15 source range includes the birth narrative. Anchors and relationships were preserved for review.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.54s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "a712ebf3"
     },
     {
       "id": "new-jerusalem",
@@ -19969,7 +20025,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/moses-birth.json",
+  "next_batch": "framework/canonical_library/objects/events/new-jerusalem.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
