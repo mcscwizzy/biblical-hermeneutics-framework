@@ -3827,6 +3827,31 @@
         ]
       },
       "checkpoint_commit": "4bb20c71"
+    },
+    {
+      "batch_id": "batch-193-intertextuality-faq",
+      "scope": [
+        "what-is-intertextuality"
+      ],
+      "completed_unit": "Reviewed the definition, interpretive examples, cited ranges, sources, notes, and related links; enriched eight explanatory fields and removed unsupported comparative history.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-intertextuality.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "Only explicit relationships in the cited texts were described; no speculative echoes were promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "f19ad235"
     }
   ],
   "inventory_count": 687,
@@ -14171,14 +14196,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f337dc20d404d7f58dbb24f38127c3e04ccb49534bf9b9096fc481189b0048e9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Explained explicit quotation, a stated use of an earlier narrative, and less certain echoes using Matthew 1, 1 Corinthians 10, Romans 15, and Hebrews 1:1–4. Removed an unsupported claim about ancient textual practices and clarified that resemblance alone does not prove a link.",
+      "limitation": "No external textual comparison source is recorded for identifying specific Revelation 5 echoes; no source passages or speculative connections were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: f19ad235."
+        ]
       }
     },
     {
@@ -21815,7 +21867,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-intertextuality.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-justification.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
