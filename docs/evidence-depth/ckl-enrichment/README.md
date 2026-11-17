@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **150 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **151 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **63 are skipped pending source or identity
-research**, and **382 remain pending review**.
+research**, and **381 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -699,3 +699,5 @@ Batch 233 enriched Elders by distinguishing delegated judges, appointed official
 Batch 234 enriched Feast Calendar with distinct explanations of Exodus 23, Leviticus 23, the seventh-month dedication in 1 Kings 8, and Hebrews 10’s argument about sacrifice. It removes unsupported historical and comparative claims and clarifies that Hebrews 10 does not explain the calendar as a whole. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/herodian-court.json`.
 
 Batch 235 reviewed Herodian Court and made no CKL content change: its references cover other leadership settings and do not identify a Herodian court, and no external history source is attached. The generic prose remains a research gap until adequate sources are available. Validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/high-priesthood.json`.
+
+Batch 236 enriched High Priesthood with text-specific explanation from Exodus 28, Leviticus 16, Numbers 35, Zechariah 3, John 11, Acts 4, and Hebrews 4–10. It distinguishes these biblical forms from later appointment history, using Josephus, Antiquities 20.247–251, for the bounded Herodian/Roman claim. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/household-codes.json`.

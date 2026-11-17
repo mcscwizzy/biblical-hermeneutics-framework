@@ -4891,6 +4891,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-236-high-priesthood-institution",
+      "scope": [
+        "high-priesthood"
+      ],
+      "completed_unit": "Reviewed the Torah, Zechariah, Gospel/Acts, Hebrews, academic orientation source, and linked Josephus evidence; clarified each text’s distinct role and cautiously summarized appointment history.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/high-priesthood.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture/source identities, linked evidence relationships, review/confidence metadata preserved.",
+        "No added source IDs or changes to reviewed/draft status."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "1be4486d"
     }
   ],
   "inventory_count": 687,
@@ -17207,14 +17232,46 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0cb3d197bb18687a1bde90605bcbc883761eaa7fb623e5ddbf6cd8457f5af94d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Expanded the biblical role through Exodus 28 and Leviticus 16, connected Numbers 35 and Zechariah 3, distinguished Gospel/Acts scenes, and summarized Hebrews’ own theological comparison. Clarified Herodian/Roman appointment history with Josephus, Antiquities 20.247–251.",
+      "limitation": "Josephus 20.247–251 was checked as a primary source through the linked structured evidence cluster; the full history of appointment, tenure, and jurisdiction is not reconstructed here. Source identities, relationships, and review metadata were left unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24077,7 +24134,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/high-priesthood.json",
+  "next_batch": "framework/canonical_library/objects/institutions/household-codes.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
