@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **1 object is enriched**, **3 are unchanged because they
-are already sufficient**, **26 are skipped pending source research**, and
-**656 remain pending review**.
+are already sufficient**, **27 are skipped pending source research**, and
+**655 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -79,6 +79,10 @@ The Pool of Bethesda entry was held because its current references and sources
 point to unrelated creation/City of David material rather than John 5 and the
 pool. Site identification and relevant excavation publications need to be
 verified before any connection is written.
+
+The Pool of Siloam Discovery entry was also held: its explanatory notes and
+source IDs describe the tunnel inscription, while the title names the pool.
+The pool and inscription need distinct, verified evidence and passage links.
 
 Beth Shean was skipped because its source entries lack bibliographic details
 and its brief summary does not identify the excavation contexts behind its
@@ -137,6 +141,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/pool-of-siloam-discovery.json`.
+The next work unit is `objects/archaeology/qumran-archaeological-site.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
