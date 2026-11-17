@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **340 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **198 are skipped pending source or identity
-research**, and **33 remain pending review**.
+At this checkpoint, **346 objects are enriched**, **117 are unchanged because they
+are already sufficient**, **224 are skipped pending source or identity
+research**, and **0 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1931,3 +1931,6 @@ The second word-study batch clarified Metanoia, Makarios, Sophia, Soteria, Phos,
 
 
 The next word-context batch clarified Hesed, Ekklesia, Koinonia, Anastasis, Parousia, and Doxa. It follows each cited passage’s own use and genre, distinguishes Hebrew-scripture parallels from New Testament texts, and does not claim that related English images prove lexical identity.
+
+
+All 687 CKL objects have now been examined. The final word-study review enriched six records whose selected passages supported specific contextual explanation, left the Torah entry unchanged because it already explains its scope and context, and held the remaining 26 entries where term-specific sources, anchors, or identity reconciliation are needed. The held records are documented individually in the manifest; no lexical ranges or language-history claims were guessed.

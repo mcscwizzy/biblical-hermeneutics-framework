@@ -12207,6 +12207,68 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-544-final-word-study-audit",
+      "scope": [
+        "agios",
+        "nomos",
+        "parakletos",
+        "pneuma",
+        "qadosh",
+        "sarx",
+        "adonai",
+        "agape",
+        "apostolos",
+        "basileia",
+        "christos",
+        "dabar",
+        "diakonia",
+        "eleos",
+        "elohim",
+        "emet",
+        "hamartia",
+        "katabole",
+        "kyrios",
+        "logos",
+        "martyria",
+        "mashiach",
+        "mishpat",
+        "nephesh",
+        "pistis",
+        "ruach",
+        "shalom",
+        "shema",
+        "teleios",
+        "theos",
+        "tsedeq",
+        "yahweh",
+        "torah"
+      ],
+      "completed_unit": "Enriched six passage-grounded word-study explanations; reviewed and held 26 entries for lexical-source, anchor, or identity gaps; and left Torah unchanged because its existing explanation was sufficient.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/word_studies/agios.json",
+        "framework/canonical_library/objects/word_studies/nomos.json",
+        "framework/canonical_library/objects/word_studies/parakletos.json",
+        "framework/canonical_library/objects/word_studies/pneuma.json",
+        "framework/canonical_library/objects/word_studies/qadosh.json",
+        "framework/canonical_library/objects/word_studies/sarx.json"
+      ],
+      "protected_checks": [
+        "No claims, evidence IDs, source identities, Scripture references, relationships, confidence, dispute, review, or source-lock data were changed.",
+        "Unsupported lexicon, ancient Near Eastern, and comparative-language claims were not introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Progress manifest accounts for all 687 objects with zero pending review.",
+          "Protected-field fingerprint and curated relationship checks passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -37088,14 +37150,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f6b35a923d8e2d1bec41f23541647cb93aa22394d883e5d36e3af6e99af9eab9",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors combine Hebrew divine-name passages with a Greek Gospel text and related-name concepts without a reviewed lexical source.",
+      "limitation": "The object needs a source-grounded distinction among Adonai, YHWH, Elohim, Theos, and Kyrios, including exact textual uses. The current reference-work record has no author, locator, or bibliographic detail.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37106,14 +37185,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "53f4c4c05a23809193caf19dda34e6c408b6526db7eec39a3d51368cb49d8a85",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its Hebrew-scripture anchors describe related themes rather than establishing usage of the named Greek word.",
+      "limitation": "The object mixes Exodus, Psalms, Micah, Ephesians, and Titus under a broad mercy/favor gloss. A reviewed lexical source and exact occurrences are needed to distinguish love from grace, mercy, and steadfast love.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37124,14 +37220,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "46886f951886576b17343d7df888138cc80996bccc26622a789e8532c61346a7",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected the Levitical call to holiness with Isaiah’s vision, Peter’s citation of Israel’s Scripture, and Hebrews’ exhortation, distinguishing the theme from identical word usage.",
+      "limitation": "The explanation stays with the cited passages and canonical relationships. It adds no etymology or semantic range beyond reviewed lexical support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37186,14 +37308,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ef98c428c9f0eba60acd88c288f6ab29ccebf07c4df17695337b095ced4a5478",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because most anchors describe service generally, while the object provides no reviewed lexical support for the named term.",
+      "limitation": "The references include one passage about apostles and several about service or leadership. The object needs exact-use review and a lexicon source before its lexical scope can be explained.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37204,14 +37343,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "8937fab85b53828822c2f73c4fd492d0e5834e0cad2d61785b9db5e0a5453376",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its title names the Greek word for kingdom while its anchors and related-object links concern covenant promise and instruction.",
+      "limitation": "The Scripture/source cluster is misaligned with the named term; it needs identity and anchor reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37310,14 +37466,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a77182ff4b30967d5258a763caf7d376ff2e90209d0800a77c1ce83190b198ce",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its references support royal and messianic themes but the object lacks reviewed Greek lexical support for the named word.",
+      "limitation": "The entry combines Hebrew royal texts with Luke’s later interpretation. A source-grounded account must distinguish the original contexts, Greek usage, and later reception without assuming equivalence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37328,14 +37501,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a336a892692d6ef11b4151597c78739c7bd7e1199b659eb1624ddb8068877dd8",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors combine Hebrew instruction texts, John’s Word prologue, and New Testament Scripture passages without establishing the named Hebrew word’s usage.",
+      "limitation": "The source records contain Scripture references and incomplete reference-work entries, but no reviewed lexical source. The object needs exact-occurrence and language-link review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37346,14 +37536,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f64283147392e104881a5ac080f98b2a62fb403f597a44efb9f515337fadef4a",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because the references largely describe service thematically and the source list contains no reviewed lexical reference.",
+      "limitation": "Several anchors concern service; the exact term-specific uses and their differences from apostolos require source review before a lexical explanation can be added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37496,14 +37703,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d379b986d963d087570f00757cc90adae9c47edd54eee8a2582c8a4afe5c9367",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because the source cluster blends Hebrew mercy/steadfast-love passages with New Testament grace passages under one Greek-term label.",
+      "limitation": "A reviewed lexical source and exact-use audit are needed to distinguish eleos from charis and the Hebrew terms associated with similar themes.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37514,14 +37738,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c3f0991cf65a8c76e6b1db17d78dda357f7179f03a58befa2b4492a49a244a4c",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because the anchors mix divine-name texts across Hebrew and Greek without reviewing the term’s exact uses or relation to the other name records.",
+      "limitation": "The records for Elohim, Yahweh, Adonai, Theos, and Kyrios need a coordinated source review; current reference-work entries lack locators and bibliographic details.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37532,14 +37773,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3f848303741c3822a1497ea73f6fbd6dfc4323d72bcac9ec622804665e5d7f35",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its title names a Hebrew term but its anchors center on believing/faith and the object shares its source cluster with Pistis.",
+      "limitation": "The cited texts do not establish the exact use of emet in the named passages. A lexicon and occurrence-level review are needed to distinguish emet, emunah, and pistis.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37550,14 +37808,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "42ed41a55db502dfed229f7a3c376a1143632c60b6ba6a207faf327c4b30e498",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because the summary associates the term with deliverance and rescue while its anchors focus on salvation and atonement.",
+      "limitation": "The title/summary/source mapping appears misaligned for a word study of sin. Identity and evidence reconciliation is needed before explanatory prose can be safely revised.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37656,14 +37931,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "175fde06af2e412088458b69213f915f2623ac441079d2d14d9971428e5d8fc5",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its creation-themed references do not establish the named Greek word’s occurrence or sense.",
+      "limitation": "The object needs an exact occurrence list and reviewed lexical source; the current anchors are thematic and cannot substantiate the word study.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37718,14 +38010,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0c2da223615fe661b740933215ac97697a97b32482b45ab4772fbfb6a38a1fe0",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors combine Hebrew divine-name texts and Greek references without source-grounded distinctions among Lord-language and divine names.",
+      "limitation": "The Kyrios, Yahweh, Adonai, Elohim, and Theos records need coordinated lexical and textual review; existing reference-work metadata lacks locators.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37736,14 +38045,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ea74f4ebf24621be44c0789abb44d1feaf011d9f35cfcd21b4fab7e5e82d4376",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its references mix Hebrew psalms about instruction, the Logos prologue, and other Scripture passages without establishing one lexical range.",
+      "limitation": "A reviewed Greek lexical source and exact-use review are needed to distinguish John’s use of Logos from the broader English theme “word of God.”",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37798,14 +38124,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "be7f7ac7787a1f7047aafc190f0fa32f3e93ef9f10599edc025fb9fa062ae6d0",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors concern instruction and Scripture rather than a focused treatment of witness or testimony.",
+      "limitation": "The title/anchor mapping appears misaligned, and the object lacks a reviewed lexical source. Identity and source reconciliation are required.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37816,14 +38159,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ed024fb55fd119742600187723376a021a473b5c437d11c0de96cff3113ce7a2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because the references support royal and messianic themes but do not provide reviewed lexical evidence for the Hebrew term’s scope and later use.",
+      "limitation": "The object combines Hebrew passages and Luke’s interpretation; reviewed lexical and reception sources are needed to distinguish original contexts from later readings.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37878,14 +38238,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a1ac2993fbfda1b4b87e593ba42acf3febadb7a492d5cfb3f52d1891e516e528",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because it shares the same references and explanation with Tsedeq but the source list has no lexicon to distinguish the two Hebrew terms.",
+      "limitation": "A coordinated lexical and occurrence-level review is needed before the two justice-related word studies can be explained distinctly.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37896,14 +38273,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a1101a9088230fad37514161b8aa699bb0a6a5edefc2da25683a2d738c776739",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its references concern God’s word and instruction rather than the named Hebrew term.",
+      "limitation": "The source/anchor cluster appears misassigned and lacks lexical references; identity and source reconciliation are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -37914,14 +38308,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b19abe6e835634c6a03d9385123b9f7054dab5902aa2fc01efdf5e1669e4e46d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified the distinct textual roles of command, covenant instruction, psalmic meditation, and Paul’s arguments about sin and promise.",
+      "limitation": "The explanation stays with the cited passages and canonical relationships. It adds no etymology or semantic range beyond reviewed lexical support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37932,14 +38352,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "afe1b3eb7a1dcc7df3e4d1214190ecbd3c5523268ba3ce5d0d944b29d3ebe540",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Focused on John 14’s promise of the Spirit as continuing presence and teacher, while distinguishing related Spirit passages that do not make the same claim.",
+      "limitation": "The explanation stays with the cited passages and canonical relationships. It adds no etymology or semantic range beyond reviewed lexical support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -38038,14 +38484,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3ea09e733bd444ee2e8816d9c91c4fb8e1755dae12a30a89fd0720471008a981",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because it shares anchors with Emet and does not distinguish Hebrew-scripture themes from Greek New Testament usage.",
+      "limitation": "A reviewed lexical source and exact-occurrence audit are needed to distinguish pistis from emet and emunah and to clarify what the cited texts directly support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -38056,14 +38519,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "15b14de516815a029ed272609fde003f14ef94fea5b7343b2fa066f3b14d53a8",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained the Spirit’s distinct roles in Ezekiel’s renewal promise, John’s teaching, Acts’ Pentecost narrative, and Romans’ account of life and adoption.",
+      "limitation": "The explanation stays with the cited passages and canonical relationships. It adds no etymology or semantic range beyond reviewed lexical support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -38074,14 +38563,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ba6ad52841ae8ea89041cb630dbb31763d4f3be0f39c530a7088f6fcd2b99ad9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Distinguished the Hebrew-scripture portrayals of holiness in Leviticus and Isaiah from later texts that recall or develop the theme.",
+      "limitation": "The explanation stays with the cited passages and canonical relationships. It adds no etymology or semantic range beyond reviewed lexical support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -38092,14 +38607,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6848f769a0a59439b40dd469bc954bc75f189a2631c385e5da08b5beb988c480",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors concern the word and instruction of Scripture rather than the named Hebrew term.",
+      "limitation": "The object appears to have inherited an unrelated Dabar/Logos source cluster. It needs identity and source reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -38110,14 +38642,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c88fec0b1396631f5f6942c6a7dd47e079b12939203d1d39a8ddb6e2fd90bcfd",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Separated Psalm 8’s reflection on humanity from Paul’s different arguments about Adam, sin, and conduct in Romans and Galatians.",
+      "limitation": "The explanation stays with the cited passages and canonical relationships. It adds no etymology or semantic range beyond reviewed lexical support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical source identities, Scripture anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -38128,14 +38686,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "03bc0857aa589303661524cf2754a701794d571561e0f217be401e01cb3d688b",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors concern Scripture’s instruction rather than the named Hebrew term.",
+      "limitation": "The object appears to have inherited an unrelated Dabar/Logos source cluster and lacks a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -38146,14 +38721,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4a37bd30d35f1880023903db7ff09d14fd028ab84f2006bd8b0632b1120ff1e7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its references include hearing and law themes but do not establish the named Hebrew form’s lexical scope.",
+      "limitation": "The term needs exact occurrence review and lexical support, particularly to distinguish a word-form study from broader instruction/obedience themes.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -38296,14 +38888,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "00b30ec50e42be7115f5182fce6a73d46f025953c59c62a45ce415a4e509fd98",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors and summary describe wisdom while the title names a different Greek term.",
+      "limitation": "The shared Sophia/wisdom reference cluster does not establish teleios usage; the entry needs identity and anchor reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -38314,14 +38923,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "8249457bd9a24e0569544f1948e9607df11fc8cc8ed1497e1d590d293647c243",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors combine Hebrew divine-name passages and Greek references without reviewed lexical distinctions.",
+      "limitation": "The Theos, Elohim, Yahweh, Adonai, and Kyrios records need coordinated review; the existing reference-work record lacks bibliographic locator details.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -38332,14 +38958,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b3bf508399016f3b8cd161cba7ba440bcaab7b5b6ae77865e3df2bf31165a7a2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary distinguishes instruction/teaching, law, and the Pentateuch; literary context cautions that the term’s scope depends on passage context; covenantal significance explains its role in Israel’s life. Existing Pauline support links remain specific and qualified.",
+      "limitation": "The ancient treaty/legal comparison is not supported by a locator in this object’s source list and remains a future source-review need; no new comparison was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -38350,14 +38993,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "21edbea2bbcf4c63a2c579c5f73b4018743ace50d3ce740599bc0c1e06e506e3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because it shares the same anchor set as Mishpat without reviewed lexical sources that distinguish the two Hebrew terms.",
+      "limitation": "A coordinated occurrence-level and lexical review is needed before either entry can explain their distinction responsibly.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -38368,19 +39028,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "459001feacec3c200fddb7e79e633e1ec1c9052f70ef36ad429e5215c58b702c",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note",
+        "related_objects",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its references combine Hebrew name passages with Greek John 1 and a related-name cluster without reviewed lexical documentation.",
+      "limitation": "The object needs exact-use and source review alongside Adonai, Elohim, Theos, and Kyrios; the current reference-work record has no bibliographic locator.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/word_studies/adonai.json",
+  "next_batch": "none; all 687 objects have been reviewed",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
