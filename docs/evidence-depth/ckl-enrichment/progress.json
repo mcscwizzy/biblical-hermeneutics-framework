@@ -6068,6 +6068,32 @@
         ]
       },
       "checkpoint_commit": "61b5fcc3"
+    },
+    {
+      "batch_id": "batch-285-elisha-person",
+      "scope": [
+        "elisha"
+      ],
+      "completed_unit": "Reviewed Elisha and enriched the directly anchored widow-and-oil narrative while distinguishing it from Luke 4’s reference to Naaman.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/elisha.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20350,14 +20376,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9b01eceebce284d3ea3fac577f8040cfe881c8d1e53d2073b089aa0573367997",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the widow-and-oil account in 2 Kings 4:1-7, explaining how the vessels make the scale of the provision visible and how the oil enables debt payment. Distinguished Luke 4’s later reference to Elisha and Naaman as a separate episode.",
+      "limitation": "Other listed references to Isaiah 40 and Jeremiah 31 are not episodes about Elisha and were not used to expand his biography. No broad historical or economic reconstruction was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -26302,7 +26351,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/elisha.json",
+  "next_batch": "framework/canonical_library/objects/people/elizabeth.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

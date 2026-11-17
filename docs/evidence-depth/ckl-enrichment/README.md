@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **178 objects are enriched**, **95 are unchanged because they
+At this checkpoint, **179 objects are enriched**, **95 are unchanged because they
 are already sufficient**, **81 are skipped pending source or identity
-research**, and **333 remain pending review**.
+research**, and **332 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -845,3 +845,6 @@ Batch 283 reviewed Dorcas and left it unchanged. The cited ranges do not include
 
 
 Batch 284 reviewed Elijah and left the record unchanged. Most references do not identify him: 2 Kings 4:1-7 concerns Elisha, while Isaiah 40 and Jeremiah 31 are other prophetic texts. Luke 4 does mention Elijah, but the entry omits his direct narrative episodes and its source list is generic. Passage scope needs review before a biography can be safely expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Elisha.
+
+
+Batch 285 reviewed Elisha. The explanation now follows the widow’s debt and the vessels of oil in 2 Kings 4:1-7, showing how the story moves from household crisis to repayment and provision. Luke 4’s reference to Elisha and Naaman is identified as a separate episode. Other listed prophetic references were not used to extend Elisha’s biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Elizabeth.
