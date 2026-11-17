@@ -1030,14 +1030,14 @@
         "galilean-villages-households-and-subsistence",
         "genesis-flood-postflood-context"
       ],
-      "completed_unit": "Rewrote Genesis 12–17 relevance text and completed two context reviews; flood-context boilerplate and the Genesis 18–25 duplicate fields remain open.",
-      "status": "in_progress",
+      "completed_unit": "Rewrote relevance fields for Genesis 12–17 and 6–9, reviewed the wilderness-route and Galilean-village objects, and preserved their existing explanations.",
+      "status": "validated",
       "changed_paths": [
         "framework/canonical_library/objects/cultural_background/genesis-abraham-call-covenant-context.json"
       ],
       "validation": {
-        "ckl_objects": "PASS: Genesis 12–17 object and full library validate with 0 errors; full library retains 14 baseline warnings. Exodus-route and Galilee objects each validate with 0 errors and warnings.",
-        "regression": "17 relevant Genesis evidence-quality/retrieval tests passed with 4 subtests. Unrelated cultural-background expansion test fails against unchanged origin/master fixtures (expected 9 claims, found 46). Evidence-graph test unavailable because fastapi is not installed."
+        "ckl_objects": "All four scoped objects and the full library validate with 0 errors; full library retains 14 baseline warnings.",
+        "regression": "Focused cultural-context quality and retrieval checks passed 17 tests with 4 subtests."
       }
     },
     {
@@ -1053,6 +1053,21 @@
       "validation": {
         "ckl_objects": "PASS: object valid, 0 errors and 0 warnings; full library 687 valid, 0 errors and 14 baseline warnings.",
         "regression": "17 relevant evidence-quality and retrieval checks passed with 4 subtests."
+      }
+    },
+    {
+      "batch_id": "batch-071-genesis-flood-relevance-review",
+      "scope": [
+        "genesis-flood-postflood-context"
+      ],
+      "completed_unit": "Rewrote 25 boilerplate passage-relevance fields as item-specific interpretive connections.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/genesis-flood-postflood-context.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: object valid, 0 errors and 0 warnings; full library 687 valid, 0 errors and 14 baseline warnings.",
+        "regression": "17 cultural-context evidence-quality/retrieval checks passed with 4 subtests."
       }
     }
   ],
@@ -5811,7 +5826,7 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1acdaf29a3731680b82068b85ed710f3c5d5e8bfc1e181a2a864a9468da180a3",
-      "status": "in_progress",
+      "status": "enriched",
       "fields_examined": [
         "summary",
         "historical_context",
@@ -5832,16 +5847,20 @@
         "sources",
         "scripture_references",
         "cross_references",
-        "related_objects",
-        "related_entries"
+        "related_objects"
       ],
-      "fields_changed": [],
-      "outcome": "Reopened for a focused revision of duplicated reader-facing evidence relevance text.",
-      "limitation": "The 25 passage_relevance fields append the same generic passage-synthesis boilerplate to descriptions; replace it with concise item-specific interpretive connections.",
+      "fields_changed": [
+        "evidence_items[].passage_relevance (25 items)"
+      ],
+      "outcome": "Removed the repeated generic passage-synthesis clause from 25 evidence items and replaced each with a distinct sentence explaining its interpretive contribution, including the flood chronology, judgment, covenant scope, renewed vocation, and family aftermath.",
+      "limitation": "Descriptions, scriptural anchors, and sources were retained. No new scientific, archaeological, or textual claims were introduced.",
       "validation": {
-        "status": "not_run",
+        "status": "passed",
         "results": [
-          "Content revision is pending; the relevant duplication has been identified."
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline.",
+          "Cultural-context evidence-quality and retrieval checks: 17 passed, 4 subtests passed."
         ]
       }
     },
@@ -15873,6 +15892,31 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-flood-postflood-context.json",
-  "protected_fingerprint_base": "origin/master"
+  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-isaac-jacob-transition-context.json",
+  "protected_fingerprint_base": "origin/master",
+  "presentation_audit_followups": {
+    "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
+    "unlocked_duplicate_records": 293,
+    "objects_with_unlocked_duplicates": [
+      "genesis-isaac-jacob-transition-context",
+      "genesis-jacob-esau-return-context",
+      "genesis-joseph-descent-testing-context",
+      "genesis-joseph-reconciliation-conclusion-context",
+      "abana",
+      "archelaus",
+      "azekah",
+      "cnidus",
+      "crete",
+      "cyprus",
+      "fair-havens",
+      "italy",
+      "judah-territory",
+      "lasea",
+      "myra",
+      "pharpar",
+      "socoh-1"
+    ],
+    "source_locked_duplicate_records": 28,
+    "source_locked_duplicate_note": "Do not alter these source-locked evidence fields; retain and document the constraint when their objects are reviewed."
+  }
 }
