@@ -8449,6 +8449,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-388-cyprus",
+      "scope": [
+        "cyprus"
+      ],
+      "completed_unit": "Clarified Cyprus as shelter in Acts 27:4 after departure from Sidon and distinguished the route marker from a port stop.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/cyprus.json"
+      ],
+      "protected_checks": [
+        "Object and evidence IDs, source lock, Scripture anchor, and review metadata were preserved.",
+        "No route reconstruction, distance, or stop at Cyprus was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26447,14 +26472,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "5d9a52be22cff2624b7f9aa575aa8acbb908edf7925703b0c10dac0d0aedc851",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "primary_observation",
+        "scripture_references",
+        "sources",
+        "source_lock"
+      ],
+      "fields_changed": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance"
+      ],
+      "outcome": "Explained Cyprus as shelter in the narrated route after the ship leaves Sidon, distinguishing sailing under its lee from stopping at a port on the island.",
+      "limitation": "The source-locked passage establishes only the narrated sequence; no sailing lane, distance, or external maritime reconstruction was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object/evidence/source IDs, source lock, Scripture anchor, and review metadata remain unchanged."
+        ]
       }
     },
     {
@@ -30581,7 +30623,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/cyprus.json",
+  "next_batch": "framework/canonical_library/objects/places/damascus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

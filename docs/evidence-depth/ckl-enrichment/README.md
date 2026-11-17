@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **218 objects are enriched**, **105 are unchanged because they
+At this checkpoint, **219 objects are enriched**, **105 are unchanged because they
 are already sufficient**, **134 are skipped pending source or identity
-research**, and **230 remain pending review**.
+research**, and **229 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1259,5 +1259,13 @@ Batch 387 clarified the Acts 27:7-8 sequence from Cnidus along Crete to Fair
 Havens near Lasea, distinguishing the route setting from the harbor the narrative
 says the ship reached. No modern route reconstruction or distance was added.
 CKL validation reported 687 valid objects, zero errors, and the same 14 baseline
+warnings; focused content-quality and retrieval regressions passed (17 tests, 4
+subtests). The next pending object is recorded in the manifest.
+
+
+Batch 388 clarified Cyprus's role in Acts 27:4: after leaving Sidon, the ship
+sails under the island's lee because of contrary winds. The text presents Cyprus
+as shelter in the narrated route, not as a port where the ship stops. CKL
+validation reported 687 valid objects, zero errors, and the same 14 baseline
 warnings; focused content-quality and retrieval regressions passed (17 tests, 4
 subtests). The next pending object is recorded in the manifest.
