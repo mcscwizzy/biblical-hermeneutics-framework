@@ -86,6 +86,20 @@
         "ne9c_ne10_regressions": "PASS: 73 regression tests; curated identities and dispositions unchanged."
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-004-babylonian-chronicles-and-balaam-inscription",
+      "scope": [
+        "babylonian-chronicles",
+        "balaam-inscription"
+      ],
+      "completed_unit": "Two archaeology objects reviewed; one sufficient, one held for source research",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: each valid with 0 errors and 10 baseline section-status warnings; no object content changed."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -130,14 +144,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "333d4023a2283ea992454fe8e472369a1f4a00634b15fa622b92380ca73aea06",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
+      "outcome": "Left intact. The record clearly identifies BM 21946 and the 597 BCE notice, distinguishes it from the later destruction, describes the chronicle genre and Babylonian viewpoint, and qualifies the identification of the unnamed city of Judah.",
       "limitation": "",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -148,14 +176,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ddfbde00a15da94d8f13970f67bec679ea35bb75aff92988b0333d998fb7ff9b",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the current entry does not provide a verifiable account of a Balaam inscription.",
+      "limitation": "The summary is generic and names Tell Dan, Jerusalem, and Joshua; source IDs include the Tel Dan Stele, Israel Museum, and unlinked generic entries, but all four non-scripture source records lack locators, URLs, notes, or claim support. The two Scripture references (2 Samuel 8 and 2 Kings 8) do not establish a Balaam inscription connection. There are no claim or evidence items. New scholarship is needed to determine whether the intended artifact is the Deir Alla Balaam inscription or another object and to build a verified biblical relationship. Do not silently substitute Tel Dan or Deir Alla.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -12520,6 +12562,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "objects/archaeology/babylonian-chronicles.json",
+  "next_batch": "objects/archaeology/beth-shean-excavations.json",
   "protected_fingerprint_base": "origin/master"
 }

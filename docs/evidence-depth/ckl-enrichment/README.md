@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **1 object is fully audited and enriched**, **1 is skipped
-pending source research**, and **685 remain pending review**. None has yet been
-classified as unchanged because it was already sufficient.
+At this checkpoint, **1 object is enriched**, **1 is unchanged because it is
+already sufficient**, **2 are skipped pending source research**, and **683
+remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -51,6 +51,14 @@ explanation needs new source research identifying the artifact, excavation,
 publication, and any relevant biblical connection. The object has 10 existing
 section-status warnings, unchanged from baseline.
 
+The Babylonian Chronicles object was also reviewed and left intact: it already
+explains the 597 BCE notice, the limits of what BM 21946 records, its
+Babylonian chronicle setting, and the qualified identification of the city of
+Judah. The Balaam Inscription object was skipped for the same source-integrity
+reason as Arad: its title and generic text do not match its source records and
+biblical anchors. Research must establish which inscription the entry intends
+before any explanatory prose can be safely written.
+
 ## Reader reachability
 
 Canonical object detail responses serialize summaries and evidence items.
@@ -77,6 +85,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/babylonian-chronicles.json`.
+The next work unit is `objects/archaeology/beth-shean-excavations.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
