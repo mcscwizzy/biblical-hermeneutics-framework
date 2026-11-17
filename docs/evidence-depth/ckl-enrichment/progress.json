@@ -1978,6 +1978,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "8f616de5"
+    },
+    {
+      "batch_id": "batch-116-ascension-account-clarification",
+      "scope": [
+        "ascension"
+      ],
+      "completed_unit": "Reviewed all explanatory fields, four Gospel references, source identities, related-object edges, two interpretive notes, and the absence of atomic claims or typed evidence; clarified four narrative fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/ascension.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, related-object edges, statuses, and review metadata preserved.",
+        "Matthew, Mark, Luke, and John are not presented as narrating an identical ascension episode; Mark’s longer ending retains textual qualification."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "2bd63dfb"
     }
   ],
   "inventory_count": 687,
@@ -8751,14 +8772,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4e3376ebf247be97b430e48382caf1d36cb945fe86ec3fb0c1d78e153bfdb9a1",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Corrected the blanket claim that all four Gospels use the same ascension scene. The explanation now distinguishes Luke’s departure, Matthew’s commission, John’s resurrection appearances, and the ascension in Mark’s longer ending, preserving the known textual qualification.",
+      "limitation": "The preserved passage references omit Acts 1, although Luke-Acts continuity is relevant to a fuller account. That missing anchor/source requires research-governed review and was not added; all existing references and related-object edges remain unchanged. Historical and ANE boilerplate fields were not expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture references, related-object edges, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (67.35s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -17979,7 +18025,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/ascension.json",
+  "next_batch": "framework/canonical_library/objects/events/assyrian-exile-of-israel.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
