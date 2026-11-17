@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **129 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **130 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **406 remain pending review**.
+research**, and **405 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -651,3 +651,5 @@ Batch 209 enriched What is the significance of Jerusalem? with the sequence from
 Batch 210 enriched What is the significance of Passover? with the Exodus meal and sign, Deuteronomy’s remembrance, Luke’s covenant meal, and distinctive uses in John, Paul, and 1 Peter. It removes an unsupported ANE comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-exile.json`.
 
 Batch 211 enriched What is the significance of the Exile? with the fall of Jerusalem, lament, life in Babylon, restoration hope, and return decree. It distinguishes Luke 21’s later setting and avoids broad claims about imperial deportation practices. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-holy-spirit.json`.
+
+Batch 212 enriched What is the significance of the Holy Spirit? with connections among Ezekiel 36, Joel 2, John 14–16, Acts 2, Romans 8, and Galatians 5. It removes unsupported cultural and broad lexical claims. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-resurrection.json`.
