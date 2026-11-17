@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **234 objects are enriched**, **109 are unchanged because they
+At this checkpoint, **235 objects are enriched**, **109 are unchanged because they
 are already sufficient**, **156 are skipped pending source or identity
-research**, and **188 remain pending review**.
+research**, and **187 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1514,3 +1514,6 @@ Batch 428 reviewed Mount Seir 1 and made no content changes. Its anchors refer t
 
 
 Batch 429 reviewed Mount Sinai. The revised explanation follows Exodus 19–24 from arrival and preparation through the commandments and covenant ratification, then distinguishes Deuteronomy's remembrance and Hebrews' later use of Sinai imagery. The unsupported generic mountain comparison was removed; no archaeological location was asserted. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 430 reviewed Mount Zion. The revised explanation uses 2 Samuel 5:7–9 to identify Zion as the stronghold David captures, then distinguishes that royal scene from the later temple passages in the object. Genesis and Joshua anchors were retained but not used to support claims about Zion. The unsupported generic ancient Near Eastern section was removed. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
