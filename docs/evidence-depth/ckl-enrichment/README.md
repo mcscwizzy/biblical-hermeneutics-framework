@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **2 objects are enriched**, **8 are unchanged because they
+At this checkpoint, **2 objects are enriched**, **9 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **635 remain pending review**.
+research**, and **634 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -199,6 +199,14 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/books/1-chronicles.json`.
+First Chronicles was left unchanged. Its summary and contexts already explain
+the book's structure and postmonarchic setting; six interpretive notes clearly
+separate textual observations from historical reconstruction and preserve
+disagreement. The claims are tied to passages, and its Psalter evidence item
+distinguishes the observable reuse of Psalm 106:48 from a debated proposal
+about the Psalter's collection history. The object passed validation with zero
+errors and zero warnings.
+
+The next work unit is `objects/books/1-corinthians.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
