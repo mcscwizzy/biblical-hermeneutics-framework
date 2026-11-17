@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **1 object is enriched**, **3 are unchanged because they
-are already sufficient**, **35 are skipped pending source research**, and
-**646 remain pending review**.
+At this checkpoint, **1 object is enriched**, **6 are unchanged because they
+are already sufficient**, **39 are skipped pending source or identity
+research**, and **641 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -94,6 +94,15 @@ their source records and Scripture links instead describe the Tel Dan Stele.
 The named objects need separate, site-specific records and verified excavation
 sources before contextual prose can be added.
 
+Tell Dan Excavations, Tell es-Safi Excavations, Temple Mount Area Finds, and
+Wadi Murabba'at Scrolls were held because their records respectively repeat
+stele material, mix site identities, describe Qumran material, or lack
+site-specific manuscript evidence. The Temple Warning Inscription entry was
+left unchanged; it already explains the warning's placement, its relation to
+the temple boundary, and the limited connection to Acts 21 with a museum source.
+All five records passed object validation with zero errors and the same ten
+pre-existing section-status warnings.
+
 Shiloh Excavations was held because its sources and Scripture links point to
 Jerusalem and general creation texts rather than site-specific Shiloh evidence.
 The record needs excavation phases and relevant biblical anchors reviewed.
@@ -162,6 +171,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/tell-dan-excavations.json`.
+The next work unit is `objects/archaeology/merneptah-stele.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

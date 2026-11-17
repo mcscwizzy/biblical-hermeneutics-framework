@@ -318,6 +318,23 @@
         "ckl_objects": "PASS: both valid with 0 errors and 10 pre-existing section-status warnings each."
       },
       "checkpoint_commit": "917bf011"
+    },
+    {
+      "batch_id": "batch-020-tell-dan-through-wadi-review",
+      "scope": [
+        "tell-dan-excavations",
+        "tell-es-safi-excavations",
+        "temple-mount-area-finds",
+        "temple-warning-inscription",
+        "wadi-murabbaat-scrolls"
+      ],
+      "completed_unit": "Five archaeology objects reviewed; one sufficient and four held for source or identity reconciliation",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all five valid with 0 errors and 10 pre-existing section-status warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -1699,14 +1716,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "65b767dc8fa08e20765d346421ad37206f1147c9cb3f56977bc8d94dc4442bf1",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the record does not reliably describe its titled archaeological site or object.",
+      "limitation": "The entry uses the Tel Dan Stele sources and generic references but has no excavation claims, site phases, or catalogued findings. Its source records have no locators or support. The site and inscription need separate, source-grounded descriptions.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1717,14 +1748,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "872fd6c631bfc72d6bc9cc982a30c19ab2a05d12781dc51cbec222dd77a56fc0",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the record does not reliably describe its titled archaeological site or object.",
+      "limitation": "The title names Tell es-Safi, but the summary and source records describe Tell es-Sultan/Jericho. The Scripture anchors also do not establish a Tell es-Safi excavation context. Object identity and excavation reports need review before explanation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1735,14 +1780,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "139deec74c345bd6af73883cc81f6260d712797dc8212c94c641905ff3c6bf3d",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the record does not reliably describe its titled archaeological site or object.",
+      "limitation": "The content and sources point to the Dead Sea Scrolls and Qumran rather than finds from the Temple Mount area; the Scripture anchors are unrelated. Specific objects, provenance, and find context need to be established first.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1753,14 +1812,26 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b18066b9cbe2e0b19464381b74d0277e175555969b322707e4e05dbb73bd1589",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
+      "outcome": "Left intact. The entry identifies the Herodian-period boundary inscription, explains its limited use for Acts 21, and distinguishes the accusation in Acts from what the artifact itself can establish. Its museum and historical sources are recorded with locators and support fields.",
       "limitation": "",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1771,14 +1842,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "bcd6fc3a2334197175708c4b7663443daccd8245b3a7c178ae140f888023930b",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the record does not reliably describe its titled archaeological site or object.",
+      "limitation": "The summary and source IDs refer to Qumran/Dead Sea Scrolls, not Wadi Murabba’at. No manuscript, provenance, date, or relevant biblical text is identified. The object needs source reconciliation before it can be expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13297,6 +13382,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/archaeology/tell-dan-excavations.json",
+  "next_batch": "framework/canonical_library/objects/archaeology/merneptah-stele.json",
   "protected_fingerprint_base": "origin/master"
 }
