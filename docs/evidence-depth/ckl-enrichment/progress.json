@@ -9978,6 +9978,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-456-branch-prophecy",
+      "scope": [
+        "branch-prophecy"
+      ],
+      "completed_unit": "Clarified the distinct uses of the Branch image in Jeremiah and Zechariah without collapsing their oracles.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/prophecy/branch-prophecy.json"
+      ],
+      "protected_checks": [
+        "Object, source identities, Scripture references, review metadata, and curated relationships were preserved.",
+        "No comparative background or predetermined fulfillment conclusion was introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30300,14 +30325,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "97409fc8022afae52168d7c44b1007831235005b8b2f75a26b6193a35bf76a05",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained how Jeremiah connects the Branch with just Davidic rule and how Zechariah places the image in visions involving Joshua, temple rebuilding, and royal-priestly roles.",
+      "limitation": "Only the biblical passages are recorded as substantive sources. No comparative ancient Near Eastern background or single harmonized interpretation across the four oracles was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33210,7 +33259,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/prophecy/branch-prophecy.json",
+  "next_batch": "framework/canonical_library/objects/prophecy/day-of-the-lord-prophecy.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

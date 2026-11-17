@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **242 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **243 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **168 are skipped pending source or identity
-research**, and **162 remain pending review**.
+research**, and **161 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1592,3 +1592,6 @@ Batch 454 reviewed Tyre and made no content changes. Its anchors concern Ai, the
 
 
 Batch 455 reviewed Zion. The revised explanation identifies Zion as the stronghold David captures in 2 Samuel 5:7–9, then distinguishes that royal scene from the later temple references. Genesis and Joshua anchors were preserved but not used to support Zion-specific claims; the generic ancient Near Eastern text was removed. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 456 reviewed Branch Prophecy. The revised explanation distinguishes Jeremiah's branch as a just Davidic ruler from Zechariah's visions involving Joshua, temple rebuilding, and royal-priestly roles. It treats the shared image as a connection across distinct texts, not as one flattened oracle, and removes unsupported generic ancient Near Eastern context. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
