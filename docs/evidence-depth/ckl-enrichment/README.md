@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **134 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **134 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **401 remain pending review**.
+research**, and **400 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -661,3 +661,5 @@ Batch 214 enriched What is the significance of the Sabbath? by distinguishing th
 Batch 215 enriched What is the significance of the Temple? with connections among sanctuary instructions, Solomon’s dedication, pilgrimage, Jesus’ temple saying, Hebrews, and Revelation. It removes unsupported claims about other ancient temples and flags Psalm 84 source metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-synagogue.json`.
 
 Batch 216 enriched What is the Synagogue? by grounding its explanation in Luke 4 and Acts 13/17, distinguishing those scenes from Deuteronomy 6 and Psalm 74, and qualifying unsupported claims about origins and later worship. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. Historical origins remain a source-research gap. The next work unit is `framework/canonical_library/objects/faq/what-is-the-tabernacle.json`.
+
+Batch 217 reviewed What Is the Tabernacle? and left it unchanged because its existing explanations already connect the biblical sequence and later reception while qualifying historical reconstruction and ancient comparisons. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-temple.json`.
