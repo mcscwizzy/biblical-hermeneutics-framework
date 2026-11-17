@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **240 objects are enriched**, **114 are unchanged because they
-are already sufficient**, **165 are skipped pending source or identity
-research**, and **168 remain pending review**.
+are already sufficient**, **166 are skipped pending source or identity
+research**, and **167 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1574,3 +1574,6 @@ Batch 448 reviewed Socoh 1. The summary now explains how 1 Samuel 17:1 locates t
 
 
 Batch 449 reviewed Sodom and made no content changes. Its anchors concern the Table of Nations, travel and Levites, Edom, and Paul's speech rather than Sodom. The generic ancient Near Eastern context lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 450 reviewed Susa and made no content changes. Its anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Susa. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
