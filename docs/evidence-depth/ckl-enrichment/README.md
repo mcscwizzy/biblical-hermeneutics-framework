@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **132 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **133 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **403 remain pending review**.
+research**, and **402 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -657,3 +657,5 @@ Batch 212 enriched What is the significance of the Holy Spirit? with connections
 Batch 213 enriched What is the significance of the Resurrection? with connections among the Gospel narratives, Acts 2, 1 Corinthians 15, Romans 6, and 1 Peter 1. It distinguishes narrative from argument and removes unsupported claims about ancient views of death. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-sabbath.json`.
 
 Batch 214 enriched What is the significance of the Sabbath? by distinguishing the creation and liberation rationales, manna instructions, covenant-sign language, Jesus’ teaching, and Hebrews’ argument about rest. It removes an unsupported cultural comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-temple.json`.
+
+Batch 215 enriched What is the significance of the Temple? with connections among sanctuary instructions, Solomon’s dedication, pilgrimage, Jesus’ temple saying, Hebrews, and Revelation. It removes unsupported claims about other ancient temples and flags Psalm 84 source metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-synagogue.json`.
