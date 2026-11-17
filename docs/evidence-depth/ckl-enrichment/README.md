@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **52 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **53 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **516 remain pending review**.
+research**, and **515 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -426,6 +426,8 @@ Batch 111 reviewed the Thessalonian civic and funerary context record: all 15 cl
 
 Batch 112 reviewed the creation-doctrine framework’s summary, canonical contexts, Scripture references, source identities, two interpretive notes, and its absence of atomic claims and typed evidence. The summary now traces creation from Genesis and the Psalms through the New Testament’s Christological language to Revelation’s renewal, without adding unsupported historical comparisons. Only the summary changed. The object had nine pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/abrahamic-covenant.json`.
+Batch 113 reviewed the Abrahamic covenant record’s summary, contexts, four biblical source entries, two interpretive notes, and its absence of atomic claims or typed evidence. The summary now distinguishes Genesis 15’s ceremony from Genesis 17’s sign and notes the later, distinct arguments in Romans and Galatians. It adds no new historical comparison. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/annunciation-to-mary.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

@@ -1915,6 +1915,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "7396765c"
+    },
+    {
+      "batch_id": "batch-113-abrahamic-covenant-summary",
+      "scope": [
+        "abrahamic-covenant"
+      ],
+      "completed_unit": "Reviewed the summary, contextual fields, four biblical source entries, two interpretive notes, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/abrahamic-covenant.json"
+      ],
+      "protected_checks": [
+        "Scripture references, source identities, relationships, and review metadata preserved.",
+        "Genesis 15 and 17 remain distinct scenes; later Pauline readings are not collapsed into one conclusion."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "c3e260aa"
     }
   ],
   "inventory_count": 687,
@@ -8571,14 +8592,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3cf4fc9e7531f2c036e5ed88d1419fe406fe2209a0c02546f20f8b221eac4574",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Clarified the distinction between Genesis 15’s covenant ceremony and Genesis 17’s circumcision sign, and connected their shared promise to later readings in Romans 4 and Galatians 3. The summary stays within the recorded biblical references and does not add comparative historical claims.",
+      "limitation": "The object has no atomic claims or typed evidence; its recorded support is biblical passages and a general historical orientation. The summary adds no specific ancient treaty comparison or new historical reconstruction.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: references, source identities, claims/evidence (none present), relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.19s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -17853,7 +17892,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/abrahamic-covenant.json",
+  "next_batch": "framework/canonical_library/objects/events/annunciation-to-mary.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
