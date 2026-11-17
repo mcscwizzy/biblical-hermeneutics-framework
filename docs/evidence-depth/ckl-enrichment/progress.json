@@ -4746,6 +4746,31 @@
         ]
       },
       "checkpoint_commit": "4119afdc"
+    },
+    {
+      "batch_id": "batch-230-baptism-institution",
+      "scope": [
+        "baptism"
+      ],
+      "completed_unit": "Reviewed the source passages, source links, and contextual claims; explained baptism from Matthew 28, Acts 2, and Romans 6 and separated the Lord’s Supper material.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/baptism.json"
+      ],
+      "protected_checks": [
+        "Object, source identities, Scripture anchors/relationships, links, review and confidence metadata preserved.",
+        "No unsupported washings, Second Temple, ANE, or later reception claims introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "4bdae75d"
     }
   ],
   "inventory_count": 687,
@@ -16788,14 +16813,48 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9a267d2b38151dfc31adea6d499945b6b968d9a0348713d3353f4a7bdab50347",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Grounded baptismal claims in Matthew 28, Acts 2, and Romans 6; explained the distinct contribution of each and distinguished them from 1 Corinthians 11’s Lord’s Supper. Removed unsupported historical, ANE, Jewish-washing, and later reception claims.",
+      "limitation": "No separate historical sources are attached for earlier Jewish washings or later Christian baptismal practice. First Corinthians 11 is incorrectly attached as supporting Scripture for baptism; its actual subject is the Lord’s Supper. This reference was preserved and the mismatch documented rather than silently changing the relationship.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23766,7 +23825,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/baptism.json",
+  "next_batch": "framework/canonical_library/objects/institutions/covenant-assembly.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
