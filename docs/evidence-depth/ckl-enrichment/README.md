@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **282 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **283 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **173 are skipped pending source or identity
-research**, and **117 remain pending review**.
+research**, and **116 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1705,3 +1705,5 @@ Batch 498 reviewed Remnant Theme and left it unchanged. Its anchors concern exil
 Batch 499 enriched Restoration Theme across return, comfort, renewed hearts, the Spirit, and new creation. The explanation separates these dimensions and does not present them as one historical event. The next pending object is recorded in the manifest.
 
 Batch 500 enriched Resurrection Theme by distinguishing Ezekiel’s national-restoration vision, Daniel’s resurrection hope, Lazarus’ return to life, Jesus’ resurrection, and future transformed embodiment. It qualified the Second Temple context and removed broad claims about ancient views of death. The next pending object is recorded in the manifest.
+
+Batch 501 enriched Righteousness Theme across its cited passages, distinguishing God’s character, human conduct, impartial judgment, and praise following judgment. Unsupported comparative and lexical claims were not added. The next pending object is recorded in the manifest.

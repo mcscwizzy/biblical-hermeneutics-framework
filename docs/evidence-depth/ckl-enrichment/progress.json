@@ -11089,6 +11089,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-501-righteousness-theme",
+      "scope": [
+        "righteousness-theme"
+      ],
+      "completed_unit": "Connected righteousness in Deuteronomy 32, Micah 6, Romans 2, and Revelation 19 to each text’s specific argument and literary setting.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/righteousness-theme.json"
+      ],
+      "protected_checks": [
+        "Object and evidence identifiers, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "No unsupported comparative or lexical claims were introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -33330,14 +33355,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "dd9740af2e55b54f8b39d2a624d399456e7bea556f47d195ae049b582580e520",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Distinguished how righteousness functions in each cited passage: God’s character, ethical conduct, impartial judgment, and praise following judgment.",
+      "limitation": "The record has no source for broad ancient Near Eastern comparison or Hebrew/Greek lexical claims; none were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -35430,7 +35482,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/righteousness-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/sabbath-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
