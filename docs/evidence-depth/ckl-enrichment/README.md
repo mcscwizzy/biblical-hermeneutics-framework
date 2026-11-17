@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **238 objects are enriched**, **111 are unchanged because they
-are already sufficient**, **160 are skipped pending source or identity
-research**, and **178 remain pending review**.
+are already sufficient**, **161 are skipped pending source or identity
+research**, and **177 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1544,3 +1544,6 @@ Batch 438 reviewed Philippi and left it unchanged. The record already explains R
 
 
 Batch 439 reviewed Philistia and made no content changes. The listed anchors do not establish Philistia-specific history or support the object's imperial characterization. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 440 reviewed Ramoth-gilead and made no content changes. Its anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Ramoth-gilead. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
