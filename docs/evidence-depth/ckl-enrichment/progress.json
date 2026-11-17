@@ -10028,6 +10028,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-458-immanuel-prophecy",
+      "scope": [
+        "immanuel-prophecy"
+      ],
+      "completed_unit": "Clarified the immediate setting of Isaiah’s Immanuel sign and its later quotation in Matthew while preserving their distinct contexts.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/prophecy/immanuel-prophecy.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "Removed broad ancient Near Eastern boilerplate unsupported by a comparative source; no additional historical reconstruction was introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30434,14 +30459,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "29c2719587245abc8d66e2cb4726b9c61ff24b285561196a76162693ca30ebc7",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained the sign within Isaiah’s account of Ahaz’s crisis, the child-sign sequence and Assyrian threat in Isaiah 8, and Matthew’s later quotation while keeping the two literary settings distinct.",
+      "limitation": "Only the recorded biblical texts were used for this object. No external historical reconstruction or ancient Near Eastern comparison was added; the sources do not settle the child’s identity or the precise relationship of the two settings.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33308,7 +33357,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/prophecy/immanuel-prophecy.json",
+  "next_batch": "framework/canonical_library/objects/prophecy/judgment-against-the-nations.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
