@@ -8474,6 +8474,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-389-damascus",
+      "scope": [
+        "damascus"
+      ],
+      "completed_unit": "Replaced generic profile prose with a passage-bounded explanation of Saul and Ananias in Acts 9:1-19.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/damascus.json"
+      ],
+      "protected_checks": [
+        "Object and source identities, Scripture references, related-object edges, and review metadata were preserved.",
+        "Historical and Ancient Near Eastern applicability was disabled because no independent contextual source is recorded.",
+        "No external history or details outside the cited episode were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26507,14 +26533,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "69bf7362e220e874158dfee556f2aa28006d5d9ccb9152b50f2ead6dcf1102e3",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.historical",
+        "context_applicability.ancient_near_east"
+      ],
+      "outcome": "Replaced generic ministry prose with the Acts 9:1-19 account of Saul’s journey, encounter with Jesus, and Ananias’s visit in Damascus. The explanation stays within the narrated episode and distinguishes it from unsupported city history.",
+      "limitation": "The sources do not independently document Damascus at this period. Other Gospel and Acts anchors remain unchanged and need curation review because they do not establish this specific episode.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master; Scripture anchors, sources, and review metadata are unchanged."
+        ]
       }
     },
     {
@@ -30623,7 +30670,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/damascus.json",
+  "next_batch": "framework/canonical_library/objects/places/dan.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
