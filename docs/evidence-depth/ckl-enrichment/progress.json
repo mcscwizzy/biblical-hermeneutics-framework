@@ -4621,6 +4621,31 @@
         ]
       },
       "checkpoint_commit": "55f7c306"
+    },
+    {
+      "batch_id": "batch-225-peter-faq",
+      "scope": [
+        "who-was-peter"
+      ],
+      "completed_unit": "Reviewed Gospel, Acts, Galatians, and 1 Peter references and their interpretive notes; distinguished passage perspectives and added the community implications of Acts 10 and Galatians 2.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/who-was-peter.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchors, source identities, related links, review/confidence metadata preserved.",
+        "No unsupported Galilean social-history claims added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "21dfa32e"
     }
   ],
   "inventory_count": 687,
@@ -16427,14 +16452,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3be83e5d73e988600553bc82e4c16dc386178f011eb9513b8ea61a974aa763c6",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "new_testament_connections"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Connected Peter’s confession, denial, restoration, witness at Pentecost, Cornelius episode, and dispute at Antioch to their distinct narratives and perspectives. Removed unsupported claims about Galilean social networks and emphasized that Peter’s prominence does not make every action endorsed.",
+      "limitation": "The recorded support is biblical and an internal CKL orientation record; no specialist historical source supports social-history claims about fishing or household networks. This FAQ does not supply a full chronology or resolve questions about the authorship of 1 Peter.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23495,7 +23550,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/who-was-peter.json",
+  "next_batch": "framework/canonical_library/objects/faq/why-are-genealogies-included.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
