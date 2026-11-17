@@ -3577,6 +3577,31 @@
         ]
       },
       "checkpoint_commit": "07021a08"
+    },
+    {
+      "batch_id": "batch-183-shalom-meaning-faq",
+      "scope": [
+        "what-does-shalom-mean"
+      ],
+      "completed_unit": "Reviewed the lexical question, cited usage contexts, sources, anchors, interpretive notes, and related links; expanded seven fields with passage-specific examples.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-does-shalom-mean.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsourced comparison to other ancient peace language added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "2300f4c2"
     }
   ],
   "inventory_count": 687,
@@ -13476,14 +13501,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "795e73c099cd57ed253921dabd53676d6a1e645a62653904897f86f788114a35",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note"
+      ],
+      "outcome": "Expanded the answer with passage-specific examples of shalom as blessing, secure life, covenant promise, peace with God, and reconciliation between divided groups. Replaced unsupported comparative claims about ancient peace language with the cited biblical contexts.",
+      "limitation": "The object has no lexicon or scholarly lexical source, so this is a passage-based explanation rather than a full lexical-semantic study. The Psalm 29 source record is typed as reference-work despite naming Scripture; it was preserved for review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21300,7 +21351,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-does-shalom-mean.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-does-torah-mean.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
