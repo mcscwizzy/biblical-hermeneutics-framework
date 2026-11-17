@@ -1644,6 +1644,25 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "227c585c"
+    },
+    {
+      "batch_id": "batch-100-roman-citizenship-review",
+      "scope": [
+        "roman-citizenship-and-legal-process"
+      ],
+      "completed_unit": "Reviewed the summary, two claims, one interpretive note, source identities, and supporting links; retained the existing cautiously scoped explanations.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No content or protected metadata changed.",
+        "Narrative attestation remains distinct from independent biographical confirmation and broad legal generalization."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -7770,14 +7789,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7e5fc98ca60acc9e30b37c1b0c122e7862145582a0bd74243e32f461ce3db654",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "intertextuality",
+        "greek_words",
+        "common_questions",
+        "claims[*].claim",
+        "claims[*].rationale",
+        "interpretive_notes[*].note",
+        "sources[*].identity_and_support_links",
+        "scripture_references",
+        "reader compatibility"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged. The summary and two claims already distinguish Acts’ narrative portrayal from independent historical confirmation, and they limit what can be generalized from the legal scenes.",
+      "limitation": "Only Acts directly attests Paul’s citizenship in this record; the single comparative legal source is a classic work whose claims were not independently re-read. No additional scholarly conclusion was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Regression tests not run because no content changed."
+        ]
       }
     },
     {
@@ -17286,7 +17324,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/roman-citizenship-and-legal-process.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/roman-corinth-civic-household-and-association-life.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

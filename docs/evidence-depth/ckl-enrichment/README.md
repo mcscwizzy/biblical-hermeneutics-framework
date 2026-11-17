@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **40 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **40 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **529 remain pending review**.
+research**, and **528 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -399,6 +399,8 @@ Batch 098 reviewed the ritual purity and communal holiness record: all 20 claims
 
 Batch 099 reviewed the Roman Athens and Areopagus record: all 12 claims, 16 typed evidence items, and four interpretive notes. The explanations already distinguish the Classical and Roman Agoras, an ambiguous Areopagus setting, layered cult practice, philosophical comparanda, and the limits of the unknown-god altar evidence. The summary now gives readers the scene’s progression without claiming an exact venue or artifact. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/roman-citizenship-and-legal-process.json`.
+Batch 100 reviewed the Roman citizenship and legal process record and left it unchanged. Its summary and two claims already distinguish Acts’ repeated citizenship portrayal from independent confirmation and limit what can be inferred about Roman procedure from the narrated scenes. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. Regression tests were not run because no content changed.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/roman-corinth-civic-household-and-association-life.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
