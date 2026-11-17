@@ -8155,6 +8155,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-375-azekah",
+      "scope": [
+        "azekah"
+      ],
+      "completed_unit": "Clarified the verse’s geographic framing of the Philistine camp while limiting the description to the locked 1 Samuel 17:1 evidence.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/azekah.json"
+      ],
+      "protected_checks": [
+        "Object, evidence, and source IDs; source lock; Scripture references; confidence and review metadata were preserved.",
+        "No modern location, archaeology, or broader historical claim was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -25698,14 +25723,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "90c0b575c3fe7196be5afbad1d90507d91ce5b0a45764d9bc7d51dd3f7848c93",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "primary_observation",
+        "scripture_references",
+        "sources",
+        "source_lock"
+      ],
+      "fields_changed": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance"
+      ],
+      "outcome": "Explained how 1 Samuel 17:1 uses Azekah with Socoh to locate the Philistine camp and what the verse does not establish about the town. The wording remains within the source-locked identity.",
+      "limitation": "No wider historical, archaeological, or modern-location claim was added because the record contains no verified source for those details.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master; source lock and Scripture anchor remain unchanged."
+        ]
       }
     },
     {
@@ -30066,7 +30108,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/azekah.json",
+  "next_batch": "framework/canonical_library/objects/places/babylon-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

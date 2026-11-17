@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **213 objects are enriched**, **101 are unchanged because they
+At this checkpoint, **214 objects are enriched**, **101 are unchanged because they
 are already sufficient**, **130 are skipped pending source or identity
-research**, and **243 remain pending review**.
+research**, and **242 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1149,3 +1149,13 @@ from the artifact described in Acts, and carefully qualifies the Areopagus
 setting, literary speech, and limits of the named adherents. Single-object
 validation passed with 1 valid object and no warnings. The next pending object
 is Azekah.
+
+
+Batch 375 clarified Azekah's role in 1 Samuel 17:1: the place name helps
+locate the Philistine camp alongside Socoh at the opening of the David and
+Goliath account. The summary and evidence explanation now state what the verse
+shows and avoid claims about the town beyond that anchor. The locked identity,
+source, and Scripture reference remain unchanged. Object and full-library CKL
+validation passed with zero errors and the same 14 baseline warnings; focused
+content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
+pending object is recorded in the manifest.
