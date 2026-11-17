@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **144 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **145 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **390 remain pending review**.
+research**, and **389 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -683,3 +683,5 @@ Batch 225 enriched Who Was Peter? with the distinct Gospel, Acts, Galatians, and
 Batch 226 enriched Why Are Genealogies Included? by distinguishing descent lines, lists of peoples, return records, literary transitions, and the ways Matthew and Luke frame Jesus. It removes general claims about ancient social use without comparative sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/why-does-the-bible-repeat-themes.json`.
 
 Batch 227 enriched Why Does the Bible Repeat Themes? with passage-specific examples of teaching, retelling, song, quotation, and development across Deuteronomy, Psalms, Exodus, Isaiah, Matthew, Hebrews, and Revelation. It removes unsupported claims about ancient oral and mnemonic practices and flags Psalm 78 source-type metadata. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/why-is-exile-important.json`.
+
+Batch 228 enriched Why Is Exile Important? by distinguishing Jerusalem’s fall, prophetic warning, lament, exile settings, and Ezekiel’s promise of return and inner renewal. It treats Luke 21 as a thematic connection rather than an explicit quotation and removes unsupported imperial comparisons. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. Psalm 137 source-type metadata remains flagged. The next work unit is `framework/canonical_library/objects/institutions/apostleship.json`.

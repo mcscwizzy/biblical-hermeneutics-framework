@@ -4696,6 +4696,31 @@
         ]
       },
       "checkpoint_commit": "66d320d0"
+    },
+    {
+      "batch_id": "batch-228-exile-significance-faq",
+      "scope": [
+        "why-is-exile-important"
+      ],
+      "completed_unit": "Reviewed the narrative, prophetic, lament, exilic, restoration, and Gospel references and their sources; clarified distinct textual responses to exile.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/why-is-exile-important.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchors, source identities, related links, and confidence/review metadata preserved.",
+        "No unsupported imperial comparison or historical chronology introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "5fa0b327"
     }
   ],
   "inventory_count": 687,
@@ -16644,14 +16669,43 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f80112bfaa58dd62153b1107c083ab3a2230ae9f61edb72281363ff1dd468347",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Distinguished the fall of Jerusalem, prophetic warning, communal lament, life in exile, promise of return and inner renewal, and a cautious thematic link to Luke 21. Removed unsupported comparative claims about imperial deportation practice.",
+      "limitation": "The recorded sources are biblical texts and an internal CKL orientation record, not external historical or archaeological evidence about Babylonian campaigns or deportation practice. Psalm 137 source metadata incorrectly identifies Scripture as a reference-work; preserved for separate review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23658,7 +23712,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/why-is-exile-important.json",
+  "next_batch": "framework/canonical_library/objects/institutions/apostleship.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
