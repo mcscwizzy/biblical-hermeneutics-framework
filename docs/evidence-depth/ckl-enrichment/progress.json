@@ -3902,6 +3902,31 @@
         ]
       },
       "checkpoint_commit": "c506ba1a"
+    },
+    {
+      "batch_id": "batch-196-sacrifice-faq",
+      "scope": [
+        "what-is-sacrifice-in-the-bible"
+      ],
+      "completed_unit": "Reviewed the summary, passage-specific roles, comparative claims, interpretive notes, source records, and anchors; enriched eight explanatory fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-sacrifice-in-the-bible.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No comparative claims about ancient sacrificial practice retained without evidence."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "8cb90cba"
     }
   ],
   "inventory_count": 687,
@@ -14381,14 +14406,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2b2444681d95af305f5871f9ab809a4a84a4701d41ad87cbcc495d7458616d96",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Explained the different roles of the offerings and passages cited, including covenant, burnt offering, Day of Atonement, obedience, and Hebrews’ account of Christ’s self-offering. Removed an unsupported ancient Near Eastern generalization.",
+      "limitation": "No comparative research on ancient sacrificial practice is cited. The Psalm 40 source is typed as reference-work despite naming Scripture; source metadata remains unchanged pending review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: 8cb90cba."
+        ]
       }
     },
     {
@@ -21971,7 +22023,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-sacrifice-in-the-bible.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-ancient-near-east.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **114 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **115 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **422 remain pending review**.
+research**, and **421 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -619,3 +619,5 @@ Batch 193 enriched What is intertextuality? with examples from Matthew 1, 1 Cori
 Batch 194 enriched What is Justification? with the distinct arguments in Romans 3–4, Galatians 2, and Philippians 3. It follows Paul’s use of Abraham and David, removes an unsupported ancient-court comparison, and flags the Psalm 32 source-type metadata for later review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-resurrection.json`.
 
 Batch 195 enriched What is Resurrection? with distinctions among Daniel’s vision, Gospel narratives, Paul’s argument about transformed bodily life, pastoral hope, and Revelation’s renewal imagery. It removes an unsupported claim about surrounding cultures. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-sacrifice-in-the-bible.json`.
+
+Batch 196 enriched What is Sacrifice in the Bible? with distinctions among Noah’s offering, the Sinai covenant rite, Levitical offerings, Psalm 40, Isaiah 53, and Hebrews 9. It removes an unsupported ancient-practice comparison and records a source-type metadata follow-up for Psalm 40. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-ancient-near-east.json`.
