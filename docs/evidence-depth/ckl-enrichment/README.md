@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **289 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **176 are skipped pending source or identity
-research**, and **106 remain pending review**.
+are already sufficient**, **177 are skipped pending source or identity
+research**, and **105 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1752,3 +1752,9 @@ Water Theme was reviewed and held for subject/anchor reconciliation. Its
 Scripture links and related records point to the burning bush, the tabernacle
 and temple glory, incarnation, and new Jerusalem rather than water. No CKL
 content was changed; the manifest records the research gap.
+
+
+Wedding Theme was reviewed and held for identity/anchor reconciliation. Its
+scripture links and related objects point to covenant promises, Exodus 19,
+Jeremiah’s new covenant, the Last Supper, and Hebrews, but none of the recorded
+passages establishes wedding or marriage imagery. No CKL content was changed.
