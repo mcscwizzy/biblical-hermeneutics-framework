@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **162 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **163 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **67 are skipped pending source or identity
 research**, and **367 remain pending review**.
 
@@ -746,3 +746,6 @@ Batch 250 reviewed Roman Citizenship and made no CKL content change. The anchors
 
 
 Batch 251 enriched Roman Governorship using the Gospel and Acts scenes, the Caesarea Pilate inscription, and Josephus, Antiquities 18, which was directly inspected. The explanation distinguishes Pilate and Felix, connects the inscription and Josephus to the office and administrative setting, and states that they do not verify Gospel trial dialogue. Source IDs and curated relationships were preserved; the object’s source-list mismatch remains a metadata follow-up. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sacrificial-system.json`.
+
+
+Batch 252 enriched Sacrificial System by distinguishing the burnt offering, purification offerings, the Day of Atonement, Psalm 51’s account of repentance and sacrifice, and Hebrews’ argument about Jesus. The explanation avoids flattening these texts into one ritual or one claim and removes generic ancient Near Eastern comparison unsupported by the object’s sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sadducees.json`.
