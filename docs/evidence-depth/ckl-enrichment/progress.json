@@ -11039,6 +11039,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-499-restoration-theme",
+      "scope": [
+        "restoration-theme"
+      ],
+      "completed_unit": "Clarified how the restoration anchors move from return and comfort to inner renewal, the Spirit, and new creation.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/restoration-theme.json"
+      ],
+      "protected_checks": [
+        "Object and evidence identifiers, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "No unsupported comparative context was introduced; distinct texts and events remain distinguished."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -33187,14 +33212,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2d965367b9179a9cdb1f65efe3ffea8b82f3a049becf37090c5e7b6988c97915",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained restoration across return, prophetic comfort, cleansing and new heart, the Spirit, and renewed creation, distinguishing each passage’s focus.",
+      "limitation": "No comparative ancient Near Eastern sources were recorded. The explanation keeps the passages distinct and does not claim they describe one historical event.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -35323,7 +35375,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/restoration-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/resurrection-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
