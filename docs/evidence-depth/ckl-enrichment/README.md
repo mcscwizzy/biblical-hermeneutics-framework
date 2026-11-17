@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **231 objects are enriched**, **108 are unchanged because they
-are already sufficient**, **149 are skipped pending source or identity
-research**, and **199 remain pending review**.
+are already sufficient**, **150 are skipped pending source or identity
+research**, and **198 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1481,3 +1481,6 @@ Batch 417 reviewed Judah territory. The object summary now explains that “Beth
 
 
 Batch 418 reviewed Judea. The revised explanation follows the recorded Gospel and Acts anchors: movement through the region, Jerusalem scenes, named rulers in distinct episodes, and Judea's place in Acts' mission geography. The former broad administrative chronology was not retained because its internal support remains pending human review; the source-locked Matthew 2 evidence was left intact. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 419 reviewed Kadesh-barnea and made no content changes. Its Genesis, Deuteronomy, Isaiah, and Acts anchors do not establish the place identity or context asserted by the object. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
