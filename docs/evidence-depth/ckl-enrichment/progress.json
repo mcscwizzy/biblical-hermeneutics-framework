@@ -736,6 +736,21 @@
         "ckl_objects": "PASS: Jude valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-049-judges-explanation-enrichment",
+      "scope": [
+        "judges"
+      ],
+      "completed_unit": "Clarified book summary and expanded six claim rationales from existing text",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/judges.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: Judges valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "No retrieval test run because only claim rationale fields changed; the summary passes schema validation and retains its existing reader-facing role."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3947,14 +3962,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "97d1bd4dba80a5fc02fa6f14f9243a2cdc80ba67133ffe2bd7c308c34fce8e14",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "evidence_items[*].description/primary_observation/passage_relevance",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "claims[judges-literary-movement].rationale",
+        "claims[judges-programmatic-pattern].rationale",
+        "claims[judges-deborah-leadership].rationale",
+        "claims[judges-gideon-abimelech-turn].rationale",
+        "claims[judges-samson-begins-deliverance].rationale",
+        "claims[judges-no-king-refrain].rationale"
+      ],
+      "outcome": "Reworked the summary to show the book’s progression from repeated deliverance to internal collapse, and expanded six claim rationales to explain its varied cycle, leadership roles, incomplete deliverance, and unresolved kingship refrain.",
+      "limitation": "No new archaeological or historical reconstruction was introduced. The one typed evidence item is source-locked and remains unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Protected-field review: only summary and six claim rationale fields changed; identifiers, claims, source identities, anchors, classifications, interpretive notes, source-locked evidence, and relationships remain unchanged."
+        ]
       }
     },
     {
@@ -14615,6 +14653,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/judges.json",
+  "next_batch": "framework/canonical_library/objects/books/lamentations.json",
   "protected_fingerprint_base": "origin/master"
 }
