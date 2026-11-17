@@ -1084,6 +1084,21 @@
         "ckl_objects": "PASS: object valid, 0 errors and 0 warnings; full library 687 valid, 0 errors and 14 baseline warnings.",
         "regression": "17 cultural-context evidence-quality/retrieval checks passed with 4 subtests."
       }
+    },
+    {
+      "batch_id": "batch-073-genesis-31-36-relevance-review",
+      "scope": [
+        "genesis-jacob-esau-return-context"
+      ],
+      "completed_unit": "Rewrote 68 duplicated passage-relevance fields across Genesis 31–36 as distinct interpretive connections.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/genesis-jacob-esau-return-context.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: object valid, 0 errors and 0 warnings; full library 687 valid, 0 errors and 14 baseline warnings.",
+        "regression": "17 cultural-context evidence-quality/retrieval checks passed with 4 subtests."
+      }
     }
   ],
   "inventory_count": 687,
@@ -5937,14 +5952,46 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2c4f7bebcb7bd2dd848c2f7e38f3dea3398aaad628d41f616dfb0012b5746c7e",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "genre",
+        "structure",
+        "major_themes",
+        "interpretive_disputes",
+        "claims[]",
+        "interpretive_notes[]",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects",
+        "related_entries"
+      ],
+      "fields_changed": [
+        "evidence_items[].passage_relevance (68 items)"
+      ],
+      "outcome": "Replaced 68 exact description/relevance duplicates with distinct explanations of how the evidence illuminates Jacob’s departure and return, the wrestling and reconciliation scenes, the violence against Dinah, the return to Bethel, and the Edom genealogies.",
+      "limitation": "Descriptions, citations, anchors, and protected relationships were preserved. Interpretive disputes around the opponent, Dinah episode, place names, and Edom history remain qualified.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline.",
+          "Cultural-context evidence-quality and retrieval checks: 17 passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -15939,13 +15986,12 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-jacob-esau-return-context.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-joseph-descent-testing-context.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
-    "unlocked_duplicate_records": 242,
+    "unlocked_duplicate_records": 174,
     "objects_with_unlocked_duplicates": [
-      "genesis-jacob-esau-return-context",
       "genesis-joseph-descent-testing-context",
       "genesis-joseph-reconciliation-conclusion-context",
       "abana",
