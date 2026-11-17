@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **10 objects are enriched**, **45 are unchanged because they
+At this checkpoint, **10 objects are enriched**, **46 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **590 remain pending review**.
+research**, and **589 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -206,6 +206,8 @@ Batch 049 enriched Judges. The summary now makes the book's decline visible: the
 Batch 050 reviewed Lamentations. Its summary and contexts guide readers through the changing voices, alphabetic forms, destruction setting, and textual witnesses; 27 claims and 33 notes explain the relationship between complaint, fragile hope, trauma, and the unresolved final petition. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 Batch 051 enriched Leviticus. The summary now connects the book to Exodus's closing scene, framing its instructions around how Israel worships and lives in God's presence. Five claim rationales explain the movement from sacrifice and sanctuary toward purity, atonement, neighbor-care, and communal ethics while retaining the distinction between ritual impurity and moral wrongdoing. Single-object and full-library validation passed with zero errors; the same 14 baseline warnings remain.
+
+Batch 052 reviewed Luke. Its summary, 44 claims, and 68 notes already explain the Gospel's Jewish setting, distinct narrative contributions, and debated textual forms while preserving uncertainty. The three typed evidence records are passage-specific: each separates a direct Greek observation from its attributed scholarly interpretation and limits the conclusion. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 ## Reader reachability
 

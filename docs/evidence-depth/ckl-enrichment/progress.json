@@ -779,6 +779,19 @@
         "ckl_objects": "PASS: Leviticus valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
         "regression": "No retrieval test run because claim rationales are not indexed or rendered; summary retains its reader-facing schema and passes validation."
       }
+    },
+    {
+      "batch_id": "batch-052-luke-review",
+      "scope": [
+        "luke"
+      ],
+      "completed_unit": "Luke summary, contexts, claims, notes, typed evidence, sources, and anchors reviewed; existing explanations sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Luke valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -4102,14 +4115,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1a7882e208f5eb64e7ffe2365e304cec7b22858a969c2b357014e1ed743854be",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and contexts explain the Gospel’s Jewish setting and literary movement; 44 claims and 68 notes clarify textual variants, historical questions, social reversals, and ethical cautions. Three typed evidence records distinguish explicit observations from source-specific scholarly proposals and state limits on interpretation.",
+      "limitation": "The existing descriptions already unpack their significance and evidence layers. No protected source-lock fields required modification.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14716,6 +14742,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/luke.json",
+  "next_batch": "framework/canonical_library/objects/books/malachi.json",
   "protected_fingerprint_base": "origin/master"
 }
