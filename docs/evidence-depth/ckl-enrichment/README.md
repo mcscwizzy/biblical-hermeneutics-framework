@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **221 objects are enriched**, **107 are unchanged because they
-are already sufficient**, **136 are skipped pending source or identity
-research**, and **223 remain pending review**.
+are already sufficient**, **137 are skipped pending source or identity
+research**, and **222 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1321,3 +1321,11 @@ as proof of every event. The linked evidence cluster preserves chronological
 and interpretive limits. Single-object validation passed with 1 valid object, 0
 errors, and 8 pre-existing section-status warnings. The next pending object is
 recorded in the manifest.
+
+
+Batch 395 reviewed Euphrates and held it for source and anchor review. The
+current references concern the sea crossing, Jordan, and restoration imagery,
+not the Euphrates; the internal historical-orientation source is pending human
+review. Single-object validation passed with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is recorded in the
+manifest.

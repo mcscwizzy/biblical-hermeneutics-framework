@@ -8610,6 +8610,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-395-euphrates-review",
+      "scope": [
+        "euphrates"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Euphrates-specific source and Scripture-anchor review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No unsupported river history or curated relationships were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26865,14 +26886,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "478f7985957aa86960bd086f0547f8b1671a07961ccf673f90aa8efffd8888b3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed explanatory fields, Scripture anchors, sources, and related-object links. The cited passages concern other waters and do not support Euphrates-specific geography or historical claims; no prose was changed.",
+      "limitation": "Exodus 14:1-31 concerns the sea crossing, Joshua 1:1-4 concerns the Jordan boundary, Psalm 114 recalls the sea and Jordan, and Isaiah 43:1-21 uses waters in restoration imagery. None establishes Euphrates-specific context. The internal historical-orientation source is pending human review. Euphrates-specific passages and verified sources are needed before enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -30873,7 +30909,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/euphrates.json",
+  "next_batch": "framework/canonical_library/objects/places/fair-havens.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
