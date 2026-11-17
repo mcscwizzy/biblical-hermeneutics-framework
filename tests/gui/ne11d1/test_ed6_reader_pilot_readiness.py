@@ -45,7 +45,10 @@ def test_ed6_passage_tasks_show_exact_source_and_natural_uncertainty(
     _select_verses(driver, wait, case["book"], case["chapter"], case["verses"])
 
     explorer = _open_narrative_explorer(driver, wait)
-    assert f"Current passage: {case['reference']}" in explorer.text
+    assert f"Current passage: {case['reference']}" not in explorer.text
+    assert case["reference"] in explorer.find_element(
+        By.CSS_SELECTOR, ".narrative-explorer-header h3"
+    ).get_attribute("aria-label")
     explorer.find_element(By.CSS_SELECTOR, f'[data-section-id="{case["section_id"]}"]').click()
     section = wait.until(lambda page: page.find_element(
         By.CSS_SELECTOR,

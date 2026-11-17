@@ -22,7 +22,8 @@ def test_narrative_explorer_discovery_and_focused_category_history(driver, base_
     cards = explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")
     assert len(cards) == 6
     assert not explorer.find_elements(By.CSS_SELECTOR, "article.narrative-explorer-item")
-    assert "Current passage: Genesis 1" in explorer.text
+    assert "Current passage: Genesis 1" not in explorer.text
+    assert "Genesis 1" in explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-header h3").get_attribute("aria-label")
     assert "Follow a Connection" in explorer.text
     assert driver.save_screenshot(str(artifacts_dir / "ui03-discovery-desktop.png"))
 
@@ -59,7 +60,8 @@ def test_exodus_geography_and_cosmic_categories_keep_distinct_availability(drive
     driver.find_element(By.CSS_SELECTOR, '[data-testid="companion-narrative-explorer"]').click()
     explorer = wait.until(lambda b: b.find_element(By.CSS_SELECTOR, ".narrative-explorer"))
     assert len(explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")) == 6
-    assert "Current passage: Exodus 3:2" in explorer.text
+    assert "Current passage: Exodus 3:2" not in explorer.text
+    assert "Exodus 3:2" in explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-header h3").get_attribute("aria-label")
 
     explorer.find_element(By.CSS_SELECTOR, '[data-section-id="biblical_geography"]').click()
     geography = wait.until(lambda b:b.find_element(
@@ -76,7 +78,7 @@ def test_exodus_geography_and_cosmic_categories_keep_distinct_availability(drive
     cosmic_card.click()
     cosmic = wait.until(lambda b:b.find_element(
         By.CSS_SELECTOR,
-        ".narrative-explorer-section[data-section-id='divine_council_cosmic_geography']",
+        ".narrative-explorer-empty-topic[data-section-id='divine_council_cosmic_geography']",
     ))
     assert "Availability could not be checked" in cosmic.text
     assert not cosmic.find_elements(By.CSS_SELECTOR, ".narrative-explorer-item-action")
@@ -187,10 +189,9 @@ def test_real_jonah_verification_interrupted_by_chapter_change(driver, base_url)
     wait.until(lambda b: b.execute_script(
         "return window.BHFStudySelection?.getState?.().reference === 'Jonah 2';"
     ))
-    wait.until(lambda b: any(
-        "Current passage: Jonah 2" in element.text
-        for element in b.find_elements(By.CSS_SELECTOR, ".narrative-explorer-passage")
-    ))
+    wait.until(lambda b: "Jonah 2" in b.find_element(
+        By.CSS_SELECTOR, ".narrative-explorer-header h3"
+    ).get_attribute("aria-label"))
     assert not driver.find_elements(
         By.CSS_SELECTOR,
         '.narrative-explorer-related-passage[data-route-id="jonah-1-17-matthew-12-40-sign-of-jonah"][aria-current="true"]',
