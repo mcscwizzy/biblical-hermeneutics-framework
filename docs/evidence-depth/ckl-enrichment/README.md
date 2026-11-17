@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **306 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **184 are skipped pending source or identity
-research**, and **81 remain pending review**.
+At this checkpoint, **307 objects are enriched**, **116 are unchanged because they
+are already sufficient**, **189 are skipped pending source or identity
+research**, and **75 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1910,3 +1910,6 @@ Grace was enriched to distinguish how Exodus 34, Psalm 103, Micah 7, Ephesians 2
 
 
 Hamartiology was reviewed and held. Its title names the doctrine of sin, but its explanatory prose, Scripture anchors, and sources instead concern covenant promises and fulfillment; the only historical-orientation source is an internal placeholder pending human review. The object needs identity and source reconciliation before any doctrine-specific account can be supported.
+
+
+Inspiration was clarified from the cited texts: Deuteronomy’s covenant instruction, the Psalms’ praise of divine teaching, Luke’s scene of scriptural interpretation, and 2 Timothy’s description of sacred writings. The explanation distinguishes these textual observations from later doctrinal debates and leaves external historical context blank where the object’s sources do not establish it. Imago Dei, Incarnation, Inerrancy, Judgment, and Justification were held because their source anchors do not directly support their named doctrines or because the records are misaligned.
