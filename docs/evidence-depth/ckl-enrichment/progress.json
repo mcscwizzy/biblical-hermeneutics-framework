@@ -6252,6 +6252,28 @@
         ]
       },
       "checkpoint_commit": "072b0211"
+    },
+    {
+      "batch_id": "batch-293-gideon-person",
+      "scope": [
+        "gideon"
+      ],
+      "completed_unit": "Reviewed Gideon and held the entry because it omits the direct Judges 6-8 narrative and overstates what its general-cycle and later references establish.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20808,14 +20830,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4780e785776af426ea5f43f11d724b5bfa1af4687ff223ed4776ae75765be360",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the person-specific narrative in Judges 6-8 is not among the anchors. Judges 2 gives a general cycle, 1 Samuel 12:11 names Jerubbaal in a deliverer list, and Hebrews 11:32 names Gideon, but these do not support the record’s broad claims about his narrative or Samuel’s literary use of him.",
+      "limitation": "The entry needs direct passage anchors and a clarified claim about its relation to Samuel before Gideon-specific explanation can be safely expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26616,7 +26652,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/gideon.json",
+  "next_batch": "framework/canonical_library/objects/people/hannah.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

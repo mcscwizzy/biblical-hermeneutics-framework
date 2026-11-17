@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **180 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **87 are skipped pending source or identity
-research**, and **325 remain pending review**.
+are already sufficient**, **88 are skipped pending source or identity
+research**, and **324 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -869,3 +869,6 @@ Batch 291 reviewed Ezekiel the Prophet and left it unchanged. The references are
 
 
 Batch 292 reviewed Ezra the Scribe and left it unchanged. The anchors cover Ezra 1’s return decree, Nehemiah’s prayer, Esther’s appeal, and Haggai’s temple oracle; none identifies Ezra. The person-specific passages in Ezra 7-10 are absent, so the entry needs reference reconciliation before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Gideon.
+
+
+Batch 293 reviewed Gideon and left it unchanged. The direct narrative in Judges 6-8 is absent; the anchors instead include the general cycle in Judges 2, Jerubbaal in 1 Samuel 12:11, and Gideon in Hebrews 11:32. Those references do not support the broad claim that Samuel uses Gideon to argue for monarchy. Direct anchors and claim scope need review before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Hannah.
