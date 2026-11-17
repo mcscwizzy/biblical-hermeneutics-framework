@@ -291,6 +291,33 @@
         "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
       },
       "checkpoint_commit": "a18c5af2"
+    },
+    {
+      "batch_id": "batch-018-tel-dan-stele-review",
+      "scope": [
+        "tel-dan-stele"
+      ],
+      "completed_unit": "Explanatory-field audit; held for inscription identification and text sources",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
+      },
+      "checkpoint_commit": "pending"
+    },
+    {
+      "batch_id": "batch-019-tel-dan-and-tel-rehov-review",
+      "scope": [
+        "tel-dan-stele",
+        "tel-rehov-honey-workshop"
+      ],
+      "completed_unit": "Two archaeology objects reviewed; both held for subject/source reconciliation",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: both valid with 0 errors and 10 pre-existing section-status warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -1608,14 +1635,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1411c1c405885d1eb4e271cfe20157425d9daae843fb200ecaf044b4ca9f8998",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; current source records do not support the named archaeological subject.",
+      "limitation": "All listed source records lack author, locator, URL, source notes, and claim support; the anchors to 2 Samuel 8 and 2 Kings 8 do not address the inscription’s relevant damaged Aramaic text. This entry may be conflated with the separate Tell Dan excavation object. The artifact, text, fragments, date, and disputed readings require verified sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1626,14 +1667,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7c0de0111e379f9a4502700861204b5109dbe3662601d2a5f909e51319570a61",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; current source records do not support the named archaeological subject.",
+      "limitation": "The title names a honey workshop at Tel Rehov, but the entire record’s context, interpretive notes, sources, and biblical links instead describe the Tel Dan Stele. No Tel Rehov remains or apiculture evidence are recorded, and all sources lack locators and claim support. The object needs identity correction and excavation research before any explanation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13242,6 +13297,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/archaeology/tel-dan-stele.json",
+  "next_batch": "framework/canonical_library/objects/archaeology/tell-dan-excavations.json",
   "protected_fingerprint_base": "origin/master"
 }

@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **1 object is enriched**, **3 are unchanged because they
-are already sufficient**, **33 are skipped pending source research**, and
-**648 remain pending review**.
+are already sufficient**, **35 are skipped pending source research**, and
+**646 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -88,6 +88,11 @@ The Siloam Inscription and Taylor Prism entries were held because their source
 records lack artifact identifiers, locators, and source-supported claims. The
 Siloam entry needs a verified inscription text and tunnel connection; Taylor
 Prism should be reconciled with the better-supported Sennacherib Prism record.
+
+The Tel Dan Stele and Tel Rehov Honey Workshop entries were both held because
+their source records and Scripture links instead describe the Tel Dan Stele.
+The named objects need separate, site-specific records and verified excavation
+sources before contextual prose can be added.
 
 Shiloh Excavations was held because its sources and Scripture links point to
 Jerusalem and general creation texts rather than site-specific Shiloh evidence.
@@ -157,6 +162,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/tel-dan-stele.json`.
+The next work unit is `objects/archaeology/tell-dan-excavations.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
