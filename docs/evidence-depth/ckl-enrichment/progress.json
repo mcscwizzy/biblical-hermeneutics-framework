@@ -857,6 +857,19 @@
         "ckl_objects": "PASS: Nahum valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-058-nehemiah-review",
+      "scope": [
+        "nehemiah"
+      ],
+      "completed_unit": "Nehemiah reviewed and found already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Nehemiah valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -4366,14 +4379,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5f1076a3933cca7bf27a2abc2ccdb8df348c3bee6c21514162873306c4b445a5",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. Its summary and contexts explain the Persian-period setting and the book’s turn from wall building to Torah, economic repair, covenant, and incomplete reform; eight claims and ten notes distinguish textual narrative from archaeological reconstruction and later application.",
+      "limitation": "Existing material already connects observations to their literary and historical significance, including careful treatment of coercive reforms.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14872,6 +14898,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/nehemiah.json",
+  "next_batch": "framework/canonical_library/objects/books/numbers.json",
   "protected_fingerprint_base": "origin/master"
 }
