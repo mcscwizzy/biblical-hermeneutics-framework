@@ -4844,6 +4844,31 @@
         ]
       },
       "checkpoint_commit": "6d1a1704"
+    },
+    {
+      "batch_id": "batch-234-feast-calendar-institution",
+      "scope": [
+        "feast-calendar"
+      ],
+      "completed_unit": "Reviewed the festival instructions, dedication narrative, Hebrews passage, contextual claims, and related links; separated the calendar from sacrifice as distinct subjects.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/feast-calendar.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchors, source identities, related links, and review/confidence metadata preserved.",
+        "No Second Temple or ancient comparative claim added without a supporting source."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "64538be3"
     }
   ],
   "inventory_count": 687,
@@ -17070,14 +17095,48 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "17c9898d6a314c1b3c6a916f3094109c4d7fdd2abe25bd504b7a067ce533372c",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Explained the actual material in Exodus 23, Leviticus 23:1–8, 1 Kings 8, and Hebrews 10, distinguishing festival instructions, temple-dedication narrative, and later argument about sacrifice. Removed unsupported Second Temple and generic comparative background.",
+      "limitation": "No source is attached for actual Second Temple feast practice or later Christian observance. Hebrews 10 addresses repeated sacrifices, not the calendar as a whole.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23976,7 +24035,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/feast-calendar.json",
+  "next_batch": "framework/canonical_library/objects/institutions/herodian-court.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

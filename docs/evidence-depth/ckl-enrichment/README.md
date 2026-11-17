@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **149 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **150 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **62 are skipped pending source or identity
-research**, and **384 remain pending review**.
+research**, and **383 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -695,3 +695,5 @@ Batch 231 enriched the Covenant Assembly institution entry by distinguishing Exo
 Batch 232 reviewed Diaconate and made no CKL content change: its direct passages describe community and shared roles but do not establish a distinct office, while its more specific Phoebe and service research links remain draft/in_review. The existing generic context claims remain a source-research gap. Validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/elders.json`.
 
 Batch 233 enriched Elders by distinguishing delegated judges, appointed officials, named elders, and the council in Acts. It removes unsupported comparisons with neighboring empires and avoids treating these varied settings as one uniform office. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/feast-calendar.json`.
+
+Batch 234 enriched Feast Calendar with distinct explanations of Exodus 23, Leviticus 23, the seventh-month dedication in 1 Kings 8, and Hebrews 10’s argument about sacrifice. It removes unsupported historical and comparative claims and clarifies that Hebrews 10 does not explain the calendar as a whole. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/herodian-court.json`.
