@@ -5715,6 +5715,31 @@
         ]
       },
       "checkpoint_commit": "8a5ed9cb"
+    },
+    {
+      "batch_id": "batch-270-archelaus-person",
+      "scope": [
+        "archelaus"
+      ],
+      "completed_unit": "Reviewed Archelaus and expanded only the summary with Matthew 2:22’s narrative connection between his rule in Judea and Joseph’s route toward Galilee.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/archelaus.json"
+      ],
+      "protected_checks": [
+        "Object ID, source identity, Scripture anchor, source-locked evidence item and attestation, certainty, review status, and relations preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Source-locked evidence, protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19477,14 +19502,27 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "ae25043d4aa91af061de126bc2ad8c0097b2ab2c1e8ff4b9d3a3d7009458b038",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "scripture_references",
+        "sources",
+        "evidence_items",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Expanded the summary to explain the narrative function of Matthew 2:22: Archelaus’s rule in Judea is linked to Joseph’s fear and the family’s turn toward Galilee. The claim remains confined to the text.",
+      "limitation": "No wider historical profile of Archelaus was added; the object is deliberately limited to one locked textual occurrence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Source-locked evidence, protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -25699,7 +25737,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/archelaus.json",
+  "next_batch": "framework/canonical_library/objects/people/balaam.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
