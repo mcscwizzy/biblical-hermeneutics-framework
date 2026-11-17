@@ -2096,6 +2096,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "b499eea2"
+    },
+    {
+      "batch_id": "batch-122-birth-of-isaac-summary",
+      "scope": [
+        "birth-of-isaac"
+      ],
+      "completed_unit": "Reviewed summary, contexts, Scripture references, source identities, one interpretive note, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/birth-of-isaac.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "Genesis narrative and later Pauline and Hebrews readings remain distinct."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "6e6eafe8"
     }
   ],
   "inventory_count": 687,
@@ -9085,14 +9106,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5288110a7ee28c73ed9eec4fde1ff2c9fa853a16239b6b9259c3a5af6c737a4b",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Connected Sarah’s laughter at the promise in Genesis 18 with the birth and naming of Isaac in Genesis 21, then distinguished the later uses of the story in Romans 9 and Hebrews 11.",
+      "limitation": "The object has no atomic claims or typed evidence; the wording stays within its listed biblical references and interpretive note and adds no external historical claim.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture anchors, relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (67.27s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18205,7 +18244,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/birth-of-isaac.json",
+  "next_batch": "framework/canonical_library/objects/events/birth-of-jesus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
