@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **189 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **190 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **91 are skipped pending source or identity
-research**, and **311 remain pending review**.
+research**, and **310 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -911,3 +911,6 @@ Batch 305 reviewed Jesus. The central profile now connects Matthew’s birth acc
 
 
 Batch 306 reviewed Jethro. The profile now follows Exodus 18 from Jethro’s response to the deliverance to his advice that Moses share the work of judging, and explains how the scene bridges the escape from Egypt and arrival at Sinai. The source list includes Exodus 1–40, but the structured passage references omit Exodus 18; that relationship remains a follow-up. No comparative claim about a universal ancient judicial system was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. A validator comparison warning from the first wording was removed before checkpoint. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is job-the-sufferer.
+
+
+Batch 307 reviewed Job the Sufferer. The explanation now follows the book from its prose opening into the friends’ poetic arguments and Job’s protest, showing how the reader’s knowledge of the opening tests the friends’ certainty. James’s later appeal to endurance is distinguished from Job’s own speeches, which include lament. The sources do not establish a date for Job or a precise location for Uz, so neither was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is john-son-of-zebedee.
