@@ -10053,6 +10053,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-459-judgment-against-the-nations",
+      "scope": [
+        "judgment-against-the-nations"
+      ],
+      "completed_unit": "Clarified the distinct targets and literary forms of the oracles while explaining their shared theme of accountability across nations.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/prophecy/judgment-against-the-nations.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "Removed generic historical background that implied an unsupported common setting; no new chronology was introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30501,14 +30526,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b81bf45a4b035df208d9e9ba7f70f7e2b3d5b388c9297a2f75f974522c1606b7",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained the distinct targets, charges, and forms across Isaiah, Jeremiah, Amos, Obadiah, Nahum, and Zephaniah, while identifying their shared theme of accountability across nations.",
+      "limitation": "Only the recorded biblical texts were used. They present separate prophetic portrayals and do not establish a single chronology or one historical crisis behind the oracles.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33357,7 +33406,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/prophecy/judgment-against-the-nations.json",
+  "next_batch": "framework/canonical_library/objects/prophecy/messianic-prophecy.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **245 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **246 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **168 are skipped pending source or identity
-research**, and **159 remain pending review**.
+research**, and **158 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1601,3 +1601,6 @@ Batch 457 reviewed Day of the Lord Prophecy. The revised explanation distinguish
 
 
 Batch 458 reviewed Immanuel Prophecy. The revised explanation follows Isaiah 7’s sign in Ahaz’s crisis, Isaiah 8’s child-sign imagery and Assyrian threat, and Matthew’s later quotation, keeping the two settings distinct. The broad ancient Near Eastern boilerplate was removed because the object has no supporting comparative source. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 459 reviewed Judgment Against the Nations. The revised explanation identifies the distinct targets and accusations in Isaiah, Jeremiah, Amos, Obadiah, Nahum, and Zephaniah, and shows their shared concern with accountability without treating them as one campaign. It removes the generic ancient Near Eastern context unsupported by this object’s sources. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
