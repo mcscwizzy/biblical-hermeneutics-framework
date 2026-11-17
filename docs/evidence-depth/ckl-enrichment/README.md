@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **20 objects are enriched**, **73 are unchanged because they
+At this checkpoint, **20 objects are enriched**, **74 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **551 remain pending review**.
+research**, and **550 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -345,6 +345,9 @@ Batch 076 reviewed the Genesis 10–11 nations and Babel context. Its 29 evidenc
 
 Batch 077 reviewed the honor-and-shame background object and left it unchanged. It has no passage-specific evidence items or claims, and its broad historical and cultural statements rely on an internal CKL orientation note rather than inspected scholarly support. Future research is needed before expanding claims about honor and shame across ancient societies and periods. The full CKL remains at 687 valid objects, zero errors, and 14 baseline warnings. The single-object path audit reports nine section-status warnings for this unchanged record; those do not appear in the full-library audit. No regression tests were run because no content changed.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/judean-pilgrimage-taxation-and-roman-power.json`.
+
+Batch 078 reviewed the Judean pilgrimage, taxation, and Roman power record and left it unchanged. Its claims and evidence distinguish temple payments, tolls, imperial tribute, Roman jurisdiction, crucifixion, and burial, and carefully bound what the stepped street and Yehohanan remains can establish. The cited excavation report, Josephus passage, and museum object record were inspected. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. Regression tests were not run because no content changed.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/judges-household-religion-and-regional-cult-sites.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

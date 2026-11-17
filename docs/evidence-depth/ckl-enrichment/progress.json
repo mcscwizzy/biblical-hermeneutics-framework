@@ -1184,6 +1184,25 @@
         "regression": "NOT RUN: no content changed."
       },
       "checkpoint_commit": "2913e8d7"
+    },
+    {
+      "batch_id": "batch-078-judean-pilgrimage-roman-power-review",
+      "scope": [
+        "judean-pilgrimage-taxation-and-roman-power"
+      ],
+      "completed_unit": "Reviewed the passage claims, archaeological evidence, source attributions, and uncertainty limits; no explanatory changes needed.",
+      "status": "validated_unchanged",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL fields changed.",
+        "Existing distinctions among text, archaeology, ancient historiography, and reconstruction retained."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, 14 baseline warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6257,14 +6276,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6a7b5d2c30bfd118e95d23e381a40aeb8737ad93745ba1f4a5f041efd8b0c6f3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "interpretive_notes",
+        "claims and rationales",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "evidence_items.primary_observation",
+        "evidence_items.scholarly_interpretation",
+        "sources",
+        "scripture_references",
+        "review and source-lock metadata"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the object unchanged. Its claims and evidence already distinguish temple commerce, imperial tribute, tolls, provincial authority, execution, and burial while explaining what the archaeology and ancient sources do and do not establish.",
+      "limitation": "No additional interpretation of the listed Keddie scholarship was introduced. Directly inspected the cited IAA excavation report, Josephus Antiquities 18 passage, and museum record for the Yehohanan ossuary; retained the existing caution around individual remains and Gospel narratives.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated_unchanged",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression tests not run because no CKL content changed.",
+          "Protected-field fingerprint matches baseline."
+        ]
       }
     },
     {
@@ -16169,7 +16209,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/judean-pilgrimage-taxation-and-roman-power.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/judges-household-religion-and-regional-cult-sites.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
