@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **220 objects are enriched**, **105 are unchanged because they
+At this checkpoint, **220 objects are enriched**, **106 are unchanged because they
 are already sufficient**, **134 are skipped pending source or identity
 research**, and **228 remain pending review**.
 
@@ -1279,3 +1279,12 @@ applicability were disabled. CKL validation reported 687 valid objects, zero
 errors, and the same 14 baseline warnings; focused content-quality and retrieval
 regressions passed (17 tests, 4 subtests). The next pending object is recorded in
 the manifest.
+
+
+Batch 390 reviewed Dan and left its explanation intact. It distinguishes the
+Judges 18 migration and cult installation from Jeroboam's later royal sanctuary,
+connects the narrative critique to its setting, and states what archaeology does
+not establish about the objects or priestly line. The recorded scholarly
+sources support these qualifications. Single-object validation passed with 1
+valid object, 0 errors, and 8 pre-existing section-status warnings. The next
+pending object is recorded in the manifest.
