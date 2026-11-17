@@ -11924,6 +11924,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-535-grace",
+      "scope": [
+        "grace"
+      ],
+      "completed_unit": "Enriched the explanatory fields to distinguish the passages’ portrayals of grace and clarify how they relate.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/grace.json"
+      ],
+      "protected_checks": [
+        "Canonical IDs, claims, evidence, source identities, Scripture references, relationships, confidence, dispute, review, and source-lock fields were preserved.",
+        "Protected-field fingerprint matches the fetched base."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Object validator: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validator: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused regressions: 17 passed, 4 subtests passed.",
+          "Reader-facing summary/context fields remain exposed through canonical object details and retrieval."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -35491,14 +35516,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c630d8996bcf732bf33a49a216f664976ce2359b1e7bf5615b131457ec85c275",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Clarified how the selected passages portray grace in distinct genres and settings: graciousness after Israel’s breach, compassion and pardon, new life in Christ, and grace shaping conduct.",
+      "limitation": "The listed source records do not support a specific ancient Near Eastern comparison or a lexical study; two general interpretive notes were retained without expansion.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Grace object validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings, matching baseline.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected research fields, Scripture anchors, relationships, source identities, and review classifications unchanged."
+        ]
       }
     },
     {
@@ -36979,7 +37027,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/grace.json",
+  "next_batch": "framework/canonical_library/objects/theology/hamartiology.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

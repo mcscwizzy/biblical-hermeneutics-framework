@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **305 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **306 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **183 are skipped pending source or identity
-research**, and **83 remain pending review**.
+research**, and **82 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1904,3 +1904,6 @@ Glorification was held for doctrine/anchor reconciliation. Its references and
 source IDs duplicate the Eschatology cluster, which centers on coming,
 resurrection, and renewed creation rather than establishing a full account of
 glorification. No CKL content was changed.
+
+
+Grace was enriched to distinguish how Exodus 34, Psalm 103, Micah 7, Ephesians 2, and Titus 2 portray graciousness, compassion, pardon, new life, and changed conduct. The object’s generic ancient Near Eastern comparison was removed because its source records did not support one; no lexical claim was added. Object and full-library validation and focused retrieval regressions passed.
