@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **151 objects are enriched**, **92 are unchanged because they
-are already sufficient**, **63 are skipped pending source or identity
-research**, and **381 remain pending review**.
+are already sufficient**, **64 are skipped pending source or identity
+research**, and **380 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -701,3 +701,6 @@ Batch 234 enriched Feast Calendar with distinct explanations of Exodus 23, Levit
 Batch 235 reviewed Herodian Court and made no CKL content change: its references cover other leadership settings and do not identify a Herodian court, and no external history source is attached. The generic prose remains a research gap until adequate sources are available. Validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/high-priesthood.json`.
 
 Batch 236 enriched High Priesthood with text-specific explanation from Exodus 28, Leviticus 16, Numbers 35, Zechariah 3, John 11, Acts 4, and Hebrews 4–10. It distinguishes these biblical forms from later appointment history, using Josephus, Antiquities 20.247–251, for the bounded Herodian/Roman claim. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/household-codes.json`.
+
+
+Batch 237 reviewed Household Codes and made no CKL content change. Its direct anchors cover Sinai, household instruction, communal life, and ordered worship, while household-code passages and related scholarly discussions appear in separate Ephesians, Colossians, and 1 Peter records that remain in review. The institution object has no object-level reviewed historical source, so its generic context wording remains a research gap. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/household.json`.

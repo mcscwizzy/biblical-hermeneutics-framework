@@ -4916,6 +4916,29 @@
         ]
       },
       "checkpoint_commit": "1be4486d"
+    },
+    {
+      "batch_id": "batch-237-household-codes-institution",
+      "scope": [
+        "household-codes"
+      ],
+      "completed_unit": "Reviewed the institution object, its Scripture anchors and source record, and related household-code claims in Ephesians, Colossians, and 1 Peter. Held the object because its direct anchors do not cover household codes and its relevant book records remain in review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object content, source identities, Scripture anchors, relationships, review/confidence metadata, and protected fingerprints unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest integrity check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -17282,14 +17305,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "bd4aa4e82c5500a8b848f3063dc0c26fe2664276d43ad6869ccaa288be28dec4",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No explanation was added because this object’s current Scripture anchors concern Sinai, household instruction, communal life, and ordered worship rather than New Testament household codes; the directly relevant book records remain in review.",
+      "limitation": "This object does not directly anchor Ephesians 5:21–6:9, Colossians 3:18–4:1, or 1 Peter 2:18–3:7, and its only historical source is an internal orientation entry pending human review. Relevant passages and source-linked discussions exist in separate Ephesians, Colossians, and 1 Peter records, but their in_review status and absence of an object-level reviewed history source do not justify importing specific historical claims here. Existing generic context wording remains a source-research gap.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no CKL content changed.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected metadata, Scripture anchors, source identities, and relationships remain unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24134,7 +24176,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/household-codes.json",
+  "next_batch": "framework/canonical_library/objects/institutions/household.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
