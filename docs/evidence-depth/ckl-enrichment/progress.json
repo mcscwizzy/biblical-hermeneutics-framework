@@ -5258,6 +5258,31 @@
         ]
       },
       "checkpoint_commit": "cb1c5ff9"
+    },
+    {
+      "batch_id": "batch-251-roman-governorship-institution",
+      "scope": [
+        "roman-governorship"
+      ],
+      "completed_unit": "Enriched Roman Governorship from the Gospel trial narratives, Acts 24, the Caesarea Pilate inscription, and Josephus, Antiquities 18. Distinguished Pilate and Felix, clarified what inscription and ancient historical writing support, and bounded those sources against the biblical narratives.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/roman-governorship.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -18249,14 +18274,47 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "19cd65e2fd402dd2ebbc358c4d17365f3770b0d4e9f4bf43137792552611f636",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Connected the Gospel accounts of Pilate and Acts’ Felix to distinct legal scenes. Enriched historical context with the Pilate inscription’s prefect title and Josephus’ account of Pilate’s tenure, military standards, aqueduct, and Roman custody of priestly vestments; bounded these sources as evidence for office and administration, not confirmation of Gospel dialogue.",
+      "limitation": "The historical information is available through the existing Pilate Stone and Judean context relationships; the object’s own source list remains generic and does not identify Josephus or the inscription. Josephus, Antiquities 18, and the inscription record were directly inspected for this batch, but no source IDs or relationships were added or changed. The linked cluster remains in review and was not promoted.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24849,7 +24907,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/roman-governorship.json",
+  "next_batch": "framework/canonical_library/objects/institutions/sacrificial-system.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

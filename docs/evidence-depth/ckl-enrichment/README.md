@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **161 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **162 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **67 are skipped pending source or identity
 research**, and **367 remain pending review**.
 
@@ -743,3 +743,6 @@ Batch 249 reviewed Roman Army and made no CKL content change. Most references co
 
 
 Batch 250 reviewed Roman Citizenship and made no CKL content change. The anchors concern Israelite leadership or Acts 23’s council dispute rather than Paul’s citizenship episodes; the object also lacks an independently reviewed historical source. A grounded explanation needs direct citizenship passages and reviewed context. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/roman-governorship.json`.
+
+
+Batch 251 enriched Roman Governorship using the Gospel and Acts scenes, the Caesarea Pilate inscription, and Josephus, Antiquities 18, which was directly inspected. The explanation distinguishes Pilate and Felix, connects the inscription and Josephus to the office and administrative setting, and states that they do not verify Gospel trial dialogue. Source IDs and curated relationships were preserved; the object’s source-list mismatch remains a metadata follow-up. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sacrificial-system.json`.
