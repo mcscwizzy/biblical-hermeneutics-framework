@@ -8944,6 +8944,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-410-holy-place-review",
+      "scope": [
+        "holy-place-2"
+      ],
+      "completed_unit": "Explanatory-field audit; held for identity and anchor reconciliation.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No sanctuary identity or curated relationship was inferred."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27721,14 +27742,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "03d93ba62a95e28db0ae00bb1a2449f9e039a8555bf2e294b8bdab6a3a63dcf5",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed explanatory fields, anchors, sources, and related-object links. The title does not clarify which sanctuary or “holy place” is intended, and its anchors span unrelated locations; no prose was changed.",
+      "limitation": "The anchors include Shechem, David’s Hebron/Jerusalem narratives, and Jerusalem temple scenes, while the source list is broad and the internal orientation source is pending human review. The intended identity and specific textual subject must be reconciled before adding context.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -31459,7 +31495,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/holy-place-2.json",
+  "next_batch": "framework/canonical_library/objects/places/italy.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
