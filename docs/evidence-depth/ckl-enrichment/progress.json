@@ -1623,6 +1623,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "2eeed41b"
+    },
+    {
+      "batch_id": "batch-099-roman-athens-summary",
+      "scope": [
+        "roman-athens-agora-cult-and-philosophy"
+      ],
+      "completed_unit": "Reviewed all 12 claims, 16 typed evidence items, four interpretive notes, and contextual fields; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/roman-athens-agora-cult-and-philosophy.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "The exact altar, venue, trial procedure, and historical transcript remain unclaimed."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -7698,14 +7719,47 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "be4cc295bc6d7d0acd101b75f818cd190e84a94b8048115cccdd96d8d1dabea5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "structure",
+        "interpretive_disputes",
+        "greek_words",
+        "intertextuality",
+        "common_questions",
+        "claims[*].claim",
+        "claims[*].rationale",
+        "evidence_items[*].description",
+        "evidence_items[*].passage_relevance",
+        "interpretive_notes[*].note",
+        "sources[*].identity_and_support_links",
+        "scripture_references",
+        "related_objects",
+        "reader compatibility"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "The summary now traces Acts 17 from the synagogue and agora to the speech’s creator, repentance, judgment, and resurrection themes, while explaining that the Areopagus location and procedure remain uncertain and that no matching altar has been identified. All 12 claims, 16 typed evidence items, and four interpretive notes were reviewed and retained.",
+      "limitation": "No source-dependent historical or interpretive claim was added. Source identities and support links were inspected, but cited scholarship was not independently re-read; existing claims and evidence were retained without treating bibliography entries as newly verified arguments.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Focused content-quality and retrieval regression: 17 passed, 4 subtests passed.",
+          "Protected source, anchor, claim/evidence identity, relationship, uncertainty, and review metadata unchanged."
+        ]
       }
     },
     {
@@ -17232,7 +17286,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/roman-athens-agora-cult-and-philosophy.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/roman-citizenship-and-legal-process.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
