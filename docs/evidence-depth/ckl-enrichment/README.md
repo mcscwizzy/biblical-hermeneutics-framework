@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **221 objects are enriched**, **106 are unchanged because they
+At this checkpoint, **221 objects are enriched**, **107 are unchanged because they
 are already sufficient**, **136 are skipped pending source or identity
-research**, and **224 remain pending review**.
+research**, and **223 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1312,3 +1312,12 @@ passages concern Ai, the Valley of Elah, Jerusalem, and Ammon, while its interna
 historical-orientation source is pending human review. Single-object validation
 passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings.
 The next pending object is recorded in the manifest.
+
+
+Batch 394 reviewed Ephesus and left its source-aware explanation intact. It
+distinguishes Acts' explicit setting from Revelation, First Timothy, and the
+disputed destination phrase in Ephesians; archaeological fit is not presented
+as proof of every event. The linked evidence cluster preserves chronological
+and interpretive limits. Single-object validation passed with 1 valid object, 0
+errors, and 8 pre-existing section-status warnings. The next pending object is
+recorded in the manifest.
