@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **224 objects are enriched**, **108 are unchanged because they
+At this checkpoint, **225 objects are enriched**, **108 are unchanged because they
 are already sufficient**, **145 are skipped pending source or identity
-research**, and **210 remain pending review**.
+research**, and **209 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1423,3 +1423,12 @@ passages do not identify Hamath or support the generic regional claims, and the
 internal historical-orientation source is pending human review. Single-object
 validation passed with 1 valid object, 0 errors, and 8 pre-existing
 section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 408 explained the transition in 2 Samuel 5: Israel's elders anoint David
+at Hebron, after which the narrative moves to David's capture and establishment
+in Jerusalem. The explanation distinguishes those two settings and makes no
+archaeological or external city-history claims. CKL validation reported 687
+valid objects, zero errors, and the same 14 baseline warnings; focused
+content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
+pending object is recorded in the manifest.

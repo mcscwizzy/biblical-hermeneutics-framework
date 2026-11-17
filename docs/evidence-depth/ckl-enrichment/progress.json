@@ -8897,6 +8897,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-408-hebron",
+      "scope": [
+        "hebron"
+      ],
+      "completed_unit": "Explained Hebron as the setting of David’s anointing in 2 Samuel 5:3 and distinguished it from the subsequent Jerusalem sequence.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/hebron.json"
+      ],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, and review metadata were preserved.",
+        "Ancient Near Eastern applicability was disabled because no comparative source is recorded.",
+        "No archaeology or external city-history claim was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27601,14 +27627,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "223955eae556c068abb39bafb1e272f0b6619eba061a3b07313ac4746029fd4d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east"
+      ],
+      "outcome": "Explained the transition in 2 Samuel 5 from David’s anointing by Israel’s elders at Hebron to his capture and establishment in Jerusalem, distinguishing the two settings.",
+      "limitation": "The cited anchor supports the narrative sequence only; no archaeology, city history, or broader site claims were added. Other anchors remain unchanged for curation review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master; Scripture references, source identities, relationships, and review metadata remain unchanged."
+        ]
       }
     },
     {
@@ -31375,7 +31423,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/hebron.json",
+  "next_batch": "framework/canonical_library/objects/places/heshbon.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
