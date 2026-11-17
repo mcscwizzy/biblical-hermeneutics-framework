@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **232 objects are enriched**, **109 are unchanged because they
+At this checkpoint, **233 objects are enriched**, **109 are unchanged because they
 are already sufficient**, **155 are skipped pending source or identity
-research**, and **191 remain pending review**.
+research**, and **190 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1505,3 +1505,6 @@ Batch 425 reviewed Mizpah 3 and made no content changes. Its anchors identify Sh
 
 
 Batch 426 reviewed Moab 1 and made no content changes. Its listed anchors do not establish Moab-specific geography or the object’s claim that Moab was an imperial power; the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 427 reviewed Most Holy Place 2. The explanation now follows 1 Kings 8:6–13: the ark and covenant tablets are placed in the inner sanctuary, then the cloud fills the temple. Other anchors were preserved but not used to support this room's identity. No archaeological reconstruction, dimensions, access rules, or ancient Near Eastern parallels were added. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
