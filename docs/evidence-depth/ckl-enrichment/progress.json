@@ -10701,6 +10701,28 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-485-mountain-theme-review",
+      "scope": [
+        "mountain-theme"
+      ],
+      "completed_unit": "Reviewed and held Mountain Theme because its cited evidence is primarily about covenant and does not support mountain-specific explanation.",
+      "status": "reviewed_skipped",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL anchors, sources, relationships, or metadata were altered.",
+        "Identity/evidence mismatch is recorded for future reviewed reconciliation."
+      ],
+      "validation": {
+        "status": "reviewed_no_content_change",
+        "results": [
+          "No CKL object was modified; object and protected-field data remain unchanged.",
+          "The object remains schema-valid under the most recent full CKL audit (687 valid, 0 errors, 14 baseline warnings).",
+          "Focused regression tests were not rerun because no CKL content or retrieval input changed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -32251,14 +32273,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "93ddde50450efcba6e3eb75a1c4a42d1aa937845947cb2c575aa785fea962420",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No explanatory prose changed because the recorded references and related sources primarily document covenant rather than a mountain theme.",
+      "limitation": "Only Exodus 19:1–6 is explicitly a mountain setting among the Scripture anchors; Genesis 9:8–17 and 12:1–3, Jeremiah 31:31–34, Luke 22:20, and Hebrews 8:6–13 concern covenant without an evident mountain connection in the cited ranges. A reviewed object identity or corrected evidence relationship is needed before enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "No CKL object was modified; object and protected-field data remain unchanged.",
+          "The object remains schema-valid under the most recent full CKL audit (687 valid, 0 errors, 14 baseline warnings).",
+          "Focused regression tests were not rerun because no CKL content or retrieval input changed."
+        ]
       }
     },
     {
@@ -34639,7 +34680,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/mountain-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/new-covenant-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

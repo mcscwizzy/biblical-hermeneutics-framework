@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **270 objects are enriched**, **115 are unchanged because they
-are already sufficient**, **169 are skipped pending source or identity
-research**, and **133 remain pending review**.
+are already sufficient**, **170 are skipped pending source or identity
+research**, and **132 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1673,3 +1673,5 @@ Batch 482 enriched Light and Darkness Theme by distinguishing creation imagery, 
 Batch 483 enriched Mercy Theme from Exodus 34, Psalm 103, Micah 7, Ephesians 2, and Titus 2, connecting forgiveness, covenant faithfulness, grace, and changed conduct. Unsupported comparative context was not retained. The next pending object is recorded in the manifest.
 
 Batch 484 enriched Messiah Theme by tracing its distinct royal, priestly, prophetic, and servant passages and separating those texts from their New Testament interpretation in relation to Jesus. The next pending object is recorded in the manifest.
+
+Batch 485 reviewed Mountain Theme and left it unchanged. Most cited anchors concern covenant; Exodus 19:1–6 is the only explicitly mountain setting in the listed references. The manifest records the need for identity or anchor review.
