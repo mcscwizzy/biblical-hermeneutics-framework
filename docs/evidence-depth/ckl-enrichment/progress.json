@@ -2367,6 +2367,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "79227016"
+    },
+    {
+      "batch_id": "batch-135-crucifixion-summary",
+      "scope": [
+        "crucifixion"
+      ],
+      "completed_unit": "Reviewed summary, contexts, Scripture references, source identities, two interpretive notes, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/crucifixion.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "The Roman execution remains distinct from later New Testament interpretations, which retain multiple images."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "d5391fa8"
     }
   ],
   "inventory_count": 687,
@@ -9858,14 +9879,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "8f49520c0c0d65f59b21c6cc8d9710c10de49c00ce7ccfb1484e7b5d24d7ec44",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the compressed phrase “atoning death” with an accessible explanation of how later New Testament writings connect Jesus’ death with sin and restored relationship, while naming multiple canonical images.",
+      "limitation": "The object has no atomic claims or typed evidence; the summary stays within its Gospel and New Testament references and does not claim that one atonement model exhausts the texts.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture anchors, relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (60.86s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18744,7 +18784,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/crucifixion.json",
+  "next_batch": "framework/canonical_library/objects/events/david-and-goliath.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
