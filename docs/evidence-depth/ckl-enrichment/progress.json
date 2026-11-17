@@ -4964,6 +4964,31 @@
         ]
       },
       "checkpoint_commit": "9eb5c847"
+    },
+    {
+      "batch_id": "batch-239-kingship-institution",
+      "scope": [
+        "kingship"
+      ],
+      "completed_unit": "Enriched the Kingship object from Exodus 18, Deuteronomy 16-18, 1 Samuel 8, and Acts 23. Distinguished judges, the Israelite monarchy, and a Roman tribune; explained the permission and warning presented together in First Samuel; removed generic unsupported ANE framing.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/kingship.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -17415,14 +17440,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "89bd004f0d1d8f28b7f6c2c9f077561833ba77da6def6c524ac31bdf3a6c1ae9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Distinguished Exodus and Deuteronomy’s judges, the request and warning about monarchy in 1 Samuel 8, Deuteronomy’s limits on a king, and the Roman tribune in Acts 23. Explained that the biblical passages present different roles and that First Samuel holds permission and warning together.",
+      "limitation": "The object has no independently reviewed historical source; the internal orientation source is pending human review. The explanation therefore stays with its recorded biblical passages and does not add comparative ANE history or reconstruct the history of Israelite monarchy. Deuteronomy 17:14-20 is within the object’s Deuteronomy 16-18 Scripture source record; existing Scripture-reference entries and relationships were preserved.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24231,7 +24286,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/kingship.json",
+  "next_batch": "framework/canonical_library/objects/institutions/levites.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
