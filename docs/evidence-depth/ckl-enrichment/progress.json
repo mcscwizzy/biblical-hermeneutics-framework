@@ -6116,6 +6116,28 @@
         ]
       },
       "checkpoint_commit": "76249dfe"
+    },
+    {
+      "batch_id": "batch-287-epaphroditus-person",
+      "scope": [
+        "epaphroditus"
+      ],
+      "completed_unit": "Reviewed Epaphroditus and held the entry because its references do not identify him or include his person-specific notices in Philippians 2 and 4.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20471,14 +20493,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3b509ca6791de96de4ce66ec943c63a9522522482cd73aa9703dea384115cd3d",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because none of the cited references identifies Epaphroditus: Acts 9:1-19 concerns Saul, and Romans 16, 1 Corinthians 3:4-9, and Philippians 1:12-18 do not name him. The person-specific references in Philippians 2 and 4 are absent.",
+      "limitation": "The record’s individual passage set and scope need reconciliation before an account of Epaphroditus’s ministry can be safely written. The internal orientation source does not resolve the mismatch.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26387,7 +26423,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/epaphroditus.json",
+  "next_batch": "framework/canonical_library/objects/people/esther-the-queen.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
