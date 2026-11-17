@@ -5189,6 +5189,29 @@
         ]
       },
       "checkpoint_commit": "d149e17c"
+    },
+    {
+      "batch_id": "batch-248-public-reading-institution",
+      "scope": [
+        "public-reading-of-scripture"
+      ],
+      "completed_unit": "Reviewed the Public Reading of Scripture object’s context, references, and source list. Held without content changes because its direct anchors concern assembly, household instruction, Pentecost, and gifts rather than public Scripture reading, and it lacks an independently reviewed history source.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object content, IDs, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest integrity check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -18069,14 +18092,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "349e588b9f9716e38d3298930b25bf6535997c54db4391e77997444b0c11004f",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No explanation was added because the object’s Scripture anchors do not directly describe public reading of Scripture and no independently reviewed historical source is attached.",
+      "limitation": "Exodus 19:1-6 concerns Israel assembled at Sinai, Deuteronomy 6:4-9 addresses instruction in daily household life, Acts 2 narrates Pentecost and Peter’s speech, and 1 Corinthians 12 discusses spiritual gifts. These anchors do not establish the practice of public reading as a subject. The only non-Scripture source is an internal orientation placeholder pending human review. A source-grounded explanation requires direct public-reading passages and, for broader historical context, reviewed evidence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no CKL content changed.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected metadata, Scripture anchors, source identities, and relationships remain unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24723,7 +24765,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/public-reading-of-scripture.json",
+  "next_batch": "framework/canonical_library/objects/institutions/roman-army.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

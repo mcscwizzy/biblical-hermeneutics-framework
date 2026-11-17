@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **161 objects are enriched**, **92 are unchanged because they
-are already sufficient**, **64 are skipped pending source or identity
-research**, and **370 remain pending review**.
+are already sufficient**, **65 are skipped pending source or identity
+research**, and **369 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -734,3 +734,6 @@ Batch 246 enriched Priestly Service by separating festival legislation in Exodus
 
 
 Batch 247 enriched Prophets within the scope of its direct New Testament anchors: Acts 2 presents Peter interpreting Pentecost through Joel, and 1 Corinthians 12 places prophets among gifts serving one body. The explanation distinguishes those settings and records the gap: the object lacks a specific Old Testament prophetic passage and an independently reviewed history source. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/public-reading-of-scripture.json`.
+
+
+Batch 248 reviewed Public Reading of Scripture and made no CKL content change. Its anchors cover Sinai’s assembly, household instruction, Pentecost, and spiritual gifts, but do not directly document public reading; its only historical source is an internal orientation placeholder pending human review. A source-grounded explanation needs direct public-reading passages and reviewed historical evidence. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/roman-army.json`.
