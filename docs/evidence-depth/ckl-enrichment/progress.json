@@ -975,6 +975,22 @@
         "ckl_objects": "PASS: all four objects valid; Abrahamic record has 11 warnings present in origin/master, other three have none. Full library 687 valid, 0 errors, same 14 baseline warnings.",
         "regression": "30 retrieval and context tests passed with 4 subtests. Evidence-graph test collection unavailable because fastapi is not installed."
       }
+    },
+    {
+      "batch_id": "batch-066-imperial-and-egyptian-context-review",
+      "scope": [
+        "assyrian-tribute-and-royal-representation",
+        "babylonian-conquest-deportation-and-judean-diaspora",
+        "egyptian-forced-labor-and-brickmaking",
+        "egyptian-kingship-and-divine-order"
+      ],
+      "completed_unit": "Reviewed four Assyrian, Babylonian, and Egyptian context records; existing explanations were sufficient.",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all four objects valid, 0 errors and 0 warnings. No content changes; full-library validation not rerun.",
+        "regression": "No retrieval regression run because no content fields changed."
+      }
     }
   ],
   "inventory_count": 687,
@@ -5366,14 +5382,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "70cc7cf8d839d545eabf14812f45e2b8ef8d8a4b49767df6cfc7aafc4e07517b",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "claims[].claim",
+        "claims[].rationale",
+        "interpretive_notes[].note",
+        "interpretive_notes[].rationale",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].primary_observation",
+        "evidence_items[].scholarly_interpretation",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Passage-bounded summaries, claims, evidence descriptions, and interpretive notes already explain the relevant biblical sequence and what the external evidence contributes. The records distinguish royal or administrative source perspectives from biblical narrative and avoid treating comparison as proof of identity or theological meaning.",
+      "limitation": "No explanatory fields changed. Chronology, source perspective, and the limits of archaeological or documentary evidence remain qualified as recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline."
+        ]
       }
     },
     {
@@ -5384,14 +5428,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e8322e0ec58bc24b870697ff1dea0d0757063669ff9c56ac5f28fb5d4f11e926",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "claims[].claim",
+        "claims[].rationale",
+        "interpretive_notes[].note",
+        "interpretive_notes[].rationale",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].primary_observation",
+        "evidence_items[].scholarly_interpretation",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Passage-bounded summaries, claims, evidence descriptions, and interpretive notes already explain the relevant biblical sequence and what the external evidence contributes. The records distinguish royal or administrative source perspectives from biblical narrative and avoid treating comparison as proof of identity or theological meaning.",
+      "limitation": "No explanatory fields changed. Chronology, source perspective, and the limits of archaeological or documentary evidence remain qualified as recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline."
+        ]
       }
     },
     {
@@ -5402,14 +5474,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "42261d8fe532548ea75d8212d04124da8d86ab8eec5c72cad7b8e4da99c191f4",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "claims[].claim",
+        "claims[].rationale",
+        "interpretive_notes[].note",
+        "interpretive_notes[].rationale",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].primary_observation",
+        "evidence_items[].scholarly_interpretation",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Passage-bounded summaries, claims, evidence descriptions, and interpretive notes already explain the relevant biblical sequence and what the external evidence contributes. The records distinguish royal or administrative source perspectives from biblical narrative and avoid treating comparison as proof of identity or theological meaning.",
+      "limitation": "No explanatory fields changed. Chronology, source perspective, and the limits of archaeological or documentary evidence remain qualified as recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline."
+        ]
       }
     },
     {
@@ -5420,14 +5520,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1a367d7ee04e33d8116f259a4189858be3aa37cd235d6ec3620860c40a2cf96a",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "claims[].claim",
+        "claims[].rationale",
+        "interpretive_notes[].note",
+        "interpretive_notes[].rationale",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].primary_observation",
+        "evidence_items[].scholarly_interpretation",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Passage-bounded summaries, claims, evidence descriptions, and interpretive notes already explain the relevant biblical sequence and what the external evidence contributes. The records distinguish royal or administrative source perspectives from biblical narrative and avoid treating comparison as proof of identity or theological meaning.",
+      "limitation": "No explanatory fields changed. Chronology, source perspective, and the limits of archaeological or documentary evidence remain qualified as recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline."
+        ]
       }
     },
     {
@@ -15548,6 +15676,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/assyrian-tribute-and-royal-representation.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/exodus-wilderness-routes-and-water.json",
   "protected_fingerprint_base": "origin/master"
 }
