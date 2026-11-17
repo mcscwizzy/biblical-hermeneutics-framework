@@ -844,6 +844,19 @@
         "ckl_objects": "PASS: Micah valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-057-nahum-review",
+      "scope": [
+        "nahum"
+      ],
+      "completed_unit": "Nahum summary, contexts, claims, notes, typed evidence, sources, and anchors reviewed; existing explanations sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Nahum valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -4322,14 +4335,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d5932799b5bce6aaabe27ee6e54da0da68b17640c358d3a13a2f703b789fbf3c",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and contexts explain the Assyrian horizon and Second Temple reception; 27 claims and 46 notes distinguish historical evidence from siege poetry, preserve ethically difficult gendered rhetoric, and separate the book’s ancient referents from later uses. The typed evidence item clearly labels a low-confidence text-critical proposal and its limits.",
+      "limitation": "The explanations are already substantive and source-aware. No change to the object or its evidence is warranted.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14846,6 +14872,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/nahum.json",
+  "next_batch": "framework/canonical_library/objects/books/nehemiah.json",
   "protected_fingerprint_base": "origin/master"
 }

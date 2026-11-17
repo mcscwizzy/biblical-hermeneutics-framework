@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **10 objects are enriched**, **50 are unchanged because they
+At this checkpoint, **10 objects are enriched**, **51 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **585 remain pending review**.
+research**, and **584 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -216,6 +216,8 @@ Batch 054 reviewed Mark. The summary, 41 claims, and 78 notes already explain th
 Batch 055 reviewed Matthew. Its 46 claims and 72 notes already explain the Gospel's Jewish setting, literary design, and major interpretive disputes in detail; one source-locked evidence item carefully records the narrated movement sequence without adding a speculative itinerary. No changes were made, and single-object validation passed with zero errors and warnings.
 
 Batch 056 reviewed Micah. Its 34 claims and 52 notes already explain the Assyrian horizon, land and leadership critiques, disputed speaker transitions, and the book's varied Jewish and Christian reception. The notes preserve uncertainty around the Isaiah parallel, the Bethlehem ruler, and modern uses of the peace and justice passages. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 057 reviewed Nahum. Its 27 claims and 46 notes already explain the Assyrian setting, violent siege poetry, refuge language, and contested gendered imagery without flattening ethical tension. The one typed evidence record labels an alternative textual reconstruction as low confidence and explains why it does not establish geography or composition date. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 ## Reader reachability
 
