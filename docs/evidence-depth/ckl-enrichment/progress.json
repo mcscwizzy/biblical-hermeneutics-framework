@@ -6944,6 +6944,27 @@
         ]
       },
       "checkpoint_commit": "8fd95959"
+    },
+    {
+      "batch_id": "batch-322-martha-person",
+      "scope": [
+        "martha"
+      ],
+      "completed_unit": "Reviewed Martha and held the profile because the cited Gospel endings do not name her or cover her narrative.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object, source, Scripture-reference, relationship, review-status, and claim metadata preserved.",
+        "No CKL content or curated relationships were changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -22467,14 +22488,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "68104e19a42b76f0d0b9bd9868c9a92f680c6b22f2e11c7de71ff27111238e27",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the profile unchanged pending person-specific passage reconciliation.",
+      "limitation": "The title names Martha, but the anchors are the four Gospel endings and do not name her. Her direct scenes in Luke 10 and John 11–12 are absent. The generic Gospel-character prose cannot safely be adapted to Martha without the relevant passages and source alignment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content, source, reference, or relationship fields were changed."
+        ]
       }
     },
     {
@@ -27789,7 +27823,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/martha.json",
+  "next_batch": "framework/canonical_library/objects/people/mary-magdalene.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
