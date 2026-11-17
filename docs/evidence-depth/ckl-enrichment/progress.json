@@ -10278,6 +10278,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-468-blessing-and-curse-theme",
+      "scope": [
+        "blessing-and-curse-theme"
+      ],
+      "completed_unit": "Clarified what the current covenant anchors say about blessing and noted the limited textual support for the curse half of the theme.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/blessing-and-curse-theme.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "Removed broad ancient Near Eastern boilerplate unsupported by specific comparative sources; did not add anchors to cure the curse-text gap."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -31100,14 +31125,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "50dd0b5b77426f9fcc03fbbdb70393df7308210e836277dbc4df52b49e75d698",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained the distinct covenant scenes and their promises, showing where blessing is paired with warning and avoiding a universal prosperity or hardship formula.",
+      "limitation": "The cited passages support covenant, promise, blessing, and a specific curse warning in Genesis 12:3, but do not cover enough curse texts to explain the full theme. No additional texts or ancient Near Eastern comparisons were introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33794,7 +33842,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/blessing-and-curse-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/covenant-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
