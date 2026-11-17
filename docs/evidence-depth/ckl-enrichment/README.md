@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **216 objects are enriched**, **104 are unchanged because they
+At this checkpoint, **217 objects are enriched**, **104 are unchanged because they
 are already sufficient**, **134 are skipped pending source or identity
-research**, and **233 remain pending review**.
+research**, and **232 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1235,3 +1235,12 @@ other anchors remain untouched for curation review. CKL validation reported 687
 valid objects, zero errors, and the same 14 baseline warnings; focused
 content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
 pending object is recorded in the manifest.
+
+
+Batch 385 clarified Cnidus's role in Acts 27:7 as a point the ship passed in
+adverse winds, distinguishing it from ports the narrative says the ship reached.
+The source-locked identity and passage remain unchanged; no stop, sailing lane,
+distance, or port history was inferred. CKL validation reported 687 valid
+objects, zero errors, and the same 14 baseline warnings; focused content-quality
+and retrieval regressions passed (17 tests, 4 subtests). The next pending object
+is recorded in the manifest.

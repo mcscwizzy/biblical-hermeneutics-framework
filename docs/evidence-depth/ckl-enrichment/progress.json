@@ -8378,6 +8378,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-385-cnidus",
+      "scope": [
+        "cnidus"
+      ],
+      "completed_unit": "Clarified Cnidus as a passed landmark in Acts 27:7 and distinguished it from ports reached during the voyage.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/cnidus.json"
+      ],
+      "protected_checks": [
+        "Object and evidence IDs, source lock, Scripture anchor, and review metadata were preserved.",
+        "No stop, reconstructed sailing lane, distance, or port-status claim was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26269,14 +26294,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "e1d213505f8d44ffa110c6ac5da3ea106191e0d582da9633e3c0f5b51874c3dd",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "primary_observation",
+        "scripture_references",
+        "sources",
+        "source_lock"
+      ],
+      "fields_changed": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance"
+      ],
+      "outcome": "Explained how Acts 27:7 uses Cnidus as a passed route marker in adverse winds and distinguishes it from ports the ship reached. No stop, sailing lane, or distance was inferred.",
+      "limitation": "The source-locked passage establishes only the narrated sequence; no external route reconstruction or port history was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object/evidence/source IDs, source lock, Scripture anchor, and review metadata remain unchanged."
+        ]
       }
     },
     {
@@ -30457,7 +30499,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/cnidus.json",
+  "next_batch": "framework/canonical_library/objects/places/corinth.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
