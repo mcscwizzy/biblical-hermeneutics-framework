@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **293 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **294 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **178 are skipped pending source or identity
-research**, and **100 remain pending review**.
+research**, and **99 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1795,3 +1795,11 @@ identity and future hope. The explanation uses the linked evidence cluster to
 qualify Roman household comparisons and avoids treating them as a complete
 legal model. The object and full library validate without new errors or
 warnings; focused regressions passed.
+
+
+Atonement now distinguishes Leviticus 16’s two-goat rite, Isaiah 53’s
+suffering-servant poem, Hebrews’ sanctuary argument, and First John’s language
+of advocacy and atonement. The explanation avoids making one image carry every
+atonement account and removes unsupported ancient Near Eastern framing. The
+object and full library validate without new errors or warnings; focused
+regressions passed.

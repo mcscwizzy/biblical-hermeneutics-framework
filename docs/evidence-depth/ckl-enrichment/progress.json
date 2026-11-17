@@ -11502,6 +11502,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-518-atonement",
+      "scope": [
+        "atonement"
+      ],
+      "completed_unit": "Distinguished the ritual of Leviticus 16, the servant poem of Isaiah 53, Hebrews’ sanctuary argument, and First John’s advocacy/atonement language.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/atonement.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "No single atonement mechanism or scholarly consensus was added beyond the cited passages."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -34415,14 +34441,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "fffb0141e718e4dc609572220b6987b3374d24e4e245d1c30ead6ac52c5cc802",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained the distinct ritual, prophetic, Hebrews, and Johannine uses of atonement language without collapsing them into one mechanism.",
+      "limitation": "No comparative ancient Near Eastern source is recorded. Generic interpretive notes were reviewed and left unchanged; the account stays within the cited texts and related sacrifice record.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, Scripture anchors, source identities, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -36209,7 +36258,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/atonement.json",
+  "next_batch": "framework/canonical_library/objects/theology/bibliology.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
