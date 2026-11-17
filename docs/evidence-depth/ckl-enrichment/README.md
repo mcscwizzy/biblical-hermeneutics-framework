@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **196 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **196 objects are enriched**, **97 are unchanged because they
 are already sufficient**, **97 are skipped pending source or identity
-research**, and **298 remain pending review**.
+research**, and **297 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -950,3 +950,6 @@ Batch 318 reviewed Lois. The explanation now focuses on 2 Timothy 1:5, which nam
 
 
 Batch 319 reviewed Luke the Physician and left the profile unchanged. The anchors concern Saul, general church networks, and Paul’s imprisonment; they do not identify Luke. The current source set also does not establish Luke’s authorship or biography, so the generic ministry claims need person-specific evidence before expansion. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is lydia.
+
+
+Batch 320 reviewed Lydia and left her entry unchanged. It already explains the scene in Acts 16:14–15, 40, distinguishes Lydia’s stated role from disputed claims about wealth or office, and correctly notes that Philippians does not name her. The record also separates Acts’ account from later commemoration. Single-object validation introduced no new issue; no CKL fields changed. The next pending object is mark-the-evangelist.

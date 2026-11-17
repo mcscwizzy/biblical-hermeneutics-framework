@@ -6901,6 +6901,28 @@
         ]
       },
       "checkpoint_commit": "e5b99f6e"
+    },
+    {
+      "batch_id": "batch-320-lydia-person",
+      "scope": [
+        "lydia"
+      ],
+      "completed_unit": "Reviewed Lydia and left the existing detailed, source-aware explanation unchanged.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL object fields were changed.",
+        "No source, Scripture-reference, relationship, review, or claim metadata was changed.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation completed; no new CKL issue was introduced.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -22354,14 +22376,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3b8f686b9ce849169ed54bd90612a344ca01b42d855b67e45ff7a17434a317d7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_disputes",
+        "interpretive_notes",
+        "intertextuality",
+        "archaeology",
+        "hermeneutical_lens"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The existing record is already specific and carefully bounded: it connects Acts 16:14–15, 40 with Lydia’s origin, trade, household baptism, hospitality, and the narrative’s limits. It explicitly separates Philippians as a city connection from direct evidence about Lydia and marks debated identifications and later reception.",
+      "limitation": "No explanation changes needed. Existing human review remains required; this review does not alter that status.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation completed; no new CKL issue was introduced.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
       }
     },
     {
@@ -27712,7 +27755,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/lydia.json",
+  "next_batch": "framework/canonical_library/objects/people/mark-the-evangelist.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
