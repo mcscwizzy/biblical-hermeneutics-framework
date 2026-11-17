@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **213 objects are enriched**, **99 are unchanged because they
-are already sufficient**, **128 are skipped pending source or identity
-research**, and **247 remain pending review**.
+are already sufficient**, **129 are skipped pending source or identity
+research**, and **246 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1118,3 +1118,10 @@ passages do not identify the Arabah, while its regional and covenantal prose is
 generic and its internal historical-orientation source is pending human review.
 The record passed single-object validation with 1 valid object, 0 errors, and 8
 pre-existing section-status warnings. The next pending object is Arad.
+
+
+Batch 371 reviewed Ashdod and held it for source and anchor review. Its cited
+passages concern Ai, the Valley of Elah, Jerusalem, and Ammon rather than
+Ashdod; the internal historical-orientation source is pending human review.
+The object passed single-object validation with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is Ashkelon.

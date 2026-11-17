@@ -8071,6 +8071,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-371-ashdod-review",
+      "scope": [
+        "ashdod"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Ashdod-specific source and Scripture-anchor review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No unsupported history or curated relationships were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -25476,14 +25497,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9fcbe22a7259b534f01c73edae63ae9a3dec5e5ae011269146376739b418f111",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the explanatory fields, anchors, source list, and related-object links. The cited passages describe unrelated events and do not establish an Ashdod-specific account; no prose was changed.",
+      "limitation": "Joshua 8 concerns Ai, 1 Samuel 17 concerns the Valley of Elah, 2 Kings 25 concerns Jerusalem, and Jeremiah 49:1-6 concerns Ammon; these anchors do not support the Ashdod profile. Its internal historical-orientation source is pending human review. Ashdod-specific passages and source review are needed before enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -29916,7 +29952,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/ashdod.json",
+  "next_batch": "framework/canonical_library/objects/places/asia.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
