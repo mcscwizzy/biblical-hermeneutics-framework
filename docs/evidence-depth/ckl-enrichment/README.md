@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **214 objects are enriched**, **102 are unchanged because they
+At this checkpoint, **215 objects are enriched**, **102 are unchanged because they
 are already sufficient**, **133 are skipped pending source or identity
-research**, and **238 remain pending review**.
+research**, and **237 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1191,3 +1191,12 @@ Bethel. The internal historical-orientation source is pending human review. The
 record passed single-object validation with 1 valid object, 0 errors, and 8
 pre-existing section-status warnings. The next pending object is recorded in the
 manifest.
+
+
+Batch 380 clarified how Ruth 1:1 and Matthew 2:1 use the labels Bethlehem in
+Judah and Bethlehem of Judea to locate two distinct narrative settings. The
+explanation avoids treating those local designations as claims about permanent
+political control or tribal ownership. The source-locked evidence and Scripture
+anchors remain unchanged. Object and full-library CKL validation passed with no
+new warnings; focused content-quality and retrieval regressions passed (17 tests,
+4 subtests). The next pending object is recorded in the manifest.
