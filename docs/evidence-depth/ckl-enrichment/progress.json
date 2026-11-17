@@ -1852,6 +1852,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "25864af9"
+    },
+    {
+      "batch_id": "batch-110-tabernacle-summary",
+      "scope": [
+        "tabernacle-presence-access-and-mobility"
+      ],
+      "completed_unit": "Reviewed all four claims, four typed evidence items, two interpretive notes, contextual fields, Scripture references, and recorded source identities; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/tabernacle-presence-access-and-mobility.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "The sanctuary’s meaning is not extended into unrecorded symbolism; compositional history remains qualified."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "2f8d0957"
     }
   ],
   "inventory_count": 687,
@@ -8402,14 +8423,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "51b5f9fb40f78803f145475c3dcd757dcfab261cd668a6fcf10c5343437b7f7e",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "scripture_references",
+        "sources",
+        "claims[*].rationale/notes",
+        "evidence_items[*].description/passage_relevance/observation/interpretation",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the internal cluster description with a reader-facing account of the tabernacle’s stated purpose, its ordered access, the correspondence between instructions and construction, and the cloud’s role in Israel’s movement. The summary distinguishes the observable literary pattern from debated compositional history.",
+      "limitation": "Reviewed recorded Scripture passages, claims, evidence, notes, and source identities; no underlying scholarly publication was newly consulted, and no new historical reconstruction or unsupported item-by-item symbolism was introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: claims, typed evidence, sources, Scripture anchors, relationships, uncertainty classifications, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.43s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -17738,7 +17776,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/tabernacle-presence-access-and-mobility.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/thessalonian-civic-and-funerary-context.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
