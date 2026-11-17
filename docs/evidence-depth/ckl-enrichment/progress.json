@@ -8310,6 +8310,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-382-capernaum-review",
+      "scope": [
+        "capernaum"
+      ],
+      "completed_unit": "Explanatory-field review; existing Gospel and village-context explanation was already sufficient.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No further archaeological assertions were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26093,14 +26114,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "fa1d49602921ec7ac6afddfed0978f77b7f5bfe2617599fab910ade72c6760aa",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The existing profile already connects Gospel scenes with village homes, synagogue, lake travel, and communal life, and it distinguishes the later monumental synagogue from the building in Mark 1. No explanatory rewrite was needed.",
+      "limitation": "The recorded source list has only broad Gospel entries and a pending internal orientation source, not a site-specific archaeological citation for the existing basalt-house and settlement claims. No additional archaeological detail should be added until that support is reviewed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -30335,7 +30374,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/capernaum.json",
+  "next_batch": "framework/canonical_library/objects/places/chaldea.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
