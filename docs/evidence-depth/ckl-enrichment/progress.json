@@ -6442,6 +6442,27 @@
         ]
       },
       "checkpoint_commit": "2e8da043"
+    },
+    {
+      "batch_id": "batch-301-james-brother-of-jesus-person",
+      "scope": [
+        "james-brother-of-jesus"
+      ],
+      "completed_unit": "Reviewed James, Brother of Jesus and held the entry because its anchors concern Saul or general church life, not James.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object, source, Scripture-reference, relationship, review-status, and claim metadata preserved.",
+        "No CKL content or curated relationships were changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21239,14 +21260,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "39f1a8c587dc41ea60a82b725acd5a471e5f40cd76c5310bda69637822c98814",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the record unchanged pending person-specific passage and source reconciliation.",
+      "limitation": "The title names James, brother of Jesus, but Acts 9:1-19 concerns Saul, Romans 16 lists other coworkers, 1 Corinthians 3 discusses ministry generally, and Philippians 1 describes gospel partnership without naming James. James’s direct notices in Galatians 1–2 and Acts 15/21 are absent. The generic claims about this figure therefore lack person-specific support in the current anchors.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content, source, reference, or relationship fields were changed."
+        ]
       }
     },
     {
@@ -26939,7 +26973,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/james-brother-of-jesus.json",
+  "next_batch": "framework/canonical_library/objects/people/james-son-of-alphaeus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
