@@ -2018,6 +2018,25 @@
         "regression": "NOT RUN: no content changed."
       },
       "checkpoint_commit": "c84d7333"
+    },
+    {
+      "batch_id": "batch-118-babel-explanation-review",
+      "scope": [
+        "babel"
+      ],
+      "completed_unit": "Reviewed the summary and contextual fields, Scripture reference and source identities, two interpretive notes, and the absence of claims or typed evidence; left the already-sufficient explanation unchanged.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "The ziggurat comparison remains bounded and no specific monument is identified."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -8868,14 +8887,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4de38a27f592e9b65d0a99cd5174eb0fbf6f1fb3fdba79520ea1ebce25b35dc4",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note/rationale",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary clearly states the narrative’s setting and stated aims. The contextual fields distinguish the story’s setting from composition history and qualify ziggurats as analogy rather than a specific identification. No rewrite was needed.",
+      "limitation": "The underlying Sarna commentary was not newly consulted; no new scholarly claims were introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings_no_content_change",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Claims/evidence are absent; all source identities, Scripture anchors, relationships, and metadata remain unchanged.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -18060,7 +18094,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/babel.json",
+  "next_batch": "framework/canonical_library/objects/events/babylonian-exile.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
