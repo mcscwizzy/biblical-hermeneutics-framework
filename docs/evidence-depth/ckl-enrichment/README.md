@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **75 objects are enriched**, **80 are unchanged because they
-are already sufficient**, **45 are skipped pending source or identity
-research**, and **487 remain pending review**.
+are already sufficient**, **46 are skipped pending source or identity
+research**, and **486 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -484,6 +484,8 @@ Batch 140 enriched the division of the kingdom record with the Shechem successio
 
 Batch 141 corrected the Elijah on Mount Carmel event record, replacing unrelated exile-and-restoration template text with the 1 Kings 18 confrontation and its role in the Elijah narrative. The generic ancient Near Eastern placeholder was cleared for lack of comparative sourcing. Existing anchors and relationships remain untouched, though they do not point to Carmel and need research review. Structural validation retained the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/fall-of-babylon.json`.
+Batch 142 reviewed Fall of Babylon and skipped enrichment pending source and scope research. Its anchors cover Assyrian exile, a Babylon oracle, and restoration material but do not directly narrate Babylon’s capture; no independent historical source is recorded. The unchanged library validates with zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/fall-of-jerusalem.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

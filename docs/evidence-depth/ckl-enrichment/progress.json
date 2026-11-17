@@ -2536,6 +2536,29 @@
         ]
       },
       "checkpoint_commit": "b1375ee0"
+    },
+    {
+      "batch_id": "batch-142-fall-of-babylon-source-gap-review",
+      "scope": [
+        "fall-of-babylon"
+      ],
+      "completed_unit": "Reviewed explanatory fields, anchors, sources, relationships, notes, and evidence coverage; skipped enrichment because the provided anchors do not document the event named by the object.",
+      "status": "skipped_insufficient_support",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL object data changed.",
+        "Unrelated and broad anchors, source identities, and relationships remain untouched pending research review."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "f4643d52"
     }
   ],
   "inventory_count": 687,
@@ -10331,15 +10354,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "82bf8def4943d609192fef68aa54b9f37032cad432a7aa67b71b051ce150232b",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged pending source and scope research. Existing prose is generic template text and does not explain the fall of Babylon.",
+      "limitation": "The Scripture anchors primarily concern the Assyrian fall of northern Israel, Hezekiah’s Passover, a Jeremiah oracle about Babylon, and postexilic temple hope; none directly narrates Babylon’s capture. The source list gives broad book ranges, including 2 Chronicles 29–36, but its only Babylon-related narrative is indirect and no independent historical or archaeological source is recorded. Clarify intended event scope and add a verified primary anchor or scholarly source before rewriting.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "f4643d52"
     },
     {
       "id": "fall-of-jerusalem",
@@ -19091,7 +19133,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/fall-of-babylon.json",
+  "next_batch": "framework/canonical_library/objects/events/fall-of-jerusalem.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
