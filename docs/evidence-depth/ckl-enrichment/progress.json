@@ -7273,6 +7273,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "d936bfd5"
+    },
+    {
+      "batch_id": "batch-336-peter-person",
+      "scope": [
+        "peter"
+      ],
+      "completed_unit": "Expanded Peter’s profile across the call, confession, and Acts 1 scenes, keeping the books’ distinct narratives clear.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/peter.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "Claims and evidence items were not changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -23349,14 +23374,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7364496d6d6b3d2f3fac6e3d2a4803e8b1bbc17fa74daad6a75a2cecc89441fb",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Completed review of the populated explanatory fields, Scripture relationships, source coverage, and curated thematic links. Enrichment is grounded in Matthew, Luke, and Acts and remains available in the existing reader contexts.",
+      "limitation": "No external source is recorded for Peter’s economic or social status; no broader reconstruction of Galilean fishing has been added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -28419,7 +28470,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/peter.json",
+  "next_batch": "framework/canonical_library/objects/people/philemon-of-colossae.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
