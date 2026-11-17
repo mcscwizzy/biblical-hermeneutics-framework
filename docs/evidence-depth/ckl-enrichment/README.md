@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **75 objects are enriched**, **82 are unchanged because they
+At this checkpoint, **76 objects are enriched**, **82 are unchanged because they
 are already sufficient**, **46 are skipped pending source or identity
-research**, and **484 remain pending review**.
+research**, and **483 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -490,6 +490,8 @@ Batch 143 reviewed Fall of Jerusalem and left it unchanged. Its history distingu
 
 Batch 144 reviewed Fall of Samaria and left it unchanged. Its historical section qualifies the Shalmaneser V/Sargon II chronology; its ANE section separates Assyrian royal claims from administrative evidence; and its covenantal and canonical fields distinguish the fall of Israel from Judah’s later exile. The library retains zero errors and the same 14 baseline warnings.
 
-The next work unit is `framework/canonical_library/objects/events/feeding-of-the-five-thousand.json`.
+Batch 145 corrected the Feeding of the Five Thousand record, explaining the shared scene and the differences in Gospel placement, including John’s sign and bread-of-life discourse. It removed a generic unsupported ANE placeholder. Its anchors point to Gospel endings rather than the feeding scenes, a research follow-up preserved in the manifest. The full library retains zero errors and the same 14 baseline warnings; regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/first-missionary-journey.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
