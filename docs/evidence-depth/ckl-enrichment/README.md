@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **148 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **149 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **62 are skipped pending source or identity
-research**, and **385 remain pending review**.
+research**, and **384 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -693,3 +693,5 @@ Batch 230 enriched the Baptism institution entry with the distinct uses in Matth
 Batch 231 enriched the Covenant Assembly institution entry by distinguishing Exodus 19, Deuteronomy 6, Acts 2, and 1 Corinthians 12 as different depictions of communal life. It removes unsupported generalizations about social context and does not assume identical governance across settings. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/diaconate.json`.
 
 Batch 232 reviewed Diaconate and made no CKL content change: its direct passages describe community and shared roles but do not establish a distinct office, while its more specific Phoebe and service research links remain draft/in_review. The existing generic context claims remain a source-research gap. Validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/elders.json`.
+
+Batch 233 enriched Elders by distinguishing delegated judges, appointed officials, named elders, and the council in Acts. It removes unsupported comparisons with neighboring empires and avoids treating these varied settings as one uniform office. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/feast-calendar.json`.

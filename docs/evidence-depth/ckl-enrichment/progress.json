@@ -4819,6 +4819,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-233-elders-institution",
+      "scope": [
+        "elders"
+      ],
+      "completed_unit": "Reviewed the cited leadership passages and related-object context; clarified the specific roles and differences among them.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/elders.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchors, source identities, related links, and review/confidence metadata preserved.",
+        "No unsupported comparison with neighboring empires or uniform office claim added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "6d1a1704"
     }
   ],
   "inventory_count": 687,
@@ -16998,14 +17023,43 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d330a57b29bf8db7099dc95fed430dcd0b4796e9a4fa677dd38d370baeb474f2",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "canonical_context",
+        "context_applicability.canonical",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Distinguished delegated judges in Exodus 18, judges and officers in Deuteronomy 16, elders requesting a king in 1 Samuel 8, and the council hearing in Acts 23. Removed unsupported claims about elders in neighboring societies and a single continuous office.",
+      "limitation": "The listed sources are biblical texts and an internal CKL orientation record; no comparative source supports the previous broad claim about neighboring imperial institutions. The references cover varied leadership settings rather than a single elders office.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23922,7 +23976,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/elders.json",
+  "next_batch": "framework/canonical_library/objects/institutions/feast-calendar.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
