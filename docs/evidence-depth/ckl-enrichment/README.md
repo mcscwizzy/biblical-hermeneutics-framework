@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **121 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **122 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **414 remain pending review**.
+research**, and **413 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -635,3 +635,5 @@ Batch 201 enriched What is the Kingdom of God? with connections among Psalm 2, D
 Batch 202 enriched What is the Kingdom of Israel? by distinguishing the split and Samaria’s fall from the different prophetic interpretations in Hosea, Amos, and Isaiah. It removes broad unsupported claims about empire and keeps each passage’s stated concern visible. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-kingdom-of-judah.json`.
 
 Batch 203 enriched What is the Kingdom of Judah? with the sequence from division through Jerusalem’s fall and exile to Cyrus’s return decree, alongside Jeremiah’s warning and Ezekiel’s restoration image. It avoids overstating continuity of the monarchy through exile and flags the Psalm 89 source-range metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-messiah.json`.
+
+Batch 204 enriched What is the Messiah? with connections among the Davidic promise, royal and priestly psalms, Isaiah’s ruler and servant passages, and New Testament claims about Jesus. It distinguishes the Christian canonical reading from the earlier passages’ own genres and settings and removes an unsupported royal-anointing comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-new-covenant.json`.
