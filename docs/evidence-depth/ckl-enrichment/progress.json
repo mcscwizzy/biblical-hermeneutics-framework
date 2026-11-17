@@ -3349,6 +3349,35 @@
         ]
       },
       "checkpoint_commit": "f2f43c12"
+    },
+    {
+      "batch_id": "batch-174-exodus-and-related-event-records",
+      "scope": [
+        "temptation-of-jesus",
+        "the-exodus",
+        "the-fall"
+      ],
+      "completed_unit": "Reviewed three event records; held Temptation of Jesus for an anchor mismatch, enriched The Exodus from its recorded biblical references, and left The Fall unchanged because its explanation was already adequate.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/the-exodus.json"
+      ],
+      "protected_checks": [
+        "Protected fingerprints match for all three records.",
+        "No Scripture anchors, source identities, relationships, statuses, or review metadata changed.",
+        "No unsupported date, dynasty, or comparative historical claim added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Three single-object CKL audits: each 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected-field comparisons: PASS for all three records.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "c74ec9a2"
     }
   ],
   "inventory_count": 687,
@@ -12675,14 +12704,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "79b6958febf3d584e63f914189d87021de89cf083be1051c657d82e8c1343fae",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending event identity and source reconciliation.",
+      "limitation": "The title names Jesus’ wilderness temptation, but its anchors point to resurrection and commission scenes. No account of the temptation in Matthew 4, Mark 1, or Luke 4 is recorded, and the listed sources provide no passage-specific support. Rewriting would require unsupported anchor/source reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run for this unchanged object; focused tests were run for the changed object in the batch."
+        ]
       }
     },
     {
@@ -12693,14 +12739,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b3358c59c94a04319694759c29693762eb1915c091531f45ff51913dc5f74e88",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the narrative from oppression, Moses’ call, confrontation, plagues, and Passover through departure, sea crossing, and song. Clarified how the rescue grounds later covenant instruction and how later texts recall the event. Replaced the generic imperial-religion claim with the conflict as narrated in Exodus.",
+      "limitation": "No date or dynasty was supplied because the recorded text leaves Pharaoh unnamed and no reviewed historical source establishes a date.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -12711,14 +12782,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "340c038ec0ee52861cee4b7ca46fccbfb11501f7b2337964a43fdf882edfbf10",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Existing explanation already connects Genesis 3’s disobedience, broken trust, curse, and expulsion with its role in the wider biblical account of sin and restoration. Later New Testament interpretations are separately anchored and the textual observations are specific.",
+      "limitation": "The broad ancient Near Eastern comparison is not independently substantiated in this review and was not expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -20769,7 +20857,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/temptation-of-jesus.json",
+  "next_batch": "framework/canonical_library/objects/events/the-flood.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

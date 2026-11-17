@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **95 objects are enriched**, **87 are unchanged because they
-are already sufficient**, **55 are skipped pending source or identity
-research**, and **450 remain pending review**.
+At this checkpoint, **96 objects are enriched**, **87 are unchanged because they
+are already sufficient**, **56 are skipped pending source or identity
+research**, and **447 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -548,6 +548,8 @@ Batch 172 enriched Road to Emmaus. Its explanation now follows the disciples fro
 
 Batch 173 reviewed Second Missionary Journey, Sermon on the Mount, Sinai Covenant, and Solomon Builds the Temple. The two former records were held because their anchors do not cover the named event. Sinai now follows Exodus 19–24 from deliverance and communal calling to covenant ratification, without an unsourced treaty analogy. Solomon’s temple explanation now links the building details in 1 Kings 6 with the promise in 2 Samuel 7, the ark’s arrival in 2 Chronicles 5, and the later destruction in 2 Kings 25. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/temptation-of-jesus.json`.
+Batch 174 reviewed Temptation of Jesus, The Exodus, and The Fall. Temptation of Jesus was held because its anchors point to resurrection scenes rather than the temptation accounts. The Exodus now traces oppression, the plagues, Passover, departure, and the sea crossing, then explains how rescue grounds covenant life and later scriptural memory. The Fall was left unchanged because its existing explanation already connects the narrative details to the canonical themes. Full CKL validation retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/the-flood.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
