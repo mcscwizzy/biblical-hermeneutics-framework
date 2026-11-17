@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **142 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **143 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **392 remain pending review**.
+research**, and **391 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -679,3 +679,5 @@ Batch 223 enriched Who Was Moses? by tracing the cited account from call and del
 Batch 224 enriched Who Was Paul? by distinguishing Acts’ narrative, Paul’s self-presentation in Galatians, and letter-specific arguments in Romans, 1 Corinthians, and Philippians. It removes uncited claims about diaspora and Greco-Roman settings. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/who-was-peter.json`.
 
 Batch 225 enriched Who Was Peter? with the distinct Gospel, Acts, Galatians, and 1 Peter scenes, including restoration, Gentile inclusion, and disagreement over table fellowship. It removes unsupported claims about Galilean social networks. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/why-are-genealogies-included.json`.
+
+Batch 226 enriched Why Are Genealogies Included? by distinguishing descent lines, lists of peoples, return records, literary transitions, and the ways Matthew and Luke frame Jesus. It removes general claims about ancient social use without comparative sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/why-does-the-bible-repeat-themes.json`.
