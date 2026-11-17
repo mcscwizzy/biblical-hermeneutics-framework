@@ -2388,6 +2388,25 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "d5391fa8"
+    },
+    {
+      "batch_id": "batch-136-david-goliath-sufficiency-review",
+      "scope": [
+        "david-and-goliath"
+      ],
+      "completed_unit": "Reviewed the summary, contexts, two claims, two typed evidence items, interpretive notes, Scripture anchors, and source identities; left the already-sufficient explanation unchanged.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "The archaeological comparison remains bounded and does not authenticate the narrative’s named combatant or imply technological monopoly."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -9916,14 +9935,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e477086f3bb2dbb4cb635b56652e62b3d4a8b41b7751a291e094b51103dfe279",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "scripture_references",
+        "sources",
+        "claims[*].rationale/notes",
+        "evidence_items[*].description/passage_relevance",
+        "interpretive_notes[*].note/rationale"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary clearly identifies the narrative’s military and rhetorical contrasts. Claims and typed evidence explain the weapon inventory and provide bounded archaeological context, explicitly stating that the Gath workshop does not authenticate Goliath or prove a technological monopoly. No rewrite was needed.",
+      "limitation": "The listed scholarly publication was reviewed by source identity only; its full argument was not newly consulted. Existing claims and support were left unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings_no_content_change",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "All source identities, Scripture anchors, claim/evidence links, relationships, and metadata remain unchanged.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -18784,7 +18817,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/david-and-goliath.json",
+  "next_batch": "framework/canonical_library/objects/events/david-anointed.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
