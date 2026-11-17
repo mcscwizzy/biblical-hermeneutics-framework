@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **98 objects are enriched**, **87 are unchanged because they
+At this checkpoint, **99 objects are enriched**, **87 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **438 remain pending review**.
+research**, and **437 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -415,7 +415,9 @@ Batch 178 enriched How do the Old and New Testaments connect? The FAQ now explai
 
 Batch 179 enriched How should I read apocalyptic literature? The FAQ now grounds its guidance in Daniel 7 and Revelation 1, 13, and 21, showing how symbols address power, endurance, and hope. It replaces a broad unsourced claim about ancient imagery with examples from the cited passages. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/how-should-i-read-prophecy.json`.
+Batch 180 enriched How should I read prophecy? The FAQ now grounds its reading advice in Isaiah’s commissioning, Jeremiah’s call, Amos’s demand for justice, Ezekiel’s vision, and Jesus’ use of Isaiah in Luke 4. It distinguishes original setting from later use and avoids unsupported comparisons to other ancient oracles. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-does-hesed-mean.json`.
 Batch 106 reviewed Roman Rome: all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes Romans’ greetings and Acts’ guarded lodging from the city evidence and later traditions, keeping Claudius’s action, the audience, and meeting sites qualified. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
 Batch 107 reviewed the Second Temple priesthood and temple authority record: all four claims, four typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. Its summary now explains how priestly authority, imperial appointment power, the temple boundary relevant to Acts 21, and a proposed Caiaphas identification relate, while preserving uncertainty. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
@@ -564,6 +566,8 @@ Batch 178 enriched How do the Old and New Testaments connect? The FAQ now explai
 
 Batch 179 enriched How should I read apocalyptic literature? The FAQ now grounds its guidance in Daniel 7 and Revelation 1, 13, and 21, showing how symbols address power, endurance, and hope. It replaces a broad unsourced claim about ancient imagery with examples from the cited passages. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/how-should-i-read-prophecy.json`.
+Batch 180 enriched How should I read prophecy? The FAQ now grounds its reading advice in Isaiah’s commissioning, Jeremiah’s call, Amos’s demand for justice, Ezekiel’s vision, and Jesus’ use of Isaiah in Luke 4. It distinguishes original setting from later use and avoids unsupported comparisons to other ancient oracles. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-does-hesed-mean.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

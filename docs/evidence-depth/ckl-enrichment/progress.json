@@ -3502,6 +3502,31 @@
         ]
       },
       "checkpoint_commit": "16ca0391"
+    },
+    {
+      "batch_id": "batch-180-prophecy-reading-faq",
+      "scope": [
+        "how-should-i-read-prophecy"
+      ],
+      "completed_unit": "Reviewed the FAQ, scriptural examples, interpretive notes, source list, and canonical links; expanded six explanatory fields with passage-specific reading guidance.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/how-should-i-read-prophecy.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsupported comparative ancient custom or universal fulfillment claim added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "02f25714"
     }
   ],
   "inventory_count": 687,
@@ -13270,14 +13295,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b90e6527f86f38f144ba4f7ab356eb3c692a08e9186ac067744a624f8d62b6ce",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the reading guidance with cited examples of prophetic commissioning, justice, vision, and later fulfillment. Clarified that prophecy takes different literary forms and that a later Christian reading should be tied to passages that explicitly make that connection. Replaced an unsupported broad treaty/royal-image comparison with examples from the listed texts.",
+      "limitation": "No broader historical reconstruction of prophetic institutions or comparative ancient oracle forms was added because the record contains no scholarly sources for those claims.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21148,7 +21198,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/how-should-i-read-prophecy.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-does-hesed-mean.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
