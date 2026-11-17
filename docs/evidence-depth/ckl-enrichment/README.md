@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **261 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **262 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **169 are skipped pending source or identity
-research**, and **142 remain pending review**.
+research**, and **141 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1652,3 +1652,6 @@ Batch 474 reviewed Fire Theme and left the CKL object unchanged. Its cited passa
 
 
 Batch 475 reviewed Glory Theme. The revised explanation connects Moses’ call, the tabernacle, Solomon’s temple, John’s account of the Word’s glory, and Revelation’s vision of God dwelling with humanity, while keeping those scenes distinct. It removes unsupported generic ancient Near Eastern context. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 476 reviewed Holiness Theme. The revised explanation connects Leviticus’ call with its communal obligations, Isaiah’s confession and cleansing, and the later exhortations in 1 Peter and Hebrews. It uses the linked CKL evidence to preserve the ethical limits that holiness language must not authorize coercion or harm, and adds no unsupported ancient Near Eastern comparison. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
