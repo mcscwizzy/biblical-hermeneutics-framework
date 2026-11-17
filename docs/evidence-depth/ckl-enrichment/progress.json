@@ -9865,6 +9865,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-451-sychar",
+      "scope": [
+        "sychar"
+      ],
+      "completed_unit": "Clarified how John’s geography of Sychar, Jacob’s field, and the well frames the narrative scene.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/sychar.json"
+      ],
+      "protected_checks": [
+        "Evidence IDs, source identities and locks, Scripture references, confidence, review status, and relationships were preserved.",
+        "No modern site identification or hydraulic reconstruction was introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30020,14 +30045,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "831bf53e0670c5a757c9f01e5570fd9d5e3b0d258fb591ef5ff858fea1385600",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Expanded the summary to explain how John’s reference to Jacob’s field and well frames the Sychar scene.",
+      "limitation": "The evidence item is source-locked; its wording, source identities, Scripture anchor, and relationships were preserved. No modern site identification or hydraulic reconstruction was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Evidence IDs, source identities and locks, Scripture references, confidence, review status, and relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33020,7 +33062,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/sychar.json",
+  "next_batch": "framework/canonical_library/objects/places/syria-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
