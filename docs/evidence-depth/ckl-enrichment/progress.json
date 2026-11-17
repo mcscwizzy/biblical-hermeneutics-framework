@@ -167,6 +167,23 @@
         "ckl_objects": "PASS: all eight valid with 0 errors and 10 pre-existing section-status warnings each."
       },
       "checkpoint_commit": "becbba4d"
+    },
+    {
+      "batch_id": "batch-009-lachish-and-royal-inscriptions",
+      "scope": [
+        "lachish-ostraca",
+        "lachish-reliefs",
+        "masada-excavations",
+        "megiddo-excavations",
+        "mesha-stele"
+      ],
+      "completed_unit": "Five archaeology objects reviewed; one sufficient and four held for source verification",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all five valid with 0 errors and 10 pre-existing section-status warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -883,14 +900,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b6c1eb129ac1458e7bd859e1df2150f2f5113157e23d6b0ec860e3652825378a",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing entry does not supply enough verifiable site or artifact evidence.",
+      "limitation": "The entry uses generic template prose, has no identified ostraca or evidence items, and its source records lack locators, URLs, and claim support. The Lachish letters and siege context require specific document IDs, editions, and excavation provenance.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -901,14 +932,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9a6a0b04dc864d900aead8ae456da10f6296d548b22ef6a53c8c4f209e306ff6",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
+      "outcome": "Left intact. The explanation identifies Sennacherib’s capture of Lachish, explains the relief cycle as royal display, distinguishes it from the biblical narrative, and ties uncertainty and context to named sources.",
       "limitation": "",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -919,14 +963,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "93c4ae4e1e42d49bf3d51f27c22ee0b40bd60b39142aeb5c0896224303a2e284",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing entry does not supply enough verifiable site or artifact evidence.",
+      "limitation": "The summary and anchors are generic or mismatched (Psalm 19/Romans 1); its sources point to City of David rather than Masada and have no locators or support. A site-specific account needs securely identified Masada excavations, periods, and relevant primary texts.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -937,14 +995,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "076b5e997f2f11c69203d3278c48cc4ca1df96777ccf9d417aa28fd710d4a430",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing entry does not supply enough verifiable site or artifact evidence.",
+      "limitation": "The record has no site-stratigraphy evidence or claims; source records lack locators, authors, URLs, and support. Its Joshua, Kings, and Revelation anchors are not tied to excavated phases, so phase dating and biblical correlations need verified excavation publications.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -973,14 +1045,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d215a65232aae79a2aea29ee1cbc0068f8d5de9b46edff05b2b473c1d8037f78",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the existing entry does not supply enough verifiable site or artifact evidence.",
+      "limitation": "The broad summary is plausible but the source entries for the Mesha Stele, Louvre, and Kings provide no locators, URLs, notes, or supported claims. The inscription text, damaged readings, and comparison with 2 Kings 3 require a cited edition or museum record before the explanation is expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -12895,6 +12981,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "objects/archaeology/lachish-ostraca.json",
+  "next_batch": "objects/archaeology/mount-ebal-altar-discovery.json",
   "protected_fingerprint_base": "origin/master"
 }

@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **1 object is enriched**, **3 are unchanged because they
-are already sufficient**, **19 are skipped pending source research**, and
-**664 remain pending review**.
+are already sufficient**, **23 are skipped pending source research**, and
+**659 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -89,6 +89,13 @@ inscription evidence, or lack a verified link between the artifact and the
 passages. Each passed single-object validation with zero errors and the same
 ten pre-existing section-status warnings.
 
+In the next review group, the Lachish Reliefs explanation was already
+sufficient: it describes the Assyrian visual account and its royal purpose,
+then distinguishes that evidence from Kings and Isaiah. Lachish Ostraca,
+Masada, Megiddo, and the Mesha Stele were held because the current CKL entries
+lack specific artifact or stratigraphic references tied to their biblical
+anchors. Their source details need repair or review before expansion.
+
 ## Reader reachability
 
 Canonical object detail responses serialize summaries and evidence items.
@@ -115,6 +122,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/lachish-ostraca.json`.
+The next work unit is `objects/archaeology/mount-ebal-altar-discovery.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
