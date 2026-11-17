@@ -335,6 +335,22 @@
         "ckl_objects": "PASS: all five valid with 0 errors and 10 pre-existing section-status warnings each."
       },
       "checkpoint_commit": "7f1783881030fc0cc6a1345eba9c7381b8286de2"
+    },
+    {
+      "batch_id": "batch-021-merneptah-through-pilgrimage-road-review",
+      "scope": [
+        "merneptah-stele",
+        "moabite-stone",
+        "pilate-stone",
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "completed_unit": "Four remaining archaeology objects reviewed; two sufficient and two held for source support",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all four valid with 0 errors and 10 pre-existing section-status warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -1178,14 +1194,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3464313fd0b7dd8db0ac601ade0100fb828e7e7461c8c97a4aa1a836eabcf72f",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
+      "outcome": "The summary and contexts already explain the inscription as royal victory text, the Israel entry’s people classification, its broad relevance to Joshua/Judges, and the limits on what it can establish. UCL’s inscription page and the cited Chicago volume were checked; no added wording would materially improve the explanation without expanding beyond current source support.",
       "limitation": "",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1228,14 +1258,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5a5e665d989ec8e4873aef036bf3c810689141989df6037aa84ed8cad60ffecf",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The entry identifies the Mesha Stele but its context is generic or internally inconsistent, and its source list consists of title-only placeholders with no publication details, locators, URLs, or supported fields. The exact damaged reading and biblical comparison cannot be enriched responsibly until sources and artifact evidence are reconciled.",
+      "limitation": "Recorded evidence does not adequately support safe enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1310,14 +1354,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f3aac49d92cdb977e2e9da087cd912706072591aca5b3d43bfcdbc48eeed40cf",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary and limits are clear, but the source list contains generic title-only placeholders without museum record URLs, inscription text, locators, or field-level support. The entry cannot substantiate the wording or historical details from its recorded research, so expansion is deferred pending source curation.",
+      "limitation": "Recorded evidence does not adequately support safe enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1328,14 +1386,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "28282b28f13282cd63935fbebc552df84612fae1aebed227073e8afcd8bd8d51",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
+      "outcome": "The summary and context already explain the street’s location, first-century setting, urban features, relevance to Gospel geography, and limits on assigning a route to Jesus. The cited Israel Antiquities Authority excavation report was checked and supports these distinctions; further prose would be repetitive.",
       "limitation": "",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13382,6 +13454,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/archaeology/merneptah-stele.json",
+  "next_batch": "framework/canonical_library/objects/archaeology/samaria-palace.json",
   "protected_fingerprint_base": "origin/master"
 }

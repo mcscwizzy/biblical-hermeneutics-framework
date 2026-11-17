@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **1 object is enriched**, **6 are unchanged because they
-are already sufficient**, **39 are skipped pending source or identity
-research**, and **641 remain pending review**.
+At this checkpoint, **1 object is enriched**, **8 are unchanged because they
+are already sufficient**, **41 are skipped pending source or identity
+research**, and **637 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -103,6 +103,15 @@ the temple boundary, and the limited connection to Acts 21 with a museum source.
 All five records passed object validation with zero errors and the same ten
 pre-existing section-status warnings.
 
+The Merneptah Stele and Jerusalem Stepped Street explanations were left intact.
+Their recorded inscription, scholarly volume, and Israel Antiquities Authority
+excavation report support the existing descriptions, contextual connections,
+and interpretive limits. The Moabite Stone and Pilate Stone entries were held:
+their explanatory notes refer to significant inscriptions, but the recorded
+source lists are title-only placeholders without locators, URLs, or support
+links. All four objects passed validation with zero errors and ten existing
+section-status warnings each.
+
 Shiloh Excavations was held because its sources and Scripture links point to
 Jerusalem and general creation texts rather than site-specific Shiloh evidence.
 The record needs excavation phases and relevant biblical anchors reviewed.
@@ -171,6 +180,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/merneptah-stele.json`.
+The next work unit is `objects/archaeology/samaria-palace.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
