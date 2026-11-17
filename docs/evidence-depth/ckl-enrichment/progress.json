@@ -12139,6 +12139,40 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-542-word-contexts-light-wisdom-salvation",
+      "scope": [
+        "metanoia",
+        "makarios",
+        "sophia",
+        "soteria",
+        "phos",
+        "skotia"
+      ],
+      "completed_unit": "Enriched six word-study entries through passage-specific observations, distinguishing shared themes from claims about original-language word usage.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/word_studies/metanoia.json",
+        "framework/canonical_library/objects/word_studies/makarios.json",
+        "framework/canonical_library/objects/word_studies/sophia.json",
+        "framework/canonical_library/objects/word_studies/soteria.json",
+        "framework/canonical_library/objects/word_studies/phos.json",
+        "framework/canonical_library/objects/word_studies/skotia.json"
+      ],
+      "protected_checks": [
+        "No claims, evidence IDs, source identities, Scripture references, relationships, confidence, dispute, review, or source-lock data were changed.",
+        "No unsupported lexical, historical, or ancient Near Eastern assertions were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "No schema, retrieval, or protected-field failures."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -37556,14 +37590,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c4c8aef7582f38694d540eecaf6cb17b7eaf5a3f9ec02080b85a743c90cb10c4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected the Psalms’ blessing sayings with Jesus’ beatitudes and clarified that Luke’s blessings and woes challenge prosperity as the measure of a blessed life.",
+      "limitation": "The explanation stays with the selected passages and their literary/canonical relationships. It adds no etymology, semantic range, or historical usage claim without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical claims, source identities, anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37610,14 +37670,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "69cff066e68d0cde01b1d7d05f4adc9091c05ec83a9225d7372a4cdc7de74df5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained the differences between covenantal calls to return, Jesus’ call to repent and believe, Luke’s parable of return, and the response narrated in Acts.",
+      "limitation": "The explanation stays with the selected passages and their literary/canonical relationships. It adds no etymology, semantic range, or historical usage claim without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical claims, source identities, anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37718,14 +37804,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4322c0e50f8092180b6df2b904c1107829a1934f1ee79f0f83d9d47df02bdfdb",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified how light functions as protection in Psalm 27, revelation in John 1, and ethical life in Ephesians and 1 John.",
+      "limitation": "The explanation stays with the selected passages and their literary/canonical relationships. It adds no etymology, semantic range, or historical usage claim without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical claims, source identities, anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37862,14 +37974,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0c5965de330e253944459377cb311c761a75394f1dabc1e10092960c862f7b46",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained darkness as danger, opposition, or conduct inconsistent with truth across the cited psalm, Gospel prologue, and letters.",
+      "limitation": "The explanation stays with the selected passages and their literary/canonical relationships. It adds no etymology, semantic range, or historical usage claim without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical claims, source identities, anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37880,14 +38018,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e4fd3a339572b2c1a5d649033911c3de7223c8cd8c9d6ddc34c582690d75104f",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Distinguished Proverbs’ teaching and personification of Wisdom from James’s counsel amid trials and conflicts, connecting wisdom with conduct.",
+      "limitation": "The explanation stays with the selected passages and their literary/canonical relationships. It adds no etymology, semantic range, or historical usage claim without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical claims, source identities, anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37898,14 +38062,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2a326961fe07dcfacb116e305a3886faa2501ef410e68e1f6c4df98eacddb7a9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained the different emphases on salvation in Isaiah, John, Romans, Ephesians, and Titus: suffering, life, redemption, new life, and renewal.",
+      "limitation": "The explanation stays with the selected passages and their literary/canonical relationships. It adds no etymology, semantic range, or historical usage claim without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Lexical claims, source identities, anchors, relationships, and protected metadata unchanged."
+        ]
       }
     },
     {
