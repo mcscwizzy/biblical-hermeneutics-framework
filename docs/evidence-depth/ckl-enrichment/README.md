@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **7 objects are enriched**, **40 are unchanged because they
+At this checkpoint, **7 objects are enriched**, **41 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **598 remain pending review**.
+research**, and **597 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -190,6 +190,8 @@ Batch 041 reviewed James. The summary, context, 32 claims, and 42 notes already 
 Batch 042 reviewed Jeremiah. The summary and contexts orient readers to the book's chronology, literary plurality, and distinct Hebrew and Greek editions. Its 18 claims and 26 notes connect details to the historical crisis, clarify the limits of reconstruction, and carefully distinguish later reuse from historical referent. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 Batch 043 reviewed Job. Its summary and context already guide readers through the gap between the heavenly prologue and Job's knowledge, the long poetic debate, and the unresolved tension in the epilogue. Eight claims and 14 notes explain the friends' failed diagnosis, Job's protest, the divine speeches, and the limits of restoration language. It was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 044 reviewed Joel. Its summary, contexts, 22 claims, and 33 notes already explain the agrarian crisis, uncertain date, locust and army imagery, broad participation in the spirit oracle, and the book's later reuse. The notes carefully separate ecological reflection from claims about modern disasters and distinguish quotation from allusion. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 ## Reader reachability
 

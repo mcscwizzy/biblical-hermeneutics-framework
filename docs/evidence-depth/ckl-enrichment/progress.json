@@ -669,6 +669,19 @@
         "ckl_objects": "PASS: Job valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-044-joel-review",
+      "scope": [
+        "joel"
+      ],
+      "completed_unit": "Joel reviewed and found already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Joel valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3714,14 +3727,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d61a030c56792364ab160286007d441b2c45aca31ba7a7375fc87aa89d13442f",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and contexts explain the agricultural setting and disputed date; 22 claims and 33 notes connect locust, army, spirit, ecological and restoration language to the text while distinguishing historical inference, later reception, and modern analogy.",
+      "limitation": "The existing explanations are clear, substantive, and appropriately uncertain.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14472,6 +14498,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/joel.json",
+  "next_batch": "framework/canonical_library/objects/books/john.json",
   "protected_fingerprint_base": "origin/master"
 }
