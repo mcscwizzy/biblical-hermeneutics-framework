@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **170 objects are enriched**, **94 are unchanged because they
+At this checkpoint, **171 objects are enriched**, **94 are unchanged because they
 are already sufficient**, **69 are skipped pending source or identity
-research**, and **354 remain pending review**.
+research**, and **353 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -782,3 +782,6 @@ Batch 262 reviewed Village Elders and left it unchanged. The title suggests a vi
 
 
 Batch 263 reviewed Chiasm. Its literary explanation now contrasts Genesis 9:6 and Philippians 2:6-11, which are proposed structural readings, with Mark 2:27 as a balanced saying that need not be a chiasm. Readers are prompted to test correspondences and boundaries and ask whether the proposed center clarifies the passage. The broader claims about ancient composition and Second Temple interpretation were not expanded because the record has no independently inspected source for them. Single-object validation passed with zero errors and nine pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Aaron.
+
+
+Batch 264 reviewed Aaron. The explanation now follows the record’s cited sequence: Exodus 4 appoints Aaron as Moses’s spokesman, Numbers 17 uses his staff in a leadership test, Deuteronomy 10 records his death and Eleazar’s succession, and Hebrews 3 later compares Moses and Jesus through God’s household. The account avoids turning the Hebrews passage into another episode in Aaron’s biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Abel.

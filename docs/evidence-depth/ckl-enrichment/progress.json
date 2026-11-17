@@ -5575,6 +5575,32 @@
         ]
       },
       "checkpoint_commit": "dd54f155"
+    },
+    {
+      "batch_id": "batch-264-aaron-person",
+      "scope": [
+        "aaron"
+      ],
+      "completed_unit": "Reviewed Aaron and expanded his passage-grounded biographical context while separating the wilderness narrative from Hebrews 3’s later comparison of Moses and Jesus.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/aaron.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19088,14 +19114,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b121a02ee471107b4707bc6effe46998640fa160961b6155f8c94131db2d0714",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role"
+      ],
+      "outcome": "Expanded Aaron’s biographical arc from the specific anchors: his appointment as Moses’s spokesman in Exodus 4, the staff test in Numbers 17, Eleazar’s succession in Deuteronomy 10, and Hebrews 3’s later theological comparison of Moses and Jesus. The prose distinguishes that later argument from Aaron’s biography.",
+      "limitation": "No independent historical reconstruction or ancient Near Eastern comparison was added; the explanation stays with the cited biblical passages.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -25454,7 +25502,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/aaron.json",
+  "next_batch": "framework/canonical_library/objects/people/abel.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
