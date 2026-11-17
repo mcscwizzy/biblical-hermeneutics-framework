@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **19 objects are enriched**, **73 are unchanged because they
+At this checkpoint, **20 objects are enriched**, **73 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **553 remain pending review**.
+research**, and **552 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -340,6 +340,9 @@ Batch 074 enriched the Genesis 37–44 Joseph descent and testing record. Its su
 
 Batch 075 enriched the Genesis 45–50 Joseph reconciliation and conclusion record. Its overview and context now connect the migration, famine administration, tribal blessings, burial, and Joseph’s final oath while making clear that Egyptian comparisons do not identify the characters or date the events. Eighty-two duplicated evidence relevance fields now explain their scene-level significance, including textual totals and later reception. Source identities, evidence observations, anchors, and relationships remain intact. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/genesis-nations-babel-context.json`.
+
+Batch 076 reviewed the Genesis 10–11 nations and Babel context. Its 29 evidence explanations already gave specific, source-aware accounts of the table of peoples, Babel’s language and building imagery, and disputed names and chronology, so those remained unchanged. The summary and context fields now describe the sequence in more accessible prose and explain what the Mesopotamian comparisons can and cannot establish. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/honor-and-shame.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

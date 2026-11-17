@@ -1143,6 +1143,28 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "5f63c139"
+    },
+    {
+      "batch_id": "batch-076-genesis-nations-babel-summary",
+      "scope": [
+        "genesis-nations-babel-context"
+      ],
+      "completed_unit": "Reviewed all explanatory fields; clarified the summary, ancient Near Eastern context, and literary context while retaining 29 sufficient evidence explanations.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/genesis-nations-babel-context.json"
+      ],
+      "protected_checks": [
+        "Object and evidence identities, sources, Scripture anchors, relationships, uncertainty classifications, status, and attestations preserved.",
+        "All existing passage-specific evidence descriptions and relevance fields retained.",
+        "No new historical claim or curated relationship added."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6139,14 +6161,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9efc8d383832d66e3acd35675b73b8de30458a04e513b987460c66b2e6e34f30",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "claims (none present)",
+        "interpretive_notes (none present)",
+        "protected Scripture/source/review metadata"
+      ],
+      "fields_changed": [
+        "summary",
+        "ancient_near_east_context",
+        "literary_context"
+      ],
+      "outcome": "Replaced the summary’s internal “evidence container” description with a reader-oriented account of Genesis 10–11 and clarified the architectural and literary comparison fields. All 29 passage-specific evidence explanations were already substantive and appropriately qualified; they remain unchanged.",
+      "limitation": "No new historical identification or chronology claim was added. Existing uncertainty around ethnogeographic identifications, the Babel literary sequence, and chronology remains intact.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression: 17 cultural-context evidence-quality/retrieval tests passed with 4 subtests.",
+          "Protected-field fingerprint matches baseline; Scripture anchors, source identities, and relationships unchanged."
+        ]
       }
     },
     {
@@ -16087,7 +16130,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-nations-babel-context.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/honor-and-shame.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
