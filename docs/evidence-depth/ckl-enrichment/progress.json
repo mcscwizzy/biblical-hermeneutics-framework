@@ -6230,6 +6230,28 @@
         ]
       },
       "checkpoint_commit": "e458cfc5"
+    },
+    {
+      "batch_id": "batch-292-ezra-the-scribe-person",
+      "scope": [
+        "ezra-the-scribe"
+      ],
+      "completed_unit": "Reviewed Ezra the Scribe and held the entry because its anchors describe restoration-era events and other people rather than Ezra’s direct narrative.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20754,14 +20776,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d9cf09c492dc4cec517852622cd4b69d4781c52e1bd30823d463655006e794c7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the object names Ezra the Scribe but its references concern the return decree in Ezra 1, Nehemiah’s prayer, Esther’s appeal, and Haggai’s temple oracle. None identifies Ezra; the person-specific passages in Ezra 7-10 are absent.",
+      "limitation": "The title and reference set need reconciliation before Ezra-specific explanation can be written. The internal historical-orientation record does not resolve the mismatch.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26580,7 +26616,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/ezra-the-scribe.json",
+  "next_batch": "framework/canonical_library/objects/people/gideon.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

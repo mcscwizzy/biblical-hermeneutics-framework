@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **180 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **86 are skipped pending source or identity
-research**, and **326 remain pending review**.
+are already sufficient**, **87 are skipped pending source or identity
+research**, and **325 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -866,3 +866,6 @@ Batch 290 reviewed Eve and left the entry unchanged. Its primary anchor is Genes
 
 
 Batch 291 reviewed Ezekiel the Prophet and left it unchanged. The references are 2 Kings 4 (Elisha), Isaiah 40, Jeremiah 31, and Luke 4; none provides Ezekiel’s own prophetic narrative. The source list points to Kings and generic prophetic texts rather than Ezekiel. Person-specific anchors and sources need reconciliation before biography or exile-era context can be expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Ezra the Scribe.
+
+
+Batch 292 reviewed Ezra the Scribe and left it unchanged. The anchors cover Ezra 1’s return decree, Nehemiah’s prayer, Esther’s appeal, and Haggai’s temple oracle; none identifies Ezra. The person-specific passages in Ezra 7-10 are absent, so the entry needs reference reconciliation before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Gideon.
