@@ -12107,6 +12107,38 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-541-selected-word-contexts",
+      "scope": [
+        "abba",
+        "berit",
+        "diatheke",
+        "charis",
+        "hupomone"
+      ],
+      "completed_unit": "Enriched five word-study objects through passage-specific observations only, avoiding unsupported lexical range claims.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/word_studies/abba.json",
+        "framework/canonical_library/objects/word_studies/berit.json",
+        "framework/canonical_library/objects/word_studies/diatheke.json",
+        "framework/canonical_library/objects/word_studies/charis.json",
+        "framework/canonical_library/objects/word_studies/hupomone.json"
+      ],
+      "protected_checks": [
+        "No claims, evidence IDs, source identities, Scripture references, relationships, confidence, dispute, review, or source-lock data were changed.",
+        "No lexical etymologies, comparative language claims, or ancient Near Eastern assertions were introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "No lexical or protected-field integrity failures."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -36944,14 +36976,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "8b97ece4bea9c0d484c195a7e99257de35978313cc23dc7ab8407ec4fd2398f4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected the phrase in Romans 8 and Galatians 4 to each letter’s teaching about the Spirit, adoption, inheritance, and hope, while distinguishing the related family language in Ephesians and 1 John.",
+      "limitation": "The account describes the cited passages and their literary/canonical relationships. No semantic range, etymology, or historical usage claim was added without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Original-language assertions, source identities, anchors, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37070,14 +37128,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d6b36daa82ee095ab0401358ed3f799d2c173dea6b26552dcb488748b1551e0d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained the different covenant settings in Genesis, Deuteronomy, Jeremiah, and Hebrews, including Hebrews’ quotation of Jeremiah’s promise.",
+      "limitation": "The account describes the cited passages and their literary/canonical relationships. No semantic range, etymology, or historical usage claim was added without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Original-language assertions, source identities, anchors, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37088,14 +37172,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4e70dea6d8b629bf809814fc4c18b7687212d46b0fce5f51d312b58dffaf9bf8",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Distinguished the Hebrew-scripture portrayals of compassion and forgiveness from Ephesians and Titus on grace, new life, and ethical formation.",
+      "limitation": "The account describes the cited passages and their literary/canonical relationships. No semantic range, etymology, or historical usage claim was added without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Original-language assertions, source identities, anchors, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37160,14 +37270,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c10ecd0a5f93fefebd97ff8027b6763f8def02f12d366921e589bbc90ac48e75",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified the textual relationship between Jeremiah’s promise and Hebrews’ argument without treating every covenant passage as an identical lexical instance.",
+      "limitation": "The account describes the cited passages and their literary/canonical relationships. No semantic range, etymology, or historical usage claim was added without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Original-language assertions, source identities, anchors, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37304,14 +37440,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e554eb1282d16d9c8e28aa49001cf6a36acba687ac03d08a279b8b73f4e075c0",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Unpacked Romans’ connection of suffering and hope, Hebrews’ calls to hold firm and run, and James’s account of tested faith.",
+      "limitation": "The account describes the cited passages and their literary/canonical relationships. No semantic range, etymology, or historical usage claim was added without a reviewed lexical source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Original-language assertions, source identities, anchors, and protected metadata unchanged."
+        ]
       }
     },
     {
@@ -37838,7 +38000,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/word_studies/abba.json",
+  "next_batch": "framework/canonical_library/objects/word_studies/adonai.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

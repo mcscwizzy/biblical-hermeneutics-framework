@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **323 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **328 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **198 are skipped pending source or identity
-research**, and **50 remain pending review**.
+research**, and **45 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1922,3 +1922,6 @@ Six doctrine records were clarified from their cited biblical texts: Perseveranc
 
 
 Six more theology objects were clarified: Resurrection, Second Coming, Suffering, Trinity, Typology, and Union with Christ. The explanations distinguish the cited texts’ arguments and literary forms, remove broad unsupported context claims, and avoid imposing disputed timelines. The duplicate Theology of the Cross and Theology of the Kingdom entries were held for curation in the previous batch. The Exodus-to-Sinai timeline’s sequence is already clear, but its ancient imperial and Second Temple context statements lack independently reviewed source support.
+
+
+The first lexical/context batch clarified Abba, Berit, Diatheke, Charis, and Hupomone from their cited passages. It distinguishes related themes from exact lexical claims and adds no unsupported etymology or semantic range. The word-study inventory contains many other entries with mismatched anchors or no reviewed lexical source; those are being held individually with the specific gap recorded.
