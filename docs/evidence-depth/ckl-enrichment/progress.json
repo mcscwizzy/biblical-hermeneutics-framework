@@ -7935,6 +7935,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "5b7a9410"
+    },
+    {
+      "batch_id": "batch-365-zechariah-the-prophet-person",
+      "scope": [
+        "zechariah-the-prophet"
+      ],
+      "completed_unit": "Reviewed Zechariah the Prophet and held the record because its anchors do not identify him or his book.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -25129,14 +25151,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "21eacbc17cee27f29f865ca297633cf45d3bc8e315b9b79698ce8eb03930bfb9",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Zechariah the Prophet’s profile, anchors, sources, and themes. The title may refer to the prophet whose book bears this name, but its anchors point to Elijah’s era, Isaiah’s consolation, Jeremiah’s new-covenant passage, and Jesus’ reading in Luke 4. None identifies Zechariah or the contents of his book. Left it unchanged pending identity and source review.",
+      "limitation": "No reference to the Book of Zechariah or a specific Zechariah episode is recorded. No likely passages or historical context were imported.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29677,7 +29717,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/zechariah-the-prophet.json",
+  "next_batch": "framework/canonical_library/objects/places/abana.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
