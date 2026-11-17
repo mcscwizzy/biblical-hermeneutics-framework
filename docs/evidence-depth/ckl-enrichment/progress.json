@@ -2582,6 +2582,29 @@
         ]
       },
       "checkpoint_commit": "025f3f8b"
+    },
+    {
+      "batch_id": "batch-144-fall-of-samaria-sufficiency-review",
+      "scope": [
+        "fall-of-samaria"
+      ],
+      "completed_unit": "Reviewed the historical, ANE, literary, covenantal, and canonical explanations, source identities, anchors, relationships, and chronology qualifications; retained the sufficient record unchanged.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL object data changed.",
+        "Existing chronology and source-critical limits preserved."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "44532d7b"
     }
   ],
   "inventory_count": 687,
@@ -10453,15 +10476,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e367f05e764fbe7d30d6d5a558742d3cebf99d2e9098485b37f2edb7adc135d4",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "historical_setting",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged: the record distinguishes the biblical narrative from Assyrian royal claims, names the Shalmaneser V/Sargon II chronology dispute, and explains deportation, provincial incorporation, and the end of the northern monarchy without equating it with the later fall of Judah.",
+      "limitation": "The record already supplies source-critical cautions, historical uncertainty, and the distinction between empire evidence and theological interpretation; no further explanation was needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "44532d7b"
     },
     {
       "id": "feeding-of-the-five-thousand",
@@ -19177,7 +19222,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/fall-of-samaria.json",
+  "next_batch": "framework/canonical_library/objects/events/feeding-of-the-five-thousand.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

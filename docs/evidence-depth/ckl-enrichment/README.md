@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **75 objects are enriched**, **81 are unchanged because they
+At this checkpoint, **75 objects are enriched**, **82 are unchanged because they
 are already sufficient**, **46 are skipped pending source or identity
-research**, and **485 remain pending review**.
+research**, and **484 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -488,6 +488,8 @@ Batch 142 reviewed Fall of Babylon and skipped enrichment pending source and sco
 
 Batch 143 reviewed Fall of Jerusalem and left it unchanged. Its history distinguishes the 597 BCE capture from the later destruction, qualifies the 587/586 BCE date, and explicitly limits what the Babylonian Chronicle establishes. The object and library validated with no errors and the same 14 baseline warnings.
 
-The next work unit is `framework/canonical_library/objects/events/fall-of-samaria.json`.
+Batch 144 reviewed Fall of Samaria and left it unchanged. Its historical section qualifies the Shalmaneser V/Sargon II chronology; its ANE section separates Assyrian royal claims from administrative evidence; and its covenantal and canonical fields distinguish the fall of Israel from Judah’s later exile. The library retains zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/feeding-of-the-five-thousand.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
