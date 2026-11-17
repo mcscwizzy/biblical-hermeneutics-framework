@@ -8965,6 +8965,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-411-italy",
+      "scope": [
+        "italy"
+      ],
+      "completed_unit": "Clarified Italy as the planned destination in Acts 27:1, not a reached port in the passage through verse 8.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/italy.json"
+      ],
+      "protected_checks": [
+        "Object and evidence IDs, source lock, Scripture anchor, and review metadata were preserved.",
+        "No later itinerary or route reconstruction was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27775,14 +27800,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "be4d368735b184f2694f3dd1198e1c64afe7b260d2fd5e3e2825bf019e7b2970",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "primary_observation",
+        "scripture_references",
+        "sources",
+        "source_lock"
+      ],
+      "fields_changed": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance"
+      ],
+      "outcome": "Clarified Italy as the intended destination in Acts 27:1, distinguishing it from the ports and route markers in the passage through verse 8, which ends at Fair Havens.",
+      "limitation": "The source-locked segment does not narrate arrival in Italy; no later itinerary, port call, or route reconstruction was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object/evidence/source IDs, source lock, Scripture anchor, and review metadata remain unchanged."
+        ]
       }
     },
     {
@@ -31495,7 +31537,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/italy.json",
+  "next_batch": "framework/canonical_library/objects/places/jabesh-gilead.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **225 objects are enriched**, **108 are unchanged because they
+At this checkpoint, **226 objects are enriched**, **108 are unchanged because they
 are already sufficient**, **147 are skipped pending source or identity
-research**, and **207 remain pending review**.
+research**, and **206 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1448,3 +1448,11 @@ anchors mix Shechem, David's Hebron/Jerusalem narratives, and temple scenes;
 the internal orientation source is pending human review. Single-object
 validation passed with 1 valid object, 0 errors, and 8 pre-existing
 section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 411 clarified Italy as the intended destination named in Acts 27:1,
+distinguishing it from the ports and route markers through verse 8, which ends at
+Fair Havens. No arrival in Italy or later itinerary was inferred. CKL validation
+reported 687 valid objects, zero errors, and the same 14 baseline warnings;
+focused content-quality and retrieval regressions passed (17 tests, 4 subtests).
+The next pending object is recorded in the manifest.
