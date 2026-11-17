@@ -1329,6 +1329,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "b052cb16"
+    },
+    {
+      "batch_id": "batch-085-pauline-sexuality-restoration-summary",
+      "scope": [
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+      ],
+      "completed_unit": "Reviewed all 23 claims, 23 typed evidence records, and five interpretive notes; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/pauline-bodies-marriage-sexual-ethics-discipline-and-restoration.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, sources, anchors, relationships, uncertainty, and review metadata preserved.",
+        "No ancient term was equated with a modern identity category or expanded into a new legal conclusion."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6669,14 +6690,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5abf1e0c586000297c4519a8793de34de786dea9c5f890dcdc09561c1e166802",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "original_audience",
+        "canonical_context",
+        "interpretive_notes (5)",
+        "claims and rationales (23)",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "evidence_items.scholarly_interpretation (23)",
+        "sources",
+        "scripture_references",
+        "review and source-lock metadata"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Reviewed all 23 claims and passage-specific evidence records. Their explanations already preserve lexical and historical disputes, distinguish ancient texts from modern identity categories, and retain safeguarding limits. Rewrote only the internal evidence-cluster summary.",
+      "limitation": "No lexical, historical, legal, or safeguarding claim was added. Interpretive disagreement and the limits of the ancient case records remain explicit.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression: 17 cultural-context evidence-quality/retrieval tests passed with 4 subtests.",
+          "Protected-field fingerprint matches baseline; claims, evidence, sources, anchors, relationships, and review metadata unchanged."
+        ]
       }
     },
     {
@@ -16455,7 +16499,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/pauline-bodies-marriage-sexual-ethics-discipline-and-restoration.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
