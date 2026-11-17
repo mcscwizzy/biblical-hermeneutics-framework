@@ -3452,6 +3452,31 @@
         ]
       },
       "checkpoint_commit": "c74ec9a2"
+    },
+    {
+      "batch_id": "batch-178-old-new-testaments-faq",
+      "scope": [
+        "how-do-the-old-and-new-testaments-connect"
+      ],
+      "completed_unit": "Reviewed the FAQ narrative, scriptural examples, source list, and canonical links; expanded six explanatory fields with concrete examples from the cited passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/how-do-the-old-and-new-testaments-connect.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "Removed unsupported broad comparison with other ancient collections."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "b8e95ee1"
     }
   ],
   "inventory_count": 687,
@@ -13134,14 +13159,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "da53d44f2d3a198882933be2fb66a7a567350e3f51f5b84bad53fea76635b14d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the FAQ with specific examples of how Luke, Matthew, Paul, Hebrews, and 1 Peter connect earlier Scripture to claims about Jesus, promise, instruction, and hope. Replaced an unsupported comparison with other ancient collections with direct description of the cited texts.",
+      "limitation": "The answer summarizes the New Testament’s own claims and does not attempt to resolve how every Old Testament law or practice applies in later Christian interpretation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21048,7 +21098,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/how-do-the-old-and-new-testaments-connect.json",
+  "next_batch": "framework/canonical_library/objects/faq/how-should-i-read-apocalyptic-literature.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

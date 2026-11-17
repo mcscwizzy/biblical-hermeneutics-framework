@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **96 objects are enriched**, **87 are unchanged because they
+At this checkpoint, **97 objects are enriched**, **87 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **440 remain pending review**.
+research**, and **439 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -411,7 +411,9 @@ Batch 104 reviewed the Roman Macedonia road network and city diversity record: a
 
 Batch 105 reviewed Roman Philippi: all 12 claims, 12 typed evidence items, nine interpretive notes, contextual fields, anchors, and source identities. The summary now connects Acts’ travel, household welcome, exploitation, and civic conflict to Philippi’s Roman-colony setting, while distinguishing the archaeological setting from verification of narrated events and preserving uncertainty about the traditional prison site and letter provenance. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/roman-rome-jewish-civic-household-and-imperial-life.json`.
+Batch 178 enriched How do the Old and New Testaments connect? The FAQ now explains the specific bridges made in Luke 24, Matthew 5, Romans 15, 2 Corinthians 1, Hebrews 1, and 1 Peter 1. It avoids implying that the Testaments have identical contexts and replaces an unsupported broad comparison with other ancient collections. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/how-should-i-read-apocalyptic-literature.json`.
 Batch 106 reviewed Roman Rome: all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes Romans’ greetings and Acts’ guarded lodging from the city evidence and later traditions, keeping Claudius’s action, the audience, and meeting sites qualified. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
 Batch 107 reviewed the Second Temple priesthood and temple authority record: all four claims, four typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. Its summary now explains how priestly authority, imperial appointment power, the temple boundary relevant to Acts 21, and a proposed Caiaphas identification relate, while preserving uncertainty. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
@@ -556,6 +558,8 @@ Batch 176 reviewed Wilderness Wandering and left it unchanged. Its explanation f
 
 Batch 177 reviewed Writing of Revelation and skipped prose changes pending object-identity and source review. Its title does not identify a discrete event, and its references span Daniel, Ezekiel, Revelation, and Isaiah without establishing the historical setting of Revelation’s composition. Validation found zero errors and the same 14 baseline warnings.
 
-The next work unit is `framework/canonical_library/objects/faq/how-do-the-old-and-new-testaments-connect.json`.
+Batch 178 enriched How do the Old and New Testaments connect? The FAQ now explains the specific bridges made in Luke 24, Matthew 5, Romans 15, 2 Corinthians 1, Hebrews 1, and 1 Peter 1. It avoids implying that the Testaments have identical contexts and replaces an unsupported broad comparison with other ancient collections. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/how-should-i-read-apocalyptic-literature.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
