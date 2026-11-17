@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **285 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **285 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **173 are skipped pending source or identity
-research**, and **114 remain pending review**.
+research**, and **113 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1711,3 +1711,5 @@ Batch 501 enriched Righteousness Theme across its cited passages, distinguishing
 Batch 502 enriched Sabbath Theme by distinguishing creation, liberation, covenant identity, land rest, ethical observance, and promised rest. Unsupported comparative ancient-background statements were removed. The next pending object is recorded in the manifest.
 
 Batch 503 enriched Sacrifice Theme by distinguishing substitution, Passover deliverance, offerings, purification, servant imagery, and the New Testament’s multiple interpretations of Jesus’ death. The next pending object is recorded in the manifest.
+
+Batch 504 reviewed Sanctuary Theme and left it unchanged. Its source-aware account already distinguishes sanctuary settings and New Testament uses, qualifies comparisons, and preserves safeguards against replacement readings.
