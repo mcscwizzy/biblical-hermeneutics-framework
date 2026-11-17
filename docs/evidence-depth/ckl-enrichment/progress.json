@@ -1999,6 +1999,25 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "2bd63dfb"
+    },
+    {
+      "batch_id": "batch-117-assyrian-exile-support-review",
+      "scope": [
+        "assyrian-exile-of-israel"
+      ],
+      "completed_unit": "Reviewed the summary and contextual fields, Scripture anchors, source identities, two interpretive notes, and the absence of claims or typed evidence; held the record unchanged pending source research.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "Assyrian inscription claims and deportation chronology were not expanded without recorded source support."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -8815,14 +8834,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9784879088eb47f3d0e9d7bd348a0140a1d50eb3975897c56ce80971c989ec74",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note/rationale",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary and contextual prose are already substantive and carefully distinguish Assyrian deportation from Judah’s later Babylonian exile. No explanatory wording was changed.",
+      "limitation": "The historical context refers to Sargon II inscriptions and a detailed deportation chronology, but the recorded source list contains only biblical texts and no Assyrian inscription or scholarly publication supporting those specifics. Source-specific research is needed before further enrichment or factual verification.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings_no_content_change",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Claims/evidence are absent; all source identities, Scripture anchors, relationships, and metadata remain unchanged.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -18025,7 +18060,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/assyrian-exile-of-israel.json",
+  "next_batch": "framework/canonical_library/objects/events/babel.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

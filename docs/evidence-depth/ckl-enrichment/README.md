@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **56 objects are enriched**, **76 are unchanged because they
-are already sufficient**, **43 are skipped pending source or identity
-research**, and **512 remain pending review**.
+are already sufficient**, **44 are skipped pending source or identity
+research**, and **511 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -434,6 +434,8 @@ Batch 115 reviewed and corrected the Ark Brought to Jerusalem event record, whos
 
 Batch 116 reviewed and corrected the Ascension record’s Gospel framing. The summary now distinguishes Luke’s departure scene, Matthew’s commission, John’s resurrection appearances, and Mark’s ascension in the longer ending, whose textual history remains qualified. Acts 1 is missing from the object’s preserved anchors and remains a research follow-up. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/assyrian-exile-of-israel.json`.
+Batch 117 reviewed the Assyrian exile record and left its explanation unchanged. The historical context names Sargon II’s inscriptions and a deportation chronology, but the recorded sources are biblical texts only; those historical details need source-specific research before further enrichment. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
+
+The next work unit is `framework/canonical_library/objects/events/babel.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
