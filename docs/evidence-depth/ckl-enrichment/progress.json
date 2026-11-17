@@ -3927,6 +3927,28 @@
         ]
       },
       "checkpoint_commit": "8cb90cba"
+    },
+    {
+      "batch_id": "batch-197-ancient-near-east-faq-review",
+      "scope": [
+        "what-is-the-ancient-near-east"
+      ],
+      "completed_unit": "Reviewed the scope definition, comparative claims, cited passages, source types, and notes. Skipped prose changes because the record has no academic support for geographic boundaries or comparative cultural assertions.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "No unsupported regional or comparative claims were expanded."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "No content change; no retrieval regression rerun."
+        ]
+      },
+      "checkpoint_commit": "d0f6059a"
     }
   ],
   "inventory_count": 687,
@@ -14451,14 +14473,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4ed9ca2f49aee50a26e95b5c0a164ba58a1cd43849147c3b2f91ed0fcb426339",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held narrative expansion. The Scripture anchors illustrate selected political and literary settings, but they do not substantiate broad claims about the region’s geographic boundaries, uniform cultural traits, or surrounding religious practices.",
+      "limitation": "Needs a directly inspected academic source defining the Ancient Near East’s scope and supporting any comparative claims. No such source is recorded; biblical references alone are insufficient for those claims.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "No CKL content changed; protected fingerprint and anchors remain unchanged."
+        ]
       }
     },
     {
@@ -22023,7 +22060,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-ancient-near-east.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-day-of-the-lord.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
