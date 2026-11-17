@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **305 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **182 are skipped pending source or identity
-research**, and **84 remain pending review**.
+are already sufficient**, **183 are skipped pending source or identity
+research**, and **83 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1898,3 +1898,9 @@ Final Judgment was held for source/anchor review. Daniel 12 includes resurrectio
 to life or shame, but the other anchors primarily address the coming, gathering,
 resurrection, defeat of death, or renewed creation; the source list duplicates
 the broader Eschatology cluster. No CKL content was changed.
+
+
+Glorification was held for doctrine/anchor reconciliation. Its references and
+source IDs duplicate the Eschatology cluster, which centers on coming,
+resurrection, and renewed creation rather than establishing a full account of
+glorification. No CKL content was changed.
