@@ -9823,6 +9823,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-449-sodom-review",
+      "scope": [
+        "sodom"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Sodom-specific Scripture-anchor and source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Sodom history or geography was inferred from unrelated anchors."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -29916,14 +29937,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f237223b4cec0eb9fab1cbdcfde3d94123e4d8af13ae4f58bf9cb38e3500b371",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; the listed Scripture anchors do not establish Sodom’s identity, history, or the object’s regional claims.",
+      "limitation": "Genesis 10:1–32, Deuteronomy 10:6–9, Isaiah 63:1–6, and Acts 13:16–22 do not establish Sodom-specific geography or history; their notes address other subjects. The generic ancient Near Eastern context is unsupported, and the internal historical-orientation source is pending human review. Sodom-specific reviewed anchors and sources are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -32952,7 +32986,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/sodom.json",
+  "next_batch": "framework/canonical_library/objects/places/susa.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

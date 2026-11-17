@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **240 objects are enriched**, **114 are unchanged because they
-are already sufficient**, **164 are skipped pending source or identity
-research**, and **169 remain pending review**.
+are already sufficient**, **165 are skipped pending source or identity
+research**, and **168 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1571,3 +1571,6 @@ Batch 447 reviewed Sidon and made no content changes. Its anchors identify Ai, t
 
 
 Batch 448 reviewed Socoh 1. The summary now explains how 1 Samuel 17:1 locates the Philistine camp between Socoh and Azekah before the confrontation unfolds. The source-locked evidence remained unchanged, and no lasting territorial claim was added. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 449 reviewed Sodom and made no content changes. Its anchors concern the Table of Nations, travel and Levites, Edom, and Paul's speech rather than Sodom. The generic ancient Near Eastern context lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
