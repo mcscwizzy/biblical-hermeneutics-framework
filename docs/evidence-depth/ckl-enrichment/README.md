@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **83 objects are enriched**, **82 are unchanged because they
+At this checkpoint, **84 objects are enriched**, **82 are unchanged because they
 are already sufficient**, **48 are skipped pending source or identity
-research**, and **474 remain pending review**.
+research**, and **473 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -510,6 +510,8 @@ Batch 153 enriched Jacob at Peniel, connecting the night struggle to Jacob’s f
 
 Batch 154 enriched Joseph Interprets Pharaoh’s Dreams, explaining the paired dreams, the famine plan, and Joseph’s rise to administrative authority. It connects later Genesis interpretations of preservation without treating the harm he suffered as good in itself. No unsupported court-practice comparison was added. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/joseph-sold-into-egypt.json`.
+Batch 155 enriched Joseph Sold into Egypt with the brothers’ betrayal, Jacob’s deception, and the episode’s role in the later preservation story, without excusing the violence. Generic cultural claims were removed for lack of supporting sources. The broad Genesis source range covers the episode, though the structured anchors point elsewhere and remain flagged. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/judges-cycle.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
