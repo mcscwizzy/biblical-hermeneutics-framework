@@ -3652,6 +3652,31 @@
         ]
       },
       "checkpoint_commit": "14cf3f6c"
+    },
+    {
+      "batch_id": "batch-186-parable-faq",
+      "scope": [
+        "what-is-a-parable"
+      ],
+      "completed_unit": "Reviewed the question, Gospel examples, interpretive notes, sources, anchors, and related links; expanded seven fields with context-specific guidance from the cited parables.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-a-parable.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsourced ancient storytelling comparison added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "7a89473e"
     }
   ],
   "inventory_count": 687,
@@ -13683,14 +13708,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a7584f82b71cae942b7dd886762651b05bc16e80972c4054b1575b4d1dea0722",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note"
+      ],
+      "outcome": "Expanded the FAQ with examples from Mark 4, Luke 10 and 15, and Matthew 21 and 25 to show how parables work in different settings. Replaced an unsupported generalization about ancient moral storytelling with the narratives and audiences in the cited Gospel passages.",
+      "limitation": "No broader historical survey of ancient storytelling or parable genre has been added because the record contains no comparative literary source.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21453,7 +21504,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-a-parable.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-a-prophet.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

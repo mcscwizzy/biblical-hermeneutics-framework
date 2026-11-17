@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **104 objects are enriched**, **87 are unchanged because they
+At this checkpoint, **105 objects are enriched**, **87 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **432 remain pending review**.
+research**, and **431 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -427,7 +427,9 @@ Batch 184 enriched What does Torah mean? The answer now illustrates Torah as ins
 
 Batch 185 enriched What is a covenant sign? The FAQ now distinguishes the rainbow, circumcision, Passover, Sabbath, and the new-covenant meal by the functions the cited passages give them. It also explains Paul’s point about Abraham’s circumcision in Romans 4 and avoids unsupported comparisons with other ancient treaty markers. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/what-is-a-parable.json`.
+Batch 186 enriched What is a parable? The answer now uses the sower, Good Samaritan, lost stories, tenants, and wedding attendants to show that parables vary in form and force. It explains why audience and Gospel setting matter and avoids an unsourced comparison with general ancient storytelling. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-is-a-prophet.json`.
 Batch 106 reviewed Roman Rome: all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes Romans’ greetings and Acts’ guarded lodging from the city evidence and later traditions, keeping Claudius’s action, the audience, and meeting sites qualified. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
 Batch 107 reviewed the Second Temple priesthood and temple authority record: all four claims, four typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. Its summary now explains how priestly authority, imperial appointment power, the temple boundary relevant to Acts 21, and a proposed Caiaphas identification relate, while preserving uncertainty. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
@@ -588,6 +590,8 @@ Batch 184 enriched What does Torah mean? The answer now illustrates Torah as ins
 
 Batch 185 enriched What is a covenant sign? The FAQ now distinguishes the rainbow, circumcision, Passover, Sabbath, and the new-covenant meal by the functions the cited passages give them. It also explains Paul’s point about Abraham’s circumcision in Romans 4 and avoids unsupported comparisons with other ancient treaty markers. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/what-is-a-parable.json`.
+Batch 186 enriched What is a parable? The answer now uses the sower, Good Samaritan, lost stories, tenants, and wedding attendants to show that parables vary in form and force. It explains why audience and Gospel setting matter and avoids an unsourced comparison with general ancient storytelling. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-is-a-prophet.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
