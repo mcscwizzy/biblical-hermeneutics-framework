@@ -437,6 +437,19 @@
         "ckl_objects": "PASS: object 1 valid, 0 errors, 0 warnings; full library 687 valid, 0 errors, same 14 pre-existing warnings."
       },
       "checkpoint_commit": "daa593460320fb2b66b435926f30bc660d7fc0b8"
+    },
+    {
+      "batch_id": "batch-028-1-peter-review",
+      "scope": [
+        "1-peter"
+      ],
+      "completed_unit": "1 Peter object, 32 claims, 43 interpretive notes, and sources reviewed; already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: 1 valid, 0 errors, 0 warnings."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -2246,14 +2259,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1ec68424a881950c175e8df9b49a9ff922741fd85b12f75663d186401813a6b2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary explains the letter’s themes and explicit uncertainties; context sections distinguish its Roman-period setting from scriptural antecedents. The 32 claims and 43 interpretive notes give readers passage-specific background while fairly qualifying disputed authorship, audience, suffering context, textual readings, and modern reception.",
+      "limitation": "None for explanatory enrichment; the existing explanations are already substantial, clear, and carefully bounded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13664,6 +13693,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/1-peter.json",
+  "next_batch": "framework/canonical_library/objects/books/1-samuel.json",
   "protected_fingerprint_base": "origin/master"
 }
