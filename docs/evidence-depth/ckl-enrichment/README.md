@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **221 objects are enriched**, **107 are unchanged because they
+At this checkpoint, **222 objects are enriched**, **107 are unchanged because they
 are already sufficient**, **137 are skipped pending source or identity
-research**, and **222 remain pending review**.
+research**, and **221 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1328,4 +1328,13 @@ current references concern the sea crossing, Jordan, and restoration imagery,
 not the Euphrates; the internal historical-orientation source is pending human
 review. Single-object validation passed with 1 valid object, 0 errors, and 8
 pre-existing section-status warnings. The next pending object is recorded in the
+manifest.
+
+
+Batch 396 clarified Fair Havens as the point Acts 27:8 says the ship reached,
+near Lasea, distinguishing the arrival from Cnidus and Crete as route markers.
+The explanation does not extend into later wintering conditions or modern site
+identification. CKL validation reported 687 valid objects, zero errors, and the
+same 14 baseline warnings; focused content-quality and retrieval regressions
+passed (17 tests, 4 subtests). The next pending object is recorded in the
 manifest.

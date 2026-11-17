@@ -8631,6 +8631,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-396-fair-havens",
+      "scope": [
+        "fair-havens"
+      ],
+      "completed_unit": "Clarified Fair Havens as the narrated arrival near Lasea and distinguished it from earlier route markers.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/fair-havens.json"
+      ],
+      "protected_checks": [
+        "Object and evidence IDs, source lock, Scripture anchor, and review metadata were preserved.",
+        "No wintering, harbor-quality, or modern site-identification claim was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26919,14 +26944,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "a9285363ca27298e2c4842851d8d126a7503554f3bbc5932f28a4f7d3c36e76c",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "primary_observation",
+        "scripture_references",
+        "sources",
+        "source_lock"
+      ],
+      "fields_changed": [
+        "summary",
+        "evidence_items.description",
+        "evidence_items.passage_relevance"
+      ],
+      "outcome": "Explained Fair Havens as the point the ship reaches in Acts 27:8, near Lasea, distinguishing arrival from the route markers Cnidus and Crete and not extending into the wintering debate.",
+      "limitation": "The locked passage establishes only the narrated arrival near Lasea; later wintering conditions, harbor quality, and modern site identification were not added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object/evidence/source IDs, source lock, Scripture anchor, and review metadata remain unchanged."
+        ]
       }
     },
     {
@@ -30909,7 +30951,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/fair-havens.json",
+  "next_batch": "framework/canonical_library/objects/places/galatia.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
