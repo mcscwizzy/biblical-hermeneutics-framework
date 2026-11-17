@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **42 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **43 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **526 remain pending review**.
+research**, and **525 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -405,6 +405,8 @@ Batch 101 reviewed the Roman Corinth civic, household, and association record: a
 
 Batch 102 reviewed the Roman Ephesus civic, cultic, and household record: all 12 claims, 12 typed evidence items, and three interpretive notes. The explanations already distinguish Acts’ Ephesian settings from archaeology, Revelation’s named assembly, the disputed destination of Ephesians, and First Timothy’s narrated setting. The summary now gives readers a concise map without turning local cult evidence into a universal explanation. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/roman-galatia-regions-roads-cities-and-audience.json`.
+Batch 103 reviewed the Roman Galatia regions, roads, cities, and audience record: all 19 claims, 19 typed evidence items, and five interpretive notes. The explanations already distinguish Roman provincial Galatia from older regional identities, document the southern city sequence and road network, and preserve uncertainty about which assemblies received Galatians. The summary now makes those distinctions easier to follow. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/roman-macedonia-road-network-and-city-diversity.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
