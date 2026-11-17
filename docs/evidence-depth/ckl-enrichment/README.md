@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **31 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **32 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **538 remain pending review**.
+research**, and **537 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -381,6 +381,8 @@ Batch 089 reviewed the Pauline Israel and Jewish-gentile relations record: all 4
 
 Batch 090 reviewed the Pauline kinship, guardianship, slavery, and inheritance record: all 19 claims, 19 typed evidence items, and six interpretive notes. The explanations already distinguish Galatians’ household-heir analogy from Romans 8’s movement through adoption, Spirit, co-heirship, suffering, and bodily hope, while limiting Roman legal comparisons. The summary now makes those differences clearer to readers. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks.json`.
+Batch 091 reviewed the Pauline mission and interassembly networks record: all 74 claims, 74 typed evidence items, and six interpretive notes. Their explanations already make coworkers, hosts, messengers, women’s labor, changing plans, support, correction, and local agency visible, while distinguishing the letters from Acts’ later narrative. The summary now gives readers a concise map of that network. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
