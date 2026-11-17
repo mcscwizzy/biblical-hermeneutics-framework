@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **196 objects are enriched**, **96 are unchanged because they
-are already sufficient**, **96 are skipped pending source or identity
-research**, and **299 remain pending review**.
+are already sufficient**, **97 are skipped pending source or identity
+research**, and **298 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -947,3 +947,6 @@ Batch 317 reviewed Lazarus and left the profile unchanged. The cited passages ar
 
 
 Batch 318 reviewed Lois. The explanation now focuses on 2 Timothy 1:5, which names her as Timothy’s grandmother and connects her remembered faith with Eunice’s and Timothy’s. It avoids turning this brief family notice into a fuller ministry biography and distinguishes the adjacent childhood-teaching passage. The source list includes 2 Timothy, but the structured anchor list omits the direct reference. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is luke-the-physician.
+
+
+Batch 319 reviewed Luke the Physician and left the profile unchanged. The anchors concern Saul, general church networks, and Paul’s imprisonment; they do not identify Luke. The current source set also does not establish Luke’s authorship or biography, so the generic ministry claims need person-specific evidence before expansion. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is lydia.
