@@ -11580,6 +11580,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-521-covenant-faithfulness",
+      "scope": [
+        "covenant-faithfulness"
+      ],
+      "completed_unit": "Clarified the different dimensions of covenant commitment in Genesis, Exodus, Jeremiah, Luke, and Hebrews without forcing them into one agreement pattern.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/covenant-faithfulness.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "Historical and comparative discussion is bounded to the recorded biblical texts."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -34617,14 +34643,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0e0e6e8e6bfe634d0085fb5fa63184953f28c6544fb25635a245695bcd1fb4e6",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained how the cited passages present different dimensions of covenant commitment: preservation, promise, vocation, renewal, and Christian use of new-covenant language.",
+      "limitation": "No comparative ancient Near Eastern sources are recorded, so treaty-form parallels were not expanded. The texts’ distinct recipients and purposes are retained. Generic interpretive notes were reviewed and left unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture anchors, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -36357,7 +36406,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/covenant-faithfulness.json",
+  "next_batch": "framework/canonical_library/objects/theology/covenant-theology.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
