@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **183 objects are enriched**, **96 are unchanged because they
-are already sufficient**, **88 are skipped pending source or identity
-research**, and **320 remain pending review**.
+are already sufficient**, **89 are skipped pending source or identity
+research**, and **319 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -884,3 +884,6 @@ Batch 296 reviewed Isaac. The summary and narrative fields now explain how Genes
 
 
 Batch 297 reviewed Abraham. The explanation now follows Genesis 12–22 through the call, connected promises, covenant scenes, and the interrupted offering. Household and land details are framed as Genesis depicts them rather than as universal ancient Near Eastern customs; listed New Testament appeals are distinguished from Genesis’s original narrative. The broad historical-context field remains unchanged because its sources do not establish an external chronology or reconstructed social setting. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is anna-the-prophetess.
+
+
+Batch 298 reviewed Anna the Prophetess and left her record unchanged. Its cited passages concern Elisha, Isaiah, Jeremiah, and Jesus; Anna’s appearance in Luke 2 is missing. The source list likewise does not establish her identity or biography, so the generic judgment-and-restoration prose was not adapted to her. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is isaiah-the-prophet.
