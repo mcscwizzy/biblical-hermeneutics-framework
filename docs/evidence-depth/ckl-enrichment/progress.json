@@ -8289,6 +8289,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-381-canaan-review",
+      "scope": [
+        "canaan"
+      ],
+      "completed_unit": "Explanatory-field review; existing passage-scale, historical, and theological distinctions were already sufficient.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "Existing cautions about regional variation and modern identity projection were preserved."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26037,14 +26058,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "bf375f2f32c052a879703d6caeb6b1850ee78cbc70d129bdcc6c3945f1d77df9",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The existing profile already explains that Canaan can refer to land, inhabitants, destination, or remembered regional name depending on passage. It distinguishes covenant theology from historical geography, describes the region as multiple communities rather than one empire, and avoids projecting modern identities backward. No rewrite was needed.",
+      "limitation": "None identified for explanatory depth in the reviewed fields; the text explicitly qualifies regional scope and ethnic inference.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -30297,7 +30335,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/canaan.json",
+  "next_batch": "framework/canonical_library/objects/places/capernaum.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

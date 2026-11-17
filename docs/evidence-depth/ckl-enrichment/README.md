@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **215 objects are enriched**, **102 are unchanged because they
+At this checkpoint, **215 objects are enriched**, **103 are unchanged because they
 are already sufficient**, **133 are skipped pending source or identity
-research**, and **237 remain pending review**.
+research**, and **236 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1200,3 +1200,12 @@ political control or tribal ownership. The source-locked evidence and Scripture
 anchors remain unchanged. Object and full-library CKL validation passed with no
 new warnings; focused content-quality and retrieval regressions passed (17 tests,
 4 subtests). The next pending object is recorded in the manifest.
+
+
+Batch 381 reviewed Canaan and left its explanation intact. It distinguishes the
+name's passage-specific uses, covenant theology, and changing historical
+geography; it also avoids treating Canaan as one fixed empire or projecting
+modern borders and ethnic identities backward. Its sources support those
+qualifications. Single-object validation passed with 1 valid object, 0 errors,
+and 8 pre-existing section-status warnings. The next pending object is recorded
+in the manifest.
