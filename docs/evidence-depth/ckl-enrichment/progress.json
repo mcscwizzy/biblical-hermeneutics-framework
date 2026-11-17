@@ -1789,6 +1789,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "c938e961"
+    },
+    {
+      "batch_id": "batch-107-second-temple-priesthood-summary",
+      "scope": [
+        "second-temple-priesthood-and-temple-authority"
+      ],
+      "completed_unit": "Reviewed all four claims, four typed evidence items, three interpretive notes, contextual fields, Scripture references, and recorded source identities; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/second-temple-priesthood-and-temple-authority.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "The proposed Caiaphas ossuary identification, temple-inscription relationship to Acts 21, and council reconstructions remain qualified."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "3bf4d1dc"
     }
   ],
   "inventory_count": 687,
@@ -8231,14 +8252,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "eeeb0e731558cba23680bffac6abe439bc9039783a4a3ba2af40085153020b11",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "second_temple_context",
+        "original_audience",
+        "interpretive_disputes",
+        "scripture_references",
+        "sources",
+        "claims[*].rationale/notes",
+        "evidence_items[*].description/passage_relevance/observation/interpretation",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the compact topic list with an explanation of how priestly authority, rulers’ appointment power, the temple warning boundary, and the proposed Caiaphas ossuary fit together. The summary distinguishes primary textual accounts, Josephus, the inscription, and an archaeological identification proposal, while preserving uncertainty about council practice and the ossuary.",
+      "limitation": "Reviewed the recorded claims, typed evidence, interpretive notes, anchors, and source identities; no underlying scholarly publication was newly consulted, and no new historical claim was added beyond the object’s existing evidence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: claims, typed evidence, sources, Scripture anchors, relationships, uncertainty classifications, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (62.31s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -17621,7 +17661,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/second-temple-priesthood-and-temple-authority.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/second-temple-synagogues-scribes-and-sectarian-groups.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
