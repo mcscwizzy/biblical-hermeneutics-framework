@@ -2709,6 +2709,33 @@
         ]
       },
       "checkpoint_commit": "ac021e66"
+    },
+    {
+      "batch_id": "batch-149-great-white-throne-context",
+      "scope": [
+        "great-white-throne-judgment"
+      ],
+      "completed_unit": "Reviewed narrative and context fields, Scripture anchors, source identities, relationships, interpretive notes, and absence of atomic claims or typed evidence; enriched six explanatory fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/great-white-throne-judgment.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "No unsupported historical or ANE comparison introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.03s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "351a54a2"
     }
   ],
   "inventory_count": 687,
@@ -10800,15 +10827,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e5197489f5ea346017e8d3632aac3a4086f7c4a2f3e153e6ac21c720d425c7a5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Replaced broad apocalyptic template language with the specific throne, opened books, judgment, and defeat-of-death imagery in Revelation 20. Clarified the Daniel 7 literary echo and the scene’s placement before Revelation’s new creation without imposing a detailed end-times timetable.",
+      "limitation": "No independent ancient Near Eastern comparison source is recorded; the ANE field is left blank. The existing Scripture anchors and relationships remain unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.03s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "351a54a2"
     },
     {
       "id": "hannahs-prayer",
@@ -19434,7 +19490,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/great-white-throne-judgment.json",
+  "next_batch": "framework/canonical_library/objects/events/hannahs-prayer.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
