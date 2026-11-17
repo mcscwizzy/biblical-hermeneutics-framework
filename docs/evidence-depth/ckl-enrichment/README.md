@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **227 objects are enriched**, **108 are unchanged because they
+At this checkpoint, **228 objects are enriched**, **108 are unchanged because they
 are already sufficient**, **148 are skipped pending source or identity
-research**, and **204 remain pending review**.
+research**, and **203 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1466,3 +1466,6 @@ human review. Single-object validation passed with 1 valid object, 0 errors, and
 the manifest.
 
 Batch 413 reviewed Jericho. The explanation now follows Joshua 6's closed-city description and the repeated circuit instructions across seven days, while making clear that the source-locked observations do not establish an excavation phase, date, or reconstructed siege route. The object’s broader Scripture anchors point to other events and places; they were left unchanged and were not used to support added context. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The manifest records the next pending object.
+
+
+Batch 414 reviewed Jerusalem. The updated summary and context follow the record's scriptural anchors from David's capture and the temple dedication through pilgrimage, prophetic hope, Jesus' lament, Acts, and Revelation. The prose distinguishes narrated events from later literary images and does not add unsupported archaeological or comparative ancient Near Eastern claims. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.

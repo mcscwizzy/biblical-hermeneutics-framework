@@ -9036,6 +9036,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-414-jerusalem",
+      "scope": [
+        "jerusalem"
+      ],
+      "completed_unit": "Expanded the scriptural account of Jerusalem across historical, poetic, prophetic, Gospel, Acts, and Revelation passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/jerusalem.json"
+      ],
+      "protected_checks": [
+        "Object, claim/evidence IDs, source identities, Scripture references, review metadata, and curated relationships were preserved.",
+        "No archaeological chronology or comparative ancient Near Eastern claim was introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27954,14 +27979,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e93649c1a3b8bbea4a881eacab9de0778c79bdba7cf9e7d5746fe65f4558e81a",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Replaced broad place labels with a passage-specific account of Jerusalem across the record’s scriptural anchors, distinguishing narrated history, prophetic hope, Jesus’ lament, Acts, and Revelation.",
+      "limitation": "The object has Scripture references but no archaeological or comparative ancient Near Eastern source support. No city-development chronology, archaeological claim, or cultural comparison was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, claim/evidence IDs, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -31620,7 +31668,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/jerusalem.json",
+  "next_batch": "framework/canonical_library/objects/places/jezreel-2.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
