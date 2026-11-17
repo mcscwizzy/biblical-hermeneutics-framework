@@ -4939,6 +4939,31 @@
         ]
       },
       "checkpoint_commit": "aa5c45ff"
+    },
+    {
+      "batch_id": "batch-238-household-institution",
+      "scope": [
+        "household"
+      ],
+      "completed_unit": "Enriched the household object from its direct Mark 1–2, Acts 16, and Romans 16 anchors; separated the Gospel and Acts narratives from the Romans greeting list and avoided unsupported archaeological identification or generalized household history.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/household.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -17342,14 +17367,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1ed4ca34958baefe070415d381255a7baabdae4019fbcf2e5065e2279c1d867b",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Explained the different household scenes in Mark 1–2, Acts 16, and Romans 16: care and crowds in Galilean homes, the jailer’s hospitality and household baptism, and a named house assembly. Distinguished narrative scenes from a letter greeting and avoided treating them as one household model.",
+      "limitation": "The object’s direct sources are Scripture and an internal historical-orientation placeholder pending human review. Explanations therefore stay with what the cited passages narrate; they do not add comparative household history or identify archaeological buildings. Related cultural-background clusters remain draft/in_review and were not promoted. The ancient Near Eastern context flag was set false because these Roman-period passages do not support the former generic ANE framing.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24176,7 +24231,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/household.json",
+  "next_batch": "framework/canonical_library/objects/institutions/kingship.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
