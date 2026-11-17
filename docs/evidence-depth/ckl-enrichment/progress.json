@@ -7847,6 +7847,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "59fb2105"
+    },
+    {
+      "batch_id": "batch-361-titus-the-companion-person",
+      "scope": [
+        "titus-the-companion"
+      ],
+      "completed_unit": "Reviewed Titus the Companion and held the record because its Gospel sources do not identify him.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24897,14 +24919,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "550da2b2361bfb0d9b37c4818d038d77eb8b386866d5c0abbd95fa64e1d018b9",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Titus the Companion’s profile, Scripture anchors, sources, and related objects. The entry describes a Pauline coworker, but all references and sources are Gospel resurrection or ascension passages and do not identify Titus. Left the record unchanged pending source and identity review.",
+      "limitation": "The recorded bibliography omits Acts and Paul’s letters, which are necessary to support the profile’s subject. No new references or identity links were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29517,7 +29557,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/titus-the-companion.json",
+  "next_batch": "framework/canonical_library/objects/people/tychicus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
