@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **190 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **191 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **91 are skipped pending source or identity
-research**, and **310 remain pending review**.
+research**, and **309 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -914,3 +914,6 @@ Batch 306 reviewed Jethro. The profile now follows Exodus 18 from Jethro’s res
 
 
 Batch 307 reviewed Job the Sufferer. The explanation now follows the book from its prose opening into the friends’ poetic arguments and Job’s protest, showing how the reader’s knowledge of the opening tests the friends’ certainty. James’s later appeal to endurance is distinguished from Job’s own speeches, which include lament. The sources do not establish a date for Job or a precise location for Uz, so neither was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is john-son-of-zebedee.
+
+
+Batch 308 reviewed John son of Zebedee. The explanation now follows Matthew’s call scene and the later lists in Luke 6 and Acts 1, showing what those passages establish about John’s family, call, and place among the Twelve. It distinguishes those references from later authorship traditions that the listed passages do not identify. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is john-the-baptist.
