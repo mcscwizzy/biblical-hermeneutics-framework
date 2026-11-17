@@ -1264,6 +1264,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "c95333b8"
+    },
+    {
+      "batch_id": "batch-082-mesopotamian-creation-flood-summary",
+      "scope": [
+        "mesopotamian-creation-and-flood-comparisons"
+      ],
+      "completed_unit": "Reviewed the comparative claims and source limits; rewrote the reader-facing summary of Genesis 1–11 and selected Mesopotamian texts.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/mesopotamian-creation-and-flood-comparisons.json"
+      ],
+      "protected_checks": [
+        "Evidence and claim content, source identities, Scripture anchors, relationships, and uncertainty metadata preserved.",
+        "No direct literary dependence or date of Genesis inferred."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6485,14 +6506,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5252573744fb2b1b3a894176cf0ae5218883bf96d5d5c8767b27aac5693a6fa9",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "interpretive_notes",
+        "claims and rationales",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "sources",
+        "scripture_references",
+        "review and source-lock metadata"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the technical summary with a clear account of Genesis’s creation and flood narratives and the role of Mesopotamian comparison. The summary preserves the distinction between shared motifs and proof of direct borrowing, and distinguishes surviving tablets from the age of traditions.",
+      "limitation": "No direction of dependence, route of transmission, or date for Genesis was inferred from the extant tablet copies.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression: 17 cultural-context evidence-quality/retrieval tests passed with 4 subtests.",
+          "Protected-field fingerprint matches baseline; evidence, sources, anchors, and relationships unchanged."
+        ]
       }
     },
     {
@@ -16325,7 +16366,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/mesopotamian-creation-and-flood-comparisons.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/patronage-hospitality-and-debt.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
