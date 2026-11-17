@@ -6645,6 +6645,27 @@
         ]
       },
       "checkpoint_commit": "9b94b348"
+    },
+    {
+      "batch_id": "batch-309-john-the-baptist-person",
+      "scope": [
+        "john-the-baptist"
+      ],
+      "completed_unit": "Reviewed John the Baptist and held the profile because its cited passages concern other people or general church life.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object, source, Scripture-reference, relationship, review-status, and claim metadata preserved.",
+        "No CKL content or curated relationships were changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21731,14 +21752,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c8d3e4930aab6fbd318c5fe2a9b460a90b579fb908ae7b693f436caadd499c6e",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the profile unchanged pending reconciliation of its subject with its passages and sources.",
+      "limitation": "The title identifies John the Baptist, but the listed passages concern Saul’s conversion (Acts 9), church networks (Romans 16), ministry generally (1 Corinthians 3), and Paul’s imprisonment (Philippians 1). John the Baptist’s direct narrative in the Gospels is absent. The source list likewise centers Acts and letters, so the generic church-ministry claims cannot safely be adapted to John.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content, source, reference, or relationship fields were changed."
+        ]
       }
     },
     {
@@ -27287,7 +27321,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/john-the-baptist.json",
+  "next_batch": "framework/canonical_library/objects/people/jonah-the-prophet.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

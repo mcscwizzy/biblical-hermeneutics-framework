@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **191 objects are enriched**, **96 are unchanged because they
-are already sufficient**, **91 are skipped pending source or identity
-research**, and **309 remain pending review**.
+are already sufficient**, **92 are skipped pending source or identity
+research**, and **308 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -917,3 +917,6 @@ Batch 307 reviewed Job the Sufferer. The explanation now follows the book from i
 
 
 Batch 308 reviewed John son of Zebedee. The explanation now follows Matthew’s call scene and the later lists in Luke 6 and Acts 1, showing what those passages establish about John’s family, call, and place among the Twelve. It distinguishes those references from later authorship traditions that the listed passages do not identify. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is john-the-baptist.
+
+
+Batch 309 reviewed John the Baptist and left the profile unchanged. Its references concern Saul’s conversion, church networks, general ministry, and Paul’s imprisonment; John the Baptist’s Gospel narrative is absent. The person-specific source and anchor set needs reconciliation before this profile can safely explain his role. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is jonah-the-prophet.
