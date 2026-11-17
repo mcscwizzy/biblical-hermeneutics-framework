@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **178 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **79 are skipped pending source or identity
-research**, and **335 remain pending review**.
+are already sufficient**, **80 are skipped pending source or identity
+research**, and **334 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -839,3 +839,6 @@ Batch 281 reviewed David. The literary context now explains the house/house reve
 
 
 Batch 282 reviewed Deborah and left it unchanged. The references cover the general cycle in Judges 2, the monarchy transition in 1 Samuel 12, and Hebrews 11’s list of faithful figures (which names Barak, not Deborah); they omit Deborah’s direct narratives in Judges 4-5. The record also says Samuel uses Deborah, which the cited passage does not establish. Person-specific anchors and scope need reconciliation before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Dorcas.
+
+
+Batch 283 reviewed Dorcas and left it unchanged. The cited ranges do not include her direct account: Acts 9:1-19 concerns Saul, and Romans 16, 1 Corinthians 3, and Philippians 1 do not identify Dorcas. The person-specific episode in Acts 9:36-42 is absent, so the entry needs reference reconciliation before explanation can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Elijah.

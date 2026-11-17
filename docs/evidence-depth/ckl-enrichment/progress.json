@@ -6024,6 +6024,28 @@
         ]
       },
       "checkpoint_commit": "2203a9c3"
+    },
+    {
+      "batch_id": "batch-283-dorcas-person",
+      "scope": [
+        "dorcas"
+      ],
+      "completed_unit": "Reviewed Dorcas and held the entry because the cited references do not include her direct account in Acts 9:36-42.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20242,14 +20264,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "92b8e0e16ceb50e9fb87da5e6e0e8eaf0581c28049947bd4e8d35cc5d6202638",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the person-specific narrative of Dorcas is absent from the cited references. Acts 9:1-19 concerns Saul’s conversion; Romans 16, 1 Corinthians 3, and Philippians 1 do not identify Dorcas. The direct account in Acts 9:36-42 is not anchored.",
+      "limitation": "The entry’s person-specific passage set and supporting source scope require reconciliation before explanatory content can be safely added. The internal orientation source does not resolve the mismatch.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26230,7 +26266,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/dorcas.json",
+  "next_batch": "framework/canonical_library/objects/people/elijah.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
