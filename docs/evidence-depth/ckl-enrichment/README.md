@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **192 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **193 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **94 are skipped pending source or identity
-research**, and **305 remain pending review**.
+research**, and **304 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -929,3 +929,6 @@ Batch 311 reviewed Joseph, Husband of Mary and left the profile unchanged. Its a
 
 
 Batch 312 reviewed Joseph. The explanation follows the plot from family conflict and enslavement to Egyptian administration, famine, and reunion, using the recurring dreams, clothing, and delayed recognition to show how the story’s reversals work. It also distinguishes Joseph’s interpretation of preservation from an excuse for his brothers’ harm. The broad Genesis source supports the narrative, though structured references still emphasize Abraham. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is joshua-son-of-nun.
+
+
+Batch 313 reviewed Joshua son of Nun. The explanation now follows the commissioning after Moses, the Jordan crossing, and Joshua’s final covenant gathering at Shechem. It explains the connection between land, promise, and continued allegiance, and distinguishes Hebrews’ later use of Joshua’s rest from the book’s own narrative. The biblical sources do not settle archaeological chronology, so none was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is judas-iscariot.
