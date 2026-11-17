@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **238 objects are enriched**, **111 are unchanged because they
+At this checkpoint, **239 objects are enriched**, **111 are unchanged because they
 are already sufficient**, **161 are skipped pending source or identity
-research**, and **177 remain pending review**.
+research**, and **176 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1547,3 +1547,6 @@ Batch 439 reviewed Philistia and made no content changes. The listed anchors do 
 
 
 Batch 440 reviewed Ramoth-gilead and made no content changes. Its anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Ramoth-gilead. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 441 reviewed Red Sea 1. The revised explanation follows Exodus 14's crossing and Psalm 114's poetic memory, while distinguishing the Jordan in Joshua and Psalm 114 and Isaiah's unnamed waters. No modern site or reconstructed route was asserted, and the unsupported generic ancient Near Eastern context was removed. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
