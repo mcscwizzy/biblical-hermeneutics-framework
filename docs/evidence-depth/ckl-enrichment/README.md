@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **80 objects are enriched**, **82 are unchanged because they
+At this checkpoint, **81 objects are enriched**, **82 are unchanged because they
 are already sufficient**, **48 are skipped pending source or identity
-research**, and **477 remain pending review**.
+research**, and **476 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -504,6 +504,8 @@ Batch 150 reviewed Hannah’s Prayer and skipped enrichment pending source revie
 
 Batch 151 corrected Hezekiah’s Reforms with the distinct portrayals in Kings and Chronicles, including temple service, removal of high places, and the Passover invitation to northern Israelites. No comparative ANE claim was added. Existing anchors omit the central reform accounts but were preserved for research review. The full library retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/institution-of-the-lords-supper.json`.
+Batch 152 corrected the Lord’s Supper event record, distinguishing the Synoptic bread-and-cup accounts from John’s footwashing and farewell teaching. It cleared unsupported generic cultural-background prose; current Scripture anchors still point to resurrection appearances and remain flagged for review. Structural validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/jacob-wrestles-at-peniel.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

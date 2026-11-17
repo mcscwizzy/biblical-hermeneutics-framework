@@ -2786,6 +2786,33 @@
         ]
       },
       "checkpoint_commit": "3f382aa6"
+    },
+    {
+      "batch_id": "batch-152-lords-supper-context-repair",
+      "scope": [
+        "institution-of-the-lords-supper"
+      ],
+      "completed_unit": "Reviewed narrative fields, anchors, sources, relationships, interpretive notes, and evidence coverage; replaced generic content in six explanatory fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/institution-of-the-lords-supper.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "No unsupported cultural comparison introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (62.71s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "356d7f90"
     }
   ],
   "inventory_count": 687,
@@ -11008,15 +11035,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b2f2fb44b078abeae6ece98ccb65ea5d1f0a52f82d150ff337f5a954db7a8b15",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Replaced resurrection template text with the Synoptic bread-and-cup accounts, their covenant language, and the distinct Johannine meal narrative of footwashing and farewell teaching. Cleared unsupported generic cultural background.",
+      "limitation": "The structured anchors point to resurrection appearances rather than the final meal, although the source list names all four Gospels. Anchors and relationships were preserved for research review; no external historical or cultural comparison was introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (62.71s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "356d7f90"
     },
     {
       "id": "jacob-wrestles-at-peniel",
@@ -19588,7 +19644,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/institution-of-the-lords-supper.json",
+  "next_batch": "framework/canonical_library/objects/events/jacob-wrestles-at-peniel.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
