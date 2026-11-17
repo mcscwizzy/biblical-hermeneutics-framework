@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **32 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **33 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **537 remain pending review**.
+research**, and **536 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -383,6 +383,8 @@ Batch 090 reviewed the Pauline kinship, guardianship, slavery, and inheritance r
 
 Batch 091 reviewed the Pauline mission and interassembly networks record: all 74 claims, 74 typed evidence items, and six interpretive notes. Their explanations already make coworkers, hosts, messengers, women’s labor, changing plans, support, correction, and local agency visible, while distinguishing the letters from Acts’ later narrative. The summary now gives readers a concise map of that network. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory.json`.
+Batch 092 reviewed the Pauline prayer, thanksgiving, lament, and communal memory record: all 58 claims, 54 typed evidence items, and four interpretive notes. Their explanations already hold prayer and hope together with grief, uncertainty, conflict, practical aid, consent, and safeguarding. The summary now describes these functions in plain language and identifies Acts as a later narrative. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
