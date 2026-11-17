@@ -7440,6 +7440,28 @@
         ]
       },
       "checkpoint_commit": "352ff8af"
+    },
+    {
+      "batch_id": "batch-343-pontius-pilate-person",
+      "scope": [
+        "pontius-pilate"
+      ],
+      "completed_unit": "Reviewed Pontius Pilate and held the record because its Scripture anchors point to unrelated figures and scenes.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -23801,14 +23823,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9876ebe434256ea8c61f6b6005b5b5dc92d60265067af4231cb0ae69dc3fe62d",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the Pontius Pilate profile, sources, anchors, and related themes. The primary anchor Matthew 27:3–10 narrates Judas’s return of the silver and the priests’ response, not Pilate; the other anchors concern Cain, Balaam, and Herod. The broad Matthew 26–27 source includes the trial narrative, but the structured relationships do not identify it. Left the record unchanged.",
+      "limitation": "The recorded passages do not support the profile’s moral interpretation of Pilate or its historical and covenantal claims. No likely Pilate passages or external historical sources were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -28745,7 +28785,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/pontius-pilate.json",
+  "next_batch": "framework/canonical_library/objects/people/priscilla.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
