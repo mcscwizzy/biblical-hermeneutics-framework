@@ -643,6 +643,19 @@
         "ckl_objects": "PASS: James valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-042-jeremiah-review",
+      "scope": [
+        "jeremiah"
+      ],
+      "completed_unit": "Jeremiah reviewed and found already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Jeremiah valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3626,14 +3639,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "42eefd78971bcd4c92d4225ef016ff4e0b333d0d555b675c2508de3a0e6608fe",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and contextual sections explain Jeremiah’s historical and textual complexity; 18 claims and 26 notes distinguish textual evidence, historical reconstruction, trauma-aware interpretation, Jewish reception, and later Christian reuse with clear qualifications.",
+      "limitation": "The current explanation is already substantial and specific; no new research or rewriting is warranted.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14420,6 +14446,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/jeremiah.json",
+  "next_batch": "framework/canonical_library/objects/books/job.json",
   "protected_fingerprint_base": "origin/master"
 }
