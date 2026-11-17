@@ -1165,6 +1165,25 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "f8a0022d"
+    },
+    {
+      "batch_id": "batch-077-honor-and-shame-source-gap",
+      "scope": [
+        "honor-and-shame"
+      ],
+      "completed_unit": "Reviewed the social-context summary, scope, interpretive notes, sources, and anchors; held the object pending scholarly source support.",
+      "status": "validated_with_source_gap",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL fields changed.",
+        "Source identities, anchors, and all review metadata remain as in origin/master."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors; 9 path-level section-status warnings on this unchanged object.",
+        "ckl_library": "PASS: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6200,14 +6219,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1680d64c02910e0c54eadf3eb9cea2376285fd830149877a3d2f2dfc2e08d5f0",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "covenantal_significance",
+        "intertextuality",
+        "interpretive_notes",
+        "sources",
+        "scripture_references",
+        "evidence_items (none present)",
+        "claims (none present)"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the object unchanged. Its summary is concise, but historical and cultural generalizations lack inspected scholarly support or passage-specific evidence; the only general support is an internal CKL orientation source pending human review.",
+      "limitation": "Future scholarly research should support and qualify the broad claims about group-oriented society, honor/shame patterns across periods, patronage, and the ordering of status by covenant. Do not treat the category as a universal interpretive key.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated_unchanged",
+        "results": [
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings; no new library warnings.",
+          "Single-object path audit: 1 valid, 0 errors, 9 section-status warnings. The object file is unchanged from origin/master; these path-level warnings are pre-existing and do not appear in the full-library audit.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -16130,7 +16169,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/honor-and-shame.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/judean-pilgrimage-taxation-and-roman-power.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

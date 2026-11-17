@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **20 objects are enriched**, **73 are unchanged because they
-are already sufficient**, **42 are skipped pending source or identity
-research**, and **552 remain pending review**.
+are already sufficient**, **43 are skipped pending source or identity
+research**, and **551 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -343,6 +343,8 @@ Batch 075 enriched the Genesis 45–50 Joseph reconciliation and conclusion reco
 
 Batch 076 reviewed the Genesis 10–11 nations and Babel context. Its 29 evidence explanations already gave specific, source-aware accounts of the table of peoples, Babel’s language and building imagery, and disputed names and chronology, so those remained unchanged. The summary and context fields now describe the sequence in more accessible prose and explain what the Mesopotamian comparisons can and cannot establish. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/honor-and-shame.json`.
+Batch 077 reviewed the honor-and-shame background object and left it unchanged. It has no passage-specific evidence items or claims, and its broad historical and cultural statements rely on an internal CKL orientation note rather than inspected scholarly support. Future research is needed before expanding claims about honor and shame across ancient societies and periods. The full CKL remains at 687 valid objects, zero errors, and 14 baseline warnings. The single-object path audit reports nine section-status warnings for this unchanged record; those do not appear in the full-library audit. No regression tests were run because no content changed.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/judean-pilgrimage-taxation-and-roman-power.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
