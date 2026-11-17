@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **54 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **55 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **514 remain pending review**.
+research**, and **513 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -430,6 +430,8 @@ Batch 113 reviewed the Abrahamic covenant record’s summary, contexts, four bib
 
 Batch 114 reviewed the annunciation-to-Mary record’s summary, contexts, biblical source entries, one interpretive note, and its absence of atomic claims or typed evidence. The summary now connects Gabriel’s Davidic announcement, Mary’s response, the Spirit’s role, and the promise to David while keeping later devotional traditions distinct. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/ark-brought-to-jerusalem.json`.
+Batch 115 reviewed and corrected the Ark Brought to Jerusalem event record, whose summary and contextual fields had mistakenly described land-taking and generic cross-book themes. The revised prose follows 2 Samuel 6 and distinguishes the procession from the promise in 2 Samuel 7. The object’s broad Joshua, Judges, and 1 Samuel anchors and curated edges were preserved; their relevance needs separate review. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/ascension.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
