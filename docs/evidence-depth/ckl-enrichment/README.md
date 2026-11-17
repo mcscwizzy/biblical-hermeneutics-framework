@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **267 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **268 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **169 are skipped pending source or identity
-research**, and **136 remain pending review**.
+research**, and **135 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1667,3 +1667,5 @@ Batch 479 enriched Justice Theme from its four recorded biblical anchors, distin
 Batch 480 enriched Kingdom Theme across its recorded biblical anchors, distinguishing royal psalms, Daniel’s visions, Jesus’ proclamation, communal ethics, and future completion. Unsupported generalizations about ancient imperial comparison and Second Temple expectations were removed. The next pending record is Land Theme.
 
 Batch 481 enriched Land Theme across its cited passages, distinguishing return to the land, covenant renewal, the Spirit promise, and Revelation’s wider new-creation horizon. The next pending object is recorded in the manifest.
+
+Batch 482 enriched Light and Darkness Theme by distinguishing creation imagery, the psalm’s language of trust, John’s opening imagery, and ethical uses in Ephesians and 1 John. Unsupported ancient Near Eastern context was removed. The next pending object is recorded in the manifest.

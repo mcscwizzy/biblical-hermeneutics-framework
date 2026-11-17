@@ -10626,6 +10626,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-482-light-and-darkness-theme",
+      "scope": [
+        "light-and-darkness-theme"
+      ],
+      "completed_unit": "Distinguished creation light, the psalm’s image of trust, John’s opening imagery, and ethical uses in Ephesians and 1 John.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/light-and-darkness-theme.json"
+      ],
+      "protected_checks": [
+        "Object and evidence identifiers, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "No source-dependent comparative claims were introduced; unsupported ANE boilerplate was removed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -32041,14 +32066,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b54ded4e1abb9edfd9e389211742cd39452d0f4050a73438d6fcd8d23ed94aa2",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained how light and darkness function differently in creation, prayer, John’s opening, and New Testament ethical instruction.",
+      "limitation": "No comparative ancient Near Eastern context is supported by the object’s recorded sources; the explanation stays with the cited biblical passages.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -34483,7 +34535,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/light-and-darkness-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/mercy-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
