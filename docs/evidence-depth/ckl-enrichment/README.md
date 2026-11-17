@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **237 objects are enriched**, **109 are unchanged because they
-are already sufficient**, **157 are skipped pending source or identity
-research**, and **184 remain pending review**.
+are already sufficient**, **158 are skipped pending source or identity
+research**, and **183 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1526,3 +1526,6 @@ Batch 432 reviewed Nazareth. The revised fields explain its role in the family n
 
 
 Batch 433 reviewed Negeb and made no content changes. Its anchors do not establish Negeb-specific geography or history; the generic ancient Near Eastern context lacks support, and the internal orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 434 reviewed Nile and made no content changes. The anchors concern the sea crossing, the Jordan, and unspecified water imagery; they do not name the Nile or support Egyptian agricultural and royal-context claims. The internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.

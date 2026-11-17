@@ -9496,6 +9496,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-434-nile-review",
+      "scope": [
+        "nile"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Nile-specific Scripture-anchor and contextual-source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Nile or Egyptian background claims were inferred from other water references."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -29113,14 +29134,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "fe8e3421608cd370575b16d762b459e805e1e9553ee3ee0eb0d4db6fec7af9b7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; none of the Scripture anchors names the Nile, and the connected water imagery does not establish this river or its Egyptian context.",
+      "limitation": "Exodus 14 concerns the sea crossing, Joshua 1:1–4 concerns the Jordan boundary, Psalm 114 names the sea and Jordan, and Isaiah 43 uses unnamed water imagery. These do not establish the Nile, Egyptian agricultural cycles, or royal ideology. The internal historical-orientation source is pending human review; Nile-specific Scripture anchors and reviewed contextual sources are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -32419,7 +32453,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/nile.json",
+  "next_batch": "framework/canonical_library/objects/places/nineveh.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
