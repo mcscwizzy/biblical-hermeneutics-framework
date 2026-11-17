@@ -127,13 +127,13 @@ def _measure_overview(driver) -> dict:
         const explorer = document.querySelector('.narrative-explorer');
         const notice = explorer.querySelector('.narrative-explorer-featured-empty');
         const guidance = explorer.querySelector('.narrative-explorer-featured-guidance');
+        const pathways = explorer.querySelector('.narrative-explorer-pathways');
         const guide = explorer.querySelector('.narrative-explorer-terms-guide');
         const summary = guide.querySelector('summary');
         const terms = [...guide.querySelectorAll('dt')];
         const definitions = [...guide.querySelectorAll('dd')];
         const rootStyle = getComputedStyle(document.documentElement);
         const summaryStyle = getComputedStyle(summary);
-        const noticeStyle = getComputedStyle(notice);
         const definitionStyle = getComputedStyle(definitions[0]);
         const bounds = element => {
           const rect = element.getBoundingClientRect();
@@ -145,8 +145,9 @@ def _measure_overview(driver) -> dict:
         return {
           viewport: {innerWidth: window.innerWidth, clientWidth: document.documentElement.clientWidth,
             scrollWidth: document.documentElement.scrollWidth},
-          notice: bounds(notice),
-          guidance: bounds(guidance),
+          notice: notice ? bounds(notice) : null,
+          guidance: guidance ? bounds(guidance) : null,
+          pathways: bounds(pathways),
           summary: bounds(summary),
           termCount: terms.length,
           terms: terms.map(term => term.textContent.trim()),
@@ -159,8 +160,6 @@ def _measure_overview(driver) -> dict:
             surface: rootStyle.getPropertyValue('--surface').trim(),
             surfaceMuted: rootStyle.getPropertyValue('--surface-muted').trim(),
             summaryBackground: rootStyle.getPropertyValue('--surface').trim(),
-            noticeBackground: rootStyle.getPropertyValue('--surface-muted').trim(),
-            noticeForeground: noticeStyle.color,
           },
         };
         """
@@ -171,14 +170,14 @@ def _assert_no_horizontal_overflow(metrics: dict, width: int) -> None:
     assert metrics["viewport"]["innerWidth"] == width, metrics
     assert metrics["viewport"]["clientWidth"] == width, metrics
     assert metrics["viewport"]["scrollWidth"] <= width, metrics
-    for name in ("notice", "summary", *[f"term-{index}" for index in range(14)]):
-        measurement = metrics["notice"] if name == "notice" else metrics["summary"] if name == "summary" else metrics["definitions"][int(name[5:])]
+    for name in ("pathways", "summary", *[f"term-{index}" for index in range(14)]):
+        measurement = metrics["pathways"] if name == "pathways" else metrics["summary"] if name == "summary" else metrics["definitions"][int(name[5:])]
         assert measurement["left"] >= -1 and measurement["right"] <= width + 1, (name, measurement)
         assert measurement["scrollWidth"] <= measurement["clientWidth"] + 1, (name, measurement)
 
 
 @pytest.mark.parametrize(("width", "height", "mobile", "label"), VIEWPORTS)
-def test_ed5_empty_notice_and_terminology_guide_acceptance(
+def test_ed5_compact_pathways_and_terminology_guide_acceptance(
     driver, base_url, artifacts_dir, width, height, mobile, label
 ):
     browser = _assert_chromium(driver)
@@ -193,17 +192,15 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
         "return window.BHFStudySelection?.getState?.().reference === '1 Kings 2';"
     ))
     explorer = _open_narrative_explorer(driver, wait)
-    notice = wait.until(lambda page: page.find_element(
-        By.CSS_SELECTOR,
-        ".narrative-explorer-featured-empty",
-    ))
-    assert notice.is_displayed()
-    assert "No eligible Evidence library research is currently available for 1 Kings 2" in notice.text
-    assert "not the passage's importance" in notice.text
-    guidance = explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-featured-guidance")
-    assert guidance.is_displayed()
-    assert "Start with a study topic or explore the original context for 1 Kings 2" in guidance.text
-    assert explorer.text.index(guidance.text) < explorer.text.index(notice.text)
+    assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-empty")
+    assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-guidance")
+    assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-discoveries")
+    assert "Current passage: 1 Kings 2" not in explorer.text
+    assert "1 Kings 2" in explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-header h3").get_attribute("aria-label")
+    pathways = explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-pathways")
+    assert [button.text for button in pathways.find_elements(By.TAG_NAME, "button")] == [
+        "Understand the Passage", "Follow a Connection",
+    ]
     screenshot_label = "desktop" if width == 1440 else f"{width}px"
     assert driver.save_screenshot(str(artifacts_dir / f"1kings2-{screenshot_label}.png"))
 
@@ -256,19 +253,20 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
             const notice = rendered.querySelector('.narrative-explorer-featured-empty');
             const guidance = rendered.querySelector('.narrative-explorer-featured-guidance');
             result[name] = {
+              featuredCard: Boolean(rendered.querySelector('.narrative-explorer-featured-discoveries')),
               guidance: guidance?.textContent || '',
-              negativeNotice: notice?.textContent || '',
+              emptyNotice: notice?.textContent || '',
+              coverageNote: rendered.querySelector('.narrative-explorer-coverage-note')?.textContent || '',
             };
           }
           return {baseline: {state: coverage.state, query_status: coverage.query_status}, notices: result};
         })().then(done).catch(error => done({error: String(error)}));
         """
     )
-    assert all("Start with a study topic" in result["guidance"]
-               and not result["negativeNotice"]
-               for result in noncomplete_notice_cases["notices"].values()), noncomplete_notice_cases
+    assert all(not result["featuredCard"] and not result["guidance"] and not result["emptyNotice"]
+               and result["coverageNote"] for result in noncomplete_notice_cases["notices"].values()), noncomplete_notice_cases
     print(
-        "ED5_EMPTY_NOTICE=" + json.dumps({
+        "ED5_COMPACT_PATHWAYS=" + json.dumps({
             "viewport": viewport,
             "baseline_ckl": ckl_coverage,
             "negative_states": noncomplete_notice_cases["notices"],
@@ -278,8 +276,8 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
     )
 
     # Native details/summary keeps browser disclosure semantics and focus in place.
-    browse_sources = explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-browse-sources")
-    driver.execute_script("arguments[0].focus()", browse_sources)
+    topic_buttons = explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")
+    driver.execute_script("arguments[0].focus()", topic_buttons[-1])
     ActionChains(driver).send_keys(Keys.TAB).perform()
     assert driver.execute_script("return document.activeElement === arguments[0]", summary)
     focus = driver.execute_script(
@@ -345,14 +343,13 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
         assert all(definition["text"] for definition in metrics["definitions"]), metrics
         _assert_no_horizontal_overflow(metrics, width)
         assert metrics["summary"]["height"] >= 44, metrics
-        browse_height = driver.execute_script(
-            "return document.querySelector('.narrative-explorer-browse-sources').getBoundingClientRect().height"
+        pathways_height = driver.execute_script(
+            "return document.querySelector('.narrative-explorer-pathways').getBoundingClientRect().height"
         )
-        assert browse_height >= 44, browse_height
+        assert pathways_height >= 44, pathways_height
 
         colors = metrics["colors"]
         contrast = {
-            "notice": round(_contrast_ratio(colors["noticeForeground"], colors["noticeBackground"]), 2),
             "terms": round(_contrast_ratio(colors["pageMuted"], colors["surface"]), 2),
             "summary": round(_contrast_ratio(colors["summaryForeground"], colors["summaryBackground"]), 2),
             "term_headings": round(_contrast_ratio(colors["pageText"], colors["surface"]), 2),
@@ -369,12 +366,12 @@ def test_ed5_empty_notice_and_terminology_guide_acceptance(
         theme_reports[theme] = {
             "contrast_ratios": contrast,
             "summary_height": metrics["summary"]["height"],
-            "browse_sources_height": browse_height,
+            "pathways_height": pathways_height,
             "document_width": metrics["viewport"]["scrollWidth"],
             "longest_definition_length": len(longest_definition["text"]),
             "longest_definition_scroll": longest_definition["scrollHeight"],
             "longest_definition_client": longest_definition["clientHeight"],
-            "overflow_checked_elements": 17,
+            "overflow_checked_elements": 16,
         }
         summary.click()
 

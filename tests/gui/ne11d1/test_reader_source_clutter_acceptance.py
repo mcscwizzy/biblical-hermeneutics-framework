@@ -22,7 +22,9 @@ def test_reader_topics_on_mobile(driver, ne11d1_base_url):
         set_viewport(driver, 390, 844, mobile=True)
         _select_passage(driver, wait, case)
         explorer = _open_explorer(driver, wait)
-        wait.until(lambda d: f"Current passage: {case['reference']}" in d.find_element(By.CSS_SELECTOR, '.narrative-explorer').text)
+        explorer = wait.until(lambda d: d.find_element(By.CSS_SELECTOR, '.narrative-explorer'))
+        assert f"Current passage: {case['reference']}" not in explorer.text
+        assert case['reference'] in explorer.find_element(By.CSS_SELECTOR, '.narrative-explorer-header h3').get_attribute('aria-label')
         assert len(explorer.find_elements(By.CSS_SELECTOR, '.narrative-explorer-category-card')) == 6
         assert 'Find a source' not in explorer.text
         ids = [x.get_attribute('data-section-id') for x in explorer.find_elements(By.CSS_SELECTOR, '.narrative-explorer-category-card')]

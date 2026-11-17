@@ -906,10 +906,8 @@
     const header = element(document, "header", `narrative-explorer-header${definition ? " is-focused" : ""}`);
     const heading = appendTextElement(document, header, "h3", definition?.title || "Explore this passage");
     heading.setAttribute("tabindex", "-1");
+    if (passage) heading.setAttribute("aria-label", `${definition?.title || "Explore this passage"}, ${passage}`);
     heading.dataset.narrativePrimary = "true";
-    appendTextElement(document, header, "p", definition?.description
-      || "Choose a topic to explore more research connected with this passage.");
-    if (passage) appendTextElement(document, header, "p", `Current passage: ${passage}`, "narrative-explorer-passage");
     rootElement.append(header);
 
     if (trailNodes(options.trail).length > 1) rootElement.append(renderTrailHeader(options.trail, options));
@@ -919,31 +917,31 @@
     const coverageBySource = new Map((Array.isArray(projection?.coverage) ? projection.coverage : []).map((entry) => [entry.source_domain, entry]));
 
     if (view.kind === "overview" || !definition) {
-      rootElement.append(renderFeaturedDiscoveries(document, [...itemsById.values()], passage, coverageBySource));
-      const intro = element(document, "section", "narrative-explorer-discovery");
-      appendTextElement(document, intro, "h4", "Follow a Connection");
-      appendTextElement(document, intro, "p", "Follow a connection when specific evidence links this passage with another part of the Bible. Similarity alone is not enough.");
+      const featured = renderFeaturedDiscoveries(document, [...itemsById.values()]);
+      if (featured) rootElement.append(featured);
+      const pathways = element(document, "nav", "narrative-explorer-pathways");
+      pathways.setAttribute("aria-label", "Passage study pathways");
       const follow = element(document, "button", "narrative-explorer-follow-connection");
       follow.type = "button";
       follow.textContent = "Follow a Connection";
       follow.setAttribute("aria-label", passage ? `Follow a Connection from ${passage}` : "Follow a Connection");
       follow.addEventListener("click", (event) => options.onOpenCategory?.("themes_biblical_connections", event.currentTarget || follow));
-      intro.append(follow);
-      rootElement.append(intro);
 
       const contextEntry = element(document, "button", "narrative-explorer-understand-passage");
       contextEntry.type = "button";
       contextEntry.dataset.narrativeUnderstandPassage = "true";
       contextEntry.dataset.narrativeFocusId = "understand-passage";
-      const contextIcon = element(document, "span", "narrative-explorer-context-icon");
-      contextIcon.setAttribute("aria-hidden", "true");
-      contextIcon.textContent = "◷";
-      const contextCopy = element(document, "span", "narrative-explorer-context-copy");
-      appendTextElement(document, contextCopy, "strong", "Understand the Passage");
-      appendTextElement(document, contextCopy, "span", "Explore the historical setting, original audience, literary structure, and cultural background.");
-      contextEntry.append(contextIcon, contextCopy);
+      appendTextElement(document, contextEntry, "span", "Understand the Passage");
       contextEntry.addEventListener("click", (event) => options.onOpenUnderstandPassage?.(event.currentTarget || contextEntry));
-      rootElement.append(contextEntry);
+      pathways.append(contextEntry, follow);
+      rootElement.append(pathways);
+
+      const incompleteCoverage = (Array.isArray(projection?.coverage) ? projection.coverage : [])
+        .some((entry) => ["partial", "unknown"].includes(entry?.state));
+      if (incompleteCoverage) {
+        const coverageNote = appendTextElement(document, rootElement, "p", "Some source coverage may be incomplete.", "narrative-explorer-coverage-note");
+        coverageNote.setAttribute("role", "status");
+      }
 
       const choices = element(document, "section", "narrative-explorer-topic-choices");
       choices.setAttribute("aria-labelledby", "narrative-explorer-topics-title");
@@ -988,20 +986,36 @@
       .map((id) => itemsById.get(id))
       .filter((item) => item && presentationTier(item) !== "withheld_from_reader_promotion" && hasReaderObservation(item));
     let hasConnectionPreview = false;
+    let hasPassageConnections = false;
     if (definition.id === "themes_biblical_connections") {
-      rootElement.append(renderRelatedPassages(document, passage, projection?.related_passages, options));
+      const passageConnections = renderRelatedPassages(document, passage, projection?.related_passages, options);
+      hasPassageConnections = Boolean(passageConnections);
+      if (passageConnections) rootElement.append(passageConnections);
       const candidates = selectConnectionPreviews(connectionPreviewCandidates(
         [...itemsById.values()], connectionsByItem, sectionsById,
       ));
       hasConnectionPreview = candidates.length > 0;
-      rootElement.append(renderConnectionDiscovery(
-        document, passage, [...itemsById.values()], connectionsByItem, coverageBySource, sectionsById, options,
-      ));
+      const connectionDiscovery = renderConnectionDiscovery(
+        document, [...itemsById.values()], connectionsByItem, coverageBySource, sectionsById, options,
+      );
+      if (connectionDiscovery) rootElement.append(connectionDiscovery);
     }
-    rootElement.append(renderSection(document, definition, section, items, coverageBySource, connectionsByItem, options, {
-      focused: true,
-      hidePreviews: definition.id === "themes_biblical_connections" && hasConnectionPreview,
-    }));
+    const relatedCoverage = routeAvailabilityState(projection?.related_passages);
+    const cklCoverageState = coverageBySource.get("canonical_knowledge_library")?.state;
+    const incompleteThemeCoverage = [relatedCoverage, cklCoverageState].find((state) => state === "partial")
+      || [relatedCoverage, cklCoverageState].find((state) => state === "unknown");
+    const sectionForRendering = definition.id === "themes_biblical_connections"
+      && !hasConnectionPreview
+      && !hasPassageConnections
+      && incompleteThemeCoverage
+      ? {...section, state: incompleteThemeCoverage}
+      : section;
+    if (items.length || !(definition.id === "themes_biblical_connections" && (hasConnectionPreview || hasPassageConnections))) {
+      rootElement.append(renderSection(document, definition, sectionForRendering, items, coverageBySource, connectionsByItem, options, {
+        focused: true,
+        hidePreviews: definition.id === "themes_biblical_connections" && hasConnectionPreview,
+      }));
+    }
     return rootElement;
   }
 
@@ -1009,33 +1023,13 @@
     return PRESENTATION_POLICY?.tierFor?.(item) || "withheld_from_reader_promotion";
   }
 
-  function renderFeaturedDiscoveries(document, items, passage, coverageBySource = new Map()) {
+  function renderFeaturedDiscoveries(document, items) {
+    const discoveries = PRESENTATION_POLICY?.featuredDiscoveries?.(items) || [];
+    if (!discoveries.length) return null;
     const section = element(document, "section", "narrative-explorer-featured-discoveries");
     section.setAttribute("aria-labelledby", "narrative-explorer-featured-title");
     const heading = appendTextElement(document, section, "h4", "What to notice");
     heading.id = "narrative-explorer-featured-title";
-    const discoveries = PRESENTATION_POLICY?.featuredDiscoveries?.(items) || [];
-    if (!discoveries.length) {
-      const cklCoverage = coverageBySource.get("canonical_knowledge_library");
-      const completedEmpty = cklCoverage?.state === "not_represented" && cklCoverage.query_status === "complete";
-      appendTextElement(
-        document,
-        section,
-        "p",
-        `Start with a study topic or explore the original context for ${passage || "this passage"}. Where evidence supports a relationship, follow a verified biblical connection.`,
-        "narrative-explorer-featured-guidance",
-      );
-      if (completedEmpty) {
-        appendTextElement(
-          document,
-          section,
-          "p",
-          `No eligible Evidence library research is currently available for ${passage || "this passage"}. This reflects BHF's current coverage, not the passage's importance.`,
-          "narrative-explorer-featured-empty",
-        );
-      }
-      return section;
-    }
     discoveries.slice(0, 3).forEach(({item, wording}) => {
       const card = element(document, "article", "narrative-explorer-featured-card");
       appendTextElement(document, card, "h5", readerText(item.title) || readerText(item.claim_text) || "Passage discovery");
@@ -1154,14 +1148,9 @@
 
   function renderRelatedPassages(document, passage, related, options) {
     const section = element(document, "section", "narrative-explorer-related-passages");
-    section.setAttribute("aria-labelledby", "narrative-explorer-related-passages-title");
-    const heading = appendTextElement(document, section, "h4", "Connections to other passages");
-    heading.id = "narrative-explorer-related-passages-title";
     const routes = related && typeof related === "object" ? related : {};
     const state = normalizeState(routes.state);
     section.dataset.coverageState = state;
-    appendTextElement(document, section, "p", "A passage reference alone does not prove that two passages are related. These links require a recorded relationship or passage-specific evidence.",
-      state === "partial" || state === "unknown" ? "narrative-explorer-missing-provenance" : "narrative-explorer-section-heading");
 
     const selectedRouteApplies = (route) => (
       passageRangesOverlap(passage, route?.source_passage)
@@ -1171,24 +1160,21 @@
       .filter(selectedRouteApplies);
     const bridges = (Array.isArray(routes.evidence_backed_bridges) ? routes.evidence_backed_bridges : [])
       .filter(selectedRouteApplies);
+    if (!authored.length && !bridges.length) return null;
+    appendTextElement(document, section, "h4", "Connections to other passages");
+    section.setAttribute("aria-label", "Connections to other passages");
+    if (state === "partial" || state === "unknown") {
+      appendTextElement(document, section, "p", state === "partial"
+        ? "Some passage connections may be missing from these results."
+        : "Passage connection coverage could not be checked.", "narrative-explorer-coverage-note");
+    }
     if (authored.length) {
-      appendTextElement(document, section, "h5", "Connections recorded in BHF");
-      appendTextElement(document, section, "p", "These relationships are shown with their recorded wording and supporting references.", "narrative-explorer-section-heading");
+      if (bridges.length) appendTextElement(document, section, "h5", "Connections recorded in BHF");
       renderPassageRouteList(document, section, authored, "authored", options);
     }
     if (bridges.length) {
-      appendTextElement(document, section, "h5", "Connections supported by passage-specific research");
-      appendTextElement(document, section, "p", "Each link is tied to research about the passages shown. Read the source and uncertainty before following it.", "narrative-explorer-section-heading");
+      if (authored.length) appendTextElement(document, section, "h5", "Connections supported by passage-specific research");
       renderPassageRouteList(document, section, bridges, "bridge", options);
-    }
-    if (!authored.length && !bridges.length && state === "available") {
-      appendTextElement(document, section, "p", "No source-linked connection is available here. BHF's current coverage may be incomplete.", "narrative-explorer-missing-provenance");
-    } else if (!authored.length && !bridges.length && state === "partial") {
-      appendTextElement(document, section, "p", "No connection is ready to show from the results returned; some connection information may be missing.", "narrative-explorer-missing-provenance");
-    } else if (!authored.length && !bridges.length && state === "unknown") {
-      appendTextElement(document, section, "p", "BHF could not check available connections just now. The lookup did not finish, so more may be available.", "narrative-explorer-missing-provenance");
-    } else if (!authored.length && !bridges.length && state === "not_represented") {
-      appendTextElement(document, section, "p", "No source-linked connection was found in the available records; this does not prove that no connection exists.", "narrative-explorer-missing-provenance");
     }
     return section;
   }
@@ -1243,7 +1229,7 @@
         const inTrail = destination.valid && passageIsInTrail(options.trail, normalizeReference(destination.reference));
         const hopsAtLimit = currentRelationshipHops(options.trail) >= MAX_RELATIONSHIP_HOPS;
         if (inCurrent) {
-          appendTextElement(document, article, "p", `Current passage: ${destination.reference}`, "narrative-explorer-current-passage");
+          appendTextElement(document, article, "p", "This is the current passage.", "narrative-explorer-current-passage");
         } else if (inTrail) {
           appendTextElement(document, article, "p", `This passage already appears in the trail: ${destination.reference}`, "narrative-explorer-trail-cycle");
         } else if (hopsAtLimit) {
@@ -1292,7 +1278,6 @@
   function appendPassageRouteDetails(document, parent, route, routeKind) {
     const details = element(document, "details", "narrative-explorer-related-passage-details");
     appendTextElement(document, details, "summary", "Supporting sources");
-    appendTextElement(document, details, "p", readerText(route.explanation) || "The record does not include an explanation for this connection.");
     (Array.isArray(route.supporting_records) ? route.supporting_records : []).forEach((record) => {
       if (readerText(record.statement)) appendTextElement(document, details, "p", readerText(record.statement), "narrative-explorer-original-claim");
     });
@@ -1319,51 +1304,27 @@
     return labels[readerText(value)] || "Documented passage comparison";
   }
 
-  function renderConnectionDiscovery(document, passage, items, connectionsByItem, coverageBySource, sectionsById, options) {
-    const section = element(document, "section", "narrative-explorer-connection-discovery");
-    section.setAttribute("aria-labelledby", "narrative-explorer-connection-discovery-title");
-    const heading = appendTextElement(document, section, "h4", `Evidence about ${readerText(passage) || "the selected passage"}`);
-    heading.id = "narrative-explorer-connection-discovery-title";
-    appendTextElement(
-      document,
-      section,
-      "p",
-      "A Scripture reference shows where evidence applies. It doesn't automatically mean two passages are connected. Historical comparisons offer context, but do not by themselves show borrowing or direct dependence.",
-      "narrative-explorer-section-heading",
-    );
-
+  function renderConnectionDiscovery(document, items, connectionsByItem, coverageBySource, sectionsById, options) {
     const cklCoverage = coverageBySource.get("canonical_knowledge_library");
-    if (cklCoverage?.state === "unknown") {
-      appendTextElement(document, section, "p", "BHF could not check source availability, so this preview may be incomplete.", "narrative-explorer-missing-provenance");
-    } else if (cklCoverage?.state === "partial") {
-      appendTextElement(document, section, "p", "Some source records may be missing from this preview.", "narrative-explorer-missing-provenance");
-    }
-
     const candidates = connectionPreviewCandidates(items, connectionsByItem, sectionsById);
     const previewItems = selectConnectionPreviews(candidates);
-    if (previewItems.length) {
-      const previews = element(document, "div", "narrative-explorer-previews");
-      previewItems.forEach((candidate) => {
-        previews.append(renderItem(
-          document,
-          candidate.item,
-          connectionsByItem.get(candidate.item.id) || [],
-          options,
-          candidate,
-        ));
-      });
-      section.append(previews);
-      return section;
+    if (!previewItems.length) return null;
+    const section = element(document, "section", "narrative-explorer-connection-discovery");
+    section.setAttribute("aria-label", "Documented connections from this passage");
+    if (cklCoverage?.state === "unknown" || cklCoverage?.state === "partial") {
+      appendTextElement(document, section, "p", cklCoverage.state === "partial"
+        ? "Some source records may be missing from these results."
+        : "Source coverage could not be checked.", "narrative-explorer-coverage-note");
     }
-
-    const emptyMessage = cklCoverage?.state === "unknown"
-      ? "BHF could not check source availability, so no connection preview is ready. Try again later."
-      : cklCoverage?.state === "partial"
-        ? "No source-linked preview is ready from the returned records; more research may be missing."
-        : cklCoverage?.state === "not_represented"
-          ? "No source-linked connection preview was found in the available records. This does not prove that no connection exists."
-          : "No source-linked connection is ready to show for this passage yet.";
-    appendTextElement(document, section, "p", emptyMessage, "narrative-explorer-missing-provenance");
+    const previews = element(document, "div", "narrative-explorer-previews");
+    previewItems.forEach((candidate) => previews.append(renderItem(
+      document,
+      candidate.item,
+      connectionsByItem.get(candidate.item.id) || [],
+      options,
+      candidate,
+    )));
+    section.append(previews);
     return section;
   }
 
@@ -1508,37 +1469,39 @@
 
   function renderSection(document, definition, section, items, coverageBySource, connectionsByItem, options, renderOptions = {}) {
     items = items.filter((item) => presentationTier(item) !== "withheld_from_reader_promotion");
+    const state = normalizeState(section.state);
+    if (!items.length) {
+      const empty = element(document, "p", "narrative-explorer-empty-topic");
+      empty.dataset.sectionId = definition.id;
+      empty.textContent = state === "unknown"
+        ? "Source availability could not be checked just now."
+        : state === "partial"
+          ? "No eligible findings are ready to show; results may be incomplete."
+          : state === "not_represented"
+            ? "No eligible findings are available for this topic and passage."
+            : "No findings met this topic's reader criteria.";
+      return empty;
+    }
     const card = element(document, "section", `narrative-explorer-section${renderOptions.focused ? " is-focused" : ""}`);
     card.dataset.sectionId = definition.id;
-    const heading = element(document, "div", "narrative-explorer-section-heading");
-    appendTextElement(document, heading, "h4", renderOptions.focused ? "Observations about this passage" : definition.title);
-    if (!renderOptions.focused) appendTextElement(document, heading, "p", definition.description);
-    card.append(heading);
+    card.setAttribute("aria-label", definition.title);
+    if (!renderOptions.focused) {
+      const heading = element(document, "div", "narrative-explorer-section-heading");
+      appendTextElement(document, heading, "h4", definition.title);
+      card.append(heading);
+    }
     if (definition.id === "divine_council_cosmic_geography") {
       appendTextElement(
         document,
         card,
         "p",
-        "Comparative material describes an ancient cultural or literary context; it does not by itself prove borrowing, quotation, or dependence. Proposed symbolic readings remain interpretations, not archaeological findings.",
+        "Comparative material and symbolic readings are interpretations, not proof of direct dependence or archaeological findings.",
         "narrative-explorer-caution",
       );
     }
 
-    const state = normalizeState(section.state);
-    if (!items.length) {
-      const emptyMessage = state === "unknown"
-        ? "BHF could not check source availability for this topic just now. Try again later."
-        : state === "partial"
-          ? "No source-linked findings are ready to show; some research may be missing from this topic."
-          : state === "not_represented"
-            ? "No source-linked research was found for this topic and passage. This does not speak to the passage's importance."
-            : "No source-linked findings met this topic's reader filter. Related research may be available in BHF's research tools.";
-      appendTextElement(document, card, "p", emptyMessage, "narrative-explorer-empty-topic");
-    } else if (state === "partial") {
+    if (items.length && state === "partial") {
       appendTextElement(document, card, "p", "Some source records may be missing from this topic.", "narrative-explorer-availability is-partial");
-    }
-    if (state === "not_represented" && definition.id === "archaeology_ancient_history" && !items.length) {
-      appendTextElement(document, card, "p", "No linked archaeology records were found; this does not disprove a biblical account.", "narrative-explorer-caution");
     }
 
     const previewList = element(document, "div", "narrative-explorer-previews");

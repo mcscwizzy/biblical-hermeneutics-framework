@@ -145,8 +145,8 @@ def test_enabled_narrative_hub_keeps_context_summaries_and_reader_state(driver, 
     follow = driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-follow-connection")
     assert follow.is_displayed()
     context_entry = driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-understand-passage")
-    assert context_entry.find_element(By.CSS_SELECTOR, ".narrative-explorer-context-copy strong").text == "Understand the Passage"
-    assert "Explore the historical setting, original audience, literary structure, and cultural background." in context_entry.text
+    assert context_entry.text == "Understand the Passage"
+    assert len(driver.find_element(By.CSS_SELECTOR, ".narrative-explorer-pathways").find_elements(By.TAG_NAME, "button")) == 2
 
     projection_count = driver.execute_script(
         "return performance.getEntriesByType('resource').filter(entry => entry.name.includes('/api/narrative-explorer/v1/passages/')).length;"

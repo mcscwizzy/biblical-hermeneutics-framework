@@ -55,6 +55,8 @@ VIEWPORTS = [
 
 OPENING_CASES = [
     {"name": "genesis6", "book": "Genesis", "chapter": 6, "verses": [1, 2, 3, 4], "reference": "Genesis 6:1-4"},
+    {"name": "john1", "book": "John", "chapter": 1, "verses": [1], "reference": "John 1:1"},
+    {"name": "jeremiah32", "book": "Jeremiah", "chapter": 32, "verses": [1], "reference": "Jeremiah 32:1"},
     {"name": "genesis12", "book": "Genesis", "chapter": 12, "verses": [1, 2, 3], "reference": "Genesis 12:1-3"},
     {"name": "psalm82", "book": "Psalms", "chapter": 82, "verses": [1, 2, 3, 4, 5, 6, 7, 8], "reference": "Psalms 82:1-8"},
 ]
@@ -90,7 +92,8 @@ def test_ed7_featured_discoveries_disclose_sources_without_editorial_diagnostics
 
     explorer = _open_explorer(driver, wait)
     card = wait.until(lambda page: page.find_element(By.CSS_SELECTOR, ".narrative-explorer-featured-card"))
-    assert f"Current passage: {case['reference']}" in explorer.text
+    assert f"Current passage: {case['reference']}" not in explorer.text
+    assert case["reference"] in explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-header h3").get_attribute("aria-label")
     assert case["title"] in card.text
     assert card.find_element(By.CSS_SELECTOR, ".narrative-explorer-featured-uncertainty").text
     assert not any(token in explorer.text.lower() for token in (
@@ -127,7 +130,7 @@ def test_ed7_featured_discoveries_disclose_sources_without_editorial_diagnostics
 
 @pytest.mark.parametrize("case", OPENING_CASES, ids=[case["name"] for case in OPENING_CASES])
 @pytest.mark.parametrize("viewport", VIEWPORTS, ids=[entry[3] for entry in VIEWPORTS])
-def test_ed7_zero_feature_opening_leads_to_reader_pathways(
+def test_ed7_overview_only_shows_qualified_discoveries_and_reader_pathways(
     driver, ne11d1_base_url, artifacts_dir, case, viewport
 ):
     browser = _assert_chromium(driver)
@@ -139,30 +142,27 @@ def test_ed7_zero_feature_opening_leads_to_reader_pathways(
     _select_passage(driver, wait, case)
 
     explorer = _open_explorer(driver, wait)
-    guidance = wait.until(lambda page: page.find_element(
-        By.CSS_SELECTOR,
-        ".narrative-explorer-featured-guidance",
-    ))
-    assert guidance.is_displayed()
-    assert f"Current passage: {case['reference']}" in explorer.text
-    assert "Start with a study topic or explore the original context" in guidance.text
-    assert "Where evidence supports a relationship, follow a verified biblical connection." in guidance.text
-    assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-card")
+    assert f"Current passage: {case['reference']}" not in explorer.text
+    assert case["reference"] in explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-header h3").get_attribute("aria-label")
+    featured_sections = explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-discoveries")
+    featured_cards = explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-card")
+    if featured_sections:
+        assert featured_cards
+    else:
+        assert not featured_cards
     assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-empty")
-    assert not any(phrase in explorer.text for phrase in (
-        "No source-checked discovery is ready to feature",
-        "not the passage's importance",
-    ))
     assert len(explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-category-card")) == 6
-    assert explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-understand-passage").is_displayed()
+    pathways = explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-pathways")
+    assert pathways.find_element(By.CSS_SELECTOR, ".narrative-explorer-understand-passage").is_displayed()
+    assert pathways.find_element(By.CSS_SELECTOR, ".narrative-explorer-follow-connection").is_displayed()
     assert driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth"), width
 
     screenshot = artifacts_dir / f"{case['name']}-{label}.png"
     assert driver.save_screenshot(str(screenshot))
     print("ED7_CHROMIUM_OPENING=" + json.dumps({
         "case": case["name"], "browser": browser, "reference": case["reference"],
-        "viewport": width, "featured_cards": 0, "study_topics": 6,
-        "positive_guidance": True, "horizontal_overflow": False,
+        "viewport": width, "featured_cards": len(featured_cards), "study_topics": 6,
+        "compact_pathways": True, "horizontal_overflow": False,
         "screenshot": screenshot.name,
     }, sort_keys=True), flush=True)
 
@@ -184,9 +184,8 @@ def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
         "reference": "Jonah 1:17",
     })
     explorer = _open_explorer(driver, wait)
-    guidance = explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-featured-guidance")
-    assert "verified biblical connection" in guidance.text
     assert not explorer.find_elements(By.CSS_SELECTOR, ".narrative-explorer-featured-empty")
+    assert explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-pathways .narrative-explorer-follow-connection").is_displayed()
     assert driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth"), width
     explorer.find_element(By.CSS_SELECTOR, ".narrative-explorer-follow-connection").click()
     wait.until(lambda page: page.find_element(By.CSS_SELECTOR, ".narrative-explorer-related-passages"))
@@ -194,6 +193,7 @@ def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
     assert "Connection to Matthew 12:40" in article.text
     assert "The earlier text is Jonah 1:17; the later passage is Matthew 12:40." in article.text
     assert "Matthew 12:40 explicitly compares" in article.text
+    assert "Ancient time reckoning and idiom leave the chronology unsettled" in article.text
     assert not any(token in article.text for token in (
         "ckl:", "source_id", "human_review_required", "Connection type:",
     ))
@@ -203,16 +203,18 @@ def test_ed7_jonah_to_matthew_connection_keeps_direction_and_navigation(
     support.find_element(By.CSS_SELECTOR, "summary").click()
     support_text = driver.execute_script("return arguments[0].innerText", support)
     assert "Supporting sources" in support_text
-    assert "Jonah 1:17" in support_text and "Matthew 12:40" in support_text
+    assert "Masoretic Text of Jonah" in support_text
+    assert "New Testament sign-of-Jonah passages" in support_text
     before = artifacts_dir / f"jonah-matthew-{label}-route.png"
     assert driver.save_screenshot(str(before))
 
     _click_related_passage(driver, wait, article, "Matthew 12:40")
     assert driver.execute_script("return window.BHFStudySelection?.getState?.().reference") == "Matthew 12:40"
-    wait.until(lambda page: "Current passage: Matthew 12:40" in page.find_element(
+    wait.until(lambda page: "Matthew 12:40" in page.find_element(
         By.CSS_SELECTOR,
-        ".narrative-explorer",
-    ).text)
+        ".narrative-explorer-header h3",
+    ).get_attribute("aria-label"))
+    assert "Current passage: Matthew 12:40" not in driver.find_element(By.CSS_SELECTOR, ".narrative-explorer").text
     assert driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth"), width
     after = artifacts_dir / f"jonah-matthew-{label}-destination.png"
     assert driver.save_screenshot(str(after))
