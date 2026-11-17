@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **213 objects are enriched**, **99 are unchanged because they
-are already sufficient**, **129 are skipped pending source or identity
-research**, and **246 remain pending review**.
+are already sufficient**, **130 are skipped pending source or identity
+research**, and **245 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1125,3 +1125,10 @@ passages concern Ai, the Valley of Elah, Jerusalem, and Ammon rather than
 Ashdod; the internal historical-orientation source is pending human review.
 The object passed single-object validation with 1 valid object, 0 errors, and 8
 pre-existing section-status warnings. The next pending object is Asia.
+
+
+Batch 372 reviewed Asia and held it for clarification of the intended biblical
+place label and anchor set. The cited passages do not establish that subject,
+and the internal historical-orientation source is pending human review. The
+object passed single-object validation with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is Assyria.
