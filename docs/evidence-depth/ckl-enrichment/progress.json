@@ -7759,6 +7759,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "2c6ddcb6"
+    },
+    {
+      "batch_id": "batch-357-tabitha-person",
+      "scope": [
+        "tabitha"
+      ],
+      "completed_unit": "Reviewed Tabitha and held the record because its Gospel sources do not identify the Acts figure.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24665,14 +24687,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "59cf8a702e39132b21324e91abe52d59ce68c3aa6299d9e5132c16829b327957",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Tabitha’s profile, sources, anchors, and related themes. The title points to the woman named in Acts 9, but all current Scripture references and sources are Gospel resurrection or ascension scenes; none identifies her. Left the record unchanged pending source and identity review.",
+      "limitation": "The recorded sources do not include Acts 9:36–42 or any other passage naming Tabitha. No likely Acts references or relationships were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29357,7 +29397,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/tabitha.json",
+  "next_batch": "framework/canonical_library/objects/people/thaddaeus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
