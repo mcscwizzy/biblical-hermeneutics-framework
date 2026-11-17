@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **222 objects are enriched**, **108 are unchanged because they
+At this checkpoint, **223 objects are enriched**, **108 are unchanged because they
 are already sufficient**, **137 are skipped pending source or identity
-research**, and **220 remain pending review**.
+research**, and **219 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1346,3 +1346,12 @@ unnamed audience, and road evidence from a proven itinerary. North- and
 South-Galatian proposals and the limits of reconstructing Paul's illness and
 route are represented fairly. Single-object validation passed with 1 valid
 object and no warnings. The next pending object is recorded in the manifest.
+
+
+Batch 398 clarified Galilee's literary and theological role through Mark 1:14-15
+and the movement through synagogues, homes, and neighboring villages. No new
+historical or archaeological assertions were added; the linked evidence cluster
+continues to distinguish Gospel observations from material comparison. CKL
+validation reported 687 valid objects, zero errors, and the same 14 baseline
+warnings; focused content-quality and retrieval regressions passed (17 tests, 4
+subtests). The next pending object is recorded in the manifest.

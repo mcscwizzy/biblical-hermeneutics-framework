@@ -8677,6 +8677,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-398-galilee",
+      "scope": [
+        "galilee-1"
+      ],
+      "completed_unit": "Clarified Galilee’s literary and covenantal role through Mark 1:14-15 and the following village scenes.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/galilee-1.json"
+      ],
+      "protected_checks": [
+        "Object, claim, source identities, Scripture anchors, related-object edges, and review metadata were preserved.",
+        "No historical or archaeological assertions were added.",
+        "Existing distinctions between biblical narrative and material comparison remain."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27037,14 +27063,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ec7e61e97a0f139a6e819c5b570ceca4f431a72e6588a6dded04aabacb08fcb4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "evidence_cluster",
+        "related_objects",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Made the literary and theological explanation more specific to Mark 1:14-15 and the movement through synagogues, homes, and neighboring villages, while retaining the evidence cluster’s limits on regional generalization.",
+      "limitation": "No new historical or archaeological claims were added; the evidence cluster continues to distinguish direct Gospel observations from archaeological comparison.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master; claims, sources, Scripture references, relationships, and review metadata are unchanged."
+        ]
       }
     },
     {
@@ -30991,7 +31039,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/galilee-1.json",
+  "next_batch": "framework/canonical_library/objects/places/gath-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
