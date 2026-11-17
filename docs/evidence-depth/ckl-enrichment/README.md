@@ -21,7 +21,7 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **1 object is enriched**, **2 are unchanged because they
-are already sufficient**, **3 are skipped pending source research**, and **681
+are already sufficient**, **4 are skipped pending source research**, and **680
 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
@@ -59,6 +59,12 @@ reason as Arad: its title and generic text do not match its source records and
 biblical anchors. Research must establish which inscription the entry intends
 before any explanatory prose can be safely written.
 
+The Bronze Snake record was also held. Its title points to the serpent in
+Numbers 21, while its summary and historical context describe the Merneptah
+Stele and its reference to Israel. Its source records do not resolve that
+subject mismatch. The CKL needs a reviewed correction or separate records
+before either topic can be enriched safely.
+
 Beth Shean was skipped because its source entries lack bibliographic details
 and its brief summary does not identify the excavation contexts behind its
 period labels. The Black Obelisk explanation was left unchanged: it already
@@ -92,6 +98,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/bronze-snake.json`.
+The next work unit is `objects/archaeology/caesarea-maritima-excavations.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
