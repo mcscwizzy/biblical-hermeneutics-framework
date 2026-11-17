@@ -7483,6 +7483,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "4f2d84d2"
+    },
+    {
+      "batch_id": "batch-345-rahab-person",
+      "scope": [
+        "rahab"
+      ],
+      "completed_unit": "Explained Rahab’s Joshua 2 choices and oath while keeping Genesis 12, Ruth 1, and Acts 10 as separate canonical comparisons.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/rahab.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "Ancient Near Eastern applicability was disabled because no comparative source is recorded; canonical applicability was enabled for the explicitly cited cross-book comparisons."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -23917,14 +23942,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "131a16cef16bde7fb53cb67f39c97accbef327d8ac37362465362ad98cac27c8",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Completed review of the populated explanatory fields, biblical source coverage, curated themes, and context applicability. The explanation distinguishes Rahab’s Joshua episode from the separate canonical comparisons.",
+      "limitation": "The recorded sources are Scripture and do not include archaeological or external historical support for an independent Rahab biography or the episode’s historicity.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -28825,7 +28878,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/rahab.json",
+  "next_batch": "framework/canonical_library/objects/people/rebekah.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
