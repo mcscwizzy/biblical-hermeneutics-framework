@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **1 object is enriched**, **3 are unchanged because they
-are already sufficient**, **23 are skipped pending source research**, and
-**659 remain pending review**.
+are already sufficient**, **24 are skipped pending source research**, and
+**658 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -64,6 +64,11 @@ Numbers 21, while its summary and historical context describe the Merneptah
 Stele and its reference to Israel. Its source records do not resolve that
 subject mismatch. The CKL needs a reviewed correction or separate records
 before either topic can be enriched safely.
+
+The Mount Ebal Altar Discovery entry was held because its content instead
+describes Qumran and the Dead Sea Scrolls, including unrelated Scripture
+anchors and source IDs. The entry needs object identity reconciliation before
+any archaeological explanation can be written.
 
 Beth Shean was skipped because its source entries lack bibliographic details
 and its brief summary does not identify the excavation contexts behind its
@@ -122,6 +127,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/mount-ebal-altar-discovery.json`.
+The next work unit is `objects/archaeology/nimrud-reliefs.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
