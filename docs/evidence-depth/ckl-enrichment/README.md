@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **91 objects are enriched**, **86 are unchanged because they
+At this checkpoint, **92 objects are enriched**, **86 are unchanged because they
 are already sufficient**, **52 are skipped pending source or identity
-research**, and **458 remain pending review**.
+research**, and **457 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -538,6 +538,8 @@ Batch 167 reviewed Rebuilding the Walls and skipped enrichment pending identity 
 
 Batch 168 reviewed Red Sea Crossing and left it unchanged. The record already connects Exodus 13–15 and Numbers 33, preserves the route markers without choosing modern coordinates, and separates the normalized English title from unresolved Hebrew place-name geography. Validation found zero errors and the same 14 baseline warnings.
 
-The next work unit is `framework/canonical_library/objects/events/resurrection.json`.
+Batch 169 enriched Resurrection by clarifying how Acts reads Psalm 16, how the cited Gospel narratives differ, and how Paul connects Jesus’ resurrection with the future raising of the dead. The generic ancient-world claim was not expanded without a relevant source, and a Psalm 16 source-type mismatch was documented while preserving the metadata. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/return-from-exile.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

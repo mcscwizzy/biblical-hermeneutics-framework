@@ -3221,6 +3221,32 @@
         ]
       },
       "checkpoint_commit": "544db912"
+    },
+    {
+      "batch_id": "batch-169-resurrection-explanation",
+      "scope": [
+        "resurrection"
+      ],
+      "completed_unit": "Reviewed the New Testament narrative and interpretive fields, anchors, source records, and related links; enriched five explanatory fields using the recorded biblical passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/resurrection.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, review statuses, and other protected fields preserved.",
+        "No broad ancient-world comparison was added.",
+        "The Psalm 16 source-type issue was documented without changing protected source metadata."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "9897673d"
     }
   ],
   "inventory_count": 687,
@@ -12236,14 +12262,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e2672101908091774fdad86849b630db7cbd953ac2f00d82e2c7920a1c077d36",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Clarified the New Testament’s witness and interpretation: Peter reads Psalm 16 in Acts 2, the Gospel accounts narrate distinct encounters, and Paul connects Jesus’ resurrection to future resurrection as firstfruits.",
+      "limitation": "The existing broad ancient-world claim that death was final was not expanded because the record lacks a source for that comparison. The Psalm 16 source entry is typed as a reference-work despite naming Scripture; that source metadata was preserved for review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -20474,7 +20524,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/resurrection.json",
+  "next_batch": "framework/canonical_library/objects/events/return-from-exile.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
