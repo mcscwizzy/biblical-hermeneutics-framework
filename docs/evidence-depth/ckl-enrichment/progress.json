@@ -5333,6 +5333,31 @@
         ]
       },
       "checkpoint_commit": "34cfda1f"
+    },
+    {
+      "batch_id": "batch-254-sanhedrin-institution",
+      "scope": [
+        "sanhedrin"
+      ],
+      "completed_unit": "Reviewed Sanhedrin’s substantial historical and literary explanations and retained them. Replaced only the canonical-role field with a reader-facing summary of the varied council scenes and the warning against assuming one continuous body.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/sanhedrin.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -18465,14 +18490,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d2760d930985937ce5f0728a31d9e40fdf20986de32ba66a618dd6b15f6bec8f",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "original_audience",
+        "historical_setting",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "canonical_role"
+      ],
+      "outcome": "The existing Sanhedrin explanation was already substantial and explicit about historical uncertainty. Replaced only the canonical-role field, removing internal CKL cluster language and summarizing the distinct Gospel and Acts council scenes without claiming they were one unchanged court.",
+      "limitation": "The source list contains broad Exodus, Deuteronomy, and Samuel headings that do not match the council passages, and the listed academic overview was not consulted for this edit. Source metadata, relationships, and historical claims were preserved for follow-up.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -25011,7 +25060,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/sanhedrin.json",
+  "next_batch": "framework/canonical_library/objects/institutions/scribes.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

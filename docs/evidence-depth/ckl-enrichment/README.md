@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **164 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **165 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **67 are skipped pending source or identity
 research**, and **367 remain pending review**.
 
@@ -752,3 +752,6 @@ Batch 252 enriched Sacrificial System by distinguishing the burnt offering, puri
 
 
 Batch 253 reviewed Sadducees. The existing summary and context already handled source limitations and historical uncertainty carefully. I changed only the canonical-role field, replacing internal evidence-cluster language with a reader-facing summary of the Gospel and Acts portrayals and the caution against conflating Jewish groups. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sanhedrin.json`.
+
+
+Batch 254 reviewed Sanhedrin. The existing historical and interpretive explanations already qualified the evidence and resisted treating all council scenes as one fixed body. I changed only the canonical-role field, replacing internal cluster language with a reader-facing summary of the varied Gospel and Acts hearings. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/scribes.json`.
