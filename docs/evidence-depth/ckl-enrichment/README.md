@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **153 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **154 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **64 are skipped pending source or identity
-research**, and **378 remain pending review**.
+research**, and **377 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -710,3 +710,6 @@ Batch 238 enriched Household with passage-specific explanations of Simon and And
 
 
 Batch 239 enriched Kingship by distinguishing the delegated judges in Exodus and Deuteronomy, the requested monarchy and its warning in 1 Samuel 8, and the Roman tribune in Acts 23. The explanation avoids treating these as one office, holds Samuel’s permission and warning together, and removes generic Ancient Near Eastern framing unsupported by an independent source. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/levites.json`.
+
+
+Batch 240 enriched Levites from the object’s two locked Numbers 18 evidence items. The explanation clarifies the tithe as provision for service and distinguishes the Levites’ territorial-inheritance statement from the separate statement addressed to Aaron. Broader, weakly related Scripture anchors remain unchanged, and generic comparative background was removed. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/levitical-service.json`.

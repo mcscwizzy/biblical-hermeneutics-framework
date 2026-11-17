@@ -4989,6 +4989,31 @@
         ]
       },
       "checkpoint_commit": "4494919e"
+    },
+    {
+      "batch_id": "batch-240-levites-institution",
+      "scope": [
+        "levites"
+      ],
+      "completed_unit": "Enriched the Levites object from its two locked Numbers 18 evidence items. Explained tithe provision for service and the distinction between the Levites’ territorial inheritance and the statement addressed to Aaron; left broad unrelated anchors unchanged and removed unsupported generic ANE framing.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/levites.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, source-lock identities, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -17488,14 +17513,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6e3437fd1d63c0c948a01e0e922a78667692d08e31b4f33028c8b833574d8b7f",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Explained the Numbers 18 allocation: tithes are assigned to the Levites in connection with their service, and the passage distinguishes their lack of territorial inheritance from the separate statement addressed to Aaron. Kept the claim bounded to this allocation instruction.",
+      "limitation": "The Scripture-reference list also contains broader community passages that do not directly establish Levite duties; those anchors and all source-lock evidence identities and relationships were preserved. The explanation relies on the existing locked Numbers 18 source records and does not reconstruct later practice or add comparative Ancient Near Eastern claims.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; source-lock evidence and Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24286,7 +24341,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/levites.json",
+  "next_batch": "framework/canonical_library/objects/institutions/levitical-service.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
