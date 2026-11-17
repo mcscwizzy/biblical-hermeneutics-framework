@@ -6274,6 +6274,28 @@
         ]
       },
       "checkpoint_commit": "d4abf108"
+    },
+    {
+      "batch_id": "batch-294-hannah-person",
+      "scope": [
+        "hannah"
+      ],
+      "completed_unit": "Reviewed Hannah and retained the already passage-specific account of childlessness, prayer, the birth of Samuel, Eli’s household, and the reversals in Hannah’s song.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20862,14 +20884,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "940bd479c40b1190eb2b1adfcfda6b2905e6f27cffa8125717bd88261e54e138",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged. The entry already explains Hannah’s childlessness, prayer, vow, Samuel’s birth, the contrast with Eli’s household, and the reversals in her song. It also avoids turning an ancient household arrangement into a timeless rule or claiming to know a private reason for every event.",
+      "limitation": "The Scripture references point directly to 1 Samuel 1-3, but the listed source records point to Genesis and unrelated New Testament passages. That provenance mismatch remains for separate review; no new claims were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26652,7 +26689,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/hannah.json",
+  "next_batch": "framework/canonical_library/objects/people/herod-the-great.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
