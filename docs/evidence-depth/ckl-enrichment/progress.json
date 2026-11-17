@@ -7367,6 +7367,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "0b500688"
+    },
+    {
+      "batch_id": "batch-340-phinehas-person",
+      "scope": [
+        "phinehas"
+      ],
+      "completed_unit": "Reviewed Phinehas and held the record because its anchors concern other figures and do not support the profile’s historical claims.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -23605,14 +23627,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "73edb44493a09516d8b39b1832b8d6caf2720d760feb9048b7573d8697dc1736",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the Phinehas profile and found its Scripture anchors concern Moses, Aaron, and the wilderness generation rather than Phinehas’s narrative in Numbers 25. The profile’s generic historical context and late second-millennium date claim are not supported by the recorded anchors or a specific external source. Left it unchanged pending source and anchor review.",
+      "limitation": "The recorded anchors do not include the Phinehas episode, and the bibliography contains only broad biblical book ranges plus an internal orientation note. No date or historical reconstruction can be responsibly added from those sources.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -28603,7 +28643,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/phinehas.json",
+  "next_batch": "framework/canonical_library/objects/people/phoebe-of-cenchreae.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
