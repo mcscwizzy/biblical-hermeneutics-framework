@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **169 objects are enriched**, **94 are unchanged because they
-are already sufficient**, **68 are skipped pending source or identity
-research**, and **356 remain pending review**.
+are already sufficient**, **69 are skipped pending source or identity
+research**, and **355 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -776,3 +776,6 @@ Batch 260 reviewed Temple Tax. Its historical and literary explanations now foll
 
 
 Batch 261 reviewed Temple. The summary now explains the temple as a place of worship, sacrifice, prayer, and sign of divine presence; the literary context traces how Exodus, Kings/Chronicles, Psalm 84, John 2, Hebrews 8-9, and Revelation 21 use temple language in distinct ways. The explanation also avoids an unsupported general comparison with neighboring temples and makes clear that the current anchors do not provide a detailed exile-and-rebuilding history. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Village Elders.
+
+
+Batch 262 reviewed Village Elders and left it unchanged. The title suggests a village-level office, but the anchors combine delegated judges (Exodus 18), town judges and officials (Deuteronomy 16), national elders requesting a king (1 Samuel 8), and a Jerusalem council scene (Acts 23). The record needs its intended scope resolved and direct evidence for village elders before explanation can be safely expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Chiasm.
