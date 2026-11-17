@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **89 objects are enriched**, **83 are unchanged because they
-are already sufficient**, **49 are skipped pending source or identity
-research**, and **466 remain pending review**.
+At this checkpoint, **90 objects are enriched**, **83 are unchanged because they
+are already sufficient**, **51 are skipped pending source or identity
+research**, and **463 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -526,6 +526,8 @@ Batch 161 enriched Passover with the household meal, marked doorways, departure,
 
 Batch 162 reviewed Paul before Agrippa and skipped prose changes pending identity and source review. The object is mislabeled as a Gospel event, its anchors point to Gospel passages rather than Acts, and its generic historical and literary statements do not fit the event. No Acts text or relevant source is recorded, so the prose was left unchanged. The full CKL validated with zero errors and 14 baseline warnings.
 
-The next work unit is `framework/canonical_library/objects/events/paul-in-prison.json`.
+Batch 163 reviewed Paul in Prison, Pentecost, and Peter’s Denial. Pentecost’s summary and narrative fields now explain the sequence in Acts 2: the Spirit’s arrival, the crowd hearing in different languages, Peter’s reading through Joel, and the community that follows. The explanation stays with recorded biblical sources and adds no external historical reconstruction. The two Paul/Peter event records were skipped because their anchors and sources do not support the named events. The full CKL validated with zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/plagues-of-egypt.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

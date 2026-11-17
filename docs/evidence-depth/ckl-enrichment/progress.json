@@ -3076,6 +3076,34 @@
         ]
       },
       "checkpoint_commit": "f9361f6d"
+    },
+    {
+      "batch_id": "batch-163-pentecost-and-neighboring-events",
+      "scope": [
+        "paul-in-prison",
+        "pentecost",
+        "peters-denial"
+      ],
+      "completed_unit": "Reviewed the narratives, explanatory fields, source identities, Scripture anchors, interpretive notes, and relationships of three consecutive event records; enriched Pentecost and held the two mismatched event records.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/pentecost.json"
+      ],
+      "protected_checks": [
+        "Protected fingerprints match for all three reviewed objects.",
+        "No Scripture anchors, source identities, related-object edges, statuses, or review metadata changed.",
+        "No external historical assertions were added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Three single-object CKL audits: each 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "3987ca3d"
     }
   ],
   "inventory_count": 687,
@@ -11796,14 +11824,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "716d483e201cd368e5d5bc73eb2f6b7957cfc195d857270b098a0dd114e98478",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending identity and source review.",
+      "limitation": "The event title is Paul in Prison, but the record calls it a Gospel event and its Scripture anchors point only to Gospel passages. Its generic context repeats unrelated Gospel and Jesus material. No Acts passage or source documenting Paul’s imprisonment is recorded; correcting the prose would require unsupported identity/source reconciliation. Anchors, sources, and relationships are preserved.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run for this unchanged record; focused tests were run for the changed batch object."
+        ]
       }
     },
     {
@@ -11814,14 +11859,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "607ce3070d1872cc6ba2241805aeda6dbea3de1d7ad9379ed3e695aa3c496014",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the explanation with Acts 2’s movement from the Spirit’s arrival and the crowd’s languages to Peter’s Joel-based interpretation and the community that follows. Clarified how the festival setting, Acts 1:8, and Joel connect to the event without adding unsourced comparative history.",
+      "limitation": "Historical and cultural detail is limited to what Acts 2 and the cited biblical cross-references establish; no external historical reconstruction was added. The existing generic ancient_near_east_context was not expanded because no comparative source is recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -11832,14 +11901,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a58e5855d07857c4c8eae966899abcf75e0dcbac163f294a801f4069946a8aac",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending identity and source review.",
+      "limitation": "The event is Peter’s denial, but its Scripture anchors point to Gospel resurrection/commission passages rather than the denial narratives. The generic context refers to unrelated passages and themes. No denial passage or source specifically supporting this event is recorded; replacing the prose would require unsupported anchor/source reconciliation. Anchors, sources, and relationships are preserved.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run for this unchanged record; focused tests were run for the changed batch object."
+        ]
       }
     },
     {
@@ -20178,7 +20264,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/paul-in-prison.json",
+  "next_batch": "framework/canonical_library/objects/events/plagues-of-egypt.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
