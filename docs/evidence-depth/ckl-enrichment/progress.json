@@ -5762,6 +5762,28 @@
         ]
       },
       "checkpoint_commit": "7151b587"
+    },
+    {
+      "batch_id": "batch-272-barnabas-person",
+      "scope": [
+        "barnabas"
+      ],
+      "completed_unit": "Reviewed Barnabas and held the record because its Scripture anchors do not identify Barnabas in the cited ranges.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19587,14 +19609,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f84b5982705611c8df622e1d64bb70503caaf7499c2fbade8d4cf1bba22bc010",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the Barnabas record cites Acts 9:1-19, Romans 16, 1 Corinthians 3:4-9, and Philippians 1:12-18, none of which identifies Barnabas in the cited ranges. The references appear to be generic first-generation church passages rather than person-specific evidence.",
+      "limitation": "The entry needs its Barnabas-specific passage set reconciled before any individual biography or ministry explanation can be safely added. The internal orientation source does not resolve this mismatch.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -25773,7 +25809,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/barnabas.json",
+  "next_batch": "framework/canonical_library/objects/people/bartholomew.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
