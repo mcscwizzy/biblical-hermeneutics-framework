@@ -5064,6 +5064,31 @@
         ]
       },
       "checkpoint_commit": "438e12f0"
+    },
+    {
+      "batch_id": "batch-243-patronage-institution",
+      "scope": [
+        "patronage"
+      ],
+      "completed_unit": "Enriched Patronage from Romans 16:1-2, 16:23, 2 Corinthians 8, and Philemon. Distinguished commendation, hospitality, collection administration, and personal appeal while retaining the object’s existing boundaries around patronage and related practices.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/patronage.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -17706,14 +17731,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e84858ca92bc9b62d294e6696aec3c7a629e389f776afb2ddb3884c5af479558",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Explained the different textual cases in Romans 16, 2 Corinthians 8, and Philemon: commendation and support, hospitality, accountable collection administration, and a personal appeal framed by partnership and debt. Preserved the distinction between these cases and avoided labeling every gift or unequal relationship patronage.",
+      "limitation": "The direct anchors are biblical passages. Detailed Greco-Roman comparisons remain associated with linked cultural-background clusters in review and were not expanded here. The source list contains broad unrelated scriptural headings and an internal historical-orientation placeholder; these protected records remain unchanged for metadata and research review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24450,7 +24503,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/patronage.json",
+  "next_batch": "framework/canonical_library/objects/institutions/pharisees.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
