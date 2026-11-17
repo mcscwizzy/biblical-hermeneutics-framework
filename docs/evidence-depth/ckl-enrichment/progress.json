@@ -2056,6 +2056,25 @@
         "regression": "NOT RUN: no content changed."
       },
       "checkpoint_commit": "06fd5cb7"
+    },
+    {
+      "batch_id": "batch-120-baptism-record-identity-review",
+      "scope": [
+        "baptism-of-jesus"
+      ],
+      "completed_unit": "Reviewed explanatory fields, Scripture anchors, source identities, related-object links, two interpretive notes, and the absence of claims or typed evidence; held the object pending identity and anchor reconciliation.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "Baptism explanations were not added to mismatched ending and appearance references."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -8973,14 +8992,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "56668cf51f00b5349f00a18967a76e349da9e2282e3366b985aef14220c18130",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note/rationale",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The record is titled Baptism of Jesus, but its Scripture anchors point to Matthew 28, Mark 16:19-20, Luke 24:50-53, and John 20 rather than baptism narratives. No summary expansion was made.",
+      "limitation": "The object needs its passage anchors and source records reconciled with the named event before reader-facing explanation can be written safely. All anchors, source identities, relationships, and existing prose remain unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings_no_content_change",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Claims/evidence are absent; all source identities, Scripture anchors, relationships, and metadata remain unchanged.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -18129,7 +18166,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/baptism-of-jesus.json",
+  "next_batch": "framework/canonical_library/objects/events/binding-of-isaac.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
