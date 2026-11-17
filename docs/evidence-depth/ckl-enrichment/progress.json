@@ -8813,6 +8813,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-404-gilgal-review",
+      "scope": [
+        "gilgal-1"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Gilgal-specific source and Scripture-anchor review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No unsupported place history or curated relationships were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27385,14 +27406,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d8ac45a27d0cd26c2b329c9cd08b5e1da6748ae22ca3984db72d1ce8de7e0158",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed explanatory fields, references, sources, and related-object links. The cited passages concern Shechem, Hebron, Jerusalem, and the Jerusalem temple, not Gilgal; no prose was changed.",
+      "limitation": "Genesis 12:6-7 concerns Shechem; Joshua 24 is the covenant assembly at Shechem; 2 Samuel 5:1-10 concerns David at Hebron and Jerusalem; 1 Kings 8 and John 2 concern the Jerusalem temple. These do not establish Gilgal. The internal historical-orientation source is pending human review. Gilgal-specific anchors and source review are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -31231,7 +31267,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/gilgal-1.json",
+  "next_batch": "framework/canonical_library/objects/places/gomorrah.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
