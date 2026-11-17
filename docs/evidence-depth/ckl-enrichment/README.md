@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **59 objects are enriched**, **79 are unchanged because they
+At this checkpoint, **60 objects are enriched**, **79 are unchanged because they
 are already sufficient**, **45 are skipped pending source or identity
 research**, and **511 remain pending review**.
 
@@ -450,6 +450,8 @@ Batch 123 reviewed the birth-of-Jesus record’s contexts, references, sources, 
 
 Batch 124 reviewed the burial-of-Jesus record and left it unchanged. Its summary explains the burial’s place between death and the empty-tomb accounts; context distinguishes Sabbath timing and regional tomb evidence from identifying Jesus’ tomb. No archaeology publication is recorded, so no further archaeological explanation was added. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
 
-The next work unit is `framework/canonical_library/objects/events/burning-bush.json`.
+Batch 125 corrected the Burning Bush event record, whose summary described the whole Exodus and whose other contexts were generic placeholders. The revised fields explain Moses’ encounter and commission in Exodus 3 and distinguish that scene from the later Sinai covenant. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/call-of-abraham.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

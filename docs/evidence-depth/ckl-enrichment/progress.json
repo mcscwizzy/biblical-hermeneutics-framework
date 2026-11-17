@@ -2157,6 +2157,27 @@
         "regression": "NOT RUN: no content changed."
       },
       "checkpoint_commit": "24efaa0d"
+    },
+    {
+      "batch_id": "batch-125-burning-bush-context-correction",
+      "scope": [
+        "burning-bush"
+      ],
+      "completed_unit": "Reviewed all explanatory fields, Scripture references, source identities, related-object edges, interpretive notes, and the absence of atomic claims or typed evidence; corrected six generic or inaccurate narrative fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/burning-bush.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture references, related-object edges, statuses, and review metadata preserved.",
+        "The encounter at Horeb is distinguished from later Sinai and wilderness events."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "9a54d0ca"
     }
   ],
   "inventory_count": 687,
@@ -9252,14 +9273,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "62837a3cec9a4df30eff5edc0a79abff01ea7046f3d6713904a3fd8d3e1b8e73",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note/rationale",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Replaced generic Exodus template language with a passage-specific explanation of Moses’ encounter and commission at Horeb. The fields connect the burning sign, divine self-identification, Moses’ objections, and the later Sinai covenant without treating later events as part of the bush scene.",
+      "limitation": "The object has no atomic claims or typed evidence; the revised prose relies on its listed biblical passages. No specific ancient Near Eastern ritual or external historical reconstruction was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture anchors, relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (68.68s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18318,7 +18366,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/burning-bush.json",
+  "next_batch": "framework/canonical_library/objects/events/call-of-abraham.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
