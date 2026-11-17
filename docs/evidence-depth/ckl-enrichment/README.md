@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **220 objects are enriched**, **106 are unchanged because they
+At this checkpoint, **221 objects are enriched**, **106 are unchanged because they
 are already sufficient**, **135 are skipped pending source or identity
-research**, and **226 remain pending review**.
+research**, and **225 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1295,3 +1295,13 @@ passages do not identify Edom or support the generic imperial profile, and the
 internal historical-orientation source is pending human review. Single-object
 validation passed with 1 valid object, 0 errors, and 8 pre-existing
 section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 392 made Egypt's profile specific to the Abraham, Joseph, Exodus, and
+Matthew episodes and clarified Exodus 3's account of God hearing the oppressed.
+The unsourced Ancient Near Eastern and Second Temple generalizations were
+removed and those contexts disabled pending appropriate sources. Scripture
+anchors and relationships remain unchanged. CKL validation reported 687 valid
+objects, zero errors, and the same 14 baseline warnings; focused
+content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
+pending object is recorded in the manifest.

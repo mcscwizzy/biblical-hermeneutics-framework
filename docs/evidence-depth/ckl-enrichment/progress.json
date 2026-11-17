@@ -8542,6 +8542,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-392-egypt",
+      "scope": [
+        "egypt"
+      ],
+      "completed_unit": "Specified Egypt’s distinct biblical roles using the recorded passages and removed unsupported ANE and Second Temple generalizations.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/egypt.json"
+      ],
+      "protected_checks": [
+        "Object, source identities, Scripture references, related-object edges, and review metadata were preserved.",
+        "Ancient Near Eastern and Second Temple applicability were disabled because no relevant external sources are recorded.",
+        "No Egyptological or diaspora history was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26682,14 +26708,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9defbf8ed95b73df4d539f2a0cbb9570af0c0c5628c7c7733f2a94f0a98d5f6a",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.second_temple"
+      ],
+      "outcome": "Made the summary specific to the Abraham, Joseph, Exodus, and Matthew episodes; clarified the Exodus 3 account of God hearing the oppressed; and removed broad ANE and Second Temple claims unsupported by the recorded sources.",
+      "limitation": "No external Egyptological or Second Temple source is recorded, so those contextual sections remain inapplicable pending reviewed research. Scripture anchors and relationships remain unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master; Scripture anchors, sources, and review metadata are unchanged."
+        ]
       }
     },
     {
@@ -30744,7 +30797,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/egypt.json",
+  "next_batch": "framework/canonical_library/objects/places/ekron.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
