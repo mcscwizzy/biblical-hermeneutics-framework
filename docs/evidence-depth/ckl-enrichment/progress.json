@@ -6567,6 +6567,32 @@
         ]
       },
       "checkpoint_commit": "6d633c6b"
+    },
+    {
+      "batch_id": "batch-306-jethro-person",
+      "scope": [
+        "jethro"
+      ],
+      "completed_unit": "Reviewed Jethro and enriched the direct Exodus 18 narrative supported by the recorded Exodus source, noting omitted structured anchors.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/jethro.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; the first pass briefly raised a new comparison warning, which was removed before checkpoint.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21544,13 +21570,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1e2605fa236e0f0d1dd159d346580ff4a03ee42c99fc3d3793e267e3a16d7b9c",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Replaced generic wilderness-figure prose with Exodus 18’s scene: Jethro hears of deliverance, recognizes Moses’s overloaded judging role, and advises distributing responsibility before Sinai.",
+      "limitation": "The structured passage anchors omit Exodus 18 even though the recorded Exodus 1–40 Scripture source covers it. The anchor relationship needs separate reconciliation; no comparative claim about standard ANE judicial systems was added.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -27154,7 +27198,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/jethro.json",
+  "next_batch": "framework/canonical_library/objects/people/job-the-sufferer.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
