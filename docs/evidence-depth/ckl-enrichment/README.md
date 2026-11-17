@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **48 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **49 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **520 remain pending review**.
+research**, and **519 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -418,6 +418,8 @@ Batch 107 reviewed the Second Temple priesthood and temple authority record: all
 
 Batch 108 reviewed the Second Temple synagogues, scribes, and sectarian groups record: all five claims, five typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes the different contributions of Luke-Acts, the Theodotus inscription, Ben Sira, Josephus, and 4QMMT, without treating one synagogue pattern or sect label as universal. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/synagogue-life-and-exclusion.json`.
+Batch 109 reviewed the synagogue-life and exclusion record: both claims, its interpretive note, contextual fields, anchors, sources, and the absence of typed evidence. The summary now clarifies synagogue settings in Luke-Acts and the limits of John’s exclusion language without proposing a universal decree or rupture. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/tabernacle-presence-access-and-mobility.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

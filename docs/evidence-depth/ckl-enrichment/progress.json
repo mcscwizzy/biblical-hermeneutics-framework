@@ -1831,6 +1831,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "bbe7fec6"
+    },
+    {
+      "batch_id": "batch-109-synagogue-life-summary",
+      "scope": [
+        "synagogue-life-and-exclusion"
+      ],
+      "completed_unit": "Reviewed both claims, the interpretive note, contextual fields, Scripture references, source identities, and the absence of typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/synagogue-life-and-exclusion.json"
+      ],
+      "protected_checks": [
+        "Claims, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "John’s exclusion language remains bounded to its narrative and does not become a universal historical claim."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "25864af9"
     }
   ],
   "inventory_count": 687,
@@ -8347,14 +8368,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "20caca9c479a4efb3ae069fdb3ae02c806d82a37fdea2e77aa7854ba6aa24874",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "scripture_references",
+        "sources",
+        "claims[*].rationale/notes",
+        "interpretive_notes[*].note/rationale",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the research-guide phrasing with an accessible account of synagogue scenes in Luke-Acts and John’s exclusion language. The summary explains why those notices illuminate community conflict without establishing a single decree or universal rupture.",
+      "limitation": "This record has no typed evidence items and only two claims; the summary stays within its recorded Gospel passages and claims and adds no independent historical reconstruction. Source identities were inspected, but no underlying scholarly publication was newly consulted.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: claims, sources, Scripture anchors, relationships, uncertainty classifications, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (62.25s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -17701,7 +17738,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/synagogue-life-and-exclusion.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/tabernacle-presence-access-and-mobility.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
