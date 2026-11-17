@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **45 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **46 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **523 remain pending review**.
+research**, and **522 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -412,5 +412,8 @@ Batch 104 reviewed the Roman Macedonia road network and city diversity record: a
 Batch 105 reviewed Roman Philippi: all 12 claims, 12 typed evidence items, nine interpretive notes, contextual fields, anchors, and source identities. The summary now connects Acts’ travel, household welcome, exploitation, and civic conflict to Philippi’s Roman-colony setting, while distinguishing the archaeological setting from verification of narrated events and preserving uncertainty about the traditional prison site and letter provenance. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
 The next work unit is `framework/canonical_library/objects/cultural_background/roman-rome-jewish-civic-household-and-imperial-life.json`.
+Batch 106 reviewed Roman Rome: all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes Romans’ greetings and Acts’ guarded lodging from the city evidence and later traditions, keeping Claudius’s action, the audience, and meeting sites qualified. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/second-temple-priesthood-and-temple-authority.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

@@ -1768,6 +1768,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "7aefb465"
+    },
+    {
+      "batch_id": "batch-106-roman-rome-summary",
+      "scope": [
+        "roman-rome-jewish-civic-household-and-imperial-life"
+      ],
+      "completed_unit": "Reviewed all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, Scripture references, and recorded source identities; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/roman-rome-jewish-civic-household-and-imperial-life.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "Claudius’s action, Phoebe’s role, audience composition, later reception, and site identifications retain their stated evidentiary limits."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "c938e961"
     }
   ],
   "inventory_count": 687,
@@ -8173,14 +8194,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "057ee9f4835a94c231d1ba731743591bdd74f4198ace1e7cd1c79189f725a7b4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "original_audience",
+        "interpretive_disputes",
+        "scripture_references",
+        "sources",
+        "claims[*].rationale/notes",
+        "evidence_items[*].description/passage_relevance/observation/interpretation",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the topic inventory with a reader-facing explanation of how Romans and Acts portray Rome, what ancient city and community evidence contributes, and why later Neronian violence and apostolic memory should not be collapsed into the setting of Romans. The summary preserves open questions about audience makeup, Claudius's action, and meeting sites.",
+      "limitation": "Reviewed the recorded claims, evidence, notes, anchors, and source identities; no underlying scholarly publication was newly consulted and no new historical assertion was added beyond existing evidence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: claims, typed evidence, sources, Scripture anchors, relationships, uncertainty classifications, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.43s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -17581,7 +17621,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/roman-rome-jewish-civic-household-and-imperial-life.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/second-temple-priesthood-and-temple-authority.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
