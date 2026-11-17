@@ -4869,6 +4869,28 @@
         ]
       },
       "checkpoint_commit": "64538be3"
+    },
+    {
+      "batch_id": "batch-235-herodian-court-support-review",
+      "scope": [
+        "herodian-court"
+      ],
+      "completed_unit": "Reviewed the institutional summary, contextual fields, references, sources, and related entries; held the object because its anchors do not document a Herodian court.",
+      "status": "reviewed_support_limited",
+      "changed_paths": [],
+      "protected_checks": [
+        "No object, source, Scripture reference, related-object edge, or metadata changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 baseline section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -17147,14 +17169,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "eb16d0bf9a536d646191bde098f4721ec3678f43f1da220d15777459d71f9935",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed. The attached passages concern delegated judges, judges and officials, elders requesting a king, and Paul before a council; none documents a Herodian court.",
+      "limitation": "No Herodian ruler, court, or specific court practice appears in the directly cited passages, and no external historical source is attached. The current generic institutional prose cannot be responsibly made specific without reviewed primary or scholarly support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 baseline section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "No CKL object content changed; git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24035,7 +24077,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/herodian-court.json",
+  "next_batch": "framework/canonical_library/objects/institutions/high-priesthood.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
