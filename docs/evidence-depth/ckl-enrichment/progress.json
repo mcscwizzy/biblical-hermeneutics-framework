@@ -7646,7 +7646,7 @@
           "No CKL content changed; regression tests not run."
         ]
       },
-      "checkpoint_commit": ""
+      "checkpoint_commit": "bcccef24"
     },
     {
       "batch_id": "batch-352-silas-person",
@@ -7654,6 +7654,28 @@
         "silas"
       ],
       "completed_unit": "Reviewed Silas and held the record because its Gospel anchors do not identify him or support the profile’s claims.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
+      "checkpoint_commit": ""
+    },
+    {
+      "batch_id": "batch-353-simeon-the-just-person",
+      "scope": [
+        "simeon-the-just"
+      ],
+      "completed_unit": "Reviewed Simeon the Just and held the record because the Gospel anchors do not identify him or establish the title’s referent.",
       "status": "completed",
       "changed_paths": [],
       "protected_checks": [
@@ -24420,14 +24442,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "07ffc165798a4bd75c5fb6b607ab38eaa781c8483cdac0d1ce4a1cc6151f85b6",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Simeon the Just’s profile, sources, Scripture anchors, and related themes. The prose treats him as a Gospel figure, but all anchors point to resurrection or ascension scenes where he does not appear. The Gospel sources span broad book ranges but do not establish the identity or tradition implied by the title “the Just.” Left it unchanged pending identity and source review.",
+      "limitation": "No recorded Scripture passage or other source identifies this Simeon or explains the epithet. No later Jewish reception tradition was invented or imported.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29184,7 +29224,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/simeon-the-just.json",
+  "next_batch": "framework/canonical_library/objects/people/simon-the-zealot.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
