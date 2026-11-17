@@ -2199,6 +2199,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "5087aacd"
+    },
+    {
+      "batch_id": "batch-127-calling-of-the-twelve-summary",
+      "scope": [
+        "calling-of-the-twelve"
+      ],
+      "completed_unit": "Reviewed summary, contexts, Scripture references, source identities, one interpretive note, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/calling-of-the-twelve.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "The Twelve remain distinct from the wider disciple group; the later selection of Matthias is not merged into the initial call."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "84cb3b2a"
     }
   ],
   "inventory_count": 687,
@@ -9375,14 +9396,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c36b3557feec4fee27e82f21511d5d31eefa3c1c1452a401d23245ba5a490770",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Explained why the group of Twelve matters, distinguished it from the wider circle of disciples, and compared how Mark, Luke, and Matthew frame the selection and mission. Acts’ later choice of Matthias is presented as a separate response to changed circumstances.",
+      "limitation": "The object has no atomic claims or typed evidence; the summary stays within its listed Gospel and Acts passages and adds no external historical reconstruction.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture anchors, relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18405,7 +18444,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/calling-of-the-twelve.json",
+  "next_batch": "framework/canonical_library/objects/events/conquest-of-jericho.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

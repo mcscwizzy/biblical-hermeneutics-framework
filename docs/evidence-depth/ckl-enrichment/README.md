@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **61 objects are enriched**, **79 are unchanged because they
+At this checkpoint, **62 objects are enriched**, **79 are unchanged because they
 are already sufficient**, **45 are skipped pending source or identity
 research**, and **511 remain pending review**.
 
@@ -454,6 +454,8 @@ Batch 125 corrected the Burning Bush event record, whose summary described the w
 
 Batch 126 reviewed the Call of Abraham record’s contexts, references, sources, and interpretive notes. Its summary now traces Genesis 12’s departure and promises through the blessing for the nations, then distinguishes later arguments in Romans, Galatians, and Hebrews. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/calling-of-the-twelve.json`.
+Batch 127 reviewed the Calling of the Twelve record’s contexts, passages, sources, and interpretive note. Its summary now explains the significance of the number twelve, distinguishes the group from Jesus’ wider circle of disciples, compares the Gospel accounts, and treats Matthias’s later selection in Acts as a separate event. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/conquest-of-jericho.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
