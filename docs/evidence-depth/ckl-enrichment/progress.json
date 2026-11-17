@@ -4596,6 +4596,31 @@
         ]
       },
       "checkpoint_commit": "6f881f50"
+    },
+    {
+      "batch_id": "batch-224-paul-faq",
+      "scope": [
+        "who-was-paul"
+      ],
+      "completed_unit": "Reviewed narrative and epistolary claims, references, sources, and related entries; distinguished Acts, Paul’s self-presentation, and letter-specific arguments.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/who-was-paul.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchor identities, source identities, related links, review/confidence metadata preserved.",
+        "Removed uncited historical and comparative assertions; did not add a biography or settle authorship questions."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "55f7c306"
     }
   ],
   "inventory_count": 687,
@@ -16354,14 +16379,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9a22067387a7d6244f30d96002d38b204d4021d04d4d9ea31711a3ca8e9072cb",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "new_testament_connections"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Distinguished Acts’ third-person narrative from Paul’s first-person account in Galatians and the arguments of Romans, 1 Corinthians, and Philippians. Connected each passage to its particular contribution and removed uncited generalizations about diaspora and Greco-Roman settings.",
+      "limitation": "The listed sources are biblical texts and an internal CKL orientation record, not a specialist historical source. The FAQ gives no complete chronology or independent historical reconstruction, and does not resolve authorship questions for every text in the list.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23440,7 +23495,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/who-was-paul.json",
+  "next_batch": "framework/canonical_library/objects/faq/who-was-peter.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
