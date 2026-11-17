@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **277 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **278 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **170 are skipped pending source or identity
-research**, and **125 remain pending review**.
+research**, and **124 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1689,3 +1689,5 @@ Batch 490 enriched New Temple Theme by tracing dwelling-presence language from E
 Batch 491 enriched Peace Theme across its cited passages, connecting blessing, trust, reconciliation, and prayer. Linked Pauline material helped distinguish peace from forced silence or conflict suppression; the related shalom record was not used to make broader lexical claims. The next pending object is recorded in the manifest.
 
 Batch 492 enriched People of God Theme around shared worship, care, reconciliation, gifts, and witness. It distinguishes the texts’ uses of Israel’s scriptural language without implying that Israel’s story has been erased. The next pending object is recorded in the manifest.
+
+Batch 493 enriched Prayer Theme across its cited passages, distinguishing lament, Jesus’ teaching, persistent prayer, petition, thanksgiving, and communal care. Linked Pauline evidence informed the caution against guaranteeing particular outcomes. The next pending object is recorded in the manifest.
