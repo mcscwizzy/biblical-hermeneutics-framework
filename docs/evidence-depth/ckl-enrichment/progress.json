@@ -7712,6 +7712,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "59464798"
+    },
+    {
+      "batch_id": "batch-355-solomon-person",
+      "scope": [
+        "solomon"
+      ],
+      "completed_unit": "Explained the 1 Kings 6 temple account and its covenant condition while bounding the historical and royal-psalm claims.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/solomon.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "Ancient Near Eastern applicability was disabled because no comparative source is recorded; canonical applicability was enabled for the Davidic and royal-psalm distinctions."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24536,14 +24561,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d5ebbc15fefe26388356251b7bd8067fb8de5adf0a68119b2f6eb4dddfeca6d5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Completed review of the populated explanatory fields, anchors, source records, related objects, and context applicability. The profile now focuses on the 1 Kings 6 temple account and treats Psalm 2 as related royal language rather than securely Solomonic.",
+      "limitation": "No external archaeological evidence for Solomon’s temple or comparative royal building source is recorded. The prose does not make such claims.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -29264,7 +29317,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/solomon.json",
+  "next_batch": "framework/canonical_library/objects/people/stephen.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
