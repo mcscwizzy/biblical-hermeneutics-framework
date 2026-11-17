@@ -480,6 +480,21 @@
         "ckl_objects": "PASS: all three valid with 0 errors and 0 warnings each."
       },
       "checkpoint_commit": "da6029006ec0ae825efa8b962a622f786cbdce68"
+    },
+    {
+      "batch_id": "batch-031-2-kings-through-2-samuel-review",
+      "scope": [
+        "2-kings",
+        "2-peter",
+        "2-samuel"
+      ],
+      "completed_unit": "Three book objects, claims, notes, typed geography evidence, sources, and Scripture anchors reviewed; all already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all three valid with 0 errors and 0 warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -2527,14 +2542,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "71aae1c9ab4c533371f06a62ac9eca1e4c00bb24e428173ff8c3da2d706f669f",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary and context fields explain the prophetic and royal sequence from divided monarchy through exile. Thirteen claims and seven notes are passage-specific and distinguish the book’s theological interpretation from external historical reconstruction; three locked geographic evidence items remain tied to the Naaman narrative.",
+      "limitation": "None for explanatory enrichment; the object already provides clear, contextual, and qualified explanations.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -2545,14 +2576,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2ae4fad196931a2dab450f6bab9d787793325a74d1b51e26ed7e806de2eff712",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary, contexts, 32 claims, and 43 notes explain the letter’s main argument and unusually complex questions about authorship, relation to Jude, opponents, textual variants, and eschatology. Interpretive proposals and modern applications are carefully qualified.",
+      "limitation": "None for explanatory enrichment; the object already provides clear, contextual, and qualified explanations.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -2563,14 +2610,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d33fdf682a71a90992fbc351f29e8bfbfa0d228df8fca56a3f4ef58c2a5a17ac",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left intact. The summary and literary context explain David’s ascent, promise, abuse of power, household violence, rebellion, and the book’s closing appendix. Six claims and five notes identify the narrative’s explicit judgments and preserve the ethical and canonical disputes.",
+      "limitation": "None for explanatory enrichment; the object already provides clear, contextual, and qualified explanations.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13819,6 +13882,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/2-kings.json",
+  "next_batch": "framework/canonical_library/objects/books/2-thessalonians.json",
   "protected_fingerprint_base": "origin/master"
 }
