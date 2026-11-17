@@ -1413,6 +1413,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "5d9b0361"
+    },
+    {
+      "batch_id": "batch-089-pauline-israel-summary",
+      "scope": [
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+      ],
+      "completed_unit": "Reviewed all 40 claims, 40 typed evidence items, six interpretive notes, and key contextual fields; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "No disputed interpretation of Torah, election, hardening, pistis Christou, all Israel, or Jewish identity was promoted as settled."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6967,14 +6988,52 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2079215c3ddf927ecaa0364a3e24486462b6a0637dd12248d2f0a1f7099789b4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "structure",
+        "canonical_placement",
+        "interpretive_disputes",
+        "intertextuality",
+        "hebrew_words",
+        "greek_words",
+        "common_questions",
+        "canonical_story",
+        "claims[*].claim",
+        "claims[*].rationale",
+        "evidence_items[*].description",
+        "evidence_items[*].passage_relevance",
+        "interpretive_notes[*].note",
+        "interpretive_notes[*].rationale",
+        "sources[*].identity_and_support_links",
+        "scripture_references",
+        "related_objects",
+        "reader compatibility"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "The summary now explains the distinct arguments about Jewish and gentile belonging across Romans, Galatians, First Corinthians, Philippians, and Acts, while keeping key interpretations disputed and rejecting later identity-erasing conclusions. All 40 claims, 40 typed evidence items, and six interpretive notes were reviewed and retained.",
+      "limitation": "No source-dependent historical or interpretive claim was added. Source identities and support links were inspected, but cited scholarship was not independently re-read; existing claims and evidence were retained without treating bibliography entries as newly verified arguments.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Focused content-quality and retrieval regression: 17 passed, 4 subtests passed.",
+          "Protected source, anchor, claim/evidence identity, relationship, uncertainty, and review metadata unchanged."
+        ]
       }
     },
     {
@@ -16681,7 +16740,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/pauline-kinship-guardianship-slavery-and-inheritance.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **29 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **30 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **540 remain pending review**.
+research**, and **539 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -377,6 +377,8 @@ Batch 087 reviewed the Pauline authorities and civic life record: all 52 claims,
 
 Batch 088 reviewed the Pauline food, conscience, and shared meals record: all 49 claims, 49 typed evidence items, and seven interpretive notes. Their explanations already distinguish temple participation, market purchase, private hospitality, assembly meals, and the Antioch conflict, while preserving Jewish practice diversity and uncertainty about disputed details. The summary now traces these settings in reader language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel.json`.
+Batch 089 reviewed the Pauline Israel and Jewish-gentile relations record: all 40 claims, 40 typed evidence items, and six interpretive notes. Their explanations already preserve Israel’s scriptural gifts and hope, distinguish gentile inclusion from identity erasure, and qualify debates about Torah, election, hardening, and “all Israel.” The summary now gives readers a clearer map of the different arguments across Romans, Galatians, Corinthians, Philippians, and Acts. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-kinship-guardianship-slavery-and-inheritance.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
