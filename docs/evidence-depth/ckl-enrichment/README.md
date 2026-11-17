@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **4 objects are enriched**, **14 are unchanged because they
+At this checkpoint, **4 objects are enriched**, **17 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **627 remain pending review**.
+research**, and **624 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -246,6 +246,12 @@ notes are specific and carefully qualified; the 1 Samuel geography evidence
 also remains source-locked. All three objects validated with zero errors and
 zero warnings.
 
-The next work unit is `objects/books/2-chronicles.json`.
+Second Chronicles, 2 Corinthians, and 2 John were left intact. Their summaries
+and contexts already explain each book's main literary and historical setting.
+Their claims, notes, and typed evidence are detailed and careful about debated
+authorship, literary reconstruction, textual interpretation, and modern
+application. All three objects validated with zero errors and zero warnings.
+
+The next work unit is `objects/books/2-kings.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
