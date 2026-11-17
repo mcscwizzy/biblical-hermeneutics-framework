@@ -7530,6 +7530,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "b2a89341"
+    },
+    {
+      "batch_id": "batch-347-ruth-the-moabite-person",
+      "scope": [
+        "ruth-the-moabite"
+      ],
+      "completed_unit": "Explained the story’s movement from Ruth’s pledge to Naomi through provision and family continuity to the genealogy leading to David.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/ruth-the-moabite.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "Ancient Near Eastern applicability was disabled because no comparative source is recorded; canonical applicability was enabled for the book’s closing genealogy."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24046,14 +24071,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0a298930eaaa2cc041ee2e2d4c95d5ee79beafe8be8871d8d9d9177c6df0c105",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Completed review of the populated narrative fields, book-level Scripture source, anchors, context flags, and related objects. The explanation grounds the summary in Ruth’s narrated choices and identifies the Davidic genealogy as the book’s closing horizon.",
+      "limitation": "The structured anchor for Ruth is Ruth 1:16–18, while the broader source entry covers Ruth 1–4. Added no new Scripture relationships; passage-level relevance still depends on reviewing those anchors.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -28918,7 +28971,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/ruth-the-moabite.json",
+  "next_batch": "framework/canonical_library/objects/people/samson.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
