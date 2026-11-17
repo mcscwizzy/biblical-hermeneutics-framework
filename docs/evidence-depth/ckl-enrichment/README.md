@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **237 objects are enriched**, **110 are unchanged because they
+At this checkpoint, **238 objects are enriched**, **110 are unchanged because they
 are already sufficient**, **159 are skipped pending source or identity
-research**, and **181 remain pending review**.
+research**, and **180 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1535,3 +1535,6 @@ Batch 435 reviewed Nineveh and made no content changes. The anchors identify Ai,
 
 
 Batch 436 reviewed Persia and left it unchanged. The record already distinguishes Achaemenid reigns and administrative phases, explains why provincial conditions were not uniform, separates the literary forms of the biblical texts, and limits what the Cyrus Cylinder can establish about Judah. Its source-based qualifications were retained. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 437 reviewed Pharpar. The summary now explains why Naaman names it alongside Abana when objecting to the instruction to wash in the Jordan, and clarifies that the ranking is part of his speech rather than independent evidence about river quality. The source-locked evidence was retained unchanged. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.

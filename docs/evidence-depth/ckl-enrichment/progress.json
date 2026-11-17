@@ -9559,6 +9559,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-437-pharpar",
+      "scope": [
+        "pharpar"
+      ],
+      "completed_unit": "Explained Pharpar’s role in Naaman’s objection in 2 Kings 5:12 while preserving the source-locked evidence.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/pharpar.json"
+      ],
+      "protected_checks": [
+        "Evidence ID, source identity and lock, Scripture anchor, confidence, review status, and relationships were preserved.",
+        "No hydrological or comparative water-quality claim was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -29268,14 +29293,31 @@
       "review_status": "unreviewed",
       "human_review_required": true,
       "protected_sha256": "a395438059e3de8d65ccc683c5c14859e56d00c25e397a29ca4ddbb21fe1661d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Expanded the summary to explain Pharpar’s role in Naaman’s comparison with the Jordan in 2 Kings 5:12 and distinguished character speech from independent hydrological evidence.",
+      "limitation": "The evidence item is source-locked; its wording, source identities, Scripture anchor, and relationships were left unchanged. No river identification beyond the recorded place name or water-quality claim was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Evidence ID, source identity and lock, Scripture anchor, confidence, review status, and relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -32520,7 +32562,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/pharpar.json",
+  "next_batch": "framework/canonical_library/objects/places/philippi.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
