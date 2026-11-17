@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **258 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **259 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **168 are skipped pending source or identity
-research**, and **146 remain pending review**.
+research**, and **145 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1640,3 +1640,6 @@ Batch 470 reviewed Creation Theme. The revised explanation connects Genesis’ o
 
 
 Batch 471 reviewed Exile Theme. The revised explanation distinguishes the biblical warnings, Judah’s deportations and Jerusalem’s fall, prophetic hopes for return, and later uses of exile language in Luke and 1 Peter. It removes unsupported ancient Near Eastern and Second Temple context and notes that the listed historical anchors do not cover the northern kingdom’s earlier fall. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 472 reviewed Exodus Pattern Theme. The revised explanation follows the narrative from oppression and Passover through the sea, wilderness, and Sinai, using the linked Exodus-to-Sinai timeline. It distinguishes those events from later passages that reuse covenant language and removes unsupported generic ancient Near Eastern background. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
