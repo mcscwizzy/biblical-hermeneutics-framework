@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **175 objects are enriched**, **95 are unchanged because they
+At this checkpoint, **176 objects are enriched**, **95 are unchanged because they
 are already sufficient**, **76 are skipped pending source or identity
-research**, and **341 remain pending review**.
+research**, and **340 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -821,3 +821,6 @@ Batch 275 reviewed Boaz. The explanation traces Ruth’s movement from Boaz’s 
 
 
 Batch 276 reviewed Caiaphas and left it unchanged. The entry repeats a generic warning-figure profile with references to Cain (Genesis 4), Balaam (Numbers 22), Herod (Matthew 2), and Judas (Matthew 27); none of those ranges identifies Caiaphas. The record needs its identity and passage scope reconciled before contextual prose can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Cain.
+
+
+Batch 277 reviewed Cain. The entry now explains the Genesis 4 sequence: anger and fratricide fracture family and land; God judges Cain but marks him to limit vengeance. It also notes that Genesis does not spell out why Abel’s offering is regarded and distinguishes Cain’s narrative from other listed figures. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Caleb.
