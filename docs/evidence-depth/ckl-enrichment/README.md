@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **180 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **83 are skipped pending source or identity
-research**, and **329 remain pending review**.
+are already sufficient**, **84 are skipped pending source or identity
+research**, and **328 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -857,3 +857,6 @@ Batch 287 reviewed Epaphroditus and left it unchanged. The cited ranges do not i
 
 
 Batch 288 reviewed Esther the Queen. The explanation now follows Esther 4’s actual movement from Mordecai’s appeal and the shared fast to Esther’s risky decision to approach the king. It avoids treating linked Ezra, Nehemiah, and Haggai passages as events in her biography and does not add an unsupported reconstruction of Persian court protocol. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Eunice.
+
+
+Batch 289 reviewed Eunice and left it unchanged. The cited references—Acts 9, Romans 16, 1 Corinthians 3, and Philippians 1—do not name her; the direct mentions of Eunice and Timothy’s family in Acts 16 and 2 Timothy are absent. The person-specific passage set needs reconciliation before the entry can safely explain Eunice’s role. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Eve.
