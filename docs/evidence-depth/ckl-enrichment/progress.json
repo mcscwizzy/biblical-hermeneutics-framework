@@ -2813,6 +2813,33 @@
         ]
       },
       "checkpoint_commit": "356d7f90"
+    },
+    {
+      "batch_id": "batch-153-jacob-peniel-explanation",
+      "scope": [
+        "jacob-wrestles-at-peniel"
+      ],
+      "completed_unit": "Reviewed the summary, setting, literary movement, canonical context, source anchors, and uncertainty; enriched six explanatory fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/jacob-wrestles-at-peniel.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "Genesis’ ambiguity about the opponent kept distinct from Hosea’s later reflection."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.37s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "635d0938"
     }
   ],
   "inventory_count": 687,
@@ -11082,15 +11109,45 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "008127e55b4436c633604c8d4ec111690522a8c2f72e57bb465901e9fc6bfc2f",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Expanded the night encounter’s relation to Jacob’s fear of Esau, the new name and injury, and the following reunion. Distinguished Genesis’ unnamed opponent from Hosea’s later reflection and cleared an unsupported general ANE claim.",
+      "limitation": "No external source supports a broader cultural comparison, so the ANE field is blank. The existing Scripture anchors include the primary scene, reunion, and Hosea’s later reflection; all anchors and relationships remain unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.37s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "635d0938"
     },
     {
       "id": "joseph-interprets-pharaohs-dreams",
@@ -19644,7 +19701,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/jacob-wrestles-at-peniel.json",
+  "next_batch": "framework/canonical_library/objects/events/joseph-interprets-pharaohs-dreams.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
