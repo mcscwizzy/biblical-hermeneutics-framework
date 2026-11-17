@@ -8403,6 +8403,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-386-corinth-review",
+      "scope": [
+        "corinth"
+      ],
+      "completed_unit": "Explanatory-field review; existing sourced and qualified profile was already sufficient.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "Existing limits on archaeological identifications, social reconstruction, and stereotypes were preserved."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -26329,14 +26350,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a0713af8b881649a0557aedf3ef78bebd85a3967d9fcbbcc13989c05535fdc00",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "evidence_cluster",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The existing profile already connects Corinth’s civic setting with Acts and the letters while keeping their chronology distinct. It treats archaeological inscriptions and social comparisons with clear limits and rejects the “uniquely immoral Corinth” stereotype. No rewrite was needed.",
+      "limitation": "None identified for explanatory depth in the reviewed fields; the linked evidence cluster preserves uncertainties about the Erastus identification, exact venues, assembly organization, and literary chronology.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -30499,7 +30539,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/corinth.json",
+  "next_batch": "framework/canonical_library/objects/places/crete.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
