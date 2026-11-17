@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **289 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **177 are skipped pending source or identity
-research**, and **105 remain pending review**.
+are already sufficient**, **178 are skipped pending source or identity
+research**, and **104 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1758,3 +1758,10 @@ Wedding Theme was reviewed and held for identity/anchor reconciliation. Its
 scripture links and related objects point to covenant promises, Exodus 19,
 Jeremiah’s new covenant, the Last Supper, and Hebrews, but none of the recorded
 passages establishes wedding or marriage imagery. No CKL content was changed.
+
+
+Wisdom Theme was reviewed and held because the recorded references instead
+concern covenant promises and renewal, and the linked records are covenant
+entries. The record needs reviewed identity/anchor reconciliation or a
+wisdom-focused evidence set before explanation can be expanded. No CKL content
+was changed.
