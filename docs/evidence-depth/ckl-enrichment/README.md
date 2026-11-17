@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **159 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **160 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **64 are skipped pending source or identity
-research**, and **372 remain pending review**.
+research**, and **371 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -728,3 +728,6 @@ Batch 244 reviewed Pharisees. Its existing historical, Second Temple, canonical,
 
 
 Batch 245 enriched Priesthood by distinguishing Torah instructions for Aaronic service, Psalm 110, Hebrews’ argument about Jesus, and First Peter’s royal-priesthood language for the community. The prose stays within the biblical sources and does not generalize about ancient Near Eastern priesthood or survey Second Temple groups without independent support. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/priestly-service.json`.
+
+
+Batch 246 enriched Priestly Service by separating festival legislation in Exodus and Leviticus, Solomon’s temple dedication, and Hebrews’ later argument about sacrifice. The explanation stays within those texts and does not claim an uninterrupted historical development or reconstruct Second Temple practice without supporting sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/prophets.json`.

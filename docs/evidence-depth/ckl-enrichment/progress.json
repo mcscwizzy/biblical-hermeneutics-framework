@@ -5139,6 +5139,31 @@
         ]
       },
       "checkpoint_commit": "12f4f5e7"
+    },
+    {
+      "batch_id": "batch-246-priestly-service-institution",
+      "scope": [
+        "priestly-service"
+      ],
+      "completed_unit": "Enriched Priestly Service by distinguishing festival legislation in Exodus and Leviticus, Solomon’s temple dedication in 1 Kings, and Hebrews’ argument about sacrifice. Removed generic ANE framing and unsupported historical-development claims.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/priestly-service.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -17923,14 +17948,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "953dfd4a1a43fafd0a544774374cf7702af5b5bc1868044c75c9df8926b801da",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Separated Exodus and Leviticus festival instructions, the temple dedication narrative in 1 Kings, and Hebrews’ argument about repeated offerings. Explained each passage’s distinct role and bounded the historical claims to the recorded Scriptures.",
+      "limitation": "The object has Scripture and internal orientation sources but no independently reviewed comparative historical source. No reconstruction of priestly development or Second Temple practice was added. Existing broad source metadata was preserved.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24613,7 +24668,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/priestly-service.json",
+  "next_batch": "framework/canonical_library/objects/institutions/prophets.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
