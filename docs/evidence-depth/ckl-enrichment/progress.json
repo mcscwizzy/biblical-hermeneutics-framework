@@ -8703,6 +8703,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-399-gath",
+      "scope": [
+        "gath-1"
+      ],
+      "completed_unit": "Explained Gath as Goliath’s city of origin in 1 Samuel 17 while distinguishing it from the Valley of Elah battlefield.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/gath-1.json"
+      ],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, and review metadata were preserved.",
+        "Ancient Near Eastern applicability was disabled because no comparative source is recorded.",
+        "No independent city history or archaeology was added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27103,14 +27129,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ebf9c5ddef5d4af0c05db8d154d3ff37562ed4736358f54b8abc9b12d7afb8cb",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east"
+      ],
+      "outcome": "Clarified that 1 Samuel 17 identifies Goliath as from Gath while placing the confrontation in the Valley of Elah; removed unsupported generic ANE language and bounded the city’s role to this passage.",
+      "limitation": "The record’s other Scripture anchors do not establish Gath and remain unchanged for curation review. No independent city history or archaeological claim was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches origin/master; source identities, Scripture references, and review metadata remain unchanged."
+        ]
       }
     },
     {
@@ -31039,7 +31087,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/gath-1.json",
+  "next_batch": "framework/canonical_library/objects/places/gaza.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
