@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **288 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **289 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **175 are skipped pending source or identity
-research**, and **108 remain pending review**.
+research**, and **107 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1738,3 +1738,11 @@ the focused content-quality and retrieval regressions passed.
 
 
 The Temple Theme now distinguishes the tabernacle and temple settings, pilgrimage and prophetic visions, Jesus’ temple saying, Hebrews’ sanctuary argument, and Revelation’s city without a separate temple. Unsupported generalizations about ancient Near Eastern temples and Second Temple practice were removed or bounded. Two unsourced interpretive notes remain unchanged pending reviewed support. The object and full library validate without new errors or warnings, and focused content-quality and retrieval regressions passed.
+
+
+Water and Spirit Theme now distinguishes the two cited passages that explicitly
+join the images (Genesis 1 and Ezekiel 36) from Joel, John, Acts, and Romans,
+which develop the Spirit theme without repeating water imagery in these
+anchors. An unsupported ancient Near Eastern paragraph was removed. The object
+and full library validate without new errors or warnings; focused content-quality
+and retrieval regressions passed.
