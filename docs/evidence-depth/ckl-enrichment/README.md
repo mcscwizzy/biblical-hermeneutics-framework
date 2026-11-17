@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **243 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **244 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **168 are skipped pending source or identity
-research**, and **161 remain pending review**.
+research**, and **160 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1595,3 +1595,6 @@ Batch 455 reviewed Zion. The revised explanation identifies Zion as the strongho
 
 
 Batch 456 reviewed Branch Prophecy. The revised explanation distinguishes Jeremiah's branch as a just Davidic ruler from Zechariah's visions involving Joshua, temple rebuilding, and royal-priestly roles. It treats the shared image as a connection across distinct texts, not as one flattened oracle, and removes unsupported generic ancient Near Eastern context. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 457 reviewed Day of the Lord Prophecy. The revised explanation distinguishes Amos and Zephaniah’s warnings, Joel’s alarm imagery, and the later Christian exhortations in 1 Thessalonians and 2 Peter. It keeps their settings and purposes distinct and removes a generic ancient Near Eastern comparison not supported by the recorded sources. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
