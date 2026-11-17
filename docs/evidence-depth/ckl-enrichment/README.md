@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **6 objects are enriched**, **35 are unchanged because they
+At this checkpoint, **7 objects are enriched**, **35 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **604 remain pending review**.
+research**, and **603 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -178,6 +178,8 @@ Batch 035 reviewed Exodus, Ezekiel, Ezra, and Galatians. Five Exodus claim ratio
 Batch 036 reviewed Habakkuk. Its summary, historical and literary context, 28 claims, and 46 interpretive notes already explain the Chaldean horizon, the book's complaints and woes, disputed Hebrew and textual questions, Second Temple reception, and limits on modern analogy in accessible, source-aware language. It was left unchanged after single-object validation passed with zero errors and warnings. The next pending object is recorded in the manifest.
 
 Batch 037 reviewed Haggai. Its summary and contextual sections, 28 claims, and 49 interpretive notes already explain the Persian-period setting, dated oracles, priestly exchange about ritual status, and debated restoration language with detailed distinctions between text, historical reconstruction, and later reception. It was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 038 enriched Hebrews. Its 32 claim rationales previously repeated one generic sentence; they now explain the work's argument through Scripture, the movement from warning to communal practice, and where historical or theological interpretation remains open. The detailed summary, contexts, and 40 interpretive notes were retained. Single-object and full-library validation passed with zero errors; the full validator still reports the same 14 baseline warnings. Retrieval tests were not run because claim rationale is not indexed or rendered by the standard modal. The 40 note-level rationale fields remain unchanged because the notes themselves already explain their cautions.
 
 ## Reader reachability
 

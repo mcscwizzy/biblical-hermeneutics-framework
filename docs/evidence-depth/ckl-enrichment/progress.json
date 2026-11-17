@@ -589,6 +589,21 @@
         "ckl_objects": "PASS: Haggai valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-038-hebrews-rationale-enrichment",
+      "scope": [
+        "hebrews"
+      ],
+      "completed_unit": "Replaced 32 generic claim rationales with specific explanation of textual reasoning, significance, and interpretive limits",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/hebrews.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: Hebrews valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "No retrieval tests run because only claim rationale fields changed; rationale is not consumed by the retrieval index or standard reader modal."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3413,14 +3428,62 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "22b21c5fff5739d98db2a7453bebc37eeea23eafaffde6295b57ba9d3ba53148",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "claims[heb-anonymous].rationale",
+        "claims[heb-genre].rationale",
+        "claims[heb-son].rationale",
+        "claims[heb-angels].rationale",
+        "claims[heb-solidarity].rationale",
+        "claims[heb-moses].rationale",
+        "claims[heb-rest].rationale",
+        "claims[heb-word].rationale",
+        "claims[heb-access].rationale",
+        "claims[heb-appointment].rationale",
+        "claims[heb-warning-six].rationale",
+        "claims[heb-anchor].rationale",
+        "claims[heb-melchizedek].rationale",
+        "claims[heb-priesthood-change].rationale",
+        "claims[heb-covenant].rationale",
+        "claims[heb-sanctuary].rationale",
+        "claims[heb-diatheke].rationale",
+        "claims[heb-once].rationale",
+        "claims[heb-conscience].rationale",
+        "claims[heb-access-community].rationale",
+        "claims[heb-warning-ten].rationale",
+        "claims[heb-former-days].rationale",
+        "claims[heb-faith].rationale",
+        "claims[heb-women].rationale",
+        "claims[heb-race].rationale",
+        "claims[heb-discipline].rationale",
+        "claims[heb-sinai-zion].rationale",
+        "claims[heb-kingdom].rationale",
+        "claims[heb-ethics].rationale",
+        "claims[heb-closing].rationale",
+        "claims[heb-p46].rationale",
+        "claims[heb-sinaiticus].rationale"
+      ],
+      "outcome": "Replaced 32 identical generic claim rationales with claim-specific explanations of Hebrews’ scriptural reasoning, literary sequence, historical limits, disputed questions, and communal implications. The claim text, 40 interpretive notes, source identities, Scripture anchors, certainty and dispute classifications, and relationships were preserved.",
+      "limitation": "Claim rationales are serialized in object detail but not rendered by the standard canonical browser modal or indexed by retrieval. The interpretive notes already explain their cautions; their generic internal rationale fields were left unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Protected-field review: only 32 claim rationale fields changed; identifiers, claim wording, sources, anchors, review and dispute metadata, notes, and relationships remain unchanged."
+        ]
       }
     },
     {
@@ -14279,6 +14342,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/hebrews.json",
+  "next_batch": "framework/canonical_library/objects/books/hosea.json",
   "protected_fingerprint_base": "origin/master"
 }
