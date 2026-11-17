@@ -22,7 +22,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 At this checkpoint, **220 objects are enriched**, **106 are unchanged because they
 are already sufficient**, **134 are skipped pending source or identity
-research**, and **228 remain pending review**.
+research**, and **227 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
