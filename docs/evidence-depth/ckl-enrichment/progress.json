@@ -5928,6 +5928,32 @@
         ]
       },
       "checkpoint_commit": "6c20cd0b"
+    },
+    {
+      "batch_id": "batch-279-cornelius-person",
+      "scope": [
+        "cornelius"
+      ],
+      "completed_unit": "Reviewed Cornelius and enriched the Acts 10 narrative while distinguishing its paired visions and household scene from broader canonical parallels.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/cornelius.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20002,14 +20028,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d3ed5ee147f63ae13fb3a6ced232a1ead1c02b46e1154b3de9a23be623957aa2",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Explained the paired visions, Peter’s visit to Cornelius’s household, and the Spirit’s arrival before baptism. The prose distinguishes these Acts 10 events from Genesis 12, Joshua 2, and Ruth 1 as broader thematic parallels rather than parts of Cornelius’s biography.",
+      "limitation": "No external reconstruction of Roman military or civic structures was added; the historical explanation stays with Acts 10’s explicit setting and description.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -26062,7 +26111,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/cornelius.json",
+  "next_batch": "framework/canonical_library/objects/people/daniel-the-exile.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

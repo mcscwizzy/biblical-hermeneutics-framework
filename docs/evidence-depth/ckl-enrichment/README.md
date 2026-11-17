@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **176 objects are enriched**, **95 are unchanged because they
+At this checkpoint, **177 objects are enriched**, **95 are unchanged because they
 are already sufficient**, **77 are skipped pending source or identity
-research**, and **339 remain pending review**.
+research**, and **338 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -827,3 +827,6 @@ Batch 277 reviewed Cain. The entry now explains the Genesis 4 sequence: anger an
 
 
 Batch 278 reviewed Caleb and left it unchanged. The entry repeats a generic wilderness figure description, but its anchors—Exodus 4, Numbers 17, Deuteronomy 10, and Hebrews 3—concern Moses, Aaron, and their leadership rather than Caleb. The person-specific passage set needs reconciliation before explanatory prose can be safely written. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Cornelius.
+
+
+Batch 279 reviewed Cornelius. The explanation now follows the paired visions, Peter’s visit to the household in Caesarea, and the Spirit’s arrival before baptism. It distinguishes those events from Genesis 12, Joshua 2, and Ruth 1, which serve as broader parallels rather than Cornelius’s biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Daniel the Exile.
