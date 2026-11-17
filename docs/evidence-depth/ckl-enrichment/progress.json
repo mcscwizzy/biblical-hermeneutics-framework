@@ -3727,6 +3727,31 @@
         ]
       },
       "checkpoint_commit": "3b53b68f"
+    },
+    {
+      "batch_id": "batch-189-biblical-wisdom-faq",
+      "scope": [
+        "what-is-biblical-wisdom"
+      ],
+      "completed_unit": "Reviewed the question, biblical examples, historical and cultural claims, source list, anchors, notes, and related links; expanded seven fields with specific examples from the cited texts.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-biblical-wisdom.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsupported comparative wisdom-literature claims added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "930e3359"
     }
   ],
   "inventory_count": 687,
@@ -13891,14 +13916,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a1056eb3c5f607b54dc8d7811330f9251114a3f85b1c3de4f7b996f23ffbb279",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note"
+      ],
+      "outcome": "Expanded the FAQ with passage-specific examples of instruction, trust, lament about human limits, the two ways, Jesus’ building parable, and wisdom expressed through conduct. Replaced unsupported claims about wisdom’s historical development and comparisons with neighboring cultures with details from the cited texts.",
+      "limitation": "No external history of Israelite wisdom instruction or comparative ancient wisdom literature was added. Psalm 1’s source record is typed as reference-work despite naming Scripture; the protected record was preserved for review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: 930e3359."
+        ]
       }
     },
     {
@@ -21607,7 +21659,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-biblical-wisdom.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-canonical-theology.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
