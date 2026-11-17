@@ -1069,6 +1069,21 @@
         "ckl_objects": "PASS: object valid, 0 errors and 0 warnings; full library 687 valid, 0 errors and 14 baseline warnings.",
         "regression": "17 cultural-context evidence-quality/retrieval checks passed with 4 subtests."
       }
+    },
+    {
+      "batch_id": "batch-072-genesis-26-30-relevance-review",
+      "scope": [
+        "genesis-isaac-jacob-transition-context"
+      ],
+      "completed_unit": "Rewrote all 51 duplicated passage-relevance fields as distinct interpretive connections for Genesis 26–30.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/genesis-isaac-jacob-transition-context.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: object valid, 0 errors and 0 warnings; full library 687 valid, 0 errors and 14 baseline warnings.",
+        "regression": "17 cultural-context evidence-quality/retrieval checks passed with 4 subtests."
+      }
     }
   ],
   "inventory_count": 687,
@@ -5872,14 +5887,46 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1c370f9dee23e76152a3bc194fb1cf834ee4ee4a612f8decb4d2bc7f446e9198",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "genre",
+        "structure",
+        "major_themes",
+        "interpretive_disputes",
+        "claims[]",
+        "interpretive_notes[]",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects",
+        "related_entries"
+      ],
+      "fields_changed": [
+        "evidence_items[].passage_relevance (51 items)"
+      ],
+      "outcome": "Replaced 51 exact description/relevance duplicates with distinct passage-specific explanations across Genesis 26–30. The new relevance text makes the significance of water disputes, blessing and birthright, Jacob’s dream, household labor and fertility, and livestock wages clear without repeating the evidence description.",
+      "limitation": "Evidence descriptions, sources, Scripture anchors, and relationships were preserved. Comparative customs remain analogies, and no direct historical verification was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline.",
+          "Cultural-context evidence-quality and retrieval checks: 17 passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -15892,13 +15939,12 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-isaac-jacob-transition-context.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-jacob-esau-return-context.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
-    "unlocked_duplicate_records": 293,
+    "unlocked_duplicate_records": 242,
     "objects_with_unlocked_duplicates": [
-      "genesis-isaac-jacob-transition-context",
       "genesis-jacob-esau-return-context",
       "genesis-joseph-descent-testing-context",
       "genesis-joseph-reconciliation-conclusion-context",
