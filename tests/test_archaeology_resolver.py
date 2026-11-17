@@ -29,6 +29,46 @@ def test_exact_scripture_links_are_ranked_and_bounded(tmp_path) -> None:
     assert len(result["archaeological_items"]) <= 8
 
 
+def test_passage_cards_expose_only_the_recorded_links_that_match_the_selected_range(tmp_path) -> None:
+    path = tmp_path / "study.sqlite"
+    initialize_database(path)
+
+    john = resolve_archaeology_evidence(
+        book="John", chapter=9, verse_start=7, verse_end=11, path=path
+    )
+    kings = resolve_archaeology_evidence(
+        book="2 Kings", chapter=20, verse_start=20, verse_end=20, path=path
+    )
+
+    john_card = john["archaeological_items"][0]
+    assert john_card["id"] == "pool-of-siloam"
+    assert john_card["matched_scripture_links"] == [
+        {
+            "id": "asl-siloam-pool-1",
+            "book": "John",
+            "chapter": 9,
+            "verse_start": 7,
+            "verse_end": 11,
+            "relationship_type": "direct_context",
+            "notes": "The pool appears directly in the passage.",
+        }
+    ]
+    assert {item["id"]: item["matched_scripture_links"] for item in kings["archaeological_items"]} == {
+        "hezekiahs-tunnel-item": [{"id": "asl-tunnel-1", "book": "2 Kings", "chapter": 20, "verse_start": 20, "verse_end": 20, "relationship_type": "direct_context", "notes": "The tunnel provides the archaeological setting for the verse."}],
+        "siloam-inscription": [{"id": "asl-siloam-1", "book": "2 Kings", "chapter": 20, "verse_start": 20, "verse_end": 20, "relationship_type": "direct_context", "notes": "Pairs naturally with the tunnel and water-system setting."}],
+    }
+
+
+def test_name_in_passage_without_recorded_link_has_no_matched_scripture_relationship(tmp_path) -> None:
+    path = tmp_path / "study.sqlite"
+    initialize_database(path)
+
+    result = resolve_archaeology_evidence(book="Jeremiah", chapter=32, path=path)
+
+    assert result["archaeological_items"]
+    assert all(item["matched_scripture_links"] == [] for item in result["archaeological_items"])
+
+
 def test_passage_resolution_does_not_expand_unused_site_details(tmp_path, monkeypatch) -> None:
     path = tmp_path / "study.sqlite"
     initialize_database(path)

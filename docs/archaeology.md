@@ -34,6 +34,18 @@ index. `archaeology_media` stores zero or more media records for one existing
 item or site. Passage resolution prioritizes Scripture-link overlap, then
 carefully matched canonical names, and returns at most eight cards.
 
+The Study Companion keeps **Archaeology for this Passage** separate from
+**Browse All Archaeology**. Passage cards show only resolver results with a
+recorded Scripture-link overlap and expose the matching link's relationship
+type and notes; name-in-text candidates without a recorded link do not become
+passage evidence. The full catalog remains available from its own browse view.
+
+The same two retrieval modes exist for People, Themes, Timeline, and Canonical
+Knowledge: passage mode uses passage context, while Explore BHF mode browses
+the larger canonical catalog. Their current views show passage-related counts
+or empty states, but their labels do not make the browse-versus-passage split
+as explicit. This archaeology fix does not change those collections.
+
 The existing map service remains the map implementation. Archaeology cards use
 the existing map workspace and stable item/site IDs.
 

@@ -67,13 +67,26 @@ def test_feature_disabled_overview_keeps_compact_context_and_source_fallback(dri
     sources = driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]")
     assert "Open Canonical Knowledge" in sources.text
     assert "Open Maps Explorer" in sources.text
-    assert "Open Archaeology Library" in sources.text
+    assert "Browse All Archaeology" in sources.text
     assert "Open Cross References" in sources.text
     assert "Open Timeline" in sources.text
-    assert "Open passage Archaeology" in sources.text
+    assert "Archaeology for this Passage" in sources.text
     assert "Open Places & Locations" in sources.text
-    driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
-    wait.until(lambda _driver: driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]").is_displayed())
+    set_viewport(driver, 1440, 1000, True)
+    sources.find_element(By.XPATH, ".//button[normalize-space()='Archaeology for this Passage']").click()
+    wait.until(lambda _driver: "Archaeology for this Passage" in _driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]").text)
+    assert "No archaeology is linked to John 1:1" in driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]").text
+    driver.find_element(By.XPATH, "//button[normalize-space()='Browse All Archaeology']").click()
+    wait.until(lambda _driver: "Browse All Archaeology" in _driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]").text)
+    set_viewport(driver, 390, 844, True)
+    driver.find_element(By.XPATH, "//button[normalize-space()='Archaeology for this Passage']").click()
+    wait.until(lambda _driver: "No archaeology is linked to John 1:1" in _driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]").text)
+    navigation_metrics = driver.execute_script(
+        "return {width: innerWidth, body: document.documentElement.scrollWidth, nav: document.querySelector('.companion-archaeology-navigation').scrollWidth};"
+    )
+    assert navigation_metrics["width"] == 390
+    assert navigation_metrics["body"] <= navigation_metrics["width"]
+    assert navigation_metrics["nav"] <= navigation_metrics["width"]
 
 
 def test_feature_disabled_context_fallback_explains_offline_lookup(driver, wait, base_url):

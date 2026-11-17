@@ -1481,6 +1481,36 @@ body.companion-sheet-full {
   margin-top: 4px;
 }
 
+.companion-archaeology-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 12px;
+}
+
+.companion-archaeology-navigation button {
+  min-height: 44px;
+}
+
+.companion-archaeology-navigation button[aria-current="true"] {
+  border-color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.companion-archaeology-passage-card {
+  display: grid;
+  gap: 10px;
+}
+
+.companion-archaeology-passage-card section {
+  min-width: 0;
+}
+
+.companion-archaeology-passage-card section p,
+.companion-archaeology-passage-card a {
+  overflow-wrap: anywhere;
+}
+
 .companion-reference-list {
   display: grid;
   gap: 8px;

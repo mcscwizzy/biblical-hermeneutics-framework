@@ -111,6 +111,11 @@ def resolve_archaeology_evidence(
             item,
             sites_by_id.get(item.get("site_id"), {}),
             links_by_item.get(item["id"], []),
+            [
+                link
+                for link in links_by_item.get(item["id"], [])
+                if _overlaps_reference(link, canonical_book, chapter_number, start, end)
+            ],
         )
         for item in ordered_items
     ]
@@ -131,7 +136,12 @@ def resolve_archaeology_evidence(
     }
 
 
-def _evidence_card(item: dict[str, Any], site: dict[str, Any], links: list[dict[str, Any]]) -> dict[str, Any]:
+def _evidence_card(
+    item: dict[str, Any],
+    site: dict[str, Any],
+    links: list[dict[str, Any]],
+    matched_links: list[dict[str, Any]],
+) -> dict[str, Any]:
     details = item.get("evidence_details") or {}
     if not isinstance(details, dict):
         details = {}
@@ -171,6 +181,18 @@ def _evidence_card(item: dict[str, Any], site: dict[str, Any], links: list[dict[
         "current_location": details.get("current_location", ""),
         "biblical_relationship": relationship,
         "scripture_references": scripture_references,
+        "matched_scripture_links": [
+            {
+                "id": str(link.get("id") or ""),
+                "book": str(link.get("book") or ""),
+                "chapter": int(link.get("chapter") or 0),
+                "verse_start": int(link.get("verse_start") or 0),
+                "verse_end": int(link.get("verse_end") or 0),
+                "relationship_type": str(link.get("relationship_type") or ""),
+                "notes": str(link.get("notes") or ""),
+            }
+            for link in matched_links
+        ],
         "related_places": [site.get("modern_location", ""), site.get("ancient_region", "")],
         "related_events": [],
         "related_ckl_objects": [],

@@ -990,6 +990,10 @@
         await renderTranslationComparison(selection, requestSequence, signal);
         return;
       }
+      if (resourceId === "archaeology") {
+        await renderArchaeologyForPassage(selection, requestSequence, signal);
+        return;
+      }
       if (resourceId === "browse_research") {
         host.replaceChildren(renderResearchSources(false));
         host.setAttribute("aria-busy", "false");
@@ -1065,7 +1069,7 @@
       if (resourceId === "archaeology") {
         const data = await requestJson("/api/archaeology?limit=12&include_media=false", signal);
         if (requestSequence !== sequence) return;
-        renderArchaeology(data.results || [], false);
+        renderArchaeologyCatalog(data.results || [], options.getSelection?.() || {});
         return;
       }
       if (resourceId === "commentary") {
@@ -1274,11 +1278,24 @@
       if (requestSequence === sequence) commit(body);
     }
 
-    function renderArchaeology(items, contextual) {
-      const body = resourceBody(
-        contextual ? "Archaeology for this passage" : "Archaeology Collection",
-        `${items.length} record${items.length === 1 ? "" : "s"}${contextual ? " related to this passage" : " available to browse"}`,
-      );
+    async function renderArchaeologyForPassage(selection, requestSequence, signal) {
+      if (!selection?.book || !selection?.chapter || selection.hasPassageSelection !== true) {
+        const body = resourceBody("Archaeology for this Passage", "Select a Bible passage to see recorded archaeology relationships.");
+        body.append(archaeologyNavigation("passage", selection));
+        if (requestSequence === sequence) commit(body);
+        return;
+      }
+      const parameters = new URLSearchParams({book: selection.book, chapter: String(selection.chapter)});
+      if (selection.startVerse) parameters.set("verse_start", String(selection.startVerse));
+      if (selection.endVerse) parameters.set("verse_end", String(selection.endVerse));
+      const data = await requestJson(`/api/archaeology/for-passage?${parameters}`, signal);
+      if (requestSequence !== sequence) return;
+      renderArchaeologyPassage(data, selection);
+    }
+
+    function renderArchaeologyCatalog(items, selection) {
+      const body = resourceBody("Browse All Archaeology", `${items.length} record${items.length === 1 ? "" : "s"} available in the full catalog.`);
+      body.append(archaeologyNavigation("catalog", selection));
       items.slice(0, 12).forEach((item) => {
         const subtitle = [item.item_type, item.period, item.confidence].filter(Boolean).join(" · ");
         body.append(archaeologySummaryCard(item, item.summary || item.why_it_matters || subtitle, subtitle));
@@ -1286,9 +1303,105 @@
       const link = document.createElement("a");
       link.className = "companion-detail-action";
       link.href = "/archaeology";
-      link.textContent = "Open Archaeology Library →";
+      link.textContent = "Browse All Archaeology →";
       body.append(link);
       commit(body);
+    }
+
+    function renderArchaeologyPassage(result, selection) {
+      const reference = result?.reference || selection.reference || "this passage";
+      const allItems = Array.isArray(result?.archaeological_items) ? result.archaeological_items : [];
+      const items = allItems.filter((item) => Array.isArray(item?.matched_scripture_links)
+        && item.matched_scripture_links.length > 0);
+      const body = resourceBody("Archaeology for this Passage", `Current passage: ${reference}`);
+      body.append(archaeologyNavigation("passage", selection));
+      if (!items.length) {
+        const empty = document.createElement("p");
+        empty.className = "companion-detail-status";
+        empty.setAttribute("role", "status");
+        empty.textContent = `No archaeology is linked to ${reference} in the recorded Scripture relationships.`;
+        body.append(empty);
+      }
+      items.slice(0, 12).forEach((item) => body.append(archaeologyPassageCard(item)));
+      commit(body);
+    }
+
+    function archaeologyNavigation(mode, selection) {
+      const nav = document.createElement("nav");
+      nav.className = "companion-archaeology-navigation";
+      nav.setAttribute("aria-label", "Archaeology view");
+      const forPassage = document.createElement("button");
+      forPassage.type = "button";
+      forPassage.className = "secondary";
+      forPassage.textContent = "Archaeology for this Passage";
+      forPassage.setAttribute("aria-current", String(mode === "passage"));
+      forPassage.disabled = selection?.hasPassageSelection !== true;
+      forPassage.addEventListener("click", () => void open("archaeology", {mode: "passage"}));
+      const catalog = document.createElement("button");
+      catalog.type = "button";
+      catalog.className = "secondary";
+      catalog.textContent = "Browse All Archaeology";
+      catalog.setAttribute("aria-current", String(mode === "catalog"));
+      catalog.addEventListener("click", () => void open("archaeology", {mode: "explore"}));
+      nav.append(forPassage, catalog);
+      if (selection?.hasPassageSelection !== true) {
+        const note = document.createElement("p");
+        note.className = "companion-detail-status";
+        note.textContent = "Select a Bible passage to view archaeology for that passage.";
+        nav.append(note);
+      }
+      return nav;
+    }
+
+    function archaeologyPassageCard(item) {
+      const card = document.createElement("article");
+      card.className = "companion-summary-card companion-archaeology-passage-card";
+      const heading = document.createElement("h4");
+      heading.textContent = String(item.title || item.id || "Archaeology record");
+      card.append(heading);
+      const metadata = [item.item_type, item.period, item.confidence].filter(Boolean).join(" · ");
+      if (metadata) {
+        const line = document.createElement("p");
+        line.className = "companion-summary-meta";
+        line.textContent = metadata;
+        card.append(line);
+      }
+      appendArchaeologyField(card, "Recorded Scripture relationship", item.matched_scripture_links.map((link) => {
+        const range = link.verse_start === link.verse_end
+          ? `${link.verse_start}`
+          : `${link.verse_start}-${link.verse_end}`;
+        const reference = `${link.book} ${link.chapter}:${range}`;
+        return `${reference} · ${link.relationship_type}${link.notes ? ` — ${link.notes}` : ""}`;
+      }).join("; "));
+      appendArchaeologyField(card, "Biblical relevance", item.biblical_relevance || item.description || "Not recorded");
+      const source = item.source || {};
+      const sourceLabel = [source.label || source.id, source.license].filter(Boolean).join(" · ");
+      appendArchaeologyField(card, "Source record", sourceLabel || source.url || "Not recorded");
+      if (source.url && /^https?:\/\//i.test(source.url)) {
+        const link = document.createElement("a");
+        link.href = source.url;
+        link.textContent = source.url;
+        link.rel = "noreferrer";
+        card.append(link);
+      }
+      const evidenceSources = Array.isArray(item.evidence_sources) ? item.evidence_sources : [];
+      appendArchaeologyField(card, "External evidence sources", evidenceSources.length
+        ? evidenceSources.map((entry) => [entry.label, entry.url, entry.license, entry.record_id].filter(Boolean).join(" · ")).join("; ")
+        : "No separate external evidence source is recorded.");
+      const uncertainty = [item.dispute_status, item.interpretive_caution || item.scholarly_context]
+        .filter(Boolean).join(" · ") || "No interpretive caution is recorded.";
+      appendArchaeologyField(card, "Uncertainty", uncertainty);
+      return card;
+    }
+
+    function appendArchaeologyField(card, label, value) {
+      const section = document.createElement("section");
+      const heading = document.createElement("strong");
+      heading.textContent = label;
+      const content = document.createElement("p");
+      content.textContent = String(value || "Not recorded");
+      section.append(heading, content);
+      card.append(section);
     }
 
     function renderNarration(narration, resourceId, supplemental = []) {
@@ -1514,7 +1627,7 @@
       const archaeology = document.createElement("a");
       archaeology.className = "companion-text-button companion-research-source-link";
       archaeology.href = "/archaeology";
-      archaeology.textContent = "Open Archaeology Library";
+      archaeology.textContent = "Browse All Archaeology";
       libraries.append(archaeology);
       body.append(libraries);
 
@@ -1525,7 +1638,7 @@
       passage.append(passageHeading);
       passage.append(researchResourceButton("Open Cross References", "cross_references"));
       passage.append(researchResourceButton("Open Timeline", "timeline"));
-      passage.append(researchResourceButton("Open passage Archaeology", "archaeology"));
+      passage.append(researchResourceButton("Archaeology for this Passage", "archaeology"));
       passage.append(researchResourceButton("Open Places & Locations", "places_locations"));
       body.append(passage);
       return body;
@@ -2079,7 +2192,7 @@
       const back = actionButton("← Back to evidence", "");
       delete back.dataset.openLegacyResource;
       back.dataset.nativeResourceBack = "";
-      body.append(back, actionButton("Open Archaeology Library →", "archaeology"));
+      body.append(back, actionButton("Browse All Archaeology →", "archaeology"));
       commit(body);
     }
 

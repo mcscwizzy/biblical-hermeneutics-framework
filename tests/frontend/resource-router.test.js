@@ -402,10 +402,10 @@ test("secondary research browsing keeps CKL, Maps, archaeology, and passage rese
   [
     "Open Canonical Knowledge",
     "Open Maps Explorer",
-    "Open Archaeology Library",
+    "Browse All Archaeology",
     "Open Cross References",
     "Open Timeline",
-    "Open passage Archaeology",
+    "Archaeology for this Passage",
     "Open Places & Locations",
   ].forEach((label) => assert.match(text, new RegExp(label.replaceAll("&", "&"))));
   assert.equal(value.records.sessions.length, sessionCount);
@@ -907,4 +907,97 @@ test("opening a different resource cancels delayed verification", async () => {
   assert.equal(value.records.trailChanges.length, 0);
   assert.equal(value.heading.focused, false);
   assert.equal(value.router.getNarrativeTrail(), null);
+});
+
+test("passage archaeology uses recorded resolver relationships and explains each eligible record", async () => {
+  const requests = [];
+  const value = fixture({api: {async requestJson(url) {
+    requests.push(url);
+    return {reference: "John 9:7-11", archaeological_items: [
+      {
+        id: "pool-of-siloam",
+        title: "Pool of Siloam",
+        item_type: "pool",
+        period: "Second Temple period",
+        confidence: "likely",
+        matched_scripture_links: [{id: "asl-siloam-pool-1", book: "John", chapter: 9,
+          verse_start: 7, verse_end: 11, relationship_type: "direct_context",
+          notes: "The pool appears directly in the passage."}],
+        biblical_relevance: "The Gospel names the pool as the destination.",
+        source: {id: "seed", label: "Reviewed local archaeology record", url: "https://example.org/pool", license: "CC BY 4.0"},
+        evidence_sources: [{label: "Excavation report", url: "https://example.org/report", license: "Open access"}],
+        interpretive_caution: "The pool has multiple phases; the archaeology does not establish the miracle account.",
+      },
+      {
+        id: "jeremiah-generic-match",
+        title: "Unrelated City Artifact",
+        matched_scripture_links: [],
+      },
+    ]};
+  }}});
+  value.setSelection({book: "John", chapter: 9, startVerse: 7, endVerse: 11,
+    hasPassageSelection: true, reference: "John 9:7-11"});
+
+  assert.equal(await value.router.open("archaeology"), true);
+
+  assert.match(requests[0], /^\/api\/archaeology\/for-passage\?/);
+  assert.match(requests[0], /book=John/);
+  assert.match(requests[0], /chapter=9/);
+  assert.match(requests[0], /verse_start=7/);
+  assert.match(requests[0], /verse_end=11/);
+  assert.doesNotMatch(requests[0], /^\/api\/archaeology\?/);
+  assert.match(renderedText(value.host.content), /Archaeology for this Passage/);
+  assert.match(renderedText(value.host.content), /Recorded Scripture relationship/);
+  assert.match(renderedText(value.host.content), /John 9:7-11 · direct_context/);
+  assert.match(renderedText(value.host.content), /The Gospel names the pool as the destination/);
+  assert.match(renderedText(value.host.content), /Reviewed local archaeology record/);
+  assert.match(renderedText(value.host.content), /CC BY 4\.0/);
+  assert.match(renderedText(value.host.content), /Excavation report · https:\/\/example\.org\/report/);
+  assert.match(renderedText(value.host.content), /does not establish the miracle account/);
+  assert.doesNotMatch(renderedText(value.host.content), /Unrelated City Artifact/);
+});
+
+test("passage archaeology reports an empty state when resolver results lack a matching Scripture link", async () => {
+  const value = fixture({api: {async requestJson() {
+    return {reference: "Jeremiah 32", archaeological_items: [{
+      id: "name-only-result", title: "Name Only Result", matched_scripture_links: [],
+    }]};
+  }}});
+  value.setSelection({book: "Jeremiah", chapter: 32, hasPassageSelection: true, reference: "Jeremiah 32"});
+
+  await value.router.open("archaeology");
+
+  assert.match(renderedText(value.host.content), /No archaeology is linked to Jeremiah 32 in the recorded Scripture relationships/);
+  assert.doesNotMatch(renderedText(value.host.content), /Name Only Result/);
+});
+
+test("full archaeology browsing stays on the general catalog and offers passage navigation", async () => {
+  const requests = [];
+  const value = fixture({api: {async requestJson(url) {
+    requests.push(url);
+    return {results: [{id: "catalog-record", title: "Catalog Record", item_type: "inscription"}], count: 1};
+  }}});
+  value.setSelection({book: "John", chapter: 9, startVerse: 7, endVerse: 11,
+    hasPassageSelection: true, reference: "John 9:7-11"});
+
+  await value.router.open("archaeology", {mode: "explore"});
+
+  assert.match(requests[0], /^\/api\/archaeology\?limit=12&include_media=false$/);
+  assert.match(renderedText(value.host.content), /Browse All Archaeology/);
+  assert.match(renderedText(value.host.content), /Catalog Record/);
+  assert.doesNotMatch(renderedText(value.host.content), /No archaeology is linked/);
+  const passageButton = nodesWithin(value.host.content).find((node) => node.textContent === "Archaeology for this Passage");
+  passageButton.click();
+  assert.match(requests[1], /^\/api\/archaeology\/for-passage\?/);
+});
+
+test("full-library navigation asks for a passage before enabling passage-specific archaeology", async () => {
+  const value = fixture({api: {async requestJson() { return {results: [], count: 0}; }}});
+  value.setSelection({book: "John", chapter: 9, hasPassageSelection: false, reference: "John 9"});
+
+  await value.router.open("archaeology", {mode: "explore"});
+
+  const passageButton = nodesWithin(value.host.content).find((node) => node.textContent === "Archaeology for this Passage");
+  assert.equal(passageButton.disabled, true);
+  assert.match(renderedText(value.host.content), /Select a Bible passage/);
 });
