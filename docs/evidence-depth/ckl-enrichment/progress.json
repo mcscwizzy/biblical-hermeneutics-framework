@@ -3270,6 +3270,29 @@
         ]
       },
       "checkpoint_commit": "9897673d"
+    },
+    {
+      "batch_id": "batch-171-rise-of-saul-review",
+      "scope": [
+        "rise-of-saul"
+      ],
+      "completed_unit": "Reviewed the event identity, narrative fields, anchors, source ranges, interpretive notes, and related links; withheld edits because the evidence points to unrelated events.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "The event/anchor mismatch was recorded without altering anchors or source identities."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Manifest protected fingerprint check: PASS.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "9897673d"
     }
   ],
   "inventory_count": 687,
@@ -12362,14 +12385,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1f5940e14923f909ecfd77bdf01bb485a1230fd5c08377c86584d69ecf07c62c",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending event identity and source reconciliation.",
+      "limitation": "The title names Saul’s rise to kingship, but its anchors point to the Jordan crossing, the ark captured at Aphek, and David’s transport of the ark; they do not cover Saul’s anointing or accession. The sources are broad book ranges and provide no reviewed record of Saul’s rise. Rewriting would require unsupported reconciliation of event identity and anchors.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -20564,7 +20604,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/rise-of-saul.json",
+  "next_batch": "framework/canonical_library/objects/events/road-to-emmaus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

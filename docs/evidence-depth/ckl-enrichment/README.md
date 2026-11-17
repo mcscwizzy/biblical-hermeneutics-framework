@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **92 objects are enriched**, **87 are unchanged because they
-are already sufficient**, **52 are skipped pending source or identity
-research**, and **456 remain pending review**.
+are already sufficient**, **53 are skipped pending source or identity
+research**, and **455 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -542,6 +542,8 @@ Batch 169 enriched Resurrection by clarifying how Acts reads Psalm 16, how the c
 
 Batch 170 reviewed Return from Exile and left it unchanged. Its account differentiates return movements under Cyrus and Artaxerxes, marks the Cyrus Cylinder as comparative rather than Judean evidence, and explains why return did not end the diaspora or restore an independent monarchy. Validation found zero errors and the same 14 baseline warnings.
 
-The next work unit is `framework/canonical_library/objects/events/rise-of-saul.json`.
+Batch 171 reviewed Rise of Saul and skipped enrichment pending identity and anchor reconciliation. The title identifies Saul’s rise, but the structured references instead concern the Jordan crossing, the ark captured by the Philistines, and David’s transport of the ark. Validation found zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/road-to-emmaus.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
