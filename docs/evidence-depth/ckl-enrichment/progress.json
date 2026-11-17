@@ -1224,6 +1224,25 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "9bdf3283"
+    },
+    {
+      "batch_id": "batch-080-kinship-inheritance-redemption-review",
+      "scope": [
+        "kinship-inheritance-and-redemption"
+      ],
+      "completed_unit": "Reviewed the legal-context summary, claims, rationales, and dispute note; no explanatory changes needed.",
+      "status": "validated_unchanged",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL fields changed.",
+        "The distinctions among land redemption, levirate duty, and Ruth 4’s narrative transaction remain intact."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "NOT RUN: no content changed."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6373,14 +6392,30 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "641bbe2ddcaf314c95ed62d5b3f870e63f6f5e4d2464315761c630c527237845",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "interpretive_notes",
+        "claims and rationales",
+        "sources",
+        "scripture_references",
+        "review metadata"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the object unchanged. Its claims and note clearly explain how Ruth 4 joins property, marriage, and preservation of a deceased relative’s name while keeping the relationship to Leviticus 25 and Deuteronomy 25 disputed and non-identical.",
+      "limitation": "No single reconstructed legal procedure was advanced. Scholarly disagreement about the Ruth 4 transaction remains explicit.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated_unchanged",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression tests not run because no CKL content changed.",
+          "Protected-field fingerprint matches baseline."
+        ]
       }
     },
     {
@@ -16249,7 +16284,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/kinship-inheritance-and-redemption.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/late-bronze-iron-transition-and-highland-settlement.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

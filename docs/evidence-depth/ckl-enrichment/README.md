@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **21 objects are enriched**, **74 are unchanged because they
+At this checkpoint, **21 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **549 remain pending review**.
+research**, and **548 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -351,6 +351,9 @@ Batch 078 reviewed the Judean pilgrimage, taxation, and Roman power record and l
 
 Batch 079 reviewed the Judges household religion and regional cult sites record. Its four passage-level explanations already distinguished Micah’s household shrine, the Danite installation, Shiloh, and the Bull Site comparison with clear archaeological limits. The summary now explains the movement among those settings in plain language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/kinship-inheritance-and-redemption.json`.
+
+Batch 080 reviewed the kinship, inheritance, and redemption record and left it unchanged. Its two claims and interpretive caution already make clear that Ruth 4 joins property, marriage, and family continuity in its own narrated transaction without equating it with one uniform law from Leviticus or Deuteronomy. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. Regression tests were not run because no content changed.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/late-bronze-iron-transition-and-highland-settlement.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
