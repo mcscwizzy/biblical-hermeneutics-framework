@@ -2428,6 +2428,33 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "8373dfe4"
+    },
+    {
+      "batch_id": "batch-138-davidic-covenant-explanation",
+      "scope": [
+        "davidic-covenant"
+      ],
+      "completed_unit": "Reviewed all explanatory fields, Scripture anchors, source identities, related-object edges, interpretive notes, and the absence of atomic claims or typed evidence; enriched six explanatory fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/davidic-covenant.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "No non-biblical historical or ancient Near Eastern comparison was introduced without a recorded source."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.84s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "b676e868"
     }
   ],
   "inventory_count": 687,
@@ -10033,15 +10060,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3255f911aaf3a2399b628871618862f8724243688ad8bf761138b99c8628b4f5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the chapter-specific house/dynasty wordplay, the temple proposal setting, the distinction between the immediate temple-building descendant and the enduring royal promise, and the later biblical reception alongside Psalm 89’s crisis. Removed an unsupported generalized ancient Near Eastern royal comparison by stating what the listed biblical passages do and do not establish.",
+      "limitation": "No non-biblical historical or ancient Near Eastern source is recorded for this event, so no external royal practice comparison was added. Claims and typed evidence are absent; the source anchors and relationships were left intact.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.84s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "b676e868"
     },
     {
       "id": "dedication-of-solomons-temple",
@@ -18865,7 +18921,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/davidic-covenant.json",
+  "next_batch": "framework/canonical_library/objects/events/dedication-of-solomons-temple.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
