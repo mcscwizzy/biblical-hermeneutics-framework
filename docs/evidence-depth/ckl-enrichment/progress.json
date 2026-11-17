@@ -11732,6 +11732,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-527-divine-presence",
+      "scope": [
+        "divine-presence"
+      ],
+      "completed_unit": "Explained the distinct portrayals of divine presence in Exodus 3 and 40, 1 Kings 8, John 1, and Revelation 21.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/divine-presence.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "Kept each presence image distinct rather than asserting one unchanged mechanism."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -35007,14 +35033,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "70598db19e8fd87e6c68f9ae0d4b09b28ce94adc8fad0b7e636f6d06819697ce",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected the burning bush, tabernacle and temple glory, the Word dwelling among people, and Revelation’s vision of God dwelling with humanity.",
+      "limitation": "No comparative ancient Near Eastern evidence is recorded. Generic interpretive notes were reviewed and left unchanged; the explanation stays within the cited passages.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture anchors, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -36639,7 +36688,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/divine-presence.json",
+  "next_batch": "framework/canonical_library/objects/theology/divine-wrath.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
