@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **199 objects are enriched**, **97 are unchanged because they
+At this checkpoint, **200 objects are enriched**, **97 are unchanged because they
 are already sufficient**, **101 are skipped pending source or identity
-research**, and **290 remain pending review**.
+research**, and **289 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -974,3 +974,6 @@ Batch 326 reviewed Matthias. The explanation now follows Acts 1’s stated quali
 
 
 Batch 327 reviewed Miriam. The explanation now connects her leadership in the song after the sea with the later conflict in Numbers 12, preserving both parts of the narrative. The broad Exodus and Numbers sources include those scenes, but the structured anchors omit them and instead point to Moses or Aaron; that alignment remains open. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is mordecai.
+
+
+Batch 328 reviewed Mordecai. The explanation now follows Esther 4 from the decree and public mourning through Mordecai’s exchange with Esther, the communal fast, and her decision to approach the king. It preserves the book’s implicit treatment of providence and distinguishes Ezra, Nehemiah, and Haggai as broader context rather than Mordecai episodes. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is moses.

@@ -7085,6 +7085,32 @@
         ]
       },
       "checkpoint_commit": "9ce5f162"
+    },
+    {
+      "batch_id": "batch-328-mordecai-person",
+      "scope": [
+        "mordecai"
+      ],
+      "completed_unit": "Reviewed Mordecai and enriched the Esther 4 exchange with Esther, retaining the narrative’s uncertainty and separating other restoration-era books.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/mordecai.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -22812,13 +22838,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7e82f562cb2fe10980a101059543a3173964bb43d12ad4700d9b34602d6281e5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Focused Mordecai’s profile on Esther 4: mourning, the exchange with Esther, the threat of approaching the king, communal fasting, and the story’s implicit treatment of providence. Broader restoration books are distinguished from his narrative.",
+      "limitation": "No independent Persian chronology, court reconstruction, or claim about historical practice was added; the explanation follows Esther’s narrative.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -28026,7 +28070,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/mordecai.json",
+  "next_batch": "framework/canonical_library/objects/people/moses.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
