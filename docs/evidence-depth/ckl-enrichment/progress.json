@@ -4274,6 +4274,31 @@
         ]
       },
       "checkpoint_commit": "aef068fb"
+    },
+    {
+      "batch_id": "batch-211-exile-faq",
+      "scope": [
+        "what-is-the-significance-of-the-exile"
+      ],
+      "completed_unit": "Reviewed historical framing, literary settings, reasons and responses, source records, and anchors; enriched eight explanatory fields and distinguished the Babylonian exile from later exile imagery.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-significance-of-the-exile.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No universal claim that every displacement is punishment was introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "6bb28fb1"
     }
   ],
   "inventory_count": 687,
@@ -15416,14 +15441,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0c050678efda58ad12e5ffcbe187566fee00ccf5e82a5226943e89d8c9215ab4",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Connected the fall of Jerusalem, lament, life in Babylon, return hope, and Ezra’s decree using 2 Kings 25, Psalm 137, Jeremiah 29, Daniel 1, Ezekiel 36, and Ezra 1. Distinguished the later Luke 21 setting and removed unsupported generalizations about imperial deportation.",
+      "limitation": "No comparative historical source on imperial deportation practices is recorded; no broad comparison was added. Psalm 137 is typed as reference-work despite naming Scripture, and that source metadata remains unchanged pending review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: 6bb28fb1."
+        ]
       }
     },
     {
@@ -22736,7 +22788,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-the-exile.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-the-holy-spirit.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

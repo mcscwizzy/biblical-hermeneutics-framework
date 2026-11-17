@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **128 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **129 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **407 remain pending review**.
+research**, and **406 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -649,3 +649,5 @@ Batch 208 enriched What is the Second Temple? with passage-based connections fro
 Batch 209 enriched What is the significance of Jerusalem? with the sequence from David’s capture and the temple dedication to pilgrimage, prophetic hope, Jesus’ lament, Pentecost, and Revelation’s renewed city. It distinguishes narrative setting from symbolic vision and flags Psalm 122 source-type metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-passover.json`.
 
 Batch 210 enriched What is the significance of Passover? with the Exodus meal and sign, Deuteronomy’s remembrance, Luke’s covenant meal, and distinctive uses in John, Paul, and 1 Peter. It removes an unsupported ANE comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-exile.json`.
+
+Batch 211 enriched What is the significance of the Exile? with the fall of Jerusalem, lament, life in Babylon, restoration hope, and return decree. It distinguishes Luke 21’s later setting and avoids broad claims about imperial deportation practices. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-holy-spirit.json`.
