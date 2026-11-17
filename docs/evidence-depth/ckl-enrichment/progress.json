@@ -2559,6 +2559,29 @@
         ]
       },
       "checkpoint_commit": "f4643d52"
+    },
+    {
+      "batch_id": "batch-143-fall-of-jerusalem-sufficiency-review",
+      "scope": [
+        "fall-of-jerusalem"
+      ],
+      "completed_unit": "Reviewed explanatory fields, historical and archaeological sourcing, Scripture anchors, relationships, and uncertainty statements; retained the already sufficient explanation unchanged.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL object data changed.",
+        "Existing chronology qualification and explicit limit on BM 21946 preserved."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "025f3f8b"
     }
   ],
   "inventory_count": 687,
@@ -10391,15 +10414,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "219351866214b34fb74fe3167ad4a1e629c3e311e688db6f36d7669bf1d9b375",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged: the explanation distinguishes the 597 BCE capture from Jerusalem’s later destruction, treats 587/586 BCE as a chronology convention, separates the Babylonian Chronicle’s evidence from the later catastrophe, and integrates biblical prose, lament, exile, and return.",
+      "limitation": "Historical chronology is qualified in the existing text; the record already names its primary and comparative sources and clearly limits BM 21946. No additional expansion was needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "025f3f8b"
     },
     {
       "id": "fall-of-samaria",
@@ -19133,7 +19177,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/fall-of-jerusalem.json",
+  "next_batch": "framework/canonical_library/objects/events/fall-of-samaria.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
