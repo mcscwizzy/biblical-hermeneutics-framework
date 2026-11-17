@@ -1121,6 +1121,28 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "55438d1b"
+    },
+    {
+      "batch_id": "batch-075-genesis-joseph-reconciliation-conclusion",
+      "scope": [
+        "genesis-joseph-reconciliation-conclusion-context"
+      ],
+      "completed_unit": "Enriched the summary and narrative context; rewrote 82 duplicated passage-relevance fields for Genesis 45–50.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/genesis-joseph-reconciliation-conclusion-context.json"
+      ],
+      "protected_checks": [
+        "Object/evidence IDs, evidence descriptions, sources, anchors, relationships, certainty, disputes, status, and attestations preserved.",
+        "Textual traditions and later reception remain distinguished; no external conclusion was promoted to direct evidence.",
+        "No claims, source locks, or curated relationships were changed."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6072,14 +6094,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2f4749784d2735d6b0909b34e5068428240cd057293bf7b8e21e2c0a485d9430",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "original_audience",
+        "canonical_context",
+        "interpretive_notes",
+        "claims (none present)",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "sources",
+        "scripture_references",
+        "review and source-lock metadata"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "evidence_items.passage_relevance (82 items)"
+      ],
+      "outcome": "Expanded the Genesis 45–50 summary and historical/literary framing, and replaced 82 duplicated passage-relevance statements with item-specific explanations, including textual-tradition and later-reception distinctions. Original observations, evidence descriptions, sources, Scripture anchors, and relationships remain unchanged.",
+      "limitation": "Egyptian comparisons and archaeological evidence remain period-specific context; no Joseph identification, precise date, named dynasty, or verified famine claim was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression: 17 cultural-context evidence-quality/retrieval tests passed with 4 subtests.",
+          "Protected-field fingerprint matches baseline; no Scripture anchors or relationships changed."
+        ]
       }
     },
     {
@@ -16038,13 +16087,12 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-joseph-descent-testing-context.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/genesis-nations-babel-context.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
-    "unlocked_duplicate_records": 96,
+    "unlocked_duplicate_records": 14,
     "objects_with_unlocked_duplicates": [
-      "genesis-joseph-reconciliation-conclusion-context",
       "abana",
       "archelaus",
       "azekah",

@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **18 objects are enriched**, **73 are unchanged because they
+At this checkpoint, **19 objects are enriched**, **73 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **554 remain pending review**.
+research**, and **553 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -337,6 +337,9 @@ Obadiah was reviewed and left intact. Its summary, historical and regional conte
 
 Batch 074 enriched the Genesis 37–44 Joseph descent and testing record. Its summary and historical/literary framing now explain how Joseph’s rise, the family’s return, and Judah’s changed responsibility connect, while retaining the record’s explicit limits on historical identification and dating. Seventy-eight duplicated evidence relevance fields now explain each observation’s role in its scene. The observation text, sources, Scripture anchors, relationships, and uncertainty classifications remain unchanged. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/genesis-joseph-reconciliation-conclusion-context.json`.
+
+Batch 075 enriched the Genesis 45–50 Joseph reconciliation and conclusion record. Its overview and context now connect the migration, famine administration, tribal blessings, burial, and Joseph’s final oath while making clear that Egyptian comparisons do not identify the characters or date the events. Eighty-two duplicated evidence relevance fields now explain their scene-level significance, including textual totals and later reception. Source identities, evidence observations, anchors, and relationships remain intact. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/genesis-nations-babel-context.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
