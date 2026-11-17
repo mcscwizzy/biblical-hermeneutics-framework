@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **23 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **24 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **546 remain pending review**.
+research**, and **545 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -360,6 +360,9 @@ Batch 081 reviewed the Judges 1–2 and Iron I transition record. Its evidence a
 
 Batch 082 reviewed the Genesis and Mesopotamian creation and flood comparison record. Its claims and evidence already distinguished shared motifs from direct borrowing and the date of surviving tablets from the age of a tradition. The summary now describes those comparisons in plain language without implying that Genesis copied a particular tablet. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/patronage-hospitality-and-debt.json`.
+
+Batch 083 reviewed the patronage, hospitality, and debt record. Its claims, 20 evidence items, and safeguards were already detailed and passage-specific. The summary now explains how the biblical texts distinguish material support, hospitality, work, sharing with the poor, and collection accountability, without treating these as one system. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
