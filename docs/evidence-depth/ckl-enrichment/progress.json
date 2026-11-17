@@ -5212,6 +5212,29 @@
         ]
       },
       "checkpoint_commit": "38124e3b"
+    },
+    {
+      "batch_id": "batch-249-roman-army-institution",
+      "scope": [
+        "roman-army"
+      ],
+      "completed_unit": "Reviewed the Roman Army object’s context, direct references, and source list. Held without content changes because the anchors largely concern Israelite leadership and the Acts passage depicts a tribunal intervention, while no independently reviewed Roman military history source is attached.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object content, IDs, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest integrity check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -18129,14 +18152,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5767e6501bdd921c907ac4a8b84af8c4e76a48296fb0ee0d36ec895efa3e5950",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content change; the object’s direct anchors are predominantly about Israelite judges and monarchy, while the one Acts anchor concerns a council hearing and gives no reviewed history of the Roman army. The only history source is an internal orientation placeholder.",
+      "limitation": "Exodus 18, Deuteronomy 16-18, and 1 Samuel 8-12 describe Israelite leadership and monarchy rather than the Roman army. Acts 23:1-10 depicts a Roman tribune and an intervention in a council dispute, but the object contains no independently reviewed source about Roman military organization or the army’s wider role. Existing generic prose and all references/source identities remain unchanged pending appropriate primary passages and reviewed historical evidence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no CKL content changed.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected metadata, Scripture anchors, source identities, and relationships remain unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24765,7 +24807,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/roman-army.json",
+  "next_batch": "framework/canonical_library/objects/institutions/roman-citizenship.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

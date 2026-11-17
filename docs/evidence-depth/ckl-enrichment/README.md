@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **161 objects are enriched**, **92 are unchanged because they
-are already sufficient**, **65 are skipped pending source or identity
-research**, and **369 remain pending review**.
+are already sufficient**, **66 are skipped pending source or identity
+research**, and **368 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -737,3 +737,6 @@ Batch 247 enriched Prophets within the scope of its direct New Testament anchors
 
 
 Batch 248 reviewed Public Reading of Scripture and made no CKL content change. Its anchors cover Sinai’s assembly, household instruction, Pentecost, and spiritual gifts, but do not directly document public reading; its only historical source is an internal orientation placeholder pending human review. A source-grounded explanation needs direct public-reading passages and reviewed historical evidence. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/roman-army.json`.
+
+
+Batch 249 reviewed Roman Army and made no CKL content change. Most references concern Israelite leadership; Acts 23:1-10 depicts a tribune intervening in a council dispute, while the object lacks an independently reviewed source on Roman military organization. A source-grounded account needs appropriate military passages and reviewed historical evidence. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/roman-citizenship.json`.
