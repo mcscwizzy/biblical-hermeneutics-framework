@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **135 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **136 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **399 remain pending review**.
+research**, and **398 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -665,3 +665,5 @@ Batch 216 enriched What is the Synagogue? by grounding its explanation in Luke 4
 Batch 217 reviewed What Is the Tabernacle? and left it unchanged because its existing explanations already connect the biblical sequence and later reception while qualifying historical reconstruction and ancient comparisons. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-temple.json`.
 
 Batch 218 enriched What is the Temple? with passage-specific explanations from 1 Kings 8, Psalm 84, John 2, Hebrews 9, and Revelation 21. It distinguishes their genres and claims, removes unsupported history and general ANE comparison, and flags existing Psalm 84 source-type metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-typology.json`.
+
+Batch 219 enriched What is Typology? with explicit examples from Romans 5, 1 Corinthians 10, Colossians 2, Hebrews 8–9, and 1 Peter 3. It distinguishes textual signals from later proposed parallels and removes an unsupported generalization about ancient reading practice. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-verses-show-identity-in-christ.json`.

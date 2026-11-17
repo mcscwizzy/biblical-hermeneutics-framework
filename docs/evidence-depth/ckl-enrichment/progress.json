@@ -4471,6 +4471,31 @@
         ]
       },
       "checkpoint_commit": "2b05dcf3"
+    },
+    {
+      "batch_id": "batch-219-typology-faq",
+      "scope": [
+        "what-is-typology"
+      ],
+      "completed_unit": "Reviewed the cited Scripture, reader-facing fields, sources, and related-object links; grounded the account in explicit textual signals and qualified claims about historical practice.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-typology.json"
+      ],
+      "protected_checks": [
+        "Object and source identities, Scripture anchors, links, and review/confidence metadata preserved.",
+        "Removed unsupported generalization about ancient readers; no interpretive parallels added beyond the listed texts."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "b5fa22bc"
     }
   ],
   "inventory_count": 687,
@@ -15988,14 +16013,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5acd4ef4666b265e93385d3b2be5c67ae435614f9f3872b0d306fdc63f30eb26",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "later_christian_reception"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Grounded the definition in explicit New Testament links, distinguishing Paul’s Adam comparison and wilderness examples, Colossians’ shadow language, Hebrews’ sanctuary argument, and 1 Peter’s flood/baptism comparison. Removed the unsupported generalization about what ancient readers expected.",
+      "limitation": "The entry records biblical passages and an internal CKL orientation record, not comparative historical scholarship. It therefore makes no claim about typology across all ancient Jewish or Greco-Roman interpretation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23164,7 +23219,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-typology.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-verses-show-identity-in-christ.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
