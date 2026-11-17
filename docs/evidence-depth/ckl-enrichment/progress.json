@@ -5740,6 +5740,28 @@
         ]
       },
       "checkpoint_commit": "6f299cbb"
+    },
+    {
+      "batch_id": "batch-271-balaam-person",
+      "scope": [
+        "balaam"
+      ],
+      "completed_unit": "Reviewed Balaam and held the entry because its references combine Balaam with Cain, Herod, Judas, and a broader warning-figure theme.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19533,14 +19555,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b413427bc44a9662b985d80b6c4e78db3270aa8d9b956b02983724810e00ff1f",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the Balaam entry combines Numbers 22:21-35 with unrelated references to Cain (Genesis 4), Herod (Matthew 2), Judas (Matthew 27), and Herod Agrippa (Acts 12 in the source list). The record appears to mix a person profile with a generic warning-figure theme.",
+      "limitation": "The intended object scope and passage relationships need reconciliation before Balaam-specific context can be added. The internal historical-orientation record does not resolve the mixed identities.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -25737,7 +25773,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/balaam.json",
+  "next_batch": "framework/canonical_library/objects/people/barnabas.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

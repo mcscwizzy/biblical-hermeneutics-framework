@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **173 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **72 are skipped pending source or identity
-research**, and **347 remain pending review**.
+are already sufficient**, **73 are skipped pending source or identity
+research**, and **346 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -803,3 +803,6 @@ Batch 269 reviewed Aquila and left it unchanged. The existing profile ties each 
 
 
 Batch 270 reviewed Archelaus. Its summary now explains that Matthew 2:22 connects Archelaus’s rule in Judea with Joseph’s fear and the family’s turn toward Galilee, while keeping the person record limited to that narrated occurrence. The source-locked evidence item and all protected metadata remain unchanged. Single-object validation passed with zero errors and zero warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Balaam.
+
+
+Batch 271 reviewed Balaam and left it unchanged. The entry combines Numbers 22:21-35 with references to Cain (Genesis 4), Herod (Matthew 2), and Judas (Matthew 27), alongside a broader warning-figure framing. The title and references need reconciliation before Balaam-specific explanation can be safely written. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Barnabas.
