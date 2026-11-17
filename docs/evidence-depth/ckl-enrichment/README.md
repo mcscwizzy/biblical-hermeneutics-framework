@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **79 objects are enriched**, **82 are unchanged because they
-are already sufficient**, **47 are skipped pending source or identity
-research**, and **479 remain pending review**.
+are already sufficient**, **48 are skipped pending source or identity
+research**, and **478 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -500,6 +500,8 @@ Batch 148 reviewed Golden Calf and skipped enrichment pending direct source veri
 
 Batch 149 enriched Great White Throne Judgment with the scene’s opened books, universal judgment, defeat of death, and literary connection to Daniel 7. It preserves uncertainty about apocalyptic chronology and adds no unsourced ancient Near Eastern comparison. The full CKL retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/hannahs-prayer.json`.
+Batch 150 reviewed Hannah’s Prayer and skipped enrichment pending source review. Its anchors and sources concern Gospel resurrection appearances, and it contains no direct material from 1 Samuel 2. No CKL content changed; the object and full library retain zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/hezekiahs-reforms.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

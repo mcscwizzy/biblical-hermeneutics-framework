@@ -2736,6 +2736,29 @@
         ]
       },
       "checkpoint_commit": "351a54a2"
+    },
+    {
+      "batch_id": "batch-150-hannah-prayer-source-gap-review",
+      "scope": [
+        "hannahs-prayer"
+      ],
+      "completed_unit": "Reviewed narrative fields, Scripture anchors, sources, relationships, interpretive notes, and evidence coverage; skipped enrichment because the recorded material does not address Hannah’s prayer.",
+      "status": "skipped_insufficient_support",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL object data changed.",
+        "Unrelated Scripture anchors, source identities, relationships, and review metadata preserved pending research review."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "87babe37"
     }
   ],
   "inventory_count": 687,
@@ -10874,15 +10897,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "99f788a518b2110681fe650a9caa8ca5036aef84eaf1017760a936e765820d87",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged pending source and anchor review. Existing fields are generic template prose about Gospel events and do not describe Hannah’s prayer.",
+      "limitation": "All Scripture anchors and source identities concern the Gospels and resurrection appearances, not Hannah’s prayer in 1 Samuel 2:1–10. No 1 Samuel source or other direct support is recorded. Verify the intended event scope and add appropriate reviewed sources before rewriting; current anchors and relationships were preserved.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "No content changed; regression tests not run.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "87babe37"
     },
     {
       "id": "hezekiahs-reforms",
@@ -19490,7 +19532,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/hannahs-prayer.json",
+  "next_batch": "framework/canonical_library/objects/events/hezekiahs-reforms.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
