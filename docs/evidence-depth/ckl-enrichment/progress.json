@@ -6094,6 +6094,28 @@
         ]
       },
       "checkpoint_commit": "7729e64a"
+    },
+    {
+      "batch_id": "batch-286-elizabeth-person",
+      "scope": [
+        "elizabeth"
+      ],
+      "completed_unit": "Reviewed Elizabeth and held the entry because its references point to Gospel endings rather than Elizabeth’s narrative in Luke 1.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20417,14 +20439,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b07f10ab9426e83fb55d27e343eaa50e36e93cbe5d7dc33dfdc1fb061ffe8d5a",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the title Elizabeth has no direct occurrence in the cited passages. The anchors are the four Gospel endings (Matthew 28, Mark 16, Luke 24, John 20), while Elizabeth’s narrative appears in Luke 1.",
+      "limitation": "The person-specific reference set needs correction or reconciliation before any account of Elizabeth’s role in the Gospel narrative can be safely added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26351,7 +26387,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/elizabeth.json",
+  "next_batch": "framework/canonical_library/objects/people/epaphroditus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

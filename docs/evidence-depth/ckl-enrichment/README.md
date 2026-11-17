@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **179 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **81 are skipped pending source or identity
-research**, and **332 remain pending review**.
+are already sufficient**, **82 are skipped pending source or identity
+research**, and **331 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -848,3 +848,6 @@ Batch 284 reviewed Elijah and left the record unchanged. Most references do not 
 
 
 Batch 285 reviewed Elisha. The explanation now follows the widow’s debt and the vessels of oil in 2 Kings 4:1-7, showing how the story moves from household crisis to repayment and provision. Luke 4’s reference to Elisha and Naaman is identified as a separate episode. Other listed prophetic references were not used to extend Elisha’s biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Elizabeth.
+
+
+Batch 286 reviewed Elizabeth and left it unchanged. The references point to the four Gospel endings (Matthew 28, Mark 16, Luke 24, John 20), while Elizabeth’s narrative occurs in Luke 1. The person-specific anchor set needs correction or reconciliation before explanatory prose can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Epaphroditus.
