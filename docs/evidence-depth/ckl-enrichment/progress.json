@@ -6923,6 +6923,27 @@
         ]
       },
       "checkpoint_commit": "278f055a"
+    },
+    {
+      "batch_id": "batch-321-mark-the-evangelist-person",
+      "scope": [
+        "mark-the-evangelist"
+      ],
+      "completed_unit": "Reviewed Mark the Evangelist and held the record because its anchors do not identify Mark or support the title’s claims.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object, source, Scripture-reference, relationship, review-status, and claim metadata preserved.",
+        "No CKL content or curated relationships were changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -22415,14 +22436,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f849c629f871ab482c35f736028a44551045276f4f933a669a091206385e4745",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the profile unchanged pending person-specific anchor and identity clarification.",
+      "limitation": "The title names Mark the Evangelist, but the listed passages concern Saul’s conversion, general church networks and ministry, and Paul’s imprisonment. The source list is broad Acts and letters but gives no person-specific locators or source argument identifying Mark as the evangelist. The generic ministry profile cannot be made specific without clarifying whether the entry means John Mark and which claims it intends to support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content, source, reference, or relationship fields were changed."
+        ]
       }
     },
     {
@@ -27755,7 +27789,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/mark-the-evangelist.json",
+  "next_batch": "framework/canonical_library/objects/people/martha.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

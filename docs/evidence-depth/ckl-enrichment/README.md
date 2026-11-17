@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **196 objects are enriched**, **97 are unchanged because they
-are already sufficient**, **97 are skipped pending source or identity
-research**, and **297 remain pending review**.
+are already sufficient**, **98 are skipped pending source or identity
+research**, and **296 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -953,3 +953,6 @@ Batch 319 reviewed Luke the Physician and left the profile unchanged. The anchor
 
 
 Batch 320 reviewed Lydia and left her entry unchanged. It already explains the scene in Acts 16:14–15, 40, distinguishes Lydia’s stated role from disputed claims about wealth or office, and correctly notes that Philippians does not name her. The record also separates Acts’ account from later commemoration. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; no CKL fields changed. The next pending object is mark-the-evangelist.
+
+
+Batch 321 reviewed Mark the Evangelist and left the profile unchanged. Its cited passages concern Saul or church life generally; none identifies Mark. The broad Acts and letter sources do not specify whether the entry means John Mark or which evangelist claims it intends to support. Identity and anchor reconciliation are needed before enrichment. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is martha.
