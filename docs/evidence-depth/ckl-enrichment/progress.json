@@ -351,6 +351,19 @@
         "ckl_objects": "PASS: all four valid with 0 errors and 10 pre-existing section-status warnings each."
       },
       "checkpoint_commit": "a3338d82f1e0fcde8876a1ca107d57e750ee1234"
+    },
+    {
+      "batch_id": "batch-022-samaria-palace-review",
+      "scope": [
+        "samaria-palace"
+      ],
+      "completed_unit": "Final pending archaeology object held for subject and source reconciliation",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: object valid with 0 errors and 10 pre-existing section-status warnings."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -1578,14 +1591,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1b928451c7293f6e891c912927565c8b31a827950c6a8354dda12a60100cd80b",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made. The title identifies Samaria, while the summary and primary source describe Nineveh; other contexts and Scripture anchors are generic or unrelated, with no usable source locators or evidence links. Object identity and provenance need review first.",
+      "limitation": "The record does not establish whether it intends a Samaria palace, a Nineveh palace/library, or another subject; recorded research is insufficient for a factual correction or explanation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13454,6 +13481,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/archaeology/samaria-palace.json",
+  "next_batch": "framework/canonical_library/objects/biblical_theology/exile-and-return-storyline.json",
   "protected_fingerprint_base": "origin/master"
 }
