@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **221 objects are enriched**, **106 are unchanged because they
-are already sufficient**, **135 are skipped pending source or identity
-research**, and **225 remain pending review**.
+are already sufficient**, **136 are skipped pending source or identity
+research**, and **224 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1305,3 +1305,10 @@ anchors and relationships remain unchanged. CKL validation reported 687 valid
 objects, zero errors, and the same 14 baseline warnings; focused
 content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
 pending object is recorded in the manifest.
+
+
+Batch 393 reviewed Ekron and held it for source and anchor review. Its listed
+passages concern Ai, the Valley of Elah, Jerusalem, and Ammon, while its internal
+historical-orientation source is pending human review. Single-object validation
+passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings.
+The next pending object is recorded in the manifest.
