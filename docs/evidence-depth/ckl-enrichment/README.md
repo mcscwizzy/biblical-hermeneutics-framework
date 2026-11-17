@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **200 objects are enriched**, **97 are unchanged because they
+At this checkpoint, **201 objects are enriched**, **97 are unchanged because they
 are already sufficient**, **101 are skipped pending source or identity
-research**, and **289 remain pending review**.
+research**, and **288 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -977,3 +977,6 @@ Batch 327 reviewed Miriam. The explanation now connects her leadership in the so
 
 
 Batch 328 reviewed Mordecai. The explanation now follows Esther 4 from the decree and public mourning through Mordecai’s exchange with Esther, the communal fast, and her decision to approach the king. It preserves the book’s implicit treatment of providence and distinguishes Ezra, Nehemiah, and Haggai as broader context rather than Mordecai episodes. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is moses.
+
+
+Batch 329 reviewed Moses. The profile now follows the narrative from call and deliverance through Sinai and Deuteronomy’s farewell speeches, explaining how covenant instruction follows rescue and is taught to the next generation. Acts 7 and Hebrews 3 are identified as later New Testament readings that develop the biblical portrayal of Moses. The biblical sources do not establish an external Exodus chronology, so none was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is nathan-the-prophet.
