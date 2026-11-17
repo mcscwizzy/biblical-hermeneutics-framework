@@ -236,6 +236,22 @@
         "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
       },
       "checkpoint_commit": "8ce33ef1"
+    },
+    {
+      "batch_id": "batch-014-qumran-samaria-and-sennacherib",
+      "scope": [
+        "qumran-archaeological-site",
+        "qumran-caves",
+        "samaria-ostraca",
+        "sennacherib-prism"
+      ],
+      "completed_unit": "Four archaeology objects reviewed; one sufficient and three held for source research",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all four valid with 0 errors and 10 pre-existing section-status warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -1311,14 +1327,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6a4d03aaf7b4325d228a3b7e10a1220b36ed4c15952ebde707f2e0f5bb33ee37",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the current entry lacks verified archaeological or manuscript evidence tied to its passages.",
+      "limitation": "The entry has no site phases, claims, or evidence items; all source records lack locators and claim support. Its Isaiah 40/Deuteronomy 32/Psalm 119 anchors are not tied to specific Qumran contexts. Occupation chronology and the settlement-scroll relationship need excavation and manuscript scholarship.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1329,14 +1359,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a4911338c6b1c441c7e748a4b09be8ad6b3d9cd9808b8eb326e1e885240d93dd",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the current entry lacks verified archaeological or manuscript evidence tied to its passages.",
+      "limitation": "The caves and manuscript recovery are described generically, with no identified cave, manuscript, date, or textual witness. Sources lack locators, and the biblical anchors do not connect specific scroll evidence to the claims. Source research is required before describing recovery or transmission.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1347,14 +1391,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "6d754734ea8cac65e05f2eb19399cf3738b54e7c358e11d53bf7e843497f4f08",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL enrichment made; the current entry lacks verified archaeological or manuscript evidence tied to its passages.",
+      "limitation": "The summary names Samaria Ostraca but the source records and cross-references point to Lachish and Genesis/Psalm creation material. There are no claims or evidence items, and source entries lack locators or support. The intended ostraca and their historical context must be established first.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1383,14 +1441,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2d94883f482f1dbb0a187ccb1d563badbf53aaa30e4eb28307abb1ee89486a13",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
+      "outcome": "Left intact. The entry explains the prism and relief as distinct Assyrian self-presentations, distinguishes the 701 BCE campaign from their later artifact dates, and qualifies the contrast with Kings and Isaiah. Its claim and evidence records retain appropriate scope and uncertainty.",
       "limitation": "",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13089,6 +13161,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/archaeology/qumran-archaeological-site.json",
+  "next_batch": "framework/canonical_library/objects/archaeology/shiloh-excavations.json",
   "protected_fingerprint_base": "origin/master"
 }

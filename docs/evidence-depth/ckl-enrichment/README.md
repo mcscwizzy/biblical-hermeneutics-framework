@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **1 object is enriched**, **3 are unchanged because they
-are already sufficient**, **27 are skipped pending source research**, and
-**655 remain pending review**.
+are already sufficient**, **30 are skipped pending source research**, and
+**651 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -84,6 +84,13 @@ The Pool of Siloam Discovery entry was also held: its explanatory notes and
 source IDs describe the tunnel inscription, while the title names the pool.
 The pool and inscription need distinct, verified evidence and passage links.
 
+Qumran Archaeological Site, Qumran Caves, and Samaria Ostraca were also held:
+their records lack manuscript/site-specific evidence or contain mismatched
+source and Scripture links. The Sennacherib Prism entry was left unchanged
+because it already explains the annals and Lachish reliefs as separate Assyrian
+royal presentations, distinguishes artifact dates from the 701 BCE campaign,
+and qualifies comparison with Kings and Isaiah.
+
 Beth Shean was skipped because its source entries lack bibliographic details
 and its brief summary does not identify the excavation contexts behind its
 period labels. The Black Obelisk explanation was left unchanged: it already
@@ -141,6 +148,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/qumran-archaeological-site.json`.
+The next work unit is `objects/archaeology/shiloh-excavations.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
