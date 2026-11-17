@@ -7461,6 +7461,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "cd437420"
+    },
+    {
+      "batch_id": "batch-344-priscilla-person",
+      "scope": [
+        "priscilla"
+      ],
+      "completed_unit": "Reviewed Priscilla’s profile and left it unchanged because it already gives a detailed, source-aware explanation with appropriate uncertainty.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -23859,14 +23881,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "baaccc0835fbe07e1d099647a031ad7fe0e7261633501e0a7f0be2881cd4ba22",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the populated context, passage anchors, source records, and interpretive notes. The profile follows Acts and the letters with specific scenes, distinguishes explicit text from reconstruction, preserves uncertainty about ethnicity and formal office, and explains why name order is limited evidence. No rewrite was needed.",
+      "limitation": "Interpretive debates are already bounded and linked to recorded academic sources; changing the prose would risk duplicating or flattening the existing nuance.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -28785,7 +28825,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/priscilla.json",
+  "next_batch": "framework/canonical_library/objects/people/rahab.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
