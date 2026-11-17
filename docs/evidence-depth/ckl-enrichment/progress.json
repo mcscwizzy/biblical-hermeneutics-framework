@@ -422,6 +422,21 @@
         "ckl_objects": "PASS: 1 valid, 0 errors, 0 warnings."
       },
       "checkpoint_commit": "356ecba9f2efc8ebad6f163fdb47136cd51a93f4"
+    },
+    {
+      "batch_id": "batch-027-1-kings-claim-rationales",
+      "scope": [
+        "1-kings"
+      ],
+      "completed_unit": "Reviewed the full 1 Kings object, six claims, six interpretive notes, and source support; expanded four terse claim rationales",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/1-kings.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: object 1 valid, 0 errors, 0 warnings; full library 687 valid, 0 errors, same 14 pre-existing warnings."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -2190,14 +2205,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "883ffc2f56264c1fa845c6280014587a8f665f304540221565a4b64964bfe8c8",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "claims[first-kings-solomon-discernment].rationale",
+        "claims[first-kings-temple-prayer-warning].rationale",
+        "claims[first-kings-carmel-confession].rationale",
+        "claims[first-kings-naboth-condemnation].rationale"
+      ],
+      "outcome": "Clarified four rationales by showing how Solomon’s judgment illustrates wisdom, how the temple prayer and warning qualify security, how Carmel moves from public allegiance to the end of drought, and how the Naboth episode links royal power to murder, justice, and inherited land. All claims, Scripture anchors, source identities, interpretive notes, and dispute qualifications remain unchanged.",
+      "limitation": "No new historical or archaeological claims were added; the explanations follow the cited biblical narratives.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Protected-field review: only four claim rationale fields changed; claim wording, IDs, Scripture anchors, sources, certainty/dispute classifications, and relationships unchanged."
+        ]
       }
     },
     {
@@ -13626,6 +13664,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/1-kings.json",
+  "next_batch": "framework/canonical_library/objects/books/1-peter.json",
   "protected_fingerprint_base": "origin/master"
 }
