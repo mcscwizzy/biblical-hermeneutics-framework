@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **180 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **84 are skipped pending source or identity
-research**, and **328 remain pending review**.
+are already sufficient**, **85 are skipped pending source or identity
+research**, and **327 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -860,3 +860,6 @@ Batch 288 reviewed Esther the Queen. The explanation now follows Esther 4’s ac
 
 
 Batch 289 reviewed Eunice and left it unchanged. The cited references—Acts 9, Romans 16, 1 Corinthians 3, and Philippians 1—do not name her; the direct mentions of Eunice and Timothy’s family in Acts 16 and 2 Timothy are absent. The person-specific passage set needs reconciliation before the entry can safely explain Eunice’s role. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Eve.
+
+
+Batch 290 reviewed Eve and left the entry unchanged. Its primary anchor is Genesis 11:1-9, the Babel narrative, while Eve’s direct story is in Genesis 2-4. Romans 5 and 1 Corinthians 15 focus on Adam and the new humanity, and Hebrews 11 does not name Eve. The primary passage and reception scope need reconciliation before enrichment. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Ezekiel the Prophet.
