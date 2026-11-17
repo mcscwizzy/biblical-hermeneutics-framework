@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **51 objects are enriched**, **76 are unchanged because they
+At this checkpoint, **52 objects are enriched**, **76 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **517 remain pending review**.
+research**, and **516 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -424,6 +424,8 @@ Batch 110 reviewed the tabernacle presence, access, and mobility record: all fou
 
 Batch 111 reviewed the Thessalonian civic and funerary context record: all 15 claims, 16 typed evidence items, two interpretive notes, contextual fields, anchors, and source identities. The summary now connects the city’s route and free-city setting to the community described in Acts and the letters, while distinguishing later burial evidence and retaining disputed political readings as proposals. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/doctrine/creation-doctrine-framework.json`.
+Batch 112 reviewed the creation-doctrine framework’s summary, canonical contexts, Scripture references, source identities, two interpretive notes, and its absence of atomic claims and typed evidence. The summary now traces creation from Genesis and the Psalms through the New Testament’s Christological language to Revelation’s renewal, without adding unsupported historical comparisons. Only the summary changed. The object had nine pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/abrahamic-covenant.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
