@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **213 objects are enriched**, **99 are unchanged because they
-are already sufficient**, **125 are skipped pending source or identity
-research**, and **270 remain pending review**.
+are already sufficient**, **126 are skipped pending source or identity
+research**, and **249 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1094,3 +1094,12 @@ Batch 366 reviewed Abana. Its summary now explains why Naaman compares Abana and
 
 
 Batch 367 reviewed Ai. The profile now explains the ambush and capture in Joshua 8 and limits the location claim to the narrative’s placement near Bethel. It makes no archaeological identification. The anchors to 1 Samuel 17, 2 Kings 25, and Jeremiah 49 remain unchanged and are documented as mismatches requiring curation review. Ancient Near Eastern applicability was disabled because no comparative source is recorded. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 368 reviewed Amalek and held it for source and anchor review. Its listed
+Scripture passages do not identify Amalek, its generic interpretive notes have
+no linked sources, and its internal historical-orientation source is marked
+pending human review. No contextual claims or corrected relationships were
+invented. The object passed single-object validation with 1 valid object, 0
+errors, and 8 pre-existing section-status warnings. The next pending object is
+Ammon.
