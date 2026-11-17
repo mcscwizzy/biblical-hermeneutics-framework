@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **10 objects are enriched**, **52 are unchanged because they
+At this checkpoint, **11 objects are enriched**, **52 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **583 remain pending review**.
+research**, and **582 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -220,6 +220,8 @@ Batch 056 reviewed Micah. Its 34 claims and 52 notes already explain the Assyria
 Batch 057 reviewed Nahum. Its 27 claims and 46 notes already explain the Assyrian setting, violent siege poetry, refuge language, and contested gendered imagery without flattening ethical tension. The one typed evidence record labels an alternative textual reconstruction as low confidence and explains why it does not establish geography or composition date. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 Batch 058 reviewed Nehemiah. Its summary and contexts already connect wall rebuilding with the later Torah assembly, economic restitution, covenant commitments, and the unresolved relapse in chapter 13. Eight claims and ten notes explain the Persian setting, disputed wall reconstruction, internal debt crisis, and forceful final reforms. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 059 enriched Numbers. The revised summary uses the two censuses to make the generational transition clear, and six claim rationales explain how Kadesh redirects the story and how the closing instructions prepare a new generation for inheritance. The Deir Alla comparison now states what a shared name can show without treating the inscription as verification of Numbers' narrative. No new historical claims were added. Single-object and full-library validation passed with zero errors; the same 14 baseline warnings remain.
 
 ## Reader reachability
 

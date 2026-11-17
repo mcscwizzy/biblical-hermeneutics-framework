@@ -870,6 +870,21 @@
         "ckl_objects": "PASS: Nehemiah valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-059-numbers-explanation-enrichment",
+      "scope": [
+        "numbers"
+      ],
+      "completed_unit": "Clarified summary and six claim rationales using existing biblical narrative and sources",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/numbers.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: Numbers valid with 0 errors and 0 warnings; full CKL 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "No retrieval test run because claim rationales are not indexed or rendered; the summary remains a schema-valid reader-facing field."
+      }
     }
   ],
   "inventory_count": 687,
@@ -4410,14 +4425,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1feba8363ec5aab56738e37c508c2b411344992d4ef2e20266f6fda9786db583",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "claims[numbers-literary-journey].rationale",
+        "claims[numbers-two-generations].rationale",
+        "claims[numbers-kadesh-judgment].rationale",
+        "claims[numbers-balaam-blessing].rationale",
+        "claims[numbers-inheritance-preparation].rationale",
+        "claims[numbers-deir-alla-limits].rationale"
+      ],
+      "outcome": "Reframed the summary around the generational transition and expanded six claim rationales to explain the journey structure, Kadesh turning point, blessing episode, inheritance preparation, and limits of the Deir Alla comparison.",
+      "limitation": "The existing caveats about route, census totals, composition, and the inscription were retained; no new historical or archaeological claims were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Protected-field review: only summary and six claim rationale fields changed; claims, identifiers, sources, Scripture anchors, certainty/dispute classifications, notes, and relationships remain unchanged."
+        ]
       }
     },
     {
@@ -14898,6 +14936,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/numbers.json",
+  "next_batch": "framework/canonical_library/objects/books/obadiah.json",
   "protected_fingerprint_base": "origin/master"
 }
