@@ -4324,6 +4324,31 @@
         ]
       },
       "checkpoint_commit": "62cf2a4a"
+    },
+    {
+      "batch_id": "batch-213-resurrection-significance-faq",
+      "scope": [
+        "what-is-the-significance-of-the-resurrection"
+      ],
+      "completed_unit": "Reviewed the Gospel and epistolary arguments, historical generalizations, notes, source types, and anchors; enriched eight fields and distinguished narrative from theological argument.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-significance-of-the-resurrection.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsupported claims about ancient beliefs or historical findings added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "b62fa65d"
     }
   ],
   "inventory_count": 687,
@@ -15556,14 +15581,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a97441bab3af27ca2d54f2cdc0baa78448657caf515ca975f200f604d4b509e5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Explained how the Gospel narratives, Acts 2, 1 Corinthians 15, Romans 6, and 1 Peter 1 connect Jesus’ resurrection with vindication, future resurrection, changed conduct, and hope. Removed unsupported generalizations about ancient views of death.",
+      "limitation": "Psalm 16 is typed as reference-work despite naming Scripture; source identity and metadata remain unchanged pending review. No comparative historical source on ancient views of death is recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: b62fa65d."
+        ]
       }
     },
     {
@@ -22840,7 +22892,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-the-resurrection.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-the-sabbath.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
