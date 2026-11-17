@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **160 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **161 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **64 are skipped pending source or identity
-research**, and **371 remain pending review**.
+research**, and **370 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -731,3 +731,6 @@ Batch 245 enriched Priesthood by distinguishing Torah instructions for Aaronic s
 
 
 Batch 246 enriched Priestly Service by separating festival legislation in Exodus and Leviticus, Solomon’s temple dedication, and Hebrews’ later argument about sacrifice. The explanation stays within those texts and does not claim an uninterrupted historical development or reconstruct Second Temple practice without supporting sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/prophets.json`.
+
+
+Batch 247 enriched Prophets within the scope of its direct New Testament anchors: Acts 2 presents Peter interpreting Pentecost through Joel, and 1 Corinthians 12 places prophets among gifts serving one body. The explanation distinguishes those settings and records the gap: the object lacks a specific Old Testament prophetic passage and an independently reviewed history source. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/public-reading-of-scripture.json`.
