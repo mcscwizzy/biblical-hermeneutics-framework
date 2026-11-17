@@ -252,6 +252,19 @@
         "ckl_objects": "PASS: all four valid with 0 errors and 10 pre-existing section-status warnings each."
       },
       "checkpoint_commit": "62facb5e"
+    },
+    {
+      "batch_id": "batch-015-shiloh-review",
+      "scope": [
+        "shiloh-excavations"
+      ],
+      "completed_unit": "Explanatory-field audit; held for site-specific evidence",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -1473,14 +1486,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "11ad37ea08865a18ab9d481948bcf9bee03768f2e112e5a15304f298c8652136",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the summary, sources, and Scripture references are generic and do not describe Shiloh excavations.",
+      "limitation": "The context text and sources refer to Jerusalem/City of David, while Scripture references are Psalm 19 and Romans 1. No Shiloh excavation phases, biblical anchor passages, claims, or evidence items are recorded. The current object needs research and correction before it can explain Shiloh’s archaeological setting.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13161,6 +13188,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/archaeology/shiloh-excavations.json",
+  "next_batch": "framework/canonical_library/objects/archaeology/siloam-inscription.json",
   "protected_fingerprint_base": "origin/master"
 }
