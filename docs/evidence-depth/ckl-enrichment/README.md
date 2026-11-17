@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **213 objects are enriched**, **99 are unchanged because they
-are already sufficient**, **126 are skipped pending source or identity
-research**, and **249 remain pending review**.
+are already sufficient**, **127 are skipped pending source or identity
+research**, and **248 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1103,3 +1103,11 @@ pending human review. No contextual claims or corrected relationships were
 invented. The object passed single-object validation with 1 valid object, 0
 errors, and 8 pre-existing section-status warnings. The next pending object is
 Ammon.
+
+
+Batch 369 reviewed Ammon and held it for source and anchor review. Its listed
+passages do not identify Ammon or support the generic imperial, oppression, and
+exile claims, and its internal historical-orientation source is pending human
+review. The record passed single-object validation with 1 valid object, 0
+errors, and 8 pre-existing section-status warnings. The next pending object is
+Arabah.
