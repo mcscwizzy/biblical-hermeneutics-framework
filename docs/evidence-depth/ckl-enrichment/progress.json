@@ -7803,6 +7803,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "1a233e32"
+    },
+    {
+      "batch_id": "batch-359-thomas-person",
+      "scope": [
+        "thomas"
+      ],
+      "completed_unit": "Reviewed Thomas and held the record because its John anchor stops immediately before his scene.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24781,14 +24803,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c77a6de441b4d4598593e538cba29e0fbea71e6db78f55068d0379c7e2570661",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Thomas’s profile, Scripture references, and Gospel source coverage. John 20:17–23 ends before the scene in which Thomas appears; the other anchors are resurrection and ascension scenes that do not identify him. Although the source list includes John 1–21 broadly, the structured anchors do not reach Thomas’s confession in John 20:24–29. Left the record unchanged pending anchor review.",
+      "limitation": "The current reference to John 20:17–23 does not include Thomas’s appearance in the following verses. No new passage relationship was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29437,7 +29477,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/thomas.json",
+  "next_batch": "framework/canonical_library/objects/people/timothy.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
