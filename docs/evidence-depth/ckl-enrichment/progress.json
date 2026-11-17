@@ -7230,6 +7230,28 @@
         ]
       },
       "checkpoint_commit": "d31415b5"
+    },
+    {
+      "batch_id": "batch-334-onesimus-person",
+      "scope": [
+        "onesimus"
+      ],
+      "completed_unit": "Reviewed Onesimus and held the record unchanged because its Scripture anchors and sources do not identify him or include Philemon.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -23233,14 +23255,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2d6aa8788d4aa13b4f06f4c3716ad2bd9559a4a3457b53f08313e0608f18e390",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the Onesimus profile, source entries, Scripture anchors, related themes, and interpretive notes. The text concerns Onesimus, but its anchors point to Saul’s conversion and ministry, Paul’s network in Romans 16, general church/ministry passages, and Philippians. None identifies the Onesimus described in Philemon. Left the record unchanged pending source and anchor review.",
+      "limitation": "Philemon is not among the structured Scripture anchors or recorded source entries. Adding its account or replacing unrelated anchors requires review of source and Scripture relationships, which are protected.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -28339,7 +28379,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/onesimus.json",
+  "next_batch": "framework/canonical_library/objects/people/paul.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

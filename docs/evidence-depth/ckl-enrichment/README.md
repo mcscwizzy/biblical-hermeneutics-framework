@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **203 objects are enriched**, **97 are unchanged because they
-are already sufficient**, **103 are skipped pending source or identity
-research**, and **284 remain pending review**.
+are already sufficient**, **104 are skipped pending source or identity
+research**, and **283 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -992,3 +992,6 @@ Batch 332 reviewed Nicodemus and left the record unchanged. The profile concerns
 
 
 Batch 333 reviewed Noah. The explanation now follows Genesis from violence and the flood through covenant and Babel, while noting that the Genesis narrative does not claim human failure has disappeared. Hebrews 11:7 is described as a later biblical remembrance of Noah’s trust. The sources recorded here do not include an inspected external flood account, archaeological study, or scholarly comparison, so no historical identification or direct-borrowing claim was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is onesimus.
+
+
+Batch 334 reviewed Onesimus and left the record unchanged. The profile’s anchors point to Saul’s conversion, Paul’s broader network, and general ministry passages, but do not identify Onesimus or include Philemon. Philemon was not added to the structured source relationships because those require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is paul.
