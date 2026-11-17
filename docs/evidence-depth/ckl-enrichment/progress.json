@@ -1203,6 +1203,27 @@
         "regression": "NOT RUN: no content changed."
       },
       "checkpoint_commit": "908f1b27"
+    },
+    {
+      "batch_id": "batch-079-judges-household-religion-summary",
+      "scope": [
+        "judges-household-religion-and-regional-cult-sites"
+      ],
+      "completed_unit": "Reviewed the contextual fields and four typed evidence records; clarified the reader-facing summary while retaining sufficient evidence explanations.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/judges-household-religion-and-regional-cult-sites.json"
+      ],
+      "protected_checks": [
+        "Evidence descriptions, sources, anchors, relationships, uncertainty statuses, and review metadata unchanged.",
+        "No archaeological installation or site newly identified with a biblical location."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6315,14 +6336,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "19e2a93bb0381c17dd0555054abe440d8823b9579730b516713e4e409cc0f193",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "interpretive_notes",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "sources",
+        "scripture_references",
+        "review and source-lock metadata"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Replaced the internal “passage-linked evidence cluster” description with an accessible summary of the distinct household, Danite, and Shiloh settings and the limits of archaeological comparison. Existing passage-level explanations already clarify those limits and were retained.",
+      "limitation": "Iron I archaeological comparisons remain comparisons only; no excavated site is identified with the biblical shrine, installation, tent, or festival.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression: 17 cultural-context evidence-quality/retrieval tests passed with 4 subtests.",
+          "Protected-field fingerprint matches baseline; no evidence, source, anchor, or relationship changed."
+        ]
       }
     },
     {
@@ -16209,7 +16249,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/judges-household-religion-and-regional-cult-sites.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/kinship-inheritance-and-redemption.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

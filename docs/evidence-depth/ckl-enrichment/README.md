@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **20 objects are enriched**, **74 are unchanged because they
+At this checkpoint, **21 objects are enriched**, **74 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **550 remain pending review**.
+research**, and **549 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -348,6 +348,9 @@ Batch 077 reviewed the honor-and-shame background object and left it unchanged. 
 
 Batch 078 reviewed the Judean pilgrimage, taxation, and Roman power record and left it unchanged. Its claims and evidence distinguish temple payments, tolls, imperial tribute, Roman jurisdiction, crucifixion, and burial, and carefully bound what the stepped street and Yehohanan remains can establish. The cited excavation report, Josephus passage, and museum object record were inspected. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. Regression tests were not run because no content changed.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/judges-household-religion-and-regional-cult-sites.json`.
+
+Batch 079 reviewed the Judges household religion and regional cult sites record. Its four passage-level explanations already distinguished Micah’s household shrine, the Danite installation, Shiloh, and the Bull Site comparison with clear archaeological limits. The summary now explains the movement among those settings in plain language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/kinship-inheritance-and-redemption.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
