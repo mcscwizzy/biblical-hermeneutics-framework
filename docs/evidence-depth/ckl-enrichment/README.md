@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **124 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **125 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **411 remain pending review**.
+research**, and **410 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -641,3 +641,5 @@ Batch 204 enriched What is the Messiah? with connections among the Davidic promi
 Batch 205 enriched What is the New Covenant? by distinguishing Jeremiah’s promise to Israel and Judah, Ezekiel’s renewal imagery, Jesus’ covenant words, and the different treatments in 2 Corinthians and Hebrews. It removes an unsupported treaty comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-role-of-priests.json`.
 
 Batch 206 enriched What is the role of priests? with examples of sanctuary service, teaching, blessing, prophetic critique, and Hebrews’ account of Jesus as high priest. It removes unsupported comparative and later-history claims. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-roman-empire-in-the-bible.json`.
+
+Batch 207 enriched What is the Roman Empire in the Bible? by distinguishing the narrative settings in Luke, John, and Acts; instruction in Romans and 1 Peter; and symbolic imagery in Revelation. It removes unsupported generalizations about roads, citizenship, imperial cult, and empire-wide practice. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-second-temple.json`.

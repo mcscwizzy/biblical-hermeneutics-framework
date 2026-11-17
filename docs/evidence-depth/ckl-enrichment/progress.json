@@ -4174,6 +4174,31 @@
         ]
       },
       "checkpoint_commit": "fcbd628c"
+    },
+    {
+      "batch_id": "batch-207-roman-empire-faq",
+      "scope": [
+        "what-is-the-roman-empire-in-the-bible"
+      ],
+      "completed_unit": "Reviewed historical generalizations, passage-specific depictions, genre, sources, and anchors; enriched eight explanatory fields and removed unsupported empire-wide claims.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-roman-empire-in-the-bible.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsupported generalizations about Roman administration or imperial cult retained."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "060bc4e2"
     }
   ],
   "inventory_count": 687,
@@ -15136,14 +15161,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f0d1d0e731e239900f4ad60d4ad8d0ced2be7cc3ea431405621e53d0aa746c1f",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Explained the different portrayals in Luke 2, John 19, Acts 17, Romans 13, 1 Peter 2, and Revelation 13 and 17. Distinguished narrative settings, practical instruction, and apocalyptic symbols; removed unsupported claims about imperial roads, citizenship, cult, and broad political practices.",
+      "limitation": "No historical or comparative academic source is recorded for broad claims about Roman administration, roads, citizenship, patronage, or imperial cult; such claims were not retained.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: 060bc4e2."
+        ]
       }
     },
     {
@@ -22528,7 +22580,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-roman-empire-in-the-bible.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-second-temple.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
