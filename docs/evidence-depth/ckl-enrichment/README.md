@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **87 objects are enriched**, **83 are unchanged because they
+At this checkpoint, **88 objects are enriched**, **83 are unchanged because they
 are already sufficient**, **48 are skipped pending source or identity
-research**, and **469 remain pending review**.
+research**, and **468 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -520,6 +520,8 @@ Batch 158 corrected Marriage Supper of the Lamb, explaining Revelation 19’s we
 
 Batch 159 corrected Moses’ Birth with the specific rescue narrative and its setting inside Pharaoh’s campaign against Hebrew children. It removes generic cultural claims that lack sources. The Exodus source range includes the scene, but the structured anchors point to other passages and remain flagged. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/new-jerusalem.json`.
+Batch 160 enriched New Jerusalem, explaining the vision’s dwelling of God, end of death and grief, river and tree of life, and healing of the nations. It connects Ezekiel’s measured city without treating Revelation as an archaeological plan and removes an unsupported general ANE comparison. The library retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/passover.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
