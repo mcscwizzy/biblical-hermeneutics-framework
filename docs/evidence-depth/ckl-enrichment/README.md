@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **165 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **166 objects are enriched**, **92 are unchanged because they
 are already sufficient**, **67 are skipped pending source or identity
 research**, and **367 remain pending review**.
 
@@ -755,3 +755,6 @@ Batch 253 reviewed Sadducees. The existing summary and context already handled s
 
 
 Batch 254 reviewed Sanhedrin. The existing historical and interpretive explanations already qualified the evidence and resisted treating all council scenes as one fixed body. I changed only the canonical-role field, replacing internal cluster language with a reader-facing summary of the varied Gospel and Acts hearings. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/scribes.json`.
+
+
+Batch 255 reviewed Scribes. Its existing explanation already distinguishes administrative, priestly, learned, and legal roles; I changed only the canonical-role field to replace internal cluster wording with passage-specific examples from Kings, Ezra, Nehemiah, and the Gospels. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/second-temple-administration.json`.

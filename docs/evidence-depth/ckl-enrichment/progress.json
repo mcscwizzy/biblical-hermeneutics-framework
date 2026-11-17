@@ -5358,6 +5358,31 @@
         ]
       },
       "checkpoint_commit": "45b58aaf"
+    },
+    {
+      "batch_id": "batch-255-scribes-institution",
+      "scope": [
+        "scribes"
+      ],
+      "completed_unit": "Reviewed the substantive scribes context and retained it. Replaced only the canonical-role field with a passage-grounded description of the royal official in Kings, Ezra’s scribal commission, public reading in Nehemiah, and Gospel legal debates.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/scribes.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -18532,14 +18557,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5c15a0656c95faf6e34caa944f8f5816eef2b9ab6c901e10e2ceafe1aa9ab0be",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "original_audience",
+        "historical_setting",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "canonical_role"
+      ],
+      "outcome": "The existing Scribes explanation was already substantial and distinguishes administrative, priestly, learned, and legal roles across periods. Replaced only the canonical-role field, removing internal cluster language and grounding the synthesis in Kings, Ezra, Nehemiah, and the Gospels.",
+      "limitation": "The Scripture source list contains unrelated Exodus, Deuteronomy, Samuel, and Acts headings that do not match most direct anchors; source identities remain unchanged. The listed Sirach commentary was not consulted for this edit, so no new claim about Ben Sira was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -25060,7 +25109,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/scribes.json",
+  "next_batch": "framework/canonical_library/objects/institutions/second-temple-administration.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
