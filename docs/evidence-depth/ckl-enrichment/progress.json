@@ -5039,6 +5039,31 @@
         ]
       },
       "checkpoint_commit": "39e763df"
+    },
+    {
+      "batch_id": "batch-242-lords-supper-institution",
+      "scope": [
+        "lords-supper"
+      ],
+      "completed_unit": "Reviewed the substantial existing summary and contextual fields; enriched the weak literary, covenantal, canonical-role, and interpretive-note explanations from the Synoptic meal narratives and 1 Corinthians 10–11. Preserved the stronger historical context and all source/Scripture metadata.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/lords-supper.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -17634,14 +17659,43 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f6d97a39747d0b82773b68458a8526fdb7d43416fb9180a92eb810d565cc2e92",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Strengthened the weak literary and canonical explanations by distinguishing the Synoptic meal narratives from Paul’s correction of Corinthian practice. Connected covenant language, remembrance, proclamation, participation, and responsibility to the specific passages without treating the accounts as identical.",
+      "limitation": "The object’s direct Scripture anchors support the narrative and communal observations. It also retains context claims about Roman household hierarchy and the Synoptic/John chronology whose comparative support is associated with source-linked records still in review; those claims and source identities were preserved rather than independently upgraded. Existing Scripture source titles include unrelated entries and remain untouched for metadata review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24396,7 +24450,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/lords-supper.json",
+  "next_batch": "framework/canonical_library/objects/institutions/patronage.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
