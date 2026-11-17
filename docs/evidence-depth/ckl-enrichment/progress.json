@@ -4571,6 +4571,31 @@
         ]
       },
       "checkpoint_commit": "15cb9971"
+    },
+    {
+      "batch_id": "batch-223-moses-faq",
+      "scope": [
+        "who-was-moses"
+      ],
+      "completed_unit": "Reviewed the account, canonical references, sources, and related entries; clarified Moses’ role in deliverance and covenant instruction and distinguished later New Testament references.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/who-was-moses.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchors, source identities, related links, review/confidence metadata preserved.",
+        "No broad ancient comparative claims added without supporting sources."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "6f881f50"
     }
   ],
   "inventory_count": 687,
@@ -16281,14 +16306,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "80cd84a957680769b56c56c624795a518b954a320ee0030a90f889fea34653f5",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "new_testament_connections"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Explained the movement from Moses’ call and Israel’s deliverance to Sinai and Deuteronomy’s closing account, then distinguished how Matthew 17 and Hebrews 3 recall him. Removed unsupported generalized comparison about royal rescue and lawgiving.",
+      "limitation": "The listed sources are biblical texts and an internal CKL orientation record, not independent historical research. The entry does not date Moses or reconstruct the exodus historically.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23385,7 +23440,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/who-was-moses.json",
+  "next_batch": "framework/canonical_library/objects/faq/who-was-paul.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
