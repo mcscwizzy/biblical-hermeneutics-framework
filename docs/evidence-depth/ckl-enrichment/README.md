@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **181 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **182 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **88 are skipped pending source or identity
-research**, and **322 remain pending review**.
+research**, and **321 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -878,3 +878,6 @@ Batch 294 reviewed Hannah and left her explanation unchanged. It already connect
 
 
 Batch 295 reviewed Herod the Great. The entry now focuses on Matthew 2’s narrated conflict around the newborn king: Herod’s fear and deception, the threat to children, and Joseph’s flight. It distinguishes this episode from Cain, Balaam, Judas, and the later Herod in Acts 12 rather than treating them as Herod’s biography. No independent historical reconstruction or claim about the episode’s scale was added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Isaac.
+
+
+Batch 296 reviewed Isaac. The summary and narrative fields now explain how Genesis moves from Abraham’s promised son through the interrupted offering, marriage, well disputes, and the repeated promise in Genesis 26 before the story turns to Jacob. Generic household boilerplate was replaced with a bounded description of the family world depicted in Genesis, not a claim about every ancient household. The existing Scripture reference list is unchanged; it emphasizes Abraham’s call and covenant, so Isaac-specific anchors remain a source-alignment follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is abraham.

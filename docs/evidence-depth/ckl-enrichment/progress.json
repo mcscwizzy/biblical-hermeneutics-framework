@@ -6322,6 +6322,32 @@
         ]
       },
       "checkpoint_commit": "379ec6f5"
+    },
+    {
+      "batch_id": "batch-296-isaac-person",
+      "scope": [
+        "isaac"
+      ],
+      "completed_unit": "Reviewed Isaac’s person record and enriched its narrative fields using the recorded Genesis source, while leaving anchors and source metadata unchanged.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/isaac.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -20984,13 +21010,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "718515f907fe14cd15f67f9e9ddb0c391535583700ad586efeaedc787b22b898",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Replaced generic person boilerplate with a Scripture-grounded account of Isaac’s place between Abraham and Jacob, including the interrupted offering, marriage, well disputes, and repeated promise in Genesis 26. The narrative is framed as Genesis presents it, without adding an independent historical reconstruction.",
+      "limitation": "The structured Scripture references emphasize Abraham’s call and covenant rather than Isaac’s own episodes; the existing broad Genesis 12–50 source supports the narrative explanation, but person-specific anchors remain a source-alignment follow-up.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -26738,7 +26780,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/isaac.json",
+  "next_batch": "framework/canonical_library/objects/people/abraham.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
