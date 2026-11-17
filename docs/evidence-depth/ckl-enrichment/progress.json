@@ -563,6 +563,19 @@
         "ckl_objects": "PASS: four objects valid with 0 errors and 0 warnings each; full library 687 valid, 0 errors, same 14 baseline warnings.",
         "regression": "No retrieval tests run because only claim rationale fields changed; these are not used by the retrieval index or standard reader modal."
       }
+    },
+    {
+      "batch_id": "batch-036-habakkuk-review",
+      "scope": [
+        "habakkuk"
+      ],
+      "completed_unit": "Habakkuk reviewed and found already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Habakkuk valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3327,14 +3340,26 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "39ec73ec872de20aa49745bf363656de87203eb2c31d530e52208cc5b64d8cc9",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary, literary and historical context, 28 claims, and 46 interpretive notes explain the Chaldean setting, complaints and woes, disputed Hebrew terms, textual witnesses, later reception, and limits of modern application with unusually clear source and uncertainty distinctions.",
+      "limitation": "The object is already explanatory and carefully qualified; no unsupported extension was needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14229,6 +14254,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/genesis-1.json",
+  "next_batch": "framework/canonical_library/objects/books/haggai.json",
   "protected_fingerprint_base": "origin/master"
 }
