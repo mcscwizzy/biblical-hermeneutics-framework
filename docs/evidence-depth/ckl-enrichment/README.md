@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **72 objects are enriched**, **80 are unchanged because they
+At this checkpoint, **73 objects are enriched**, **80 are unchanged because they
 are already sufficient**, **45 are skipped pending source or identity
-research**, and **490 remain pending review**.
+research**, and **489 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -478,6 +478,8 @@ Batch 137 corrected generic event language in the David Anointed record. The rev
 
 Batch 138 enriched the Davidic covenant record. Its explanation now follows the chapter’s house-and-dynasty wordplay, distinguishes the temple-building descendant from the enduring royal promise, and traces later hope alongside Psalm 89’s crisis. A generalized ancient Near Eastern comparison was removed because the recorded sources do not support it. All source identities, Scripture anchors, and relationships remain unchanged; structural validation passed with the same 14 baseline warnings, and the focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/dedication-of-solomons-temple.json`.
+Batch 139 enriched the Solomon temple dedication record. The explanation now follows the ark-and-cloud scene into Solomon’s prayer: the temple is a focus for prayer but does not contain God, and the prayer anticipates exile, repentance, return, and even foreign worshippers. No unsupported comparison with neighboring royal dedication rites was retained. Protected metadata and relationships remain intact; the full CKL validator reported the same 14 baseline warnings, and the focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/division-of-the-kingdom.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

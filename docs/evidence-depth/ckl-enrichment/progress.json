@@ -2455,6 +2455,33 @@
         ]
       },
       "checkpoint_commit": "b676e868"
+    },
+    {
+      "batch_id": "batch-139-solomon-temple-dedication-context",
+      "scope": [
+        "dedication-of-solomons-temple"
+      ],
+      "completed_unit": "Reviewed all explanatory fields, Scripture anchors, source identities, related-object edges, interpretive notes, and absence of atomic claims or typed evidence; enriched seven narrative fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/dedication-of-solomons-temple.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "No external comparison with neighboring royal practices was added without source support."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.31s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "5a278993"
     }
   ],
   "inventory_count": 687,
@@ -10107,15 +10134,46 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7acc462b2babd589969a3b70a1956fbfbe8ba3fed802d30ec8847edbe7c58d16",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the dedication’s ark-and-cloud scene and Solomon’s prayer, including the temple as a focus of prayer without containing God, petitions concerning exile and return, and the inclusion of foreign worshippers. Replaced the generalized royal-ceremony comparison with a clearly bounded account of what the listed biblical sources establish.",
+      "limitation": "No external historical or comparative source is recorded for the event, so no claim about neighboring royal dedication rites was retained. The internal CKL historical-orientation entry is not an independently reviewed scholarly source. Claims and typed evidence are absent; all anchors and relationships remain unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.31s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "5a278993"
     },
     {
       "id": "division-of-the-kingdom",
@@ -18921,7 +18979,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/dedication-of-solomons-temple.json",
+  "next_batch": "framework/canonical_library/objects/events/division-of-the-kingdom.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
