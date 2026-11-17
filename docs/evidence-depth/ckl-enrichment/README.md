@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **201 objects are enriched**, **97 are unchanged because they
+At this checkpoint, **202 objects are enriched**, **97 are unchanged because they
 are already sufficient**, **102 are skipped pending source or identity
-research**, and **287 remain pending review**.
+research**, and **286 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -982,4 +982,7 @@ Batch 328 reviewed Mordecai. The explanation now follows Esther 4 from the decre
 Batch 329 reviewed Moses. The profile now follows the narrative from call and deliverance through Sinai and Deuteronomy’s farewell speeches, explaining how covenant instruction follows rescue and is taught to the next generation. Acts 7 and Hebrews 3 are identified as later New Testament readings that develop the biblical portrayal of Moses. The biblical sources do not establish an external Exodus chronology, so none was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is nathan-the-prophet.
 
 
-Batch 330 reviewed Nathan the Prophet and left the record unchanged. Its narrative claims concern Nathan’s prophetic role, but its anchors point to 2 Kings 4:1–7, Isaiah 40:1–11, Jeremiah 31:31–34, and Luke 4:16–30; these do not establish episodes from Nathan’s life. The likely Samuel/Kings passages were not substituted because the existing source and anchor relationships require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is nehemiah-the-governor.
+Batch 330 reviewed Nathan the Prophet and left the record unchanged. Its narrative claims concern Nathan’s prophetic role, but its anchors point to 2 Kings 4:1–7, Isaiah 40:1–11, Jeremiah 31:31–34, and Luke 4:16–30; these do not establish episodes from Nathan’s life. The likely Samuel/Kings passages were not substituted because the existing source and anchor relationships require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is nicodemus.
+
+
+Batch 331 reviewed Nehemiah the Governor. The profile now follows the account from the report and prayer in chapter 1 through rebuilding, public Torah reading, and community reforms. Ezra, Haggai, and Esther are treated as related but distinct restoration-era settings. The historical and ancient Near Eastern explanations stay within the biblical narrative and do not add an external Persian chronology. Relevant context dimensions were enabled after confirming the current context builder hides fields marked inapplicable. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is nicodemus.

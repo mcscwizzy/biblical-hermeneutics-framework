@@ -7157,6 +7157,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "c0826368"
+    },
+    {
+      "batch_id": "batch-331-nehemiah-the-governor-person",
+      "scope": [
+        "nehemiah-the-governor"
+      ],
+      "completed_unit": "Expanded Nehemiah’s profile and enabled the relevant context dimensions after verifying the current context builder uses those flags to determine which fields it surfaces.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/nehemiah-the-governor.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "Context-applicability values were enabled only for the authored historical, ANE, covenantal, post-exilic, and canonical explanations so the existing context builder can surface them."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -23002,14 +23027,73 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2a0e5a63130cc698c8462ea2978e942abc053b9b3aef4d5e011342244d6a5dad",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability",
+        "authorship_positions",
+        "date_ranges",
+        "original_audience",
+        "historical_setting",
+        "genre",
+        "structure",
+        "major_themes",
+        "canonical_placement",
+        "key_people",
+        "key_places",
+        "key_events",
+        "interpretive_disputes",
+        "primary_sources",
+        "related_entries",
+        "intertextuality",
+        "timeline",
+        "maps",
+        "archaeology",
+        "hebrew_words",
+        "greek_words",
+        "related_people",
+        "related_places",
+        "related_events",
+        "cross_references",
+        "new_testament_connections",
+        "common_questions",
+        "canonical_story",
+        "hermeneutical_lens",
+        "retrieval_metadata"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability"
+      ],
+      "outcome": "Completed the object-level review of all populated narrative and contextual fields, relevant reader context applicability, source and Scripture relationships, and existing thematic links. Enriched the explanation and confirmed it is surfaced through the existing context workflow.",
+      "limitation": "The historical and ancient Near Eastern account is bounded by Nehemiah’s own narrative and its recorded biblical sources; no independent reconstruction of Persian administration or composition chronology was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -28162,7 +28246,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/nehemiah-the-governor.json",
+  "next_batch": "framework/canonical_library/objects/people/nicodemus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
