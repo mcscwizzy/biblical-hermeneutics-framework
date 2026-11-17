@@ -957,6 +957,24 @@
         "ckl_objects": "PASS: all three CKL objects valid, 0 errors and 0 warnings. No content changes; full CKL validation not rerun.",
         "regression": "No retrieval regression run because no content fields changed."
       }
+    },
+    {
+      "batch_id": "batch-065-abrahamic-and-context-review",
+      "scope": [
+        "abrahamic-covenant-framework",
+        "ancient-divine-assembly-imagery",
+        "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "assyrian-deportation-and-provincial-incorporation"
+      ],
+      "completed_unit": "Enriched the Abrahamic Covenant Framework summary; reviewed three cultural-context objects and left them unchanged.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/covenants/abrahamic-covenant-framework.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: all four objects valid; Abrahamic record has 11 warnings present in origin/master, other three have none. Full library 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "30 retrieval and context tests passed with 4 subtests. Evidence-graph test collection unavailable because fastapi is not installed."
+      }
     }
   ],
   "inventory_count": 687,
@@ -5139,14 +5157,52 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1a91b10e83ecd3567362838b30b95ce3ba9cc91a943d4ad910e5ddd7bcd0c6cb",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "canonical_placement",
+        "genre",
+        "structure",
+        "major_themes",
+        "interpretive_disputes",
+        "claims[].claim",
+        "claims[].rationale",
+        "interpretive_notes[].note",
+        "interpretive_notes[].rationale",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].primary_observation",
+        "evidence_items[].scholarly_interpretation",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Expanded the reader-facing summary to walk through Genesis 12, 15, 17, and 22, explain how the covenant promise develops across call, ceremony, sign, and tested obedience, and connect Paul’s later use of Abraham to the promise’s nations horizon while retaining land and family themes.",
+      "limitation": "No scholarly historical reconstruction was added. The explanation relies on the object’s existing Scripture references and keeps later Pauline development distinct from the Genesis scenes.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 11 pre-existing section-status warnings, confirmed in origin/master version.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline.",
+          "Retrieval and context regressions: 30 passed, 4 subtests passed.",
+          "Evidence-graph test collection unavailable: fastapi is not installed."
+        ]
       }
     },
     {
@@ -5157,14 +5213,47 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "94f8a91730a1c99c127a5d3151f50a0a2366ae3837cb088a37a53624121fd852",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "canonical_placement",
+        "genre",
+        "structure",
+        "major_themes",
+        "interpretive_disputes",
+        "claims[].claim",
+        "claims[].rationale",
+        "interpretive_notes[].note",
+        "interpretive_notes[].rationale",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].primary_observation",
+        "evidence_items[].scholarly_interpretation",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary and contextual fields already explain the subject and bound its historical or comparative significance. Claims and typed evidence connect primary-text or material observations to passage relevance, and interpretive notes identify what the evidence cannot establish. No supported explanatory gap required revision.",
+      "limitation": "No explanatory fields changed. Existing uncertainty about comparative continuity, artifact identity, chronology, and interpretation remains qualified as recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline."
+        ]
       }
     },
     {
@@ -5175,14 +5264,47 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a6fe76d7d6c28d52d490883e4e03b977fe17a9859ee2897a175b7bbea5c111f2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "canonical_placement",
+        "genre",
+        "structure",
+        "major_themes",
+        "interpretive_disputes",
+        "claims[].claim",
+        "claims[].rationale",
+        "interpretive_notes[].note",
+        "interpretive_notes[].rationale",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].primary_observation",
+        "evidence_items[].scholarly_interpretation",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary and contextual fields already explain the subject and bound its historical or comparative significance. Claims and typed evidence connect primary-text or material observations to passage relevance, and interpretive notes identify what the evidence cannot establish. No supported explanatory gap required revision.",
+      "limitation": "No explanatory fields changed. Existing uncertainty about comparative continuity, artifact identity, chronology, and interpretation remains qualified as recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline."
+        ]
       }
     },
     {
@@ -5193,14 +5315,47 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2d6677c2a5294a0b861dca0cbcc0d64a5a3dfb54dbbb9001f8e81a1177a57f3e",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "canonical_placement",
+        "genre",
+        "structure",
+        "major_themes",
+        "interpretive_disputes",
+        "claims[].claim",
+        "claims[].rationale",
+        "interpretive_notes[].note",
+        "interpretive_notes[].rationale",
+        "evidence_items[].title",
+        "evidence_items[].description",
+        "evidence_items[].primary_observation",
+        "evidence_items[].scholarly_interpretation",
+        "evidence_items[].passage_relevance",
+        "sources",
+        "scripture_references",
+        "cross_references",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The summary and contextual fields already explain the subject and bound its historical or comparative significance. Claims and typed evidence connect primary-text or material observations to passage relevance, and interpretive notes identify what the evidence cannot establish. No supported explanatory gap required revision.",
+      "limitation": "No explanatory fields changed. Existing uncertainty about comparative continuity, artifact identity, chronology, and interpretation remains qualified as recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Protected-field fingerprint matches the fetched origin/master baseline."
+        ]
       }
     },
     {
@@ -15393,6 +15548,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/covenants/abrahamic-covenant-framework.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/assyrian-tribute-and-royal-representation.json",
   "protected_fingerprint_base": "origin/master"
 }
