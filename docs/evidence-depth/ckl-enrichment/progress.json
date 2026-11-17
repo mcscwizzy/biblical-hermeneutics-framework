@@ -11254,6 +11254,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-508-spirit-theme",
+      "scope": [
+        "spirit-theme"
+      ],
+      "completed_unit": "Clarified how the Spirit theme moves through creation, shared leadership, prophetic renewal, Pentecost, Jesus’ promise, and communal life while keeping direct textual claims distinct from broad interpretive questions.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/spirit-theme.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "Two unsourced interpretive notes were reviewed and left unchanged pending support."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Progress-manifest protected-field and inventory checks passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -33784,14 +33810,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c30b9c454d899b2e61190b3f21e68ab45dbd730ee400046c68a2a6b3b4806ca3",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east"
+      ],
+      "outcome": "Connected the direct anchors from creation, shared leadership, prophetic renewal, Pentecost, Jesus’ promise, and community life while distinguishing the passages’ literary settings and functions.",
+      "limitation": "The two interpretive notes remain unchanged: their source arrays are empty, and the broad claims about lexical range and Old/New Testament relation need specific reviewed support before expansion. No broad ancient Near Eastern comparison was retained.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation after final wording: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, Scripture references, source identities, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -35758,7 +35804,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/spirit-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/temple-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

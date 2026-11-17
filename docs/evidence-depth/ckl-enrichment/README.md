@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **286 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **287 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **175 are skipped pending source or identity
-research**, and **110 remain pending review**.
+research**, and **109 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1726,3 +1726,12 @@ comparisons; a generic ancient Near Eastern paragraph was removed because the
 recorded evidence does not support it. The object and full CKL validate with no
 new errors or warnings, and the focused content-quality and retrieval tests
 passed.
+
+
+The Spirit Theme now traces its direct anchors from creation and shared
+leadership through prophetic renewal, Pentecost, Jesus’ promise, and communal
+life, while explaining how the passages use different literary forms. A broad
+ancient Near Eastern comparison was removed because the recorded sources do not
+support it. Two unsourced interpretive notes remain unchanged pending reviewed
+support. The object and full library validate without new errors or warnings;
+the focused content-quality and retrieval regressions passed.
