@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **74 objects are enriched**, **80 are unchanged because they
+At this checkpoint, **75 objects are enriched**, **80 are unchanged because they
 are already sufficient**, **45 are skipped pending source or identity
-research**, and **488 remain pending review**.
+research**, and **487 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -482,6 +482,8 @@ Batch 139 enriched the Solomon temple dedication record. The explanation now fol
 
 Batch 140 enriched the division of the kingdom record with the Shechem succession crisis, Rehoboam’s decision, the northern break, and Jeroboam’s worship centers. It distinguishes the narrative’s political events from its theological interpretation and leaves the ancient Near Eastern field blank because no comparative source is recorded. The full CKL again validated with zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/elijah-on-mount-carmel.json`.
+Batch 141 corrected the Elijah on Mount Carmel event record, replacing unrelated exile-and-restoration template text with the 1 Kings 18 confrontation and its role in the Elijah narrative. The generic ancient Near Eastern placeholder was cleared for lack of comparative sourcing. Existing anchors and relationships remain untouched, though they do not point to Carmel and need research review. Structural validation retained the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/fall-of-babylon.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
