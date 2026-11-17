@@ -6965,6 +6965,32 @@
         ]
       },
       "checkpoint_commit": "c2cc4e67"
+    },
+    {
+      "batch_id": "batch-323-mary-magdalene-person",
+      "scope": [
+        "mary-magdalene"
+      ],
+      "completed_unit": "Reviewed Mary Magdalene and focused the narrative explanation on her direct role in John 20.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/mary-magdalene.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -22519,13 +22545,34 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f95bbc9cfacf5b3061a2a3ba21b59b1decbe5bd0b0d67a2a7f7fecde98ded75a",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Focused the profile on John 20:17–23, explaining the movement from grief and recognition to Mary’s report to the disciples. Other Gospel-ending anchors were not treated as scenes about Mary.",
+      "limitation": "The reference set is mixed, with John 20:17–23 as the direct Mary anchor. No broader social-status claims, harmonized biography, or later reception claims were added.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -27823,7 +27870,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/mary-magdalene.json",
+  "next_batch": "framework/canonical_library/objects/people/mary-mother-of-jesus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
