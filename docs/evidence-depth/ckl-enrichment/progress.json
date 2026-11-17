@@ -9450,6 +9450,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-432-nazareth",
+      "scope": [
+        "nazareth"
+      ],
+      "completed_unit": "Expanded the Gospel narrative roles of Nazareth and removed unsupported generic ancient Near Eastern boilerplate.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/places/nazareth.json"
+      ],
+      "protected_checks": [
+        "Object and evidence IDs, source identities and locks, Scripture references, review metadata, and curated relationships were preserved.",
+        "The unverified archaeological statement was left unchanged pending specific source review."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -28997,14 +29022,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "bd3f56c6434fb1ac334766667e13379b472df4038b754ed3daf07901a351a2ca",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained Nazareth’s roles in the family narratives and in the hometown reception scenes in Mark 6 and Luke 4, while removing unrelated generic ancient Near Eastern boilerplate.",
+      "limitation": "The historical-context field’s assertion about early Roman remains is not linked to an inspectable archaeological source in this object; it was left unchanged and requires source review. The source-locked Matthew evidence and all Scripture anchors were preserved.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object and evidence IDs, source identity and lock, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -32339,7 +32385,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/nazareth.json",
+  "next_batch": "framework/canonical_library/objects/places/negeb.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
