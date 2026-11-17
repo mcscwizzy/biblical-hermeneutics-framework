@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **185 objects are enriched**, **96 are unchanged because they
+At this checkpoint, **186 objects are enriched**, **96 are unchanged because they
 are already sufficient**, **91 are skipped pending source or identity
-research**, and **315 remain pending review**.
+research**, and **314 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -899,3 +899,6 @@ Batch 301 reviewed James, Brother of Jesus and left the profile unchanged. The a
 
 
 Batch 302 reviewed James son of Alphaeus. The explanation now focuses on what Luke 6 and Acts 1 show: he is named among the Twelve and the gathered disciples, while the cited passages provide no individual episode or later ministry. This preserves a useful group-level context without filling the biographical gaps with tradition or guesswork. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is james-son-of-zebedee.
+
+
+Batch 303 reviewed James son of Zebedee. The explanation now connects Matthew’s call scene—James working with his brother and father—to his naming among the Twelve in Luke 6 and Acts 1. The family and fishing details are kept within the narrative’s evidence, and no later ministry is inferred. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is jeremiah-the-prophet.

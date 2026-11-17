@@ -6489,6 +6489,32 @@
         ]
       },
       "checkpoint_commit": "eb1ba660"
+    },
+    {
+      "batch_id": "batch-303-james-son-of-zebedee-person",
+      "scope": [
+        "james-son-of-zebedee"
+      ],
+      "completed_unit": "Reviewed James son of Zebedee and enriched the call, group-membership, and family-work context from the cited passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/james-son-of-zebedee.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21354,13 +21380,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "3c96b8d4281ecb5f7cf09a6a204f453d12e1e45fd608b04857e6b58aa5296516",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context"
+      ],
+      "outcome": "Replaced generic apostolic boilerplate with the specific call scene in Matthew 4 and James’s later inclusion in Luke 6 and Acts 1. The fishing and family details are bounded to what the cited narrative says.",
+      "limitation": "The listed passages do not describe James’s later ministry or provide a full biography; no such account was added.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -27018,7 +27063,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/james-son-of-zebedee.json",
+  "next_batch": "framework/canonical_library/objects/people/jeremiah-the-prophet.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
