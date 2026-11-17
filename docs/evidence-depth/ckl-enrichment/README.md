@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **172 objects are enriched**, **94 are unchanged because they
+At this checkpoint, **172 objects are enriched**, **95 are unchanged because they
 are already sufficient**, **72 are skipped pending source or identity
-research**, and **349 remain pending review**.
+research**, and **348 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -797,3 +797,6 @@ Batch 267 reviewed Andrew. The entry now explains the evidence actually availabl
 
 
 Batch 268 reviewed Apollos and left it unchanged. First Corinthians 3:4-9 does mention Apollos, but the principal references include Acts 9 (Saul), Romans 16, and Philippians 1, which do not identify him; the entry also omits the central Acts 18 narrative. The person-specific passage set needs reconciliation before prose can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Aquila.
+
+
+Batch 269 reviewed Aquila and left it unchanged. The existing profile ties each point to Acts or Pauline greetings, separates narrative and epistolary settings, and limits claims about Claudian policy, craft, citizenship, wealth, household status, and formal office. It already explains what the reader can infer and where reconstruction stops. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Archelaus.

@@ -5693,6 +5693,28 @@
         ]
       },
       "checkpoint_commit": "facb3426"
+    },
+    {
+      "batch_id": "batch-269-aquila-person",
+      "scope": [
+        "aquila"
+      ],
+      "completed_unit": "Reviewed Aquila and left the already detailed, text-specific account of diaspora mobility, shared work, travel, teaching, household assemblies, and evidential limits intact.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19418,14 +19440,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "476900a22cb5a8fbbb20c8dd65e278f0831bd4792f6d3a7d25cc7ba600f023cd",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "historical_setting",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged. The entry gives a passage-specific profile across Acts and Pauline greetings, distinguishes each narrative and epistolary setting, explains the couple’s mobility and coworking, and carefully limits claims about Claudian policy, craft, citizenship, wealth, household status, and formal office.",
+      "limitation": "No additional scholarly claims were needed; the existing source-aware cautions already explain where reconstruction remains uncertain.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -25658,7 +25699,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/aquila.json",
+  "next_batch": "framework/canonical_library/objects/people/archelaus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
