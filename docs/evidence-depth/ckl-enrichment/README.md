@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **265 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **266 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **169 are skipped pending source or identity
-research**, and **138 remain pending review**.
+research**, and **137 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1663,3 +1663,5 @@ Batch 477 reviewed Hope Theme. The revised explanation distinguishes Deuteronomy
 Batch 478 enriched the Image of God theme by tracing how the image language works in Genesis, Psalm 8, worship, speech ethics, and New Testament renewal texts. Unsupported ancient Near Eastern and Second Temple generalizations were removed because the recorded sources do not substantiate them. The next pending record is Justice Theme.
 
 Batch 479 enriched Justice Theme from its four recorded biblical anchors, distinguishing their literary settings and claims about God’s character, conduct, judgment, and hope. The unsupported general ancient Near Eastern statement was removed. The next pending record is Kingdom Theme.
+
+Batch 480 enriched Kingdom Theme across its recorded biblical anchors, distinguishing royal psalms, Daniel’s visions, Jesus’ proclamation, communal ethics, and future completion. Unsupported generalizations about ancient imperial comparison and Second Temple expectations were removed. The next pending record is Land Theme.
