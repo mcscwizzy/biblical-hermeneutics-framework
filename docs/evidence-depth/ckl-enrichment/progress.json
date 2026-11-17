@@ -4049,6 +4049,31 @@
         ]
       },
       "checkpoint_commit": "85d535ee"
+    },
+    {
+      "batch_id": "batch-202-kingdom-of-israel-faq",
+      "scope": [
+        "what-is-the-kingdom-of-israel"
+      ],
+      "completed_unit": "Reviewed the historical sequence, the distinct prophetic settings, external context claims, sources, and anchors; enriched eight explanatory fields with passage-specific details.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-kingdom-of-israel.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No external empire context was inferred beyond the passages cited."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "c2a38ef3"
     }
   ],
   "inventory_count": 687,
@@ -14786,14 +14811,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a6440f8ac3357d693a218890cfd35ec0cd564e756e44dcf32c0cacce1f62ff67",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Connected the division narrative, the Omri and Ahab episodes, Samaria’s fall, and prophetic responses in Hosea, Amos, and Isaiah. Clarified the different genres and specific concerns of the cited passages; removed unsupported broad claims about imperial pressure.",
+      "limitation": "No external historical or archaeological source is cited; no claims beyond the biblical narratives and their explicit framing were introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: c2a38ef3."
+        ]
       }
     },
     {
@@ -22268,7 +22320,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-kingdom-of-israel.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-kingdom-of-judah.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
