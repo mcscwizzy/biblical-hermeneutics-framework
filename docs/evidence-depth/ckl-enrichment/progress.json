@@ -6541,6 +6541,32 @@
         ]
       },
       "checkpoint_commit": "5143e71b"
+    },
+    {
+      "batch_id": "batch-305-jesus-person",
+      "scope": [
+        "jesus"
+      ],
+      "completed_unit": "Reviewed the central Jesus person profile and expanded its explanations across the directly cited Gospel and New Testament passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/jesus.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -21478,13 +21504,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "92dbc2d1386959a1e71ae4892ae867b85da9283d9b39106e7db5cbf314e89fa1",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Expanded the central person profile by connecting specific Gospel passages and New Testament interpretations, distinguishing narrative, poetic, and argumentative forms. Context is tied to the cited Scripture rather than unsupported archaeology or blanket claims about Jewish groups.",
+      "limitation": "Historical context remains concise; the listed sources are biblical texts and do not support an independent archaeological or chronological reconstruction.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -27106,7 +27154,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/jesus.json",
+  "next_batch": "framework/canonical_library/objects/people/jethro.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
