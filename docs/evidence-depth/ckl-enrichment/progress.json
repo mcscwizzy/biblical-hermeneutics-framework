@@ -5906,6 +5906,28 @@
         ]
       },
       "checkpoint_commit": "29090d3c"
+    },
+    {
+      "batch_id": "batch-278-caleb-person",
+      "scope": [
+        "caleb"
+      ],
+      "completed_unit": "Reviewed Caleb and held the entry because its wilderness passages concern Moses and Aaron rather than Caleb.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19948,14 +19970,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7724353191667704345ff3239334c211e72301e1b3d23dc8ad3aecdc0b85717c",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the Caleb object repeats a generic wilderness profile and references Exodus 4 (Moses and Aaron), Numbers 17 (Aaron’s staff), Deuteronomy 10 (Aaron), and Hebrews 3 (Moses), none of which identifies Caleb.",
+      "limitation": "The person-specific passages about Caleb and the object scope need reconciliation before any biography or wilderness interpretation can be safely added. The internal orientation source does not resolve the mismatch.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26026,7 +26062,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/caleb.json",
+  "next_batch": "framework/canonical_library/objects/people/cornelius.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
