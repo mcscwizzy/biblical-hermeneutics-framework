@@ -5671,6 +5671,28 @@
         ]
       },
       "checkpoint_commit": "76d6313d"
+    },
+    {
+      "batch_id": "batch-268-apollos-person",
+      "scope": [
+        "apollos"
+      ],
+      "completed_unit": "Reviewed Apollos and held the entry because its person-specific biblical anchors are inconsistent and omit the central Acts narrative.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19364,14 +19386,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "debc894811f24d90f36cb96d54f24f2364d37c150187fb630cbbc48af19811e2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the person title is Apollos but the principal narrative anchors are Acts 9 (Saul), Romans 16, and Philippians 1, which do not identify him. First Corinthians 3:4-9 does mention Apollos, but the record does not reconcile the unrelated references or point to his narrative in Acts 18.",
+      "limitation": "The person-specific passage set and scope need reconciliation before explanatory claims about Apollos’s ministry can be added. The internal orientation source does not resolve the mismatch.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -25622,7 +25658,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/apollos.json",
+  "next_batch": "framework/canonical_library/objects/people/aquila.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **172 objects are enriched**, **94 are unchanged because they
-are already sufficient**, **71 are skipped pending source or identity
-research**, and **350 remain pending review**.
+are already sufficient**, **72 are skipped pending source or identity
+research**, and **349 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -794,3 +794,6 @@ Batch 266 reviewed Adam and left it unchanged. Its primary anchor, Genesis 11:1-
 
 
 Batch 267 reviewed Andrew. The entry now explains the evidence actually available: Matthew calls Andrew alongside Peter, Luke names him among the Twelve, and Acts lists him among the gathered disciples. It clarifies that Peter speaks individually in Matthew 16, so readers do not transfer his response to Andrew. The brief scriptural portrait was not extended into an unsupported biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Apollos.
+
+
+Batch 268 reviewed Apollos and left it unchanged. First Corinthians 3:4-9 does mention Apollos, but the principal references include Acts 9 (Saul), Romans 16, and Philippians 1, which do not identify him; the entry also omits the central Acts 18 narrative. The person-specific passage set needs reconciliation before prose can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Aquila.
