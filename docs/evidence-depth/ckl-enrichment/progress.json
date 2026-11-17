@@ -10353,6 +10353,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-471-exile-theme",
+      "scope": [
+        "exile-theme"
+      ],
+      "completed_unit": "Clarified Judah’s historical exile, the prophetic restoration promises, and later Christian uses of exile language.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/exile-theme.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "Limited the account to recorded passages and removed unsourced ancient Near Eastern and Second Temple context."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -31299,14 +31324,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "700fd7b442db5952d9547e4373ee4bc9175fc7717bc5ddf04ea00aa814bf71e8",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "second_temple_context",
+        "context_applicability.ancient_near_east",
+        "context_applicability.second_temple",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained Judah’s deportations and Jerusalem’s fall, the legal warnings and prophetic hopes for return, and later uses of exile language in Luke and 1 Peter without conflating them.",
+      "limitation": "The listed historical anchors focus on Judah and do not cover the northern kingdom’s earlier fall. No external ancient Near Eastern comparison or Second Temple social reconstruction was added because no specific sources were recorded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33939,7 +33992,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/exile-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/exodus-pattern-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
