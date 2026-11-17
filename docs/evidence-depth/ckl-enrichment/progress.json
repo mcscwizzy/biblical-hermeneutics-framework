@@ -7320,6 +7320,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "44c4d77f"
+    },
+    {
+      "batch_id": "batch-338-philip-the-apostle-person",
+      "scope": [
+        "philip-the-apostle"
+      ],
+      "completed_unit": "Replaced generic biography claims with a source-bounded explanation of Philip’s inclusion among the Twelve and the gathered followers in Acts 1.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/philip-the-apostle.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "Ancient Near Eastern applicability was disabled because the record contains no supported comparative context; canonical applicability was enabled for the Luke/Acts explanation."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -23476,14 +23501,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "affd2dcf8810103932bd251b29f3a7a355b4abe16d8fbe047bd7cbbdab4fa5a8",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Completed the review of populated explanatory fields, source/anchor relationships, related-object links, and context applicability. The profile now limits its claims to Luke 6 and Acts 1.",
+      "limitation": "The current Scripture anchors include Matthew passages that do not name Philip, while Luke 6 and Acts 1 do. Those anchor relationships were preserved. No occupation, family, or later ministry claim was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -28510,7 +28563,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/philip-the-apostle.json",
+  "next_batch": "framework/canonical_library/objects/people/philip-the-evangelist.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
