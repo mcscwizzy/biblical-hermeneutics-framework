@@ -53,6 +53,39 @@
         "api_tests": "NOT RUN: collection requires unavailable fastapi dependency."
       },
       "checkpoint_commit": "f590b95d"
+    },
+    {
+      "batch_id": "batch-002-genesis-completion",
+      "scope": [
+        "genesis"
+      ],
+      "completed_unit": "Full explanatory-field review of the Genesis book object",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/genesis.json"
+      ],
+      "validation": {
+        "ckl_object": "PASS: Genesis valid with no warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, 14 baseline warnings.",
+        "retrieval_regressions": "PASS: 107 tests, 4 subtests.",
+        "protected_fields": "PASS: fingerprints match origin/master.",
+        "ne9c_ne10_regressions": "PASS: 73 tests."
+      },
+      "checkpoint_commit": "pending"
+    },
+    {
+      "batch_id": "batch-003-arad-ostraca-review",
+      "scope": [
+        "arad-ostraca"
+      ],
+      "completed_unit": "Explanatory-field audit; skipped pending verified source research",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+        "ne9c_ne10_regressions": "PASS: 73 regression tests; curated identities and dispositions unchanged."
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -65,14 +98,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f144d82af23ee2bf0f13188d4815aca31ca9cc7e031824e418f402eb8c80024d",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_context",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "archaeology",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the object lacks claim and evidence records, and its short context fields do not explain a verifiable Arad Ostraca find.",
+      "limitation": "The summary and literary context name Lachish, Jerusalem, and Joshua despite the object title; the Scripture anchors (Psalm 19:1-6 and Romans 1:20) do not establish the artifact context; four source records have no author, locator, URL, supports, or notes, including two unrelated headings. A source-grounded account requires identifying the specific ostraca, excavation/site, dates, publication, and relevant biblical connection. These cannot be supplied from the current record without new research.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 warnings; all 10 are the baseline section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1505,30 +1552,61 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0cf6231507eaf4a9989948362d8ab0f9d27dfe4895e571b43c07979edf6874fc",
-      "status": "in_progress",
+      "status": "enriched",
       "fields_examined": [
-        "claims[genesis-5-genealogy-structure].rationale",
-        "claims[genesis-5-and-he-died-mortality].rationale",
-        "claims[genesis-5-enoch-walks-with-god].rationale",
-        "claims[genesis-5-genealogy-narrative-function].rationale"
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "structure",
+        "intertextuality",
+        "interpretive_disputes",
+        "common_questions",
+        "canonical_story",
+        "hermeneutical_lens",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale"
       ],
       "fields_changed": [
-        "claims[genesis-5-genealogy-structure].rationale",
+        "summary",
+        "literary_context",
+        "claims[genesis-5-adam-seth-image-lineage].rationale",
+        "claims[genesis-5-repeated-genealogy-formula].rationale",
         "claims[genesis-5-and-he-died-mortality].rationale",
         "claims[genesis-5-enoch-walks-with-god].rationale",
-        "claims[genesis-5-genealogy-narrative-function].rationale"
+        "claims[genesis-5-methuselah-lamech-noah-naming].rationale",
+        "claims[genesis-5-genealogy-narrative-function].rationale",
+        "claims[genesis-literary-movement].rationale",
+        "claims[genesis-blessing-for-families].rationale",
+        "claims[genesis-ends-in-egypt].rationale",
+        "evidence_items[g2-toledot-and-genesis1-relationship].passage_relevance",
+        "evidence_items[g2-dust-adamah-breath].passage_relevance",
+        "evidence_items[g2-garden-planting-presence].passage_relevance",
+        "evidence_items[g2-rivers-and-eden-geographic-limits].passage_relevance",
+        "evidence_items[g2-work-and-keep-vocation].passage_relevance",
+        "evidence_items[g2-two-trees-and-knowing-good-evil].passage_relevance",
+        "evidence_items[g2-ezer-kenegdo-counterpart].passage_relevance",
+        "evidence_items[g2-bone-of-bones-and-one-flesh].passage_relevance",
+        "evidence_items[g2-naked-and-unashamed].passage_relevance"
       ],
-      "outcome": "Expanded explanations of the Genesis 5 genealogy pattern, mortality refrain, Enoch exception, and transition to Noah. Other object fields remain to be reviewed.",
-      "limitation": "",
+      "outcome": "Expanded the reader-visible book summary, clarified Genesis 5 and book-level claim rationales, and replaced repetitive boilerplate in nine Genesis 2 relevance fields with specific connections. Existing well-developed contexts, interpretive cautions, and detailed evidence explanations were retained.",
+      "limitation": "The Genesis 1-11 ancient Near Eastern comparison claim and the Genesis 5 textual-variant evidence were not expanded; their scholarly-source arguments were not independently rechecked in this batch.",
       "validation": {
-        "status": "pass_with_environment_limit",
+        "status": "pass",
         "results": [
-          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
-          "Full CKL validation: 687 valid, 0 errors, 14 warnings, same warning count and paths as baseline.",
-          "CKL schema, packaging, retrieval, service, and precision regression set: 107 passed, 4 subtests passed.",
-          "Source-lock, CKL scope semantics, and structured claims: 35 passed.",
-          "NE-9C/NE-10 projection and curation subset: 73 passed.",
-          "The complete canonical_library test-folder collection is blocked at collection because fastapi is unavailable; tests importing the API could not run."
+          "Genesis object validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 pre-existing warnings.",
+          "CKL schema, packaging, retrieval, service, and precision regressions: 107 passed, 4 subtests passed.",
+          "Protected-field fingerprint check: pass against origin/master; claim text, IDs, source identities, Scripture anchors, status classifications, and evidence relationships unchanged."
         ]
       }
     },
@@ -12442,6 +12520,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "Finish the remaining Genesis explanatory fields; then review the next CKL object in stable path order.",
+  "next_batch": "objects/archaeology/babylonian-chronicles.json",
   "protected_fingerprint_base": "origin/master"
 }
