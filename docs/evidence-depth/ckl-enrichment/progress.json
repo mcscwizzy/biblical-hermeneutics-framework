@@ -1099,6 +1099,28 @@
         "ckl_objects": "PASS: object valid, 0 errors and 0 warnings; full library 687 valid, 0 errors and 14 baseline warnings.",
         "regression": "17 cultural-context evidence-quality/retrieval checks passed with 4 subtests."
       }
+    },
+    {
+      "batch_id": "batch-074-genesis-joseph-descent-testing",
+      "scope": [
+        "genesis-joseph-descent-testing-context"
+      ],
+      "completed_unit": "Enriched the object summary and narrative context; rewrote 78 duplicated passage-relevance fields for Genesis 37–44.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/genesis-joseph-descent-testing-context.json"
+      ],
+      "protected_checks": [
+        "Object and evidence IDs, sources, Scripture anchors, relationships, certainty, disputes, status, and attestations preserved.",
+        "No claims, evidence descriptions, observations, or scholarly interpretations altered.",
+        "Historical comparisons remain qualified and no external historical assertion was added."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6002,14 +6024,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d0c8c089e5487ac496a0b54866f6860aac55a3585041b99ec5b25335dd2f6a96",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "original_audience",
+        "canonical_context",
+        "interpretive_notes",
+        "claims (none present)",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "evidence_items.primary_observation",
+        "evidence_items.scholarly_interpretation",
+        "evidence_items.confidence_rationale",
+        "sources",
+        "scripture_references",
+        "review and source-lock metadata"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "evidence_items.passage_relevance (78 items)"
+      ],
+      "outcome": "Expanded the Genesis 37–44 narrative summary and context, and replaced 78 duplicated passage-relevance statements with item-specific explanations. Kept observations, scope limits, Scripture anchors, sources, relationships, disputes, confidence, and review metadata unchanged.",
+      "limitation": "Egyptian and ancient Near Eastern comparisons remain contextual; no named historical identification, precise date, or independently verified famine was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression: 17 cultural-context evidence-quality/retrieval tests passed with 4 subtests.",
+          "Protected-field fingerprint matches baseline; no Scripture anchors or relationships changed."
+        ]
       }
     },
     {
@@ -15990,9 +16042,8 @@
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
-    "unlocked_duplicate_records": 174,
+    "unlocked_duplicate_records": 96,
     "objects_with_unlocked_duplicates": [
-      "genesis-joseph-descent-testing-context",
       "genesis-joseph-reconciliation-conclusion-context",
       "abana",
       "archelaus",

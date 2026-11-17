@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **17 objects are enriched**, **73 are unchanged because they
+At this checkpoint, **18 objects are enriched**, **73 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **555 remain pending review**.
+research**, and **554 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -335,6 +335,8 @@ rendered in the standard browser modal or indexed by retrieval.
 
 Obadiah was reviewed and left intact. Its summary, historical and regional context, literary sequence, and interpretive notes already explain the movement from Edom’s humiliation through the Jerusalem accusations and day of YHWH to Zion’s survivors and contested territorial conclusion. The 23 claim rationales preserve clear limits, including the undated historical setting, uncertain Edomite actions, contested grammar, and debated overlap with Jeremiah 49. The object validated with zero errors and warnings; no retrieval test was needed because no content changed.
 
-The next work unit is `books/philemon.json`.
+Batch 074 enriched the Genesis 37–44 Joseph descent and testing record. Its summary and historical/literary framing now explain how Joseph’s rise, the family’s return, and Judah’s changed responsibility connect, while retaining the record’s explicit limits on historical identification and dating. Seventy-eight duplicated evidence relevance fields now explain each observation’s role in its scene. The observation text, sources, Scripture anchors, relationships, and uncertainty classifications remain unchanged. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/genesis-joseph-reconciliation-conclusion-context.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
