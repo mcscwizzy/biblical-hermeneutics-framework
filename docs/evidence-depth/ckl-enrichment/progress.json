@@ -100,6 +100,20 @@
         "ckl_objects": "PASS: each valid with 0 errors and 10 baseline section-status warnings; no object content changed."
       },
       "checkpoint_commit": "fdd89eeb"
+    },
+    {
+      "batch_id": "batch-005-beth-shean-and-black-obelisk",
+      "scope": [
+        "beth-shean-excavations",
+        "black-obelisk"
+      ],
+      "completed_unit": "Two archaeology objects reviewed; one skipped pending excavation sources, one already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: each valid with 0 errors and 10 baseline section-status warnings."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -208,14 +222,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b8722e053b5e0ac71f445f91e44f559d26d66822d205555cc398e77a852526e7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the summary names broad periods and biblical references but the record lacks sources that identify specific excavated evidence or connect it to those passages.",
+      "limitation": "All five source entries have no author, publisher, locator, URL, notes, or claim support. No claim/evidence items or archaeology details are present. The current summary mentions Egyptian, Israelite, and Roman remains without identifying specific contexts. A source-grounded explanation requires site chronology, excavation publications, and phase-specific links to 1 Samuel 31 and 1 Kings 4; no such support is recorded here.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -226,14 +254,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5dde00912e3add09c81915ff00e07cc8e84257414c93edf0f84b9a84cae2af31",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
+      "outcome": "Left intact. The explanation distinguishes the monument as an imperial display from neutral reporting, separates the Assyrian tribute notice from Kings, and qualifies disputed details about Jehu, the prostrate figure, and the Omri designation.",
       "limitation": "",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -12562,6 +12604,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "objects/archaeology/beth-shean-excavations.json",
+  "next_batch": "objects/archaeology/bronze-snake.json",
   "protected_fingerprint_base": "origin/master"
 }

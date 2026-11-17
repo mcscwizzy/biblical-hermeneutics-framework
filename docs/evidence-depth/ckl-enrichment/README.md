@@ -20,8 +20,8 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **1 object is enriched**, **1 is unchanged because it is
-already sufficient**, **2 are skipped pending source research**, and **683
+At this checkpoint, **1 object is enriched**, **2 are unchanged because they
+are already sufficient**, **3 are skipped pending source research**, and **681
 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
@@ -59,6 +59,13 @@ reason as Arad: its title and generic text do not match its source records and
 biblical anchors. Research must establish which inscription the entry intends
 before any explanatory prose can be safely written.
 
+Beth Shean was skipped because its source entries lack bibliographic details
+and its brief summary does not identify the excavation contexts behind its
+period labels. The Black Obelisk explanation was left unchanged: it already
+connects the tribute register with Jehu's reign while distinguishing the
+Assyrian imperial display from the biblical account and preserving uncertainty
+about the figure and the designation "House of Omri."
+
 ## Reader reachability
 
 Canonical object detail responses serialize summaries and evidence items.
@@ -85,6 +92,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/beth-shean-excavations.json`.
+The next work unit is `objects/archaeology/bronze-snake.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
