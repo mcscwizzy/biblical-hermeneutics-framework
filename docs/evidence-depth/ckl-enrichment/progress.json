@@ -10551,6 +10551,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-479-justice-theme",
+      "scope": [
+        "justice-theme"
+      ],
+      "completed_unit": "Distinguished the different literary settings and claims in Deuteronomy 32, Micah 6, Romans 2, and Revelation 19; removed unsupported comparative context.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/justice-theme.json"
+      ],
+      "protected_checks": [
+        "Object and evidence identifiers, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "No new historical or comparative claims were introduced; the unsupported ancient Near Eastern generalization was removed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -31829,14 +31854,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4914e48758bc6c505be2d0f7b5c1e14c3283ff1d3d93add8525ced479c67f375",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Connected the four recorded biblical anchors to their distinct literary settings and clarified how the theme links God’s character, human conduct, impartial judgment, and hope for justice.",
+      "limitation": "The object has no inspected historical or comparative source supporting its broad ancient Near Eastern statement; that comparison was removed. The explanation remains grounded in its recorded biblical passages.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -34325,7 +34377,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/justice-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/kingdom-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
