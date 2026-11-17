@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **115 objects are enriched**, **91 are unchanged because they
+At this checkpoint, **116 objects are enriched**, **91 are unchanged because they
 are already sufficient**, **61 are skipped pending source or identity
-research**, and **420 remain pending review**.
+research**, and **419 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -623,3 +623,5 @@ Batch 195 enriched What is Resurrection? with distinctions among Daniel’s visi
 Batch 196 enriched What is Sacrifice in the Bible? with distinctions among Noah’s offering, the Sinai covenant rite, Levitical offerings, Psalm 40, Isaiah 53, and Hebrews 9. It removes an unsupported ancient-practice comparison and records a source-type metadata follow-up for Psalm 40. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-ancient-near-east.json`.
 
 Batch 197 reviewed What is the Ancient Near East? and held its prose pending academic source research. Its biblical references illustrate selected settings but do not define the region’s boundaries or substantiate broad comparisons with neighboring cultures. No CKL content changed; full validation retained zero errors and the same 14 baseline warnings. The next work unit is `framework/canonical_library/objects/faq/what-is-the-day-of-the-lord.json`.
+
+Batch 198 enriched What is the Day of the Lord? with passage-specific distinctions across Amos, Joel, Zephaniah, Isaiah, Malachi, 1 Thessalonians, 2 Peter, and Revelation. It explains how warning, judgment, rescue, and renewal vary by context and removes an unsupported royal-day comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-holy-spirit.json`.
