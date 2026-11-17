@@ -2482,6 +2482,33 @@
         ]
       },
       "checkpoint_commit": "5a278993"
+    },
+    {
+      "batch_id": "batch-140-division-of-kingdom-context",
+      "scope": [
+        "division-of-the-kingdom"
+      ],
+      "completed_unit": "Reviewed all explanatory fields, Scripture anchors, source identities, related-object edges, interpretive notes, and absence of atomic claims or typed evidence; enriched five narrative fields and cleared an unsupported comparison.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/division-of-the-kingdom.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "Unsupported generalized ANE comparison removed; no new comparison introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings; the initial ANE warning was eliminated by leaving the unsupported field blank.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.44s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "6b479175"
     }
   ],
   "inventory_count": 687,
@@ -10183,15 +10210,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a708a5a17c2d93d62f6c55915b37211ed7c544e723e1a87c8f40b399ce12f121",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the Shechem succession dispute, Rehoboam’s rejection of counsel, the northern break with David’s house, and Jeroboam’s worship centers. Clarified how Kings places the political outcome alongside prophetic interpretation, and removed the unsupported generic ancient Near Eastern comparison.",
+      "limitation": "The recorded sources support the biblical narrative and later scriptural uses but do not establish a comparison with political fractures in neighboring kingdoms; the ancient_near_east_context field is therefore left blank. The internal CKL historical-orientation entry is pending human review. Existing scripture references and relationships were preserved.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings; the initial ANE warning was eliminated by leaving the unsupported field blank.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.44s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "6b479175"
     },
     {
       "id": "elijah-on-mount-carmel",
@@ -18979,7 +19035,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/division-of-the-kingdom.json",
+  "next_batch": "framework/canonical_library/objects/events/elijah-on-mount-carmel.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
