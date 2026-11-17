@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **306 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **183 are skipped pending source or identity
-research**, and **82 remain pending review**.
+are already sufficient**, **184 are skipped pending source or identity
+research**, and **81 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1907,3 +1907,6 @@ glorification. No CKL content was changed.
 
 
 Grace was enriched to distinguish how Exodus 34, Psalm 103, Micah 7, Ephesians 2, and Titus 2 portray graciousness, compassion, pardon, new life, and changed conduct. The object’s generic ancient Near Eastern comparison was removed because its source records did not support one; no lexical claim was added. Object and full-library validation and focused retrieval regressions passed.
+
+
+Hamartiology was reviewed and held. Its title names the doctrine of sin, but its explanatory prose, Scripture anchors, and sources instead concern covenant promises and fulfillment; the only historical-orientation source is an internal placeholder pending human review. The object needs identity and source reconciliation before any doctrine-specific account can be supported.

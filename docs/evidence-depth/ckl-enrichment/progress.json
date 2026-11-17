@@ -11949,6 +11949,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-536-hamartiology-review",
+      "scope": [
+        "hamartiology"
+      ],
+      "completed_unit": "Reviewed and held Hamartiology because its doctrine title conflicts with covenant-focused explanations and source anchors.",
+      "status": "reviewed_skipped",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL object content or protected fields were altered.",
+        "Identity/source mismatch and pending-review limitation recorded for future research."
+      ],
+      "validation": {
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Object validator: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "No content edit; no retrieval regressions required."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -35557,14 +35578,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "fcb60169e83f95ada2bf6e2a578c81e16aab84492ac676d3e9f4e722910c021f",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the record unchanged because its title identifies the doctrine of sin while its summary, context, literary explanation, and anchors describe covenant promise and fulfillment.",
+      "limitation": "The Scripture anchors and source records concern Genesis 9/12, Sinai, Jeremiah 31, and Hebrews 8, not a coherent treatment of sin. The sole internal historical-orientation source is explicitly pending human review. The object needs reviewed identity and source reconciliation before doctrine-specific explanation can be written.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Object validation: 1 valid, 0 errors, 9 pre-existing section-status warnings.",
+          "No CKL content, protected metadata, references, sources, or relationships were changed.",
+          "Focused regressions were not rerun because no CKL content or retrieval input changed."
+        ]
       }
     },
     {
@@ -37027,7 +37063,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/hamartiology.json",
+  "next_batch": "framework/canonical_library/objects/theology/imago-dei.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
