@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **102 objects are enriched**, **87 are unchanged because they
+At this checkpoint, **103 objects are enriched**, **87 are unchanged because they
 are already sufficient**, **60 are skipped pending source or identity
-research**, and **434 remain pending review**.
+research**, and **433 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -423,7 +423,9 @@ Batch 182 enriched What does ruach mean? The explanation now distinguishes the H
 
 Batch 183 enriched What does shalom mean? The answer now shows passage-specific uses as blessing, secure life, covenant promise, peace with God, and reconciliation between divided groups. It avoids an unsupported comparison to general ancient peace language. A full lexical review remains open because no lexicon source is recorded, and the Psalm 29 source type needs metadata review. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/what-does-torah-mean.json`.
+Batch 184 enriched What does Torah mean? The answer now illustrates Torah as instruction in Deuteronomy, meditation in the Psalms, and a topic of New Testament interpretation. It avoids an unsupported comparison with other legal and treaty traditions. A full lexical review remains open because no lexicon is recorded; the Psalm source-type metadata also needs review. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-is-a-covenant-sign.json`.
 Batch 106 reviewed Roman Rome: all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes Romans’ greetings and Acts’ guarded lodging from the city evidence and later traditions, keeping Claudius’s action, the audience, and meeting sites qualified. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
 Batch 107 reviewed the Second Temple priesthood and temple authority record: all four claims, four typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. Its summary now explains how priestly authority, imperial appointment power, the temple boundary relevant to Acts 21, and a proposed Caiaphas identification relate, while preserving uncertainty. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
@@ -580,6 +582,8 @@ Batch 182 enriched What does ruach mean? The explanation now distinguishes the H
 
 Batch 183 enriched What does shalom mean? The answer now shows passage-specific uses as blessing, secure life, covenant promise, peace with God, and reconciliation between divided groups. It avoids an unsupported comparison to general ancient peace language. A full lexical review remains open because no lexicon source is recorded, and the Psalm 29 source type needs metadata review. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/faq/what-does-torah-mean.json`.
+Batch 184 enriched What does Torah mean? The answer now illustrates Torah as instruction in Deuteronomy, meditation in the Psalms, and a topic of New Testament interpretation. It avoids an unsupported comparison with other legal and treaty traditions. A full lexical review remains open because no lexicon is recorded; the Psalm source-type metadata also needs review. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/faq/what-is-a-covenant-sign.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

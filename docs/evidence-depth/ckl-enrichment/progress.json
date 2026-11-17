@@ -3602,6 +3602,31 @@
         ]
       },
       "checkpoint_commit": "2300f4c2"
+    },
+    {
+      "batch_id": "batch-184-torah-meaning-faq",
+      "scope": [
+        "what-does-torah-mean"
+      ],
+      "completed_unit": "Reviewed the lexical question, usage examples, interpretive notes, source list, anchors, and related links; expanded seven fields with examples from the cited passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-does-torah-mean.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "Removed the unsourced ancient legal/treaty comparison."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "1152ea64"
     }
   ],
   "inventory_count": 687,
@@ -13545,14 +13570,40 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "82dd01a38411bfd9cd6ac1a295130410d950c368d735cbbb528d93394bc36bc1",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Expanded the FAQ with examples of Torah as instruction taught in Deuteronomy, meditation in the Psalms, and a subject of interpretation in Matthew, Romans, and Galatians. Replaced an unsupported comparison to ancient legal and treaty traditions with the contexts in the cited texts.",
+      "limitation": "No lexicon or scholarly source is listed, so the answer remains an illustrative passage-based guide rather than a full lexical study. Psalm 1 and Psalm 19 source records are typed as reference-work despite naming Scripture; those protected records were preserved for review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -21351,7 +21402,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-does-torah-mean.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-a-covenant-sign.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
