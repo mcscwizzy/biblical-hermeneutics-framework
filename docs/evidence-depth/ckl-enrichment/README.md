@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **93 objects are enriched**, **87 are unchanged because they
-are already sufficient**, **53 are skipped pending source or identity
-research**, and **454 remain pending review**.
+At this checkpoint, **95 objects are enriched**, **87 are unchanged because they
+are already sufficient**, **55 are skipped pending source or identity
+research**, and **450 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -546,6 +546,8 @@ Batch 171 reviewed Rise of Saul and skipped enrichment pending identity and anch
 
 Batch 172 enriched Road to Emmaus. Its explanation now follows the disciples from grief and confusion through Jesus’ reading of Scripture, recognition at the meal, and return to witness. Travel and hospitality remain grounded in Luke’s narrative; no modern location or generalized custom was asserted. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/second-missionary-journey.json`.
+Batch 173 reviewed Second Missionary Journey, Sermon on the Mount, Sinai Covenant, and Solomon Builds the Temple. The two former records were held because their anchors do not cover the named event. Sinai now follows Exodus 19–24 from deliverance and communal calling to covenant ratification, without an unsourced treaty analogy. Solomon’s temple explanation now links the building details in 1 Kings 6 with the promise in 2 Samuel 7, the ark’s arrival in 2 Chronicles 5, and the later destruction in 2 Kings 25. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/temptation-of-jesus.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

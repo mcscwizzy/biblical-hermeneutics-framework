@@ -3318,6 +3318,37 @@
         ]
       },
       "checkpoint_commit": "03ae9846"
+    },
+    {
+      "batch_id": "batch-173-sinai-and-solomon-events",
+      "scope": [
+        "second-missionary-journey",
+        "sermon-on-the-mount",
+        "sinai-covenant",
+        "solomon-builds-the-temple"
+      ],
+      "completed_unit": "Reviewed four event records; withheld changes for two anchor mismatches and enriched Sinai Covenant and Solomon Builds the Temple from their recorded biblical passages.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/sinai-covenant.json",
+        "framework/canonical_library/objects/events/solomon-builds-the-temple.json"
+      ],
+      "protected_checks": [
+        "Protected fingerprints match for all four records.",
+        "No source identities, Scripture anchors, relationships, statuses, or review metadata changed.",
+        "No unsupported treaty or architectural comparison added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Four single-object CKL audits: each 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected-field comparisons: PASS for all four records.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "f2f43c12"
     }
   ],
   "inventory_count": 687,
@@ -12488,14 +12519,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "17263a6c4dcedd99f35b8dd102b55101416cb3e2f99a3c060bd31242a47fb905",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending event identity and source reconciliation.",
+      "limitation": "The title names Paul’s second missionary journey, but the anchors point to Paul’s conversion, Pentecost, the Jerusalem Council, and Ephesians 2; they do not narrate the journey in Acts 15:36–18:22. No journey-specific passage or source is recorded, so rewriting would require unsupported anchor/source reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run for this unchanged object; focused tests were run for changed records in the batch."
+        ]
       }
     },
     {
@@ -12506,14 +12554,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "42be9b3026404c32b0bf2797a720f7c2dfe24b9c115ab504567a58645f8f0606",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left explanatory prose unchanged pending event identity and source reconciliation.",
+      "limitation": "The title names Jesus’ Sermon on the Mount, but all anchors point to Gospel resurrection or commission scenes rather than Matthew 5–7. The source list contains broad Gospel labels but no passage for the sermon. Rewriting would require unsupported anchor/source reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run for this unchanged object; focused tests were run for changed records in the batch."
+        ]
       }
     },
     {
@@ -12524,14 +12589,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "cc07ad611f2bfc1af6784aac35a08bd6f6a656a4483d23f2fa7cd0f74a7258f0",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the Exodus 19–24 sequence from deliverance and Israel’s calling through covenant words, communal assent, ratification, and the shared meal. Replaced the unsupported treaty-pattern generalization with details directly narrated in Exodus.",
+      "limitation": "No external treaty comparison was added because the listed sources do not document one.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -12542,14 +12632,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "60ac8cff8176bd367e763f05f22c0c5674e1540bb32e70f0ec4378443d17c970",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Clarified the building details in 1 Kings 6, the promise in 2 Samuel 7, the ark’s arrival in 2 Chronicles 5, and the warning that temple construction does not remove covenant responsibility. Connected this to the later destruction account in 2 Kings 25 without adding external architectural comparisons.",
+      "limitation": "The Scripture anchors cover different stages of the temple story; 2 Kings 25 concerns its later destruction rather than construction. Existing anchors and source identities were preserved.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -20654,7 +20769,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/second-missionary-journey.json",
+  "next_batch": "framework/canonical_library/objects/events/temptation-of-jesus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
