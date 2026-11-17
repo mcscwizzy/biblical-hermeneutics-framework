@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **292 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **293 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **178 are skipped pending source or identity
-research**, and **101 remain pending review**.
+research**, and **100 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1787,3 +1787,11 @@ communal praise in Psalm 95, the sacred-place question in John 4, embodied
 devotion in Romans 12, and Revelation’s throne-room vision. Unsupported
 ancient Near Eastern boilerplate was removed. The object and full library
 validate without new errors or warnings; focused regressions passed.
+
+
+Adoption now distinguishes Romans’ Spirit-led belonging and co-heirship,
+Galatians’ minor-heir analogy, Ephesians’ blessing, and 1 John’s present
+identity and future hope. The explanation uses the linked evidence cluster to
+qualify Roman household comparisons and avoids treating them as a complete
+legal model. The object and full library validate without new errors or
+warnings; focused regressions passed.
