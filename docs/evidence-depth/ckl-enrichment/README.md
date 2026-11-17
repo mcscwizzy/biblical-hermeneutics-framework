@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **35 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **36 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **534 remain pending review**.
+research**, and **533 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -389,6 +389,8 @@ Batch 093 reviewed the Pauline Spirit, gifts, prophecy, healing, and assembly-or
 
 Batch 094 reviewed the Pauline suffering, weakness, disability, healing, and apostolic legitimacy record: all 28 claims, 28 typed evidence items, and five interpretive notes. Their explanations already distinguish illness, injury, disability, persecution, poverty, imprisonment, rhetorical weakness, and cross-shaped power, and explicitly leave Paul’s thorn unidentified. The summary now gives readers that distinction in plain language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-women-coworkers-prophecy-and-assembly-authority.json`.
+Batch 095 reviewed the Pauline women coworkers and assembly authority record: all 20 claims, 20 typed evidence items, and five interpretive notes. The explanations already distinguish named work, prophecy, hospitality, disputed silence instructions, Junia’s debated apostolic description, and later office systems. The summary now shows readers how Romans, Corinthians, Philippians, and Acts contribute without flattening their differences. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
