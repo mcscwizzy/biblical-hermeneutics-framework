@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **241 objects are enriched**, **114 are unchanged because they
+At this checkpoint, **241 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **167 are skipped pending source or identity
-research**, and **165 remain pending review**.
+research**, and **164 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1583,3 +1583,6 @@ Batch 451 reviewed Sychar. The summary now explains how John places the town nea
 
 
 Batch 452 reviewed Syria 1 and made no content changes. Its anchors do not establish Syria-specific context or support the characterization of Syria as an imperial power. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 453 reviewed Thessalonica and left it unchanged. The explanation already covers its civic status, road and harbor position, and how Acts and the letters use the city differently. Its source notes distinguish the politarch inscription and later archaeological material from direct evidence for Acts' events, and preserve uncertainty about Second Thessalonians. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
