@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **298 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **299 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **179 are skipped pending source or identity
-research**, and **94 remain pending review**.
+research**, and **93 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1839,3 +1839,10 @@ creation, and Revelation 21’s renewal. The explanation keeps its claims within
 the listed texts and does not use them to resolve modern scientific chronology.
 The object and full library validate without new errors or warnings; focused
 regressions passed.
+
+
+Divine Holiness now links Leviticus’ command to Isaiah’s temple vision,
+confession, cleansing, and commission, then to its use in First Peter and
+Hebrews. The revised fields distinguish command, vision, quotation, and
+exhortation. The object and full library validate without new errors or
+warnings; focused regressions passed.
