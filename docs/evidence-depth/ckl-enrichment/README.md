@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **247 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **248 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **168 are skipped pending source or identity
-research**, and **157 remain pending review**.
+research**, and **156 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1607,3 +1607,6 @@ Batch 459 reviewed Judgment Against the Nations. The revised explanation identif
 
 
 Batch 460 reviewed Messianic Prophecy. The revised explanation distinguishes the Davidic promise, Psalm 2’s royal psalm, Isaiah and Micah’s ruler imagery, and later Christian readings in Luke and Acts. It describes their connections without treating them as identical predictions and removes generic ancient Near Eastern boilerplate unsupported by a comparative source. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 461 reviewed New Covenant Prophecy. The revised explanation spells out Jeremiah’s people-wide promise of heart-written instruction, knowledge of God, and forgiveness; relates it to Ezekiel’s cleansing and new-heart imagery; and distinguishes uses in Luke, 2 Corinthians, and Hebrews. It removes unsupported generic ancient Near Eastern background. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.

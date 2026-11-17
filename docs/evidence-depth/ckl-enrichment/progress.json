@@ -10103,6 +10103,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-461-new-covenant-prophecy",
+      "scope": [
+        "new-covenant-prophecy"
+      ],
+      "completed_unit": "Clarified Jeremiah’s and Ezekiel’s renewal imagery and distinguished how the New Testament texts reuse it.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/prophecy/new-covenant-prophecy.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "Removed broad ancient Near Eastern context unsupported by a comparative source; later Christian reception is identified as reception."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30635,14 +30660,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "89b4ff51f3161662f676f01fa1c0518e9db93b7316d14297214aa8537253b400",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained the corporate scope and key elements of Jeremiah’s promise, Ezekiel’s related imagery, and distinct New Testament uses in Luke, 2 Corinthians, and Hebrews.",
+      "limitation": "Only the recorded biblical texts were used. No external chronology, ancient Near Eastern comparison, or resolution of later theological questions about the promise’s scope was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33455,7 +33504,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/prophecy/new-covenant-prophecy.json",
+  "next_batch": "framework/canonical_library/objects/prophecy/new-jerusalem-prophecy.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
