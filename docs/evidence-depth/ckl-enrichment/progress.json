@@ -7913,6 +7913,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "8eece26b"
+    },
+    {
+      "batch_id": "batch-364-zechariah-the-priest-person",
+      "scope": [
+        "zechariah-the-priest"
+      ],
+      "completed_unit": "Reviewed Zechariah the Priest and held the record because its anchors do not identify the Luke 1 figure.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -25071,14 +25093,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1530b7d40826f7aab6c1578ecc6c5e1eac792610efa9a5182150d2b00498bc65",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Zechariah the Priest’s profile, Scripture anchors, sources, and related themes. Although the title resembles the priest in Luke 1, the anchors and Gospel source list do not identify him or narrate the temple scene where Zechariah appears. The current prose is generic Gospel-character text. Left it unchanged pending source and identity review.",
+      "limitation": "Luke 1:5–25 and 1:57–79 are absent from the structured anchors. No likely passage or identity relationships were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29637,7 +29677,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/zechariah-the-priest.json",
+  "next_batch": "framework/canonical_library/objects/people/zechariah-the-prophet.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
