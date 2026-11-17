@@ -5409,6 +5409,28 @@
         ]
       },
       "checkpoint_commit": "564b6fdd"
+    },
+    {
+      "batch_id": "batch-257-synagogue-leadership-institution",
+      "scope": [
+        "synagogue-leadership"
+      ],
+      "completed_unit": "Reviewed the object and held it because its title concerns synagogue leadership but its Scripture anchors describe broader judicial, royal, and council settings without synagogue evidence.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -18662,14 +18684,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "723552be7ac5e25fe804d8139ca73ca6cda0bd946ad36fe56955add4b144ad69",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the title identifies synagogue leadership while the Scripture anchors concern delegated judging in Exodus, judges and kings in Deuteronomy, elders requesting a king in 1 Samuel, and Paul before the Jerusalem council in Acts 23. These do not document synagogue offices or leadership practice.",
+      "limitation": "The object needs identity and anchor reconciliation plus a reviewed source that directly supports synagogue leadership before contextual explanation can be written. Its internal CKL orientation note is not independently verified scholarship.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -25154,7 +25190,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/synagogue-leadership.json",
+  "next_batch": "framework/canonical_library/objects/institutions/synagogue.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **167 objects are enriched**, **92 are unchanged because they
-are already sufficient**, **67 are skipped pending source or identity
-research**, and **361 remain pending review**.
+are already sufficient**, **68 are skipped pending source or identity
+research**, and **360 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -761,3 +761,6 @@ Batch 255 reviewed Scribes. Its existing explanation already distinguishes admin
 
 
 Batch 256 reviewed Second Temple Administration. Its historical context was expanded with distinct scenes already anchored in Ezra 7, Nehemiah 8, Malachi 2, Luke 2, John 11, and Acts 4/23. The prose explains what those texts show about Torah instruction, temple life, priestly teaching, and council deliberation while cautioning that the scenes do not establish one continuous or representative bureaucracy. No external scholarly arguments were added because the listed academic works were not independently consulted. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Synagogue Leadership.
+
+
+Batch 257 reviewed Synagogue Leadership and left it unchanged. Its title names synagogue leadership, but its anchors cover delegated judging (Exodus 18), judges and kingship (Deuteronomy 16), elders requesting a king (1 Samuel 8), and Paul before the Jerusalem council (Acts 23). None directly supports synagogue offices. The entry needs identity and anchor reconciliation plus a reviewed source on synagogue leadership before contextual prose can be added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Synagogue.
