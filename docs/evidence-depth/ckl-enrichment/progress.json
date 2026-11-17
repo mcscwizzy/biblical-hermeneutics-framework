@@ -7690,6 +7690,28 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "b4757080"
+    },
+    {
+      "batch_id": "batch-354-simon-the-zealot-person",
+      "scope": [
+        "simon-the-zealot"
+      ],
+      "completed_unit": "Reviewed Simon the Zealot and held the record because the current Gospel anchors do not identify him and the sources omit his named lists.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24478,14 +24500,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "375fdcc67201c482467bedb6cf5f739ae6c6ec0bb49e3227a13d9ac82deed7e7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed Simon the Zealot’s profile, sources, anchors, and thematic links. The prose concerns a Gospel disciple, but the four anchors are resurrection or ascension passages that do not identify him; the sources do not include Luke 6 or Acts 1, where he is named in lists of the Twelve. The epithet’s historical meaning is also unsupported here. Left the record unchanged pending identity and anchor review.",
+      "limitation": "No passage in the current anchor set supports a biographical account or interpretation of “Zealot.” No Acts or historical sources were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29224,7 +29264,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/simon-the-zealot.json",
+  "next_batch": "framework/canonical_library/objects/people/solomon.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
