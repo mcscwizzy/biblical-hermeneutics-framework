@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **249 objects are enriched**, **115 are unchanged because they
+At this checkpoint, **250 objects are enriched**, **115 are unchanged because they
 are already sufficient**, **168 are skipped pending source or identity
-research**, and **155 remain pending review**.
+research**, and **154 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1613,3 +1613,6 @@ Batch 461 reviewed New Covenant Prophecy. The revised explanation spells out Jer
 
 
 Batch 462 reviewed New Jerusalem Prophecy. The revised explanation distinguishes Isaiah’s restored-creation imagery, Ezekiel 40:1–4 as the opening of a temple vision, and Revelation’s descending holy city. It keeps each passage’s scope clear and removes unsupported generic ancient Near Eastern background. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 463 reviewed Remnant Prophecy. The revised explanation distinguishes Isaiah’s return from Assyria, Zephaniah’s humble gathered community, and Paul’s uses of the remnant image in Romans 9 and 11. It avoids turning the New Testament passages into a claim that Israel has been discarded and removes unsupported generic ancient Near Eastern background. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.

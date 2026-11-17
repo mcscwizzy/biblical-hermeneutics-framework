@@ -10153,6 +10153,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-463-remnant-prophecy",
+      "scope": [
+        "remnant-prophecy"
+      ],
+      "completed_unit": "Clarified the distinct uses of remnant language in Isaiah, Zephaniah, and Paul’s arguments in Romans.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/prophecy/remnant-prophecy.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "Removed generic ancient Near Eastern context unsupported by a comparative source; Paul’s argument was not reframed as replacement of Israel."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30769,14 +30794,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "37e5e013aad6c84400752c1b19afc8068ff3afd29e94ba300cec962ed1fbc943",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Distinguished Isaiah’s return from Assyria, Zephaniah’s humble gathered community, and Paul’s uses of remnant language in arguments about Israel and grace.",
+      "limitation": "Only the recorded biblical texts were used. No external historical reconstruction or ancient Near Eastern comparison was introduced, and the distinct arguments were not collapsed into one definition of the remnant.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33553,7 +33602,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/prophecy/remnant-prophecy.json",
+  "next_batch": "framework/canonical_library/objects/prophecy/restoration-prophecy.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
