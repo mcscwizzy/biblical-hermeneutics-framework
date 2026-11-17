@@ -7647,6 +7647,28 @@
         ]
       },
       "checkpoint_commit": ""
+    },
+    {
+      "batch_id": "batch-352-silas-person",
+      "scope": [
+        "silas"
+      ],
+      "completed_unit": "Reviewed Silas and held the record because its Gospel anchors do not identify him or support the profile’s claims.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -24362,14 +24384,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "65ed4405d92af439c9c406fffd2497b4f408510d56e2f1bc6995c21fde5361fa",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the Silas profile, sources, Scripture anchors, and related objects. Its prose treats him as a Gospel figure, but every anchor points to a post-resurrection or ascension scene where Silas does not appear; its interpretive notes also concern generic Gospel figures. Left the record unchanged pending identity and source review.",
+      "limitation": "The recorded sources do not include Acts or the letters that name Silas/Silvanus. No likely Acts or Pauline references were substituted.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -29144,7 +29184,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/silas.json",
+  "next_batch": "framework/canonical_library/objects/people/simeon-the-just.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
