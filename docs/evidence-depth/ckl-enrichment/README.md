@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **178 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **78 are skipped pending source or identity
-research**, and **336 remain pending review**.
+are already sufficient**, **79 are skipped pending source or identity
+research**, and **335 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -836,3 +836,6 @@ Batch 280 reviewed Daniel the Exile and left it unchanged. The entry’s referen
 
 
 Batch 281 reviewed David. The literary context now explains the house/house reversal in 2 Samuel 7: David proposes a house for God, while Nathan’s oracle promises a dynastic house for David. Acts 13:22-23 later names Jesus as coming from David’s descendants; the prose keeps those settings and purposes distinct. The separate Second Temple reception statement was not expanded without an inspected supporting source. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Deborah.
+
+
+Batch 282 reviewed Deborah and left it unchanged. The references cover the general cycle in Judges 2, the monarchy transition in 1 Samuel 12, and Hebrews 11’s list of faithful figures (which names Barak, not Deborah); they omit Deborah’s direct narratives in Judges 4-5. The record also says Samuel uses Deborah, which the cited passage does not establish. Person-specific anchors and scope need reconciliation before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Dorcas.

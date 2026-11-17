@@ -6002,6 +6002,28 @@
         ]
       },
       "checkpoint_commit": "11addf02"
+    },
+    {
+      "batch_id": "batch-282-deborah-person",
+      "scope": [
+        "deborah"
+      ],
+      "completed_unit": "Reviewed Deborah and held the entry because its references do not include her direct narratives in Judges 4-5 and its Samuel claim is unsupported by the cited range.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20188,14 +20210,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "0eeaf79d9cfac0ed7d748389a26a2ef6523602ac6edd69bf8b1cf79da28d2c5d",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because the person-specific story of Deborah is not among the cited anchors. The references cover the general cycle in Judges 2, the monarchy transition in 1 Samuel 12, and Hebrews 11’s list (which names Barak, not Deborah). The direct Deborah narratives in Judges 4-5 are absent.",
+      "limitation": "The entry needs a person-specific passage set and clarification of the claim that Samuel uses Deborah before any biographical explanation can be safely written.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26194,7 +26230,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/deborah.json",
+  "next_batch": "framework/canonical_library/objects/people/dorcas.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
