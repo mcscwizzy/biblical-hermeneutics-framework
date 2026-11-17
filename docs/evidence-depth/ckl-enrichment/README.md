@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **70 objects are enriched**, **80 are unchanged because they
+At this checkpoint, **71 objects are enriched**, **80 are unchanged because they
 are already sufficient**, **45 are skipped pending source or identity
 research**, and **511 remain pending review**.
 
@@ -474,6 +474,8 @@ Batch 135 reviewed the Crucifixion event record’s contexts, references, source
 
 Batch 136 reviewed the David and Goliath record and left it unchanged. Its summary explains the scene’s military and rhetorical contrasts; the claims and evidence connect weapon materials to a Gath workshop with explicit limits on what archaeology can establish. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
 
-The next work unit is `framework/canonical_library/objects/events/david-anointed.json`.
+Batch 137 corrected generic event language in the David Anointed record. The revised prose follows 1 Samuel 16’s selection of David, the anointing and Spirit, and the fact that Saul still reigns. The object’s existing anchors omit 1 Samuel 16 and include unrelated passages; they remain preserved for review. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/davidic-covenant.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
