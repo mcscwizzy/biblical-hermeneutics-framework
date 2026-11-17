@@ -6046,6 +6046,28 @@
         ]
       },
       "checkpoint_commit": "da93c94d"
+    },
+    {
+      "batch_id": "batch-284-elijah-person",
+      "scope": [
+        "elijah"
+      ],
+      "completed_unit": "Reviewed Elijah and held the entry because its references mostly concern other prophetic texts or Elisha, with only Luke 4 naming Elijah and no direct Elijah narrative set.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20296,14 +20318,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "48c13268b37ae0c734716936c3c3fd09587d72dbc9ca4091a75214d8a18a1410",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held without prose changes because most anchors do not identify Elijah: 2 Kings 4:1-7 concerns Elisha; Isaiah 40 and Jeremiah 31 concern other prophetic material. Luke 4:16-30 does mention Elijah, but the person-specific Elijah narratives are not anchored and the source list is generic.",
+      "limitation": "The person-specific passage scope and the intended relation of the prophetic texts need review before a biographical explanation can be safely expanded.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -26266,7 +26302,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/elijah.json",
+  "next_batch": "framework/canonical_library/objects/people/elisha.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

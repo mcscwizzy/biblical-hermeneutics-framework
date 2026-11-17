@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **178 objects are enriched**, **95 are unchanged because they
-are already sufficient**, **80 are skipped pending source or identity
-research**, and **334 remain pending review**.
+are already sufficient**, **81 are skipped pending source or identity
+research**, and **333 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -842,3 +842,6 @@ Batch 282 reviewed Deborah and left it unchanged. The references cover the gener
 
 
 Batch 283 reviewed Dorcas and left it unchanged. The cited ranges do not include her direct account: Acts 9:1-19 concerns Saul, and Romans 16, 1 Corinthians 3, and Philippians 1 do not identify Dorcas. The person-specific episode in Acts 9:36-42 is absent, so the entry needs reference reconciliation before explanation can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Elijah.
+
+
+Batch 284 reviewed Elijah and left the record unchanged. Most references do not identify him: 2 Kings 4:1-7 concerns Elisha, while Isaiah 40 and Jeremiah 31 are other prophetic texts. Luke 4 does mention Elijah, but the entry omits his direct narrative episodes and its source list is generic. Passage scope needs review before a biography can be safely expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Elisha.
