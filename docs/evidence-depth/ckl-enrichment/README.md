@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **171 objects are enriched**, **94 are unchanged because they
-are already sufficient**, **70 are skipped pending source or identity
-research**, and **352 remain pending review**.
+are already sufficient**, **71 are skipped pending source or identity
+research**, and **351 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -788,3 +788,6 @@ Batch 264 reviewed Aaron. The explanation now follows the record’s cited seque
 
 
 Batch 265 reviewed Abel and left it unchanged. Its primary anchor is Genesis 11:1-9, which narrates Babel; Romans 5 and 1 Corinthians 15 focus on Adam and new humanity. Hebrews 11:4 does name Abel, but the entry’s summary, source scope, and other anchors remain unresolved. Identity and reference reconciliation is needed before explanatory prose can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Adam.
+
+
+Batch 266 reviewed Adam and left it unchanged. Its primary anchor, Genesis 11:1-9, is the Babel narrative rather than Adam’s story in Genesis 2-3. Romans 5 and 1 Corinthians 15 relate Adam to later theological arguments, while Hebrews 11:1-7 does not identify Adam. The entry needs its primary passage and reception scope reconciled before explanation can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Andrew.
