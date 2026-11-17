@@ -10403,6 +10403,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-473-faithfulness-theme",
+      "scope": [
+        "faithfulness-theme"
+      ],
+      "completed_unit": "Explained distinct uses of trust and faith language in Genesis, Habakkuk, Romans, and Hebrews.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/faithfulness-theme.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "No lexical conclusion about Habakkuk 2:4 or unsupported ancient Near Eastern comparison was introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -31436,14 +31461,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e9901fe933a989ed771a2820d9f8283372f5c8ac0e19e21338efbc0e8d2e7565",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Distinguished Abraham’s trust, Habakkuk’s waiting vision, Paul’s argument from Abraham, and Hebrews’ exhortation while connecting them around reliance on God.",
+      "limitation": "The recorded sources support textual explanation but not a lexical study of Habakkuk 2:4 or a broader treatment of faith and faithfulness terminology. No ancient Near Eastern comparison was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -34040,7 +34088,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/faithfulness-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/fire-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
