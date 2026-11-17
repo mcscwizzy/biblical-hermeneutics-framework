@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **91 objects are enriched**, **85 are unchanged because they
+At this checkpoint, **91 objects are enriched**, **86 are unchanged because they
 are already sufficient**, **52 are skipped pending source or identity
-research**, and **459 remain pending review**.
+research**, and **458 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -536,6 +536,8 @@ Batch 166 reviewed Rebuilding the Temple and left it unchanged. Its existing acc
 
 Batch 167 reviewed Rebuilding the Walls and skipped enrichment pending identity and source reconciliation. The title concerns Jerusalem’s walls, but the anchors cover Samaria, Judah’s decline, exile, and temple renewal; no Nehemiah passage or directly relevant source is recorded. The object and full CKL validated with zero errors and the same 14 baseline warnings.
 
-The next work unit is `framework/canonical_library/objects/events/red-sea-crossing.json`.
+Batch 168 reviewed Red Sea Crossing and left it unchanged. The record already connects Exodus 13–15 and Numbers 33, preserves the route markers without choosing modern coordinates, and separates the normalized English title from unresolved Hebrew place-name geography. Validation found zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/resurrection.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

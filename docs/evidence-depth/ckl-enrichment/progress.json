@@ -3198,6 +3198,29 @@
         ]
       },
       "checkpoint_commit": "544db912"
+    },
+    {
+      "batch_id": "batch-168-red-sea-crossing-review",
+      "scope": [
+        "red-sea-crossing"
+      ],
+      "completed_unit": "Reviewed the narrative sequence, geographic and lexical uncertainty, source support, Scripture anchors, and related links; left the object unchanged because it is already sufficiently specific and carefully qualified.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "No CKL content or protected metadata changed.",
+        "Modern geographic identifications remain unresolved and qualified."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Manifest protected fingerprint check: PASS.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "544db912"
     }
   ],
   "inventory_count": 687,
@@ -12178,14 +12201,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "edae3ad92d60c6edd6d2099fcbb8087f475fa6b8e02640d7fc68ada5ff548814",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "The explanation already connects Exodus 13–15 and Numbers 33, distinguishes the biblical route markers from modern site proposals, and clearly marks uncertainty about geography and the Hebrew place term.",
+      "limitation": "The record lists relevant scholarly sources, but this review did not independently inspect their full arguments; no additional geographic claims were added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint matches the manifest baseline; no CKL fields changed.",
+          "Regression tests not run because no CKL content changed."
+        ]
       }
     },
     {
@@ -20434,7 +20474,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/red-sea-crossing.json",
+  "next_batch": "framework/canonical_library/objects/events/resurrection.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
