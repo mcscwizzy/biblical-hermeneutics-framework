@@ -20,7 +20,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **56 objects are enriched**, **77 are unchanged because they
+At this checkpoint, **56 objects are enriched**, **78 are unchanged because they
 are already sufficient**, **44 are skipped pending source or identity
 research**, and **511 remain pending review**.
 
@@ -438,6 +438,8 @@ Batch 117 reviewed the Assyrian exile record and left its explanation unchanged.
 
 Batch 118 reviewed the Babel event record and left it unchanged. Its summary identifies the builders’ aims, and its context separates narrative setting from composition history while treating ziggurats as a bounded analogy rather than a specific monument. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
 
-The next work unit is `framework/canonical_library/objects/events/babylonian-exile.json`.
+Batch 119 reviewed the Babylonian exile record and left it unchanged. Its explanation already distinguishes the 597 BCE deportation, Jerusalem’s destruction in 587/586 BCE, continued life in Judah and Babylonia, and the limits of the surviving evidence. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
+
+The next work unit is `framework/canonical_library/objects/events/baptism-of-jesus.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
