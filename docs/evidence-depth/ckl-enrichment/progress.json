@@ -5014,6 +5014,31 @@
         ]
       },
       "checkpoint_commit": "a6a034b4"
+    },
+    {
+      "batch_id": "batch-241-levitical-service-institution",
+      "scope": [
+        "levitical-service"
+      ],
+      "completed_unit": "Enriched Levitical Service from Exodus 23, Leviticus 23, 1 Kings 8, and Hebrews 10. Distinguished festival instructions, temple dedication narrative, and Hebrews’ theological argument; removed unsupported developmental and generic ANE claims.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/levitical-service.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -17561,14 +17586,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5636ce91b2b19ce98b1ab1326c552059dbe8689505b33abc86556ab60bcddc98",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Distinguished the festival instructions in Exodus and Leviticus, the temple dedication narrative in 1 Kings, and Hebrews’ argument about repeated sacrifices and Jesus’ offering. Qualified the theological comparison as Hebrews’ own argument and removed unsupported claims about historical development and generic ANE practice.",
+      "limitation": "The object contains Scripture and an internal orientation source pending human review, but no independent historical source. The explanation therefore follows the four recorded passages and does not reconstruct the development of Levitical practice or make claims about Second Temple worship.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base; Scripture/source identities and relationships are unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24341,7 +24396,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/levitical-service.json",
+  "next_batch": "framework/canonical_library/objects/institutions/lords-supper.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
