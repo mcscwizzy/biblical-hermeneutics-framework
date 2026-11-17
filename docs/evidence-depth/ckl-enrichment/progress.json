@@ -5235,6 +5235,29 @@
         ]
       },
       "checkpoint_commit": "7e70cafb"
+    },
+    {
+      "batch_id": "batch-250-roman-citizenship-institution",
+      "scope": [
+        "roman-citizenship"
+      ],
+      "completed_unit": "Reviewed Roman Citizenship’s direct references and sources. Held without edits because the Scripture anchors cover Israelite leadership or Acts 23’s council dispute, not Paul’s citizenship episodes, and no independent historical source is attached.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object content, IDs, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest integrity check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -18189,14 +18212,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b8f453a715a8ddafc77f85cc75fa503336db48b615687fc8f50104d75890309f",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content change; the direct anchors concern Israelite leadership and monarchy, and the Acts anchor does not cover Paul’s citizenship claim. No independently reviewed historical source on Roman citizenship is attached.",
+      "limitation": "Exodus 18, Deuteronomy 16-18, and 1 Samuel 8-12 concern Israelite leadership. Acts 23:1-10 presents a council dispute, but does not describe Paul invoking Roman citizenship; the broad Acts 23-26 source title also does not locate the relevant citizenship episodes. The only historical source is an internal orientation placeholder. A source-grounded explanation needs direct citizenship passages and reviewed historical evidence. Existing prose and metadata remain unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no CKL content changed.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected metadata, Scripture anchors, source identities, and relationships remain unchanged.",
+          "Manifest integrity check and git diff --check: PASS."
+        ]
       }
     },
     {
@@ -24807,7 +24849,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/roman-citizenship.json",
+  "next_batch": "framework/canonical_library/objects/institutions/roman-governorship.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
