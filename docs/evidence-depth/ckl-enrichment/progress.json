@@ -4349,6 +4349,31 @@
         ]
       },
       "checkpoint_commit": "b62fa65d"
+    },
+    {
+      "batch_id": "batch-214-sabbath-significance-faq",
+      "scope": [
+        "what-is-the-significance-of-the-sabbath"
+      ],
+      "completed_unit": "Reviewed creation and liberation rationales, covenant-sign language, Jesus’ teaching, Hebrews’ argument, comparative claim, and sources; enriched eight explanatory fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/what-is-the-significance-of-the-sabbath.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "No unsupported comparison with surrounding cultures retained."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "d14768f8"
     }
   ],
   "inventory_count": 687,
@@ -15626,14 +15651,41 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "80907ceab4a288b5c227ca1f22e6aeaafb86bf385dd040a06304af199b6f73de",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes"
+      ],
+      "outcome": "Explained the creation and Exodus rationales, manna practice, covenant-sign language, Jesus’ teaching, and Hebrews’ separate argument about rest. Removed an unsupported claim comparing Sabbath with surrounding cultures.",
+      "limitation": "No comparative source on neighboring cultures’ rest practices is recorded; no such claim was retained.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected fingerprint check: PASS; source identities, Scripture anchors, relationships, and review metadata preserved.",
+          "git diff --check: PASS.",
+          "Content checkpoint commit: d14768f8."
+        ]
       }
     },
     {
@@ -22892,7 +22944,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-the-sabbath.json",
+  "next_batch": "framework/canonical_library/objects/faq/what-is-the-significance-of-the-temple.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
