@@ -792,6 +792,19 @@
         "ckl_objects": "PASS: Luke valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-053-malachi-review",
+      "scope": [
+        "malachi"
+      ],
+      "completed_unit": "Malachi reviewed and found already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Malachi valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -4146,14 +4159,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "45b2a06b85c57f0b0ed12f018107bfdfc0c180bb1d21987f4ae404aad8d08ca7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. Its summary and contexts locate the disputes within Persian-period Yehud and the Second Temple; 34 claims and 67 notes explain textual ambiguity, historical limits, labor and neighbor justice, vulnerable relationships, and Jewish and Christian reception with specific qualifications.",
+      "limitation": "The object already provides detailed, accessible explanations and safeguards against overconfident or harmful modern application.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14742,6 +14768,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/malachi.json",
+  "next_batch": "framework/canonical_library/objects/books/mark.json",
   "protected_fingerprint_base": "origin/master"
 }
