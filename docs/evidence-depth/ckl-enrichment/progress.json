@@ -4546,6 +4546,31 @@
         ]
       },
       "checkpoint_commit": "259ba7c2"
+    },
+    {
+      "batch_id": "batch-222-david-faq",
+      "scope": [
+        "who-was-david"
+      ],
+      "completed_unit": "Reviewed the biblical evidence, literary settings, notes, sources, and related entries; clarified Davidic promise and later canonical uses, removing unsupported historical comparison.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/faq/who-was-david.json"
+      ],
+      "protected_checks": [
+        "Object and Scripture anchor identities, source identities, related links, and review/confidence metadata preserved.",
+        "No unsupported comparison about ancient kingship added."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "15cb9971"
     }
   ],
   "inventory_count": 687,
@@ -16209,14 +16234,43 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "cab4dc046c8663c45a15b8adcb5ac3ad235295dbe230ce216914c9d81a5a0a4d",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability",
+        "literary_context",
+        "canonical_context",
+        "covenantal_significance",
+        "interpretive_notes",
+        "scripture_references",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "canonical_context",
+        "context_applicability.canonical",
+        "covenantal_significance",
+        "interpretive_notes[0].note",
+        "interpretive_notes[1].note"
+      ],
+      "outcome": "Connected David’s anointing, the promise to his house, royal psalms, and New Testament uses while distinguishing narrative, poetry, announcement, speech, and vision. Removed broad unsupported comparison about ancient kingship.",
+      "limitation": "The listed support is biblical; it does not provide independent historical evidence or a comparative study of ancient kingship. Psalm 2 and Psalm 110 are incorrectly typed as reference works in the existing source metadata; preserved for later metadata review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint matches the fetched base.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -23331,7 +23385,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/faq/who-was-david.json",
+  "next_batch": "framework/canonical_library/objects/faq/who-was-moses.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
