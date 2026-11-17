@@ -10203,6 +10203,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-465-suffering-servant-prophecy",
+      "scope": [
+        "suffering-servant-prophecy"
+      ],
+      "completed_unit": "Clarified the progression and differing images in Isaiah’s servant passages and their later Christian use.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/prophecy/suffering-servant-prophecy.json"
+      ],
+      "protected_checks": [
+        "Object and claim identities, source identities, Scripture anchors, review metadata, and curated relationships were preserved.",
+        "Removed generic ancient Near Eastern background unsupported by a comparative source; later reception was distinguished from original textual setting."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30903,14 +30928,38 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "acbaafd815ff47d559ec89b68871310446d9a5c020d92f193ea804b59beb85c1",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note",
+        "hermeneutical_lens"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "context_applicability.ancient_near_east",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Explained the varied servant roles across Isaiah 42, 49, 50, and 52–53, including the Israel language in Isaiah 49, and distinguished the later readings in Acts and 1 Peter.",
+      "limitation": "Only the recorded biblical texts were used. The entry does not settle the servant’s identity across the Isaian passages or treat later Christian reception as proof of Isaiah’s original referent.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 13 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Object, source identities, Scripture references, review metadata, and curated relationships were preserved; protected-field fingerprint matches the fetched base."
+        ]
       }
     },
     {
@@ -33651,7 +33700,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/prophecy/suffering-servant-prophecy.json",
+  "next_batch": "framework/canonical_library/objects/symbols/temple-symbol.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
