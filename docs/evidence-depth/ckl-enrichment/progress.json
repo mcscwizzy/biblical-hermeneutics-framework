@@ -1936,6 +1936,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "c3e260aa"
+    },
+    {
+      "batch_id": "batch-114-annunciation-summary",
+      "scope": [
+        "annunciation-to-mary"
+      ],
+      "completed_unit": "Reviewed the summary, contextual fields, biblical source entries, one interpretive note, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/annunciation-to-mary.json"
+      ],
+      "protected_checks": [
+        "Scripture references, source identities, relationships, classifications, and review metadata preserved.",
+        "Luke’s narrative and later devotional traditions remain distinct."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "b5467795"
     }
   ],
   "inventory_count": 687,
@@ -8628,14 +8649,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "46e4eb00d7abe32f257077489177314c35b56cfcbd97197db74120830428c708",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Clarified Luke’s Davidic language, Mary’s response, and the Holy Spirit’s role, then connected the throne promise to 2 Samuel 7. The summary preserves the narrative’s emphasis and keeps later devotional traditions distinct.",
+      "limitation": "The object has no atomic claims or typed evidence; the summary stays with its listed biblical passages and interpretive note and adds no historical reconstruction.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: references, source identities, claims/evidence (none present), relationships, classifications, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.71s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -17892,7 +17931,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/annunciation-to-mary.json",
+  "next_batch": "framework/canonical_library/objects/events/ark-brought-to-jerusalem.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
