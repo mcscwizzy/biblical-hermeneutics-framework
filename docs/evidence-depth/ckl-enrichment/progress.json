@@ -11229,6 +11229,31 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-507-sonship-theme",
+      "scope": [
+        "sonship-theme"
+      ],
+      "completed_unit": "Clarified how adoption and child language function distinctly in Romans, Galatians, Ephesians, and 1 John, with careful limits on Roman legal comparison.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/sonship-theme.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, sources, Scripture references, claims, relationships, review metadata, or protected fields changed.",
+        "Removed the generic ancient Near Eastern paragraph and set its applicability flag false because the recorded evidence supports Roman household comparison rather than broad ANE claims."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint and retrieval/canonical regressions passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -33722,14 +33747,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "7dabe2e66383ce467e97a4d6d678b42313488a63d4385fc7634c5e34296e6090",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east"
+      ],
+      "outcome": "Clarified the distinct arguments and household imagery in Romans 8, Galatians 4, Ephesians 1, and 1 John 3; qualified the use of Roman adoption practices and removed unsupported generic ancient Near Eastern framing.",
+      "limitation": "The recorded sources support comparison with Roman household and adoption contexts, but do not establish one uniform legal procedure or authorize claims about modern adoption.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture references, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -35714,7 +35758,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/sonship-theme.json",
+  "next_batch": "framework/canonical_library/objects/themes/spirit-theme.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

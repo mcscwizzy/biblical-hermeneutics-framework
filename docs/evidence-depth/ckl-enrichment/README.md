@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **285 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **286 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **175 are skipped pending source or identity
-research**, and **111 remain pending review**.
+research**, and **110 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1717,3 +1717,12 @@ Batch 504 reviewed Sanctuary Theme and left it unchanged. Its source-aware accou
 Batch 505 reviewed Seed Theme and left it unchanged. All listed anchors concern exile, return, restoration, the Spirit, or new creation; none establishes seed or descendant imagery. The manifest records the source/identity gap.
 
 Batch 506 reviewed Shepherd Theme and left it unchanged. Isaiah 40:11 is the only cited anchor that directly uses shepherd imagery; the other references concern restoration more generally. The manifest records the need for anchor review.
+
+
+The Sonship Theme review clarified the different roles of adoption and child
+language in Romans 8, Galatians 4, Ephesians 1, and 1 John 3. The explanation
+now distinguishes each letter’s argument and qualifies Roman household
+comparisons; a generic ancient Near Eastern paragraph was removed because the
+recorded evidence does not support it. The object and full CKL validate with no
+new errors or warnings, and the focused content-quality and retrieval tests
+passed.
