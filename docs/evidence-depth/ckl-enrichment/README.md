@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **169 objects are enriched**, **94 are unchanged because they
+At this checkpoint, **170 objects are enriched**, **94 are unchanged because they
 are already sufficient**, **69 are skipped pending source or identity
-research**, and **355 remain pending review**.
+research**, and **354 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -779,3 +779,6 @@ Batch 261 reviewed Temple. The summary now explains the temple as a place of wor
 
 
 Batch 262 reviewed Village Elders and left it unchanged. The title suggests a village-level office, but the anchors combine delegated judges (Exodus 18), town judges and officials (Deuteronomy 16), national elders requesting a king (1 Samuel 8), and a Jerusalem council scene (Acts 23). The record needs its intended scope resolved and direct evidence for village elders before explanation can be safely expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Chiasm.
+
+
+Batch 263 reviewed Chiasm. Its literary explanation now contrasts Genesis 9:6 and Philippians 2:6-11, which are proposed structural readings, with Mark 2:27 as a balanced saying that need not be a chiasm. Readers are prompted to test correspondences and boundaries and ask whether the proposed center clarifies the passage. The broader claims about ancient composition and Second Temple interpretation were not expanded because the record has no independently inspected source for them. Single-object validation passed with zero errors and nine pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Aaron.
