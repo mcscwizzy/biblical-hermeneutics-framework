@@ -6138,6 +6138,32 @@
         ]
       },
       "checkpoint_commit": "0fb3b42b"
+    },
+    {
+      "batch_id": "batch-288-esther-the-queen-person",
+      "scope": [
+        "esther-the-queen"
+      ],
+      "completed_unit": "Reviewed Esther the Queen and replaced generic restoration-era prose with the specific risk, appeal, fast, and decision in Esther 4.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/esther-the-queen.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -20525,14 +20551,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4d8a5d34c539bb488468b1c9e23ee21108322cba9165a56821523161a1c1c774",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Replaced generic restoration-era wording with the actual Esther 4 crisis: Esther’s constrained access to the king, Mordecai’s appeal, the shared fast, and her decision to approach. Clarified that linked Ezra, Nehemiah, and Haggai references are broader restoration context, not episodes in Esther’s biography.",
+      "limitation": "The account stays within Esther 4’s narrative claims and does not add an external reconstruction of Persian court protocol or Esther’s historicity.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -26423,7 +26472,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/esther-the-queen.json",
+  "next_batch": "framework/canonical_library/objects/people/eunice.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
