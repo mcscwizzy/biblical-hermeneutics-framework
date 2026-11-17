@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **167 objects are enriched**, **92 are unchanged because they
+At this checkpoint, **167 objects are enriched**, **93 are unchanged because they
 are already sufficient**, **68 are skipped pending source or identity
-research**, and **360 remain pending review**.
+research**, and **359 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -764,3 +764,6 @@ Batch 256 reviewed Second Temple Administration. Its historical context was expa
 
 
 Batch 257 reviewed Synagogue Leadership and left it unchanged. Its title names synagogue leadership, but its anchors cover delegated judging (Exodus 18), judges and kingship (Deuteronomy 16), elders requesting a king (1 Samuel 8), and Paul before the Jerusalem council (Acts 23). None directly supports synagogue offices. The entry needs identity and anchor reconciliation plus a reviewed source on synagogue leadership before contextual prose can be added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Synagogue.
+
+
+Batch 258 reviewed Synagogue and left it unchanged. It already distinguishes the varied local evidence for pre-70 synagogues from later standardized practice, relates narrated settings to Scripture reading, teaching, prayer, debate, and discipline, and marks the uncertain origin and Johannine exclusion questions. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Tabernacle.

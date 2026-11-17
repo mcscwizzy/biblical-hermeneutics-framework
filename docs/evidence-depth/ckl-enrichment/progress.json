@@ -5431,6 +5431,28 @@
         ]
       },
       "checkpoint_commit": "5436b3f1"
+    },
+    {
+      "batch_id": "batch-258-synagogue-institution",
+      "scope": [
+        "synagogue"
+      ],
+      "completed_unit": "Reviewed the synagogue institution record and left its already nuanced explanations of local variation, pre-70 evidence, Gospel and Acts scenes, and limits of later liturgical reconstruction unchanged.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "All CKL object fields were left unchanged.",
+        "No curated relationships were changed or promoted."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -18716,14 +18738,33 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ca55efebbdf8b2c1b995964e7159565587e41f1a54ad946e5d60194ee77ae36a",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "historical_setting",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged. The object already explains local variation in pre-70 synagogue evidence, distinguishes Gospel and Acts scenes, notes continued temple orientation, and cautions against projecting later rabbinic liturgies or assuming a single exilic origin.",
+      "limitation": "Some historically specific claims rely on the listed open-access Matassa monograph and internal evidence clusters; no additional argument was added because existing prose is sufficiently careful and explanatory.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No content fields or protected relationships were changed.",
+          "Manifest protected-field check and git diff --check passed."
+        ]
       }
     },
     {
@@ -25190,7 +25231,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/synagogue.json",
+  "next_batch": "framework/canonical_library/objects/institutions/tabernacle.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
