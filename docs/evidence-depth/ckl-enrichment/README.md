@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **82 objects are enriched**, **82 are unchanged because they
+At this checkpoint, **83 objects are enriched**, **82 are unchanged because they
 are already sufficient**, **48 are skipped pending source or identity
-research**, and **475 remain pending review**.
+research**, and **474 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -508,6 +508,8 @@ Batch 152 corrected the Lord’s Supper event record, distinguishing the Synopti
 
 Batch 153 enriched Jacob at Peniel, connecting the night struggle to Jacob’s fear and reunion with Esau, while keeping Genesis’ unnamed opponent distinct from Hosea’s later reflection. The unsupported general ANE comparison was removed. The library retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/joseph-interprets-pharaohs-dreams.json`.
+Batch 154 enriched Joseph Interprets Pharaoh’s Dreams, explaining the paired dreams, the famine plan, and Joseph’s rise to administrative authority. It connects later Genesis interpretations of preservation without treating the harm he suffered as good in itself. No unsupported court-practice comparison was added. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/events/joseph-sold-into-egypt.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

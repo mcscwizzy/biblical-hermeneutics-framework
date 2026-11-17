@@ -2840,6 +2840,33 @@
         ]
       },
       "checkpoint_commit": "635d0938"
+    },
+    {
+      "batch_id": "batch-154-joseph-pharaoh-dreams-context",
+      "scope": [
+        "joseph-interprets-pharaohs-dreams"
+      ],
+      "completed_unit": "Reviewed explanatory fields, Scripture anchors, source identities, relationships, notes, and evidence coverage; enriched five narrative fields.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/joseph-interprets-pharaohs-dreams.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, curated relationships, statuses, applicability, and review metadata preserved.",
+        "No uncited comparative claim about Egyptian court practices introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.33s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "78929afc"
     }
   ],
   "inventory_count": 687,
@@ -11157,15 +11184,44 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "822619e1ee33e7d072ba4b6ab935e5c7ae2edf603ade3eab01e781bd1130d3bc",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "claims",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Expanded Pharaoh’s paired dreams, Joseph’s interpretation and grain-storage proposal, and the transition from prisoner to administrator. Connected the episode to Genesis 45 and 50’s later preservation language while distinguishing that interpretation from the harm Joseph suffered.",
+      "limitation": "No external ancient Near Eastern court-practice or dream-interpretation source is recorded, so the comparative field is blank. Existing Scripture anchors and relationships remain unchanged.",
       "validation": {
-        "status": "not_run",
-        "results": []
-      }
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; source identities, Scripture anchors, relationships, claim/evidence data, statuses, applicability, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.33s).",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "78929afc"
     },
     {
       "id": "joseph-sold-into-egypt",
@@ -19701,7 +19757,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/joseph-interprets-pharaohs-dreams.json",
+  "next_batch": "framework/canonical_library/objects/events/joseph-sold-into-egypt.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
