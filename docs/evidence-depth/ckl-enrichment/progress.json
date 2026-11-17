@@ -576,6 +576,19 @@
         "ckl_objects": "PASS: Habakkuk valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-037-haggai-review",
+      "scope": [
+        "haggai"
+      ],
+      "completed_unit": "Haggai reviewed and found already sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Haggai valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -3370,14 +3383,26 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d62c809e53d94736188ac0f937b3abdfbe422d63ec60ca7a8e84e6593c5984b7",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary and context explain the Persian-period setting, dated units, priestly Torah exchange, and canonical reception; 28 claims and 49 interpretive notes clarify textual and historical evidence, disputed readings, and ethical limits in detail.",
+      "limitation": "The object already provides carefully qualified, accessible explanations; no new expansion is justified.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14254,6 +14279,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/haggai.json",
+  "next_batch": "framework/canonical_library/objects/books/hebrews.json",
   "protected_fingerprint_base": "origin/master"
 }
