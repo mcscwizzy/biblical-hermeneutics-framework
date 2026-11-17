@@ -2304,6 +2304,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "10d280ee"
+    },
+    {
+      "batch_id": "batch-132-shechem-covenant-summary",
+      "scope": [
+        "covenant-renewal-at-shechem"
+      ],
+      "completed_unit": "Reviewed summary, contexts, Scripture references, source identities, one interpretive note, and the absence of atomic claims or typed evidence; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/covenant-renewal-at-shechem.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, relationships, statuses, and review metadata preserved.",
+        "The people’s response is explained in light of the prior recital of divine acts and the warning about covenant responsibility."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "8e65505a"
     }
   ],
   "inventory_count": 687,
@@ -9687,14 +9708,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "cf24d457646171b0b17fa7ae27604be080c647ede091d82fa310abf2cc2b0853",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items",
+        "interpretive_notes[*].note/rationale"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Explained the sequence in Joshua 24: Joshua recounts God’s acts, invites Israel’s response, warns of covenant responsibility, and establishes a stone as witness. The summary connects Shechem with earlier ancestral and later Judges narratives.",
+      "limitation": "The object has no atomic claims or typed evidence; the summary stays within the listed biblical sources and adds no external reconstruction of covenant ceremony.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 warnings; same baseline warning set.",
+          "Protected-field review: source identities, Scripture anchors, relationships, statuses, and review metadata unchanged.",
+          "Targeted content-quality and retrieval regressions: 17 passed, 4 subtests passed (61.49s).",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -18627,7 +18666,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/covenant-renewal-at-shechem.json",
+  "next_batch": "framework/canonical_library/objects/events/creation.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
