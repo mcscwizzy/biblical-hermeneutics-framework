@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **202 objects are enriched**, **97 are unchanged because they
+At this checkpoint, **203 objects are enriched**, **97 are unchanged because they
 are already sufficient**, **103 are skipped pending source or identity
-research**, and **285 remain pending review**.
+research**, and **284 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -988,4 +988,7 @@ Batch 330 reviewed Nathan the Prophet and left the record unchanged. Its narrati
 Batch 331 reviewed Nehemiah the Governor. The profile now follows the account from the report and prayer in chapter 1 through rebuilding, public Torah reading, and community reforms. Ezra, Haggai, and Esther are treated as related but distinct restoration-era settings. The historical and ancient Near Eastern explanations stay within the biblical narrative and do not add an external Persian chronology. Relevant context dimensions were enabled after confirming the current context builder hides fields marked inapplicable. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is nicodemus.
 
 
-Batch 332 reviewed Nicodemus and left the record unchanged. The profile concerns a figure in John, but its anchors point only to Gospel resurrection and ascension scenes that do not include him. The likely scenes in John were not substituted because the source and anchor relationships require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is noah.
+Batch 332 reviewed Nicodemus and left the record unchanged. The profile concerns a figure in John, but its anchors point only to Gospel resurrection and ascension scenes that do not include him. The likely scenes in John were not substituted because the source and anchor relationships require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is onesimus.
+
+
+Batch 333 reviewed Noah. The explanation now follows Genesis from violence and the flood through covenant and Babel, while noting that the Genesis narrative does not claim human failure has disappeared. Hebrews 11:7 is described as a later biblical remembrance of Noah’s trust. The sources recorded here do not include an inspected external flood account, archaeological study, or scholarly comparison, so no historical identification or direct-borrowing claim was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is onesimus.

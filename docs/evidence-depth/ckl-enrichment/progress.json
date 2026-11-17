@@ -7204,6 +7204,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "237da660"
+    },
+    {
+      "batch_id": "batch-333-noah-person",
+      "scope": [
+        "noah"
+      ],
+      "completed_unit": "Expanded Noah’s narrative context from Genesis and its later remembrance in Hebrews while explicitly bounding external historical and literary claims.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/noah.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "The Genesis 1–11 and Hebrews 11 source identities and all Scripture anchor relationships remain unchanged."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -23162,14 +23187,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "721e26e778b7f1b1f4bd3c266587ec5392a6d9ed48c5b2bfb8723188b43ecaaf",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability"
+      ],
+      "outcome": "Completed review of the populated narrative fields, relevant context applicability, biblical sources and anchors, and related objects. The explanation is grounded in the recorded Genesis and Hebrews sources, with historical/comparative limits stated.",
+      "limitation": "The recorded sources are biblical and do not include an inspected external flood account, archaeology, or scholarly comparison. No historical identification or direct-borrowing claim was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -28286,7 +28339,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/noah.json",
+  "next_batch": "framework/canonical_library/objects/people/onesimus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
