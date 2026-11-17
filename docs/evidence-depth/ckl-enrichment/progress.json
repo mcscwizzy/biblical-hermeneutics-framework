@@ -8855,6 +8855,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-406-great-sea-review",
+      "scope": [
+        "great-sea"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Great Sea-specific source and Scripture-anchor review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, related-object edges, context flags, and review metadata remained unchanged.",
+        "No unsupported geographic identification or curated relationships were added."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -27493,14 +27514,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "8915fb59bfd386bdf925a9c935859db4a90eb0a572df11d05742b8ef6fbb43c3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "interpretive_notes",
+        "related_objects",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed explanatory fields, references, sources, and related-object links. The cited passages concern the sea crossing, Jordan, and restoration imagery, not the Great Sea or its Mediterranean designation; no prose was changed.",
+      "limitation": "Exodus 14:1-31 describes the sea crossing, Joshua 1:1-4 describes a Jordan boundary, Psalm 114 recalls the sea and Jordan, and Isaiah 43:1-21 uses waters in restoration imagery. These do not establish the Great Sea profile or its trade-route claims. The internal historical-orientation source is pending human review. Great Sea-specific passages and geographic sources are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -31303,7 +31339,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/great-sea.json",
+  "next_batch": "framework/canonical_library/objects/places/hamath-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
