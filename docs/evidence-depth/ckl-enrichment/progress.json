@@ -11450,6 +11450,32 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-516-worship-theme",
+      "scope": [
+        "worship-theme"
+      ],
+      "completed_unit": "Explained the different forms and settings of worship in Exodus 15, Psalm 95, John 4, Romans 12, and Revelation 4.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/themes/worship-theme.json"
+      ],
+      "protected_checks": [
+        "No canonical IDs, source identities, Scripture anchors, claims, relationships, review metadata, or other protected fields changed.",
+        "Removed unsupported generic ancient Near Eastern framing and set its applicability flag false.",
+        "Historical wording describes the Samaritan/Judean sacred-place question without characterizing either community."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Manifest integrity check passed."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -34281,14 +34307,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a494b575f80da4b6652232d1f802d793ef79c34760876354a17557752f3990eb",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability",
+        "interpretive_notes[*].note"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected worship as song after deliverance, communal praise, response to a sacred-place question, embodied life, and heavenly praise while retaining each passage’s setting.",
+      "limitation": "No comparative ancient Near Eastern evidence is recorded. Generic interpretive notes were reviewed and left unchanged; the explanation stays within the cited passages.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed.",
+          "Protected-field fingerprint, source identities, Scripture anchors, review metadata, and curated relationships are unchanged."
+        ]
       }
     },
     {
@@ -36111,7 +36160,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/themes/worship-theme.json",
+  "next_batch": "framework/canonical_library/objects/theology/adoption.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

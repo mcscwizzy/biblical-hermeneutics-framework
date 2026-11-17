@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **291 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **292 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **178 are skipped pending source or identity
-research**, and **102 remain pending review**.
+research**, and **101 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1780,3 +1780,10 @@ Scripture’s formative role in 2 Timothy, and Hebrews’ account of divine spee
 The unsupported ancient Near Eastern boilerplate was removed. The object and
 full library validate without new errors or warnings; focused content-quality
 and retrieval regressions passed.
+
+
+Worship Theme now distinguishes the post-deliverance song in Exodus 15,
+communal praise in Psalm 95, the sacred-place question in John 4, embodied
+devotion in Romans 12, and Revelation’s throne-room vision. Unsupported
+ancient Near Eastern boilerplate was removed. The object and full library
+validate without new errors or warnings; focused regressions passed.
