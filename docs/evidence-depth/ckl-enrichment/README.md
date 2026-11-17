@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **36 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **37 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **533 remain pending review**.
+research**, and **532 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -391,6 +391,8 @@ Batch 094 reviewed the Pauline suffering, weakness, disability, healing, and apo
 
 Batch 095 reviewed the Pauline women coworkers and assembly authority record: all 20 claims, 20 typed evidence items, and five interpretive notes. The explanations already distinguish named work, prophecy, hospitality, disputed silence instructions, Junia’s debated apostolic description, and later office systems. The summary now shows readers how Romans, Corinthians, Philippians, and Acts contribute without flattening their differences. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity.json`.
+Batch 096 reviewed the Pauline work, wages, poverty, giving, and economic solidarity record: all 50 claims, 50 typed evidence items, and six interpretive notes. Their explanations already distinguish support rights from voluntary nonuse, generosity from coercion, equality from enforced destitution, and unwillingness from inability to work. The summary now guides readers through those distinctions and identifies Acts as a later witness. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/persian-restoration-and-yehud-administration.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
