@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **300 objects are enriched**, **116 are unchanged because they
+At this checkpoint, **301 objects are enriched**, **116 are unchanged because they
 are already sufficient**, **179 are skipped pending source or identity
-research**, and **92 remain pending review**.
+research**, and **91 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1853,3 +1853,10 @@ Paul’s argument about impartial judgment, and Revelation’s praise after
 judgment. It connects divine character, human conduct, accountability, and
 hope without treating the passages as interchangeable. The object and full
 library validate without new errors or warnings; focused regressions passed.
+
+
+Divine Mercy now connects Exodus 34’s proclamation after Israel’s breach,
+Psalm 103’s compassion toward frailty, Micah 7’s hope of pardon, and the way
+Ephesians 2 and Titus 2 link grace with new life and changed conduct. Unsupported
+ancient Near Eastern boilerplate was removed. The object and full library
+validate without new errors or warnings; focused regressions passed.
