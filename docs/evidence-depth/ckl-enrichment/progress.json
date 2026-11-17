@@ -210,6 +210,19 @@
         "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
       },
       "checkpoint_commit": "dfec63cd"
+    },
+    {
+      "batch_id": "batch-012-bethesda-review",
+      "scope": [
+        "pool-of-bethesda-excavation"
+      ],
+      "completed_unit": "Explanatory-field audit; held for relevant artifact and passage evidence",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -1221,14 +1234,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "92f6496897db1509456a2c8f3693efb8e37347666893305615f217de124a0a95",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the summary, sources, and Scripture references do not address the Pool of Bethesda.",
+      "limitation": "The summary and context are generic, and the primary references are Psalm 19:1-6 and Romans 1:20 rather than John 5:1-15. The source entries point to City of David and Genesis/Psalm texts, with no locators or support. No excavation or text-to-site evidence is recorded. The identity and relevant John passage need review before expansion.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13035,6 +13062,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "objects/archaeology/pool-of-bethesda-excavation.json",
+  "next_batch": "framework/canonical_library/objects/archaeology/pool-of-siloam-discovery.json",
   "protected_fingerprint_base": "origin/master"
 }
