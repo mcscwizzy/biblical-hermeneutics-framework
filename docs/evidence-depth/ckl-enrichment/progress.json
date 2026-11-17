@@ -9224,6 +9224,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-422-lebanon-review",
+      "scope": [
+        "lebanon"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Lebanon-specific Scripture-anchor and source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Lebanon geography or history was inferred from mismatched anchors."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -28426,14 +28447,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ecac5a57fef6fcdd5f4cbe2441f82e6c4f0172d1fb2c6a8f5a8e53652c033d69",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; the Scripture anchors and source support do not establish the place claims about Lebanon.",
+      "limitation": "Genesis 10:1–32, Deuteronomy 10:6–9, Isaiah 63:1–6, and Acts 13:16–22 do not establish Lebanon-specific geography or history; their notes address other subjects. The generic ancient Near Eastern context is unsupported, and the internal historical-orientation source is pending human review. Reviewed location-specific anchors and sources are needed before expansion.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -31948,7 +31982,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/lebanon.json",
+  "next_batch": "framework/canonical_library/objects/places/macedonia.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
