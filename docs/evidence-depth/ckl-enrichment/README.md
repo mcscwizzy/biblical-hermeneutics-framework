@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **311 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **190 are skipped pending source or identity
-research**, and **70 remain pending review**.
+At this checkpoint, **317 objects are enriched**, **116 are unchanged because they
+are already sufficient**, **197 are skipped pending source or identity
+research**, and **57 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1916,3 +1916,6 @@ Inspiration was clarified from the cited texts: Deuteronomy’s covenant instruc
 
 
 Four theology records now explain their cited passages more specifically: Kingdom distinguishes royal poetry, visions, parables, and apocalyptic proclamation; Messianic Hope separates return and renewal texts from claims about a messianic figure; Mission connects blessing with several distinct forms of witness; and New Covenant follows Jeremiah’s promise through its use in Luke, Paul, and Hebrews. Unsupported ancient Near Eastern comparison language was removed. Law and Gospel was held because its anchors and generic prose do not support the named distinction.
+
+
+Six doctrine records were clarified from their cited biblical texts: Perseverance, Pneumatology, Repentance, Sanctification, Prayer, and Worship. The explanations distinguish the passages’ genres and claims, and broad unsupported ancient-context statements were removed. Seven adjacent records were held for research or curation: priesthood of believers, providence, remnant, sacramental theology, spiritual gifts, theology of the cross, and a duplicate theology-of-the-kingdom entry.

@@ -12031,6 +12031,47 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-539-practice-and-doctrine-review",
+      "scope": [
+        "perseverance",
+        "pneumatology",
+        "repentance",
+        "sanctification",
+        "theology-of-prayer",
+        "theology-of-worship",
+        "priesthood-of-believers",
+        "providence",
+        "remnant",
+        "sacramental-theology",
+        "spiritual-gifts",
+        "theology-of-the-cross",
+        "theology-of-the-kingdom"
+      ],
+      "completed_unit": "Enriched six textually anchored doctrine records and held seven records with mismatched focus, duplicated anchors, or insufficient doctrine-specific support.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/theology/perseverance.json",
+        "framework/canonical_library/objects/theology/pneumatology.json",
+        "framework/canonical_library/objects/theology/repentance.json",
+        "framework/canonical_library/objects/theology/sanctification.json",
+        "framework/canonical_library/objects/theology/theology-of-prayer.json",
+        "framework/canonical_library/objects/theology/theology-of-worship.json"
+      ],
+      "protected_checks": [
+        "No claim IDs, evidence IDs, source identities, Scripture references, relationships, certainty/dispute fields, review statuses, source locks, or curated edges were changed.",
+        "Unsupported ancient Near Eastern comparisons were removed from edited objects; no replacement comparisons were introduced."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "No schema or retrieval failures; protected research data and curated relationships remained unchanged."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -36087,14 +36128,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "2f9d5bcd42ac45eb5829975b30262a3b33e029563cd1c575e28080620f322986",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Distinguished Romans’ account of suffering, endurance, and hope from Hebrews’ exhortations to hold firm and James’s account of tested faith.",
+      "limitation": "The sources are biblical texts only; no later doctrinal positions about falling away or perseverance were introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, sources, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36105,14 +36171,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "65f2ee1873cacdfa5704ed938fee8c63e2ce1ef69b13624d70be772820a21ec3",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained distinct portrayals of the Spirit in creation, prophetic renewal, Jesus’ promise, Pentecost, and Paul’s account of life and adoption.",
+      "limitation": "The sources support close readings of the cited passages but not external historical reconstruction or a lexical analysis.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, sources, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36123,14 +36214,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f586743298aba37d053cddd46405050efac0022e08e3f7767319814ae328abc1",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its title concerns the priesthood of believers, but its anchors focus on atonement, sacrificial mediation, and advocacy.",
+      "limitation": "The source set contains Leviticus 16, Isaiah 53, Hebrews 9–10, and 1 John 2, without passages that directly establish the priesthood of believers. The record needs reviewed anchors and source reconciliation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -36141,14 +36247,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d8f19cca7c5ee0cb9750d6dcec847f2454810327b26d089dbf943ef7591334da",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its title names providence, while its summary and references repeat a restoration-hope cluster.",
+      "limitation": "Deuteronomy 30, Isaiah 40, Ezekiel 36, Joel 2, and Revelation 21 can support restoration themes but do not provide a focused account of providence as named. Its internal historical orientation is pending human review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -36159,14 +36280,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5359c0c3aa0a00bcbba2ea0bf845d5ae82e84fa9395c8005d7940d1185fcc6a4",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its summary and sources reproduce a broad restoration-hope cluster without a focused remnant claim.",
+      "limitation": "The anchors emphasize return, comfort, renewal, the Spirit, and new creation; they do not include a clear remnant-focused passage. Its internal historical orientation is pending human review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -36177,14 +36313,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "657a9c7efb38f928765d2d0e76851bdea58cfffaacfd9ba562a526b43f0bc243",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Clarified that Deuteronomy 30 and Joel 2 explicitly call for return, while Ezekiel, Isaiah, and Revelation emphasize renewal and restoration in different ways.",
+      "limitation": "The source set supports the textual distinctions among return, renewal, comfort, and restoration; no lexical study was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, sources, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36213,14 +36374,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "12123b0d441c44a25d57687c8f3dfb8bd32ac7f1b1d8acfc1889cc815518cd11",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its title names sacramental theology while its Scripture references and explanatory prose repeat generic covenant-promise material.",
+      "limitation": "The source set has one Lord’s Supper reference but no focused treatment of baptism, the meal, or sacramental interpretation. Reviewed anchors and sources are needed for a responsible account.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -36231,14 +36407,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c97d8cf9d77f64f74d37e70eae87c145b64ee519f834ec728c2ef4cdc1f9805c",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected the call to holiness in Leviticus with Jesus’ prayer and New Testament instruction about truth, bodily conduct, and pursuit of holiness.",
+      "limitation": "The internal orientation source is pending human review; the explanation relies only on the cited passages and makes no external historical claim.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, sources, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36267,14 +36468,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "fca2053eebd447fb0eebe9c9c3cd74382e629d945ecdd83af474c234d21891c5",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its anchors and summary concern the Spirit’s presence and new-covenant life rather than spiritual gifts.",
+      "limitation": "The references duplicate the Pneumatology cluster (Genesis 1, Ezekiel 36, Joel 2, John 14, Acts 2, Romans 8) and do not directly address gifts. Doctrine-specific anchors are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -36285,14 +36501,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "67c758c5b3d55719494334a2545a23b97cd46106c768fa1a8e3667d01f15dd42",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Explained how the selected texts portray appeal, Jesus’ teaching, thanksgiving, persistence, and communal care without reducing them to one method.",
+      "limitation": "The sources are Scripture references only; no comparative ritual history or prescriptive universal prayer formula was added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, sources, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -36321,14 +36562,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "46630e33008c03b0e9039ed7875d409eb0843f70786875769e0b85707e0bf4c2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held the entry because its sources duplicate the suffering cluster without a focused textual or source basis for the named theology of the cross.",
+      "limitation": "Job 1, Psalm 22, Isaiah 53, Romans 5, and 1 Peter 4 can illuminate suffering and endurance, but the object does not provide a clear crucifixion anchor or a reviewed source for the distinct theological label.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -36339,14 +36595,29 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "33803ebcb3c034488e2def19b7aa7996375870df55e46ef1a7d2873daa337032",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources",
+        "interpretive_notes[*].note"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Held this duplicate entry because it repeats the same summary, passage anchors, and source set as Kingdom Theology.",
+      "limitation": "The record needs curation to clarify whether it represents a distinct concept or a duplicate. Repeating the same exposition would not add reader value; no metadata or relationship was changed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "reviewed_no_content_change",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "No CKL content or protected metadata was changed."
+        ]
       }
     },
     {
@@ -36357,14 +36628,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "af984fff59acb8582ddeb5468fbb92819fdd02d533d255480d5305dae854d36e",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability",
+        "scripture_references",
+        "sources"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "context_applicability.ancient_near_east",
+        "context_applicability.canonical"
+      ],
+      "outcome": "Connected song, attentive hearing, dialogue, embodied response, and heavenly praise across the cited passages.",
+      "limitation": "The sources are Scripture references only; no comparative ancient Near Eastern ritual claims were introduced.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected claims, anchors, sources, relationships, and review fields unchanged."
+        ]
       }
     },
     {
@@ -37341,7 +37637,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/theology/perseverance.json",
+  "next_batch": "framework/canonical_library/objects/theology/resurrection-doctrine.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
