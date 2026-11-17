@@ -9890,6 +9890,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-452-syria-review",
+      "scope": [
+        "syria-1"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Syria-specific Scripture-anchor and source review.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Syrian regional history or imperial role was inferred from unrelated anchors."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -30080,14 +30101,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "5c4348a18901801b32a68e0f06a8a5346fe1288a1405d516c9bfafb43020100f",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; the Scripture anchors do not establish Syria-specific geography, history, or the characterization of Syria as an imperial power.",
+      "limitation": "Genesis 10:1–32, Exodus 3:1–15, 2 Kings 25:8–17, Daniel 11:40–45, and Acts 28:11–16 do not support the Syria-specific context asserted in the object; the notes attach unrelated settings to these passages. The generic ancient Near Eastern section is unsupported, and the internal historical-orientation source is pending human review. Corrected anchors and reviewed Syria-specific sources are needed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -33062,7 +33096,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/syria-1.json",
+  "next_batch": "framework/canonical_library/objects/places/thessalonica.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

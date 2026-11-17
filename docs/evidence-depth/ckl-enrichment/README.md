@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **241 objects are enriched**, **114 are unchanged because they
-are already sufficient**, **166 are skipped pending source or identity
-research**, and **166 remain pending review**.
+are already sufficient**, **167 are skipped pending source or identity
+research**, and **165 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1580,3 +1580,6 @@ Batch 450 reviewed Susa and made no content changes. Its anchors identify Ai, th
 
 
 Batch 451 reviewed Sychar. The summary now explains how John places the town near Jacob's field and sets the scene at Jacob's well, giving the following conversation a concrete narrative setting. The source-locked evidence remains unchanged, and no modern site identification was added. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 452 reviewed Syria 1 and made no content changes. Its anchors do not establish Syria-specific context or support the characterization of Syria as an imperial power. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
