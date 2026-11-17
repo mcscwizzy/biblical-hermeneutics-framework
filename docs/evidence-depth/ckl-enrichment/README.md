@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **34 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **35 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **535 remain pending review**.
+research**, and **534 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -387,6 +387,8 @@ Batch 092 reviewed the Pauline prayer, thanksgiving, lament, and communal memory
 
 Batch 093 reviewed the Pauline Spirit, gifts, prophecy, healing, and assembly-order record: all 34 claims, 34 typed evidence items, and six interpretive notes. The explanations already distinguish diverse Spirit-related language and gifts, and connect them to common benefit, intelligibility, testing, and accountable care. The summary now makes that structure easier to follow without resolving later disputes about which gifts continue. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy.json`.
+Batch 094 reviewed the Pauline suffering, weakness, disability, healing, and apostolic legitimacy record: all 28 claims, 28 typed evidence items, and five interpretive notes. Their explanations already distinguish illness, injury, disability, persecution, poverty, imprisonment, rhetorical weakness, and cross-shaped power, and explicitly leave Paul’s thorn unidentified. The summary now gives readers that distinction in plain language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-women-coworkers-prophecy-and-assembly-authority.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
