@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **213 objects are enriched**, **100 are unchanged because they
+At this checkpoint, **213 objects are enriched**, **101 are unchanged because they
 are already sufficient**, **130 are skipped pending source or identity
-research**, and **244 remain pending review**.
+research**, and **243 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1141,3 +1141,11 @@ not sufficient for adding further historical detail, especially about dates,
 imperial administration, or royal media. Single-object validation passed with
 1 valid object, 0 errors, and 8 pre-existing section-status warnings. The next
 pending object is Athens.
+
+
+Batch 374 reviewed Athens and left its explanation intact. It already connects
+Acts 17 with the layered Roman-period city, distinguishes later altar witnesses
+from the artifact described in Acts, and carefully qualifies the Areopagus
+setting, literary speech, and limits of the named adherents. Single-object
+validation passed with 1 valid object and no warnings. The next pending object
+is Azekah.
