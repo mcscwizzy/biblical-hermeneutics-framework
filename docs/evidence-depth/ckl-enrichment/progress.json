@@ -7346,6 +7346,28 @@
         ]
       },
       "checkpoint_commit": "e8f88793"
+    },
+    {
+      "batch_id": "batch-339-philip-the-evangelist-person",
+      "scope": [
+        "philip-the-evangelist"
+      ],
+      "completed_unit": "Reviewed Philip the Evangelist and held the record because its specific anchors do not identify his episodes in Acts.",
+      "status": "completed",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No CKL content fields changed."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -23547,14 +23569,32 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f510e3c045e9da9a6e38d2cae46878ede30fd14a5338f0bd7ac19a877417f7fd",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Reviewed the Philip the Evangelist profile, sources, anchors, related objects, and interpretive notes. The source list includes Acts 1–28 broadly, but the specific Scripture anchors point to Saul’s conversion, Romans 16, general ministry passages, and Philippians; none identifies Philip’s episodes in Acts. Left the record unchanged because a passage-specific explanation would require adding or reviewing evidence relationships.",
+      "limitation": "The broad Acts source alone does not establish which Philip-related scenes the curated profile intends to surface. No likely Acts 6, 8, or 21 references were added or promoted.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; regression tests not run."
+        ]
       }
     },
     {
@@ -28563,7 +28603,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/philip-the-evangelist.json",
+  "next_batch": "framework/canonical_library/objects/people/phinehas.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
