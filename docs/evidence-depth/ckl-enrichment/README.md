@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **89 objects are enriched**, **83 are unchanged because they
-are already sufficient**, **48 are skipped pending source or identity
-research**, and **467 remain pending review**.
+are already sufficient**, **49 are skipped pending source or identity
+research**, and **466 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -524,6 +524,8 @@ Batch 160 enriched New Jerusalem, explaining the vision’s dwelling of God, end
 
 Batch 161 enriched Passover with the household meal, marked doorways, departure, and the ritual’s role in teaching later generations. It distinguishes the Exodus account from New Testament rereadings and removes unsupported general ANE framing. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/events/paul-before-agrippa.json`.
+Batch 162 reviewed Paul before Agrippa and skipped prose changes pending identity and source review. The object is mislabeled as a Gospel event, its anchors point to Gospel passages rather than Acts, and its generic historical and literary statements do not fit the event. No Acts text or relevant source is recorded, so the prose was left unchanged. The full CKL validated with zero errors and 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/events/paul-in-prison.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
