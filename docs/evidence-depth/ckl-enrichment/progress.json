@@ -1350,6 +1350,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "74f0befc"
+    },
+    {
+      "batch_id": "batch-086-pauline-resurrection-grief-summary",
+      "scope": [
+        "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+      ],
+      "completed_unit": "Reviewed all 30 claims, 30 typed evidence records, and five interpretive notes; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead.json"
+      ],
+      "protected_checks": [
+        "All claim and typed evidence fields, source references, anchors, relationships, uncertainty, and review metadata preserved.",
+        "No dated forecast, postmortem mechanism, proxy rite, or body-normalization scheme was promoted."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6731,14 +6752,37 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "144e8f21318cf2b295ee37724b57b6ac64a1e5a7c0dfb9f60421507cd092b644",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "historical_setting",
+        "ancient_near_east_context",
+        "literary_context",
+        "original_audience",
+        "canonical_context",
+        "interpretive_notes (5)",
+        "claims and rationales (30)",
+        "evidence_items.description",
+        "evidence_items.passage_relevance",
+        "evidence_items.scholarly_interpretation (30)",
+        "sources",
+        "scripture_references",
+        "review and source-lock metadata"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "Reviewed all 30 claims and 30 evidence records. Their explanations were already detailed and carefully distinguished physical death, metaphor, resurrection, bereavement, bodily transformation, and disputed interpretations. Rewrote only the technical summary to orient ordinary readers to the passages and open questions.",
+      "limitation": "No chronology, intermediate-state model, baptism-for-the-dead practice, or body-normalization claim was settled or added.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "validated",
+        "results": [
+          "CKL object: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL: 687 valid, 0 errors, 14 baseline warnings.",
+          "Regression: 17 cultural-context evidence-quality/retrieval tests passed with 4 subtests.",
+          "Protected-field fingerprint matches baseline; claim/evidence content, sources, anchors, relationships, and review metadata unchanged."
+        ]
       }
     },
     {
@@ -16499,7 +16543,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

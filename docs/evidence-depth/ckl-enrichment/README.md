@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **26 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **27 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **543 remain pending review**.
+research**, and **542 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -369,6 +369,9 @@ Batch 084 reviewed the large Pauline authority and conflict record: all 70 claim
 
 Batch 085 reviewed the Pauline sexuality and restoration record. Its 23 claims and evidence explanations already distinguish ancient wording, disputed legal and rhetorical contexts, modern identity categories, consent, and safeguarding limits. The summary now makes that scope easier to grasp without flattening the passages into a single rule. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead.json`.
+
+Batch 086 reviewed the Pauline death, resurrection, and grief record: all 30 claims, 30 evidence explanations, and five interpretive notes. Its passage-level explanations already distinguish bodily resurrection, metaphorical death, grief, transformation, and disputed passages. The summary now gives readers a plain-language map of those questions while leaving unresolved matters open. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
