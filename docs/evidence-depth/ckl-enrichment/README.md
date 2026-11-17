@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **171 objects are enriched**, **94 are unchanged because they
-are already sufficient**, **69 are skipped pending source or identity
-research**, and **353 remain pending review**.
+are already sufficient**, **70 are skipped pending source or identity
+research**, and **352 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -785,3 +785,6 @@ Batch 263 reviewed Chiasm. Its literary explanation now contrasts Genesis 9:6 an
 
 
 Batch 264 reviewed Aaron. The explanation now follows the record’s cited sequence: Exodus 4 appoints Aaron as Moses’s spokesman, Numbers 17 uses his staff in a leadership test, Deuteronomy 10 records his death and Eleazar’s succession, and Hebrews 3 later compares Moses and Jesus through God’s household. The account avoids turning the Hebrews passage into another episode in Aaron’s biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Abel.
+
+
+Batch 265 reviewed Abel and left it unchanged. Its primary anchor is Genesis 11:1-9, which narrates Babel; Romans 5 and 1 Corinthians 15 focus on Adam and new humanity. Hebrews 11:4 does name Abel, but the entry’s summary, source scope, and other anchors remain unresolved. Identity and reference reconciliation is needed before explanatory prose can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Adam.
