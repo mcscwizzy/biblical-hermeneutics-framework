@@ -1124,4 +1124,4 @@ Batch 371 reviewed Ashdod and held it for source and anchor review. Its cited
 passages concern Ai, the Valley of Elah, Jerusalem, and Ammon rather than
 Ashdod; the internal historical-orientation source is pending human review.
 The object passed single-object validation with 1 valid object, 0 errors, and 8
-pre-existing section-status warnings. The next pending object is Ashkelon.
+pre-existing section-status warnings. The next pending object is Asia.
