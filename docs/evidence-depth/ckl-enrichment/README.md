@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **1 object is enriched**, **3 are unchanged because they
-are already sufficient**, **31 are skipped pending source research**, and
-**650 remain pending review**.
+are already sufficient**, **33 are skipped pending source research**, and
+**648 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -83,6 +83,11 @@ verified before any connection is written.
 The Pool of Siloam Discovery entry was also held: its explanatory notes and
 source IDs describe the tunnel inscription, while the title names the pool.
 The pool and inscription need distinct, verified evidence and passage links.
+
+The Siloam Inscription and Taylor Prism entries were held because their source
+records lack artifact identifiers, locators, and source-supported claims. The
+Siloam entry needs a verified inscription text and tunnel connection; Taylor
+Prism should be reconciled with the better-supported Sennacherib Prism record.
 
 Shiloh Excavations was held because its sources and Scripture links point to
 Jerusalem and general creation texts rather than site-specific Shiloh evidence.
@@ -152,6 +157,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/siloam-inscription.json`.
+The next work unit is `objects/archaeology/tel-dan-stele.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.

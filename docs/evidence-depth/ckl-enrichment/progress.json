@@ -265,6 +265,32 @@
         "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
       },
       "checkpoint_commit": "f5e679f3"
+    },
+    {
+      "batch_id": "batch-016-siloam-inscription-review",
+      "scope": [
+        "siloam-inscription"
+      ],
+      "completed_unit": "Explanatory-field audit; held for primary inscription/source details",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
+      },
+      "checkpoint_commit": "pending"
+    },
+    {
+      "batch_id": "batch-017-taylor-prism-review",
+      "scope": [
+        "taylor-prism"
+      ],
+      "completed_unit": "Explanatory-field audit; held for record/source reconciliation",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -1518,14 +1544,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "fa7acc093aae277b66f77c657123a2665ec4b2fff46b25f3fc08076797852f37",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the inscription is named but its context, reading, and association with the tunnel are unsupported by identified sources.",
+      "limitation": "The source entries identify the Siloam Inscription and Istanbul museum only by generic names, without catalog number, edition, locator, URL, or support. There are no inscription/evidence items or claims. The biblical references concern Hezekiah and Jerusalem broadly; the inscription text, date, proposed royal association, and relation to the waterworks need primary-source and excavation references before elaboration.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -1536,14 +1576,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ebae73c1bb9c98dcecd6d63b82fcd9daabb4bb7a1b058f5cf96e1d8de1c420b3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No enrichment made; the object is identified generally, but it lacks source locators and claim/evidence records needed to explain the annals in detail.",
+      "limitation": "The title and notes identify Sennacherib’s royal prism but no source record has a museum number, inscription lines, URL, or claim support. The entry says the source is propagandistic without a source-grounded account of what it records or how it differs from 2 Kings/Isaiah. It should be aligned with the stronger, separately reviewed Sennacherib Prism record before expansion.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -13188,6 +13242,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/archaeology/siloam-inscription.json",
+  "next_batch": "framework/canonical_library/objects/archaeology/tel-dan-stele.json",
   "protected_fingerprint_base": "origin/master"
 }
