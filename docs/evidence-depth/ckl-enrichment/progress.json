@@ -127,6 +127,26 @@
         "ckl_object": "PASS: 1 valid, 0 errors, 10 baseline section-status warnings."
       },
       "checkpoint_commit": "da2d07ac"
+    },
+    {
+      "batch_id": "batch-007-archaeology-source-audit",
+      "scope": [
+        "caesarea-maritima-excavations",
+        "caiaphas-ossuary",
+        "city-of-david-excavations",
+        "cyrus-cylinder",
+        "dead-sea-scrolls",
+        "ein-gedi-scroll",
+        "elephantine-papyri",
+        "gezer-excavations"
+      ],
+      "completed_unit": "Eight archaeology objects reviewed; one sufficient and seven held for source verification",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: all eight valid with 0 errors and 10 pre-existing section-status warnings each."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -331,14 +351,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "e5129c2fb0d8ecd2e892d64dbb4f435937042f8ec40dcf29a1c6165fe4012921",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review; additional evidence is needed before the current explanations can be extended safely.",
+      "limitation": "The source entries lack locators and claim support, there are no evidence items, and the recorded Scripture references do not explain the harbor/administrative-city subject. Specific excavation, harbor-phase, and passage links need scholarly publication support.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -349,14 +383,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c60ca53548146c567d4cfe7d9798f4ae1d922d08724dfb6f2362837fce9a5e75",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review; additional evidence is needed before the current explanations can be extended safely.",
+      "limitation": "The title identifies a Caiaphas ossuary while the summary and source IDs describe the James Ossuary; source records provide no provenance, locators, or claim support, and the Scripture anchors do not resolve the object identity. Research must identify the intended ossuary before exposition.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -367,14 +415,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "1b33a3ac0e7b49f202c349e990e25c016abc6faf788aefae42aad9745f7caf74",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review; additional evidence is needed before the current explanations can be extended safely.",
+      "limitation": "The record is a generic template, has no claims or evidence items, and its source records lack author, locator, URL, notes, and support. Excavation phases and passage links require named site reports and reviewed evidence.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -385,14 +447,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ab333387fbcba046e25cc47a8ce4e207e38e5c80e8327614f7f16c81fc47ec46",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
+      "outcome": "The entry already identifies BM 90920, explains the Babylonian royal legitimation and restoration rhetoric, distinguishes the cylinder from Ezra’s decree, and qualifies how far Babylonian rhetoric can be generalized to imperial policy.",
       "limitation": "",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -403,14 +479,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "bad7ca67d5a2588beee57b7f1010689cb98252e68401940f5aa92510e5b7ac10",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review; additional evidence is needed before the current explanations can be extended safely.",
+      "limitation": "The record has no manuscript-level claims or evidence; its sources lack locators and bibliographic details, while broad Scripture anchors do not identify any scroll or textual witness. A useful account requires specific manuscripts, provenance, dates, and textual comparisons.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -421,14 +511,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "b31ae86dd25cd87c616b11e5809be9fd30d25dc4e71d9f9d76ac612eed1391c4",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review; additional evidence is needed before the current explanations can be extended safely.",
+      "limitation": "The entry supplies no identified scroll, manuscript reading, or evidence item; source records have no locators, and its Psalm 19/Romans 1 anchors do not establish the artifact’s identity or textual relevance. Source research is needed before enrichment.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -439,14 +543,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "ae570104910e133cb1ba6667ea4f9b2a1cf67ff0d06bf80dac57808c9e7c4eb2",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review; additional evidence is needed before the current explanations can be extended safely.",
+      "limitation": "The object has no identified papyrus, claim, or evidence item; source records are generic and unlocated, and broad Jeremiah 44/Isaiah 19 references are not tied to particular documents. Research must identify primary papyri and the specific historical question.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -457,14 +575,28 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "a628cd6631d8e29a94ff5b63e1927f25370c23aec42166d98196cceb3292da0b",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review; additional evidence is needed before the current explanations can be extended safely.",
+      "limitation": "The summary makes broad claims about a border city and Bronze/Iron Age significance, but the object has no claims/evidence and its sources lack locators, URLs, and support. Specific strata and biblical connections require excavation reports and careful dating.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 10 pre-existing section-status warnings. No CKL content changed."
+        ]
       }
     },
     {
@@ -12631,6 +12763,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "objects/archaeology/caesarea-maritima-excavations.json",
+  "next_batch": "objects/archaeology/gibeon-wine-jars.json",
   "protected_fingerprint_base": "origin/master"
 }

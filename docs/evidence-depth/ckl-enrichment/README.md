@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **1 object is enriched**, **2 are unchanged because they
-are already sufficient**, **4 are skipped pending source research**, and **680
-remain pending review**.
+At this checkpoint, **1 object is enriched**, **3 are unchanged because they
+are already sufficient**, **11 are skipped pending source research**, and
+**672 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -72,6 +72,15 @@ connects the tribute register with Jehu's reign while distinguishing the
 Assyrian imperial display from the biblical account and preserving uncertainty
 about the figure and the designation "House of Omri."
 
+Seven more archaeology records were held for research because their source
+entries lack locators or claim support, or their titles, summaries, and
+Scripture anchors identify different subjects. These include Caesarea,
+Caiaphas, City of David, Dead Sea Scrolls, Ein Gedi, Elephantine, and Gezer.
+The Cyrus Cylinder record was left unchanged because its object identity,
+inscription setting, comparison with Ezra, and policy limits are already
+explained with source-linked qualifications. All eight objects validated with
+zero errors and the same ten pre-existing section-status warnings each.
+
 ## Reader reachability
 
 Canonical object detail responses serialize summaries and evidence items.
@@ -98,6 +107,6 @@ Validate the full CKL after each content batch:
 python3 tools/ckl_validate.py
 ```
 
-The next work unit is `objects/archaeology/caesarea-maritima-excavations.json`.
+The next work unit is `objects/archaeology/gibeon-wine-jars.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
