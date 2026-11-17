@@ -393,6 +393,22 @@
         "ckl_objects": "PASS: 1 valid, 0 errors, 0 warnings."
       },
       "checkpoint_commit": "7befab2b8e2abb217a59dd048bc812b3c0450d90"
+    },
+    {
+      "batch_id": "batch-025-1-corinthians-claim-rationales",
+      "scope": [
+        "1-corinthians"
+      ],
+      "completed_unit": "Reviewed the full book object, 44 claims, 88 interpretive notes, sources, and found six terse rationales that benefited from passage-specific explanation",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/books/1-corinthians.json"
+      ],
+      "validation": {
+        "ckl_objects": "PASS: object 1 valid, 0 errors, 0 warnings; full library 687 valid, 0 errors, same 14 pre-existing warnings.",
+        "regression": "No retrieval test run: claim rationale is serialized but not used by retrieval or rendered in the standard object modal."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -2084,14 +2100,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "c8c4b4ee936afa0e90af68a584e12fc19a03076d508192968aa50272cb4344c3",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note/rationale",
+        "claims[*].claim/rationale",
+        "scripture_references",
+        "sources",
+        "evidence_items"
+      ],
+      "fields_changed": [
+        "claims[1cor-cross].rationale",
+        "claims[1cor-temple].rationale",
+        "claims[1cor-body].rationale",
+        "claims[1cor-idol-food].rationale",
+        "claims[1cor-israel].rationale",
+        "claims[1cor-demons].rationale"
+      ],
+      "outcome": "Expanded six concise claim rationales with passage-grounded explanations of the cross/status reversal, the assembly as God’s temple, embodied holiness, idol-meal distinctions, Israel’s wilderness warnings, and the tension between idols-as-nothing and table participation. Claim wording, IDs, Scripture anchors, source identities, confidence, dispute classifications, and all 88 interpretive notes were preserved.",
+      "limitation": "Claim rationales are serialized in canonical detail but are not rendered in the standard browser modal or indexed by retrieval; the changed fields improve the research layer and API representation.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 pre-existing warnings.",
+          "Semantic and protected-field review: only six claim rationale fields changed; claim text, IDs, Scripture references, sources, confidence, dispute statuses, interpretive notes, and evidence relationships unchanged."
+        ]
       }
     },
     {
@@ -13556,6 +13597,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/1-corinthians.json",
+  "next_batch": "framework/canonical_library/objects/books/1-john.json",
   "protected_fingerprint_base": "origin/master"
 }

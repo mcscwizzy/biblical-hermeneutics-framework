@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **2 objects are enriched**, **9 are unchanged because they
+At this checkpoint, **3 objects are enriched**, **9 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **634 remain pending review**.
+research**, and **633 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -207,6 +207,16 @@ distinguishes the observable reuse of Psalm 106:48 from a debated proposal
 about the Psalter's collection history. The object passed validation with zero
 errors and zero warnings.
 
-The next work unit is `objects/books/1-corinthians.json`.
+For 1 Corinthians, six claim rationales were expanded to show how Paul’s
+argument connects the cross with status, the assembly with temple language,
+embodied conduct with belonging to Messiah, idol meals with table allegiance
+and conscience, Israel’s wilderness story with warning, and idol claims with
+participation in sacrificial meals. The surrounding book summary, claims,
+sources, Scripture anchors, and 88 cautious interpretive notes were retained.
+The object and full library validate with zero errors and the same 14 existing
+warnings. Claim rationales are available in canonical detail but are not
+rendered in the standard browser modal or retrieval index.
+
+The next work unit is `objects/books/1-john.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
