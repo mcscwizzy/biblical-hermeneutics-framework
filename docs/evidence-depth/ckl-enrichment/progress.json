@@ -6807,6 +6807,32 @@
         ]
       },
       "checkpoint_commit": "ce303a89"
+    },
+    {
+      "batch_id": "batch-316-korah-person",
+      "scope": [
+        "korah"
+      ],
+      "completed_unit": "Reviewed Korah and enriched the Numbers 16–17 dispute and its narrative resolution.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/korah.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -22126,13 +22152,31 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "d00e8dc6427ce84a11ee4e549e6d3fbf7b22dc48782110b49421f9fb0caf31d0",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_context",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "outcome": "Expanded Korah’s narrative using Numbers 16–17: the challenge to Moses and Aaron, the question of shared holiness and priestly service, the judgment, and the budding staff as narrative resolution.",
+      "limitation": "The structured references include Numbers 17 but omit the direct challenge in Numbers 16; the broad Numbers 1–36 source covers it. No independent chronology or cross-cultural political comparison was added.",
       "validation": {
-        "status": "not_run",
+        "status": "pending",
         "results": []
       }
     },
@@ -27556,7 +27600,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/korah.json",
+  "next_batch": "framework/canonical_library/objects/people/lazarus.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
