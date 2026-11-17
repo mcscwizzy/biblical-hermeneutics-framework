@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **30 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **31 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **539 remain pending review**.
+research**, and **538 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -379,6 +379,8 @@ Batch 088 reviewed the Pauline food, conscience, and shared meals record: all 49
 
 Batch 089 reviewed the Pauline Israel and Jewish-gentile relations record: all 40 claims, 40 typed evidence items, and six interpretive notes. Their explanations already preserve Israel’s scriptural gifts and hope, distinguish gentile inclusion from identity erasure, and qualify debates about Torah, election, hardening, and “all Israel.” The summary now gives readers a clearer map of the different arguments across Romans, Galatians, Corinthians, Philippians, and Acts. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-kinship-guardianship-slavery-and-inheritance.json`.
+Batch 090 reviewed the Pauline kinship, guardianship, slavery, and inheritance record: all 19 claims, 19 typed evidence items, and six interpretive notes. The explanations already distinguish Galatians’ household-heir analogy from Romans 8’s movement through adoption, Spirit, co-heirship, suffering, and bodily hope, while limiting Roman legal comparisons. The summary now makes those differences clearer to readers. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
