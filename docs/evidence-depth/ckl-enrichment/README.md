@@ -22,7 +22,7 @@ counted as a fully enriched, unchanged, or skipped object.
 
 At this checkpoint, **96 objects are enriched**, **87 are unchanged because they
 are already sufficient**, **59 are skipped pending source or identity
-research**, and **442 remain pending review**.
+research**, and **441 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -552,6 +552,8 @@ Batch 174 reviewed Temptation of Jesus, The Exodus, and The Fall. Temptation of 
 
 Batch 175 reviewed The Flood, Third Missionary Journey, Transfiguration, Triumphal Entry, and Twelve Spies. The Flood and Twelve Spies were left unchanged because their explanations already make the narrative and interpretive limits clear. The three other event records were held because their references point to unrelated episodes. The full CKL remained valid with zero errors and the same 14 baseline warnings; regression tests were not rerun because no CKL content changed.
 
-The next work unit is `framework/canonical_library/objects/events/wilderness-wandering.json`.
+Batch 176 reviewed Wilderness Wandering and left it unchanged. Its explanation follows the route and resource episodes while clearly distinguishing the textual itinerary from disputed modern site identifications. Validation found zero errors and the same 14 baseline warnings.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
