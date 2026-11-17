@@ -7577,6 +7577,31 @@
           "No CKL content changed; regression tests not run."
         ]
       },
+      "checkpoint_commit": "e60434cc"
+    },
+    {
+      "batch_id": "batch-349-samuel-the-prophet-person",
+      "scope": [
+        "samuel-the-prophet"
+      ],
+      "completed_unit": "Explained Samuel’s speech at the transition to monarchy and identified Hebrews as later biblical reception.",
+      "status": "completed",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/samuel-the-prophet.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "Ancient Near Eastern applicability was disabled because no external context source is recorded; canonical applicability was enabled for the Hebrews reception note."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
+      },
       "checkpoint_commit": ""
     }
   ],
@@ -24175,14 +24200,42 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "9ea258809d1ae7f116937b3b56fe4868d2f69f9f79975eb7e773f4003fa7a5ab",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes",
+        "context_applicability"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "canonical_context",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Completed review of the populated fields, Scripture anchors, related objects, and context applicability. The profile now explains Samuel’s anchored speech while distinguishing the later Hebrews reference.",
+      "limitation": "No nonbiblical historical or archaeological source is recorded; historical statements remain limited to the biblical narrative’s framing.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings; no new warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings; no new warnings.",
+          "Focused content-quality and retrieval regression: 17 tests passed, 4 subtests passed."
+        ]
       }
     },
     {
@@ -29011,7 +29064,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/samuel-the-prophet.json",
+  "next_batch": "framework/canonical_library/objects/people/sarah.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
