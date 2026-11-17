@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **289 objects are enriched**, **116 are unchanged because they
-are already sufficient**, **175 are skipped pending source or identity
-research**, and **107 remain pending review**.
+are already sufficient**, **176 are skipped pending source or identity
+research**, and **106 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1746,3 +1746,9 @@ which develop the Spirit theme without repeating water imagery in these
 anchors. An unsupported ancient Near Eastern paragraph was removed. The object
 and full library validate without new errors or warnings; focused content-quality
 and retrieval regressions passed.
+
+
+Water Theme was reviewed and held for subject/anchor reconciliation. Its
+Scripture links and related records point to the burning bush, the tabernacle
+and temple glory, incarnation, and new Jerusalem rather than water. No CKL
+content was changed; the manifest records the research gap.
