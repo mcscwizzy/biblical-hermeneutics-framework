@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **280 objects are enriched**, **115 are unchanged because they
-are already sufficient**, **172 are skipped pending source or identity
-research**, and **120 remain pending review**.
+are already sufficient**, **173 are skipped pending source or identity
+research**, and **119 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -1699,3 +1699,5 @@ Batch 495 reviewed Priestly Mediation Theme and left it unchanged. Hebrews 8:6â€
 Batch 496 enriched Promise Theme by distinguishing the promises to Noah, Abraham, Israel at Sinai, and the new covenant, then tracing the latter through Luke and Hebrews. The next pending object is recorded in the manifest.
 
 Batch 497 reviewed Redemption Theme and left it unchanged. Its anchors concern return, comfort, renewal, the Spirit, and new creation without directly establishing redemption language or a redemption mechanism. Source or anchor review is needed before expansion.
+
+Batch 498 reviewed Remnant Theme and left it unchanged. Its anchors concern exile, return, restoration, the Spirit, and new creation but do not directly identify a remnant; reviewed remnant-specific evidence is needed before expansion.
