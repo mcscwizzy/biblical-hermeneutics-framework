@@ -1371,6 +1371,27 @@
         "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
       },
       "checkpoint_commit": "9661601a"
+    },
+    {
+      "batch_id": "batch-087-pauline-governing-authorities-summary",
+      "scope": [
+        "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+      ],
+      "completed_unit": "Reviewed all 52 claims, 52 typed evidence items, six interpretive notes, and contextual fields; clarified only the reader-facing summary.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/cultural_background/pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance.json"
+      ],
+      "protected_checks": [
+        "All claims, typed evidence, source identities, anchors, relationships, uncertainty, and review metadata preserved.",
+        "No disputed imperial resonance or modern political application was promoted as settled."
+      ],
+      "validation": {
+        "ckl_object": "PASS: 1 valid, 0 errors, 0 warnings.",
+        "ckl_library": "PASS: 687 valid, 0 errors, same 14 baseline warnings.",
+        "regression": "PASS: 17 cultural-context evidence-quality/retrieval tests, 4 subtests."
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -6793,14 +6814,62 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "4b93eb443c344b0042dee514334033c8e3c1bda95ec2073f6fd20991f4cf1a26",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "context_applicability",
+        "literary_context",
+        "covenantal_significance",
+        "authorship_positions",
+        "date_ranges",
+        "original_audience",
+        "historical_setting",
+        "canonical_role",
+        "genre",
+        "structure",
+        "major_themes",
+        "canonical_placement",
+        "interpretive_disputes",
+        "primary_sources",
+        "intertextuality",
+        "hebrew_words",
+        "greek_words",
+        "canonical_story",
+        "hermeneutical_lens",
+        "retrieval_metadata",
+        "importance",
+        "claims[*].claim",
+        "claims[*].rationale",
+        "evidence_items[*].description",
+        "evidence_items[*].passage_relevance",
+        "interpretive_notes[*].note",
+        "interpretive_notes[*].rationale",
+        "sources[*].identity_and_support_links",
+        "scripture_references",
+        "related_objects",
+        "related_entries",
+        "section_status",
+        "reader compatibility"
+      ],
+      "fields_changed": [
+        "summary"
+      ],
+      "outcome": "The summary now explains how Romans, the Corinthian letters, Philippians, First Thessalonians, and Acts address power in distinct settings, while preserving uncertainty about imperial resonance and limits on modern political application. All 52 claims, 52 typed evidence items, and six interpretive notes were reviewed and retained.",
+      "limitation": "No source-dependent historical or interpretive claim was added. Source identities and support links were inspected, but cited scholarship was not independently re-read; existing claims and evidence were retained without treating bibliography entries as newly verified arguments.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "passed",
+        "results": [
+          "Object CKL validation: 1 valid, 0 errors, 0 warnings.",
+          "Full CKL validation: 687 valid, 0 errors, same 14 baseline warnings.",
+          "Focused content-quality and retrieval regression: 17 passed, 4 subtests passed.",
+          "Protected source, anchor, claim/evidence identity, relationship, uncertainty, and review metadata unchanged."
+        ]
       }
     },
     {
@@ -16543,7 +16612,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/cultural_background/pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance.json",
+  "next_batch": "framework/canonical_library/objects/cultural_background/pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

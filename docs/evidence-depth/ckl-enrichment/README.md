@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **27 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **28 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **542 remain pending review**.
+research**, and **541 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -372,6 +372,9 @@ Batch 085 reviewed the Pauline sexuality and restoration record. Its 23 claims a
 
 Batch 086 reviewed the Pauline death, resurrection, and grief record: all 30 claims, 30 evidence explanations, and five interpretive notes. Its passage-level explanations already distinguish bodily resurrection, metaphorical death, grief, transformation, and disputed passages. The summary now gives readers a plain-language map of those questions while leaving unresolved matters open. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance.json`.
+
+Batch 087 reviewed the Pauline authorities and civic life record: all 52 claims, 52 typed evidence items, and six interpretive notes. Their explanations already distinguish Romans’ ethical sequence, Corinthian disputes and metaphors, Philippi’s civic language, Thessalonian hope, and Acts’ later legal narratives. The summary now explains these connections in reader language while leaving disputed imperial resonance open. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
