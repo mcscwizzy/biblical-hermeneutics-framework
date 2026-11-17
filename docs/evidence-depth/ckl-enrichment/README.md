@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **28 objects are enriched**, **75 are unchanged because they
+At this checkpoint, **29 objects are enriched**, **75 are unchanged because they
 are already sufficient**, **43 are skipped pending source or identity
-research**, and **541 remain pending review**.
+research**, and **540 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -375,6 +375,8 @@ Batch 086 reviewed the Pauline death, resurrection, and grief record: all 30 cla
 
 Batch 087 reviewed the Pauline authorities and civic life record: all 52 claims, 52 typed evidence items, and six interpretive notes. Their explanations already distinguish Romans’ ethical sequence, Corinthian disputes and metaphors, Philippi’s civic language, Thessalonian hope, and Acts’ later legal narratives. The summary now explains these connections in reader language while leaving disputed imperial resonance open. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
 
-The next work unit is `framework/canonical_library/objects/cultural_background/pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status.json`.
+Batch 088 reviewed the Pauline food, conscience, and shared meals record: all 49 claims, 49 typed evidence items, and seven interpretive notes. Their explanations already distinguish temple participation, market purchase, private hospitality, assembly meals, and the Antioch conflict, while preserving Jewish practice diversity and uncertainty about disputed details. The summary now traces these settings in reader language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+The next work unit is `framework/canonical_library/objects/cultural_background/pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel.json`.
 Record field paths, actual outcomes, validation evidence, and checkpoint commit
 IDs in `progress.json`.
