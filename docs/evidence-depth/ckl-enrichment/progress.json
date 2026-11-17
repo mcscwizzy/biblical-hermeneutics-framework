@@ -3293,6 +3293,31 @@
         ]
       },
       "checkpoint_commit": "9897673d"
+    },
+    {
+      "batch_id": "batch-172-road-to-emmaus-explanation",
+      "scope": [
+        "road-to-emmaus"
+      ],
+      "completed_unit": "Reviewed the narrative, social setting, literary sequence, scriptural interpretation, sources, anchors, and relationships; enriched six existing explanatory fields from Luke 24 and Acts 2.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/events/road-to-emmaus.json"
+      ],
+      "protected_checks": [
+        "Source identities, Scripture anchors, related-object edges, statuses, and review metadata preserved.",
+        "No modern Emmaus location or generalized custom was introduced."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
+      },
+      "checkpoint_commit": "03ae9846"
     }
   ],
   "inventory_count": 687,
@@ -12420,14 +12445,39 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "398f273658130ed02315aa56f4c63f996e2698cfc6af5faa1bffc2ff799d97d2",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the account from the disciples’ departure and confusion through Jesus’ scriptural explanation, recognition at the meal, and return to witness. Kept the contextual details within Luke’s own description of the journey and hospitality.",
+      "limitation": "No modern Emmaus location or generalized travel custom was asserted.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "JSON parse: PASS.",
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, 14 baseline warnings.",
+          "Protected fingerprint and explicit protected-field comparison: PASS; references, sources, relationships, statuses, applicability, and review metadata unchanged.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "git diff --check: PASS."
+        ]
       }
     },
     {
@@ -20604,7 +20654,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/events/road-to-emmaus.json",
+  "next_batch": "framework/canonical_library/objects/events/second-missionary-journey.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
