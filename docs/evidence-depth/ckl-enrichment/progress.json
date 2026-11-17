@@ -9287,6 +9287,27 @@
         ]
       },
       "checkpoint_commit": "included_in_next_checkpoint"
+    },
+    {
+      "batch_id": "batch-425-mizpah-3-review",
+      "scope": [
+        "mizpah-3"
+      ],
+      "completed_unit": "Explanatory-field audit; held for Mizpah identity and Scripture-anchor reconciliation.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "CKL object, source identities, Scripture references, relationships, context flags, and review metadata remained unchanged.",
+        "No Mizpah identity, worship history, or symbolic role was inferred from unrelated anchors."
+      ],
+      "validation": {
+        "status": "passed",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content changed; full-library and retrieval regressions were not rerun for this manifest-only review."
+        ]
+      },
+      "checkpoint_commit": "included_in_next_checkpoint"
     }
   ],
   "inventory_count": 687,
@@ -28583,14 +28604,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "02891784ddd986bbce2337628e6015a3b825986009562fa3f5d787aabf0d38ce",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "interpretive_notes[*].note",
+        "scripture_references",
+        "sources",
+        "claims",
+        "evidence_items"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "No CKL content changed; none of the Scripture anchors identifies Mizpah, and the place identity cannot be established from this record.",
+      "limitation": "Genesis 12:6–7 concerns Shechem, Joshua 24 concerns covenant renewal at Shechem, 2 Samuel 5 and 1 Kings 8 concern Jerusalem, and John 2 concerns the Jerusalem temple. These passages do not support the object’s Mizpah-specific claims. The generic ancient Near Eastern section is unsupported, and the internal historical-orientation source is pending human review. A specific Mizpah identity, corrected anchors, and reviewed sources are required.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings. No CKL content changed; no full-library or retrieval regression rerun for this manifest-only review."
+        ]
       }
     },
     {
@@ -32051,7 +32085,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/places/mizpah-3.json",
+  "next_batch": "framework/canonical_library/objects/places/moab-1.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
