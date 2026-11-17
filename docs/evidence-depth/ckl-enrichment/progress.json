@@ -5832,6 +5832,32 @@
         ]
       },
       "checkpoint_commit": "d440a526"
+    },
+    {
+      "batch_id": "batch-275-boaz-person",
+      "scope": [
+        "boaz"
+      ],
+      "completed_unit": "Reviewed Boaz and expanded the passage-grounded movement from gleaning field to threshing floor, public gate transaction, and genealogy to David.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/people/boaz.json"
+      ],
+      "protected_checks": [
+        "Object ID, sources, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -19761,14 +19787,36 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "f1de3eb2135c481097ac9ef38eb49747e893d15a0b8927a525bd0824ecfacd7f",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "canonical_role",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "canonical_role"
+      ],
+      "outcome": "Expanded the Ruth narrative from field encounter to threshing-floor request, town-gate resolution, and genealogy to David. The prose connects gleaning and public negotiation to the story’s movement while avoiding a claim that Ruth supplies a complete legal code.",
+      "limitation": "The scripture anchors point to Ruth, but the source list names Genesis, Romans, Galatians, and Hebrews. No external historical or legal reconstruction was added; the source-list mismatch remains for separate provenance review.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -25893,7 +25941,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/boaz.json",
+  "next_batch": "framework/canonical_library/objects/people/caiaphas.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",
