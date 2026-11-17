@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **10 objects are enriched**, **47 are unchanged because they
+At this checkpoint, **10 objects are enriched**, **48 are unchanged because they
 are already sufficient**, **42 are skipped pending source or identity
-research**, and **588 remain pending review**.
+research**, and **587 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -210,6 +210,8 @@ Batch 051 enriched Leviticus. The summary now connects the book to Exodus's clos
 Batch 052 reviewed Luke. Its summary, 44 claims, and 68 notes already explain the Gospel's Jewish setting, distinct narrative contributions, and debated textual forms while preserving uncertainty. The three typed evidence records are passage-specific: each separates a direct Greek observation from its attributed scholarly interpretation and limits the conclusion. The object was left unchanged after single-object validation passed with zero errors and warnings.
 
 Batch 053 reviewed Malachi. Its 34 claims and 67 notes already explain the disputation form, Persian-period setting, difficult marriage and tithing passages, and the relationship between Torah, Elijah, and later reception. They distinguish historical claims from later Jewish and Christian readings and guard against unsupported modern application. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 054 reviewed Mark. The summary, 41 claims, and 78 notes already explain the Gospel's rapid narrative, Roman execution setting, and earliest recoverable ending, while distinguishing textual variants and later canonical reception. Its single typed evidence item carefully reports an abstract-level textual proposal without treating it as settled. No changes were made; single-object validation passed with zero errors and warnings.
 
 ## Reader reachability
 

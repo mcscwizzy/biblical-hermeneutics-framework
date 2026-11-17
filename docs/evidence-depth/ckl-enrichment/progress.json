@@ -805,6 +805,19 @@
         "ckl_objects": "PASS: Malachi valid with 0 errors and 0 warnings.",
         "regression": "No retrieval tests run; the object was unchanged."
       }
+    },
+    {
+      "batch_id": "batch-054-mark-review",
+      "scope": [
+        "mark"
+      ],
+      "completed_unit": "Mark summary, contexts, claims, notes, typed evidence, sources, and anchors reviewed; existing explanations sufficient",
+      "status": "validated",
+      "changed_paths": [],
+      "validation": {
+        "ckl_objects": "PASS: Mark valid with 0 errors and 0 warnings.",
+        "regression": "No retrieval tests run; the object was unchanged."
+      }
     }
   ],
   "inventory_count": 687,
@@ -4190,14 +4203,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "533eba55b196d818a373e0a0b75f144a03812572cb5821b4cb5d84816905d1c3",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "unchanged_sufficient",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "second_temple_context",
+        "claims[*].claim/rationale",
+        "interpretive_notes[*].note/rationale",
+        "evidence_items[*].description/primary_observation/scholarly_interpretation/passage_relevance/confidence_rationale",
+        "scripture_references",
+        "sources"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left unchanged after review. The summary clearly introduces Mark’s narrative arc and textually qualified ending; 41 claims and 78 notes explain its Jewish and Roman settings, literary devices, difficult passages, textual variants, and ethical reception. The one typed evidence item carefully distinguishes a low-confidence textual proposal from an established reading.",
+      "limitation": "The existing explanations already provide source-aware context and uncertainty. No source or protected field was changed.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 0 warnings."
+        ]
       }
     },
     {
@@ -14768,6 +14794,6 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/books/mark.json",
+  "next_batch": "framework/canonical_library/objects/books/matthew.json",
   "protected_fingerprint_base": "origin/master"
 }
