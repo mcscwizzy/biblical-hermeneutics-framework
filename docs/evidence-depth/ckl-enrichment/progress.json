@@ -5475,6 +5475,32 @@
         ]
       },
       "checkpoint_commit": "4e92d87e"
+    },
+    {
+      "batch_id": "batch-260-temple-tax-institution",
+      "scope": [
+        "temple-tax"
+      ],
+      "completed_unit": "Reviewed Temple Tax and rewrote its historical, ancient-context, and literary explanations around the explicit Scripture anchors, distinguishing sanctuary contributions, the Matthew 17 didrachma, and Caesar’s tribute in Mark 12.",
+      "status": "validated",
+      "changed_paths": [
+        "framework/canonical_library/objects/institutions/temple-tax.json"
+      ],
+      "protected_checks": [
+        "Object ID, source records, Scripture anchors, related-object edges, review/confidence metadata, and evidence relationships preserved.",
+        "No curated relationships were changed or promoted.",
+        "No claim, evidence item, status, or source-lock data was changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": "pending"
     }
   ],
   "inventory_count": 687,
@@ -18837,14 +18863,35 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "dee6c4dcf57378c7b370ad813f41ca810fb911ac7da02d3abae0986e2fe20c22",
-      "status": "pending_review",
-      "fields_examined": [],
-      "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "status": "enriched",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "second_temple_context",
+        "canonical_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "interpretive_notes",
+        "sources",
+        "related_objects"
+      ],
+      "fields_changed": [
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context"
+      ],
+      "outcome": "Clarified the explicit textual sequence in Exodus 30, 2 Chronicles 24, Matthew 17, and Mark 12, distinguishing sanctuary contributions, the temple didrachma, and tribute to Caesar. Replaced a broad unsupported claim that multiple biblical collections use Temple Tax language with a specific account of the actual anchors.",
+      "limitation": "The existing second_temple_context assertion about diaspora collection practices and the post-70 diversion to Jupiter Capitolinus was not expanded or independently verified; this object lacks a specific supporting source for that history. The rewritten fields therefore state only what its Scripture anchors establish.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Full CKL validation: 687 valid, 0 errors, the same 14 baseline warnings.",
+          "Focused content-quality and retrieval regressions: 17 passed, 4 subtests passed.",
+          "Protected-field fingerprint, manifest check, and git diff --check passed."
+        ]
       }
     },
     {
@@ -25275,7 +25322,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/institutions/temple-tax.json",
+  "next_batch": "framework/canonical_library/objects/institutions/temple.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

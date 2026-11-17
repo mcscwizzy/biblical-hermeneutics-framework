@@ -20,9 +20,9 @@ counted as a fully enriched, unchanged, or skipped object.
 
 ## Current checkpoint
 
-At this checkpoint, **167 objects are enriched**, **94 are unchanged because they
+At this checkpoint, **168 objects are enriched**, **94 are unchanged because they
 are already sufficient**, **68 are skipped pending source or identity
-research**, and **358 remain pending review**.
+research**, and **357 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -770,3 +770,6 @@ Batch 258 reviewed Synagogue and left it unchanged. It already distinguishes the
 
 
 Batch 259 reviewed Tabernacle and left it unchanged. Its explanation connects Exodus 25-40 with Leviticus and Numbers, distinguishes the sanctuary’s narrative setting from historical reconstruction, and treats Mari, Egyptian, and Timna comparisons as evidence for cultural intelligibility rather than identity or direct dependence. It also explains Hebrews as later interpretation rather than the only meaning of Exodus. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Temple Tax.
+
+
+Batch 260 reviewed Temple Tax. Its historical and literary explanations now follow the object’s actual anchors: the sanctuary assessment in Exodus 30, temple-repair collection in 2 Chronicles 24, the didrachma question in Matthew 17, and Caesar’s tribute in Mark 12. This helps readers distinguish temple support from imperial taxation and replaces an unsupported sweep across multiple biblical collections. The separate post-70 tax-redirection statement remains a research limitation because this object has no specific source for it; it was not expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Temple.
