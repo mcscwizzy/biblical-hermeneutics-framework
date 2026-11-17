@@ -7012,6 +7012,27 @@
         ]
       },
       "checkpoint_commit": "daf9dc59"
+    },
+    {
+      "batch_id": "batch-325-matthew-the-tax-collector-person",
+      "scope": [
+        "matthew-the-tax-collector"
+      ],
+      "completed_unit": "Reviewed Matthew the Tax Collector and held the profile because the specific tax-collector call is absent from its anchors.",
+      "status": "validated",
+      "changed_paths": [],
+      "protected_checks": [
+        "Object, source, Scripture-reference, relationship, review-status, and claim metadata preserved.",
+        "No CKL content or curated relationships were changed."
+      ],
+      "validation": {
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "Manifest coverage, protected-field fingerprint, and git diff --check passed."
+        ]
+      },
+      "checkpoint_commit": ""
     }
   ],
   "inventory_count": 687,
@@ -22636,14 +22657,27 @@
       "review_status": "in_review",
       "human_review_required": true,
       "protected_sha256": "484ff29197bdc33b54e182be5cbe8af3425045c04b8532fc737805e54d320206",
-      "status": "pending_review",
-      "fields_examined": [],
+      "status": "skipped_insufficient_support",
+      "fields_examined": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "sources",
+        "related_objects",
+        "interpretive_notes"
+      ],
       "fields_changed": [],
-      "outcome": "",
-      "limitation": "",
+      "outcome": "Left the profile unchanged pending reconciliation of Matthew’s tax-collector call with the person-specific anchors.",
+      "limitation": "The title identifies Matthew the tax collector, but Matthew 4:18–22 concerns Peter, Andrew, James, and John; Matthew 16 centers Peter’s confession; Luke 6 and Acts 1 list the Twelve without the tax-collector call. The direct call scene in Matthew 9:9 is absent. The current anchors support group membership more than the title’s specific identity claim.",
       "validation": {
-        "status": "not_run",
-        "results": []
+        "status": "pass_with_baseline_object_warnings",
+        "results": [
+          "Single-object CKL validation: 1 valid, 0 errors, 8 pre-existing section-status warnings.",
+          "No CKL content, source, reference, or relationship fields were changed."
+        ]
       }
     },
     {
@@ -27904,7 +27938,7 @@
     }
   ],
   "base_commit": "0c9c78afeccc210d7e81f55e32a980c1c4673df4",
-  "next_batch": "framework/canonical_library/objects/people/matthew-the-tax-collector.json",
+  "next_batch": "framework/canonical_library/objects/people/matthias.json",
   "protected_fingerprint_base": "origin/master",
   "presentation_audit_followups": {
     "method": "Exact comparison of each typed evidence item description and passage_relevance; candidates are reviewed individually before edits.",

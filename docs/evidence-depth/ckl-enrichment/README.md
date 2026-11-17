@@ -21,8 +21,8 @@ counted as a fully enriched, unchanged, or skipped object.
 ## Current checkpoint
 
 At this checkpoint, **197 objects are enriched**, **97 are unchanged because they
-are already sufficient**, **100 are skipped pending source or identity
-research**, and **293 remain pending review**.
+are already sufficient**, **101 are skipped pending source or identity
+research**, and **292 remain pending review**.
 
 Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
 repeated pattern, its mortality refrain, Enoch's distinct ending, and the
@@ -965,3 +965,6 @@ Batch 323 reviewed Mary Magdalene. The explanation now follows John 20 from Mary
 
 
 Batch 324 reviewed Mary, Mother of Jesus and left the profile unchanged. Its references are the Gospel endings and omit her direct appearances; the related birth-of-Jesus edge does not substitute for those passages. Person-specific anchors are needed before the generic description can be safely applied. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is matthew-the-tax-collector.
+
+
+Batch 325 reviewed Matthew the Tax Collector and left the profile unchanged. The current anchors include lists of the Twelve but omit Matthew 9:9, the direct call scene that establishes the tax-collector context. The anchors therefore need reconciliation before that specific identity can be explained. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is matthias.
