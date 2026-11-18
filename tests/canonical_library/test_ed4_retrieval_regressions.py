@@ -58,9 +58,12 @@ class ED4RetrievalRegressionTests(unittest.TestCase):
         self.assertEqual(response.analysis.scripture_references[0].book, "1 Corinthians")
         self.assertEqual(response.analysis.scripture_references[0].start_chapter, 15)
         self.assertEqual(response.results[0].id, "1-corinthians")
-        self.assertGreater(response.results[0].raw_score, response.results[1].raw_score)
-        self.assertIn("resurrection-theme", [result.id for result in response.results[:5]])
-        self.assertIn("resurrection-theme", [result.id for result in response.results[:5]])
+        self.assertEqual(response.results[0].score, 1.0)
+        resurrection = next(
+            result for result in response.results if result.id == "resurrection-theme"
+        )
+        self.assertEqual(resurrection.score, 1.0)
+        self.assertGreater(response.results[0].raw_score, resurrection.raw_score)
 
     def test_general_resurrection_question_keeps_topic_result_first(self) -> None:
         ids = self.result_ids("What is resurrection?")
