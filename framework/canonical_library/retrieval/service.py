@@ -11,7 +11,7 @@ from ..normalization import normalize_alias, normalize_id
 from ..schema import KNOWLEDGE_LAYER_PRIORITY
 from .indexer import CKLIndex, IndexedCKLEntry, load_index
 from .models import CKLIndexStats, CKLSearchResponse, CKLSearchResult, QueryAnalysis
-from .ranker import score_indexed_entry
+from .ranker import MAX_RAW_SCORE, score_indexed_entry
 from .tokenizer import analyze_query, normalize_query
 
 
@@ -204,14 +204,26 @@ class CKLRetrievalService:
         deduped: dict[str, CKLSearchResult] = {}
         for result in results:
             existing = deduped.get(result.id)
-            if existing is None or result.score > existing.score:
+            if existing is None or result.raw_score > existing.raw_score:
                 deduped[result.id] = result
 
         query_alignment = {result.id: _result_alignment_rank(query, result) for result in deduped.values()}
+        normalized_query_tokens = set(normalize_query(query).lower().split())
+        explicit_result_books = [
+            result.title
+            for result in deduped.values()
+            if result.category == "book"
+            and any(
+                (label_tokens := set(normalize_query(label).lower().split()))
+                and label_tokens.issubset(normalized_query_tokens)
+                for label in [result.title, *result.aliases]
+            )
+        ]
+        ranking_named_books = list(dict.fromkeys([*named_books, *explicit_result_books]))
         homonymous_places = {
             result.id
             for result in deduped.values()
-            if _explicit_book_place_homonym_rank(result, analysis, named_books)
+            if _explicit_book_place_homonym_rank(result, analysis, ranking_named_books)
         }
 
         def ordering_key(result: CKLSearchResult) -> tuple[Any, ...]:
@@ -221,20 +233,21 @@ class CKLRetrievalService:
                 homonym_scope_rank,
                 query_alignment.get(result.id, 3),
                 _focused_category_rank(query, result),
+                _named_entity_rank(query, result, analysis, ranking_named_books),
                 _named_book_rank(
                     result,
-                    named_books,
+                    ranking_named_books,
                     has_scripture_reference=has_scripture_reference,
                     primary_relationship_book=primary_relationship_book,
                 ),
                 -(
-                    result.score
-                    - _draft_score_penalty(
+                    result.raw_score
+                    - (MAX_RAW_SCORE * _draft_score_penalty(
                         query,
                         result,
                         has_scripture_reference=has_scripture_reference,
-                        named_books=named_books,
-                    )
+                        named_books=ranking_named_books,
+                    ))
                 ),
                 _scripture_scope_rank(
                     result,
@@ -352,6 +365,85 @@ def _focused_category_rank(query: str, result: CKLSearchResult) -> int:
     return 0
 
 
+def _named_entity_rank(
+    query: str,
+    result: CKLSearchResult,
+    analysis: QueryAnalysis,
+    named_books: Sequence[str],
+) -> int:
+    """Keep explicitly named place records ahead of broad book records."""
+
+    if result.category != "place":
+        return 1
+    candidate_name_tokens = {
+        token
+        for candidate in [result.title, *result.aliases]
+        for token in normalize_alias(candidate).lower().split()
+        if len(token) >= 5
+    }
+    explicit_book_names = [
+        *named_books,
+        *analysis.matched_terms_by_category.get("books", []),
+        *(reference.book for reference in analysis.scripture_references),
+    ]
+    for book in dict.fromkeys(explicit_book_names):
+        book_name_tokens = normalize_alias(book).lower().split()
+        if any(
+            SequenceMatcher(None, book_token, candidate_token).ratio() >= 0.8
+            for book_token in book_name_tokens
+            if len(book_token) >= 5
+            for candidate_token in candidate_name_tokens
+        ):
+            return 1
+    query_tokens = set(normalize_query(query).lower().split())
+    for reference in analysis.scripture_references:
+        query_tokens.difference_update(normalize_query(reference.book).lower().split())
+        if reference.start_chapter is not None:
+            query_tokens.discard(str(reference.start_chapter))
+        if reference.start_verse is not None:
+            query_tokens.discard(str(reference.start_verse))
+        if reference.end_chapter is not None:
+            query_tokens.discard(str(reference.end_chapter))
+        if reference.end_verse is not None:
+            query_tokens.discard(str(reference.end_verse))
+
+    candidate_tokens = set(normalize_query(result.title).lower().split())
+    for alias in result.aliases:
+        candidate_tokens.update(normalize_query(alias).lower().split())
+    candidate_tokens.difference_update(_ENTITY_TITLE_STOP_WORDS)
+    if not query_tokens.intersection(candidate_tokens):
+        return 1
+    opening_tokens = normalize_query(query).lower().split()
+    if not opening_tokens or opening_tokens[0] not in {"why", "what", "where", "who", "how"}:
+        return 1
+    focus_index = 1
+    if focus_index < len(opening_tokens) and opening_tokens[focus_index] in {
+        "is", "are", "was", "were", "does", "do", "did",
+    }:
+        focus_index += 1
+    if focus_index < len(opening_tokens) and opening_tokens[focus_index] == "the":
+        focus_index += 1
+    return (
+        0
+        if focus_index < len(opening_tokens)
+        and opening_tokens[focus_index] in candidate_tokens
+        else 1
+    )
+
+
+_ENTITY_TITLE_STOP_WORDS = {
+    "the",
+    "and",
+    "of",
+    "son",
+    "daughter",
+    "king",
+    "queen",
+    "prophet",
+    "apostle",
+}
+
+
 def _named_book_rank(
     result: CKLSearchResult,
     named_books: Sequence[str],
@@ -369,7 +461,7 @@ def _named_book_rank(
         ):
             return 0
         return 1
-    if has_scripture_reference or not named_books:
+    if not named_books:
         return 0
     normalized_named_books = {
         normalize_query(book).lower()

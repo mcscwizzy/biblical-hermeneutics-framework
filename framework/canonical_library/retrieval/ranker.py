@@ -117,7 +117,7 @@ def score_indexed_entry(
         nonlocal score
         if value <= 0:
             return
-        score = min(MAX_RAW_SCORE, score + value)
+        score += value
         signal = ScoreSignal(
             name=name,
             value=round(value, 4),
@@ -265,6 +265,7 @@ def score_indexed_entry(
         category=category,
         title=title,
         score=normalized_score,
+        raw_score=round(score, 4),
         matched_terms=matched_terms,
         matched_fields=matched_fields,
         summary=str(getattr(entry, "summary", "") or ""),
