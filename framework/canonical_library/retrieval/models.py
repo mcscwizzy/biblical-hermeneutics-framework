@@ -47,6 +47,7 @@ class CKLSearchResult:
     category: str
     title: str
     score: float
+    raw_score: float = 0.0
     matched_terms: list[str] = field(default_factory=list)
     matched_fields: list[str] = field(default_factory=list)
     summary: str = ""
@@ -66,6 +67,7 @@ class CKLSearchResult:
         data = asdict(self)
         if not debug:
             data.pop("score_details", None)
+            data.pop("raw_score", None)
         return data
 
 

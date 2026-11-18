@@ -1,0 +1,1936 @@
+# CKL Explanation Enrichment Progress
+
+This directory tracks the library-wide explanation review requested for the
+CKL. The machine-readable inventory in `progress.json` has one row for every
+CKL object. Rows remain `pending_review` until all applicable explanatory fields
+in that object have been examined. `in_progress` marks a record with a reviewed
+and validated field batch but unfinished object-level coverage. It is not
+counted as a fully enriched, unchanged, or skipped object.
+
+## Baseline
+
+- Branch: `feat/ckl-explanation-enrichment`
+- Base: `origin/master` at `0c9c78afeccc210d7e81f55e32a980c1c4673df4`
+- Inventory: 687 objects
+- CKL validation: 687 valid, 0 errors, 14 pre-existing warnings
+- Protected-field hashes are compared with the fetched base revision.
+- ED-7 currently classifies 71 evidence records as withheld from reader
+  promotion. Those classifications, NE-9C curations, NE-10 bridges, and held
+  candidates remain protected inputs.
+
+## Current checkpoint
+
+At this checkpoint, **346 objects are enriched**, **117 are unchanged because they
+are already sufficient**, **224 are skipped pending source or identity
+research**, and **0 remain pending review**.
+
+Batch 001 clarified four existing Genesis 5 claim rationales: the genealogy's
+repeated pattern, its mortality refrain, Enoch's distinct ending, and the
+transition toward Noah. Batch 002 completed the Genesis object review. It
+strengthened the book summary, clarified additional claim rationales, and
+replaced repetitive wording in nine Genesis 2 passage-relevance explanations.
+The detailed historical and literary contexts were already careful and were
+left intact. The ancient Near Eastern comparison claim and Genesis 5 textual
+variant evidence were not expanded because their source arguments were not
+independently rechecked.
+
+Both Genesis validation runs passed with 1 valid object, 0 errors, and 0
+warnings. The full CKL validator reports 687 valid objects, 0 errors, and the
+same 14 warnings as baseline. CKL schema, packaging, retrieval, service, and
+precision regressions passed 107 tests and 4 subtests. Source-lock and claim
+scope checks passed 35 tests; NE-9C/NE-10 projection and curation regressions
+passed 73 tests. API test collection remains unavailable because `fastapi` is
+not installed. Per-batch results and protected-field fingerprints are in
+`progress.json`.
+
+The first archaeology record, Arad Ostraca, was reviewed and left unchanged.
+Its CKL summary and literary context refer to Lachish, Jerusalem, and Joshua;
+its Scripture references do not establish an Arad artifact connection; and its
+four source entries lack bibliographic locators and claim support. A reliable
+explanation needs new source research identifying the artifact, excavation,
+publication, and any relevant biblical connection. The object has 10 existing
+section-status warnings, unchanged from baseline.
+
+The Babylonian Chronicles object was also reviewed and left intact: it already
+explains the 597 BCE notice, the limits of what BM 21946 records, its
+Babylonian chronicle setting, and the qualified identification of the city of
+Judah. The Balaam Inscription object was skipped for the same source-integrity
+reason as Arad: its title and generic text do not match its source records and
+biblical anchors. Research must establish which inscription the entry intends
+before any explanatory prose can be safely written.
+
+The Bronze Snake record was also held. Its title points to the serpent in
+Numbers 21, while its summary and historical context describe the Merneptah
+Stele and its reference to Israel. Its source records do not resolve that
+subject mismatch. The CKL needs a reviewed correction or separate records
+before either topic can be enriched safely.
+
+The Mount Ebal Altar Discovery entry was held because its content instead
+describes Qumran and the Dead Sea Scrolls, including unrelated Scripture
+anchors and source IDs. The entry needs object identity reconciliation before
+any archaeological explanation can be written.
+
+The Nimrud Reliefs record was held because its summary describes the Lachish
+relief cycle, while the title and generic source IDs point to Nimrud/Nineveh.
+It needs the relief cycle identified precisely before the record can be
+expanded.
+
+The Pool of Bethesda entry was held because its current references and sources
+point to unrelated creation/City of David material rather than John 5 and the
+pool. Site identification and relevant excavation publications need to be
+verified before any connection is written.
+
+The Pool of Siloam Discovery entry was also held: its explanatory notes and
+source IDs describe the tunnel inscription, while the title names the pool.
+The pool and inscription need distinct, verified evidence and passage links.
+
+The Siloam Inscription and Taylor Prism entries were held because their source
+records lack artifact identifiers, locators, and source-supported claims. The
+Siloam entry needs a verified inscription text and tunnel connection; Taylor
+Prism should be reconciled with the better-supported Sennacherib Prism record.
+
+The Tel Dan Stele and Tel Rehov Honey Workshop entries were both held because
+their source records and Scripture links instead describe the Tel Dan Stele.
+The named objects need separate, site-specific records and verified excavation
+sources before contextual prose can be added.
+
+Tell Dan Excavations, Tell es-Safi Excavations, Temple Mount Area Finds, and
+Wadi Murabba'at Scrolls were held because their records respectively repeat
+stele material, mix site identities, describe Qumran material, or lack
+site-specific manuscript evidence. The Temple Warning Inscription entry was
+left unchanged; it already explains the warning's placement, its relation to
+the temple boundary, and the limited connection to Acts 21 with a museum source.
+All five records passed object validation with zero errors and the same ten
+pre-existing section-status warnings.
+
+The Merneptah Stele and Jerusalem Stepped Street explanations were left intact.
+Their recorded inscription, scholarly volume, and Israel Antiquities Authority
+excavation report support the existing descriptions, contextual connections,
+and interpretive limits. The Moabite Stone and Pilate Stone entries were held:
+their explanatory notes refer to significant inscriptions, but the recorded
+source lists are title-only placeholders without locators, URLs, or support
+links. All four objects passed validation with zero errors and ten existing
+section-status warnings each.
+
+Samaria Palace was held because the title names Samaria but the summary and
+source record describe Nineveh. Its other contextual fields and biblical
+anchors are generic or unrelated, so the intended artifact must be established
+before any explanation can be responsibly written.
+
+The Exile and Return Storyline summary and contexts now connect the named
+passages more concretely: Deuteronomy 30's promised gathering, Jerusalem's fall
+in 2 Kings 25, Jeremiah's address to people living in exile, and Ezra's account
+of return are set beside later restoration language. The updated wording also
+clarifies that biblical return language can describe both historical return
+and a wider canonical hope. Scripture anchors, source identities, claims, and
+relationships were unchanged.
+The updated object and full library both validate with zero errors; the full
+validator reports the same 14 pre-existing warnings, including this object's
+section-status warning. The targeted content-quality and retrieval test command
+was interrupted after 20 passing test markers because it continued at roughly
+30 seconds per test and had not produced a summary. No failure appeared before
+interruption; the final test result remains unavailable.
+
+Shiloh Excavations was held because its sources and Scripture links point to
+Jerusalem and general creation texts rather than site-specific Shiloh evidence.
+The record needs excavation phases and relevant biblical anchors reviewed.
+
+Qumran Archaeological Site, Qumran Caves, and Samaria Ostraca were also held:
+their records lack manuscript/site-specific evidence or contain mismatched
+source and Scripture links. The Sennacherib Prism entry was left unchanged
+because it already explains the annals and Lachish reliefs as separate Assyrian
+royal presentations, distinguishes artifact dates from the 701 BCE campaign,
+and qualifies comparison with Kings and Isaiah.
+
+Beth Shean was skipped because its source entries lack bibliographic details
+and its brief summary does not identify the excavation contexts behind its
+period labels. The Black Obelisk explanation was left unchanged: it already
+connects the tribute register with Jehu's reign while distinguishing the
+Assyrian imperial display from the biblical account and preserving uncertainty
+about the figure and the designation "House of Omri."
+
+Seven more archaeology records were held for research because their source
+entries lack locators or claim support, or their titles, summaries, and
+Scripture anchors identify different subjects. These include Caesarea,
+Caiaphas, City of David, Dead Sea Scrolls, Ein Gedi, Elephantine, and Gezer.
+The Cyrus Cylinder record was left unchanged because its object identity,
+inscription setting, comparison with Ezra, and policy limits are already
+explained with source-linked qualifications. All eight objects validated with
+zero errors and the same ten pre-existing section-status warnings each.
+
+Eight additional archaeology objects were held: Gibeon wine jars, Hazor,
+Herodium, Hezekiah's tunnel inscription, the James Ossuary, the Ketef Hinnom
+silver scrolls, the Kurkh Monolith, and the Lachish city gate. Their records
+either use generic or mismatched sources, omit the relevant excavation or
+inscription evidence, or lack a verified link between the artifact and the
+passages. Each passed single-object validation with zero errors and the same
+ten pre-existing section-status warnings.
+
+In the next review group, the Lachish Reliefs explanation was already
+sufficient: it describes the Assyrian visual account and its royal purpose,
+then distinguishes that evidence from Kings and Isaiah. Lachish Ostraca,
+Masada, Megiddo, and the Mesha Stele were held because the current CKL entries
+lack specific artifact or stratigraphic references tied to their biblical
+anchors. Their source details need repair or review before expansion.
+
+Batch 035 reviewed Exodus, Ezekiel, Ezra, and Galatians. Five Exodus claim rationales now explain how the book moves beyond departure from Egypt toward covenant and divine presence, how the Merneptah reference is useful but limited, and how ancient Near Eastern parallels provide comparison without proving dependence. Ezekiel, Ezra, and Galatians already have accessible book summaries and context, detailed claim explanations, and specific interpretive notes that preserve uncertainty; their prose was left unchanged. All four objects validate with zero errors or warnings, and the full CKL remains at 687 valid objects, zero errors, and the same 14 baseline warnings. No retrieval test was run because the only edits were claim rationales, which are not used by the retrieval index or standard reader modal. The next pending object is `habakkuk.json`.
+
+Batch 036 reviewed Habakkuk. Its summary, historical and literary context, 28 claims, and 46 interpretive notes already explain the Chaldean horizon, the book's complaints and woes, disputed Hebrew and textual questions, Second Temple reception, and limits on modern analogy in accessible, source-aware language. It was left unchanged after single-object validation passed with zero errors and warnings. The next pending object is recorded in the manifest.
+
+Batch 037 reviewed Haggai. Its summary and contextual sections, 28 claims, and 49 interpretive notes already explain the Persian-period setting, dated oracles, priestly exchange about ritual status, and debated restoration language with detailed distinctions between text, historical reconstruction, and later reception. It was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 038 enriched Hebrews. Its 32 claim rationales previously repeated one generic sentence; they now explain the work's argument through Scripture, the movement from warning to communal practice, and where historical or theological interpretation remains open. The detailed summary, contexts, and 40 interpretive notes were retained. Single-object and full-library validation passed with zero errors; the full validator still reports the same 14 baseline warnings. Retrieval tests were not run because claim rationale is not indexed or rendered by the standard modal. The 40 note-level rationale fields remain unchanged because the notes themselves already explain their cautions.
+
+Batch 039 reviewed Hosea. Its summary and contexts already explain the eighth-century northern setting, the book's layered literary form, and later Jewish and Christian reception. Its 20 claims and 32 notes distinguish the text from disputed reconstructions of marriage language, fertility practice, composition, and reuse. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 040 reviewed Isaiah. Its summary and context explain the book's Assyrian, Babylonian, Persian, and postexilic horizons, while its 19 claims and 26 notes distinguish historical referents, textual evidence, and later reception. Three typed evidence items are source-locked and were not altered; the remaining evidence explanation is already source-grounded and careful about inference. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 041 reviewed James. The summary, context, 32 claims, and 42 notes already explain its exhortative form, uncertain sender and audience, Jewish scriptural setting, economic critique, and debated faith-and-works language without flattening disagreement. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 042 reviewed Jeremiah. The summary and contexts orient readers to the book's chronology, literary plurality, and distinct Hebrew and Greek editions. Its 18 claims and 26 notes connect details to the historical crisis, clarify the limits of reconstruction, and carefully distinguish later reuse from historical referent. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 043 reviewed Job. Its summary and context already guide readers through the gap between the heavenly prologue and Job's knowledge, the long poetic debate, and the unresolved tension in the epilogue. Eight claims and 14 notes explain the friends' failed diagnosis, Job's protest, the divine speeches, and the limits of restoration language. It was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 044 reviewed Joel. Its summary, contexts, 22 claims, and 33 notes already explain the agrarian crisis, uncertain date, locust and army imagery, broad participation in the spirit oracle, and the book's later reuse. The notes carefully separate ecological reflection from claims about modern disasters and distinguish quotation from allusion. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 045 reviewed John. Its 45 claims and 87 notes already explain the Gospel's structure, Jewish setting, Greek textual questions, and contested readings while keeping narrative, historical reconstruction, and reception distinct. The two typed evidence records include one source-locked item and one low-confidence proposal reported with explicit limits. No changes were made, and single-object validation passed with zero errors and warnings.
+
+Batch 046 reviewed Jonah. Its 24 claims and 44 notes already unpack the narrative's repeated structure and unresolved final question, and distinguish the eighth-century namesake from the later literary book. The notes also give careful treatment to Nineveh, the fish, plant, Hebrew idioms, Jewish liturgy, and later Gospel and Islamic reception. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 047 enriched Joshua. The reader-facing summary now draws together the transition from campaigns to allotment and covenant, including the book's own tension between broad victory summaries and notices of land still unconquered. Five claim rationales explain why that tension, Rahab's preservation, Torah-shaped leadership, and the final Shechem covenant matter. No new archaeological or conquest chronology claims were added. Single-object and full-library validation passed with zero errors; the same 14 baseline warnings remain.
+
+Batch 048 reviewed Jude. Its 29 claims and 39 notes already explain the letter's polemical form, Second Temple Jewish traditions, textual variants, and the difference between literary use of Enoch and claims about an entire work's status. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 049 enriched Judges. The summary now makes the book's decline visible: the repeated deliverance pattern gives way to internal idolatry, sexual violence, and civil war. Six claim rationales clarify that the episodes vary, show distinct roles in Deborah's story, leave Samson's deliverance incomplete, and raise but do not settle the kingship question. No archaeological or historical reconstruction was added, and the source-locked geography evidence remains untouched. Full-library validation passed with the same 14 baseline warnings.
+
+Batch 050 reviewed Lamentations. Its summary and contexts guide readers through the changing voices, alphabetic forms, destruction setting, and textual witnesses; 27 claims and 33 notes explain the relationship between complaint, fragile hope, trauma, and the unresolved final petition. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 051 enriched Leviticus. The summary now connects the book to Exodus's closing scene, framing its instructions around how Israel worships and lives in God's presence. Five claim rationales explain the movement from sacrifice and sanctuary toward purity, atonement, neighbor-care, and communal ethics while retaining the distinction between ritual impurity and moral wrongdoing. Single-object and full-library validation passed with zero errors; the same 14 baseline warnings remain.
+
+Batch 052 reviewed Luke. Its summary, 44 claims, and 68 notes already explain the Gospel's Jewish setting, distinct narrative contributions, and debated textual forms while preserving uncertainty. The three typed evidence records are passage-specific: each separates a direct Greek observation from its attributed scholarly interpretation and limits the conclusion. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 053 reviewed Malachi. Its 34 claims and 67 notes already explain the disputation form, Persian-period setting, difficult marriage and tithing passages, and the relationship between Torah, Elijah, and later reception. They distinguish historical claims from later Jewish and Christian readings and guard against unsupported modern application. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 054 reviewed Mark. The summary, 41 claims, and 78 notes already explain the Gospel's rapid narrative, Roman execution setting, and earliest recoverable ending, while distinguishing textual variants and later canonical reception. Its single typed evidence item carefully reports an abstract-level textual proposal without treating it as settled. No changes were made; single-object validation passed with zero errors and warnings.
+
+Batch 055 reviewed Matthew. Its 46 claims and 72 notes already explain the Gospel's Jewish setting, literary design, and major interpretive disputes in detail; one source-locked evidence item carefully records the narrated movement sequence without adding a speculative itinerary. No changes were made, and single-object validation passed with zero errors and warnings.
+
+Batch 056 reviewed Micah. Its 34 claims and 52 notes already explain the Assyrian horizon, land and leadership critiques, disputed speaker transitions, and the book's varied Jewish and Christian reception. The notes preserve uncertainty around the Isaiah parallel, the Bethlehem ruler, and modern uses of the peace and justice passages. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 057 reviewed Nahum. Its 27 claims and 46 notes already explain the Assyrian setting, violent siege poetry, refuge language, and contested gendered imagery without flattening ethical tension. The one typed evidence record labels an alternative textual reconstruction as low confidence and explains why it does not establish geography or composition date. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 058 reviewed Nehemiah. Its summary and contexts already connect wall rebuilding with the later Torah assembly, economic restitution, covenant commitments, and the unresolved relapse in chapter 13. Eight claims and ten notes explain the Persian setting, disputed wall reconstruction, internal debt crisis, and forceful final reforms. The object was left unchanged after single-object validation passed with zero errors and warnings.
+
+Batch 059 enriched Numbers. The revised summary uses the two censuses to make the generational transition clear, and six claim rationales explain how Kadesh redirects the story and how the closing instructions prepare a new generation for inheritance. The Deir Alla comparison now states what a shared name can show without treating the inscription as verification of Numbers' narrative. No new historical claims were added. Single-object and full-library validation passed with zero errors; the same 14 baseline warnings remain.
+
+## Reader reachability
+
+Canonical object detail responses serialize summaries and evidence items.
+Retrieval indexes evidence title, description, primary observation, scholarly
+interpretation, passage relevance, and confidence rationale. Claim rationales
+are serialized in canonical object detail, but the standard canonical browser
+modal does not render them, and retrieval indexes claim text rather than
+rationale. This batch improves the CKL research layer without claiming direct
+reader display. Evidence presentation depends on the Narrative Explorer
+evidence packet.
+
+## Resume and validation
+
+Refresh the inventory while preserving existing progress, then validate it:
+
+```sh
+python3 tools/ckl_enrichment_progress.py --sync
+python3 tools/ckl_enrichment_progress.py --check
+```
+
+Validate the full CKL after each content batch:
+
+```sh
+python3 tools/ckl_validate.py
+```
+
+First Chronicles was left unchanged. Its summary and contexts already explain
+the book's structure and postmonarchic setting; six interpretive notes clearly
+separate textual observations from historical reconstruction and preserve
+disagreement. The claims are tied to passages, and its Psalter evidence item
+distinguishes the observable reuse of Psalm 106:48 from a debated proposal
+about the Psalter's collection history. The object passed validation with zero
+errors and zero warnings.
+
+For 1 Corinthians, six claim rationales were expanded to show how Paul’s
+argument connects the cross with status, the assembly with temple language,
+embodied conduct with belonging to Messiah, idol meals with table allegiance
+and conscience, Israel’s wilderness story with warning, and idol claims with
+participation in sacrificial meals. The surrounding book summary, claims,
+sources, Scripture anchors, and 88 cautious interpretive notes were retained.
+The object and full library validate with zero errors and the same 14 existing
+warnings. Claim rationales are available in canonical detail but are not
+rendered in the standard browser modal or retrieval index.
+
+First John was also left intact. Its summary, contexts, 33 claims, and 41
+interpretive notes already give readers specific explanations while carefully
+qualifying authorship and community reconstructions, lexical disputes, textual
+variants, and later reception. The book validated with zero errors and zero
+warnings.
+
+Four 1 Kings claim rationales were expanded. They now explain how the child
+judgment illustrates Solomon's discernment, why the temple prayer is followed
+by a warning against assuming the building guarantees security, how the
+Carmel episode moves from public allegiance to the end of drought, and how
+Naboth's vineyard episode exposes royal injustice and seizure of inherited
+land. The text of the claims, references, and six existing interpretive notes
+were retained. The object and library validate without new errors or warnings.
+
+First Peter was left intact. Its summary and context fields already connect
+the letter's themes to its Jewish scriptural inheritance and Roman provincial
+setting while limiting claims about authorship, audience, and persecution.
+Thirty-two claims and 43 interpretive notes provide specific explanations and
+guard against harmful overreadings. The object passed validation with zero
+errors and zero warnings.
+
+The next three book objects, 1 Samuel, 1 Thessalonians, and 1 Timothy, were
+left intact. Their summaries and contexts already explain the narrative or
+letter-level movement and distinguish explicit textual claims from disputed
+historical, literary, and lexical reconstruction. Their claims and interpretive
+notes are specific and carefully qualified; the 1 Samuel geography evidence
+also remains source-locked. All three objects validated with zero errors and
+zero warnings.
+
+Second Chronicles, 2 Corinthians, and 2 John were left intact. Their summaries
+and contexts already explain each book's main literary and historical setting.
+Their claims, notes, and typed evidence are detailed and careful about debated
+authorship, literary reconstruction, textual interpretation, and modern
+application. All three objects validated with zero errors and zero warnings.
+
+Second Kings, 2 Peter, and 2 Samuel were left intact. Their summaries and
+contexts already explain the main narrative or epistolary sequence, and their
+claims and notes make careful distinctions between textual observation,
+historical reconstruction, and theological interpretation. Locked Naaman
+geography evidence remains unchanged. All three objects validated with zero
+errors and zero warnings.
+
+Second Thessalonians, 2 Timothy, and 3 John were left unchanged. Their
+summaries and contexts clearly distinguish letter-level observations from
+disputed authorship, chronology, community history, and interpretation. Their
+claims and notes already provide accessible explanations, source-aware
+uncertainty, and careful limits on modern application. All three validated
+with zero errors and zero warnings.
+
+Acts, Amos, Colossians, and Daniel were left intact. Their summaries and
+contexts already provide detailed historical and literary framing; claims and
+notes carefully separate text, source evidence, scholarly reconstruction,
+and later reception. Source-locked Acts geography and the four objects all
+validated with zero errors and zero warnings.
+
+Deuteronomy, Ecclesiastes, and Esther were left intact because their summaries,
+claims, and notes already explain their literary and historical contexts while
+carefully qualifying text, dating, and reception questions. Ephesians had 28
+claim rationales that all repeated a generic sentence. Those rationales now
+explain the specific textual basis or interpretive limit for each claim,
+including grace and good works, Jewish-gentile reconciliation, temple imagery,
+household instruction, and the armor metaphor. Claims, notes, sources, and
+anchors were preserved. The four objects and full library validate with zero
+errors and the same 14 baseline warnings. Claim rationales are not currently
+rendered in the standard browser modal or indexed by retrieval.
+
+Obadiah was reviewed and left intact. Its summary, historical and regional context, literary sequence, and interpretive notes already explain the movement from Edom’s humiliation through the Jerusalem accusations and day of YHWH to Zion’s survivors and contested territorial conclusion. The 23 claim rationales preserve clear limits, including the undated historical setting, uncertain Edomite actions, contested grammar, and debated overlap with Jeremiah 49. The object validated with zero errors and warnings; no retrieval test was needed because no content changed.
+
+Batch 074 enriched the Genesis 37–44 Joseph descent and testing record. Its summary and historical/literary framing now explain how Joseph’s rise, the family’s return, and Judah’s changed responsibility connect, while retaining the record’s explicit limits on historical identification and dating. Seventy-eight duplicated evidence relevance fields now explain each observation’s role in its scene. The observation text, sources, Scripture anchors, relationships, and uncertainty classifications remain unchanged. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 075 enriched the Genesis 45–50 Joseph reconciliation and conclusion record. Its overview and context now connect the migration, famine administration, tribal blessings, burial, and Joseph’s final oath while making clear that Egyptian comparisons do not identify the characters or date the events. Eighty-two duplicated evidence relevance fields now explain their scene-level significance, including textual totals and later reception. Source identities, evidence observations, anchors, and relationships remain intact. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 076 reviewed the Genesis 10–11 nations and Babel context. Its 29 evidence explanations already gave specific, source-aware accounts of the table of peoples, Babel’s language and building imagery, and disputed names and chronology, so those remained unchanged. The summary and context fields now describe the sequence in more accessible prose and explain what the Mesopotamian comparisons can and cannot establish. The object validated with zero errors or warnings; full CKL validation remains at 687 valid, zero errors, and the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 077 reviewed the honor-and-shame background object and left it unchanged. It has no passage-specific evidence items or claims, and its broad historical and cultural statements rely on an internal CKL orientation note rather than inspected scholarly support. Future research is needed before expanding claims about honor and shame across ancient societies and periods. The full CKL remains at 687 valid objects, zero errors, and 14 baseline warnings. The single-object path audit reports nine section-status warnings for this unchanged record; those do not appear in the full-library audit. No regression tests were run because no content changed.
+
+
+Batch 078 reviewed the Judean pilgrimage, taxation, and Roman power record and left it unchanged. Its claims and evidence distinguish temple payments, tolls, imperial tribute, Roman jurisdiction, crucifixion, and burial, and carefully bound what the stepped street and Yehohanan remains can establish. The cited excavation report, Josephus passage, and museum object record were inspected. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. Regression tests were not run because no content changed.
+
+
+Batch 079 reviewed the Judges household religion and regional cult sites record. Its four passage-level explanations already distinguished Micah’s household shrine, the Danite installation, Shiloh, and the Bull Site comparison with clear archaeological limits. The summary now explains the movement among those settings in plain language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 080 reviewed the kinship, inheritance, and redemption record and left it unchanged. Its two claims and interpretive caution already make clear that Ruth 4 joins property, marriage, and family continuity in its own narrated transaction without equating it with one uniform law from Leviticus or Deuteronomy. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. Regression tests were not run because no content changed.
+
+
+Batch 081 reviewed the Judges 1–2 and Iron I transition record. Its evidence already distinguished Judges’ varied local outcomes from archaeological settlement patterns and limited what the Merneptah Stele can show. The summary now explains these connections in reader-facing prose without assigning an ethnic identity to each village or using archaeology to verify the campaigns. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 082 reviewed the Genesis and Mesopotamian creation and flood comparison record. Its claims and evidence already distinguished shared motifs from direct borrowing and the date of surviving tablets from the age of a tradition. The summary now describes those comparisons in plain language without implying that Genesis copied a particular tablet. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 083 reviewed the patronage, hospitality, and debt record. Its claims, 20 evidence items, and safeguards were already detailed and passage-specific. The summary now explains how the biblical texts distinguish material support, hospitality, work, sharing with the poor, and collection accountability, without treating these as one system. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 084 reviewed the large Pauline authority and conflict record: all 70 claims, 70 evidence items, and four interpretive notes. Its passage-level explanations were already detailed and carefully qualified, so they remain unchanged. The summary now explains why the letters’ partial accounts and Acts’ later narratives must be kept distinct, and why forgiveness does not automatically restore trust, authority, or contact. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 085 reviewed the Pauline sexuality and restoration record. Its 23 claims and evidence explanations already distinguish ancient wording, disputed legal and rhetorical contexts, modern identity categories, consent, and safeguarding limits. The summary now makes that scope easier to grasp without flattening the passages into a single rule. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 086 reviewed the Pauline death, resurrection, and grief record: all 30 claims, 30 evidence explanations, and five interpretive notes. Its passage-level explanations already distinguish bodily resurrection, metaphorical death, grief, transformation, and disputed passages. The summary now gives readers a plain-language map of those questions while leaving unresolved matters open. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+
+Batch 087 reviewed the Pauline authorities and civic life record: all 52 claims, 52 typed evidence items, and six interpretive notes. Their explanations already distinguish Romans’ ethical sequence, Corinthian disputes and metaphors, Philippi’s civic language, Thessalonian hope, and Acts’ later legal narratives. The summary now explains these connections in reader language while leaving disputed imperial resonance open. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 088 reviewed the Pauline food, conscience, and shared meals record: all 49 claims, 49 typed evidence items, and seven interpretive notes. Their explanations already distinguish temple participation, market purchase, private hospitality, assembly meals, and the Antioch conflict, while preserving Jewish practice diversity and uncertainty about disputed details. The summary now traces these settings in reader language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 089 reviewed the Pauline Israel and Jewish-gentile relations record: all 40 claims, 40 typed evidence items, and six interpretive notes. Their explanations already preserve Israel’s scriptural gifts and hope, distinguish gentile inclusion from identity erasure, and qualify debates about Torah, election, hardening, and “all Israel.” The summary now gives readers a clearer map of the different arguments across Romans, Galatians, Corinthians, Philippians, and Acts. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 090 reviewed the Pauline kinship, guardianship, slavery, and inheritance record: all 19 claims, 19 typed evidence items, and six interpretive notes. The explanations already distinguish Galatians’ household-heir analogy from Romans 8’s movement through adoption, Spirit, co-heirship, suffering, and bodily hope, while limiting Roman legal comparisons. The summary now makes those differences clearer to readers. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 091 reviewed the Pauline mission and interassembly networks record: all 74 claims, 74 typed evidence items, and six interpretive notes. Their explanations already make coworkers, hosts, messengers, women’s labor, changing plans, support, correction, and local agency visible, while distinguishing the letters from Acts’ later narrative. The summary now gives readers a concise map of that network. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 092 reviewed the Pauline prayer, thanksgiving, lament, and communal memory record: all 58 claims, 54 typed evidence items, and four interpretive notes. Their explanations already hold prayer and hope together with grief, uncertainty, conflict, practical aid, consent, and safeguarding. The summary now describes these functions in plain language and identifies Acts as a later narrative. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 093 reviewed the Pauline Spirit, gifts, prophecy, healing, and assembly-order record: all 34 claims, 34 typed evidence items, and six interpretive notes. The explanations already distinguish diverse Spirit-related language and gifts, and connect them to common benefit, intelligibility, testing, and accountable care. The summary now makes that structure easier to follow without resolving later disputes about which gifts continue. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 094 reviewed the Pauline suffering, weakness, disability, healing, and apostolic legitimacy record: all 28 claims, 28 typed evidence items, and five interpretive notes. Their explanations already distinguish illness, injury, disability, persecution, poverty, imprisonment, rhetorical weakness, and cross-shaped power, and explicitly leave Paul’s thorn unidentified. The summary now gives readers that distinction in plain language. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 095 reviewed the Pauline women coworkers and assembly authority record: all 20 claims, 20 typed evidence items, and five interpretive notes. The explanations already distinguish named work, prophecy, hospitality, disputed silence instructions, Junia’s debated apostolic description, and later office systems. The summary now shows readers how Romans, Corinthians, Philippians, and Acts contribute without flattening their differences. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 096 reviewed the Pauline work, wages, poverty, giving, and economic solidarity record: all 50 claims, 50 typed evidence items, and six interpretive notes. Their explanations already distinguish support rights from voluntary nonuse, generosity from coercion, equality from enforced destitution, and unwillingness from inability to work. The summary now guides readers through those distinctions and identifies Acts as a later witness. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 097 reviewed the Persian restoration and Yehud administration record: all four claims, four typed evidence items, and three interpretive notes. The explanations already distinguish Ezra’s multi-reign account from the Cylinder’s Babylonian text, Yehud’s stamp evidence, and a later Elephantine petition. The summary now states what each source contributes without treating comparative evidence as direct confirmation. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 098 reviewed the ritual purity and communal holiness record: all 20 claims, 20 typed evidence items, and five interpretive notes. The explanations already distinguish Levitical impurity categories, Mark’s Jewish hand-purity dispute, Acts’ interpretation of Peter’s vision, and the separate Pauline food cases. The summary now explains those differences without turning comparative evidence into a universal menu. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 099 reviewed the Roman Athens and Areopagus record: all 12 claims, 16 typed evidence items, and four interpretive notes. The explanations already distinguish the Classical and Roman Agoras, an ambiguous Areopagus setting, layered cult practice, philosophical comparanda, and the limits of the unknown-god altar evidence. The summary now gives readers the scene’s progression without claiming an exact venue or artifact. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 100 reviewed the Roman citizenship and legal process record and left it unchanged. Its summary and two claims already distinguish Acts’ repeated citizenship portrayal from independent confirmation and limit what can be inferred about Roman procedure from the narrated scenes. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. Regression tests were not run because no content changed.
+
+Batch 101 reviewed the Roman Corinth civic, household, and association record: all 10 claims, 10 typed evidence items, and three interpretive notes. Their explanations already connect ports, civic space, cult, households, status inequality, and meals to the letters while limiting what archaeology can establish. The summary now makes those connections easier to follow and preserves uncertainty about specific people and venues. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 102 reviewed the Roman Ephesus civic, cultic, and household record: all 12 claims, 12 typed evidence items, and three interpretive notes. The explanations already distinguish Acts’ Ephesian settings from archaeology, Revelation’s named assembly, the disputed destination of Ephesians, and First Timothy’s narrated setting. The summary now gives readers a concise map without turning local cult evidence into a universal explanation. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 103 reviewed the Roman Galatia regions, roads, cities, and audience record: all 19 claims, 19 typed evidence items, and five interpretive notes. The explanations already distinguish Roman provincial Galatia from older regional identities, document the southern city sequence and road network, and preserve uncertainty about which assemblies received Galatians. The summary now makes those distinctions easier to follow. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 104 reviewed the Roman Macedonia road network and city diversity record: all 11 claims, 11 typed evidence items, and two interpretive notes. Their explanations already distinguish the Via Egnatia trunk route from Beroea’s branches, the cities’ civic statuses, and Acts’ itinerary from the letters’ accounts. The summary now puts those points in a clear sequence. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 105 reviewed Roman Philippi: all 12 claims, 12 typed evidence items, nine interpretive notes, contextual fields, anchors, and source identities. The summary now connects Acts’ travel, household welcome, exploitation, and civic conflict to Philippi’s Roman-colony setting, while distinguishing the archaeological setting from verification of narrated events and preserving uncertainty about the traditional prison site and letter provenance. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 178 enriched How do the Old and New Testaments connect? The FAQ now explains the specific bridges made in Luke 24, Matthew 5, Romans 15, 2 Corinthians 1, Hebrews 1, and 1 Peter 1. It avoids implying that the Testaments have identical contexts and replaces an unsupported broad comparison with other ancient collections. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 179 enriched How should I read apocalyptic literature? The FAQ now grounds its guidance in Daniel 7 and Revelation 1, 13, and 21, showing how symbols address power, endurance, and hope. It replaces a broad unsourced claim about ancient imagery with examples from the cited passages. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 180 enriched How should I read prophecy? The FAQ now grounds its reading advice in Isaiah’s commissioning, Jeremiah’s call, Amos’s demand for justice, Ezekiel’s vision, and Jesus’ use of Isaiah in Luke 4. It distinguishes original setting from later use and avoids unsupported comparisons to other ancient oracles. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 181 enriched What does hesed mean? The explanation now shows how the cited passages use hesed in describing God, human loyalty, worship, and restoration. It does not claim one English gloss fits every occurrence or make an unsourced treaty comparison. A future lexical review is still needed because the object has no lexicon source, and two Psalm source records are misclassified in metadata. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 182 enriched What does ruach mean? The explanation now distinguishes the Hebrew word’s context-dependent uses in Genesis, Ezekiel, and Joel from related breath imagery and the Greek wording in John and Acts. It avoids treating every breath passage as an occurrence of ruach. A full lexical review remains open because the record has no lexicon source. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 183 enriched What does shalom mean? The answer now shows passage-specific uses as blessing, secure life, covenant promise, peace with God, and reconciliation between divided groups. It avoids an unsupported comparison to general ancient peace language. A full lexical review remains open because no lexicon source is recorded, and the Psalm 29 source type needs metadata review. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 184 enriched What does Torah mean? The answer now illustrates Torah as instruction in Deuteronomy, meditation in the Psalms, and a topic of New Testament interpretation. It avoids an unsupported comparison with other legal and treaty traditions. A full lexical review remains open because no lexicon is recorded; the Psalm source-type metadata also needs review. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 185 enriched What is a covenant sign? The FAQ now distinguishes the rainbow, circumcision, Passover, Sabbath, and the new-covenant meal by the functions the cited passages give them. It also explains Paul’s point about Abraham’s circumcision in Romans 4 and avoids unsupported comparisons with other ancient treaty markers. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 186 enriched What is a parable? The answer now uses the sower, Good Samaritan, lost stories, tenants, and wedding attendants to show that parables vary in form and force. It explains why audience and Gospel setting matter and avoids an unsourced comparison with general ancient storytelling. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 187 enriched What is a prophet? The FAQ now explains prophetic work through the call stories of Samuel, Isaiah, Jeremiah, and Ezekiel, Amos’s challenge about justice, and later readings in Luke and Acts. It replaces an unsupported comparison to royal advisers and clarifies that prophecy includes more than prediction. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 188 enriched What is a psalm? The FAQ now distinguishes wisdom teaching, lament, trust, royal language, and thanksgiving, and shows how particular psalms are quoted or interpreted in Luke, Acts, and Hebrews. It removes an unsupported comparison with other ancient prayer-poetry traditions. The Psalm source-type metadata also needs review. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 189 enriched What is biblical wisdom? The FAQ now follows examples from Proverbs, Job, the Psalms, Ecclesiastes, Jesus’ teaching, and James to show wisdom as lived practice. It removes unsupported claims about the tradition’s historical origins and neighboring cultures. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests. Psalm 1 source-type metadata remains flagged for review.
+
+The next work unit is `framework/canonical_library/objects/faq/what-is-canonical-theology.json`.
+Batch 106 reviewed Roman Rome: all 16 claims, 17 typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes Romans’ greetings and Acts’ guarded lodging from the city evidence and later traditions, keeping Claudius’s action, the audience, and meeting sites qualified. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 107 reviewed the Second Temple priesthood and temple authority record: all four claims, four typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. Its summary now explains how priestly authority, imperial appointment power, the temple boundary relevant to Acts 21, and a proposed Caiaphas identification relate, while preserving uncertainty. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 108 reviewed the Second Temple synagogues, scribes, and sectarian groups record: all five claims, five typed evidence items, three interpretive notes, contextual fields, anchors, and source identities. The summary now distinguishes the different contributions of Luke-Acts, the Theodotus inscription, Ben Sira, Josephus, and 4QMMT, without treating one synagogue pattern or sect label as universal. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 109 reviewed the synagogue-life and exclusion record: both claims, its interpretive note, contextual fields, anchors, sources, and the absence of typed evidence. The summary now clarifies synagogue settings in Luke-Acts and the limits of John’s exclusion language without proposing a universal decree or rupture. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 110 reviewed the tabernacle presence, access, and mobility record: all four claims, four typed evidence items, two interpretive notes, contextual fields, anchors, and source identities. Its summary now connects the tabernacle’s stated purpose, ordered access, construction sequence, and the cloud’s guidance in Exodus and Numbers. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 111 reviewed the Thessalonian civic and funerary context record: all 15 claims, 16 typed evidence items, two interpretive notes, contextual fields, anchors, and source identities. The summary now connects the city’s route and free-city setting to the community described in Acts and the letters, while distinguishing later burial evidence and retaining disputed political readings as proposals. Only the summary changed. The object and full CKL validated with zero errors; the library retains the same 14 baseline warnings. The focused cultural-context and retrieval regression passed 17 tests with 4 subtests.
+
+Batch 112 reviewed the creation-doctrine framework’s summary, canonical contexts, Scripture references, source identities, two interpretive notes, and its absence of atomic claims and typed evidence. The summary now traces creation from Genesis and the Psalms through the New Testament’s Christological language to Revelation’s renewal, without adding unsupported historical comparisons. Only the summary changed. The object had nine pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 113 reviewed the Abrahamic covenant record’s summary, contexts, four biblical source entries, two interpretive notes, and its absence of atomic claims or typed evidence. The summary now distinguishes Genesis 15’s ceremony from Genesis 17’s sign and notes the later, distinct arguments in Romans and Galatians. It adds no new historical comparison. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 114 reviewed the annunciation-to-Mary record’s summary, contexts, biblical source entries, one interpretive note, and its absence of atomic claims or typed evidence. The summary now connects Gabriel’s Davidic announcement, Mary’s response, the Spirit’s role, and the promise to David while keeping later devotional traditions distinct. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 115 reviewed and corrected the Ark Brought to Jerusalem event record, whose summary and contextual fields had mistakenly described land-taking and generic cross-book themes. The revised prose follows 2 Samuel 6 and distinguishes the procession from the promise in 2 Samuel 7. The object’s broad Joshua, Judges, and 1 Samuel anchors and curated edges were preserved; their relevance needs separate review. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 116 reviewed and corrected the Ascension record’s Gospel framing. The summary now distinguishes Luke’s departure scene, Matthew’s commission, John’s resurrection appearances, and Mark’s ascension in the longer ending, whose textual history remains qualified. Acts 1 is missing from the object’s preserved anchors and remains a research follow-up. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 117 reviewed the Assyrian exile record and left its explanation unchanged. The historical context names Sargon II’s inscriptions and a deportation chronology, but the recorded sources are biblical texts only; those historical details need source-specific research before further enrichment. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
+
+Batch 118 reviewed the Babel event record and left it unchanged. Its summary identifies the builders’ aims, and its context separates narrative setting from composition history while treating ziggurats as a bounded analogy rather than a specific monument. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
+
+Batch 119 reviewed the Babylonian exile record and left it unchanged. Its explanation already distinguishes the 597 BCE deportation, Jerusalem’s destruction in 587/586 BCE, continued life in Judah and Babylonia, and the limits of the surviving evidence. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
+
+Batch 120 reviewed the Baptism of Jesus object and held it unchanged. Its anchors point to Gospel endings and appearances rather than baptism narratives, so the object needs source and identity reconciliation before a passage-specific explanation can be written. It had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
+
+Batch 121 reviewed the Binding of Isaac record’s contexts, anchors, sources, and interpretive notes. Its summary now explains the command concerning Isaac, the interruption, the ram offered in his place, and the reaffirmed promise; Hebrews 11 is identified as a later reading. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 122 reviewed the birth-of-Isaac record’s contexts, references, sources, and interpretive note. Its summary now connects Sarah’s laughter at the promise in Genesis 18 with Isaac’s birth in Genesis 21, while distinguishing the later readings in Romans and Hebrews. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 123 reviewed the birth-of-Jesus record’s contexts, references, sources, and interpretive notes. Its summary now distinguishes Matthew’s and Luke’s birth narratives, their shared relation to Davidic hope, and the different purposes of later Pauline references. Historical questions about census chronology remain unresolved rather than being harmonized. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 124 reviewed the burial-of-Jesus record and left it unchanged. Its summary explains the burial’s place between death and the empty-tomb accounts; context distinguishes Sabbath timing and regional tomb evidence from identifying Jesus’ tomb. No archaeology publication is recorded, so no further archaeological explanation was added. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
+
+Batch 125 corrected the Burning Bush event record, whose summary described the whole Exodus and whose other contexts were generic placeholders. The revised fields explain Moses’ encounter and commission in Exodus 3 and distinguish that scene from the later Sinai covenant. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 126 reviewed the Call of Abraham record’s contexts, references, sources, and interpretive notes. Its summary now traces Genesis 12’s departure and promises through the blessing for the nations, then distinguishes later arguments in Romans, Galatians, and Hebrews. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 127 reviewed the Calling of the Twelve record’s contexts, passages, sources, and interpretive note. Its summary now explains the significance of the number twelve, distinguishes the group from Jesus’ wider circle of disciples, compares the Gospel accounts, and treats Matthias’s later selection in Acts as a separate event. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 128 corrected the Conquest of Jericho event record, whose summary and context fields had described a generic land-taking event. The revised prose follows Joshua’s sequence, including Rahab’s rescue, and distinguishes the narrative from archaeological questions. The existing passage anchors omit Joshua 2 and 6; they remain unchanged for research review. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 129 corrected generic context in the Conversion of Paul record. The revised account explains Saul’s reversal, Ananias’s role, Acts’ later retellings, and why conversion, call, and commissioning are overlapping descriptions. Acts 15 and Ephesians 2 remain later discussions of gentile inclusion. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 130 reviewed the Cornelius household record’s contexts, anchors, sources, and interpretive note. The summary now follows the sequence from the paired visions through the Spirit’s arrival before baptism, then the retelling in Acts 11 and later discussion in Acts 15. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 131 corrected generic church-event prose in the Council of Jerusalem record. The revised account follows Acts 15’s dispute, testimonies, scriptural argument, and decision for Gentile believers. Its existing Acts 9 anchor is unrelated to the council and remains unchanged for review. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 132 reviewed the covenant-renewal-at-Shechem record’s contexts, anchors, sources, and interpretive note. Its summary now traces Joshua’s recital of God’s acts through Israel’s response, the warning about covenant responsibility, and the stone witness, linking Shechem to its wider narrative setting. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 133 reviewed the Creation event record’s summary, contexts, references, sources, and interpretive notes. The summary now explains Genesis 1’s sequence of separations, the goodness refrain, human vocation, and seventh-day rest, keeping the chapter’s literary design central. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 134 reviewed the Crossing the Jordan record’s contexts, references, sources, and interpretive note. Its summary now explains how the ark-led crossing and memorial stones connect the event with communal memory, and distinguishes Psalm 114’s later poetic echo from the Joshua narrative. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 135 reviewed the Crucifixion event record’s contexts, references, sources, and interpretive notes. The summary now explains “atoning” in accessible language while preserving the different New Testament images used to interpret the cross. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 136 reviewed the David and Goliath record and left it unchanged. Its summary explains the scene’s military and rhetorical contrasts; the claims and evidence connect weapon materials to a Gath workshop with explicit limits on what archaeology can establish. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. Regression tests were not run because content did not change.
+
+Batch 137 corrected generic event language in the David Anointed record. The revised prose follows 1 Samuel 16’s selection of David, the anointing and Spirit, and the fact that Saul still reigns. The object’s existing anchors omit 1 Samuel 16 and include unrelated passages; they remain preserved for review. The object had eight pre-existing section-status warnings; the full CKL retained the same 14 baseline warnings and no errors. The focused regression passed 17 tests with 4 subtests.
+
+Batch 138 enriched the Davidic covenant record. Its explanation now follows the chapter’s house-and-dynasty wordplay, distinguishes the temple-building descendant from the enduring royal promise, and traces later hope alongside Psalm 89’s crisis. A generalized ancient Near Eastern comparison was removed because the recorded sources do not support it. All source identities, Scripture anchors, and relationships remain unchanged; structural validation passed with the same 14 baseline warnings, and the focused regression passed 17 tests with 4 subtests.
+
+Batch 139 enriched the Solomon temple dedication record. The explanation now follows the ark-and-cloud scene into Solomon’s prayer: the temple is a focus for prayer but does not contain God, and the prayer anticipates exile, repentance, return, and even foreign worshippers. No unsupported comparison with neighboring royal dedication rites was retained. Protected metadata and relationships remain intact; the full CKL validator reported the same 14 baseline warnings, and the focused regression passed 17 tests with 4 subtests.
+
+Batch 140 enriched the division of the kingdom record with the Shechem succession crisis, Rehoboam’s decision, the northern break, and Jeroboam’s worship centers. It distinguishes the narrative’s political events from its theological interpretation and leaves the ancient Near Eastern field blank because no comparative source is recorded. The full CKL again validated with zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 141 corrected the Elijah on Mount Carmel event record, replacing unrelated exile-and-restoration template text with the 1 Kings 18 confrontation and its role in the Elijah narrative. The generic ancient Near Eastern placeholder was cleared for lack of comparative sourcing. Existing anchors and relationships remain untouched, though they do not point to Carmel and need research review. Structural validation retained the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 142 reviewed Fall of Babylon and skipped enrichment pending source and scope research. Its anchors cover Assyrian exile, a Babylon oracle, and restoration material but do not directly narrate Babylon’s capture; no independent historical source is recorded. The unchanged library validates with zero errors and the same 14 baseline warnings.
+
+Batch 143 reviewed Fall of Jerusalem and left it unchanged. Its history distinguishes the 597 BCE capture from the later destruction, qualifies the 587/586 BCE date, and explicitly limits what the Babylonian Chronicle establishes. The object and library validated with no errors and the same 14 baseline warnings.
+
+Batch 144 reviewed Fall of Samaria and left it unchanged. Its historical section qualifies the Shalmaneser V/Sargon II chronology; its ANE section separates Assyrian royal claims from administrative evidence; and its covenantal and canonical fields distinguish the fall of Israel from Judah’s later exile. The library retains zero errors and the same 14 baseline warnings.
+
+Batch 145 corrected the Feeding of the Five Thousand record, explaining the shared scene and the differences in Gospel placement, including John’s sign and bread-of-life discourse. It removed a generic unsupported ANE placeholder. Its anchors point to Gospel endings rather than the feeding scenes, a research follow-up preserved in the manifest. The full library retains zero errors and the same 14 baseline warnings; regression passed 17 tests with 4 subtests.
+
+Batch 146 corrected the First Missionary Journey event record, grounding the explanation in Acts 13–14 and distinguishing that journey from the later Acts 15 discussion. Its current Scripture anchors point elsewhere and remain flagged for review; the generic ANE placeholder was cleared. Structural validation kept zero errors and the same 14 baseline warnings; regression passed 17 tests with 4 subtests.
+
+Batch 147 enriched Giving of the Law. The prose now connects the commandments to the exodus narrative and communal life, compares Exodus and Deuteronomy’s Sabbath rationales, and situates Matthew 5 as later interpretation. The uncited generic comparison with ancient law collections and treaties was removed. Structural validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 148 reviewed Golden Calf and skipped enrichment pending direct source verification. Its Scripture anchors and listed source ranges omit Exodus 32–34, where the event is narrated. The unchanged object validates with zero errors and its 8 pre-existing section-status warnings; full CKL validation retains the same 14 baseline warnings.
+
+Batch 149 enriched Great White Throne Judgment with the scene’s opened books, universal judgment, defeat of death, and literary connection to Daniel 7. It preserves uncertainty about apocalyptic chronology and adds no unsourced ancient Near Eastern comparison. The full CKL retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 150 reviewed Hannah’s Prayer and skipped enrichment pending source review. Its anchors and sources concern Gospel resurrection appearances, and it contains no direct material from 1 Samuel 2. No CKL content changed; the object and full library retain zero errors and the same 14 baseline warnings.
+
+Batch 151 corrected Hezekiah’s Reforms with the distinct portrayals in Kings and Chronicles, including temple service, removal of high places, and the Passover invitation to northern Israelites. No comparative ANE claim was added. Existing anchors omit the central reform accounts but were preserved for research review. The full library retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 152 corrected the Lord’s Supper event record, distinguishing the Synoptic bread-and-cup accounts from John’s footwashing and farewell teaching. It cleared unsupported generic cultural-background prose; current Scripture anchors still point to resurrection appearances and remain flagged for review. Structural validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 153 enriched Jacob at Peniel, connecting the night struggle to Jacob’s fear and reunion with Esau, while keeping Genesis’ unnamed opponent distinct from Hosea’s later reflection. The unsupported general ANE comparison was removed. The library retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 154 enriched Joseph Interprets Pharaoh’s Dreams, explaining the paired dreams, the famine plan, and Joseph’s rise to administrative authority. It connects later Genesis interpretations of preservation without treating the harm he suffered as good in itself. No unsupported court-practice comparison was added. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 155 enriched Joseph Sold into Egypt with the brothers’ betrayal, Jacob’s deception, and the episode’s role in the later preservation story, without excusing the violence. Generic cultural claims were removed for lack of supporting sources. The broad Genesis source range covers the episode, though the structured anchors point elsewhere and remain flagged. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 156 reviewed Judges Cycle and left it unchanged. The record distinguishes the framework in Judges 2 from varied individual narratives, qualifies chronology and archaeology, and explains the pattern’s deterioration and limits with named sources. Structural validation reported zero errors and the same 14 baseline warnings.
+
+Batch 157 corrected Letters to the Seven Churches, explaining the seven named communities, their differing messages, and the calls and promises in Revelation 1–3. The unrelated anchors still point to later visions and remain flagged; no city-specific historical reconstruction was added. The full CKL retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 158 corrected Marriage Supper of the Lamb, explaining Revelation 19’s wedding announcement and invitation, then distinguishing it from the later bride image in Revelation 21. The current anchors omit Revelation 19 and remain flagged; no unsourced marriage-custom comparison was added. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 159 corrected Moses’ Birth with the specific rescue narrative and its setting inside Pharaoh’s campaign against Hebrew children. It removes generic cultural claims that lack sources. The Exodus source range includes the scene, but the structured anchors point to other passages and remain flagged. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 160 enriched New Jerusalem, explaining the vision’s dwelling of God, end of death and grief, river and tree of life, and healing of the nations. It connects Ezekiel’s measured city without treating Revelation as an archaeological plan and removes an unsupported general ANE comparison. The library retains zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 161 enriched Passover with the household meal, marked doorways, departure, and the ritual’s role in teaching later generations. It distinguishes the Exodus account from New Testament rereadings and removes unsupported general ANE framing. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regression passed 17 tests with 4 subtests.
+
+Batch 162 reviewed Paul before Agrippa and skipped prose changes pending identity and source review. The object is mislabeled as a Gospel event, its anchors point to Gospel passages rather than Acts, and its generic historical and literary statements do not fit the event. No Acts text or relevant source is recorded, so the prose was left unchanged. The full CKL validated with zero errors and 14 baseline warnings.
+
+Batch 163 reviewed Paul in Prison, Pentecost, and Peter’s Denial. Pentecost’s summary and narrative fields now explain the sequence in Acts 2: the Spirit’s arrival, the crowd hearing in different languages, Peter’s reading through Joel, and the community that follows. The explanation stays with recorded biblical sources and adds no external historical reconstruction. The two Paul/Peter event records were skipped because their anchors and sources do not support the named events. The full CKL validated with zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 164 reviewed Plagues of Egypt and left it unchanged. Its explanation already traces the sequence, sets limits on Egyptian comparison, and distinguishes Exodus’s judgment language from unsupported one-to-one plague-to-deity charts. Historical date and external confirmation remain qualified. Validation found zero errors and the same 14 baseline warnings.
+
+Batch 165 enriched Raising of Lazarus using John 11–12. The explanation now follows Bethany’s setting, Martha’s resurrection hope, the grief and sign, the mixed response, and the event’s role in the move toward the passion. Burial details stay with what John narrates; no broader custom claims were added. The full CKL retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 166 reviewed Rebuilding the Temple and left it unchanged. Its existing account links Ezra’s rebuilding narrative with Haggai and Zechariah, explains Persian administration with appropriate limits, and distinguishes the literary sequence from chronology. It also keeps restoration and documentary uncertainties qualified. Validation found zero errors and the same 14 baseline warnings.
+
+Batch 167 reviewed Rebuilding the Walls and skipped enrichment pending identity and source reconciliation. The title concerns Jerusalem’s walls, but the anchors cover Samaria, Judah’s decline, exile, and temple renewal; no Nehemiah passage or directly relevant source is recorded. The object and full CKL validated with zero errors and the same 14 baseline warnings.
+
+Batch 168 reviewed Red Sea Crossing and left it unchanged. The record already connects Exodus 13–15 and Numbers 33, preserves the route markers without choosing modern coordinates, and separates the normalized English title from unresolved Hebrew place-name geography. Validation found zero errors and the same 14 baseline warnings.
+
+Batch 169 enriched Resurrection by clarifying how Acts reads Psalm 16, how the cited Gospel narratives differ, and how Paul connects Jesus’ resurrection with the future raising of the dead. The generic ancient-world claim was not expanded without a relevant source, and a Psalm 16 source-type mismatch was documented while preserving the metadata. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 170 reviewed Return from Exile and left it unchanged. Its account differentiates return movements under Cyrus and Artaxerxes, marks the Cyrus Cylinder as comparative rather than Judean evidence, and explains why return did not end the diaspora or restore an independent monarchy. Validation found zero errors and the same 14 baseline warnings.
+
+Batch 171 reviewed Rise of Saul and skipped enrichment pending identity and anchor reconciliation. The title identifies Saul’s rise, but the structured references instead concern the Jordan crossing, the ark captured by the Philistines, and David’s transport of the ark. Validation found zero errors and the same 14 baseline warnings.
+
+Batch 172 enriched Road to Emmaus. Its explanation now follows the disciples from grief and confusion through Jesus’ reading of Scripture, recognition at the meal, and return to witness. Travel and hospitality remain grounded in Luke’s narrative; no modern location or generalized custom was asserted. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 173 reviewed Second Missionary Journey, Sermon on the Mount, Sinai Covenant, and Solomon Builds the Temple. The two former records were held because their anchors do not cover the named event. Sinai now follows Exodus 19–24 from deliverance and communal calling to covenant ratification, without an unsourced treaty analogy. Solomon’s temple explanation now links the building details in 1 Kings 6 with the promise in 2 Samuel 7, the ark’s arrival in 2 Chronicles 5, and the later destruction in 2 Kings 25. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 174 reviewed Temptation of Jesus, The Exodus, and The Fall. Temptation of Jesus was held because its anchors point to resurrection scenes rather than the temptation accounts. The Exodus now traces oppression, the plagues, Passover, departure, and the sea crossing, then explains how rescue grounds covenant life and later scriptural memory. The Fall was left unchanged because its existing explanation already connects the narrative details to the canonical themes. Full CKL validation retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 175 reviewed The Flood, Third Missionary Journey, Transfiguration, Triumphal Entry, and Twelve Spies. The Flood and Twelve Spies were left unchanged because their explanations already make the narrative and interpretive limits clear. The three other event records were held because their references point to unrelated episodes. The full CKL remained valid with zero errors and the same 14 baseline warnings; regression tests were not rerun because no CKL content changed.
+
+Batch 176 reviewed Wilderness Wandering and left it unchanged. Its explanation follows the route and resource episodes while clearly distinguishing the textual itinerary from disputed modern site identifications. Validation found zero errors and the same 14 baseline warnings.
+
+Batch 177 reviewed Writing of Revelation and skipped prose changes pending object-identity and source review. Its title does not identify a discrete event, and its references span Daniel, Ezekiel, Revelation, and Isaiah without establishing the historical setting of Revelation’s composition. Validation found zero errors and the same 14 baseline warnings.
+
+Batch 178 enriched How do the Old and New Testaments connect? The FAQ now explains the specific bridges made in Luke 24, Matthew 5, Romans 15, 2 Corinthians 1, Hebrews 1, and 1 Peter 1. It avoids implying that the Testaments have identical contexts and replaces an unsupported broad comparison with other ancient collections. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 179 enriched How should I read apocalyptic literature? The FAQ now grounds its guidance in Daniel 7 and Revelation 1, 13, and 21, showing how symbols address power, endurance, and hope. It replaces a broad unsourced claim about ancient imagery with examples from the cited passages. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 180 enriched How should I read prophecy? The FAQ now grounds its reading advice in Isaiah’s commissioning, Jeremiah’s call, Amos’s demand for justice, Ezekiel’s vision, and Jesus’ use of Isaiah in Luke 4. It distinguishes original setting from later use and avoids unsupported comparisons to other ancient oracles. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 181 enriched What does hesed mean? The explanation now shows how the cited passages use hesed in describing God, human loyalty, worship, and restoration. It does not claim one English gloss fits every occurrence or make an unsourced treaty comparison. A future lexical review is still needed because the object has no lexicon source, and two Psalm source records are misclassified in metadata. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 182 enriched What does ruach mean? The explanation now distinguishes the Hebrew word’s context-dependent uses in Genesis, Ezekiel, and Joel from related breath imagery and the Greek wording in John and Acts. It avoids treating every breath passage as an occurrence of ruach. A full lexical review remains open because the record has no lexicon source. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 183 enriched What does shalom mean? The answer now shows passage-specific uses as blessing, secure life, covenant promise, peace with God, and reconciliation between divided groups. It avoids an unsupported comparison to general ancient peace language. A full lexical review remains open because no lexicon source is recorded, and the Psalm 29 source type needs metadata review. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 184 enriched What does Torah mean? The answer now illustrates Torah as instruction in Deuteronomy, meditation in the Psalms, and a topic of New Testament interpretation. It avoids an unsupported comparison with other legal and treaty traditions. A full lexical review remains open because no lexicon is recorded; the Psalm source-type metadata also needs review. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 185 enriched What is a covenant sign? The FAQ now distinguishes the rainbow, circumcision, Passover, Sabbath, and the new-covenant meal by the functions the cited passages give them. It also explains Paul’s point about Abraham’s circumcision in Romans 4 and avoids unsupported comparisons with other ancient treaty markers. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 186 enriched What is a parable? The answer now uses the sower, Good Samaritan, lost stories, tenants, and wedding attendants to show that parables vary in form and force. It explains why audience and Gospel setting matter and avoids an unsourced comparison with general ancient storytelling. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 187 enriched What is a prophet? The FAQ now explains prophetic work through the call stories of Samuel, Isaiah, Jeremiah, and Ezekiel, Amos’s challenge about justice, and later readings in Luke and Acts. It replaces an unsupported comparison to royal advisers and clarifies that prophecy includes more than prediction. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 188 enriched What is a psalm? The FAQ now distinguishes wisdom teaching, lament, trust, royal language, and thanksgiving, and shows how particular psalms are quoted or interpreted in Luke, Acts, and Hebrews. It removes an unsupported comparison with other ancient prayer-poetry traditions. The Psalm source-type metadata also needs review. Full CKL validation retained zero errors and the same 14 baseline warnings, and focused quality and retrieval regressions passed 17 tests with 4 subtests.
+
+Batch 189 enriched What is biblical wisdom? The FAQ now follows examples from Proverbs, Job, the Psalms, Ecclesiastes, Jesus’ teaching, and James to show wisdom as lived practice. It removes unsupported claims about the tradition’s historical origins and neighboring cultures. The full CKL retained zero errors and the same 14 baseline warnings; focused quality and retrieval regressions passed 17 tests with 4 subtests. Psalm 1 source-type metadata remains flagged for review.
+
+The next work unit is `framework/canonical_library/objects/faq/what-is-canonical-theology.json`.
+Record field paths, actual outcomes, validation evidence, and checkpoint commit
+IDs in `progress.json`.
+
+Batch 190 enriched What is canonical theology? with examples from Luke 24, Matthew 5, Romans 15, 2 Timothy 3, and Hebrews 1. The explanation now distinguishes the texts’ specific uses of earlier Scripture and cautions against treating connected reading as proof of dependence. Unsupported ANE and canon-formation generalizations were removed. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-covenant.json`.
+
+Batch 191 enriched What is Covenant? with passage-specific distinctions from Genesis 9 and 12, Exodus 24, Jeremiah 31, Luke 22, and Hebrews 8. The FAQ now distinguishes promises and responses across those scenes and removes the unsupported Hittite and Neo-Assyrian treaty comparison. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-holiness.json`.
+
+Batch 192 enriched What is Holiness? with specific examples from Exodus 19, Leviticus 19, Isaiah 6, 1 Peter 1, Hebrews 12, and Revelation 4. The explanation connects holiness with communal conduct as well as worship and removes an unsupported claim about surrounding cultures. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-intertextuality.json`.
+
+Batch 193 enriched What is intertextuality? with examples from Matthew 1, 1 Corinthians 10, Romans 15, and Hebrews 1:1–4. The FAQ distinguishes marked quotation and stated reuse from less certain echoes, and removes an unsupported generalization about ancient textual practice. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-justification.json`.
+
+Batch 194 enriched What is Justification? with the distinct arguments in Romans 3–4, Galatians 2, and Philippians 3. It follows Paul’s use of Abraham and David, removes an unsupported ancient-court comparison, and flags the Psalm 32 source-type metadata for later review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-resurrection.json`.
+
+Batch 195 enriched What is Resurrection? with distinctions among Daniel’s vision, Gospel narratives, Paul’s argument about transformed bodily life, pastoral hope, and Revelation’s renewal imagery. It removes an unsupported claim about surrounding cultures. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-sacrifice-in-the-bible.json`.
+
+Batch 196 enriched What is Sacrifice in the Bible? with distinctions among Noah’s offering, the Sinai covenant rite, Levitical offerings, Psalm 40, Isaiah 53, and Hebrews 9. It removes an unsupported ancient-practice comparison and records a source-type metadata follow-up for Psalm 40. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-ancient-near-east.json`.
+
+Batch 197 reviewed What is the Ancient Near East? and held its prose pending academic source research. Its biblical references illustrate selected settings but do not define the region’s boundaries or substantiate broad comparisons with neighboring cultures. No CKL content changed; full validation retained zero errors and the same 14 baseline warnings. The next work unit is `framework/canonical_library/objects/faq/what-is-the-day-of-the-lord.json`.
+
+Batch 198 enriched What is the Day of the Lord? with passage-specific distinctions across Amos, Joel, Zephaniah, Isaiah, Malachi, 1 Thessalonians, 2 Peter, and Revelation. It explains how warning, judgment, rescue, and renewal vary by context and removes an unsupported royal-day comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-holy-spirit.json`.
+
+Batch 199 enriched What is the Holy Spirit? with passage-specific examples from Genesis, Ezekiel, Joel, John, Acts, Romans, and Galatians. It explains Acts 2’s explicit connection to Joel and avoids unsupported comparative or lexical claims. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-image-of-god.json`.
+
+Batch 200 enriched What is the Image of God? with connections among Genesis 1, 5, and 9, Psalm 8, James 3, Colossians 3, and Romans 8. It explains creation responsibility, human dignity, speech, and renewal and removes an unsupported royal-image comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-kingdom-of-god.json`.
+
+Batch 201 enriched What is the Kingdom of God? with connections among Psalm 2, Daniel 2, Mark 1, Matthew 6, Romans 14, 1 Corinthians 15, and Revelation 11. It distinguishes present response from future completion and removes an unsupported comparative kingship claim. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-kingdom-of-israel.json`.
+
+Batch 202 enriched What is the Kingdom of Israel? by distinguishing the split and Samaria’s fall from the different prophetic interpretations in Hosea, Amos, and Isaiah. It removes broad unsupported claims about empire and keeps each passage’s stated concern visible. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-kingdom-of-judah.json`.
+
+Batch 203 enriched What is the Kingdom of Judah? with the sequence from division through Jerusalem’s fall and exile to Cyrus’s return decree, alongside Jeremiah’s warning and Ezekiel’s restoration image. It avoids overstating continuity of the monarchy through exile and flags the Psalm 89 source-range metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-messiah.json`.
+
+Batch 204 enriched What is the Messiah? with connections among the Davidic promise, royal and priestly psalms, Isaiah’s ruler and servant passages, and New Testament claims about Jesus. It distinguishes the Christian canonical reading from the earlier passages’ own genres and settings and removes an unsupported royal-anointing comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-new-covenant.json`.
+
+Batch 205 enriched What is the New Covenant? by distinguishing Jeremiah’s promise to Israel and Judah, Ezekiel’s renewal imagery, Jesus’ covenant words, and the different treatments in 2 Corinthians and Hebrews. It removes an unsupported treaty comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-role-of-priests.json`.
+
+Batch 206 enriched What is the role of priests? with examples of sanctuary service, teaching, blessing, prophetic critique, and Hebrews’ account of Jesus as high priest. It removes unsupported comparative and later-history claims. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-roman-empire-in-the-bible.json`.
+
+Batch 207 enriched What is the Roman Empire in the Bible? by distinguishing the narrative settings in Luke, John, and Acts; instruction in Romans and 1 Peter; and symbolic imagery in Revelation. It removes unsupported generalizations about roads, citizenship, imperial cult, and empire-wide practice. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-second-temple.json`.
+
+Batch 208 enriched What is the Second Temple? with passage-based connections from Ezra, Haggai, Zechariah, Malachi, Luke, John, Acts, and Hebrews. It removes the unsupported full chronology and records the need for academic historical and archaeological sources for later dates and destruction. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-jerusalem.json`.
+
+Batch 209 enriched What is the significance of Jerusalem? with the sequence from David’s capture and the temple dedication to pilgrimage, prophetic hope, Jesus’ lament, Pentecost, and Revelation’s renewed city. It distinguishes narrative setting from symbolic vision and flags Psalm 122 source-type metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-passover.json`.
+
+Batch 210 enriched What is the significance of Passover? with the Exodus meal and sign, Deuteronomy’s remembrance, Luke’s covenant meal, and distinctive uses in John, Paul, and 1 Peter. It removes an unsupported ANE comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-exile.json`.
+
+Batch 211 enriched What is the significance of the Exile? with the fall of Jerusalem, lament, life in Babylon, restoration hope, and return decree. It distinguishes Luke 21’s later setting and avoids broad claims about imperial deportation practices. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-holy-spirit.json`.
+
+Batch 212 enriched What is the significance of the Holy Spirit? with connections among Ezekiel 36, Joel 2, John 14–16, Acts 2, Romans 8, and Galatians 5. It removes unsupported cultural and broad lexical claims. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-resurrection.json`.
+
+Batch 213 enriched What is the significance of the Resurrection? with connections among the Gospel narratives, Acts 2, 1 Corinthians 15, Romans 6, and 1 Peter 1. It distinguishes narrative from argument and removes unsupported claims about ancient views of death. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-sabbath.json`.
+
+Batch 214 enriched What is the significance of the Sabbath? by distinguishing the creation and liberation rationales, manna instructions, covenant-sign language, Jesus’ teaching, and Hebrews’ argument about rest. It removes an unsupported cultural comparison. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-significance-of-the-temple.json`.
+
+Batch 215 enriched What is the significance of the Temple? with connections among sanctuary instructions, Solomon’s dedication, pilgrimage, Jesus’ temple saying, Hebrews, and Revelation. It removes unsupported claims about other ancient temples and flags Psalm 84 source metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-synagogue.json`.
+
+Batch 216 enriched What is the Synagogue? by grounding its explanation in Luke 4 and Acts 13/17, distinguishing those scenes from Deuteronomy 6 and Psalm 74, and qualifying unsupported claims about origins and later worship. Full CKL validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. Historical origins remain a source-research gap. The next work unit is `framework/canonical_library/objects/faq/what-is-the-tabernacle.json`.
+
+Batch 217 reviewed What Is the Tabernacle? and left it unchanged because its existing explanations already connect the biblical sequence and later reception while qualifying historical reconstruction and ancient comparisons. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-the-temple.json`.
+
+Batch 218 enriched What is the Temple? with passage-specific explanations from 1 Kings 8, Psalm 84, John 2, Hebrews 9, and Revelation 21. It distinguishes their genres and claims, removes unsupported history and general ANE comparison, and flags existing Psalm 84 source-type metadata for review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-is-typology.json`.
+
+Batch 219 enriched What is Typology? with explicit examples from Romans 5, 1 Corinthians 10, Colossians 2, Hebrews 8–9, and 1 Peter 3. It distinguishes textual signals from later proposed parallels and removes an unsupported generalization about ancient reading practice. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/what-verses-show-identity-in-christ.json`.
+
+Batch 220 enriched What Verses Show Identity in Christ? by tying adoption, inheritance, new creation, communal vocation, and conduct to their specific passages and letter arguments. It removes unsupported generalizations about ancient identity customs. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/who-was-abraham.json`.
+
+Batch 221 enriched Who Was Abraham? with the sequence of promises in Genesis 12, 15, 17, and 22, then distinguished how Romans, Galatians, Hebrews, and James use those episodes. It removed the unsupported claim that Genesis 12 calls Abraham from Ur and unreferenced cultural comparisons. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/who-was-david.json`.
+
+Batch 222 enriched Who Was David? by connecting the Samuel narratives, royal psalms, and later New Testament interpretations while keeping their genres distinct. It removes a broad unsupported comparison about ancient kingship and records existing Psalm source-type metadata concerns. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/who-was-moses.json`.
+
+Batch 223 enriched Who Was Moses? by tracing the cited account from call and deliverance through Sinai and later references in Matthew 17 and Hebrews 3. It removes unsupported generalizations about ancient royal rescue and lawgiving. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/who-was-paul.json`.
+
+Batch 224 enriched Who Was Paul? by distinguishing Acts’ narrative, Paul’s self-presentation in Galatians, and letter-specific arguments in Romans, 1 Corinthians, and Philippians. It removes uncited claims about diaspora and Greco-Roman settings. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/who-was-peter.json`.
+
+Batch 225 enriched Who Was Peter? with the distinct Gospel, Acts, Galatians, and 1 Peter scenes, including restoration, Gentile inclusion, and disagreement over table fellowship. It removes unsupported claims about Galilean social networks. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/why-are-genealogies-included.json`.
+
+Batch 226 enriched Why Are Genealogies Included? by distinguishing descent lines, lists of peoples, return records, literary transitions, and the ways Matthew and Luke frame Jesus. It removes general claims about ancient social use without comparative sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/why-does-the-bible-repeat-themes.json`.
+
+Batch 227 enriched Why Does the Bible Repeat Themes? with passage-specific examples of teaching, retelling, song, quotation, and development across Deuteronomy, Psalms, Exodus, Isaiah, Matthew, Hebrews, and Revelation. It removes unsupported claims about ancient oral and mnemonic practices and flags Psalm 78 source-type metadata. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/faq/why-is-exile-important.json`.
+
+Batch 228 enriched Why Is Exile Important? by distinguishing Jerusalem’s fall, prophetic warning, lament, exile settings, and Ezekiel’s promise of return and inner renewal. It treats Luke 21 as a thematic connection rather than an explicit quotation and removes unsupported imperial comparisons. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. Psalm 137 source-type metadata remains flagged. The next work unit is `framework/canonical_library/objects/institutions/apostleship.json`.
+
+Batch 229 enriched the Apostleship institution entry from Acts 2 and 1 Corinthians 12, distinguishing the apostolic role from the broader covenant-community passages in Exodus 19 and Deuteronomy 6. It removed unsupported generic social-context claims. Linked Pauline research clusters remain draft/in_review and were not promoted. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/baptism.json`.
+
+Batch 230 enriched the Baptism institution entry with the distinct uses in Matthew 28, Acts 2, and Romans 6 and separated these from the Lord’s Supper in 1 Corinthians 11. It removes unsupported comparative and later-history claims. The existing 1 Corinthians 11 supporting-reference relationship is flagged for metadata review and preserved. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/covenant-assembly.json`.
+
+Batch 231 enriched the Covenant Assembly institution entry by distinguishing Exodus 19, Deuteronomy 6, Acts 2, and 1 Corinthians 12 as different depictions of communal life. It removes unsupported generalizations about social context and does not assume identical governance across settings. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/diaconate.json`.
+
+Batch 232 reviewed Diaconate and made no CKL content change: its direct passages describe community and shared roles but do not establish a distinct office, while its more specific Phoebe and service research links remain draft/in_review. The existing generic context claims remain a source-research gap. Validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/elders.json`.
+
+Batch 233 enriched Elders by distinguishing delegated judges, appointed officials, named elders, and the council in Acts. It removes unsupported comparisons with neighboring empires and avoids treating these varied settings as one uniform office. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/feast-calendar.json`.
+
+Batch 234 enriched Feast Calendar with distinct explanations of Exodus 23, Leviticus 23, the seventh-month dedication in 1 Kings 8, and Hebrews 10’s argument about sacrifice. It removes unsupported historical and comparative claims and clarifies that Hebrews 10 does not explain the calendar as a whole. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/herodian-court.json`.
+
+Batch 235 reviewed Herodian Court and made no CKL content change: its references cover other leadership settings and do not identify a Herodian court, and no external history source is attached. The generic prose remains a research gap until adequate sources are available. Validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/high-priesthood.json`.
+
+Batch 236 enriched High Priesthood with text-specific explanation from Exodus 28, Leviticus 16, Numbers 35, Zechariah 3, John 11, Acts 4, and Hebrews 4–10. It distinguishes these biblical forms from later appointment history, using Josephus, Antiquities 20.247–251, for the bounded Herodian/Roman claim. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/household-codes.json`.
+
+
+Batch 237 reviewed Household Codes and made no CKL content change. Its direct anchors cover Sinai, household instruction, communal life, and ordered worship, while household-code passages and related scholarly discussions appear in separate Ephesians, Colossians, and 1 Peter records that remain in review. The institution object has no object-level reviewed historical source, so its generic context wording remains a research gap. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/household.json`.
+
+
+Batch 238 enriched Household with passage-specific explanations of Simon and Andrew’s home and the crowded house in Mark, the Philippian jailer’s household in Acts, and the house assembly named in Romans 16. The prose distinguishes narrative scenes from a letter greeting and avoids treating them as one household model. Because the object lacks an independently reviewed historical source, no archaeological identification or broad household-history claim was added; generic Ancient Near Eastern framing was removed. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/kingship.json`.
+
+
+Batch 239 enriched Kingship by distinguishing the delegated judges in Exodus and Deuteronomy, the requested monarchy and its warning in 1 Samuel 8, and the Roman tribune in Acts 23. The explanation avoids treating these as one office, holds Samuel’s permission and warning together, and removes generic Ancient Near Eastern framing unsupported by an independent source. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/levites.json`.
+
+
+Batch 240 enriched Levites from the object’s two locked Numbers 18 evidence items. The explanation clarifies the tithe as provision for service and distinguishes the Levites’ territorial-inheritance statement from the separate statement addressed to Aaron. Broader, weakly related Scripture anchors remain unchanged, and generic comparative background was removed. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/levitical-service.json`.
+
+
+Batch 241 enriched Levitical Service by separating the festival instructions in Exodus and Leviticus, Solomon’s temple dedication in 1 Kings, and Hebrews’ argument about sacrifice. The text does not claim an uninterrupted historical development or reconstruct Second Temple practice without supporting sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/lords-supper.json`.
+
+
+Batch 242 reviewed Lord’s Supper and preserved its already substantial passage-specific summary and context. It strengthened the weaker literary, covenantal, canonical-role, and interpretive-note fields by distinguishing the Synoptic meal narratives from Paul’s correction of unequal access and rival-table participation in Corinth. Existing source metadata and relationships remain unchanged for research review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/patronage.json`.
+
+
+Batch 243 enriched Patronage by distinguishing Phoebe’s commendation, Gaius’s hosting, collection administration in 2 Corinthians 8, and Paul’s appeal to Philemon. The explanation keeps those cases distinct and avoids labeling every gift or unequal relationship as formal patronage. Detailed Greco-Roman comparisons remain outside this text-only enrichment because linked research clusters are still in review. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/pharisees.json`.
+
+
+Batch 244 reviewed Pharisees. Its existing historical, Second Temple, canonical, and interpretive explanations were already substantial and careful. I changed only the canonical-role field, replacing internal evidence-cluster language with a reader-facing description of the varied Gospel and Acts portrayals and the limit against generalizing polemic to all Jews. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/priesthood.json`.
+
+
+Batch 245 enriched Priesthood by distinguishing Torah instructions for Aaronic service, Psalm 110, Hebrews’ argument about Jesus, and First Peter’s royal-priesthood language for the community. The prose stays within the biblical sources and does not generalize about ancient Near Eastern priesthood or survey Second Temple groups without independent support. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/priestly-service.json`.
+
+
+Batch 246 enriched Priestly Service by separating festival legislation in Exodus and Leviticus, Solomon’s temple dedication, and Hebrews’ later argument about sacrifice. The explanation stays within those texts and does not claim an uninterrupted historical development or reconstruct Second Temple practice without supporting sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/prophets.json`.
+
+
+Batch 247 enriched Prophets within the scope of its direct New Testament anchors: Acts 2 presents Peter interpreting Pentecost through Joel, and 1 Corinthians 12 places prophets among gifts serving one body. The explanation distinguishes those settings and records the gap: the object lacks a specific Old Testament prophetic passage and an independently reviewed history source. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/public-reading-of-scripture.json`.
+
+
+Batch 248 reviewed Public Reading of Scripture and made no CKL content change. Its anchors cover Sinai’s assembly, household instruction, Pentecost, and spiritual gifts, but do not directly document public reading; its only historical source is an internal orientation placeholder pending human review. A source-grounded explanation needs direct public-reading passages and reviewed historical evidence. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/roman-army.json`.
+
+
+Batch 249 reviewed Roman Army and made no CKL content change. Most references concern Israelite leadership; Acts 23:1-10 depicts a tribune intervening in a council dispute, while the object lacks an independently reviewed source on Roman military organization. A source-grounded account needs appropriate military passages and reviewed historical evidence. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/roman-citizenship.json`.
+
+
+Batch 250 reviewed Roman Citizenship and made no CKL content change. The anchors concern Israelite leadership or Acts 23’s council dispute rather than Paul’s citizenship episodes; the object also lacks an independently reviewed historical source. A grounded explanation needs direct citizenship passages and reviewed context. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/roman-governorship.json`.
+
+
+Batch 251 enriched Roman Governorship using the Gospel and Acts scenes, the Caesarea Pilate inscription, and Josephus, Antiquities 18, which was directly inspected. The explanation distinguishes Pilate and Felix, connects the inscription and Josephus to the office and administrative setting, and states that they do not verify Gospel trial dialogue. Source IDs and curated relationships were preserved; the object’s source-list mismatch remains a metadata follow-up. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sacrificial-system.json`.
+
+
+Batch 252 enriched Sacrificial System by distinguishing the burnt offering, purification offerings, the Day of Atonement, Psalm 51’s account of repentance and sacrifice, and Hebrews’ argument about Jesus. The explanation avoids flattening these texts into one ritual or one claim and removes generic ancient Near Eastern comparison unsupported by the object’s sources. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sadducees.json`.
+
+
+Batch 253 reviewed Sadducees. The existing summary and context already handled source limitations and historical uncertainty carefully. I changed only the canonical-role field, replacing internal evidence-cluster language with a reader-facing summary of the Gospel and Acts portrayals and the caution against conflating Jewish groups. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/sanhedrin.json`.
+
+
+Batch 254 reviewed Sanhedrin. The existing historical and interpretive explanations already qualified the evidence and resisted treating all council scenes as one fixed body. I changed only the canonical-role field, replacing internal cluster language with a reader-facing summary of the varied Gospel and Acts hearings. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/scribes.json`.
+
+
+Batch 255 reviewed Scribes. Its existing explanation already distinguishes administrative, priestly, learned, and legal roles; I changed only the canonical-role field to replace internal cluster wording with passage-specific examples from Kings, Ezra, Nehemiah, and the Gospels. Full validation retained zero errors and the same 14 baseline warnings; focused regressions passed 17 tests and 4 subtests. The next work unit is `framework/canonical_library/objects/institutions/second-temple-administration.json`.
+
+
+Batch 256 reviewed Second Temple Administration. Its historical context was expanded with distinct scenes already anchored in Ezra 7, Nehemiah 8, Malachi 2, Luke 2, John 11, and Acts 4/23. The prose explains what those texts show about Torah instruction, temple life, priestly teaching, and council deliberation while cautioning that the scenes do not establish one continuous or representative bureaucracy. No external scholarly arguments were added because the listed academic works were not independently consulted. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Synagogue Leadership.
+
+
+Batch 257 reviewed Synagogue Leadership and left it unchanged. Its title names synagogue leadership, but its anchors cover delegated judging (Exodus 18), judges and kingship (Deuteronomy 16), elders requesting a king (1 Samuel 8), and Paul before the Jerusalem council (Acts 23). None directly supports synagogue offices. The entry needs identity and anchor reconciliation plus a reviewed source on synagogue leadership before contextual prose can be added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Synagogue.
+
+
+Batch 258 reviewed Synagogue and left it unchanged. It already distinguishes the varied local evidence for pre-70 synagogues from later standardized practice, relates narrated settings to Scripture reading, teaching, prayer, debate, and discipline, and marks the uncertain origin and Johannine exclusion questions. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Tabernacle.
+
+
+Batch 259 reviewed Tabernacle and left it unchanged. Its explanation connects Exodus 25-40 with Leviticus and Numbers, distinguishes the sanctuary’s narrative setting from historical reconstruction, and treats Mari, Egyptian, and Timna comparisons as evidence for cultural intelligibility rather than identity or direct dependence. It also explains Hebrews as later interpretation rather than the only meaning of Exodus. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Temple Tax.
+
+
+Batch 260 reviewed Temple Tax. Its historical and literary explanations now follow the object’s actual anchors: the sanctuary assessment in Exodus 30, temple-repair collection in 2 Chronicles 24, the didrachma question in Matthew 17, and Caesar’s tribute in Mark 12. This helps readers distinguish temple support from imperial taxation and replaces an unsupported sweep across multiple biblical collections. The separate post-70 tax-redirection statement remains a research limitation because this object has no specific source for it; it was not expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Temple.
+
+
+Batch 261 reviewed Temple. The summary now explains the temple as a place of worship, sacrifice, prayer, and sign of divine presence; the literary context traces how Exodus, Kings/Chronicles, Psalm 84, John 2, Hebrews 8-9, and Revelation 21 use temple language in distinct ways. The explanation also avoids an unsupported general comparison with neighboring temples and makes clear that the current anchors do not provide a detailed exile-and-rebuilding history. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Village Elders.
+
+
+Batch 262 reviewed Village Elders and left it unchanged. The title suggests a village-level office, but the anchors combine delegated judges (Exodus 18), town judges and officials (Deuteronomy 16), national elders requesting a king (1 Samuel 8), and a Jerusalem council scene (Acts 23). The record needs its intended scope resolved and direct evidence for village elders before explanation can be safely expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Chiasm.
+
+
+Batch 263 reviewed Chiasm. Its literary explanation now contrasts Genesis 9:6 and Philippians 2:6-11, which are proposed structural readings, with Mark 2:27 as a balanced saying that need not be a chiasm. Readers are prompted to test correspondences and boundaries and ask whether the proposed center clarifies the passage. The broader claims about ancient composition and Second Temple interpretation were not expanded because the record has no independently inspected source for them. Single-object validation passed with zero errors and nine pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Aaron.
+
+
+Batch 264 reviewed Aaron. The explanation now follows the record’s cited sequence: Exodus 4 appoints Aaron as Moses’s spokesman, Numbers 17 uses his staff in a leadership test, Deuteronomy 10 records his death and Eleazar’s succession, and Hebrews 3 later compares Moses and Jesus through God’s household. The account avoids turning the Hebrews passage into another episode in Aaron’s biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Abel.
+
+
+Batch 265 reviewed Abel and left it unchanged. Its primary anchor is Genesis 11:1-9, which narrates Babel; Romans 5 and 1 Corinthians 15 focus on Adam and new humanity. Hebrews 11:4 does name Abel, but the entry’s summary, source scope, and other anchors remain unresolved. Identity and reference reconciliation is needed before explanatory prose can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Adam.
+
+
+Batch 266 reviewed Adam and left it unchanged. Its primary anchor, Genesis 11:1-9, is the Babel narrative rather than Adam’s story in Genesis 2-3. Romans 5 and 1 Corinthians 15 relate Adam to later theological arguments, while Hebrews 11:1-7 does not identify Adam. The entry needs its primary passage and reception scope reconciled before explanation can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Andrew.
+
+
+Batch 267 reviewed Andrew. The entry now explains the evidence actually available: Matthew calls Andrew alongside Peter, Luke names him among the Twelve, and Acts lists him among the gathered disciples. It clarifies that Peter speaks individually in Matthew 16, so readers do not transfer his response to Andrew. The brief scriptural portrait was not extended into an unsupported biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Apollos.
+
+
+Batch 268 reviewed Apollos and left it unchanged. First Corinthians 3:4-9 does mention Apollos, but the principal references include Acts 9 (Saul), Romans 16, and Philippians 1, which do not identify him; the entry also omits the central Acts 18 narrative. The person-specific passage set needs reconciliation before prose can be safely enriched. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Aquila.
+
+
+Batch 269 reviewed Aquila and left it unchanged. The existing profile ties each point to Acts or Pauline greetings, separates narrative and epistolary settings, and limits claims about Claudian policy, craft, citizenship, wealth, household status, and formal office. It already explains what the reader can infer and where reconstruction stops. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Archelaus.
+
+
+Batch 270 reviewed Archelaus. Its summary now explains that Matthew 2:22 connects Archelaus’s rule in Judea with Joseph’s fear and the family’s turn toward Galilee, while keeping the person record limited to that narrated occurrence. The source-locked evidence item and all protected metadata remain unchanged. Single-object validation passed with zero errors and zero warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Balaam.
+
+
+Batch 271 reviewed Balaam and left it unchanged. The entry combines Numbers 22:21-35 with references to Cain (Genesis 4), Herod (Matthew 2), and Judas (Matthew 27), alongside a broader warning-figure framing. The title and references need reconciliation before Balaam-specific explanation can be safely written. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Barnabas.
+
+
+Batch 272 reviewed Barnabas and left it unchanged. The cited ranges—Acts 9:1-19, Romans 16, 1 Corinthians 3:4-9, and Philippians 1:12-18—do not identify Barnabas, so they cannot support a person-specific account of his ministry. The reference set needs correction or reconciliation before explanatory prose can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Bartholomew.
+
+
+Batch 273 reviewed Bartholomew. The explanation now distinguishes Luke 6 and Acts 1, which name him in group lists, from Matthew 4’s call scene and Matthew 16’s individual response, which do not name him. This prevents group material from becoming an invented personal biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Bathsheba.
+
+
+Batch 274 reviewed Bathsheba and left it unchanged. The title identifies Bathsheba, but the summary and Scripture anchors concern Genesis, Abraham, and the ancestral promise. A backlink from David is not enough to support a biography, and no Bathsheba-specific passage is anchored. The entry needs identity and reference reconciliation before explanation can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Boaz.
+
+
+Batch 275 reviewed Boaz. The explanation traces Ruth’s movement from Boaz’s field, through the threshing-floor request, to the public arrangement at the gate and the genealogy to David. It explains the story’s social settings without treating it as a complete legal code. The Scripture anchors correctly point to Ruth, though the source list instead names Genesis and several unrelated New Testament books; no additional historical or legal reconstruction was added pending separate provenance review. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Caiaphas.
+
+
+Batch 276 reviewed Caiaphas and left it unchanged. The entry repeats a generic warning-figure profile with references to Cain (Genesis 4), Balaam (Numbers 22), Herod (Matthew 2), and Judas (Matthew 27); none of those ranges identifies Caiaphas. The record needs its identity and passage scope reconciled before contextual prose can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Cain.
+
+
+Batch 277 reviewed Cain. The entry now explains the Genesis 4 sequence: anger and fratricide fracture family and land; God judges Cain but marks him to limit vengeance. It also notes that Genesis does not spell out why Abel’s offering is regarded and distinguishes Cain’s narrative from other listed figures. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Caleb.
+
+
+Batch 278 reviewed Caleb and left it unchanged. The entry repeats a generic wilderness figure description, but its anchors—Exodus 4, Numbers 17, Deuteronomy 10, and Hebrews 3—concern Moses, Aaron, and their leadership rather than Caleb. The person-specific passage set needs reconciliation before explanatory prose can be safely written. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Cornelius.
+
+
+Batch 279 reviewed Cornelius. The explanation now follows the paired visions, Peter’s visit to the household in Caesarea, and the Spirit’s arrival before baptism. It distinguishes those events from Genesis 12, Joshua 2, and Ruth 1, which serve as broader parallels rather than Cornelius’s biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Daniel the Exile.
+
+
+Batch 280 reviewed Daniel the Exile and left it unchanged. The entry’s references and sources concern Ezra’s return, Nehemiah’s wall-building, Esther, and Haggai; none identifies Daniel. The record appears to combine Daniel’s name with restoration-era themes and needs identity and passage reconciliation before explanation can be added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is David.
+
+
+Batch 281 reviewed David. The literary context now explains the house/house reversal in 2 Samuel 7: David proposes a house for God, while Nathan’s oracle promises a dynastic house for David. Acts 13:22-23 later names Jesus as coming from David’s descendants; the prose keeps those settings and purposes distinct. The separate Second Temple reception statement was not expanded without an inspected supporting source. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Deborah.
+
+
+Batch 282 reviewed Deborah and left it unchanged. The references cover the general cycle in Judges 2, the monarchy transition in 1 Samuel 12, and Hebrews 11’s list of faithful figures (which names Barak, not Deborah); they omit Deborah’s direct narratives in Judges 4-5. The record also says Samuel uses Deborah, which the cited passage does not establish. Person-specific anchors and scope need reconciliation before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Dorcas.
+
+
+Batch 283 reviewed Dorcas and left it unchanged. The cited ranges do not include her direct account: Acts 9:1-19 concerns Saul, and Romans 16, 1 Corinthians 3, and Philippians 1 do not identify Dorcas. The person-specific episode in Acts 9:36-42 is absent, so the entry needs reference reconciliation before explanation can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Elijah.
+
+
+Batch 284 reviewed Elijah and left the record unchanged. Most references do not identify him: 2 Kings 4:1-7 concerns Elisha, while Isaiah 40 and Jeremiah 31 are other prophetic texts. Luke 4 does mention Elijah, but the entry omits his direct narrative episodes and its source list is generic. Passage scope needs review before a biography can be safely expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Elisha.
+
+
+Batch 285 reviewed Elisha. The explanation now follows the widow’s debt and the vessels of oil in 2 Kings 4:1-7, showing how the story moves from household crisis to repayment and provision. Luke 4’s reference to Elisha and Naaman is identified as a separate episode. Other listed prophetic references were not used to extend Elisha’s biography. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Elizabeth.
+
+
+Batch 286 reviewed Elizabeth and left it unchanged. The references point to the four Gospel endings (Matthew 28, Mark 16, Luke 24, John 20), while Elizabeth’s narrative occurs in Luke 1. The person-specific anchor set needs correction or reconciliation before explanatory prose can be safely added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Epaphroditus.
+
+
+Batch 287 reviewed Epaphroditus and left it unchanged. The cited ranges do not identify him: Acts 9 concerns Saul, and Romans 16, 1 Corinthians 3, and Philippians 1 do not name Epaphroditus. His person-specific notices in Philippians 2 and 4 are absent, so the entry needs reference reconciliation before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Esther the Queen.
+
+
+Batch 288 reviewed Esther the Queen. The explanation now follows Esther 4’s actual movement from Mordecai’s appeal and the shared fast to Esther’s risky decision to approach the king. It avoids treating linked Ezra, Nehemiah, and Haggai passages as events in her biography and does not add an unsupported reconstruction of Persian court protocol. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Eunice.
+
+
+Batch 289 reviewed Eunice and left it unchanged. The cited references—Acts 9, Romans 16, 1 Corinthians 3, and Philippians 1—do not name her; the direct mentions of Eunice and Timothy’s family in Acts 16 and 2 Timothy are absent. The person-specific passage set needs reconciliation before the entry can safely explain Eunice’s role. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Eve.
+
+
+Batch 290 reviewed Eve and left the entry unchanged. Its primary anchor is Genesis 11:1-9, the Babel narrative, while Eve’s direct story is in Genesis 2-4. Romans 5 and 1 Corinthians 15 focus on Adam and the new humanity, and Hebrews 11 does not name Eve. The primary passage and reception scope need reconciliation before enrichment. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Ezekiel the Prophet.
+
+
+Batch 291 reviewed Ezekiel the Prophet and left it unchanged. The references are 2 Kings 4 (Elisha), Isaiah 40, Jeremiah 31, and Luke 4; none provides Ezekiel’s own prophetic narrative. The source list points to Kings and generic prophetic texts rather than Ezekiel. Person-specific anchors and sources need reconciliation before biography or exile-era context can be expanded. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Ezra the Scribe.
+
+
+Batch 292 reviewed Ezra the Scribe and left it unchanged. The anchors cover Ezra 1’s return decree, Nehemiah’s prayer, Esther’s appeal, and Haggai’s temple oracle; none identifies Ezra. The person-specific passages in Ezra 7-10 are absent, so the entry needs reference reconciliation before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Gideon.
+
+
+Batch 293 reviewed Gideon and left it unchanged. The direct narrative in Judges 6-8 is absent; the anchors instead include the general cycle in Judges 2, Jerubbaal in 1 Samuel 12:11, and Gideon in Hebrews 11:32. Those references do not support the broad claim that Samuel uses Gideon to argue for monarchy. Direct anchors and claim scope need review before expansion. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Hannah.
+
+
+Batch 294 reviewed Hannah and left her explanation unchanged. It already connects childlessness, prayer, vow, and Samuel’s birth with the contrast to Eli’s household and the reversals in Hannah’s song, while avoiding a timeless rule or unsupported claim about private motives. Her Scripture references point to 1 Samuel 1-3, but source records point to Genesis and unrelated New Testament passages; that provenance issue remains for separate review. Single-object validation passed with zero errors and eight pre-existing section-status warnings; no content or curated relationships changed. The next pending object is Herod the Great.
+
+
+Batch 295 reviewed Herod the Great. The entry now focuses on Matthew 2’s narrated conflict around the newborn king: Herod’s fear and deception, the threat to children, and Joseph’s flight. It distinguishes this episode from Cain, Balaam, Judas, and the later Herod in Acts 12 rather than treating them as Herod’s biography. No independent historical reconstruction or claim about the episode’s scale was added. Single-object validation passed with zero errors and eight pre-existing section-status warnings; full CKL validation passed with 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is Isaac.
+
+
+Batch 296 reviewed Isaac. The summary and narrative fields now explain how Genesis moves from Abraham’s promised son through the interrupted offering, marriage, well disputes, and the repeated promise in Genesis 26 before the story turns to Jacob. Generic household boilerplate was replaced with a bounded description of the family world depicted in Genesis, not a claim about every ancient household. The existing Scripture reference list is unchanged; it emphasizes Abraham’s call and covenant, so Isaac-specific anchors remain a source-alignment follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is abraham.
+
+
+Batch 297 reviewed Abraham. The explanation now follows Genesis 12–22 through the call, connected promises, covenant scenes, and the interrupted offering. Household and land details are framed as Genesis depicts them rather than as universal ancient Near Eastern customs; listed New Testament appeals are distinguished from Genesis’s original narrative. The broad historical-context field remains unchanged because its sources do not establish an external chronology or reconstructed social setting. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is anna-the-prophetess.
+
+
+Batch 298 reviewed Anna the Prophetess and left her record unchanged. Its cited passages concern Elisha, Isaiah, Jeremiah, and Jesus; Anna’s appearance in Luke 2 is missing. The source list likewise does not establish her identity or biography, so the generic judgment-and-restoration prose was not adapted to her. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is isaiah-the-prophet.
+
+
+Batch 299 reviewed Isaiah the Prophet and left the entry unchanged. Isaiah 40:1–11 is the only passage directly belonging to Isaiah; 2 Kings 4 concerns Elisha, Jeremiah 31 concerns Jeremiah, and Luke 4 records Jesus reading from Isaiah 61. The broad or misclassified source records do not support the profile’s generic biographical claims, so person-specific sources and anchors need reconciliation first. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is jacob.
+
+
+Batch 300 reviewed Jacob. The explanation now follows the family story through the blessing conflict, Jacob’s years with Laban, the return to Esau, the promise repeated at Bethel, and the naming of Israel. Household and property details are bounded to Genesis’ narrative rather than generalized to all ancient households. The Scripture reference list remains unchanged and emphasizes Abraham’s passages; Jacob-specific anchors remain a source-alignment follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is james-brother-of-jesus.
+
+
+Batch 301 reviewed James, Brother of Jesus and left the profile unchanged. The anchors concern Saul’s conversion or general church life, and omit James’s direct notices in Galatians 1–2 and Acts 15/21. The generic ministry claims cannot be tied to this person without person-specific anchors. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is james-son-of-alphaeus.
+
+
+Batch 302 reviewed James son of Alphaeus. The explanation now focuses on what Luke 6 and Acts 1 show: he is named among the Twelve and the gathered disciples, while the cited passages provide no individual episode or later ministry. This preserves a useful group-level context without filling the biographical gaps with tradition or guesswork. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is james-son-of-zebedee.
+
+
+Batch 303 reviewed James son of Zebedee. The explanation now connects Matthew’s call scene—James working with his brother and father—to his naming among the Twelve in Luke 6 and Acts 1. The family and fishing details are kept within the narrative’s evidence, and no later ministry is inferred. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is jeremiah-the-prophet.
+
+
+Batch 304 reviewed Jeremiah the Prophet and focused the explanation on Jeremiah 31:31–34, the record’s direct Jeremiah-specific anchor. It now explains the oracle’s movement from a broken covenant to promised restoration, instruction written on the heart, and forgiveness. The other listed passages were not used as Jeremiah biography or as comparative ancient Near Eastern evidence; their source alignment remains an open follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is jesus.
+
+
+Batch 305 reviewed Jesus. The central profile now connects Matthew’s birth account, Mark’s kingdom announcement, Luke’s Nazareth reading, John’s prologue, and the New Testament letters’ interpretations of self-giving, resurrection, and reign. Historical context remains bounded to the biblical sources; no archaeological or chronological reconstruction was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is jethro.
+
+
+Batch 306 reviewed Jethro. The profile now follows Exodus 18 from Jethro’s response to the deliverance to his advice that Moses share the work of judging, and explains how the scene bridges the escape from Egypt and arrival at Sinai. The source list includes Exodus 1–40, but the structured passage references omit Exodus 18; that relationship remains a follow-up. No comparative claim about a universal ancient judicial system was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. A validator comparison warning from the first wording was removed before checkpoint. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is job-the-sufferer.
+
+
+Batch 307 reviewed Job the Sufferer. The explanation now follows the book from its prose opening into the friends’ poetic arguments and Job’s protest, showing how the reader’s knowledge of the opening tests the friends’ certainty. James’s later appeal to endurance is distinguished from Job’s own speeches, which include lament. The sources do not establish a date for Job or a precise location for Uz, so neither was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is john-son-of-zebedee.
+
+
+Batch 308 reviewed John son of Zebedee. The explanation now follows Matthew’s call scene and the later lists in Luke 6 and Acts 1, showing what those passages establish about John’s family, call, and place among the Twelve. It distinguishes those references from later authorship traditions that the listed passages do not identify. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is john-the-baptist.
+
+
+Batch 309 reviewed John the Baptist and left the profile unchanged. Its references concern Saul’s conversion, church networks, general ministry, and Paul’s imprisonment; John the Baptist’s Gospel narrative is absent. The person-specific source and anchor set needs reconciliation before this profile can safely explain his role. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is jonah-the-prophet.
+
+
+Batch 310 reviewed Jonah the Prophet and left the record unchanged. Its references concern Elisha, Isaiah, Jeremiah, and Jesus, while Jonah’s own book and person-specific source are missing. The generic prophetic profile therefore needs source and anchor reconciliation before it can be safely explained. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is joseph-husband-of-mary.
+
+
+Batch 311 reviewed Joseph, Husband of Mary and left the profile unchanged. Its anchors are the four Gospel endings and omit Joseph’s infancy narratives. The related birth-of-Jesus edge does not replace person-specific passages, so the current generic description was not adapted to him. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is joseph.
+
+
+Batch 312 reviewed Joseph. The explanation follows the plot from family conflict and enslavement to Egyptian administration, famine, and reunion, using the recurring dreams, clothing, and delayed recognition to show how the story’s reversals work. It also distinguishes Joseph’s interpretation of preservation from an excuse for his brothers’ harm. The broad Genesis source supports the narrative, though structured references still emphasize Abraham. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is joshua-son-of-nun.
+
+
+Batch 313 reviewed Joshua son of Nun. The explanation now follows the commissioning after Moses, the Jordan crossing, and Joshua’s final covenant gathering at Shechem. It explains the connection between land, promise, and continued allegiance, and distinguishes Hebrews’ later use of Joshua’s rest from the book’s own narrative. The biblical sources do not settle archaeological chronology, so none was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is judas-iscariot.
+
+
+Batch 314 reviewed Judas Iscariot. The explanation now follows Matthew 27:3–10, where Judas returns the silver and confesses that he betrayed innocent blood, while the priests refuse responsibility. The other listed figures—Cain, Balaam, and Herod—are kept separate from Judas’s biography, with no claim of literary dependence. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is jude-of-jerusalem.
+
+
+Batch 315 reviewed Jude of Jerusalem and left the profile unchanged. Its references concern Saul, general church ministry, and Paul; none identifies Jude or establishes which Jude the record intends. Person and source reconciliation is required before the generic early-church description can be made specific. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is korah.
+
+
+Batch 316 reviewed Korah. The explanation now connects Numbers 16’s challenge to Moses and Aaron with the budding staff in Numbers 17, clarifying how the second chapter answers the continuing dispute. It distinguishes the community’s shared holiness from the specific priestly role as the narrative presents it. The structured anchors omit Numbers 16, though the recorded Numbers source covers it; that alignment remains a follow-up. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is lazarus.
+
+
+Batch 317 reviewed Lazarus and left the profile unchanged. The cited passages are the four Gospel endings and do not name Lazarus; his direct story in John 11–12 is absent. The current source and reference set therefore cannot support an explanation of his role. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is lois.
+
+
+Batch 318 reviewed Lois. The explanation now focuses on 2 Timothy 1:5, which names her as Timothy’s grandmother and connects her remembered faith with Eunice’s and Timothy’s. It avoids turning this brief family notice into a fuller ministry biography and distinguishes the adjacent childhood-teaching passage. The source list includes 2 Timothy, but the structured anchor list omits the direct reference. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is luke-the-physician.
+
+
+Batch 319 reviewed Luke the Physician and left the profile unchanged. The anchors concern Saul, general church networks, and Paul’s imprisonment; they do not identify Luke. The current source set also does not establish Luke’s authorship or biography, so the generic ministry claims need person-specific evidence before expansion. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is lydia.
+
+
+Batch 320 reviewed Lydia and left her entry unchanged. It already explains the scene in Acts 16:14–15, 40, distinguishes Lydia’s stated role from disputed claims about wealth or office, and correctly notes that Philippians does not name her. The record also separates Acts’ account from later commemoration. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; no CKL fields changed. The next pending object is mark-the-evangelist.
+
+
+Batch 321 reviewed Mark the Evangelist and left the profile unchanged. Its cited passages concern Saul or church life generally; none identifies Mark. The broad Acts and letter sources do not specify whether the entry means John Mark or which evangelist claims it intends to support. Identity and anchor reconciliation are needed before enrichment. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is martha.
+
+
+Batch 322 reviewed Martha and left the profile unchanged. Its references are the Gospel endings and do not name her; her scenes in Luke 10 and John 11–12 are absent. The generic description cannot be made specific without person-focused anchors. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is mary-magdalene.
+
+
+Batch 323 reviewed Mary Magdalene. The explanation now follows John 20 from Mary’s grief and recognition of Jesus to her report to the disciples. It keeps the other Gospel-ending references separate and avoids unsupported claims about her social status or a harmonized biography. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is mary-mother-of-jesus.
+
+
+Batch 324 reviewed Mary, Mother of Jesus and left the profile unchanged. Its references are the Gospel endings and omit her direct appearances; the related birth-of-Jesus edge does not substitute for those passages. Person-specific anchors are needed before the generic description can be safely applied. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is matthew-the-tax-collector.
+
+
+Batch 325 reviewed Matthew the Tax Collector and left the profile unchanged. The current anchors include lists of the Twelve but omit Matthew 9:9, the direct call scene that establishes the tax-collector context. The anchors therefore need reconciliation before that specific identity can be explained. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings. No CKL content or relationships changed. The next pending object is matthias.
+
+
+Batch 326 reviewed Matthias. The explanation now follows Acts 1’s stated qualification for an apostolic witness, the prayer and casting of lots, and Matthias being numbered with the Eleven before Pentecost. It does not infer a later ministry or present the selection method as universal. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is miriam.
+
+
+Batch 327 reviewed Miriam. The explanation now connects her leadership in the song after the sea with the later conflict in Numbers 12, preserving both parts of the narrative. The broad Exodus and Numbers sources include those scenes, but the structured anchors omit them and instead point to Moses or Aaron; that alignment remains open. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is mordecai.
+
+
+Batch 328 reviewed Mordecai. The explanation now follows Esther 4 from the decree and public mourning through Mordecai’s exchange with Esther, the communal fast, and her decision to approach the king. It preserves the book’s implicit treatment of providence and distinguishes Ezra, Nehemiah, and Haggai as broader context rather than Mordecai episodes. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is moses.
+
+
+Batch 329 reviewed Moses. The profile now follows the narrative from call and deliverance through Sinai and Deuteronomy’s farewell speeches, explaining how covenant instruction follows rescue and is taught to the next generation. Acts 7 and Hebrews 3 are identified as later New Testament readings that develop the biblical portrayal of Moses. The biblical sources do not establish an external Exodus chronology, so none was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; the full CKL retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is nathan-the-prophet.
+
+
+Batch 330 reviewed Nathan the Prophet and left the record unchanged. Its narrative claims concern Nathan’s prophetic role, but its anchors point to 2 Kings 4:1–7, Isaiah 40:1–11, Jeremiah 31:31–34, and Luke 4:16–30; these do not establish episodes from Nathan’s life. The likely Samuel/Kings passages were not substituted because the existing source and anchor relationships require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is nicodemus.
+
+
+Batch 331 reviewed Nehemiah the Governor. The profile now follows the account from the report and prayer in chapter 1 through rebuilding, public Torah reading, and community reforms. Ezra, Haggai, and Esther are treated as related but distinct restoration-era settings. The historical and ancient Near Eastern explanations stay within the biblical narrative and do not add an external Persian chronology. Relevant context dimensions were enabled after confirming the current context builder hides fields marked inapplicable. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is nicodemus.
+
+
+Batch 332 reviewed Nicodemus and left the record unchanged. The profile concerns a figure in John, but its anchors point only to Gospel resurrection and ascension scenes that do not include him. The likely scenes in John were not substituted because the source and anchor relationships require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is onesimus.
+
+
+Batch 333 reviewed Noah. The explanation now follows Genesis from violence and the flood through covenant and Babel, while noting that the Genesis narrative does not claim human failure has disappeared. Hebrews 11:7 is described as a later biblical remembrance of Noah’s trust. The sources recorded here do not include an inspected external flood account, archaeological study, or scholarly comparison, so no historical identification or direct-borrowing claim was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is onesimus.
+
+
+Batch 334 reviewed Onesimus and left the record unchanged. The profile’s anchors point to Saul’s conversion, Paul’s broader network, and general ministry passages, but do not identify Onesimus or include Philemon. Philemon was not added to the structured source relationships because those require review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is paul.
+
+
+Batch 335 reviewed Paul and left the profile unchanged. Its existing context explains his first-century Jewish and Roman setting, distinguishes Acts from the letters, describes the pastoral purpose of his correspondence, and makes its covenant themes accessible. The selected anchors and sources support the profile’s scope. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 336 reviewed Peter. The profile now follows the selected scenes from his call as a fisherman through his confession of Jesus as Messiah and his speaking role in Acts 1. It keeps Matthew, Luke, and Acts in their own narrative settings and connects Peter’s role to public witness rather than private status. No broader economic reconstruction was added without supporting sources. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 337 reviewed Philemon of Colossae and left the record unchanged. Its anchors and sources concern Saul’s conversion, Paul’s wider networks, and general church activity; they do not identify Philemon or include the Letter to Philemon. The title’s identification with that letter’s recipient could not be established from the recorded evidence. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 338 reviewed Philip the Apostle. The profile now limits its account to the scenes that name him: Luke 6 includes him among the Twelve, and Acts 1 includes him among the gathered followers. Generic claims about his social background and a distinct role in mission expansion were removed. The Matthew anchors remain unchanged even though those passages do not name Philip. Unsupported ancient Near Eastern context was disabled so it is not surfaced. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 339 reviewed Philip the Evangelist and left the profile unchanged. Although the source list includes Acts broadly, the specific anchors point to Saul’s conversion, Romans 16, and general ministry passages rather than Philip’s episodes. Likely passages in Acts were not added because that would change the curated Scripture relationships. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 340 reviewed Phinehas and left the record unchanged. Its anchors concern Moses, Aaron, and the wilderness generation rather than Phinehas’s episode, while the profile’s late second-millennium framing has no specific historical source. No replacement anchors or chronology were supplied. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 341 reviewed Phoebe of Cenchreae. The profile now explains Paul’s commendation, the meanings commonly given for diakonos and prostatis, and the practical request that Roman believers welcome and assist her. It preserves the distinction between explicit wording and proposed roles: Paul does not explicitly identify her as the letter carrier or interpreter, and the wording does not settle a later formal office. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 342 reviewed the separate Phoebe profile. Its generic apostolic boilerplate has been replaced with the direct Romans 16 account: Paul introduces her from Cenchreae, commends her to Rome, and asks the recipients to welcome and assist her. The explanation stays within that passage and does not assert a detailed itinerary or later formal office. The similarly named Phoebe of Cenchreae object remains separate; no identity edge was added. Ancient Near Eastern applicability was disabled because the recorded sources provide no comparative context. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 343 reviewed Pontius Pilate and left the record unchanged. Its primary anchor, Matthew 27:3–10, recounts Judas returning the silver and the priests’ response, not Pilate; its remaining anchors concern Cain, Balaam, and Herod. Although a broad source entry spans Matthew 26–27, the structured references do not point to Pilate’s trial scenes. No interpretation or historical background was added from the misaligned anchors. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 344 reviewed Priscilla and left the profile unchanged. It already follows the specific scenes in Acts and Paul’s letters, explains her shared instruction of Apollos, distinguishes explicit statements from later reconstruction, and treats ethnicity, office, name order, and later identifications with appropriate caution. Its recorded sources support that detail. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 345 reviewed Rahab. The explanation now follows Joshua 2 from Rahab hiding the spies and interpreting what she has heard to her request for her family and the spies’ oath. Genesis 12, Ruth 1, and Acts 10 are identified as separate canonical comparisons, not additional Rahab episodes. Historical and archaeological claims remain bounded to the biblical narrative because no external source is recorded. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 346 reviewed Rebekah and left the record unchanged. Its references point to Abraham’s call and covenant promises and to Hebrews’ patriarchal faith discussion, not Rebekah’s central scenes. Although a broad Genesis 12–50 source covers her story, the structured anchors do not identify the passages intended for her profile. No claims about her role in the family narrative were added until those relationships are reviewed. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 347 reviewed Ruth the Moabite. The explanation now follows the book from bereavement and Ruth’s pledge to Naomi through harvest work, a public resolution for the family’s future, and the genealogy to David. It identifies the judges-era setting as the book’s own framing and avoids adding external customary or chronological claims. Genesis 12, Joshua 2, and Acts 10 remain distinct comparisons, not events from Ruth’s biography. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 348 reviewed Samson and left the record unchanged. The primary anchor, Judges 2:6–23, surveys the judge cycle rather than Samson’s story; Hebrews 11:32 mentions him only in a list. The broad Judges 1–21 source does not identify passage-level support for a fuller profile, so no specific Samson episodes were added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 349 reviewed Samuel the Prophet. The profile now explains how his address in 1 Samuel 12 reviews Israel’s history and calls both the people and their new king to remain faithful. Hebrews 11 is described as a later biblical remembrance rather than evidence for Samuel’s original narrative setting. No external historical reconstruction was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 350 reviewed Sarah and left the record unchanged. Its anchors focus on Abraham’s call and covenant episodes, while the broad Genesis 12–50 source does not identify which Sarah scenes support the profile’s summary and covenant claims. Hebrews 11:8–22 provides broader patriarchal faith context but does not repair that passage-level gap. No new anchors or interpretations were added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 351 reviewed Saul and left the record unchanged. Its primary anchor concerns the Judges cycle, the supporting Samuel passage addresses Israel’s new king rather than Saul’s own story, and Hebrews 11 does not name Saul. The broad 1 Samuel source does not identify which scenes support the profile. No kingship biography was added without matching passage-level evidence. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 352 reviewed Silas and left the record unchanged. Its anchors point to Gospel resurrection and ascension scenes where Silas does not appear, and its sources omit Acts and the letters that name him. The generic Gospel interpretation was not carried forward without matching evidence. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 353 reviewed Simeon the Just and left the record unchanged. The Gospel anchors point to resurrection and ascension scenes that do not identify him, and the recorded sources do not establish which historical or reception-tradition figure the epithet names. No later tradition was imported without source support. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 354 reviewed Simon the Zealot and left the record unchanged. Its resurrection and ascension anchors do not identify him, and its sources omit Luke 6 and Acts 1, where he appears in lists of the Twelve. The historical meaning of the epithet is also unsupported by the current sources. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 355 reviewed Solomon. The profile now focuses on the temple construction account in 1 Kings 6, including the covenant condition inserted into the building narrative. It identifies the fourth-year date as the book’s internal chronology, makes no external archaeological claim, and distinguishes Psalm 2’s royal language from a proven Solomonic composition. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 356 reviewed Stephen and left the record unchanged. The profile concerns an Acts figure, but all its anchors and sources point to Gospel resurrection and ascension accounts; none identifies Stephen or his speech and death in Acts 6–7. No Acts relationships were added in this explanation pass. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 357 reviewed Tabitha and left the record unchanged. The title points to the woman in Acts 9, but the structured sources and references contain only Gospel resurrection and ascension scenes. No Acts passage or identity link was added without source review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 358 reviewed Thaddaeus and left the record unchanged. Its sources and anchors point to resurrection and ascension scenes that do not name him, and do not include the Gospel lists where the disciple is identified. The record also does not support resolving the name variation among those lists. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 359 reviewed Thomas and left the record unchanged. John 20:17–23 stops just before Thomas appears in 20:24–29, while the other anchors concern resurrection and ascension scenes that do not identify him. The broader John source is not a substitute for those missing passage relationships. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 360 reviewed Timothy and left the record unchanged. The profile concerns Paul’s coworker, but its Scripture anchors and source list contain only Gospel passages and do not identify him. Acts and the Pauline letters were not added without reviewing the missing source relationships. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 361 reviewed Titus the Companion and left the record unchanged. It describes a Pauline coworker, but the Scripture references and source entries point only to Gospel resurrection or ascension scenes. Acts and Paul’s letters are absent, so no biography or identity relationship was added. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 362 reviewed Tychicus and left the record unchanged. The profile concerns a Pauline messenger, but its references and sources are Gospel resurrection and ascension passages where he does not appear. Acts and the Pauline letters were not added without source review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 363 reviewed Zechariah, Father of John and left the record unchanged. The title points to the figure in Luke 1, but the profile describes a Pauline coworker and its anchors concern Acts 9, Romans 16, and general church ministry. Luke is absent from the source list. No identity or passage relationships were changed. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 364 reviewed Zechariah the Priest and left the record unchanged. Its title appears to point to the priest in Luke 1, but the anchors and sources do not include the annunciation, birth, or hymn scenes where he appears. The current text is generic Gospel-character language rather than an evidence-based profile. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 365 reviewed Zechariah the Prophet and left the record unchanged. Its anchors point to unrelated prophetic and Gospel scenes and do not reference the Book of Zechariah or a specific episode involving the prophet. The object’s intended identity and historical setting require source review. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; content regressions were not run because no CKL content changed. The next pending object is amalek.
+
+
+Batch 366 reviewed Abana. Its summary now explains why Naaman compares Abana and Pharpar with the Jordan in his protest to Elisha. The verse identifies Abana as a river of Damascus; no modern location is asserted because the record contains no external geographic source. The locked identity, single Scripture reference, and review status remain unchanged. Single-object validation passed with 1 valid object and no warnings; full CKL validation retained 687 valid objects and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 367 reviewed Ai. The profile now explains the ambush and capture in Joshua 8 and limits the location claim to the narrative’s placement near Bethel. It makes no archaeological identification. The anchors to 1 Samuel 17, 2 Kings 25, and Jeremiah 49 remain unchanged and are documented as mismatches requiring curation review. Ancient Near Eastern applicability was disabled because no comparative source is recorded. Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings; full CKL validation retained 687 valid objects, 0 errors, and the same 14 baseline warnings. Focused content-quality and retrieval regressions passed (17 tests, 4 subtests). The next pending object is amalek.
+
+
+Batch 368 reviewed Amalek and held it for source and anchor review. Its listed
+Scripture passages do not identify Amalek, its generic interpretive notes have
+no linked sources, and its internal historical-orientation source is marked
+pending human review. No contextual claims or corrected relationships were
+invented. The object passed single-object validation with 1 valid object, 0
+errors, and 8 pre-existing section-status warnings. The next pending object is
+Ammon.
+
+
+Batch 369 reviewed Ammon and held it for source and anchor review. Its listed
+passages do not identify Ammon or support the generic imperial, oppression, and
+exile claims, and its internal historical-orientation source is pending human
+review. The record passed single-object validation with 1 valid object, 0
+errors, and 8 pre-existing section-status warnings. The next pending object is
+Arabah.
+
+
+Batch 370 reviewed Arabah and held it for source and anchor review. Its cited
+passages do not identify the Arabah, while its regional and covenantal prose is
+generic and its internal historical-orientation source is pending human review.
+The record passed single-object validation with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is Arad.
+
+
+Batch 371 reviewed Ashdod and held it for source and anchor review. Its cited
+passages concern Ai, the Valley of Elah, Jerusalem, and Ammon rather than
+Ashdod; the internal historical-orientation source is pending human review.
+The object passed single-object validation with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is Asia.
+
+
+Batch 372 reviewed Asia and held it for clarification of the intended biblical
+place label and anchor set. The cited passages do not establish that subject,
+and the internal historical-orientation source is pending human review. The
+object passed single-object validation with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is Assyria.
+
+
+Batch 373 reviewed Assyria and left its already substantial explanation
+unchanged. It distinguishes the biblical books' historical settings and literary
+portrayals rather than flattening them into a single symbol. The source list is
+not sufficient for adding further historical detail, especially about dates,
+imperial administration, or royal media. Single-object validation passed with
+1 valid object, 0 errors, and 8 pre-existing section-status warnings. The next
+pending object is Athens.
+
+
+Batch 374 reviewed Athens and left its explanation intact. It already connects
+Acts 17 with the layered Roman-period city, distinguishes later altar witnesses
+from the artifact described in Acts, and carefully qualifies the Areopagus
+setting, literary speech, and limits of the named adherents. Single-object
+validation passed with 1 valid object and no warnings. The next pending object
+is Azekah.
+
+
+Batch 375 clarified Azekah's role in 1 Samuel 17:1: the place name helps
+locate the Philistine camp alongside Socoh at the opening of the David and
+Goliath account. The summary and evidence explanation now state what the verse
+shows and avoid claims about the town beyond that anchor. The locked identity,
+source, and Scripture reference remain unchanged. Object and full-library CKL
+validation passed with zero errors and the same 14 baseline warnings; focused
+content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
+pending object is recorded in the manifest.
+
+
+Batch 376 reviewed Babylon and left its explanation intact. It distinguishes the
+historical city from wider Babylonia and from Revelation's symbolic reuse, and
+separates biblical covenant interpretation from documentary evidence. The source
+notes also limit what the Al-Yahudu records establish about the city itself.
+Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 377 reviewed Bashan and held it for source and anchor review. Its current
+Scripture references do not identify Bashan or support the generic geographic
+and covenantal prose, and the internal historical-orientation source is pending
+human review. Single-object validation passed with 1 valid object, 0 errors, and
+8 pre-existing section-status warnings. The next pending object is recorded in
+the manifest.
+
+
+Batch 378 reviewed Beersheba 1 and held it for source and anchor review. Its
+references concern Shechem, Hebron, Jerusalem, and the Jerusalem temple rather
+than Beersheba; the internal historical-orientation source is pending human
+review. The record passed single-object validation with 1 valid object, 0
+errors, and 8 pre-existing section-status warnings. The next pending object is
+recorded in the manifest.
+
+
+Batch 379 reviewed Bethel 1 and held it for anchor and source review. Its cited
+passages concern Shechem, Hebron, Jerusalem, and the New Jerusalem rather than
+Bethel. The internal historical-orientation source is pending human review. The
+record passed single-object validation with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is recorded in the
+manifest.
+
+
+Batch 380 clarified how Ruth 1:1 and Matthew 2:1 use the labels Bethlehem in
+Judah and Bethlehem of Judea to locate two distinct narrative settings. The
+explanation avoids treating those local designations as claims about permanent
+political control or tribal ownership. The source-locked evidence and Scripture
+anchors remain unchanged. Object and full-library CKL validation passed with no
+new warnings; focused content-quality and retrieval regressions passed (17 tests,
+4 subtests). The next pending object is recorded in the manifest.
+
+
+Batch 381 reviewed Canaan and left its explanation intact. It distinguishes the
+name's passage-specific uses, covenant theology, and changing historical
+geography; it also avoids treating Canaan as one fixed empire or projecting
+modern borders and ethnic identities backward. Its sources support those
+qualifications. Single-object validation passed with 1 valid object, 0 errors,
+and 8 pre-existing section-status warnings. The next pending object is recorded
+in the manifest.
+
+
+Batch 382 reviewed Capernaum and left the explanatory prose intact. It already
+connects Gospel scenes with homes, synagogue, lake travel, and village life, and
+warns against identifying the later monumental synagogue with Mark 1's
+building. The record lacks a site-specific archaeological source for some
+existing settlement claims, so no further archaeology was added. Single-object
+validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 383 reviewed Chaldea and held it for source and anchor review. Its listed
+passages do not establish the Chaldea-specific profile or generic imperial
+claims, and the internal historical-orientation source is pending human review.
+Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 384 explained the sequence in 2 Samuel 5:7-9: David captures Zion, the
+text calls it the City of David, and the narrative describes his residence and
+building there. The profile connects that sequence with the establishment of
+his rule while avoiding unsupported archaeological dates or boundaries. Its
+other anchors remain untouched for curation review. CKL validation reported 687
+valid objects, zero errors, and the same 14 baseline warnings; focused
+content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
+pending object is recorded in the manifest.
+
+
+Batch 385 clarified Cnidus's role in Acts 27:7 as a point the ship passed in
+adverse winds, distinguishing it from ports the narrative says the ship reached.
+The source-locked identity and passage remain unchanged; no stop, sailing lane,
+distance, or port history was inferred. CKL validation reported 687 valid
+objects, zero errors, and the same 14 baseline warnings; focused content-quality
+and retrieval regressions passed (17 tests, 4 subtests). The next pending object
+is recorded in the manifest.
+
+
+Batch 386 reviewed Corinth and left its explanation intact. It distinguishes
+Acts from Paul's occasional letters, uses inscriptions and archaeological
+context with explicit limits, and rejects the “uniquely immoral Corinth”
+stereotype. Its linked evidence cluster also qualifies venue, Erastus, and social
+reconstructions. Single-object validation passed with 1 valid object, 0 errors,
+and 8 pre-existing section-status warnings. The next pending object is recorded
+in the manifest.
+
+
+Batch 387 clarified the Acts 27:7-8 sequence from Cnidus along Crete to Fair
+Havens near Lasea, distinguishing the route setting from the harbor the narrative
+says the ship reached. No modern route reconstruction or distance was added.
+CKL validation reported 687 valid objects, zero errors, and the same 14 baseline
+warnings; focused content-quality and retrieval regressions passed (17 tests, 4
+subtests). The next pending object is recorded in the manifest.
+
+
+Batch 388 clarified Cyprus's role in Acts 27:4: after leaving Sidon, the ship
+sails under the island's lee because of contrary winds. The text presents Cyprus
+as shelter in the narrated route, not as a port where the ship stops. CKL
+validation reported 687 valid objects, zero errors, and the same 14 baseline
+warnings; focused content-quality and retrieval regressions passed (17 tests, 4
+subtests). The next pending object is recorded in the manifest.
+
+
+Batch 389 replaced Damascus's generic ministry claims with the Acts 9:1-19
+account of Saul's journey, encounter with Jesus, and Ananias's visit. It stays
+within the episode and notes that the CKL source list does not independently
+document the city's history at the time. Historical and Ancient Near Eastern
+applicability were disabled. CKL validation reported 687 valid objects, zero
+errors, and the same 14 baseline warnings; focused content-quality and retrieval
+regressions passed (17 tests, 4 subtests). The next pending object is recorded in
+the manifest.
+
+
+Batch 390 reviewed Dan and left its explanation intact. It distinguishes the
+Judges 18 migration and cult installation from Jeroboam's later royal sanctuary,
+connects the narrative critique to its setting, and states what archaeology does
+not establish about the objects or priestly line. The recorded scholarly
+sources support these qualifications. Single-object validation passed with 1
+valid object, 0 errors, and 8 pre-existing section-status warnings. The next
+pending object is recorded in the manifest.
+
+
+Batch 391 reviewed Edom and held it for source and anchor review. Its listed
+passages do not identify Edom or support the generic imperial profile, and the
+internal historical-orientation source is pending human review. Single-object
+validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 392 made Egypt's profile specific to the Abraham, Joseph, Exodus, and
+Matthew episodes and clarified Exodus 3's account of God hearing the oppressed.
+The unsourced Ancient Near Eastern and Second Temple generalizations were
+removed and those contexts disabled pending appropriate sources. Scripture
+anchors and relationships remain unchanged. CKL validation reported 687 valid
+objects, zero errors, and the same 14 baseline warnings; focused
+content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
+pending object is recorded in the manifest.
+
+
+Batch 393 reviewed Ekron and held it for source and anchor review. Its listed
+passages concern Ai, the Valley of Elah, Jerusalem, and Ammon, while its internal
+historical-orientation source is pending human review. Single-object validation
+passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings.
+The next pending object is recorded in the manifest.
+
+
+Batch 394 reviewed Ephesus and left its source-aware explanation intact. It
+distinguishes Acts' explicit setting from Revelation, First Timothy, and the
+disputed destination phrase in Ephesians; archaeological fit is not presented
+as proof of every event. The linked evidence cluster preserves chronological
+and interpretive limits. Single-object validation passed with 1 valid object, 0
+errors, and 8 pre-existing section-status warnings. The next pending object is
+recorded in the manifest.
+
+
+Batch 395 reviewed Euphrates and held it for source and anchor review. The
+current references concern the sea crossing, Jordan, and restoration imagery,
+not the Euphrates; the internal historical-orientation source is pending human
+review. Single-object validation passed with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is recorded in the
+manifest.
+
+
+Batch 396 clarified Fair Havens as the point Acts 27:8 says the ship reached,
+near Lasea, distinguishing the arrival from Cnidus and Crete as route markers.
+The explanation does not extend into later wintering conditions or modern site
+identification. CKL validation reported 687 valid objects, zero errors, and the
+same 14 baseline warnings; focused content-quality and retrieval regressions
+passed (17 tests, 4 subtests). The next pending object is recorded in the
+manifest.
+
+
+Batch 397 reviewed Galatia and left its detailed explanation intact. It
+distinguishes ethnic and provincial uses, Acts' travel narrative and Galatians'
+unnamed audience, and road evidence from a proven itinerary. North- and
+South-Galatian proposals and the limits of reconstructing Paul's illness and
+route are represented fairly. Single-object validation passed with 1 valid
+object and no warnings. The next pending object is recorded in the manifest.
+
+
+Batch 398 clarified Galilee's literary and theological role through Mark 1:14-15
+and the movement through synagogues, homes, and neighboring villages. No new
+historical or archaeological assertions were added; the linked evidence cluster
+continues to distinguish Gospel observations from material comparison. CKL
+validation reported 687 valid objects, zero errors, and the same 14 baseline
+warnings; focused content-quality and retrieval regressions passed (17 tests, 4
+subtests). The next pending object is recorded in the manifest.
+
+
+Batch 399 clarified that 1 Samuel 17 names Gath as Goliath's city of origin
+while placing the confrontation in the Valley of Elah. The unsupported generic
+Ancient Near Eastern section was removed; the other mismatched anchors remain
+untouched for curation review. CKL validation reported 687 valid objects, zero
+errors, and the same 14 baseline warnings; focused content-quality and retrieval
+regressions passed (17 tests, 4 subtests). The next pending object is recorded in
+the manifest.
+
+
+Batch 400 reviewed Gaza and held it for source and anchor review. Its listed
+passages concern Ai, the Valley of Elah/Gath, Jerusalem, and Ammon rather than
+Gaza, and the internal historical-orientation source is pending human review.
+Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 401 reviewed Gibeah 1 and held it for anchor and source review. Genesis
+10, Deuteronomy 10, Isaiah 63, and Acts 13 do not establish Gibeah, and the
+internal historical-orientation source is pending human review. Single-object
+validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 402 reviewed Gibeon and held it for source and anchor review. The current
+references concern Shechem, Hebron, Jerusalem, and the Jerusalem temple rather
+than Gibeon, and the internal historical-orientation source is pending human
+review. Single-object validation passed with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is recorded in the
+manifest.
+
+
+Batch 403 reviewed Gilead 1 and held it for source and anchor review. Its cited
+passages do not identify Gilead or support the generic regional prose, and the
+internal historical-orientation source is pending human review. Single-object
+validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 404 reviewed Gilgal 1 and held it for source and anchor review. Its cited
+passages concern Shechem, Hebron, Jerusalem, and the Jerusalem temple rather
+than Gilgal, and the internal historical-orientation source is pending human
+review. Single-object validation passed with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is recorded in the
+manifest.
+
+
+Batch 405 reviewed Gomorrah and held it for source and anchor review. Its
+current passages do not identify Gomorrah or support the generic regional prose,
+and the internal historical-orientation source is pending human review.
+Single-object validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 406 reviewed Great Sea and held it for source and anchor review. Its
+references concern the sea crossing, Jordan, and restoration imagery, not the
+Great Sea or its Mediterranean and trade-route claims. The internal
+historical-orientation source is pending human review. Single-object validation
+passed with 1 valid object, 0 errors, and 8 pre-existing section-status warnings.
+The next pending object is recorded in the manifest.
+
+
+Batch 407 reviewed Hamath 1 and held it for source and anchor review. Its cited
+passages do not identify Hamath or support the generic regional claims, and the
+internal historical-orientation source is pending human review. Single-object
+validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 408 explained the transition in 2 Samuel 5: Israel's elders anoint David
+at Hebron, after which the narrative moves to David's capture and establishment
+in Jerusalem. The explanation distinguishes those two settings and makes no
+archaeological or external city-history claims. CKL validation reported 687
+valid objects, zero errors, and the same 14 baseline warnings; focused
+content-quality and retrieval regressions passed (17 tests, 4 subtests). The next
+pending object is recorded in the manifest.
+
+
+Batch 409 reviewed Heshbon and held it for source and anchor review. Its listed
+passages concern Ai, the Valley of Elah/Gath, Jerusalem, and Ammon rather than
+Heshbon, and the internal historical-orientation source is pending human
+review. Single-object validation passed with 1 valid object, 0 errors, and 8
+pre-existing section-status warnings. The next pending object is recorded in the
+manifest.
+
+
+Batch 410 reviewed Holy Place 2 and held it for identity and anchor
+reconciliation. The title does not specify which sanctuary is meant, while the
+anchors mix Shechem, David's Hebron/Jerusalem narratives, and temple scenes;
+the internal orientation source is pending human review. Single-object
+validation passed with 1 valid object, 0 errors, and 8 pre-existing
+section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 411 clarified Italy as the intended destination named in Acts 27:1,
+distinguishing it from the ports and route markers through verse 8, which ends at
+Fair Havens. No arrival in Italy or later itinerary was inferred. CKL validation
+reported 687 valid objects, zero errors, and the same 14 baseline warnings;
+focused content-quality and retrieval regressions passed (17 tests, 4 subtests).
+The next pending object is recorded in the manifest.
+
+
+Batch 412 reviewed Jabesh-gilead and held it for source and anchor review. Its
+listed passages concern Ai, the Valley of Elah/Gath, Jerusalem, and Ammon rather
+than Jabesh-gilead, and the internal historical-orientation source is pending
+human review. Single-object validation passed with 1 valid object, 0 errors, and
+8 pre-existing section-status warnings. The next pending object is recorded in
+the manifest.
+
+Batch 413 reviewed Jericho. The explanation now follows Joshua 6's closed-city description and the repeated circuit instructions across seven days, while making clear that the source-locked observations do not establish an excavation phase, date, or reconstructed siege route. The object’s broader Scripture anchors point to other events and places; they were left unchanged and were not used to support added context. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The manifest records the next pending object.
+
+
+Batch 414 reviewed Jerusalem. The updated summary and context follow the record's scriptural anchors from David's capture and the temple dedication through pilgrimage, prophetic hope, Jesus' lament, Acts, and Revelation. The prose distinguishes narrated events from later literary images and does not add unsupported archaeological or comparative ancient Near Eastern claims. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 415 reviewed Jezreel 2 and made no content changes. Its Scripture anchors concern the Table of Nations, travel and Levites, Edom, and Paul's speech in Acts; they do not establish a Jezreel location or history. The generic ancient Near Eastern section and internal historical-orientation record therefore remain unusable pending source and identity review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 416 reviewed Jordan. The revised explanation distinguishes Joshua 1's boundary instruction, Psalm 114's poetic personification of the river, the different sea crossing in Exodus 14, and Isaiah 43's unnamed waters. The generic regional-geography section was removed because no comparative or archaeological source is recorded. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 417 reviewed Judah territory. The object summary now explains that “Bethlehem in Judah” gives Ruth 1:1 a regional setting alongside the town name, without asserting tribal ownership or political control. The evidence item itself is source-locked, so its wording and relationship data were retained. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 418 reviewed Judea. The revised explanation follows the recorded Gospel and Acts anchors: movement through the region, Jerusalem scenes, named rulers in distinct episodes, and Judea's place in Acts' mission geography. The former broad administrative chronology was not retained because its internal support remains pending human review; the source-locked Matthew 2 evidence was left intact. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 419 reviewed Kadesh-barnea and made no content changes. Its Genesis, Deuteronomy, Isaiah, and Acts anchors do not establish the place identity or context asserted by the object. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 420 reviewed Lachish and made no content changes. Its anchors point to Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than establishing Lachish. The generic ancient Near Eastern section lacks support, and the internal historical-orientation record remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 421 reviewed Lasea. The summary now explains that Acts 27:8 places Lasea near Fair Havens, the harbor the ship reached; it does not describe Lasea as a port call. The source-locked evidence wording and route relationships were preserved. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 422 reviewed Lebanon and made no content changes. Its listed anchors do not establish Lebanon-specific geography or history; the generic ancient Near Eastern context is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 423 reviewed Macedonia and left it unchanged. Its historical and literary context, six claims, source set, and interpretive notes already explain Roman administrative phases, route evidence, differences among cities, limits in combining Acts with Paul's letters, regional language, and collection activity. The record preserves major and minor scholarly uncertainties without flattening them. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 424 reviewed Midian and made no content changes. The anchors do not establish Midian as an imperial power or connect it with Jerusalem's fall, Daniel's conflict imagery, or Paul's voyage. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 425 reviewed Mizpah 3 and made no content changes. Its anchors identify Shechem and Jerusalem rather than a Mizpah location, so they cannot support the object's place-specific statements. The generic ancient Near Eastern context lacks evidence, and the internal orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 426 reviewed Moab 1 and made no content changes. Its listed anchors do not establish Moab-specific geography or the object’s claim that Moab was an imperial power; the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 427 reviewed Most Holy Place 2. The explanation now follows 1 Kings 8:6–13: the ark and covenant tablets are placed in the inner sanctuary, then the cloud fills the temple. Other anchors were preserved but not used to support this room's identity. No archaeological reconstruction, dimensions, access rules, or ancient Near Eastern parallels were added. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 428 reviewed Mount Seir 1 and made no content changes. Its anchors refer to other water crossings and do not name Mount Seir or establish the Edomite highland context in the object. The internal geographic orientation remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 429 reviewed Mount Sinai. The revised explanation follows Exodus 19–24 from arrival and preparation through the commandments and covenant ratification, then distinguishes Deuteronomy's remembrance and Hebrews' later use of Sinai imagery. The unsupported generic mountain comparison was removed; no archaeological location was asserted. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 430 reviewed Mount Zion. The revised explanation uses 2 Samuel 5:7–9 to identify Zion as the stronghold David captures, then distinguishes that royal scene from the later temple passages in the object. Genesis and Joshua anchors were retained but not used to support claims about Zion. The unsupported generic ancient Near Eastern section was removed. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 431 reviewed Myra. The summary now explains that Acts 27:5–6 records the group reaching Myra, then boarding an Alexandrian ship bound for Italy. The source-locked evidence and route relationships remain unchanged; no harbor details or reconstructed distances were added. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 432 reviewed Nazareth. The revised fields explain its role in the family narratives and the hometown response scenes in Mark 6 and Luke 4; the unrelated generic ancient Near Eastern text was removed. The statement about early Roman remains remains unchanged because the object has no inspectable archaeological source for it and needs human source review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 433 reviewed Negeb and made no content changes. Its anchors do not establish Negeb-specific geography or history; the generic ancient Near Eastern context lacks support, and the internal orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 434 reviewed Nile and made no content changes. The anchors concern the sea crossing, the Jordan, and unspecified water imagery; they do not name the Nile or support Egyptian agricultural and royal-context claims. The internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 435 reviewed Nineveh and made no content changes. The anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Nineveh. The generic ancient Near Eastern text lacks support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 436 reviewed Persia and left it unchanged. The record already distinguishes Achaemenid reigns and administrative phases, explains why provincial conditions were not uniform, separates the literary forms of the biblical texts, and limits what the Cyrus Cylinder can establish about Judah. Its source-based qualifications were retained. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 437 reviewed Pharpar. The summary now explains why Naaman names it alongside Abana when objecting to the instruction to wash in the Jordan, and clarifies that the ranking is part of his speech rather than independent evidence about river quality. The source-locked evidence was retained unchanged. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 438 reviewed Philippi and left it unchanged. The record already explains Roman colonial status, the city's varied institutions and route relationships, and how Acts and Philippians use the place differently. Its cautions distinguish archaeology from narrative events, avoid overgeneralizing the population, and keep letter provenance open. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 439 reviewed Philistia and made no content changes. The listed anchors do not establish Philistia-specific history or support the object's imperial characterization. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 440 reviewed Ramoth-gilead and made no content changes. Its anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Ramoth-gilead. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 441 reviewed Red Sea 1. The revised explanation follows Exodus 14's crossing and Psalm 114's poetic memory, while distinguishing the Jordan in Joshua and Psalm 114 and Isaiah's unnamed waters. No modern site or reconstructed route was asserted, and the unsupported generic ancient Near Eastern context was removed. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 442 reviewed Rome and left it unchanged. The record already explains its Roman and Jewish settings, distinguishes Romans from Acts, and treats the Claudian notice, Nero's later violence, early Christian archaeological identifications, and later memory with appropriate qualifications. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 443 reviewed Salt Sea and made no content changes. Its anchors concern the sea crossing, the Jordan, and unnamed waters; they do not establish the Salt Sea or Dead Sea basin. The internal geographic orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 444 reviewed Samaria 1 and made no content changes. Its anchors concern Galilee, Jerusalem, and Damascus rather than Samaria. The generic ancient Near Eastern section is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 445 reviewed Shechem and left its explanatory prose unchanged. The object already traces promise, settlement, covenant renewal, and Joseph's burial through specific Genesis and Joshua passages. Its generic statement about regional trade and travel routes lacks a location-specific source and was not expanded; the manifest records this source gap for later review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 446 reviewed Shiloh and left it unchanged. Its summary, contexts, and notes already trace the site's roles across Joshua, Judges, Samuel, and Jeremiah, and carefully distinguish occupation evidence from identification of biblical events. The archaeological and theological qualifications are already specific and readable. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 447 reviewed Sidon and made no content changes. Its anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Sidon. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 448 reviewed Socoh 1. The summary now explains how 1 Samuel 17:1 locates the Philistine camp between Socoh and Azekah before the confrontation unfolds. The source-locked evidence remained unchanged, and no lasting territorial claim was added. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 449 reviewed Sodom and made no content changes. Its anchors concern the Table of Nations, travel and Levites, Edom, and Paul's speech rather than Sodom. The generic ancient Near Eastern context lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 450 reviewed Susa and made no content changes. Its anchors identify Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Susa. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 451 reviewed Sychar. The summary now explains how John places the town near Jacob's field and sets the scene at Jacob's well, giving the following conversation a concrete narrative setting. The source-locked evidence remains unchanged, and no modern site identification was added. Single-object validation passed with zero errors or warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 452 reviewed Syria 1 and made no content changes. Its anchors do not establish Syria-specific context or support the characterization of Syria as an imperial power. The generic ancient Near Eastern text lacks source support, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 453 reviewed Thessalonica and left it unchanged. The explanation already covers its civic status, road and harbor position, and how Acts and the letters use the city differently. Its source notes distinguish the politarch inscription and later archaeological material from direct evidence for Acts' events, and preserve uncertainty about Second Thessalonians. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 454 reviewed Tyre and made no content changes. Its anchors concern Ai, the Valley of Elah and Gath, Jerusalem, and Ammon rather than Tyre. The generic ancient Near Eastern text is unsupported, and the internal historical-orientation source remains pending human review. Single-object validation passed with zero errors and eight pre-existing section-status warnings. The next pending object is recorded in the manifest.
+
+
+Batch 455 reviewed Zion. The revised explanation identifies Zion as the stronghold David captures in 2 Samuel 5:7–9, then distinguishes that royal scene from the later temple references. Genesis and Joshua anchors were preserved but not used to support Zion-specific claims; the generic ancient Near Eastern text was removed. Single-object validation passed with zero errors and eight pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 456 reviewed Branch Prophecy. The revised explanation distinguishes Jeremiah's branch as a just Davidic ruler from Zechariah's visions involving Joshua, temple rebuilding, and royal-priestly roles. It treats the shared image as a connection across distinct texts, not as one flattened oracle, and removes unsupported generic ancient Near Eastern context. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 457 reviewed Day of the Lord Prophecy. The revised explanation distinguishes Amos and Zephaniah’s warnings, Joel’s alarm imagery, and the later Christian exhortations in 1 Thessalonians and 2 Peter. It keeps their settings and purposes distinct and removes a generic ancient Near Eastern comparison not supported by the recorded sources. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 458 reviewed Immanuel Prophecy. The revised explanation follows Isaiah 7’s sign in Ahaz’s crisis, Isaiah 8’s child-sign imagery and Assyrian threat, and Matthew’s later quotation, keeping the two settings distinct. The broad ancient Near Eastern boilerplate was removed because the object has no supporting comparative source. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 459 reviewed Judgment Against the Nations. The revised explanation identifies the distinct targets and accusations in Isaiah, Jeremiah, Amos, Obadiah, Nahum, and Zephaniah, and shows their shared concern with accountability without treating them as one campaign. It removes the generic ancient Near Eastern context unsupported by this object’s sources. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 460 reviewed Messianic Prophecy. The revised explanation distinguishes the Davidic promise, Psalm 2’s royal psalm, Isaiah and Micah’s ruler imagery, and later Christian readings in Luke and Acts. It describes their connections without treating them as identical predictions and removes generic ancient Near Eastern boilerplate unsupported by a comparative source. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 461 reviewed New Covenant Prophecy. The revised explanation spells out Jeremiah’s people-wide promise of heart-written instruction, knowledge of God, and forgiveness; relates it to Ezekiel’s cleansing and new-heart imagery; and distinguishes uses in Luke, 2 Corinthians, and Hebrews. It removes unsupported generic ancient Near Eastern background. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 462 reviewed New Jerusalem Prophecy. The revised explanation distinguishes Isaiah’s restored-creation imagery, Ezekiel 40:1–4 as the opening of a temple vision, and Revelation’s descending holy city. It keeps each passage’s scope clear and removes unsupported generic ancient Near Eastern background. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 463 reviewed Remnant Prophecy. The revised explanation distinguishes Isaiah’s return from Assyria, Zephaniah’s humble gathered community, and Paul’s uses of the remnant image in Romans 9 and 11. It avoids turning the New Testament passages into a claim that Israel has been discarded and removes unsupported generic ancient Near Eastern background. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 464 reviewed Restoration Prophecy. The revised explanation distinguishes Isaiah’s wilderness road, Jeremiah’s healing and return, Ezekiel’s renewed people, Zechariah’s safe city, and Revelation’s renewed creation. It removes unsupported generic ancient Near Eastern background and does not impose a shared date or timetable. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 465 reviewed Suffering Servant Prophecy. The revised explanation traces the different servant roles in Isaiah 42, 49, 50, and 52–53, notes Isaiah 49’s explicit Israel wording, and identifies Acts 8 and 1 Peter 2 as later Christian readings. It removes unsupported generic ancient Near Eastern background and does not settle the servant’s identity across passages. Single-object validation passed with zero errors and 13 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 466 reviewed Temple Symbol. The revised explanation connects the sanctuary’s stated purpose, Solomon’s dedication, Ezekiel’s departure scene, and distinct New Testament uses for Jesus, the church, and Revelation’s final vision. It adds no unsupported ancient Near Eastern or Second Temple comparisons. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 467 reviewed Adoption Theme. The revised explanation follows Galatians’ movement from custody to Abrahamic heirship, adoption, and the Spirit’s cry, and Romans’ distinct movement through adoption, co-heirship, suffering, and bodily hope. Ephesians and 1 John are described in their own terms. The linked CKL research bounds Roman legal comparison and preserves scriptural backgrounds. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 468 reviewed Blessing and Curse Theme. The revised explanation distinguishes the promises to Noah and Abraham, Israel’s Sinai vocation, and later covenant-renewal texts. It avoids treating prosperity or hardship as a universal blessing-or-curse test. The current anchors include only a specific curse warning in Genesis 12:3, so the wider curse theme remains a documented research gap. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 469 reviewed Covenant Theme. The revised explanation walks through Noah, Abraham, Sinai, David, Deuteronomy, Jeremiah, Luke, and Hebrews while showing how the promises and recipients differ. The broad ancient Near Eastern treaty comparison has no specific source in this object, so no further comparison was added. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 470 reviewed Creation Theme. The revised explanation connects Genesis’ ordered world and human vocation with the Psalms’ praise, New Testament creation language about Christ, Romans’ groaning creation, and Revelation’s renewed world. It removes an unsupported comparison with ancient origin stories because no specific source is recorded. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 471 reviewed Exile Theme. The revised explanation distinguishes the biblical warnings, Judah’s deportations and Jerusalem’s fall, prophetic hopes for return, and later uses of exile language in Luke and 1 Peter. It removes unsupported ancient Near Eastern and Second Temple context and notes that the listed historical anchors do not cover the northern kingdom’s earlier fall. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 472 reviewed Exodus Pattern Theme. The revised explanation follows the narrative from oppression and Passover through the sea, wilderness, and Sinai, using the linked Exodus-to-Sinai timeline. It distinguishes those events from later passages that reuse covenant language and removes unsupported generic ancient Near Eastern background. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 473 reviewed Faithfulness Theme. The revised explanation distinguishes Abraham’s trust, Habakkuk’s waiting vision, Paul’s argument in Romans 4, and Hebrews’ exhortation. It records that the current sources do not support a lexical analysis of Habakkuk 2:4 and adds no unsupported ancient Near Eastern comparison. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 474 reviewed Fire Theme and left the CKL object unchanged. Its cited passages and sources concern covenant and do not support a fire-centered explanation; adding examples or references would require reviewed research. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. The object remained byte-for-byte unchanged; focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 475 reviewed Glory Theme. The revised explanation connects Moses’ call, the tabernacle, Solomon’s temple, John’s account of the Word’s glory, and Revelation’s vision of God dwelling with humanity, while keeping those scenes distinct. It removes unsupported generic ancient Near Eastern context. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 476 reviewed Holiness Theme. The revised explanation connects Leviticus’ call with its communal obligations, Isaiah’s confession and cleansing, and the later exhortations in 1 Peter and Hebrews. It uses the linked CKL evidence to preserve the ethical limits that holiness language must not authorize coercion or harm, and adds no unsupported ancient Near Eastern comparison. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 477 reviewed Hope Theme. The revised explanation distinguishes Deuteronomy’s return, Isaiah’s comfort, Ezekiel’s renewal, Joel’s promised spirit, and Revelation’s new creation. It also carries forward the linked evidence’s caution that hope can coexist with groaning and uncertainty, and removes unsupported generic ancient Near Eastern context. Single-object validation passed with zero errors and 10 pre-existing section-status warnings. Full CKL validation remains at 687 valid objects, zero errors, and the same 14 baseline warnings. Focused content-quality and retrieval regression passed 17 tests and 4 subtests. The next pending object is recorded in the manifest.
+
+
+Batch 478 enriched the Image of God theme by tracing how the image language works in Genesis, Psalm 8, worship, speech ethics, and New Testament renewal texts. Unsupported ancient Near Eastern and Second Temple generalizations were removed because the recorded sources do not substantiate them. The next pending record is Justice Theme.
+
+Batch 479 enriched Justice Theme from its four recorded biblical anchors, distinguishing their literary settings and claims about God’s character, conduct, judgment, and hope. The unsupported general ancient Near Eastern statement was removed. The next pending record is Kingdom Theme.
+
+Batch 480 enriched Kingdom Theme across its recorded biblical anchors, distinguishing royal psalms, Daniel’s visions, Jesus’ proclamation, communal ethics, and future completion. Unsupported generalizations about ancient imperial comparison and Second Temple expectations were removed. The next pending record is Land Theme.
+
+Batch 481 enriched Land Theme across its cited passages, distinguishing return to the land, covenant renewal, the Spirit promise, and Revelation’s wider new-creation horizon. The next pending object is recorded in the manifest.
+
+Batch 482 enriched Light and Darkness Theme by distinguishing creation imagery, the psalm’s language of trust, John’s opening imagery, and ethical uses in Ephesians and 1 John. Unsupported ancient Near Eastern context was removed. The next pending object is recorded in the manifest.
+
+Batch 483 enriched Mercy Theme from Exodus 34, Psalm 103, Micah 7, Ephesians 2, and Titus 2, connecting forgiveness, covenant faithfulness, grace, and changed conduct. Unsupported comparative context was not retained. The next pending object is recorded in the manifest.
+
+Batch 484 enriched Messiah Theme by tracing its distinct royal, priestly, prophetic, and servant passages and separating those texts from their New Testament interpretation in relation to Jesus. The next pending object is recorded in the manifest.
+
+Batch 485 reviewed Mountain Theme and left it unchanged. Most cited anchors concern covenant; Exodus 19:1–6 is the only explicitly mountain setting in the listed references. The manifest records the need for identity or anchor review.
+
+Batch 486 enriched New Covenant Theme from Jeremiah 31, Luke 22, and Hebrews 8, distinguishing those texts from the earlier covenant accounts included as background. The next pending object is recorded in the manifest.
+
+Batch 487 enriched New Creation Theme across Genesis, John, Romans 8, and Revelation 21, connecting creation and human vocation with the hope of creation’s liberation and renewal. The next pending object is recorded in the manifest.
+
+Batch 488 enriched New Exodus Theme by explaining the canonical restoration pattern and qualifying the link to the earlier Exodus. Isaiah 40’s wilderness-road image is distinguished from the distinct contributions of Deuteronomy 30, Ezekiel 36, Joel 2, and Revelation 21. The next pending object is recorded in the manifest.
+
+Batch 489 enriched New Jerusalem Theme from Revelation 21:1–5, distinguishing the vision of the city from broader restoration themes in the other listed passages. The next pending object is recorded in the manifest.
+
+Batch 490 enriched New Temple Theme by tracing dwelling-presence language from Exodus and 1 Kings to John, Ephesians, and Revelation. The explanation preserves the different temple images in their respective texts. The next pending object is recorded in the manifest.
+
+Batch 491 enriched Peace Theme across its cited passages, connecting blessing, trust, reconciliation, and prayer. Linked Pauline material helped distinguish peace from forced silence or conflict suppression; the related shalom record was not used to make broader lexical claims. The next pending object is recorded in the manifest.
+
+Batch 492 enriched People of God Theme around shared worship, care, reconciliation, gifts, and witness. It distinguishes the texts’ uses of Israel’s scriptural language without implying that Israel’s story has been erased. The next pending object is recorded in the manifest.
+
+Batch 493 enriched Prayer Theme across its cited passages, distinguishing lament, Jesus’ teaching, persistent prayer, petition, thanksgiving, and communal care. Linked Pauline evidence informed the caution against guaranteeing particular outcomes. The next pending object is recorded in the manifest.
+
+Batch 494 enriched Presence Theme by following the presence imagery from Moses’ call and Israel’s sanctuary to John and Revelation. The next pending object is recorded in the manifest.
+
+Batch 495 reviewed Priestly Mediation Theme and left it unchanged. Hebrews 8:6–13 supports mediation, but most other anchors concern covenant more generally; the record needs reviewed source or anchor reconciliation before safe expansion.
+
+Batch 496 enriched Promise Theme by distinguishing the promises to Noah, Abraham, Israel at Sinai, and the new covenant, then tracing the latter through Luke and Hebrews. The next pending object is recorded in the manifest.
+
+Batch 497 reviewed Redemption Theme and left it unchanged. Its anchors concern return, comfort, renewal, the Spirit, and new creation without directly establishing redemption language or a redemption mechanism. Source or anchor review is needed before expansion.
+
+Batch 498 reviewed Remnant Theme and left it unchanged. Its anchors concern exile, return, restoration, the Spirit, and new creation but do not directly identify a remnant; reviewed remnant-specific evidence is needed before expansion.
+
+Batch 499 enriched Restoration Theme across return, comfort, renewed hearts, the Spirit, and new creation. The explanation separates these dimensions and does not present them as one historical event. The next pending object is recorded in the manifest.
+
+Batch 500 enriched Resurrection Theme by distinguishing Ezekiel’s national-restoration vision, Daniel’s resurrection hope, Lazarus’ return to life, Jesus’ resurrection, and future transformed embodiment. It qualified the Second Temple context and removed broad claims about ancient views of death. The next pending object is recorded in the manifest.
+
+Batch 501 enriched Righteousness Theme across its cited passages, distinguishing God’s character, human conduct, impartial judgment, and praise following judgment. Unsupported comparative and lexical claims were not added. The next pending object is recorded in the manifest.
+
+Batch 502 enriched Sabbath Theme by distinguishing creation, liberation, covenant identity, land rest, ethical observance, and promised rest. Unsupported comparative ancient-background statements were removed. The next pending object is recorded in the manifest.
+
+Batch 503 enriched Sacrifice Theme by distinguishing substitution, Passover deliverance, offerings, purification, servant imagery, and the New Testament’s multiple interpretations of Jesus’ death. The next pending object is recorded in the manifest.
+
+Batch 504 reviewed Sanctuary Theme and left it unchanged. Its source-aware account already distinguishes sanctuary settings and New Testament uses, qualifies comparisons, and preserves safeguards against replacement readings.
+
+Batch 505 reviewed Seed Theme and left it unchanged. All listed anchors concern exile, return, restoration, the Spirit, or new creation; none establishes seed or descendant imagery. The manifest records the source/identity gap.
+
+Batch 506 reviewed Shepherd Theme and left it unchanged. Isaiah 40:11 is the only cited anchor that directly uses shepherd imagery; the other references concern restoration more generally. The manifest records the need for anchor review.
+
+
+The Sonship Theme review clarified the different roles of adoption and child
+language in Romans 8, Galatians 4, Ephesians 1, and 1 John 3. The explanation
+now distinguishes each letter’s argument and qualifies Roman household
+comparisons; a generic ancient Near Eastern paragraph was removed because the
+recorded evidence does not support it. The object and full CKL validate with no
+new errors or warnings, and the focused content-quality and retrieval tests
+passed.
+
+
+The Spirit Theme now traces its direct anchors from creation and shared
+leadership through prophetic renewal, Pentecost, Jesus’ promise, and communal
+life, while explaining how the passages use different literary forms. A broad
+ancient Near Eastern comparison was removed because the recorded sources do not
+support it. Two unsourced interpretive notes remain unchanged pending reviewed
+support. The object and full library validate without new errors or warnings;
+the focused content-quality and retrieval regressions passed.
+
+
+The Temple Theme now distinguishes the tabernacle and temple settings, pilgrimage and prophetic visions, Jesus’ temple saying, Hebrews’ sanctuary argument, and Revelation’s city without a separate temple. Unsupported generalizations about ancient Near Eastern temples and Second Temple practice were removed or bounded. Two unsourced interpretive notes remain unchanged pending reviewed support. The object and full library validate without new errors or warnings, and focused content-quality and retrieval regressions passed.
+
+
+Water and Spirit Theme now distinguishes the two cited passages that explicitly
+join the images (Genesis 1 and Ezekiel 36) from Joel, John, Acts, and Romans,
+which develop the Spirit theme without repeating water imagery in these
+anchors. An unsupported ancient Near Eastern paragraph was removed. The object
+and full library validate without new errors or warnings; focused content-quality
+and retrieval regressions passed.
+
+
+Water Theme was reviewed and held for subject/anchor reconciliation. Its
+Scripture links and related records point to the burning bush, the tabernacle
+and temple glory, incarnation, and new Jerusalem rather than water. No CKL
+content was changed; the manifest records the research gap.
+
+
+Wedding Theme was reviewed and held for identity/anchor reconciliation. Its
+scripture links and related objects point to covenant promises, Exodus 19,
+Jeremiah’s new covenant, the Last Supper, and Hebrews, but none of the recorded
+passages establishes wedding or marriage imagery. No CKL content was changed.
+
+
+Wisdom Theme was reviewed and held because the recorded references instead
+concern covenant promises and renewal, and the linked records are covenant
+entries. The record needs reviewed identity/anchor reconciliation or a
+wisdom-focused evidence set before explanation can be expanded. No CKL content
+was changed.
+
+
+Witness Theme now separates Genesis’ promise of blessing, Jesus’ commission,
+Spirit-enabled witness in Acts, Paul’s missionary explanation, and 1 Peter’s
+public communal testimony. Unsupported ancient Near Eastern boilerplate was
+removed. The object and full library validate without new errors or warnings;
+focused content-quality and retrieval regressions passed.
+
+
+Word of God Theme now distinguishes Deuteronomy’s teaching commands, the
+Psalms’ reflection on instruction, Jesus’ reading of Moses and the Prophets,
+Scripture’s formative role in 2 Timothy, and Hebrews’ account of divine speech.
+The unsupported ancient Near Eastern boilerplate was removed. The object and
+full library validate without new errors or warnings; focused content-quality
+and retrieval regressions passed.
+
+
+Worship Theme now distinguishes the post-deliverance song in Exodus 15,
+communal praise in Psalm 95, the sacred-place question in John 4, embodied
+devotion in Romans 12, and Revelation’s throne-room vision. Unsupported
+ancient Near Eastern boilerplate was removed. The object and full library
+validate without new errors or warnings; focused regressions passed.
+
+
+Adoption now distinguishes Romans’ Spirit-led belonging and co-heirship,
+Galatians’ minor-heir analogy, Ephesians’ blessing, and 1 John’s present
+identity and future hope. The explanation uses the linked evidence cluster to
+qualify Roman household comparisons and avoids treating them as a complete
+legal model. The object and full library validate without new errors or
+warnings; focused regressions passed.
+
+
+Atonement now distinguishes Leviticus 16’s two-goat rite, Isaiah 53’s
+suffering-servant poem, Hebrews’ sanctuary argument, and First John’s language
+of advocacy and atonement. The explanation avoids making one image carry every
+atonement account and removes unsupported ancient Near Eastern framing. The
+object and full library validate without new errors or warnings; focused
+regressions passed.
+
+
+Bibliology now distinguishes Deuteronomy’s commands and teaching, the Psalms’
+meditation, Jesus’ interpretation of Moses and the Prophets, Scripture’s
+formative role in 2 Timothy, and Hebrews’ account of divine speech. The prose
+does not infer canon or inerrancy doctrines from these anchors. The object and
+full library validate without new errors or warnings; focused regressions
+passed.
+
+
+Christology now distinguishes the Davidic promise, royal psalm, Isaiah’s ruler
+and suffering servant, and the New Testament readings of Jesus in Luke 24 and
+Acts 2. It notes that Isaiah 53 does not name the servant in the cited verses
+and does not impose one original identification. The object and full library
+validate without new errors or warnings; focused regressions passed.
+
+
+Covenant Faithfulness now explains how the cited texts differ: preservation
+after the flood, blessing through Abraham, Israel’s vocation, prophetic renewal,
+and New Testament use of new-covenant language. Unsupported comparative
+ancient Near Eastern material was not retained. The object and full library
+validate without new errors or warnings; focused regressions passed.
+
+
+Covenant Theology was held for source research. The entry’s scriptural anchors
+support its biblical examples, but no recorded source supports the historical
+claim about Reformed development or the comparison with Hittite and
+Neo-Assyrian treaty forms. No CKL content was changed.
+
+
+Creation Doctrine now connects Genesis’ distinct creation scenes, Psalm 8’s
+reflection on human vocation, John 1’s Word and life, Romans 8’s groaning
+creation, and Revelation 21’s renewal. The explanation keeps its claims within
+the listed texts and does not use them to resolve modern scientific chronology.
+The object and full library validate without new errors or warnings; focused
+regressions passed.
+
+
+Divine Holiness now links Leviticus’ command to Isaiah’s temple vision,
+confession, cleansing, and commission, then to its use in First Peter and
+Hebrews. The revised fields distinguish command, vision, quotation, and
+exhortation. The object and full library validate without new errors or
+warnings; focused regressions passed.
+
+
+Divine Justice now distinguishes Moses’ song, Micah’s challenge about offerings,
+Paul’s argument about impartial judgment, and Revelation’s praise after
+judgment. It connects divine character, human conduct, accountability, and
+hope without treating the passages as interchangeable. The object and full
+library validate without new errors or warnings; focused regressions passed.
+
+
+Divine Mercy now connects Exodus 34’s proclamation after Israel’s breach,
+Psalm 103’s compassion toward frailty, Micah 7’s hope of pardon, and the way
+Ephesians 2 and Titus 2 link grace with new life and changed conduct. Unsupported
+ancient Near Eastern boilerplate was removed. The object and full library
+validate without new errors or warnings; focused regressions passed.
+
+
+Divine Presence now distinguishes Moses’ encounter at the bush, the cloud and
+glory filling the tent and temple, the Word living among people in John, and
+Revelation’s vision of God dwelling with humanity. The object and full library
+validate without new errors or warnings; focused regressions passed.
+
+
+Divine Wrath was held for identity/anchor reconciliation. Its six listed
+passages and source IDs concern covenant promises and renewal rather than
+divine wrath. No CKL content was changed; the manifest records the required
+source and subject gap.
+
+
+Ecclesiology now distinguishes the confession and building image in Matthew,
+the shared life in Acts, household/temple imagery in Ephesians 2, body and
+growth in Ephesians 4, and living stones in First Peter. The object and full
+library validate without new errors or warnings; focused regressions passed.
+
+
+Election was held because its source cluster is primarily covenant-focused.
+Exodus 19 and Genesis 12 offer possible points of contact, but the remaining
+anchors concern covenant promise and renewal, and no sources establish the
+broader doctrine represented by the object. No CKL content was changed.
+
+
+Eschatology now distinguishes the apocalyptic, Gospel, epistolary, and
+resurrection settings in Daniel, Matthew, Paul, and Revelation rather than
+forcing them into one timetable. Faith now traces trust through promise in
+Genesis, waiting in Habakkuk, Paul’s argument in Romans, and Hebrews’
+exhortation. The objects and full library validate without new errors or
+warnings; focused regressions passed.
+
+
+Final Judgment was held for source/anchor review. Daniel 12 includes resurrection
+to life or shame, but the other anchors primarily address the coming, gathering,
+resurrection, defeat of death, or renewed creation; the source list duplicates
+the broader Eschatology cluster. No CKL content was changed.
+
+
+Glorification was held for doctrine/anchor reconciliation. Its references and
+source IDs duplicate the Eschatology cluster, which centers on coming,
+resurrection, and renewed creation rather than establishing a full account of
+glorification. No CKL content was changed.
+
+
+Grace was enriched to distinguish how Exodus 34, Psalm 103, Micah 7, Ephesians 2, and Titus 2 portray graciousness, compassion, pardon, new life, and changed conduct. The object’s generic ancient Near Eastern comparison was removed because its source records did not support one; no lexical claim was added. Object and full-library validation and focused retrieval regressions passed.
+
+
+Hamartiology was reviewed and held. Its title names the doctrine of sin, but its explanatory prose, Scripture anchors, and sources instead concern covenant promises and fulfillment; the only historical-orientation source is an internal placeholder pending human review. The object needs identity and source reconciliation before any doctrine-specific account can be supported.
+
+
+Inspiration was clarified from the cited texts: Deuteronomy’s covenant instruction, the Psalms’ praise of divine teaching, Luke’s scene of scriptural interpretation, and 2 Timothy’s description of sacred writings. The explanation distinguishes these textual observations from later doctrinal debates and leaves external historical context blank where the object’s sources do not establish it. Imago Dei, Incarnation, Inerrancy, Judgment, and Justification were held because their source anchors do not directly support their named doctrines or because the records are misaligned.
+
+
+Four theology records now explain their cited passages more specifically: Kingdom distinguishes royal poetry, visions, parables, and apocalyptic proclamation; Messianic Hope separates return and renewal texts from claims about a messianic figure; Mission connects blessing with several distinct forms of witness; and New Covenant follows Jeremiah’s promise through its use in Luke, Paul, and Hebrews. Unsupported ancient Near Eastern comparison language was removed. Law and Gospel was held because its anchors and generic prose do not support the named distinction.
+
+
+Six doctrine records were clarified from their cited biblical texts: Perseverance, Pneumatology, Repentance, Sanctification, Prayer, and Worship. The explanations distinguish the passages’ genres and claims, and broad unsupported ancient-context statements were removed. Seven adjacent records were held for research or curation: priesthood of believers, providence, remnant, sacramental theology, spiritual gifts, theology of the cross, and a duplicate theology-of-the-kingdom entry.
+
+
+Six more theology objects were clarified: Resurrection, Second Coming, Suffering, Trinity, Typology, and Union with Christ. The explanations distinguish the cited texts’ arguments and literary forms, remove broad unsupported context claims, and avoid imposing disputed timelines. The duplicate Theology of the Cross and Theology of the Kingdom entries were held for curation in the previous batch. The Exodus-to-Sinai timeline’s sequence is already clear, but its ancient imperial and Second Temple context statements lack independently reviewed source support.
+
+
+The first lexical/context batch clarified Abba, Berit, Diatheke, Charis, and Hupomone from their cited passages. It distinguishes related themes from exact lexical claims and adds no unsupported etymology or semantic range. The word-study inventory contains many other entries with mismatched anchors or no reviewed lexical source; those are being held individually with the specific gap recorded.
+
+
+The second word-study batch clarified Metanoia, Makarios, Sophia, Soteria, Phos, and Skotia from their passage settings. The summaries now distinguish wisdom instruction from personification, salvation images across genres, and light/darkness imagery across Hebrew and Greek passages without claiming lexical equivalence from a shared English rendering.
+
+
+The next word-context batch clarified Hesed, Ekklesia, Koinonia, Anastasis, Parousia, and Doxa. It follows each cited passage’s own use and genre, distinguishes Hebrew-scripture parallels from New Testament texts, and does not claim that related English images prove lexical identity.
+
+
+All 687 CKL objects have now been examined. The final word-study review enriched six records whose selected passages supported specific contextual explanation, left the Torah entry unchanged because it already explains its scope and context, and held the remaining 26 entries where term-specific sources, anchors, or identity reconciliation are needed. The held records are documented individually in the manifest; no lexical ranges or language-history claims were guessed.

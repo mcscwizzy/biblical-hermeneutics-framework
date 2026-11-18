@@ -28,6 +28,9 @@ class CKLRetrievalServiceTests(unittest.TestCase):
         self.assertIn("stats", payload)
         self.assertGreater(len(payload["results"]), 0)
         self.assertNotIn("score_details", payload["results"][0])
+        self.assertNotIn("raw_score", payload["results"][0])
+        debug_payload = response.to_dict(debug=True)
+        self.assertIn("raw_score", debug_payload["results"][0])
 
     def test_shechem_ranks_first_for_joshua_24(self) -> None:
         response = self.service.search("Why is Shechem important in Joshua 24?")

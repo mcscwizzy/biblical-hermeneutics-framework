@@ -1615,7 +1615,9 @@
       if (materials.length) appendTextElement(document, card, "p", `Ancient comparative material (not Scripture): ${materials.join(" · ")}.`, "narrative-explorer-curation-comparative");
     }
     const interpretation = readerText(item?.rationale?.scholarly_interpretation || item?.rationale?.interpretation);
-    if (interpretation && isDisputed(item)) appendTextElement(document, card, "p", interpretation, "narrative-explorer-item-interpretation");
+    if (interpretation && isDisputed(item)) {
+      appendTextElement(document, card, "p", conciseSourceText(interpretation), "narrative-explorer-item-interpretation");
+    }
     const qualification = previewQualification(item, evidenceLabel);
     if (qualification) appendTextElement(document, card, "p", qualification, "narrative-explorer-item-qualification");
 
@@ -1749,24 +1751,38 @@
     const observation = readerText(rationale.primary_observation);
     const interpretation = readerText(rationale.scholarly_interpretation || rationale.interpretation);
     const relevance = readerText(rationale.passage_relevance);
+    const claimRationale = readerText(rationale.rationale);
+    const confidenceRationale = readerText(rationale.confidence_rationale);
+    const confidence = readerText(item?.confidence);
+    if (observation || interpretation || relevance || claimRationale || confidenceRationale) {
+      appendTextElement(document, original, "h4", "Understanding this observation");
+    }
     if (observation) {
-      appendTextElement(document, original, "h6", "What the text or source describes");
+      appendTextElement(document, original, "h5", "What the text or source describes");
       appendTextElement(document, original, "p", observation, "narrative-explorer-original-claim");
     }
     if (interpretation) {
-      appendTextElement(document, original, "h6", "What a scholar proposes");
+      appendTextElement(document, original, "h5", "What a scholar proposes");
       appendTextElement(document, original, "p", interpretation, "narrative-explorer-original-description");
     }
     if (relevance) {
-      appendTextElement(document, original, "h6", "Why it matters here");
+      appendTextElement(document, original, "h5", "Why it matters here");
       appendTextElement(document, original, "p", relevance, "narrative-explorer-original-description");
     }
+    if (claimRationale) {
+      appendTextElement(document, original, "h5", "Why this claim is made");
+      appendTextElement(document, original, "p", claimRationale, "narrative-explorer-original-description");
+    }
+    if (confidenceRationale) {
+      appendTextElement(document, original, "h5", confidence ? `Confidence: ${confidence}` : "Why this confidence level");
+      appendTextElement(document, original, "p", confidenceRationale, "narrative-explorer-original-description");
+    }
     if (!observation && claim) {
-      appendTextElement(document, original, "h6", "Research claim");
+      appendTextElement(document, original, "h5", "Research claim");
       appendTextElement(document, original, "p", claim, "narrative-explorer-original-claim");
     }
     if (description && description !== claim && description !== observation) {
-      appendTextElement(document, original, "h6", "More context");
+      appendTextElement(document, original, "h5", "More context");
       appendTextElement(document, original, "p", description, "narrative-explorer-original-description");
     }
     if (original.children.length) parent.append(original);
@@ -2044,6 +2060,7 @@
     if (readerText(item?.description) && readerText(item.description) !== readerText(item.claim_text)) {
       appendTextElement(document, view, "p", readerText(item.description), "narrative-explorer-item-description");
     }
+    appendFullEvidenceDetails(document, view, item);
     const qualification = previewQualification(item, category);
     if (qualification) appendTextElement(document, view, "p", qualification, "narrative-explorer-caution");
     if (category === "Ancient comparative literature") {

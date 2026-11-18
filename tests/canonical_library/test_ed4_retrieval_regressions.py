@@ -49,6 +49,42 @@ class ED4RetrievalRegressionTests(unittest.TestCase):
 
         self.assertEqual(set(ids), {"genesis", "john"})
 
+    def test_explicit_1_corinthians_15_precedes_broader_resurrection_topic(self) -> None:
+        response = self.service.search(
+            "Who were the resurrection witnesses in 1 Corinthians 15?",
+            debug=True,
+        )
+
+        self.assertEqual(response.analysis.scripture_references[0].book, "1 Corinthians")
+        self.assertEqual(response.analysis.scripture_references[0].start_chapter, 15)
+        self.assertEqual(response.results[0].id, "1-corinthians")
+        self.assertEqual(response.results[0].score, 1.0)
+        resurrection = next(
+            result for result in response.results if result.id == "resurrection-theme"
+        )
+        self.assertEqual(resurrection.score, 1.0)
+        self.assertGreater(response.results[0].raw_score, resurrection.raw_score)
+
+    def test_general_resurrection_question_keeps_topic_result_first(self) -> None:
+        ids = self.result_ids("What is resurrection?")
+
+        self.assertEqual(ids[0], "what-is-resurrection")
+
+    def test_explicit_hebrews_11_keeps_book_and_focused_faith_evidence_available(self) -> None:
+        ids = self.result_ids("What does Hebrews 11 say about faith?")
+
+        self.assertEqual(ids[0], "hebrews")
+        self.assertIn("faith", ids[:3])
+
+    def test_resurrection_comparison_keeps_both_named_books_and_focused_evidence(self) -> None:
+        ids = self.result_ids(
+            "Compare resurrection witnesses in 1 Corinthians 15 with Luke 24.",
+            limit=5,
+        )
+
+        self.assertEqual(set(ids[:2]), {"1-corinthians", "luke"})
+        self.assertIn("resurrection", ids)
+
     def test_separately_named_nested_book_titles_both_remain_retrievable(self) -> None:
         ids = self.result_ids("Compare 1 John 3:19 and John 3:16.", limit=2)
 

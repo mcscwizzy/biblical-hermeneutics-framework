@@ -557,8 +557,24 @@ test("canonical detail uses exact object lookup and keeps source links attached 
       id: "target-evidence",
       title: "Target evidence item",
       description: "Evidence text linked to the target source.",
+      primary_observation: "The text names the promise and its stated addressees.",
+      scholarly_interpretation: "The promise is interpreted within its literary setting, while later application remains debated.",
+      passage_relevance: "This supports a careful reading of Genesis 12 without treating the promise as an unrestricted modern political claim.",
+      confidence_rationale: "The wording is explicit; the scope of later application is disputed.",
       source_ids: ["target-source"],
       claim_ids: [],
+    }],
+    claims: [{
+      id: "g12-call-leave-household",
+      claim: "Abram's call requires a real departure from household and land.",
+      rationale: "The command and journey are explicit; the exact social cost is inferred from the narrated departure.",
+      passage_relevance: "This frames the promise as a call with cost, without turning it into a universal migration rule.",
+      confidence: "high",
+      confidence_rationale: "The departure is explicit, while the wider social implications are interpretive.",
+      certainty: "textually_explicit",
+      dispute_status: "minor_scholarly_disagreement",
+      source_ids: ["target-source"],
+      scripture_references: [{reference: "Genesis 12:1-4", relationship: "direct"}],
     }],
   };
   const value = fixture({canonicalDetail: detail});
@@ -592,7 +608,19 @@ test("canonical detail uses exact object lookup and keeps source links attached 
   assert.match(renderedText(sourceRecord), /Recorded support links/);
   assert.match(renderedText(sourceRecord), /Target evidence item/);
   assert.equal(evidenceRecord.tagName, "DETAILS");
+  assert.match(renderedText(evidenceRecord), /Understanding this observation/);
+  assert.match(renderedText(evidenceRecord), /The text names the promise and its stated addressees/);
+  assert.match(renderedText(evidenceRecord), /later application remains debated/);
+  assert.match(renderedText(evidenceRecord), /careful reading of Genesis 12/);
+  assert.match(renderedText(evidenceRecord), /scope of later application is disputed/);
   assert.match(renderedText(evidenceRecord), /Target source title/);
+  const claimExplanation = nodesWithin(body).find((item) => item?.dataset?.claimId === "g12-call-leave-household");
+  assert.equal(claimExplanation.tagName, "DETAILS");
+  assert.match(renderedText(claimExplanation), /Understanding this observation/);
+  assert.match(renderedText(claimExplanation), /exact social cost is inferred/);
+  assert.match(renderedText(claimExplanation), /universal migration rule/);
+  assert.match(renderedText(claimExplanation), /Genesis 12:1-4/);
+  assert.match(renderedText(claimExplanation), /Target source title/);
   assert.doesNotMatch(text, /abraham-only-source/);
 });
 
