@@ -1942,6 +1942,7 @@
       if (references.length) appendGroup(body, "Scripture", references.map((reference) => ({title: reference})));
       appendCanonicalSources(body, detail);
       appendCanonicalEvidence(body, detail);
+      appendCanonicalClaims(body, detail);
       const back = actionButton("← Back to results", "");
       delete back.dataset.openLegacyResource;
       back.dataset.nativeResourceBack = "";
@@ -2063,10 +2064,27 @@
 
         const content = document.createElement("div");
         content.className = "companion-canonical-evidence-content";
-        appendCanonicalField(content, "Description", evidence.description || evidence.primary_observation || evidence.passage_relevance);
+        appendCanonicalField(content, "Description", evidence.description);
         appendCanonicalField(content, "Evidence type", evidence.evidence_type);
         appendCanonicalField(content, "Certainty", evidence.certainty);
         appendCanonicalField(content, "Dispute status", evidence.dispute_status);
+
+        const explanationFields = [
+          ["What the text or source describes", evidence.primary_observation],
+          ["What a scholar proposes", evidence.scholarly_interpretation],
+          ["Why it matters here", evidence.passage_relevance],
+          ["Why this claim is made", evidence.rationale],
+          [evidence.confidence ? `Confidence: ${evidence.confidence}` : "Why this confidence level", evidence.confidence_rationale],
+        ].filter(([, value]) => typeof value === "string" && value.trim());
+        if (explanationFields.length) {
+          const explanation = document.createElement("section");
+          explanation.className = "companion-canonical-evidence-explanation";
+          const heading = document.createElement("h5");
+          heading.textContent = "Understanding this observation";
+          explanation.append(heading);
+          explanationFields.forEach(([label, value]) => appendCanonicalField(explanation, label, value));
+          content.append(explanation);
+        }
 
         const sourceIds = Array.isArray(evidence.source_ids)
           ? evidence.source_ids.map((value) => String(value || "").trim()).filter(Boolean)
@@ -2117,6 +2135,107 @@
       });
       section.append(list);
       body.append(section);
+    }
+
+    function appendCanonicalClaims(body, detail) {
+      const claims = Array.isArray(detail?.claims)
+        ? detail.claims.filter((claim) => claim && typeof claim === "object" && !Array.isArray(claim))
+        : [];
+      if (!claims.length) return;
+      const sources = Array.isArray(detail?.sources)
+        ? detail.sources.filter((source) => source && typeof source === "object" && !Array.isArray(source))
+        : [];
+      const sourceById = new Map(sources.map((source) => [String(source.id || "").trim(), source]));
+      const section = document.createElement("details");
+      section.className = "companion-canonical-claims";
+      const sectionSummary = document.createElement("summary");
+      sectionSummary.textContent = `Claim explanations · ${claims.length}`;
+      section.append(sectionSummary);
+
+      const list = document.createElement("div");
+      list.className = "companion-canonical-claim-list";
+      claims.forEach((claim) => {
+        const claimId = String(claim.id || "").trim();
+        const claimText = String(claim.claim || claim.title || "Recorded claim").trim();
+        const item = document.createElement("details");
+        item.className = "companion-canonical-claim companion-canonical-disclosure";
+        if (claimId) item.dataset.claimId = claimId;
+        const summary = document.createElement("summary");
+        summary.textContent = conciseCanonicalText(claimText);
+        item.append(summary);
+
+        const content = document.createElement("div");
+        content.className = "companion-canonical-claim-content";
+        appendCanonicalField(content, "Claim", claimText);
+        const explanation = document.createElement("section");
+        explanation.className = "companion-canonical-claim-explanation";
+        const explanationHeading = document.createElement("h5");
+        explanationHeading.textContent = "Understanding this observation";
+        explanation.append(explanationHeading);
+        appendCanonicalField(explanation, "Why this claim is made", claim.rationale);
+        appendCanonicalField(explanation, "Why it matters here", claim.passage_relevance);
+        appendCanonicalField(
+          explanation,
+          claim.confidence ? `Confidence: ${claim.confidence}` : "Why this confidence level",
+          claim.confidence_rationale,
+        );
+        appendCanonicalField(explanation, "What remains uncertain", claim.uncertainty);
+        if (explanation.children.length > 1) content.append(explanation);
+        appendCanonicalField(content, "Certainty", canonicalReaderLabel(claim.certainty));
+        appendCanonicalField(content, "Scholarly disagreement", canonicalReaderLabel(claim.dispute_status));
+
+        const references = Array.isArray(claim.scripture_references) ? claim.scripture_references : [];
+        const referenceTexts = references.map((reference) => typeof reference === "string"
+          ? reference
+          : String(reference?.reference || "").trim()).filter(Boolean);
+        if (referenceTexts.length) {
+          const support = document.createElement("section");
+          support.className = "companion-canonical-claim-support";
+          const supportHeading = document.createElement("h5");
+          supportHeading.textContent = "Supporting Scripture passages";
+          support.append(supportHeading);
+          referenceTexts.forEach((reference) => appendCanonicalField(support, "Passage", reference));
+          content.append(support);
+        }
+
+        const sourceIds = Array.isArray(claim.source_ids)
+          ? claim.source_ids.map((value) => String(value || "").trim()).filter(Boolean)
+          : [];
+        if (sourceIds.length) {
+          const cited = document.createElement("section");
+          cited.className = "companion-canonical-claim-sources";
+          const citedHeading = document.createElement("h5");
+          citedHeading.textContent = "Cited sources";
+          cited.append(citedHeading);
+          sourceIds.forEach((sourceId) => {
+            const source = sourceById.get(sourceId);
+            appendCanonicalField(cited, "Source", source?.title || "Source details are not available for this record.");
+          });
+          content.append(cited);
+        }
+
+        item.append(content);
+        list.append(item);
+      });
+      section.append(list);
+      body.append(section);
+    }
+
+    function conciseCanonicalText(value, maxLength = 180) {
+      const text = String(value || "").trim();
+      if (!text) return "";
+      const end = text.search(/[.!?](?=\s|$)/);
+      const sentence = end >= 0 ? text.slice(0, end + 1).trim() : text;
+      if (sentence.length <= maxLength) return sentence;
+      const limit = maxLength - 1;
+      const boundary = sentence.slice(0, limit).lastIndexOf(" ");
+      const stop = boundary >= Math.floor(limit * 0.6) ? boundary : limit;
+      return `${sentence.slice(0, stop).trimEnd()}…`;
+    }
+
+    function canonicalReaderLabel(value) {
+      const text = String(value || "").trim().replace(/[_-]+/g, " ");
+      return text ? text[0].toUpperCase() + text.slice(1) : "";
     }
 
     function appendCanonicalField(container, label, value) {

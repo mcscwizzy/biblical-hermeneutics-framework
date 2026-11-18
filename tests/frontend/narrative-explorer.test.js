@@ -2751,6 +2751,48 @@ test("supported Markdown emphasis renders as safe text in evidence details witho
   assert.doesNotMatch(descendants(unsafeLookingText).map((element) => element.tagName).join(" "), /IMG/);
 });
 
+test("evidence detail presents enriched explanations while overview cards stay concise", () => {
+  const item = readerEligible({
+    id: "ckl:genesis#evidence:g5-enriched-observation",
+    domain: "ckl",
+    record_kind: "evidence",
+    parent_object_id: "genesis",
+    evidence_id: "g5-enriched-observation",
+    title: "The Genesis 5 genealogy presents a repeated pattern",
+    description: "A short reader-facing observation.",
+    claim_text: "The genealogy links generations through a repeated formula.",
+    confidence: "high",
+    rationale: {
+      confidence_rationale: "The repeated formula is explicit, while its literary effect is interpreted.",
+      passage_relevance: "Genesis 5's repeated births and deaths frame Enoch's distinct account and Lamech's hope.",
+      primary_observation: "The genealogy repeatedly names a father, a son, further offspring, years lived, and death.",
+      scholarly_interpretation: "The repeated form emphasizes mortality, while Enoch's account interrupts the pattern. The genealogy's structure also creates a movement through generations and prepares readers for the flood narrative, while interpreters differ over whether its lifespan figures should be read primarily as chronology, literary pattern, or theological reflection.",
+    },
+    certainty: "textually_explicit",
+    dispute_status: "minor_scholarly_disagreement",
+    source_ids: ["genesis-primary"],
+    sources: [],
+    passage_anchors: [{reference: "Genesis 5", relationship: "direct"}],
+    applicable_passage_anchors: [{reference: "Genesis 5", relationship: "direct"}],
+  });
+  const overview = renderCategory(projection({
+    items: [item],
+    sections: [section("biblical_narrative", [item.id], "available")],
+  }), "biblical_narrative", {document: fakeDocument()});
+  const detail = explorer.renderEvidenceDetail(item, [], null, {document: fakeDocument()});
+  const card = descendants(overview).find((element) => element.className === "narrative-explorer-item");
+
+  assert.ok(card);
+  assert.ok(card.textContent.length < 700, "overview remains concise");
+  assert.doesNotMatch(card.textContent, /interpreters differ over whether its lifespan figures/);
+  assert.match(detail.textContent, /Understanding this observation/);
+  assert.match(detail.textContent, /The genealogy repeatedly names a father/);
+  assert.match(detail.textContent, /The repeated form emphasizes mortality/);
+  assert.match(detail.textContent, /Genesis 5's repeated births and deaths/);
+  assert.match(detail.textContent, /The repeated formula is explicit/);
+  assert.match(detail.textContent, /Supporting sources/);
+});
+
 test("raw CKL record navigation remains available from the detailed evidence view", () => {
   const fixturePath = path.join(__dirname, "../fixtures/narrative_explorer/ne5a_baseline/genesis_6_1_4.json");
   const data = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
